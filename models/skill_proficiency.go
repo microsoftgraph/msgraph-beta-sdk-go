@@ -8,7 +8,7 @@ import (
 type SkillProficiency struct {
     ItemFacet
 }
-// NewSkillProficiency instantiates a new SkillProficiency and sets the default values.
+// NewSkillProficiency instantiates a new skillProficiency and sets the default values.
 func NewSkillProficiency()(*SkillProficiency) {
     m := &SkillProficiency{
         ItemFacet: *NewItemFacet(),

@@ -8,7 +8,7 @@ import (
 type Acronym struct {
     SearchAnswer
 }
-// NewAcronym instantiates a new Acronym and sets the default values.
+// NewAcronym instantiates a new acronym and sets the default values.
 func NewAcronym()(*Acronym) {
     m := &Acronym{
         SearchAnswer: *NewSearchAnswer(),

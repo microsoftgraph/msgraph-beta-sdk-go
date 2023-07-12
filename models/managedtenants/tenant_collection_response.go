@@ -9,7 +9,7 @@ import (
 type TenantCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewTenantCollectionResponse instantiates a new TenantCollectionResponse and sets the default values.
+// NewTenantCollectionResponse instantiates a new tenantCollectionResponse and sets the default values.
 func NewTenantCollectionResponse()(*TenantCollectionResponse) {
     m := &TenantCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

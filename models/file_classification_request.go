@@ -7,8 +7,10 @@ import (
 // FileClassificationRequest 
 type FileClassificationRequest struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewFileClassificationRequest instantiates a new FileClassificationRequest and sets the default values.
+// NewFileClassificationRequest instantiates a new fileClassificationRequest and sets the default values.
 func NewFileClassificationRequest()(*FileClassificationRequest) {
     m := &FileClassificationRequest{
         Entity: *NewEntity(),

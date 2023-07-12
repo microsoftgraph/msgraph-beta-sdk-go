@@ -8,7 +8,7 @@ import (
 type PersonExtension struct {
     Extension
 }
-// NewPersonExtension instantiates a new PersonExtension and sets the default values.
+// NewPersonExtension instantiates a new personExtension and sets the default values.
 func NewPersonExtension()(*PersonExtension) {
     m := &PersonExtension{
         Extension: *NewExtension(),

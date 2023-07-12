@@ -8,7 +8,7 @@ import (
 type CustomAppScope struct {
     AppScope
 }
-// NewCustomAppScope instantiates a new CustomAppScope and sets the default values.
+// NewCustomAppScope instantiates a new customAppScope and sets the default values.
 func NewCustomAppScope()(*CustomAppScope) {
     m := &CustomAppScope{
         AppScope: *NewAppScope(),

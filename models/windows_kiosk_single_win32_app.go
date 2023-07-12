@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsKioskSingleWin32App 
+// WindowsKioskSingleWin32App the class used to identify the single app configuration for the kiosk win32 configuration
 type WindowsKioskSingleWin32App struct {
     WindowsKioskAppConfiguration
+    // The OdataType property
+    OdataType *string
 }
-// NewWindowsKioskSingleWin32App instantiates a new WindowsKioskSingleWin32App and sets the default values.
+// NewWindowsKioskSingleWin32App instantiates a new windowsKioskSingleWin32App and sets the default values.
 func NewWindowsKioskSingleWin32App()(*WindowsKioskSingleWin32App) {
     m := &WindowsKioskSingleWin32App{
         WindowsKioskAppConfiguration: *NewWindowsKioskAppConfiguration(),

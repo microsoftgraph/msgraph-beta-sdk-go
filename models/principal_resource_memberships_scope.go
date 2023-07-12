@@ -8,7 +8,7 @@ import (
 type PrincipalResourceMembershipsScope struct {
     AccessReviewScope
 }
-// NewPrincipalResourceMembershipsScope instantiates a new PrincipalResourceMembershipsScope and sets the default values.
+// NewPrincipalResourceMembershipsScope instantiates a new principalResourceMembershipsScope and sets the default values.
 func NewPrincipalResourceMembershipsScope()(*PrincipalResourceMembershipsScope) {
     m := &PrincipalResourceMembershipsScope{
         AccessReviewScope: *NewAccessReviewScope(),
@@ -24,6 +24,16 @@ func CreatePrincipalResourceMembershipsScopeFromDiscriminatorValue(parseNode i87
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrincipalResourceMembershipsScope) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AccessReviewScope.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["principalScopes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessReviewScopeFromDiscriminatorValue)
         if err != nil {
@@ -58,6 +68,17 @@ func (m *PrincipalResourceMembershipsScope) GetFieldDeserializers()(map[string]f
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PrincipalResourceMembershipsScope) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetPrincipalScopes gets the principalScopes property value. Defines the scopes of the principals whose access to resources are reviewed in the access review.
 func (m *PrincipalResourceMembershipsScope) GetPrincipalScopes()([]AccessReviewScopeable) {
     val, err := m.GetBackingStore().Get("principalScopes")
@@ -86,6 +107,12 @@ func (m *PrincipalResourceMembershipsScope) Serialize(writer i878a80d2330e89d268
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPrincipalScopes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPrincipalScopes()))
         for i, v := range m.GetPrincipalScopes() {
@@ -112,6 +139,13 @@ func (m *PrincipalResourceMembershipsScope) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PrincipalResourceMembershipsScope) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPrincipalScopes sets the principalScopes property value. Defines the scopes of the principals whose access to resources are reviewed in the access review.
 func (m *PrincipalResourceMembershipsScope) SetPrincipalScopes(value []AccessReviewScopeable)() {
     err := m.GetBackingStore().Set("principalScopes", value)
@@ -130,8 +164,10 @@ func (m *PrincipalResourceMembershipsScope) SetResourceScopes(value []AccessRevi
 type PrincipalResourceMembershipsScopeable interface {
     AccessReviewScopeable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetPrincipalScopes()([]AccessReviewScopeable)
     GetResourceScopes()([]AccessReviewScopeable)
+    SetOdataType(value *string)()
     SetPrincipalScopes(value []AccessReviewScopeable)()
     SetResourceScopes(value []AccessReviewScopeable)()
 }

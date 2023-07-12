@@ -7,8 +7,10 @@ import (
 // CatalogContent 
 type CatalogContent struct {
     DeployableContent
+    // The OdataType property
+    OdataType *string
 }
-// NewCatalogContent instantiates a new CatalogContent and sets the default values.
+// NewCatalogContent instantiates a new catalogContent and sets the default values.
 func NewCatalogContent()(*CatalogContent) {
     m := &CatalogContent{
         DeployableContent: *NewDeployableContent(),

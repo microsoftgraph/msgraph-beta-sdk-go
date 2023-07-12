@@ -8,6 +8,8 @@ import (
 // VulnerableManagedDevice this entity represents a device associated with a task.
 type VulnerableManagedDevice struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewVulnerableManagedDevice instantiates a new vulnerableManagedDevice and sets the default values.
 func NewVulnerableManagedDevice()(*VulnerableManagedDevice) {

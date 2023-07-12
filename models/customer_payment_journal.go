@@ -12,7 +12,7 @@ type CustomerPaymentJournal struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCustomerPaymentJournal instantiates a new CustomerPaymentJournal and sets the default values.
+// NewCustomerPaymentJournal instantiates a new customerPaymentJournal and sets the default values.
 func NewCustomerPaymentJournal()(*CustomerPaymentJournal) {
     m := &CustomerPaymentJournal{
     }

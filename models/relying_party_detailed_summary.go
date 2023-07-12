@@ -7,8 +7,10 @@ import (
 // RelyingPartyDetailedSummary 
 type RelyingPartyDetailedSummary struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewRelyingPartyDetailedSummary instantiates a new RelyingPartyDetailedSummary and sets the default values.
+// NewRelyingPartyDetailedSummary instantiates a new relyingPartyDetailedSummary and sets the default values.
 func NewRelyingPartyDetailedSummary()(*RelyingPartyDetailedSummary) {
     m := &RelyingPartyDetailedSummary{
         Entity: *NewEntity(),

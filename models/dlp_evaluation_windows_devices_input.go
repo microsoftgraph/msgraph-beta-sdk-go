@@ -7,8 +7,10 @@ import (
 // DlpEvaluationWindowsDevicesInput 
 type DlpEvaluationWindowsDevicesInput struct {
     DlpEvaluationInput
+    // The OdataType property
+    OdataType *string
 }
-// NewDlpEvaluationWindowsDevicesInput instantiates a new DlpEvaluationWindowsDevicesInput and sets the default values.
+// NewDlpEvaluationWindowsDevicesInput instantiates a new dlpEvaluationWindowsDevicesInput and sets the default values.
 func NewDlpEvaluationWindowsDevicesInput()(*DlpEvaluationWindowsDevicesInput) {
     m := &DlpEvaluationWindowsDevicesInput{
         DlpEvaluationInput: *NewDlpEvaluationInput(),

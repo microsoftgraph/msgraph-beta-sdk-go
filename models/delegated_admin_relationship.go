@@ -9,7 +9,7 @@ import (
 type DelegatedAdminRelationship struct {
     Entity
 }
-// NewDelegatedAdminRelationship instantiates a new DelegatedAdminRelationship and sets the default values.
+// NewDelegatedAdminRelationship instantiates a new delegatedAdminRelationship and sets the default values.
 func NewDelegatedAdminRelationship()(*DelegatedAdminRelationship) {
     m := &DelegatedAdminRelationship{
         Entity: *NewEntity(),
@@ -207,6 +207,16 @@ func (m *DelegatedAdminRelationship) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["operations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDelegatedAdminRelationshipOperationFromDiscriminatorValue)
         if err != nil {
@@ -259,6 +269,17 @@ func (m *DelegatedAdminRelationship) GetLastModifiedDateTime()(*i336074805fc8539
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DelegatedAdminRelationship) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -361,6 +382,12 @@ func (m *DelegatedAdminRelationship) Serialize(writer i878a80d2330e89d26896388a3
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetOperations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
@@ -457,6 +484,13 @@ func (m *DelegatedAdminRelationship) SetLastModifiedDateTime(value *i336074805fc
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DelegatedAdminRelationship) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOperations sets the operations property value. The long running operations associated with the delegated admin relationship.
 func (m *DelegatedAdminRelationship) SetOperations(value []DelegatedAdminRelationshipOperationable)() {
     err := m.GetBackingStore().Set("operations", value)
@@ -491,6 +525,7 @@ type DelegatedAdminRelationshipable interface {
     GetDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetOperations()([]DelegatedAdminRelationshipOperationable)
     GetRequests()([]DelegatedAdminRelationshipRequestable)
     GetStatus()(*DelegatedAdminRelationshipStatus)
@@ -503,6 +538,7 @@ type DelegatedAdminRelationshipable interface {
     SetDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetOperations(value []DelegatedAdminRelationshipOperationable)()
     SetRequests(value []DelegatedAdminRelationshipRequestable)()
     SetStatus(value *DelegatedAdminRelationshipStatus)()

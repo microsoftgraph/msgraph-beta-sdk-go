@@ -8,7 +8,7 @@ import (
 type AddressBookAccountTargetContent struct {
     AccountTargetContent
 }
-// NewAddressBookAccountTargetContent instantiates a new AddressBookAccountTargetContent and sets the default values.
+// NewAddressBookAccountTargetContent instantiates a new addressBookAccountTargetContent and sets the default values.
 func NewAddressBookAccountTargetContent()(*AddressBookAccountTargetContent) {
     m := &AddressBookAccountTargetContent{
         AccountTargetContent: *NewAccountTargetContent(),
@@ -51,7 +51,28 @@ func (m *AddressBookAccountTargetContent) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AddressBookAccountTargetContent) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AddressBookAccountTargetContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,6 +86,12 @@ func (m *AddressBookAccountTargetContent) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccountTargetEmails sets the accountTargetEmails property value. List of user emails targeted for an attack simulation training campaign.
@@ -74,10 +101,19 @@ func (m *AddressBookAccountTargetContent) SetAccountTargetEmails(value []string)
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AddressBookAccountTargetContent) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // AddressBookAccountTargetContentable 
 type AddressBookAccountTargetContentable interface {
     AccountTargetContentable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAccountTargetEmails()([]string)
+    GetOdataType()(*string)
     SetAccountTargetEmails(value []string)()
+    SetOdataType(value *string)()
 }

@@ -7,8 +7,10 @@ import (
 // Program 
 type Program struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewProgram instantiates a new Program and sets the default values.
+// NewProgram instantiates a new program and sets the default values.
 func NewProgram()(*Program) {
     m := &Program{
         Entity: *NewEntity(),

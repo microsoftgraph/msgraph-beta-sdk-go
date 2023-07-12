@@ -8,7 +8,7 @@ import (
 type DataSharingConsentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDataSharingConsentCollectionResponse instantiates a new DataSharingConsentCollectionResponse and sets the default values.
+// NewDataSharingConsentCollectionResponse instantiates a new dataSharingConsentCollectionResponse and sets the default values.
 func NewDataSharingConsentCollectionResponse()(*DataSharingConsentCollectionResponse) {
     m := &DataSharingConsentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

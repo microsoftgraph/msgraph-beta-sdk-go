@@ -7,8 +7,10 @@ import (
 // AuthenticationEventsPolicy 
 type AuthenticationEventsPolicy struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewAuthenticationEventsPolicy instantiates a new AuthenticationEventsPolicy and sets the default values.
+// NewAuthenticationEventsPolicy instantiates a new authenticationEventsPolicy and sets the default values.
 func NewAuthenticationEventsPolicy()(*AuthenticationEventsPolicy) {
     m := &AuthenticationEventsPolicy{
         Entity: *NewEntity(),

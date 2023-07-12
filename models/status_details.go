@@ -8,7 +8,7 @@ import (
 type StatusDetails struct {
     StatusBase
 }
-// NewStatusDetails instantiates a new StatusDetails and sets the default values.
+// NewStatusDetails instantiates a new statusDetails and sets the default values.
 func NewStatusDetails()(*StatusDetails) {
     m := &StatusDetails{
         StatusBase: *NewStatusBase(),
@@ -87,6 +87,16 @@ func (m *StatusDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["reason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -108,6 +118,17 @@ func (m *StatusDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *StatusDetails) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetReason gets the reason property value. Summarizes the status and describes why the status happened.
 func (m *StatusDetails) GetReason()(*string) {
@@ -157,6 +178,12 @@ func (m *StatusDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("reason", m.GetReason())
         if err != nil {
             return err
@@ -191,6 +218,13 @@ func (m *StatusDetails) SetErrorCode(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *StatusDetails) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetReason sets the reason property value. Summarizes the status and describes why the status happened.
 func (m *StatusDetails) SetReason(value *string)() {
     err := m.GetBackingStore().Set("reason", value)
@@ -212,11 +246,13 @@ type StatusDetailsable interface {
     GetAdditionalDetails()(*string)
     GetErrorCategory()(*ProvisioningStatusErrorCategory)
     GetErrorCode()(*string)
+    GetOdataType()(*string)
     GetReason()(*string)
     GetRecommendedAction()(*string)
     SetAdditionalDetails(value *string)()
     SetErrorCategory(value *ProvisioningStatusErrorCategory)()
     SetErrorCode(value *string)()
+    SetOdataType(value *string)()
     SetReason(value *string)()
     SetRecommendedAction(value *string)()
 }

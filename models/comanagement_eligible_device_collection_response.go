@@ -8,7 +8,7 @@ import (
 type ComanagementEligibleDeviceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewComanagementEligibleDeviceCollectionResponse instantiates a new ComanagementEligibleDeviceCollectionResponse and sets the default values.
+// NewComanagementEligibleDeviceCollectionResponse instantiates a new comanagementEligibleDeviceCollectionResponse and sets the default values.
 func NewComanagementEligibleDeviceCollectionResponse()(*ComanagementEligibleDeviceCollectionResponse) {
     m := &ComanagementEligibleDeviceCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

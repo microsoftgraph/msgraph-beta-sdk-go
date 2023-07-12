@@ -9,7 +9,7 @@ import (
 type DispositionReviewStageCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewDispositionReviewStageCollectionResponse instantiates a new DispositionReviewStageCollectionResponse and sets the default values.
+// NewDispositionReviewStageCollectionResponse instantiates a new dispositionReviewStageCollectionResponse and sets the default values.
 func NewDispositionReviewStageCollectionResponse()(*DispositionReviewStageCollectionResponse) {
     m := &DispositionReviewStageCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

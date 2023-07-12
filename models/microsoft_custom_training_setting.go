@@ -8,8 +8,10 @@ import (
 // MicrosoftCustomTrainingSetting 
 type MicrosoftCustomTrainingSetting struct {
     TrainingSetting
+    // The OdataType property
+    OdataType *string
 }
-// NewMicrosoftCustomTrainingSetting instantiates a new MicrosoftCustomTrainingSetting and sets the default values.
+// NewMicrosoftCustomTrainingSetting instantiates a new microsoftCustomTrainingSetting and sets the default values.
 func NewMicrosoftCustomTrainingSetting()(*MicrosoftCustomTrainingSetting) {
     m := &MicrosoftCustomTrainingSetting{
         TrainingSetting: *NewTrainingSetting(),

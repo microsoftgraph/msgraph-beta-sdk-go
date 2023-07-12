@@ -10,7 +10,7 @@ type ValidationResult struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewValidationResult instantiates a new ValidationResult and sets the default values.
+// NewValidationResult instantiates a new validationResult and sets the default values.
 func NewValidationResult()(*ValidationResult) {
     m := &ValidationResult{
     }

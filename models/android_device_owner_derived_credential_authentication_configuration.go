@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration 
+// AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration android COBO Derived Credential profile.
 type AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration struct {
     DeviceConfiguration
 }
-// NewAndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration instantiates a new AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration and sets the default values.
+// NewAndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration instantiates a new androidDeviceOwnerDerivedCredentialAuthenticationConfiguration and sets the default values.
 func NewAndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration()(*AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) {
     m := &AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

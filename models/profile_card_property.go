@@ -7,6 +7,8 @@ import (
 // ProfileCardProperty 
 type ProfileCardProperty struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewProfileCardProperty instantiates a new profileCardProperty and sets the default values.
 func NewProfileCardProperty()(*ProfileCardProperty) {

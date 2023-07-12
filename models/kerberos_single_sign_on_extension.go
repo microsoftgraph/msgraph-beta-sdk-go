@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// KerberosSingleSignOnExtension 
+// KerberosSingleSignOnExtension represents a Kerberos-type Single Sign-On extension profile.
 type KerberosSingleSignOnExtension struct {
     SingleSignOnExtension
+    // The OdataType property
+    OdataType *string
 }
-// NewKerberosSingleSignOnExtension instantiates a new KerberosSingleSignOnExtension and sets the default values.
+// NewKerberosSingleSignOnExtension instantiates a new kerberosSingleSignOnExtension and sets the default values.
 func NewKerberosSingleSignOnExtension()(*KerberosSingleSignOnExtension) {
     m := &KerberosSingleSignOnExtension{
         SingleSignOnExtension: *NewSingleSignOnExtension(),

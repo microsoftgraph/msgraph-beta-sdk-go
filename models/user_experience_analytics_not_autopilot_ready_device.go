@@ -7,6 +7,8 @@ import (
 // UserExperienceAnalyticsNotAutopilotReadyDevice the user experience analytics Device not windows autopilot ready.
 type UserExperienceAnalyticsNotAutopilotReadyDevice struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewUserExperienceAnalyticsNotAutopilotReadyDevice instantiates a new userExperienceAnalyticsNotAutopilotReadyDevice and sets the default values.
 func NewUserExperienceAnalyticsNotAutopilotReadyDevice()(*UserExperienceAnalyticsNotAutopilotReadyDevice) {

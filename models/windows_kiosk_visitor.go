@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsKioskVisitor 
+// WindowsKioskVisitor the class used to identify a visitor kiosk account
 type WindowsKioskVisitor struct {
     WindowsKioskUser
+    // The OdataType property
+    OdataType *string
 }
-// NewWindowsKioskVisitor instantiates a new WindowsKioskVisitor and sets the default values.
+// NewWindowsKioskVisitor instantiates a new windowsKioskVisitor and sets the default values.
 func NewWindowsKioskVisitor()(*WindowsKioskVisitor) {
     m := &WindowsKioskVisitor{
         WindowsKioskUser: *NewWindowsKioskUser(),

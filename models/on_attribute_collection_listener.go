@@ -8,7 +8,7 @@ import (
 type OnAttributeCollectionListener struct {
     AuthenticationEventListener
 }
-// NewOnAttributeCollectionListener instantiates a new OnAttributeCollectionListener and sets the default values.
+// NewOnAttributeCollectionListener instantiates a new onAttributeCollectionListener and sets the default values.
 func NewOnAttributeCollectionListener()(*OnAttributeCollectionListener) {
     m := &OnAttributeCollectionListener{
         AuthenticationEventListener: *NewAuthenticationEventListener(),

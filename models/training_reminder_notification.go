@@ -7,8 +7,10 @@ import (
 // TrainingReminderNotification 
 type TrainingReminderNotification struct {
     BaseEndUserNotification
+    // The OdataType property
+    OdataType *string
 }
-// NewTrainingReminderNotification instantiates a new TrainingReminderNotification and sets the default values.
+// NewTrainingReminderNotification instantiates a new trainingReminderNotification and sets the default values.
 func NewTrainingReminderNotification()(*TrainingReminderNotification) {
     m := &TrainingReminderNotification{
         BaseEndUserNotification: *NewBaseEndUserNotification(),

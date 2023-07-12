@@ -7,6 +7,8 @@ import (
 // MicrosoftTunnelSite entity that represents a Microsoft Tunnel site
 type MicrosoftTunnelSite struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewMicrosoftTunnelSite instantiates a new microsoftTunnelSite and sets the default values.
 func NewMicrosoftTunnelSite()(*MicrosoftTunnelSite) {

@@ -8,6 +8,8 @@ import (
 // GroupPolicyPresentation the base entity for the display presentation of any of the additional options in a group policy definition.
 type GroupPolicyPresentation struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewGroupPolicyPresentation instantiates a new groupPolicyPresentation and sets the default values.
 func NewGroupPolicyPresentation()(*GroupPolicyPresentation) {

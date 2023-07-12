@@ -8,6 +8,8 @@ import (
 // DeviceManagementScript intune will provide customer the ability to run their Powershell scripts on the enrolled windows 10 Azure Active Directory joined devices. The script can be run once or periodically.
 type DeviceManagementScript struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceManagementScript instantiates a new deviceManagementScript and sets the default values.
 func NewDeviceManagementScript()(*DeviceManagementScript) {

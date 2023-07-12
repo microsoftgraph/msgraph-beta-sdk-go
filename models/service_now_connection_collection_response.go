@@ -8,7 +8,7 @@ import (
 type ServiceNowConnectionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewServiceNowConnectionCollectionResponse instantiates a new ServiceNowConnectionCollectionResponse and sets the default values.
+// NewServiceNowConnectionCollectionResponse instantiates a new serviceNowConnectionCollectionResponse and sets the default values.
 func NewServiceNowConnectionCollectionResponse()(*ServiceNowConnectionCollectionResponse) {
     m := &ServiceNowConnectionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsPhone81VpnConfiguration 
+// WindowsPhone81VpnConfiguration by providing the configurations in this profile you can instruct the Windows Phone 8.1 to connect to desired VPN endpoint. By specifying the authentication method and security types expected by VPN endpoint you can make the VPN connection seamless for end user.
 type WindowsPhone81VpnConfiguration struct {
     Windows81VpnConfiguration
 }
-// NewWindowsPhone81VpnConfiguration instantiates a new WindowsPhone81VpnConfiguration and sets the default values.
+// NewWindowsPhone81VpnConfiguration instantiates a new windowsPhone81VpnConfiguration and sets the default values.
 func NewWindowsPhone81VpnConfiguration()(*WindowsPhone81VpnConfiguration) {
     m := &WindowsPhone81VpnConfiguration{
         Windows81VpnConfiguration: *NewWindows81VpnConfiguration(),

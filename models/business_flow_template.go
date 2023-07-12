@@ -7,8 +7,10 @@ import (
 // BusinessFlowTemplate 
 type BusinessFlowTemplate struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewBusinessFlowTemplate instantiates a new BusinessFlowTemplate and sets the default values.
+// NewBusinessFlowTemplate instantiates a new businessFlowTemplate and sets the default values.
 func NewBusinessFlowTemplate()(*BusinessFlowTemplate) {
     m := &BusinessFlowTemplate{
         Entity: *NewEntity(),

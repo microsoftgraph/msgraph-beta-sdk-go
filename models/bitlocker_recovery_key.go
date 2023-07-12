@@ -8,6 +8,8 @@ import (
 // BitlockerRecoveryKey 
 type BitlockerRecoveryKey struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewBitlockerRecoveryKey instantiates a new bitlockerRecoveryKey and sets the default values.
 func NewBitlockerRecoveryKey()(*BitlockerRecoveryKey) {

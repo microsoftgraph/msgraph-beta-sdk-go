@@ -9,8 +9,10 @@ import (
 // StrongAuthenticationPhoneAppDetail 
 type StrongAuthenticationPhoneAppDetail struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewStrongAuthenticationPhoneAppDetail instantiates a new StrongAuthenticationPhoneAppDetail and sets the default values.
+// NewStrongAuthenticationPhoneAppDetail instantiates a new strongAuthenticationPhoneAppDetail and sets the default values.
 func NewStrongAuthenticationPhoneAppDetail()(*StrongAuthenticationPhoneAppDetail) {
     m := &StrongAuthenticationPhoneAppDetail{
         Entity: *NewEntity(),

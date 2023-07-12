@@ -8,7 +8,7 @@ import (
 type LandingPageDetailCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewLandingPageDetailCollectionResponse instantiates a new LandingPageDetailCollectionResponse and sets the default values.
+// NewLandingPageDetailCollectionResponse instantiates a new landingPageDetailCollectionResponse and sets the default values.
 func NewLandingPageDetailCollectionResponse()(*LandingPageDetailCollectionResponse) {
     m := &LandingPageDetailCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

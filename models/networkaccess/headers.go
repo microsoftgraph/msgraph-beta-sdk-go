@@ -94,7 +94,7 @@ func (m *Headers) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOrigin gets the origin property value. The origin property
+// GetOrigin gets the origin property value. Represents the origin or source from which the request is being made.
 func (m *Headers) GetOrigin()(*string) {
     val, err := m.GetBackingStore().Get("origin")
     if err != nil {
@@ -105,7 +105,7 @@ func (m *Headers) GetOrigin()(*string) {
     }
     return nil
 }
-// GetReferrer gets the referrer property value. The referrer property
+// GetReferrer gets the referrer property value. Represents the referring URL or the URL of the web page that the current request originates from.
 func (m *Headers) GetReferrer()(*string) {
     val, err := m.GetBackingStore().Get("referrer")
     if err != nil {
@@ -116,7 +116,7 @@ func (m *Headers) GetReferrer()(*string) {
     }
     return nil
 }
-// GetXForwardedFor gets the xForwardedFor property value. The xForwardedFor property
+// GetXForwardedFor gets the xForwardedFor property value. Represents the information about the client original IP address when the request passes through one or more proxy servers or load balancers.
 func (m *Headers) GetXForwardedFor()(*string) {
     val, err := m.GetBackingStore().Get("xForwardedFor")
     if err != nil {
@@ -179,21 +179,21 @@ func (m *Headers) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOrigin sets the origin property value. The origin property
+// SetOrigin sets the origin property value. Represents the origin or source from which the request is being made.
 func (m *Headers) SetOrigin(value *string)() {
     err := m.GetBackingStore().Set("origin", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReferrer sets the referrer property value. The referrer property
+// SetReferrer sets the referrer property value. Represents the referring URL or the URL of the web page that the current request originates from.
 func (m *Headers) SetReferrer(value *string)() {
     err := m.GetBackingStore().Set("referrer", value)
     if err != nil {
         panic(err)
     }
 }
-// SetXForwardedFor sets the xForwardedFor property value. The xForwardedFor property
+// SetXForwardedFor sets the xForwardedFor property value. Represents the information about the client original IP address when the request passes through one or more proxy servers or load balancers.
 func (m *Headers) SetXForwardedFor(value *string)() {
     err := m.GetBackingStore().Set("xForwardedFor", value)
     if err != nil {

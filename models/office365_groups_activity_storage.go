@@ -7,8 +7,10 @@ import (
 // Office365GroupsActivityStorage 
 type Office365GroupsActivityStorage struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewOffice365GroupsActivityStorage instantiates a new Office365GroupsActivityStorage and sets the default values.
+// NewOffice365GroupsActivityStorage instantiates a new office365GroupsActivityStorage and sets the default values.
 func NewOffice365GroupsActivityStorage()(*Office365GroupsActivityStorage) {
     m := &Office365GroupsActivityStorage{
         Entity: *NewEntity(),

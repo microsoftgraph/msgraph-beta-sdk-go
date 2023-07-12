@@ -8,7 +8,7 @@ import (
 type WindowsAutopilotDeploymentProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWindowsAutopilotDeploymentProfileCollectionResponse instantiates a new WindowsAutopilotDeploymentProfileCollectionResponse and sets the default values.
+// NewWindowsAutopilotDeploymentProfileCollectionResponse instantiates a new windowsAutopilotDeploymentProfileCollectionResponse and sets the default values.
 func NewWindowsAutopilotDeploymentProfileCollectionResponse()(*WindowsAutopilotDeploymentProfileCollectionResponse) {
     m := &WindowsAutopilotDeploymentProfileCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

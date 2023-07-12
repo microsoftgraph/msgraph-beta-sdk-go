@@ -8,7 +8,7 @@ import (
 type ExactMatchDataStore struct {
     ExactMatchDataStoreBase
 }
-// NewExactMatchDataStore instantiates a new ExactMatchDataStore and sets the default values.
+// NewExactMatchDataStore instantiates a new exactMatchDataStore and sets the default values.
 func NewExactMatchDataStore()(*ExactMatchDataStore) {
     m := &ExactMatchDataStore{
         ExactMatchDataStoreBase: *NewExactMatchDataStoreBase(),

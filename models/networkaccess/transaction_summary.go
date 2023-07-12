@@ -38,7 +38,7 @@ func (m *TransactionSummary) GetAdditionalData()(map[string]any) {
 func (m *TransactionSummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBlockedCount gets the blockedCount property value. The blockedCount property
+// GetBlockedCount gets the blockedCount property value. Count of transactions that were blocked.
 func (m *TransactionSummary) GetBlockedCount()(*int32) {
     val, err := m.GetBackingStore().Get("blockedCount")
     if err != nil {
@@ -105,7 +105,7 @@ func (m *TransactionSummary) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTotalCount gets the totalCount property value. The totalCount property
+// GetTotalCount gets the totalCount property value. Count of transactions.
 func (m *TransactionSummary) GetTotalCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalCount")
     if err != nil {
@@ -173,7 +173,7 @@ func (m *TransactionSummary) SetAdditionalData(value map[string]any)() {
 func (m *TransactionSummary) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBlockedCount sets the blockedCount property value. The blockedCount property
+// SetBlockedCount sets the blockedCount property value. Count of transactions that were blocked.
 func (m *TransactionSummary) SetBlockedCount(value *int32)() {
     err := m.GetBackingStore().Set("blockedCount", value)
     if err != nil {
@@ -187,7 +187,7 @@ func (m *TransactionSummary) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTotalCount sets the totalCount property value. The totalCount property
+// SetTotalCount sets the totalCount property value. Count of transactions.
 func (m *TransactionSummary) SetTotalCount(value *int32)() {
     err := m.GetBackingStore().Set("totalCount", value)
     if err != nil {

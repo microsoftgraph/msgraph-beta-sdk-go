@@ -8,6 +8,8 @@ import (
 // DeviceAndAppManagementAssignmentFilter a class containing the properties used for Assignment Filter.
 type DeviceAndAppManagementAssignmentFilter struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceAndAppManagementAssignmentFilter instantiates a new deviceAndAppManagementAssignmentFilter and sets the default values.
 func NewDeviceAndAppManagementAssignmentFilter()(*DeviceAndAppManagementAssignmentFilter) {

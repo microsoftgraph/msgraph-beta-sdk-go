@@ -7,6 +7,8 @@ import (
 // DirectorySetting 
 type DirectorySetting struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDirectorySetting instantiates a new directorySetting and sets the default values.
 func NewDirectorySetting()(*DirectorySetting) {

@@ -8,6 +8,8 @@ import (
 // WindowsQualityUpdateProfile windows Quality Update Profile
 type WindowsQualityUpdateProfile struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWindowsQualityUpdateProfile instantiates a new windowsQualityUpdateProfile and sets the default values.
 func NewWindowsQualityUpdateProfile()(*WindowsQualityUpdateProfile) {

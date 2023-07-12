@@ -8,7 +8,7 @@ import (
 type FileValidateOperation struct {
     ValidateOperation
 }
-// NewFileValidateOperation instantiates a new FileValidateOperation and sets the default values.
+// NewFileValidateOperation instantiates a new fileValidateOperation and sets the default values.
 func NewFileValidateOperation()(*FileValidateOperation) {
     m := &FileValidateOperation{
         ValidateOperation: *NewValidateOperation(),

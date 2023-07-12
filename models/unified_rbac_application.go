@@ -7,8 +7,10 @@ import (
 // UnifiedRbacApplication 
 type UnifiedRbacApplication struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewUnifiedRbacApplication instantiates a new UnifiedRbacApplication and sets the default values.
+// NewUnifiedRbacApplication instantiates a new unifiedRbacApplication and sets the default values.
 func NewUnifiedRbacApplication()(*UnifiedRbacApplication) {
     m := &UnifiedRbacApplication{
         Entity: *NewEntity(),

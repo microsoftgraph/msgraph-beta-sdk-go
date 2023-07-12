@@ -8,7 +8,7 @@ import (
 type WebAccount struct {
     ItemFacet
 }
-// NewWebAccount instantiates a new WebAccount and sets the default values.
+// NewWebAccount instantiates a new webAccount and sets the default values.
 func NewWebAccount()(*WebAccount) {
     m := &WebAccount{
         ItemFacet: *NewItemFacet(),

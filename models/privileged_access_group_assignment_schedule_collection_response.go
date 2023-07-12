@@ -8,7 +8,7 @@ import (
 type PrivilegedAccessGroupAssignmentScheduleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPrivilegedAccessGroupAssignmentScheduleCollectionResponse instantiates a new PrivilegedAccessGroupAssignmentScheduleCollectionResponse and sets the default values.
+// NewPrivilegedAccessGroupAssignmentScheduleCollectionResponse instantiates a new privilegedAccessGroupAssignmentScheduleCollectionResponse and sets the default values.
 func NewPrivilegedAccessGroupAssignmentScheduleCollectionResponse()(*PrivilegedAccessGroupAssignmentScheduleCollectionResponse) {
     m := &PrivilegedAccessGroupAssignmentScheduleCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

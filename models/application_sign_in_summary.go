@@ -7,8 +7,10 @@ import (
 // ApplicationSignInSummary 
 type ApplicationSignInSummary struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewApplicationSignInSummary instantiates a new ApplicationSignInSummary and sets the default values.
+// NewApplicationSignInSummary instantiates a new applicationSignInSummary and sets the default values.
 func NewApplicationSignInSummary()(*ApplicationSignInSummary) {
     m := &ApplicationSignInSummary{
         Entity: *NewEntity(),

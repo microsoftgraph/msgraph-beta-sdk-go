@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationPolicyPolicySetItem 
+// DeviceManagementConfigurationPolicyPolicySetItem a class containing the properties used for DeviceManagementConfiguration PolicySetItem.
 type DeviceManagementConfigurationPolicyPolicySetItem struct {
     PolicySetItem
 }
-// NewDeviceManagementConfigurationPolicyPolicySetItem instantiates a new DeviceManagementConfigurationPolicyPolicySetItem and sets the default values.
+// NewDeviceManagementConfigurationPolicyPolicySetItem instantiates a new deviceManagementConfigurationPolicyPolicySetItem and sets the default values.
 func NewDeviceManagementConfigurationPolicyPolicySetItem()(*DeviceManagementConfigurationPolicyPolicySetItem) {
     m := &DeviceManagementConfigurationPolicyPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),

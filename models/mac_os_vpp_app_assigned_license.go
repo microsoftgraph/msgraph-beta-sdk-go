@@ -7,6 +7,8 @@ import (
 // MacOsVppAppAssignedLicense macOS Volume Purchase Program license assignment. This class does not support Create, Delete, or Update.
 type MacOsVppAppAssignedLicense struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewMacOsVppAppAssignedLicense instantiates a new macOsVppAppAssignedLicense and sets the default values.
 func NewMacOsVppAppAssignedLicense()(*MacOsVppAppAssignedLicense) {

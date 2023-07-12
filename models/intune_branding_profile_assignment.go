@@ -7,6 +7,8 @@ import (
 // IntuneBrandingProfileAssignment this entity contains the properties used to assign a branding profile to a group.
 type IntuneBrandingProfileAssignment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewIntuneBrandingProfileAssignment instantiates a new intuneBrandingProfileAssignment and sets the default values.
 func NewIntuneBrandingProfileAssignment()(*IntuneBrandingProfileAssignment) {

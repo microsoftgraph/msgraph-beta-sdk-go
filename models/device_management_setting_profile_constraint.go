@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementSettingProfileConstraint 
+// DeviceManagementSettingProfileConstraint constraint enforcing a given profile metadata
 type DeviceManagementSettingProfileConstraint struct {
     DeviceManagementConstraint
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceManagementSettingProfileConstraint instantiates a new DeviceManagementSettingProfileConstraint and sets the default values.
+// NewDeviceManagementSettingProfileConstraint instantiates a new deviceManagementSettingProfileConstraint and sets the default values.
 func NewDeviceManagementSettingProfileConstraint()(*DeviceManagementSettingProfileConstraint) {
     m := &DeviceManagementSettingProfileConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),

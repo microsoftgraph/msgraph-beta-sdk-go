@@ -8,7 +8,7 @@ import (
 type OpenIdConnectIdentityProvider struct {
     IdentityProviderBase
 }
-// NewOpenIdConnectIdentityProvider instantiates a new OpenIdConnectIdentityProvider and sets the default values.
+// NewOpenIdConnectIdentityProvider instantiates a new openIdConnectIdentityProvider and sets the default values.
 func NewOpenIdConnectIdentityProvider()(*OpenIdConnectIdentityProvider) {
     m := &OpenIdConnectIdentityProvider{
         IdentityProviderBase: *NewIdentityProviderBase(),

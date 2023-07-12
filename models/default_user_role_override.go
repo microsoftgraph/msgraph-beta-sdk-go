@@ -7,6 +7,8 @@ import (
 // DefaultUserRoleOverride 
 type DefaultUserRoleOverride struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDefaultUserRoleOverride instantiates a new defaultUserRoleOverride and sets the default values.
 func NewDefaultUserRoleOverride()(*DefaultUserRoleOverride) {

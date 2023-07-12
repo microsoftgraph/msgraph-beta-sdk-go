@@ -8,6 +8,8 @@ import (
 // PrivilegeManagementElevation the endpoint privilege management elevation result entity representing a single elevation action on a client device.
 type PrivilegeManagementElevation struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewPrivilegeManagementElevation instantiates a new privilegeManagementElevation and sets the default values.
 func NewPrivilegeManagementElevation()(*PrivilegeManagementElevation) {

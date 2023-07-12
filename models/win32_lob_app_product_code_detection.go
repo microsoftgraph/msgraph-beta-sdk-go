@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Win32LobAppProductCodeDetection 
+// Win32LobAppProductCodeDetection contains product code and version properties to detect a Win32 App
 type Win32LobAppProductCodeDetection struct {
     Win32LobAppDetection
+    // The OdataType property
+    OdataType *string
 }
-// NewWin32LobAppProductCodeDetection instantiates a new Win32LobAppProductCodeDetection and sets the default values.
+// NewWin32LobAppProductCodeDetection instantiates a new win32LobAppProductCodeDetection and sets the default values.
 func NewWin32LobAppProductCodeDetection()(*Win32LobAppProductCodeDetection) {
     m := &Win32LobAppProductCodeDetection{
         Win32LobAppDetection: *NewWin32LobAppDetection(),

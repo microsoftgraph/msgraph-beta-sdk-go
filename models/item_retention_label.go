@@ -8,6 +8,8 @@ import (
 // ItemRetentionLabel 
 type ItemRetentionLabel struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewItemRetentionLabel instantiates a new itemRetentionLabel and sets the default values.
 func NewItemRetentionLabel()(*ItemRetentionLabel) {

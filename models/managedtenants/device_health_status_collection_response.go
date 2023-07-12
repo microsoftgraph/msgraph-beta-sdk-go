@@ -9,7 +9,7 @@ import (
 type DeviceHealthStatusCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewDeviceHealthStatusCollectionResponse instantiates a new DeviceHealthStatusCollectionResponse and sets the default values.
+// NewDeviceHealthStatusCollectionResponse instantiates a new deviceHealthStatusCollectionResponse and sets the default values.
 func NewDeviceHealthStatusCollectionResponse()(*DeviceHealthStatusCollectionResponse) {
     m := &DeviceHealthStatusCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

@@ -8,7 +8,7 @@ import (
 type RestrictedAppsViolationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewRestrictedAppsViolationCollectionResponse instantiates a new RestrictedAppsViolationCollectionResponse and sets the default values.
+// NewRestrictedAppsViolationCollectionResponse instantiates a new restrictedAppsViolationCollectionResponse and sets the default values.
 func NewRestrictedAppsViolationCollectionResponse()(*RestrictedAppsViolationCollectionResponse) {
     m := &RestrictedAppsViolationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

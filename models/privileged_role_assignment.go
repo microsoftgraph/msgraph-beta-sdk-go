@@ -8,6 +8,8 @@ import (
 // PrivilegedRoleAssignment 
 type PrivilegedRoleAssignment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewPrivilegedRoleAssignment instantiates a new privilegedRoleAssignment and sets the default values.
 func NewPrivilegedRoleAssignment()(*PrivilegedRoleAssignment) {

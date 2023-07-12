@@ -7,6 +7,8 @@ import (
 // UserExperienceAnalyticsDeviceWithoutCloudIdentity the user experience analytics Device without Cloud Identity.
 type UserExperienceAnalyticsDeviceWithoutCloudIdentity struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewUserExperienceAnalyticsDeviceWithoutCloudIdentity instantiates a new userExperienceAnalyticsDeviceWithoutCloudIdentity and sets the default values.
 func NewUserExperienceAnalyticsDeviceWithoutCloudIdentity()(*UserExperienceAnalyticsDeviceWithoutCloudIdentity) {

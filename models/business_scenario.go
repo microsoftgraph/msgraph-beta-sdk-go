@@ -8,8 +8,10 @@ import (
 // BusinessScenario 
 type BusinessScenario struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewBusinessScenario instantiates a new BusinessScenario and sets the default values.
+// NewBusinessScenario instantiates a new businessScenario and sets the default values.
 func NewBusinessScenario()(*BusinessScenario) {
     m := &BusinessScenario{
         Entity: *NewEntity(),

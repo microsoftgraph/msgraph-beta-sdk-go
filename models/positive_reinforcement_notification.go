@@ -7,8 +7,10 @@ import (
 // PositiveReinforcementNotification 
 type PositiveReinforcementNotification struct {
     BaseEndUserNotification
+    // The OdataType property
+    OdataType *string
 }
-// NewPositiveReinforcementNotification instantiates a new PositiveReinforcementNotification and sets the default values.
+// NewPositiveReinforcementNotification instantiates a new positiveReinforcementNotification and sets the default values.
 func NewPositiveReinforcementNotification()(*PositiveReinforcementNotification) {
     m := &PositiveReinforcementNotification{
         BaseEndUserNotification: *NewBaseEndUserNotification(),

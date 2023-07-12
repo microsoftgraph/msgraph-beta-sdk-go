@@ -8,7 +8,7 @@ import (
 type WorkPositionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWorkPositionCollectionResponse instantiates a new WorkPositionCollectionResponse and sets the default values.
+// NewWorkPositionCollectionResponse instantiates a new workPositionCollectionResponse and sets the default values.
 func NewWorkPositionCollectionResponse()(*WorkPositionCollectionResponse) {
     m := &WorkPositionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

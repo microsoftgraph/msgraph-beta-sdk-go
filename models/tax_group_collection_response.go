@@ -8,7 +8,7 @@ import (
 type TaxGroupCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTaxGroupCollectionResponse instantiates a new TaxGroupCollectionResponse and sets the default values.
+// NewTaxGroupCollectionResponse instantiates a new taxGroupCollectionResponse and sets the default values.
 func NewTaxGroupCollectionResponse()(*TaxGroupCollectionResponse) {
     m := &TaxGroupCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

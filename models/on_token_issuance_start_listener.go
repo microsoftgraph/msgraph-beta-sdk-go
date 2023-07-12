@@ -8,7 +8,7 @@ import (
 type OnTokenIssuanceStartListener struct {
     AuthenticationEventListener
 }
-// NewOnTokenIssuanceStartListener instantiates a new OnTokenIssuanceStartListener and sets the default values.
+// NewOnTokenIssuanceStartListener instantiates a new onTokenIssuanceStartListener and sets the default values.
 func NewOnTokenIssuanceStartListener()(*OnTokenIssuanceStartListener) {
     m := &OnTokenIssuanceStartListener{
         AuthenticationEventListener: *NewAuthenticationEventListener(),

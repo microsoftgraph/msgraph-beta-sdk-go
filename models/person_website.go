@@ -8,7 +8,7 @@ import (
 type PersonWebsite struct {
     ItemFacet
 }
-// NewPersonWebsite instantiates a new PersonWebsite and sets the default values.
+// NewPersonWebsite instantiates a new personWebsite and sets the default values.
 func NewPersonWebsite()(*PersonWebsite) {
     m := &PersonWebsite{
         ItemFacet: *NewItemFacet(),

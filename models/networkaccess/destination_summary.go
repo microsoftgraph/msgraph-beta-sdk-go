@@ -38,7 +38,7 @@ func (m *DestinationSummary) GetAdditionalData()(map[string]any) {
 func (m *DestinationSummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCount gets the count property value. The count property
+// GetCount gets the count property value. Count of the aggregation.
 func (m *DestinationSummary) GetCount()(*int32) {
     val, err := m.GetBackingStore().Get("count")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *DestinationSummary) GetCount()(*int32) {
     }
     return nil
 }
-// GetDestination gets the destination property value. The destination property
+// GetDestination gets the destination property value. Destination FQDN or IP address.
 func (m *DestinationSummary) GetDestination()(*string) {
     val, err := m.GetBackingStore().Get("destination")
     if err != nil {
@@ -145,14 +145,14 @@ func (m *DestinationSummary) SetAdditionalData(value map[string]any)() {
 func (m *DestinationSummary) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCount sets the count property value. The count property
+// SetCount sets the count property value. Count of the aggregation.
 func (m *DestinationSummary) SetCount(value *int32)() {
     err := m.GetBackingStore().Set("count", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDestination sets the destination property value. The destination property
+// SetDestination sets the destination property value. Destination FQDN or IP address.
 func (m *DestinationSummary) SetDestination(value *string)() {
     err := m.GetBackingStore().Set("destination", value)
     if err != nil {

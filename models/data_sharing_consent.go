@@ -8,6 +8,8 @@ import (
 // DataSharingConsent data sharing consent information.
 type DataSharingConsent struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDataSharingConsent instantiates a new dataSharingConsent and sets the default values.
 func NewDataSharingConsent()(*DataSharingConsent) {

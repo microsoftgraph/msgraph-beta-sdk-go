@@ -8,8 +8,10 @@ import (
 // CustomExtensionCalloutResult 
 type CustomExtensionCalloutResult struct {
     AuthenticationEventHandlerResult
+    // The OdataType property
+    OdataType *string
 }
-// NewCustomExtensionCalloutResult instantiates a new CustomExtensionCalloutResult and sets the default values.
+// NewCustomExtensionCalloutResult instantiates a new customExtensionCalloutResult and sets the default values.
 func NewCustomExtensionCalloutResult()(*CustomExtensionCalloutResult) {
     m := &CustomExtensionCalloutResult{
         AuthenticationEventHandlerResult: *NewAuthenticationEventHandlerResult(),

@@ -8,7 +8,7 @@ import (
 type UnsupportedGroupPolicyExtensionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUnsupportedGroupPolicyExtensionCollectionResponse instantiates a new UnsupportedGroupPolicyExtensionCollectionResponse and sets the default values.
+// NewUnsupportedGroupPolicyExtensionCollectionResponse instantiates a new unsupportedGroupPolicyExtensionCollectionResponse and sets the default values.
 func NewUnsupportedGroupPolicyExtensionCollectionResponse()(*UnsupportedGroupPolicyExtensionCollectionResponse) {
     m := &UnsupportedGroupPolicyExtensionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

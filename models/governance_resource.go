@@ -8,6 +8,8 @@ import (
 // GovernanceResource 
 type GovernanceResource struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewGovernanceResource instantiates a new governanceResource and sets the default values.
 func NewGovernanceResource()(*GovernanceResource) {

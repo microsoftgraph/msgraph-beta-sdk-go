@@ -18,7 +18,7 @@ type ForwardingPoliciesForwardingPolicyItemRequestBuilderDeleteRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ForwardingPoliciesForwardingPolicyItemRequestBuilderGetQueryParameters get forwardingPolicies from networkAccess
+// ForwardingPoliciesForwardingPolicyItemRequestBuilderGetQueryParameters retrieve information about a specific forwarding policy.
 type ForwardingPoliciesForwardingPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *ForwardingPoliciesForwardingPolicyItemRequestBuilder) Delete(ctx contex
     }
     return nil
 }
-// Get get forwardingPolicies from networkAccess
+// Get retrieve information about a specific forwarding policy.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-forwardingpolicy-get?view=graph-rest-1.0
 func (m *ForwardingPoliciesForwardingPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ForwardingPoliciesForwardingPolicyItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -128,7 +131,7 @@ func (m *ForwardingPoliciesForwardingPolicyItemRequestBuilder) ToDeleteRequestIn
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get forwardingPolicies from networkAccess
+// ToGetRequestInformation retrieve information about a specific forwarding policy.
 func (m *ForwardingPoliciesForwardingPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ForwardingPoliciesForwardingPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

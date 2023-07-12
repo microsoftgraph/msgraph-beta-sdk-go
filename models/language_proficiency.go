@@ -8,7 +8,7 @@ import (
 type LanguageProficiency struct {
     ItemFacet
 }
-// NewLanguageProficiency instantiates a new LanguageProficiency and sets the default values.
+// NewLanguageProficiency instantiates a new languageProficiency and sets the default values.
 func NewLanguageProficiency()(*LanguageProficiency) {
     m := &LanguageProficiency{
         ItemFacet: *NewItemFacet(),

@@ -8,7 +8,7 @@ import (
 type VirtualEventWebinarCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewVirtualEventWebinarCollectionResponse instantiates a new VirtualEventWebinarCollectionResponse and sets the default values.
+// NewVirtualEventWebinarCollectionResponse instantiates a new virtualEventWebinarCollectionResponse and sets the default values.
 func NewVirtualEventWebinarCollectionResponse()(*VirtualEventWebinarCollectionResponse) {
     m := &VirtualEventWebinarCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

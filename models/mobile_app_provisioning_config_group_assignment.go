@@ -7,6 +7,8 @@ import (
 // MobileAppProvisioningConfigGroupAssignment contains the properties used to assign an App provisioning configuration to a group.
 type MobileAppProvisioningConfigGroupAssignment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewMobileAppProvisioningConfigGroupAssignment instantiates a new mobileAppProvisioningConfigGroupAssignment and sets the default values.
 func NewMobileAppProvisioningConfigGroupAssignment()(*MobileAppProvisioningConfigGroupAssignment) {

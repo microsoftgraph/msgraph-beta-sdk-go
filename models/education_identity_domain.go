@@ -10,7 +10,7 @@ type EducationIdentityDomain struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewEducationIdentityDomain instantiates a new EducationIdentityDomain and sets the default values.
+// NewEducationIdentityDomain instantiates a new educationIdentityDomain and sets the default values.
 func NewEducationIdentityDomain()(*EducationIdentityDomain) {
     m := &EducationIdentityDomain{
     }

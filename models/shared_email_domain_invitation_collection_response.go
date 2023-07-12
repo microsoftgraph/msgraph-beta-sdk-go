@@ -8,7 +8,7 @@ import (
 type SharedEmailDomainInvitationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSharedEmailDomainInvitationCollectionResponse instantiates a new SharedEmailDomainInvitationCollectionResponse and sets the default values.
+// NewSharedEmailDomainInvitationCollectionResponse instantiates a new sharedEmailDomainInvitationCollectionResponse and sets the default values.
 func NewSharedEmailDomainInvitationCollectionResponse()(*SharedEmailDomainInvitationCollectionResponse) {
     m := &SharedEmailDomainInvitationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

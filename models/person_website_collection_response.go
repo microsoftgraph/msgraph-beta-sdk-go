@@ -8,7 +8,7 @@ import (
 type PersonWebsiteCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPersonWebsiteCollectionResponse instantiates a new PersonWebsiteCollectionResponse and sets the default values.
+// NewPersonWebsiteCollectionResponse instantiates a new personWebsiteCollectionResponse and sets the default values.
 func NewPersonWebsiteCollectionResponse()(*PersonWebsiteCollectionResponse) {
     m := &PersonWebsiteCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

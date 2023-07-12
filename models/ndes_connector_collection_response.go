@@ -8,7 +8,7 @@ import (
 type NdesConnectorCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewNdesConnectorCollectionResponse instantiates a new NdesConnectorCollectionResponse and sets the default values.
+// NewNdesConnectorCollectionResponse instantiates a new ndesConnectorCollectionResponse and sets the default values.
 func NewNdesConnectorCollectionResponse()(*NdesConnectorCollectionResponse) {
     m := &NdesConnectorCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

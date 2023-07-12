@@ -8,7 +8,7 @@ import (
 type WindowsInformationProtectionWipeActionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWindowsInformationProtectionWipeActionCollectionResponse instantiates a new WindowsInformationProtectionWipeActionCollectionResponse and sets the default values.
+// NewWindowsInformationProtectionWipeActionCollectionResponse instantiates a new windowsInformationProtectionWipeActionCollectionResponse and sets the default values.
 func NewWindowsInformationProtectionWipeActionCollectionResponse()(*WindowsInformationProtectionWipeActionCollectionResponse) {
     m := &WindowsInformationProtectionWipeActionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

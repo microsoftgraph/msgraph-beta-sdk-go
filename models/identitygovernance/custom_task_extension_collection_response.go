@@ -9,7 +9,7 @@ import (
 type CustomTaskExtensionCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewCustomTaskExtensionCollectionResponse instantiates a new CustomTaskExtensionCollectionResponse and sets the default values.
+// NewCustomTaskExtensionCollectionResponse instantiates a new customTaskExtensionCollectionResponse and sets the default values.
 func NewCustomTaskExtensionCollectionResponse()(*CustomTaskExtensionCollectionResponse) {
     m := &CustomTaskExtensionCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

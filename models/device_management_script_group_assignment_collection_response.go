@@ -8,7 +8,7 @@ import (
 type DeviceManagementScriptGroupAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceManagementScriptGroupAssignmentCollectionResponse instantiates a new DeviceManagementScriptGroupAssignmentCollectionResponse and sets the default values.
+// NewDeviceManagementScriptGroupAssignmentCollectionResponse instantiates a new deviceManagementScriptGroupAssignmentCollectionResponse and sets the default values.
 func NewDeviceManagementScriptGroupAssignmentCollectionResponse()(*DeviceManagementScriptGroupAssignmentCollectionResponse) {
     m := &DeviceManagementScriptGroupAssignmentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupPolicyPresentationDecimalTextBox 
+// GroupPolicyPresentationDecimalTextBox represents an ADMX decimalTextBox element and an ADMX decimal element.
 type GroupPolicyPresentationDecimalTextBox struct {
     GroupPolicyUploadedPresentation
 }
-// NewGroupPolicyPresentationDecimalTextBox instantiates a new GroupPolicyPresentationDecimalTextBox and sets the default values.
+// NewGroupPolicyPresentationDecimalTextBox instantiates a new groupPolicyPresentationDecimalTextBox and sets the default values.
 func NewGroupPolicyPresentationDecimalTextBox()(*GroupPolicyPresentationDecimalTextBox) {
     m := &GroupPolicyPresentationDecimalTextBox{
         GroupPolicyUploadedPresentation: *NewGroupPolicyUploadedPresentation(),

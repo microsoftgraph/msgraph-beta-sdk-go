@@ -8,6 +8,8 @@ import (
 // VirtualEventRegistrant 
 type VirtualEventRegistrant struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewVirtualEventRegistrant instantiates a new virtualEventRegistrant and sets the default values.
 func NewVirtualEventRegistrant()(*VirtualEventRegistrant) {

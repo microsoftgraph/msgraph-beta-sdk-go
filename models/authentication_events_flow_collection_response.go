@@ -8,7 +8,7 @@ import (
 type AuthenticationEventsFlowCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAuthenticationEventsFlowCollectionResponse instantiates a new AuthenticationEventsFlowCollectionResponse and sets the default values.
+// NewAuthenticationEventsFlowCollectionResponse instantiates a new authenticationEventsFlowCollectionResponse and sets the default values.
 func NewAuthenticationEventsFlowCollectionResponse()(*AuthenticationEventsFlowCollectionResponse) {
     m := &AuthenticationEventsFlowCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

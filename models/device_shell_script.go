@@ -8,6 +8,8 @@ import (
 // DeviceShellScript intune will provide customer the ability to run their Shell scripts on the enrolled Mac OS devices. The script can be run once or periodically.
 type DeviceShellScript struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceShellScript instantiates a new deviceShellScript and sets the default values.
 func NewDeviceShellScript()(*DeviceShellScript) {

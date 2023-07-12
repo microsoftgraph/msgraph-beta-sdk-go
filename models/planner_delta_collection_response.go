@@ -8,7 +8,7 @@ import (
 type PlannerDeltaCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPlannerDeltaCollectionResponse instantiates a new PlannerDeltaCollectionResponse and sets the default values.
+// NewPlannerDeltaCollectionResponse instantiates a new plannerDeltaCollectionResponse and sets the default values.
 func NewPlannerDeltaCollectionResponse()(*PlannerDeltaCollectionResponse) {
     m := &PlannerDeltaCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

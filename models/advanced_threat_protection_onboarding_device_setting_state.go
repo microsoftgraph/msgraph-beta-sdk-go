@@ -8,6 +8,8 @@ import (
 // AdvancedThreatProtectionOnboardingDeviceSettingState aTP onboarding State for a given device.
 type AdvancedThreatProtectionOnboardingDeviceSettingState struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAdvancedThreatProtectionOnboardingDeviceSettingState instantiates a new advancedThreatProtectionOnboardingDeviceSettingState and sets the default values.
 func NewAdvancedThreatProtectionOnboardingDeviceSettingState()(*AdvancedThreatProtectionOnboardingDeviceSettingState) {

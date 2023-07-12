@@ -7,8 +7,10 @@ import (
 // RetentionDurationInDays 
 type RetentionDurationInDays struct {
     RetentionDuration
+    // The OdataType property
+    OdataType *string
 }
-// NewRetentionDurationInDays instantiates a new RetentionDurationInDays and sets the default values.
+// NewRetentionDurationInDays instantiates a new retentionDurationInDays and sets the default values.
 func NewRetentionDurationInDays()(*RetentionDurationInDays) {
     m := &RetentionDurationInDays{
         RetentionDuration: *NewRetentionDuration(),

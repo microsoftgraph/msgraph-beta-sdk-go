@@ -8,7 +8,7 @@ import (
 type ManagedDeviceEncryptionStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewManagedDeviceEncryptionStateCollectionResponse instantiates a new ManagedDeviceEncryptionStateCollectionResponse and sets the default values.
+// NewManagedDeviceEncryptionStateCollectionResponse instantiates a new managedDeviceEncryptionStateCollectionResponse and sets the default values.
 func NewManagedDeviceEncryptionStateCollectionResponse()(*ManagedDeviceEncryptionStateCollectionResponse) {
     m := &ManagedDeviceEncryptionStateCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

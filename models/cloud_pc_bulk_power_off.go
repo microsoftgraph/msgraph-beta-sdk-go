@@ -8,7 +8,7 @@ import (
 type CloudPcBulkPowerOff struct {
     CloudPcBulkAction
 }
-// NewCloudPcBulkPowerOff instantiates a new CloudPcBulkPowerOff and sets the default values.
+// NewCloudPcBulkPowerOff instantiates a new cloudPcBulkPowerOff and sets the default values.
 func NewCloudPcBulkPowerOff()(*CloudPcBulkPowerOff) {
     m := &CloudPcBulkPowerOff{
         CloudPcBulkAction: *NewCloudPcBulkAction(),

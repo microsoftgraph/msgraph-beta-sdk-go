@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementAbstractComplexSettingInstance 
+// DeviceManagementAbstractComplexSettingInstance a setting instance representing a complex value for an abstract setting
 type DeviceManagementAbstractComplexSettingInstance struct {
     DeviceManagementSettingInstance
 }
-// NewDeviceManagementAbstractComplexSettingInstance instantiates a new DeviceManagementAbstractComplexSettingInstance and sets the default values.
+// NewDeviceManagementAbstractComplexSettingInstance instantiates a new deviceManagementAbstractComplexSettingInstance and sets the default values.
 func NewDeviceManagementAbstractComplexSettingInstance()(*DeviceManagementAbstractComplexSettingInstance) {
     m := &DeviceManagementAbstractComplexSettingInstance{
         DeviceManagementSettingInstance: *NewDeviceManagementSettingInstance(),

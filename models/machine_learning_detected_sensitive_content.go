@@ -8,7 +8,7 @@ import (
 type MachineLearningDetectedSensitiveContent struct {
     DetectedSensitiveContent
 }
-// NewMachineLearningDetectedSensitiveContent instantiates a new MachineLearningDetectedSensitiveContent and sets the default values.
+// NewMachineLearningDetectedSensitiveContent instantiates a new machineLearningDetectedSensitiveContent and sets the default values.
 func NewMachineLearningDetectedSensitiveContent()(*MachineLearningDetectedSensitiveContent) {
     m := &MachineLearningDetectedSensitiveContent{
         DetectedSensitiveContent: *NewDetectedSensitiveContent(),
@@ -42,6 +42,16 @@ func (m *MachineLearningDetectedSensitiveContent) GetFieldDeserializers()(map[st
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMatchTolerance gets the matchTolerance property value. The matchTolerance property
@@ -58,6 +68,17 @@ func (m *MachineLearningDetectedSensitiveContent) GetMatchTolerance()(*MlClassif
 // GetModelVersion gets the modelVersion property value. The modelVersion property
 func (m *MachineLearningDetectedSensitiveContent) GetModelVersion()(*string) {
     val, err := m.GetBackingStore().Get("modelVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MachineLearningDetectedSensitiveContent) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -85,6 +106,12 @@ func (m *MachineLearningDetectedSensitiveContent) Serialize(writer i878a80d2330e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetMatchTolerance sets the matchTolerance property value. The matchTolerance property
@@ -101,12 +128,21 @@ func (m *MachineLearningDetectedSensitiveContent) SetModelVersion(value *string)
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MachineLearningDetectedSensitiveContent) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // MachineLearningDetectedSensitiveContentable 
 type MachineLearningDetectedSensitiveContentable interface {
     DetectedSensitiveContentable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetMatchTolerance()(*MlClassificationMatchTolerance)
     GetModelVersion()(*string)
+    GetOdataType()(*string)
     SetMatchTolerance(value *MlClassificationMatchTolerance)()
     SetModelVersion(value *string)()
+    SetOdataType(value *string)()
 }

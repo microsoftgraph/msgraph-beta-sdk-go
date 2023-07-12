@@ -8,7 +8,7 @@ import (
 type WindowsDriverUpdateProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWindowsDriverUpdateProfileCollectionResponse instantiates a new WindowsDriverUpdateProfileCollectionResponse and sets the default values.
+// NewWindowsDriverUpdateProfileCollectionResponse instantiates a new windowsDriverUpdateProfileCollectionResponse and sets the default values.
 func NewWindowsDriverUpdateProfileCollectionResponse()(*WindowsDriverUpdateProfileCollectionResponse) {
     m := &WindowsDriverUpdateProfileCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

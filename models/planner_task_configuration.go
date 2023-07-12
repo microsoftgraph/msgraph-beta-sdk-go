@@ -7,6 +7,8 @@ import (
 // PlannerTaskConfiguration 
 type PlannerTaskConfiguration struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewPlannerTaskConfiguration instantiates a new plannerTaskConfiguration and sets the default values.
 func NewPlannerTaskConfiguration()(*PlannerTaskConfiguration) {

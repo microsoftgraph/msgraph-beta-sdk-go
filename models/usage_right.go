@@ -7,6 +7,8 @@ import (
 // UsageRight 
 type UsageRight struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewUsageRight instantiates a new usageRight and sets the default values.
 func NewUsageRight()(*UsageRight) {

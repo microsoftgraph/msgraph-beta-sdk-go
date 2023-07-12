@@ -8,6 +8,8 @@ import (
 // JobResponseBase 
 type JobResponseBase struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewJobResponseBase instantiates a new jobResponseBase and sets the default values.
 func NewJobResponseBase()(*JobResponseBase) {

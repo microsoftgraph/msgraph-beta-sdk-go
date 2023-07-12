@@ -9,7 +9,7 @@ import (
 type RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident struct {
     UnifiedRoleManagementAlertIncident
 }
-// NewRolesAssignedOutsidePrivilegedIdentityManagementAlertIncident instantiates a new RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident and sets the default values.
+// NewRolesAssignedOutsidePrivilegedIdentityManagementAlertIncident instantiates a new rolesAssignedOutsidePrivilegedIdentityManagementAlertIncident and sets the default values.
 func NewRolesAssignedOutsidePrivilegedIdentityManagementAlertIncident()(*RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) {
     m := &RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident{
         UnifiedRoleManagementAlertIncident: *NewUnifiedRoleManagementAlertIncident(),

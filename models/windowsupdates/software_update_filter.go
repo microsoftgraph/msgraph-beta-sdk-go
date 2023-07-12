@@ -7,8 +7,10 @@ import (
 // SoftwareUpdateFilter 
 type SoftwareUpdateFilter struct {
     ContentFilter
+    // The OdataType property
+    OdataType *string
 }
-// NewSoftwareUpdateFilter instantiates a new SoftwareUpdateFilter and sets the default values.
+// NewSoftwareUpdateFilter instantiates a new softwareUpdateFilter and sets the default values.
 func NewSoftwareUpdateFilter()(*SoftwareUpdateFilter) {
     m := &SoftwareUpdateFilter{
         ContentFilter: *NewContentFilter(),

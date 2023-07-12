@@ -8,7 +8,7 @@ import (
 type CustomCalloutExtensionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCustomCalloutExtensionCollectionResponse instantiates a new CustomCalloutExtensionCollectionResponse and sets the default values.
+// NewCustomCalloutExtensionCollectionResponse instantiates a new customCalloutExtensionCollectionResponse and sets the default values.
 func NewCustomCalloutExtensionCollectionResponse()(*CustomCalloutExtensionCollectionResponse) {
     m := &CustomCalloutExtensionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -7,8 +7,10 @@ import (
 // SubjectRightsRequestAllSiteLocation 
 type SubjectRightsRequestAllSiteLocation struct {
     SubjectRightsRequestSiteLocation
+    // The OdataType property
+    OdataType *string
 }
-// NewSubjectRightsRequestAllSiteLocation instantiates a new SubjectRightsRequestAllSiteLocation and sets the default values.
+// NewSubjectRightsRequestAllSiteLocation instantiates a new subjectRightsRequestAllSiteLocation and sets the default values.
 func NewSubjectRightsRequestAllSiteLocation()(*SubjectRightsRequestAllSiteLocation) {
     m := &SubjectRightsRequestAllSiteLocation{
         SubjectRightsRequestSiteLocation: *NewSubjectRightsRequestSiteLocation(),

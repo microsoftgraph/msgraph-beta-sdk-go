@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows10PkcsCertificateProfile 
+// Windows10PkcsCertificateProfile windows 10 Desktop and Mobile PKCS certificate profile
 type Windows10PkcsCertificateProfile struct {
     Windows10CertificateProfileBase
 }
-// NewWindows10PkcsCertificateProfile instantiates a new Windows10PkcsCertificateProfile and sets the default values.
+// NewWindows10PkcsCertificateProfile instantiates a new windows10PkcsCertificateProfile and sets the default values.
 func NewWindows10PkcsCertificateProfile()(*Windows10PkcsCertificateProfile) {
     m := &Windows10PkcsCertificateProfile{
         Windows10CertificateProfileBase: *NewWindows10CertificateProfileBase(),

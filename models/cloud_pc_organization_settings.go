@@ -7,8 +7,10 @@ import (
 // CloudPcOrganizationSettings 
 type CloudPcOrganizationSettings struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewCloudPcOrganizationSettings instantiates a new CloudPcOrganizationSettings and sets the default values.
+// NewCloudPcOrganizationSettings instantiates a new cloudPcOrganizationSettings and sets the default values.
 func NewCloudPcOrganizationSettings()(*CloudPcOrganizationSettings) {
     m := &CloudPcOrganizationSettings{
         Entity: *NewEntity(),

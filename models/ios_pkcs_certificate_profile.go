@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosPkcsCertificateProfile 
+// IosPkcsCertificateProfile iOS PKCS certificate profile.
 type IosPkcsCertificateProfile struct {
     IosCertificateProfileBase
 }
-// NewIosPkcsCertificateProfile instantiates a new IosPkcsCertificateProfile and sets the default values.
+// NewIosPkcsCertificateProfile instantiates a new iosPkcsCertificateProfile and sets the default values.
 func NewIosPkcsCertificateProfile()(*IosPkcsCertificateProfile) {
     m := &IosPkcsCertificateProfile{
         IosCertificateProfileBase: *NewIosCertificateProfileBase(),

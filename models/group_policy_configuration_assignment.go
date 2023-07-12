@@ -8,6 +8,8 @@ import (
 // GroupPolicyConfigurationAssignment the group policy configuration assignment entity assigns one or more AAD groups to a specific group policy configuration.
 type GroupPolicyConfigurationAssignment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewGroupPolicyConfigurationAssignment instantiates a new groupPolicyConfigurationAssignment and sets the default values.
 func NewGroupPolicyConfigurationAssignment()(*GroupPolicyConfigurationAssignment) {

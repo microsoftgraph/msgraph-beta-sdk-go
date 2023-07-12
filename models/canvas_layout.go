@@ -7,6 +7,8 @@ import (
 // CanvasLayout 
 type CanvasLayout struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewCanvasLayout instantiates a new canvasLayout and sets the default values.
 func NewCanvasLayout()(*CanvasLayout) {

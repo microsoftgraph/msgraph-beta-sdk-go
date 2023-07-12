@@ -8,7 +8,7 @@ import (
 type CertificateAuthorityAsEntityCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCertificateAuthorityAsEntityCollectionResponse instantiates a new CertificateAuthorityAsEntityCollectionResponse and sets the default values.
+// NewCertificateAuthorityAsEntityCollectionResponse instantiates a new certificateAuthorityAsEntityCollectionResponse and sets the default values.
 func NewCertificateAuthorityAsEntityCollectionResponse()(*CertificateAuthorityAsEntityCollectionResponse) {
     m := &CertificateAuthorityAsEntityCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

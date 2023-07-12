@@ -8,7 +8,7 @@ import (
 type OutboundFlowActivity struct {
     IndustryDataRunActivity
 }
-// NewOutboundFlowActivity instantiates a new OutboundFlowActivity and sets the default values.
+// NewOutboundFlowActivity instantiates a new outboundFlowActivity and sets the default values.
 func NewOutboundFlowActivity()(*OutboundFlowActivity) {
     m := &OutboundFlowActivity{
         IndustryDataRunActivity: *NewIndustryDataRunActivity(),

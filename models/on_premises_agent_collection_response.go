@@ -8,7 +8,7 @@ import (
 type OnPremisesAgentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewOnPremisesAgentCollectionResponse instantiates a new OnPremisesAgentCollectionResponse and sets the default values.
+// NewOnPremisesAgentCollectionResponse instantiates a new onPremisesAgentCollectionResponse and sets the default values.
 func NewOnPremisesAgentCollectionResponse()(*OnPremisesAgentCollectionResponse) {
     m := &OnPremisesAgentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

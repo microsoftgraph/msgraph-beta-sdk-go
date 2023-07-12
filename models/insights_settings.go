@@ -7,6 +7,8 @@ import (
 // InsightsSettings 
 type InsightsSettings struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewInsightsSettings instantiates a new insightsSettings and sets the default values.
 func NewInsightsSettings()(*InsightsSettings) {

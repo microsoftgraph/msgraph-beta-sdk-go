@@ -8,7 +8,7 @@ import (
 type Recommendation struct {
     RecommendationBase
 }
-// NewRecommendation instantiates a new Recommendation and sets the default values.
+// NewRecommendation instantiates a new recommendation and sets the default values.
 func NewRecommendation()(*Recommendation) {
     m := &Recommendation{
         RecommendationBase: *NewRecommendationBase(),

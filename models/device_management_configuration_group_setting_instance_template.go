@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationGroupSettingInstanceTemplate 
+// DeviceManagementConfigurationGroupSettingInstanceTemplate group Setting Instance Template
 type DeviceManagementConfigurationGroupSettingInstanceTemplate struct {
     DeviceManagementConfigurationSettingInstanceTemplate
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceManagementConfigurationGroupSettingInstanceTemplate instantiates a new DeviceManagementConfigurationGroupSettingInstanceTemplate and sets the default values.
+// NewDeviceManagementConfigurationGroupSettingInstanceTemplate instantiates a new deviceManagementConfigurationGroupSettingInstanceTemplate and sets the default values.
 func NewDeviceManagementConfigurationGroupSettingInstanceTemplate()(*DeviceManagementConfigurationGroupSettingInstanceTemplate) {
     m := &DeviceManagementConfigurationGroupSettingInstanceTemplate{
         DeviceManagementConfigurationSettingInstanceTemplate: *NewDeviceManagementConfigurationSettingInstanceTemplate(),

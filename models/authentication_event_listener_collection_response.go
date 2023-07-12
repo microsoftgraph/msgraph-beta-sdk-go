@@ -8,7 +8,7 @@ import (
 type AuthenticationEventListenerCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAuthenticationEventListenerCollectionResponse instantiates a new AuthenticationEventListenerCollectionResponse and sets the default values.
+// NewAuthenticationEventListenerCollectionResponse instantiates a new authenticationEventListenerCollectionResponse and sets the default values.
 func NewAuthenticationEventListenerCollectionResponse()(*AuthenticationEventListenerCollectionResponse) {
     m := &AuthenticationEventListenerCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

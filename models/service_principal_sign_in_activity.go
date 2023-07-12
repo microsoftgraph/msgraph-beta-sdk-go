@@ -7,6 +7,8 @@ import (
 // ServicePrincipalSignInActivity 
 type ServicePrincipalSignInActivity struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewServicePrincipalSignInActivity instantiates a new servicePrincipalSignInActivity and sets the default values.
 func NewServicePrincipalSignInActivity()(*ServicePrincipalSignInActivity) {

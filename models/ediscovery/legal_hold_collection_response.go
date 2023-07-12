@@ -9,7 +9,7 @@ import (
 type LegalHoldCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewLegalHoldCollectionResponse instantiates a new LegalHoldCollectionResponse and sets the default values.
+// NewLegalHoldCollectionResponse instantiates a new legalHoldCollectionResponse and sets the default values.
 func NewLegalHoldCollectionResponse()(*LegalHoldCollectionResponse) {
     m := &LegalHoldCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate 
+// DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate choice Setting Value Constant Default Template
 type DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate struct {
     DeviceManagementConfigurationChoiceSettingValueDefaultTemplate
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate instantiates a new DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate and sets the default values.
+// NewDeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate instantiates a new deviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate and sets the default values.
 func NewDeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate()(*DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate) {
     m := &DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate{
         DeviceManagementConfigurationChoiceSettingValueDefaultTemplate: *NewDeviceManagementConfigurationChoiceSettingValueDefaultTemplate(),

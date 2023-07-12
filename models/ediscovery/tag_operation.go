@@ -8,7 +8,7 @@ import (
 type TagOperation struct {
     CaseOperation
 }
-// NewTagOperation instantiates a new TagOperation and sets the default values.
+// NewTagOperation instantiates a new tagOperation and sets the default values.
 func NewTagOperation()(*TagOperation) {
     m := &TagOperation{
         CaseOperation: *NewCaseOperation(),

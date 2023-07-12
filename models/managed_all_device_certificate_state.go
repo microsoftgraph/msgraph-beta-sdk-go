@@ -8,6 +8,8 @@ import (
 // ManagedAllDeviceCertificateState 
 type ManagedAllDeviceCertificateState struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewManagedAllDeviceCertificateState instantiates a new managedAllDeviceCertificateState and sets the default values.
 func NewManagedAllDeviceCertificateState()(*ManagedAllDeviceCertificateState) {

@@ -7,6 +7,8 @@ import (
 // SubCategory 
 type SubCategory struct {
     FilePlanDescriptorBase
+    // The OdataType property
+    OdataType *string
 }
 // NewSubCategory instantiates a new subCategory and sets the default values.
 func NewSubCategory()(*SubCategory) {

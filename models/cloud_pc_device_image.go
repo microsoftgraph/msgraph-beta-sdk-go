@@ -8,8 +8,10 @@ import (
 // CloudPcDeviceImage 
 type CloudPcDeviceImage struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewCloudPcDeviceImage instantiates a new CloudPcDeviceImage and sets the default values.
+// NewCloudPcDeviceImage instantiates a new cloudPcDeviceImage and sets the default values.
 func NewCloudPcDeviceImage()(*CloudPcDeviceImage) {
     m := &CloudPcDeviceImage{
         Entity: *NewEntity(),

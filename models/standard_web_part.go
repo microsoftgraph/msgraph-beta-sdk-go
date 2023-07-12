@@ -8,7 +8,7 @@ import (
 type StandardWebPart struct {
     WebPart
 }
-// NewStandardWebPart instantiates a new StandardWebPart and sets the default values.
+// NewStandardWebPart instantiates a new standardWebPart and sets the default values.
 func NewStandardWebPart()(*StandardWebPart) {
     m := &StandardWebPart{
         WebPart: *NewWebPart(),
@@ -57,7 +57,7 @@ func (m *StandardWebPart) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetWebPartType gets the webPartType property value. A Guid which indicates the type of the webParts
+// GetWebPartType gets the webPartType property value. A Guid that indicates the webPart type.
 func (m *StandardWebPart) GetWebPartType()(*string) {
     val, err := m.GetBackingStore().Get("webPartType")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *StandardWebPart) SetData(value WebPartDataable)() {
         panic(err)
     }
 }
-// SetWebPartType sets the webPartType property value. A Guid which indicates the type of the webParts
+// SetWebPartType sets the webPartType property value. A Guid that indicates the webPart type.
 func (m *StandardWebPart) SetWebPartType(value *string)() {
     err := m.GetBackingStore().Set("webPartType", value)
     if err != nil {

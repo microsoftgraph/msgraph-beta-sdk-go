@@ -8,6 +8,8 @@ import (
 // PolicyLink 
 type PolicyLink struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewPolicyLink instantiates a new policyLink and sets the default values.
 func NewPolicyLink()(*PolicyLink) {
@@ -95,7 +97,7 @@ func (m *PolicyLink) GetState()(*Status) {
     }
     return nil
 }
-// GetVersion gets the version property value. The version property
+// GetVersion gets the version property value. Version.
 func (m *PolicyLink) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -147,7 +149,7 @@ func (m *PolicyLink) SetState(value *Status)() {
         panic(err)
     }
 }
-// SetVersion sets the version property value. The version property
+// SetVersion sets the version property value. Version.
 func (m *PolicyLink) SetVersion(value *string)() {
     err := m.GetBackingStore().Set("version", value)
     if err != nil {

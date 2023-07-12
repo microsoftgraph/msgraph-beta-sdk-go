@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsManagementApp 
+// WindowsManagementApp windows management app entity.
 type WindowsManagementApp struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWindowsManagementApp instantiates a new windowsManagementApp and sets the default values.
 func NewWindowsManagementApp()(*WindowsManagementApp) {

@@ -7,6 +7,8 @@ import (
 // SecurityBaselineStateSummary the security baseline compliance state summary for the security baseline of the account.
 type SecurityBaselineStateSummary struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewSecurityBaselineStateSummary instantiates a new securityBaselineStateSummary and sets the default values.
 func NewSecurityBaselineStateSummary()(*SecurityBaselineStateSummary) {

@@ -22,7 +22,7 @@ func NewDeviceUsageSummary()(*DeviceUsageSummary) {
 func CreateDeviceUsageSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceUsageSummary(), nil
 }
-// GetActiveDeviceCount gets the activeDeviceCount property value. The activeDeviceCount property
+// GetActiveDeviceCount gets the activeDeviceCount property value. The number of distinct device IDs in the time frame between endDateTime and discoveryPivotDateTime.
 func (m *DeviceUsageSummary) GetActiveDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("activeDeviceCount")
     if err != nil {
@@ -94,7 +94,7 @@ func (m *DeviceUsageSummary) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetInactiveDeviceCount gets the inactiveDeviceCount property value. The inactiveDeviceCount property
+// GetInactiveDeviceCount gets the inactiveDeviceCount property value. The number of distinct device IDs havn't seen in the time frame between endDateTime and discoveryPivotDateTime but have seen in the time frame between discoveryPivotDateTime and startDateTime.
 func (m *DeviceUsageSummary) GetInactiveDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("inactiveDeviceCount")
     if err != nil {
@@ -116,7 +116,7 @@ func (m *DeviceUsageSummary) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTotalDeviceCount gets the totalDeviceCount property value. The totalDeviceCount property
+// GetTotalDeviceCount gets the totalDeviceCount property value. The number of distinct device IDs in the time frame between startDateTime and endDateTime.
 func (m *DeviceUsageSummary) GetTotalDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalDeviceCount")
     if err != nil {
@@ -161,7 +161,7 @@ func (m *DeviceUsageSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetActiveDeviceCount sets the activeDeviceCount property value. The activeDeviceCount property
+// SetActiveDeviceCount sets the activeDeviceCount property value. The number of distinct device IDs in the time frame between endDateTime and discoveryPivotDateTime.
 func (m *DeviceUsageSummary) SetActiveDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("activeDeviceCount", value)
     if err != nil {
@@ -179,7 +179,7 @@ func (m *DeviceUsageSummary) SetAdditionalData(value map[string]any)() {
 func (m *DeviceUsageSummary) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetInactiveDeviceCount sets the inactiveDeviceCount property value. The inactiveDeviceCount property
+// SetInactiveDeviceCount sets the inactiveDeviceCount property value. The number of distinct device IDs havn't seen in the time frame between endDateTime and discoveryPivotDateTime but have seen in the time frame between discoveryPivotDateTime and startDateTime.
 func (m *DeviceUsageSummary) SetInactiveDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("inactiveDeviceCount", value)
     if err != nil {
@@ -193,7 +193,7 @@ func (m *DeviceUsageSummary) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTotalDeviceCount sets the totalDeviceCount property value. The totalDeviceCount property
+// SetTotalDeviceCount sets the totalDeviceCount property value. The number of distinct device IDs in the time frame between startDateTime and endDateTime.
 func (m *DeviceUsageSummary) SetTotalDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("totalDeviceCount", value)
     if err != nil {

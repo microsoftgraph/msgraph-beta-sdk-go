@@ -7,8 +7,10 @@ import (
 // UserIdentity 
 type UserIdentity struct {
     Identity
+    // The OdataType property
+    OdataType *string
 }
-// NewUserIdentity instantiates a new UserIdentity and sets the default values.
+// NewUserIdentity instantiates a new userIdentity and sets the default values.
 func NewUserIdentity()(*UserIdentity) {
     m := &UserIdentity{
         Identity: *NewIdentity(),

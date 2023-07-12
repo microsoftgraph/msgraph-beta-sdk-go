@@ -9,7 +9,7 @@ import (
 type ManagementActionTenantDeploymentStatusCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewManagementActionTenantDeploymentStatusCollectionResponse instantiates a new ManagementActionTenantDeploymentStatusCollectionResponse and sets the default values.
+// NewManagementActionTenantDeploymentStatusCollectionResponse instantiates a new managementActionTenantDeploymentStatusCollectionResponse and sets the default values.
 func NewManagementActionTenantDeploymentStatusCollectionResponse()(*ManagementActionTenantDeploymentStatusCollectionResponse) {
     m := &ManagementActionTenantDeploymentStatusCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

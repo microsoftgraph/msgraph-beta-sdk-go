@@ -8,7 +8,7 @@ import (
 type FilePlanReferenceTemplate struct {
     FilePlanDescriptorTemplate
 }
-// NewFilePlanReferenceTemplate instantiates a new FilePlanReferenceTemplate and sets the default values.
+// NewFilePlanReferenceTemplate instantiates a new filePlanReferenceTemplate and sets the default values.
 func NewFilePlanReferenceTemplate()(*FilePlanReferenceTemplate) {
     m := &FilePlanReferenceTemplate{
         FilePlanDescriptorTemplate: *NewFilePlanDescriptorTemplate(),

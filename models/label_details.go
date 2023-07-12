@@ -7,8 +7,10 @@ import (
 // LabelDetails 
 type LabelDetails struct {
     ParentLabelDetails
+    // The OdataType property
+    OdataType *string
 }
-// NewLabelDetails instantiates a new LabelDetails and sets the default values.
+// NewLabelDetails instantiates a new labelDetails and sets the default values.
 func NewLabelDetails()(*LabelDetails) {
     m := &LabelDetails{
         ParentLabelDetails: *NewParentLabelDetails(),

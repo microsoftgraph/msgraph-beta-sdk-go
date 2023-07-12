@@ -8,7 +8,7 @@ import (
 type ForwardingProfile struct {
     Profile
 }
-// NewForwardingProfile instantiates a new ForwardingProfile and sets the default values.
+// NewForwardingProfile instantiates a new forwardingProfile and sets the default values.
 func NewForwardingProfile()(*ForwardingProfile) {
     m := &ForwardingProfile{
         Profile: *NewProfile(),
@@ -21,7 +21,7 @@ func NewForwardingProfile()(*ForwardingProfile) {
 func CreateForwardingProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewForwardingProfile(), nil
 }
-// GetAssociations gets the associations property value. The associations property
+// GetAssociations gets the associations property value. Specifies the users, groups, devices, and branch locations whose traffic is associated with the given traffic forwarding profile.
 func (m *ForwardingProfile) GetAssociations()([]Associationable) {
     val, err := m.GetBackingStore().Get("associations")
     if err != nil {
@@ -73,7 +73,7 @@ func (m *ForwardingProfile) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetPriority gets the priority property value. The priority property
+// GetPriority gets the priority property value. Profile priority.
 func (m *ForwardingProfile) GetPriority()(*int32) {
     val, err := m.GetBackingStore().Get("priority")
     if err != nil {
@@ -128,14 +128,14 @@ func (m *ForwardingProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetAssociations sets the associations property value. The associations property
+// SetAssociations sets the associations property value. Specifies the users, groups, devices, and branch locations whose traffic is associated with the given traffic forwarding profile.
 func (m *ForwardingProfile) SetAssociations(value []Associationable)() {
     err := m.GetBackingStore().Set("associations", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPriority sets the priority property value. The priority property
+// SetPriority sets the priority property value. Profile priority.
 func (m *ForwardingProfile) SetPriority(value *int32)() {
     err := m.GetBackingStore().Set("priority", value)
     if err != nil {

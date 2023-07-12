@@ -7,8 +7,10 @@ import (
 // CommunicationsApplicationIdentity 
 type CommunicationsApplicationIdentity struct {
     Identity
+    // The OdataType property
+    OdataType *string
 }
-// NewCommunicationsApplicationIdentity instantiates a new CommunicationsApplicationIdentity and sets the default values.
+// NewCommunicationsApplicationIdentity instantiates a new communicationsApplicationIdentity and sets the default values.
 func NewCommunicationsApplicationIdentity()(*CommunicationsApplicationIdentity) {
     m := &CommunicationsApplicationIdentity{
         Identity: *NewIdentity(),

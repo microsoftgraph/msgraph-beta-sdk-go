@@ -8,7 +8,7 @@ import (
 type MobileAppIntentAndStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewMobileAppIntentAndStateCollectionResponse instantiates a new MobileAppIntentAndStateCollectionResponse and sets the default values.
+// NewMobileAppIntentAndStateCollectionResponse instantiates a new mobileAppIntentAndStateCollectionResponse and sets the default values.
 func NewMobileAppIntentAndStateCollectionResponse()(*MobileAppIntentAndStateCollectionResponse) {
     m := &MobileAppIntentAndStateCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

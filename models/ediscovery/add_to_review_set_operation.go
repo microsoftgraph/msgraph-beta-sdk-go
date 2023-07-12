@@ -8,7 +8,7 @@ import (
 type AddToReviewSetOperation struct {
     CaseOperation
 }
-// NewAddToReviewSetOperation instantiates a new AddToReviewSetOperation and sets the default values.
+// NewAddToReviewSetOperation instantiates a new addToReviewSetOperation and sets the default values.
 func NewAddToReviewSetOperation()(*AddToReviewSetOperation) {
     m := &AddToReviewSetOperation{
         CaseOperation: *NewCaseOperation(),

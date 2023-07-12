@@ -8,6 +8,8 @@ import (
 // UserCredentialUsageDetails 
 type UserCredentialUsageDetails struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewUserCredentialUsageDetails instantiates a new userCredentialUsageDetails and sets the default values.
 func NewUserCredentialUsageDetails()(*UserCredentialUsageDetails) {

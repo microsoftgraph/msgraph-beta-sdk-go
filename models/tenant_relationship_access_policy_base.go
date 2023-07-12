@@ -8,7 +8,7 @@ import (
 type TenantRelationshipAccessPolicyBase struct {
     PolicyBase
 }
-// NewTenantRelationshipAccessPolicyBase instantiates a new TenantRelationshipAccessPolicyBase and sets the default values.
+// NewTenantRelationshipAccessPolicyBase instantiates a new tenantRelationshipAccessPolicyBase and sets the default values.
 func NewTenantRelationshipAccessPolicyBase()(*TenantRelationshipAccessPolicyBase) {
     m := &TenantRelationshipAccessPolicyBase{
         PolicyBase: *NewPolicyBase(),

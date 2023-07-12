@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsKioskWin32App 
+// WindowsKioskWin32App kioskModeApp v4 for Win32 app support
 type WindowsKioskWin32App struct {
     WindowsKioskAppBase
+    // The OdataType property
+    OdataType *string
 }
-// NewWindowsKioskWin32App instantiates a new WindowsKioskWin32App and sets the default values.
+// NewWindowsKioskWin32App instantiates a new windowsKioskWin32App and sets the default values.
 func NewWindowsKioskWin32App()(*WindowsKioskWin32App) {
     m := &WindowsKioskWin32App{
         WindowsKioskAppBase: *NewWindowsKioskAppBase(),

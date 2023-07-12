@@ -7,6 +7,8 @@ import (
 // DeviceManagementTemplateInsightsDefinition template insights definition
 type DeviceManagementTemplateInsightsDefinition struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceManagementTemplateInsightsDefinition instantiates a new deviceManagementTemplateInsightsDefinition and sets the default values.
 func NewDeviceManagementTemplateInsightsDefinition()(*DeviceManagementTemplateInsightsDefinition) {

@@ -8,7 +8,7 @@ import (
 type TimeCard struct {
     ChangeTrackedEntity
 }
-// NewTimeCard instantiates a new TimeCard and sets the default values.
+// NewTimeCard instantiates a new timeCard and sets the default values.
 func NewTimeCard()(*TimeCard) {
     m := &TimeCard{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),

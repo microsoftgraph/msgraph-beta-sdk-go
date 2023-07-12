@@ -8,7 +8,7 @@ import (
 type CloudAppSecurityProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCloudAppSecurityProfileCollectionResponse instantiates a new CloudAppSecurityProfileCollectionResponse and sets the default values.
+// NewCloudAppSecurityProfileCollectionResponse instantiates a new cloudAppSecurityProfileCollectionResponse and sets the default values.
 func NewCloudAppSecurityProfileCollectionResponse()(*CloudAppSecurityProfileCollectionResponse) {
     m := &CloudAppSecurityProfileCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

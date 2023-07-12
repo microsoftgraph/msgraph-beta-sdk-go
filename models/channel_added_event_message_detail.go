@@ -7,8 +7,10 @@ import (
 // ChannelAddedEventMessageDetail 
 type ChannelAddedEventMessageDetail struct {
     EventMessageDetail
+    // The OdataType property
+    OdataType *string
 }
-// NewChannelAddedEventMessageDetail instantiates a new ChannelAddedEventMessageDetail and sets the default values.
+// NewChannelAddedEventMessageDetail instantiates a new channelAddedEventMessageDetail and sets the default values.
 func NewChannelAddedEventMessageDetail()(*ChannelAddedEventMessageDetail) {
     m := &ChannelAddedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),

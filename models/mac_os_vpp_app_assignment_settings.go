@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MacOsVppAppAssignmentSettings 
+// MacOsVppAppAssignmentSettings contains properties used to assign an Mac VPP mobile app to a group.
 type MacOsVppAppAssignmentSettings struct {
     MobileAppAssignmentSettings
+    // The OdataType property
+    OdataType *string
 }
-// NewMacOsVppAppAssignmentSettings instantiates a new MacOsVppAppAssignmentSettings and sets the default values.
+// NewMacOsVppAppAssignmentSettings instantiates a new macOsVppAppAssignmentSettings and sets the default values.
 func NewMacOsVppAppAssignmentSettings()(*MacOsVppAppAssignmentSettings) {
     m := &MacOsVppAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),

@@ -8,7 +8,7 @@ import (
 type MobileAppRelationshipCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewMobileAppRelationshipCollectionResponse instantiates a new MobileAppRelationshipCollectionResponse and sets the default values.
+// NewMobileAppRelationshipCollectionResponse instantiates a new mobileAppRelationshipCollectionResponse and sets the default values.
 func NewMobileAppRelationshipCollectionResponse()(*MobileAppRelationshipCollectionResponse) {
     m := &MobileAppRelationshipCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

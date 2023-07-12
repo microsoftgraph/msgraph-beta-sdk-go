@@ -8,7 +8,7 @@ import (
 type TrustFrameworkKeySetCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTrustFrameworkKeySetCollectionResponse instantiates a new TrustFrameworkKeySetCollectionResponse and sets the default values.
+// NewTrustFrameworkKeySetCollectionResponse instantiates a new trustFrameworkKeySetCollectionResponse and sets the default values.
 func NewTrustFrameworkKeySetCollectionResponse()(*TrustFrameworkKeySetCollectionResponse) {
     m := &TrustFrameworkKeySetCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

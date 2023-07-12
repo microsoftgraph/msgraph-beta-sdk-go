@@ -7,6 +7,8 @@ import (
 // SoftwareUpdateStatusSummary 
 type SoftwareUpdateStatusSummary struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewSoftwareUpdateStatusSummary instantiates a new softwareUpdateStatusSummary and sets the default values.
 func NewSoftwareUpdateStatusSummary()(*SoftwareUpdateStatusSummary) {

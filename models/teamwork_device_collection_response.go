@@ -8,7 +8,7 @@ import (
 type TeamworkDeviceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTeamworkDeviceCollectionResponse instantiates a new TeamworkDeviceCollectionResponse and sets the default values.
+// NewTeamworkDeviceCollectionResponse instantiates a new teamworkDeviceCollectionResponse and sets the default values.
 func NewTeamworkDeviceCollectionResponse()(*TeamworkDeviceCollectionResponse) {
     m := &TeamworkDeviceCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

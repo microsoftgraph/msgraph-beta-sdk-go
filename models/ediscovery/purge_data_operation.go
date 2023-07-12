@@ -8,7 +8,7 @@ import (
 type PurgeDataOperation struct {
     CaseOperation
 }
-// NewPurgeDataOperation instantiates a new PurgeDataOperation and sets the default values.
+// NewPurgeDataOperation instantiates a new purgeDataOperation and sets the default values.
 func NewPurgeDataOperation()(*PurgeDataOperation) {
     m := &PurgeDataOperation{
         CaseOperation: *NewCaseOperation(),

@@ -7,8 +7,10 @@ import (
 // OnAttributeCollectionExternalUsersSelfServiceSignUp 
 type OnAttributeCollectionExternalUsersSelfServiceSignUp struct {
     OnAttributeCollectionHandler
+    // The OdataType property
+    OdataType *string
 }
-// NewOnAttributeCollectionExternalUsersSelfServiceSignUp instantiates a new OnAttributeCollectionExternalUsersSelfServiceSignUp and sets the default values.
+// NewOnAttributeCollectionExternalUsersSelfServiceSignUp instantiates a new onAttributeCollectionExternalUsersSelfServiceSignUp and sets the default values.
 func NewOnAttributeCollectionExternalUsersSelfServiceSignUp()(*OnAttributeCollectionExternalUsersSelfServiceSignUp) {
     m := &OnAttributeCollectionExternalUsersSelfServiceSignUp{
         OnAttributeCollectionHandler: *NewOnAttributeCollectionHandler(),

@@ -7,6 +7,8 @@ import (
 // CustomExtensionStageSetting 
 type CustomExtensionStageSetting struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewCustomExtensionStageSetting instantiates a new customExtensionStageSetting and sets the default values.
 func NewCustomExtensionStageSetting()(*CustomExtensionStageSetting) {

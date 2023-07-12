@@ -7,8 +7,10 @@ import (
 // ApprovalWorkflowProvider 
 type ApprovalWorkflowProvider struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewApprovalWorkflowProvider instantiates a new ApprovalWorkflowProvider and sets the default values.
+// NewApprovalWorkflowProvider instantiates a new approvalWorkflowProvider and sets the default values.
 func NewApprovalWorkflowProvider()(*ApprovalWorkflowProvider) {
     m := &ApprovalWorkflowProvider{
         Entity: *NewEntity(),

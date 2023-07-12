@@ -8,6 +8,8 @@ import (
 // WindowsManagementAppHealthState windows management app health state entity.
 type WindowsManagementAppHealthState struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWindowsManagementAppHealthState instantiates a new windowsManagementAppHealthState and sets the default values.
 func NewWindowsManagementAppHealthState()(*WindowsManagementAppHealthState) {

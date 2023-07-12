@@ -8,7 +8,7 @@ import (
 type QualityUpdateCatalogEntry struct {
     SoftwareUpdateCatalogEntry
 }
-// NewQualityUpdateCatalogEntry instantiates a new QualityUpdateCatalogEntry and sets the default values.
+// NewQualityUpdateCatalogEntry instantiates a new qualityUpdateCatalogEntry and sets the default values.
 func NewQualityUpdateCatalogEntry()(*QualityUpdateCatalogEntry) {
     m := &QualityUpdateCatalogEntry{
         SoftwareUpdateCatalogEntry: *NewSoftwareUpdateCatalogEntry(),

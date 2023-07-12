@@ -7,6 +7,8 @@ import (
 // LandingPageDetail 
 type LandingPageDetail struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewLandingPageDetail instantiates a new landingPageDetail and sets the default values.
 func NewLandingPageDetail()(*LandingPageDetail) {

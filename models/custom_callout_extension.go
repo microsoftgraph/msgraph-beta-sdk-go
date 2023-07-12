@@ -7,6 +7,8 @@ import (
 // CustomCalloutExtension 
 type CustomCalloutExtension struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewCustomCalloutExtension instantiates a new customCalloutExtension and sets the default values.
 func NewCustomCalloutExtension()(*CustomCalloutExtension) {

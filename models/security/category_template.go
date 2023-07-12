@@ -8,7 +8,7 @@ import (
 type CategoryTemplate struct {
     FilePlanDescriptorTemplate
 }
-// NewCategoryTemplate instantiates a new CategoryTemplate and sets the default values.
+// NewCategoryTemplate instantiates a new categoryTemplate and sets the default values.
 func NewCategoryTemplate()(*CategoryTemplate) {
     m := &CategoryTemplate{
         FilePlanDescriptorTemplate: *NewFilePlanDescriptorTemplate(),

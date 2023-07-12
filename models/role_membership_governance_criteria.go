@@ -7,8 +7,10 @@ import (
 // RoleMembershipGovernanceCriteria 
 type RoleMembershipGovernanceCriteria struct {
     GovernanceCriteria
+    // The OdataType property
+    OdataType *string
 }
-// NewRoleMembershipGovernanceCriteria instantiates a new RoleMembershipGovernanceCriteria and sets the default values.
+// NewRoleMembershipGovernanceCriteria instantiates a new roleMembershipGovernanceCriteria and sets the default values.
 func NewRoleMembershipGovernanceCriteria()(*RoleMembershipGovernanceCriteria) {
     m := &RoleMembershipGovernanceCriteria{
         GovernanceCriteria: *NewGovernanceCriteria(),

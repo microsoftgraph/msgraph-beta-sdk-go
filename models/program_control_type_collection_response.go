@@ -8,7 +8,7 @@ import (
 type ProgramControlTypeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewProgramControlTypeCollectionResponse instantiates a new ProgramControlTypeCollectionResponse and sets the default values.
+// NewProgramControlTypeCollectionResponse instantiates a new programControlTypeCollectionResponse and sets the default values.
 func NewProgramControlTypeCollectionResponse()(*ProgramControlTypeCollectionResponse) {
     m := &ProgramControlTypeCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

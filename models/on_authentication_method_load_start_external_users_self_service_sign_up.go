@@ -7,8 +7,10 @@ import (
 // OnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp 
 type OnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp struct {
     OnAuthenticationMethodLoadStartHandler
+    // The OdataType property
+    OdataType *string
 }
-// NewOnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp instantiates a new OnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp and sets the default values.
+// NewOnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp instantiates a new onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp and sets the default values.
 func NewOnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp()(*OnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp) {
     m := &OnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp{
         OnAuthenticationMethodLoadStartHandler: *NewOnAuthenticationMethodLoadStartHandler(),

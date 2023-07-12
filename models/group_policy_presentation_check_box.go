@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupPolicyPresentationCheckBox 
+// GroupPolicyPresentationCheckBox represents an ADMX checkBox element and an ADMX boolean element.
 type GroupPolicyPresentationCheckBox struct {
     GroupPolicyUploadedPresentation
 }
-// NewGroupPolicyPresentationCheckBox instantiates a new GroupPolicyPresentationCheckBox and sets the default values.
+// NewGroupPolicyPresentationCheckBox instantiates a new groupPolicyPresentationCheckBox and sets the default values.
 func NewGroupPolicyPresentationCheckBox()(*GroupPolicyPresentationCheckBox) {
     m := &GroupPolicyPresentationCheckBox{
         GroupPolicyUploadedPresentation: *NewGroupPolicyUploadedPresentation(),

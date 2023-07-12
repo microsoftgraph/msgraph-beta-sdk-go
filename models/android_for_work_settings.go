@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidForWorkSettings 
+// AndroidForWorkSettings settings for Android For Work.
 type AndroidForWorkSettings struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAndroidForWorkSettings instantiates a new androidForWorkSettings and sets the default values.
 func NewAndroidForWorkSettings()(*AndroidForWorkSettings) {

@@ -8,7 +8,7 @@ import (
 type DeviceManagementConfigurationSettingGroupCollectionDefinition struct {
     DeviceManagementConfigurationSettingGroupDefinition
 }
-// NewDeviceManagementConfigurationSettingGroupCollectionDefinition instantiates a new DeviceManagementConfigurationSettingGroupCollectionDefinition and sets the default values.
+// NewDeviceManagementConfigurationSettingGroupCollectionDefinition instantiates a new deviceManagementConfigurationSettingGroupCollectionDefinition and sets the default values.
 func NewDeviceManagementConfigurationSettingGroupCollectionDefinition()(*DeviceManagementConfigurationSettingGroupCollectionDefinition) {
     m := &DeviceManagementConfigurationSettingGroupCollectionDefinition{
         DeviceManagementConfigurationSettingGroupDefinition: *NewDeviceManagementConfigurationSettingGroupDefinition(),

@@ -7,6 +7,8 @@ import (
 // GovernancePolicyTemplate 
 type GovernancePolicyTemplate struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewGovernancePolicyTemplate instantiates a new governancePolicyTemplate and sets the default values.
 func NewGovernancePolicyTemplate()(*GovernancePolicyTemplate) {

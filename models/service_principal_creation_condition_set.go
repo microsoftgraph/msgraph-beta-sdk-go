@@ -7,6 +7,8 @@ import (
 // ServicePrincipalCreationConditionSet 
 type ServicePrincipalCreationConditionSet struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewServicePrincipalCreationConditionSet instantiates a new servicePrincipalCreationConditionSet and sets the default values.
 func NewServicePrincipalCreationConditionSet()(*ServicePrincipalCreationConditionSet) {

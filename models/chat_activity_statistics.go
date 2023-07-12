@@ -8,7 +8,7 @@ import (
 type ChatActivityStatistics struct {
     ActivityStatistics
 }
-// NewChatActivityStatistics instantiates a new ChatActivityStatistics and sets the default values.
+// NewChatActivityStatistics instantiates a new chatActivityStatistics and sets the default values.
 func NewChatActivityStatistics()(*ChatActivityStatistics) {
     m := &ChatActivityStatistics{
         ActivityStatistics: *NewActivityStatistics(),
@@ -45,7 +45,28 @@ func (m *ChatActivityStatistics) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ChatActivityStatistics) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ChatActivityStatistics) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -59,6 +80,12 @@ func (m *ChatActivityStatistics) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAfterHours sets the afterHours property value. Time spent on chats outside of working hours, which is based on the user's Microsoft Outlook calendar setting for work hours. The value is represented in ISO 8601 format for durations.
@@ -68,10 +95,19 @@ func (m *ChatActivityStatistics) SetAfterHours(value *i878a80d2330e89d26896388a3
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ChatActivityStatistics) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // ChatActivityStatisticsable 
 type ChatActivityStatisticsable interface {
     ActivityStatisticsable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAfterHours()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    GetOdataType()(*string)
     SetAfterHours(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
+    SetOdataType(value *string)()
 }

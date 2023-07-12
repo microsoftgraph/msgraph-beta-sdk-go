@@ -8,6 +8,8 @@ import (
 // UserExperienceAnalyticsAnomalyDevice the user experience analytics anomaly entity contains device details.
 type UserExperienceAnalyticsAnomalyDevice struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewUserExperienceAnalyticsAnomalyDevice instantiates a new userExperienceAnalyticsAnomalyDevice and sets the default values.
 func NewUserExperienceAnalyticsAnomalyDevice()(*UserExperienceAnalyticsAnomalyDevice) {

@@ -8,7 +8,7 @@ import (
 type MicrosoftTunnelHealthThresholdCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewMicrosoftTunnelHealthThresholdCollectionResponse instantiates a new MicrosoftTunnelHealthThresholdCollectionResponse and sets the default values.
+// NewMicrosoftTunnelHealthThresholdCollectionResponse instantiates a new microsoftTunnelHealthThresholdCollectionResponse and sets the default values.
 func NewMicrosoftTunnelHealthThresholdCollectionResponse()(*MicrosoftTunnelHealthThresholdCollectionResponse) {
     m := &MicrosoftTunnelHealthThresholdCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsRemoteConnectionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUserExperienceAnalyticsRemoteConnectionCollectionResponse instantiates a new UserExperienceAnalyticsRemoteConnectionCollectionResponse and sets the default values.
+// NewUserExperienceAnalyticsRemoteConnectionCollectionResponse instantiates a new userExperienceAnalyticsRemoteConnectionCollectionResponse and sets the default values.
 func NewUserExperienceAnalyticsRemoteConnectionCollectionResponse()(*UserExperienceAnalyticsRemoteConnectionCollectionResponse) {
     m := &UserExperienceAnalyticsRemoteConnectionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -7,6 +7,8 @@ import (
 // LookupResultRow 
 type LookupResultRow struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewLookupResultRow instantiates a new lookupResultRow and sets the default values.
 func NewLookupResultRow()(*LookupResultRow) {

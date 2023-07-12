@@ -9,7 +9,7 @@ import (
 type ValidateOperation struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LongRunningOperation
 }
-// NewValidateOperation instantiates a new ValidateOperation and sets the default values.
+// NewValidateOperation instantiates a new validateOperation and sets the default values.
 func NewValidateOperation()(*ValidateOperation) {
     m := &ValidateOperation{
         LongRunningOperation: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewLongRunningOperation(),

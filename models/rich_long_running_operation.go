@@ -8,7 +8,7 @@ import (
 type RichLongRunningOperation struct {
     LongRunningOperation
 }
-// NewRichLongRunningOperation instantiates a new RichLongRunningOperation and sets the default values.
+// NewRichLongRunningOperation instantiates a new richLongRunningOperation and sets the default values.
 func NewRichLongRunningOperation()(*RichLongRunningOperation) {
     m := &RichLongRunningOperation{
         LongRunningOperation: *NewLongRunningOperation(),

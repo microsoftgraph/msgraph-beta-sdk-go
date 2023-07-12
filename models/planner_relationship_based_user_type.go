@@ -7,8 +7,10 @@ import (
 // PlannerRelationshipBasedUserType 
 type PlannerRelationshipBasedUserType struct {
     PlannerTaskConfigurationRoleBase
+    // The OdataType property
+    OdataType *string
 }
-// NewPlannerRelationshipBasedUserType instantiates a new PlannerRelationshipBasedUserType and sets the default values.
+// NewPlannerRelationshipBasedUserType instantiates a new plannerRelationshipBasedUserType and sets the default values.
 func NewPlannerRelationshipBasedUserType()(*PlannerRelationshipBasedUserType) {
     m := &PlannerRelationshipBasedUserType{
         PlannerTaskConfigurationRoleBase: *NewPlannerTaskConfigurationRoleBase(),

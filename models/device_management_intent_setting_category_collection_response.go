@@ -8,7 +8,7 @@ import (
 type DeviceManagementIntentSettingCategoryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceManagementIntentSettingCategoryCollectionResponse instantiates a new DeviceManagementIntentSettingCategoryCollectionResponse and sets the default values.
+// NewDeviceManagementIntentSettingCategoryCollectionResponse instantiates a new deviceManagementIntentSettingCategoryCollectionResponse and sets the default values.
 func NewDeviceManagementIntentSettingCategoryCollectionResponse()(*DeviceManagementIntentSettingCategoryCollectionResponse) {
     m := &DeviceManagementIntentSettingCategoryCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

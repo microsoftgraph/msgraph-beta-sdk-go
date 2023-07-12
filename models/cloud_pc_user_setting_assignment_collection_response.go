@@ -8,7 +8,7 @@ import (
 type CloudPcUserSettingAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCloudPcUserSettingAssignmentCollectionResponse instantiates a new CloudPcUserSettingAssignmentCollectionResponse and sets the default values.
+// NewCloudPcUserSettingAssignmentCollectionResponse instantiates a new cloudPcUserSettingAssignmentCollectionResponse and sets the default values.
 func NewCloudPcUserSettingAssignmentCollectionResponse()(*CloudPcUserSettingAssignmentCollectionResponse) {
     m := &CloudPcUserSettingAssignmentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

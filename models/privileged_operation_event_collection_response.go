@@ -8,7 +8,7 @@ import (
 type PrivilegedOperationEventCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPrivilegedOperationEventCollectionResponse instantiates a new PrivilegedOperationEventCollectionResponse and sets the default values.
+// NewPrivilegedOperationEventCollectionResponse instantiates a new privilegedOperationEventCollectionResponse and sets the default values.
 func NewPrivilegedOperationEventCollectionResponse()(*PrivilegedOperationEventCollectionResponse) {
     m := &PrivilegedOperationEventCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

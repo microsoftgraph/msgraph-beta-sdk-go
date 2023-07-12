@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows10XVpnConfiguration 
+// Windows10XVpnConfiguration windows X VPN configuration profile
 type Windows10XVpnConfiguration struct {
     DeviceManagementResourceAccessProfileBase
 }
-// NewWindows10XVpnConfiguration instantiates a new Windows10XVpnConfiguration and sets the default values.
+// NewWindows10XVpnConfiguration instantiates a new windows10XVpnConfiguration and sets the default values.
 func NewWindows10XVpnConfiguration()(*Windows10XVpnConfiguration) {
     m := &Windows10XVpnConfiguration{
         DeviceManagementResourceAccessProfileBase: *NewDeviceManagementResourceAccessProfileBase(),

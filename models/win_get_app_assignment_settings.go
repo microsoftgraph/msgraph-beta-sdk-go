@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WinGetAppAssignmentSettings 
+// WinGetAppAssignmentSettings contains properties used to assign a WinGet app to a group.
 type WinGetAppAssignmentSettings struct {
     MobileAppAssignmentSettings
 }
-// NewWinGetAppAssignmentSettings instantiates a new WinGetAppAssignmentSettings and sets the default values.
+// NewWinGetAppAssignmentSettings instantiates a new winGetAppAssignmentSettings and sets the default values.
 func NewWinGetAppAssignmentSettings()(*WinGetAppAssignmentSettings) {
     m := &WinGetAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),
@@ -41,6 +41,16 @@ func (m *WinGetAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i8
         }
         if val != nil {
             m.SetNotifications(val.(*WinGetAppNotification))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -78,6 +88,17 @@ func (m *WinGetAppAssignmentSettings) GetNotifications()(*WinGetAppNotification)
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WinGetAppAssignmentSettings) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetRestartSettings gets the restartSettings property value. The reboot settings to apply for this app assignment.
 func (m *WinGetAppAssignmentSettings) GetRestartSettings()(WinGetAppRestartSettingsable) {
     val, err := m.GetBackingStore().Get("restartSettings")
@@ -109,6 +130,12 @@ func (m *WinGetAppAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("restartSettings", m.GetRestartSettings())
         if err != nil {
             return err
@@ -130,6 +157,13 @@ func (m *WinGetAppAssignmentSettings) SetNotifications(value *WinGetAppNotificat
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WinGetAppAssignmentSettings) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRestartSettings sets the restartSettings property value. The reboot settings to apply for this app assignment.
 func (m *WinGetAppAssignmentSettings) SetRestartSettings(value WinGetAppRestartSettingsable)() {
     err := m.GetBackingStore().Set("restartSettings", value)
@@ -143,8 +177,10 @@ type WinGetAppAssignmentSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetInstallTimeSettings()(WinGetAppInstallTimeSettingsable)
     GetNotifications()(*WinGetAppNotification)
+    GetOdataType()(*string)
     GetRestartSettings()(WinGetAppRestartSettingsable)
     SetInstallTimeSettings(value WinGetAppInstallTimeSettingsable)()
     SetNotifications(value *WinGetAppNotification)()
+    SetOdataType(value *string)()
     SetRestartSettings(value WinGetAppRestartSettingsable)()
 }

@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationChoiceSettingValue 
+// DeviceManagementConfigurationChoiceSettingValue setting value
 type DeviceManagementConfigurationChoiceSettingValue struct {
     DeviceManagementConfigurationSettingValue
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceManagementConfigurationChoiceSettingValue instantiates a new DeviceManagementConfigurationChoiceSettingValue and sets the default values.
+// NewDeviceManagementConfigurationChoiceSettingValue instantiates a new deviceManagementConfigurationChoiceSettingValue and sets the default values.
 func NewDeviceManagementConfigurationChoiceSettingValue()(*DeviceManagementConfigurationChoiceSettingValue) {
     m := &DeviceManagementConfigurationChoiceSettingValue{
         DeviceManagementConfigurationSettingValue: *NewDeviceManagementConfigurationSettingValue(),

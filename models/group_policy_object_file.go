@@ -9,6 +9,8 @@ import (
 // GroupPolicyObjectFile the Group Policy Object file uploaded by admin.
 type GroupPolicyObjectFile struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewGroupPolicyObjectFile instantiates a new groupPolicyObjectFile and sets the default values.
 func NewGroupPolicyObjectFile()(*GroupPolicyObjectFile) {

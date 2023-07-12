@@ -8,7 +8,7 @@ import (
 type AndroidManagedStoreAppConfigurationSchemaCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAndroidManagedStoreAppConfigurationSchemaCollectionResponse instantiates a new AndroidManagedStoreAppConfigurationSchemaCollectionResponse and sets the default values.
+// NewAndroidManagedStoreAppConfigurationSchemaCollectionResponse instantiates a new androidManagedStoreAppConfigurationSchemaCollectionResponse and sets the default values.
 func NewAndroidManagedStoreAppConfigurationSchemaCollectionResponse()(*AndroidManagedStoreAppConfigurationSchemaCollectionResponse) {
     m := &AndroidManagedStoreAppConfigurationSchemaCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

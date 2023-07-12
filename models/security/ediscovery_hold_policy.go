@@ -8,7 +8,7 @@ import (
 type EdiscoveryHoldPolicy struct {
     PolicyBase
 }
-// NewEdiscoveryHoldPolicy instantiates a new EdiscoveryHoldPolicy and sets the default values.
+// NewEdiscoveryHoldPolicy instantiates a new ediscoveryHoldPolicy and sets the default values.
 func NewEdiscoveryHoldPolicy()(*EdiscoveryHoldPolicy) {
     m := &EdiscoveryHoldPolicy{
         PolicyBase: *NewPolicyBase(),

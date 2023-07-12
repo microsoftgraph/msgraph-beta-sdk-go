@@ -9,7 +9,7 @@ import (
 type EdiscoveryNoncustodialDataSourceCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewEdiscoveryNoncustodialDataSourceCollectionResponse instantiates a new EdiscoveryNoncustodialDataSourceCollectionResponse and sets the default values.
+// NewEdiscoveryNoncustodialDataSourceCollectionResponse instantiates a new ediscoveryNoncustodialDataSourceCollectionResponse and sets the default values.
 func NewEdiscoveryNoncustodialDataSourceCollectionResponse()(*EdiscoveryNoncustodialDataSourceCollectionResponse) {
     m := &EdiscoveryNoncustodialDataSourceCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

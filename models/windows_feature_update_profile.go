@@ -8,6 +8,8 @@ import (
 // WindowsFeatureUpdateProfile windows Feature Update Profile
 type WindowsFeatureUpdateProfile struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWindowsFeatureUpdateProfile instantiates a new windowsFeatureUpdateProfile and sets the default values.
 func NewWindowsFeatureUpdateProfile()(*WindowsFeatureUpdateProfile) {

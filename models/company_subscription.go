@@ -8,8 +8,10 @@ import (
 // CompanySubscription 
 type CompanySubscription struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewCompanySubscription instantiates a new CompanySubscription and sets the default values.
+// NewCompanySubscription instantiates a new companySubscription and sets the default values.
 func NewCompanySubscription()(*CompanySubscription) {
     m := &CompanySubscription{
         Entity: *NewEntity(),

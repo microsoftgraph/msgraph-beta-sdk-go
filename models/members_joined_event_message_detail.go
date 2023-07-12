@@ -7,8 +7,10 @@ import (
 // MembersJoinedEventMessageDetail 
 type MembersJoinedEventMessageDetail struct {
     EventMessageDetail
+    // The OdataType property
+    OdataType *string
 }
-// NewMembersJoinedEventMessageDetail instantiates a new MembersJoinedEventMessageDetail and sets the default values.
+// NewMembersJoinedEventMessageDetail instantiates a new membersJoinedEventMessageDetail and sets the default values.
 func NewMembersJoinedEventMessageDetail()(*MembersJoinedEventMessageDetail) {
     m := &MembersJoinedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),

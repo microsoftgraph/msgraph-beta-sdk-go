@@ -8,7 +8,7 @@ import (
 type EmbeddedSIMDeviceStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewEmbeddedSIMDeviceStateCollectionResponse instantiates a new EmbeddedSIMDeviceStateCollectionResponse and sets the default values.
+// NewEmbeddedSIMDeviceStateCollectionResponse instantiates a new embeddedSIMDeviceStateCollectionResponse and sets the default values.
 func NewEmbeddedSIMDeviceStateCollectionResponse()(*EmbeddedSIMDeviceStateCollectionResponse) {
     m := &EmbeddedSIMDeviceStateCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

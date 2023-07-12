@@ -8,7 +8,7 @@ import (
 type BusinessScenarioTask struct {
     PlannerTask
 }
-// NewBusinessScenarioTask instantiates a new BusinessScenarioTask and sets the default values.
+// NewBusinessScenarioTask instantiates a new businessScenarioTask and sets the default values.
 func NewBusinessScenarioTask()(*BusinessScenarioTask) {
     m := &BusinessScenarioTask{
         PlannerTask: *NewPlannerTask(),

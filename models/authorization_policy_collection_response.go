@@ -8,7 +8,7 @@ import (
 type AuthorizationPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAuthorizationPolicyCollectionResponse instantiates a new AuthorizationPolicyCollectionResponse and sets the default values.
+// NewAuthorizationPolicyCollectionResponse instantiates a new authorizationPolicyCollectionResponse and sets the default values.
 func NewAuthorizationPolicyCollectionResponse()(*AuthorizationPolicyCollectionResponse) {
     m := &AuthorizationPolicyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

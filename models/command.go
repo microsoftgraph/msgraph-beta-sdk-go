@@ -7,6 +7,8 @@ import (
 // Command 
 type Command struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewCommand instantiates a new command and sets the default values.
 func NewCommand()(*Command) {

@@ -9,7 +9,7 @@ import (
 type ReviewSetQueryCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewReviewSetQueryCollectionResponse instantiates a new ReviewSetQueryCollectionResponse and sets the default values.
+// NewReviewSetQueryCollectionResponse instantiates a new reviewSetQueryCollectionResponse and sets the default values.
 func NewReviewSetQueryCollectionResponse()(*ReviewSetQueryCollectionResponse) {
     m := &ReviewSetQueryCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

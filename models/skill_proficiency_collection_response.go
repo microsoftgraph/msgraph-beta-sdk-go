@@ -8,7 +8,7 @@ import (
 type SkillProficiencyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSkillProficiencyCollectionResponse instantiates a new SkillProficiencyCollectionResponse and sets the default values.
+// NewSkillProficiencyCollectionResponse instantiates a new skillProficiencyCollectionResponse and sets the default values.
 func NewSkillProficiencyCollectionResponse()(*SkillProficiencyCollectionResponse) {
     m := &SkillProficiencyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

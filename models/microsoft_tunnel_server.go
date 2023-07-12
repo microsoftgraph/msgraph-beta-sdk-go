@@ -8,6 +8,8 @@ import (
 // MicrosoftTunnelServer entity that represents a single Microsoft Tunnel server
 type MicrosoftTunnelServer struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewMicrosoftTunnelServer instantiates a new microsoftTunnelServer and sets the default values.
 func NewMicrosoftTunnelServer()(*MicrosoftTunnelServer) {

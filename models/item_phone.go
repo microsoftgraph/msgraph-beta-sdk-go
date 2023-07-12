@@ -8,7 +8,7 @@ import (
 type ItemPhone struct {
     ItemFacet
 }
-// NewItemPhone instantiates a new ItemPhone and sets the default values.
+// NewItemPhone instantiates a new itemPhone and sets the default values.
 func NewItemPhone()(*ItemPhone) {
     m := &ItemPhone{
         ItemFacet: *NewItemFacet(),

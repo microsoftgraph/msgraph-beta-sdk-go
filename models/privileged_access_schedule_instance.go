@@ -8,6 +8,8 @@ import (
 // PrivilegedAccessScheduleInstance 
 type PrivilegedAccessScheduleInstance struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewPrivilegedAccessScheduleInstance instantiates a new privilegedAccessScheduleInstance and sets the default values.
 func NewPrivilegedAccessScheduleInstance()(*PrivilegedAccessScheduleInstance) {

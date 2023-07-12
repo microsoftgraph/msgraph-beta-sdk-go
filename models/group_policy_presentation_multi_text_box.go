@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupPolicyPresentationMultiTextBox 
+// GroupPolicyPresentationMultiTextBox represents an ADMX multiTextBox element and an ADMX multiText element.
 type GroupPolicyPresentationMultiTextBox struct {
     GroupPolicyUploadedPresentation
 }
-// NewGroupPolicyPresentationMultiTextBox instantiates a new GroupPolicyPresentationMultiTextBox and sets the default values.
+// NewGroupPolicyPresentationMultiTextBox instantiates a new groupPolicyPresentationMultiTextBox and sets the default values.
 func NewGroupPolicyPresentationMultiTextBox()(*GroupPolicyPresentationMultiTextBox) {
     m := &GroupPolicyPresentationMultiTextBox{
         GroupPolicyUploadedPresentation: *NewGroupPolicyUploadedPresentation(),

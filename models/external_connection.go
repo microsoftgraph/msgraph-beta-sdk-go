@@ -7,6 +7,8 @@ import (
 // ExternalConnection 
 type ExternalConnection struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewExternalConnection instantiates a new externalConnection and sets the default values.
 func NewExternalConnection()(*ExternalConnection) {

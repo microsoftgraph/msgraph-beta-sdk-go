@@ -8,7 +8,7 @@ import (
 type WebApplicationSegment struct {
     ApplicationSegment
 }
-// NewWebApplicationSegment instantiates a new WebApplicationSegment and sets the default values.
+// NewWebApplicationSegment instantiates a new webApplicationSegment and sets the default values.
 func NewWebApplicationSegment()(*WebApplicationSegment) {
     m := &WebApplicationSegment{
         ApplicationSegment: *NewApplicationSegment(),

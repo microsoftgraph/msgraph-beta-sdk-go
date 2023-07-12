@@ -8,7 +8,7 @@ import (
 type EducationSynchronizationProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewEducationSynchronizationProfileCollectionResponse instantiates a new EducationSynchronizationProfileCollectionResponse and sets the default values.
+// NewEducationSynchronizationProfileCollectionResponse instantiates a new educationSynchronizationProfileCollectionResponse and sets the default values.
 func NewEducationSynchronizationProfileCollectionResponse()(*EducationSynchronizationProfileCollectionResponse) {
     m := &EducationSynchronizationProfileCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

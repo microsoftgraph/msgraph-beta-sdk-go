@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows10VpnConfiguration 
+// Windows10VpnConfiguration by providing the configurations in this profile you can instruct the Windows 10 device (desktop or mobile) to connect to desired VPN endpoint. By specifying the authentication method and security types expected by VPN endpoint you can make the VPN connection seamless for end user.
 type Windows10VpnConfiguration struct {
     WindowsVpnConfiguration
 }
-// NewWindows10VpnConfiguration instantiates a new Windows10VpnConfiguration and sets the default values.
+// NewWindows10VpnConfiguration instantiates a new windows10VpnConfiguration and sets the default values.
 func NewWindows10VpnConfiguration()(*Windows10VpnConfiguration) {
     m := &Windows10VpnConfiguration{
         WindowsVpnConfiguration: *NewWindowsVpnConfiguration(),

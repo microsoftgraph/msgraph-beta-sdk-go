@@ -8,7 +8,7 @@ import (
 type AgedAccountsPayableCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAgedAccountsPayableCollectionResponse instantiates a new AgedAccountsPayableCollectionResponse and sets the default values.
+// NewAgedAccountsPayableCollectionResponse instantiates a new agedAccountsPayableCollectionResponse and sets the default values.
 func NewAgedAccountsPayableCollectionResponse()(*AgedAccountsPayableCollectionResponse) {
     m := &AgedAccountsPayableCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

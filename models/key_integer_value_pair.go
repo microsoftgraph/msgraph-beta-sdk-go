@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// KeyIntegerValuePair 
+// KeyIntegerValuePair a key-value pair with a string key and an integer value.
 type KeyIntegerValuePair struct {
     KeyTypedValuePair
+    // The OdataType property
+    OdataType *string
 }
-// NewKeyIntegerValuePair instantiates a new KeyIntegerValuePair and sets the default values.
+// NewKeyIntegerValuePair instantiates a new keyIntegerValuePair and sets the default values.
 func NewKeyIntegerValuePair()(*KeyIntegerValuePair) {
     m := &KeyIntegerValuePair{
         KeyTypedValuePair: *NewKeyTypedValuePair(),

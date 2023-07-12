@@ -8,6 +8,8 @@ import (
 // ItemFacet 
 type ItemFacet struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewItemFacet instantiates a new itemFacet and sets the default values.
 func NewItemFacet()(*ItemFacet) {

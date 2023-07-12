@@ -7,6 +7,8 @@ import (
 // DocumentCommentReply 
 type DocumentCommentReply struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDocumentCommentReply instantiates a new documentCommentReply and sets the default values.
 func NewDocumentCommentReply()(*DocumentCommentReply) {

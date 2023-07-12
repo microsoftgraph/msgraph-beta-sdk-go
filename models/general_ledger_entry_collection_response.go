@@ -8,7 +8,7 @@ import (
 type GeneralLedgerEntryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewGeneralLedgerEntryCollectionResponse instantiates a new GeneralLedgerEntryCollectionResponse and sets the default values.
+// NewGeneralLedgerEntryCollectionResponse instantiates a new generalLedgerEntryCollectionResponse and sets the default values.
 func NewGeneralLedgerEntryCollectionResponse()(*GeneralLedgerEntryCollectionResponse) {
     m := &GeneralLedgerEntryCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

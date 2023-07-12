@@ -8,6 +8,8 @@ import (
 // DelegatedAdminAccessAssignment 
 type DelegatedAdminAccessAssignment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDelegatedAdminAccessAssignment instantiates a new delegatedAdminAccessAssignment and sets the default values.
 func NewDelegatedAdminAccessAssignment()(*DelegatedAdminAccessAssignment) {

@@ -7,8 +7,10 @@ import (
 // MobilityManagementPolicy 
 type MobilityManagementPolicy struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewMobilityManagementPolicy instantiates a new MobilityManagementPolicy and sets the default values.
+// NewMobilityManagementPolicy instantiates a new mobilityManagementPolicy and sets the default values.
 func NewMobilityManagementPolicy()(*MobilityManagementPolicy) {
     m := &MobilityManagementPolicy{
         Entity: *NewEntity(),

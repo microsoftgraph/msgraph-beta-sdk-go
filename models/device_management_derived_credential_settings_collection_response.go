@@ -8,7 +8,7 @@ import (
 type DeviceManagementDerivedCredentialSettingsCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceManagementDerivedCredentialSettingsCollectionResponse instantiates a new DeviceManagementDerivedCredentialSettingsCollectionResponse and sets the default values.
+// NewDeviceManagementDerivedCredentialSettingsCollectionResponse instantiates a new deviceManagementDerivedCredentialSettingsCollectionResponse and sets the default values.
 func NewDeviceManagementDerivedCredentialSettingsCollectionResponse()(*DeviceManagementDerivedCredentialSettingsCollectionResponse) {
     m := &DeviceManagementDerivedCredentialSettingsCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

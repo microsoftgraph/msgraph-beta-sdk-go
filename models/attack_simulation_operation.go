@@ -8,7 +8,7 @@ import (
 type AttackSimulationOperation struct {
     LongRunningOperation
 }
-// NewAttackSimulationOperation instantiates a new AttackSimulationOperation and sets the default values.
+// NewAttackSimulationOperation instantiates a new attackSimulationOperation and sets the default values.
 func NewAttackSimulationOperation()(*AttackSimulationOperation) {
     m := &AttackSimulationOperation{
         LongRunningOperation: *NewLongRunningOperation(),

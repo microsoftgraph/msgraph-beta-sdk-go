@@ -7,8 +7,10 @@ import (
 // PersistentBrowserSessionControl 
 type PersistentBrowserSessionControl struct {
     ConditionalAccessSessionControl
+    // The OdataType property
+    OdataType *string
 }
-// NewPersistentBrowserSessionControl instantiates a new PersistentBrowserSessionControl and sets the default values.
+// NewPersistentBrowserSessionControl instantiates a new persistentBrowserSessionControl and sets the default values.
 func NewPersistentBrowserSessionControl()(*PersistentBrowserSessionControl) {
     m := &PersistentBrowserSessionControl{
         ConditionalAccessSessionControl: *NewConditionalAccessSessionControl(),

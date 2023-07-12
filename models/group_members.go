@@ -8,7 +8,7 @@ import (
 type GroupMembers struct {
     UserSet
 }
-// NewGroupMembers instantiates a new GroupMembers and sets the default values.
+// NewGroupMembers instantiates a new groupMembers and sets the default values.
 func NewGroupMembers()(*GroupMembers) {
     m := &GroupMembers{
         UserSet: *NewUserSet(),
@@ -55,11 +55,32 @@ func (m *GroupMembers) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetId gets the id property value. The ID of the group in Azure AD.
 func (m *GroupMembers) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *GroupMembers) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -86,6 +107,12 @@ func (m *GroupMembers) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDescription sets the description property value. The name of the group in Azure AD. Read only.
@@ -102,12 +129,21 @@ func (m *GroupMembers) SetId(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *GroupMembers) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // GroupMembersable 
 type GroupMembersable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UserSetable
     GetDescription()(*string)
     GetId()(*string)
+    GetOdataType()(*string)
     SetDescription(value *string)()
     SetId(value *string)()
+    SetOdataType(value *string)()
 }

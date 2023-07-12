@@ -7,6 +7,8 @@ import (
 // DeviceManagementComplianceScheduledActionForRule scheduled Action for Rule
 type DeviceManagementComplianceScheduledActionForRule struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceManagementComplianceScheduledActionForRule instantiates a new deviceManagementComplianceScheduledActionForRule and sets the default values.
 func NewDeviceManagementComplianceScheduledActionForRule()(*DeviceManagementComplianceScheduledActionForRule) {

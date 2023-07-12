@@ -7,8 +7,10 @@ import (
 // AccessPackageResourceAttributeQuestion 
 type AccessPackageResourceAttributeQuestion struct {
     AccessPackageResourceAttributeSource
+    // The OdataType property
+    OdataType *string
 }
-// NewAccessPackageResourceAttributeQuestion instantiates a new AccessPackageResourceAttributeQuestion and sets the default values.
+// NewAccessPackageResourceAttributeQuestion instantiates a new accessPackageResourceAttributeQuestion and sets the default values.
 func NewAccessPackageResourceAttributeQuestion()(*AccessPackageResourceAttributeQuestion) {
     m := &AccessPackageResourceAttributeQuestion{
         AccessPackageResourceAttributeSource: *NewAccessPackageResourceAttributeSource(),

@@ -8,7 +8,7 @@ import (
 type CaseHoldOperation struct {
     CaseOperation
 }
-// NewCaseHoldOperation instantiates a new CaseHoldOperation and sets the default values.
+// NewCaseHoldOperation instantiates a new caseHoldOperation and sets the default values.
 func NewCaseHoldOperation()(*CaseHoldOperation) {
     m := &CaseHoldOperation{
         CaseOperation: *NewCaseOperation(),

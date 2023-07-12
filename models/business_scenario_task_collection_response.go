@@ -8,7 +8,7 @@ import (
 type BusinessScenarioTaskCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewBusinessScenarioTaskCollectionResponse instantiates a new BusinessScenarioTaskCollectionResponse and sets the default values.
+// NewBusinessScenarioTaskCollectionResponse instantiates a new businessScenarioTaskCollectionResponse and sets the default values.
 func NewBusinessScenarioTaskCollectionResponse()(*BusinessScenarioTaskCollectionResponse) {
     m := &BusinessScenarioTaskCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

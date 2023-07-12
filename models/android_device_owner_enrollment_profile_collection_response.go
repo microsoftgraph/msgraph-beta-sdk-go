@@ -8,7 +8,7 @@ import (
 type AndroidDeviceOwnerEnrollmentProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAndroidDeviceOwnerEnrollmentProfileCollectionResponse instantiates a new AndroidDeviceOwnerEnrollmentProfileCollectionResponse and sets the default values.
+// NewAndroidDeviceOwnerEnrollmentProfileCollectionResponse instantiates a new androidDeviceOwnerEnrollmentProfileCollectionResponse and sets the default values.
 func NewAndroidDeviceOwnerEnrollmentProfileCollectionResponse()(*AndroidDeviceOwnerEnrollmentProfileCollectionResponse) {
     m := &AndroidDeviceOwnerEnrollmentProfileCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

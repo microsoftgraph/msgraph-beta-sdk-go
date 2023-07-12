@@ -8,7 +8,7 @@ import (
 type OnPremisesPublishingProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewOnPremisesPublishingProfileCollectionResponse instantiates a new OnPremisesPublishingProfileCollectionResponse and sets the default values.
+// NewOnPremisesPublishingProfileCollectionResponse instantiates a new onPremisesPublishingProfileCollectionResponse and sets the default values.
 func NewOnPremisesPublishingProfileCollectionResponse()(*OnPremisesPublishingProfileCollectionResponse) {
     m := &OnPremisesPublishingProfileCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

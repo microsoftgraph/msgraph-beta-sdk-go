@@ -7,8 +7,10 @@ import (
 // AuthenticationFlowsPolicy 
 type AuthenticationFlowsPolicy struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewAuthenticationFlowsPolicy instantiates a new AuthenticationFlowsPolicy and sets the default values.
+// NewAuthenticationFlowsPolicy instantiates a new authenticationFlowsPolicy and sets the default values.
 func NewAuthenticationFlowsPolicy()(*AuthenticationFlowsPolicy) {
     m := &AuthenticationFlowsPolicy{
         Entity: *NewEntity(),

@@ -7,8 +7,10 @@ import (
 // NoTrainingNotificationSetting 
 type NoTrainingNotificationSetting struct {
     EndUserNotificationSetting
+    // The OdataType property
+    OdataType *string
 }
-// NewNoTrainingNotificationSetting instantiates a new NoTrainingNotificationSetting and sets the default values.
+// NewNoTrainingNotificationSetting instantiates a new noTrainingNotificationSetting and sets the default values.
 func NewNoTrainingNotificationSetting()(*NoTrainingNotificationSetting) {
     m := &NoTrainingNotificationSetting{
         EndUserNotificationSetting: *NewEndUserNotificationSetting(),

@@ -8,6 +8,8 @@ import (
 // TeamTemplateDefinition 
 type TeamTemplateDefinition struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewTeamTemplateDefinition instantiates a new teamTemplateDefinition and sets the default values.
 func NewTeamTemplateDefinition()(*TeamTemplateDefinition) {

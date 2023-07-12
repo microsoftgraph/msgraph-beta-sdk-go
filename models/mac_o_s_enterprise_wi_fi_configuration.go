@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MacOSEnterpriseWiFiConfiguration 
+// MacOSEnterpriseWiFiConfiguration macOS Wi-Fi WPA-Enterprise/WPA2-Enterprise configuration profile.
 type MacOSEnterpriseWiFiConfiguration struct {
     MacOSWiFiConfiguration
 }
-// NewMacOSEnterpriseWiFiConfiguration instantiates a new MacOSEnterpriseWiFiConfiguration and sets the default values.
+// NewMacOSEnterpriseWiFiConfiguration instantiates a new macOSEnterpriseWiFiConfiguration and sets the default values.
 func NewMacOSEnterpriseWiFiConfiguration()(*MacOSEnterpriseWiFiConfiguration) {
     m := &MacOSEnterpriseWiFiConfiguration{
         MacOSWiFiConfiguration: *NewMacOSWiFiConfiguration(),

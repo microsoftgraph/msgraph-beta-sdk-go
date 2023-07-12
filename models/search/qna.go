@@ -10,7 +10,7 @@ import (
 type Qna struct {
     SearchAnswer
 }
-// NewQna instantiates a new Qna and sets the default values.
+// NewQna instantiates a new qna and sets the default values.
 func NewQna()(*Qna) {
     m := &Qna{
         SearchAnswer: *NewSearchAnswer(),

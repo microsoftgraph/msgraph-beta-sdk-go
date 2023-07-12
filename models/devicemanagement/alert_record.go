@@ -9,6 +9,8 @@ import (
 // AlertRecord 
 type AlertRecord struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAlertRecord instantiates a new alertRecord and sets the default values.
 func NewAlertRecord()(*AlertRecord) {

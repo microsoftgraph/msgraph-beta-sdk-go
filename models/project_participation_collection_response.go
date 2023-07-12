@@ -8,7 +8,7 @@ import (
 type ProjectParticipationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewProjectParticipationCollectionResponse instantiates a new ProjectParticipationCollectionResponse and sets the default values.
+// NewProjectParticipationCollectionResponse instantiates a new projectParticipationCollectionResponse and sets the default values.
 func NewProjectParticipationCollectionResponse()(*ProjectParticipationCollectionResponse) {
     m := &ProjectParticipationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

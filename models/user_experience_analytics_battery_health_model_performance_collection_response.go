@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsBatteryHealthModelPerformanceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUserExperienceAnalyticsBatteryHealthModelPerformanceCollectionResponse instantiates a new UserExperienceAnalyticsBatteryHealthModelPerformanceCollectionResponse and sets the default values.
+// NewUserExperienceAnalyticsBatteryHealthModelPerformanceCollectionResponse instantiates a new userExperienceAnalyticsBatteryHealthModelPerformanceCollectionResponse and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthModelPerformanceCollectionResponse()(*UserExperienceAnalyticsBatteryHealthModelPerformanceCollectionResponse) {
     m := &UserExperienceAnalyticsBatteryHealthModelPerformanceCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

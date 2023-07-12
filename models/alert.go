@@ -8,8 +8,10 @@ import (
 // Alert 
 type Alert struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewAlert instantiates a new Alert and sets the default values.
+// NewAlert instantiates a new alert and sets the default values.
 func NewAlert()(*Alert) {
     m := &Alert{
         Entity: *NewEntity(),

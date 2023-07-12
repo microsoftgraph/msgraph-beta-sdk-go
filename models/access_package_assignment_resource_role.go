@@ -7,6 +7,8 @@ import (
 // AccessPackageAssignmentResourceRole 
 type AccessPackageAssignmentResourceRole struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAccessPackageAssignmentResourceRole instantiates a new accessPackageAssignmentResourceRole and sets the default values.
 func NewAccessPackageAssignmentResourceRole()(*AccessPackageAssignmentResourceRole) {

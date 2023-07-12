@@ -8,8 +8,10 @@ import (
 // CustomSecurityAttributeAudit 
 type CustomSecurityAttributeAudit struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewCustomSecurityAttributeAudit instantiates a new CustomSecurityAttributeAudit and sets the default values.
+// NewCustomSecurityAttributeAudit instantiates a new customSecurityAttributeAudit and sets the default values.
 func NewCustomSecurityAttributeAudit()(*CustomSecurityAttributeAudit) {
     m := &CustomSecurityAttributeAudit{
         Entity: *NewEntity(),

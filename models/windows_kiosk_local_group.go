@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsKioskLocalGroup 
+// WindowsKioskLocalGroup the class used to identify a local group for the kiosk configuration
 type WindowsKioskLocalGroup struct {
     WindowsKioskUser
+    // The OdataType property
+    OdataType *string
 }
-// NewWindowsKioskLocalGroup instantiates a new WindowsKioskLocalGroup and sets the default values.
+// NewWindowsKioskLocalGroup instantiates a new windowsKioskLocalGroup and sets the default values.
 func NewWindowsKioskLocalGroup()(*WindowsKioskLocalGroup) {
     m := &WindowsKioskLocalGroup{
         WindowsKioskUser: *NewWindowsKioskUser(),

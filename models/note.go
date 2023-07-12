@@ -8,7 +8,7 @@ import (
 type Note struct {
     OutlookItem
 }
-// NewNote instantiates a new Note and sets the default values.
+// NewNote instantiates a new note and sets the default values.
 func NewNote()(*Note) {
     m := &Note{
         OutlookItem: *NewOutlookItem(),

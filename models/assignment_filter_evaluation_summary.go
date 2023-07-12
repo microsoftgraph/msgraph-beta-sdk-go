@@ -11,7 +11,7 @@ type AssignmentFilterEvaluationSummary struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAssignmentFilterEvaluationSummary instantiates a new AssignmentFilterEvaluationSummary and sets the default values.
+// NewAssignmentFilterEvaluationSummary instantiates a new assignmentFilterEvaluationSummary and sets the default values.
 func NewAssignmentFilterEvaluationSummary()(*AssignmentFilterEvaluationSummary) {
     m := &AssignmentFilterEvaluationSummary{
     }

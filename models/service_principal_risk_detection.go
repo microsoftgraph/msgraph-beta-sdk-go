@@ -8,8 +8,10 @@ import (
 // ServicePrincipalRiskDetection 
 type ServicePrincipalRiskDetection struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewServicePrincipalRiskDetection instantiates a new ServicePrincipalRiskDetection and sets the default values.
+// NewServicePrincipalRiskDetection instantiates a new servicePrincipalRiskDetection and sets the default values.
 func NewServicePrincipalRiskDetection()(*ServicePrincipalRiskDetection) {
     m := &ServicePrincipalRiskDetection{
         Entity: *NewEntity(),

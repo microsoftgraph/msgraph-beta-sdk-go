@@ -7,8 +7,10 @@ import (
 // Office365GroupsActivityFileCounts 
 type Office365GroupsActivityFileCounts struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewOffice365GroupsActivityFileCounts instantiates a new Office365GroupsActivityFileCounts and sets the default values.
+// NewOffice365GroupsActivityFileCounts instantiates a new office365GroupsActivityFileCounts and sets the default values.
 func NewOffice365GroupsActivityFileCounts()(*Office365GroupsActivityFileCounts) {
     m := &Office365GroupsActivityFileCounts{
         Entity: *NewEntity(),

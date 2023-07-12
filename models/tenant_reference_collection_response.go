@@ -8,7 +8,7 @@ import (
 type TenantReferenceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTenantReferenceCollectionResponse instantiates a new TenantReferenceCollectionResponse and sets the default values.
+// NewTenantReferenceCollectionResponse instantiates a new tenantReferenceCollectionResponse and sets the default values.
 func NewTenantReferenceCollectionResponse()(*TenantReferenceCollectionResponse) {
     m := &TenantReferenceCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

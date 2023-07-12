@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DefaultDeviceCompliancePolicy 
+// DefaultDeviceCompliancePolicy default device compliance policy rules that are enforced account wide.
 type DefaultDeviceCompliancePolicy struct {
     DeviceCompliancePolicy
 }
-// NewDefaultDeviceCompliancePolicy instantiates a new DefaultDeviceCompliancePolicy and sets the default values.
+// NewDefaultDeviceCompliancePolicy instantiates a new defaultDeviceCompliancePolicy and sets the default values.
 func NewDefaultDeviceCompliancePolicy()(*DefaultDeviceCompliancePolicy) {
     m := &DefaultDeviceCompliancePolicy{
         DeviceCompliancePolicy: *NewDeviceCompliancePolicy(),

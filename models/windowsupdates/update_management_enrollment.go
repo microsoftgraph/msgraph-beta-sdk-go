@@ -7,8 +7,10 @@ import (
 // UpdateManagementEnrollment 
 type UpdateManagementEnrollment struct {
     UpdatableAssetEnrollment
+    // The OdataType property
+    OdataType *string
 }
-// NewUpdateManagementEnrollment instantiates a new UpdateManagementEnrollment and sets the default values.
+// NewUpdateManagementEnrollment instantiates a new updateManagementEnrollment and sets the default values.
 func NewUpdateManagementEnrollment()(*UpdateManagementEnrollment) {
     m := &UpdateManagementEnrollment{
         UpdatableAssetEnrollment: *NewUpdatableAssetEnrollment(),

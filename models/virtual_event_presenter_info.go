@@ -7,8 +7,10 @@ import (
 // VirtualEventPresenterInfo 
 type VirtualEventPresenterInfo struct {
     MeetingParticipantInfo
+    // The OdataType property
+    OdataType *string
 }
-// NewVirtualEventPresenterInfo instantiates a new VirtualEventPresenterInfo and sets the default values.
+// NewVirtualEventPresenterInfo instantiates a new virtualEventPresenterInfo and sets the default values.
 func NewVirtualEventPresenterInfo()(*VirtualEventPresenterInfo) {
     m := &VirtualEventPresenterInfo{
         MeetingParticipantInfo: *NewMeetingParticipantInfo(),

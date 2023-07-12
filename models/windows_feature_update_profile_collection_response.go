@@ -8,7 +8,7 @@ import (
 type WindowsFeatureUpdateProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWindowsFeatureUpdateProfileCollectionResponse instantiates a new WindowsFeatureUpdateProfileCollectionResponse and sets the default values.
+// NewWindowsFeatureUpdateProfileCollectionResponse instantiates a new windowsFeatureUpdateProfileCollectionResponse and sets the default values.
 func NewWindowsFeatureUpdateProfileCollectionResponse()(*WindowsFeatureUpdateProfileCollectionResponse) {
     m := &WindowsFeatureUpdateProfileCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

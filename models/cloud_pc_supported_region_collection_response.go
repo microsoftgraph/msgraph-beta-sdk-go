@@ -8,7 +8,7 @@ import (
 type CloudPcSupportedRegionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCloudPcSupportedRegionCollectionResponse instantiates a new CloudPcSupportedRegionCollectionResponse and sets the default values.
+// NewCloudPcSupportedRegionCollectionResponse instantiates a new cloudPcSupportedRegionCollectionResponse and sets the default values.
 func NewCloudPcSupportedRegionCollectionResponse()(*CloudPcSupportedRegionCollectionResponse) {
     m := &CloudPcSupportedRegionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -8,7 +8,7 @@ import (
 type DeviceAppManagementTaskCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceAppManagementTaskCollectionResponse instantiates a new DeviceAppManagementTaskCollectionResponse and sets the default values.
+// NewDeviceAppManagementTaskCollectionResponse instantiates a new deviceAppManagementTaskCollectionResponse and sets the default values.
 func NewDeviceAppManagementTaskCollectionResponse()(*DeviceAppManagementTaskCollectionResponse) {
     m := &DeviceAppManagementTaskCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

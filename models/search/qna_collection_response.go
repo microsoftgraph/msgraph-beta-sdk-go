@@ -9,7 +9,7 @@ import (
 type QnaCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewQnaCollectionResponse instantiates a new QnaCollectionResponse and sets the default values.
+// NewQnaCollectionResponse instantiates a new qnaCollectionResponse and sets the default values.
 func NewQnaCollectionResponse()(*QnaCollectionResponse) {
     m := &QnaCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

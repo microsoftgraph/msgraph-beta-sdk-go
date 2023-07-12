@@ -8,7 +8,7 @@ import (
 type CrossTenantAccessPolicy struct {
     TenantRelationshipAccessPolicyBase
 }
-// NewCrossTenantAccessPolicy instantiates a new CrossTenantAccessPolicy and sets the default values.
+// NewCrossTenantAccessPolicy instantiates a new crossTenantAccessPolicy and sets the default values.
 func NewCrossTenantAccessPolicy()(*CrossTenantAccessPolicy) {
     m := &CrossTenantAccessPolicy{
         TenantRelationshipAccessPolicyBase: *NewTenantRelationshipAccessPolicyBase(),

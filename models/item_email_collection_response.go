@@ -8,7 +8,7 @@ import (
 type ItemEmailCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewItemEmailCollectionResponse instantiates a new ItemEmailCollectionResponse and sets the default values.
+// NewItemEmailCollectionResponse instantiates a new itemEmailCollectionResponse and sets the default values.
 func NewItemEmailCollectionResponse()(*ItemEmailCollectionResponse) {
     m := &ItemEmailCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

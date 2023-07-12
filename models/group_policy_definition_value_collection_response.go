@@ -8,7 +8,7 @@ import (
 type GroupPolicyDefinitionValueCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewGroupPolicyDefinitionValueCollectionResponse instantiates a new GroupPolicyDefinitionValueCollectionResponse and sets the default values.
+// NewGroupPolicyDefinitionValueCollectionResponse instantiates a new groupPolicyDefinitionValueCollectionResponse and sets the default values.
 func NewGroupPolicyDefinitionValueCollectionResponse()(*GroupPolicyDefinitionValueCollectionResponse) {
     m := &GroupPolicyDefinitionValueCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

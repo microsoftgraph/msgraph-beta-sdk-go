@@ -8,7 +8,7 @@ import (
 type EdiscoveryExportOperation struct {
     CaseOperation
 }
-// NewEdiscoveryExportOperation instantiates a new EdiscoveryExportOperation and sets the default values.
+// NewEdiscoveryExportOperation instantiates a new ediscoveryExportOperation and sets the default values.
 func NewEdiscoveryExportOperation()(*EdiscoveryExportOperation) {
     m := &EdiscoveryExportOperation{
         CaseOperation: *NewCaseOperation(),

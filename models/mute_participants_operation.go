@@ -8,7 +8,7 @@ import (
 type MuteParticipantsOperation struct {
     CommsOperation
 }
-// NewMuteParticipantsOperation instantiates a new MuteParticipantsOperation and sets the default values.
+// NewMuteParticipantsOperation instantiates a new muteParticipantsOperation and sets the default values.
 func NewMuteParticipantsOperation()(*MuteParticipantsOperation) {
     m := &MuteParticipantsOperation{
         CommsOperation: *NewCommsOperation(),

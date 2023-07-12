@@ -7,8 +7,10 @@ import (
 // AuthenticationMethodsRoot 
 type AuthenticationMethodsRoot struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewAuthenticationMethodsRoot instantiates a new AuthenticationMethodsRoot and sets the default values.
+// NewAuthenticationMethodsRoot instantiates a new authenticationMethodsRoot and sets the default values.
 func NewAuthenticationMethodsRoot()(*AuthenticationMethodsRoot) {
     m := &AuthenticationMethodsRoot{
         Entity: *NewEntity(),

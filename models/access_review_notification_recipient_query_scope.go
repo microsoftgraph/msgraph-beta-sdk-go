@@ -8,7 +8,7 @@ import (
 type AccessReviewNotificationRecipientQueryScope struct {
     AccessReviewNotificationRecipientScope
 }
-// NewAccessReviewNotificationRecipientQueryScope instantiates a new AccessReviewNotificationRecipientQueryScope and sets the default values.
+// NewAccessReviewNotificationRecipientQueryScope instantiates a new accessReviewNotificationRecipientQueryScope and sets the default values.
 func NewAccessReviewNotificationRecipientQueryScope()(*AccessReviewNotificationRecipientQueryScope) {
     m := &AccessReviewNotificationRecipientQueryScope{
         AccessReviewNotificationRecipientScope: *NewAccessReviewNotificationRecipientScope(),
@@ -24,6 +24,16 @@ func CreateAccessReviewNotificationRecipientQueryScopeFromDiscriminatorValue(par
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessReviewNotificationRecipientQueryScope) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AccessReviewNotificationRecipientScope.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["query"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -56,7 +66,18 @@ func (m *AccessReviewNotificationRecipientQueryScope) GetFieldDeserializers()(ma
     }
     return res
 }
-// GetQuery gets the query property value. This represents the query for who the recipients are. For example, /groups/{group id}/members for group members and /users/{user id} for a specific user.
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessReviewNotificationRecipientQueryScope) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetQuery gets the query property value. Represents the query for who the recipients are. For example, /groups/{group id}/members for group members and /users/{user id} for a specific user.
 func (m *AccessReviewNotificationRecipientQueryScope) GetQuery()(*string) {
     val, err := m.GetBackingStore().Get("query")
     if err != nil {
@@ -67,7 +88,7 @@ func (m *AccessReviewNotificationRecipientQueryScope) GetQuery()(*string) {
     }
     return nil
 }
-// GetQueryRoot gets the queryRoot property value. In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query that is, ./manager) is specified.
+// GetQueryRoot gets the queryRoot property value. In the scenario where reviewers need to be specified dynamically, indicates the relative source of the query. This property is only required if a relative query (that is, ./manager) is specified.
 func (m *AccessReviewNotificationRecipientQueryScope) GetQueryRoot()(*string) {
     val, err := m.GetBackingStore().Get("queryRoot")
     if err != nil {
@@ -96,6 +117,12 @@ func (m *AccessReviewNotificationRecipientQueryScope) Serialize(writer i878a80d2
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("query", m.GetQuery())
         if err != nil {
             return err
@@ -115,14 +142,21 @@ func (m *AccessReviewNotificationRecipientQueryScope) Serialize(writer i878a80d2
     }
     return nil
 }
-// SetQuery sets the query property value. This represents the query for who the recipients are. For example, /groups/{group id}/members for group members and /users/{user id} for a specific user.
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessReviewNotificationRecipientQueryScope) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetQuery sets the query property value. Represents the query for who the recipients are. For example, /groups/{group id}/members for group members and /users/{user id} for a specific user.
 func (m *AccessReviewNotificationRecipientQueryScope) SetQuery(value *string)() {
     err := m.GetBackingStore().Set("query", value)
     if err != nil {
         panic(err)
     }
 }
-// SetQueryRoot sets the queryRoot property value. In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query that is, ./manager) is specified.
+// SetQueryRoot sets the queryRoot property value. In the scenario where reviewers need to be specified dynamically, indicates the relative source of the query. This property is only required if a relative query (that is, ./manager) is specified.
 func (m *AccessReviewNotificationRecipientQueryScope) SetQueryRoot(value *string)() {
     err := m.GetBackingStore().Set("queryRoot", value)
     if err != nil {
@@ -140,9 +174,11 @@ func (m *AccessReviewNotificationRecipientQueryScope) SetQueryType(value *string
 type AccessReviewNotificationRecipientQueryScopeable interface {
     AccessReviewNotificationRecipientScopeable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetQuery()(*string)
     GetQueryRoot()(*string)
     GetQueryType()(*string)
+    SetOdataType(value *string)()
     SetQuery(value *string)()
     SetQueryRoot(value *string)()
     SetQueryType(value *string)()

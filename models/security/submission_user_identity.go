@@ -8,8 +8,10 @@ import (
 // SubmissionUserIdentity 
 type SubmissionUserIdentity struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Identity
+    // The OdataType property
+    OdataType *string
 }
-// NewSubmissionUserIdentity instantiates a new SubmissionUserIdentity and sets the default values.
+// NewSubmissionUserIdentity instantiates a new submissionUserIdentity and sets the default values.
 func NewSubmissionUserIdentity()(*SubmissionUserIdentity) {
     m := &SubmissionUserIdentity{
         Identity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewIdentity(),

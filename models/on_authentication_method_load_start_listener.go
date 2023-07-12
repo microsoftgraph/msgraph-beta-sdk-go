@@ -8,7 +8,7 @@ import (
 type OnAuthenticationMethodLoadStartListener struct {
     AuthenticationEventListener
 }
-// NewOnAuthenticationMethodLoadStartListener instantiates a new OnAuthenticationMethodLoadStartListener and sets the default values.
+// NewOnAuthenticationMethodLoadStartListener instantiates a new onAuthenticationMethodLoadStartListener and sets the default values.
 func NewOnAuthenticationMethodLoadStartListener()(*OnAuthenticationMethodLoadStartListener) {
     m := &OnAuthenticationMethodLoadStartListener{
         AuthenticationEventListener: *NewAuthenticationEventListener(),

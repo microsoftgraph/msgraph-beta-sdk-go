@@ -9,7 +9,7 @@ import (
 type ResourceConnectionCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewResourceConnectionCollectionResponse instantiates a new ResourceConnectionCollectionResponse and sets the default values.
+// NewResourceConnectionCollectionResponse instantiates a new resourceConnectionCollectionResponse and sets the default values.
 func NewResourceConnectionCollectionResponse()(*ResourceConnectionCollectionResponse) {
     m := &ResourceConnectionCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

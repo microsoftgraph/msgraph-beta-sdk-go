@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Win32LobAppRegistryDetection 
+// Win32LobAppRegistryDetection contains registry properties to detect a Win32 App
 type Win32LobAppRegistryDetection struct {
     Win32LobAppDetection
+    // The OdataType property
+    OdataType *string
 }
-// NewWin32LobAppRegistryDetection instantiates a new Win32LobAppRegistryDetection and sets the default values.
+// NewWin32LobAppRegistryDetection instantiates a new win32LobAppRegistryDetection and sets the default values.
 func NewWin32LobAppRegistryDetection()(*Win32LobAppRegistryDetection) {
     m := &Win32LobAppRegistryDetection{
         Win32LobAppDetection: *NewWin32LobAppDetection(),

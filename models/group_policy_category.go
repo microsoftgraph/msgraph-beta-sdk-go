@@ -8,6 +8,8 @@ import (
 // GroupPolicyCategory the category entity stores the category of a group policy definition
 type GroupPolicyCategory struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewGroupPolicyCategory instantiates a new groupPolicyCategory and sets the default values.
 func NewGroupPolicyCategory()(*GroupPolicyCategory) {

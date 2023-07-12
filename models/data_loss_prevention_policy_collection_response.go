@@ -8,7 +8,7 @@ import (
 type DataLossPreventionPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDataLossPreventionPolicyCollectionResponse instantiates a new DataLossPreventionPolicyCollectionResponse and sets the default values.
+// NewDataLossPreventionPolicyCollectionResponse instantiates a new dataLossPreventionPolicyCollectionResponse and sets the default values.
 func NewDataLossPreventionPolicyCollectionResponse()(*DataLossPreventionPolicyCollectionResponse) {
     m := &DataLossPreventionPolicyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

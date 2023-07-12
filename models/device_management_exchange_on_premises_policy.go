@@ -7,6 +7,8 @@ import (
 // DeviceManagementExchangeOnPremisesPolicy singleton entity which represents the Exchange OnPremises policy configured for a tenant.
 type DeviceManagementExchangeOnPremisesPolicy struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceManagementExchangeOnPremisesPolicy instantiates a new deviceManagementExchangeOnPremisesPolicy and sets the default values.
 func NewDeviceManagementExchangeOnPremisesPolicy()(*DeviceManagementExchangeOnPremisesPolicy) {

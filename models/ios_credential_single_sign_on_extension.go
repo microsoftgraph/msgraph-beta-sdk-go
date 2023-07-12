@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosCredentialSingleSignOnExtension 
+// IosCredentialSingleSignOnExtension represents a Credential-type Single Sign-On extension profile for iOS devices.
 type IosCredentialSingleSignOnExtension struct {
     IosSingleSignOnExtension
+    // The OdataType property
+    OdataType *string
 }
-// NewIosCredentialSingleSignOnExtension instantiates a new IosCredentialSingleSignOnExtension and sets the default values.
+// NewIosCredentialSingleSignOnExtension instantiates a new iosCredentialSingleSignOnExtension and sets the default values.
 func NewIosCredentialSingleSignOnExtension()(*IosCredentialSingleSignOnExtension) {
     m := &IosCredentialSingleSignOnExtension{
         IosSingleSignOnExtension: *NewIosSingleSignOnExtension(),

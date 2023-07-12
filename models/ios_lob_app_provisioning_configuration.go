@@ -8,6 +8,8 @@ import (
 // IosLobAppProvisioningConfiguration this topic provides descriptions of the declared methods, properties and relationships exposed by the iOS Lob App Provisioning Configuration resource.
 type IosLobAppProvisioningConfiguration struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewIosLobAppProvisioningConfiguration instantiates a new iosLobAppProvisioningConfiguration and sets the default values.
 func NewIosLobAppProvisioningConfiguration()(*IosLobAppProvisioningConfiguration) {

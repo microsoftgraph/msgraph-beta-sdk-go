@@ -7,8 +7,10 @@ import (
 // SharedEmailDomain 
 type SharedEmailDomain struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewSharedEmailDomain instantiates a new SharedEmailDomain and sets the default values.
+// NewSharedEmailDomain instantiates a new sharedEmailDomain and sets the default values.
 func NewSharedEmailDomain()(*SharedEmailDomain) {
     m := &SharedEmailDomain{
         Entity: *NewEntity(),

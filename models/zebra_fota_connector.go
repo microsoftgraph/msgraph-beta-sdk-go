@@ -5,11 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ZebraFotaConnector 
+// ZebraFotaConnector the Zebra FOTA connector entity that represents the tenant's authorization status for Intune to call Zebra Update Services.
 type ZebraFotaConnector struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewZebraFotaConnector instantiates a new ZebraFotaConnector and sets the default values.
+// NewZebraFotaConnector instantiates a new zebraFotaConnector and sets the default values.
 func NewZebraFotaConnector()(*ZebraFotaConnector) {
     m := &ZebraFotaConnector{
         Entity: *NewEntity(),

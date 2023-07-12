@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConfigurationManagerActionResult 
+// ConfigurationManagerActionResult result of the ConfigurationManager action
 type ConfigurationManagerActionResult struct {
     DeviceActionResult
+    // The OdataType property
+    OdataType *string
 }
-// NewConfigurationManagerActionResult instantiates a new ConfigurationManagerActionResult and sets the default values.
+// NewConfigurationManagerActionResult instantiates a new configurationManagerActionResult and sets the default values.
 func NewConfigurationManagerActionResult()(*ConfigurationManagerActionResult) {
     m := &ConfigurationManagerActionResult{
         DeviceActionResult: *NewDeviceActionResult(),

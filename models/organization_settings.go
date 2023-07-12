@@ -7,6 +7,8 @@ import (
 // OrganizationSettings 
 type OrganizationSettings struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewOrganizationSettings instantiates a new organizationSettings and sets the default values.
 func NewOrganizationSettings()(*OrganizationSettings) {
@@ -145,7 +147,7 @@ func (m *OrganizationSettings) GetProfileCardProperties()([]ProfileCardPropertya
     }
     return nil
 }
-// GetPronouns gets the pronouns property value. Represents administrator settings that manage the support of pronouns in an organization.
+// GetPronouns gets the pronouns property value. The pronouns property
 func (m *OrganizationSettings) GetPronouns()(PronounsSettingsable) {
     val, err := m.GetBackingStore().Get("pronouns")
     if err != nil {
@@ -241,7 +243,7 @@ func (m *OrganizationSettings) SetProfileCardProperties(value []ProfileCardPrope
         panic(err)
     }
 }
-// SetPronouns sets the pronouns property value. Represents administrator settings that manage the support of pronouns in an organization.
+// SetPronouns sets the pronouns property value. The pronouns property
 func (m *OrganizationSettings) SetPronouns(value PronounsSettingsable)() {
     err := m.GetBackingStore().Set("pronouns", value)
     if err != nil {

@@ -8,7 +8,7 @@ import (
 type EnterpriseCodeSigningCertificateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewEnterpriseCodeSigningCertificateCollectionResponse instantiates a new EnterpriseCodeSigningCertificateCollectionResponse and sets the default values.
+// NewEnterpriseCodeSigningCertificateCollectionResponse instantiates a new enterpriseCodeSigningCertificateCollectionResponse and sets the default values.
 func NewEnterpriseCodeSigningCertificateCollectionResponse()(*EnterpriseCodeSigningCertificateCollectionResponse) {
     m := &EnterpriseCodeSigningCertificateCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

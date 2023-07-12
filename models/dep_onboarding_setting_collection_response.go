@@ -8,7 +8,7 @@ import (
 type DepOnboardingSettingCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDepOnboardingSettingCollectionResponse instantiates a new DepOnboardingSettingCollectionResponse and sets the default values.
+// NewDepOnboardingSettingCollectionResponse instantiates a new depOnboardingSettingCollectionResponse and sets the default values.
 func NewDepOnboardingSettingCollectionResponse()(*DepOnboardingSettingCollectionResponse) {
     m := &DepOnboardingSettingCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

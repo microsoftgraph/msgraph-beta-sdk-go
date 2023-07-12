@@ -18,7 +18,7 @@ type DailyPrintUsageByUserPrintUsageByUserItemRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DailyPrintUsageByUserPrintUsageByUserItemRequestBuilderGetQueryParameters get dailyPrintUsageByUser from reports
+// DailyPrintUsageByUserPrintUsageByUserItemRequestBuilderGetQueryParameters retrieve a list of daily print usage summaries, grouped by user.
 type DailyPrintUsageByUserPrintUsageByUserItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *DailyPrintUsageByUserPrintUsageByUserItemRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// Get get dailyPrintUsageByUser from reports
+// Get retrieve a list of daily print usage summaries, grouped by user.
 func (m *DailyPrintUsageByUserPrintUsageByUserItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DailyPrintUsageByUserPrintUsageByUserItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByUserable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +120,7 @@ func (m *DailyPrintUsageByUserPrintUsageByUserItemRequestBuilder) ToDeleteReques
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get dailyPrintUsageByUser from reports
+// ToGetRequestInformation retrieve a list of daily print usage summaries, grouped by user.
 func (m *DailyPrintUsageByUserPrintUsageByUserItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DailyPrintUsageByUserPrintUsageByUserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

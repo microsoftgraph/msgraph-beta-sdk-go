@@ -7,6 +7,8 @@ import (
 // Connector 
 type Connector struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewConnector instantiates a new connector and sets the default values.
 func NewConnector()(*Connector) {

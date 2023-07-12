@@ -8,7 +8,7 @@ import (
 type InvokeUserFlowListener struct {
     AuthenticationListener
 }
-// NewInvokeUserFlowListener instantiates a new InvokeUserFlowListener and sets the default values.
+// NewInvokeUserFlowListener instantiates a new invokeUserFlowListener and sets the default values.
 func NewInvokeUserFlowListener()(*InvokeUserFlowListener) {
     m := &InvokeUserFlowListener{
         AuthenticationListener: *NewAuthenticationListener(),

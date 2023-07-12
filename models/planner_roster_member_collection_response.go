@@ -8,7 +8,7 @@ import (
 type PlannerRosterMemberCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPlannerRosterMemberCollectionResponse instantiates a new PlannerRosterMemberCollectionResponse and sets the default values.
+// NewPlannerRosterMemberCollectionResponse instantiates a new plannerRosterMemberCollectionResponse and sets the default values.
 func NewPlannerRosterMemberCollectionResponse()(*PlannerRosterMemberCollectionResponse) {
     m := &PlannerRosterMemberCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

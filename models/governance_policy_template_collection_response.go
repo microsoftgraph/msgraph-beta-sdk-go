@@ -8,7 +8,7 @@ import (
 type GovernancePolicyTemplateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewGovernancePolicyTemplateCollectionResponse instantiates a new GovernancePolicyTemplateCollectionResponse and sets the default values.
+// NewGovernancePolicyTemplateCollectionResponse instantiates a new governancePolicyTemplateCollectionResponse and sets the default values.
 func NewGovernancePolicyTemplateCollectionResponse()(*GovernancePolicyTemplateCollectionResponse) {
     m := &GovernancePolicyTemplateCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

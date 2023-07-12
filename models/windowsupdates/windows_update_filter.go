@@ -8,7 +8,7 @@ import (
 type WindowsUpdateFilter struct {
     SoftwareUpdateFilter
 }
-// NewWindowsUpdateFilter instantiates a new WindowsUpdateFilter and sets the default values.
+// NewWindowsUpdateFilter instantiates a new windowsUpdateFilter and sets the default values.
 func NewWindowsUpdateFilter()(*WindowsUpdateFilter) {
     m := &WindowsUpdateFilter{
         SoftwareUpdateFilter: *NewSoftwareUpdateFilter(),

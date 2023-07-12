@@ -8,8 +8,10 @@ import (
 // CloudPcExternalPartnerSetting 
 type CloudPcExternalPartnerSetting struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewCloudPcExternalPartnerSetting instantiates a new CloudPcExternalPartnerSetting and sets the default values.
+// NewCloudPcExternalPartnerSetting instantiates a new cloudPcExternalPartnerSetting and sets the default values.
 func NewCloudPcExternalPartnerSetting()(*CloudPcExternalPartnerSetting) {
     m := &CloudPcExternalPartnerSetting{
         Entity: *NewEntity(),

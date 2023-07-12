@@ -41,6 +41,10 @@ type ItemSynchronizationJobsSynchronizationJobItemRequestBuilderPatchRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// BulkUpload provides operations to manage the bulkUpload property of the microsoft.graph.synchronizationJob entity.
+func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) BulkUpload()(*ItemSynchronizationJobsItemBulkUploadRequestBuilder) {
+    return NewItemSynchronizationJobsItemBulkUploadRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemSynchronizationJobsSynchronizationJobItemRequestBuilderInternal instantiates a new SynchronizationJobItemRequestBuilder and sets the default values.
 func NewItemSynchronizationJobsSynchronizationJobItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) {
     m := &ItemSynchronizationJobsSynchronizationJobItemRequestBuilder{

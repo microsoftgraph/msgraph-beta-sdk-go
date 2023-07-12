@@ -8,6 +8,8 @@ import (
 // DeviceManagementScriptDeviceState contains properties for device run state of the device management script.
 type DeviceManagementScriptDeviceState struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceManagementScriptDeviceState instantiates a new deviceManagementScriptDeviceState and sets the default values.
 func NewDeviceManagementScriptDeviceState()(*DeviceManagementScriptDeviceState) {

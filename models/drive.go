@@ -8,7 +8,7 @@ import (
 type Drive struct {
     BaseItem
 }
-// NewDrive instantiates a new Drive and sets the default values.
+// NewDrive instantiates a new drive and sets the default values.
 func NewDrive()(*Drive) {
     m := &Drive{
         BaseItem: *NewBaseItem(),
@@ -141,6 +141,16 @@ func (m *Drive) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["owner"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
@@ -239,6 +249,17 @@ func (m *Drive) GetList()(Listable) {
     }
     if val != nil {
         return val.(Listable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Drive) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -375,6 +396,12 @@ func (m *Drive) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("owner", m.GetOwner())
         if err != nil {
             return err
@@ -460,6 +487,13 @@ func (m *Drive) SetList(value Listable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Drive) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOwner sets the owner property value. Optional. The user account that owns the drive. Read-only.
 func (m *Drive) SetOwner(value IdentitySetable)() {
     err := m.GetBackingStore().Set("owner", value)
@@ -512,6 +546,7 @@ type Driveable interface {
     GetFollowing()([]DriveItemable)
     GetItems()([]DriveItemable)
     GetList()(Listable)
+    GetOdataType()(*string)
     GetOwner()(IdentitySetable)
     GetQuota()(Quotaable)
     GetRoot()(DriveItemable)
@@ -524,6 +559,7 @@ type Driveable interface {
     SetFollowing(value []DriveItemable)()
     SetItems(value []DriveItemable)()
     SetList(value Listable)()
+    SetOdataType(value *string)()
     SetOwner(value IdentitySetable)()
     SetQuota(value Quotaable)()
     SetRoot(value DriveItemable)()

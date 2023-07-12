@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MacOSWiredNetworkConfiguration 
+// MacOSWiredNetworkConfiguration macOS wired network configuration profile.
 type MacOSWiredNetworkConfiguration struct {
     DeviceConfiguration
 }
-// NewMacOSWiredNetworkConfiguration instantiates a new MacOSWiredNetworkConfiguration and sets the default values.
+// NewMacOSWiredNetworkConfiguration instantiates a new macOSWiredNetworkConfiguration and sets the default values.
 func NewMacOSWiredNetworkConfiguration()(*MacOSWiredNetworkConfiguration) {
     m := &MacOSWiredNetworkConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

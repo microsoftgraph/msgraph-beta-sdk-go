@@ -8,6 +8,8 @@ import (
 // SalesInvoiceLine 
 type SalesInvoiceLine struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewSalesInvoiceLine instantiates a new salesInvoiceLine and sets the default values.
 func NewSalesInvoiceLine()(*SalesInvoiceLine) {

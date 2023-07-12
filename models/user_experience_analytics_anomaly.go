@@ -243,6 +243,16 @@ func (m *UserExperienceAnalyticsAnomaly) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["severity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseUserExperienceAnalyticsAnomalySeverity)
         if err != nil {
@@ -268,6 +278,17 @@ func (m *UserExperienceAnalyticsAnomaly) GetFieldDeserializers()(map[string]func
 // GetIssueId gets the issueId property value. The unique identifier of the anomaly detection model.
 func (m *UserExperienceAnalyticsAnomaly) GetIssueId()(*string) {
     val, err := m.GetBackingStore().Get("issueId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsAnomaly) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -371,6 +392,12 @@ func (m *UserExperienceAnalyticsAnomaly) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSeverity() != nil {
         cast := (*m.GetSeverity()).String()
         err = writer.WriteStringValue("severity", &cast)
@@ -464,6 +491,13 @@ func (m *UserExperienceAnalyticsAnomaly) SetIssueId(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsAnomaly) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSeverity sets the severity property value. Indicates the severity of the anomaly. Eg: anomaly severity can be high, medium, low, informational or other.
 func (m *UserExperienceAnalyticsAnomaly) SetSeverity(value *UserExperienceAnalyticsAnomalySeverity)() {
     err := m.GetBackingStore().Set("severity", value)
@@ -493,6 +527,7 @@ type UserExperienceAnalyticsAnomalyable interface {
     GetDetectionModelId()(*string)
     GetDeviceImpactedCount()(*int32)
     GetIssueId()(*string)
+    GetOdataType()(*string)
     GetSeverity()(*UserExperienceAnalyticsAnomalySeverity)
     GetState()(*UserExperienceAnalyticsAnomalyState)
     SetAnomalyFirstOccurrenceDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -506,6 +541,7 @@ type UserExperienceAnalyticsAnomalyable interface {
     SetDetectionModelId(value *string)()
     SetDeviceImpactedCount(value *int32)()
     SetIssueId(value *string)()
+    SetOdataType(value *string)()
     SetSeverity(value *UserExperienceAnalyticsAnomalySeverity)()
     SetState(value *UserExperienceAnalyticsAnomalyState)()
 }

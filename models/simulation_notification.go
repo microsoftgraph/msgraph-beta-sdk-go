@@ -7,8 +7,10 @@ import (
 // SimulationNotification 
 type SimulationNotification struct {
     BaseEndUserNotification
+    // The OdataType property
+    OdataType *string
 }
-// NewSimulationNotification instantiates a new SimulationNotification and sets the default values.
+// NewSimulationNotification instantiates a new simulationNotification and sets the default values.
 func NewSimulationNotification()(*SimulationNotification) {
     m := &SimulationNotification{
         BaseEndUserNotification: *NewBaseEndUserNotification(),

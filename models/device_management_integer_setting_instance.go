@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementIntegerSettingInstance 
+// DeviceManagementIntegerSettingInstance a setting instance representing an integer value
 type DeviceManagementIntegerSettingInstance struct {
     DeviceManagementSettingInstance
 }
-// NewDeviceManagementIntegerSettingInstance instantiates a new DeviceManagementIntegerSettingInstance and sets the default values.
+// NewDeviceManagementIntegerSettingInstance instantiates a new deviceManagementIntegerSettingInstance and sets the default values.
 func NewDeviceManagementIntegerSettingInstance()(*DeviceManagementIntegerSettingInstance) {
     m := &DeviceManagementIntegerSettingInstance{
         DeviceManagementSettingInstance: *NewDeviceManagementSettingInstance(),

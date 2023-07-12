@@ -7,6 +7,8 @@ import (
 // PrivilegedSignupStatus 
 type PrivilegedSignupStatus struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewPrivilegedSignupStatus instantiates a new privilegedSignupStatus and sets the default values.
 func NewPrivilegedSignupStatus()(*PrivilegedSignupStatus) {

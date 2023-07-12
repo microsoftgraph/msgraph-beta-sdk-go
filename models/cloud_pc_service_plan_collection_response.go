@@ -8,7 +8,7 @@ import (
 type CloudPcServicePlanCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCloudPcServicePlanCollectionResponse instantiates a new CloudPcServicePlanCollectionResponse and sets the default values.
+// NewCloudPcServicePlanCollectionResponse instantiates a new cloudPcServicePlanCollectionResponse and sets the default values.
 func NewCloudPcServicePlanCollectionResponse()(*CloudPcServicePlanCollectionResponse) {
     m := &CloudPcServicePlanCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -8,7 +8,7 @@ import (
 type AccessPackageMultipleChoiceQuestion struct {
     AccessPackageQuestion
 }
-// NewAccessPackageMultipleChoiceQuestion instantiates a new AccessPackageMultipleChoiceQuestion and sets the default values.
+// NewAccessPackageMultipleChoiceQuestion instantiates a new accessPackageMultipleChoiceQuestion and sets the default values.
 func NewAccessPackageMultipleChoiceQuestion()(*AccessPackageMultipleChoiceQuestion) {
     m := &AccessPackageMultipleChoiceQuestion{
         AccessPackageQuestion: *NewAccessPackageQuestion(),
@@ -72,7 +72,28 @@ func (m *AccessPackageMultipleChoiceQuestion) GetFieldDeserializers()(map[string
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessPackageMultipleChoiceQuestion) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AccessPackageMultipleChoiceQuestion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -98,6 +119,12 @@ func (m *AccessPackageMultipleChoiceQuestion) Serialize(writer i878a80d2330e89d2
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAllowsMultipleSelection sets the allowsMultipleSelection property value. Indicates whether requestor can select multiple choices as their answer.
@@ -114,12 +141,21 @@ func (m *AccessPackageMultipleChoiceQuestion) SetChoices(value []AccessPackageAn
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessPackageMultipleChoiceQuestion) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // AccessPackageMultipleChoiceQuestionable 
 type AccessPackageMultipleChoiceQuestionable interface {
     AccessPackageQuestionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAllowsMultipleSelection()(*bool)
     GetChoices()([]AccessPackageAnswerChoiceable)
+    GetOdataType()(*string)
     SetAllowsMultipleSelection(value *bool)()
     SetChoices(value []AccessPackageAnswerChoiceable)()
+    SetOdataType(value *string)()
 }

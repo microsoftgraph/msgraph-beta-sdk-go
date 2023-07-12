@@ -7,8 +7,10 @@ import (
 // EducationCsvDataProvider 
 type EducationCsvDataProvider struct {
     EducationSynchronizationDataProvider
+    // The OdataType property
+    OdataType *string
 }
-// NewEducationCsvDataProvider instantiates a new EducationCsvDataProvider and sets the default values.
+// NewEducationCsvDataProvider instantiates a new educationCsvDataProvider and sets the default values.
 func NewEducationCsvDataProvider()(*EducationCsvDataProvider) {
     m := &EducationCsvDataProvider{
         EducationSynchronizationDataProvider: *NewEducationSynchronizationDataProvider(),

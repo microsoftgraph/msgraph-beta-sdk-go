@@ -7,8 +7,10 @@ import (
 // MessageRecipient 
 type MessageRecipient struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewMessageRecipient instantiates a new MessageRecipient and sets the default values.
+// NewMessageRecipient instantiates a new messageRecipient and sets the default values.
 func NewMessageRecipient()(*MessageRecipient) {
     m := &MessageRecipient{
         Entity: *NewEntity(),

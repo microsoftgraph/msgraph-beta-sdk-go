@@ -8,7 +8,7 @@ import (
 type TokenMeetingInfo struct {
     MeetingInfo
 }
-// NewTokenMeetingInfo instantiates a new TokenMeetingInfo and sets the default values.
+// NewTokenMeetingInfo instantiates a new tokenMeetingInfo and sets the default values.
 func NewTokenMeetingInfo()(*TokenMeetingInfo) {
     m := &TokenMeetingInfo{
         MeetingInfo: *NewMeetingInfo(),
@@ -24,6 +24,16 @@ func CreateTokenMeetingInfoFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TokenMeetingInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MeetingInfo.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["token"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -35,6 +45,17 @@ func (m *TokenMeetingInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TokenMeetingInfo) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetToken gets the token property value. The token used to join the call.
 func (m *TokenMeetingInfo) GetToken()(*string) {
@@ -54,12 +75,25 @@ func (m *TokenMeetingInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("token", m.GetToken())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TokenMeetingInfo) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetToken sets the token property value. The token used to join the call.
 func (m *TokenMeetingInfo) SetToken(value *string)() {
@@ -72,6 +106,8 @@ func (m *TokenMeetingInfo) SetToken(value *string)() {
 type TokenMeetingInfoable interface {
     MeetingInfoable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetToken()(*string)
+    SetOdataType(value *string)()
     SetToken(value *string)()
 }

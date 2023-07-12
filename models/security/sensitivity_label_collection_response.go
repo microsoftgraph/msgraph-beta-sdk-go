@@ -9,7 +9,7 @@ import (
 type SensitivityLabelCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewSensitivityLabelCollectionResponse instantiates a new SensitivityLabelCollectionResponse and sets the default values.
+// NewSensitivityLabelCollectionResponse instantiates a new sensitivityLabelCollectionResponse and sets the default values.
 func NewSensitivityLabelCollectionResponse()(*SensitivityLabelCollectionResponse) {
     m := &SensitivityLabelCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

@@ -8,7 +8,7 @@ import (
 type AssignmentFilterEvaluationStatusDetailsCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAssignmentFilterEvaluationStatusDetailsCollectionResponse instantiates a new AssignmentFilterEvaluationStatusDetailsCollectionResponse and sets the default values.
+// NewAssignmentFilterEvaluationStatusDetailsCollectionResponse instantiates a new assignmentFilterEvaluationStatusDetailsCollectionResponse and sets the default values.
 func NewAssignmentFilterEvaluationStatusDetailsCollectionResponse()(*AssignmentFilterEvaluationStatusDetailsCollectionResponse) {
     m := &AssignmentFilterEvaluationStatusDetailsCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

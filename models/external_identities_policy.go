@@ -8,7 +8,7 @@ import (
 type ExternalIdentitiesPolicy struct {
     PolicyBase
 }
-// NewExternalIdentitiesPolicy instantiates a new ExternalIdentitiesPolicy and sets the default values.
+// NewExternalIdentitiesPolicy instantiates a new externalIdentitiesPolicy and sets the default values.
 func NewExternalIdentitiesPolicy()(*ExternalIdentitiesPolicy) {
     m := &ExternalIdentitiesPolicy{
         PolicyBase: *NewPolicyBase(),

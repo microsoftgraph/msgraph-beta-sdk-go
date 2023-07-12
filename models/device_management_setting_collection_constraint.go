@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementSettingCollectionConstraint 
+// DeviceManagementSettingCollectionConstraint constraint that enforces the maximum number of elements a collection
 type DeviceManagementSettingCollectionConstraint struct {
     DeviceManagementConstraint
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceManagementSettingCollectionConstraint instantiates a new DeviceManagementSettingCollectionConstraint and sets the default values.
+// NewDeviceManagementSettingCollectionConstraint instantiates a new deviceManagementSettingCollectionConstraint and sets the default values.
 func NewDeviceManagementSettingCollectionConstraint()(*DeviceManagementSettingCollectionConstraint) {
     m := &DeviceManagementSettingCollectionConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),

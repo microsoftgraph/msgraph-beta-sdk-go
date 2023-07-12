@@ -7,6 +7,8 @@ import (
 // UnifiedRoleManagementAlertConfiguration 
 type UnifiedRoleManagementAlertConfiguration struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewUnifiedRoleManagementAlertConfiguration instantiates a new unifiedRoleManagementAlertConfiguration and sets the default values.
 func NewUnifiedRoleManagementAlertConfiguration()(*UnifiedRoleManagementAlertConfiguration) {

@@ -8,7 +8,7 @@ import (
 type AccessPackageResourceRoleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAccessPackageResourceRoleCollectionResponse instantiates a new AccessPackageResourceRoleCollectionResponse and sets the default values.
+// NewAccessPackageResourceRoleCollectionResponse instantiates a new accessPackageResourceRoleCollectionResponse and sets the default values.
 func NewAccessPackageResourceRoleCollectionResponse()(*AccessPackageResourceRoleCollectionResponse) {
     m := &AccessPackageResourceRoleCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

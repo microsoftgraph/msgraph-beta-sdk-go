@@ -7,6 +7,8 @@ import (
 // MicrosoftTunnelHealthThreshold entity that represents the health thresholds of a health metric
 type MicrosoftTunnelHealthThreshold struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewMicrosoftTunnelHealthThreshold instantiates a new microsoftTunnelHealthThreshold and sets the default values.
 func NewMicrosoftTunnelHealthThreshold()(*MicrosoftTunnelHealthThreshold) {

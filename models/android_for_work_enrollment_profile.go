@@ -8,6 +8,8 @@ import (
 // AndroidForWorkEnrollmentProfile enrollment Profile used to enroll COSU devices using Google's Cloud Management.
 type AndroidForWorkEnrollmentProfile struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAndroidForWorkEnrollmentProfile instantiates a new androidForWorkEnrollmentProfile and sets the default values.
 func NewAndroidForWorkEnrollmentProfile()(*AndroidForWorkEnrollmentProfile) {

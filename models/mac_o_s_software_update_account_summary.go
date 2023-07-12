@@ -8,6 +8,8 @@ import (
 // MacOSSoftwareUpdateAccountSummary macOS software update account summary report for a device and user
 type MacOSSoftwareUpdateAccountSummary struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewMacOSSoftwareUpdateAccountSummary instantiates a new macOSSoftwareUpdateAccountSummary and sets the default values.
 func NewMacOSSoftwareUpdateAccountSummary()(*MacOSSoftwareUpdateAccountSummary) {

@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsKioskLocalUser 
+// WindowsKioskLocalUser the class used to identify a local account for the kiosk configuration
 type WindowsKioskLocalUser struct {
     WindowsKioskUser
+    // The OdataType property
+    OdataType *string
 }
-// NewWindowsKioskLocalUser instantiates a new WindowsKioskLocalUser and sets the default values.
+// NewWindowsKioskLocalUser instantiates a new windowsKioskLocalUser and sets the default values.
 func NewWindowsKioskLocalUser()(*WindowsKioskLocalUser) {
     m := &WindowsKioskLocalUser{
         WindowsKioskUser: *NewWindowsKioskUser(),

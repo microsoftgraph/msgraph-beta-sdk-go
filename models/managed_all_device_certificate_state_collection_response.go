@@ -8,7 +8,7 @@ import (
 type ManagedAllDeviceCertificateStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewManagedAllDeviceCertificateStateCollectionResponse instantiates a new ManagedAllDeviceCertificateStateCollectionResponse and sets the default values.
+// NewManagedAllDeviceCertificateStateCollectionResponse instantiates a new managedAllDeviceCertificateStateCollectionResponse and sets the default values.
 func NewManagedAllDeviceCertificateStateCollectionResponse()(*ManagedAllDeviceCertificateStateCollectionResponse) {
     m := &ManagedAllDeviceCertificateStateCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

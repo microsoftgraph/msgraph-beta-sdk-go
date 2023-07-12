@@ -7,6 +7,8 @@ import (
 // MeetingRegistrationQuestion 
 type MeetingRegistrationQuestion struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewMeetingRegistrationQuestion instantiates a new meetingRegistrationQuestion and sets the default values.
 func NewMeetingRegistrationQuestion()(*MeetingRegistrationQuestion) {

@@ -10,7 +10,7 @@ import (
 type Bookmark struct {
     SearchAnswer
 }
-// NewBookmark instantiates a new Bookmark and sets the default values.
+// NewBookmark instantiates a new bookmark and sets the default values.
 func NewBookmark()(*Bookmark) {
     m := &Bookmark{
         SearchAnswer: *NewSearchAnswer(),

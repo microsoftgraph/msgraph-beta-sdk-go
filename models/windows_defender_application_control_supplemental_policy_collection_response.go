@@ -8,7 +8,7 @@ import (
 type WindowsDefenderApplicationControlSupplementalPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWindowsDefenderApplicationControlSupplementalPolicyCollectionResponse instantiates a new WindowsDefenderApplicationControlSupplementalPolicyCollectionResponse and sets the default values.
+// NewWindowsDefenderApplicationControlSupplementalPolicyCollectionResponse instantiates a new windowsDefenderApplicationControlSupplementalPolicyCollectionResponse and sets the default values.
 func NewWindowsDefenderApplicationControlSupplementalPolicyCollectionResponse()(*WindowsDefenderApplicationControlSupplementalPolicyCollectionResponse) {
     m := &WindowsDefenderApplicationControlSupplementalPolicyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

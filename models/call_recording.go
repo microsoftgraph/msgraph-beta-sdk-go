@@ -8,6 +8,8 @@ import (
 // CallRecording 
 type CallRecording struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewCallRecording instantiates a new callRecording and sets the default values.
 func NewCallRecording()(*CallRecording) {

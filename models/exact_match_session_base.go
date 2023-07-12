@@ -9,7 +9,7 @@ import (
 type ExactMatchSessionBase struct {
     ExactMatchJobBase
 }
-// NewExactMatchSessionBase instantiates a new ExactMatchSessionBase and sets the default values.
+// NewExactMatchSessionBase instantiates a new exactMatchSessionBase and sets the default values.
 func NewExactMatchSessionBase()(*ExactMatchSessionBase) {
     m := &ExactMatchSessionBase{
         ExactMatchJobBase: *NewExactMatchJobBase(),

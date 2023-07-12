@@ -8,7 +8,7 @@ import (
 type PersonAnnotation struct {
     ItemFacet
 }
-// NewPersonAnnotation instantiates a new PersonAnnotation and sets the default values.
+// NewPersonAnnotation instantiates a new personAnnotation and sets the default values.
 func NewPersonAnnotation()(*PersonAnnotation) {
     m := &PersonAnnotation{
         ItemFacet: *NewItemFacet(),

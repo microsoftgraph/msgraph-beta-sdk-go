@@ -7,6 +7,8 @@ import (
 // PrivilegedAccessGroup 
 type PrivilegedAccessGroup struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewPrivilegedAccessGroup instantiates a new privilegedAccessGroup and sets the default values.
 func NewPrivilegedAccessGroup()(*PrivilegedAccessGroup) {

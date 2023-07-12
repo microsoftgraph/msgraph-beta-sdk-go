@@ -8,7 +8,7 @@ import (
 type OnTokenIssuanceStartCustomExtension struct {
     CustomAuthenticationExtension
 }
-// NewOnTokenIssuanceStartCustomExtension instantiates a new OnTokenIssuanceStartCustomExtension and sets the default values.
+// NewOnTokenIssuanceStartCustomExtension instantiates a new onTokenIssuanceStartCustomExtension and sets the default values.
 func NewOnTokenIssuanceStartCustomExtension()(*OnTokenIssuanceStartCustomExtension) {
     m := &OnTokenIssuanceStartCustomExtension{
         CustomAuthenticationExtension: *NewCustomAuthenticationExtension(),

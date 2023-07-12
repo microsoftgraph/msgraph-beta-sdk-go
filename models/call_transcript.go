@@ -8,6 +8,8 @@ import (
 // CallTranscript 
 type CallTranscript struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewCallTranscript instantiates a new callTranscript and sets the default values.
 func NewCallTranscript()(*CallTranscript) {

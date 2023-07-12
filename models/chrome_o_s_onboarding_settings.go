@@ -5,11 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ChromeOSOnboardingSettings 
+// ChromeOSOnboardingSettings entity that represents a Chromebook tenant settings
 type ChromeOSOnboardingSettings struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewChromeOSOnboardingSettings instantiates a new ChromeOSOnboardingSettings and sets the default values.
+// NewChromeOSOnboardingSettings instantiates a new chromeOSOnboardingSettings and sets the default values.
 func NewChromeOSOnboardingSettings()(*ChromeOSOnboardingSettings) {
     m := &ChromeOSOnboardingSettings{
         Entity: *NewEntity(),

@@ -8,7 +8,7 @@ import (
 type MetadataAction struct {
     InformationProtectionAction
 }
-// NewMetadataAction instantiates a new MetadataAction and sets the default values.
+// NewMetadataAction instantiates a new metadataAction and sets the default values.
 func NewMetadataAction()(*MetadataAction) {
     m := &MetadataAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
@@ -56,6 +56,16 @@ func (m *MetadataAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMetadataToAdd gets the metadataToAdd property value. A collection of key value pairs that should be added to the file.
@@ -77,6 +87,17 @@ func (m *MetadataAction) GetMetadataToRemove()([]string) {
     }
     if val != nil {
         return val.([]string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MetadataAction) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -104,6 +125,12 @@ func (m *MetadataAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetMetadataToAdd sets the metadataToAdd property value. A collection of key value pairs that should be added to the file.
@@ -120,12 +147,21 @@ func (m *MetadataAction) SetMetadataToRemove(value []string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MetadataAction) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // MetadataActionable 
 type MetadataActionable interface {
     InformationProtectionActionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetMetadataToAdd()([]KeyValuePairable)
     GetMetadataToRemove()([]string)
+    GetOdataType()(*string)
     SetMetadataToAdd(value []KeyValuePairable)()
     SetMetadataToRemove(value []string)()
+    SetOdataType(value *string)()
 }

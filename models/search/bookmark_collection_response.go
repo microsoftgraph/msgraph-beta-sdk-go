@@ -9,7 +9,7 @@ import (
 type BookmarkCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewBookmarkCollectionResponse instantiates a new BookmarkCollectionResponse and sets the default values.
+// NewBookmarkCollectionResponse instantiates a new bookmarkCollectionResponse and sets the default values.
 func NewBookmarkCollectionResponse()(*BookmarkCollectionResponse) {
     m := &BookmarkCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

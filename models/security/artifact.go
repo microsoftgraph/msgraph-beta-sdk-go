@@ -8,6 +8,8 @@ import (
 // Artifact 
 type Artifact struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewArtifact instantiates a new artifact and sets the default values.
 func NewArtifact()(*Artifact) {

@@ -7,6 +7,8 @@ import (
 // WindowsPrivacyDataAccessControlItem specify access control level per privacy data category
 type WindowsPrivacyDataAccessControlItem struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWindowsPrivacyDataAccessControlItem instantiates a new windowsPrivacyDataAccessControlItem and sets the default values.
 func NewWindowsPrivacyDataAccessControlItem()(*WindowsPrivacyDataAccessControlItem) {

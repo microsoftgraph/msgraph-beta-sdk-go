@@ -8,7 +8,7 @@ import (
 type PayloadResponseCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPayloadResponseCollectionResponse instantiates a new PayloadResponseCollectionResponse and sets the default values.
+// NewPayloadResponseCollectionResponse instantiates a new payloadResponseCollectionResponse and sets the default values.
 func NewPayloadResponseCollectionResponse()(*PayloadResponseCollectionResponse) {
     m := &PayloadResponseCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

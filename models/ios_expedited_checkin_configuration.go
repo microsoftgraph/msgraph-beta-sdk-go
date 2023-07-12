@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosExpeditedCheckinConfiguration 
+// IosExpeditedCheckinConfiguration experimental profile to increase the rate of device check-ins per day of iOS devices. This profile type is deprecated.
 type IosExpeditedCheckinConfiguration struct {
     AppleExpeditedCheckinConfigurationBase
 }
-// NewIosExpeditedCheckinConfiguration instantiates a new IosExpeditedCheckinConfiguration and sets the default values.
+// NewIosExpeditedCheckinConfiguration instantiates a new iosExpeditedCheckinConfiguration and sets the default values.
 func NewIosExpeditedCheckinConfiguration()(*IosExpeditedCheckinConfiguration) {
     m := &IosExpeditedCheckinConfiguration{
         AppleExpeditedCheckinConfigurationBase: *NewAppleExpeditedCheckinConfigurationBase(),

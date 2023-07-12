@@ -8,7 +8,7 @@ import (
 type AndroidForWorkAppConfigurationSchemaCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAndroidForWorkAppConfigurationSchemaCollectionResponse instantiates a new AndroidForWorkAppConfigurationSchemaCollectionResponse and sets the default values.
+// NewAndroidForWorkAppConfigurationSchemaCollectionResponse instantiates a new androidForWorkAppConfigurationSchemaCollectionResponse and sets the default values.
 func NewAndroidForWorkAppConfigurationSchemaCollectionResponse()(*AndroidForWorkAppConfigurationSchemaCollectionResponse) {
     m := &AndroidForWorkAppConfigurationSchemaCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

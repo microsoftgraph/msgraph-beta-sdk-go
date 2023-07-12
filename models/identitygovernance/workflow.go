@@ -8,8 +8,10 @@ import (
 // Workflow 
 type Workflow struct {
     WorkflowBase
+    // The OdataType property
+    OdataType *string
 }
-// NewWorkflow instantiates a new Workflow and sets the default values.
+// NewWorkflow instantiates a new workflow and sets the default values.
 func NewWorkflow()(*Workflow) {
     m := &Workflow{
         WorkflowBase: *NewWorkflowBase(),

@@ -8,7 +8,7 @@ import (
 type JobResponseBaseCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewJobResponseBaseCollectionResponse instantiates a new JobResponseBaseCollectionResponse and sets the default values.
+// NewJobResponseBaseCollectionResponse instantiates a new jobResponseBaseCollectionResponse and sets the default values.
 func NewJobResponseBaseCollectionResponse()(*JobResponseBaseCollectionResponse) {
     m := &JobResponseBaseCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

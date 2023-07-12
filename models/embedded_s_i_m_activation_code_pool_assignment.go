@@ -7,6 +7,8 @@ import (
 // EmbeddedSIMActivationCodePoolAssignment the embedded SIM activation code pool assignment entity assigns a specific embeddedSIMActivationCodePool to an AAD device group.
 type EmbeddedSIMActivationCodePoolAssignment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewEmbeddedSIMActivationCodePoolAssignment instantiates a new embeddedSIMActivationCodePoolAssignment and sets the default values.
 func NewEmbeddedSIMActivationCodePoolAssignment()(*EmbeddedSIMActivationCodePoolAssignment) {

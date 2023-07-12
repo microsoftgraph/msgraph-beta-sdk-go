@@ -8,7 +8,7 @@ import (
 type SequentialActivationRenewalsAlertConfiguration struct {
     UnifiedRoleManagementAlertConfiguration
 }
-// NewSequentialActivationRenewalsAlertConfiguration instantiates a new SequentialActivationRenewalsAlertConfiguration and sets the default values.
+// NewSequentialActivationRenewalsAlertConfiguration instantiates a new sequentialActivationRenewalsAlertConfiguration and sets the default values.
 func NewSequentialActivationRenewalsAlertConfiguration()(*SequentialActivationRenewalsAlertConfiguration) {
     m := &SequentialActivationRenewalsAlertConfiguration{
         UnifiedRoleManagementAlertConfiguration: *NewUnifiedRoleManagementAlertConfiguration(),

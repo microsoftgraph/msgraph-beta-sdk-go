@@ -164,6 +164,16 @@ func (m *LandingPage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSimulationContentSource)
         if err != nil {
@@ -227,6 +237,17 @@ func (m *LandingPage) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97
 // GetLocale gets the locale property value. The locale property
 func (m *LandingPage) GetLocale()(*string) {
     val, err := m.GetBackingStore().Get("locale")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *LandingPage) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -328,6 +349,12 @@ func (m *LandingPage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSource() != nil {
         cast := (*m.GetSource()).String()
         err = writer.WriteStringValue("source", &cast)
@@ -406,6 +433,13 @@ func (m *LandingPage) SetLocale(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *LandingPage) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSource sets the source property value. The source property
 func (m *LandingPage) SetSource(value *SimulationContentSource)() {
     err := m.GetBackingStore().Set("source", value)
@@ -439,6 +473,7 @@ type LandingPageable interface {
     GetLastModifiedBy()(EmailIdentityable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLocale()(*string)
+    GetOdataType()(*string)
     GetSource()(*SimulationContentSource)
     GetStatus()(*SimulationContentStatus)
     GetSupportedLocales()([]string)
@@ -450,6 +485,7 @@ type LandingPageable interface {
     SetLastModifiedBy(value EmailIdentityable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLocale(value *string)()
+    SetOdataType(value *string)()
     SetSource(value *SimulationContentSource)()
     SetStatus(value *SimulationContentStatus)()
     SetSupportedLocales(value []string)()

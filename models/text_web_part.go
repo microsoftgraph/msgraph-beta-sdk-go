@@ -8,7 +8,7 @@ import (
 type TextWebPart struct {
     WebPart
 }
-// NewTextWebPart instantiates a new TextWebPart and sets the default values.
+// NewTextWebPart instantiates a new textWebPart and sets the default values.
 func NewTextWebPart()(*TextWebPart) {
     m := &TextWebPart{
         WebPart: *NewWebPart(),

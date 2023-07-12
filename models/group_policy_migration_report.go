@@ -6,11 +6,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupPolicyMigrationReport 
+// GroupPolicyMigrationReport the Group Policy migration report.
 type GroupPolicyMigrationReport struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewGroupPolicyMigrationReport instantiates a new GroupPolicyMigrationReport and sets the default values.
+// NewGroupPolicyMigrationReport instantiates a new groupPolicyMigrationReport and sets the default values.
 func NewGroupPolicyMigrationReport()(*GroupPolicyMigrationReport) {
     m := &GroupPolicyMigrationReport{
         Entity: *NewEntity(),

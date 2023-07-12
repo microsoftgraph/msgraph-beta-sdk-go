@@ -31,7 +31,10 @@ func NewItemMailFoldersItemMessagesItemMarkAsJunkRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewItemMailFoldersItemMessagesItemMarkAsJunkRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action markAsJunk
+// Post mark a message as junk. This API adds the sender to the list of blocked senders and moves the message to the **Junk Email** folder, when **moveToJunk** is `true`.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/message-markasjunk?view=graph-rest-1.0
 func (m *ItemMailFoldersItemMessagesItemMarkAsJunkRequestBuilder) Post(ctx context.Context, body ItemMailFoldersItemMessagesItemMarkAsJunkPostRequestBodyable, requestConfiguration *ItemMailFoldersItemMessagesItemMarkAsJunkRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *ItemMailFoldersItemMessagesItemMarkAsJunkRequestBuilder) Post(ctx conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable), nil
 }
-// ToPostRequestInformation invoke action markAsJunk
+// ToPostRequestInformation mark a message as junk. This API adds the sender to the list of blocked senders and moves the message to the **Junk Email** folder, when **moveToJunk** is `true`.
 func (m *ItemMailFoldersItemMessagesItemMarkAsJunkRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemMailFoldersItemMessagesItemMarkAsJunkPostRequestBodyable, requestConfiguration *ItemMailFoldersItemMessagesItemMarkAsJunkRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

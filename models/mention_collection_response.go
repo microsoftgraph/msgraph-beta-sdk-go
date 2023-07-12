@@ -8,7 +8,7 @@ import (
 type MentionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewMentionCollectionResponse instantiates a new MentionCollectionResponse and sets the default values.
+// NewMentionCollectionResponse instantiates a new mentionCollectionResponse and sets the default values.
 func NewMentionCollectionResponse()(*MentionCollectionResponse) {
     m := &MentionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

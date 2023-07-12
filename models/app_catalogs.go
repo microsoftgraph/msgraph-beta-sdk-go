@@ -10,7 +10,7 @@ type AppCatalogs struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAppCatalogs instantiates a new AppCatalogs and sets the default values.
+// NewAppCatalogs instantiates a new appCatalogs and sets the default values.
 func NewAppCatalogs()(*AppCatalogs) {
     m := &AppCatalogs{
     }

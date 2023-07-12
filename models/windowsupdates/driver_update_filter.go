@@ -8,7 +8,7 @@ import (
 type DriverUpdateFilter struct {
     WindowsUpdateFilter
 }
-// NewDriverUpdateFilter instantiates a new DriverUpdateFilter and sets the default values.
+// NewDriverUpdateFilter instantiates a new driverUpdateFilter and sets the default values.
 func NewDriverUpdateFilter()(*DriverUpdateFilter) {
     m := &DriverUpdateFilter{
         WindowsUpdateFilter: *NewWindowsUpdateFilter(),

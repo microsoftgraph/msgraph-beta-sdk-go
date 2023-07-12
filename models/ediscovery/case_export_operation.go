@@ -8,7 +8,7 @@ import (
 type CaseExportOperation struct {
     CaseOperation
 }
-// NewCaseExportOperation instantiates a new CaseExportOperation and sets the default values.
+// NewCaseExportOperation instantiates a new caseExportOperation and sets the default values.
 func NewCaseExportOperation()(*CaseExportOperation) {
     m := &CaseExportOperation{
         CaseOperation: *NewCaseOperation(),

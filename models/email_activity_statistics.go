@@ -7,8 +7,10 @@ import (
 // EmailActivityStatistics 
 type EmailActivityStatistics struct {
     ActivityStatistics
+    // The OdataType property
+    OdataType *string
 }
-// NewEmailActivityStatistics instantiates a new EmailActivityStatistics and sets the default values.
+// NewEmailActivityStatistics instantiates a new emailActivityStatistics and sets the default values.
 func NewEmailActivityStatistics()(*EmailActivityStatistics) {
     m := &EmailActivityStatistics{
         ActivityStatistics: *NewActivityStatistics(),

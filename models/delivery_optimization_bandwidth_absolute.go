@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeliveryOptimizationBandwidthAbsolute 
+// DeliveryOptimizationBandwidthAbsolute bandwidth limits in kilobytes per second.
 type DeliveryOptimizationBandwidthAbsolute struct {
     DeliveryOptimizationBandwidth
 }
-// NewDeliveryOptimizationBandwidthAbsolute instantiates a new DeliveryOptimizationBandwidthAbsolute and sets the default values.
+// NewDeliveryOptimizationBandwidthAbsolute instantiates a new deliveryOptimizationBandwidthAbsolute and sets the default values.
 func NewDeliveryOptimizationBandwidthAbsolute()(*DeliveryOptimizationBandwidthAbsolute) {
     m := &DeliveryOptimizationBandwidthAbsolute{
         DeliveryOptimizationBandwidth: *NewDeliveryOptimizationBandwidth(),
@@ -44,6 +44,16 @@ func (m *DeliveryOptimizationBandwidthAbsolute) GetFieldDeserializers()(map[stri
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMaximumDownloadBandwidthInKilobytesPerSecond gets the maximumDownloadBandwidthInKilobytesPerSecond property value. Specifies the maximum download bandwidth in KiloBytes/second that the device can use across all concurrent download activities using Delivery Optimization. Valid values 0 to 4294967295
@@ -68,6 +78,17 @@ func (m *DeliveryOptimizationBandwidthAbsolute) GetMaximumUploadBandwidthInKilob
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeliveryOptimizationBandwidthAbsolute) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *DeliveryOptimizationBandwidthAbsolute) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.DeliveryOptimizationBandwidth.Serialize(writer)
@@ -82,6 +103,12 @@ func (m *DeliveryOptimizationBandwidthAbsolute) Serialize(writer i878a80d2330e89
     }
     {
         err = writer.WriteInt64Value("maximumUploadBandwidthInKilobytesPerSecond", m.GetMaximumUploadBandwidthInKilobytesPerSecond())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -102,12 +129,21 @@ func (m *DeliveryOptimizationBandwidthAbsolute) SetMaximumUploadBandwidthInKilob
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeliveryOptimizationBandwidthAbsolute) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // DeliveryOptimizationBandwidthAbsoluteable 
 type DeliveryOptimizationBandwidthAbsoluteable interface {
     DeliveryOptimizationBandwidthable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetMaximumDownloadBandwidthInKilobytesPerSecond()(*int64)
     GetMaximumUploadBandwidthInKilobytesPerSecond()(*int64)
+    GetOdataType()(*string)
     SetMaximumDownloadBandwidthInKilobytesPerSecond(value *int64)()
     SetMaximumUploadBandwidthInKilobytesPerSecond(value *int64)()
+    SetOdataType(value *string)()
 }

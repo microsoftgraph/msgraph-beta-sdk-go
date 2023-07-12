@@ -7,6 +7,8 @@ import (
 // DeviceHealthScriptAssignment contains properties used to assign a device management script to a group.
 type DeviceHealthScriptAssignment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceHealthScriptAssignment instantiates a new deviceHealthScriptAssignment and sets the default values.
 func NewDeviceHealthScriptAssignment()(*DeviceHealthScriptAssignment) {

@@ -18,7 +18,7 @@ type ConnectivityBranchesBranchSiteItemRequestBuilderDeleteRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectivityBranchesBranchSiteItemRequestBuilderGetQueryParameters get branches from networkAccess
+// ConnectivityBranchesBranchSiteItemRequestBuilderGetQueryParameters retrieve information about a specific branch.
 type ConnectivityBranchesBranchSiteItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewConnectivityBranchesBranchSiteItemRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewConnectivityBranchesBranchSiteItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property branches for networkAccess
+// Delete delete a specific branch.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-branchsite-delete?view=graph-rest-1.0
 func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConnectivityBranchesBranchSiteItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,7 +81,10 @@ func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) DeviceLinks()(*Connec
 func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) ForwardingProfiles()(*ConnectivityBranchesItemForwardingProfilesRequestBuilder) {
     return NewConnectivityBranchesItemForwardingProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get branches from networkAccess
+// Get retrieve information about a specific branch.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-branchsite-get?view=graph-rest-1.0
 func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityBranchesBranchSiteItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -97,7 +103,10 @@ func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) Get(ctx context.Conte
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable), nil
 }
-// Patch update the navigation property branches in networkAccess
+// Patch update the configuration or properties of a specific branch.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-branchsite-update?view=graph-rest-1.0
 func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) Patch(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable, requestConfiguration *ConnectivityBranchesBranchSiteItemRequestBuilderPatchRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +125,7 @@ func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) Patch(ctx context.Con
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable), nil
 }
-// ToDeleteRequestInformation delete navigation property branches for networkAccess
+// ToDeleteRequestInformation delete a specific branch.
 func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesBranchSiteItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +137,7 @@ func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) ToDeleteRequestInform
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get branches from networkAccess
+// ToGetRequestInformation retrieve information about a specific branch.
 func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesBranchSiteItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -144,7 +153,7 @@ func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) ToGetRequestInformati
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property branches in networkAccess
+// ToPatchRequestInformation update the configuration or properties of a specific branch.
 func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable, requestConfiguration *ConnectivityBranchesBranchSiteItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -8,6 +8,8 @@ import (
 // DepOnboardingSetting the depOnboardingSetting represents an instance of the Apple DEP service being onboarded to Intune. The onboarded service instance manages an Apple Token used to synchronize data between Apple and Intune.
 type DepOnboardingSetting struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDepOnboardingSetting instantiates a new depOnboardingSetting and sets the default values.
 func NewDepOnboardingSetting()(*DepOnboardingSetting) {

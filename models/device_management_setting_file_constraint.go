@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementSettingFileConstraint 
+// DeviceManagementSettingFileConstraint constraint enforcing the file extension is acceptable for a given setting
 type DeviceManagementSettingFileConstraint struct {
     DeviceManagementConstraint
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceManagementSettingFileConstraint instantiates a new DeviceManagementSettingFileConstraint and sets the default values.
+// NewDeviceManagementSettingFileConstraint instantiates a new deviceManagementSettingFileConstraint and sets the default values.
 func NewDeviceManagementSettingFileConstraint()(*DeviceManagementSettingFileConstraint) {
     m := &DeviceManagementSettingFileConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),

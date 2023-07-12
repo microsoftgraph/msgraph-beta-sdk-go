@@ -10,7 +10,7 @@ type ContentInfo struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewContentInfo instantiates a new ContentInfo and sets the default values.
+// NewContentInfo instantiates a new contentInfo and sets the default values.
 func NewContentInfo()(*ContentInfo) {
     m := &ContentInfo{
     }

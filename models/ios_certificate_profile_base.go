@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosCertificateProfileBase 
+// IosCertificateProfileBase iOS certificate profile base.
 type IosCertificateProfileBase struct {
     IosCertificateProfile
 }
-// NewIosCertificateProfileBase instantiates a new IosCertificateProfileBase and sets the default values.
+// NewIosCertificateProfileBase instantiates a new iosCertificateProfileBase and sets the default values.
 func NewIosCertificateProfileBase()(*IosCertificateProfileBase) {
     m := &IosCertificateProfileBase{
         IosCertificateProfile: *NewIosCertificateProfile(),

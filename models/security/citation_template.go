@@ -8,7 +8,7 @@ import (
 type CitationTemplate struct {
     FilePlanDescriptorTemplate
 }
-// NewCitationTemplate instantiates a new CitationTemplate and sets the default values.
+// NewCitationTemplate instantiates a new citationTemplate and sets the default values.
 func NewCitationTemplate()(*CitationTemplate) {
     m := &CitationTemplate{
         FilePlanDescriptorTemplate: *NewFilePlanDescriptorTemplate(),

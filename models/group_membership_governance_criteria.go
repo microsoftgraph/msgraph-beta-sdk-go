@@ -7,8 +7,10 @@ import (
 // GroupMembershipGovernanceCriteria 
 type GroupMembershipGovernanceCriteria struct {
     GovernanceCriteria
+    // The OdataType property
+    OdataType *string
 }
-// NewGroupMembershipGovernanceCriteria instantiates a new GroupMembershipGovernanceCriteria and sets the default values.
+// NewGroupMembershipGovernanceCriteria instantiates a new groupMembershipGovernanceCriteria and sets the default values.
 func NewGroupMembershipGovernanceCriteria()(*GroupMembershipGovernanceCriteria) {
     m := &GroupMembershipGovernanceCriteria{
         GovernanceCriteria: *NewGovernanceCriteria(),

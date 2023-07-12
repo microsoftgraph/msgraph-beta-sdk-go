@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AppleAppListItem 
+// AppleAppListItem represents an app in the list of managed Apple applications
 type AppleAppListItem struct {
     AppListItem
+    // The OdataType property
+    OdataType *string
 }
-// NewAppleAppListItem instantiates a new AppleAppListItem and sets the default values.
+// NewAppleAppListItem instantiates a new appleAppListItem and sets the default values.
 func NewAppleAppListItem()(*AppleAppListItem) {
     m := &AppleAppListItem{
         AppListItem: *NewAppListItem(),

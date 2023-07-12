@@ -9,7 +9,7 @@ import (
 type BranchSiteCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewBranchSiteCollectionResponse instantiates a new BranchSiteCollectionResponse and sets the default values.
+// NewBranchSiteCollectionResponse instantiates a new branchSiteCollectionResponse and sets the default values.
 func NewBranchSiteCollectionResponse()(*BranchSiteCollectionResponse) {
     m := &BranchSiteCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

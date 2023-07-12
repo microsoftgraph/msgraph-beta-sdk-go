@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsDomainJoinConfiguration 
+// WindowsDomainJoinConfiguration windows Domain Join device configuration.
 type WindowsDomainJoinConfiguration struct {
     DeviceConfiguration
 }
-// NewWindowsDomainJoinConfiguration instantiates a new WindowsDomainJoinConfiguration and sets the default values.
+// NewWindowsDomainJoinConfiguration instantiates a new windowsDomainJoinConfiguration and sets the default values.
 func NewWindowsDomainJoinConfiguration()(*WindowsDomainJoinConfiguration) {
     m := &WindowsDomainJoinConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

@@ -8,8 +8,10 @@ import (
 // CloudAppSecurityProfile 
 type CloudAppSecurityProfile struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewCloudAppSecurityProfile instantiates a new CloudAppSecurityProfile and sets the default values.
+// NewCloudAppSecurityProfile instantiates a new cloudAppSecurityProfile and sets the default values.
 func NewCloudAppSecurityProfile()(*CloudAppSecurityProfile) {
     m := &CloudAppSecurityProfile{
         Entity: *NewEntity(),

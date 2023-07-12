@@ -101,6 +101,10 @@ func (m *AdminRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Adminable), nil
 }
+// People provides operations to manage the people property of the microsoft.graph.admin entity.
+func (m *AdminRequestBuilder) People()(*PeopleRequestBuilder) {
+    return NewPeopleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ReportSettings provides operations to manage the reportSettings property of the microsoft.graph.admin entity.
 func (m *AdminRequestBuilder) ReportSettings()(*ReportSettingsRequestBuilder) {
     return NewReportSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

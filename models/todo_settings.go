@@ -10,7 +10,7 @@ type TodoSettings struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewTodoSettings instantiates a new TodoSettings and sets the default values.
+// NewTodoSettings instantiates a new todoSettings and sets the default values.
 func NewTodoSettings()(*TodoSettings) {
     m := &TodoSettings{
     }
@@ -83,7 +83,7 @@ func (m *TodoSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetIsExternalJoinEnabled gets the isExternalJoinEnabled property value. The isExternalJoinEnabled property
+// GetIsExternalJoinEnabled gets the isExternalJoinEnabled property value. Controls whether users can join lists from users external to your organization.
 func (m *TodoSettings) GetIsExternalJoinEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isExternalJoinEnabled")
     if err != nil {
@@ -94,7 +94,7 @@ func (m *TodoSettings) GetIsExternalJoinEnabled()(*bool) {
     }
     return nil
 }
-// GetIsExternalShareEnabled gets the isExternalShareEnabled property value. The isExternalShareEnabled property
+// GetIsExternalShareEnabled gets the isExternalShareEnabled property value. Controls whether users can share lists with external users.
 func (m *TodoSettings) GetIsExternalShareEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isExternalShareEnabled")
     if err != nil {
@@ -105,7 +105,7 @@ func (m *TodoSettings) GetIsExternalShareEnabled()(*bool) {
     }
     return nil
 }
-// GetIsPushNotificationEnabled gets the isPushNotificationEnabled property value. The isPushNotificationEnabled property
+// GetIsPushNotificationEnabled gets the isPushNotificationEnabled property value. Controls whether push notifications are enabled for your users.
 func (m *TodoSettings) GetIsPushNotificationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isPushNotificationEnabled")
     if err != nil {
@@ -172,21 +172,21 @@ func (m *TodoSettings) SetAdditionalData(value map[string]any)() {
 func (m *TodoSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsExternalJoinEnabled sets the isExternalJoinEnabled property value. The isExternalJoinEnabled property
+// SetIsExternalJoinEnabled sets the isExternalJoinEnabled property value. Controls whether users can join lists from users external to your organization.
 func (m *TodoSettings) SetIsExternalJoinEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isExternalJoinEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsExternalShareEnabled sets the isExternalShareEnabled property value. The isExternalShareEnabled property
+// SetIsExternalShareEnabled sets the isExternalShareEnabled property value. Controls whether users can share lists with external users.
 func (m *TodoSettings) SetIsExternalShareEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isExternalShareEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsPushNotificationEnabled sets the isPushNotificationEnabled property value. The isPushNotificationEnabled property
+// SetIsPushNotificationEnabled sets the isPushNotificationEnabled property value. Controls whether push notifications are enabled for your users.
 func (m *TodoSettings) SetIsPushNotificationEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isPushNotificationEnabled", value)
     if err != nil {

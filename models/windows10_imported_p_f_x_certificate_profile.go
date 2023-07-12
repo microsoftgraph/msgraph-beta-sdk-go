@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows10ImportedPFXCertificateProfile 
+// Windows10ImportedPFXCertificateProfile windows 10 Desktop and Mobile PFX Import certificate profile
 type Windows10ImportedPFXCertificateProfile struct {
     WindowsCertificateProfileBase
 }
-// NewWindows10ImportedPFXCertificateProfile instantiates a new Windows10ImportedPFXCertificateProfile and sets the default values.
+// NewWindows10ImportedPFXCertificateProfile instantiates a new windows10ImportedPFXCertificateProfile and sets the default values.
 func NewWindows10ImportedPFXCertificateProfile()(*Windows10ImportedPFXCertificateProfile) {
     m := &Windows10ImportedPFXCertificateProfile{
         WindowsCertificateProfileBase: *NewWindowsCertificateProfileBase(),

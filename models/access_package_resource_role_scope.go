@@ -8,6 +8,8 @@ import (
 // AccessPackageResourceRoleScope 
 type AccessPackageResourceRoleScope struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAccessPackageResourceRoleScope instantiates a new accessPackageResourceRoleScope and sets the default values.
 func NewAccessPackageResourceRoleScope()(*AccessPackageResourceRoleScope) {

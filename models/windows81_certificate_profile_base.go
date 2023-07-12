@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows81CertificateProfileBase 
+// Windows81CertificateProfileBase device Configuration.
 type Windows81CertificateProfileBase struct {
     WindowsCertificateProfileBase
 }
-// NewWindows81CertificateProfileBase instantiates a new Windows81CertificateProfileBase and sets the default values.
+// NewWindows81CertificateProfileBase instantiates a new windows81CertificateProfileBase and sets the default values.
 func NewWindows81CertificateProfileBase()(*Windows81CertificateProfileBase) {
     m := &Windows81CertificateProfileBase{
         WindowsCertificateProfileBase: *NewWindowsCertificateProfileBase(),

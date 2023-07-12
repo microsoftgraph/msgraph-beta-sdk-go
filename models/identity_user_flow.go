@@ -7,6 +7,8 @@ import (
 // IdentityUserFlow 
 type IdentityUserFlow struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewIdentityUserFlow instantiates a new identityUserFlow and sets the default values.
 func NewIdentityUserFlow()(*IdentityUserFlow) {

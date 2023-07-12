@@ -7,8 +7,10 @@ import (
 // ProgramResource 
 type ProgramResource struct {
     Identity
+    // The OdataType property
+    OdataType *string
 }
-// NewProgramResource instantiates a new ProgramResource and sets the default values.
+// NewProgramResource instantiates a new programResource and sets the default values.
 func NewProgramResource()(*ProgramResource) {
     m := &ProgramResource{
         Identity: *NewIdentity(),
