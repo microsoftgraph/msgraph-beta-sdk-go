@@ -271,6 +271,16 @@ func (m *ArchivedPrintJob) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["printerName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPrinterName(val)
+        }
+        return nil
+    }
     res["processingState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePrintJobProcessingState)
         if err != nil {
@@ -329,6 +339,17 @@ func (m *ArchivedPrintJob) GetPageCount()(*int32) {
 // GetPrinterId gets the printerId property value. The printer ID that the job was queued for. Read-only.
 func (m *ArchivedPrintJob) GetPrinterId()(*string) {
     val, err := m.GetBackingStore().Get("printerId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetPrinterName gets the printerName property value. The printer name that the job was queued for. Read-only.
+func (m *ArchivedPrintJob) GetPrinterName()(*string) {
+    val, err := m.GetBackingStore().Get("printerName")
     if err != nil {
         panic(err)
     }
@@ -435,6 +456,12 @@ func (m *ArchivedPrintJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     {
         err := writer.WriteStringValue("printerId", m.GetPrinterId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("printerName", m.GetPrinterName())
         if err != nil {
             return err
         }
@@ -562,6 +589,13 @@ func (m *ArchivedPrintJob) SetPrinterId(value *string)() {
         panic(err)
     }
 }
+// SetPrinterName sets the printerName property value. The printer name that the job was queued for. Read-only.
+func (m *ArchivedPrintJob) SetPrinterName(value *string)() {
+    err := m.GetBackingStore().Set("printerName", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProcessingState sets the processingState property value. The processingState property
 func (m *ArchivedPrintJob) SetProcessingState(value *PrintJobProcessingState)() {
     err := m.GetBackingStore().Set("processingState", value)
@@ -595,6 +629,7 @@ type ArchivedPrintJobable interface {
     GetOdataType()(*string)
     GetPageCount()(*int32)
     GetPrinterId()(*string)
+    GetPrinterName()(*string)
     GetProcessingState()(*PrintJobProcessingState)
     GetSimplexPageCount()(*int32)
     SetAcquiredByPrinter(value *bool)()
@@ -611,6 +646,7 @@ type ArchivedPrintJobable interface {
     SetOdataType(value *string)()
     SetPageCount(value *int32)()
     SetPrinterId(value *string)()
+    SetPrinterName(value *string)()
     SetProcessingState(value *PrintJobProcessingState)()
     SetSimplexPageCount(value *int32)()
 }

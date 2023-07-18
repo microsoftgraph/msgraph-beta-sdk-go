@@ -7,6 +7,8 @@ import (
 // IosCompliancePolicy this class contains compliance settings for IOS.
 type IosCompliancePolicy struct {
     DeviceCompliancePolicy
+    // The OdataType property
+    OdataType *string
 }
 // NewIosCompliancePolicy instantiates a new iosCompliancePolicy and sets the default values.
 func NewIosCompliancePolicy()(*IosCompliancePolicy) {

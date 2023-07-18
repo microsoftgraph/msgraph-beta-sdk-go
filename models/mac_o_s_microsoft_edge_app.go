@@ -7,8 +7,6 @@ import (
 // MacOSMicrosoftEdgeApp contains properties and inherited properties for the macOS Microsoft Edge App.
 type MacOSMicrosoftEdgeApp struct {
     MobileApp
-    // The OdataType property
-    OdataType *string
 }
 // NewMacOSMicrosoftEdgeApp instantiates a new macOSMicrosoftEdgeApp and sets the default values.
 func NewMacOSMicrosoftEdgeApp()(*MacOSMicrosoftEdgeApp) {

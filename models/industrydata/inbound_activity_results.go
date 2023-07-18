@@ -7,6 +7,8 @@ import (
 // InboundActivityResults 
 type InboundActivityResults struct {
     IndustryDataActivityStatistics
+    // The OdataType property
+    OdataType *string
 }
 // NewInboundActivityResults instantiates a new inboundActivityResults and sets the default values.
 func NewInboundActivityResults()(*InboundActivityResults) {
@@ -78,16 +80,6 @@ func (m *InboundActivityResults) GetFieldDeserializers()(map[string]func(i878a80
         }
         if val != nil {
             m.SetMemberships(val.(IndustryDataRunEntityCountMetricable))
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
         }
         return nil
     }
@@ -172,17 +164,6 @@ func (m *InboundActivityResults) GetMemberships()(IndustryDataRunEntityCountMetr
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *InboundActivityResults) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetOrganizations gets the organizations property value. Counts of active and inactive organizations processed by the inbound flow.
 func (m *InboundActivityResults) GetOrganizations()(IndustryDataRunEntityCountMetricable) {
     val, err := m.GetBackingStore().Get("organizations")
@@ -233,12 +214,6 @@ func (m *InboundActivityResults) Serialize(writer i878a80d2330e89d26896388a3f487
     if err != nil {
         return err
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetErrors sets the errors property value. Number of errors encountered while processing the inbound flow.
@@ -265,13 +240,6 @@ func (m *InboundActivityResults) SetMatchedPeopleByRole(value []IndustryDataRunR
 // SetMemberships sets the memberships property value. Counts of active and inactive memberships processed by the inbound flow.
 func (m *InboundActivityResults) SetMemberships(value IndustryDataRunEntityCountMetricable)() {
     err := m.GetBackingStore().Set("memberships", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *InboundActivityResults) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -312,7 +280,6 @@ type InboundActivityResultsable interface {
     GetGroups()(IndustryDataRunEntityCountMetricable)
     GetMatchedPeopleByRole()([]IndustryDataRunRoleCountMetricable)
     GetMemberships()(IndustryDataRunEntityCountMetricable)
-    GetOdataType()(*string)
     GetOrganizations()(IndustryDataRunEntityCountMetricable)
     GetPeople()(IndustryDataRunEntityCountMetricable)
     GetUnmatchedPeopleByRole()([]IndustryDataRunRoleCountMetricable)
@@ -321,7 +288,6 @@ type InboundActivityResultsable interface {
     SetGroups(value IndustryDataRunEntityCountMetricable)()
     SetMatchedPeopleByRole(value []IndustryDataRunRoleCountMetricable)()
     SetMemberships(value IndustryDataRunEntityCountMetricable)()
-    SetOdataType(value *string)()
     SetOrganizations(value IndustryDataRunEntityCountMetricable)()
     SetPeople(value IndustryDataRunEntityCountMetricable)()
     SetUnmatchedPeopleByRole(value []IndustryDataRunRoleCountMetricable)()

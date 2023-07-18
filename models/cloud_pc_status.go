@@ -19,10 +19,11 @@ const (
     UNKNOWNFUTUREVALUE_CLOUDPCSTATUS
     MOVINGREGION_CLOUDPCSTATUS
     RESIZEPENDINGLICENSE_CLOUDPCSTATUS
+    UPDATINGSINGLESIGNON_CLOUDPCSTATUS
 )
 
 func (i CloudPcStatus) String() string {
-    return []string{"notProvisioned", "provisioning", "provisioned", "inGracePeriod", "deprovisioning", "failed", "provisionedWithWarnings", "resizing", "restoring", "pendingProvision", "unknownFutureValue", "movingRegion", "resizePendingLicense"}[i]
+    return []string{"notProvisioned", "provisioning", "provisioned", "inGracePeriod", "deprovisioning", "failed", "provisionedWithWarnings", "resizing", "restoring", "pendingProvision", "unknownFutureValue", "movingRegion", "resizePendingLicense", "updatingSingleSignOn"}[i]
 }
 func ParseCloudPcStatus(v string) (any, error) {
     result := NOTPROVISIONED_CLOUDPCSTATUS
@@ -53,6 +54,8 @@ func ParseCloudPcStatus(v string) (any, error) {
             result = MOVINGREGION_CLOUDPCSTATUS
         case "resizePendingLicense":
             result = RESIZEPENDINGLICENSE_CLOUDPCSTATUS
+        case "updatingSingleSignOn":
+            result = UPDATINGSINGLESIGNON_CLOUDPCSTATUS
         default:
             return 0, errors.New("Unknown CloudPcStatus value: " + v)
     }

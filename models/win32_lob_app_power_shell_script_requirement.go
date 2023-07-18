@@ -7,6 +7,8 @@ import (
 // Win32LobAppPowerShellScriptRequirement contains PowerShell script properties to detect a Win32 App
 type Win32LobAppPowerShellScriptRequirement struct {
     Win32LobAppRequirement
+    // The OdataType property
+    OdataType *string
 }
 // NewWin32LobAppPowerShellScriptRequirement instantiates a new win32LobAppPowerShellScriptRequirement and sets the default values.
 func NewWin32LobAppPowerShellScriptRequirement()(*Win32LobAppPowerShellScriptRequirement) {
@@ -87,16 +89,6 @@ func (m *Win32LobAppPowerShellScriptRequirement) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["runAs32Bit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -128,17 +120,6 @@ func (m *Win32LobAppPowerShellScriptRequirement) GetFieldDeserializers()(map[str
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *Win32LobAppPowerShellScriptRequirement) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetRunAs32Bit gets the runAs32Bit property value. A value indicating whether this script should run as 32-bit
 func (m *Win32LobAppPowerShellScriptRequirement) GetRunAs32Bit()(*bool) {
@@ -199,12 +180,6 @@ func (m *Win32LobAppPowerShellScriptRequirement) Serialize(writer i878a80d2330e8
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteBoolValue("runAs32Bit", m.GetRunAs32Bit())
         if err != nil {
             return err
@@ -246,13 +221,6 @@ func (m *Win32LobAppPowerShellScriptRequirement) SetEnforceSignatureCheck(value 
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *Win32LobAppPowerShellScriptRequirement) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetRunAs32Bit sets the runAs32Bit property value. A value indicating whether this script should run as 32-bit
 func (m *Win32LobAppPowerShellScriptRequirement) SetRunAs32Bit(value *bool)() {
     err := m.GetBackingStore().Set("runAs32Bit", value)
@@ -281,14 +249,12 @@ type Win32LobAppPowerShellScriptRequirementable interface {
     GetDetectionType()(*Win32LobAppPowerShellScriptDetectionType)
     GetDisplayName()(*string)
     GetEnforceSignatureCheck()(*bool)
-    GetOdataType()(*string)
     GetRunAs32Bit()(*bool)
     GetRunAsAccount()(*RunAsAccountType)
     GetScriptContent()(*string)
     SetDetectionType(value *Win32LobAppPowerShellScriptDetectionType)()
     SetDisplayName(value *string)()
     SetEnforceSignatureCheck(value *bool)()
-    SetOdataType(value *string)()
     SetRunAs32Bit(value *bool)()
     SetRunAsAccount(value *RunAsAccountType)()
     SetScriptContent(value *string)()

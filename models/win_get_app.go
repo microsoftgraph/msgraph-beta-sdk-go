@@ -7,8 +7,6 @@ import (
 // WinGetApp a MobileApp that is based on a referenced application in a WinGet repository.
 type WinGetApp struct {
     MobileApp
-    // The OdataType property
-    OdataType *string
 }
 // NewWinGetApp instantiates a new winGetApp and sets the default values.
 func NewWinGetApp()(*WinGetApp) {

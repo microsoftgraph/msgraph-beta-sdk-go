@@ -7,8 +7,6 @@ import (
 // AzureADDeviceRegistrationError 
 type AzureADDeviceRegistrationError struct {
     UpdatableAssetError
-    // The OdataType property
-    OdataType *string
 }
 // NewAzureADDeviceRegistrationError instantiates a new azureADDeviceRegistrationError and sets the default values.
 func NewAzureADDeviceRegistrationError()(*AzureADDeviceRegistrationError) {
@@ -26,6 +24,16 @@ func CreateAzureADDeviceRegistrationErrorFromDiscriminatorValue(parseNode i878a8
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AzureADDeviceRegistrationError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UpdatableAssetError.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["reason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAzureADDeviceRegistrationErrorReason)
         if err != nil {
@@ -37,6 +45,17 @@ func (m *AzureADDeviceRegistrationError) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AzureADDeviceRegistrationError) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetReason gets the reason property value. The reason property
 func (m *AzureADDeviceRegistrationError) GetReason()(*AzureADDeviceRegistrationErrorReason) {
@@ -55,6 +74,12 @@ func (m *AzureADDeviceRegistrationError) Serialize(writer i878a80d2330e89d268963
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetReason() != nil {
         cast := (*m.GetReason()).String()
         err = writer.WriteStringValue("reason", &cast)
@@ -63,6 +88,13 @@ func (m *AzureADDeviceRegistrationError) Serialize(writer i878a80d2330e89d268963
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AzureADDeviceRegistrationError) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReason sets the reason property value. The reason property
 func (m *AzureADDeviceRegistrationError) SetReason(value *AzureADDeviceRegistrationErrorReason)() {
@@ -75,6 +107,8 @@ func (m *AzureADDeviceRegistrationError) SetReason(value *AzureADDeviceRegistrat
 type AzureADDeviceRegistrationErrorable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UpdatableAssetErrorable
+    GetOdataType()(*string)
     GetReason()(*AzureADDeviceRegistrationErrorReason)
+    SetOdataType(value *string)()
     SetReason(value *AzureADDeviceRegistrationErrorReason)()
 }

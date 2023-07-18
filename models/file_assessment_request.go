@@ -7,6 +7,8 @@ import (
 // FileAssessmentRequest 
 type FileAssessmentRequest struct {
     ThreatAssessmentRequest
+    // The OdataType property
+    OdataType *string
 }
 // NewFileAssessmentRequest instantiates a new fileAssessmentRequest and sets the default values.
 func NewFileAssessmentRequest()(*FileAssessmentRequest) {

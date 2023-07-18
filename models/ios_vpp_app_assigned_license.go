@@ -7,8 +7,6 @@ import (
 // IosVppAppAssignedLicense iOS Volume Purchase Program license assignment. This class does not support Create, Delete, or Update.
 type IosVppAppAssignedLicense struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewIosVppAppAssignedLicense instantiates a new iosVppAppAssignedLicense and sets the default values.
 func NewIosVppAppAssignedLicense()(*IosVppAppAssignedLicense) {
@@ -44,6 +42,16 @@ func CreateIosVppAppAssignedLicenseFromDiscriminatorValue(parseNode i878a80d2330
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosVppAppAssignedLicense) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["userEmailAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -85,6 +93,17 @@ func (m *IosVppAppAssignedLicense) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IosVppAppAssignedLicense) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserEmailAddress gets the userEmailAddress property value. The user email address.
 func (m *IosVppAppAssignedLicense) GetUserEmailAddress()(*string) {
@@ -137,6 +156,12 @@ func (m *IosVppAppAssignedLicense) Serialize(writer i878a80d2330e89d26896388a3f4
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("userEmailAddress", m.GetUserEmailAddress())
         if err != nil {
             return err
@@ -161,6 +186,13 @@ func (m *IosVppAppAssignedLicense) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IosVppAppAssignedLicense) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserEmailAddress sets the userEmailAddress property value. The user email address.
 func (m *IosVppAppAssignedLicense) SetUserEmailAddress(value *string)() {
@@ -194,10 +226,12 @@ func (m *IosVppAppAssignedLicense) SetUserPrincipalName(value *string)() {
 type IosVppAppAssignedLicenseable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetUserEmailAddress()(*string)
     GetUserId()(*string)
     GetUserName()(*string)
     GetUserPrincipalName()(*string)
+    SetOdataType(value *string)()
     SetUserEmailAddress(value *string)()
     SetUserId(value *string)()
     SetUserName(value *string)()

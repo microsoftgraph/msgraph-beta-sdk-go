@@ -7,6 +7,8 @@ import (
 // ImportedAppleDeviceIdentityResult the importedAppleDeviceIdentityResult resource represents the result of attempting to import Apple devices identities.
 type ImportedAppleDeviceIdentityResult struct {
     ImportedAppleDeviceIdentity
+    // The OdataType property
+    OdataType *string
 }
 // NewImportedAppleDeviceIdentityResult instantiates a new importedAppleDeviceIdentityResult and sets the default values.
 func NewImportedAppleDeviceIdentityResult()(*ImportedAppleDeviceIdentityResult) {

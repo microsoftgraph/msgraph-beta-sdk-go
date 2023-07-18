@@ -7,6 +7,8 @@ import (
 // AuditUserIdentity 
 type AuditUserIdentity struct {
     UserIdentity
+    // The OdataType property
+    OdataType *string
 }
 // NewAuditUserIdentity instantiates a new auditUserIdentity and sets the default values.
 func NewAuditUserIdentity()(*AuditUserIdentity) {

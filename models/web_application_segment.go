@@ -7,6 +7,8 @@ import (
 // WebApplicationSegment 
 type WebApplicationSegment struct {
     ApplicationSegment
+    // The OdataType property
+    OdataType *string
 }
 // NewWebApplicationSegment instantiates a new webApplicationSegment and sets the default values.
 func NewWebApplicationSegment()(*WebApplicationSegment) {

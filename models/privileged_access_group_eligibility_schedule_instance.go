@@ -7,6 +7,8 @@ import (
 // PrivilegedAccessGroupEligibilityScheduleInstance 
 type PrivilegedAccessGroupEligibilityScheduleInstance struct {
     PrivilegedAccessScheduleInstance
+    // The OdataType property
+    OdataType *string
 }
 // NewPrivilegedAccessGroupEligibilityScheduleInstance instantiates a new privilegedAccessGroupEligibilityScheduleInstance and sets the default values.
 func NewPrivilegedAccessGroupEligibilityScheduleInstance()(*PrivilegedAccessGroupEligibilityScheduleInstance) {

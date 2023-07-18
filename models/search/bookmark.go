@@ -9,6 +9,8 @@ import (
 // Bookmark 
 type Bookmark struct {
     SearchAnswer
+    // The OdataType property
+    OdataType *string
 }
 // NewBookmark instantiates a new bookmark and sets the default values.
 func NewBookmark()(*Bookmark) {

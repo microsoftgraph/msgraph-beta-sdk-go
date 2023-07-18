@@ -9,8 +9,6 @@ import (
 // SearchAnswer 
 type SearchAnswer struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewSearchAnswer instantiates a new searchAnswer and sets the default values.
 func NewSearchAnswer()(*SearchAnswer) {
@@ -110,6 +108,16 @@ func (m *SearchAnswer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["webUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -141,6 +149,17 @@ func (m *SearchAnswer) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad9
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SearchAnswer) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -186,6 +205,12 @@ func (m *SearchAnswer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("webUrl", m.GetWebUrl())
         if err != nil {
             return err
@@ -221,6 +246,13 @@ func (m *SearchAnswer) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SearchAnswer) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetWebUrl sets the webUrl property value. Search answer URL link. When users click this search answer in search results, they will go to this URL.
 func (m *SearchAnswer) SetWebUrl(value *string)() {
     err := m.GetBackingStore().Set("webUrl", value)
@@ -236,10 +268,12 @@ type SearchAnswerable interface {
     GetDisplayName()(*string)
     GetLastModifiedBy()(IdentitySetable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetWebUrl()(*string)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetLastModifiedBy(value IdentitySetable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetWebUrl(value *string)()
 }

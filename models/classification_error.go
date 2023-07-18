@@ -7,6 +7,8 @@ import (
 // ClassificationError 
 type ClassificationError struct {
     ClassifcationErrorBase
+    // The OdataType property
+    OdataType *string
 }
 // NewClassificationError instantiates a new classificationError and sets the default values.
 func NewClassificationError()(*ClassificationError) {
@@ -49,28 +51,7 @@ func (m *ClassificationError) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *ClassificationError) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // Serialize serializes information the current object
 func (m *ClassificationError) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -90,12 +71,6 @@ func (m *ClassificationError) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetDetails sets the details property value. The details property
@@ -105,19 +80,10 @@ func (m *ClassificationError) SetDetails(value []ClassifcationErrorBaseable)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *ClassificationError) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // ClassificationErrorable 
 type ClassificationErrorable interface {
     ClassifcationErrorBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDetails()([]ClassifcationErrorBaseable)
-    GetOdataType()(*string)
     SetDetails(value []ClassifcationErrorBaseable)()
-    SetOdataType(value *string)()
 }

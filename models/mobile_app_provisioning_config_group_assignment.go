@@ -7,8 +7,6 @@ import (
 // MobileAppProvisioningConfigGroupAssignment contains the properties used to assign an App provisioning configuration to a group.
 type MobileAppProvisioningConfigGroupAssignment struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewMobileAppProvisioningConfigGroupAssignment instantiates a new mobileAppProvisioningConfigGroupAssignment and sets the default values.
 func NewMobileAppProvisioningConfigGroupAssignment()(*MobileAppProvisioningConfigGroupAssignment) {
@@ -24,6 +22,16 @@ func CreateMobileAppProvisioningConfigGroupAssignmentFromDiscriminatorValue(pars
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MobileAppProvisioningConfigGroupAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["targetGroupId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -35,6 +43,17 @@ func (m *MobileAppProvisioningConfigGroupAssignment) GetFieldDeserializers()(map
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MobileAppProvisioningConfigGroupAssignment) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTargetGroupId gets the targetGroupId property value. The ID of the AAD group in which the app provisioning configuration is being targeted.
 func (m *MobileAppProvisioningConfigGroupAssignment) GetTargetGroupId()(*string) {
@@ -54,12 +73,25 @@ func (m *MobileAppProvisioningConfigGroupAssignment) Serialize(writer i878a80d23
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("targetGroupId", m.GetTargetGroupId())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MobileAppProvisioningConfigGroupAssignment) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTargetGroupId sets the targetGroupId property value. The ID of the AAD group in which the app provisioning configuration is being targeted.
 func (m *MobileAppProvisioningConfigGroupAssignment) SetTargetGroupId(value *string)() {
@@ -72,6 +104,8 @@ func (m *MobileAppProvisioningConfigGroupAssignment) SetTargetGroupId(value *str
 type MobileAppProvisioningConfigGroupAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetTargetGroupId()(*string)
+    SetOdataType(value *string)()
     SetTargetGroupId(value *string)()
 }

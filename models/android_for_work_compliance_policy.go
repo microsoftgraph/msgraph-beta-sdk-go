@@ -7,6 +7,8 @@ import (
 // AndroidForWorkCompliancePolicy this class contains compliance settings for Android for Work.
 type AndroidForWorkCompliancePolicy struct {
     DeviceCompliancePolicy
+    // The OdataType property
+    OdataType *string
 }
 // NewAndroidForWorkCompliancePolicy instantiates a new androidForWorkCompliancePolicy and sets the default values.
 func NewAndroidForWorkCompliancePolicy()(*AndroidForWorkCompliancePolicy) {

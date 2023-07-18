@@ -7,8 +7,6 @@ import (
 // ExternalMeetingRegistration 
 type ExternalMeetingRegistration struct {
     MeetingRegistrationBase
-    // The OdataType property
-    OdataType *string
 }
 // NewExternalMeetingRegistration instantiates a new externalMeetingRegistration and sets the default values.
 func NewExternalMeetingRegistration()(*ExternalMeetingRegistration) {

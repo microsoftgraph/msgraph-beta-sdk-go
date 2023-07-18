@@ -7,8 +7,6 @@ import (
 // AndroidManagedStoreApp contains properties and inherited properties for Android Managed Store Apps.
 type AndroidManagedStoreApp struct {
     MobileApp
-    // The OdataType property
-    OdataType *string
 }
 // NewAndroidManagedStoreApp instantiates a new androidManagedStoreApp and sets the default values.
 func NewAndroidManagedStoreApp()(*AndroidManagedStoreApp) {

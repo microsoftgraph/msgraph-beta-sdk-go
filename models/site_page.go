@@ -23,7 +23,7 @@ func NewSitePage()(*SitePage) {
 func CreateSitePageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSitePage(), nil
 }
-// GetCanvasLayout gets the canvasLayout property value. Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical section
+// GetCanvasLayout gets the canvasLayout property value. Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical sections.
 func (m *SitePage) GetCanvasLayout()(CanvasLayoutable) {
     val, err := m.GetBackingStore().Get("canvasLayout")
     if err != nil {
@@ -34,7 +34,7 @@ func (m *SitePage) GetCanvasLayout()(CanvasLayoutable) {
     }
     return nil
 }
-// GetContentType gets the contentType property value. Inherited from baseItem.
+// GetContentType gets the contentType property value. The contentType property
 func (m *SitePage) GetContentType()(ContentTypeInfoable) {
     val, err := m.GetBackingStore().Get("contentType")
     if err != nil {
@@ -176,7 +176,7 @@ func (m *SitePage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetPageLayout gets the pageLayout property value. The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue.
+// GetPageLayout gets the pageLayout property value. The pageLayout property
 func (m *SitePage) GetPageLayout()(*PageLayoutType) {
     val, err := m.GetBackingStore().Get("pageLayout")
     if err != nil {
@@ -198,7 +198,7 @@ func (m *SitePage) GetPromotionKind()(*PagePromotionType) {
     }
     return nil
 }
-// GetPublishingState gets the publishingState property value. The publishing status and the MM.mm version of the page.
+// GetPublishingState gets the publishingState property value. The publishingState property
 func (m *SitePage) GetPublishingState()(PublicationFacetable) {
     val, err := m.GetBackingStore().Get("publishingState")
     if err != nil {
@@ -253,7 +253,7 @@ func (m *SitePage) GetThumbnailWebUrl()(*string) {
     }
     return nil
 }
-// GetTitle gets the title property value. Title of the sitePage.
+// GetTitle gets the title property value. The title property
 func (m *SitePage) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
     if err != nil {
@@ -275,7 +275,7 @@ func (m *SitePage) GetTitleArea()(TitleAreaable) {
     }
     return nil
 }
-// GetWebParts gets the webParts property value. Collection of webparts on the SharePoint page
+// GetWebParts gets the webParts property value. Collection of webparts on the SharePoint page.
 func (m *SitePage) GetWebParts()([]WebPartable) {
     val, err := m.GetBackingStore().Get("webParts")
     if err != nil {
@@ -374,21 +374,21 @@ func (m *SitePage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetCanvasLayout sets the canvasLayout property value. Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical section
+// SetCanvasLayout sets the canvasLayout property value. Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical sections.
 func (m *SitePage) SetCanvasLayout(value CanvasLayoutable)() {
     err := m.GetBackingStore().Set("canvasLayout", value)
     if err != nil {
         panic(err)
     }
 }
-// SetContentType sets the contentType property value. Inherited from baseItem.
+// SetContentType sets the contentType property value. The contentType property
 func (m *SitePage) SetContentType(value ContentTypeInfoable)() {
     err := m.GetBackingStore().Set("contentType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPageLayout sets the pageLayout property value. The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue.
+// SetPageLayout sets the pageLayout property value. The pageLayout property
 func (m *SitePage) SetPageLayout(value *PageLayoutType)() {
     err := m.GetBackingStore().Set("pageLayout", value)
     if err != nil {
@@ -402,7 +402,7 @@ func (m *SitePage) SetPromotionKind(value *PagePromotionType)() {
         panic(err)
     }
 }
-// SetPublishingState sets the publishingState property value. The publishing status and the MM.mm version of the page.
+// SetPublishingState sets the publishingState property value. The publishingState property
 func (m *SitePage) SetPublishingState(value PublicationFacetable)() {
     err := m.GetBackingStore().Set("publishingState", value)
     if err != nil {
@@ -437,7 +437,7 @@ func (m *SitePage) SetThumbnailWebUrl(value *string)() {
         panic(err)
     }
 }
-// SetTitle sets the title property value. Title of the sitePage.
+// SetTitle sets the title property value. The title property
 func (m *SitePage) SetTitle(value *string)() {
     err := m.GetBackingStore().Set("title", value)
     if err != nil {
@@ -451,7 +451,7 @@ func (m *SitePage) SetTitleArea(value TitleAreaable)() {
         panic(err)
     }
 }
-// SetWebParts sets the webParts property value. Collection of webparts on the SharePoint page
+// SetWebParts sets the webParts property value. Collection of webparts on the SharePoint page.
 func (m *SitePage) SetWebParts(value []WebPartable)() {
     err := m.GetBackingStore().Set("webParts", value)
     if err != nil {

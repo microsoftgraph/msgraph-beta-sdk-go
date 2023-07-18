@@ -7,6 +7,8 @@ import (
 // EmailAuthenticationMethodConfiguration 
 type EmailAuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
+    // The OdataType property
+    OdataType *string
 }
 // NewEmailAuthenticationMethodConfiguration instantiates a new emailAuthenticationMethodConfiguration and sets the default values.
 func NewEmailAuthenticationMethodConfiguration()(*EmailAuthenticationMethodConfiguration) {

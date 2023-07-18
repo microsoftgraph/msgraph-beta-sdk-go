@@ -33,6 +33,17 @@ func (m *CloudPC) GetAadDeviceId()(*string) {
     }
     return nil
 }
+// GetConnectionSettings gets the connectionSettings property value. The connectionSettings property
+func (m *CloudPC) GetConnectionSettings()(CloudPcConnectionSettingsable) {
+    val, err := m.GetBackingStore().Get("connectionSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcConnectionSettingsable)
+    }
+    return nil
+}
 // GetConnectivityResult gets the connectivityResult property value. The connectivity health check result of a Cloud PC, including the updated timestamp and whether the Cloud PC can be connected.
 func (m *CloudPC) GetConnectivityResult()(CloudPcConnectivityResultable) {
     val, err := m.GetBackingStore().Get("connectivityResult")
@@ -76,6 +87,16 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         if val != nil {
             m.SetAadDeviceId(val)
+        }
+        return nil
+    }
+    res["connectionSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcConnectionSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetConnectionSettings(val.(CloudPcConnectionSettingsable))
         }
         return nil
     }
@@ -571,6 +592,12 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
         }
     }
     {
+        err = writer.WriteObjectValue("connectionSettings", m.GetConnectionSettings())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("connectivityResult", m.GetConnectivityResult())
         if err != nil {
             return err
@@ -732,6 +759,13 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 // SetAadDeviceId sets the aadDeviceId property value. The Azure Active Directory (Azure AD) device ID of the Cloud PC.
 func (m *CloudPC) SetAadDeviceId(value *string)() {
     err := m.GetBackingStore().Set("aadDeviceId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetConnectionSettings sets the connectionSettings property value. The connectionSettings property
+func (m *CloudPC) SetConnectionSettings(value CloudPcConnectionSettingsable)() {
+    err := m.GetBackingStore().Set("connectionSettings", value)
     if err != nil {
         panic(err)
     }
@@ -909,6 +943,7 @@ type CloudPCable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAadDeviceId()(*string)
+    GetConnectionSettings()(CloudPcConnectionSettingsable)
     GetConnectivityResult()(CloudPcConnectivityResultable)
     GetDiskEncryptionState()(*CloudPcDiskEncryptionState)
     GetDisplayName()(*string)
@@ -934,6 +969,7 @@ type CloudPCable interface {
     GetUserAccountType()(*CloudPcUserAccountType)
     GetUserPrincipalName()(*string)
     SetAadDeviceId(value *string)()
+    SetConnectionSettings(value CloudPcConnectionSettingsable)()
     SetConnectivityResult(value CloudPcConnectivityResultable)()
     SetDiskEncryptionState(value *CloudPcDiskEncryptionState)()
     SetDisplayName(value *string)()

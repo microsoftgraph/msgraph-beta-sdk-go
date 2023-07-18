@@ -8,8 +8,6 @@ import (
 // LabelsRoot 
 type LabelsRoot struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewLabelsRoot instantiates a new labelsRoot and sets the default values.
 func NewLabelsRoot()(*LabelsRoot) {
@@ -149,6 +147,16 @@ func (m *LabelsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["retentionLabels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRetentionLabelFromDiscriminatorValue)
         if err != nil {
@@ -175,6 +183,17 @@ func (m *LabelsRoot) GetFilePlanReferences()([]FilePlanReferenceTemplateable) {
     }
     if val != nil {
         return val.([]FilePlanReferenceTemplateable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *LabelsRoot) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -255,6 +274,12 @@ func (m *LabelsRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRetentionLabels() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRetentionLabels()))
         for i, v := range m.GetRetentionLabels() {
@@ -304,6 +329,13 @@ func (m *LabelsRoot) SetFilePlanReferences(value []FilePlanReferenceTemplateable
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *LabelsRoot) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRetentionLabels sets the retentionLabels property value. Represents how customers can manage their data, whether and for how long to retain or delete it.
 func (m *LabelsRoot) SetRetentionLabels(value []RetentionLabelable)() {
     err := m.GetBackingStore().Set("retentionLabels", value)
@@ -320,11 +352,13 @@ type LabelsRootable interface {
     GetCitations()([]CitationTemplateable)
     GetDepartments()([]DepartmentTemplateable)
     GetFilePlanReferences()([]FilePlanReferenceTemplateable)
+    GetOdataType()(*string)
     GetRetentionLabels()([]RetentionLabelable)
     SetAuthorities(value []AuthorityTemplateable)()
     SetCategories(value []CategoryTemplateable)()
     SetCitations(value []CitationTemplateable)()
     SetDepartments(value []DepartmentTemplateable)()
     SetFilePlanReferences(value []FilePlanReferenceTemplateable)()
+    SetOdataType(value *string)()
     SetRetentionLabels(value []RetentionLabelable)()
 }

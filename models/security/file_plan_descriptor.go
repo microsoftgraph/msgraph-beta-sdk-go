@@ -8,8 +8,6 @@ import (
 // FilePlanDescriptor 
 type FilePlanDescriptor struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewFilePlanDescriptor instantiates a new filePlanDescriptor and sets the default values.
 func NewFilePlanDescriptor()(*FilePlanDescriptor) {
@@ -213,6 +211,16 @@ func (m *FilePlanDescriptor) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetFilePlanReference gets the filePlanReference property value. Represents the file plan descriptor of type filePlanReference applied to a particular retention label.
@@ -234,6 +242,17 @@ func (m *FilePlanDescriptor) GetFilePlanReferenceTemplate()(FilePlanReferenceTem
     }
     if val != nil {
         return val.(FilePlanReferenceTemplateable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *FilePlanDescriptor) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -299,6 +318,12 @@ func (m *FilePlanDescriptor) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err = writer.WriteObjectValue("filePlanReferenceTemplate", m.GetFilePlanReferenceTemplate())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -375,6 +400,13 @@ func (m *FilePlanDescriptor) SetFilePlanReferenceTemplate(value FilePlanReferenc
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *FilePlanDescriptor) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // FilePlanDescriptorable 
 type FilePlanDescriptorable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
@@ -389,6 +421,7 @@ type FilePlanDescriptorable interface {
     GetDepartmentTemplate()(DepartmentTemplateable)
     GetFilePlanReference()(FilePlanReferenceable)
     GetFilePlanReferenceTemplate()(FilePlanReferenceTemplateable)
+    GetOdataType()(*string)
     SetAuthority(value Authorityable)()
     SetAuthorityTemplate(value AuthorityTemplateable)()
     SetCategory(value AppliedCategoryable)()
@@ -399,4 +432,5 @@ type FilePlanDescriptorable interface {
     SetDepartmentTemplate(value DepartmentTemplateable)()
     SetFilePlanReference(value FilePlanReferenceable)()
     SetFilePlanReferenceTemplate(value FilePlanReferenceTemplateable)()
+    SetOdataType(value *string)()
 }

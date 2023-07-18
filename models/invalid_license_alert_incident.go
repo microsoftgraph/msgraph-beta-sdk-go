@@ -7,6 +7,8 @@ import (
 // InvalidLicenseAlertIncident 
 type InvalidLicenseAlertIncident struct {
     UnifiedRoleManagementAlertIncident
+    // The OdataType property
+    OdataType *string
 }
 // NewInvalidLicenseAlertIncident instantiates a new invalidLicenseAlertIncident and sets the default values.
 func NewInvalidLicenseAlertIncident()(*InvalidLicenseAlertIncident) {

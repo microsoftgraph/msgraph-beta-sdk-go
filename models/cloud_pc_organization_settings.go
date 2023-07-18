@@ -7,8 +7,6 @@ import (
 // CloudPcOrganizationSettings 
 type CloudPcOrganizationSettings struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewCloudPcOrganizationSettings instantiates a new cloudPcOrganizationSettings and sets the default values.
 func NewCloudPcOrganizationSettings()(*CloudPcOrganizationSettings) {
@@ -66,6 +64,16 @@ func (m *CloudPcOrganizationSettings) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["osVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcOperatingSystem)
         if err != nil {
@@ -97,6 +105,17 @@ func (m *CloudPcOrganizationSettings) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CloudPcOrganizationSettings) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOsVersion gets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
 func (m *CloudPcOrganizationSettings) GetOsVersion()(*CloudPcOperatingSystem) {
@@ -149,6 +168,12 @@ func (m *CloudPcOrganizationSettings) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetOsVersion() != nil {
         cast := (*m.GetOsVersion()).String()
         err = writer.WriteStringValue("osVersion", &cast)
@@ -185,6 +210,13 @@ func (m *CloudPcOrganizationSettings) SetEnableSingleSignOn(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CloudPcOrganizationSettings) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOsVersion sets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
 func (m *CloudPcOrganizationSettings) SetOsVersion(value *CloudPcOperatingSystem)() {
     err := m.GetBackingStore().Set("osVersion", value)
@@ -212,11 +244,13 @@ type CloudPcOrganizationSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEnableMEMAutoEnroll()(*bool)
     GetEnableSingleSignOn()(*bool)
+    GetOdataType()(*string)
     GetOsVersion()(*CloudPcOperatingSystem)
     GetUserAccountType()(*CloudPcUserAccountType)
     GetWindowsSettings()(CloudPcWindowsSettingsable)
     SetEnableMEMAutoEnroll(value *bool)()
     SetEnableSingleSignOn(value *bool)()
+    SetOdataType(value *string)()
     SetOsVersion(value *CloudPcOperatingSystem)()
     SetUserAccountType(value *CloudPcUserAccountType)()
     SetWindowsSettings(value CloudPcWindowsSettingsable)()

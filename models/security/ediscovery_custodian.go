@@ -77,6 +77,16 @@ func (m *EdiscoveryCustodian) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["siteSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSiteSourceFromDiscriminatorValue)
         if err != nil {
@@ -138,6 +148,17 @@ func (m *EdiscoveryCustodian) GetLastIndexOperation()(EdiscoveryIndexOperationab
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EdiscoveryCustodian) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetSiteSources gets the siteSources property value. Data source entity for SharePoint sites associated with the custodian.
 func (m *EdiscoveryCustodian) GetSiteSources()([]SiteSourceable) {
     val, err := m.GetBackingStore().Get("siteSources")
@@ -191,6 +212,12 @@ func (m *EdiscoveryCustodian) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     {
         err = writer.WriteObjectValue("lastIndexOperation", m.GetLastIndexOperation())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -254,6 +281,13 @@ func (m *EdiscoveryCustodian) SetLastIndexOperation(value EdiscoveryIndexOperati
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EdiscoveryCustodian) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSiteSources sets the siteSources property value. Data source entity for SharePoint sites associated with the custodian.
 func (m *EdiscoveryCustodian) SetSiteSources(value []SiteSourceable)() {
     err := m.GetBackingStore().Set("siteSources", value)
@@ -282,12 +316,14 @@ type EdiscoveryCustodianable interface {
     GetAcknowledgedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetEmail()(*string)
     GetLastIndexOperation()(EdiscoveryIndexOperationable)
+    GetOdataType()(*string)
     GetSiteSources()([]SiteSourceable)
     GetUnifiedGroupSources()([]UnifiedGroupSourceable)
     GetUserSources()([]UserSourceable)
     SetAcknowledgedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetEmail(value *string)()
     SetLastIndexOperation(value EdiscoveryIndexOperationable)()
+    SetOdataType(value *string)()
     SetSiteSources(value []SiteSourceable)()
     SetUnifiedGroupSources(value []UnifiedGroupSourceable)()
     SetUserSources(value []UserSourceable)()

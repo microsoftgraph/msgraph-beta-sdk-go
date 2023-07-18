@@ -7,6 +7,8 @@ import (
 // OpenTypeExtension 
 type OpenTypeExtension struct {
     Extension
+    // The OdataType property
+    OdataType *string
 }
 // NewOpenTypeExtension instantiates a new openTypeExtension and sets the default values.
 func NewOpenTypeExtension()(*OpenTypeExtension) {

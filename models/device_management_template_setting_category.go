@@ -7,6 +7,8 @@ import (
 // DeviceManagementTemplateSettingCategory entity representing a template setting category
 type DeviceManagementTemplateSettingCategory struct {
     DeviceManagementSettingCategory
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceManagementTemplateSettingCategory instantiates a new deviceManagementTemplateSettingCategory and sets the default values.
 func NewDeviceManagementTemplateSettingCategory()(*DeviceManagementTemplateSettingCategory) {

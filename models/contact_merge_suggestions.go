@@ -7,8 +7,6 @@ import (
 // ContactMergeSuggestions 
 type ContactMergeSuggestions struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewContactMergeSuggestions instantiates a new contactMergeSuggestions and sets the default values.
 func NewContactMergeSuggestions()(*ContactMergeSuggestions) {
@@ -34,6 +32,16 @@ func (m *ContactMergeSuggestions) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsEnabled gets the isEnabled property value. true if the duplicate contact merge suggestions feature is enabled for the user; false if the feature is disabled. Default value is true.
@@ -44,6 +52,17 @@ func (m *ContactMergeSuggestions) GetIsEnabled()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ContactMergeSuggestions) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -59,6 +78,12 @@ func (m *ContactMergeSuggestions) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetIsEnabled sets the isEnabled property value. true if the duplicate contact merge suggestions feature is enabled for the user; false if the feature is disabled. Default value is true.
@@ -68,10 +93,19 @@ func (m *ContactMergeSuggestions) SetIsEnabled(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ContactMergeSuggestions) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // ContactMergeSuggestionsable 
 type ContactMergeSuggestionsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetIsEnabled()(*bool)
+    GetOdataType()(*string)
     SetIsEnabled(value *bool)()
+    SetOdataType(value *string)()
 }

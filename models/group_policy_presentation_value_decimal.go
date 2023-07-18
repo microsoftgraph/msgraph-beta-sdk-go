@@ -7,8 +7,6 @@ import (
 // GroupPolicyPresentationValueDecimal the entity represents an unsigned integer value of a decimal text box presentation on a policy definition.
 type GroupPolicyPresentationValueDecimal struct {
     GroupPolicyPresentationValue
-    // The OdataType property
-    OdataType *string
 }
 // NewGroupPolicyPresentationValueDecimal instantiates a new groupPolicyPresentationValueDecimal and sets the default values.
 func NewGroupPolicyPresentationValueDecimal()(*GroupPolicyPresentationValueDecimal) {
@@ -24,6 +22,16 @@ func CreateGroupPolicyPresentationValueDecimalFromDiscriminatorValue(parseNode i
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyPresentationValueDecimal) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.GroupPolicyPresentationValue.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -35,6 +43,17 @@ func (m *GroupPolicyPresentationValueDecimal) GetFieldDeserializers()(map[string
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *GroupPolicyPresentationValueDecimal) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetValue gets the value property value. An unsigned integer value for the associated presentation.
 func (m *GroupPolicyPresentationValueDecimal) GetValue()(*int64) {
@@ -54,12 +73,25 @@ func (m *GroupPolicyPresentationValueDecimal) Serialize(writer i878a80d2330e89d2
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt64Value("value", m.GetValue())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *GroupPolicyPresentationValueDecimal) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetValue sets the value property value. An unsigned integer value for the associated presentation.
 func (m *GroupPolicyPresentationValueDecimal) SetValue(value *int64)() {
@@ -72,6 +104,8 @@ func (m *GroupPolicyPresentationValueDecimal) SetValue(value *int64)() {
 type GroupPolicyPresentationValueDecimalable interface {
     GroupPolicyPresentationValueable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetValue()(*int64)
+    SetOdataType(value *string)()
     SetValue(value *int64)()
 }

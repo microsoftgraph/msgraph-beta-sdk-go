@@ -7,8 +7,6 @@ import (
 // MobilityManagementPolicy 
 type MobilityManagementPolicy struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewMobilityManagementPolicy instantiates a new mobilityManagementPolicy and sets the default values.
 func NewMobilityManagementPolicy()(*MobilityManagementPolicy) {
@@ -155,6 +153,16 @@ func (m *MobilityManagementPolicy) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["termsOfUseUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -186,6 +194,17 @@ func (m *MobilityManagementPolicy) GetIsValid()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MobilityManagementPolicy) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -256,6 +275,12 @@ func (m *MobilityManagementPolicy) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("termsOfUseUrl", m.GetTermsOfUseUrl())
         if err != nil {
             return err
@@ -312,6 +337,13 @@ func (m *MobilityManagementPolicy) SetIsValid(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MobilityManagementPolicy) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTermsOfUseUrl sets the termsOfUseUrl property value. Terms of Use URL of the mobility management application.
 func (m *MobilityManagementPolicy) SetTermsOfUseUrl(value *string)() {
     err := m.GetBackingStore().Set("termsOfUseUrl", value)
@@ -330,6 +362,7 @@ type MobilityManagementPolicyable interface {
     GetDisplayName()(*string)
     GetIncludedGroups()([]Groupable)
     GetIsValid()(*bool)
+    GetOdataType()(*string)
     GetTermsOfUseUrl()(*string)
     SetAppliesTo(value *PolicyScope)()
     SetComplianceUrl(value *string)()
@@ -338,5 +371,6 @@ type MobilityManagementPolicyable interface {
     SetDisplayName(value *string)()
     SetIncludedGroups(value []Groupable)()
     SetIsValid(value *bool)()
+    SetOdataType(value *string)()
     SetTermsOfUseUrl(value *string)()
 }

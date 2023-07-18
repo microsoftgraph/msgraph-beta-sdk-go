@@ -8,6 +8,8 @@ import (
 // VerifiableCredentialRequired 
 type VerifiableCredentialRequired struct {
     VerifiableCredentialRequirementStatus
+    // The OdataType property
+    OdataType *string
 }
 // NewVerifiableCredentialRequired instantiates a new verifiableCredentialRequired and sets the default values.
 func NewVerifiableCredentialRequired()(*VerifiableCredentialRequired) {
@@ -46,16 +48,6 @@ func (m *VerifiableCredentialRequired) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -67,17 +59,6 @@ func (m *VerifiableCredentialRequired) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *VerifiableCredentialRequired) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetUrl gets the url property value. A URL that launches the digital wallet and starts the presentation process. You can present this URL to the user if they can't scan the QR code.
 func (m *VerifiableCredentialRequired) GetUrl()(*string) {
@@ -103,12 +84,6 @@ func (m *VerifiableCredentialRequired) Serialize(writer i878a80d2330e89d26896388
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("url", m.GetUrl())
         if err != nil {
             return err
@@ -119,13 +94,6 @@ func (m *VerifiableCredentialRequired) Serialize(writer i878a80d2330e89d26896388
 // SetExpiryDateTime sets the expiryDateTime property value. When the presentation request will expire and a new one will need to be generated.
 func (m *VerifiableCredentialRequired) SetExpiryDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expiryDateTime", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *VerifiableCredentialRequired) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -142,9 +110,7 @@ type VerifiableCredentialRequiredable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     VerifiableCredentialRequirementStatusable
     GetExpiryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetOdataType()(*string)
     GetUrl()(*string)
     SetExpiryDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetOdataType(value *string)()
     SetUrl(value *string)()
 }

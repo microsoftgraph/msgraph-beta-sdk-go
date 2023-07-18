@@ -7,6 +7,8 @@ import (
 // AddWatermarkAction 
 type AddWatermarkAction struct {
     InformationProtectionAction
+    // The OdataType property
+    OdataType *string
 }
 // NewAddWatermarkAction instantiates a new addWatermarkAction and sets the default values.
 func NewAddWatermarkAction()(*AddWatermarkAction) {
@@ -61,16 +63,6 @@ func (m *AddWatermarkAction) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetLayout(val.(*WatermarkLayout))
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
         }
         return nil
     }
@@ -140,17 +132,6 @@ func (m *AddWatermarkAction) GetLayout()(*WatermarkLayout) {
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *AddWatermarkAction) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetText gets the text property value. The contents of the watermark itself.
 func (m *AddWatermarkAction) GetText()(*string) {
     val, err := m.GetBackingStore().Get("text")
@@ -205,12 +186,6 @@ func (m *AddWatermarkAction) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("text", m.GetText())
         if err != nil {
             return err
@@ -252,13 +227,6 @@ func (m *AddWatermarkAction) SetLayout(value *WatermarkLayout)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *AddWatermarkAction) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetText sets the text property value. The contents of the watermark itself.
 func (m *AddWatermarkAction) SetText(value *string)() {
     err := m.GetBackingStore().Set("text", value)
@@ -281,14 +249,12 @@ type AddWatermarkActionable interface {
     GetFontName()(*string)
     GetFontSize()(*int32)
     GetLayout()(*WatermarkLayout)
-    GetOdataType()(*string)
     GetText()(*string)
     GetUiElementName()(*string)
     SetFontColor(value *string)()
     SetFontName(value *string)()
     SetFontSize(value *int32)()
     SetLayout(value *WatermarkLayout)()
-    SetOdataType(value *string)()
     SetText(value *string)()
     SetUiElementName(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // RevokeAppleVppLicensesActionResult revoke Apple Vpp licenses action result
 type RevokeAppleVppLicensesActionResult struct {
     DeviceActionResult
-    // The OdataType property
-    OdataType *string
 }
 // NewRevokeAppleVppLicensesActionResult instantiates a new revokeAppleVppLicensesActionResult and sets the default values.
 func NewRevokeAppleVppLicensesActionResult()(*RevokeAppleVppLicensesActionResult) {
@@ -45,6 +43,16 @@ func (m *RevokeAppleVppLicensesActionResult) GetFieldDeserializers()(map[string]
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["totalLicensesCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -56,6 +64,17 @@ func (m *RevokeAppleVppLicensesActionResult) GetFieldDeserializers()(map[string]
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RevokeAppleVppLicensesActionResult) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTotalLicensesCount gets the totalLicensesCount property value. Total number of Apple Vpp licenses associated
 func (m *RevokeAppleVppLicensesActionResult) GetTotalLicensesCount()(*int32) {
@@ -81,6 +100,12 @@ func (m *RevokeAppleVppLicensesActionResult) Serialize(writer i878a80d2330e89d26
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("totalLicensesCount", m.GetTotalLicensesCount())
         if err != nil {
             return err
@@ -91,6 +116,13 @@ func (m *RevokeAppleVppLicensesActionResult) Serialize(writer i878a80d2330e89d26
 // SetFailedLicensesCount sets the failedLicensesCount property value. Total number of Apple Vpp licenses that failed to revoke
 func (m *RevokeAppleVppLicensesActionResult) SetFailedLicensesCount(value *int32)() {
     err := m.GetBackingStore().Set("failedLicensesCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RevokeAppleVppLicensesActionResult) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -107,7 +139,9 @@ type RevokeAppleVppLicensesActionResultable interface {
     DeviceActionResultable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetFailedLicensesCount()(*int32)
+    GetOdataType()(*string)
     GetTotalLicensesCount()(*int32)
     SetFailedLicensesCount(value *int32)()
+    SetOdataType(value *string)()
     SetTotalLicensesCount(value *int32)()
 }

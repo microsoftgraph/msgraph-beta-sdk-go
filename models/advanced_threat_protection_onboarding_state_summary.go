@@ -7,8 +7,6 @@ import (
 // AdvancedThreatProtectionOnboardingStateSummary windows defender advanced threat protection onboarding state summary across the account.
 type AdvancedThreatProtectionOnboardingStateSummary struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAdvancedThreatProtectionOnboardingStateSummary instantiates a new advancedThreatProtectionOnboardingStateSummary and sets the default values.
 func NewAdvancedThreatProtectionOnboardingStateSummary()(*AdvancedThreatProtectionOnboardingStateSummary) {
@@ -144,6 +142,16 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) GetFieldDeserializers()
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["remediatedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -196,6 +204,17 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) GetNotAssignedDeviceCou
     }
     if val != nil {
         return val.(*int32)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AdvancedThreatProtectionOnboardingStateSummary) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -276,6 +295,12 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) Serialize(writer i878a8
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("remediatedDeviceCount", m.GetRemediatedDeviceCount())
         if err != nil {
             return err
@@ -338,6 +363,13 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) SetNotAssignedDeviceCou
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AdvancedThreatProtectionOnboardingStateSummary) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRemediatedDeviceCount sets the remediatedDeviceCount property value. Number of remediated devices
 func (m *AdvancedThreatProtectionOnboardingStateSummary) SetRemediatedDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("remediatedDeviceCount", value)
@@ -363,6 +395,7 @@ type AdvancedThreatProtectionOnboardingStateSummaryable interface {
     GetNonCompliantDeviceCount()(*int32)
     GetNotApplicableDeviceCount()(*int32)
     GetNotAssignedDeviceCount()(*int32)
+    GetOdataType()(*string)
     GetRemediatedDeviceCount()(*int32)
     GetUnknownDeviceCount()(*int32)
     SetAdvancedThreatProtectionOnboardingDeviceSettingStates(value []AdvancedThreatProtectionOnboardingDeviceSettingStateable)()
@@ -372,6 +405,7 @@ type AdvancedThreatProtectionOnboardingStateSummaryable interface {
     SetNonCompliantDeviceCount(value *int32)()
     SetNotApplicableDeviceCount(value *int32)()
     SetNotAssignedDeviceCount(value *int32)()
+    SetOdataType(value *string)()
     SetRemediatedDeviceCount(value *int32)()
     SetUnknownDeviceCount(value *int32)()
 }

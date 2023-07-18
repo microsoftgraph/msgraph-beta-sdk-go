@@ -18,7 +18,7 @@ type ItemPagesItemWebPartsWebPartItemRequestBuilderDeleteRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemPagesItemWebPartsWebPartItemRequestBuilderGetQueryParameters read the properties and relationships of a webPart object.
+// ItemPagesItemWebPartsWebPartItemRequestBuilderGetQueryParameters collection of webparts on the SharePoint page.
 type ItemPagesItemWebPartsWebPartItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemPagesItemWebPartsWebPartItemRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewItemPagesItemWebPartsWebPartItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property webParts for sites
+// Delete delete a webPart object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/webpart-delete?view=graph-rest-1.0
 func (m *ItemPagesItemWebPartsWebPartItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemPagesItemWebPartsWebPartItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,10 +73,7 @@ func (m *ItemPagesItemWebPartsWebPartItemRequestBuilder) Delete(ctx context.Cont
     }
     return nil
 }
-// Get read the properties and relationships of a webPart object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/webpart-get?view=graph-rest-1.0
+// Get collection of webparts on the SharePoint page.
 func (m *ItemPagesItemWebPartsWebPartItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPagesItemWebPartsWebPartItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebPartable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +115,7 @@ func (m *ItemPagesItemWebPartsWebPartItemRequestBuilder) Patch(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebPartable), nil
 }
-// ToDeleteRequestInformation delete navigation property webParts for sites
+// ToDeleteRequestInformation delete a webPart object.
 func (m *ItemPagesItemWebPartsWebPartItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemPagesItemWebPartsWebPartItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -127,7 +127,7 @@ func (m *ItemPagesItemWebPartsWebPartItemRequestBuilder) ToDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a webPart object.
+// ToGetRequestInformation collection of webparts on the SharePoint page.
 func (m *ItemPagesItemWebPartsWebPartItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPagesItemWebPartsWebPartItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

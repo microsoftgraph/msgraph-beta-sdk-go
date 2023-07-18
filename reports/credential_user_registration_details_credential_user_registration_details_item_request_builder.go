@@ -55,6 +55,7 @@ func NewCredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRe
     return NewCredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property credentialUserRegistrationDetails for reports
+// Deprecated: The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
 func (m *CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -71,6 +72,7 @@ func (m *CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemR
     return nil
 }
 // Get details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+// Deprecated: The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
 func (m *CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,6 +92,7 @@ func (m *CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemR
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable), nil
 }
 // Patch update the navigation property credentialUserRegistrationDetails in reports
+// Deprecated: The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
 func (m *CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable, requestConfiguration *CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -109,6 +112,7 @@ func (m *CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemR
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable), nil
 }
 // ToDeleteRequestInformation delete navigation property credentialUserRegistrationDetails for reports
+// Deprecated: The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
 func (m *CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -121,6 +125,7 @@ func (m *CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemR
     return requestInfo, nil
 }
 // ToGetRequestInformation details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+// Deprecated: The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
 func (m *CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -137,6 +142,7 @@ func (m *CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemR
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property credentialUserRegistrationDetails in reports
+// Deprecated: The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
 func (m *CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable, requestConfiguration *CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

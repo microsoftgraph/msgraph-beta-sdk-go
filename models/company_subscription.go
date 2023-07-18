@@ -8,8 +8,6 @@ import (
 // CompanySubscription 
 type CompanySubscription struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewCompanySubscription instantiates a new companySubscription and sets the default values.
 func NewCompanySubscription()(*CompanySubscription) {
@@ -21,6 +19,17 @@ func NewCompanySubscription()(*CompanySubscription) {
 // CreateCompanySubscriptionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateCompanySubscriptionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCompanySubscription(), nil
+}
+// GetCommerceSubscriptionId gets the commerceSubscriptionId property value. The commerceSubscriptionId property
+func (m *CompanySubscription) GetCommerceSubscriptionId()(*string) {
+    val, err := m.GetBackingStore().Get("commerceSubscriptionId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
 func (m *CompanySubscription) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -36,6 +45,16 @@ func (m *CompanySubscription) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3a
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CompanySubscription) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["commerceSubscriptionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCommerceSubscriptionId(val)
+        }
+        return nil
+    }
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -73,6 +92,46 @@ func (m *CompanySubscription) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetOcpSubscriptionId(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
+    res["ownerId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOwnerId(val)
+        }
+        return nil
+    }
+    res["ownerTenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOwnerTenantId(val)
+        }
+        return nil
+    }
+    res["ownerType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOwnerType(val)
         }
         return nil
     }
@@ -167,6 +226,50 @@ func (m *CompanySubscription) GetOcpSubscriptionId()(*string) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CompanySubscription) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOwnerId gets the ownerId property value. The ownerId property
+func (m *CompanySubscription) GetOwnerId()(*string) {
+    val, err := m.GetBackingStore().Get("ownerId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOwnerTenantId gets the ownerTenantId property value. The ownerTenantId property
+func (m *CompanySubscription) GetOwnerTenantId()(*string) {
+    val, err := m.GetBackingStore().Get("ownerTenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOwnerType gets the ownerType property value. The ownerType property
+func (m *CompanySubscription) GetOwnerType()(*string) {
+    val, err := m.GetBackingStore().Get("ownerType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetServiceStatus gets the serviceStatus property value. The serviceStatus property
 func (m *CompanySubscription) GetServiceStatus()([]ServicePlanInfoable) {
     val, err := m.GetBackingStore().Get("serviceStatus")
@@ -229,6 +332,12 @@ func (m *CompanySubscription) Serialize(writer i878a80d2330e89d26896388a3f487eef
         return err
     }
     {
+        err = writer.WriteStringValue("commerceSubscriptionId", m.GetCommerceSubscriptionId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
         if err != nil {
             return err
@@ -248,6 +357,30 @@ func (m *CompanySubscription) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     {
         err = writer.WriteStringValue("ocpSubscriptionId", m.GetOcpSubscriptionId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("ownerId", m.GetOwnerId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("ownerTenantId", m.GetOwnerTenantId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("ownerType", m.GetOwnerType())
         if err != nil {
             return err
         }
@@ -290,6 +423,13 @@ func (m *CompanySubscription) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
+// SetCommerceSubscriptionId sets the commerceSubscriptionId property value. The commerceSubscriptionId property
+func (m *CompanySubscription) SetCommerceSubscriptionId(value *string)() {
+    err := m.GetBackingStore().Set("commerceSubscriptionId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
 func (m *CompanySubscription) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
@@ -314,6 +454,34 @@ func (m *CompanySubscription) SetNextLifecycleDateTime(value *i336074805fc853987
 // SetOcpSubscriptionId sets the ocpSubscriptionId property value. The ocpSubscriptionId property
 func (m *CompanySubscription) SetOcpSubscriptionId(value *string)() {
     err := m.GetBackingStore().Set("ocpSubscriptionId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CompanySubscription) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOwnerId sets the ownerId property value. The ownerId property
+func (m *CompanySubscription) SetOwnerId(value *string)() {
+    err := m.GetBackingStore().Set("ownerId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOwnerTenantId sets the ownerTenantId property value. The ownerTenantId property
+func (m *CompanySubscription) SetOwnerTenantId(value *string)() {
+    err := m.GetBackingStore().Set("ownerTenantId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOwnerType sets the ownerType property value. The ownerType property
+func (m *CompanySubscription) SetOwnerType(value *string)() {
+    err := m.GetBackingStore().Set("ownerType", value)
     if err != nil {
         panic(err)
     }
@@ -357,19 +525,29 @@ func (m *CompanySubscription) SetTotalLicenses(value *int32)() {
 type CompanySubscriptionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCommerceSubscriptionId()(*string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetIsTrial()(*bool)
     GetNextLifecycleDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOcpSubscriptionId()(*string)
+    GetOdataType()(*string)
+    GetOwnerId()(*string)
+    GetOwnerTenantId()(*string)
+    GetOwnerType()(*string)
     GetServiceStatus()([]ServicePlanInfoable)
     GetSkuId()(*string)
     GetSkuPartNumber()(*string)
     GetStatus()(*string)
     GetTotalLicenses()(*int32)
+    SetCommerceSubscriptionId(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetIsTrial(value *bool)()
     SetNextLifecycleDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOcpSubscriptionId(value *string)()
+    SetOdataType(value *string)()
+    SetOwnerId(value *string)()
+    SetOwnerTenantId(value *string)()
+    SetOwnerType(value *string)()
     SetServiceStatus(value []ServicePlanInfoable)()
     SetSkuId(value *string)()
     SetSkuPartNumber(value *string)()

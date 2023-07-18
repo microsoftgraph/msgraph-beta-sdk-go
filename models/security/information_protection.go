@@ -8,8 +8,6 @@ import (
 // InformationProtection 
 type InformationProtection struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewInformationProtection instantiates a new informationProtection and sets the default values.
 func NewInformationProtection()(*InformationProtection) {
@@ -32,6 +30,16 @@ func (m *InformationProtection) GetFieldDeserializers()(map[string]func(i878a80d
         }
         if val != nil {
             m.SetLabelPolicySettings(val.(InformationProtectionPolicySettingable))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -64,6 +72,17 @@ func (m *InformationProtection) GetLabelPolicySettings()(InformationProtectionPo
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *InformationProtection) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetSensitivityLabels gets the sensitivityLabels property value. Read the Microsoft Purview Information Protection labels for the user or organization.
 func (m *InformationProtection) GetSensitivityLabels()([]SensitivityLabelable) {
     val, err := m.GetBackingStore().Get("sensitivityLabels")
@@ -83,6 +102,12 @@ func (m *InformationProtection) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     {
         err = writer.WriteObjectValue("labelPolicySettings", m.GetLabelPolicySettings())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -108,6 +133,13 @@ func (m *InformationProtection) SetLabelPolicySettings(value InformationProtecti
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *InformationProtection) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSensitivityLabels sets the sensitivityLabels property value. Read the Microsoft Purview Information Protection labels for the user or organization.
 func (m *InformationProtection) SetSensitivityLabels(value []SensitivityLabelable)() {
     err := m.GetBackingStore().Set("sensitivityLabels", value)
@@ -120,7 +152,9 @@ type InformationProtectionable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetLabelPolicySettings()(InformationProtectionPolicySettingable)
+    GetOdataType()(*string)
     GetSensitivityLabels()([]SensitivityLabelable)
     SetLabelPolicySettings(value InformationProtectionPolicySettingable)()
+    SetOdataType(value *string)()
     SetSensitivityLabels(value []SensitivityLabelable)()
 }

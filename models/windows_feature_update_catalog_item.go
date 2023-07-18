@@ -7,6 +7,8 @@ import (
 // WindowsFeatureUpdateCatalogItem windows update catalog item entity
 type WindowsFeatureUpdateCatalogItem struct {
     WindowsUpdateCatalogItem
+    // The OdataType property
+    OdataType *string
 }
 // NewWindowsFeatureUpdateCatalogItem instantiates a new windowsFeatureUpdateCatalogItem and sets the default values.
 func NewWindowsFeatureUpdateCatalogItem()(*WindowsFeatureUpdateCatalogItem) {

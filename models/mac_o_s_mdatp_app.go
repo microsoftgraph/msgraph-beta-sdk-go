@@ -7,8 +7,6 @@ import (
 // MacOSMdatpApp contains properties and inherited properties for the macOS Microsoft Defender Advanced Threat Protection (MDATP) App. This is deprecated for MacOSMicrosoftDefenderApp in 2305 (May 2023).
 type MacOSMdatpApp struct {
     MobileApp
-    // The OdataType property
-    OdataType *string
 }
 // NewMacOSMdatpApp instantiates a new macOSMdatpApp and sets the default values.
 func NewMacOSMdatpApp()(*MacOSMdatpApp) {

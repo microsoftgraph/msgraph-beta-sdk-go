@@ -7,6 +7,8 @@ import (
 // OnPremisesAgentGroup 
 type OnPremisesAgentGroup struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewOnPremisesAgentGroup instantiates a new onPremisesAgentGroup and sets the default values.
 func NewOnPremisesAgentGroup()(*OnPremisesAgentGroup) {
@@ -80,16 +82,6 @@ func (m *OnPremisesAgentGroup) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["publishedResources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePublishedResourceFromDiscriminatorValue)
         if err != nil {
@@ -126,17 +118,6 @@ func (m *OnPremisesAgentGroup) GetIsDefault()(*bool) {
     }
     if val != nil {
         return val.(*bool)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *OnPremisesAgentGroup) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -192,12 +173,6 @@ func (m *OnPremisesAgentGroup) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetPublishedResources() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPublishedResources()))
         for i, v := range m.GetPublishedResources() {
@@ -240,13 +215,6 @@ func (m *OnPremisesAgentGroup) SetIsDefault(value *bool)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *OnPremisesAgentGroup) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetPublishedResources sets the publishedResources property value. List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
 func (m *OnPremisesAgentGroup) SetPublishedResources(value []PublishedResourceable)() {
     err := m.GetBackingStore().Set("publishedResources", value)
@@ -268,13 +236,11 @@ type OnPremisesAgentGroupable interface {
     GetAgents()([]OnPremisesAgentable)
     GetDisplayName()(*string)
     GetIsDefault()(*bool)
-    GetOdataType()(*string)
     GetPublishedResources()([]PublishedResourceable)
     GetPublishingType()(*OnPremisesPublishingType)
     SetAgents(value []OnPremisesAgentable)()
     SetDisplayName(value *string)()
     SetIsDefault(value *bool)()
-    SetOdataType(value *string)()
     SetPublishedResources(value []PublishedResourceable)()
     SetPublishingType(value *OnPremisesPublishingType)()
 }

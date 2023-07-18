@@ -8,8 +8,6 @@ import (
 // ProcessEvidence 
 type ProcessEvidence struct {
     AlertEvidence
-    // The OdataType property
-    OdataType *string
 }
 // NewProcessEvidence instantiates a new processEvidence and sets the default values.
 func NewProcessEvidence()(*ProcessEvidence) {
@@ -63,6 +61,16 @@ func (m *ProcessEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         if val != nil {
             m.SetMdeDeviceId(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -152,6 +160,17 @@ func (m *ProcessEvidence) GetImageFile()(FileDetailsable) {
 // GetMdeDeviceId gets the mdeDeviceId property value. A unique identifier assigned to a device by Microsoft Defender for Endpoint.
 func (m *ProcessEvidence) GetMdeDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("mdeDeviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ProcessEvidence) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -263,6 +282,12 @@ func (m *ProcessEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("parentProcessCreationDateTime", m.GetParentProcessCreationDateTime())
         if err != nil {
             return err
@@ -327,6 +352,13 @@ func (m *ProcessEvidence) SetMdeDeviceId(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ProcessEvidence) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetParentProcessCreationDateTime sets the parentProcessCreationDateTime property value. Date and time when the parent of the process was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ProcessEvidence) SetParentProcessCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("parentProcessCreationDateTime", value)
@@ -383,6 +415,7 @@ type ProcessEvidenceable interface {
     GetDetectionStatus()(*DetectionStatus)
     GetImageFile()(FileDetailsable)
     GetMdeDeviceId()(*string)
+    GetOdataType()(*string)
     GetParentProcessCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetParentProcessId()(*int64)
     GetParentProcessImageFile()(FileDetailsable)
@@ -393,6 +426,7 @@ type ProcessEvidenceable interface {
     SetDetectionStatus(value *DetectionStatus)()
     SetImageFile(value FileDetailsable)()
     SetMdeDeviceId(value *string)()
+    SetOdataType(value *string)()
     SetParentProcessCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetParentProcessId(value *int64)()
     SetParentProcessImageFile(value FileDetailsable)()

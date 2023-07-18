@@ -8,8 +8,6 @@ import (
 // DeviceLocalCredential 
 type DeviceLocalCredential struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceLocalCredential instantiates a new deviceLocalCredential and sets the default values.
 func NewDeviceLocalCredential()(*DeviceLocalCredential) {
@@ -88,6 +86,16 @@ func (m *DeviceLocalCredential) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["passwordBase64"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -99,6 +107,17 @@ func (m *DeviceLocalCredential) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceLocalCredential) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPasswordBase64 gets the passwordBase64 property value. The password for the local administrator account that is backed up to Azure Active Directory and returned as a base 64 encoded value.
 func (m *DeviceLocalCredential) GetPasswordBase64()(*string) {
@@ -136,6 +155,12 @@ func (m *DeviceLocalCredential) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("passwordBase64", m.GetPasswordBase64())
         if err != nil {
             return err
@@ -164,6 +189,13 @@ func (m *DeviceLocalCredential) SetBackupDateTime(value *i336074805fc853987abe6f
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceLocalCredential) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPasswordBase64 sets the passwordBase64 property value. The password for the local administrator account that is backed up to Azure Active Directory and returned as a base 64 encoded value.
 func (m *DeviceLocalCredential) SetPasswordBase64(value *string)() {
     err := m.GetBackingStore().Set("passwordBase64", value)
@@ -178,9 +210,11 @@ type DeviceLocalCredentialable interface {
     GetAccountName()(*string)
     GetAccountSid()(*string)
     GetBackupDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetPasswordBase64()(*string)
     SetAccountName(value *string)()
     SetAccountSid(value *string)()
     SetBackupDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetPasswordBase64(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // DeviceManagementConfigurationStringSettingValueTemplate string Setting Value Template
 type DeviceManagementConfigurationStringSettingValueTemplate struct {
     DeviceManagementConfigurationSimpleSettingValueTemplate
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementConfigurationStringSettingValueTemplate instantiates a new deviceManagementConfigurationStringSettingValueTemplate and sets the default values.
 func NewDeviceManagementConfigurationStringSettingValueTemplate()(*DeviceManagementConfigurationStringSettingValueTemplate) {
@@ -47,7 +45,28 @@ func (m *DeviceManagementConfigurationStringSettingValueTemplate) GetFieldDeseri
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationStringSettingValueTemplate) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationStringSettingValueTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -61,6 +80,12 @@ func (m *DeviceManagementConfigurationStringSettingValueTemplate) Serialize(writ
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDefaultValue sets the defaultValue property value. String Setting Value Default Template.
@@ -70,10 +95,19 @@ func (m *DeviceManagementConfigurationStringSettingValueTemplate) SetDefaultValu
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationStringSettingValueTemplate) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // DeviceManagementConfigurationStringSettingValueTemplateable 
 type DeviceManagementConfigurationStringSettingValueTemplateable interface {
     DeviceManagementConfigurationSimpleSettingValueTemplateable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDefaultValue()(DeviceManagementConfigurationStringSettingValueDefaultTemplateable)
+    GetOdataType()(*string)
     SetDefaultValue(value DeviceManagementConfigurationStringSettingValueDefaultTemplateable)()
+    SetOdataType(value *string)()
 }

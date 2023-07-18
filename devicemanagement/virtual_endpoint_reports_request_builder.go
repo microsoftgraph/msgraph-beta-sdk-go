@@ -93,9 +93,17 @@ func (m *VirtualEndpointReportsRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcReportsable), nil
 }
+// GetConnectionQualityReports provides operations to call the getConnectionQualityReports method.
+func (m *VirtualEndpointReportsRequestBuilder) GetConnectionQualityReports()(*VirtualEndpointReportsGetConnectionQualityReportsRequestBuilder) {
+    return NewVirtualEndpointReportsGetConnectionQualityReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GetDailyAggregatedRemoteConnectionReports provides operations to call the getDailyAggregatedRemoteConnectionReports method.
 func (m *VirtualEndpointReportsRequestBuilder) GetDailyAggregatedRemoteConnectionReports()(*VirtualEndpointReportsGetDailyAggregatedRemoteConnectionReportsRequestBuilder) {
     return NewVirtualEndpointReportsGetDailyAggregatedRemoteConnectionReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GetInaccessibleCloudPcReports provides operations to call the getInaccessibleCloudPcReports method.
+func (m *VirtualEndpointReportsRequestBuilder) GetInaccessibleCloudPcReports()(*VirtualEndpointReportsGetInaccessibleCloudPcReportsRequestBuilder) {
+    return NewVirtualEndpointReportsGetInaccessibleCloudPcReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetRealTimeRemoteConnectionLatencyWithCloudPcId provides operations to call the getRealTimeRemoteConnectionLatency method.
 func (m *VirtualEndpointReportsRequestBuilder) GetRealTimeRemoteConnectionLatencyWithCloudPcId(cloudPcId *string)(*VirtualEndpointReportsGetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder) {

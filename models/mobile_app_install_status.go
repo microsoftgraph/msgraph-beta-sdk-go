@@ -8,8 +8,6 @@ import (
 // MobileAppInstallStatus contains properties for the installation state of a mobile app for a device. This will be deprecated starting May, 2023 (Intune Release 2305).
 type MobileAppInstallStatus struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewMobileAppInstallStatus instantiates a new mobileAppInstallStatus and sets the default values.
 func NewMobileAppInstallStatus()(*MobileAppInstallStatus) {
@@ -170,6 +168,16 @@ func (m *MobileAppInstallStatus) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["osDescription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -253,6 +261,17 @@ func (m *MobileAppInstallStatus) GetMobileAppInstallStatusValue()(*ResultantAppS
     }
     if val != nil {
         return val.(*ResultantAppState)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MobileAppInstallStatus) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -364,6 +383,12 @@ func (m *MobileAppInstallStatus) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("osDescription", m.GetOsDescription())
         if err != nil {
             return err
@@ -452,6 +477,13 @@ func (m *MobileAppInstallStatus) SetMobileAppInstallStatusValue(value *Resultant
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MobileAppInstallStatus) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOsDescription sets the osDescription property value. OS Description
 func (m *MobileAppInstallStatus) SetOsDescription(value *string)() {
     err := m.GetBackingStore().Set("osDescription", value)
@@ -493,6 +525,7 @@ type MobileAppInstallStatusable interface {
     GetInstallStateDetail()(*ResultantAppStateDetail)
     GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMobileAppInstallStatusValue()(*ResultantAppState)
+    GetOdataType()(*string)
     GetOsDescription()(*string)
     GetOsVersion()(*string)
     GetUserName()(*string)
@@ -506,6 +539,7 @@ type MobileAppInstallStatusable interface {
     SetInstallStateDetail(value *ResultantAppStateDetail)()
     SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMobileAppInstallStatusValue(value *ResultantAppState)()
+    SetOdataType(value *string)()
     SetOsDescription(value *string)()
     SetOsVersion(value *string)()
     SetUserName(value *string)()

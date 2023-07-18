@@ -8,8 +8,6 @@ import (
 // NetworkAccessRoot 
 type NetworkAccessRoot struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewNetworkAccessRoot instantiates a new networkAccessRoot and sets the default values.
 func NewNetworkAccessRoot()(*NetworkAccessRoot) {
@@ -88,6 +86,16 @@ func (m *NetworkAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["reports"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateReportsFromDiscriminatorValue)
         if err != nil {
@@ -150,6 +158,17 @@ func (m *NetworkAccessRoot) GetLogs()(Logsable) {
     }
     if val != nil {
         return val.(Logsable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *NetworkAccessRoot) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -229,6 +248,12 @@ func (m *NetworkAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("reports", m.GetReports())
         if err != nil {
             return err
@@ -276,6 +301,13 @@ func (m *NetworkAccessRoot) SetLogs(value Logsable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *NetworkAccessRoot) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetReports sets the reports property value. Represents the status of the Global Secure Access services for the tenant.
 func (m *NetworkAccessRoot) SetReports(value Reportsable)() {
     err := m.GetBackingStore().Set("reports", value)
@@ -305,6 +337,7 @@ type NetworkAccessRootable interface {
     GetForwardingPolicies()([]ForwardingPolicyable)
     GetForwardingProfiles()([]ForwardingProfileable)
     GetLogs()(Logsable)
+    GetOdataType()(*string)
     GetReports()(Reportsable)
     GetSettings()(Settingsable)
     GetTenantStatus()(TenantStatusable)
@@ -312,6 +345,7 @@ type NetworkAccessRootable interface {
     SetForwardingPolicies(value []ForwardingPolicyable)()
     SetForwardingProfiles(value []ForwardingProfileable)()
     SetLogs(value Logsable)()
+    SetOdataType(value *string)()
     SetReports(value Reportsable)()
     SetSettings(value Settingsable)()
     SetTenantStatus(value TenantStatusable)()

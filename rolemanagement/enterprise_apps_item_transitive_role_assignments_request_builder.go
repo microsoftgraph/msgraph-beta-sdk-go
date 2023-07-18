@@ -11,7 +11,7 @@ import (
 type EnterpriseAppsItemTransitiveRoleAssignmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EnterpriseAppsItemTransitiveRoleAssignmentsRequestBuilderGetQueryParameters get the list of direct and transitive unifiedRoleAssignment objects for a specific principal. For example, if a user is assigned an Azure AD role through group membership, the role assignment is transitive, and this request will list the group's ID as the **principalId**. Results can also be filtered by the **roleDefinitionId** and **directoryScopeId**. Supported only for directory (Azure AD) provider. For more information, see Use Azure AD groups to manage role assignments.
+// EnterpriseAppsItemTransitiveRoleAssignmentsRequestBuilderGetQueryParameters get transitiveRoleAssignments from roleManagement
 type EnterpriseAppsItemTransitiveRoleAssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewEnterpriseAppsItemTransitiveRoleAssignmentsRequestBuilder(rawUrl string,
 func (m *EnterpriseAppsItemTransitiveRoleAssignmentsRequestBuilder) Count()(*EnterpriseAppsItemTransitiveRoleAssignmentsCountRequestBuilder) {
     return NewEnterpriseAppsItemTransitiveRoleAssignmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of direct and transitive unifiedRoleAssignment objects for a specific principal. For example, if a user is assigned an Azure AD role through group membership, the role assignment is transitive, and this request will list the group's ID as the **principalId**. Results can also be filtered by the **roleDefinitionId** and **directoryScopeId**. Supported only for directory (Azure AD) provider. For more information, see Use Azure AD groups to manage role assignments.
+// Get get transitiveRoleAssignments from roleManagement
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/rbacapplication-list-transitiveroleassignments?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *EnterpriseAppsItemTransitiveRoleAssignmentsRequestBuilder) Post(ctx con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentable), nil
 }
-// ToGetRequestInformation get the list of direct and transitive unifiedRoleAssignment objects for a specific principal. For example, if a user is assigned an Azure AD role through group membership, the role assignment is transitive, and this request will list the group's ID as the **principalId**. Results can also be filtered by the **roleDefinitionId** and **directoryScopeId**. Supported only for directory (Azure AD) provider. For more information, see Use Azure AD groups to manage role assignments.
+// ToGetRequestInformation get transitiveRoleAssignments from roleManagement
 func (m *EnterpriseAppsItemTransitiveRoleAssignmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EnterpriseAppsItemTransitiveRoleAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

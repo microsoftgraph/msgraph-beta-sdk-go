@@ -7,6 +7,8 @@ import (
 // AndroidDeviceComplianceLocalActionLockDeviceWithPasscode local Action Lock Device with Passcode Configuration
 type AndroidDeviceComplianceLocalActionLockDeviceWithPasscode struct {
     AndroidDeviceComplianceLocalActionBase
+    // The OdataType property
+    OdataType *string
 }
 // NewAndroidDeviceComplianceLocalActionLockDeviceWithPasscode instantiates a new androidDeviceComplianceLocalActionLockDeviceWithPasscode and sets the default values.
 func NewAndroidDeviceComplianceLocalActionLockDeviceWithPasscode()(*AndroidDeviceComplianceLocalActionLockDeviceWithPasscode) {

@@ -7,8 +7,6 @@ import (
 // DeviceConfigurationAssignment the device configuration assignment entity assigns an AAD group to a specific device configuration.
 type DeviceConfigurationAssignment struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceConfigurationAssignment instantiates a new deviceConfigurationAssignment and sets the default values.
 func NewDeviceConfigurationAssignment()(*DeviceConfigurationAssignment) {
@@ -31,6 +29,16 @@ func (m *DeviceConfigurationAssignment) GetFieldDeserializers()(map[string]func(
         }
         if val != nil {
             m.SetIntent(val.(*DeviceConfigAssignmentIntent))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -74,6 +82,17 @@ func (m *DeviceConfigurationAssignment) GetIntent()(*DeviceConfigAssignmentInten
     }
     if val != nil {
         return val.(*DeviceConfigAssignmentIntent)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceConfigurationAssignment) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -123,6 +142,12 @@ func (m *DeviceConfigurationAssignment) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSource() != nil {
         cast := (*m.GetSource()).String()
         err = writer.WriteStringValue("source", &cast)
@@ -141,6 +166,13 @@ func (m *DeviceConfigurationAssignment) Serialize(writer i878a80d2330e89d2689638
 // SetIntent sets the intent property value. The admin intent to apply or remove the profile. Possible values are: apply, remove.
 func (m *DeviceConfigurationAssignment) SetIntent(value *DeviceConfigAssignmentIntent)() {
     err := m.GetBackingStore().Set("intent", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceConfigurationAssignment) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -171,10 +203,12 @@ type DeviceConfigurationAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetIntent()(*DeviceConfigAssignmentIntent)
+    GetOdataType()(*string)
     GetSource()(*DeviceAndAppManagementAssignmentSource)
     GetSourceId()(*string)
     GetTarget()(DeviceAndAppManagementAssignmentTargetable)
     SetIntent(value *DeviceConfigAssignmentIntent)()
+    SetOdataType(value *string)()
     SetSource(value *DeviceAndAppManagementAssignmentSource)()
     SetSourceId(value *string)()
     SetTarget(value DeviceAndAppManagementAssignmentTargetable)()

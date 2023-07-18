@@ -137,6 +137,16 @@ func (m *Workspace) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["tags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -210,6 +220,17 @@ func (m *Workspace) GetNickname()(*string) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Workspace) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetTags gets the tags property value. Specifies additional features of the workspace, for example, details like the type of view or furniture type.
 func (m *Workspace) GetTags()([]string) {
     val, err := m.GetBackingStore().Get("tags")
@@ -271,6 +292,12 @@ func (m *Workspace) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     {
         err = writer.WriteStringValue("nickname", m.GetNickname())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -339,6 +366,13 @@ func (m *Workspace) SetNickname(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Workspace) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTags sets the tags property value. Specifies additional features of the workspace, for example, details like the type of view or furniture type.
 func (m *Workspace) SetTags(value []string)() {
     err := m.GetBackingStore().Set("tags", value)
@@ -358,6 +392,7 @@ type Workspaceable interface {
     GetIsWheelChairAccessible()(*bool)
     GetLabel()(*string)
     GetNickname()(*string)
+    GetOdataType()(*string)
     GetTags()([]string)
     SetBuilding(value *string)()
     SetCapacity(value *int32)()
@@ -367,5 +402,6 @@ type Workspaceable interface {
     SetIsWheelChairAccessible(value *bool)()
     SetLabel(value *string)()
     SetNickname(value *string)()
+    SetOdataType(value *string)()
     SetTags(value []string)()
 }

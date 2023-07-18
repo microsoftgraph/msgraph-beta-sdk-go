@@ -7,8 +7,6 @@ import (
 // KerberosSingleSignOnExtension represents a Kerberos-type Single Sign-On extension profile.
 type KerberosSingleSignOnExtension struct {
     SingleSignOnExtension
-    // The OdataType property
-    OdataType *string
 }
 // NewKerberosSingleSignOnExtension instantiates a new kerberosSingleSignOnExtension and sets the default values.
 func NewKerberosSingleSignOnExtension()(*KerberosSingleSignOnExtension) {
@@ -201,6 +199,16 @@ func (m *KerberosSingleSignOnExtension) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["passwordBlockModification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -341,6 +349,17 @@ func (m *KerberosSingleSignOnExtension) GetIsDefaultRealm()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *KerberosSingleSignOnExtension) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -542,6 +561,12 @@ func (m *KerberosSingleSignOnExtension) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("passwordBlockModification", m.GetPasswordBlockModification())
         if err != nil {
             return err
@@ -677,6 +702,13 @@ func (m *KerberosSingleSignOnExtension) SetIsDefaultRealm(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *KerberosSingleSignOnExtension) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPasswordBlockModification sets the passwordBlockModification property value. Enables or disables password changes.
 func (m *KerberosSingleSignOnExtension) SetPasswordBlockModification(value *bool)() {
     err := m.GetBackingStore().Set("passwordBlockModification", value)
@@ -780,6 +812,7 @@ type KerberosSingleSignOnExtensionable interface {
     GetDomainRealms()([]string)
     GetDomains()([]string)
     GetIsDefaultRealm()(*bool)
+    GetOdataType()(*string)
     GetPasswordBlockModification()(*bool)
     GetPasswordChangeUrl()(*string)
     GetPasswordEnableLocalSync()(*bool)
@@ -801,6 +834,7 @@ type KerberosSingleSignOnExtensionable interface {
     SetDomainRealms(value []string)()
     SetDomains(value []string)()
     SetIsDefaultRealm(value *bool)()
+    SetOdataType(value *string)()
     SetPasswordBlockModification(value *bool)()
     SetPasswordChangeUrl(value *string)()
     SetPasswordEnableLocalSync(value *bool)()

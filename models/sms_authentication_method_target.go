@@ -7,6 +7,8 @@ import (
 // SmsAuthenticationMethodTarget 
 type SmsAuthenticationMethodTarget struct {
     AuthenticationMethodTarget
+    // The OdataType property
+    OdataType *string
 }
 // NewSmsAuthenticationMethodTarget instantiates a new smsAuthenticationMethodTarget and sets the default values.
 func NewSmsAuthenticationMethodTarget()(*SmsAuthenticationMethodTarget) {

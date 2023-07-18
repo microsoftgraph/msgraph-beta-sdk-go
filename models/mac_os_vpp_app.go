@@ -8,8 +8,6 @@ import (
 // MacOsVppApp contains properties and inherited properties for MacOS Volume-Purchased Program (VPP) Apps.
 type MacOsVppApp struct {
     MobileApp
-    // The OdataType property
-    OdataType *string
 }
 // NewMacOsVppApp instantiates a new macOsVppApp and sets the default values.
 func NewMacOsVppApp()(*MacOsVppApp) {

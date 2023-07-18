@@ -7,6 +7,8 @@ import (
 // TooManyGlobalAdminsAssignedToTenantAlertIncident 
 type TooManyGlobalAdminsAssignedToTenantAlertIncident struct {
     UnifiedRoleManagementAlertIncident
+    // The OdataType property
+    OdataType *string
 }
 // NewTooManyGlobalAdminsAssignedToTenantAlertIncident instantiates a new tooManyGlobalAdminsAssignedToTenantAlertIncident and sets the default values.
 func NewTooManyGlobalAdminsAssignedToTenantAlertIncident()(*TooManyGlobalAdminsAssignedToTenantAlertIncident) {

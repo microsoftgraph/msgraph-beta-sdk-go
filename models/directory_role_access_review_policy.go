@@ -7,8 +7,6 @@ import (
 // DirectoryRoleAccessReviewPolicy 
 type DirectoryRoleAccessReviewPolicy struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDirectoryRoleAccessReviewPolicy instantiates a new directoryRoleAccessReviewPolicy and sets the default values.
 func NewDirectoryRoleAccessReviewPolicy()(*DirectoryRoleAccessReviewPolicy) {
@@ -24,6 +22,16 @@ func CreateDirectoryRoleAccessReviewPolicyFromDiscriminatorValue(parseNode i878a
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DirectoryRoleAccessReviewPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessReviewScheduleSettingsFromDiscriminatorValue)
         if err != nil {
@@ -35,6 +43,17 @@ func (m *DirectoryRoleAccessReviewPolicy) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DirectoryRoleAccessReviewPolicy) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSettings gets the settings property value. The settings property
 func (m *DirectoryRoleAccessReviewPolicy) GetSettings()(AccessReviewScheduleSettingsable) {
@@ -54,12 +73,25 @@ func (m *DirectoryRoleAccessReviewPolicy) Serialize(writer i878a80d2330e89d26896
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("settings", m.GetSettings())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DirectoryRoleAccessReviewPolicy) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettings sets the settings property value. The settings property
 func (m *DirectoryRoleAccessReviewPolicy) SetSettings(value AccessReviewScheduleSettingsable)() {
@@ -72,6 +104,8 @@ func (m *DirectoryRoleAccessReviewPolicy) SetSettings(value AccessReviewSchedule
 type DirectoryRoleAccessReviewPolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetSettings()(AccessReviewScheduleSettingsable)
+    SetOdataType(value *string)()
     SetSettings(value AccessReviewScheduleSettingsable)()
 }

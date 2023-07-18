@@ -7,6 +7,8 @@ import (
 // OnTokenIssuanceStartListener 
 type OnTokenIssuanceStartListener struct {
     AuthenticationEventListener
+    // The OdataType property
+    OdataType *string
 }
 // NewOnTokenIssuanceStartListener instantiates a new onTokenIssuanceStartListener and sets the default values.
 func NewOnTokenIssuanceStartListener()(*OnTokenIssuanceStartListener) {

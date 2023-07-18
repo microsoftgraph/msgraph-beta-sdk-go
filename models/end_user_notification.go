@@ -8,8 +8,6 @@ import (
 // EndUserNotification 
 type EndUserNotification struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewEndUserNotification instantiates a new endUserNotification and sets the default values.
 func NewEndUserNotification()(*EndUserNotification) {
@@ -166,6 +164,16 @@ func (m *EndUserNotification) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSimulationContentSource)
         if err != nil {
@@ -234,6 +242,17 @@ func (m *EndUserNotification) GetNotificationType()(*EndUserNotificationType) {
     }
     if val != nil {
         return val.(*EndUserNotificationType)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EndUserNotification) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -331,6 +350,12 @@ func (m *EndUserNotification) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSource() != nil {
         cast := (*m.GetSource()).String()
         err = writer.WriteStringValue("source", &cast)
@@ -409,6 +434,13 @@ func (m *EndUserNotification) SetNotificationType(value *EndUserNotificationType
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EndUserNotification) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSource sets the source property value. The source property
 func (m *EndUserNotification) SetSource(value *SimulationContentSource)() {
     err := m.GetBackingStore().Set("source", value)
@@ -442,6 +474,7 @@ type EndUserNotificationable interface {
     GetLastModifiedBy()(EmailIdentityable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetNotificationType()(*EndUserNotificationType)
+    GetOdataType()(*string)
     GetSource()(*SimulationContentSource)
     GetStatus()(*SimulationContentStatus)
     GetSupportedLocales()([]string)
@@ -453,6 +486,7 @@ type EndUserNotificationable interface {
     SetLastModifiedBy(value EmailIdentityable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetNotificationType(value *EndUserNotificationType)()
+    SetOdataType(value *string)()
     SetSource(value *SimulationContentSource)()
     SetStatus(value *SimulationContentStatus)()
     SetSupportedLocales(value []string)()

@@ -57,7 +57,7 @@ func (m *WindowsAppXAppAssignmentSettings) GetOdataType()(*string) {
     }
     return nil
 }
-// GetUseDeviceContext gets the useDeviceContext property value. When TRUE, indicates that device execution context will be used for the AppX mobile app. When FALSE, indicates that user context will be used for the AppX mobile app. By default, this property is set to FALSE. Once this property has been set to TRUE it cannot be changed.
+// GetUseDeviceContext gets the useDeviceContext property value. Whether or not to use device execution context for Windows AppX mobile app.
 func (m *WindowsAppXAppAssignmentSettings) GetUseDeviceContext()(*bool) {
     val, err := m.GetBackingStore().Get("useDeviceContext")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *WindowsAppXAppAssignmentSettings) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetUseDeviceContext sets the useDeviceContext property value. When TRUE, indicates that device execution context will be used for the AppX mobile app. When FALSE, indicates that user context will be used for the AppX mobile app. By default, this property is set to FALSE. Once this property has been set to TRUE it cannot be changed.
+// SetUseDeviceContext sets the useDeviceContext property value. Whether or not to use device execution context for Windows AppX mobile app.
 func (m *WindowsAppXAppAssignmentSettings) SetUseDeviceContext(value *bool)() {
     err := m.GetBackingStore().Set("useDeviceContext", value)
     if err != nil {

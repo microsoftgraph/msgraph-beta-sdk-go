@@ -7,8 +7,6 @@ import (
 // DeviceManagementIntentDeviceStateSummary entity that represents device state summary for an intent
 type DeviceManagementIntentDeviceStateSummary struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementIntentDeviceStateSummary instantiates a new deviceManagementIntentDeviceStateSummary and sets the default values.
 func NewDeviceManagementIntentDeviceStateSummary()(*DeviceManagementIntentDeviceStateSummary) {
@@ -107,6 +105,16 @@ func (m *DeviceManagementIntentDeviceStateSummary) GetFieldDeserializers()(map[s
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["successCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -138,6 +146,17 @@ func (m *DeviceManagementIntentDeviceStateSummary) GetNotApplicablePlatformCount
     }
     if val != nil {
         return val.(*int32)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementIntentDeviceStateSummary) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -189,6 +208,12 @@ func (m *DeviceManagementIntentDeviceStateSummary) Serialize(writer i878a80d2330
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("successCount", m.GetSuccessCount())
         if err != nil {
             return err
@@ -231,6 +256,13 @@ func (m *DeviceManagementIntentDeviceStateSummary) SetNotApplicablePlatformCount
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementIntentDeviceStateSummary) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSuccessCount sets the successCount property value. Number of succeeded devices
 func (m *DeviceManagementIntentDeviceStateSummary) SetSuccessCount(value *int32)() {
     err := m.GetBackingStore().Set("successCount", value)
@@ -247,11 +279,13 @@ type DeviceManagementIntentDeviceStateSummaryable interface {
     GetFailedCount()(*int32)
     GetNotApplicableCount()(*int32)
     GetNotApplicablePlatformCount()(*int32)
+    GetOdataType()(*string)
     GetSuccessCount()(*int32)
     SetConflictCount(value *int32)()
     SetErrorCount(value *int32)()
     SetFailedCount(value *int32)()
     SetNotApplicableCount(value *int32)()
     SetNotApplicablePlatformCount(value *int32)()
+    SetOdataType(value *string)()
     SetSuccessCount(value *int32)()
 }

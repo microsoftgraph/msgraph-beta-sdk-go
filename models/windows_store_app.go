@@ -7,8 +7,6 @@ import (
 // WindowsStoreApp contains properties and inherited properties for Windows Store apps.
 type WindowsStoreApp struct {
     MobileApp
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsStoreApp instantiates a new windowsStoreApp and sets the default values.
 func NewWindowsStoreApp()(*WindowsStoreApp) {

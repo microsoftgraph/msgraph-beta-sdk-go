@@ -7,8 +7,6 @@ import (
 // AdminAppsAndServices 
 type AdminAppsAndServices struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAdminAppsAndServices instantiates a new adminAppsAndServices and sets the default values.
 func NewAdminAppsAndServices()(*AdminAppsAndServices) {
@@ -24,6 +22,16 @@ func CreateAdminAppsAndServicesFromDiscriminatorValue(parseNode i878a80d2330e89d
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AdminAppsAndServices) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAppsAndServicesSettingsFromDiscriminatorValue)
         if err != nil {
@@ -35,6 +43,17 @@ func (m *AdminAppsAndServices) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AdminAppsAndServices) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSettings gets the settings property value. The settings property
 func (m *AdminAppsAndServices) GetSettings()(AppsAndServicesSettingsable) {
@@ -54,12 +73,25 @@ func (m *AdminAppsAndServices) Serialize(writer i878a80d2330e89d26896388a3f487ee
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("settings", m.GetSettings())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AdminAppsAndServices) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettings sets the settings property value. The settings property
 func (m *AdminAppsAndServices) SetSettings(value AppsAndServicesSettingsable)() {
@@ -72,6 +104,8 @@ func (m *AdminAppsAndServices) SetSettings(value AppsAndServicesSettingsable)() 
 type AdminAppsAndServicesable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetSettings()(AppsAndServicesSettingsable)
+    SetOdataType(value *string)()
     SetSettings(value AppsAndServicesSettingsable)()
 }

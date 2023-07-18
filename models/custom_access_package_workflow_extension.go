@@ -8,6 +8,8 @@ import (
 // CustomAccessPackageWorkflowExtension 
 type CustomAccessPackageWorkflowExtension struct {
     CustomCalloutExtension
+    // The OdataType property
+    OdataType *string
 }
 // NewCustomAccessPackageWorkflowExtension instantiates a new customAccessPackageWorkflowExtension and sets the default values.
 func NewCustomAccessPackageWorkflowExtension()(*CustomAccessPackageWorkflowExtension) {

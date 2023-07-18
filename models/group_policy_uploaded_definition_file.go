@@ -8,6 +8,8 @@ import (
 // GroupPolicyUploadedDefinitionFile the entity represents an ADMX (Administrative Template) XML file uploaded by Administrator. The ADMX file contains a collection of group policy definitions and their locations by category path. The group policy definition file also contains the languages supported as determined by the language dependent ADML (Administrative Template) language files.
 type GroupPolicyUploadedDefinitionFile struct {
     GroupPolicyDefinitionFile
+    // The OdataType property
+    OdataType *string
 }
 // NewGroupPolicyUploadedDefinitionFile instantiates a new groupPolicyUploadedDefinitionFile and sets the default values.
 func NewGroupPolicyUploadedDefinitionFile()(*GroupPolicyUploadedDefinitionFile) {

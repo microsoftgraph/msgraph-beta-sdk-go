@@ -8,6 +8,8 @@ import (
 // EmailThreatSubmission 
 type EmailThreatSubmission struct {
     ThreatSubmission
+    // The OdataType property
+    OdataType *string
 }
 // NewEmailThreatSubmission instantiates a new emailThreatSubmission and sets the default values.
 func NewEmailThreatSubmission()(*EmailThreatSubmission) {

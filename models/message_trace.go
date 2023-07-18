@@ -8,6 +8,8 @@ import (
 // MessageTrace 
 type MessageTrace struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewMessageTrace instantiates a new messageTrace and sets the default values.
 func NewMessageTrace()(*MessageTrace) {
@@ -51,16 +53,6 @@ func (m *MessageTrace) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         if val != nil {
             m.SetMessageId(val)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
         }
         return nil
     }
@@ -135,17 +127,6 @@ func (m *MessageTrace) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 // GetMessageId gets the messageId property value. The messageId property
 func (m *MessageTrace) GetMessageId()(*string) {
     val, err := m.GetBackingStore().Get("messageId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *MessageTrace) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -239,12 +220,6 @@ func (m *MessageTrace) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteTimeValue("receivedDateTime", m.GetReceivedDateTime())
         if err != nil {
             return err
@@ -302,13 +277,6 @@ func (m *MessageTrace) SetMessageId(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *MessageTrace) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetReceivedDateTime sets the receivedDateTime property value. The receivedDateTime property
 func (m *MessageTrace) SetReceivedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("receivedDateTime", value)
@@ -357,7 +325,6 @@ type MessageTraceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDestinationIPAddress()(*string)
     GetMessageId()(*string)
-    GetOdataType()(*string)
     GetReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRecipients()([]MessageRecipientable)
     GetSenderEmail()(*string)
@@ -366,7 +333,6 @@ type MessageTraceable interface {
     GetSubject()(*string)
     SetDestinationIPAddress(value *string)()
     SetMessageId(value *string)()
-    SetOdataType(value *string)()
     SetReceivedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRecipients(value []MessageRecipientable)()
     SetSenderEmail(value *string)()

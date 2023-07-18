@@ -11,7 +11,7 @@ import (
 type ItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilderGetQueryParameters get a list of the horizontalSection objects and their properties. Sort by `id` in ascending order.
+// ItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilderGetQueryParameters collection of horizontal sections on the SharePoint page.
 type ItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilder(rawUrl string,
 func (m *ItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilder) Count()(*ItemPagesItemCanvasLayoutHorizontalSectionsCountRequestBuilder) {
     return NewItemPagesItemCanvasLayoutHorizontalSectionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the horizontalSection objects and their properties. Sort by `id` in ascending order.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/horizontalsection-list?view=graph-rest-1.0
+// Get collection of horizontal sections on the SharePoint page.
 func (m *ItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HorizontalSectionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *ItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilder) Get(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HorizontalSectionCollectionResponseable), nil
 }
-// Post create a horizontalSection object in a given sitePage.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/sitepage-post-horizontalsection?view=graph-rest-1.0
+// Post create new navigation property to horizontalSections for sites
 func (m *ItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HorizontalSectionable, requestConfiguration *ItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HorizontalSectionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *ItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilder) Post(ctx con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HorizontalSectionable), nil
 }
-// ToGetRequestInformation get a list of the horizontalSection objects and their properties. Sort by `id` in ascending order.
+// ToGetRequestInformation collection of horizontal sections on the SharePoint page.
 func (m *ItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *ItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilder) ToGetRequest
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a horizontalSection object in a given sitePage.
+// ToPostRequestInformation create new navigation property to horizontalSections for sites
 func (m *ItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HorizontalSectionable, requestConfiguration *ItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

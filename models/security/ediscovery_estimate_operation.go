@@ -7,6 +7,8 @@ import (
 // EdiscoveryEstimateOperation 
 type EdiscoveryEstimateOperation struct {
     CaseOperation
+    // The OdataType property
+    OdataType *string
 }
 // NewEdiscoveryEstimateOperation instantiates a new ediscoveryEstimateOperation and sets the default values.
 func NewEdiscoveryEstimateOperation()(*EdiscoveryEstimateOperation) {

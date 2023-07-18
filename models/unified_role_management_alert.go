@@ -55,7 +55,7 @@ func (m *UnifiedRoleManagementAlert) GetAlertDefinitionId()(*string) {
     }
     return nil
 }
-// GetAlertIncidents gets the alertIncidents property value. Represents the incidents of this alert that have been triggered in Privileged Identity Management (PIM) for Azure AD roles in the tenant. Supports $expand.
+// GetAlertIncidents gets the alertIncidents property value. Represents the incidents of this type of alert that have been triggered in Privileged Identity Management (PIM) for Azure AD roles in the tenant. Supports $expand.
 func (m *UnifiedRoleManagementAlert) GetAlertIncidents()([]UnifiedRoleManagementAlertIncidentable) {
     val, err := m.GetBackingStore().Get("alertIncidents")
     if err != nil {
@@ -338,7 +338,7 @@ func (m *UnifiedRoleManagementAlert) SetAlertDefinitionId(value *string)() {
         panic(err)
     }
 }
-// SetAlertIncidents sets the alertIncidents property value. Represents the incidents of this alert that have been triggered in Privileged Identity Management (PIM) for Azure AD roles in the tenant. Supports $expand.
+// SetAlertIncidents sets the alertIncidents property value. Represents the incidents of this type of alert that have been triggered in Privileged Identity Management (PIM) for Azure AD roles in the tenant. Supports $expand.
 func (m *UnifiedRoleManagementAlert) SetAlertIncidents(value []UnifiedRoleManagementAlertIncidentable)() {
     err := m.GetBackingStore().Set("alertIncidents", value)
     if err != nil {

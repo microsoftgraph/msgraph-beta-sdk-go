@@ -7,8 +7,6 @@ import (
 // OnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp 
 type OnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp struct {
     OnAuthenticationMethodLoadStartHandler
-    // The OdataType property
-    OdataType *string
 }
 // NewOnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp instantiates a new onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp and sets the default values.
 func NewOnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp()(*OnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp) {
@@ -42,6 +40,16 @@ func (m *OnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp) GetField
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIdentityProviders gets the identityProviders property value. The identityProviders property
@@ -52,6 +60,17 @@ func (m *OnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp) GetIdent
     }
     if val != nil {
         return val.([]IdentityProviderBaseable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *OnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -73,6 +92,12 @@ func (m *OnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp) Serializ
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetIdentityProviders sets the identityProviders property value. The identityProviders property
@@ -82,10 +107,19 @@ func (m *OnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp) SetIdent
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *OnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // OnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUpable 
 type OnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUpable interface {
     OnAuthenticationMethodLoadStartHandlerable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetIdentityProviders()([]IdentityProviderBaseable)
+    GetOdataType()(*string)
     SetIdentityProviders(value []IdentityProviderBaseable)()
+    SetOdataType(value *string)()
 }

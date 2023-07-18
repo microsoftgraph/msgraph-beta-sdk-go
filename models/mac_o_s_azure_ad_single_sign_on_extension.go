@@ -99,7 +99,28 @@ func (m *MacOSAzureAdSingleSignOnExtension) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MacOSAzureAdSingleSignOnExtension) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOSAzureAdSingleSignOnExtension) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -131,6 +152,12 @@ func (m *MacOSAzureAdSingleSignOnExtension) Serialize(writer i878a80d2330e89d268
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetBundleIdAccessControlList sets the bundleIdAccessControlList property value. An optional list of additional bundle IDs allowed to use the AAD extension for single sign-on.
@@ -154,6 +181,13 @@ func (m *MacOSAzureAdSingleSignOnExtension) SetEnableSharedDeviceMode(value *boo
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MacOSAzureAdSingleSignOnExtension) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // MacOSAzureAdSingleSignOnExtensionable 
 type MacOSAzureAdSingleSignOnExtensionable interface {
     MacOSSingleSignOnExtensionable
@@ -161,7 +195,9 @@ type MacOSAzureAdSingleSignOnExtensionable interface {
     GetBundleIdAccessControlList()([]string)
     GetConfigurations()([]KeyTypedValuePairable)
     GetEnableSharedDeviceMode()(*bool)
+    GetOdataType()(*string)
     SetBundleIdAccessControlList(value []string)()
     SetConfigurations(value []KeyTypedValuePairable)()
     SetEnableSharedDeviceMode(value *bool)()
+    SetOdataType(value *string)()
 }

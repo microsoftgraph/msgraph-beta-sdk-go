@@ -540,6 +540,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCloudPcExportJob(), nil
                     case "#microsoft.graph.cloudPcExternalPartnerSetting":
                         return NewCloudPcExternalPartnerSetting(), nil
+                    case "#microsoft.graph.cloudPcFrontLineServicePlan":
+                        return NewCloudPcFrontLineServicePlan(), nil
                     case "#microsoft.graph.cloudPcGalleryImage":
                         return NewCloudPcGalleryImage(), nil
                     case "#microsoft.graph.cloudPcOnPremisesConnection":

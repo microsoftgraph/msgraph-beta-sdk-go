@@ -73,7 +73,7 @@ func (m *DevicesFilter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetMode gets the mode property value. Determines whether devices satisfying the rule should be allowed or blocked.The possible values are: allowed, blocked, unknownFutureValue.Not implemented yet
+// GetMode gets the mode property value. Determines whether devices satisfying the rule should be allowed or blocked.The possible values are: allowed, blocked, unknownFutureValue.
 func (m *DevicesFilter) GetMode()(*CrossTenantAccessPolicyTargetConfigurationAccessType) {
     val, err := m.GetBackingStore().Get("mode")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *DevicesFilter) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRule gets the rule property value. Defines the rule to filter the devices. An example would be device.deviceAttribute2 -eq 'PrivilegedAccessWorkstation' Not implemented yet
+// GetRule gets the rule property value. Defines the rule to filter the devices. For example, device.deviceAttribute2 -eq 'PrivilegedAccessWorkstation'.
 func (m *DevicesFilter) GetRule()(*string) {
     val, err := m.GetBackingStore().Get("rule")
     if err != nil {
@@ -146,7 +146,7 @@ func (m *DevicesFilter) SetAdditionalData(value map[string]any)() {
 func (m *DevicesFilter) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetMode sets the mode property value. Determines whether devices satisfying the rule should be allowed or blocked.The possible values are: allowed, blocked, unknownFutureValue.Not implemented yet
+// SetMode sets the mode property value. Determines whether devices satisfying the rule should be allowed or blocked.The possible values are: allowed, blocked, unknownFutureValue.
 func (m *DevicesFilter) SetMode(value *CrossTenantAccessPolicyTargetConfigurationAccessType)() {
     err := m.GetBackingStore().Set("mode", value)
     if err != nil {
@@ -160,7 +160,7 @@ func (m *DevicesFilter) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRule sets the rule property value. Defines the rule to filter the devices. An example would be device.deviceAttribute2 -eq 'PrivilegedAccessWorkstation' Not implemented yet
+// SetRule sets the rule property value. Defines the rule to filter the devices. For example, device.deviceAttribute2 -eq 'PrivilegedAccessWorkstation'.
 func (m *DevicesFilter) SetRule(value *string)() {
     err := m.GetBackingStore().Set("rule", value)
     if err != nil {

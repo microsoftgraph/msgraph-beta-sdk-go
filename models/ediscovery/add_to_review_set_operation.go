@@ -22,6 +22,16 @@ func CreateAddToReviewSetOperationFromDiscriminatorValue(parseNode i878a80d2330e
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AddToReviewSetOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CaseOperation.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["reviewSet"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateReviewSetFromDiscriminatorValue)
         if err != nil {
@@ -43,6 +53,17 @@ func (m *AddToReviewSetOperation) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AddToReviewSetOperation) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetReviewSet gets the reviewSet property value. The review set to which items matching the source collection query are added to.
 func (m *AddToReviewSetOperation) GetReviewSet()(ReviewSetable) {
@@ -73,6 +94,12 @@ func (m *AddToReviewSetOperation) Serialize(writer i878a80d2330e89d26896388a3f48
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("reviewSet", m.GetReviewSet())
         if err != nil {
             return err
@@ -85,6 +112,13 @@ func (m *AddToReviewSetOperation) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AddToReviewSetOperation) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReviewSet sets the reviewSet property value. The review set to which items matching the source collection query are added to.
 func (m *AddToReviewSetOperation) SetReviewSet(value ReviewSetable)() {
@@ -104,8 +138,10 @@ func (m *AddToReviewSetOperation) SetSourceCollection(value SourceCollectionable
 type AddToReviewSetOperationable interface {
     CaseOperationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetReviewSet()(ReviewSetable)
     GetSourceCollection()(SourceCollectionable)
+    SetOdataType(value *string)()
     SetReviewSet(value ReviewSetable)()
     SetSourceCollection(value SourceCollectionable)()
 }

@@ -7,8 +7,6 @@ import (
 // TeamsTab 
 type TeamsTab struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewTeamsTab instantiates a new teamsTab and sets the default values.
 func NewTeamsTab()(*TeamsTab) {
@@ -76,6 +74,16 @@ func (m *TeamsTab) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["sortOrderIndex"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -121,6 +129,17 @@ func (m *TeamsTab) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 // GetMessageId gets the messageId property value. The messageId property
 func (m *TeamsTab) GetMessageId()(*string) {
     val, err := m.GetBackingStore().Get("messageId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamsTab) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -198,6 +217,12 @@ func (m *TeamsTab) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("sortOrderIndex", m.GetSortOrderIndex())
         if err != nil {
             return err
@@ -244,6 +269,13 @@ func (m *TeamsTab) SetMessageId(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamsTab) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSortOrderIndex sets the sortOrderIndex property value. Index of the order used for sorting tabs.
 func (m *TeamsTab) SetSortOrderIndex(value *string)() {
     err := m.GetBackingStore().Set("sortOrderIndex", value)
@@ -279,6 +311,7 @@ type TeamsTabable interface {
     GetConfiguration()(TeamsTabConfigurationable)
     GetDisplayName()(*string)
     GetMessageId()(*string)
+    GetOdataType()(*string)
     GetSortOrderIndex()(*string)
     GetTeamsApp()(TeamsAppable)
     GetTeamsAppId()(*string)
@@ -286,6 +319,7 @@ type TeamsTabable interface {
     SetConfiguration(value TeamsTabConfigurationable)()
     SetDisplayName(value *string)()
     SetMessageId(value *string)()
+    SetOdataType(value *string)()
     SetSortOrderIndex(value *string)()
     SetTeamsApp(value TeamsAppable)()
     SetTeamsAppId(value *string)()

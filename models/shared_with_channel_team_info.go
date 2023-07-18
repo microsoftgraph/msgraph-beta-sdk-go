@@ -7,6 +7,8 @@ import (
 // SharedWithChannelTeamInfo 
 type SharedWithChannelTeamInfo struct {
     TeamInfo
+    // The OdataType property
+    OdataType *string
 }
 // NewSharedWithChannelTeamInfo instantiates a new sharedWithChannelTeamInfo and sets the default values.
 func NewSharedWithChannelTeamInfo()(*SharedWithChannelTeamInfo) {

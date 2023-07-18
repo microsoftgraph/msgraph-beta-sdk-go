@@ -18,7 +18,7 @@ type ItemPagesItemCanvasLayoutVerticalSectionRequestBuilderDeleteRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemPagesItemCanvasLayoutVerticalSectionRequestBuilderGetQueryParameters read the properties and relationships of a verticalSection object.
+// ItemPagesItemCanvasLayoutVerticalSectionRequestBuilderGetQueryParameters vertical section on the SharePoint page.
 type ItemPagesItemCanvasLayoutVerticalSectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *ItemPagesItemCanvasLayoutVerticalSectionRequestBuilder) Delete(ctx cont
     }
     return nil
 }
-// Get read the properties and relationships of a verticalSection object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/verticalsection-get?view=graph-rest-1.0
+// Get vertical section on the SharePoint page.
 func (m *ItemPagesItemCanvasLayoutVerticalSectionRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPagesItemCanvasLayoutVerticalSectionRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VerticalSectionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,10 +89,7 @@ func (m *ItemPagesItemCanvasLayoutVerticalSectionRequestBuilder) Get(ctx context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VerticalSectionable), nil
 }
-// Patch create a verticalSection object in a given sitePage.  A sitePage can only have one vertical section. If a vertical section already exists, this method returns a `409 Conflict` response code.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/sitepage-post-verticalsection?view=graph-rest-1.0
+// Patch update the navigation property verticalSection in sites
 func (m *ItemPagesItemCanvasLayoutVerticalSectionRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VerticalSectionable, requestConfiguration *ItemPagesItemCanvasLayoutVerticalSectionRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VerticalSectionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -126,7 +120,7 @@ func (m *ItemPagesItemCanvasLayoutVerticalSectionRequestBuilder) ToDeleteRequest
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a verticalSection object.
+// ToGetRequestInformation vertical section on the SharePoint page.
 func (m *ItemPagesItemCanvasLayoutVerticalSectionRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPagesItemCanvasLayoutVerticalSectionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +136,7 @@ func (m *ItemPagesItemCanvasLayoutVerticalSectionRequestBuilder) ToGetRequestInf
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation create a verticalSection object in a given sitePage.  A sitePage can only have one vertical section. If a vertical section already exists, this method returns a `409 Conflict` response code.
+// ToPatchRequestInformation update the navigation property verticalSection in sites
 func (m *ItemPagesItemCanvasLayoutVerticalSectionRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VerticalSectionable, requestConfiguration *ItemPagesItemCanvasLayoutVerticalSectionRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

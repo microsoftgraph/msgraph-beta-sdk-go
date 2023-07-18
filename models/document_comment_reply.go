@@ -7,8 +7,6 @@ import (
 // DocumentCommentReply 
 type DocumentCommentReply struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDocumentCommentReply instantiates a new documentCommentReply and sets the default values.
 func NewDocumentCommentReply()(*DocumentCommentReply) {
@@ -55,11 +53,32 @@ func (m *DocumentCommentReply) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLocation gets the location property value. The location property
 func (m *DocumentCommentReply) GetLocation()(*string) {
     val, err := m.GetBackingStore().Get("location")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DocumentCommentReply) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -86,6 +105,12 @@ func (m *DocumentCommentReply) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetContent sets the content property value. The content property
@@ -102,12 +127,21 @@ func (m *DocumentCommentReply) SetLocation(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DocumentCommentReply) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // DocumentCommentReplyable 
 type DocumentCommentReplyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetContent()(*string)
     GetLocation()(*string)
+    GetOdataType()(*string)
     SetContent(value *string)()
     SetLocation(value *string)()
+    SetOdataType(value *string)()
 }

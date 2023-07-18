@@ -7,6 +7,8 @@ import (
 // DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate choice Setting Collection Instance Template
 type DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate struct {
     DeviceManagementConfigurationSettingInstanceTemplate
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate instantiates a new deviceManagementConfigurationChoiceSettingCollectionInstanceTemplate and sets the default values.
 func NewDeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate()(*DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate) {
@@ -72,28 +74,7 @@ func (m *DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate) G
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -119,12 +100,6 @@ func (m *DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate) S
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetAllowUnmanagedValues sets the allowUnmanagedValues property value. Linked policy may append values which are not present in the template.
@@ -141,21 +116,12 @@ func (m *DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate) S
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplateable 
 type DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplateable interface {
     DeviceManagementConfigurationSettingInstanceTemplateable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAllowUnmanagedValues()(*bool)
     GetChoiceSettingCollectionValueTemplate()([]DeviceManagementConfigurationChoiceSettingValueTemplateable)
-    GetOdataType()(*string)
     SetAllowUnmanagedValues(value *bool)()
     SetChoiceSettingCollectionValueTemplate(value []DeviceManagementConfigurationChoiceSettingValueTemplateable)()
-    SetOdataType(value *string)()
 }

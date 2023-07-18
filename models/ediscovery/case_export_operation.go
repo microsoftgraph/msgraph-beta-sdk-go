@@ -7,6 +7,8 @@ import (
 // CaseExportOperation 
 type CaseExportOperation struct {
     CaseOperation
+    // The OdataType property
+    OdataType *string
 }
 // NewCaseExportOperation instantiates a new caseExportOperation and sets the default values.
 func NewCaseExportOperation()(*CaseExportOperation) {
