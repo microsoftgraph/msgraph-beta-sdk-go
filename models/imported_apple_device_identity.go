@@ -8,8 +8,6 @@ import (
 // ImportedAppleDeviceIdentity the importedAppleDeviceIdentity resource represents the imported device identity of an Apple device .
 type ImportedAppleDeviceIdentity struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewImportedAppleDeviceIdentity instantiates a new importedAppleDeviceIdentity and sets the default values.
 func NewImportedAppleDeviceIdentity()(*ImportedAppleDeviceIdentity) {
@@ -157,6 +155,16 @@ func (m *ImportedAppleDeviceIdentity) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["platform"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePlatform)
         if err != nil {
@@ -229,6 +237,17 @@ func (m *ImportedAppleDeviceIdentity) GetLastContactedDateTime()(*i336074805fc85
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ImportedAppleDeviceIdentity) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -326,6 +345,12 @@ func (m *ImportedAppleDeviceIdentity) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPlatform() != nil {
         cast := (*m.GetPlatform()).String()
         err = writer.WriteStringValue("platform", &cast)
@@ -402,6 +427,13 @@ func (m *ImportedAppleDeviceIdentity) SetLastContactedDateTime(value *i336074805
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ImportedAppleDeviceIdentity) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPlatform sets the platform property value. The platform property
 func (m *ImportedAppleDeviceIdentity) SetPlatform(value *Platform)() {
     err := m.GetBackingStore().Set("platform", value)
@@ -441,6 +473,7 @@ type ImportedAppleDeviceIdentityable interface {
     GetIsDeleted()(*bool)
     GetIsSupervised()(*bool)
     GetLastContactedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetPlatform()(*Platform)
     GetRequestedEnrollmentProfileAssignmentDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRequestedEnrollmentProfileId()(*string)
@@ -452,6 +485,7 @@ type ImportedAppleDeviceIdentityable interface {
     SetIsDeleted(value *bool)()
     SetIsSupervised(value *bool)()
     SetLastContactedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetPlatform(value *Platform)()
     SetRequestedEnrollmentProfileAssignmentDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRequestedEnrollmentProfileId(value *string)()

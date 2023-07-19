@@ -8,6 +8,8 @@ import (
 // ExactMatchSessionBase 
 type ExactMatchSessionBase struct {
     ExactMatchJobBase
+    // The OdataType property
+    OdataType *string
 }
 // NewExactMatchSessionBase instantiates a new exactMatchSessionBase and sets the default values.
 func NewExactMatchSessionBase()(*ExactMatchSessionBase) {

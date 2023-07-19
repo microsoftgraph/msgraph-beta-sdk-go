@@ -7,8 +7,6 @@ import (
 // DeviceManagementComplianceScheduledActionForRule scheduled Action for Rule
 type DeviceManagementComplianceScheduledActionForRule struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementComplianceScheduledActionForRule instantiates a new deviceManagementComplianceScheduledActionForRule and sets the default values.
 func NewDeviceManagementComplianceScheduledActionForRule()(*DeviceManagementComplianceScheduledActionForRule) {
@@ -24,6 +22,16 @@ func CreateDeviceManagementComplianceScheduledActionForRuleFromDiscriminatorValu
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementComplianceScheduledActionForRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["ruleName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -51,6 +59,17 @@ func (m *DeviceManagementComplianceScheduledActionForRule) GetFieldDeserializers
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementComplianceScheduledActionForRule) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRuleName gets the ruleName property value. Name of the rule which this scheduled action applies to.
 func (m *DeviceManagementComplianceScheduledActionForRule) GetRuleName()(*string) {
@@ -81,6 +100,12 @@ func (m *DeviceManagementComplianceScheduledActionForRule) Serialize(writer i878
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("ruleName", m.GetRuleName())
         if err != nil {
             return err
@@ -100,6 +125,13 @@ func (m *DeviceManagementComplianceScheduledActionForRule) Serialize(writer i878
     }
     return nil
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementComplianceScheduledActionForRule) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRuleName sets the ruleName property value. Name of the rule which this scheduled action applies to.
 func (m *DeviceManagementComplianceScheduledActionForRule) SetRuleName(value *string)() {
     err := m.GetBackingStore().Set("ruleName", value)
@@ -118,8 +150,10 @@ func (m *DeviceManagementComplianceScheduledActionForRule) SetScheduledActionCon
 type DeviceManagementComplianceScheduledActionForRuleable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetRuleName()(*string)
     GetScheduledActionConfigurations()([]DeviceManagementComplianceActionItemable)
+    SetOdataType(value *string)()
     SetRuleName(value *string)()
     SetScheduledActionConfigurations(value []DeviceManagementComplianceActionItemable)()
 }

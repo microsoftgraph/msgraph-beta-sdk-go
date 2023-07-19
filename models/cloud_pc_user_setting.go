@@ -114,6 +114,16 @@ func (m *CloudPcUserSetting) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["resetEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetResetEnabled(val)
+        }
+        return nil
+    }
     res["restorePointSetting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCloudPcRestorePointSettingFromDiscriminatorValue)
         if err != nil {
@@ -150,6 +160,17 @@ func (m *CloudPcUserSetting) GetLastModifiedDateTime()(*i336074805fc853987abe6f7
 // GetLocalAdminEnabled gets the localAdminEnabled property value. Indicates whether the local admin option is enabled. Default value is false. To enable the local admin option, change the setting to true. If the local admin option is enabled, the end user can be an admin of the Cloud PC device.
 func (m *CloudPcUserSetting) GetLocalAdminEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("localAdminEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetResetEnabled gets the resetEnabled property value. The resetEnabled property
+func (m *CloudPcUserSetting) GetResetEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("resetEnabled")
     if err != nil {
         panic(err)
     }
@@ -223,6 +244,12 @@ func (m *CloudPcUserSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteBoolValue("resetEnabled", m.GetResetEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("restorePointSetting", m.GetRestorePointSetting())
         if err != nil {
             return err
@@ -271,6 +298,13 @@ func (m *CloudPcUserSetting) SetLocalAdminEnabled(value *bool)() {
         panic(err)
     }
 }
+// SetResetEnabled sets the resetEnabled property value. The resetEnabled property
+func (m *CloudPcUserSetting) SetResetEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("resetEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRestorePointSetting sets the restorePointSetting property value. Defines how frequently a restore point is created that is, a snapshot is taken) for users' provisioned Cloud PCs (default is 12 hours), and whether the user is allowed to restore their own Cloud PCs to a backup made at a specific point in time.
 func (m *CloudPcUserSetting) SetRestorePointSetting(value CloudPcRestorePointSettingable)() {
     err := m.GetBackingStore().Set("restorePointSetting", value)
@@ -294,6 +328,7 @@ type CloudPcUserSettingable interface {
     GetDisplayName()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLocalAdminEnabled()(*bool)
+    GetResetEnabled()(*bool)
     GetRestorePointSetting()(CloudPcRestorePointSettingable)
     GetSelfServiceEnabled()(*bool)
     SetAssignments(value []CloudPcUserSettingAssignmentable)()
@@ -301,6 +336,7 @@ type CloudPcUserSettingable interface {
     SetDisplayName(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLocalAdminEnabled(value *bool)()
+    SetResetEnabled(value *bool)()
     SetRestorePointSetting(value CloudPcRestorePointSettingable)()
     SetSelfServiceEnabled(value *bool)()
 }

@@ -7,6 +7,8 @@ import (
 // Windows81CompliancePolicy this class contains compliance settings for Windows 8.1.
 type Windows81CompliancePolicy struct {
     DeviceCompliancePolicy
+    // The OdataType property
+    OdataType *string
 }
 // NewWindows81CompliancePolicy instantiates a new windows81CompliancePolicy and sets the default values.
 func NewWindows81CompliancePolicy()(*Windows81CompliancePolicy) {

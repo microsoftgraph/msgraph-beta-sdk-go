@@ -7,6 +7,8 @@ import (
 // NoMfaOnRoleActivationAlertIncident 
 type NoMfaOnRoleActivationAlertIncident struct {
     UnifiedRoleManagementAlertIncident
+    // The OdataType property
+    OdataType *string
 }
 // NewNoMfaOnRoleActivationAlertIncident instantiates a new noMfaOnRoleActivationAlertIncident and sets the default values.
 func NewNoMfaOnRoleActivationAlertIncident()(*NoMfaOnRoleActivationAlertIncident) {

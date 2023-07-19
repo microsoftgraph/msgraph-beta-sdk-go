@@ -7,6 +7,8 @@ import (
 // UserSource 
 type UserSource struct {
     DataSource
+    // The OdataType property
+    OdataType *string
 }
 // NewUserSource instantiates a new userSource and sets the default values.
 func NewUserSource()(*UserSource) {

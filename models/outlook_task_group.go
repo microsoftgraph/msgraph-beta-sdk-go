@@ -8,8 +8,6 @@ import (
 // OutlookTaskGroup 
 type OutlookTaskGroup struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewOutlookTaskGroup instantiates a new outlookTaskGroup and sets the default values.
 func NewOutlookTaskGroup()(*OutlookTaskGroup) {
@@ -76,6 +74,16 @@ func (m *OutlookTaskGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["taskFolders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOutlookTaskFolderFromDiscriminatorValue)
         if err != nil {
@@ -127,6 +135,17 @@ func (m *OutlookTaskGroup) GetName()(*string) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *OutlookTaskGroup) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetTaskFolders gets the taskFolders property value. The collection of task folders in the task group. Read-only. Nullable.
 func (m *OutlookTaskGroup) GetTaskFolders()([]OutlookTaskFolderable) {
     val, err := m.GetBackingStore().Get("taskFolders")
@@ -164,6 +183,12 @@ func (m *OutlookTaskGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     {
         err = writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -210,6 +235,13 @@ func (m *OutlookTaskGroup) SetName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *OutlookTaskGroup) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTaskFolders sets the taskFolders property value. The collection of task folders in the task group. Read-only. Nullable.
 func (m *OutlookTaskGroup) SetTaskFolders(value []OutlookTaskFolderable)() {
     err := m.GetBackingStore().Set("taskFolders", value)
@@ -225,10 +257,12 @@ type OutlookTaskGroupable interface {
     GetGroupKey()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetIsDefaultGroup()(*bool)
     GetName()(*string)
+    GetOdataType()(*string)
     GetTaskFolders()([]OutlookTaskFolderable)
     SetChangeKey(value *string)()
     SetGroupKey(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetIsDefaultGroup(value *bool)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetTaskFolders(value []OutlookTaskFolderable)()
 }

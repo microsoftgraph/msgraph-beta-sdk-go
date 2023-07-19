@@ -7,6 +7,8 @@ import (
 // LocationConstraintItem 
 type LocationConstraintItem struct {
     Location
+    // The OdataType property
+    OdataType *string
 }
 // NewLocationConstraintItem instantiates a new locationConstraintItem and sets the default values.
 func NewLocationConstraintItem()(*LocationConstraintItem) {
@@ -24,16 +26,6 @@ func CreateLocationConstraintItemFromDiscriminatorValue(parseNode i878a80d2330e8
 // GetFieldDeserializers the deserialization information for the current model
 func (m *LocationConstraintItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Location.GetFieldDeserializers()
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["resolveAvailability"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -45,17 +37,6 @@ func (m *LocationConstraintItem) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *LocationConstraintItem) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetResolveAvailability gets the resolveAvailability property value. If set to true and the specified resource is busy, findMeetingTimes looks for another resource that is free. If set to false and the specified resource is busy, findMeetingTimes returns the resource best ranked in the user's cache without checking if it's free. Default is true.
 func (m *LocationConstraintItem) GetResolveAvailability()(*bool) {
@@ -75,25 +56,12 @@ func (m *LocationConstraintItem) Serialize(writer i878a80d2330e89d26896388a3f487
         return err
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteBoolValue("resolveAvailability", m.GetResolveAvailability())
         if err != nil {
             return err
         }
     }
     return nil
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *LocationConstraintItem) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
 }
 // SetResolveAvailability sets the resolveAvailability property value. If set to true and the specified resource is busy, findMeetingTimes looks for another resource that is free. If set to false and the specified resource is busy, findMeetingTimes returns the resource best ranked in the user's cache without checking if it's free. Default is true.
 func (m *LocationConstraintItem) SetResolveAvailability(value *bool)() {
@@ -106,8 +74,6 @@ func (m *LocationConstraintItem) SetResolveAvailability(value *bool)() {
 type LocationConstraintItemable interface {
     Locationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOdataType()(*string)
     GetResolveAvailability()(*bool)
-    SetOdataType(value *string)()
     SetResolveAvailability(value *bool)()
 }

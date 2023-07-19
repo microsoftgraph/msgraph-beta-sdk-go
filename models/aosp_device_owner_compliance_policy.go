@@ -7,6 +7,8 @@ import (
 // AospDeviceOwnerCompliancePolicy this topic provides descriptions of the declared methods, properties and relationships exposed by the AndroidDeviceOwnerAOSPCompliancePolicy resource.
 type AospDeviceOwnerCompliancePolicy struct {
     DeviceCompliancePolicy
+    // The OdataType property
+    OdataType *string
 }
 // NewAospDeviceOwnerCompliancePolicy instantiates a new aospDeviceOwnerCompliancePolicy and sets the default values.
 func NewAospDeviceOwnerCompliancePolicy()(*AospDeviceOwnerCompliancePolicy) {

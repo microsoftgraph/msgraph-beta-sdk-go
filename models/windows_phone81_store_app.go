@@ -7,8 +7,6 @@ import (
 // WindowsPhone81StoreApp contains properties and inherited properties for Windows Phone 8.1 Store apps. Inherits from graph.mobileApp. Will be deprecated in February 2023.
 type WindowsPhone81StoreApp struct {
     MobileApp
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsPhone81StoreApp instantiates a new windowsPhone81StoreApp and sets the default values.
 func NewWindowsPhone81StoreApp()(*WindowsPhone81StoreApp) {

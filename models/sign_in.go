@@ -8,8 +8,6 @@ import (
 // SignIn 
 type SignIn struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewSignIn instantiates a new signIn and sets the default values.
 func NewSignIn()(*SignIn) {
@@ -682,6 +680,16 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["originalRequestId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -1121,6 +1129,17 @@ func (m *SignIn) GetNetworkLocationDetails()([]NetworkLocationDetailable) {
     }
     if val != nil {
         return val.([]NetworkLocationDetailable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SignIn) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -1713,6 +1732,12 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("originalRequestId", m.GetOriginalRequestId())
         if err != nil {
             return err
@@ -2146,6 +2171,13 @@ func (m *SignIn) SetNetworkLocationDetails(value []NetworkLocationDetailable)() 
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SignIn) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOriginalRequestId sets the originalRequestId property value. The request identifier of the first request in the authentication sequence. Supports $filter (eq operator only).
 func (m *SignIn) SetOriginalRequestId(value *string)() {
     err := m.GetBackingStore().Set("originalRequestId", value)
@@ -2388,6 +2420,7 @@ type SignInable interface {
     GetManagedServiceIdentity()(ManagedIdentityable)
     GetMfaDetail()(MfaDetailable)
     GetNetworkLocationDetails()([]NetworkLocationDetailable)
+    GetOdataType()(*string)
     GetOriginalRequestId()(*string)
     GetPrivateLinkDetails()(PrivateLinkDetailsable)
     GetProcessingTimeInMilliseconds()(*int32)
@@ -2452,6 +2485,7 @@ type SignInable interface {
     SetManagedServiceIdentity(value ManagedIdentityable)()
     SetMfaDetail(value MfaDetailable)()
     SetNetworkLocationDetails(value []NetworkLocationDetailable)()
+    SetOdataType(value *string)()
     SetOriginalRequestId(value *string)()
     SetPrivateLinkDetails(value PrivateLinkDetailsable)()
     SetProcessingTimeInMilliseconds(value *int32)()

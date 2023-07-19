@@ -8,8 +8,6 @@ import (
 // WindowsDefenderApplicationControlSupplementalPolicy 
 type WindowsDefenderApplicationControlSupplementalPolicy struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsDefenderApplicationControlSupplementalPolicy instantiates a new windowsDefenderApplicationControlSupplementalPolicy and sets the default values.
 func NewWindowsDefenderApplicationControlSupplementalPolicy()(*WindowsDefenderApplicationControlSupplementalPolicy) {
@@ -215,6 +213,16 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -251,6 +259,17 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetLastModifiedDat
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -348,6 +367,12 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) Serialize(writer i
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRoleScopeTagIds() != nil {
         err = writer.WriteCollectionOfStringValues("roleScopeTagIds", m.GetRoleScopeTagIds())
         if err != nil {
@@ -425,6 +450,13 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) SetLastModifiedDat
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsDefenderApplicationControlSupplementalPolicy) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for the Windows Defender Application Control Supplemental Policy entity.
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) SetRoleScopeTagIds(value []string)() {
     err := m.GetBackingStore().Set("roleScopeTagIds", value)
@@ -452,6 +484,7 @@ type WindowsDefenderApplicationControlSupplementalPolicyable interface {
     GetDeviceStatuses()([]WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable)
     GetDisplayName()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetRoleScopeTagIds()([]string)
     GetVersion()(*string)
     SetAssignments(value []WindowsDefenderApplicationControlSupplementalPolicyAssignmentable)()
@@ -463,6 +496,7 @@ type WindowsDefenderApplicationControlSupplementalPolicyable interface {
     SetDeviceStatuses(value []WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable)()
     SetDisplayName(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetRoleScopeTagIds(value []string)()
     SetVersion(value *string)()
 }

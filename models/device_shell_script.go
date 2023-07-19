@@ -8,8 +8,6 @@ import (
 // DeviceShellScript intune will provide customer the ability to run their Shell scripts on the enrolled Mac OS devices. The script can be run once or periodically.
 type DeviceShellScript struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceShellScript instantiates a new deviceShellScript and sets the default values.
 func NewDeviceShellScript()(*DeviceShellScript) {
@@ -220,6 +218,16 @@ func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["retryCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -324,6 +332,17 @@ func (m *DeviceShellScript) GetLastModifiedDateTime()(*i336074805fc853987abe6f7f
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceShellScript) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -466,6 +485,12 @@ func (m *DeviceShellScript) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("retryCount", m.GetRetryCount())
         if err != nil {
             return err
@@ -580,6 +605,13 @@ func (m *DeviceShellScript) SetLastModifiedDateTime(value *i336074805fc853987abe
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceShellScript) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRetryCount sets the retryCount property value. Number of times for the script to be retried if it fails
 func (m *DeviceShellScript) SetRetryCount(value *int32)() {
     err := m.GetBackingStore().Set("retryCount", value)
@@ -636,6 +668,7 @@ type DeviceShellScriptable interface {
     GetFileName()(*string)
     GetGroupAssignments()([]DeviceManagementScriptGroupAssignmentable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetRetryCount()(*int32)
     GetRoleScopeTagIds()([]string)
     GetRunAsAccount()(*RunAsAccountType)
@@ -652,6 +685,7 @@ type DeviceShellScriptable interface {
     SetFileName(value *string)()
     SetGroupAssignments(value []DeviceManagementScriptGroupAssignmentable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetRetryCount(value *int32)()
     SetRoleScopeTagIds(value []string)()
     SetRunAsAccount(value *RunAsAccountType)()

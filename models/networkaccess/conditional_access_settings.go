@@ -8,8 +8,6 @@ import (
 // ConditionalAccessSettings 
 type ConditionalAccessSettings struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewConditionalAccessSettings instantiates a new conditionalAccessSettings and sets the default values.
 func NewConditionalAccessSettings()(*ConditionalAccessSettings) {
@@ -25,6 +23,16 @@ func CreateConditionalAccessSettingsFromDiscriminatorValue(parseNode i878a80d233
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConditionalAccessSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["signalingStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseStatus)
         if err != nil {
@@ -36,6 +44,17 @@ func (m *ConditionalAccessSettings) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ConditionalAccessSettings) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSignalingStatus gets the signalingStatus property value. The signalingStatus property
 func (m *ConditionalAccessSettings) GetSignalingStatus()(*Status) {
@@ -54,6 +73,12 @@ func (m *ConditionalAccessSettings) Serialize(writer i878a80d2330e89d26896388a3f
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSignalingStatus() != nil {
         cast := (*m.GetSignalingStatus()).String()
         err = writer.WriteStringValue("signalingStatus", &cast)
@@ -62,6 +87,13 @@ func (m *ConditionalAccessSettings) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ConditionalAccessSettings) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSignalingStatus sets the signalingStatus property value. The signalingStatus property
 func (m *ConditionalAccessSettings) SetSignalingStatus(value *Status)() {
@@ -74,6 +106,8 @@ func (m *ConditionalAccessSettings) SetSignalingStatus(value *Status)() {
 type ConditionalAccessSettingsable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetSignalingStatus()(*Status)
+    SetOdataType(value *string)()
     SetSignalingStatus(value *Status)()
 }

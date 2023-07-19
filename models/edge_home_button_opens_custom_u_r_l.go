@@ -7,8 +7,6 @@ import (
 // EdgeHomeButtonOpensCustomURL show the home button; clicking the home button loads a specific URL.
 type EdgeHomeButtonOpensCustomURL struct {
     EdgeHomeButtonConfiguration
-    // The OdataType property
-    OdataType *string
 }
 // NewEdgeHomeButtonOpensCustomURL instantiates a new edgeHomeButtonOpensCustomURL and sets the default values.
 func NewEdgeHomeButtonOpensCustomURL()(*EdgeHomeButtonOpensCustomURL) {
@@ -36,11 +34,32 @@ func (m *EdgeHomeButtonOpensCustomURL) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetHomeButtonCustomURL gets the homeButtonCustomURL property value. The specific URL to load.
 func (m *EdgeHomeButtonOpensCustomURL) GetHomeButtonCustomURL()(*string) {
     val, err := m.GetBackingStore().Get("homeButtonCustomURL")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EdgeHomeButtonOpensCustomURL) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -61,6 +80,12 @@ func (m *EdgeHomeButtonOpensCustomURL) Serialize(writer i878a80d2330e89d26896388
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetHomeButtonCustomURL sets the homeButtonCustomURL property value. The specific URL to load.
@@ -70,10 +95,19 @@ func (m *EdgeHomeButtonOpensCustomURL) SetHomeButtonCustomURL(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EdgeHomeButtonOpensCustomURL) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // EdgeHomeButtonOpensCustomURLable 
 type EdgeHomeButtonOpensCustomURLable interface {
     EdgeHomeButtonConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetHomeButtonCustomURL()(*string)
+    GetOdataType()(*string)
     SetHomeButtonCustomURL(value *string)()
+    SetOdataType(value *string)()
 }

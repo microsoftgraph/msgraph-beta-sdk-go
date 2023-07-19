@@ -7,8 +7,6 @@ import (
 // CloudPcProvisioningPolicyAssignment 
 type CloudPcProvisioningPolicyAssignment struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewCloudPcProvisioningPolicyAssignment instantiates a new cloudPcProvisioningPolicyAssignment and sets the default values.
 func NewCloudPcProvisioningPolicyAssignment()(*CloudPcProvisioningPolicyAssignment) {
@@ -51,6 +49,16 @@ func (m *CloudPcProvisioningPolicyAssignment) GetFieldDeserializers()(map[string
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["target"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCloudPcManagementAssignmentTargetFromDiscriminatorValue)
         if err != nil {
@@ -62,6 +70,17 @@ func (m *CloudPcProvisioningPolicyAssignment) GetFieldDeserializers()(map[string
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CloudPcProvisioningPolicyAssignment) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTarget gets the target property value. The assignment target for the provisioning policy. Currently, the only target supported for this policy is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
 func (m *CloudPcProvisioningPolicyAssignment) GetTarget()(CloudPcManagementAssignmentTargetable) {
@@ -93,6 +112,12 @@ func (m *CloudPcProvisioningPolicyAssignment) Serialize(writer i878a80d2330e89d2
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("target", m.GetTarget())
         if err != nil {
             return err
@@ -103,6 +128,13 @@ func (m *CloudPcProvisioningPolicyAssignment) Serialize(writer i878a80d2330e89d2
 // SetAssignedUsers sets the assignedUsers property value. The assignment targeted users for the provisioning policy. This list of users is computed based on assignments, licenses, group memberships, and policies. This property is read-only. Supports$expand.
 func (m *CloudPcProvisioningPolicyAssignment) SetAssignedUsers(value []Userable)() {
     err := m.GetBackingStore().Set("assignedUsers", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CloudPcProvisioningPolicyAssignment) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -119,7 +151,9 @@ type CloudPcProvisioningPolicyAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAssignedUsers()([]Userable)
+    GetOdataType()(*string)
     GetTarget()(CloudPcManagementAssignmentTargetable)
     SetAssignedUsers(value []Userable)()
+    SetOdataType(value *string)()
     SetTarget(value CloudPcManagementAssignmentTargetable)()
 }

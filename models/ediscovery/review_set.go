@@ -9,8 +9,6 @@ import (
 // ReviewSet 
 type ReviewSet struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewReviewSet instantiates a new reviewSet and sets the default values.
 func NewReviewSet()(*ReviewSet) {
@@ -89,6 +87,16 @@ func (m *ReviewSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["queries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateReviewSetQueryFromDiscriminatorValue)
         if err != nil {
@@ -106,6 +114,17 @@ func (m *ReviewSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ReviewSet) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetQueries gets the queries property value. The queries property
 func (m *ReviewSet) GetQueries()([]ReviewSetQueryable) {
@@ -138,6 +157,12 @@ func (m *ReviewSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -177,6 +202,13 @@ func (m *ReviewSet) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ReviewSet) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetQueries sets the queries property value. The queries property
 func (m *ReviewSet) SetQueries(value []ReviewSetQueryable)() {
     err := m.GetBackingStore().Set("queries", value)
@@ -191,9 +223,11 @@ type ReviewSetable interface {
     GetCreatedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDisplayName()(*string)
+    GetOdataType()(*string)
     GetQueries()([]ReviewSetQueryable)
     SetCreatedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDisplayName(value *string)()
+    SetOdataType(value *string)()
     SetQueries(value []ReviewSetQueryable)()
 }

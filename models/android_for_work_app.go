@@ -7,8 +7,6 @@ import (
 // AndroidForWorkApp contains properties and inherited properties for Android for Work (AFW) Apps.
 type AndroidForWorkApp struct {
     MobileApp
-    // The OdataType property
-    OdataType *string
 }
 // NewAndroidForWorkApp instantiates a new androidForWorkApp and sets the default values.
 func NewAndroidForWorkApp()(*AndroidForWorkApp) {

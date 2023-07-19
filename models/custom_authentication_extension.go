@@ -7,6 +7,8 @@ import (
 // CustomAuthenticationExtension 
 type CustomAuthenticationExtension struct {
     CustomCalloutExtension
+    // The OdataType property
+    OdataType *string
 }
 // NewCustomAuthenticationExtension instantiates a new customAuthenticationExtension and sets the default values.
 func NewCustomAuthenticationExtension()(*CustomAuthenticationExtension) {

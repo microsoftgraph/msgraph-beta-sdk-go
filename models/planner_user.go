@@ -7,6 +7,8 @@ import (
 // PlannerUser 
 type PlannerUser struct {
     PlannerDelta
+    // The OdataType property
+    OdataType *string
 }
 // NewPlannerUser instantiates a new plannerUser and sets the default values.
 func NewPlannerUser()(*PlannerUser) {

@@ -8,6 +8,8 @@ import (
 // UnifiedGroupSource 
 type UnifiedGroupSource struct {
     DataSource
+    // The OdataType property
+    OdataType *string
 }
 // NewUnifiedGroupSource instantiates a new unifiedGroupSource and sets the default values.
 func NewUnifiedGroupSource()(*UnifiedGroupSource) {

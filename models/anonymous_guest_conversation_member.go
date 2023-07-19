@@ -7,6 +7,8 @@ import (
 // AnonymousGuestConversationMember 
 type AnonymousGuestConversationMember struct {
     ConversationMember
+    // The OdataType property
+    OdataType *string
 }
 // NewAnonymousGuestConversationMember instantiates a new anonymousGuestConversationMember and sets the default values.
 func NewAnonymousGuestConversationMember()(*AnonymousGuestConversationMember) {

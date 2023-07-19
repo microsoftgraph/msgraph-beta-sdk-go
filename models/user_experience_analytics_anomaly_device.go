@@ -8,8 +8,6 @@ import (
 // UserExperienceAnalyticsAnomalyDevice the user experience analytics anomaly entity contains device details.
 type UserExperienceAnalyticsAnomalyDevice struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewUserExperienceAnalyticsAnomalyDevice instantiates a new userExperienceAnalyticsAnomalyDevice and sets the default values.
 func NewUserExperienceAnalyticsAnomalyDevice()(*UserExperienceAnalyticsAnomalyDevice) {
@@ -214,6 +212,16 @@ func (m *UserExperienceAnalyticsAnomalyDevice) GetFieldDeserializers()(map[strin
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["osName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -235,6 +243,17 @@ func (m *UserExperienceAnalyticsAnomalyDevice) GetFieldDeserializers()(map[strin
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsAnomalyDevice) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOsName gets the osName property value. The name of the OS installed on the device.
 func (m *UserExperienceAnalyticsAnomalyDevice) GetOsName()(*string) {
@@ -320,6 +339,12 @@ func (m *UserExperienceAnalyticsAnomalyDevice) Serialize(writer i878a80d2330e89d
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("osName", m.GetOsName())
         if err != nil {
             return err
@@ -396,6 +421,13 @@ func (m *UserExperienceAnalyticsAnomalyDevice) SetDeviceStatus(value *UserExperi
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsAnomalyDevice) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOsName sets the osName property value. The name of the OS installed on the device.
 func (m *UserExperienceAnalyticsAnomalyDevice) SetOsName(value *string)() {
     err := m.GetBackingStore().Set("osName", value)
@@ -423,6 +455,7 @@ type UserExperienceAnalyticsAnomalyDeviceable interface {
     GetDeviceModel()(*string)
     GetDeviceName()(*string)
     GetDeviceStatus()(*UserExperienceAnalyticsDeviceStatus)
+    GetOdataType()(*string)
     GetOsName()(*string)
     GetOsVersion()(*string)
     SetAnomalyId(value *string)()
@@ -434,6 +467,7 @@ type UserExperienceAnalyticsAnomalyDeviceable interface {
     SetDeviceModel(value *string)()
     SetDeviceName(value *string)()
     SetDeviceStatus(value *UserExperienceAnalyticsDeviceStatus)()
+    SetOdataType(value *string)()
     SetOsName(value *string)()
     SetOsVersion(value *string)()
 }

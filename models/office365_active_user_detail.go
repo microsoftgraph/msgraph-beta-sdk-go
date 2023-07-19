@@ -7,8 +7,6 @@ import (
 // Office365ActiveUserDetail 
 type Office365ActiveUserDetail struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewOffice365ActiveUserDetail instantiates a new office365ActiveUserDetail and sets the default values.
 func NewOffice365ActiveUserDetail()(*Office365ActiveUserDetail) {
@@ -202,6 +200,16 @@ func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetIsDeleted(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -401,6 +409,17 @@ func (m *Office365ActiveUserDetail) GetIsDeleted()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Office365ActiveUserDetail) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -615,6 +634,12 @@ func (m *Office365ActiveUserDetail) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteDateOnlyValue("oneDriveLastActivityDate", m.GetOneDriveLastActivityDate())
         if err != nil {
             return err
@@ -772,6 +797,13 @@ func (m *Office365ActiveUserDetail) SetIsDeleted(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Office365ActiveUserDetail) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOneDriveLastActivityDate sets the oneDriveLastActivityDate property value. The date when user last viewed or edited files, shared files internally or externally, or synced files.
 func (m *Office365ActiveUserDetail) SetOneDriveLastActivityDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     err := m.GetBackingStore().Set("oneDriveLastActivityDate", value)
@@ -872,6 +904,7 @@ type Office365ActiveUserDetailable interface {
     GetHasTeamsLicense()(*bool)
     GetHasYammerLicense()(*bool)
     GetIsDeleted()(*bool)
+    GetOdataType()(*string)
     GetOneDriveLastActivityDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetOneDriveLicenseAssignDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetReportRefreshDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
@@ -896,6 +929,7 @@ type Office365ActiveUserDetailable interface {
     SetHasTeamsLicense(value *bool)()
     SetHasYammerLicense(value *bool)()
     SetIsDeleted(value *bool)()
+    SetOdataType(value *string)()
     SetOneDriveLastActivityDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetOneDriveLicenseAssignDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetReportRefreshDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()

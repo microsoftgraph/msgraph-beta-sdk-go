@@ -8,6 +8,8 @@ import (
 // HostTracker 
 type HostTracker struct {
     Artifact
+    // The OdataType property
+    OdataType *string
 }
 // NewHostTracker instantiates a new hostTracker and sets the default values.
 func NewHostTracker()(*HostTracker) {

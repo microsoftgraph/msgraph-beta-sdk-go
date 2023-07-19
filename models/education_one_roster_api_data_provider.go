@@ -7,6 +7,8 @@ import (
 // EducationOneRosterApiDataProvider 
 type EducationOneRosterApiDataProvider struct {
     EducationSynchronizationDataProvider
+    // The OdataType property
+    OdataType *string
 }
 // NewEducationOneRosterApiDataProvider instantiates a new educationOneRosterApiDataProvider and sets the default values.
 func NewEducationOneRosterApiDataProvider()(*EducationOneRosterApiDataProvider) {
@@ -87,16 +89,6 @@ func (m *EducationOneRosterApiDataProvider) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["providerName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -140,17 +132,6 @@ func (m *EducationOneRosterApiDataProvider) GetFieldDeserializers()(map[string]f
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *EducationOneRosterApiDataProvider) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetProviderName gets the providerName property value. The OneRoster Service Provider name as defined by the [OneRoster specification][oneroster].
 func (m *EducationOneRosterApiDataProvider) GetProviderName()(*string) {
@@ -210,12 +191,6 @@ func (m *EducationOneRosterApiDataProvider) Serialize(writer i878a80d2330e89d268
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("providerName", m.GetProviderName())
         if err != nil {
             return err
@@ -256,13 +231,6 @@ func (m *EducationOneRosterApiDataProvider) SetCustomizations(value EducationSyn
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *EducationOneRosterApiDataProvider) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetProviderName sets the providerName property value. The OneRoster Service Provider name as defined by the [OneRoster specification][oneroster].
 func (m *EducationOneRosterApiDataProvider) SetProviderName(value *string)() {
     err := m.GetBackingStore().Set("providerName", value)
@@ -291,14 +259,12 @@ type EducationOneRosterApiDataProviderable interface {
     GetConnectionSettings()(EducationSynchronizationConnectionSettingsable)
     GetConnectionUrl()(*string)
     GetCustomizations()(EducationSynchronizationCustomizationsable)
-    GetOdataType()(*string)
     GetProviderName()(*string)
     GetSchoolsIds()([]string)
     GetTermIds()([]string)
     SetConnectionSettings(value EducationSynchronizationConnectionSettingsable)()
     SetConnectionUrl(value *string)()
     SetCustomizations(value EducationSynchronizationCustomizationsable)()
-    SetOdataType(value *string)()
     SetProviderName(value *string)()
     SetSchoolsIds(value []string)()
     SetTermIds(value []string)()

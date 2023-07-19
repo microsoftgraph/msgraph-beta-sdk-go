@@ -31,6 +31,9 @@ func NewItemSitesItemPagesItemGetWebPartsByPositionRequestBuilder(rawUrl string,
     return NewItemSitesItemPagesItemGetWebPartsByPositionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action getWebPartsByPosition
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/sitepage-getwebpartsbyposition?view=graph-rest-1.0
 func (m *ItemSitesItemPagesItemGetWebPartsByPositionRequestBuilder) Post(ctx context.Context, body ItemSitesItemPagesItemGetWebPartsByPositionPostRequestBodyable, requestConfiguration *ItemSitesItemPagesItemGetWebPartsByPositionRequestBuilderPostRequestConfiguration)(ItemSitesItemPagesItemGetWebPartsByPositionResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

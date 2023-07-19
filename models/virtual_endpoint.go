@@ -180,6 +180,22 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["frontLineServicePlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCloudPcFrontLineServicePlanFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CloudPcFrontLineServicePlanable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CloudPcFrontLineServicePlanable)
+                }
+            }
+            m.SetFrontLineServicePlans(res)
+        }
+        return nil
+    }
     res["galleryImages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCloudPcGalleryImageFromDiscriminatorValue)
         if err != nil {
@@ -329,6 +345,17 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     return res
+}
+// GetFrontLineServicePlans gets the frontLineServicePlans property value. The frontLineServicePlans property
+func (m *VirtualEndpoint) GetFrontLineServicePlans()([]CloudPcFrontLineServicePlanable) {
+    val, err := m.GetBackingStore().Get("frontLineServicePlans")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CloudPcFrontLineServicePlanable)
+    }
+    return nil
 }
 // GetGalleryImages gets the galleryImages property value. The gallery image resource on Cloud PC.
 func (m *VirtualEndpoint) GetGalleryImages()([]CloudPcGalleryImageable) {
@@ -512,6 +539,18 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    if m.GetFrontLineServicePlans() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFrontLineServicePlans()))
+        for i, v := range m.GetFrontLineServicePlans() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("frontLineServicePlans", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetGalleryImages() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGalleryImages()))
         for i, v := range m.GetGalleryImages() {
@@ -664,6 +703,13 @@ func (m *VirtualEndpoint) SetExternalPartnerSettings(value []CloudPcExternalPart
         panic(err)
     }
 }
+// SetFrontLineServicePlans sets the frontLineServicePlans property value. The frontLineServicePlans property
+func (m *VirtualEndpoint) SetFrontLineServicePlans(value []CloudPcFrontLineServicePlanable)() {
+    err := m.GetBackingStore().Set("frontLineServicePlans", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetGalleryImages sets the galleryImages property value. The gallery image resource on Cloud PC.
 func (m *VirtualEndpoint) SetGalleryImages(value []CloudPcGalleryImageable)() {
     err := m.GetBackingStore().Set("galleryImages", value)
@@ -744,6 +790,7 @@ type VirtualEndpointable interface {
     GetCrossCloudGovernmentOrganizationMapping()(CloudPcCrossCloudGovernmentOrganizationMappingable)
     GetDeviceImages()([]CloudPcDeviceImageable)
     GetExternalPartnerSettings()([]CloudPcExternalPartnerSettingable)
+    GetFrontLineServicePlans()([]CloudPcFrontLineServicePlanable)
     GetGalleryImages()([]CloudPcGalleryImageable)
     GetOnPremisesConnections()([]CloudPcOnPremisesConnectionable)
     GetOrganizationSettings()(CloudPcOrganizationSettingsable)
@@ -760,6 +807,7 @@ type VirtualEndpointable interface {
     SetCrossCloudGovernmentOrganizationMapping(value CloudPcCrossCloudGovernmentOrganizationMappingable)()
     SetDeviceImages(value []CloudPcDeviceImageable)()
     SetExternalPartnerSettings(value []CloudPcExternalPartnerSettingable)()
+    SetFrontLineServicePlans(value []CloudPcFrontLineServicePlanable)()
     SetGalleryImages(value []CloudPcGalleryImageable)()
     SetOnPremisesConnections(value []CloudPcOnPremisesConnectionable)()
     SetOrganizationSettings(value CloudPcOrganizationSettingsable)()

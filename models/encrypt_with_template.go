@@ -7,8 +7,6 @@ import (
 // EncryptWithTemplate 
 type EncryptWithTemplate struct {
     EncryptContent
-    // The OdataType property
-    OdataType *string
 }
 // NewEncryptWithTemplate instantiates a new encryptWithTemplate and sets the default values.
 func NewEncryptWithTemplate()(*EncryptWithTemplate) {

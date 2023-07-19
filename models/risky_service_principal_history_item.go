@@ -7,6 +7,8 @@ import (
 // RiskyServicePrincipalHistoryItem 
 type RiskyServicePrincipalHistoryItem struct {
     RiskyServicePrincipal
+    // The OdataType property
+    OdataType *string
 }
 // NewRiskyServicePrincipalHistoryItem instantiates a new riskyServicePrincipalHistoryItem and sets the default values.
 func NewRiskyServicePrincipalHistoryItem()(*RiskyServicePrincipalHistoryItem) {

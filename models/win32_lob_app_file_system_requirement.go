@@ -7,6 +7,8 @@ import (
 // Win32LobAppFileSystemRequirement contains file or folder path to detect a Win32 App
 type Win32LobAppFileSystemRequirement struct {
     Win32LobAppRequirement
+    // The OdataType property
+    OdataType *string
 }
 // NewWin32LobAppFileSystemRequirement instantiates a new win32LobAppFileSystemRequirement and sets the default values.
 func NewWin32LobAppFileSystemRequirement()(*Win32LobAppFileSystemRequirement) {
@@ -76,16 +78,6 @@ func (m *Win32LobAppFileSystemRequirement) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["path"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -101,17 +93,6 @@ func (m *Win32LobAppFileSystemRequirement) GetFieldDeserializers()(map[string]fu
 // GetFileOrFolderName gets the fileOrFolderName property value. The file or folder name to detect Win32 Line of Business (LoB) app
 func (m *Win32LobAppFileSystemRequirement) GetFileOrFolderName()(*string) {
     val, err := m.GetBackingStore().Get("fileOrFolderName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *Win32LobAppFileSystemRequirement) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -157,12 +138,6 @@ func (m *Win32LobAppFileSystemRequirement) Serialize(writer i878a80d2330e89d2689
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("path", m.GetPath())
         if err != nil {
             return err
@@ -191,13 +166,6 @@ func (m *Win32LobAppFileSystemRequirement) SetFileOrFolderName(value *string)() 
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *Win32LobAppFileSystemRequirement) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetPath sets the path property value. The file or folder path to detect Win32 Line of Business (LoB) app
 func (m *Win32LobAppFileSystemRequirement) SetPath(value *string)() {
     err := m.GetBackingStore().Set("path", value)
@@ -212,11 +180,9 @@ type Win32LobAppFileSystemRequirementable interface {
     GetCheck32BitOn64System()(*bool)
     GetDetectionType()(*Win32LobAppFileSystemDetectionType)
     GetFileOrFolderName()(*string)
-    GetOdataType()(*string)
     GetPath()(*string)
     SetCheck32BitOn64System(value *bool)()
     SetDetectionType(value *Win32LobAppFileSystemDetectionType)()
     SetFileOrFolderName(value *string)()
-    SetOdataType(value *string)()
     SetPath(value *string)()
 }

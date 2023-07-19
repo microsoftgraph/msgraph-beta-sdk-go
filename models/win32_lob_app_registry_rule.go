@@ -7,6 +7,8 @@ import (
 // Win32LobAppRegistryRule a complex type to store registry rule data for a Win32 LOB app.
 type Win32LobAppRegistryRule struct {
     Win32LobAppRule
+    // The OdataType property
+    OdataType *string
 }
 // NewWin32LobAppRegistryRule instantiates a new win32LobAppRegistryRule and sets the default values.
 func NewWin32LobAppRegistryRule()(*Win32LobAppRegistryRule) {
@@ -76,16 +78,6 @@ func (m *Win32LobAppRegistryRule) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["operationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWin32LobAppRegistryRuleOperationType)
         if err != nil {
@@ -121,17 +113,6 @@ func (m *Win32LobAppRegistryRule) GetFieldDeserializers()(map[string]func(i878a8
 // GetKeyPath gets the keyPath property value. The full path of the registry entry containing the value to detect.
 func (m *Win32LobAppRegistryRule) GetKeyPath()(*string) {
     val, err := m.GetBackingStore().Get("keyPath")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *Win32LobAppRegistryRule) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -197,12 +178,6 @@ func (m *Win32LobAppRegistryRule) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetOperationType() != nil {
         cast := (*m.GetOperationType()).String()
         err = writer.WriteStringValue("operationType", &cast)
@@ -246,13 +221,6 @@ func (m *Win32LobAppRegistryRule) SetKeyPath(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *Win32LobAppRegistryRule) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOperationType sets the operationType property value. Contains all supported registry data detection type.
 func (m *Win32LobAppRegistryRule) SetOperationType(value *Win32LobAppRegistryRuleOperationType)() {
     err := m.GetBackingStore().Set("operationType", value)
@@ -281,14 +249,12 @@ type Win32LobAppRegistryRuleable interface {
     GetCheck32BitOn64System()(*bool)
     GetComparisonValue()(*string)
     GetKeyPath()(*string)
-    GetOdataType()(*string)
     GetOperationType()(*Win32LobAppRegistryRuleOperationType)
     GetOperator()(*Win32LobAppRuleOperator)
     GetValueName()(*string)
     SetCheck32BitOn64System(value *bool)()
     SetComparisonValue(value *string)()
     SetKeyPath(value *string)()
-    SetOdataType(value *string)()
     SetOperationType(value *Win32LobAppRegistryRuleOperationType)()
     SetOperator(value *Win32LobAppRuleOperator)()
     SetValueName(value *string)()

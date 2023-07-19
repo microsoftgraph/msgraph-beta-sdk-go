@@ -7,6 +7,8 @@ import (
 // EvaluateLabelJobResponse 
 type EvaluateLabelJobResponse struct {
     JobResponseBase
+    // The OdataType property
+    OdataType *string
 }
 // NewEvaluateLabelJobResponse instantiates a new evaluateLabelJobResponse and sets the default values.
 func NewEvaluateLabelJobResponse()(*EvaluateLabelJobResponse) {

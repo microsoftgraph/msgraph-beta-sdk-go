@@ -7,8 +7,6 @@ import (
 // CommunicationsUserIdentity 
 type CommunicationsUserIdentity struct {
     Identity
-    // The OdataType property
-    OdataType *string
 }
 // NewCommunicationsUserIdentity instantiates a new communicationsUserIdentity and sets the default values.
 func NewCommunicationsUserIdentity()(*CommunicationsUserIdentity) {
@@ -26,6 +24,16 @@ func CreateCommunicationsUserIdentityFromDiscriminatorValue(parseNode i878a80d23
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CommunicationsUserIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Identity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -37,6 +45,17 @@ func (m *CommunicationsUserIdentity) GetFieldDeserializers()(map[string]func(i87
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CommunicationsUserIdentity) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTenantId gets the tenantId property value. The user's tenant ID.
 func (m *CommunicationsUserIdentity) GetTenantId()(*string) {
@@ -56,12 +75,25 @@ func (m *CommunicationsUserIdentity) Serialize(writer i878a80d2330e89d26896388a3
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("tenantId", m.GetTenantId())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CommunicationsUserIdentity) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantId sets the tenantId property value. The user's tenant ID.
 func (m *CommunicationsUserIdentity) SetTenantId(value *string)() {
@@ -74,6 +106,8 @@ func (m *CommunicationsUserIdentity) SetTenantId(value *string)() {
 type CommunicationsUserIdentityable interface {
     Identityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetTenantId()(*string)
+    SetOdataType(value *string)()
     SetTenantId(value *string)()
 }

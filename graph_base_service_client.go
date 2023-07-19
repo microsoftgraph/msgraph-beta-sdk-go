@@ -20,6 +20,7 @@ import (
     i1b84a2c37ba0bbd175c6da40c8679db7d04dfcb044d8421d26d024db45218e4a "github.com/microsoftgraph/msgraph-beta-sdk-go/schemaextensions"
     i1c7e7a5d0708841f8c98ec910d583f348cbffaad386ef9a24d3ee4eba285ea21 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamtemplatedefinition"
     i1dfcb6e17563ae78b6dbaf02d32cee89099a7795106760d7d401df42ce73b8fc "github.com/microsoftgraph/msgraph-beta-sdk-go/accessreviews"
+    i1feaf5e7874bc1012d47d3fb9128ea97140f17a0526b7e8dd267bdb120026eae "github.com/microsoftgraph/msgraph-beta-sdk-go/applicationswithappid"
     i20621ebd49d2bb1ed6c592ae35dfa701db30564a91ff100d25b0dcdb142bd942 "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryroles"
     i20702653f98186060bd39b9fe8136743eafc0ddaa43435e527665ac75229a33a "github.com/microsoftgraph/msgraph-beta-sdk-go/identity"
     i2130b9a37453c245bc87d9a83666a92560714fc5bb3c0f5a77e999639d2f4e45 "github.com/microsoftgraph/msgraph-beta-sdk-go/appcatalogs"
@@ -82,6 +83,7 @@ import (
     i8a18cb7418541221b2c3fd213a484d9e3029fab916358b16fb24015b078b8eba "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceroledefinitions"
     i8d3c03812535daaab5e9e28f499097b08f09a8a7ab62e664ebf24dd8af17e77c "github.com/microsoftgraph/msgraph-beta-sdk-go/activitystatistics"
     i8e667c6208be96da3103b8806ff97028502c18052414fe99a224c1565834ca0f "github.com/microsoftgraph/msgraph-beta-sdk-go/authenticationmethodconfigurations"
+    i8f15afd67f0af97c484d7c65f1ee4d999eb4ea9fe08743b8099d031e04b49baf "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceswithdeviceid"
     i97c9750160852aa25d52a4c6fa196b644ce728c6645ca520427ff4d85c76afa0 "github.com/microsoftgraph/msgraph-beta-sdk-go/businessflowtemplates"
     i98a1471d41b15330865bc87691830281af9ecf479bfc797e54f02448790b1e4e "github.com/microsoftgraph/msgraph-beta-sdk-go/termstore"
     i9e22e53c888822daa9264a72be4d11f335e3170e9198aae4bba758214e319857 "github.com/microsoftgraph/msgraph-beta-sdk-go/domains"
@@ -112,10 +114,12 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
     ie934faa615fb56652e5964395b3dc205321ac84e8cf244796ebe59ba3713fbd9 "github.com/microsoftgraph/msgraph-beta-sdk-go/subscribedskus"
     if11203f2b5e6319285361e1998b4a25572cc1950d617d10ffd84e91e5f477349 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedroleassignmentrequests"
+    if298592eede46286a454444191c80a3a678c2136e14beb3f7c77b80b0b3ed812 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipalswithappid"
     if3c2dea1db099d8f9ce8b623a12f6291f276e2bbb50259658f584a3a85cf71b8 "github.com/microsoftgraph/msgraph-beta-sdk-go/dataclassification"
     if4a9faac580b9d5510ead8eac155e0cecb2222152b913f0bedc9a44bbe2ee79e "github.com/microsoftgraph/msgraph-beta-sdk-go/approvalworkflowproviders"
     if5cd0cf36bc86d9253920d73c41189ad8a30342e678d4f0138afa5095fd31538 "github.com/microsoftgraph/msgraph-beta-sdk-go/programcontroltypes"
     if7bcb57951e8f2ae550fcf781dc209ed777854429fcfe2465a71b03112dfc346 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications"
+    ifc2b4dc2959942f88a5b666d62b682ecb910ab6189042234241247fd57d38877 "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryroleswithroletemplateid"
     ifc59747dbaa83f8f51942823114f4abfa41e0c0a64d67957f17e6b60407ce219 "github.com/microsoftgraph/msgraph-beta-sdk-go/app"
     ifcac309012d761a79a74e6d79fad6979f2117e7af36ff6e5ad131093412afcc7 "github.com/microsoftgraph/msgraph-beta-sdk-go/governancesubjects"
     iff395ba1da21566390b02b5bed781aecf3bb849fc71f2359410792d1d1b67079 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams"
@@ -168,6 +172,10 @@ func (m *GraphBaseServiceClient) AppCatalogs()(*i2130b9a37453c245bc87d9a83666a92
 // Applications provides operations to manage the collection of application entities.
 func (m *GraphBaseServiceClient) Applications()(*ie1b2fd35e4b1f7cbc7bd808e462c966c4ec16a274923b50216bdd8a2ae0a3129.ApplicationsRequestBuilder) {
     return ie1b2fd35e4b1f7cbc7bd808e462c966c4ec16a274923b50216bdd8a2ae0a3129.NewApplicationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ApplicationsWithAppId provides operations to manage the collection of application entities.
+func (m *GraphBaseServiceClient) ApplicationsWithAppId(appId *string)(*i1feaf5e7874bc1012d47d3fb9128ea97140f17a0526b7e8dd267bdb120026eae.ApplicationsWithAppIdRequestBuilder) {
+    return i1feaf5e7874bc1012d47d3fb9128ea97140f17a0526b7e8dd267bdb120026eae.NewApplicationsWithAppIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, appId)
 }
 // ApplicationTemplates provides operations to manage the collection of applicationTemplate entities.
 func (m *GraphBaseServiceClient) ApplicationTemplates()(*i9fb9a4d9d99571d2cc1de51809c0dfccf1dae8bd81c7eb39e51d1382c2ec81ba.ApplicationTemplatesRequestBuilder) {
@@ -279,6 +287,10 @@ func (m *GraphBaseServiceClient) DeviceManagement()(*i09893664b20e7c846b2bc7aaaf
 func (m *GraphBaseServiceClient) Devices()(*i0b4892b2f92a31e44541567b8065e8e7760cb336e17d7dacb9120a865d5b0a37.DevicesRequestBuilder) {
     return i0b4892b2f92a31e44541567b8065e8e7760cb336e17d7dacb9120a865d5b0a37.NewDevicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// DevicesWithDeviceId provides operations to manage the collection of device entities.
+func (m *GraphBaseServiceClient) DevicesWithDeviceId(deviceId *string)(*i8f15afd67f0af97c484d7c65f1ee4d999eb4ea9fe08743b8099d031e04b49baf.DevicesWithDeviceIdRequestBuilder) {
+    return i8f15afd67f0af97c484d7c65f1ee4d999eb4ea9fe08743b8099d031e04b49baf.NewDevicesWithDeviceIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, deviceId)
+}
 // Directory provides operations to manage the directory singleton.
 func (m *GraphBaseServiceClient) Directory()(*i6e398703c86ec3814400d80161079e7253c4e25f4ba1adb0c8d31da236f7bcd7.DirectoryRequestBuilder) {
     return i6e398703c86ec3814400d80161079e7253c4e25f4ba1adb0c8d31da236f7bcd7.NewDirectoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -290,6 +302,10 @@ func (m *GraphBaseServiceClient) DirectoryObjects()(*iaec68a3d2c3ba0a78ebb66cd93
 // DirectoryRoles provides operations to manage the collection of directoryRole entities.
 func (m *GraphBaseServiceClient) DirectoryRoles()(*i20621ebd49d2bb1ed6c592ae35dfa701db30564a91ff100d25b0dcdb142bd942.DirectoryRolesRequestBuilder) {
     return i20621ebd49d2bb1ed6c592ae35dfa701db30564a91ff100d25b0dcdb142bd942.NewDirectoryRolesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// DirectoryRolesWithRoleTemplateId provides operations to manage the collection of directoryRole entities.
+func (m *GraphBaseServiceClient) DirectoryRolesWithRoleTemplateId(roleTemplateId *string)(*ifc2b4dc2959942f88a5b666d62b682ecb910ab6189042234241247fd57d38877.DirectoryRolesWithRoleTemplateIdRequestBuilder) {
+    return ifc2b4dc2959942f88a5b666d62b682ecb910ab6189042234241247fd57d38877.NewDirectoryRolesWithRoleTemplateIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, roleTemplateId)
 }
 // DirectoryRoleTemplates provides operations to manage the collection of directoryRoleTemplate entities.
 func (m *GraphBaseServiceClient) DirectoryRoleTemplates()(*i5b4eb770497618728398e41e6ed415ad2b92d20f7ad45ba75277a5800d9a2a12.DirectoryRoleTemplatesRequestBuilder) {
@@ -530,6 +546,10 @@ func (m *GraphBaseServiceClient) Security()(*i761e9f0dec20dbf36c7fd626d107fb81ef
 // ServicePrincipals provides operations to manage the collection of servicePrincipal entities.
 func (m *GraphBaseServiceClient) ServicePrincipals()(*ibd3e65bb14e91a8a05d902c54fadec2c1b6931676c97f76da4969c975770aab2.ServicePrincipalsRequestBuilder) {
     return ibd3e65bb14e91a8a05d902c54fadec2c1b6931676c97f76da4969c975770aab2.NewServicePrincipalsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ServicePrincipalsWithAppId provides operations to manage the collection of servicePrincipal entities.
+func (m *GraphBaseServiceClient) ServicePrincipalsWithAppId(appId *string)(*if298592eede46286a454444191c80a3a678c2136e14beb3f7c77b80b0b3ed812.ServicePrincipalsWithAppIdRequestBuilder) {
+    return if298592eede46286a454444191c80a3a678c2136e14beb3f7c77b80b0b3ed812.NewServicePrincipalsWithAppIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, appId)
 }
 // Settings provides operations to manage the collection of directorySetting entities.
 func (m *GraphBaseServiceClient) Settings()(*i714cbeb65962cb4d3e58007792fa4832d175c04614ba3aa7efb22871aea885bf.SettingsRequestBuilder) {

@@ -7,8 +7,6 @@ import (
 // Office365GroupsActivityFileCounts 
 type Office365GroupsActivityFileCounts struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewOffice365GroupsActivityFileCounts instantiates a new office365GroupsActivityFileCounts and sets the default values.
 func NewOffice365GroupsActivityFileCounts()(*Office365GroupsActivityFileCounts) {
@@ -42,6 +40,16 @@ func (m *Office365GroupsActivityFileCounts) GetFieldDeserializers()(map[string]f
         }
         if val != nil {
             m.SetActive(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -86,6 +94,17 @@ func (m *Office365GroupsActivityFileCounts) GetFieldDeserializers()(map[string]f
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Office365GroupsActivityFileCounts) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetReportDate gets the reportDate property value. The date on which a number of files were active in the group's SharePoint site.
 func (m *Office365GroupsActivityFileCounts) GetReportDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
@@ -144,6 +163,12 @@ func (m *Office365GroupsActivityFileCounts) Serialize(writer i878a80d2330e89d268
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteDateOnlyValue("reportDate", m.GetReportDate())
         if err != nil {
             return err
@@ -172,6 +197,13 @@ func (m *Office365GroupsActivityFileCounts) Serialize(writer i878a80d2330e89d268
 // SetActive sets the active property value. The number of files that were viewed, edited, shared, or synced in the group's SharePoint document library.
 func (m *Office365GroupsActivityFileCounts) SetActive(value *int64)() {
     err := m.GetBackingStore().Set("active", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Office365GroupsActivityFileCounts) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -209,11 +241,13 @@ type Office365GroupsActivityFileCountsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetActive()(*int64)
+    GetOdataType()(*string)
     GetReportDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetReportPeriod()(*string)
     GetReportRefreshDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetTotal()(*int64)
     SetActive(value *int64)()
+    SetOdataType(value *string)()
     SetReportDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetReportPeriod(value *string)()
     SetReportRefreshDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()

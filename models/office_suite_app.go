@@ -7,8 +7,6 @@ import (
 // OfficeSuiteApp contains properties and inherited properties for the Office365 Suite App.
 type OfficeSuiteApp struct {
     MobileApp
-    // The OdataType property
-    OdataType *string
 }
 // NewOfficeSuiteApp instantiates a new officeSuiteApp and sets the default values.
 func NewOfficeSuiteApp()(*OfficeSuiteApp) {

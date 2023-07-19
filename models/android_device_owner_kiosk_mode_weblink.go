@@ -7,8 +7,6 @@ import (
 // AndroidDeviceOwnerKioskModeWeblink a weblink on the Android Device Owner Managed Home Screen
 type AndroidDeviceOwnerKioskModeWeblink struct {
     AndroidDeviceOwnerKioskModeFolderItem
-    // The OdataType property
-    OdataType *string
 }
 // NewAndroidDeviceOwnerKioskModeWeblink instantiates a new androidDeviceOwnerKioskModeWeblink and sets the default values.
 func NewAndroidDeviceOwnerKioskModeWeblink()(*AndroidDeviceOwnerKioskModeWeblink) {

@@ -8,8 +8,6 @@ import (
 // DeviceAndAppManagementAssignmentFilter a class containing the properties used for Assignment Filter.
 type DeviceAndAppManagementAssignmentFilter struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceAndAppManagementAssignmentFilter instantiates a new deviceAndAppManagementAssignmentFilter and sets the default values.
 func NewDeviceAndAppManagementAssignmentFilter()(*DeviceAndAppManagementAssignmentFilter) {
@@ -137,6 +135,16 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetFieldDeserializers()(map[str
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["payloads"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePayloadByFilterFromDiscriminatorValue)
         if err != nil {
@@ -199,6 +207,17 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetLastModifiedDateTime()(*i336
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceAndAppManagementAssignmentFilter) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -283,6 +302,12 @@ func (m *DeviceAndAppManagementAssignmentFilter) Serialize(writer i878a80d2330e8
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPayloads() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPayloads()))
         for i, v := range m.GetPayloads() {
@@ -351,6 +376,13 @@ func (m *DeviceAndAppManagementAssignmentFilter) SetLastModifiedDateTime(value *
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceAndAppManagementAssignmentFilter) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPayloads sets the payloads property value. Indicates associated assignments for a specific filter.
 func (m *DeviceAndAppManagementAssignmentFilter) SetPayloads(value []PayloadByFilterable)() {
     err := m.GetBackingStore().Set("payloads", value)
@@ -388,6 +420,7 @@ type DeviceAndAppManagementAssignmentFilterable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetPayloads()([]PayloadByFilterable)
     GetPlatform()(*DevicePlatformType)
     GetRoleScopeTags()([]string)
@@ -397,6 +430,7 @@ type DeviceAndAppManagementAssignmentFilterable interface {
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetPayloads(value []PayloadByFilterable)()
     SetPlatform(value *DevicePlatformType)()
     SetRoleScopeTags(value []string)()

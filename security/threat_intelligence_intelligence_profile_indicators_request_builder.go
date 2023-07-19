@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilderGetQueryParameters get intelligenceProfileIndicators from security
+// ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilderGetQueryParameters read the properties and relationships of a intelligenceProfileIndicator object.
 type ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilder(rawUrl str
 func (m *ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilder) Count()(*ThreatIntelligenceIntelligenceProfileIndicatorsCountRequestBuilder) {
     return NewThreatIntelligenceIntelligenceProfileIndicatorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get intelligenceProfileIndicators from security
+// Get read the properties and relationships of a intelligenceProfileIndicator object.
 func (m *ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.IntelligenceProfileIndicatorCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilder) Post(ctx
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.IntelligenceProfileIndicatorable), nil
 }
-// ToGetRequestInformation get intelligenceProfileIndicators from security
+// ToGetRequestInformation read the properties and relationships of a intelligenceProfileIndicator object.
 func (m *ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

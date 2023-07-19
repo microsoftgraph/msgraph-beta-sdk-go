@@ -8,6 +8,8 @@ import (
 // StaleSignInAlertIncident 
 type StaleSignInAlertIncident struct {
     UnifiedRoleManagementAlertIncident
+    // The OdataType property
+    OdataType *string
 }
 // NewStaleSignInAlertIncident instantiates a new staleSignInAlertIncident and sets the default values.
 func NewStaleSignInAlertIncident()(*StaleSignInAlertIncident) {

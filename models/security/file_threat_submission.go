@@ -7,6 +7,8 @@ import (
 // FileThreatSubmission 
 type FileThreatSubmission struct {
     ThreatSubmission
+    // The OdataType property
+    OdataType *string
 }
 // NewFileThreatSubmission instantiates a new fileThreatSubmission and sets the default values.
 func NewFileThreatSubmission()(*FileThreatSubmission) {

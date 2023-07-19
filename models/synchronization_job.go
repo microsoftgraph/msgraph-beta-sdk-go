@@ -7,8 +7,6 @@ import (
 // SynchronizationJob 
 type SynchronizationJob struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewSynchronizationJob instantiates a new synchronizationJob and sets the default values.
 func NewSynchronizationJob()(*SynchronizationJob) {
@@ -42,6 +40,16 @@ func (m *SynchronizationJob) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetBulkUpload(val.(BulkUploadable))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -102,6 +110,17 @@ func (m *SynchronizationJob) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SynchronizationJob) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSchedule gets the schedule property value. Schedule used to run the job. Read-only.
 func (m *SynchronizationJob) GetSchedule()(SynchronizationScheduleable) {
@@ -171,6 +190,12 @@ func (m *SynchronizationJob) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("schedule", m.GetSchedule())
         if err != nil {
             return err
@@ -215,6 +240,13 @@ func (m *SynchronizationJob) SetBulkUpload(value BulkUploadable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SynchronizationJob) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSchedule sets the schedule property value. Schedule used to run the job. Read-only.
 func (m *SynchronizationJob) SetSchedule(value SynchronizationScheduleable)() {
     err := m.GetBackingStore().Set("schedule", value)
@@ -255,12 +287,14 @@ type SynchronizationJobable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBulkUpload()(BulkUploadable)
+    GetOdataType()(*string)
     GetSchedule()(SynchronizationScheduleable)
     GetSchema()(SynchronizationSchemaable)
     GetStatus()(SynchronizationStatusable)
     GetSynchronizationJobSettings()([]KeyValuePairable)
     GetTemplateId()(*string)
     SetBulkUpload(value BulkUploadable)()
+    SetOdataType(value *string)()
     SetSchedule(value SynchronizationScheduleable)()
     SetSchema(value SynchronizationSchemaable)()
     SetStatus(value SynchronizationStatusable)()

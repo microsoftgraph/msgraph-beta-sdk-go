@@ -7,8 +7,6 @@ import (
 // EncryptWithUserDefinedRights 
 type EncryptWithUserDefinedRights struct {
     EncryptContent
-    // The OdataType property
-    OdataType *string
 }
 // NewEncryptWithUserDefinedRights instantiates a new encryptWithUserDefinedRights and sets the default values.
 func NewEncryptWithUserDefinedRights()(*EncryptWithUserDefinedRights) {

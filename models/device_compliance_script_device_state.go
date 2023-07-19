@@ -8,8 +8,6 @@ import (
 // DeviceComplianceScriptDeviceState contains properties for device run state of the device compliance script.
 type DeviceComplianceScriptDeviceState struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceComplianceScriptDeviceState instantiates a new deviceComplianceScriptDeviceState and sets the default values.
 func NewDeviceComplianceScriptDeviceState()(*DeviceComplianceScriptDeviceState) {
@@ -97,6 +95,16 @@ func (m *DeviceComplianceScriptDeviceState) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["scriptError"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -149,6 +157,17 @@ func (m *DeviceComplianceScriptDeviceState) GetManagedDevice()(ManagedDeviceable
     }
     if val != nil {
         return val.(ManagedDeviceable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceComplianceScriptDeviceState) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -212,6 +231,12 @@ func (m *DeviceComplianceScriptDeviceState) Serialize(writer i878a80d2330e89d268
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("scriptError", m.GetScriptError())
         if err != nil {
             return err
@@ -260,6 +285,13 @@ func (m *DeviceComplianceScriptDeviceState) SetManagedDevice(value ManagedDevice
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceComplianceScriptDeviceState) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetScriptError sets the scriptError property value. Error from the detection script
 func (m *DeviceComplianceScriptDeviceState) SetScriptError(value *string)() {
     err := m.GetBackingStore().Set("scriptError", value)
@@ -283,6 +315,7 @@ type DeviceComplianceScriptDeviceStateable interface {
     GetLastStateUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetManagedDevice()(ManagedDeviceable)
+    GetOdataType()(*string)
     GetScriptError()(*string)
     GetScriptOutput()(*string)
     SetDetectionState(value *RunState)()
@@ -290,6 +323,7 @@ type DeviceComplianceScriptDeviceStateable interface {
     SetLastStateUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetManagedDevice(value ManagedDeviceable)()
+    SetOdataType(value *string)()
     SetScriptError(value *string)()
     SetScriptOutput(value *string)()
 }

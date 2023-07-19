@@ -8,8 +8,6 @@ import (
 // PolicySet a class containing the properties used for PolicySet.
 type PolicySet struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewPolicySet instantiates a new policySet and sets the default values.
 func NewPolicySet()(*PolicySet) {
@@ -178,6 +176,16 @@ func (m *PolicySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["roleScopeTags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -236,6 +244,17 @@ func (m *PolicySet) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PolicySet) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -328,6 +347,12 @@ func (m *PolicySet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRoleScopeTags() != nil {
         err = writer.WriteCollectionOfStringValues("roleScopeTags", m.GetRoleScopeTags())
         if err != nil {
@@ -399,6 +424,13 @@ func (m *PolicySet) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PolicySet) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRoleScopeTags sets the roleScopeTags property value. RoleScopeTags of the PolicySet
 func (m *PolicySet) SetRoleScopeTags(value []string)() {
     err := m.GetBackingStore().Set("roleScopeTags", value)
@@ -425,6 +457,7 @@ type PolicySetable interface {
     GetGuidedDeploymentTags()([]string)
     GetItems()([]PolicySetItemable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetRoleScopeTags()([]string)
     GetStatus()(*PolicySetStatus)
     SetAssignments(value []PolicySetAssignmentable)()
@@ -435,6 +468,7 @@ type PolicySetable interface {
     SetGuidedDeploymentTags(value []string)()
     SetItems(value []PolicySetItemable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetRoleScopeTags(value []string)()
     SetStatus(value *PolicySetStatus)()
 }

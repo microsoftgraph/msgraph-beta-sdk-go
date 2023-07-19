@@ -7,8 +7,6 @@ import (
 // RoleManagementAlert 
 type RoleManagementAlert struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewRoleManagementAlert instantiates a new roleManagementAlert and sets the default values.
 func NewRoleManagementAlert()(*RoleManagementAlert) {
@@ -105,6 +103,16 @@ func (m *RoleManagementAlert) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["operations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateLongRunningOperationFromDiscriminatorValue)
         if err != nil {
@@ -122,6 +130,17 @@ func (m *RoleManagementAlert) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RoleManagementAlert) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOperations gets the operations property value. Represents operations on resources that take a long time to complete and can run in the background until completion.
 func (m *RoleManagementAlert) GetOperations()([]LongRunningOperationable) {
@@ -176,6 +195,12 @@ func (m *RoleManagementAlert) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetOperations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
@@ -211,6 +236,13 @@ func (m *RoleManagementAlert) SetAlerts(value []UnifiedRoleManagementAlertable)(
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RoleManagementAlert) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOperations sets the operations property value. Represents operations on resources that take a long time to complete and can run in the background until completion.
 func (m *RoleManagementAlert) SetOperations(value []LongRunningOperationable)() {
     err := m.GetBackingStore().Set("operations", value)
@@ -225,9 +257,11 @@ type RoleManagementAlertable interface {
     GetAlertConfigurations()([]UnifiedRoleManagementAlertConfigurationable)
     GetAlertDefinitions()([]UnifiedRoleManagementAlertDefinitionable)
     GetAlerts()([]UnifiedRoleManagementAlertable)
+    GetOdataType()(*string)
     GetOperations()([]LongRunningOperationable)
     SetAlertConfigurations(value []UnifiedRoleManagementAlertConfigurationable)()
     SetAlertDefinitions(value []UnifiedRoleManagementAlertDefinitionable)()
     SetAlerts(value []UnifiedRoleManagementAlertable)()
+    SetOdataType(value *string)()
     SetOperations(value []LongRunningOperationable)()
 }

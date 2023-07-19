@@ -7,8 +7,6 @@ import (
 // EducationCsvDataProvider 
 type EducationCsvDataProvider struct {
     EducationSynchronizationDataProvider
-    // The OdataType property
-    OdataType *string
 }
 // NewEducationCsvDataProvider instantiates a new educationCsvDataProvider and sets the default values.
 func NewEducationCsvDataProvider()(*EducationCsvDataProvider) {
@@ -47,7 +45,28 @@ func (m *EducationCsvDataProvider) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EducationCsvDataProvider) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EducationCsvDataProvider) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -61,6 +80,12 @@ func (m *EducationCsvDataProvider) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCustomizations sets the customizations property value. Optional customizations to be applied to the synchronization profile.
@@ -70,10 +95,19 @@ func (m *EducationCsvDataProvider) SetCustomizations(value EducationSynchronizat
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EducationCsvDataProvider) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // EducationCsvDataProviderable 
 type EducationCsvDataProviderable interface {
     EducationSynchronizationDataProviderable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCustomizations()(EducationSynchronizationCustomizationsable)
+    GetOdataType()(*string)
     SetCustomizations(value EducationSynchronizationCustomizationsable)()
+    SetOdataType(value *string)()
 }

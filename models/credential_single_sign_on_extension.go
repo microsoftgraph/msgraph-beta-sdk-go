@@ -7,8 +7,6 @@ import (
 // CredentialSingleSignOnExtension represents a Credential-type Single Sign-On extension profile.
 type CredentialSingleSignOnExtension struct {
     SingleSignOnExtension
-    // The OdataType property
-    OdataType *string
 }
 // NewCredentialSingleSignOnExtension instantiates a new credentialSingleSignOnExtension and sets the default values.
 func NewCredentialSingleSignOnExtension()(*CredentialSingleSignOnExtension) {
@@ -101,6 +99,16 @@ func (m *CredentialSingleSignOnExtension) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["realm"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -122,6 +130,17 @@ func (m *CredentialSingleSignOnExtension) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CredentialSingleSignOnExtension) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRealm gets the realm property value. Gets or sets the case-sensitive realm name for this profile.
 func (m *CredentialSingleSignOnExtension) GetRealm()(*string) {
@@ -176,6 +195,12 @@ func (m *CredentialSingleSignOnExtension) Serialize(writer i878a80d2330e89d26896
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("realm", m.GetRealm())
         if err != nil {
             return err
@@ -210,6 +235,13 @@ func (m *CredentialSingleSignOnExtension) SetExtensionIdentifier(value *string)(
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CredentialSingleSignOnExtension) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRealm sets the realm property value. Gets or sets the case-sensitive realm name for this profile.
 func (m *CredentialSingleSignOnExtension) SetRealm(value *string)() {
     err := m.GetBackingStore().Set("realm", value)
@@ -231,11 +263,13 @@ type CredentialSingleSignOnExtensionable interface {
     GetConfigurations()([]KeyTypedValuePairable)
     GetDomains()([]string)
     GetExtensionIdentifier()(*string)
+    GetOdataType()(*string)
     GetRealm()(*string)
     GetTeamIdentifier()(*string)
     SetConfigurations(value []KeyTypedValuePairable)()
     SetDomains(value []string)()
     SetExtensionIdentifier(value *string)()
+    SetOdataType(value *string)()
     SetRealm(value *string)()
     SetTeamIdentifier(value *string)()
 }

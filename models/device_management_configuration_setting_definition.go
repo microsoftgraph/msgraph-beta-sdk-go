@@ -7,6 +7,8 @@ import (
 // DeviceManagementConfigurationSettingDefinition 
 type DeviceManagementConfigurationSettingDefinition struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceManagementConfigurationSettingDefinition instantiates a new deviceManagementConfigurationSettingDefinition and sets the default values.
 func NewDeviceManagementConfigurationSettingDefinition()(*DeviceManagementConfigurationSettingDefinition) {
@@ -240,16 +242,6 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetFieldDeserializers()
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["offsetUri"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -380,17 +372,6 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetOccurrence()(DeviceM
     }
     if val != nil {
         return val.(DeviceManagementConfigurationSettingOccurrenceable)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *DeviceManagementConfigurationSettingDefinition) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -545,12 +526,6 @@ func (m *DeviceManagementConfigurationSettingDefinition) Serialize(writer i878a8
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("offsetUri", m.GetOffsetUri())
         if err != nil {
             return err
@@ -680,13 +655,6 @@ func (m *DeviceManagementConfigurationSettingDefinition) SetOccurrence(value Dev
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *DeviceManagementConfigurationSettingDefinition) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOffsetUri sets the offsetUri property value. Offset CSP Path from Base
 func (m *DeviceManagementConfigurationSettingDefinition) SetOffsetUri(value *string)() {
     err := m.GetBackingStore().Set("offsetUri", value)
@@ -751,7 +719,6 @@ type DeviceManagementConfigurationSettingDefinitionable interface {
     GetKeywords()([]string)
     GetName()(*string)
     GetOccurrence()(DeviceManagementConfigurationSettingOccurrenceable)
-    GetOdataType()(*string)
     GetOffsetUri()(*string)
     GetReferredSettingInformationList()([]DeviceManagementConfigurationReferredSettingInformationable)
     GetRootDefinitionId()(*string)
@@ -770,7 +737,6 @@ type DeviceManagementConfigurationSettingDefinitionable interface {
     SetKeywords(value []string)()
     SetName(value *string)()
     SetOccurrence(value DeviceManagementConfigurationSettingOccurrenceable)()
-    SetOdataType(value *string)()
     SetOffsetUri(value *string)()
     SetReferredSettingInformationList(value []DeviceManagementConfigurationReferredSettingInformationable)()
     SetRootDefinitionId(value *string)()

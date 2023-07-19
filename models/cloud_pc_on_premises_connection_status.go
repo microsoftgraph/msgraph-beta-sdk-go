@@ -11,11 +11,12 @@ const (
     PASSED_CLOUDPCONPREMISESCONNECTIONSTATUS
     FAILED_CLOUDPCONPREMISESCONNECTIONSTATUS
     WARNING_CLOUDPCONPREMISESCONNECTIONSTATUS
+    INFORMATIONAL_CLOUDPCONPREMISESCONNECTIONSTATUS
     UNKNOWNFUTUREVALUE_CLOUDPCONPREMISESCONNECTIONSTATUS
 )
 
 func (i CloudPcOnPremisesConnectionStatus) String() string {
-    return []string{"pending", "running", "passed", "failed", "warning", "unknownFutureValue"}[i]
+    return []string{"pending", "running", "passed", "failed", "warning", "informational", "unknownFutureValue"}[i]
 }
 func ParseCloudPcOnPremisesConnectionStatus(v string) (any, error) {
     result := PENDING_CLOUDPCONPREMISESCONNECTIONSTATUS
@@ -30,6 +31,8 @@ func ParseCloudPcOnPremisesConnectionStatus(v string) (any, error) {
             result = FAILED_CLOUDPCONPREMISESCONNECTIONSTATUS
         case "warning":
             result = WARNING_CLOUDPCONPREMISESCONNECTIONSTATUS
+        case "informational":
+            result = INFORMATIONAL_CLOUDPCONPREMISESCONNECTIONSTATUS
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCONPREMISESCONNECTIONSTATUS
         default:

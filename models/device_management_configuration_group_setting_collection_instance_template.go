@@ -7,8 +7,6 @@ import (
 // DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate group Setting Collection Instance Template
 type DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate struct {
     DeviceManagementConfigurationSettingInstanceTemplate
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementConfigurationGroupSettingCollectionInstanceTemplate instantiates a new deviceManagementConfigurationGroupSettingCollectionInstanceTemplate and sets the default values.
 func NewDeviceManagementConfigurationGroupSettingCollectionInstanceTemplate()(*DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) {
@@ -63,6 +61,16 @@ func (m *DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) Ge
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetGroupSettingCollectionValueTemplate gets the groupSettingCollectionValueTemplate property value. Group Setting Collection Value Template
@@ -73,6 +81,17 @@ func (m *DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) Ge
     }
     if val != nil {
         return val.([]DeviceManagementConfigurationGroupSettingValueTemplateable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -100,6 +119,12 @@ func (m *DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) Se
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAllowUnmanagedValues sets the allowUnmanagedValues property value. Linked policy may append values which are not present in the template.
@@ -116,12 +141,21 @@ func (m *DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) Se
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // DeviceManagementConfigurationGroupSettingCollectionInstanceTemplateable 
 type DeviceManagementConfigurationGroupSettingCollectionInstanceTemplateable interface {
     DeviceManagementConfigurationSettingInstanceTemplateable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAllowUnmanagedValues()(*bool)
     GetGroupSettingCollectionValueTemplate()([]DeviceManagementConfigurationGroupSettingValueTemplateable)
+    GetOdataType()(*string)
     SetAllowUnmanagedValues(value *bool)()
     SetGroupSettingCollectionValueTemplate(value []DeviceManagementConfigurationGroupSettingValueTemplateable)()
+    SetOdataType(value *string)()
 }

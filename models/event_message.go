@@ -7,6 +7,8 @@ import (
 // EventMessage 
 type EventMessage struct {
     Message
+    // The OdataType property
+    OdataType *string
 }
 // NewEventMessage instantiates a new eventMessage and sets the default values.
 func NewEventMessage()(*EventMessage) {

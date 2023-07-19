@@ -8,8 +8,6 @@ import (
 // PlannerPlanConfiguration 
 type PlannerPlanConfiguration struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewPlannerPlanConfiguration instantiates a new plannerPlanConfiguration and sets the default values.
 func NewPlannerPlanConfiguration()(*PlannerPlanConfiguration) {
@@ -151,6 +149,16 @@ func (m *PlannerPlanConfiguration) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The identity of the user who last modified the plan configuration.
@@ -183,6 +191,17 @@ func (m *PlannerPlanConfiguration) GetLocalizations()([]PlannerPlanConfiguration
     }
     if val != nil {
         return val.([]PlannerPlanConfigurationLocalizationable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PlannerPlanConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -246,6 +265,12 @@ func (m *PlannerPlanConfiguration) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetBuckets sets the buckets property value. List the buckets that should be created in the plan.
@@ -297,6 +322,13 @@ func (m *PlannerPlanConfiguration) SetLocalizations(value []PlannerPlanConfigura
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PlannerPlanConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // PlannerPlanConfigurationable 
 type PlannerPlanConfigurationable interface {
     Entityable
@@ -308,6 +340,7 @@ type PlannerPlanConfigurationable interface {
     GetLastModifiedBy()(IdentitySetable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLocalizations()([]PlannerPlanConfigurationLocalizationable)
+    GetOdataType()(*string)
     SetBuckets(value []PlannerPlanConfigurationBucketDefinitionable)()
     SetCreatedBy(value IdentitySetable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -315,4 +348,5 @@ type PlannerPlanConfigurationable interface {
     SetLastModifiedBy(value IdentitySetable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLocalizations(value []PlannerPlanConfigurationLocalizationable)()
+    SetOdataType(value *string)()
 }

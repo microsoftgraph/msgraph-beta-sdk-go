@@ -8,8 +8,6 @@ import (
 // MeetingRegistration 
 type MeetingRegistration struct {
     MeetingRegistrationBase
-    // The OdataType property
-    OdataType *string
 }
 // NewMeetingRegistration instantiates a new meetingRegistration and sets the default values.
 func NewMeetingRegistration()(*MeetingRegistration) {

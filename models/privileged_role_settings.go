@@ -7,8 +7,6 @@ import (
 // PrivilegedRoleSettings 
 type PrivilegedRoleSettings struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewPrivilegedRoleSettings instantiates a new privilegedRoleSettings and sets the default values.
 func NewPrivilegedRoleSettings()(*PrivilegedRoleSettings) {
@@ -153,6 +151,16 @@ func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["ticketingInfoOnElevation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -231,6 +239,17 @@ func (m *PrivilegedRoleSettings) GetNotificationToUserOnElevation()(*bool) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PrivilegedRoleSettings) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetTicketingInfoOnElevation gets the ticketingInfoOnElevation property value. The ticketingInfoOnElevation property
 func (m *PrivilegedRoleSettings) GetTicketingInfoOnElevation()(*bool) {
     val, err := m.GetBackingStore().Get("ticketingInfoOnElevation")
@@ -298,6 +317,12 @@ func (m *PrivilegedRoleSettings) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     {
         err = writer.WriteBoolValue("notificationToUserOnElevation", m.GetNotificationToUserOnElevation())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -373,6 +398,13 @@ func (m *PrivilegedRoleSettings) SetNotificationToUserOnElevation(value *bool)()
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PrivilegedRoleSettings) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTicketingInfoOnElevation sets the ticketingInfoOnElevation property value. The ticketingInfoOnElevation property
 func (m *PrivilegedRoleSettings) SetTicketingInfoOnElevation(value *bool)() {
     err := m.GetBackingStore().Set("ticketingInfoOnElevation", value)
@@ -393,6 +425,7 @@ type PrivilegedRoleSettingsable interface {
     GetMfaOnElevation()(*bool)
     GetMinElevationDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetNotificationToUserOnElevation()(*bool)
+    GetOdataType()(*string)
     GetTicketingInfoOnElevation()(*bool)
     SetApprovalOnElevation(value *bool)()
     SetApproverIds(value []string)()
@@ -403,5 +436,6 @@ type PrivilegedRoleSettingsable interface {
     SetMfaOnElevation(value *bool)()
     SetMinElevationDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetNotificationToUserOnElevation(value *bool)()
+    SetOdataType(value *string)()
     SetTicketingInfoOnElevation(value *bool)()
 }

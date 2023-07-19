@@ -40,6 +40,16 @@ func (m *EdiscoveryReviewSet) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["queries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEdiscoveryReviewSetQueryFromDiscriminatorValue)
         if err != nil {
@@ -66,6 +76,17 @@ func (m *EdiscoveryReviewSet) GetFiles()([]EdiscoveryFileable) {
     }
     if val != nil {
         return val.([]EdiscoveryFileable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EdiscoveryReviewSet) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -98,6 +119,12 @@ func (m *EdiscoveryReviewSet) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetQueries() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetQueries()))
         for i, v := range m.GetQueries() {
@@ -119,6 +146,13 @@ func (m *EdiscoveryReviewSet) SetFiles(value []EdiscoveryFileable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EdiscoveryReviewSet) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetQueries sets the queries property value. Represents queries within the review set.
 func (m *EdiscoveryReviewSet) SetQueries(value []EdiscoveryReviewSetQueryable)() {
     err := m.GetBackingStore().Set("queries", value)
@@ -131,7 +165,9 @@ type EdiscoveryReviewSetable interface {
     DataSetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetFiles()([]EdiscoveryFileable)
+    GetOdataType()(*string)
     GetQueries()([]EdiscoveryReviewSetQueryable)
     SetFiles(value []EdiscoveryFileable)()
+    SetOdataType(value *string)()
     SetQueries(value []EdiscoveryReviewSetQueryable)()
 }

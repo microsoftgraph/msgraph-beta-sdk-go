@@ -8,6 +8,8 @@ import (
 // Custodian 
 type Custodian struct {
     DataSourceContainer
+    // The OdataType property
+    OdataType *string
 }
 // NewCustodian instantiates a new custodian and sets the default values.
 func NewCustodian()(*Custodian) {

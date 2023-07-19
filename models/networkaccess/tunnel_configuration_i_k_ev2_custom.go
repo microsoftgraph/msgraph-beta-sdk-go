@@ -7,6 +7,8 @@ import (
 // TunnelConfigurationIKEv2Custom 
 type TunnelConfigurationIKEv2Custom struct {
     TunnelConfiguration
+    // The OdataType property
+    OdataType *string
 }
 // NewTunnelConfigurationIKEv2Custom instantiates a new tunnelConfigurationIKEv2Custom and sets the default values.
 func NewTunnelConfigurationIKEv2Custom()(*TunnelConfigurationIKEv2Custom) {
@@ -85,16 +87,6 @@ func (m *TunnelConfigurationIKEv2Custom) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["pfsGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePfsGroup)
         if err != nil {
@@ -161,17 +153,6 @@ func (m *TunnelConfigurationIKEv2Custom) GetIpSecIntegrity()(*IpSecIntegrity) {
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *TunnelConfigurationIKEv2Custom) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetPfsGroup gets the pfsGroup property value. The pfsGroup property
 func (m *TunnelConfigurationIKEv2Custom) GetPfsGroup()(*PfsGroup) {
     val, err := m.GetBackingStore().Get("pfsGroup")
@@ -235,12 +216,6 @@ func (m *TunnelConfigurationIKEv2Custom) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetPfsGroup() != nil {
         cast := (*m.GetPfsGroup()).String()
         err = writer.WriteStringValue("pfsGroup", &cast)
@@ -291,13 +266,6 @@ func (m *TunnelConfigurationIKEv2Custom) SetIpSecIntegrity(value *IpSecIntegrity
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *TunnelConfigurationIKEv2Custom) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetPfsGroup sets the pfsGroup property value. The pfsGroup property
 func (m *TunnelConfigurationIKEv2Custom) SetPfsGroup(value *PfsGroup)() {
     err := m.GetBackingStore().Set("pfsGroup", value)
@@ -321,7 +289,6 @@ type TunnelConfigurationIKEv2Customable interface {
     GetIkeIntegrity()(*IkeIntegrity)
     GetIpSecEncryption()(*IpSecEncryption)
     GetIpSecIntegrity()(*IpSecIntegrity)
-    GetOdataType()(*string)
     GetPfsGroup()(*PfsGroup)
     GetSaLifeTimeSeconds()(*int64)
     SetDhGroup(value *DhGroup)()
@@ -329,7 +296,6 @@ type TunnelConfigurationIKEv2Customable interface {
     SetIkeIntegrity(value *IkeIntegrity)()
     SetIpSecEncryption(value *IpSecEncryption)()
     SetIpSecIntegrity(value *IpSecIntegrity)()
-    SetOdataType(value *string)()
     SetPfsGroup(value *PfsGroup)()
     SetSaLifeTimeSeconds(value *int64)()
 }

@@ -8,8 +8,6 @@ import (
 // AccessPackageAssignmentRequest 
 type AccessPackageAssignmentRequest struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAccessPackageAssignmentRequest instantiates a new accessPackageAssignmentRequest and sets the default values.
 func NewAccessPackageAssignmentRequest()(*AccessPackageAssignmentRequest) {
@@ -231,6 +229,16 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["requestor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessPackageSubjectFromDiscriminatorValue)
         if err != nil {
@@ -313,6 +321,17 @@ func (m *AccessPackageAssignmentRequest) GetIsValidationOnly()(*bool) {
 // GetJustification gets the justification property value. The requestor's supplied justification.
 func (m *AccessPackageAssignmentRequest) GetJustification()(*string) {
     val, err := m.GetBackingStore().Get("justification")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessPackageAssignmentRequest) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -472,6 +491,12 @@ func (m *AccessPackageAssignmentRequest) Serialize(writer i878a80d2330e89d268963
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("requestor", m.GetRequestor())
         if err != nil {
             return err
@@ -585,6 +610,13 @@ func (m *AccessPackageAssignmentRequest) SetJustification(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessPackageAssignmentRequest) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRequestor sets the requestor property value. The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageAssignmentRequest) SetRequestor(value AccessPackageSubjectable)() {
     err := m.GetBackingStore().Set("requestor", value)
@@ -641,6 +673,7 @@ type AccessPackageAssignmentRequestable interface {
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetIsValidationOnly()(*bool)
     GetJustification()(*string)
+    GetOdataType()(*string)
     GetRequestor()(AccessPackageSubjectable)
     GetRequestState()(*string)
     GetRequestStatus()(*string)
@@ -657,6 +690,7 @@ type AccessPackageAssignmentRequestable interface {
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetIsValidationOnly(value *bool)()
     SetJustification(value *string)()
+    SetOdataType(value *string)()
     SetRequestor(value AccessPackageSubjectable)()
     SetRequestState(value *string)()
     SetRequestStatus(value *string)()

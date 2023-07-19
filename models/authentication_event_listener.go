@@ -7,8 +7,6 @@ import (
 // AuthenticationEventListener 
 type AuthenticationEventListener struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAuthenticationEventListener instantiates a new authenticationEventListener and sets the default values.
 func NewAuthenticationEventListener()(*AuthenticationEventListener) {
@@ -92,6 +90,16 @@ func (m *AuthenticationEventListener) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["priority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -103,6 +111,17 @@ func (m *AuthenticationEventListener) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AuthenticationEventListener) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPriority gets the priority property value. The priority of this handler. Between 0 (lower priority) and 1000 (higher priority).
 func (m *AuthenticationEventListener) GetPriority()(*int32) {
@@ -134,6 +153,12 @@ func (m *AuthenticationEventListener) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("priority", m.GetPriority())
         if err != nil {
             return err
@@ -155,6 +180,13 @@ func (m *AuthenticationEventListener) SetConditions(value AuthenticationConditio
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AuthenticationEventListener) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPriority sets the priority property value. The priority of this handler. Between 0 (lower priority) and 1000 (higher priority).
 func (m *AuthenticationEventListener) SetPriority(value *int32)() {
     err := m.GetBackingStore().Set("priority", value)
@@ -168,8 +200,10 @@ type AuthenticationEventListenerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAuthenticationEventsFlowId()(*string)
     GetConditions()(AuthenticationConditionsable)
+    GetOdataType()(*string)
     GetPriority()(*int32)
     SetAuthenticationEventsFlowId(value *string)()
     SetConditions(value AuthenticationConditionsable)()
+    SetOdataType(value *string)()
     SetPriority(value *int32)()
 }

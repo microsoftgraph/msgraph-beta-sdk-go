@@ -7,6 +7,8 @@ import (
 // DeviceHealthScriptTimeSchedule base type of Device health script time schedule.
 type DeviceHealthScriptTimeSchedule struct {
     DeviceHealthScriptRunSchedule
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceHealthScriptTimeSchedule instantiates a new deviceHealthScriptTimeSchedule and sets the default values.
 func NewDeviceHealthScriptTimeSchedule()(*DeviceHealthScriptTimeSchedule) {
@@ -44,16 +46,6 @@ func CreateDeviceHealthScriptTimeScheduleFromDiscriminatorValue(parseNode i878a8
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceHealthScriptTimeSchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceHealthScriptRunSchedule.GetFieldDeserializers()
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["time"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeOnlyValue()
         if err != nil {
@@ -75,17 +67,6 @@ func (m *DeviceHealthScriptTimeSchedule) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *DeviceHealthScriptTimeSchedule) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetTime gets the time property value. At what time the script is scheduled to run. This collection can contain a maximum of 20 elements.
 func (m *DeviceHealthScriptTimeSchedule) GetTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
@@ -116,12 +97,6 @@ func (m *DeviceHealthScriptTimeSchedule) Serialize(writer i878a80d2330e89d268963
         return err
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteTimeOnlyValue("time", m.GetTime())
         if err != nil {
             return err
@@ -134,13 +109,6 @@ func (m *DeviceHealthScriptTimeSchedule) Serialize(writer i878a80d2330e89d268963
         }
     }
     return nil
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *DeviceHealthScriptTimeSchedule) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
 }
 // SetTime sets the time property value. At what time the script is scheduled to run. This collection can contain a maximum of 20 elements.
 func (m *DeviceHealthScriptTimeSchedule) SetTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
@@ -160,10 +128,8 @@ func (m *DeviceHealthScriptTimeSchedule) SetUseUtc(value *bool)() {
 type DeviceHealthScriptTimeScheduleable interface {
     DeviceHealthScriptRunScheduleable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOdataType()(*string)
     GetTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
     GetUseUtc()(*bool)
-    SetOdataType(value *string)()
     SetTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)()
     SetUseUtc(value *bool)()
 }

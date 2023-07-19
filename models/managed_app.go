@@ -7,8 +7,6 @@ import (
 // ManagedApp abstract class that contains properties and inherited properties for apps that you can manage with an Intune app protection policy.
 type ManagedApp struct {
     MobileApp
-    // The OdataType property
-    OdataType *string
 }
 // NewManagedApp instantiates a new managedApp and sets the default values.
 func NewManagedApp()(*ManagedApp) {

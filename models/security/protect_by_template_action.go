@@ -7,8 +7,6 @@ import (
 // ProtectByTemplateAction 
 type ProtectByTemplateAction struct {
     InformationProtectionAction
-    // The OdataType property
-    OdataType *string
 }
 // NewProtectByTemplateAction instantiates a new protectByTemplateAction and sets the default values.
 func NewProtectByTemplateAction()(*ProtectByTemplateAction) {
@@ -26,6 +24,16 @@ func CreateProtectByTemplateActionFromDiscriminatorValue(parseNode i878a80d2330e
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProtectByTemplateAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.InformationProtectionAction.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["templateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -37,6 +45,17 @@ func (m *ProtectByTemplateAction) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ProtectByTemplateAction) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTemplateId gets the templateId property value. The unique identifier for a protection template in Microsoft Purview Information Protection to apply to the content.
 func (m *ProtectByTemplateAction) GetTemplateId()(*string) {
@@ -56,12 +75,25 @@ func (m *ProtectByTemplateAction) Serialize(writer i878a80d2330e89d26896388a3f48
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("templateId", m.GetTemplateId())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ProtectByTemplateAction) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTemplateId sets the templateId property value. The unique identifier for a protection template in Microsoft Purview Information Protection to apply to the content.
 func (m *ProtectByTemplateAction) SetTemplateId(value *string)() {
@@ -74,6 +106,8 @@ func (m *ProtectByTemplateAction) SetTemplateId(value *string)() {
 type ProtectByTemplateActionable interface {
     InformationProtectionActionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetTemplateId()(*string)
+    SetOdataType(value *string)()
     SetTemplateId(value *string)()
 }

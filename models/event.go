@@ -8,6 +8,8 @@ import (
 // Event 
 type Event struct {
     OutlookItem
+    // The OdataType property
+    OdataType *string
 }
 // NewEvent instantiates a new event and sets the default values.
 func NewEvent()(*Event) {

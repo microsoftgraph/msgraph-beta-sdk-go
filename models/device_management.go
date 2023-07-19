@@ -9,8 +9,6 @@ import (
 // DeviceManagement singleton entity that acts as a container for all device management functionality.
 type DeviceManagement struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagement instantiates a new deviceManagement and sets the default values.
 func NewDeviceManagement()(*DeviceManagement) {
@@ -2027,6 +2025,16 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["privilegeManagementElevations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePrivilegeManagementElevationFromDiscriminatorValue)
         if err != nil {
@@ -3644,6 +3652,17 @@ func (m *DeviceManagement) GetNotificationMessageTemplates()([]NotificationMessa
     }
     if val != nil {
         return val.([]NotificationMessageTemplateable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagement) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -5569,6 +5588,12 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPrivilegeManagementElevations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPrivilegeManagementElevations()))
         for i, v := range m.GetPrivilegeManagementElevations() {
@@ -7140,6 +7165,13 @@ func (m *DeviceManagement) SetNotificationMessageTemplates(value []NotificationM
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagement) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPrivilegeManagementElevations sets the privilegeManagementElevations property value. The endpoint privilege management elevation event entity contains elevation details.
 func (m *DeviceManagement) SetPrivilegeManagementElevations(value []PrivilegeManagementElevationable)() {
     err := m.GetBackingStore().Set("privilegeManagementElevations", value)
@@ -7851,6 +7883,7 @@ type DeviceManagementable interface {
     GetMobileThreatDefenseConnectors()([]MobileThreatDefenseConnectorable)
     GetNdesConnectors()([]NdesConnectorable)
     GetNotificationMessageTemplates()([]NotificationMessageTemplateable)
+    GetOdataType()(*string)
     GetPrivilegeManagementElevations()([]PrivilegeManagementElevationable)
     GetRemoteActionAudits()([]RemoteActionAuditable)
     GetRemoteAssistancePartners()([]RemoteAssistancePartnerable)
@@ -8030,6 +8063,7 @@ type DeviceManagementable interface {
     SetMobileThreatDefenseConnectors(value []MobileThreatDefenseConnectorable)()
     SetNdesConnectors(value []NdesConnectorable)()
     SetNotificationMessageTemplates(value []NotificationMessageTemplateable)()
+    SetOdataType(value *string)()
     SetPrivilegeManagementElevations(value []PrivilegeManagementElevationable)()
     SetRemoteActionAudits(value []RemoteActionAuditable)()
     SetRemoteAssistancePartners(value []RemoteAssistancePartnerable)()

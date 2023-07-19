@@ -7,6 +7,8 @@ import (
 // AddFooter 
 type AddFooter struct {
     MarkContent
+    // The OdataType property
+    OdataType *string
 }
 // NewAddFooter instantiates a new addFooter and sets the default values.
 func NewAddFooter()(*AddFooter) {
@@ -55,16 +57,6 @@ func (m *AddFooter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetMargin gets the margin property value. The margin property
@@ -75,17 +67,6 @@ func (m *AddFooter) GetMargin()(*int32) {
     }
     if val != nil {
         return val.(*int32)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *AddFooter) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -108,12 +89,6 @@ func (m *AddFooter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetAlignment sets the alignment property value. The alignment property
@@ -130,21 +105,12 @@ func (m *AddFooter) SetMargin(value *int32)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *AddFooter) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // AddFooterable 
 type AddFooterable interface {
     MarkContentable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAlignment()(*Alignment)
     GetMargin()(*int32)
-    GetOdataType()(*string)
     SetAlignment(value *Alignment)()
     SetMargin(value *int32)()
-    SetOdataType(value *string)()
 }

@@ -7,6 +7,8 @@ import (
 // Acronym 
 type Acronym struct {
     SearchAnswer
+    // The OdataType property
+    OdataType *string
 }
 // NewAcronym instantiates a new acronym and sets the default values.
 func NewAcronym()(*Acronym) {

@@ -7,8 +7,6 @@ import (
 // DeviceManagementSettingCategory entity representing a setting category
 type DeviceManagementSettingCategory struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementSettingCategory instantiates a new deviceManagementSettingCategory and sets the default values.
 func NewDeviceManagementSettingCategory()(*DeviceManagementSettingCategory) {
@@ -75,6 +73,16 @@ func (m *DeviceManagementSettingCategory) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["settingDefinitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementSettingDefinitionFromDiscriminatorValue)
         if err != nil {
@@ -101,6 +109,17 @@ func (m *DeviceManagementSettingCategory) GetHasRequiredSetting()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementSettingCategory) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -133,6 +152,12 @@ func (m *DeviceManagementSettingCategory) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSettingDefinitions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSettingDefinitions()))
         for i, v := range m.GetSettingDefinitions() {
@@ -161,6 +186,13 @@ func (m *DeviceManagementSettingCategory) SetHasRequiredSetting(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementSettingCategory) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSettingDefinitions sets the settingDefinitions property value. The setting definitions this category contains
 func (m *DeviceManagementSettingCategory) SetSettingDefinitions(value []DeviceManagementSettingDefinitionable)() {
     err := m.GetBackingStore().Set("settingDefinitions", value)
@@ -174,8 +206,10 @@ type DeviceManagementSettingCategoryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
     GetHasRequiredSetting()(*bool)
+    GetOdataType()(*string)
     GetSettingDefinitions()([]DeviceManagementSettingDefinitionable)
     SetDisplayName(value *string)()
     SetHasRequiredSetting(value *bool)()
+    SetOdataType(value *string)()
     SetSettingDefinitions(value []DeviceManagementSettingDefinitionable)()
 }

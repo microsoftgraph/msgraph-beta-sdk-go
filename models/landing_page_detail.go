@@ -7,8 +7,6 @@ import (
 // LandingPageDetail 
 type LandingPageDetail struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewLandingPageDetail instantiates a new landingPageDetail and sets the default values.
 func NewLandingPageDetail()(*LandingPageDetail) {
@@ -65,6 +63,16 @@ func (m *LandingPageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsDefaultLangauge gets the isDefaultLangauge property value. The isDefaultLangauge property
@@ -81,6 +89,17 @@ func (m *LandingPageDetail) GetIsDefaultLangauge()(*bool) {
 // GetLanguage gets the language property value. The language property
 func (m *LandingPageDetail) GetLanguage()(*string) {
     val, err := m.GetBackingStore().Get("language")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *LandingPageDetail) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -113,6 +132,12 @@ func (m *LandingPageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetContent sets the content property value. The content property
@@ -136,6 +161,13 @@ func (m *LandingPageDetail) SetLanguage(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *LandingPageDetail) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // LandingPageDetailable 
 type LandingPageDetailable interface {
     Entityable
@@ -143,7 +175,9 @@ type LandingPageDetailable interface {
     GetContent()(*string)
     GetIsDefaultLangauge()(*bool)
     GetLanguage()(*string)
+    GetOdataType()(*string)
     SetContent(value *string)()
     SetIsDefaultLangauge(value *bool)()
     SetLanguage(value *string)()
+    SetOdataType(value *string)()
 }

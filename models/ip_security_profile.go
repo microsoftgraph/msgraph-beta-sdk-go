@@ -8,8 +8,6 @@ import (
 // IpSecurityProfile 
 type IpSecurityProfile struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewIpSecurityProfile instantiates a new ipSecurityProfile and sets the default values.
 func NewIpSecurityProfile()(*IpSecurityProfile) {
@@ -209,6 +207,16 @@ func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["riskScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -288,6 +296,17 @@ func (m *IpSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IpSecurityProfile) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -403,6 +422,12 @@ func (m *IpSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("riskScore", m.GetRiskScore())
         if err != nil {
             return err
@@ -492,6 +517,13 @@ func (m *IpSecurityProfile) SetLastSeenDateTime(value *i336074805fc853987abe6f7f
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IpSecurityProfile) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRiskScore sets the riskScore property value. The riskScore property
 func (m *IpSecurityProfile) SetRiskScore(value *string)() {
     err := m.GetBackingStore().Set("riskScore", value)
@@ -527,6 +559,7 @@ type IpSecurityProfileable interface {
     GetIpCategories()([]IpCategoryable)
     GetIpReferenceData()([]IpReferenceDataable)
     GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetRiskScore()(*string)
     GetTags()([]string)
     GetVendorInformation()(SecurityVendorInformationable)
@@ -540,6 +573,7 @@ type IpSecurityProfileable interface {
     SetIpCategories(value []IpCategoryable)()
     SetIpReferenceData(value []IpReferenceDataable)()
     SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetRiskScore(value *string)()
     SetTags(value []string)()
     SetVendorInformation(value SecurityVendorInformationable)()

@@ -7,6 +7,8 @@ import (
 // TypedEmailAddress 
 type TypedEmailAddress struct {
     EmailAddress
+    // The OdataType property
+    OdataType *string
 }
 // NewTypedEmailAddress instantiates a new typedEmailAddress and sets the default values.
 func NewTypedEmailAddress()(*TypedEmailAddress) {
@@ -24,16 +26,6 @@ func CreateTypedEmailAddressFromDiscriminatorValue(parseNode i878a80d2330e89d268
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TypedEmailAddress) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EmailAddress.GetFieldDeserializers()
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["otherLabel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -55,17 +47,6 @@ func (m *TypedEmailAddress) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *TypedEmailAddress) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetOtherLabel gets the otherLabel property value. To specify a custom type of email address, set type to other, and assign otherLabel to a custom string. For example, you may use a specific email address for your volunteer activities. Set type to other, and set otherLabel to a custom string such as Volunteer work.
 func (m *TypedEmailAddress) GetOtherLabel()(*string) {
@@ -96,12 +77,6 @@ func (m *TypedEmailAddress) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         return err
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("otherLabel", m.GetOtherLabel())
         if err != nil {
             return err
@@ -115,13 +90,6 @@ func (m *TypedEmailAddress) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     return nil
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *TypedEmailAddress) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
 }
 // SetOtherLabel sets the otherLabel property value. To specify a custom type of email address, set type to other, and assign otherLabel to a custom string. For example, you may use a specific email address for your volunteer activities. Set type to other, and set otherLabel to a custom string such as Volunteer work.
 func (m *TypedEmailAddress) SetOtherLabel(value *string)() {
@@ -141,10 +109,8 @@ func (m *TypedEmailAddress) SetType(value *EmailType)() {
 type TypedEmailAddressable interface {
     EmailAddressable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOdataType()(*string)
     GetOtherLabel()(*string)
     GetType()(*EmailType)
-    SetOdataType(value *string)()
     SetOtherLabel(value *string)()
     SetType(value *EmailType)()
 }

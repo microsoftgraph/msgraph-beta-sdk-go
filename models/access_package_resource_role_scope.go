@@ -8,8 +8,6 @@ import (
 // AccessPackageResourceRoleScope 
 type AccessPackageResourceRoleScope struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAccessPackageResourceRoleScope instantiates a new accessPackageResourceRoleScope and sets the default values.
 func NewAccessPackageResourceRoleScope()(*AccessPackageResourceRoleScope) {
@@ -129,6 +127,16 @@ func (m *AccessPackageResourceRoleScope) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetModifiedBy gets the modifiedBy property value. The modifiedBy property
@@ -150,6 +158,17 @@ func (m *AccessPackageResourceRoleScope) GetModifiedDateTime()(*i336074805fc8539
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessPackageResourceRoleScope) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -191,6 +210,12 @@ func (m *AccessPackageResourceRoleScope) Serialize(writer i878a80d2330e89d268963
     }
     {
         err = writer.WriteTimeValue("modifiedDateTime", m.GetModifiedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -239,6 +264,13 @@ func (m *AccessPackageResourceRoleScope) SetModifiedDateTime(value *i336074805fc
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessPackageResourceRoleScope) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // AccessPackageResourceRoleScopeable 
 type AccessPackageResourceRoleScopeable interface {
     Entityable
@@ -249,10 +281,12 @@ type AccessPackageResourceRoleScopeable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetModifiedBy()(*string)
     GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     SetAccessPackageResourceRole(value AccessPackageResourceRoleable)()
     SetAccessPackageResourceScope(value AccessPackageResourceScopeable)()
     SetCreatedBy(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetModifiedBy(value *string)()
     SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
 }

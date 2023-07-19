@@ -7,8 +7,6 @@ import (
 // CustomExtensionHandler 
 type CustomExtensionHandler struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewCustomExtensionHandler instantiates a new customExtensionHandler and sets the default values.
 func NewCustomExtensionHandler()(*CustomExtensionHandler) {
@@ -45,6 +43,16 @@ func (m *CustomExtensionHandler) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["stage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAccessPackageCustomExtensionStage)
         if err != nil {
@@ -56,6 +64,17 @@ func (m *CustomExtensionHandler) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CustomExtensionHandler) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetStage gets the stage property value. Indicates the stage of the access package assignment request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
 func (m *CustomExtensionHandler) GetStage()(*AccessPackageCustomExtensionStage) {
@@ -80,6 +99,12 @@ func (m *CustomExtensionHandler) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetStage() != nil {
         cast := (*m.GetStage()).String()
         err = writer.WriteStringValue("stage", &cast)
@@ -96,6 +121,13 @@ func (m *CustomExtensionHandler) SetCustomExtension(value CustomAccessPackageWor
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CustomExtensionHandler) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStage sets the stage property value. Indicates the stage of the access package assignment request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
 func (m *CustomExtensionHandler) SetStage(value *AccessPackageCustomExtensionStage)() {
     err := m.GetBackingStore().Set("stage", value)
@@ -108,7 +140,9 @@ type CustomExtensionHandlerable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCustomExtension()(CustomAccessPackageWorkflowExtensionable)
+    GetOdataType()(*string)
     GetStage()(*AccessPackageCustomExtensionStage)
     SetCustomExtension(value CustomAccessPackageWorkflowExtensionable)()
+    SetOdataType(value *string)()
     SetStage(value *AccessPackageCustomExtensionStage)()
 }

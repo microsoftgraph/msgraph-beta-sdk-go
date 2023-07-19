@@ -7,6 +7,8 @@ import (
 // GroupPolicyUploadedPresentation represents an ADMX checkBox element and an ADMX boolean element.
 type GroupPolicyUploadedPresentation struct {
     GroupPolicyPresentation
+    // The OdataType property
+    OdataType *string
 }
 // NewGroupPolicyUploadedPresentation instantiates a new groupPolicyUploadedPresentation and sets the default values.
 func NewGroupPolicyUploadedPresentation()(*GroupPolicyUploadedPresentation) {

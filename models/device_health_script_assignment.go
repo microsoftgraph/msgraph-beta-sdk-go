@@ -7,8 +7,6 @@ import (
 // DeviceHealthScriptAssignment contains properties used to assign a device management script to a group.
 type DeviceHealthScriptAssignment struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceHealthScriptAssignment instantiates a new deviceHealthScriptAssignment and sets the default values.
 func NewDeviceHealthScriptAssignment()(*DeviceHealthScriptAssignment) {
@@ -24,6 +22,16 @@ func CreateDeviceHealthScriptAssignmentFromDiscriminatorValue(parseNode i878a80d
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceHealthScriptAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["runRemediationScript"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -55,6 +63,17 @@ func (m *DeviceHealthScriptAssignment) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceHealthScriptAssignment) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRunRemediationScript gets the runRemediationScript property value. Determine whether we want to run detection script only or run both detection script and remediation script
 func (m *DeviceHealthScriptAssignment) GetRunRemediationScript()(*bool) {
@@ -96,6 +115,12 @@ func (m *DeviceHealthScriptAssignment) Serialize(writer i878a80d2330e89d26896388
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("runRemediationScript", m.GetRunRemediationScript())
         if err != nil {
             return err
@@ -114,6 +139,13 @@ func (m *DeviceHealthScriptAssignment) Serialize(writer i878a80d2330e89d26896388
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceHealthScriptAssignment) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRunRemediationScript sets the runRemediationScript property value. Determine whether we want to run detection script only or run both detection script and remediation script
 func (m *DeviceHealthScriptAssignment) SetRunRemediationScript(value *bool)() {
@@ -140,9 +172,11 @@ func (m *DeviceHealthScriptAssignment) SetTarget(value DeviceAndAppManagementAss
 type DeviceHealthScriptAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetRunRemediationScript()(*bool)
     GetRunSchedule()(DeviceHealthScriptRunScheduleable)
     GetTarget()(DeviceAndAppManagementAssignmentTargetable)
+    SetOdataType(value *string)()
     SetRunRemediationScript(value *bool)()
     SetRunSchedule(value DeviceHealthScriptRunScheduleable)()
     SetTarget(value DeviceAndAppManagementAssignmentTargetable)()

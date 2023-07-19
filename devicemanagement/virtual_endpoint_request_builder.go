@@ -94,6 +94,10 @@ func (m *VirtualEndpointRequestBuilder) DeviceImages()(*VirtualEndpointDeviceIma
 func (m *VirtualEndpointRequestBuilder) ExternalPartnerSettings()(*VirtualEndpointExternalPartnerSettingsRequestBuilder) {
     return NewVirtualEndpointExternalPartnerSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// FrontLineServicePlans provides operations to manage the frontLineServicePlans property of the microsoft.graph.virtualEndpoint entity.
+func (m *VirtualEndpointRequestBuilder) FrontLineServicePlans()(*VirtualEndpointFrontLineServicePlansRequestBuilder) {
+    return NewVirtualEndpointFrontLineServicePlansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GalleryImages provides operations to manage the galleryImages property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) GalleryImages()(*VirtualEndpointGalleryImagesRequestBuilder) {
     return NewVirtualEndpointGalleryImagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

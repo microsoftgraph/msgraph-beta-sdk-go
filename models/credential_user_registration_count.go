@@ -7,8 +7,6 @@ import (
 // CredentialUserRegistrationCount 
 type CredentialUserRegistrationCount struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewCredentialUserRegistrationCount instantiates a new credentialUserRegistrationCount and sets the default values.
 func NewCredentialUserRegistrationCount()(*CredentialUserRegistrationCount) {
@@ -24,6 +22,16 @@ func CreateCredentialUserRegistrationCountFromDiscriminatorValue(parseNode i878a
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CredentialUserRegistrationCount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["totalUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -51,6 +59,17 @@ func (m *CredentialUserRegistrationCount) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CredentialUserRegistrationCount) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTotalUserCount gets the totalUserCount property value. Provides the count of users with accountEnabled set to true in the tenant.
 func (m *CredentialUserRegistrationCount) GetTotalUserCount()(*int64) {
@@ -81,6 +100,12 @@ func (m *CredentialUserRegistrationCount) Serialize(writer i878a80d2330e89d26896
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt64Value("totalUserCount", m.GetTotalUserCount())
         if err != nil {
             return err
@@ -100,6 +125,13 @@ func (m *CredentialUserRegistrationCount) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CredentialUserRegistrationCount) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTotalUserCount sets the totalUserCount property value. Provides the count of users with accountEnabled set to true in the tenant.
 func (m *CredentialUserRegistrationCount) SetTotalUserCount(value *int64)() {
     err := m.GetBackingStore().Set("totalUserCount", value)
@@ -118,8 +150,10 @@ func (m *CredentialUserRegistrationCount) SetUserRegistrationCounts(value []User
 type CredentialUserRegistrationCountable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetTotalUserCount()(*int64)
     GetUserRegistrationCounts()([]UserRegistrationCountable)
+    SetOdataType(value *string)()
     SetTotalUserCount(value *int64)()
     SetUserRegistrationCounts(value []UserRegistrationCountable)()
 }

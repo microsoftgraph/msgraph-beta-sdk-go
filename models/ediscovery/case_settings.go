@@ -8,8 +8,6 @@ import (
 // CaseSettings 
 type CaseSettings struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewCaseSettings instantiates a new caseSettings and sets the default values.
 func NewCaseSettings()(*CaseSettings) {
@@ -32,6 +30,16 @@ func (m *CaseSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         if val != nil {
             m.SetOcr(val.(OcrSettingsable))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -65,6 +73,17 @@ func (m *CaseSettings) GetOcr()(OcrSettingsable) {
     }
     if val != nil {
         return val.(OcrSettingsable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CaseSettings) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -103,6 +122,12 @@ func (m *CaseSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("redundancyDetection", m.GetRedundancyDetection())
         if err != nil {
             return err
@@ -119,6 +144,13 @@ func (m *CaseSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 // SetOcr sets the ocr property value. The OCR (Optical Character Recognition) settings for the case.
 func (m *CaseSettings) SetOcr(value OcrSettingsable)() {
     err := m.GetBackingStore().Set("ocr", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CaseSettings) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -142,9 +174,11 @@ type CaseSettingsable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetOcr()(OcrSettingsable)
+    GetOdataType()(*string)
     GetRedundancyDetection()(RedundancyDetectionSettingsable)
     GetTopicModeling()(TopicModelingSettingsable)
     SetOcr(value OcrSettingsable)()
+    SetOdataType(value *string)()
     SetRedundancyDetection(value RedundancyDetectionSettingsable)()
     SetTopicModeling(value TopicModelingSettingsable)()
 }

@@ -8,8 +8,6 @@ import (
 // SharedEmailDomainInvitation 
 type SharedEmailDomainInvitation struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewSharedEmailDomainInvitation instantiates a new sharedEmailDomainInvitation and sets the default values.
 func NewSharedEmailDomainInvitation()(*SharedEmailDomainInvitation) {
@@ -66,6 +64,16 @@ func (m *SharedEmailDomainInvitation) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetInvitationDomain gets the invitationDomain property value. The invitationDomain property
@@ -82,6 +90,17 @@ func (m *SharedEmailDomainInvitation) GetInvitationDomain()(*string) {
 // GetInvitationStatus gets the invitationStatus property value. The invitationStatus property
 func (m *SharedEmailDomainInvitation) GetInvitationStatus()(*string) {
     val, err := m.GetBackingStore().Get("invitationStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SharedEmailDomainInvitation) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -114,6 +133,12 @@ func (m *SharedEmailDomainInvitation) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetExpiryTime sets the expiryTime property value. The expiryTime property
@@ -137,6 +162,13 @@ func (m *SharedEmailDomainInvitation) SetInvitationStatus(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SharedEmailDomainInvitation) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SharedEmailDomainInvitationable 
 type SharedEmailDomainInvitationable interface {
     Entityable
@@ -144,7 +176,9 @@ type SharedEmailDomainInvitationable interface {
     GetExpiryTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetInvitationDomain()(*string)
     GetInvitationStatus()(*string)
+    GetOdataType()(*string)
     SetExpiryTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetInvitationDomain(value *string)()
     SetInvitationStatus(value *string)()
+    SetOdataType(value *string)()
 }

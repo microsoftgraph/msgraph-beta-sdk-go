@@ -7,8 +7,6 @@ import (
 // CommunicationsApplicationInstanceIdentity 
 type CommunicationsApplicationInstanceIdentity struct {
     Identity
-    // The OdataType property
-    OdataType *string
 }
 // NewCommunicationsApplicationInstanceIdentity instantiates a new communicationsApplicationInstanceIdentity and sets the default values.
 func NewCommunicationsApplicationInstanceIdentity()(*CommunicationsApplicationInstanceIdentity) {
@@ -36,6 +34,16 @@ func (m *CommunicationsApplicationInstanceIdentity) GetFieldDeserializers()(map[
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -56,6 +64,17 @@ func (m *CommunicationsApplicationInstanceIdentity) GetHidden()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CommunicationsApplicationInstanceIdentity) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -83,6 +102,12 @@ func (m *CommunicationsApplicationInstanceIdentity) Serialize(writer i878a80d233
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("tenantId", m.GetTenantId())
         if err != nil {
             return err
@@ -93,6 +118,13 @@ func (m *CommunicationsApplicationInstanceIdentity) Serialize(writer i878a80d233
 // SetHidden sets the hidden property value. True if the participant would not like to be shown in other participants' rosters.
 func (m *CommunicationsApplicationInstanceIdentity) SetHidden(value *bool)() {
     err := m.GetBackingStore().Set("hidden", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CommunicationsApplicationInstanceIdentity) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -109,7 +141,9 @@ type CommunicationsApplicationInstanceIdentityable interface {
     Identityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetHidden()(*bool)
+    GetOdataType()(*string)
     GetTenantId()(*string)
     SetHidden(value *bool)()
+    SetOdataType(value *string)()
     SetTenantId(value *string)()
 }

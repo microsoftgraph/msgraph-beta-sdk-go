@@ -7,6 +7,8 @@ import (
 // GovernanceSubject 
 type GovernanceSubject struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewGovernanceSubject instantiates a new governanceSubject and sets the default values.
 func NewGovernanceSubject()(*GovernanceSubject) {
@@ -64,16 +66,6 @@ func (m *GovernanceSubject) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["principalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -95,17 +87,6 @@ func (m *GovernanceSubject) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *GovernanceSubject) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetPrincipalName gets the principalName property value. The principal name of the user subject. If the subject is in other types, it is empty.
 func (m *GovernanceSubject) GetPrincipalName()(*string) {
@@ -148,12 +129,6 @@ func (m *GovernanceSubject) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("principalName", m.GetPrincipalName())
         if err != nil {
             return err
@@ -181,13 +156,6 @@ func (m *GovernanceSubject) SetEmail(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *GovernanceSubject) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetPrincipalName sets the principalName property value. The principal name of the user subject. If the subject is in other types, it is empty.
 func (m *GovernanceSubject) SetPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("principalName", value)
@@ -208,12 +176,10 @@ type GovernanceSubjectable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
     GetEmail()(*string)
-    GetOdataType()(*string)
     GetPrincipalName()(*string)
     GetType()(*string)
     SetDisplayName(value *string)()
     SetEmail(value *string)()
-    SetOdataType(value *string)()
     SetPrincipalName(value *string)()
     SetType(value *string)()
 }

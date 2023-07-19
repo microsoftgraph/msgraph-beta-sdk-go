@@ -7,6 +7,8 @@ import (
 // ComanagementEligibleDevice device Co-Management eligibility state
 type ComanagementEligibleDevice struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewComanagementEligibleDevice instantiates a new comanagementEligibleDevice and sets the default values.
 func NewComanagementEligibleDevice()(*ComanagementEligibleDevice) {
@@ -153,16 +155,6 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(i87
         }
         if val != nil {
             m.SetModel(val)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
         }
         return nil
     }
@@ -315,17 +307,6 @@ func (m *ComanagementEligibleDevice) GetMdmStatus()(*string) {
 // GetModel gets the model property value. Model
 func (m *ComanagementEligibleDevice) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *ComanagementEligibleDevice) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -509,12 +490,6 @@ func (m *ComanagementEligibleDevice) Serialize(writer i878a80d2330e89d26896388a3
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("osDescription", m.GetOsDescription())
         if err != nil {
             return err
@@ -641,13 +616,6 @@ func (m *ComanagementEligibleDevice) SetModel(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *ComanagementEligibleDevice) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOsDescription sets the osDescription property value. OSDescription
 func (m *ComanagementEligibleDevice) SetOsDescription(value *string)() {
     err := m.GetBackingStore().Set("osDescription", value)
@@ -731,7 +699,6 @@ type ComanagementEligibleDeviceable interface {
     GetManufacturer()(*string)
     GetMdmStatus()(*string)
     GetModel()(*string)
-    GetOdataType()(*string)
     GetOsDescription()(*string)
     GetOsVersion()(*string)
     GetOwnerType()(*OwnerType)
@@ -751,7 +718,6 @@ type ComanagementEligibleDeviceable interface {
     SetManufacturer(value *string)()
     SetMdmStatus(value *string)()
     SetModel(value *string)()
-    SetOdataType(value *string)()
     SetOsDescription(value *string)()
     SetOsVersion(value *string)()
     SetOwnerType(value *OwnerType)()

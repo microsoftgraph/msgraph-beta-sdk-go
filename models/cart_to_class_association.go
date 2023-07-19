@@ -8,8 +8,6 @@ import (
 // CartToClassAssociation cartToClassAssociation for associating device carts with classrooms.
 type CartToClassAssociation struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewCartToClassAssociation instantiates a new cartToClassAssociation and sets the default values.
 func NewCartToClassAssociation()(*CartToClassAssociation) {
@@ -152,6 +150,16 @@ func (m *CartToClassAssociation) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -172,6 +180,17 @@ func (m *CartToClassAssociation) GetLastModifiedDateTime()(*i336074805fc853987ab
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CartToClassAssociation) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -229,6 +248,12 @@ func (m *CartToClassAssociation) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("version", m.GetVersion())
         if err != nil {
             return err
@@ -278,6 +303,13 @@ func (m *CartToClassAssociation) SetLastModifiedDateTime(value *i336074805fc8539
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CartToClassAssociation) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetVersion sets the version property value. Version of the CartToClassAssociation.
 func (m *CartToClassAssociation) SetVersion(value *int32)() {
     err := m.GetBackingStore().Set("version", value)
@@ -295,6 +327,7 @@ type CartToClassAssociationable interface {
     GetDeviceCartIds()([]string)
     GetDisplayName()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetVersion()(*int32)
     SetClassroomIds(value []string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -302,5 +335,6 @@ type CartToClassAssociationable interface {
     SetDeviceCartIds(value []string)()
     SetDisplayName(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetVersion(value *int32)()
 }
