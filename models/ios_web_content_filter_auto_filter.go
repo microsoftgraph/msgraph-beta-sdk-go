@@ -7,8 +7,6 @@ import (
 // IosWebContentFilterAutoFilter represents an iOS Web Content Filter setting type, which enables iOS automatic filter feature and allows for additional URL access control. When constructed with no property values, the iOS device will enable the automatic filter regardless.
 type IosWebContentFilterAutoFilter struct {
     IosWebContentFilterBase
-    // The OdataType property
-    OdataType *string
 }
 // NewIosWebContentFilterAutoFilter instantiates a new iosWebContentFilterAutoFilter and sets the default values.
 func NewIosWebContentFilterAutoFilter()(*IosWebContentFilterAutoFilter) {

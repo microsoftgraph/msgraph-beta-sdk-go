@@ -7,8 +7,6 @@ import (
 // UserFlowLanguagePage 
 type UserFlowLanguagePage struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewUserFlowLanguagePage instantiates a new userFlowLanguagePage and sets the default values.
 func NewUserFlowLanguagePage()(*UserFlowLanguagePage) {

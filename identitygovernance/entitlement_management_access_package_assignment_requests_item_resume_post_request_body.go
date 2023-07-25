@@ -79,7 +79,7 @@ func (m *EntitlementManagementAccessPackageAssignmentRequestsItemResumePostReque
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -96,8 +96,8 @@ func (m *EntitlementManagementAccessPackageAssignmentRequestsItemResumePostReque
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *EntitlementManagementAccessPackageAssignmentRequestsItemResumePostRequestBody) GetType()(*string) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *EntitlementManagementAccessPackageAssignmentRequestsItemResumePostRequestBody) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -122,7 +122,7 @@ func (m *EntitlementManagementAccessPackageAssignmentRequestsItemResumePostReque
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -160,8 +160,8 @@ func (m *EntitlementManagementAccessPackageAssignmentRequestsItemResumePostReque
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *EntitlementManagementAccessPackageAssignmentRequestsItemResumePostRequestBody) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *EntitlementManagementAccessPackageAssignmentRequestsItemResumePostRequestBody) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -175,9 +175,9 @@ type EntitlementManagementAccessPackageAssignmentRequestsItemResumePostRequestBo
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetData()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomExtensionDataable)
     GetSource()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetData(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomExtensionDataable)()
     SetSource(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
 }

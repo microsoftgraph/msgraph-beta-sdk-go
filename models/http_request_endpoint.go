@@ -24,16 +24,6 @@ func CreateHttpRequestEndpointFromDiscriminatorValue(parseNode i878a80d2330e89d2
 // GetFieldDeserializers the deserialization information for the current model
 func (m *HttpRequestEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CustomExtensionEndpointConfiguration.GetFieldDeserializers()
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["targetUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -45,17 +35,6 @@ func (m *HttpRequestEndpoint) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *HttpRequestEndpoint) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetTargetUrl gets the targetUrl property value. The HTTP endpoint that a custom extension calls.
 func (m *HttpRequestEndpoint) GetTargetUrl()(*string) {
@@ -75,25 +54,12 @@ func (m *HttpRequestEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef
         return err
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("targetUrl", m.GetTargetUrl())
         if err != nil {
             return err
         }
     }
     return nil
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *HttpRequestEndpoint) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
 }
 // SetTargetUrl sets the targetUrl property value. The HTTP endpoint that a custom extension calls.
 func (m *HttpRequestEndpoint) SetTargetUrl(value *string)() {
@@ -106,8 +72,6 @@ func (m *HttpRequestEndpoint) SetTargetUrl(value *string)() {
 type HttpRequestEndpointable interface {
     CustomExtensionEndpointConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOdataType()(*string)
     GetTargetUrl()(*string)
-    SetOdataType(value *string)()
     SetTargetUrl(value *string)()
 }

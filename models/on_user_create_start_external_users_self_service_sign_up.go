@@ -7,8 +7,6 @@ import (
 // OnUserCreateStartExternalUsersSelfServiceSignUp 
 type OnUserCreateStartExternalUsersSelfServiceSignUp struct {
     OnUserCreateStartHandler
-    // The OdataType property
-    OdataType *string
 }
 // NewOnUserCreateStartExternalUsersSelfServiceSignUp instantiates a new onUserCreateStartExternalUsersSelfServiceSignUp and sets the default values.
 func NewOnUserCreateStartExternalUsersSelfServiceSignUp()(*OnUserCreateStartExternalUsersSelfServiceSignUp) {

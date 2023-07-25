@@ -7,8 +7,6 @@ import (
 // FeatureRolloutPolicy 
 type FeatureRolloutPolicy struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewFeatureRolloutPolicy instantiates a new featureRolloutPolicy and sets the default values.
 func NewFeatureRolloutPolicy()(*FeatureRolloutPolicy) {

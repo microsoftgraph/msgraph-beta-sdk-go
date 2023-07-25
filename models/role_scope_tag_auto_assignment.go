@@ -7,8 +7,6 @@ import (
 // RoleScopeTagAutoAssignment contains the properties for auto-assigning a Role Scope Tag to a group to be applied to Devices.
 type RoleScopeTagAutoAssignment struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewRoleScopeTagAutoAssignment instantiates a new roleScopeTagAutoAssignment and sets the default values.
 func NewRoleScopeTagAutoAssignment()(*RoleScopeTagAutoAssignment) {

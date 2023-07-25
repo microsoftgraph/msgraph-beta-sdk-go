@@ -7,8 +7,6 @@ import (
 // PersonExtension 
 type PersonExtension struct {
     Extension
-    // The OdataType property
-    OdataType *string
 }
 // NewPersonExtension instantiates a new personExtension and sets the default values.
 func NewPersonExtension()(*PersonExtension) {

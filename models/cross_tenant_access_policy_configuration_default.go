@@ -7,8 +7,6 @@ import (
 // CrossTenantAccessPolicyConfigurationDefault 
 type CrossTenantAccessPolicyConfigurationDefault struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewCrossTenantAccessPolicyConfigurationDefault instantiates a new crossTenantAccessPolicyConfigurationDefault and sets the default values.
 func NewCrossTenantAccessPolicyConfigurationDefault()(*CrossTenantAccessPolicyConfigurationDefault) {

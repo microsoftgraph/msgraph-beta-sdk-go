@@ -7,8 +7,6 @@ import (
 // TenantAttachRBAC singleton entity that acts as a container for tenant attach enablement functionality.
 type TenantAttachRBAC struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewTenantAttachRBAC instantiates a new tenantAttachRBAC and sets the default values.
 func NewTenantAttachRBAC()(*TenantAttachRBAC) {

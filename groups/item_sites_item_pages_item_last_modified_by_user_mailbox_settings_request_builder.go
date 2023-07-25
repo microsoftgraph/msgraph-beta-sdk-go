@@ -7,7 +7,7 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// ItemSitesItemPagesItemLastModifiedByUserMailboxSettingsRequestBuilder builds and executes requests for operations under \groups\{group-id}\sites\{site-id}\pages\{sitePage-id}\lastModifiedByUser\mailboxSettings
+// ItemSitesItemPagesItemLastModifiedByUserMailboxSettingsRequestBuilder builds and executes requests for operations under \groups\{group-id}\sites\{site-id}\pages\{baseSitePage-id}\lastModifiedByUser\mailboxSettings
 type ItemSitesItemPagesItemLastModifiedByUserMailboxSettingsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -37,7 +37,7 @@ type ItemSitesItemPagesItemLastModifiedByUserMailboxSettingsRequestBuilderPatchR
 // NewItemSitesItemPagesItemLastModifiedByUserMailboxSettingsRequestBuilderInternal instantiates a new MailboxSettingsRequestBuilder and sets the default values.
 func NewItemSitesItemPagesItemLastModifiedByUserMailboxSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemPagesItemLastModifiedByUserMailboxSettingsRequestBuilder) {
     m := &ItemSitesItemPagesItemLastModifiedByUserMailboxSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/pages/{sitePage%2Did}/lastModifiedByUser/mailboxSettings{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/pages/{baseSitePage%2Did}/lastModifiedByUser/mailboxSettings{?%24select,%24expand}", pathParameters),
     }
     return m
 }

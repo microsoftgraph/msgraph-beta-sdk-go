@@ -8,8 +8,6 @@ import (
 // MessageTrace 
 type MessageTrace struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewMessageTrace instantiates a new messageTrace and sets the default values.
 func NewMessageTrace()(*MessageTrace) {

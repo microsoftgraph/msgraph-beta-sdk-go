@@ -7,8 +7,6 @@ import (
 // ZebraFotaDeployment the Zebra FOTA deployment entity that describes settings, deployment device groups required to create a FOTA deployment, and deployment status.
 type ZebraFotaDeployment struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewZebraFotaDeployment instantiates a new zebraFotaDeployment and sets the default values.
 func NewZebraFotaDeployment()(*ZebraFotaDeployment) {

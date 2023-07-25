@@ -7,8 +7,6 @@ import (
 // AccessReviewError 
 type AccessReviewError struct {
     GenericError
-    // The OdataType property
-    OdataType *string
 }
 // NewAccessReviewError instantiates a new accessReviewError and sets the default values.
 func NewAccessReviewError()(*AccessReviewError) {

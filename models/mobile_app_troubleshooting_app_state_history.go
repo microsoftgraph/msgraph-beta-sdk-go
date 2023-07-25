@@ -64,16 +64,6 @@ func (m *MobileAppTroubleshootingAppStateHistory) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["runState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRunState)
         if err != nil {
@@ -85,17 +75,6 @@ func (m *MobileAppTroubleshootingAppStateHistory) GetFieldDeserializers()(map[st
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *MobileAppTroubleshootingAppStateHistory) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetRunState gets the runState property value. Indicates the type of execution status of the device management script.
 func (m *MobileAppTroubleshootingAppStateHistory) GetRunState()(*RunState) {
@@ -127,12 +106,6 @@ func (m *MobileAppTroubleshootingAppStateHistory) Serialize(writer i878a80d2330e
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetRunState() != nil {
         cast := (*m.GetRunState()).String()
         err = writer.WriteStringValue("runState", &cast)
@@ -156,13 +129,6 @@ func (m *MobileAppTroubleshootingAppStateHistory) SetErrorCode(value *string)() 
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *MobileAppTroubleshootingAppStateHistory) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetRunState sets the runState property value. Indicates the type of execution status of the device management script.
 func (m *MobileAppTroubleshootingAppStateHistory) SetRunState(value *RunState)() {
     err := m.GetBackingStore().Set("runState", value)
@@ -176,10 +142,8 @@ type MobileAppTroubleshootingAppStateHistoryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetActionType()(*MobileAppActionType)
     GetErrorCode()(*string)
-    GetOdataType()(*string)
     GetRunState()(*RunState)
     SetActionType(value *MobileAppActionType)()
     SetErrorCode(value *string)()
-    SetOdataType(value *string)()
     SetRunState(value *RunState)()
 }

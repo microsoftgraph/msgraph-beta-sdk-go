@@ -7,8 +7,6 @@ import (
 // SingleValueLegacyExtendedProperty 
 type SingleValueLegacyExtendedProperty struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewSingleValueLegacyExtendedProperty instantiates a new singleValueLegacyExtendedProperty and sets the default values.
 func NewSingleValueLegacyExtendedProperty()(*SingleValueLegacyExtendedProperty) {

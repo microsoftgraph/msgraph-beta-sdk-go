@@ -108,16 +108,6 @@ func (m *JobResponseBase) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -154,7 +144,7 @@ func (m *JobResponseBase) GetFieldDeserializers()(map[string]func(i878a80d2330e8
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -169,17 +159,6 @@ func (m *JobResponseBase) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *JobResponseBase) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetStartDateTime gets the startDateTime property value. The startDateTime property
 func (m *JobResponseBase) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -214,8 +193,8 @@ func (m *JobResponseBase) GetTenantId()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *JobResponseBase) GetType()(*string) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *JobResponseBase) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -261,12 +240,6 @@ func (m *JobResponseBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteTimeValue("startDateTime", m.GetStartDateTime())
         if err != nil {
             return err
@@ -285,7 +258,7 @@ func (m *JobResponseBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
-        err = writer.WriteStringValue("type", m.GetType())
+        err = writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -319,13 +292,6 @@ func (m *JobResponseBase) SetError(value ClassificationErrorable)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *JobResponseBase) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetStartDateTime sets the startDateTime property value. The startDateTime property
 func (m *JobResponseBase) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startDateTime", value)
@@ -347,8 +313,8 @@ func (m *JobResponseBase) SetTenantId(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *JobResponseBase) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *JobResponseBase) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -368,19 +334,17 @@ type JobResponseBaseable interface {
     GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetError()(ClassificationErrorable)
-    GetOdataType()(*string)
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetStatus()(*string)
     GetTenantId()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     GetUserId()(*string)
     SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetError(value ClassificationErrorable)()
-    SetOdataType(value *string)()
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetStatus(value *string)()
     SetTenantId(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
     SetUserId(value *string)()
 }

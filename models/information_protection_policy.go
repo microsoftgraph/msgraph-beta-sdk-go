@@ -7,8 +7,6 @@ import (
 // InformationProtectionPolicy 
 type InformationProtectionPolicy struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewInformationProtectionPolicy instantiates a new informationProtectionPolicy and sets the default values.
 func NewInformationProtectionPolicy()(*InformationProtectionPolicy) {

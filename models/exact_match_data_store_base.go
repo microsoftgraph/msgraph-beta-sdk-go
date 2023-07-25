@@ -8,8 +8,6 @@ import (
 // ExactMatchDataStoreBase 
 type ExactMatchDataStoreBase struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewExactMatchDataStoreBase instantiates a new exactMatchDataStoreBase and sets the default values.
 func NewExactMatchDataStoreBase()(*ExactMatchDataStoreBase) {

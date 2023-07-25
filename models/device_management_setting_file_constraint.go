@@ -7,8 +7,6 @@ import (
 // DeviceManagementSettingFileConstraint constraint enforcing the file extension is acceptable for a given setting
 type DeviceManagementSettingFileConstraint struct {
     DeviceManagementConstraint
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementSettingFileConstraint instantiates a new deviceManagementSettingFileConstraint and sets the default values.
 func NewDeviceManagementSettingFileConstraint()(*DeviceManagementSettingFileConstraint) {

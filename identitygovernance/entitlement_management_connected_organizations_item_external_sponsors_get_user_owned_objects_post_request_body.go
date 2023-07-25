@@ -47,7 +47,7 @@ func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsGetUserO
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -63,8 +63,8 @@ func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsGetUserO
     }
     return res
 }
-// GetType gets the type property value. The type property
-func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsGetUserOwnedObjectsPostRequestBody) GetType()(*string) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsGetUserOwnedObjectsPostRequestBody) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -88,7 +88,7 @@ func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsGetUserO
 // Serialize serializes information the current object
 func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsGetUserOwnedObjectsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -118,8 +118,8 @@ func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsGetUserO
 func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsGetUserOwnedObjectsPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetType sets the type property value. The type property
-func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsGetUserOwnedObjectsPostRequestBody) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsGetUserOwnedObjectsPostRequestBody) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -138,9 +138,9 @@ type EntitlementManagementConnectedOrganizationsItemExternalSponsorsGetUserOwned
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     GetUserId()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
     SetUserId(value *string)()
 }

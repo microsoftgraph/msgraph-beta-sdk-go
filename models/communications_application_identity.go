@@ -55,16 +55,6 @@ func (m *CommunicationsApplicationIdentity) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetHidden gets the hidden property value. True if the participant would not like to be shown in other participants' rosters.
@@ -75,17 +65,6 @@ func (m *CommunicationsApplicationIdentity) GetHidden()(*bool) {
     }
     if val != nil {
         return val.(*bool)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *CommunicationsApplicationIdentity) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -107,12 +86,6 @@ func (m *CommunicationsApplicationIdentity) Serialize(writer i878a80d2330e89d268
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetApplicationType sets the applicationType property value. First party Microsoft application presenting this identity.
@@ -129,21 +102,12 @@ func (m *CommunicationsApplicationIdentity) SetHidden(value *bool)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *CommunicationsApplicationIdentity) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // CommunicationsApplicationIdentityable 
 type CommunicationsApplicationIdentityable interface {
     Identityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetApplicationType()(*string)
     GetHidden()(*bool)
-    GetOdataType()(*string)
     SetApplicationType(value *string)()
     SetHidden(value *bool)()
-    SetOdataType(value *string)()
 }

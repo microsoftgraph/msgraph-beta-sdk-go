@@ -8,8 +8,6 @@ import (
 // LongRunningOperation 
 type LongRunningOperation struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewLongRunningOperation instantiates a new longRunningOperation and sets the default values.
 func NewLongRunningOperation()(*LongRunningOperation) {

@@ -7,8 +7,6 @@ import (
 // TeamsAppIcon 
 type TeamsAppIcon struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewTeamsAppIcon instantiates a new teamsAppIcon and sets the default values.
 func NewTeamsAppIcon()(*TeamsAppIcon) {

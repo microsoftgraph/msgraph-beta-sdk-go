@@ -7,8 +7,6 @@ import (
 // MultiValueLegacyExtendedProperty 
 type MultiValueLegacyExtendedProperty struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewMultiValueLegacyExtendedProperty instantiates a new multiValueLegacyExtendedProperty and sets the default values.
 func NewMultiValueLegacyExtendedProperty()(*MultiValueLegacyExtendedProperty) {

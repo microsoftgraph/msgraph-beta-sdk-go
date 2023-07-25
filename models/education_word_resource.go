@@ -7,8 +7,6 @@ import (
 // EducationWordResource 
 type EducationWordResource struct {
     EducationResource
-    // The OdataType property
-    OdataType *string
 }
 // NewEducationWordResource instantiates a new educationWordResource and sets the default values.
 func NewEducationWordResource()(*EducationWordResource) {

@@ -43,16 +43,6 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["provisioningType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcProvisioningType)
         if err != nil {
@@ -99,7 +89,7 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(i878a80d233
             return err
         }
         if val != nil {
-            m.SetType(val.(*CloudPcServicePlanType))
+            m.SetTypeEscaped(val.(*CloudPcServicePlanType))
         }
         return nil
     }
@@ -124,17 +114,6 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *CloudPcServicePlan) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetProvisioningType gets the provisioningType property value. Specifies the type of license used when provisioning Cloud PCs. By default, the license type is dedicated. Possible values are: dedicated, shared, unknownFutureValue.
 func (m *CloudPcServicePlan) GetProvisioningType()(*CloudPcProvisioningType) {
@@ -180,8 +159,8 @@ func (m *CloudPcServicePlan) GetSupportedSolution()(*CloudPcManagementService) {
     }
     return nil
 }
-// GetType gets the type property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
-func (m *CloudPcServicePlan) GetType()(*CloudPcServicePlanType) {
+// GetTypeEscaped gets the type property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
+func (m *CloudPcServicePlan) GetTypeEscaped()(*CloudPcServicePlanType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -225,12 +204,6 @@ func (m *CloudPcServicePlan) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetProvisioningType() != nil {
         cast := (*m.GetProvisioningType()).String()
         err = writer.WriteStringValue("provisioningType", &cast)
@@ -257,8 +230,8 @@ func (m *CloudPcServicePlan) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -281,13 +254,6 @@ func (m *CloudPcServicePlan) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 // SetDisplayName sets the displayName property value. The name for the service plan. Read-only.
 func (m *CloudPcServicePlan) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *CloudPcServicePlan) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -320,8 +286,8 @@ func (m *CloudPcServicePlan) SetSupportedSolution(value *CloudPcManagementServic
         panic(err)
     }
 }
-// SetType sets the type property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
-func (m *CloudPcServicePlan) SetType(value *CloudPcServicePlanType)() {
+// SetTypeEscaped sets the type property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
+func (m *CloudPcServicePlan) SetTypeEscaped(value *CloudPcServicePlanType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -346,21 +312,19 @@ type CloudPcServicePlanable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
-    GetOdataType()(*string)
     GetProvisioningType()(*CloudPcProvisioningType)
     GetRamInGB()(*int32)
     GetStorageInGB()(*int32)
     GetSupportedSolution()(*CloudPcManagementService)
-    GetType()(*CloudPcServicePlanType)
+    GetTypeEscaped()(*CloudPcServicePlanType)
     GetUserProfileInGB()(*int32)
     GetVCpuCount()(*int32)
     SetDisplayName(value *string)()
-    SetOdataType(value *string)()
     SetProvisioningType(value *CloudPcProvisioningType)()
     SetRamInGB(value *int32)()
     SetStorageInGB(value *int32)()
     SetSupportedSolution(value *CloudPcManagementService)()
-    SetType(value *CloudPcServicePlanType)()
+    SetTypeEscaped(value *CloudPcServicePlanType)()
     SetUserProfileInGB(value *int32)()
     SetVCpuCount(value *int32)()
 }

@@ -8,8 +8,6 @@ import (
 // ServiceNowConnection serviceNow properties including the ServiceNow instanceUrl, connection credentials and other metadata.
 type ServiceNowConnection struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewServiceNowConnection instantiates a new serviceNowConnection and sets the default values.
 func NewServiceNowConnection()(*ServiceNowConnection) {

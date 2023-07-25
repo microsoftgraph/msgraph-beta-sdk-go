@@ -7,8 +7,6 @@ import (
 // IdentityProvider 
 type IdentityProvider struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewIdentityProvider instantiates a new identityProvider and sets the default values.
 func NewIdentityProvider()(*IdentityProvider) {
@@ -100,7 +98,7 @@ func (m *IdentityProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -117,8 +115,8 @@ func (m *IdentityProvider) GetName()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo,QQ, WeChat, OpenIDConnect. Not nullable.
-func (m *IdentityProvider) GetType()(*string) {
+// GetTypeEscaped gets the type property value. The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo,QQ, WeChat, OpenIDConnect. Not nullable.
+func (m *IdentityProvider) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -153,7 +151,7 @@ func (m *IdentityProvider) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
-        err = writer.WriteStringValue("type", m.GetType())
+        err = writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -181,8 +179,8 @@ func (m *IdentityProvider) SetName(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo,QQ, WeChat, OpenIDConnect. Not nullable.
-func (m *IdentityProvider) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo,QQ, WeChat, OpenIDConnect. Not nullable.
+func (m *IdentityProvider) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -195,9 +193,9 @@ type IdentityProviderable interface {
     GetClientId()(*string)
     GetClientSecret()(*string)
     GetName()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     SetClientId(value *string)()
     SetClientSecret(value *string)()
     SetName(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
 }

@@ -8,8 +8,6 @@ import (
 // UserExperienceAnalyticsDeviceScope the user experience analytics device scope entity contains device scope configuration values use to apply filtering on the endpoint analytics reports.
 type UserExperienceAnalyticsDeviceScope struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewUserExperienceAnalyticsDeviceScope instantiates a new userExperienceAnalyticsDeviceScope and sets the default values.
 func NewUserExperienceAnalyticsDeviceScope()(*UserExperienceAnalyticsDeviceScope) {

@@ -7,8 +7,6 @@ import (
 // DeviceManagementConfigurationStringSettingValueDefinition string constraints
 type DeviceManagementConfigurationStringSettingValueDefinition struct {
     DeviceManagementConfigurationSettingValueDefinition
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementConfigurationStringSettingValueDefinition instantiates a new deviceManagementConfigurationStringSettingValueDefinition and sets the default values.
 func NewDeviceManagementConfigurationStringSettingValueDefinition()(*DeviceManagementConfigurationStringSettingValueDefinition) {

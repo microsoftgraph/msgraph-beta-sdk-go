@@ -7,8 +7,6 @@ import (
 // IosLobAppProvisioningConfigurationAssignment a class containing the properties used for Group Assignment of an iOS LOB App Provisioning and Configuration.
 type IosLobAppProvisioningConfigurationAssignment struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewIosLobAppProvisioningConfigurationAssignment instantiates a new iosLobAppProvisioningConfigurationAssignment and sets the default values.
 func NewIosLobAppProvisioningConfigurationAssignment()(*IosLobAppProvisioningConfigurationAssignment) {

@@ -8,8 +8,6 @@ import (
 // SubjectRightsRequest 
 type SubjectRightsRequest struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewSubjectRightsRequest instantiates a new subjectRightsRequest and sets the default values.
 func NewSubjectRightsRequest()(*SubjectRightsRequest) {
@@ -469,7 +467,7 @@ func (m *SubjectRightsRequest) GetFieldDeserializers()(map[string]func(i878a80d2
             return err
         }
         if val != nil {
-            m.SetType(val.(*SubjectRightsRequestType))
+            m.SetTypeEscaped(val.(*SubjectRightsRequestType))
         }
         return nil
     }
@@ -640,8 +638,8 @@ func (m *SubjectRightsRequest) GetTeam()(Teamable) {
     }
     return nil
 }
-// GetType gets the type property value. The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.
-func (m *SubjectRightsRequest) GetType()(*SubjectRightsRequestType) {
+// GetTypeEscaped gets the type property value. The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.
+func (m *SubjectRightsRequest) GetTypeEscaped()(*SubjectRightsRequestType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -851,8 +849,8 @@ func (m *SubjectRightsRequest) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -1049,8 +1047,8 @@ func (m *SubjectRightsRequest) SetTeam(value Teamable)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.
-func (m *SubjectRightsRequest) SetType(value *SubjectRightsRequestType)() {
+// SetTypeEscaped sets the type property value. The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.
+func (m *SubjectRightsRequest) SetTypeEscaped(value *SubjectRightsRequestType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -1087,7 +1085,7 @@ type SubjectRightsRequestable interface {
     GetStages()([]SubjectRightsRequestStageDetailable)
     GetStatus()(*SubjectRightsRequestStatus)
     GetTeam()(Teamable)
-    GetType()(*SubjectRightsRequestType)
+    GetTypeEscaped()(*SubjectRightsRequestType)
     SetApprovers(value []Userable)()
     SetAssignedTo(value Identityable)()
     SetClosedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -1115,5 +1113,5 @@ type SubjectRightsRequestable interface {
     SetStages(value []SubjectRightsRequestStageDetailable)()
     SetStatus(value *SubjectRightsRequestStatus)()
     SetTeam(value Teamable)()
-    SetType(value *SubjectRightsRequestType)()
+    SetTypeEscaped(value *SubjectRightsRequestType)()
 }

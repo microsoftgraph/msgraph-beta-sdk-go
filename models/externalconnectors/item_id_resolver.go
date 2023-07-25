@@ -34,16 +34,6 @@ func (m *ItemIdResolver) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["urlMatchInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUrlMatchInfoFromDiscriminatorValue)
         if err != nil {
@@ -59,17 +49,6 @@ func (m *ItemIdResolver) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 // GetItemId gets the itemId property value. Pattern that specifies how to form the ID of the external item that the URL represents. The named groups from the regular expression in urlPattern within the urlMatchInfo can be referenced by inserting the group name inside curly brackets.
 func (m *ItemIdResolver) GetItemId()(*string) {
     val, err := m.GetBackingStore().Get("itemId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *ItemIdResolver) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -102,12 +81,6 @@ func (m *ItemIdResolver) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("urlMatchInfo", m.GetUrlMatchInfo())
         if err != nil {
             return err
@@ -118,13 +91,6 @@ func (m *ItemIdResolver) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 // SetItemId sets the itemId property value. Pattern that specifies how to form the ID of the external item that the URL represents. The named groups from the regular expression in urlPattern within the urlMatchInfo can be referenced by inserting the group name inside curly brackets.
 func (m *ItemIdResolver) SetItemId(value *string)() {
     err := m.GetBackingStore().Set("itemId", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *ItemIdResolver) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -141,9 +107,7 @@ type ItemIdResolverable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UrlToItemResolverBaseable
     GetItemId()(*string)
-    GetOdataType()(*string)
     GetUrlMatchInfo()(UrlMatchInfoable)
     SetItemId(value *string)()
-    SetOdataType(value *string)()
     SetUrlMatchInfo(value UrlMatchInfoable)()
 }

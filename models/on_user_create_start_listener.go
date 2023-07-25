@@ -34,16 +34,6 @@ func (m *OnUserCreateStartListener) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetHandler gets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.
@@ -54,17 +44,6 @@ func (m *OnUserCreateStartListener) GetHandler()(OnUserCreateStartHandlerable) {
     }
     if val != nil {
         return val.(OnUserCreateStartHandlerable)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *OnUserCreateStartListener) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -80,12 +59,6 @@ func (m *OnUserCreateStartListener) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetHandler sets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.
@@ -95,19 +68,10 @@ func (m *OnUserCreateStartListener) SetHandler(value OnUserCreateStartHandlerabl
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *OnUserCreateStartListener) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // OnUserCreateStartListenerable 
 type OnUserCreateStartListenerable interface {
     AuthenticationEventListenerable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetHandler()(OnUserCreateStartHandlerable)
-    GetOdataType()(*string)
     SetHandler(value OnUserCreateStartHandlerable)()
-    SetOdataType(value *string)()
 }

@@ -77,7 +77,7 @@ func (m *MobileAppSupportedDeviceType) GetFieldDeserializers()(map[string]func(i
             return err
         }
         if val != nil {
-            m.SetType(val.(*DeviceType))
+            m.SetTypeEscaped(val.(*DeviceType))
         }
         return nil
     }
@@ -116,8 +116,8 @@ func (m *MobileAppSupportedDeviceType) GetOdataType()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. Device type.
-func (m *MobileAppSupportedDeviceType) GetType()(*DeviceType) {
+// GetTypeEscaped gets the type property value. Device type.
+func (m *MobileAppSupportedDeviceType) GetTypeEscaped()(*DeviceType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -147,8 +147,8 @@ func (m *MobileAppSupportedDeviceType) Serialize(writer i878a80d2330e89d26896388
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -194,8 +194,8 @@ func (m *MobileAppSupportedDeviceType) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. Device type.
-func (m *MobileAppSupportedDeviceType) SetType(value *DeviceType)() {
+// SetTypeEscaped sets the type property value. Device type.
+func (m *MobileAppSupportedDeviceType) SetTypeEscaped(value *DeviceType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -210,10 +210,10 @@ type MobileAppSupportedDeviceTypeable interface {
     GetMaximumOperatingSystemVersion()(*string)
     GetMinimumOperatingSystemVersion()(*string)
     GetOdataType()(*string)
-    GetType()(*DeviceType)
+    GetTypeEscaped()(*DeviceType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetMaximumOperatingSystemVersion(value *string)()
     SetMinimumOperatingSystemVersion(value *string)()
     SetOdataType(value *string)()
-    SetType(value *DeviceType)()
+    SetTypeEscaped(value *DeviceType)()
 }

@@ -7,8 +7,6 @@ import (
 // DeviceManagementConfigurationSettingGroupCollectionInstance setting instance within policy
 type DeviceManagementConfigurationSettingGroupCollectionInstance struct {
     DeviceManagementConfigurationSettingInstance
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementConfigurationSettingGroupCollectionInstance instantiates a new deviceManagementConfigurationSettingGroupCollectionInstance and sets the default values.
 func NewDeviceManagementConfigurationSettingGroupCollectionInstance()(*DeviceManagementConfigurationSettingGroupCollectionInstance) {

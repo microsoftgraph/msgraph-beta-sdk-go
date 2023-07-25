@@ -7,8 +7,6 @@ import (
 // WorkflowVersion 
 type WorkflowVersion struct {
     WorkflowBase
-    // The OdataType property
-    OdataType *string
 }
 // NewWorkflowVersion instantiates a new workflowVersion and sets the default values.
 func NewWorkflowVersion()(*WorkflowVersion) {

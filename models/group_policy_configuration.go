@@ -8,8 +8,6 @@ import (
 // GroupPolicyConfiguration the group policy configuration entity contains the configured values for one or more group policy definitions.
 type GroupPolicyConfiguration struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewGroupPolicyConfiguration instantiates a new groupPolicyConfiguration and sets the default values.
 func NewGroupPolicyConfiguration()(*GroupPolicyConfiguration) {

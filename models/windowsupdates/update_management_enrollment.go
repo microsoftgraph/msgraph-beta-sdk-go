@@ -24,16 +24,6 @@ func CreateUpdateManagementEnrollmentFromDiscriminatorValue(parseNode i878a80d23
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UpdateManagementEnrollment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UpdatableAssetEnrollment.GetFieldDeserializers()
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["updateCategory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseUpdateCategory)
         if err != nil {
@@ -45,17 +35,6 @@ func (m *UpdateManagementEnrollment) GetFieldDeserializers()(map[string]func(i87
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *UpdateManagementEnrollment) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetUpdateCategory gets the updateCategory property value. The updateCategory property
 func (m *UpdateManagementEnrollment) GetUpdateCategory()(*UpdateCategory) {
@@ -74,12 +53,6 @@ func (m *UpdateManagementEnrollment) Serialize(writer i878a80d2330e89d26896388a3
     if err != nil {
         return err
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetUpdateCategory() != nil {
         cast := (*m.GetUpdateCategory()).String()
         err = writer.WriteStringValue("updateCategory", &cast)
@@ -88,13 +61,6 @@ func (m *UpdateManagementEnrollment) Serialize(writer i878a80d2330e89d26896388a3
         }
     }
     return nil
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *UpdateManagementEnrollment) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
 }
 // SetUpdateCategory sets the updateCategory property value. The updateCategory property
 func (m *UpdateManagementEnrollment) SetUpdateCategory(value *UpdateCategory)() {
@@ -107,8 +73,6 @@ func (m *UpdateManagementEnrollment) SetUpdateCategory(value *UpdateCategory)() 
 type UpdateManagementEnrollmentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UpdatableAssetEnrollmentable
-    GetOdataType()(*string)
     GetUpdateCategory()(*UpdateCategory)
-    SetOdataType(value *string)()
     SetUpdateCategory(value *UpdateCategory)()
 }

@@ -7,8 +7,6 @@ import (
 // ChannelMembersNotificationRecipient 
 type ChannelMembersNotificationRecipient struct {
     TeamworkNotificationRecipient
-    // The OdataType property
-    OdataType *string
 }
 // NewChannelMembersNotificationRecipient instantiates a new channelMembersNotificationRecipient and sets the default values.
 func NewChannelMembersNotificationRecipient()(*ChannelMembersNotificationRecipient) {

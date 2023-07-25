@@ -8,8 +8,6 @@ import (
 // AccessPackageResourceRequest 
 type AccessPackageResourceRequest struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAccessPackageResourceRequest instantiates a new accessPackageResourceRequest and sets the default values.
 func NewAccessPackageResourceRequest()(*AccessPackageResourceRequest) {

@@ -87,7 +87,7 @@ func (m *CloudPcDomainJoinConfiguration) GetFieldDeserializers()(map[string]func
             return err
         }
         if val != nil {
-            m.SetType(val.(*CloudPcDomainJoinType))
+            m.SetTypeEscaped(val.(*CloudPcDomainJoinType))
         }
         return nil
     }
@@ -137,8 +137,8 @@ func (m *CloudPcDomainJoinConfiguration) GetRegionName()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure AD. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave regionName as empty. If you choose the azureADJoin type, provide a value for either onPremisesConnectionId or regionName. The possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
-func (m *CloudPcDomainJoinConfiguration) GetType()(*CloudPcDomainJoinType) {
+// GetTypeEscaped gets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure AD. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave regionName as empty. If you choose the azureADJoin type, provide a value for either onPremisesConnectionId or regionName. The possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
+func (m *CloudPcDomainJoinConfiguration) GetTypeEscaped()(*CloudPcDomainJoinType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -175,8 +175,8 @@ func (m *CloudPcDomainJoinConfiguration) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -229,8 +229,8 @@ func (m *CloudPcDomainJoinConfiguration) SetRegionName(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure AD. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave regionName as empty. If you choose the azureADJoin type, provide a value for either onPremisesConnectionId or regionName. The possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
-func (m *CloudPcDomainJoinConfiguration) SetType(value *CloudPcDomainJoinType)() {
+// SetTypeEscaped sets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure AD. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave regionName as empty. If you choose the azureADJoin type, provide a value for either onPremisesConnectionId or regionName. The possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
+func (m *CloudPcDomainJoinConfiguration) SetTypeEscaped(value *CloudPcDomainJoinType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -246,11 +246,11 @@ type CloudPcDomainJoinConfigurationable interface {
     GetOnPremisesConnectionId()(*string)
     GetRegionGroup()(*CloudPcRegionGroup)
     GetRegionName()(*string)
-    GetType()(*CloudPcDomainJoinType)
+    GetTypeEscaped()(*CloudPcDomainJoinType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetOnPremisesConnectionId(value *string)()
     SetRegionGroup(value *CloudPcRegionGroup)()
     SetRegionName(value *string)()
-    SetType(value *CloudPcDomainJoinType)()
+    SetTypeEscaped(value *CloudPcDomainJoinType)()
 }

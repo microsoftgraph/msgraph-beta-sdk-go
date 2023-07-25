@@ -7,8 +7,6 @@ import (
 // BookingBusiness represents a Microsot Bookings Business.
 type BookingBusiness struct {
     BookingNamedEntity
-    // The OdataType property
-    OdataType *string
 }
 // NewBookingBusiness instantiates a new bookingBusiness and sets the default values.
 func NewBookingBusiness()(*BookingBusiness) {

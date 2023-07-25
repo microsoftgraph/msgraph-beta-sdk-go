@@ -7,14 +7,14 @@ import (
 // OauthApplicationEvidence 
 type OauthApplicationEvidence struct {
     AlertEvidence
-    // The OdataType property
-    OdataType *string
 }
 // NewOauthApplicationEvidence instantiates a new oauthApplicationEvidence and sets the default values.
 func NewOauthApplicationEvidence()(*OauthApplicationEvidence) {
     m := &OauthApplicationEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
+    odataTypeValue := "#microsoft.graph.security.oauthApplicationEvidence"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateOauthApplicationEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -8,8 +8,6 @@ import (
 // Host 
 type Host struct {
     Artifact
-    // The OdataType property
-    OdataType *string
 }
 // NewHost instantiates a new host and sets the default values.
 func NewHost()(*Host) {

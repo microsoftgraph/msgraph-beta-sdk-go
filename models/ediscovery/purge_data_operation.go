@@ -7,8 +7,6 @@ import (
 // PurgeDataOperation 
 type PurgeDataOperation struct {
     CaseOperation
-    // The OdataType property
-    OdataType *string
 }
 // NewPurgeDataOperation instantiates a new purgeDataOperation and sets the default values.
 func NewPurgeDataOperation()(*PurgeDataOperation) {

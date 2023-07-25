@@ -7,8 +7,6 @@ import (
 // WindowsUpdateFilter 
 type WindowsUpdateFilter struct {
     SoftwareUpdateFilter
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsUpdateFilter instantiates a new windowsUpdateFilter and sets the default values.
 func NewWindowsUpdateFilter()(*WindowsUpdateFilter) {

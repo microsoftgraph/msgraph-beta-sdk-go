@@ -8,8 +8,6 @@ import (
 // Post 
 type Post struct {
     OutlookItem
-    // The OdataType property
-    OdataType *string
 }
 // NewPost instantiates a new post and sets the default values.
 func NewPost()(*Post) {

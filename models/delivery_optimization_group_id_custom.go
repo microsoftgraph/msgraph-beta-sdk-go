@@ -7,8 +7,6 @@ import (
 // DeliveryOptimizationGroupIdCustom custom group id type
 type DeliveryOptimizationGroupIdCustom struct {
     DeliveryOptimizationGroupIdSource
-    // The OdataType property
-    OdataType *string
 }
 // NewDeliveryOptimizationGroupIdCustom instantiates a new deliveryOptimizationGroupIdCustom and sets the default values.
 func NewDeliveryOptimizationGroupIdCustom()(*DeliveryOptimizationGroupIdCustom) {

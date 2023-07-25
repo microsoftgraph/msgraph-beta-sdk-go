@@ -7,8 +7,6 @@ import (
 // WindowsKioskWin32App kioskModeApp v4 for Win32 app support
 type WindowsKioskWin32App struct {
     WindowsKioskAppBase
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsKioskWin32App instantiates a new windowsKioskWin32App and sets the default values.
 func NewWindowsKioskWin32App()(*WindowsKioskWin32App) {

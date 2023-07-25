@@ -7,8 +7,6 @@ import (
 // AllDomains 
 type AllDomains struct {
     ValidatingDomains
-    // The OdataType property
-    OdataType *string
 }
 // NewAllDomains instantiates a new allDomains and sets the default values.
 func NewAllDomains()(*AllDomains) {

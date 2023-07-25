@@ -7,8 +7,6 @@ import (
 // PlannerExternalTaskSource 
 type PlannerExternalTaskSource struct {
     PlannerTaskCreation
-    // The OdataType property
-    OdataType *string
 }
 // NewPlannerExternalTaskSource instantiates a new plannerExternalTaskSource and sets the default values.
 func NewPlannerExternalTaskSource()(*PlannerExternalTaskSource) {

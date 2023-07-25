@@ -88,7 +88,7 @@ func (m *Acl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
             return err
         }
         if val != nil {
-            m.SetType(val.(*AclType))
+            m.SetTypeEscaped(val.(*AclType))
         }
         return nil
     }
@@ -126,8 +126,8 @@ func (m *Acl) GetOdataType()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *Acl) GetType()(*AclType) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *Acl) GetTypeEscaped()(*AclType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -170,8 +170,8 @@ func (m *Acl) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -223,8 +223,8 @@ func (m *Acl) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *Acl) SetType(value *AclType)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *Acl) SetTypeEscaped(value *AclType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -246,12 +246,12 @@ type Aclable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetIdentitySource()(*IdentitySourceType)
     GetOdataType()(*string)
-    GetType()(*AclType)
+    GetTypeEscaped()(*AclType)
     GetValue()(*string)
     SetAccessType(value *AccessType)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetIdentitySource(value *IdentitySourceType)()
     SetOdataType(value *string)()
-    SetType(value *AclType)()
+    SetTypeEscaped(value *AclType)()
     SetValue(value *string)()
 }

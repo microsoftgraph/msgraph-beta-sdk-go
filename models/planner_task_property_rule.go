@@ -200,16 +200,6 @@ func (m *PlannerTaskPropertyRule) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["order"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -337,17 +327,6 @@ func (m *PlannerTaskPropertyRule) GetNotes()([]string) {
     }
     if val != nil {
         return val.([]string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *PlannerTaskPropertyRule) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -482,12 +461,6 @@ func (m *PlannerTaskPropertyRule) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetOrder() != nil {
         err = writer.WriteCollectionOfStringValues("order", m.GetOrder())
         if err != nil {
@@ -588,13 +561,6 @@ func (m *PlannerTaskPropertyRule) SetNotes(value []string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *PlannerTaskPropertyRule) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOrder sets the order property value. Rules and restrictions for changing the order of the task. Accepted values are allow and block.
 func (m *PlannerTaskPropertyRule) SetOrder(value []string)() {
     err := m.GetBackingStore().Set("order", value)
@@ -656,7 +622,6 @@ type PlannerTaskPropertyRuleable interface {
     GetDueDate()([]string)
     GetMove()([]string)
     GetNotes()([]string)
-    GetOdataType()(*string)
     GetOrder()([]string)
     GetPercentComplete()([]string)
     GetPreviewType()([]string)
@@ -672,7 +637,6 @@ type PlannerTaskPropertyRuleable interface {
     SetDueDate(value []string)()
     SetMove(value []string)()
     SetNotes(value []string)()
-    SetOdataType(value *string)()
     SetOrder(value []string)()
     SetPercentComplete(value []string)()
     SetPreviewType(value []string)()

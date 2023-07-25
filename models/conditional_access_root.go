@@ -7,8 +7,6 @@ import (
 // ConditionalAccessRoot 
 type ConditionalAccessRoot struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewConditionalAccessRoot instantiates a new conditionalAccessRoot and sets the default values.
 func NewConditionalAccessRoot()(*ConditionalAccessRoot) {

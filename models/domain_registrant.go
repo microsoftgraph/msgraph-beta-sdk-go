@@ -98,7 +98,7 @@ func (m *DomainRegistrant) GetFieldDeserializers()(map[string]func(i878a80d2330e
             return err
         }
         if val != nil {
-            m.SetVendor(val)
+            m.SetVendorEscaped(val)
         }
         return nil
     }
@@ -137,8 +137,8 @@ func (m *DomainRegistrant) GetUrl()(*string) {
     }
     return nil
 }
-// GetVendor gets the vendor property value. The vendor property
-func (m *DomainRegistrant) GetVendor()(*string) {
+// GetVendorEscaped gets the vendor property value. The vendor property
+func (m *DomainRegistrant) GetVendorEscaped()(*string) {
     val, err := m.GetBackingStore().Get("vendorEscaped")
     if err != nil {
         panic(err)
@@ -175,7 +175,7 @@ func (m *DomainRegistrant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
-        err := writer.WriteStringValue("vendor", m.GetVendor())
+        err := writer.WriteStringValue("vendor", m.GetVendorEscaped())
         if err != nil {
             return err
         }
@@ -227,8 +227,8 @@ func (m *DomainRegistrant) SetUrl(value *string)() {
         panic(err)
     }
 }
-// SetVendor sets the vendor property value. The vendor property
-func (m *DomainRegistrant) SetVendor(value *string)() {
+// SetVendorEscaped sets the vendor property value. The vendor property
+func (m *DomainRegistrant) SetVendorEscaped(value *string)() {
     err := m.GetBackingStore().Set("vendorEscaped", value)
     if err != nil {
         panic(err)
@@ -244,11 +244,11 @@ type DomainRegistrantable interface {
     GetOdataType()(*string)
     GetOrganization()(*string)
     GetUrl()(*string)
-    GetVendor()(*string)
+    GetVendorEscaped()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCountryOrRegionCode(value *string)()
     SetOdataType(value *string)()
     SetOrganization(value *string)()
     SetUrl(value *string)()
-    SetVendor(value *string)()
+    SetVendorEscaped(value *string)()
 }

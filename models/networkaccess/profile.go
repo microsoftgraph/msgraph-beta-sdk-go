@@ -83,16 +83,6 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["policies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePolicyLinkFromDiscriminatorValue)
         if err != nil {
@@ -145,17 +135,6 @@ func (m *Profile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
 // GetName gets the name property value. Profile name.
 func (m *Profile) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *Profile) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -221,12 +200,6 @@ func (m *Profile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPolicies()))
         for i, v := range m.GetPolicies() {
@@ -275,13 +248,6 @@ func (m *Profile) SetName(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *Profile) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetPolicies sets the policies property value. Traffic forwarding policies associated with this profile.
 func (m *Profile) SetPolicies(value []PolicyLinkable)() {
     err := m.GetBackingStore().Set("policies", value)
@@ -310,14 +276,12 @@ type Profileable interface {
     GetDescription()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetName()(*string)
-    GetOdataType()(*string)
     GetPolicies()([]PolicyLinkable)
     GetState()(*Status)
     GetVersion()(*string)
     SetDescription(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetName(value *string)()
-    SetOdataType(value *string)()
     SetPolicies(value []PolicyLinkable)()
     SetState(value *Status)()
     SetVersion(value *string)()

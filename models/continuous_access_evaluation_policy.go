@@ -100,16 +100,6 @@ func (m *ContinuousAccessEvaluationPolicy) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["users"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -161,17 +151,6 @@ func (m *ContinuousAccessEvaluationPolicy) GetMigrate()(*bool) {
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *ContinuousAccessEvaluationPolicy) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetUsers gets the users property value. The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty. Read-only.
 func (m *ContinuousAccessEvaluationPolicy) GetUsers()([]string) {
     val, err := m.GetBackingStore().Get("users")
@@ -219,12 +198,6 @@ func (m *ContinuousAccessEvaluationPolicy) Serialize(writer i878a80d2330e89d2689
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetUsers() != nil {
         err = writer.WriteCollectionOfStringValues("users", m.GetUsers())
         if err != nil {
@@ -268,13 +241,6 @@ func (m *ContinuousAccessEvaluationPolicy) SetMigrate(value *bool)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *ContinuousAccessEvaluationPolicy) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetUsers sets the users property value. The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty. Read-only.
 func (m *ContinuousAccessEvaluationPolicy) SetUsers(value []string)() {
     err := m.GetBackingStore().Set("users", value)
@@ -291,13 +257,11 @@ type ContinuousAccessEvaluationPolicyable interface {
     GetGroups()([]string)
     GetIsEnabled()(*bool)
     GetMigrate()(*bool)
-    GetOdataType()(*string)
     GetUsers()([]string)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetGroups(value []string)()
     SetIsEnabled(value *bool)()
     SetMigrate(value *bool)()
-    SetOdataType(value *string)()
     SetUsers(value []string)()
 }

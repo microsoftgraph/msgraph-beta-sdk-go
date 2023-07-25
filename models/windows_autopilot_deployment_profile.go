@@ -8,8 +8,6 @@ import (
 // WindowsAutopilotDeploymentProfile windows Autopilot Deployment Profile
 type WindowsAutopilotDeploymentProfile struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsAutopilotDeploymentProfile instantiates a new windowsAutopilotDeploymentProfile and sets the default values.
 func NewWindowsAutopilotDeploymentProfile()(*WindowsAutopilotDeploymentProfile) {

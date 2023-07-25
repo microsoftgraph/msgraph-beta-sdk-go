@@ -7,8 +7,6 @@ import (
 // JoinMeetingIdMeetingInfo 
 type JoinMeetingIdMeetingInfo struct {
     MeetingInfo
-    // The OdataType property
-    OdataType *string
 }
 // NewJoinMeetingIdMeetingInfo instantiates a new joinMeetingIdMeetingInfo and sets the default values.
 func NewJoinMeetingIdMeetingInfo()(*JoinMeetingIdMeetingInfo) {

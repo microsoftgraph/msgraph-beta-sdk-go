@@ -8,8 +8,6 @@ import (
 // ApplePushNotificationCertificate apple push notification certificate.
 type ApplePushNotificationCertificate struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewApplePushNotificationCertificate instantiates a new applePushNotificationCertificate and sets the default values.
 func NewApplePushNotificationCertificate()(*ApplePushNotificationCertificate) {

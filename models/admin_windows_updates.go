@@ -7,8 +7,6 @@ import (
 // AdminWindowsUpdates 
 type AdminWindowsUpdates struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAdminWindowsUpdates instantiates a new adminWindowsUpdates and sets the default values.
 func NewAdminWindowsUpdates()(*AdminWindowsUpdates) {

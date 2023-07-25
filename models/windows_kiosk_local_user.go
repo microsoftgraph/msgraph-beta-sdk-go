@@ -7,8 +7,6 @@ import (
 // WindowsKioskLocalUser the class used to identify a local account for the kiosk configuration
 type WindowsKioskLocalUser struct {
     WindowsKioskUser
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsKioskLocalUser instantiates a new windowsKioskLocalUser and sets the default values.
 func NewWindowsKioskLocalUser()(*WindowsKioskLocalUser) {

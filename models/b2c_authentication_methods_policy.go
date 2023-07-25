@@ -52,16 +52,6 @@ func (m *B2cAuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetIsEmailPasswordAuthenticationEnabled gets the isEmailPasswordAuthenticationEnabled property value. The tenant admin can configure local accounts using email if the email and password authentication method is enabled.
@@ -97,17 +87,6 @@ func (m *B2cAuthenticationMethodsPolicy) GetIsUserNameAuthenticationEnabled()(*b
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *B2cAuthenticationMethodsPolicy) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // Serialize serializes information the current object
 func (m *B2cAuthenticationMethodsPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -128,12 +107,6 @@ func (m *B2cAuthenticationMethodsPolicy) Serialize(writer i878a80d2330e89d268963
     }
     {
         err = writer.WriteBoolValue("isUserNameAuthenticationEnabled", m.GetIsUserNameAuthenticationEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -161,13 +134,6 @@ func (m *B2cAuthenticationMethodsPolicy) SetIsUserNameAuthenticationEnabled(valu
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *B2cAuthenticationMethodsPolicy) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // B2cAuthenticationMethodsPolicyable 
 type B2cAuthenticationMethodsPolicyable interface {
     Entityable
@@ -175,9 +141,7 @@ type B2cAuthenticationMethodsPolicyable interface {
     GetIsEmailPasswordAuthenticationEnabled()(*bool)
     GetIsPhoneOneTimePasswordAuthenticationEnabled()(*bool)
     GetIsUserNameAuthenticationEnabled()(*bool)
-    GetOdataType()(*string)
     SetIsEmailPasswordAuthenticationEnabled(value *bool)()
     SetIsPhoneOneTimePasswordAuthenticationEnabled(value *bool)()
     SetIsUserNameAuthenticationEnabled(value *bool)()
-    SetOdataType(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // Authority 
 type Authority struct {
     FilePlanDescriptorBase
-    // The OdataType property
-    OdataType *string
 }
 // NewAuthority instantiates a new authority and sets the default values.
 func NewAuthority()(*Authority) {

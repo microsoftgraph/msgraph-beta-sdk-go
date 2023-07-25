@@ -7,8 +7,6 @@ import (
 // DeliveryOptimizationBandwidthPercentage bandwidth limits specified as a percentage.
 type DeliveryOptimizationBandwidthPercentage struct {
     DeliveryOptimizationBandwidth
-    // The OdataType property
-    OdataType *string
 }
 // NewDeliveryOptimizationBandwidthPercentage instantiates a new deliveryOptimizationBandwidthPercentage and sets the default values.
 func NewDeliveryOptimizationBandwidthPercentage()(*DeliveryOptimizationBandwidthPercentage) {

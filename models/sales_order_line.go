@@ -302,16 +302,6 @@ func (m *SalesOrderLine) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["quantity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
@@ -510,17 +500,6 @@ func (m *SalesOrderLine) GetNetTaxAmount()(*float64) {
     }
     if val != nil {
         return val.(*float64)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *SalesOrderLine) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -749,12 +728,6 @@ func (m *SalesOrderLine) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteFloat64Value("quantity", m.GetQuantity())
         if err != nil {
             return err
@@ -942,13 +915,6 @@ func (m *SalesOrderLine) SetNetTaxAmount(value *float64)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *SalesOrderLine) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetQuantity sets the quantity property value. The quantity property
 func (m *SalesOrderLine) SetQuantity(value *float64)() {
     err := m.GetBackingStore().Set("quantity", value)
@@ -1041,7 +1007,6 @@ type SalesOrderLineable interface {
     GetNetAmount()(*float64)
     GetNetAmountIncludingTax()(*float64)
     GetNetTaxAmount()(*float64)
-    GetOdataType()(*string)
     GetQuantity()(*float64)
     GetSequence()(*int32)
     GetShipmentDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
@@ -1070,7 +1035,6 @@ type SalesOrderLineable interface {
     SetNetAmount(value *float64)()
     SetNetAmountIncludingTax(value *float64)()
     SetNetTaxAmount(value *float64)()
-    SetOdataType(value *string)()
     SetQuantity(value *float64)()
     SetSequence(value *int32)()
     SetShipmentDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()

@@ -411,16 +411,6 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["osVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -512,17 +502,6 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
 // GetManagedDeviceName gets the managedDeviceName property value. Managed device name.
 func (m *DeviceManagementAutopilotEvent) GetManagedDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("managedDeviceName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *DeviceManagementAutopilotEvent) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -745,12 +724,6 @@ func (m *DeviceManagementAutopilotEvent) Serialize(writer i878a80d2330e89d268963
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("osVersion", m.GetOsVersion())
         if err != nil {
             return err
@@ -939,13 +912,6 @@ func (m *DeviceManagementAutopilotEvent) SetManagedDeviceName(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *DeviceManagementAutopilotEvent) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOsVersion sets the osVersion property value. Device operating system version.
 func (m *DeviceManagementAutopilotEvent) SetOsVersion(value *string)() {
     err := m.GetBackingStore().Set("osVersion", value)
@@ -1025,7 +991,6 @@ type DeviceManagementAutopilotEventable interface {
     GetEnrollmentType()(*WindowsAutopilotEnrollmentType)
     GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetManagedDeviceName()(*string)
-    GetOdataType()(*string)
     GetOsVersion()(*string)
     GetPolicyStatusDetails()([]DeviceManagementAutopilotPolicyStatusDetailable)
     GetTargetedAppCount()(*int32)
@@ -1053,7 +1018,6 @@ type DeviceManagementAutopilotEventable interface {
     SetEnrollmentType(value *WindowsAutopilotEnrollmentType)()
     SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetManagedDeviceName(value *string)()
-    SetOdataType(value *string)()
     SetOsVersion(value *string)()
     SetPolicyStatusDetails(value []DeviceManagementAutopilotPolicyStatusDetailable)()
     SetTargetedAppCount(value *int32)()

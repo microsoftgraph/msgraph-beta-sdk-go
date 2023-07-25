@@ -7,8 +7,6 @@ import (
 // InternalSponsors 
 type InternalSponsors struct {
     UserSet
-    // The OdataType property
-    OdataType *string
 }
 // NewInternalSponsors instantiates a new internalSponsors and sets the default values.
 func NewInternalSponsors()(*InternalSponsors) {

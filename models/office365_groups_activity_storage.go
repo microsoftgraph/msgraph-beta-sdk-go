@@ -32,16 +32,6 @@ func (m *Office365GroupsActivityStorage) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["reportDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
@@ -92,17 +82,6 @@ func (m *Office365GroupsActivityStorage) GetMailboxStorageUsedInBytes()(*int64) 
     }
     if val != nil {
         return val.(*int64)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *Office365GroupsActivityStorage) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -163,12 +142,6 @@ func (m *Office365GroupsActivityStorage) Serialize(writer i878a80d2330e89d268963
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteDateOnlyValue("reportDate", m.GetReportDate())
         if err != nil {
             return err
@@ -197,13 +170,6 @@ func (m *Office365GroupsActivityStorage) Serialize(writer i878a80d2330e89d268963
 // SetMailboxStorageUsedInBytes sets the mailboxStorageUsedInBytes property value. The storage used in group mailbox.
 func (m *Office365GroupsActivityStorage) SetMailboxStorageUsedInBytes(value *int64)() {
     err := m.GetBackingStore().Set("mailboxStorageUsedInBytes", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *Office365GroupsActivityStorage) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -241,13 +207,11 @@ type Office365GroupsActivityStorageable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetMailboxStorageUsedInBytes()(*int64)
-    GetOdataType()(*string)
     GetReportDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetReportPeriod()(*string)
     GetReportRefreshDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetSiteStorageUsedInBytes()(*int64)
     SetMailboxStorageUsedInBytes(value *int64)()
-    SetOdataType(value *string)()
     SetReportDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetReportPeriod(value *string)()
     SetReportRefreshDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()

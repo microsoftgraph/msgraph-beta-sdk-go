@@ -7,8 +7,6 @@ import (
 // AdminForms 
 type AdminForms struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAdminForms instantiates a new adminForms and sets the default values.
 func NewAdminForms()(*AdminForms) {

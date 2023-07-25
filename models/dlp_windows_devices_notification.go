@@ -7,8 +7,6 @@ import (
 // DlpWindowsDevicesNotification 
 type DlpWindowsDevicesNotification struct {
     DlpNotification
-    // The OdataType property
-    OdataType *string
 }
 // NewDlpWindowsDevicesNotification instantiates a new dlpWindowsDevicesNotification and sets the default values.
 func NewDlpWindowsDevicesNotification()(*DlpWindowsDevicesNotification) {

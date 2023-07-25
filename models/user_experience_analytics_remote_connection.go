@@ -210,16 +210,6 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["remoteSignInTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
@@ -266,17 +256,6 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetManufacturer()(*string) {
 // GetModel gets the model property value. The user experience analytics device model.
 func (m *UserExperienceAnalyticsRemoteConnection) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *UserExperienceAnalyticsRemoteConnection) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -385,12 +364,6 @@ func (m *UserExperienceAnalyticsRemoteConnection) Serialize(writer i878a80d2330e
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteFloat64Value("remoteSignInTime", m.GetRemoteSignInTime())
         if err != nil {
             return err
@@ -480,13 +453,6 @@ func (m *UserExperienceAnalyticsRemoteConnection) SetModel(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *UserExperienceAnalyticsRemoteConnection) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetRemoteSignInTime sets the remoteSignInTime property value. The remote sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsRemoteConnection) SetRemoteSignInTime(value *float64)() {
     err := m.GetBackingStore().Set("remoteSignInTime", value)
@@ -522,7 +488,6 @@ type UserExperienceAnalyticsRemoteConnectionable interface {
     GetDeviceName()(*string)
     GetManufacturer()(*string)
     GetModel()(*string)
-    GetOdataType()(*string)
     GetRemoteSignInTime()(*float64)
     GetUserPrincipalName()(*string)
     GetVirtualNetwork()(*string)
@@ -536,7 +501,6 @@ type UserExperienceAnalyticsRemoteConnectionable interface {
     SetDeviceName(value *string)()
     SetManufacturer(value *string)()
     SetModel(value *string)()
-    SetOdataType(value *string)()
     SetRemoteSignInTime(value *float64)()
     SetUserPrincipalName(value *string)()
     SetVirtualNetwork(value *string)()

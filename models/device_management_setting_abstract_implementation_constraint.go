@@ -7,8 +7,6 @@ import (
 // DeviceManagementSettingAbstractImplementationConstraint constraint that enforces an AbstractComplex type has or is set to a particular value
 type DeviceManagementSettingAbstractImplementationConstraint struct {
     DeviceManagementConstraint
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementSettingAbstractImplementationConstraint instantiates a new deviceManagementSettingAbstractImplementationConstraint and sets the default values.
 func NewDeviceManagementSettingAbstractImplementationConstraint()(*DeviceManagementSettingAbstractImplementationConstraint) {

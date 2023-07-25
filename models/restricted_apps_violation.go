@@ -7,8 +7,6 @@ import (
 // RestrictedAppsViolation violation of restricted apps configuration profile per device per user
 type RestrictedAppsViolation struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewRestrictedAppsViolation instantiates a new restrictedAppsViolation and sets the default values.
 func NewRestrictedAppsViolation()(*RestrictedAppsViolation) {

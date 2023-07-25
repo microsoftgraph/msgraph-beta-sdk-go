@@ -65,16 +65,6 @@ func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetFieldDeser
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["requiredAzureAdTrustType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementConfigurationAzureAdTrustType)
         if err != nil {
@@ -127,17 +117,6 @@ func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetMaximumSup
 // GetMinimumSupportedVersion gets the minimumSupportedVersion property value. Minimum supported version of Windows
 func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetMinimumSupportedVersion()(*string) {
     val, err := m.GetBackingStore().Get("minimumSupportedVersion")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -203,12 +182,6 @@ func (m *DeviceManagementConfigurationWindowsSettingApplicability) Serialize(wri
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetRequiredAzureAdTrustType() != nil {
         cast := (*m.GetRequiredAzureAdTrustType()).String()
         err = writer.WriteStringValue("requiredAzureAdTrustType", &cast)
@@ -251,13 +224,6 @@ func (m *DeviceManagementConfigurationWindowsSettingApplicability) SetMinimumSup
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *DeviceManagementConfigurationWindowsSettingApplicability) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetRequiredAzureAdTrustType sets the requiredAzureAdTrustType property value. Required AAD Trust Type
 func (m *DeviceManagementConfigurationWindowsSettingApplicability) SetRequiredAzureAdTrustType(value *DeviceManagementConfigurationAzureAdTrustType)() {
     err := m.GetBackingStore().Set("requiredAzureAdTrustType", value)
@@ -286,14 +252,12 @@ type DeviceManagementConfigurationWindowsSettingApplicabilityable interface {
     GetConfigurationServiceProviderVersion()(*string)
     GetMaximumSupportedVersion()(*string)
     GetMinimumSupportedVersion()(*string)
-    GetOdataType()(*string)
     GetRequiredAzureAdTrustType()(*DeviceManagementConfigurationAzureAdTrustType)
     GetRequiresAzureAd()(*bool)
     GetWindowsSkus()([]DeviceManagementConfigurationWindowsSkus)
     SetConfigurationServiceProviderVersion(value *string)()
     SetMaximumSupportedVersion(value *string)()
     SetMinimumSupportedVersion(value *string)()
-    SetOdataType(value *string)()
     SetRequiredAzureAdTrustType(value *DeviceManagementConfigurationAzureAdTrustType)()
     SetRequiresAzureAd(value *bool)()
     SetWindowsSkus(value []DeviceManagementConfigurationWindowsSkus)()

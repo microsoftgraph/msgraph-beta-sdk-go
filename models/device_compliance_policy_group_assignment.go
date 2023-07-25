@@ -7,8 +7,6 @@ import (
 // DeviceCompliancePolicyGroupAssignment device compliance policy group assignment.
 type DeviceCompliancePolicyGroupAssignment struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceCompliancePolicyGroupAssignment instantiates a new deviceCompliancePolicyGroupAssignment and sets the default values.
 func NewDeviceCompliancePolicyGroupAssignment()(*DeviceCompliancePolicyGroupAssignment) {

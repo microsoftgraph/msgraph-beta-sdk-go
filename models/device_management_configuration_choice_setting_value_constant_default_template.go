@@ -51,16 +51,6 @@ func (m *DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate)
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["settingDefinitionOptionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -72,17 +62,6 @@ func (m *DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate)
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetSettingDefinitionOptionId gets the settingDefinitionOptionId property value. Default Constant Value
 func (m *DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate) GetSettingDefinitionOptionId()(*string) {
@@ -114,12 +93,6 @@ func (m *DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate)
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("settingDefinitionOptionId", m.GetSettingDefinitionOptionId())
         if err != nil {
             return err
@@ -130,13 +103,6 @@ func (m *DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate)
 // SetChildren sets the children property value. Option Children
 func (m *DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate) SetChildren(value []DeviceManagementConfigurationSettingInstanceTemplateable)() {
     err := m.GetBackingStore().Set("children", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -153,9 +119,7 @@ type DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplateable 
     DeviceManagementConfigurationChoiceSettingValueDefaultTemplateable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetChildren()([]DeviceManagementConfigurationSettingInstanceTemplateable)
-    GetOdataType()(*string)
     GetSettingDefinitionOptionId()(*string)
     SetChildren(value []DeviceManagementConfigurationSettingInstanceTemplateable)()
-    SetOdataType(value *string)()
     SetSettingDefinitionOptionId(value *string)()
 }

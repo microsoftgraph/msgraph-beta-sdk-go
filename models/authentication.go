@@ -7,8 +7,6 @@ import (
 // Authentication 
 type Authentication struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAuthentication instantiates a new authentication and sets the default values.
 func NewAuthentication()(*Authentication) {

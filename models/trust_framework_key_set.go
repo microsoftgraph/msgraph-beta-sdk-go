@@ -7,8 +7,6 @@ import (
 // TrustFrameworkKeySet 
 type TrustFrameworkKeySet struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewTrustFrameworkKeySet instantiates a new trustFrameworkKeySet and sets the default values.
 func NewTrustFrameworkKeySet()(*TrustFrameworkKeySet) {

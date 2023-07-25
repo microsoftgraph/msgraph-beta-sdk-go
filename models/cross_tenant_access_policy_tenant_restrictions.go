@@ -7,8 +7,6 @@ import (
 // CrossTenantAccessPolicyTenantRestrictions 
 type CrossTenantAccessPolicyTenantRestrictions struct {
     CrossTenantAccessPolicyB2BSetting
-    // The OdataType property
-    OdataType *string
 }
 // NewCrossTenantAccessPolicyTenantRestrictions instantiates a new crossTenantAccessPolicyTenantRestrictions and sets the default values.
 func NewCrossTenantAccessPolicyTenantRestrictions()(*CrossTenantAccessPolicyTenantRestrictions) {

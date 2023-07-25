@@ -74,16 +74,6 @@ func (m *SensitiveType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["publisherName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -149,17 +139,6 @@ func (m *SensitiveType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 // GetName gets the name property value. The name property
 func (m *SensitiveType) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *SensitiveType) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -260,12 +239,6 @@ func (m *SensitiveType) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("publisherName", m.GetPublisherName())
         if err != nil {
             return err
@@ -326,13 +299,6 @@ func (m *SensitiveType) SetName(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *SensitiveType) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetPublisherName sets the publisherName property value. The publisherName property
 func (m *SensitiveType) SetPublisherName(value *string)() {
     err := m.GetBackingStore().Set("publisherName", value)
@@ -382,7 +348,6 @@ type SensitiveTypeable interface {
     GetClassificationMethod()(*ClassificationMethod)
     GetDescription()(*string)
     GetName()(*string)
-    GetOdataType()(*string)
     GetPublisherName()(*string)
     GetRulePackageId()(*string)
     GetRulePackageType()(*string)
@@ -392,7 +357,6 @@ type SensitiveTypeable interface {
     SetClassificationMethod(value *ClassificationMethod)()
     SetDescription(value *string)()
     SetName(value *string)()
-    SetOdataType(value *string)()
     SetPublisherName(value *string)()
     SetRulePackageId(value *string)()
     SetRulePackageType(value *string)()

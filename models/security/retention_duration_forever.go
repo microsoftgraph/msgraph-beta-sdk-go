@@ -7,8 +7,6 @@ import (
 // RetentionDurationForever 
 type RetentionDurationForever struct {
     RetentionDuration
-    // The OdataType property
-    OdataType *string
 }
 // NewRetentionDurationForever instantiates a new retentionDurationForever and sets the default values.
 func NewRetentionDurationForever()(*RetentionDurationForever) {

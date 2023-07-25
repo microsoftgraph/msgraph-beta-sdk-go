@@ -7,8 +7,6 @@ import (
 // SearchEntity 
 type SearchEntity struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewSearchEntity instantiates a new searchEntity and sets the default values.
 func NewSearchEntity()(*SearchEntity) {

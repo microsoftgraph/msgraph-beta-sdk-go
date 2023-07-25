@@ -96,16 +96,6 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["policyType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementAutopilotPolicyType)
         if err != nil {
@@ -136,17 +126,6 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetLastReportedDateTime()(
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *DeviceManagementAutopilotPolicyStatusDetail) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -203,12 +182,6 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) Serialize(writer i878a80d2
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetPolicyType() != nil {
         cast := (*m.GetPolicyType()).String()
         err = writer.WriteStringValue("policyType", &cast)
@@ -252,13 +225,6 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) SetLastReportedDateTime(va
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *DeviceManagementAutopilotPolicyStatusDetail) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetPolicyType sets the policyType property value. The policyType property
 func (m *DeviceManagementAutopilotPolicyStatusDetail) SetPolicyType(value *DeviceManagementAutopilotPolicyType)() {
     err := m.GetBackingStore().Set("policyType", value)
@@ -281,14 +247,12 @@ type DeviceManagementAutopilotPolicyStatusDetailable interface {
     GetDisplayName()(*string)
     GetErrorCode()(*int32)
     GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetOdataType()(*string)
     GetPolicyType()(*DeviceManagementAutopilotPolicyType)
     GetTrackedOnEnrollmentStatus()(*bool)
     SetComplianceStatus(value *DeviceManagementAutopilotPolicyComplianceStatus)()
     SetDisplayName(value *string)()
     SetErrorCode(value *int32)()
     SetLastReportedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetOdataType(value *string)()
     SetPolicyType(value *DeviceManagementAutopilotPolicyType)()
     SetTrackedOnEnrollmentStatus(value *bool)()
 }

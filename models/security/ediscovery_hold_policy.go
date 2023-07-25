@@ -7,8 +7,6 @@ import (
 // EdiscoveryHoldPolicy 
 type EdiscoveryHoldPolicy struct {
     PolicyBase
-    // The OdataType property
-    OdataType *string
 }
 // NewEdiscoveryHoldPolicy instantiates a new ediscoveryHoldPolicy and sets the default values.
 func NewEdiscoveryHoldPolicy()(*EdiscoveryHoldPolicy) {

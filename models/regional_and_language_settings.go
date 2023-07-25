@@ -7,8 +7,6 @@ import (
 // RegionalAndLanguageSettings 
 type RegionalAndLanguageSettings struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewRegionalAndLanguageSettings instantiates a new regionalAndLanguageSettings and sets the default values.
 func NewRegionalAndLanguageSettings()(*RegionalAndLanguageSettings) {

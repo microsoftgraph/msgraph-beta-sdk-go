@@ -7,8 +7,6 @@ import (
 // DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate simple Setting Collection Instance Template
 type DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate struct {
     DeviceManagementConfigurationSettingInstanceTemplate
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate instantiates a new deviceManagementConfigurationSimpleSettingCollectionInstanceTemplate and sets the default values.
 func NewDeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate()(*DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate) {

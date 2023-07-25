@@ -8,8 +8,6 @@ import (
 // SynchronizationTemplate 
 type SynchronizationTemplate struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewSynchronizationTemplate instantiates a new synchronizationTemplate and sets the default values.
 func NewSynchronizationTemplate()(*SynchronizationTemplate) {
@@ -33,8 +31,8 @@ func (m *SynchronizationTemplate) GetApplicationId()(*i561e97a8befe7661a44c8f546
     }
     return nil
 }
-// GetDefault gets the default property value. true if this template is recommended to be the default for the application.
-func (m *SynchronizationTemplate) GetDefault()(*bool) {
+// GetDefaultEscaped gets the default property value. true if this template is recommended to be the default for the application.
+func (m *SynchronizationTemplate) GetDefaultEscaped()(*bool) {
     val, err := m.GetBackingStore().Get("defaultEscaped")
     if err != nil {
         panic(err)
@@ -96,7 +94,7 @@ func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(i878a8
             return err
         }
         if val != nil {
-            m.SetDefault(val)
+            m.SetDefaultEscaped(val)
         }
         return nil
     }
@@ -193,7 +191,7 @@ func (m *SynchronizationTemplate) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     {
-        err = writer.WriteBoolValue("default", m.GetDefault())
+        err = writer.WriteBoolValue("default", m.GetDefaultEscaped())
         if err != nil {
             return err
         }
@@ -243,8 +241,8 @@ func (m *SynchronizationTemplate) SetApplicationId(value *i561e97a8befe7661a44c8
         panic(err)
     }
 }
-// SetDefault sets the default property value. true if this template is recommended to be the default for the application.
-func (m *SynchronizationTemplate) SetDefault(value *bool)() {
+// SetDefaultEscaped sets the default property value. true if this template is recommended to be the default for the application.
+func (m *SynchronizationTemplate) SetDefaultEscaped(value *bool)() {
     err := m.GetBackingStore().Set("defaultEscaped", value)
     if err != nil {
         panic(err)
@@ -290,14 +288,14 @@ type SynchronizationTemplateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetApplicationId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
-    GetDefault()(*bool)
+    GetDefaultEscaped()(*bool)
     GetDescription()(*string)
     GetDiscoverable()(*bool)
     GetFactoryTag()(*string)
     GetMetadata()([]SynchronizationMetadataEntryable)
     GetSchema()(SynchronizationSchemaable)
     SetApplicationId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
-    SetDefault(value *bool)()
+    SetDefaultEscaped(value *bool)()
     SetDescription(value *string)()
     SetDiscoverable(value *bool)()
     SetFactoryTag(value *string)()

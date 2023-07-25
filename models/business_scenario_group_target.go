@@ -7,8 +7,6 @@ import (
 // BusinessScenarioGroupTarget 
 type BusinessScenarioGroupTarget struct {
     BusinessScenarioTaskTargetBase
-    // The OdataType property
-    OdataType *string
 }
 // NewBusinessScenarioGroupTarget instantiates a new businessScenarioGroupTarget and sets the default values.
 func NewBusinessScenarioGroupTarget()(*BusinessScenarioGroupTarget) {

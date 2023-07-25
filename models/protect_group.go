@@ -7,8 +7,6 @@ import (
 // ProtectGroup 
 type ProtectGroup struct {
     LabelActionBase
-    // The OdataType property
-    OdataType *string
 }
 // NewProtectGroup instantiates a new protectGroup and sets the default values.
 func NewProtectGroup()(*ProtectGroup) {

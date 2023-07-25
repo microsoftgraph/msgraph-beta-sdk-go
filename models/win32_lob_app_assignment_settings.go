@@ -65,16 +65,6 @@ func (m *Win32LobAppAssignmentSettings) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["restartSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWin32LobAppRestartSettingsFromDiscriminatorValue)
         if err != nil {
@@ -106,17 +96,6 @@ func (m *Win32LobAppAssignmentSettings) GetNotifications()(*Win32LobAppNotificat
     }
     if val != nil {
         return val.(*Win32LobAppNotification)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *Win32LobAppAssignmentSettings) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -158,12 +137,6 @@ func (m *Win32LobAppAssignmentSettings) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("restartSettings", m.GetRestartSettings())
         if err != nil {
             return err
@@ -192,13 +165,6 @@ func (m *Win32LobAppAssignmentSettings) SetNotifications(value *Win32LobAppNotif
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *Win32LobAppAssignmentSettings) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetRestartSettings sets the restartSettings property value. The reboot settings to apply for this app assignment.
 func (m *Win32LobAppAssignmentSettings) SetRestartSettings(value Win32LobAppRestartSettingsable)() {
     err := m.GetBackingStore().Set("restartSettings", value)
@@ -213,11 +179,9 @@ type Win32LobAppAssignmentSettingsable interface {
     GetDeliveryOptimizationPriority()(*Win32LobAppDeliveryOptimizationPriority)
     GetInstallTimeSettings()(MobileAppInstallTimeSettingsable)
     GetNotifications()(*Win32LobAppNotification)
-    GetOdataType()(*string)
     GetRestartSettings()(Win32LobAppRestartSettingsable)
     SetDeliveryOptimizationPriority(value *Win32LobAppDeliveryOptimizationPriority)()
     SetInstallTimeSettings(value MobileAppInstallTimeSettingsable)()
     SetNotifications(value *Win32LobAppNotification)()
-    SetOdataType(value *string)()
     SetRestartSettings(value Win32LobAppRestartSettingsable)()
 }

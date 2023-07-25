@@ -8,8 +8,6 @@ import (
 // DeviceAppManagementTask a device app management task.
 type DeviceAppManagementTask struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceAppManagementTask instantiates a new deviceAppManagementTask and sets the default values.
 func NewDeviceAppManagementTask()(*DeviceAppManagementTask) {

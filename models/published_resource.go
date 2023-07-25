@@ -70,16 +70,6 @@ func (m *PublishedResource) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["publishingType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseOnPremisesPublishingType)
         if err != nil {
@@ -101,17 +91,6 @@ func (m *PublishedResource) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *PublishedResource) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetPublishingType gets the publishingType property value. The publishingType property
 func (m *PublishedResource) GetPublishingType()(*OnPremisesPublishingType) {
@@ -159,12 +138,6 @@ func (m *PublishedResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetPublishingType() != nil {
         cast := (*m.GetPublishingType()).String()
         err = writer.WriteStringValue("publishingType", &cast)
@@ -194,13 +167,6 @@ func (m *PublishedResource) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *PublishedResource) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetPublishingType sets the publishingType property value. The publishingType property
 func (m *PublishedResource) SetPublishingType(value *OnPremisesPublishingType)() {
     err := m.GetBackingStore().Set("publishingType", value)
@@ -221,12 +187,10 @@ type PublishedResourceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAgentGroups()([]OnPremisesAgentGroupable)
     GetDisplayName()(*string)
-    GetOdataType()(*string)
     GetPublishingType()(*OnPremisesPublishingType)
     GetResourceName()(*string)
     SetAgentGroups(value []OnPremisesAgentGroupable)()
     SetDisplayName(value *string)()
-    SetOdataType(value *string)()
     SetPublishingType(value *OnPremisesPublishingType)()
     SetResourceName(value *string)()
 }

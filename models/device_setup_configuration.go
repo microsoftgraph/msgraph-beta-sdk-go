@@ -8,8 +8,6 @@ import (
 // DeviceSetupConfiguration this is the base class for Setup Configuration. Setup configurations are platform specific and individual per-platform setup configurations inherit from here.
 type DeviceSetupConfiguration struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceSetupConfiguration instantiates a new deviceSetupConfiguration and sets the default values.
 func NewDeviceSetupConfiguration()(*DeviceSetupConfiguration) {

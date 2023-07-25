@@ -7,8 +7,6 @@ import (
 // IosVppAppAssignedDeviceLicense iOS Volume Purchase Program device license assignment. This class does not support Create, Delete, or Update.
 type IosVppAppAssignedDeviceLicense struct {
     IosVppAppAssignedLicense
-    // The OdataType property
-    OdataType *string
 }
 // NewIosVppAppAssignedDeviceLicense instantiates a new iosVppAppAssignedDeviceLicense and sets the default values.
 func NewIosVppAppAssignedDeviceLicense()(*IosVppAppAssignedDeviceLicense) {

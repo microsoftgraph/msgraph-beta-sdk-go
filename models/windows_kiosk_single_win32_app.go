@@ -7,8 +7,6 @@ import (
 // WindowsKioskSingleWin32App the class used to identify the single app configuration for the kiosk win32 configuration
 type WindowsKioskSingleWin32App struct {
     WindowsKioskAppConfiguration
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsKioskSingleWin32App instantiates a new windowsKioskSingleWin32App and sets the default values.
 func NewWindowsKioskSingleWin32App()(*WindowsKioskSingleWin32App) {

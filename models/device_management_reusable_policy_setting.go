@@ -8,8 +8,6 @@ import (
 // DeviceManagementReusablePolicySetting graph model for a reusable setting
 type DeviceManagementReusablePolicySetting struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementReusablePolicySetting instantiates a new deviceManagementReusablePolicySetting and sets the default values.
 func NewDeviceManagementReusablePolicySetting()(*DeviceManagementReusablePolicySetting) {

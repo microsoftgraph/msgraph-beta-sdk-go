@@ -8,8 +8,6 @@ import (
 // MicrosoftManagedTrainingSetting 
 type MicrosoftManagedTrainingSetting struct {
     TrainingSetting
-    // The OdataType property
-    OdataType *string
 }
 // NewMicrosoftManagedTrainingSetting instantiates a new microsoftManagedTrainingSetting and sets the default values.
 func NewMicrosoftManagedTrainingSetting()(*MicrosoftManagedTrainingSetting) {

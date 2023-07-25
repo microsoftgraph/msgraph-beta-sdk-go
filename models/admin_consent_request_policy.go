@@ -7,8 +7,6 @@ import (
 // AdminConsentRequestPolicy 
 type AdminConsentRequestPolicy struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAdminConsentRequestPolicy instantiates a new adminConsentRequestPolicy and sets the default values.
 func NewAdminConsentRequestPolicy()(*AdminConsentRequestPolicy) {

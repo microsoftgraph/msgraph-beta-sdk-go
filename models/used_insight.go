@@ -7,8 +7,6 @@ import (
 // UsedInsight 
 type UsedInsight struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewUsedInsight instantiates a new usedInsight and sets the default values.
 func NewUsedInsight()(*UsedInsight) {

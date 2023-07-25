@@ -323,16 +323,6 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["security"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSecurityReportsRootFromDiscriminatorValue)
         if err != nil {
@@ -428,17 +418,6 @@ func (m *ReportRoot) GetMonthlyPrintUsageSummariesByUser()([]PrintUsageByUserabl
     }
     if val != nil {
         return val.([]PrintUsageByUserable)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *ReportRoot) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -643,12 +622,6 @@ func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("security", m.GetSecurity())
         if err != nil {
             return err
@@ -777,13 +750,6 @@ func (m *ReportRoot) SetMonthlyPrintUsageSummariesByUser(value []PrintUsageByUse
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *ReportRoot) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetSecurity sets the security property value. Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
 func (m *ReportRoot) SetSecurity(value SecurityReportsRootable)() {
     err := m.GetBackingStore().Set("security", value)
@@ -829,7 +795,6 @@ type ReportRootable interface {
     GetMonthlyPrintUsageByUser()([]PrintUsageByUserable)
     GetMonthlyPrintUsageSummariesByPrinter()([]PrintUsageByPrinterable)
     GetMonthlyPrintUsageSummariesByUser()([]PrintUsageByUserable)
-    GetOdataType()(*string)
     GetSecurity()(SecurityReportsRootable)
     GetServicePrincipalSignInActivities()([]ServicePrincipalSignInActivityable)
     GetSla()(ServiceLevelAgreementRootable)
@@ -847,7 +812,6 @@ type ReportRootable interface {
     SetMonthlyPrintUsageByUser(value []PrintUsageByUserable)()
     SetMonthlyPrintUsageSummariesByPrinter(value []PrintUsageByPrinterable)()
     SetMonthlyPrintUsageSummariesByUser(value []PrintUsageByUserable)()
-    SetOdataType(value *string)()
     SetSecurity(value SecurityReportsRootable)()
     SetServicePrincipalSignInActivities(value []ServicePrincipalSignInActivityable)()
     SetSla(value ServiceLevelAgreementRootable)()

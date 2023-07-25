@@ -7,8 +7,6 @@ import (
 // PlannerBucketTaskBoardTaskFormat 
 type PlannerBucketTaskBoardTaskFormat struct {
     PlannerDelta
-    // The OdataType property
-    OdataType *string
 }
 // NewPlannerBucketTaskBoardTaskFormat instantiates a new plannerBucketTaskBoardTaskFormat and sets the default values.
 func NewPlannerBucketTaskBoardTaskFormat()(*PlannerBucketTaskBoardTaskFormat) {

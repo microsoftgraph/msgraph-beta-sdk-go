@@ -105,7 +105,7 @@ func (m *VerifiedCredentialData) GetFieldDeserializers()(map[string]func(i878a80
                     res[i] = *(v.(*string))
                 }
             }
-            m.SetType(res)
+            m.SetTypeEscaped(res)
         }
         return nil
     }
@@ -122,8 +122,8 @@ func (m *VerifiedCredentialData) GetOdataType()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The list of credential types provided by the issuer.
-func (m *VerifiedCredentialData) GetType()([]string) {
+// GetTypeEscaped gets the type property value. The list of credential types provided by the issuer.
+func (m *VerifiedCredentialData) GetTypeEscaped()([]string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -153,8 +153,8 @@ func (m *VerifiedCredentialData) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
-    if m.GetType() != nil {
-        err := writer.WriteCollectionOfStringValues("type", m.GetType())
+    if m.GetTypeEscaped() != nil {
+        err := writer.WriteCollectionOfStringValues("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -199,8 +199,8 @@ func (m *VerifiedCredentialData) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The list of credential types provided by the issuer.
-func (m *VerifiedCredentialData) SetType(value []string)() {
+// SetTypeEscaped sets the type property value. The list of credential types provided by the issuer.
+func (m *VerifiedCredentialData) SetTypeEscaped(value []string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -215,10 +215,10 @@ type VerifiedCredentialDataable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetClaims()(VerifiedCredentialClaimsable)
     GetOdataType()(*string)
-    GetType()([]string)
+    GetTypeEscaped()([]string)
     SetAuthority(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetClaims(value VerifiedCredentialClaimsable)()
     SetOdataType(value *string)()
-    SetType(value []string)()
+    SetTypeEscaped(value []string)()
 }

@@ -7,8 +7,6 @@ import (
 // PayloadCompatibleAssignmentFilter a class containing the properties used for Payload Compatible Assignment Filter.
 type PayloadCompatibleAssignmentFilter struct {
     DeviceAndAppManagementAssignmentFilter
-    // The OdataType property
-    OdataType *string
 }
 // NewPayloadCompatibleAssignmentFilter instantiates a new payloadCompatibleAssignmentFilter and sets the default values.
 func NewPayloadCompatibleAssignmentFilter()(*PayloadCompatibleAssignmentFilter) {

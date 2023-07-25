@@ -7,8 +7,6 @@ import (
 // BookingCustomer represents a customer of the business.
 type BookingCustomer struct {
     BookingPerson
-    // The OdataType property
-    OdataType *string
 }
 // NewBookingCustomer instantiates a new bookingCustomer and sets the default values.
 func NewBookingCustomer()(*BookingCustomer) {

@@ -90,14 +90,14 @@ func (m *ItemItemsItemWorkbookFunctionsAverageIfPostRequestBody) GetFieldDeseria
             return err
         }
         if val != nil {
-            m.SetRange(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable))
+            m.SetRangeEscaped(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable))
         }
         return nil
     }
     return res
 }
-// GetRange gets the range property value. The range property
-func (m *ItemItemsItemWorkbookFunctionsAverageIfPostRequestBody) GetRange()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable) {
+// GetRangeEscaped gets the range property value. The range property
+func (m *ItemItemsItemWorkbookFunctionsAverageIfPostRequestBody) GetRangeEscaped()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable) {
     val, err := m.GetBackingStore().Get("rangeEscaped")
     if err != nil {
         panic(err)
@@ -122,7 +122,7 @@ func (m *ItemItemsItemWorkbookFunctionsAverageIfPostRequestBody) Serialize(write
         }
     }
     {
-        err := writer.WriteObjectValue("range", m.GetRange())
+        err := writer.WriteObjectValue("range", m.GetRangeEscaped())
         if err != nil {
             return err
         }
@@ -160,8 +160,8 @@ func (m *ItemItemsItemWorkbookFunctionsAverageIfPostRequestBody) SetCriteria(val
         panic(err)
     }
 }
-// SetRange sets the range property value. The range property
-func (m *ItemItemsItemWorkbookFunctionsAverageIfPostRequestBody) SetRange(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)() {
+// SetRangeEscaped sets the range property value. The range property
+func (m *ItemItemsItemWorkbookFunctionsAverageIfPostRequestBody) SetRangeEscaped(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)() {
     err := m.GetBackingStore().Set("rangeEscaped", value)
     if err != nil {
         panic(err)
@@ -175,9 +175,9 @@ type ItemItemsItemWorkbookFunctionsAverageIfPostRequestBodyable interface {
     GetAverageRange()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCriteria()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)
-    GetRange()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)
+    GetRangeEscaped()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)
     SetAverageRange(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCriteria(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)()
-    SetRange(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)()
+    SetRangeEscaped(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)()
 }

@@ -7,8 +7,6 @@ import (
 // ChannelDeletedEventMessageDetail 
 type ChannelDeletedEventMessageDetail struct {
     EventMessageDetail
-    // The OdataType property
-    OdataType *string
 }
 // NewChannelDeletedEventMessageDetail instantiates a new channelDeletedEventMessageDetail and sets the default values.
 func NewChannelDeletedEventMessageDetail()(*ChannelDeletedEventMessageDetail) {

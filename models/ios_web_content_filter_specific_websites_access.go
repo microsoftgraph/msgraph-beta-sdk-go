@@ -7,8 +7,6 @@ import (
 // IosWebContentFilterSpecificWebsitesAccess represents an iOS Web Content Filter setting type, which installs URL bookmarks into iOS built-in browser. An example scenario is in the classroom where teachers would like the students to navigate websites through browser bookmarks configured on their iOS devices, and no access to other sites.
 type IosWebContentFilterSpecificWebsitesAccess struct {
     IosWebContentFilterBase
-    // The OdataType property
-    OdataType *string
 }
 // NewIosWebContentFilterSpecificWebsitesAccess instantiates a new iosWebContentFilterSpecificWebsitesAccess and sets the default values.
 func NewIosWebContentFilterSpecificWebsitesAccess()(*IosWebContentFilterSpecificWebsitesAccess) {

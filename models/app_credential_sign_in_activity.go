@@ -158,16 +158,6 @@ func (m *AppCredentialSignInActivity) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["resourceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -230,17 +220,6 @@ func (m *AppCredentialSignInActivity) GetKeyUsage()(*ApplicationKeyUsage) {
     }
     if val != nil {
         return val.(*ApplicationKeyUsage)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *AppCredentialSignInActivity) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -335,12 +314,6 @@ func (m *AppCredentialSignInActivity) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("resourceId", m.GetResourceId())
         if err != nil {
             return err
@@ -416,13 +389,6 @@ func (m *AppCredentialSignInActivity) SetKeyUsage(value *ApplicationKeyUsage)() 
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *AppCredentialSignInActivity) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetResourceId sets the resourceId property value. The ID of the accessed resource.
 func (m *AppCredentialSignInActivity) SetResourceId(value *string)() {
     err := m.GetBackingStore().Set("resourceId", value)
@@ -456,7 +422,6 @@ type AppCredentialSignInActivityable interface {
     GetKeyId()(*string)
     GetKeyType()(*ApplicationKeyType)
     GetKeyUsage()(*ApplicationKeyUsage)
-    GetOdataType()(*string)
     GetResourceId()(*string)
     GetServicePrincipalObjectId()(*string)
     GetSignInActivity()(SignInActivityable)
@@ -468,7 +433,6 @@ type AppCredentialSignInActivityable interface {
     SetKeyId(value *string)()
     SetKeyType(value *ApplicationKeyType)()
     SetKeyUsage(value *ApplicationKeyUsage)()
-    SetOdataType(value *string)()
     SetResourceId(value *string)()
     SetServicePrincipalObjectId(value *string)()
     SetSignInActivity(value SignInActivityable)()

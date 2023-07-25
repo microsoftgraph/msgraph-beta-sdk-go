@@ -7,8 +7,6 @@ import (
 // DeviceManagementSettingSddlConstraint constraint enforcing the setting is well formed SDDL
 type DeviceManagementSettingSddlConstraint struct {
     DeviceManagementConstraint
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementSettingSddlConstraint instantiates a new deviceManagementSettingSddlConstraint and sets the default values.
 func NewDeviceManagementSettingSddlConstraint()(*DeviceManagementSettingSddlConstraint) {

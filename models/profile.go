@@ -7,8 +7,6 @@ import (
 // Profile 
 type Profile struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewProfile instantiates a new profile and sets the default values.
 func NewProfile()(*Profile) {

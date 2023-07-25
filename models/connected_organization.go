@@ -8,8 +8,6 @@ import (
 // ConnectedOrganization 
 type ConnectedOrganization struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewConnectedOrganization instantiates a new connectedOrganization and sets the default values.
 func NewConnectedOrganization()(*ConnectedOrganization) {

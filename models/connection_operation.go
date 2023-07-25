@@ -43,16 +43,6 @@ func (m *ConnectionOperation) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseConnectionOperationStatus)
         if err != nil {
@@ -64,17 +54,6 @@ func (m *ConnectionOperation) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *ConnectionOperation) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetStatus gets the status property value. The status property
 func (m *ConnectionOperation) GetStatus()(*ConnectionOperationStatus) {
@@ -99,12 +78,6 @@ func (m *ConnectionOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetStatus() != nil {
         cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
@@ -121,13 +94,6 @@ func (m *ConnectionOperation) SetError(value PublicErrorable)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *ConnectionOperation) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetStatus sets the status property value. The status property
 func (m *ConnectionOperation) SetStatus(value *ConnectionOperationStatus)() {
     err := m.GetBackingStore().Set("status", value)
@@ -140,9 +106,7 @@ type ConnectionOperationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetError()(PublicErrorable)
-    GetOdataType()(*string)
     GetStatus()(*ConnectionOperationStatus)
     SetError(value PublicErrorable)()
-    SetOdataType(value *string)()
     SetStatus(value *ConnectionOperationStatus)()
 }

@@ -8,8 +8,6 @@ import (
 // ApplicationSignInDetailedSummary 
 type ApplicationSignInDetailedSummary struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewApplicationSignInDetailedSummary instantiates a new applicationSignInDetailedSummary and sets the default values.
 func NewApplicationSignInDetailedSummary()(*ApplicationSignInDetailedSummary) {

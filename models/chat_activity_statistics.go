@@ -7,8 +7,6 @@ import (
 // ChatActivityStatistics 
 type ChatActivityStatistics struct {
     ActivityStatistics
-    // The OdataType property
-    OdataType *string
 }
 // NewChatActivityStatistics instantiates a new chatActivityStatistics and sets the default values.
 func NewChatActivityStatistics()(*ChatActivityStatistics) {

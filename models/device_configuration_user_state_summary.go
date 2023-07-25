@@ -7,8 +7,6 @@ import (
 // DeviceConfigurationUserStateSummary 
 type DeviceConfigurationUserStateSummary struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceConfigurationUserStateSummary instantiates a new deviceConfigurationUserStateSummary and sets the default values.
 func NewDeviceConfigurationUserStateSummary()(*DeviceConfigurationUserStateSummary) {

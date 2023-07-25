@@ -7,8 +7,6 @@ import (
 // MacOSKerberosSingleSignOnExtension represents a Kerberos-type Single Sign-On extension profile for macOS devices.
 type MacOSKerberosSingleSignOnExtension struct {
     MacOSSingleSignOnExtension
-    // The OdataType property
-    OdataType *string
 }
 // NewMacOSKerberosSingleSignOnExtension instantiates a new macOSKerberosSingleSignOnExtension and sets the default values.
 func NewMacOSKerberosSingleSignOnExtension()(*MacOSKerberosSingleSignOnExtension) {

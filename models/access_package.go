@@ -8,8 +8,6 @@ import (
 // AccessPackage 
 type AccessPackage struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAccessPackage instantiates a new accessPackage and sets the default values.
 func NewAccessPackage()(*AccessPackage) {

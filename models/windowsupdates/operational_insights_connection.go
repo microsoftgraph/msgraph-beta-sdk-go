@@ -66,16 +66,6 @@ func (m *OperationalInsightsConnection) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["workspaceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -87,17 +77,6 @@ func (m *OperationalInsightsConnection) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *OperationalInsightsConnection) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetWorkspaceName gets the workspaceName property value. The name of the Log Analytics workspace.
 func (m *OperationalInsightsConnection) GetWorkspaceName()(*string) {
@@ -129,12 +108,6 @@ func (m *OperationalInsightsConnection) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("workspaceName", m.GetWorkspaceName())
         if err != nil {
             return err
@@ -156,13 +129,6 @@ func (m *OperationalInsightsConnection) SetAzureSubscriptionId(value *string)() 
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *OperationalInsightsConnection) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetWorkspaceName sets the workspaceName property value. The name of the Log Analytics workspace.
 func (m *OperationalInsightsConnection) SetWorkspaceName(value *string)() {
     err := m.GetBackingStore().Set("workspaceName", value)
@@ -176,10 +142,8 @@ type OperationalInsightsConnectionable interface {
     ResourceConnectionable
     GetAzureResourceGroupName()(*string)
     GetAzureSubscriptionId()(*string)
-    GetOdataType()(*string)
     GetWorkspaceName()(*string)
     SetAzureResourceGroupName(value *string)()
     SetAzureSubscriptionId(value *string)()
-    SetOdataType(value *string)()
     SetWorkspaceName(value *string)()
 }

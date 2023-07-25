@@ -7,8 +7,6 @@ import (
 // PlannerAssignedToTaskBoardTaskFormat 
 type PlannerAssignedToTaskBoardTaskFormat struct {
     PlannerDelta
-    // The OdataType property
-    OdataType *string
 }
 // NewPlannerAssignedToTaskBoardTaskFormat instantiates a new plannerAssignedToTaskBoardTaskFormat and sets the default values.
 func NewPlannerAssignedToTaskBoardTaskFormat()(*PlannerAssignedToTaskBoardTaskFormat) {

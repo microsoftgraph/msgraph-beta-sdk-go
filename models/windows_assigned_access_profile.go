@@ -7,8 +7,6 @@ import (
 // WindowsAssignedAccessProfile assigned Access profile for Windows.
 type WindowsAssignedAccessProfile struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsAssignedAccessProfile instantiates a new windowsAssignedAccessProfile and sets the default values.
 func NewWindowsAssignedAccessProfile()(*WindowsAssignedAccessProfile) {

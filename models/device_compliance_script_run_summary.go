@@ -8,8 +8,6 @@ import (
 // DeviceComplianceScriptRunSummary contains properties for the run summary of a device management script.
 type DeviceComplianceScriptRunSummary struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceComplianceScriptRunSummary instantiates a new deviceComplianceScriptRunSummary and sets the default values.
 func NewDeviceComplianceScriptRunSummary()(*DeviceComplianceScriptRunSummary) {

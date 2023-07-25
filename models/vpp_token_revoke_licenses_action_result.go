@@ -64,16 +64,6 @@ func (m *VppTokenRevokeLicensesActionResult) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["totalLicensesCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -85,17 +75,6 @@ func (m *VppTokenRevokeLicensesActionResult) GetFieldDeserializers()(map[string]
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *VppTokenRevokeLicensesActionResult) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetTotalLicensesCount gets the totalLicensesCount property value. A count of the number of licenses that were attempted to revoke.
 func (m *VppTokenRevokeLicensesActionResult) GetTotalLicensesCount()(*int32) {
@@ -128,12 +107,6 @@ func (m *VppTokenRevokeLicensesActionResult) Serialize(writer i878a80d2330e89d26
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteInt32Value("totalLicensesCount", m.GetTotalLicensesCount())
         if err != nil {
             return err
@@ -155,13 +128,6 @@ func (m *VppTokenRevokeLicensesActionResult) SetFailedLicensesCount(value *int32
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *VppTokenRevokeLicensesActionResult) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetTotalLicensesCount sets the totalLicensesCount property value. A count of the number of licenses that were attempted to revoke.
 func (m *VppTokenRevokeLicensesActionResult) SetTotalLicensesCount(value *int32)() {
     err := m.GetBackingStore().Set("totalLicensesCount", value)
@@ -175,10 +141,8 @@ type VppTokenRevokeLicensesActionResultable interface {
     VppTokenActionResultable
     GetActionFailureReason()(*VppTokenActionFailureReason)
     GetFailedLicensesCount()(*int32)
-    GetOdataType()(*string)
     GetTotalLicensesCount()(*int32)
     SetActionFailureReason(value *VppTokenActionFailureReason)()
     SetFailedLicensesCount(value *int32)()
-    SetOdataType(value *string)()
     SetTotalLicensesCount(value *int32)()
 }

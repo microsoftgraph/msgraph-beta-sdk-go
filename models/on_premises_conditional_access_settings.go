@@ -8,8 +8,6 @@ import (
 // OnPremisesConditionalAccessSettings singleton entity which represents the Exchange OnPremises Conditional Access Settings for a tenant.
 type OnPremisesConditionalAccessSettings struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewOnPremisesConditionalAccessSettings instantiates a new onPremisesConditionalAccessSettings and sets the default values.
 func NewOnPremisesConditionalAccessSettings()(*OnPremisesConditionalAccessSettings) {

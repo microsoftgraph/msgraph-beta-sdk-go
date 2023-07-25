@@ -7,8 +7,6 @@ import (
 // Department 
 type Department struct {
     FilePlanDescriptorBase
-    // The OdataType property
-    OdataType *string
 }
 // NewDepartment instantiates a new department and sets the default values.
 func NewDepartment()(*Department) {

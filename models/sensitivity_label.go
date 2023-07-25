@@ -7,8 +7,6 @@ import (
 // SensitivityLabel 
 type SensitivityLabel struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewSensitivityLabel instantiates a new sensitivityLabel and sets the default values.
 func NewSensitivityLabel()(*SensitivityLabel) {

@@ -7,8 +7,6 @@ import (
 // DeviceHealthScriptStringParameter properties of the  String script parameter.
 type DeviceHealthScriptStringParameter struct {
     DeviceHealthScriptParameter
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceHealthScriptStringParameter instantiates a new deviceHealthScriptStringParameter and sets the default values.
 func NewDeviceHealthScriptStringParameter()(*DeviceHealthScriptStringParameter) {

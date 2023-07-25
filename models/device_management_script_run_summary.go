@@ -64,16 +64,6 @@ func (m *DeviceManagementScriptRunSummary) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["successDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -95,17 +85,6 @@ func (m *DeviceManagementScriptRunSummary) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *DeviceManagementScriptRunSummary) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetSuccessDeviceCount gets the successDeviceCount property value. Success device count.
 func (m *DeviceManagementScriptRunSummary) GetSuccessDeviceCount()(*int32) {
@@ -148,12 +127,6 @@ func (m *DeviceManagementScriptRunSummary) Serialize(writer i878a80d2330e89d2689
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteInt32Value("successDeviceCount", m.GetSuccessDeviceCount())
         if err != nil {
             return err
@@ -181,13 +154,6 @@ func (m *DeviceManagementScriptRunSummary) SetErrorUserCount(value *int32)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *DeviceManagementScriptRunSummary) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetSuccessDeviceCount sets the successDeviceCount property value. Success device count.
 func (m *DeviceManagementScriptRunSummary) SetSuccessDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("successDeviceCount", value)
@@ -208,12 +174,10 @@ type DeviceManagementScriptRunSummaryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetErrorDeviceCount()(*int32)
     GetErrorUserCount()(*int32)
-    GetOdataType()(*string)
     GetSuccessDeviceCount()(*int32)
     GetSuccessUserCount()(*int32)
     SetErrorDeviceCount(value *int32)()
     SetErrorUserCount(value *int32)()
-    SetOdataType(value *string)()
     SetSuccessDeviceCount(value *int32)()
     SetSuccessUserCount(value *int32)()
 }

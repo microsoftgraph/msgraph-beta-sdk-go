@@ -7,8 +7,6 @@ import (
 // ActivateDeviceEsimActionResult activate device eSIM action result
 type ActivateDeviceEsimActionResult struct {
     DeviceActionResult
-    // The OdataType property
-    OdataType *string
 }
 // NewActivateDeviceEsimActionResult instantiates a new activateDeviceEsimActionResult and sets the default values.
 func NewActivateDeviceEsimActionResult()(*ActivateDeviceEsimActionResult) {

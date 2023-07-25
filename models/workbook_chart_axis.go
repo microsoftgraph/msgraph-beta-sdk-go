@@ -7,8 +7,6 @@ import (
 // WorkbookChartAxis 
 type WorkbookChartAxis struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWorkbookChartAxis instantiates a new workbookChartAxis and sets the default values.
 func NewWorkbookChartAxis()(*WorkbookChartAxis) {

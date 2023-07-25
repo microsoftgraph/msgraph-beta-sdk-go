@@ -7,8 +7,6 @@ import (
 // GroupPolicyPresentationValueLongDecimal the entity represents an unsigned long value of a long decimal text box presentation on a policy definition.
 type GroupPolicyPresentationValueLongDecimal struct {
     GroupPolicyPresentationValue
-    // The OdataType property
-    OdataType *string
 }
 // NewGroupPolicyPresentationValueLongDecimal instantiates a new groupPolicyPresentationValueLongDecimal and sets the default values.
 func NewGroupPolicyPresentationValueLongDecimal()(*GroupPolicyPresentationValueLongDecimal) {

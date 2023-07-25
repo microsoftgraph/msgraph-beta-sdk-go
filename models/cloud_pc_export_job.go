@@ -8,8 +8,6 @@ import (
 // CloudPcExportJob 
 type CloudPcExportJob struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewCloudPcExportJob instantiates a new cloudPcExportJob and sets the default values.
 func NewCloudPcExportJob()(*CloudPcExportJob) {
@@ -140,7 +138,7 @@ func (m *CloudPcExportJob) GetFieldDeserializers()(map[string]func(i878a80d2330e
                     res[i] = *(v.(*string))
                 }
             }
-            m.SetSelect(res)
+            m.SetSelectEscaped(res)
         }
         return nil
     }
@@ -190,8 +188,8 @@ func (m *CloudPcExportJob) GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97
     }
     return nil
 }
-// GetSelect gets the select property value. The selected columns of the report.
-func (m *CloudPcExportJob) GetSelect()([]string) {
+// GetSelectEscaped gets the select property value. The selected columns of the report.
+func (m *CloudPcExportJob) GetSelectEscaped()([]string) {
     val, err := m.GetBackingStore().Get("selectEscaped")
     if err != nil {
         panic(err)
@@ -251,8 +249,8 @@ func (m *CloudPcExportJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
-    if m.GetSelect() != nil {
-        err = writer.WriteCollectionOfStringValues("select", m.GetSelect())
+    if m.GetSelectEscaped() != nil {
+        err = writer.WriteCollectionOfStringValues("select", m.GetSelectEscaped())
         if err != nil {
             return err
         }
@@ -308,8 +306,8 @@ func (m *CloudPcExportJob) SetRequestDateTime(value *i336074805fc853987abe6f7fe3
         panic(err)
     }
 }
-// SetSelect sets the select property value. The selected columns of the report.
-func (m *CloudPcExportJob) SetSelect(value []string)() {
+// SetSelectEscaped sets the select property value. The selected columns of the report.
+func (m *CloudPcExportJob) SetSelectEscaped(value []string)() {
     err := m.GetBackingStore().Set("selectEscaped", value)
     if err != nil {
         panic(err)
@@ -326,7 +324,7 @@ type CloudPcExportJobable interface {
     GetFormat()(*string)
     GetReportName()(*CloudPcReportName)
     GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetSelect()([]string)
+    GetSelectEscaped()([]string)
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetExportJobStatus(value *CloudPcExportJobStatus)()
     SetExportUrl(value *string)()
@@ -334,5 +332,5 @@ type CloudPcExportJobable interface {
     SetFormat(value *string)()
     SetReportName(value *CloudPcReportName)()
     SetRequestDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetSelect(value []string)()
+    SetSelectEscaped(value []string)()
 }

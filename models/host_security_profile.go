@@ -167,16 +167,6 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["os"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -360,17 +350,6 @@ func (m *HostSecurityProfile) GetNetworkInterfaces()([]NetworkInterfaceable) {
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *HostSecurityProfile) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetOs gets the os property value. The os property
 func (m *HostSecurityProfile) GetOs()(*string) {
     val, err := m.GetBackingStore().Get("os")
@@ -533,12 +512,6 @@ func (m *HostSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("os", m.GetOs())
         if err != nil {
             return err
@@ -659,13 +632,6 @@ func (m *HostSecurityProfile) SetNetworkInterfaces(value []NetworkInterfaceable)
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *HostSecurityProfile) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOs sets the os property value. The os property
 func (m *HostSecurityProfile) SetOs(value *string)() {
     err := m.GetBackingStore().Set("os", value)
@@ -730,7 +696,6 @@ type HostSecurityProfileable interface {
     GetLogonUsers()([]LogonUserable)
     GetNetBiosName()(*string)
     GetNetworkInterfaces()([]NetworkInterfaceable)
-    GetOdataType()(*string)
     GetOs()(*string)
     GetOsVersion()(*string)
     GetParentHost()(*string)
@@ -749,7 +714,6 @@ type HostSecurityProfileable interface {
     SetLogonUsers(value []LogonUserable)()
     SetNetBiosName(value *string)()
     SetNetworkInterfaces(value []NetworkInterfaceable)()
-    SetOdataType(value *string)()
     SetOs(value *string)()
     SetOsVersion(value *string)()
     SetParentHost(value *string)()

@@ -8,8 +8,6 @@ import (
 // ManagedDeviceMobileAppConfigurationDeviceSummary contains properties, inherited properties and actions for an MDM mobile app configuration device status summary.
 type ManagedDeviceMobileAppConfigurationDeviceSummary struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewManagedDeviceMobileAppConfigurationDeviceSummary instantiates a new managedDeviceMobileAppConfigurationDeviceSummary and sets the default values.
 func NewManagedDeviceMobileAppConfigurationDeviceSummary()(*ManagedDeviceMobileAppConfigurationDeviceSummary) {

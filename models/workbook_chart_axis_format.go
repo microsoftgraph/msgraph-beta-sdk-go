@@ -7,8 +7,6 @@ import (
 // WorkbookChartAxisFormat 
 type WorkbookChartAxisFormat struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWorkbookChartAxisFormat instantiates a new workbookChartAxisFormat and sets the default values.
 func NewWorkbookChartAxisFormat()(*WorkbookChartAxisFormat) {

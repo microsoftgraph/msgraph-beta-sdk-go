@@ -8,8 +8,6 @@ import (
 // RedundantAssignmentAlertIncident 
 type RedundantAssignmentAlertIncident struct {
     UnifiedRoleManagementAlertIncident
-    // The OdataType property
-    OdataType *string
 }
 // NewRedundantAssignmentAlertIncident instantiates a new redundantAssignmentAlertIncident and sets the default values.
 func NewRedundantAssignmentAlertIncident()(*RedundantAssignmentAlertIncident) {

@@ -7,8 +7,6 @@ import (
 // PlannerSharedWithContainer 
 type PlannerSharedWithContainer struct {
     PlannerPlanContainer
-    // The OdataType property
-    OdataType *string
 }
 // NewPlannerSharedWithContainer instantiates a new plannerSharedWithContainer and sets the default values.
 func NewPlannerSharedWithContainer()(*PlannerSharedWithContainer) {

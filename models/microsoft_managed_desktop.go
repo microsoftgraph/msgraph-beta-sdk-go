@@ -67,7 +67,7 @@ func (m *MicrosoftManagedDesktop) GetFieldDeserializers()(map[string]func(i878a8
             return err
         }
         if val != nil {
-            m.SetType(val.(*MicrosoftManagedDesktopType))
+            m.SetTypeEscaped(val.(*MicrosoftManagedDesktopType))
         }
         return nil
     }
@@ -95,8 +95,8 @@ func (m *MicrosoftManagedDesktop) GetProfile()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. Indicates whether the provisioning policy enables Microsoft Managed Desktop. It indicates the type of plan under which the device is managed if the provisioning policy is enabled. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue.
-func (m *MicrosoftManagedDesktop) GetType()(*MicrosoftManagedDesktopType) {
+// GetTypeEscaped gets the type property value. Indicates whether the provisioning policy enables Microsoft Managed Desktop. It indicates the type of plan under which the device is managed if the provisioning policy is enabled. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue.
+func (m *MicrosoftManagedDesktop) GetTypeEscaped()(*MicrosoftManagedDesktopType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -120,8 +120,8 @@ func (m *MicrosoftManagedDesktop) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -160,8 +160,8 @@ func (m *MicrosoftManagedDesktop) SetProfile(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. Indicates whether the provisioning policy enables Microsoft Managed Desktop. It indicates the type of plan under which the device is managed if the provisioning policy is enabled. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue.
-func (m *MicrosoftManagedDesktop) SetType(value *MicrosoftManagedDesktopType)() {
+// SetTypeEscaped sets the type property value. Indicates whether the provisioning policy enables Microsoft Managed Desktop. It indicates the type of plan under which the device is managed if the provisioning policy is enabled. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue.
+func (m *MicrosoftManagedDesktop) SetTypeEscaped(value *MicrosoftManagedDesktopType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -175,9 +175,9 @@ type MicrosoftManagedDesktopable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetProfile()(*string)
-    GetType()(*MicrosoftManagedDesktopType)
+    GetTypeEscaped()(*MicrosoftManagedDesktopType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetProfile(value *string)()
-    SetType(value *MicrosoftManagedDesktopType)()
+    SetTypeEscaped(value *MicrosoftManagedDesktopType)()
 }

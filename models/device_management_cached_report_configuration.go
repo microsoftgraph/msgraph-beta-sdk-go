@@ -74,16 +74,6 @@ func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["orderBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -122,7 +112,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[
                     res[i] = *(v.(*string))
                 }
             }
-            m.SetSelect(res)
+            m.SetSelectEscaped(res)
         }
         return nil
     }
@@ -171,17 +161,6 @@ func (m *DeviceManagementCachedReportConfiguration) GetMetadata()(*string) {
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *DeviceManagementCachedReportConfiguration) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetOrderBy gets the orderBy property value. Ordering of columns in the report
 func (m *DeviceManagementCachedReportConfiguration) GetOrderBy()([]string) {
     val, err := m.GetBackingStore().Get("orderBy")
@@ -204,8 +183,8 @@ func (m *DeviceManagementCachedReportConfiguration) GetReportName()(*string) {
     }
     return nil
 }
-// GetSelect gets the select property value. Columns selected from the report
-func (m *DeviceManagementCachedReportConfiguration) GetSelect()([]string) {
+// GetSelectEscaped gets the select property value. Columns selected from the report
+func (m *DeviceManagementCachedReportConfiguration) GetSelectEscaped()([]string) {
     val, err := m.GetBackingStore().Get("selectEscaped")
     if err != nil {
         panic(err)
@@ -256,12 +235,6 @@ func (m *DeviceManagementCachedReportConfiguration) Serialize(writer i878a80d233
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetOrderBy() != nil {
         err = writer.WriteCollectionOfStringValues("orderBy", m.GetOrderBy())
         if err != nil {
@@ -274,8 +247,8 @@ func (m *DeviceManagementCachedReportConfiguration) Serialize(writer i878a80d233
             return err
         }
     }
-    if m.GetSelect() != nil {
-        err = writer.WriteCollectionOfStringValues("select", m.GetSelect())
+    if m.GetSelectEscaped() != nil {
+        err = writer.WriteCollectionOfStringValues("select", m.GetSelectEscaped())
         if err != nil {
             return err
         }
@@ -317,13 +290,6 @@ func (m *DeviceManagementCachedReportConfiguration) SetMetadata(value *string)()
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *DeviceManagementCachedReportConfiguration) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOrderBy sets the orderBy property value. Ordering of columns in the report
 func (m *DeviceManagementCachedReportConfiguration) SetOrderBy(value []string)() {
     err := m.GetBackingStore().Set("orderBy", value)
@@ -338,8 +304,8 @@ func (m *DeviceManagementCachedReportConfiguration) SetReportName(value *string)
         panic(err)
     }
 }
-// SetSelect sets the select property value. Columns selected from the report
-func (m *DeviceManagementCachedReportConfiguration) SetSelect(value []string)() {
+// SetSelectEscaped sets the select property value. Columns selected from the report
+func (m *DeviceManagementCachedReportConfiguration) SetSelectEscaped(value []string)() {
     err := m.GetBackingStore().Set("selectEscaped", value)
     if err != nil {
         panic(err)
@@ -360,18 +326,16 @@ type DeviceManagementCachedReportConfigurationable interface {
     GetFilter()(*string)
     GetLastRefreshDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMetadata()(*string)
-    GetOdataType()(*string)
     GetOrderBy()([]string)
     GetReportName()(*string)
-    GetSelect()([]string)
+    GetSelectEscaped()([]string)
     GetStatus()(*DeviceManagementReportStatus)
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetFilter(value *string)()
     SetLastRefreshDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMetadata(value *string)()
-    SetOdataType(value *string)()
     SetOrderBy(value []string)()
     SetReportName(value *string)()
-    SetSelect(value []string)()
+    SetSelectEscaped(value []string)()
     SetStatus(value *DeviceManagementReportStatus)()
 }

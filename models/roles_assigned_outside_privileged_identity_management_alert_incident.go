@@ -8,8 +8,6 @@ import (
 // RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident 
 type RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident struct {
     UnifiedRoleManagementAlertIncident
-    // The OdataType property
-    OdataType *string
 }
 // NewRolesAssignedOutsidePrivilegedIdentityManagementAlertIncident instantiates a new rolesAssignedOutsidePrivilegedIdentityManagementAlertIncident and sets the default values.
 func NewRolesAssignedOutsidePrivilegedIdentityManagementAlertIncident()(*RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) {

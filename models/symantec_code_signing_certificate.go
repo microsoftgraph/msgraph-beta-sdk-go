@@ -8,8 +8,6 @@ import (
 // SymantecCodeSigningCertificate 
 type SymantecCodeSigningCertificate struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewSymantecCodeSigningCertificate instantiates a new symantecCodeSigningCertificate and sets the default values.
 func NewSymantecCodeSigningCertificate()(*SymantecCodeSigningCertificate) {

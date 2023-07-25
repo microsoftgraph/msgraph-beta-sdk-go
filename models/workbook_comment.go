@@ -7,8 +7,6 @@ import (
 // WorkbookComment 
 type WorkbookComment struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWorkbookComment instantiates a new workbookComment and sets the default values.
 func NewWorkbookComment()(*WorkbookComment) {

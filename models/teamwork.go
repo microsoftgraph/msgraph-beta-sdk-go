@@ -103,16 +103,6 @@ func (m *Teamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["teamsAppSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamsAppSettingsFromDiscriminatorValue)
         if err != nil {
@@ -156,17 +146,6 @@ func (m *Teamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *Teamwork) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetTeamsAppSettings gets the teamsAppSettings property value. Represents tenant-wide settings for all Teams apps in the tenant.
 func (m *Teamwork) GetTeamsAppSettings()(TeamsAppSettingsable) {
@@ -244,12 +223,6 @@ func (m *Teamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("teamsAppSettings", m.GetTeamsAppSettings())
         if err != nil {
             return err
@@ -302,13 +275,6 @@ func (m *Teamwork) SetDevices(value []TeamworkDeviceable)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *Teamwork) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetTeamsAppSettings sets the teamsAppSettings property value. Represents tenant-wide settings for all Teams apps in the tenant.
 func (m *Teamwork) SetTeamsAppSettings(value TeamsAppSettingsable)() {
     err := m.GetBackingStore().Set("teamsAppSettings", value)
@@ -337,14 +303,12 @@ type Teamworkable interface {
     GetDeletedChats()([]DeletedChatable)
     GetDeletedTeams()([]DeletedTeamable)
     GetDevices()([]TeamworkDeviceable)
-    GetOdataType()(*string)
     GetTeamsAppSettings()(TeamsAppSettingsable)
     GetTeamTemplates()([]TeamTemplateable)
     GetWorkforceIntegrations()([]WorkforceIntegrationable)
     SetDeletedChats(value []DeletedChatable)()
     SetDeletedTeams(value []DeletedTeamable)()
     SetDevices(value []TeamworkDeviceable)()
-    SetOdataType(value *string)()
     SetTeamsAppSettings(value TeamsAppSettingsable)()
     SetTeamTemplates(value []TeamTemplateable)()
     SetWorkforceIntegrations(value []WorkforceIntegrationable)()

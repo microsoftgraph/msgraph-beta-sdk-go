@@ -8,8 +8,6 @@ import (
 // CloudPcBulkAction 
 type CloudPcBulkAction struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewCloudPcBulkAction instantiates a new cloudPcBulkAction and sets the default values.
 func NewCloudPcBulkAction()(*CloudPcBulkAction) {

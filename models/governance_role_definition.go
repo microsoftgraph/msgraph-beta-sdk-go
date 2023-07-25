@@ -7,8 +7,6 @@ import (
 // GovernanceRoleDefinition 
 type GovernanceRoleDefinition struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewGovernanceRoleDefinition instantiates a new governanceRoleDefinition and sets the default values.
 func NewGovernanceRoleDefinition()(*GovernanceRoleDefinition) {

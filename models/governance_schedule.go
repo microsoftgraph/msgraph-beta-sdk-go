@@ -110,7 +110,7 @@ func (m *GovernanceSchedule) GetFieldDeserializers()(map[string]func(i878a80d233
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -138,8 +138,8 @@ func (m *GovernanceSchedule) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97
     }
     return nil
 }
-// GetType gets the type property value. The role assignment schedule type. Only Once is supported for now.
-func (m *GovernanceSchedule) GetType()(*string) {
+// GetTypeEscaped gets the type property value. The role assignment schedule type. Only Once is supported for now.
+func (m *GovernanceSchedule) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -176,7 +176,7 @@ func (m *GovernanceSchedule) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -228,8 +228,8 @@ func (m *GovernanceSchedule) SetStartDateTime(value *i336074805fc853987abe6f7fe3
         panic(err)
     }
 }
-// SetType sets the type property value. The role assignment schedule type. Only Once is supported for now.
-func (m *GovernanceSchedule) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. The role assignment schedule type. Only Once is supported for now.
+func (m *GovernanceSchedule) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -245,11 +245,11 @@ type GovernanceScheduleable interface {
     GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOdataType()(*string)
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOdataType(value *string)()
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // TimeOffItem 
 type TimeOffItem struct {
     ScheduleEntity
-    // The OdataType property
-    OdataType *string
 }
 // NewTimeOffItem instantiates a new timeOffItem and sets the default values.
 func NewTimeOffItem()(*TimeOffItem) {

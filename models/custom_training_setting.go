@@ -7,8 +7,6 @@ import (
 // CustomTrainingSetting 
 type CustomTrainingSetting struct {
     TrainingSetting
-    // The OdataType property
-    OdataType *string
 }
 // NewCustomTrainingSetting instantiates a new customTrainingSetting and sets the default values.
 func NewCustomTrainingSetting()(*CustomTrainingSetting) {

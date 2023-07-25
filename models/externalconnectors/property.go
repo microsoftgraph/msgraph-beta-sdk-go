@@ -170,7 +170,7 @@ func (m *Property) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
             return err
         }
         if val != nil {
-            m.SetType(val.(*PropertyType))
+            m.SetTypeEscaped(val.(*PropertyType))
         }
         return nil
     }
@@ -275,8 +275,8 @@ func (m *Property) GetRankingHint()(RankingHintable) {
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *Property) GetType()(*PropertyType) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *Property) GetTypeEscaped()(*PropertyType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -348,8 +348,8 @@ func (m *Property) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -444,8 +444,8 @@ func (m *Property) SetRankingHint(value RankingHintable)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *Property) SetType(value *PropertyType)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *Property) SetTypeEscaped(value *PropertyType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -467,7 +467,7 @@ type Propertyable interface {
     GetName()(*string)
     GetOdataType()(*string)
     GetRankingHint()(RankingHintable)
-    GetType()(*PropertyType)
+    GetTypeEscaped()(*PropertyType)
     SetAliases(value []string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetIsExactMatchRequired(value *bool)()
@@ -479,5 +479,5 @@ type Propertyable interface {
     SetName(value *string)()
     SetOdataType(value *string)()
     SetRankingHint(value RankingHintable)()
-    SetType(value *PropertyType)()
+    SetTypeEscaped(value *PropertyType)()
 }

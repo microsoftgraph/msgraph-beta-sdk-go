@@ -7,7 +7,7 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// ItemPagesItemCreatedByUserMailboxSettingsRequestBuilder builds and executes requests for operations under \sites\{site-id}\pages\{sitePage-id}\createdByUser\mailboxSettings
+// ItemPagesItemCreatedByUserMailboxSettingsRequestBuilder builds and executes requests for operations under \sites\{site-id}\pages\{baseSitePage-id}\createdByUser\mailboxSettings
 type ItemPagesItemCreatedByUserMailboxSettingsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -37,7 +37,7 @@ type ItemPagesItemCreatedByUserMailboxSettingsRequestBuilderPatchRequestConfigur
 // NewItemPagesItemCreatedByUserMailboxSettingsRequestBuilderInternal instantiates a new MailboxSettingsRequestBuilder and sets the default values.
 func NewItemPagesItemCreatedByUserMailboxSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPagesItemCreatedByUserMailboxSettingsRequestBuilder) {
     m := &ItemPagesItemCreatedByUserMailboxSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/pages/{sitePage%2Did}/createdByUser/mailboxSettings{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/pages/{baseSitePage%2Did}/createdByUser/mailboxSettings{?%24select,%24expand}", pathParameters),
     }
     return m
 }

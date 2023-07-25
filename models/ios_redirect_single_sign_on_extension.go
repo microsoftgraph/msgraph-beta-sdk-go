@@ -7,8 +7,6 @@ import (
 // IosRedirectSingleSignOnExtension represents a Redirect-type Single Sign-On extension profile for iOS devices.
 type IosRedirectSingleSignOnExtension struct {
     IosSingleSignOnExtension
-    // The OdataType property
-    OdataType *string
 }
 // NewIosRedirectSingleSignOnExtension instantiates a new iosRedirectSingleSignOnExtension and sets the default values.
 func NewIosRedirectSingleSignOnExtension()(*IosRedirectSingleSignOnExtension) {

@@ -7,8 +7,6 @@ import (
 // WindowsKioskUWPApp the base class for a type of apps
 type WindowsKioskUWPApp struct {
     WindowsKioskAppBase
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsKioskUWPApp instantiates a new windowsKioskUWPApp and sets the default values.
 func NewWindowsKioskUWPApp()(*WindowsKioskUWPApp) {

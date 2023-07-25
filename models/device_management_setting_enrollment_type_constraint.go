@@ -7,8 +7,6 @@ import (
 // DeviceManagementSettingEnrollmentTypeConstraint constraint that enforces the enrollment types applied to a setting
 type DeviceManagementSettingEnrollmentTypeConstraint struct {
     DeviceManagementConstraint
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementSettingEnrollmentTypeConstraint instantiates a new deviceManagementSettingEnrollmentTypeConstraint and sets the default values.
 func NewDeviceManagementSettingEnrollmentTypeConstraint()(*DeviceManagementSettingEnrollmentTypeConstraint) {

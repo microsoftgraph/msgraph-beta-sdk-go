@@ -7,8 +7,6 @@ import (
 // DeviceManagementSettingRegexConstraint constraint enforcing the setting matches against a given RegEx pattern
 type DeviceManagementSettingRegexConstraint struct {
     DeviceManagementConstraint
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementSettingRegexConstraint instantiates a new deviceManagementSettingRegexConstraint and sets the default values.
 func NewDeviceManagementSettingRegexConstraint()(*DeviceManagementSettingRegexConstraint) {

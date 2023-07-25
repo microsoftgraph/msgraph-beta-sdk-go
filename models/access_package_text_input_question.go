@@ -7,8 +7,6 @@ import (
 // AccessPackageTextInputQuestion 
 type AccessPackageTextInputQuestion struct {
     AccessPackageQuestion
-    // The OdataType property
-    OdataType *string
 }
 // NewAccessPackageTextInputQuestion instantiates a new accessPackageTextInputQuestion and sets the default values.
 func NewAccessPackageTextInputQuestion()(*AccessPackageTextInputQuestion) {

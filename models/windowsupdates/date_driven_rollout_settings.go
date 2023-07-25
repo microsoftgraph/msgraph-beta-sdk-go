@@ -8,8 +8,6 @@ import (
 // DateDrivenRolloutSettings 
 type DateDrivenRolloutSettings struct {
     GradualRolloutSettings
-    // The OdataType property
-    OdataType *string
 }
 // NewDateDrivenRolloutSettings instantiates a new dateDrivenRolloutSettings and sets the default values.
 func NewDateDrivenRolloutSettings()(*DateDrivenRolloutSettings) {

@@ -7,8 +7,6 @@ import (
 // Win32LobAppFileSystemDetection contains file or folder path to detect a Win32 App
 type Win32LobAppFileSystemDetection struct {
     Win32LobAppDetection
-    // The OdataType property
-    OdataType *string
 }
 // NewWin32LobAppFileSystemDetection instantiates a new win32LobAppFileSystemDetection and sets the default values.
 func NewWin32LobAppFileSystemDetection()(*Win32LobAppFileSystemDetection) {

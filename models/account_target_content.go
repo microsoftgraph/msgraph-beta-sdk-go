@@ -77,7 +77,7 @@ func (m *AccountTargetContent) GetFieldDeserializers()(map[string]func(i878a80d2
             return err
         }
         if val != nil {
-            m.SetType(val.(*AccountTargetContentType))
+            m.SetTypeEscaped(val.(*AccountTargetContentType))
         }
         return nil
     }
@@ -94,8 +94,8 @@ func (m *AccountTargetContent) GetOdataType()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The type of account target content. Possible values are: unknown,includeAll, addressBook,  unknownFutureValue.
-func (m *AccountTargetContent) GetType()(*AccountTargetContentType) {
+// GetTypeEscaped gets the type property value. The type of account target content. Possible values are: unknown,includeAll, addressBook,  unknownFutureValue.
+func (m *AccountTargetContent) GetTypeEscaped()(*AccountTargetContentType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -113,8 +113,8 @@ func (m *AccountTargetContent) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -146,8 +146,8 @@ func (m *AccountTargetContent) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type of account target content. Possible values are: unknown,includeAll, addressBook,  unknownFutureValue.
-func (m *AccountTargetContent) SetType(value *AccountTargetContentType)() {
+// SetTypeEscaped sets the type property value. The type of account target content. Possible values are: unknown,includeAll, addressBook,  unknownFutureValue.
+func (m *AccountTargetContent) SetTypeEscaped(value *AccountTargetContentType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -160,8 +160,8 @@ type AccountTargetContentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
-    GetType()(*AccountTargetContentType)
+    GetTypeEscaped()(*AccountTargetContentType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
-    SetType(value *AccountTargetContentType)()
+    SetTypeEscaped(value *AccountTargetContentType)()
 }

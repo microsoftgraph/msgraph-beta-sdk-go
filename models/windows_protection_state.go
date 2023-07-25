@@ -8,8 +8,6 @@ import (
 // WindowsProtectionState device protection status entity.
 type WindowsProtectionState struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsProtectionState instantiates a new windowsProtectionState and sets the default values.
 func NewWindowsProtectionState()(*WindowsProtectionState) {

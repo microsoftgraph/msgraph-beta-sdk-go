@@ -7,8 +7,6 @@ import (
 // EdgeSearchEngine allows IT admins to set a predefined default search engine for MDM-Controlled devices.
 type EdgeSearchEngine struct {
     EdgeSearchEngineBase
-    // The OdataType property
-    OdataType *string
 }
 // NewEdgeSearchEngine instantiates a new edgeSearchEngine and sets the default values.
 func NewEdgeSearchEngine()(*EdgeSearchEngine) {

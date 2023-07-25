@@ -51,14 +51,14 @@ func (m *AndroidDeviceOwnerKioskModeApp) GetFieldDeserializers()(map[string]func
             return err
         }
         if val != nil {
-            m.SetPackage(val)
+            m.SetPackageEscaped(val)
         }
         return nil
     }
     return res
 }
-// GetPackage gets the package property value. Package name of application
-func (m *AndroidDeviceOwnerKioskModeApp) GetPackage()(*string) {
+// GetPackageEscaped gets the package property value. Package name of application
+func (m *AndroidDeviceOwnerKioskModeApp) GetPackageEscaped()(*string) {
     val, err := m.GetBackingStore().Get("packageEscaped")
     if err != nil {
         panic(err)
@@ -81,7 +81,7 @@ func (m *AndroidDeviceOwnerKioskModeApp) Serialize(writer i878a80d2330e89d268963
         }
     }
     {
-        err = writer.WriteStringValue("package", m.GetPackage())
+        err = writer.WriteStringValue("package", m.GetPackageEscaped())
         if err != nil {
             return err
         }
@@ -95,8 +95,8 @@ func (m *AndroidDeviceOwnerKioskModeApp) SetClassName(value *string)() {
         panic(err)
     }
 }
-// SetPackage sets the package property value. Package name of application
-func (m *AndroidDeviceOwnerKioskModeApp) SetPackage(value *string)() {
+// SetPackageEscaped sets the package property value. Package name of application
+func (m *AndroidDeviceOwnerKioskModeApp) SetPackageEscaped(value *string)() {
     err := m.GetBackingStore().Set("packageEscaped", value)
     if err != nil {
         panic(err)
@@ -107,7 +107,7 @@ type AndroidDeviceOwnerKioskModeAppable interface {
     AndroidDeviceOwnerKioskModeFolderItemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetClassName()(*string)
-    GetPackage()(*string)
+    GetPackageEscaped()(*string)
     SetClassName(value *string)()
-    SetPackage(value *string)()
+    SetPackageEscaped(value *string)()
 }

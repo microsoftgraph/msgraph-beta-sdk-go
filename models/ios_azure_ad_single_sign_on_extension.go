@@ -7,8 +7,6 @@ import (
 // IosAzureAdSingleSignOnExtension represents an Azure AD-type Single Sign-On extension profile for iOS devices.
 type IosAzureAdSingleSignOnExtension struct {
     IosSingleSignOnExtension
-    // The OdataType property
-    OdataType *string
 }
 // NewIosAzureAdSingleSignOnExtension instantiates a new iosAzureAdSingleSignOnExtension and sets the default values.
 func NewIosAzureAdSingleSignOnExtension()(*IosAzureAdSingleSignOnExtension) {

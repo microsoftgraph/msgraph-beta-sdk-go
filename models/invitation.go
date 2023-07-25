@@ -7,8 +7,6 @@ import (
 // Invitation 
 type Invitation struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewInvitation instantiates a new invitation and sets the default values.
 func NewInvitation()(*Invitation) {
@@ -61,6 +59,22 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         if val != nil {
             m.SetInvitedUserMessageInfo(val.(InvitedUserMessageInfoable))
+        }
+        return nil
+    }
+    res["invitedUserSponsors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DirectoryObjectable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(DirectoryObjectable)
+                }
+            }
+            m.SetInvitedUserSponsors(res)
         }
         return nil
     }
@@ -170,6 +184,17 @@ func (m *Invitation) GetInvitedUserMessageInfo()(InvitedUserMessageInfoable) {
     }
     return nil
 }
+// GetInvitedUserSponsors gets the invitedUserSponsors property value. The users or groups who are sponsors of the invited user. Sponsors are users and groups that are responsible for guest users' privileges in the tenant and for keeping the guest users' information and access up to date.
+func (m *Invitation) GetInvitedUserSponsors()([]DirectoryObjectable) {
+    val, err := m.GetBackingStore().Get("invitedUserSponsors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DirectoryObjectable)
+    }
+    return nil
+}
 // GetInvitedUserType gets the invitedUserType property value. The userType of the user being invited. By default, this is Guest. You can invite as Member if you're are company administrator. The default is false.
 func (m *Invitation) GetInvitedUserType()(*string) {
     val, err := m.GetBackingStore().Get("invitedUserType")
@@ -266,6 +291,18 @@ func (m *Invitation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    if m.GetInvitedUserSponsors() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInvitedUserSponsors()))
+        for i, v := range m.GetInvitedUserSponsors() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("invitedUserSponsors", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("invitedUserType", m.GetInvitedUserType())
         if err != nil {
@@ -332,6 +369,13 @@ func (m *Invitation) SetInvitedUserMessageInfo(value InvitedUserMessageInfoable)
         panic(err)
     }
 }
+// SetInvitedUserSponsors sets the invitedUserSponsors property value. The users or groups who are sponsors of the invited user. Sponsors are users and groups that are responsible for guest users' privileges in the tenant and for keeping the guest users' information and access up to date.
+func (m *Invitation) SetInvitedUserSponsors(value []DirectoryObjectable)() {
+    err := m.GetBackingStore().Set("invitedUserSponsors", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetInvitedUserType sets the invitedUserType property value. The userType of the user being invited. By default, this is Guest. You can invite as Member if you're are company administrator. The default is false.
 func (m *Invitation) SetInvitedUserType(value *string)() {
     err := m.GetBackingStore().Set("invitedUserType", value)
@@ -382,6 +426,7 @@ type Invitationable interface {
     GetInvitedUserDisplayName()(*string)
     GetInvitedUserEmailAddress()(*string)
     GetInvitedUserMessageInfo()(InvitedUserMessageInfoable)
+    GetInvitedUserSponsors()([]DirectoryObjectable)
     GetInvitedUserType()(*string)
     GetInviteRedeemUrl()(*string)
     GetInviteRedirectUrl()(*string)
@@ -392,6 +437,7 @@ type Invitationable interface {
     SetInvitedUserDisplayName(value *string)()
     SetInvitedUserEmailAddress(value *string)()
     SetInvitedUserMessageInfo(value InvitedUserMessageInfoable)()
+    SetInvitedUserSponsors(value []DirectoryObjectable)()
     SetInvitedUserType(value *string)()
     SetInviteRedeemUrl(value *string)()
     SetInviteRedirectUrl(value *string)()

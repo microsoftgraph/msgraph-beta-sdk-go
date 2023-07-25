@@ -7,8 +7,6 @@ import (
 // DeviceManagementSettingIntegerConstraint constraint enforcing the permitted value range for an integer setting
 type DeviceManagementSettingIntegerConstraint struct {
     DeviceManagementConstraint
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementSettingIntegerConstraint instantiates a new deviceManagementSettingIntegerConstraint and sets the default values.
 func NewDeviceManagementSettingIntegerConstraint()(*DeviceManagementSettingIntegerConstraint) {

@@ -7,8 +7,6 @@ import (
 // DeviceManagementSettingAppConstraint constraint enforcing the setting contains only vaild app types.
 type DeviceManagementSettingAppConstraint struct {
     DeviceManagementConstraint
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementSettingAppConstraint instantiates a new deviceManagementSettingAppConstraint and sets the default values.
 func NewDeviceManagementSettingAppConstraint()(*DeviceManagementSettingAppConstraint) {

@@ -7,8 +7,6 @@ import (
 // AndroidFotaDeploymentAssignmentTarget the AAD Group we are deploying firmware updates to
 type AndroidFotaDeploymentAssignmentTarget struct {
     DeviceAndAppManagementAssignmentTarget
-    // The OdataType property
-    OdataType *string
 }
 // NewAndroidFotaDeploymentAssignmentTarget instantiates a new androidFotaDeploymentAssignmentTarget and sets the default values.
 func NewAndroidFotaDeploymentAssignmentTarget()(*AndroidFotaDeploymentAssignmentTarget) {

@@ -7,8 +7,6 @@ import (
 // DeviceManagementConfigurationIntegerSettingValueDefinition 
 type DeviceManagementConfigurationIntegerSettingValueDefinition struct {
     DeviceManagementConfigurationSettingValueDefinition
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementConfigurationIntegerSettingValueDefinition instantiates a new deviceManagementConfigurationIntegerSettingValueDefinition and sets the default values.
 func NewDeviceManagementConfigurationIntegerSettingValueDefinition()(*DeviceManagementConfigurationIntegerSettingValueDefinition) {

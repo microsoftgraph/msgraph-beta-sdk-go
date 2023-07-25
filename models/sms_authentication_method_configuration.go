@@ -7,8 +7,6 @@ import (
 // SmsAuthenticationMethodConfiguration 
 type SmsAuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
-    // The OdataType property
-    OdataType *string
 }
 // NewSmsAuthenticationMethodConfiguration instantiates a new smsAuthenticationMethodConfiguration and sets the default values.
 func NewSmsAuthenticationMethodConfiguration()(*SmsAuthenticationMethodConfiguration) {

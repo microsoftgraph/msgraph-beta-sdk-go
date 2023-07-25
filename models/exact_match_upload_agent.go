@@ -8,8 +8,6 @@ import (
 // ExactMatchUploadAgent 
 type ExactMatchUploadAgent struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewExactMatchUploadAgent instantiates a new exactMatchUploadAgent and sets the default values.
 func NewExactMatchUploadAgent()(*ExactMatchUploadAgent) {

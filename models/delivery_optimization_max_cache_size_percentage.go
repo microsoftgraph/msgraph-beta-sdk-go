@@ -7,8 +7,6 @@ import (
 // DeliveryOptimizationMaxCacheSizePercentage delivery Optimization Max cache size percentage types.
 type DeliveryOptimizationMaxCacheSizePercentage struct {
     DeliveryOptimizationMaxCacheSize
-    // The OdataType property
-    OdataType *string
 }
 // NewDeliveryOptimizationMaxCacheSizePercentage instantiates a new deliveryOptimizationMaxCacheSizePercentage and sets the default values.
 func NewDeliveryOptimizationMaxCacheSizePercentage()(*DeliveryOptimizationMaxCacheSizePercentage) {

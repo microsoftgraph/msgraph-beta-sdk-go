@@ -7,8 +7,6 @@ import (
 // GroupPolicyPresentationValueList the entity represents a collection of name/value pairs of a list box presentation on a policy definition.
 type GroupPolicyPresentationValueList struct {
     GroupPolicyPresentationValue
-    // The OdataType property
-    OdataType *string
 }
 // NewGroupPolicyPresentationValueList instantiates a new groupPolicyPresentationValueList and sets the default values.
 func NewGroupPolicyPresentationValueList()(*GroupPolicyPresentationValueList) {

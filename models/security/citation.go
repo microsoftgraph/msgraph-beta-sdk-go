@@ -7,8 +7,6 @@ import (
 // Citation 
 type Citation struct {
     FilePlanDescriptorBase
-    // The OdataType property
-    OdataType *string
 }
 // NewCitation instantiates a new citation and sets the default values.
 func NewCitation()(*Citation) {

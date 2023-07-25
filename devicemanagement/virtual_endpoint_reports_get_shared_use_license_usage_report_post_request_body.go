@@ -116,7 +116,7 @@ func (m *VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBody) Ge
                     res[i] = *(v.(*string))
                 }
             }
-            m.SetSelect(res)
+            m.SetSelectEscaped(res)
         }
         return nil
     }
@@ -197,8 +197,8 @@ func (m *VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBody) Ge
     }
     return nil
 }
-// GetSelect gets the select property value. The select property
-func (m *VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBody) GetSelect()([]string) {
+// GetSelectEscaped gets the select property value. The select property
+func (m *VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBody) GetSelectEscaped()([]string) {
     val, err := m.GetBackingStore().Get("selectEscaped")
     if err != nil {
         panic(err)
@@ -263,8 +263,8 @@ func (m *VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBody) Se
             return err
         }
     }
-    if m.GetSelect() != nil {
-        err := writer.WriteCollectionOfStringValues("select", m.GetSelect())
+    if m.GetSelectEscaped() != nil {
+        err := writer.WriteCollectionOfStringValues("select", m.GetSelectEscaped())
         if err != nil {
             return err
         }
@@ -335,8 +335,8 @@ func (m *VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBody) Se
         panic(err)
     }
 }
-// SetSelect sets the select property value. The select property
-func (m *VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBody) SetSelect(value []string)() {
+// SetSelectEscaped sets the select property value. The select property
+func (m *VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBody) SetSelectEscaped(value []string)() {
     err := m.GetBackingStore().Set("selectEscaped", value)
     if err != nil {
         panic(err)
@@ -367,7 +367,7 @@ type VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBodyable int
     GetOrderBy()([]string)
     GetReportName()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcReportName)
     GetSearch()(*string)
-    GetSelect()([]string)
+    GetSelectEscaped()([]string)
     GetSkip()(*int32)
     GetTop()(*int32)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
@@ -376,7 +376,7 @@ type VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBodyable int
     SetOrderBy(value []string)()
     SetReportName(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcReportName)()
     SetSearch(value *string)()
-    SetSelect(value []string)()
+    SetSelectEscaped(value []string)()
     SetSkip(value *int32)()
     SetTop(value *int32)()
 }

@@ -8,8 +8,6 @@ import (
 // AuthenticationMethodsPolicy 
 type AuthenticationMethodsPolicy struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAuthenticationMethodsPolicy instantiates a new authenticationMethodsPolicy and sets the default values.
 func NewAuthenticationMethodsPolicy()(*AuthenticationMethodsPolicy) {

@@ -8,8 +8,6 @@ import (
 // Permission 
 type Permission struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewPermission instantiates a new permission and sets the default values.
 func NewPermission()(*Permission) {

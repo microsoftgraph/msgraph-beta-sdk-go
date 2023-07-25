@@ -7,8 +7,6 @@ import (
 // DeviceManagementSettingXmlConstraint constraint enforcing the setting is well formed XML
 type DeviceManagementSettingXmlConstraint struct {
     DeviceManagementConstraint
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementSettingXmlConstraint instantiates a new deviceManagementSettingXmlConstraint and sets the default values.
 func NewDeviceManagementSettingXmlConstraint()(*DeviceManagementSettingXmlConstraint) {

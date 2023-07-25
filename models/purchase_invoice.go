@@ -392,7 +392,7 @@ func (m *PurchaseInvoice) GetFieldDeserializers()(map[string]func(i878a80d2330e8
             return err
         }
         if val != nil {
-            m.SetVendor(val.(VendorEscapedable))
+            m.SetVendorEscaped(val.(VendorEscapedable))
         }
         return nil
     }
@@ -647,8 +647,8 @@ func (m *PurchaseInvoice) GetTotalTaxAmount()(*float64) {
     }
     return nil
 }
-// GetVendor gets the vendor property value. The vendor property
-func (m *PurchaseInvoice) GetVendor()(VendorEscapedable) {
+// GetVendorEscaped gets the vendor property value. The vendor property
+func (m *PurchaseInvoice) GetVendorEscaped()(VendorEscapedable) {
     val, err := m.GetBackingStore().Get("vendorEscaped")
     if err != nil {
         panic(err)
@@ -867,7 +867,7 @@ func (m *PurchaseInvoice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
-        err := writer.WriteObjectValue("vendor", m.GetVendor())
+        err := writer.WriteObjectValue("vendor", m.GetVendorEscaped())
         if err != nil {
             return err
         }
@@ -1097,8 +1097,8 @@ func (m *PurchaseInvoice) SetTotalTaxAmount(value *float64)() {
         panic(err)
     }
 }
-// SetVendor sets the vendor property value. The vendor property
-func (m *PurchaseInvoice) SetVendor(value VendorEscapedable)() {
+// SetVendorEscaped sets the vendor property value. The vendor property
+func (m *PurchaseInvoice) SetVendorEscaped(value VendorEscapedable)() {
     err := m.GetBackingStore().Set("vendorEscaped", value)
     if err != nil {
         panic(err)
@@ -1164,7 +1164,7 @@ type PurchaseInvoiceable interface {
     GetTotalAmountExcludingTax()(*float64)
     GetTotalAmountIncludingTax()(*float64)
     GetTotalTaxAmount()(*float64)
-    GetVendor()(VendorEscapedable)
+    GetVendorEscaped()(VendorEscapedable)
     GetVendorId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetVendorInvoiceNumber()(*string)
     GetVendorName()(*string)
@@ -1196,7 +1196,7 @@ type PurchaseInvoiceable interface {
     SetTotalAmountExcludingTax(value *float64)()
     SetTotalAmountIncludingTax(value *float64)()
     SetTotalTaxAmount(value *float64)()
-    SetVendor(value VendorEscapedable)()
+    SetVendorEscaped(value VendorEscapedable)()
     SetVendorId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetVendorInvoiceNumber(value *string)()
     SetVendorName(value *string)()

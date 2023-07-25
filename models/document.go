@@ -7,8 +7,6 @@ import (
 // Document 
 type Document struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDocument instantiates a new document and sets the default values.
 func NewDocument()(*Document) {

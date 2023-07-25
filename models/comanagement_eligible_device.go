@@ -7,8 +7,6 @@ import (
 // ComanagementEligibleDevice device Co-Management eligibility state
 type ComanagementEligibleDevice struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewComanagementEligibleDevice instantiates a new comanagementEligibleDevice and sets the default values.
 func NewComanagementEligibleDevice()(*ComanagementEligibleDevice) {

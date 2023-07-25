@@ -7,8 +7,6 @@ import (
 // TeamsAppRemovedEventMessageDetail 
 type TeamsAppRemovedEventMessageDetail struct {
     EventMessageDetail
-    // The OdataType property
-    OdataType *string
 }
 // NewTeamsAppRemovedEventMessageDetail instantiates a new teamsAppRemovedEventMessageDetail and sets the default values.
 func NewTeamsAppRemovedEventMessageDetail()(*TeamsAppRemovedEventMessageDetail) {

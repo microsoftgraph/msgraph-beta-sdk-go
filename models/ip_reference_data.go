@@ -140,7 +140,7 @@ func (m *IpReferenceData) GetFieldDeserializers()(map[string]func(i878a80d2330e8
             return err
         }
         if val != nil {
-            m.SetVendor(val)
+            m.SetVendorEscaped(val)
         }
         return nil
     }
@@ -179,8 +179,8 @@ func (m *IpReferenceData) GetState()(*string) {
     }
     return nil
 }
-// GetVendor gets the vendor property value. The vendor property
-func (m *IpReferenceData) GetVendor()(*string) {
+// GetVendorEscaped gets the vendor property value. The vendor property
+func (m *IpReferenceData) GetVendorEscaped()(*string) {
     val, err := m.GetBackingStore().Get("vendorEscaped")
     if err != nil {
         panic(err)
@@ -229,7 +229,7 @@ func (m *IpReferenceData) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
-        err := writer.WriteStringValue("vendor", m.GetVendor())
+        err := writer.WriteStringValue("vendor", m.GetVendorEscaped())
         if err != nil {
             return err
         }
@@ -295,8 +295,8 @@ func (m *IpReferenceData) SetState(value *string)() {
         panic(err)
     }
 }
-// SetVendor sets the vendor property value. The vendor property
-func (m *IpReferenceData) SetVendor(value *string)() {
+// SetVendorEscaped sets the vendor property value. The vendor property
+func (m *IpReferenceData) SetVendorEscaped(value *string)() {
     err := m.GetBackingStore().Set("vendorEscaped", value)
     if err != nil {
         panic(err)
@@ -314,7 +314,7 @@ type IpReferenceDataable interface {
     GetOdataType()(*string)
     GetOrganization()(*string)
     GetState()(*string)
-    GetVendor()(*string)
+    GetVendorEscaped()(*string)
     SetAsn(value *int64)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCity(value *string)()
@@ -322,5 +322,5 @@ type IpReferenceDataable interface {
     SetOdataType(value *string)()
     SetOrganization(value *string)()
     SetState(value *string)()
-    SetVendor(value *string)()
+    SetVendorEscaped(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // Command 
 type Command struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewCommand instantiates a new command and sets the default values.
 func NewCommand()(*Command) {
@@ -132,7 +130,7 @@ func (m *Command) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -204,8 +202,8 @@ func (m *Command) GetStatus()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *Command) GetType()(*string) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *Command) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -270,7 +268,7 @@ func (m *Command) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
         }
     }
     {
-        err = writer.WriteStringValue("type", m.GetType())
+        err = writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -333,8 +331,8 @@ func (m *Command) SetStatus(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *Command) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *Command) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -352,7 +350,7 @@ type Commandable interface {
     GetPostBackUri()(*string)
     GetResponsepayload()(PayloadResponseable)
     GetStatus()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     SetAppServiceName(value *string)()
     SetError(value *string)()
     SetPackageFamilyName(value *string)()
@@ -361,5 +359,5 @@ type Commandable interface {
     SetPostBackUri(value *string)()
     SetResponsepayload(value PayloadResponseable)()
     SetStatus(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
 }

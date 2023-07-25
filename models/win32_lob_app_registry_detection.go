@@ -7,8 +7,6 @@ import (
 // Win32LobAppRegistryDetection contains registry properties to detect a Win32 App
 type Win32LobAppRegistryDetection struct {
     Win32LobAppDetection
-    // The OdataType property
-    OdataType *string
 }
 // NewWin32LobAppRegistryDetection instantiates a new win32LobAppRegistryDetection and sets the default values.
 func NewWin32LobAppRegistryDetection()(*Win32LobAppRegistryDetection) {

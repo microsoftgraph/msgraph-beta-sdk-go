@@ -191,7 +191,7 @@ func (m *ApprovalStage) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPrimaryApprovers gets the primaryApprovers property value. The users who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors. When creating or updating a policy, include at least one userSet in this collection.
+// GetPrimaryApprovers gets the primaryApprovers property value. The users who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors, externalSponsors and targetUserSponsors. When creating or updating a policy, include at least one userSet in this collection.
 func (m *ApprovalStage) GetPrimaryApprovers()([]UserSetable) {
     val, err := m.GetBackingStore().Get("primaryApprovers")
     if err != nil {
@@ -319,7 +319,7 @@ func (m *ApprovalStage) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPrimaryApprovers sets the primaryApprovers property value. The users who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors. When creating or updating a policy, include at least one userSet in this collection.
+// SetPrimaryApprovers sets the primaryApprovers property value. The users who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors, externalSponsors and targetUserSponsors. When creating or updating a policy, include at least one userSet in this collection.
 func (m *ApprovalStage) SetPrimaryApprovers(value []UserSetable)() {
     err := m.GetBackingStore().Set("primaryApprovers", value)
     if err != nil {

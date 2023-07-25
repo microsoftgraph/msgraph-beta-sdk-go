@@ -7,8 +7,6 @@ import (
 // WindowsQualityUpdateProfileAssignment this entity contains the properties used to assign a windows quality update profile to a group.
 type WindowsQualityUpdateProfileAssignment struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsQualityUpdateProfileAssignment instantiates a new windowsQualityUpdateProfileAssignment and sets the default values.
 func NewWindowsQualityUpdateProfileAssignment()(*WindowsQualityUpdateProfileAssignment) {

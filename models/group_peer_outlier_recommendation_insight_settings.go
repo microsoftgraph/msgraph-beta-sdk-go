@@ -7,8 +7,6 @@ import (
 // GroupPeerOutlierRecommendationInsightSettings 
 type GroupPeerOutlierRecommendationInsightSettings struct {
     AccessReviewRecommendationInsightSetting
-    // The OdataType property
-    OdataType *string
 }
 // NewGroupPeerOutlierRecommendationInsightSettings instantiates a new groupPeerOutlierRecommendationInsightSettings and sets the default values.
 func NewGroupPeerOutlierRecommendationInsightSettings()(*GroupPeerOutlierRecommendationInsightSettings) {

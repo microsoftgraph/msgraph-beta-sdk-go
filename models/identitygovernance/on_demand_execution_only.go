@@ -7,8 +7,6 @@ import (
 // OnDemandExecutionOnly 
 type OnDemandExecutionOnly struct {
     WorkflowExecutionConditions
-    // The OdataType property
-    OdataType *string
 }
 // NewOnDemandExecutionOnly instantiates a new onDemandExecutionOnly and sets the default values.
 func NewOnDemandExecutionOnly()(*OnDemandExecutionOnly) {

@@ -7,8 +7,6 @@ import (
 // RemoveProtectionAction 
 type RemoveProtectionAction struct {
     InformationProtectionAction
-    // The OdataType property
-    OdataType *string
 }
 // NewRemoveProtectionAction instantiates a new removeProtectionAction and sets the default values.
 func NewRemoveProtectionAction()(*RemoveProtectionAction) {

@@ -7,8 +7,6 @@ import (
 // CustomAction 
 type CustomAction struct {
     InformationProtectionAction
-    // The OdataType property
-    OdataType *string
 }
 // NewCustomAction instantiates a new customAction and sets the default values.
 func NewCustomAction()(*CustomAction) {

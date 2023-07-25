@@ -7,8 +7,6 @@ import (
 // DeviceCompliancePolicyState device Compliance Policy State for a given device.
 type DeviceCompliancePolicyState struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceCompliancePolicyState instantiates a new deviceCompliancePolicyState and sets the default values.
 func NewDeviceCompliancePolicyState()(*DeviceCompliancePolicyState) {

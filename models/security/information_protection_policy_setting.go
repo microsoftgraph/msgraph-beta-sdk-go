@@ -74,16 +74,6 @@ func (m *InformationProtectionPolicySetting) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetIsDowngradeJustificationRequired gets the isDowngradeJustificationRequired property value. Exposes whether justification input is required on label downgrade.
@@ -111,17 +101,6 @@ func (m *InformationProtectionPolicySetting) GetIsMandatory()(*bool) {
 // GetMoreInfoUrl gets the moreInfoUrl property value. Exposes the more information URL that can be configured by the administrator.
 func (m *InformationProtectionPolicySetting) GetMoreInfoUrl()(*string) {
     val, err := m.GetBackingStore().Get("moreInfoUrl")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *InformationProtectionPolicySetting) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -160,12 +139,6 @@ func (m *InformationProtectionPolicySetting) Serialize(writer i878a80d2330e89d26
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetDefaultLabelId sets the defaultLabelId property value. The defaultLabelId property
@@ -196,13 +169,6 @@ func (m *InformationProtectionPolicySetting) SetMoreInfoUrl(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *InformationProtectionPolicySetting) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // InformationProtectionPolicySettingable 
 type InformationProtectionPolicySettingable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
@@ -211,10 +177,8 @@ type InformationProtectionPolicySettingable interface {
     GetIsDowngradeJustificationRequired()(*bool)
     GetIsMandatory()(*bool)
     GetMoreInfoUrl()(*string)
-    GetOdataType()(*string)
     SetDefaultLabelId(value *string)()
     SetIsDowngradeJustificationRequired(value *bool)()
     SetIsMandatory(value *bool)()
     SetMoreInfoUrl(value *string)()
-    SetOdataType(value *string)()
 }

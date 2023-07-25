@@ -7,8 +7,6 @@ import (
 // UnifiedRoleManagementPolicyAssignment 
 type UnifiedRoleManagementPolicyAssignment struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewUnifiedRoleManagementPolicyAssignment instantiates a new unifiedRoleManagementPolicyAssignment and sets the default values.
 func NewUnifiedRoleManagementPolicyAssignment()(*UnifiedRoleManagementPolicyAssignment) {

@@ -7,8 +7,6 @@ import (
 // GovernanceSubject 
 type GovernanceSubject struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewGovernanceSubject instantiates a new governanceSubject and sets the default values.
 func NewGovernanceSubject()(*GovernanceSubject) {
@@ -82,7 +80,7 @@ func (m *GovernanceSubject) GetFieldDeserializers()(map[string]func(i878a80d2330
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -99,8 +97,8 @@ func (m *GovernanceSubject) GetPrincipalName()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The type of the subject. The value can be User, Group, and ServicePrincipal.
-func (m *GovernanceSubject) GetType()(*string) {
+// GetTypeEscaped gets the type property value. The type of the subject. The value can be User, Group, and ServicePrincipal.
+func (m *GovernanceSubject) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -135,7 +133,7 @@ func (m *GovernanceSubject) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
-        err = writer.WriteStringValue("type", m.GetType())
+        err = writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -163,8 +161,8 @@ func (m *GovernanceSubject) SetPrincipalName(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type of the subject. The value can be User, Group, and ServicePrincipal.
-func (m *GovernanceSubject) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. The type of the subject. The value can be User, Group, and ServicePrincipal.
+func (m *GovernanceSubject) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -177,9 +175,9 @@ type GovernanceSubjectable interface {
     GetDisplayName()(*string)
     GetEmail()(*string)
     GetPrincipalName()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     SetDisplayName(value *string)()
     SetEmail(value *string)()
     SetPrincipalName(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
 }

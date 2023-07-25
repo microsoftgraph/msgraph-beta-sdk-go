@@ -7,8 +7,6 @@ import (
 // WindowsInformationProtectionStoreApp store App for Windows information protection
 type WindowsInformationProtectionStoreApp struct {
     WindowsInformationProtectionApp
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsInformationProtectionStoreApp instantiates a new windowsInformationProtectionStoreApp and sets the default values.
 func NewWindowsInformationProtectionStoreApp()(*WindowsInformationProtectionStoreApp) {

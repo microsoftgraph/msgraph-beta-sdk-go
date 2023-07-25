@@ -7,8 +7,6 @@ import (
 // ExternalUsersSelfServiceSignUpEventsFlow 
 type ExternalUsersSelfServiceSignUpEventsFlow struct {
     AuthenticationEventsFlow
-    // The OdataType property
-    OdataType *string
 }
 // NewExternalUsersSelfServiceSignUpEventsFlow instantiates a new externalUsersSelfServiceSignUpEventsFlow and sets the default values.
 func NewExternalUsersSelfServiceSignUpEventsFlow()(*ExternalUsersSelfServiceSignUpEventsFlow) {

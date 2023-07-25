@@ -7,8 +7,6 @@ import (
 // AndroidDeviceOwnerKioskModeFolderItem represents an item that can be added to Android Device Owner folder (application or weblink)
 type AndroidDeviceOwnerKioskModeFolderItem struct {
     AndroidDeviceOwnerKioskModeHomeScreenItem
-    // The OdataType property
-    OdataType *string
 }
 // NewAndroidDeviceOwnerKioskModeFolderItem instantiates a new androidDeviceOwnerKioskModeFolderItem and sets the default values.
 func NewAndroidDeviceOwnerKioskModeFolderItem()(*AndroidDeviceOwnerKioskModeFolderItem) {

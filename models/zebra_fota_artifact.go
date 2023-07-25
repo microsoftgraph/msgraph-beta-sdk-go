@@ -7,8 +7,6 @@ import (
 // ZebraFotaArtifact describes a single artifact for a specific device model.
 type ZebraFotaArtifact struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewZebraFotaArtifact instantiates a new zebraFotaArtifact and sets the default values.
 func NewZebraFotaArtifact()(*ZebraFotaArtifact) {

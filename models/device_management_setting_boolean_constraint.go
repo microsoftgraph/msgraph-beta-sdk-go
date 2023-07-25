@@ -7,8 +7,6 @@ import (
 // DeviceManagementSettingBooleanConstraint constraint the enforces a particular boolean value
 type DeviceManagementSettingBooleanConstraint struct {
     DeviceManagementConstraint
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementSettingBooleanConstraint instantiates a new deviceManagementSettingBooleanConstraint and sets the default values.
 func NewDeviceManagementSettingBooleanConstraint()(*DeviceManagementSettingBooleanConstraint) {

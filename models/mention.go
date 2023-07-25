@@ -8,8 +8,6 @@ import (
 // Mention 
 type Mention struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewMention instantiates a new mention and sets the default values.
 func NewMention()(*Mention) {

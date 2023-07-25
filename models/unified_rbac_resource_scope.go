@@ -7,8 +7,6 @@ import (
 // UnifiedRbacResourceScope 
 type UnifiedRbacResourceScope struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewUnifiedRbacResourceScope instantiates a new unifiedRbacResourceScope and sets the default values.
 func NewUnifiedRbacResourceScope()(*UnifiedRbacResourceScope) {
@@ -61,7 +59,7 @@ func (m *UnifiedRbacResourceScope) GetFieldDeserializers()(map[string]func(i878a
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -78,8 +76,8 @@ func (m *UnifiedRbacResourceScope) GetScope()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *UnifiedRbacResourceScope) GetType()(*string) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *UnifiedRbacResourceScope) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -108,7 +106,7 @@ func (m *UnifiedRbacResourceScope) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
-        err = writer.WriteStringValue("type", m.GetType())
+        err = writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -129,8 +127,8 @@ func (m *UnifiedRbacResourceScope) SetScope(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *UnifiedRbacResourceScope) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *UnifiedRbacResourceScope) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -142,8 +140,8 @@ type UnifiedRbacResourceScopeable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
     GetScope()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     SetDisplayName(value *string)()
     SetScope(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
 }

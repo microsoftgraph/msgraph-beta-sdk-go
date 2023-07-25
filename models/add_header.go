@@ -7,8 +7,6 @@ import (
 // AddHeader 
 type AddHeader struct {
     MarkContent
-    // The OdataType property
-    OdataType *string
 }
 // NewAddHeader instantiates a new addHeader and sets the default values.
 func NewAddHeader()(*AddHeader) {

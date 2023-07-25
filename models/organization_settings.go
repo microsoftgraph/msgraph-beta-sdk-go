@@ -7,8 +7,6 @@ import (
 // OrganizationSettings 
 type OrganizationSettings struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewOrganizationSettings instantiates a new organizationSettings and sets the default values.
 func NewOrganizationSettings()(*OrganizationSettings) {

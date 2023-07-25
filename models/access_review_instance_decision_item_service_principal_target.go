@@ -45,16 +45,6 @@ func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) GetFieldDeseria
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["servicePrincipalDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -76,17 +66,6 @@ func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) GetFieldDeseria
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetServicePrincipalDisplayName gets the servicePrincipalDisplayName property value. The display name of the service principal whose access is being reviewed.
 func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) GetServicePrincipalDisplayName()(*string) {
@@ -123,12 +102,6 @@ func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) Serialize(write
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("servicePrincipalDisplayName", m.GetServicePrincipalDisplayName())
         if err != nil {
             return err
@@ -145,13 +118,6 @@ func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) Serialize(write
 // SetAppId sets the appId property value. The appId for the service principal entity being reviewed.
 func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) SetAppId(value *string)() {
     err := m.GetBackingStore().Set("appId", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -175,11 +141,9 @@ type AccessReviewInstanceDecisionItemServicePrincipalTargetable interface {
     AccessReviewInstanceDecisionItemTargetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAppId()(*string)
-    GetOdataType()(*string)
     GetServicePrincipalDisplayName()(*string)
     GetServicePrincipalId()(*string)
     SetAppId(value *string)()
-    SetOdataType(value *string)()
     SetServicePrincipalDisplayName(value *string)()
     SetServicePrincipalId(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // DeviceHealthScriptTimeSchedule base type of Device health script time schedule.
 type DeviceHealthScriptTimeSchedule struct {
     DeviceHealthScriptRunSchedule
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceHealthScriptTimeSchedule instantiates a new deviceHealthScriptTimeSchedule and sets the default values.
 func NewDeviceHealthScriptTimeSchedule()(*DeviceHealthScriptTimeSchedule) {

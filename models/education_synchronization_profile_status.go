@@ -64,16 +64,6 @@ func (m *EducationSynchronizationProfileStatus) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseEducationSynchronizationStatus)
         if err != nil {
@@ -115,17 +105,6 @@ func (m *EducationSynchronizationProfileStatus) GetLastSynchronizationDateTime()
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *EducationSynchronizationProfileStatus) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -175,12 +154,6 @@ func (m *EducationSynchronizationProfileStatus) Serialize(writer i878a80d2330e89
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetStatus() != nil {
         cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
@@ -217,13 +190,6 @@ func (m *EducationSynchronizationProfileStatus) SetLastSynchronizationDateTime(v
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *EducationSynchronizationProfileStatus) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetStatus sets the status property value. The status of a sync. The possible values are: paused, inProgress, success, error, validationError, quarantined, unknownFutureValue, extracting, validating. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: extracting, validating.
 func (m *EducationSynchronizationProfileStatus) SetStatus(value *EducationSynchronizationStatus)() {
     err := m.GetBackingStore().Set("status", value)
@@ -245,13 +211,11 @@ type EducationSynchronizationProfileStatusable interface {
     GetErrorCount()(*int64)
     GetLastActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastSynchronizationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetOdataType()(*string)
     GetStatus()(*EducationSynchronizationStatus)
     GetStatusMessage()(*string)
     SetErrorCount(value *int64)()
     SetLastActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastSynchronizationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetOdataType(value *string)()
     SetStatus(value *EducationSynchronizationStatus)()
     SetStatusMessage(value *string)()
 }

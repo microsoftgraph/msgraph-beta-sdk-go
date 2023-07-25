@@ -212,16 +212,6 @@ func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["registrant"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDomainRegistrantFromDiscriminatorValue)
         if err != nil {
@@ -295,17 +285,6 @@ func (m *DomainSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7f
 // GetName gets the name property value. The name property
 func (m *DomainSecurityProfile) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *DomainSecurityProfile) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -431,12 +410,6 @@ func (m *DomainSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("registrant", m.GetRegistrant())
         if err != nil {
             return err
@@ -532,13 +505,6 @@ func (m *DomainSecurityProfile) SetName(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *DomainSecurityProfile) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetRegistrant sets the registrant property value. The registrant property
 func (m *DomainSecurityProfile) SetRegistrant(value DomainRegistrantable)() {
     err := m.GetBackingStore().Set("registrant", value)
@@ -581,7 +547,6 @@ type DomainSecurityProfileable interface {
     GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetName()(*string)
-    GetOdataType()(*string)
     GetRegistrant()(DomainRegistrantable)
     GetRiskScore()(*string)
     GetTags()([]string)
@@ -596,7 +561,6 @@ type DomainSecurityProfileable interface {
     SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetName(value *string)()
-    SetOdataType(value *string)()
     SetRegistrant(value DomainRegistrantable)()
     SetRiskScore(value *string)()
     SetTags(value []string)()

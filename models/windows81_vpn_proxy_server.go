@@ -7,8 +7,6 @@ import (
 // Windows81VpnProxyServer vPN Proxy Server.
 type Windows81VpnProxyServer struct {
     VpnProxyServer
-    // The OdataType property
-    OdataType *string
 }
 // NewWindows81VpnProxyServer instantiates a new windows81VpnProxyServer and sets the default values.
 func NewWindows81VpnProxyServer()(*Windows81VpnProxyServer) {

@@ -125,7 +125,7 @@ func (m *AuditResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -164,8 +164,8 @@ func (m *AuditResource) GetResourceId()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. Audit resource's type.
-func (m *AuditResource) GetType()(*string) {
+// GetTypeEscaped gets the type property value. Audit resource's type.
+func (m *AuditResource) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -214,7 +214,7 @@ func (m *AuditResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -273,8 +273,8 @@ func (m *AuditResource) SetResourceId(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. Audit resource's type.
-func (m *AuditResource) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. Audit resource's type.
+func (m *AuditResource) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -291,12 +291,12 @@ type AuditResourceable interface {
     GetModifiedProperties()([]AuditPropertyable)
     GetOdataType()(*string)
     GetResourceId()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     SetAuditResourceType(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDisplayName(value *string)()
     SetModifiedProperties(value []AuditPropertyable)()
     SetOdataType(value *string)()
     SetResourceId(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
 }

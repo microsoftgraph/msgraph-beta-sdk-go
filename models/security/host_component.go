@@ -8,8 +8,6 @@ import (
 // HostComponent 
 type HostComponent struct {
     Artifact
-    // The OdataType property
-    OdataType *string
 }
 // NewHostComponent instantiates a new hostComponent and sets the default values.
 func NewHostComponent()(*HostComponent) {

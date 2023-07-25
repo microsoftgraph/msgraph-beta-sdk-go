@@ -22,16 +22,6 @@ func CreateAppliedCategoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AppliedCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.FilePlanDescriptorBase.GetFieldDeserializers()
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["subCategory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSubCategoryFromDiscriminatorValue)
         if err != nil {
@@ -43,17 +33,6 @@ func (m *AppliedCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *AppliedCategory) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetSubCategory gets the subCategory property value. Represents the file plan descriptor for a subcategory under a specific category, which has been assigned to a particular retention label.
 func (m *AppliedCategory) GetSubCategory()(SubCategoryable) {
@@ -73,25 +52,12 @@ func (m *AppliedCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         return err
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("subCategory", m.GetSubCategory())
         if err != nil {
             return err
         }
     }
     return nil
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *AppliedCategory) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
 }
 // SetSubCategory sets the subCategory property value. Represents the file plan descriptor for a subcategory under a specific category, which has been assigned to a particular retention label.
 func (m *AppliedCategory) SetSubCategory(value SubCategoryable)() {
@@ -104,8 +70,6 @@ func (m *AppliedCategory) SetSubCategory(value SubCategoryable)() {
 type AppliedCategoryable interface {
     FilePlanDescriptorBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOdataType()(*string)
     GetSubCategory()(SubCategoryable)
-    SetOdataType(value *string)()
     SetSubCategory(value SubCategoryable)()
 }

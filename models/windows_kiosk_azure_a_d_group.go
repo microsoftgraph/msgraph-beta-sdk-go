@@ -7,8 +7,6 @@ import (
 // WindowsKioskAzureADGroup the class used to identify an AzureAD group for the kiosk configuration
 type WindowsKioskAzureADGroup struct {
     WindowsKioskUser
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsKioskAzureADGroup instantiates a new windowsKioskAzureADGroup and sets the default values.
 func NewWindowsKioskAzureADGroup()(*WindowsKioskAzureADGroup) {

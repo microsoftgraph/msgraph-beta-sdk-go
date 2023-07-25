@@ -248,7 +248,7 @@ func (m *Item) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -417,8 +417,8 @@ func (m *Item) GetTaxGroupId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *Item) GetType()(*string) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *Item) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -555,7 +555,7 @@ func (m *Item) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -703,8 +703,8 @@ func (m *Item) SetTaxGroupId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf67
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *Item) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *Item) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -746,7 +746,7 @@ type Itemable interface {
     GetPriceIncludesTax()(*bool)
     GetTaxGroupCode()(*string)
     GetTaxGroupId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     GetUnitCost()(*float64)
     GetUnitPrice()(*float64)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
@@ -766,7 +766,7 @@ type Itemable interface {
     SetPriceIncludesTax(value *bool)()
     SetTaxGroupCode(value *string)()
     SetTaxGroupId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
     SetUnitCost(value *float64)()
     SetUnitPrice(value *float64)()
 }

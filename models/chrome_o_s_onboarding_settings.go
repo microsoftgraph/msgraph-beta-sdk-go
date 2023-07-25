@@ -43,16 +43,6 @@ func (m *ChromeOSOnboardingSettings) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["onboardingStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseOnboardingStatus)
         if err != nil {
@@ -97,17 +87,6 @@ func (m *ChromeOSOnboardingSettings) GetLastModifiedDateTime()(*i336074805fc8539
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *ChromeOSOnboardingSettings) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetOnboardingStatus gets the onboardingStatus property value. The onboarding status of the tenant.
 func (m *ChromeOSOnboardingSettings) GetOnboardingStatus()(*OnboardingStatus) {
     val, err := m.GetBackingStore().Get("onboardingStatus")
@@ -148,12 +127,6 @@ func (m *ChromeOSOnboardingSettings) Serialize(writer i878a80d2330e89d26896388a3
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetOnboardingStatus() != nil {
         cast := (*m.GetOnboardingStatus()).String()
         err = writer.WriteStringValue("onboardingStatus", &cast)
@@ -183,13 +156,6 @@ func (m *ChromeOSOnboardingSettings) SetLastModifiedDateTime(value *i336074805fc
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *ChromeOSOnboardingSettings) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOnboardingStatus sets the onboardingStatus property value. The onboarding status of the tenant.
 func (m *ChromeOSOnboardingSettings) SetOnboardingStatus(value *OnboardingStatus)() {
     err := m.GetBackingStore().Set("onboardingStatus", value)
@@ -210,12 +176,10 @@ type ChromeOSOnboardingSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetLastDirectorySyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetOdataType()(*string)
     GetOnboardingStatus()(*OnboardingStatus)
     GetOwnerUserPrincipalName()(*string)
     SetLastDirectorySyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetOdataType(value *string)()
     SetOnboardingStatus(value *OnboardingStatus)()
     SetOwnerUserPrincipalName(value *string)()
 }

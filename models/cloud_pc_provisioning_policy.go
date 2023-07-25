@@ -7,8 +7,6 @@ import (
 // CloudPcProvisioningPolicy 
 type CloudPcProvisioningPolicy struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewCloudPcProvisioningPolicy instantiates a new cloudPcProvisioningPolicy and sets the default values.
 func NewCloudPcProvisioningPolicy()(*CloudPcProvisioningPolicy) {

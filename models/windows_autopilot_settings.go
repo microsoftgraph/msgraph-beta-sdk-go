@@ -8,8 +8,6 @@ import (
 // WindowsAutopilotSettings the windowsAutopilotSettings resource represents a Windows Autopilot Account to sync data with Windows device data sync service.
 type WindowsAutopilotSettings struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsAutopilotSettings instantiates a new windowsAutopilotSettings and sets the default values.
 func NewWindowsAutopilotSettings()(*WindowsAutopilotSettings) {

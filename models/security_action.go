@@ -8,8 +8,6 @@ import (
 // SecurityAction 
 type SecurityAction struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewSecurityAction instantiates a new securityAction and sets the default values.
 func NewSecurityAction()(*SecurityAction) {

@@ -7,8 +7,6 @@ import (
 // MacAppIdentifier the identifier for a Mac app.
 type MacAppIdentifier struct {
     MobileAppIdentifier
-    // The OdataType property
-    OdataType *string
 }
 // NewMacAppIdentifier instantiates a new macAppIdentifier and sets the default values.
 func NewMacAppIdentifier()(*MacAppIdentifier) {

@@ -7,8 +7,6 @@ import (
 // MembersLeftEventMessageDetail 
 type MembersLeftEventMessageDetail struct {
     EventMessageDetail
-    // The OdataType property
-    OdataType *string
 }
 // NewMembersLeftEventMessageDetail instantiates a new membersLeftEventMessageDetail and sets the default values.
 func NewMembersLeftEventMessageDetail()(*MembersLeftEventMessageDetail) {

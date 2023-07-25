@@ -7,8 +7,6 @@ import (
 // IosVppEBookAssignment contains properties used to assign an iOS VPP EBook to a group.
 type IosVppEBookAssignment struct {
     ManagedEBookAssignment
-    // The OdataType property
-    OdataType *string
 }
 // NewIosVppEBookAssignment instantiates a new iosVppEBookAssignment and sets the default values.
 func NewIosVppEBookAssignment()(*IosVppEBookAssignment) {

@@ -8,8 +8,6 @@ import (
 // AndroidManagedStoreAccountEnterpriseSettings enterprise settings for an Android managed store account.
 type AndroidManagedStoreAccountEnterpriseSettings struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAndroidManagedStoreAccountEnterpriseSettings instantiates a new androidManagedStoreAccountEnterpriseSettings and sets the default values.
 func NewAndroidManagedStoreAccountEnterpriseSettings()(*AndroidManagedStoreAccountEnterpriseSettings) {

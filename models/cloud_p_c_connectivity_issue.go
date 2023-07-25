@@ -107,16 +107,6 @@ func (m *CloudPCConnectivityIssue) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["recommendedAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -138,17 +128,6 @@ func (m *CloudPCConnectivityIssue) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *CloudPCConnectivityIssue) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetRecommendedAction gets the recommendedAction property value. The recommended action to fix the corresponding error.
 func (m *CloudPCConnectivityIssue) GetRecommendedAction()(*string) {
@@ -203,12 +182,6 @@ func (m *CloudPCConnectivityIssue) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("recommendedAction", m.GetRecommendedAction())
         if err != nil {
             return err
@@ -250,13 +223,6 @@ func (m *CloudPCConnectivityIssue) SetErrorDescription(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *CloudPCConnectivityIssue) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetRecommendedAction sets the recommendedAction property value. The recommended action to fix the corresponding error.
 func (m *CloudPCConnectivityIssue) SetRecommendedAction(value *string)() {
     err := m.GetBackingStore().Set("recommendedAction", value)
@@ -279,14 +245,12 @@ type CloudPCConnectivityIssueable interface {
     GetErrorCode()(*string)
     GetErrorDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetErrorDescription()(*string)
-    GetOdataType()(*string)
     GetRecommendedAction()(*string)
     GetUserId()(*string)
     SetDeviceId(value *string)()
     SetErrorCode(value *string)()
     SetErrorDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetErrorDescription(value *string)()
-    SetOdataType(value *string)()
     SetRecommendedAction(value *string)()
     SetUserId(value *string)()
 }

@@ -45,16 +45,6 @@ func (m *ChatMessageMentionedIdentitySet) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["tag"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkTagIdentityFromDiscriminatorValue)
         if err != nil {
@@ -66,17 +56,6 @@ func (m *ChatMessageMentionedIdentitySet) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *ChatMessageMentionedIdentitySet) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetTag gets the tag property value. If present, represents a tag @mentioned in a team message.
 func (m *ChatMessageMentionedIdentitySet) GetTag()(TeamworkTagIdentityable) {
@@ -102,12 +81,6 @@ func (m *ChatMessageMentionedIdentitySet) Serialize(writer i878a80d2330e89d26896
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("tag", m.GetTag())
         if err != nil {
             return err
@@ -118,13 +91,6 @@ func (m *ChatMessageMentionedIdentitySet) Serialize(writer i878a80d2330e89d26896
 // SetConversation sets the conversation property value. If present, represents a conversation (for example, team or channel) @mentioned in a message.
 func (m *ChatMessageMentionedIdentitySet) SetConversation(value TeamworkConversationIdentityable)() {
     err := m.GetBackingStore().Set("conversation", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *ChatMessageMentionedIdentitySet) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -141,9 +107,7 @@ type ChatMessageMentionedIdentitySetable interface {
     IdentitySetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetConversation()(TeamworkConversationIdentityable)
-    GetOdataType()(*string)
     GetTag()(TeamworkTagIdentityable)
     SetConversation(value TeamworkConversationIdentityable)()
-    SetOdataType(value *string)()
     SetTag(value TeamworkTagIdentityable)()
 }

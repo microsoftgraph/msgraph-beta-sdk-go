@@ -54,16 +54,6 @@ func (m *GovernanceRoleAssignmentRequest) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["reason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -170,7 +160,7 @@ func (m *GovernanceRoleAssignmentRequest) GetFieldDeserializers()(map[string]fun
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -179,17 +169,6 @@ func (m *GovernanceRoleAssignmentRequest) GetFieldDeserializers()(map[string]fun
 // GetLinkedEligibleRoleAssignmentId gets the linkedEligibleRoleAssignmentId property value. If this is a request for role activation, it represents the id of the eligible assignment being referred; Otherwise, the value is null.
 func (m *GovernanceRoleAssignmentRequest) GetLinkedEligibleRoleAssignmentId()(*string) {
     val, err := m.GetBackingStore().Get("linkedEligibleRoleAssignmentId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *GovernanceRoleAssignmentRequest) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -308,8 +287,8 @@ func (m *GovernanceRoleAssignmentRequest) GetSubjectId()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
-func (m *GovernanceRoleAssignmentRequest) GetType()(*string) {
+// GetTypeEscaped gets the type property value. Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
+func (m *GovernanceRoleAssignmentRequest) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -333,12 +312,6 @@ func (m *GovernanceRoleAssignmentRequest) Serialize(writer i878a80d2330e89d26896
     }
     {
         err = writer.WriteStringValue("linkedEligibleRoleAssignmentId", m.GetLinkedEligibleRoleAssignmentId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -404,7 +377,7 @@ func (m *GovernanceRoleAssignmentRequest) Serialize(writer i878a80d2330e89d26896
         }
     }
     {
-        err = writer.WriteStringValue("type", m.GetType())
+        err = writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -421,13 +394,6 @@ func (m *GovernanceRoleAssignmentRequest) SetAssignmentState(value *string)() {
 // SetLinkedEligibleRoleAssignmentId sets the linkedEligibleRoleAssignmentId property value. If this is a request for role activation, it represents the id of the eligible assignment being referred; Otherwise, the value is null.
 func (m *GovernanceRoleAssignmentRequest) SetLinkedEligibleRoleAssignmentId(value *string)() {
     err := m.GetBackingStore().Set("linkedEligibleRoleAssignmentId", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *GovernanceRoleAssignmentRequest) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -502,8 +468,8 @@ func (m *GovernanceRoleAssignmentRequest) SetSubjectId(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
-func (m *GovernanceRoleAssignmentRequest) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
+func (m *GovernanceRoleAssignmentRequest) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -515,7 +481,6 @@ type GovernanceRoleAssignmentRequestable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAssignmentState()(*string)
     GetLinkedEligibleRoleAssignmentId()(*string)
-    GetOdataType()(*string)
     GetReason()(*string)
     GetRequestedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetResource()(GovernanceResourceable)
@@ -526,10 +491,9 @@ type GovernanceRoleAssignmentRequestable interface {
     GetStatus()(GovernanceRoleAssignmentRequestStatusable)
     GetSubject()(GovernanceSubjectable)
     GetSubjectId()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     SetAssignmentState(value *string)()
     SetLinkedEligibleRoleAssignmentId(value *string)()
-    SetOdataType(value *string)()
     SetReason(value *string)()
     SetRequestedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetResource(value GovernanceResourceable)()
@@ -540,5 +504,5 @@ type GovernanceRoleAssignmentRequestable interface {
     SetStatus(value GovernanceRoleAssignmentRequestStatusable)()
     SetSubject(value GovernanceSubjectable)()
     SetSubjectId(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
 }

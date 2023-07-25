@@ -69,7 +69,7 @@ func (m *ItemItemsItemWorkbookFunctionsSumIfPostRequestBody) GetFieldDeserialize
             return err
         }
         if val != nil {
-            m.SetRange(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable))
+            m.SetRangeEscaped(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable))
         }
         return nil
     }
@@ -85,8 +85,8 @@ func (m *ItemItemsItemWorkbookFunctionsSumIfPostRequestBody) GetFieldDeserialize
     }
     return res
 }
-// GetRange gets the range property value. The range property
-func (m *ItemItemsItemWorkbookFunctionsSumIfPostRequestBody) GetRange()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable) {
+// GetRangeEscaped gets the range property value. The range property
+func (m *ItemItemsItemWorkbookFunctionsSumIfPostRequestBody) GetRangeEscaped()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable) {
     val, err := m.GetBackingStore().Get("rangeEscaped")
     if err != nil {
         panic(err)
@@ -116,7 +116,7 @@ func (m *ItemItemsItemWorkbookFunctionsSumIfPostRequestBody) Serialize(writer i8
         }
     }
     {
-        err := writer.WriteObjectValue("range", m.GetRange())
+        err := writer.WriteObjectValue("range", m.GetRangeEscaped())
         if err != nil {
             return err
         }
@@ -153,8 +153,8 @@ func (m *ItemItemsItemWorkbookFunctionsSumIfPostRequestBody) SetCriteria(value i
         panic(err)
     }
 }
-// SetRange sets the range property value. The range property
-func (m *ItemItemsItemWorkbookFunctionsSumIfPostRequestBody) SetRange(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)() {
+// SetRangeEscaped sets the range property value. The range property
+func (m *ItemItemsItemWorkbookFunctionsSumIfPostRequestBody) SetRangeEscaped(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)() {
     err := m.GetBackingStore().Set("rangeEscaped", value)
     if err != nil {
         panic(err)
@@ -174,10 +174,10 @@ type ItemItemsItemWorkbookFunctionsSumIfPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCriteria()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)
-    GetRange()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)
+    GetRangeEscaped()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)
     GetSumRange()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCriteria(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)()
-    SetRange(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)()
+    SetRangeEscaped(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)()
     SetSumRange(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)()
 }

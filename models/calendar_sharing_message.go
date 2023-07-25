@@ -7,8 +7,6 @@ import (
 // CalendarSharingMessage 
 type CalendarSharingMessage struct {
     Message
-    // The OdataType property
-    OdataType *string
 }
 // NewCalendarSharingMessage instantiates a new calendarSharingMessage and sets the default values.
 func NewCalendarSharingMessage()(*CalendarSharingMessage) {

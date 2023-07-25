@@ -8,8 +8,6 @@ import (
 // DeviceManagementCompliancePolicy device Management Compliance Policy
 type DeviceManagementCompliancePolicy struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementCompliancePolicy instantiates a new deviceManagementCompliancePolicy and sets the default values.
 func NewDeviceManagementCompliancePolicy()(*DeviceManagementCompliancePolicy) {

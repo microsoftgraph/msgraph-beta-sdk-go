@@ -24,41 +24,20 @@ func CreateProgramResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProgramResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Identity.GetFieldDeserializers()
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *ProgramResource) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetType gets the type property value. Type of the resource, indicating whether it is a group or an app.
-func (m *ProgramResource) GetType()(*string) {
+// GetTypeEscaped gets the type property value. Type of the resource, indicating whether it is a group or an app.
+func (m *ProgramResource) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -75,28 +54,15 @@ func (m *ProgramResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         return err
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("type", m.GetType())
+        err = writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
     }
     return nil
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *ProgramResource) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetType sets the type property value. Type of the resource, indicating whether it is a group or an app.
-func (m *ProgramResource) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. Type of the resource, indicating whether it is a group or an app.
+func (m *ProgramResource) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -106,8 +72,6 @@ func (m *ProgramResource) SetType(value *string)() {
 type ProgramResourceable interface {
     Identityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOdataType()(*string)
-    GetType()(*string)
-    SetOdataType(value *string)()
-    SetType(value *string)()
+    GetTypeEscaped()(*string)
+    SetTypeEscaped(value *string)()
 }

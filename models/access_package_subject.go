@@ -7,8 +7,6 @@ import (
 // AccessPackageSubject 
 type AccessPackageSubject struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAccessPackageSubject instantiates a new accessPackageSubject and sets the default values.
 func NewAccessPackageSubject()(*AccessPackageSubject) {
@@ -175,7 +173,7 @@ func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(i878a80d2
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -225,8 +223,8 @@ func (m *AccessPackageSubject) GetSubjectLifecycle()(*AccessPackageSubjectLifecy
     }
     return nil
 }
-// GetType gets the type property value. The resource type of the subject.
-func (m *AccessPackageSubject) GetType()(*string) {
+// GetTypeEscaped gets the type property value. The resource type of the subject.
+func (m *AccessPackageSubject) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -298,7 +296,7 @@ func (m *AccessPackageSubject) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
-        err = writer.WriteStringValue("type", m.GetType())
+        err = writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -368,8 +366,8 @@ func (m *AccessPackageSubject) SetSubjectLifecycle(value *AccessPackageSubjectLi
         panic(err)
     }
 }
-// SetType sets the type property value. The resource type of the subject.
-func (m *AccessPackageSubject) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. The resource type of the subject.
+func (m *AccessPackageSubject) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -388,7 +386,7 @@ type AccessPackageSubjectable interface {
     GetOnPremisesSecurityIdentifier()(*string)
     GetPrincipalName()(*string)
     GetSubjectLifecycle()(*AccessPackageSubjectLifecycle)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     SetAltSecId(value *string)()
     SetConnectedOrganization(value ConnectedOrganizationable)()
     SetConnectedOrganizationId(value *string)()
@@ -398,5 +396,5 @@ type AccessPackageSubjectable interface {
     SetOnPremisesSecurityIdentifier(value *string)()
     SetPrincipalName(value *string)()
     SetSubjectLifecycle(value *AccessPackageSubjectLifecycle)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
 }

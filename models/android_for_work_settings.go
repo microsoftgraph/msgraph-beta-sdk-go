@@ -8,8 +8,6 @@ import (
 // AndroidForWorkSettings settings for Android For Work.
 type AndroidForWorkSettings struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAndroidForWorkSettings instantiates a new androidForWorkSettings and sets the default values.
 func NewAndroidForWorkSettings()(*AndroidForWorkSettings) {
