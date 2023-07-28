@@ -8,8 +8,6 @@ import (
 // Identity 
 type Identity struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewIdentity instantiates a new identity and sets the default values.
 func NewIdentity()(*Identity) {
@@ -31,14 +29,14 @@ func (m *Identity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
             return err
         }
         if val != nil {
-            m.SetType(val.(*IdentityType))
+            m.SetTypeEscaped(val.(*IdentityType))
         }
         return nil
     }
     return res
 }
-// GetType gets the type property value. The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.
-func (m *Identity) GetType()(*IdentityType) {
+// GetTypeEscaped gets the type property value. The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.
+func (m *Identity) GetTypeEscaped()(*IdentityType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -54,8 +52,8 @@ func (m *Identity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if err != nil {
         return err
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -63,8 +61,8 @@ func (m *Identity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetType sets the type property value. The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.
-func (m *Identity) SetType(value *IdentityType)() {
+// SetTypeEscaped sets the type property value. The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.
+func (m *Identity) SetTypeEscaped(value *IdentityType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -74,6 +72,6 @@ func (m *Identity) SetType(value *IdentityType)() {
 type Identityable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetType()(*IdentityType)
-    SetType(value *IdentityType)()
+    GetTypeEscaped()(*IdentityType)
+    SetTypeEscaped(value *IdentityType)()
 }

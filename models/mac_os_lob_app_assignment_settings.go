@@ -24,16 +24,6 @@ func CreateMacOsLobAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOsLobAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileAppAssignmentSettings.GetFieldDeserializers()
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["uninstallOnDeviceRemoval"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -46,18 +36,7 @@ func (m *MacOsLobAppAssignmentSettings) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *MacOsLobAppAssignmentSettings) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetUninstallOnDeviceRemoval gets the uninstallOnDeviceRemoval property value. When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune.
+// GetUninstallOnDeviceRemoval gets the uninstallOnDeviceRemoval property value. Whether or not to uninstall the app when device is removed from Intune.
 func (m *MacOsLobAppAssignmentSettings) GetUninstallOnDeviceRemoval()(*bool) {
     val, err := m.GetBackingStore().Get("uninstallOnDeviceRemoval")
     if err != nil {
@@ -75,12 +54,6 @@ func (m *MacOsLobAppAssignmentSettings) Serialize(writer i878a80d2330e89d2689638
         return err
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteBoolValue("uninstallOnDeviceRemoval", m.GetUninstallOnDeviceRemoval())
         if err != nil {
             return err
@@ -88,14 +61,7 @@ func (m *MacOsLobAppAssignmentSettings) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *MacOsLobAppAssignmentSettings) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetUninstallOnDeviceRemoval sets the uninstallOnDeviceRemoval property value. When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune.
+// SetUninstallOnDeviceRemoval sets the uninstallOnDeviceRemoval property value. Whether or not to uninstall the app when device is removed from Intune.
 func (m *MacOsLobAppAssignmentSettings) SetUninstallOnDeviceRemoval(value *bool)() {
     err := m.GetBackingStore().Set("uninstallOnDeviceRemoval", value)
     if err != nil {
@@ -106,8 +72,6 @@ func (m *MacOsLobAppAssignmentSettings) SetUninstallOnDeviceRemoval(value *bool)
 type MacOsLobAppAssignmentSettingsable interface {
     MobileAppAssignmentSettingsable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOdataType()(*string)
     GetUninstallOnDeviceRemoval()(*bool)
-    SetOdataType(value *string)()
     SetUninstallOnDeviceRemoval(value *bool)()
 }

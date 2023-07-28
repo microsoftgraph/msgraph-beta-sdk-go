@@ -7,8 +7,6 @@ import (
 // FilterOperatorSchema 
 type FilterOperatorSchema struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewFilterOperatorSchema instantiates a new filterOperatorSchema and sets the default values.
 func NewFilterOperatorSchema()(*FilterOperatorSchema) {

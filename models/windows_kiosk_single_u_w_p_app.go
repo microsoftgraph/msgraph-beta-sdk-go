@@ -7,8 +7,6 @@ import (
 // WindowsKioskSingleUWPApp the class used to identify the UWP app info for the kiosk configuration
 type WindowsKioskSingleUWPApp struct {
     WindowsKioskAppConfiguration
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsKioskSingleUWPApp instantiates a new windowsKioskSingleUWPApp and sets the default values.
 func NewWindowsKioskSingleUWPApp()(*WindowsKioskSingleUWPApp) {

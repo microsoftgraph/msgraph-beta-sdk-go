@@ -8,8 +8,6 @@ import (
 // LandingPage 
 type LandingPage struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewLandingPage instantiates a new landingPage and sets the default values.
 func NewLandingPage()(*LandingPage) {

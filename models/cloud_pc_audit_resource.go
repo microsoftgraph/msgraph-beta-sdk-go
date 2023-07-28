@@ -104,7 +104,7 @@ func (m *CloudPcAuditResource) GetFieldDeserializers()(map[string]func(i878a80d2
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -143,8 +143,8 @@ func (m *CloudPcAuditResource) GetResourceId()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The type of the audit resource.
-func (m *CloudPcAuditResource) GetType()(*string) {
+// GetTypeEscaped gets the type property value. The type of the audit resource.
+func (m *CloudPcAuditResource) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -187,7 +187,7 @@ func (m *CloudPcAuditResource) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -239,8 +239,8 @@ func (m *CloudPcAuditResource) SetResourceId(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type of the audit resource.
-func (m *CloudPcAuditResource) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. The type of the audit resource.
+func (m *CloudPcAuditResource) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -256,11 +256,11 @@ type CloudPcAuditResourceable interface {
     GetModifiedProperties()([]CloudPcAuditPropertyable)
     GetOdataType()(*string)
     GetResourceId()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDisplayName(value *string)()
     SetModifiedProperties(value []CloudPcAuditPropertyable)()
     SetOdataType(value *string)()
     SetResourceId(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
 }

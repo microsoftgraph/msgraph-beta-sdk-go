@@ -8,8 +8,6 @@ import (
 // TriggerAndScopeBasedConditions 
 type TriggerAndScopeBasedConditions struct {
     WorkflowExecutionConditions
-    // The OdataType property
-    OdataType *string
 }
 // NewTriggerAndScopeBasedConditions instantiates a new triggerAndScopeBasedConditions and sets the default values.
 func NewTriggerAndScopeBasedConditions()(*TriggerAndScopeBasedConditions) {

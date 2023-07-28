@@ -7,8 +7,6 @@ import (
 // WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary contains properties for the deployment summary of a WindowsDefenderApplicationControl supplemental policy.
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary instantiates a new windowsDefenderApplicationControlSupplementalPolicyDeploymentSummary and sets the default values.
 func NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary()(*WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) {

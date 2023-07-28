@@ -8,8 +8,6 @@ import (
 // DeviceManagementDomainJoinConnector a Domain Join Connector is a connector that is responsible to allocate (and delete) machine account blobs
 type DeviceManagementDomainJoinConnector struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementDomainJoinConnector instantiates a new deviceManagementDomainJoinConnector and sets the default values.
 func NewDeviceManagementDomainJoinConnector()(*DeviceManagementDomainJoinConnector) {

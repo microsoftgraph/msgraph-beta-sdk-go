@@ -7,8 +7,6 @@ import (
 // DeviceManagementIntentAssignment intent assignment entity
 type DeviceManagementIntentAssignment struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementIntentAssignment instantiates a new deviceManagementIntentAssignment and sets the default values.
 func NewDeviceManagementIntentAssignment()(*DeviceManagementIntentAssignment) {

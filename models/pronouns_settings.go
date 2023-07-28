@@ -7,8 +7,6 @@ import (
 // PronounsSettings 
 type PronounsSettings struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewPronounsSettings instantiates a new pronounsSettings and sets the default values.
 func NewPronounsSettings()(*PronounsSettings) {

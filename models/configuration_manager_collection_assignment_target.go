@@ -7,8 +7,6 @@ import (
 // ConfigurationManagerCollectionAssignmentTarget represents an assignment to a Configuration Manager Collection.
 type ConfigurationManagerCollectionAssignmentTarget struct {
     DeviceAndAppManagementAssignmentTarget
-    // The OdataType property
-    OdataType *string
 }
 // NewConfigurationManagerCollectionAssignmentTarget instantiates a new configurationManagerCollectionAssignmentTarget and sets the default values.
 func NewConfigurationManagerCollectionAssignmentTarget()(*ConfigurationManagerCollectionAssignmentTarget) {

@@ -7,8 +7,6 @@ import (
 // CaseHoldOperation 
 type CaseHoldOperation struct {
     CaseOperation
-    // The OdataType property
-    OdataType *string
 }
 // NewCaseHoldOperation instantiates a new caseHoldOperation and sets the default values.
 func NewCaseHoldOperation()(*CaseHoldOperation) {

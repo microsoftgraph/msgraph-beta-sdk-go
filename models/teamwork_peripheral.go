@@ -7,8 +7,6 @@ import (
 // TeamworkPeripheral 
 type TeamworkPeripheral struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewTeamworkPeripheral instantiates a new teamworkPeripheral and sets the default values.
 func NewTeamworkPeripheral()(*TeamworkPeripheral) {

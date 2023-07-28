@@ -7,8 +7,6 @@ import (
 // DeviceManagementConfigurationPolicyAssignment the DeviceManagementConfigurationPolicyAssignment entity assigns a specific DeviceManagementConfigurationPolicy to an AAD group.
 type DeviceManagementConfigurationPolicyAssignment struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementConfigurationPolicyAssignment instantiates a new deviceManagementConfigurationPolicyAssignment and sets the default values.
 func NewDeviceManagementConfigurationPolicyAssignment()(*DeviceManagementConfigurationPolicyAssignment) {

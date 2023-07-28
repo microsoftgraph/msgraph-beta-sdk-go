@@ -7,8 +7,6 @@ import (
 // CredentialUserRegistrationDetails 
 type CredentialUserRegistrationDetails struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewCredentialUserRegistrationDetails instantiates a new credentialUserRegistrationDetails and sets the default values.
 func NewCredentialUserRegistrationDetails()(*CredentialUserRegistrationDetails) {

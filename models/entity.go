@@ -420,6 +420,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewBaseItem(), nil
                     case "#microsoft.graph.baseItemVersion":
                         return NewBaseItemVersion(), nil
+                    case "#microsoft.graph.baseSitePage":
+                        return NewBaseSitePage(), nil
                     case "#microsoft.graph.bitlocker":
                         return NewBitlocker(), nil
                     case "#microsoft.graph.bitlockerRecoveryKey":

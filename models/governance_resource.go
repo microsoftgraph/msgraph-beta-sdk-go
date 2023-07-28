@@ -8,8 +8,6 @@ import (
 // GovernanceResource 
 type GovernanceResource struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewGovernanceResource instantiates a new governanceResource and sets the default values.
 func NewGovernanceResource()(*GovernanceResource) {
@@ -177,7 +175,7 @@ func (m *GovernanceResource) GetFieldDeserializers()(map[string]func(i878a80d233
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -271,8 +269,8 @@ func (m *GovernanceResource) GetStatus()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
-func (m *GovernanceResource) GetType()(*string) {
+// GetTypeEscaped gets the type property value. Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
+func (m *GovernanceResource) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -373,7 +371,7 @@ func (m *GovernanceResource) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
-        err = writer.WriteStringValue("type", m.GetType())
+        err = writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -450,8 +448,8 @@ func (m *GovernanceResource) SetStatus(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
-func (m *GovernanceResource) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
+func (m *GovernanceResource) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -471,7 +469,7 @@ type GovernanceResourceable interface {
     GetRoleDefinitions()([]GovernanceRoleDefinitionable)
     GetRoleSettings()([]GovernanceRoleSettingable)
     GetStatus()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     SetDisplayName(value *string)()
     SetExternalId(value *string)()
     SetParent(value GovernanceResourceable)()
@@ -482,5 +480,5 @@ type GovernanceResourceable interface {
     SetRoleDefinitions(value []GovernanceRoleDefinitionable)()
     SetRoleSettings(value []GovernanceRoleSettingable)()
     SetStatus(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
 }

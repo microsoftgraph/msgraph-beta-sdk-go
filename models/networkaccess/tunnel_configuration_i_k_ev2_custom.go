@@ -7,8 +7,6 @@ import (
 // TunnelConfigurationIKEv2Custom 
 type TunnelConfigurationIKEv2Custom struct {
     TunnelConfiguration
-    // The OdataType property
-    OdataType *string
 }
 // NewTunnelConfigurationIKEv2Custom instantiates a new tunnelConfigurationIKEv2Custom and sets the default values.
 func NewTunnelConfigurationIKEv2Custom()(*TunnelConfigurationIKEv2Custom) {

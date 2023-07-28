@@ -7,8 +7,6 @@ import (
 // LearningProvider 
 type LearningProvider struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewLearningProvider instantiates a new learningProvider and sets the default values.
 func NewLearningProvider()(*LearningProvider) {

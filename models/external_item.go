@@ -7,8 +7,6 @@ import (
 // ExternalItem 
 type ExternalItem struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewExternalItem instantiates a new externalItem and sets the default values.
 func NewExternalItem()(*ExternalItem) {

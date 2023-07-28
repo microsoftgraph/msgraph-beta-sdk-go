@@ -7,8 +7,6 @@ import (
 // WorkbookChartDataLabelFormat 
 type WorkbookChartDataLabelFormat struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWorkbookChartDataLabelFormat instantiates a new workbookChartDataLabelFormat and sets the default values.
 func NewWorkbookChartDataLabelFormat()(*WorkbookChartDataLabelFormat) {

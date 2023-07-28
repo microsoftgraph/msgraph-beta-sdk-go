@@ -7,8 +7,6 @@ import (
 // GroupPolicySettingMapping the Group Policy setting to MDM/Intune mapping.
 type GroupPolicySettingMapping struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewGroupPolicySettingMapping instantiates a new groupPolicySettingMapping and sets the default values.
 func NewGroupPolicySettingMapping()(*GroupPolicySettingMapping) {

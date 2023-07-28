@@ -93,6 +93,10 @@ func (m *InvitationItemRequestBuilder) Get(ctx context.Context, requestConfigura
 func (m *InvitationItemRequestBuilder) InvitedUser()(*ItemInvitedUserRequestBuilder) {
     return NewItemInvitedUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// InvitedUserSponsors provides operations to manage the invitedUserSponsors property of the microsoft.graph.invitation entity.
+func (m *InvitationItemRequestBuilder) InvitedUserSponsors()(*ItemInvitedUserSponsorsRequestBuilder) {
+    return NewItemInvitedUserSponsorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update entity in invitations
 func (m *InvitationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Invitationable, requestConfiguration *InvitationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Invitationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

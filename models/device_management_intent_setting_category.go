@@ -7,8 +7,6 @@ import (
 // DeviceManagementIntentSettingCategory entity representing an intent setting category
 type DeviceManagementIntentSettingCategory struct {
     DeviceManagementSettingCategory
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementIntentSettingCategory instantiates a new deviceManagementIntentSettingCategory and sets the default values.
 func NewDeviceManagementIntentSettingCategory()(*DeviceManagementIntentSettingCategory) {

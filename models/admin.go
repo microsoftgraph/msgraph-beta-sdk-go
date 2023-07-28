@@ -472,8 +472,6 @@ type Adminable interface {
 // AdminWindows 
 type AdminWindows struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAdminWindows instantiates a new adminWindows and sets the default values.
 func NewAdminWindows()(*AdminWindows) {

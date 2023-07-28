@@ -7,8 +7,6 @@ import (
 // WindowsKioskVisitor the class used to identify a visitor kiosk account
 type WindowsKioskVisitor struct {
     WindowsKioskUser
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsKioskVisitor instantiates a new windowsKioskVisitor and sets the default values.
 func NewWindowsKioskVisitor()(*WindowsKioskVisitor) {

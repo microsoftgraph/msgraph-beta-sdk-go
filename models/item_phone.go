@@ -61,7 +61,7 @@ func (m *ItemPhone) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
             return err
         }
         if val != nil {
-            m.SetType(val.(*PhoneType))
+            m.SetTypeEscaped(val.(*PhoneType))
         }
         return nil
     }
@@ -78,8 +78,8 @@ func (m *ItemPhone) GetNumber()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *ItemPhone) GetType()(*PhoneType) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *ItemPhone) GetTypeEscaped()(*PhoneType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -107,8 +107,8 @@ func (m *ItemPhone) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -130,8 +130,8 @@ func (m *ItemPhone) SetNumber(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *ItemPhone) SetType(value *PhoneType)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *ItemPhone) SetTypeEscaped(value *PhoneType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -143,8 +143,8 @@ type ItemPhoneable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
     GetNumber()(*string)
-    GetType()(*PhoneType)
+    GetTypeEscaped()(*PhoneType)
     SetDisplayName(value *string)()
     SetNumber(value *string)()
-    SetType(value *PhoneType)()
+    SetTypeEscaped(value *PhoneType)()
 }

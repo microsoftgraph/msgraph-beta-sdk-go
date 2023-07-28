@@ -88,7 +88,7 @@ func (m *EducationFileSynchronizationVerificationMessage) GetFieldDeserializers(
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -116,8 +116,8 @@ func (m *EducationFileSynchronizationVerificationMessage) GetOdataType()(*string
     }
     return nil
 }
-// GetType gets the type property value. Type of the message. Possible values are: error, warning, information.
-func (m *EducationFileSynchronizationVerificationMessage) GetType()(*string) {
+// GetTypeEscaped gets the type property value. Type of the message. Possible values are: error, warning, information.
+func (m *EducationFileSynchronizationVerificationMessage) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -148,7 +148,7 @@ func (m *EducationFileSynchronizationVerificationMessage) Serialize(writer i878a
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -193,8 +193,8 @@ func (m *EducationFileSynchronizationVerificationMessage) SetOdataType(value *st
         panic(err)
     }
 }
-// SetType sets the type property value. Type of the message. Possible values are: error, warning, information.
-func (m *EducationFileSynchronizationVerificationMessage) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. Type of the message. Possible values are: error, warning, information.
+func (m *EducationFileSynchronizationVerificationMessage) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -209,10 +209,10 @@ type EducationFileSynchronizationVerificationMessageable interface {
     GetDescription()(*string)
     GetFileName()(*string)
     GetOdataType()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDescription(value *string)()
     SetFileName(value *string)()
     SetOdataType(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
 }

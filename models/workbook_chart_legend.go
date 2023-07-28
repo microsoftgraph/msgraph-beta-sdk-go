@@ -32,16 +32,6 @@ func (m *WorkbookChartLegend) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["overlay"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -82,17 +72,6 @@ func (m *WorkbookChartLegend) GetFormat()(WorkbookChartLegendFormatable) {
     }
     if val != nil {
         return val.(WorkbookChartLegendFormatable)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *WorkbookChartLegend) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -142,12 +121,6 @@ func (m *WorkbookChartLegend) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteBoolValue("overlay", m.GetOverlay())
         if err != nil {
             return err
@@ -170,13 +143,6 @@ func (m *WorkbookChartLegend) Serialize(writer i878a80d2330e89d26896388a3f487eef
 // SetFormat sets the format property value. Represents the formatting of a chart legend, which includes fill and font formatting. Read-only.
 func (m *WorkbookChartLegend) SetFormat(value WorkbookChartLegendFormatable)() {
     err := m.GetBackingStore().Set("format", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *WorkbookChartLegend) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -207,12 +173,10 @@ type WorkbookChartLegendable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetFormat()(WorkbookChartLegendFormatable)
-    GetOdataType()(*string)
     GetOverlay()(*bool)
     GetPosition()(*string)
     GetVisible()(*bool)
     SetFormat(value WorkbookChartLegendFormatable)()
-    SetOdataType(value *string)()
     SetOverlay(value *bool)()
     SetPosition(value *string)()
     SetVisible(value *bool)()

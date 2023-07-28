@@ -7,8 +7,6 @@ import (
 // AssociatedTeamInfo 
 type AssociatedTeamInfo struct {
     TeamInfo
-    // The OdataType property
-    OdataType *string
 }
 // NewAssociatedTeamInfo instantiates a new associatedTeamInfo and sets the default values.
 func NewAssociatedTeamInfo()(*AssociatedTeamInfo) {

@@ -7,8 +7,6 @@ import (
 // OmaSettingBoolean oMA Settings Boolean definition.
 type OmaSettingBoolean struct {
     OmaSetting
-    // The OdataType property
-    OdataType *string
 }
 // NewOmaSettingBoolean instantiates a new omaSettingBoolean and sets the default values.
 func NewOmaSettingBoolean()(*OmaSettingBoolean) {

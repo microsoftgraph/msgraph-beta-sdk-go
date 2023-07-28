@@ -7,8 +7,6 @@ import (
 // Win32LobAppFileSystemRule a complex type to store file or folder rule data for a Win32 LOB app.
 type Win32LobAppFileSystemRule struct {
     Win32LobAppRule
-    // The OdataType property
-    OdataType *string
 }
 // NewWin32LobAppFileSystemRule instantiates a new win32LobAppFileSystemRule and sets the default values.
 func NewWin32LobAppFileSystemRule()(*Win32LobAppFileSystemRule) {

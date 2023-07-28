@@ -7,8 +7,6 @@ import (
 // ItemInsights 
 type ItemInsights struct {
     OfficeGraphInsights
-    // The OdataType property
-    OdataType *string
 }
 // NewItemInsights instantiates a new itemInsights and sets the default values.
 func NewItemInsights()(*ItemInsights) {

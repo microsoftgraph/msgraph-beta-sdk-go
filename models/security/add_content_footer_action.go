@@ -7,8 +7,6 @@ import (
 // AddContentFooterAction 
 type AddContentFooterAction struct {
     InformationProtectionAction
-    // The OdataType property
-    OdataType *string
 }
 // NewAddContentFooterAction instantiates a new addContentFooterAction and sets the default values.
 func NewAddContentFooterAction()(*AddContentFooterAction) {

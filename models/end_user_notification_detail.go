@@ -7,8 +7,6 @@ import (
 // EndUserNotificationDetail 
 type EndUserNotificationDetail struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewEndUserNotificationDetail instantiates a new endUserNotificationDetail and sets the default values.
 func NewEndUserNotificationDetail()(*EndUserNotificationDetail) {

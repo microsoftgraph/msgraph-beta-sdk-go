@@ -83,16 +83,6 @@ func (m *ApplyLabelAction) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["responsibleSensitiveTypeIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("uuid")
         if err != nil {
@@ -119,17 +109,6 @@ func (m *ApplyLabelAction) GetLabel()(LabelDetailsable) {
     }
     if val != nil {
         return val.(LabelDetailsable)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *ApplyLabelAction) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -175,12 +154,6 @@ func (m *ApplyLabelAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetResponsibleSensitiveTypeIds() != nil {
         err = writer.WriteCollectionOfUUIDValues("responsibleSensitiveTypeIds", m.GetResponsibleSensitiveTypeIds())
         if err != nil {
@@ -210,13 +183,6 @@ func (m *ApplyLabelAction) SetLabel(value LabelDetailsable)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *ApplyLabelAction) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetResponsibleSensitiveTypeIds sets the responsibleSensitiveTypeIds property value. If the label was the result of an automatic classification, supply the list of sensitive info type GUIDs that resulted in the returned label.
 func (m *ApplyLabelAction) SetResponsibleSensitiveTypeIds(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     err := m.GetBackingStore().Set("responsibleSensitiveTypeIds", value)
@@ -231,11 +197,9 @@ type ApplyLabelActionable interface {
     GetActions()([]InformationProtectionActionable)
     GetActionSource()(*ActionSource)
     GetLabel()(LabelDetailsable)
-    GetOdataType()(*string)
     GetResponsibleSensitiveTypeIds()([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     SetActions(value []InformationProtectionActionable)()
     SetActionSource(value *ActionSource)()
     SetLabel(value LabelDetailsable)()
-    SetOdataType(value *string)()
     SetResponsibleSensitiveTypeIds(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
 }

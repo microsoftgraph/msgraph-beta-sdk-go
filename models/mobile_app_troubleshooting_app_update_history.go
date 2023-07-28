@@ -7,8 +7,6 @@ import (
 // MobileAppTroubleshootingAppUpdateHistory history Item contained in the Mobile App Troubleshooting Event.
 type MobileAppTroubleshootingAppUpdateHistory struct {
     MobileAppTroubleshootingHistoryItem
-    // The OdataType property
-    OdataType *string
 }
 // NewMobileAppTroubleshootingAppUpdateHistory instantiates a new mobileAppTroubleshootingAppUpdateHistory and sets the default values.
 func NewMobileAppTroubleshootingAppUpdateHistory()(*MobileAppTroubleshootingAppUpdateHistory) {

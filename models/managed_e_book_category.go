@@ -8,8 +8,6 @@ import (
 // ManagedEBookCategory contains properties for a single Intune eBook category.
 type ManagedEBookCategory struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewManagedEBookCategory instantiates a new managedEBookCategory and sets the default values.
 func NewManagedEBookCategory()(*ManagedEBookCategory) {

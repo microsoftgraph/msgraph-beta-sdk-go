@@ -7,8 +7,6 @@ import (
 // Site 
 type Site struct {
     BaseItem
-    // The OdataType property
-    OdataType *string
 }
 // NewSite instantiates a new site and sets the default values.
 func NewSite()(*Site) {
@@ -287,15 +285,15 @@ func (m *Site) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         return nil
     }
     res["pages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateSitePageFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateBaseSitePageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SitePageable, len(val))
+            res := make([]BaseSitePageable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(SitePageable)
+                    res[i] = v.(BaseSitePageable)
                 }
             }
             m.SetPages(res)
@@ -432,13 +430,13 @@ func (m *Site) GetOperations()([]RichLongRunningOperationable) {
     return nil
 }
 // GetPages gets the pages property value. The collection of pages in the baseSitePages list in this site.
-func (m *Site) GetPages()([]SitePageable) {
+func (m *Site) GetPages()([]BaseSitePageable) {
     val, err := m.GetBackingStore().Get("pages")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]SitePageable)
+        return val.([]BaseSitePageable)
     }
     return nil
 }
@@ -788,7 +786,7 @@ func (m *Site) SetOperations(value []RichLongRunningOperationable)() {
     }
 }
 // SetPages sets the pages property value. The collection of pages in the baseSitePages list in this site.
-func (m *Site) SetPages(value []SitePageable)() {
+func (m *Site) SetPages(value []BaseSitePageable)() {
     err := m.GetBackingStore().Set("pages", value)
     if err != nil {
         panic(err)
@@ -853,7 +851,7 @@ type Siteable interface {
     GetLists()([]Listable)
     GetOnenote()(Onenoteable)
     GetOperations()([]RichLongRunningOperationable)
-    GetPages()([]SitePageable)
+    GetPages()([]BaseSitePageable)
     GetPermissions()([]Permissionable)
     GetRoot()(Rootable)
     GetSettings()(SiteSettingsable)
@@ -873,7 +871,7 @@ type Siteable interface {
     SetLists(value []Listable)()
     SetOnenote(value Onenoteable)()
     SetOperations(value []RichLongRunningOperationable)()
-    SetPages(value []SitePageable)()
+    SetPages(value []BaseSitePageable)()
     SetPermissions(value []Permissionable)()
     SetRoot(value Rootable)()
     SetSettings(value SiteSettingsable)()

@@ -8,8 +8,6 @@ import (
 // ZebraFotaConnector the Zebra FOTA connector entity that represents the tenant's authorization status for Intune to call Zebra Update Services.
 type ZebraFotaConnector struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewZebraFotaConnector instantiates a new zebraFotaConnector and sets the default values.
 func NewZebraFotaConnector()(*ZebraFotaConnector) {

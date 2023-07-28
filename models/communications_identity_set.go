@@ -139,16 +139,6 @@ func (m *CommunicationsIdentitySet) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["onPremises"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentityFromDiscriminatorValue)
         if err != nil {
@@ -179,17 +169,6 @@ func (m *CommunicationsIdentitySet) GetGuest()(Identityable) {
     }
     if val != nil {
         return val.(Identityable)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *CommunicationsIdentitySet) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -259,12 +238,6 @@ func (m *CommunicationsIdentitySet) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("onPremises", m.GetOnPremises())
         if err != nil {
             return err
@@ -320,13 +293,6 @@ func (m *CommunicationsIdentitySet) SetGuest(value Identityable)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *CommunicationsIdentitySet) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOnPremises sets the onPremises property value. The Skype for Business On-Premises user associated with this action.
 func (m *CommunicationsIdentitySet) SetOnPremises(value Identityable)() {
     err := m.GetBackingStore().Set("onPremises", value)
@@ -351,7 +317,6 @@ type CommunicationsIdentitySetable interface {
     GetEncrypted()(Identityable)
     GetEndpointType()(*EndpointType)
     GetGuest()(Identityable)
-    GetOdataType()(*string)
     GetOnPremises()(Identityable)
     GetPhone()(Identityable)
     SetApplicationInstance(value Identityable)()
@@ -360,7 +325,6 @@ type CommunicationsIdentitySetable interface {
     SetEncrypted(value Identityable)()
     SetEndpointType(value *EndpointType)()
     SetGuest(value Identityable)()
-    SetOdataType(value *string)()
     SetOnPremises(value Identityable)()
     SetPhone(value Identityable)()
 }

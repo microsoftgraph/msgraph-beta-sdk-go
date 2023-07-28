@@ -8,8 +8,6 @@ import (
 // NotifyUserAction 
 type NotifyUserAction struct {
     DlpActionInfo
-    // The OdataType property
-    OdataType *string
 }
 // NewNotifyUserAction instantiates a new notifyUserAction and sets the default values.
 func NewNotifyUserAction()(*NotifyUserAction) {

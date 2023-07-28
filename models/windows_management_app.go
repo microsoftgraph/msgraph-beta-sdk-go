@@ -7,8 +7,6 @@ import (
 // WindowsManagementApp windows management app entity.
 type WindowsManagementApp struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsManagementApp instantiates a new windowsManagementApp and sets the default values.
 func NewWindowsManagementApp()(*WindowsManagementApp) {

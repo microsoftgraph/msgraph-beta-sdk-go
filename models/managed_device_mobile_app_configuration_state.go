@@ -7,8 +7,6 @@ import (
 // ManagedDeviceMobileAppConfigurationState managed Device Mobile App Configuration State for a given device.
 type ManagedDeviceMobileAppConfigurationState struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewManagedDeviceMobileAppConfigurationState instantiates a new managedDeviceMobileAppConfigurationState and sets the default values.
 func NewManagedDeviceMobileAppConfigurationState()(*ManagedDeviceMobileAppConfigurationState) {

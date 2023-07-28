@@ -7,8 +7,6 @@ import (
 // RbacApplication 
 type RbacApplication struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewRbacApplication instantiates a new rbacApplication and sets the default values.
 func NewRbacApplication()(*RbacApplication) {

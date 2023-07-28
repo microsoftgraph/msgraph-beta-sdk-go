@@ -9,8 +9,6 @@ import (
 // GroupPolicyMigrationReport the Group Policy migration report.
 type GroupPolicyMigrationReport struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewGroupPolicyMigrationReport instantiates a new groupPolicyMigrationReport and sets the default values.
 func NewGroupPolicyMigrationReport()(*GroupPolicyMigrationReport) {

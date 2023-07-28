@@ -7,8 +7,6 @@ import (
 // UserAnalytics 
 type UserAnalytics struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewUserAnalytics instantiates a new userAnalytics and sets the default values.
 func NewUserAnalytics()(*UserAnalytics) {

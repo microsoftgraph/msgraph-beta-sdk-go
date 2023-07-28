@@ -7,8 +7,6 @@ import (
 // TenantSetupInfo 
 type TenantSetupInfo struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewTenantSetupInfo instantiates a new tenantSetupInfo and sets the default values.
 func NewTenantSetupInfo()(*TenantSetupInfo) {

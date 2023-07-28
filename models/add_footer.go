@@ -7,8 +7,6 @@ import (
 // AddFooter 
 type AddFooter struct {
     MarkContent
-    // The OdataType property
-    OdataType *string
 }
 // NewAddFooter instantiates a new addFooter and sets the default values.
 func NewAddFooter()(*AddFooter) {

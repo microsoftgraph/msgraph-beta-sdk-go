@@ -8,8 +8,6 @@ import (
 // CloudAppSecurityProfile 
 type CloudAppSecurityProfile struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewCloudAppSecurityProfile instantiates a new cloudAppSecurityProfile and sets the default values.
 func NewCloudAppSecurityProfile()(*CloudAppSecurityProfile) {
@@ -242,7 +240,7 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(i878a8
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -368,8 +366,8 @@ func (m *CloudAppSecurityProfile) GetTags()([]string) {
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *CloudAppSecurityProfile) GetType()(*string) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *CloudAppSecurityProfile) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -488,7 +486,7 @@ func (m *CloudAppSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     {
-        err = writer.WriteStringValue("type", m.GetType())
+        err = writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -606,8 +604,8 @@ func (m *CloudAppSecurityProfile) SetTags(value []string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *CloudAppSecurityProfile) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *CloudAppSecurityProfile) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -639,7 +637,7 @@ type CloudAppSecurityProfileable interface {
     GetPublisher()(*string)
     GetRiskScore()(*string)
     GetTags()([]string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     GetVendorInformation()(SecurityVendorInformationable)
     SetAzureSubscriptionId(value *string)()
     SetAzureTenantId(value *string)()
@@ -656,6 +654,6 @@ type CloudAppSecurityProfileable interface {
     SetPublisher(value *string)()
     SetRiskScore(value *string)()
     SetTags(value []string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
     SetVendorInformation(value SecurityVendorInformationable)()
 }

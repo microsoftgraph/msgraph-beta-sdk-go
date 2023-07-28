@@ -98,7 +98,7 @@ func (m *GovernanceNotificationTemplate) GetFieldDeserializers()(map[string]func
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -147,8 +147,8 @@ func (m *GovernanceNotificationTemplate) GetSource()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *GovernanceNotificationTemplate) GetType()(*string) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *GovernanceNotificationTemplate) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -196,7 +196,7 @@ func (m *GovernanceNotificationTemplate) Serialize(writer i878a80d2330e89d268963
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -254,8 +254,8 @@ func (m *GovernanceNotificationTemplate) SetSource(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *GovernanceNotificationTemplate) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *GovernanceNotificationTemplate) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -278,13 +278,13 @@ type GovernanceNotificationTemplateable interface {
     GetId()(*string)
     GetOdataType()(*string)
     GetSource()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     GetVersion()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCulture(value *string)()
     SetId(value *string)()
     SetOdataType(value *string)()
     SetSource(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
     SetVersion(value *string)()
 }

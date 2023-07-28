@@ -7,8 +7,6 @@ import (
 // DefaultDeviceCompliancePolicy default device compliance policy rules that are enforced account wide.
 type DefaultDeviceCompliancePolicy struct {
     DeviceCompliancePolicy
-    // The OdataType property
-    OdataType *string
 }
 // NewDefaultDeviceCompliancePolicy instantiates a new defaultDeviceCompliancePolicy and sets the default values.
 func NewDefaultDeviceCompliancePolicy()(*DefaultDeviceCompliancePolicy) {

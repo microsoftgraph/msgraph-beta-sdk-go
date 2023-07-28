@@ -7,8 +7,6 @@ import (
 // IpSubnet 
 type IpSubnet struct {
     RuleDestination
-    // The OdataType property
-    OdataType *string
 }
 // NewIpSubnet instantiates a new ipSubnet and sets the default values.
 func NewIpSubnet()(*IpSubnet) {

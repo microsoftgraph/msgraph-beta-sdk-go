@@ -7,8 +7,6 @@ import (
 // EdiscoveryFile 
 type EdiscoveryFile struct {
     File
-    // The OdataType property
-    OdataType *string
 }
 // NewEdiscoveryFile instantiates a new ediscoveryFile and sets the default values.
 func NewEdiscoveryFile()(*EdiscoveryFile) {

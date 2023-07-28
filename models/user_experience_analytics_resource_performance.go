@@ -7,8 +7,6 @@ import (
 // UserExperienceAnalyticsResourcePerformance the user experience analytics resource performance entity.
 type UserExperienceAnalyticsResourcePerformance struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewUserExperienceAnalyticsResourcePerformance instantiates a new userExperienceAnalyticsResourcePerformance and sets the default values.
 func NewUserExperienceAnalyticsResourcePerformance()(*UserExperienceAnalyticsResourcePerformance) {

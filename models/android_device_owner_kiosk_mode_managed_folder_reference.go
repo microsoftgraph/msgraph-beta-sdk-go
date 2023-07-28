@@ -44,16 +44,6 @@ func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) GetFieldDeserializer
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetFolderIdentifier gets the folderIdentifier property value. Unique identifier for the folder
@@ -70,17 +60,6 @@ func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) GetFolderIdentifier(
 // GetFolderName gets the folderName property value. Name of the folder
 func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) GetFolderName()(*string) {
     val, err := m.GetBackingStore().Get("folderName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -107,12 +86,6 @@ func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) Serialize(writer i87
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetFolderIdentifier sets the folderIdentifier property value. Unique identifier for the folder
@@ -129,21 +102,12 @@ func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) SetFolderName(value 
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // AndroidDeviceOwnerKioskModeManagedFolderReferenceable 
 type AndroidDeviceOwnerKioskModeManagedFolderReferenceable interface {
     AndroidDeviceOwnerKioskModeHomeScreenItemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetFolderIdentifier()(*string)
     GetFolderName()(*string)
-    GetOdataType()(*string)
     SetFolderIdentifier(value *string)()
     SetFolderName(value *string)()
-    SetOdataType(value *string)()
 }

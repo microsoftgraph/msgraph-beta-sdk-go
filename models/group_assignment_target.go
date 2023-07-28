@@ -7,8 +7,6 @@ import (
 // GroupAssignmentTarget represents an assignment to a group.
 type GroupAssignmentTarget struct {
     DeviceAndAppManagementAssignmentTarget
-    // The OdataType property
-    OdataType *string
 }
 // NewGroupAssignmentTarget instantiates a new groupAssignmentTarget and sets the default values.
 func NewGroupAssignmentTarget()(*GroupAssignmentTarget) {

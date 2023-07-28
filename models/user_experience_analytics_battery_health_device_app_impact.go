@@ -7,8 +7,6 @@ import (
 // UserExperienceAnalyticsBatteryHealthDeviceAppImpact the user experience analytics battery health device app impact entity contains battery usage related information at an app level for a given device.
 type UserExperienceAnalyticsBatteryHealthDeviceAppImpact struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewUserExperienceAnalyticsBatteryHealthDeviceAppImpact instantiates a new userExperienceAnalyticsBatteryHealthDeviceAppImpact and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthDeviceAppImpact()(*UserExperienceAnalyticsBatteryHealthDeviceAppImpact) {

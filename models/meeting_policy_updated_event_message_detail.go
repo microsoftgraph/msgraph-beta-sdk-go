@@ -7,8 +7,6 @@ import (
 // MeetingPolicyUpdatedEventMessageDetail 
 type MeetingPolicyUpdatedEventMessageDetail struct {
     EventMessageDetail
-    // The OdataType property
-    OdataType *string
 }
 // NewMeetingPolicyUpdatedEventMessageDetail instantiates a new meetingPolicyUpdatedEventMessageDetail and sets the default values.
 func NewMeetingPolicyUpdatedEventMessageDetail()(*MeetingPolicyUpdatedEventMessageDetail) {

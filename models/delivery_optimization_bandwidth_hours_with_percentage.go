@@ -7,8 +7,6 @@ import (
 // DeliveryOptimizationBandwidthHoursWithPercentage bandwidth limit as a percentage with business hours.
 type DeliveryOptimizationBandwidthHoursWithPercentage struct {
     DeliveryOptimizationBandwidth
-    // The OdataType property
-    OdataType *string
 }
 // NewDeliveryOptimizationBandwidthHoursWithPercentage instantiates a new deliveryOptimizationBandwidthHoursWithPercentage and sets the default values.
 func NewDeliveryOptimizationBandwidthHoursWithPercentage()(*DeliveryOptimizationBandwidthHoursWithPercentage) {

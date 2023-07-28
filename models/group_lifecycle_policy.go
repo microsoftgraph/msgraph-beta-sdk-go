@@ -7,8 +7,6 @@ import (
 // GroupLifecyclePolicy 
 type GroupLifecyclePolicy struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewGroupLifecyclePolicy instantiates a new groupLifecyclePolicy and sets the default values.
 func NewGroupLifecyclePolicy()(*GroupLifecyclePolicy) {

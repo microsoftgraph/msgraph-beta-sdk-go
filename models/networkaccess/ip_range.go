@@ -7,8 +7,6 @@ import (
 // IpRange 
 type IpRange struct {
     RuleDestination
-    // The OdataType property
-    OdataType *string
 }
 // NewIpRange instantiates a new ipRange and sets the default values.
 func NewIpRange()(*IpRange) {

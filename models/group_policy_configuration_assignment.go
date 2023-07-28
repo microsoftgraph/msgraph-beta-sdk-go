@@ -33,16 +33,6 @@ func (m *GroupPolicyConfigurationAssignment) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["target"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceAndAppManagementAssignmentTargetFromDiscriminatorValue)
         if err != nil {
@@ -63,17 +53,6 @@ func (m *GroupPolicyConfigurationAssignment) GetLastModifiedDateTime()(*i3360748
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *GroupPolicyConfigurationAssignment) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -101,12 +80,6 @@ func (m *GroupPolicyConfigurationAssignment) Serialize(writer i878a80d2330e89d26
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("target", m.GetTarget())
         if err != nil {
             return err
@@ -117,13 +90,6 @@ func (m *GroupPolicyConfigurationAssignment) Serialize(writer i878a80d2330e89d26
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyConfigurationAssignment) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *GroupPolicyConfigurationAssignment) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -140,9 +106,7 @@ type GroupPolicyConfigurationAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetOdataType()(*string)
     GetTarget()(DeviceAndAppManagementAssignmentTargetable)
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetOdataType(value *string)()
     SetTarget(value DeviceAndAppManagementAssignmentTargetable)()
 }

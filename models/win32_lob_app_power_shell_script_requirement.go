@@ -7,8 +7,6 @@ import (
 // Win32LobAppPowerShellScriptRequirement contains PowerShell script properties to detect a Win32 App
 type Win32LobAppPowerShellScriptRequirement struct {
     Win32LobAppRequirement
-    // The OdataType property
-    OdataType *string
 }
 // NewWin32LobAppPowerShellScriptRequirement instantiates a new win32LobAppPowerShellScriptRequirement and sets the default values.
 func NewWin32LobAppPowerShellScriptRequirement()(*Win32LobAppPowerShellScriptRequirement) {

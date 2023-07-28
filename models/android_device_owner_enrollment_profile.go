@@ -8,8 +8,6 @@ import (
 // AndroidDeviceOwnerEnrollmentProfile enrollment Profile used to enroll Android Enterprise devices using Google's Cloud Management.
 type AndroidDeviceOwnerEnrollmentProfile struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAndroidDeviceOwnerEnrollmentProfile instantiates a new androidDeviceOwnerEnrollmentProfile and sets the default values.
 func NewAndroidDeviceOwnerEnrollmentProfile()(*AndroidDeviceOwnerEnrollmentProfile) {

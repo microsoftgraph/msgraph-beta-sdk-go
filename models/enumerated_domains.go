@@ -7,8 +7,6 @@ import (
 // EnumeratedDomains 
 type EnumeratedDomains struct {
     ValidatingDomains
-    // The OdataType property
-    OdataType *string
 }
 // NewEnumeratedDomains instantiates a new enumeratedDomains and sets the default values.
 func NewEnumeratedDomains()(*EnumeratedDomains) {

@@ -7,8 +7,6 @@ import (
 // TemporaryAccessPassAuthenticationMethodConfiguration 
 type TemporaryAccessPassAuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
-    // The OdataType property
-    OdataType *string
 }
 // NewTemporaryAccessPassAuthenticationMethodConfiguration instantiates a new temporaryAccessPassAuthenticationMethodConfiguration and sets the default values.
 func NewTemporaryAccessPassAuthenticationMethodConfiguration()(*TemporaryAccessPassAuthenticationMethodConfiguration) {

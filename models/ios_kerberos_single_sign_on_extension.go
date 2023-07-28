@@ -7,8 +7,6 @@ import (
 // IosKerberosSingleSignOnExtension represents a Kerberos-type Single Sign-On extension profile for iOS devices.
 type IosKerberosSingleSignOnExtension struct {
     IosSingleSignOnExtension
-    // The OdataType property
-    OdataType *string
 }
 // NewIosKerberosSingleSignOnExtension instantiates a new iosKerberosSingleSignOnExtension and sets the default values.
 func NewIosKerberosSingleSignOnExtension()(*IosKerberosSingleSignOnExtension) {

@@ -8,8 +8,6 @@ import (
 // EmbeddedSIMActivationCodePool a pool represents a group of embedded SIM activation codes.
 type EmbeddedSIMActivationCodePool struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewEmbeddedSIMActivationCodePool instantiates a new embeddedSIMActivationCodePool and sets the default values.
 func NewEmbeddedSIMActivationCodePool()(*EmbeddedSIMActivationCodePool) {

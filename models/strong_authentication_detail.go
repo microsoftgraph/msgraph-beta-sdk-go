@@ -7,8 +7,6 @@ import (
 // StrongAuthenticationDetail 
 type StrongAuthenticationDetail struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewStrongAuthenticationDetail instantiates a new strongAuthenticationDetail and sets the default values.
 func NewStrongAuthenticationDetail()(*StrongAuthenticationDetail) {

@@ -8,8 +8,6 @@ import (
 // RecommendLabelAction 
 type RecommendLabelAction struct {
     InformationProtectionAction
-    // The OdataType property
-    OdataType *string
 }
 // NewRecommendLabelAction instantiates a new recommendLabelAction and sets the default values.
 func NewRecommendLabelAction()(*RecommendLabelAction) {

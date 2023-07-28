@@ -7,8 +7,6 @@ import (
 // ServiceHealth 
 type ServiceHealth struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewServiceHealth instantiates a new serviceHealth and sets the default values.
 func NewServiceHealth()(*ServiceHealth) {

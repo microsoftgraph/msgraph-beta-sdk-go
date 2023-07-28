@@ -7,8 +7,6 @@ import (
 // InboundActivityResults 
 type InboundActivityResults struct {
     IndustryDataActivityStatistics
-    // The OdataType property
-    OdataType *string
 }
 // NewInboundActivityResults instantiates a new inboundActivityResults and sets the default values.
 func NewInboundActivityResults()(*InboundActivityResults) {

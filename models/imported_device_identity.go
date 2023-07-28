@@ -8,8 +8,6 @@ import (
 // ImportedDeviceIdentity the importedDeviceIdentity resource represents a unique hardware identity of a device that has been pre-staged for pre-enrollment configuration.
 type ImportedDeviceIdentity struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewImportedDeviceIdentity instantiates a new importedDeviceIdentity and sets the default values.
 func NewImportedDeviceIdentity()(*ImportedDeviceIdentity) {

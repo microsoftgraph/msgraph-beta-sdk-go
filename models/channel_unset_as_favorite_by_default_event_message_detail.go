@@ -7,8 +7,6 @@ import (
 // ChannelUnsetAsFavoriteByDefaultEventMessageDetail 
 type ChannelUnsetAsFavoriteByDefaultEventMessageDetail struct {
     EventMessageDetail
-    // The OdataType property
-    OdataType *string
 }
 // NewChannelUnsetAsFavoriteByDefaultEventMessageDetail instantiates a new channelUnsetAsFavoriteByDefaultEventMessageDetail and sets the default values.
 func NewChannelUnsetAsFavoriteByDefaultEventMessageDetail()(*ChannelUnsetAsFavoriteByDefaultEventMessageDetail) {

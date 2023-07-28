@@ -7,8 +7,6 @@ import (
 // CustomAppScopeAttributesDictionary 
 type CustomAppScopeAttributesDictionary struct {
     Dictionary
-    // The OdataType property
-    OdataType *string
 }
 // NewCustomAppScopeAttributesDictionary instantiates a new customAppScopeAttributesDictionary and sets the default values.
 func NewCustomAppScopeAttributesDictionary()(*CustomAppScopeAttributesDictionary) {

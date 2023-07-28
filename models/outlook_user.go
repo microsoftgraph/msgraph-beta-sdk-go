@@ -7,8 +7,6 @@ import (
 // OutlookUser 
 type OutlookUser struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewOutlookUser instantiates a new outlookUser and sets the default values.
 func NewOutlookUser()(*OutlookUser) {

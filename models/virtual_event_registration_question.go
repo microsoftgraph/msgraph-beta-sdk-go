@@ -101,16 +101,6 @@ func (m *VirtualEventRegistrationQuestion) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetIsRequired gets the isRequired property value. Indicates whether the question is required to answer. Default value is false.
@@ -121,17 +111,6 @@ func (m *VirtualEventRegistrationQuestion) GetIsRequired()(*bool) {
     }
     if val != nil {
         return val.(*bool)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *VirtualEventRegistrationQuestion) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -166,12 +145,6 @@ func (m *VirtualEventRegistrationQuestion) Serialize(writer i878a80d2330e89d2689
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetAnswerChoices sets the answerChoices property value. Answer choices when answerInputType is singleChoice or multiChoice.
@@ -202,13 +175,6 @@ func (m *VirtualEventRegistrationQuestion) SetIsRequired(value *bool)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *VirtualEventRegistrationQuestion) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // VirtualEventRegistrationQuestionable 
 type VirtualEventRegistrationQuestionable interface {
     Entityable
@@ -217,10 +183,8 @@ type VirtualEventRegistrationQuestionable interface {
     GetAnswerInputType()(*VirtualEventRegistrationQuestionAnswerInputType)
     GetDisplayName()(*string)
     GetIsRequired()(*bool)
-    GetOdataType()(*string)
     SetAnswerChoices(value []string)()
     SetAnswerInputType(value *VirtualEventRegistrationQuestionAnswerInputType)()
     SetDisplayName(value *string)()
     SetIsRequired(value *bool)()
-    SetOdataType(value *string)()
 }

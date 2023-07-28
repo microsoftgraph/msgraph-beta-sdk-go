@@ -7,8 +7,6 @@ import (
 // AppConsentApprovalRoute 
 type AppConsentApprovalRoute struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAppConsentApprovalRoute instantiates a new appConsentApprovalRoute and sets the default values.
 func NewAppConsentApprovalRoute()(*AppConsentApprovalRoute) {

@@ -8,8 +8,6 @@ import (
 // AccessReview 
 type AccessReview struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAccessReview instantiates a new accessReview and sets the default values.
 func NewAccessReview()(*AccessReview) {

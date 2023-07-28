@@ -8,8 +8,6 @@ import (
 // WindowsInformationProtectionWipeAction represents wipe requests issued by tenant admin for Bring-Your-Own-Device(BYOD) Windows devices.
 type WindowsInformationProtectionWipeAction struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsInformationProtectionWipeAction instantiates a new windowsInformationProtectionWipeAction and sets the default values.
 func NewWindowsInformationProtectionWipeAction()(*WindowsInformationProtectionWipeAction) {

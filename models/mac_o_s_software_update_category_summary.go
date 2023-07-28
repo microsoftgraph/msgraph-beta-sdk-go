@@ -96,16 +96,6 @@ func (m *MacOSSoftwareUpdateCategorySummary) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["successfulUpdateCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -172,17 +162,6 @@ func (m *MacOSSoftwareUpdateCategorySummary) GetLastUpdatedDateTime()(*i33607480
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *MacOSSoftwareUpdateCategorySummary) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -272,12 +251,6 @@ func (m *MacOSSoftwareUpdateCategorySummary) Serialize(writer i878a80d2330e89d26
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteInt32Value("successfulUpdateCount", m.GetSuccessfulUpdateCount())
         if err != nil {
             return err
@@ -344,13 +317,6 @@ func (m *MacOSSoftwareUpdateCategorySummary) SetLastUpdatedDateTime(value *i3360
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *MacOSSoftwareUpdateCategorySummary) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetSuccessfulUpdateCount sets the successfulUpdateCount property value. Number of successful updates on the device
 func (m *MacOSSoftwareUpdateCategorySummary) SetSuccessfulUpdateCount(value *int32)() {
     err := m.GetBackingStore().Set("successfulUpdateCount", value)
@@ -394,7 +360,6 @@ type MacOSSoftwareUpdateCategorySummaryable interface {
     GetDisplayName()(*string)
     GetFailedUpdateCount()(*int32)
     GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetOdataType()(*string)
     GetSuccessfulUpdateCount()(*int32)
     GetTotalUpdateCount()(*int32)
     GetUpdateCategory()(*MacOSSoftwareUpdateCategory)
@@ -404,7 +369,6 @@ type MacOSSoftwareUpdateCategorySummaryable interface {
     SetDisplayName(value *string)()
     SetFailedUpdateCount(value *int32)()
     SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetOdataType(value *string)()
     SetSuccessfulUpdateCount(value *int32)()
     SetTotalUpdateCount(value *int32)()
     SetUpdateCategory(value *MacOSSoftwareUpdateCategory)()

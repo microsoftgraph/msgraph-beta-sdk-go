@@ -7,8 +7,6 @@ import (
 // IPv6Range iPv6 Range definition.
 type IPv6Range struct {
     IpRange
-    // The OdataType property
-    OdataType *string
 }
 // NewIPv6Range instantiates a new iPv6Range and sets the default values.
 func NewIPv6Range()(*IPv6Range) {

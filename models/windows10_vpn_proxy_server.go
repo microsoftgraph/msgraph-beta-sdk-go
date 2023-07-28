@@ -7,8 +7,6 @@ import (
 // Windows10VpnProxyServer vPN Proxy Server.
 type Windows10VpnProxyServer struct {
     VpnProxyServer
-    // The OdataType property
-    OdataType *string
 }
 // NewWindows10VpnProxyServer instantiates a new windows10VpnProxyServer and sets the default values.
 func NewWindows10VpnProxyServer()(*Windows10VpnProxyServer) {

@@ -7,8 +7,6 @@ import (
 // IpSegmentConfiguration 
 type IpSegmentConfiguration struct {
     SegmentConfiguration
-    // The OdataType property
-    OdataType *string
 }
 // NewIpSegmentConfiguration instantiates a new ipSegmentConfiguration and sets the default values.
 func NewIpSegmentConfiguration()(*IpSegmentConfiguration) {

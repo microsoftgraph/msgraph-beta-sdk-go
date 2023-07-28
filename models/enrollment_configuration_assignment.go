@@ -7,8 +7,6 @@ import (
 // EnrollmentConfigurationAssignment enrollment Configuration Assignment
 type EnrollmentConfigurationAssignment struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewEnrollmentConfigurationAssignment instantiates a new enrollmentConfigurationAssignment and sets the default values.
 func NewEnrollmentConfigurationAssignment()(*EnrollmentConfigurationAssignment) {

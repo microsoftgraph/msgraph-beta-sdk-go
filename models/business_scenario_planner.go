@@ -22,16 +22,6 @@ func CreateBusinessScenarioPlannerFromDiscriminatorValue(parseNode i878a80d2330e
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BusinessScenarioPlanner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["planConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePlannerPlanConfigurationFromDiscriminatorValue)
         if err != nil {
@@ -69,17 +59,6 @@ func (m *BusinessScenarioPlanner) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *BusinessScenarioPlanner) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetPlanConfiguration gets the planConfiguration property value. The configuration of Planner plans that will be created for the scenario.
 func (m *BusinessScenarioPlanner) GetPlanConfiguration()(PlannerPlanConfigurationable) {
@@ -121,12 +100,6 @@ func (m *BusinessScenarioPlanner) Serialize(writer i878a80d2330e89d26896388a3f48
         return err
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("planConfiguration", m.GetPlanConfiguration())
         if err != nil {
             return err
@@ -151,13 +124,6 @@ func (m *BusinessScenarioPlanner) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     return nil
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *BusinessScenarioPlanner) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
 }
 // SetPlanConfiguration sets the planConfiguration property value. The configuration of Planner plans that will be created for the scenario.
 func (m *BusinessScenarioPlanner) SetPlanConfiguration(value PlannerPlanConfigurationable)() {
@@ -184,11 +150,9 @@ func (m *BusinessScenarioPlanner) SetTasks(value []BusinessScenarioTaskable)() {
 type BusinessScenarioPlannerable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOdataType()(*string)
     GetPlanConfiguration()(PlannerPlanConfigurationable)
     GetTaskConfiguration()(PlannerTaskConfigurationable)
     GetTasks()([]BusinessScenarioTaskable)
-    SetOdataType(value *string)()
     SetPlanConfiguration(value PlannerPlanConfigurationable)()
     SetTaskConfiguration(value PlannerTaskConfigurationable)()
     SetTasks(value []BusinessScenarioTaskable)()

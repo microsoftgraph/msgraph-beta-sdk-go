@@ -7,8 +7,6 @@ import (
 // OutlookCategory 
 type OutlookCategory struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewOutlookCategory instantiates a new outlookCategory and sets the default values.
 func NewOutlookCategory()(*OutlookCategory) {

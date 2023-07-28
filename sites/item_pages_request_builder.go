@@ -46,16 +46,16 @@ type ItemPagesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySitePageId provides operations to manage the pages property of the microsoft.graph.site entity.
-func (m *ItemPagesRequestBuilder) BySitePageId(sitePageId string)(*ItemPagesSitePageItemRequestBuilder) {
+// ByBaseSitePageId provides operations to manage the pages property of the microsoft.graph.site entity.
+func (m *ItemPagesRequestBuilder) ByBaseSitePageId(baseSitePageId string)(*ItemPagesBaseSitePageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
-    if sitePageId != "" {
-        urlTplParams["sitePage%2Did"] = sitePageId
+    if baseSitePageId != "" {
+        urlTplParams["baseSitePage%2Did"] = baseSitePageId
     }
-    return NewItemPagesSitePageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+    return NewItemPagesBaseSitePageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemPagesRequestBuilderInternal instantiates a new PagesRequestBuilder and sets the default values.
 func NewItemPagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPagesRequestBuilder) {
@@ -78,7 +78,7 @@ func (m *ItemPagesRequestBuilder) Count()(*ItemPagesCountRequestBuilder) {
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/basesitepage-list?view=graph-rest-1.0
-func (m *ItemPagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageCollectionResponseable, error) {
+func (m *ItemPagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseSitePageCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -87,20 +87,20 @@ func (m *ItemPagesRequestBuilder) Get(ctx context.Context, requestConfiguration 
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSitePageCollectionResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateBaseSitePageCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageCollectionResponseable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseSitePageCollectionResponseable), nil
 }
 // Post create a new [sitePage][] in the site pages [list][] in a [site][].
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/sitepage-create?view=graph-rest-1.0
-func (m *ItemPagesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageable, requestConfiguration *ItemPagesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageable, error) {
+func (m *ItemPagesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseSitePageable, requestConfiguration *ItemPagesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseSitePageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -109,14 +109,14 @@ func (m *ItemPagesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSitePageFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateBaseSitePageFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseSitePageable), nil
 }
 // ToGetRequestInformation get the collection of [baseSitePage][] objects from the site pages [list][] in a [site][]. All pages in the site are returned (with pagination). Sort alphabetically by `name` in ascending order. **The following table lists the available subtypes.**
 func (m *ItemPagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -135,7 +135,7 @@ func (m *ItemPagesRequestBuilder) ToGetRequestInformation(ctx context.Context, r
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new [sitePage][] in the site pages [list][] in a [site][].
-func (m *ItemPagesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageable, requestConfiguration *ItemPagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemPagesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseSitePageable, requestConfiguration *ItemPagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters

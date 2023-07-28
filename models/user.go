@@ -3388,7 +3388,7 @@ func (m *User) GetSkills()([]string) {
     }
     return nil
 }
-// GetSponsors gets the sponsors property value. The sponsors property
+// GetSponsors gets the sponsors property value. The users and groups that are responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
 func (m *User) GetSponsors()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("sponsors")
     if err != nil {
@@ -5708,7 +5708,7 @@ func (m *User) SetSkills(value []string)() {
         panic(err)
     }
 }
-// SetSponsors sets the sponsors property value. The sponsors property
+// SetSponsors sets the sponsors property value. The users and groups that are responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
 func (m *User) SetSponsors(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("sponsors", value)
     if err != nil {

@@ -45,16 +45,6 @@ func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) GetFieldDeser
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["recommendedValueDefinition"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceManagementConfigurationIntegerSettingValueDefinitionTemplateFromDiscriminatorValue)
         if err != nil {
@@ -76,17 +66,6 @@ func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) GetFieldDeser
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetRecommendedValueDefinition gets the recommendedValueDefinition property value. Recommended value definition.
 func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) GetRecommendedValueDefinition()(DeviceManagementConfigurationIntegerSettingValueDefinitionTemplateable) {
@@ -123,12 +102,6 @@ func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) Serialize(wri
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("recommendedValueDefinition", m.GetRecommendedValueDefinition())
         if err != nil {
             return err
@@ -145,13 +118,6 @@ func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) Serialize(wri
 // SetDefaultValue sets the defaultValue property value. Integer Setting Value Default Template.
 func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) SetDefaultValue(value DeviceManagementConfigurationIntegerSettingValueDefaultTemplateable)() {
     err := m.GetBackingStore().Set("defaultValue", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -175,11 +141,9 @@ type DeviceManagementConfigurationIntegerSettingValueTemplateable interface {
     DeviceManagementConfigurationSimpleSettingValueTemplateable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDefaultValue()(DeviceManagementConfigurationIntegerSettingValueDefaultTemplateable)
-    GetOdataType()(*string)
     GetRecommendedValueDefinition()(DeviceManagementConfigurationIntegerSettingValueDefinitionTemplateable)
     GetRequiredValueDefinition()(DeviceManagementConfigurationIntegerSettingValueDefinitionTemplateable)
     SetDefaultValue(value DeviceManagementConfigurationIntegerSettingValueDefaultTemplateable)()
-    SetOdataType(value *string)()
     SetRecommendedValueDefinition(value DeviceManagementConfigurationIntegerSettingValueDefinitionTemplateable)()
     SetRequiredValueDefinition(value DeviceManagementConfigurationIntegerSettingValueDefinitionTemplateable)()
 }

@@ -7,8 +7,6 @@ import (
 // RemoteAssistanceSettings remote assistance settings for the account
 type RemoteAssistanceSettings struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewRemoteAssistanceSettings instantiates a new remoteAssistanceSettings and sets the default values.
 func NewRemoteAssistanceSettings()(*RemoteAssistanceSettings) {

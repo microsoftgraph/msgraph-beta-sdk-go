@@ -7,8 +7,6 @@ import (
 // UserExperienceAnalyticsBatteryHealthOsPerformance the user experience analytics battery health os performance entity contains battery related information for all operating system versions in their organization.
 type UserExperienceAnalyticsBatteryHealthOsPerformance struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewUserExperienceAnalyticsBatteryHealthOsPerformance instantiates a new userExperienceAnalyticsBatteryHealthOsPerformance and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthOsPerformance()(*UserExperienceAnalyticsBatteryHealthOsPerformance) {

@@ -7,8 +7,6 @@ import (
 // DeviceComplianceScriptRuleError 
 type DeviceComplianceScriptRuleError struct {
     DeviceComplianceScriptError
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceComplianceScriptRuleError instantiates a new deviceComplianceScriptRuleError and sets the default values.
 func NewDeviceComplianceScriptRuleError()(*DeviceComplianceScriptRuleError) {

@@ -7,8 +7,6 @@ import (
 // WorkbookFormatProtection 
 type WorkbookFormatProtection struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWorkbookFormatProtection instantiates a new workbookFormatProtection and sets the default values.
 func NewWorkbookFormatProtection()(*WorkbookFormatProtection) {

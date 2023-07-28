@@ -7,8 +7,6 @@ import (
 // PlannerRosterMember 
 type PlannerRosterMember struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewPlannerRosterMember instantiates a new plannerRosterMember and sets the default values.
 func NewPlannerRosterMember()(*PlannerRosterMember) {

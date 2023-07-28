@@ -7,8 +7,6 @@ import (
 // TypedEmailAddress 
 type TypedEmailAddress struct {
     EmailAddress
-    // The OdataType property
-    OdataType *string
 }
 // NewTypedEmailAddress instantiates a new typedEmailAddress and sets the default values.
 func NewTypedEmailAddress()(*TypedEmailAddress) {
@@ -42,7 +40,7 @@ func (m *TypedEmailAddress) GetFieldDeserializers()(map[string]func(i878a80d2330
             return err
         }
         if val != nil {
-            m.SetType(val.(*EmailType))
+            m.SetTypeEscaped(val.(*EmailType))
         }
         return nil
     }
@@ -59,8 +57,8 @@ func (m *TypedEmailAddress) GetOtherLabel()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.
-func (m *TypedEmailAddress) GetType()(*EmailType) {
+// GetTypeEscaped gets the type property value. The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.
+func (m *TypedEmailAddress) GetTypeEscaped()(*EmailType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -82,8 +80,8 @@ func (m *TypedEmailAddress) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -98,8 +96,8 @@ func (m *TypedEmailAddress) SetOtherLabel(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.
-func (m *TypedEmailAddress) SetType(value *EmailType)() {
+// SetTypeEscaped sets the type property value. The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.
+func (m *TypedEmailAddress) SetTypeEscaped(value *EmailType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -110,7 +108,7 @@ type TypedEmailAddressable interface {
     EmailAddressable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetOtherLabel()(*string)
-    GetType()(*EmailType)
+    GetTypeEscaped()(*EmailType)
     SetOtherLabel(value *string)()
-    SetType(value *EmailType)()
+    SetTypeEscaped(value *EmailType)()
 }

@@ -7,14 +7,14 @@ import (
 // AzureResourceEvidence 
 type AzureResourceEvidence struct {
     AlertEvidence
-    // The OdataType property
-    OdataType *string
 }
 // NewAzureResourceEvidence instantiates a new azureResourceEvidence and sets the default values.
 func NewAzureResourceEvidence()(*AzureResourceEvidence) {
     m := &AzureResourceEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
+    odataTypeValue := "#microsoft.graph.security.azureResourceEvidence"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAzureResourceEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

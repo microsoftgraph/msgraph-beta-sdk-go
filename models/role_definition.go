@@ -102,16 +102,6 @@ func (m *RoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["permissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRolePermissionFromDiscriminatorValue)
         if err != nil {
@@ -200,17 +190,6 @@ func (m *RoleDefinition) GetIsBuiltInRoleDefinition()(*bool) {
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *RoleDefinition) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetPermissions gets the permissions property value. List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
 func (m *RoleDefinition) GetPermissions()([]RolePermissionable) {
     val, err := m.GetBackingStore().Get("permissions")
@@ -281,12 +260,6 @@ func (m *RoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err = writer.WriteBoolValue("isBuiltInRoleDefinition", m.GetIsBuiltInRoleDefinition())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -363,13 +336,6 @@ func (m *RoleDefinition) SetIsBuiltInRoleDefinition(value *bool)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *RoleDefinition) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetPermissions sets the permissions property value. List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
 func (m *RoleDefinition) SetPermissions(value []RolePermissionable)() {
     err := m.GetBackingStore().Set("permissions", value)
@@ -406,7 +372,6 @@ type RoleDefinitionable interface {
     GetDisplayName()(*string)
     GetIsBuiltIn()(*bool)
     GetIsBuiltInRoleDefinition()(*bool)
-    GetOdataType()(*string)
     GetPermissions()([]RolePermissionable)
     GetRoleAssignments()([]RoleAssignmentable)
     GetRolePermissions()([]RolePermissionable)
@@ -415,7 +380,6 @@ type RoleDefinitionable interface {
     SetDisplayName(value *string)()
     SetIsBuiltIn(value *bool)()
     SetIsBuiltInRoleDefinition(value *bool)()
-    SetOdataType(value *string)()
     SetPermissions(value []RolePermissionable)()
     SetRoleAssignments(value []RoleAssignmentable)()
     SetRolePermissions(value []RolePermissionable)()

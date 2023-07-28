@@ -237,16 +237,6 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["onPremisesSynchronization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOnPremisesDirectorySynchronizationFromDiscriminatorValue)
         if err != nil {
@@ -351,17 +341,6 @@ func (m *Directory) GetInboundSharedUserProfiles()([]InboundSharedUserProfileabl
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *Directory) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetOnPremisesSynchronization gets the onPremisesSynchronization property value. A container for on-premises directory synchronization functionalities that are available for the organization.
 func (m *Directory) GetOnPremisesSynchronization()([]OnPremisesDirectorySynchronizationable) {
     val, err := m.GetBackingStore().Get("onPremisesSynchronization")
@@ -406,7 +385,7 @@ func (m *Directory) GetSharedEmailDomains()([]SharedEmailDomainable) {
     }
     return nil
 }
-// GetSubscriptions gets the subscriptions property value. The subscriptions property
+// GetSubscriptions gets the subscriptions property value. List of commercial subscriptions that an organization has acquired.
 func (m *Directory) GetSubscriptions()([]CompanySubscriptionable) {
     val, err := m.GetBackingStore().Get("subscriptions")
     if err != nil {
@@ -521,12 +500,6 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             }
         }
         err = writer.WriteCollectionOfObjectValues("inboundSharedUserProfiles", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -656,13 +629,6 @@ func (m *Directory) SetInboundSharedUserProfiles(value []InboundSharedUserProfil
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *Directory) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOnPremisesSynchronization sets the onPremisesSynchronization property value. A container for on-premises directory synchronization functionalities that are available for the organization.
 func (m *Directory) SetOnPremisesSynchronization(value []OnPremisesDirectorySynchronizationable)() {
     err := m.GetBackingStore().Set("onPremisesSynchronization", value)
@@ -691,7 +657,7 @@ func (m *Directory) SetSharedEmailDomains(value []SharedEmailDomainable)() {
         panic(err)
     }
 }
-// SetSubscriptions sets the subscriptions property value. The subscriptions property
+// SetSubscriptions sets the subscriptions property value. List of commercial subscriptions that an organization has acquired.
 func (m *Directory) SetSubscriptions(value []CompanySubscriptionable)() {
     err := m.GetBackingStore().Set("subscriptions", value)
     if err != nil {
@@ -711,7 +677,6 @@ type Directoryable interface {
     GetFederationConfigurations()([]IdentityProviderBaseable)
     GetImpactedResources()([]ImpactedResourceable)
     GetInboundSharedUserProfiles()([]InboundSharedUserProfileable)
-    GetOdataType()(*string)
     GetOnPremisesSynchronization()([]OnPremisesDirectorySynchronizationable)
     GetOutboundSharedUserProfiles()([]OutboundSharedUserProfileable)
     GetRecommendations()([]Recommendationable)
@@ -726,7 +691,6 @@ type Directoryable interface {
     SetFederationConfigurations(value []IdentityProviderBaseable)()
     SetImpactedResources(value []ImpactedResourceable)()
     SetInboundSharedUserProfiles(value []InboundSharedUserProfileable)()
-    SetOdataType(value *string)()
     SetOnPremisesSynchronization(value []OnPremisesDirectorySynchronizationable)()
     SetOutboundSharedUserProfiles(value []OutboundSharedUserProfileable)()
     SetRecommendations(value []Recommendationable)()

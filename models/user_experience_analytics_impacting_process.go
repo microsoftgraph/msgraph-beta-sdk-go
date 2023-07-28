@@ -7,8 +7,6 @@ import (
 // UserExperienceAnalyticsImpactingProcess the user experience analytics top impacting process entity.
 type UserExperienceAnalyticsImpactingProcess struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewUserExperienceAnalyticsImpactingProcess instantiates a new userExperienceAnalyticsImpactingProcess and sets the default values.
 func NewUserExperienceAnalyticsImpactingProcess()(*UserExperienceAnalyticsImpactingProcess) {

@@ -8,8 +8,6 @@ import (
 // RecommendationBase 
 type RecommendationBase struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewRecommendationBase instantiates a new recommendationBase and sets the default values.
 func NewRecommendationBase()(*RecommendationBase) {

@@ -7,8 +7,6 @@ import (
 // CustomTimeZone 
 type CustomTimeZone struct {
     TimeZoneBase
-    // The OdataType property
-    OdataType *string
 }
 // NewCustomTimeZone instantiates a new customTimeZone and sets the default values.
 func NewCustomTimeZone()(*CustomTimeZone) {

@@ -7,8 +7,6 @@ import (
 // Win32LobAppRegistryRequirement contains registry properties to detect a Win32 App
 type Win32LobAppRegistryRequirement struct {
     Win32LobAppRequirement
-    // The OdataType property
-    OdataType *string
 }
 // NewWin32LobAppRegistryRequirement instantiates a new win32LobAppRegistryRequirement and sets the default values.
 func NewWin32LobAppRegistryRequirement()(*Win32LobAppRegistryRequirement) {

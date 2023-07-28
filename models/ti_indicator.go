@@ -8,8 +8,6 @@ import (
 // TiIndicator 
 type TiIndicator struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewTiIndicator instantiates a new tiIndicator and sets the default values.
 func NewTiIndicator()(*TiIndicator) {

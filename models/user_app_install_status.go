@@ -7,8 +7,6 @@ import (
 // UserAppInstallStatus contains properties for the installation status for a user. This will be deprecated starting May, 2023 (Intune Release 2305).
 type UserAppInstallStatus struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewUserAppInstallStatus instantiates a new userAppInstallStatus and sets the default values.
 func NewUserAppInstallStatus()(*UserAppInstallStatus) {

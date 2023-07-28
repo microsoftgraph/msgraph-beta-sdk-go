@@ -64,16 +64,6 @@ func (m *DeviceCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -91,17 +81,6 @@ func (m *DeviceCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *DeviceCategory) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. Optional role scope tags for the device category.
 func (m *DeviceCategory) GetRoleScopeTagIds()([]string) {
@@ -132,12 +111,6 @@ func (m *DeviceCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetRoleScopeTagIds() != nil {
         err = writer.WriteCollectionOfStringValues("roleScopeTagIds", m.GetRoleScopeTagIds())
         if err != nil {
@@ -160,13 +133,6 @@ func (m *DeviceCategory) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *DeviceCategory) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. Optional role scope tags for the device category.
 func (m *DeviceCategory) SetRoleScopeTagIds(value []string)() {
     err := m.GetBackingStore().Set("roleScopeTagIds", value)
@@ -180,10 +146,8 @@ type DeviceCategoryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDescription()(*string)
     GetDisplayName()(*string)
-    GetOdataType()(*string)
     GetRoleScopeTagIds()([]string)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
-    SetOdataType(value *string)()
     SetRoleScopeTagIds(value []string)()
 }

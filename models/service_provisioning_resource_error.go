@@ -7,8 +7,6 @@ import (
 // ServiceProvisioningResourceError 
 type ServiceProvisioningResourceError struct {
     ServiceProvisioningError
-    // The OdataType property
-    OdataType *string
 }
 // NewServiceProvisioningResourceError instantiates a new serviceProvisioningResourceError and sets the default values.
 func NewServiceProvisioningResourceError()(*ServiceProvisioningResourceError) {

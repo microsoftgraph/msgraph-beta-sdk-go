@@ -8,8 +8,6 @@ import (
 // WindowsDriverUpdateInventory a new entity to represent driver inventories.
 type WindowsDriverUpdateInventory struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsDriverUpdateInventory instantiates a new windowsDriverUpdateInventory and sets the default values.
 func NewWindowsDriverUpdateInventory()(*WindowsDriverUpdateInventory) {

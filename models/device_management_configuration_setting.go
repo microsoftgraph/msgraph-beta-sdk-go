@@ -7,8 +7,6 @@ import (
 // DeviceManagementConfigurationSetting setting instance within policy
 type DeviceManagementConfigurationSetting struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementConfigurationSetting instantiates a new deviceManagementConfigurationSetting and sets the default values.
 func NewDeviceManagementConfigurationSetting()(*DeviceManagementConfigurationSetting) {

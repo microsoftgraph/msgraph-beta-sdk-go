@@ -77,7 +77,7 @@ func (m *CoachmarkLocation) GetFieldDeserializers()(map[string]func(i878a80d2330
             return err
         }
         if val != nil {
-            m.SetType(val.(*CoachmarkLocationType))
+            m.SetTypeEscaped(val.(*CoachmarkLocationType))
         }
         return nil
     }
@@ -116,8 +116,8 @@ func (m *CoachmarkLocation) GetOffset()(*int32) {
     }
     return nil
 }
-// GetType gets the type property value. Type of coachmark location. The possible values are: unknown, fromEmail, subject, externalTag, displayName, messageBody, unknownFutureValue.
-func (m *CoachmarkLocation) GetType()(*CoachmarkLocationType) {
+// GetTypeEscaped gets the type property value. Type of coachmark location. The possible values are: unknown, fromEmail, subject, externalTag, displayName, messageBody, unknownFutureValue.
+func (m *CoachmarkLocation) GetTypeEscaped()(*CoachmarkLocationType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -147,8 +147,8 @@ func (m *CoachmarkLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -194,8 +194,8 @@ func (m *CoachmarkLocation) SetOffset(value *int32)() {
         panic(err)
     }
 }
-// SetType sets the type property value. Type of coachmark location. The possible values are: unknown, fromEmail, subject, externalTag, displayName, messageBody, unknownFutureValue.
-func (m *CoachmarkLocation) SetType(value *CoachmarkLocationType)() {
+// SetTypeEscaped sets the type property value. Type of coachmark location. The possible values are: unknown, fromEmail, subject, externalTag, displayName, messageBody, unknownFutureValue.
+func (m *CoachmarkLocation) SetTypeEscaped(value *CoachmarkLocationType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -210,10 +210,10 @@ type CoachmarkLocationable interface {
     GetLength()(*int32)
     GetOdataType()(*string)
     GetOffset()(*int32)
-    GetType()(*CoachmarkLocationType)
+    GetTypeEscaped()(*CoachmarkLocationType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetLength(value *int32)()
     SetOdataType(value *string)()
     SetOffset(value *int32)()
-    SetType(value *CoachmarkLocationType)()
+    SetTypeEscaped(value *CoachmarkLocationType)()
 }

@@ -75,16 +75,6 @@ func (m *Notification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["payload"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePayloadTypesFromDiscriminatorValue)
         if err != nil {
@@ -130,17 +120,6 @@ func (m *Notification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 // GetGroupName gets the groupName property value. The name of the group that this notification belongs to. It is set by the developer for the purpose of grouping notifications together.
 func (m *Notification) GetGroupName()(*string) {
     val, err := m.GetBackingStore().Get("groupName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *Notification) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -218,12 +197,6 @@ func (m *Notification) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("payload", m.GetPayload())
         if err != nil {
             return err
@@ -271,13 +244,6 @@ func (m *Notification) SetGroupName(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *Notification) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetPayload sets the payload property value. The payload property
 func (m *Notification) SetPayload(value PayloadTypesable)() {
     err := m.GetBackingStore().Set("payload", value)
@@ -313,7 +279,6 @@ type Notificationable interface {
     GetDisplayTimeToLive()(*int32)
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetGroupName()(*string)
-    GetOdataType()(*string)
     GetPayload()(PayloadTypesable)
     GetPriority()(*Priority)
     GetTargetHostName()(*string)
@@ -321,7 +286,6 @@ type Notificationable interface {
     SetDisplayTimeToLive(value *int32)()
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetGroupName(value *string)()
-    SetOdataType(value *string)()
     SetPayload(value PayloadTypesable)()
     SetPriority(value *Priority)()
     SetTargetHostName(value *string)()

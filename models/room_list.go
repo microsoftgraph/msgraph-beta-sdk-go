@@ -45,16 +45,6 @@ func (m *RoomList) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["rooms"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRoomFromDiscriminatorValue)
         if err != nil {
@@ -89,17 +79,6 @@ func (m *RoomList) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *RoomList) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetRooms gets the rooms property value. The rooms property
 func (m *RoomList) GetRooms()([]Roomable) {
     val, err := m.GetBackingStore().Get("rooms")
@@ -130,12 +109,6 @@ func (m *RoomList) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     {
         err = writer.WriteStringValue("emailAddress", m.GetEmailAddress())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -173,13 +146,6 @@ func (m *RoomList) SetEmailAddress(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *RoomList) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetRooms sets the rooms property value. The rooms property
 func (m *RoomList) SetRooms(value []Roomable)() {
     err := m.GetBackingStore().Set("rooms", value)
@@ -199,11 +165,9 @@ type RoomListable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Placeable
     GetEmailAddress()(*string)
-    GetOdataType()(*string)
     GetRooms()([]Roomable)
     GetWorkspaces()([]Workspaceable)
     SetEmailAddress(value *string)()
-    SetOdataType(value *string)()
     SetRooms(value []Roomable)()
     SetWorkspaces(value []Workspaceable)()
 }

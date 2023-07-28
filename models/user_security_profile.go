@@ -144,16 +144,6 @@ func (m *UserSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["riskScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -210,17 +200,6 @@ func (m *UserSecurityProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *UserSecurityProfile) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -317,12 +296,6 @@ func (m *UserSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("riskScore", m.GetRiskScore())
         if err != nil {
             return err
@@ -390,13 +363,6 @@ func (m *UserSecurityProfile) SetLastModifiedDateTime(value *i336074805fc853987a
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *UserSecurityProfile) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetRiskScore sets the riskScore property value. The riskScore property
 func (m *UserSecurityProfile) SetRiskScore(value *string)() {
     err := m.GetBackingStore().Set("riskScore", value)
@@ -435,7 +401,6 @@ type UserSecurityProfileable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDisplayName()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetOdataType()(*string)
     GetRiskScore()(*string)
     GetTags()([]string)
     GetUserPrincipalName()(*string)
@@ -446,7 +411,6 @@ type UserSecurityProfileable interface {
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDisplayName(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetOdataType(value *string)()
     SetRiskScore(value *string)()
     SetTags(value []string)()
     SetUserPrincipalName(value *string)()

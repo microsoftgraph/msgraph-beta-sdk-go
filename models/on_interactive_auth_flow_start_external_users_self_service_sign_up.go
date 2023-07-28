@@ -7,8 +7,6 @@ import (
 // OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp 
 type OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp struct {
     OnInteractiveAuthFlowStartHandler
-    // The OdataType property
-    OdataType *string
 }
 // NewOnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp instantiates a new onInteractiveAuthFlowStartExternalUsersSelfServiceSignUp and sets the default values.
 func NewOnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp()(*OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp) {

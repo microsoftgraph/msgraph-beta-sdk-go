@@ -115,7 +115,7 @@ func (m *ReportsGetQuietTimePolicyUsersReportPostRequestBody) GetFieldDeserializ
                     res[i] = *(v.(*string))
                 }
             }
-            m.SetSelect(res)
+            m.SetSelectEscaped(res)
         }
         return nil
     }
@@ -216,8 +216,8 @@ func (m *ReportsGetQuietTimePolicyUsersReportPostRequestBody) GetSearch()(*strin
     }
     return nil
 }
-// GetSelect gets the select property value. The select property
-func (m *ReportsGetQuietTimePolicyUsersReportPostRequestBody) GetSelect()([]string) {
+// GetSelectEscaped gets the select property value. The select property
+func (m *ReportsGetQuietTimePolicyUsersReportPostRequestBody) GetSelectEscaped()([]string) {
     val, err := m.GetBackingStore().Get("selectEscaped")
     if err != nil {
         panic(err)
@@ -303,8 +303,8 @@ func (m *ReportsGetQuietTimePolicyUsersReportPostRequestBody) Serialize(writer i
             return err
         }
     }
-    if m.GetSelect() != nil {
-        err := writer.WriteCollectionOfStringValues("select", m.GetSelect())
+    if m.GetSelectEscaped() != nil {
+        err := writer.WriteCollectionOfStringValues("select", m.GetSelectEscaped())
         if err != nil {
             return err
         }
@@ -387,8 +387,8 @@ func (m *ReportsGetQuietTimePolicyUsersReportPostRequestBody) SetSearch(value *s
         panic(err)
     }
 }
-// SetSelect sets the select property value. The select property
-func (m *ReportsGetQuietTimePolicyUsersReportPostRequestBody) SetSelect(value []string)() {
+// SetSelectEscaped sets the select property value. The select property
+func (m *ReportsGetQuietTimePolicyUsersReportPostRequestBody) SetSelectEscaped(value []string)() {
     err := m.GetBackingStore().Set("selectEscaped", value)
     if err != nil {
         panic(err)
@@ -433,7 +433,7 @@ type ReportsGetQuietTimePolicyUsersReportPostRequestBodyable interface {
     GetName()(*string)
     GetOrderBy()([]string)
     GetSearch()(*string)
-    GetSelect()([]string)
+    GetSelectEscaped()([]string)
     GetSessionId()(*string)
     GetSkip()(*int32)
     GetSkipToken()(*string)
@@ -444,7 +444,7 @@ type ReportsGetQuietTimePolicyUsersReportPostRequestBodyable interface {
     SetName(value *string)()
     SetOrderBy(value []string)()
     SetSearch(value *string)()
-    SetSelect(value []string)()
+    SetSelectEscaped(value []string)()
     SetSessionId(value *string)()
     SetSkip(value *int32)()
     SetSkipToken(value *string)()

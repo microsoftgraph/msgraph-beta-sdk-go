@@ -7,8 +7,6 @@ import (
 // EncryptContent 
 type EncryptContent struct {
     LabelActionBase
-    // The OdataType property
-    OdataType *string
 }
 // NewEncryptContent instantiates a new encryptContent and sets the default values.
 func NewEncryptContent()(*EncryptContent) {

@@ -8,8 +8,6 @@ import (
 // EducationRubric 
 type EducationRubric struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewEducationRubric instantiates a new educationRubric and sets the default values.
 func NewEducationRubric()(*EducationRubric) {

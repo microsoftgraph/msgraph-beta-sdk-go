@@ -7,8 +7,6 @@ import (
 // OnTokenIssuanceStartCustomExtensionHandler 
 type OnTokenIssuanceStartCustomExtensionHandler struct {
     OnTokenIssuanceStartHandler
-    // The OdataType property
-    OdataType *string
 }
 // NewOnTokenIssuanceStartCustomExtensionHandler instantiates a new onTokenIssuanceStartCustomExtensionHandler and sets the default values.
 func NewOnTokenIssuanceStartCustomExtensionHandler()(*OnTokenIssuanceStartCustomExtensionHandler) {

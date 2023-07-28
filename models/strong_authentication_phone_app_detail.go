@@ -210,16 +210,6 @@ func (m *StrongAuthenticationPhoneAppDetail) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["phoneAppVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -315,17 +305,6 @@ func (m *StrongAuthenticationPhoneAppDetail) GetOathTokenTimeDriftInSeconds()(*i
     }
     if val != nil {
         return val.(*int32)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *StrongAuthenticationPhoneAppDetail) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -441,12 +420,6 @@ func (m *StrongAuthenticationPhoneAppDetail) Serialize(writer i878a80d2330e89d26
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("phoneAppVersion", m.GetPhoneAppVersion())
         if err != nil {
             return err
@@ -550,13 +523,6 @@ func (m *StrongAuthenticationPhoneAppDetail) SetOathTokenTimeDriftInSeconds(valu
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *StrongAuthenticationPhoneAppDetail) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetPhoneAppVersion sets the phoneAppVersion property value. The phoneAppVersion property
 func (m *StrongAuthenticationPhoneAppDetail) SetPhoneAppVersion(value *string)() {
     err := m.GetBackingStore().Set("phoneAppVersion", value)
@@ -594,7 +560,6 @@ type StrongAuthenticationPhoneAppDetailable interface {
     GetOathSecretKey()(*string)
     GetOathTokenMetadata()(OathTokenMetadataable)
     GetOathTokenTimeDriftInSeconds()(*int32)
-    GetOdataType()(*string)
     GetPhoneAppVersion()(*string)
     GetTenantDeviceId()(*string)
     GetTokenGenerationIntervalInSeconds()(*int32)
@@ -610,7 +575,6 @@ type StrongAuthenticationPhoneAppDetailable interface {
     SetOathSecretKey(value *string)()
     SetOathTokenMetadata(value OathTokenMetadataable)()
     SetOathTokenTimeDriftInSeconds(value *int32)()
-    SetOdataType(value *string)()
     SetPhoneAppVersion(value *string)()
     SetTenantDeviceId(value *string)()
     SetTokenGenerationIntervalInSeconds(value *int32)()

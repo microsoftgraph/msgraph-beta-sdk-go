@@ -8,8 +8,6 @@ import (
 // ProviderTenantSetting 
 type ProviderTenantSetting struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewProviderTenantSetting instantiates a new providerTenantSetting and sets the default values.
 func NewProviderTenantSetting()(*ProviderTenantSetting) {
@@ -93,7 +91,7 @@ func (m *ProviderTenantSetting) GetFieldDeserializers()(map[string]func(i878a80d
             return err
         }
         if val != nil {
-            m.SetVendor(val)
+            m.SetVendorEscaped(val)
         }
         return nil
     }
@@ -121,8 +119,8 @@ func (m *ProviderTenantSetting) GetProvider()(*string) {
     }
     return nil
 }
-// GetVendor gets the vendor property value. The vendor property
-func (m *ProviderTenantSetting) GetVendor()(*string) {
+// GetVendorEscaped gets the vendor property value. The vendor property
+func (m *ProviderTenantSetting) GetVendorEscaped()(*string) {
     val, err := m.GetBackingStore().Get("vendorEscaped")
     if err != nil {
         panic(err)
@@ -163,7 +161,7 @@ func (m *ProviderTenantSetting) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
-        err = writer.WriteStringValue("vendor", m.GetVendor())
+        err = writer.WriteStringValue("vendor", m.GetVendorEscaped())
         if err != nil {
             return err
         }
@@ -198,8 +196,8 @@ func (m *ProviderTenantSetting) SetProvider(value *string)() {
         panic(err)
     }
 }
-// SetVendor sets the vendor property value. The vendor property
-func (m *ProviderTenantSetting) SetVendor(value *string)() {
+// SetVendorEscaped sets the vendor property value. The vendor property
+func (m *ProviderTenantSetting) SetVendorEscaped(value *string)() {
     err := m.GetBackingStore().Set("vendorEscaped", value)
     if err != nil {
         panic(err)
@@ -213,10 +211,10 @@ type ProviderTenantSettingable interface {
     GetEnabled()(*bool)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetProvider()(*string)
-    GetVendor()(*string)
+    GetVendorEscaped()(*string)
     SetAzureTenantId(value *string)()
     SetEnabled(value *bool)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetProvider(value *string)()
-    SetVendor(value *string)()
+    SetVendorEscaped(value *string)()
 }

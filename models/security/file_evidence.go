@@ -7,14 +7,14 @@ import (
 // FileEvidence 
 type FileEvidence struct {
     AlertEvidence
-    // The OdataType property
-    OdataType *string
 }
 // NewFileEvidence instantiates a new fileEvidence and sets the default values.
 func NewFileEvidence()(*FileEvidence) {
     m := &FileEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
+    odataTypeValue := "#microsoft.graph.security.fileEvidence"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateFileEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

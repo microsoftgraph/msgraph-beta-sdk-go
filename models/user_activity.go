@@ -8,8 +8,6 @@ import (
 // UserActivity 
 type UserActivity struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewUserActivity instantiates a new userActivity and sets the default values.
 func NewUserActivity()(*UserActivity) {

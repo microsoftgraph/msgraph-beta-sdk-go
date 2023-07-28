@@ -8,8 +8,6 @@ import (
 // Contact 
 type Contact struct {
     OutlookItem
-    // The OdataType property
-    OdataType *string
 }
 // NewContact instantiates a new contact and sets the default values.
 func NewContact()(*Contact) {

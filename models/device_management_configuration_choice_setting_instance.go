@@ -45,28 +45,7 @@ func (m *DeviceManagementConfigurationChoiceSettingInstance) GetFieldDeserialize
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *DeviceManagementConfigurationChoiceSettingInstance) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationChoiceSettingInstance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,12 +59,6 @@ func (m *DeviceManagementConfigurationChoiceSettingInstance) Serialize(writer i8
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetChoiceSettingValue sets the choiceSettingValue property value. The choiceSettingValue property
@@ -95,19 +68,10 @@ func (m *DeviceManagementConfigurationChoiceSettingInstance) SetChoiceSettingVal
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *DeviceManagementConfigurationChoiceSettingInstance) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // DeviceManagementConfigurationChoiceSettingInstanceable 
 type DeviceManagementConfigurationChoiceSettingInstanceable interface {
     DeviceManagementConfigurationSettingInstanceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetChoiceSettingValue()(DeviceManagementConfigurationChoiceSettingValueable)
-    GetOdataType()(*string)
     SetChoiceSettingValue(value DeviceManagementConfigurationChoiceSettingValueable)()
-    SetOdataType(value *string)()
 }

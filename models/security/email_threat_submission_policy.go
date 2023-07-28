@@ -175,16 +175,6 @@ func (m *EmailThreatSubmissionPolicy) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetIsAlwaysReportEnabledForUsers gets the isAlwaysReportEnabledForUsers property value. Indicates whether end users can report a message as spam, phish or junk directly without a confirmation(popup). The default value is true.  Optional for creation.
@@ -308,17 +298,6 @@ func (m *EmailThreatSubmissionPolicy) GetIsReviewEmailNotificationEnabled()(*boo
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *EmailThreatSubmissionPolicy) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // Serialize serializes information the current object
 func (m *EmailThreatSubmissionPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -399,12 +378,6 @@ func (m *EmailThreatSubmissionPolicy) Serialize(writer i878a80d2330e89d26896388a
     }
     {
         err = writer.WriteBoolValue("isReviewEmailNotificationEnabled", m.GetIsReviewEmailNotificationEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -502,13 +475,6 @@ func (m *EmailThreatSubmissionPolicy) SetIsReviewEmailNotificationEnabled(value 
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *EmailThreatSubmissionPolicy) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // EmailThreatSubmissionPolicyable 
 type EmailThreatSubmissionPolicyable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
@@ -526,7 +492,6 @@ type EmailThreatSubmissionPolicyable interface {
     GetIsReportToCustomizedEmailAddressEnabled()(*bool)
     GetIsReportToMicrosoftEnabled()(*bool)
     GetIsReviewEmailNotificationEnabled()(*bool)
-    GetOdataType()(*string)
     SetCustomizedNotificationSenderEmailAddress(value *string)()
     SetCustomizedReportRecipientEmailAddress(value *string)()
     SetIsAlwaysReportEnabledForUsers(value *bool)()
@@ -540,5 +505,4 @@ type EmailThreatSubmissionPolicyable interface {
     SetIsReportToCustomizedEmailAddressEnabled(value *bool)()
     SetIsReportToMicrosoftEnabled(value *bool)()
     SetIsReviewEmailNotificationEnabled(value *bool)()
-    SetOdataType(value *string)()
 }

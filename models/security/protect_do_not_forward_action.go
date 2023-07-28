@@ -7,8 +7,6 @@ import (
 // ProtectDoNotForwardAction 
 type ProtectDoNotForwardAction struct {
     InformationProtectionAction
-    // The OdataType property
-    OdataType *string
 }
 // NewProtectDoNotForwardAction instantiates a new protectDoNotForwardAction and sets the default values.
 func NewProtectDoNotForwardAction()(*ProtectDoNotForwardAction) {

@@ -77,16 +77,6 @@ func (m *DriverUpdateCatalogEntry) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["provider"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -132,17 +122,6 @@ func (m *DriverUpdateCatalogEntry) GetFieldDeserializers()(map[string]func(i878a
 // GetManufacturer gets the manufacturer property value. The manufacturer of the driver.
 func (m *DriverUpdateCatalogEntry) GetManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("manufacturer")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *DriverUpdateCatalogEntry) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -220,12 +199,6 @@ func (m *DriverUpdateCatalogEntry) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("provider", m.GetProvider())
         if err != nil {
             return err
@@ -272,13 +245,6 @@ func (m *DriverUpdateCatalogEntry) SetManufacturer(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *DriverUpdateCatalogEntry) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetProvider sets the provider property value. The provider of the driver.
 func (m *DriverUpdateCatalogEntry) SetProvider(value *string)() {
     err := m.GetBackingStore().Set("provider", value)
@@ -314,7 +280,6 @@ type DriverUpdateCatalogEntryable interface {
     GetDescription()(*string)
     GetDriverClass()(*string)
     GetManufacturer()(*string)
-    GetOdataType()(*string)
     GetProvider()(*string)
     GetSetupInformationFile()(*string)
     GetVersion()(*string)
@@ -322,7 +287,6 @@ type DriverUpdateCatalogEntryable interface {
     SetDescription(value *string)()
     SetDriverClass(value *string)()
     SetManufacturer(value *string)()
-    SetOdataType(value *string)()
     SetProvider(value *string)()
     SetSetupInformationFile(value *string)()
     SetVersion(value *string)()

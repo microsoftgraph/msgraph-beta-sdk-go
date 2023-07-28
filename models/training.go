@@ -195,16 +195,6 @@ func (m *Training) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSimulationContentSource)
         if err != nil {
@@ -253,7 +243,7 @@ func (m *Training) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
             return err
         }
         if val != nil {
-            m.SetType(val.(*TrainingType))
+            m.SetTypeEscaped(val.(*TrainingType))
         }
         return nil
     }
@@ -303,17 +293,6 @@ func (m *Training) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *Training) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetSource gets the source property value. The source property
 func (m *Training) GetSource()(*SimulationContentSource) {
     val, err := m.GetBackingStore().Get("source")
@@ -347,8 +326,8 @@ func (m *Training) GetTags()([]string) {
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *Training) GetType()(*TrainingType) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *Training) GetTypeEscaped()(*TrainingType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -431,12 +410,6 @@ func (m *Training) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetSource() != nil {
         cast := (*m.GetSource()).String()
         err = writer.WriteStringValue("source", &cast)
@@ -456,8 +429,8 @@ func (m *Training) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -535,13 +508,6 @@ func (m *Training) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad9
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *Training) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetSource sets the source property value. The source property
 func (m *Training) SetSource(value *SimulationContentSource)() {
     err := m.GetBackingStore().Set("source", value)
@@ -563,8 +529,8 @@ func (m *Training) SetTags(value []string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *Training) SetType(value *TrainingType)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *Training) SetTypeEscaped(value *TrainingType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -584,11 +550,10 @@ type Trainingable interface {
     GetLanguageDetails()([]TrainingLanguageDetailable)
     GetLastModifiedBy()(EmailIdentityable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetOdataType()(*string)
     GetSource()(*SimulationContentSource)
     GetSupportedLocales()([]string)
     GetTags()([]string)
-    GetType()(*TrainingType)
+    GetTypeEscaped()(*TrainingType)
     SetAvailabilityStatus(value *TrainingAvailabilityStatus)()
     SetCreatedBy(value EmailIdentityable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -599,9 +564,8 @@ type Trainingable interface {
     SetLanguageDetails(value []TrainingLanguageDetailable)()
     SetLastModifiedBy(value EmailIdentityable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetOdataType(value *string)()
     SetSource(value *SimulationContentSource)()
     SetSupportedLocales(value []string)()
     SetTags(value []string)()
-    SetType(value *TrainingType)()
+    SetTypeEscaped(value *TrainingType)()
 }

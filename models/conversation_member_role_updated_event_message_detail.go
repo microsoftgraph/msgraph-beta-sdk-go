@@ -7,8 +7,6 @@ import (
 // ConversationMemberRoleUpdatedEventMessageDetail 
 type ConversationMemberRoleUpdatedEventMessageDetail struct {
     EventMessageDetail
-    // The OdataType property
-    OdataType *string
 }
 // NewConversationMemberRoleUpdatedEventMessageDetail instantiates a new conversationMemberRoleUpdatedEventMessageDetail and sets the default values.
 func NewConversationMemberRoleUpdatedEventMessageDetail()(*ConversationMemberRoleUpdatedEventMessageDetail) {

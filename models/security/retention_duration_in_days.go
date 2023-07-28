@@ -7,8 +7,6 @@ import (
 // RetentionDurationInDays 
 type RetentionDurationInDays struct {
     RetentionDuration
-    // The OdataType property
-    OdataType *string
 }
 // NewRetentionDurationInDays instantiates a new retentionDurationInDays and sets the default values.
 func NewRetentionDurationInDays()(*RetentionDurationInDays) {

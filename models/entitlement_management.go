@@ -7,8 +7,6 @@ import (
 // EntitlementManagement 
 type EntitlementManagement struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewEntitlementManagement instantiates a new entitlementManagement and sets the default values.
 func NewEntitlementManagement()(*EntitlementManagement) {

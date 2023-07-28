@@ -8,8 +8,6 @@ import (
 // PurchaseInvoiceLine 
 type PurchaseInvoiceLine struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewPurchaseInvoiceLine instantiates a new purchaseInvoiceLine and sets the default values.
 func NewPurchaseInvoiceLine()(*PurchaseInvoiceLine) {

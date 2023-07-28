@@ -63,16 +63,6 @@ func (m *TeamsAppSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetIsChatResourceSpecificConsentEnabled gets the isChatResourceSpecificConsentEnabled property value. Indicates whether resource-specific consent for chats/meetings has been enabled for the tenant. If true, Teams apps that are allowed in the tenant and require resource-specific permissions can be installed inside chats and meetings. If false, the installation of any Teams app that requires resource-specific permissions in a chat or a meeting will be blocked.
@@ -94,17 +84,6 @@ func (m *TeamsAppSettings) GetIsUserPersonalScopeResourceSpecificConsentEnabled(
     }
     if val != nil {
         return val.(*bool)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *TeamsAppSettings) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -132,12 +111,6 @@ func (m *TeamsAppSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetAllowUserRequestsForAppAccess sets the allowUserRequestsForAppAccess property value. Indicates whether users are allowed to request access to the unavailable Teams apps.
@@ -161,13 +134,6 @@ func (m *TeamsAppSettings) SetIsUserPersonalScopeResourceSpecificConsentEnabled(
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *TeamsAppSettings) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // TeamsAppSettingsable 
 type TeamsAppSettingsable interface {
     Entityable
@@ -175,9 +141,7 @@ type TeamsAppSettingsable interface {
     GetAllowUserRequestsForAppAccess()(*bool)
     GetIsChatResourceSpecificConsentEnabled()(*bool)
     GetIsUserPersonalScopeResourceSpecificConsentEnabled()(*bool)
-    GetOdataType()(*string)
     SetAllowUserRequestsForAppAccess(value *bool)()
     SetIsChatResourceSpecificConsentEnabled(value *bool)()
     SetIsUserPersonalScopeResourceSpecificConsentEnabled(value *bool)()
-    SetOdataType(value *string)()
 }

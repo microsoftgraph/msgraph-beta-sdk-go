@@ -138,16 +138,6 @@ func (m *AccessReviewDecision) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["reviewedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserIdentityFromDiscriminatorValue)
         if err != nil {
@@ -183,17 +173,6 @@ func (m *AccessReviewDecision) GetFieldDeserializers()(map[string]func(i878a80d2
 // GetJustification gets the justification property value. The reviewer's business justification, if supplied.
 func (m *AccessReviewDecision) GetJustification()(*string) {
     val, err := m.GetBackingStore().Get("justification")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *AccessReviewDecision) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -278,12 +257,6 @@ func (m *AccessReviewDecision) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("reviewedBy", m.GetReviewedBy())
         if err != nil {
             return err
@@ -345,13 +318,6 @@ func (m *AccessReviewDecision) SetJustification(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *AccessReviewDecision) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetReviewedBy sets the reviewedBy property value. The identity of the reviewer. If the recommendation was used as the review, the userPrincipalName is empty.
 func (m *AccessReviewDecision) SetReviewedBy(value UserIdentityable)() {
     err := m.GetBackingStore().Set("reviewedBy", value)
@@ -383,7 +349,6 @@ type AccessReviewDecisionable interface {
     GetAppliedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetApplyResult()(*string)
     GetJustification()(*string)
-    GetOdataType()(*string)
     GetReviewedBy()(UserIdentityable)
     GetReviewedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetReviewResult()(*string)
@@ -393,7 +358,6 @@ type AccessReviewDecisionable interface {
     SetAppliedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetApplyResult(value *string)()
     SetJustification(value *string)()
-    SetOdataType(value *string)()
     SetReviewedBy(value UserIdentityable)()
     SetReviewedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetReviewResult(value *string)()

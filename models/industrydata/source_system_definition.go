@@ -8,8 +8,6 @@ import (
 // SourceSystemDefinition 
 type SourceSystemDefinition struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewSourceSystemDefinition instantiates a new sourceSystemDefinition and sets the default values.
 func NewSourceSystemDefinition()(*SourceSystemDefinition) {
@@ -68,7 +66,7 @@ func (m *SourceSystemDefinition) GetFieldDeserializers()(map[string]func(i878a80
             return err
         }
         if val != nil {
-            m.SetVendor(val)
+            m.SetVendorEscaped(val)
         }
         return nil
     }
@@ -85,8 +83,8 @@ func (m *SourceSystemDefinition) GetUserMatchingSettings()([]UserMatchingSetting
     }
     return nil
 }
-// GetVendor gets the vendor property value. The name of the vendor who supplies the source system. Maximum supported length is 100 characters.
-func (m *SourceSystemDefinition) GetVendor()(*string) {
+// GetVendorEscaped gets the vendor property value. The name of the vendor who supplies the source system. Maximum supported length is 100 characters.
+func (m *SourceSystemDefinition) GetVendorEscaped()(*string) {
     val, err := m.GetBackingStore().Get("vendorEscaped")
     if err != nil {
         panic(err)
@@ -121,7 +119,7 @@ func (m *SourceSystemDefinition) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     {
-        err = writer.WriteStringValue("vendor", m.GetVendor())
+        err = writer.WriteStringValue("vendor", m.GetVendorEscaped())
         if err != nil {
             return err
         }
@@ -142,8 +140,8 @@ func (m *SourceSystemDefinition) SetUserMatchingSettings(value []UserMatchingSet
         panic(err)
     }
 }
-// SetVendor sets the vendor property value. The name of the vendor who supplies the source system. Maximum supported length is 100 characters.
-func (m *SourceSystemDefinition) SetVendor(value *string)() {
+// SetVendorEscaped sets the vendor property value. The name of the vendor who supplies the source system. Maximum supported length is 100 characters.
+func (m *SourceSystemDefinition) SetVendorEscaped(value *string)() {
     err := m.GetBackingStore().Set("vendorEscaped", value)
     if err != nil {
         panic(err)
@@ -155,8 +153,8 @@ type SourceSystemDefinitionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
     GetUserMatchingSettings()([]UserMatchingSettingable)
-    GetVendor()(*string)
+    GetVendorEscaped()(*string)
     SetDisplayName(value *string)()
     SetUserMatchingSettings(value []UserMatchingSettingable)()
-    SetVendor(value *string)()
+    SetVendorEscaped(value *string)()
 }

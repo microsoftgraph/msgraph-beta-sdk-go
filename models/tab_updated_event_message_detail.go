@@ -7,8 +7,6 @@ import (
 // TabUpdatedEventMessageDetail 
 type TabUpdatedEventMessageDetail struct {
     EventMessageDetail
-    // The OdataType property
-    OdataType *string
 }
 // NewTabUpdatedEventMessageDetail instantiates a new tabUpdatedEventMessageDetail and sets the default values.
 func NewTabUpdatedEventMessageDetail()(*TabUpdatedEventMessageDetail) {

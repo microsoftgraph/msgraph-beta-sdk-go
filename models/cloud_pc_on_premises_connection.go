@@ -167,16 +167,6 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["organizationalUnit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -233,7 +223,7 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(i8
             return err
         }
         if val != nil {
-            m.SetType(val.(*CloudPcOnPremisesConnectionType))
+            m.SetTypeEscaped(val.(*CloudPcOnPremisesConnectionType))
         }
         return nil
     }
@@ -303,17 +293,6 @@ func (m *CloudPcOnPremisesConnection) GetManagedBy()(*CloudPcManagementService) 
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *CloudPcOnPremisesConnection) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetOrganizationalUnit gets the organizationalUnit property value. The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.
 func (m *CloudPcOnPremisesConnection) GetOrganizationalUnit()(*string) {
     val, err := m.GetBackingStore().Get("organizationalUnit")
@@ -369,8 +348,8 @@ func (m *CloudPcOnPremisesConnection) GetSubscriptionName()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
-func (m *CloudPcOnPremisesConnection) GetType()(*CloudPcOnPremisesConnectionType) {
+// GetTypeEscaped gets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
+func (m *CloudPcOnPremisesConnection) GetTypeEscaped()(*CloudPcOnPremisesConnectionType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -465,12 +444,6 @@ func (m *CloudPcOnPremisesConnection) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("organizationalUnit", m.GetOrganizationalUnit())
         if err != nil {
             return err
@@ -500,8 +473,8 @@ func (m *CloudPcOnPremisesConnection) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -584,13 +557,6 @@ func (m *CloudPcOnPremisesConnection) SetManagedBy(value *CloudPcManagementServi
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *CloudPcOnPremisesConnection) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOrganizationalUnit sets the organizationalUnit property value. The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.
 func (m *CloudPcOnPremisesConnection) SetOrganizationalUnit(value *string)() {
     err := m.GetBackingStore().Set("organizationalUnit", value)
@@ -626,8 +592,8 @@ func (m *CloudPcOnPremisesConnection) SetSubscriptionName(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
-func (m *CloudPcOnPremisesConnection) SetType(value *CloudPcOnPremisesConnectionType)() {
+// SetTypeEscaped sets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
+func (m *CloudPcOnPremisesConnection) SetTypeEscaped(value *CloudPcOnPremisesConnectionType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -660,13 +626,12 @@ type CloudPcOnPremisesConnectionable interface {
     GetHealthCheckStatusDetails()(CloudPcOnPremisesConnectionStatusDetailsable)
     GetInUse()(*bool)
     GetManagedBy()(*CloudPcManagementService)
-    GetOdataType()(*string)
     GetOrganizationalUnit()(*string)
     GetResourceGroupId()(*string)
     GetSubnetId()(*string)
     GetSubscriptionId()(*string)
     GetSubscriptionName()(*string)
-    GetType()(*CloudPcOnPremisesConnectionType)
+    GetTypeEscaped()(*CloudPcOnPremisesConnectionType)
     GetVirtualNetworkId()(*string)
     GetVirtualNetworkLocation()(*string)
     SetAdDomainName(value *string)()
@@ -678,13 +643,12 @@ type CloudPcOnPremisesConnectionable interface {
     SetHealthCheckStatusDetails(value CloudPcOnPremisesConnectionStatusDetailsable)()
     SetInUse(value *bool)()
     SetManagedBy(value *CloudPcManagementService)()
-    SetOdataType(value *string)()
     SetOrganizationalUnit(value *string)()
     SetResourceGroupId(value *string)()
     SetSubnetId(value *string)()
     SetSubscriptionId(value *string)()
     SetSubscriptionName(value *string)()
-    SetType(value *CloudPcOnPremisesConnectionType)()
+    SetTypeEscaped(value *CloudPcOnPremisesConnectionType)()
     SetVirtualNetworkId(value *string)()
     SetVirtualNetworkLocation(value *string)()
 }

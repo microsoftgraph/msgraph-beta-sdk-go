@@ -7,8 +7,6 @@ import (
 // DeliveryOptimizationMaxCacheSizeAbsolute delivery Optimization max cache size absolute type.
 type DeliveryOptimizationMaxCacheSizeAbsolute struct {
     DeliveryOptimizationMaxCacheSize
-    // The OdataType property
-    OdataType *string
 }
 // NewDeliveryOptimizationMaxCacheSizeAbsolute instantiates a new deliveryOptimizationMaxCacheSizeAbsolute and sets the default values.
 func NewDeliveryOptimizationMaxCacheSizeAbsolute()(*DeliveryOptimizationMaxCacheSizeAbsolute) {

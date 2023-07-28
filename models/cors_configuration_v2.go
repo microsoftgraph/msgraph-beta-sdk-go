@@ -7,8 +7,6 @@ import (
 // CorsConfiguration_v2 
 type CorsConfiguration_v2 struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewCorsConfiguration_v2 instantiates a new corsConfiguration_v2 and sets the default values.
 func NewCorsConfiguration_v2()(*CorsConfiguration_v2) {

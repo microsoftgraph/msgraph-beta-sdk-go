@@ -7,8 +7,6 @@ import (
 // IosHomeScreenApp represents an icon for an app on the Home Screen
 type IosHomeScreenApp struct {
     IosHomeScreenItem
-    // The OdataType property
-    OdataType *string
 }
 // NewIosHomeScreenApp instantiates a new iosHomeScreenApp and sets the default values.
 func NewIosHomeScreenApp()(*IosHomeScreenApp) {

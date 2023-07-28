@@ -7,8 +7,6 @@ import (
 // DetectedSensitiveContent 
 type DetectedSensitiveContent struct {
     DetectedSensitiveContentBase
-    // The OdataType property
-    OdataType *string
 }
 // NewDetectedSensitiveContent instantiates a new detectedSensitiveContent and sets the default values.
 func NewDetectedSensitiveContent()(*DetectedSensitiveContent) {

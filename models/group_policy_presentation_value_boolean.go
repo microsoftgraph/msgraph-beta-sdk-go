@@ -7,8 +7,6 @@ import (
 // GroupPolicyPresentationValueBoolean the entity represents a Boolean value of a checkbox presentation on a policy definition.
 type GroupPolicyPresentationValueBoolean struct {
     GroupPolicyPresentationValue
-    // The OdataType property
-    OdataType *string
 }
 // NewGroupPolicyPresentationValueBoolean instantiates a new groupPolicyPresentationValueBoolean and sets the default values.
 func NewGroupPolicyPresentationValueBoolean()(*GroupPolicyPresentationValueBoolean) {

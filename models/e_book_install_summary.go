@@ -7,8 +7,6 @@ import (
 // EBookInstallSummary contains properties for the installation summary of a book for a device.
 type EBookInstallSummary struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewEBookInstallSummary instantiates a new eBookInstallSummary and sets the default values.
 func NewEBookInstallSummary()(*EBookInstallSummary) {

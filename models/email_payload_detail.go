@@ -7,8 +7,6 @@ import (
 // EmailPayloadDetail 
 type EmailPayloadDetail struct {
     PayloadDetail
-    // The OdataType property
-    OdataType *string
 }
 // NewEmailPayloadDetail instantiates a new emailPayloadDetail and sets the default values.
 func NewEmailPayloadDetail()(*EmailPayloadDetail) {

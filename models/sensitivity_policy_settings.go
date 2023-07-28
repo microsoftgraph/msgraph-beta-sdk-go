@@ -7,8 +7,6 @@ import (
 // SensitivityPolicySettings 
 type SensitivityPolicySettings struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewSensitivityPolicySettings instantiates a new sensitivityPolicySettings and sets the default values.
 func NewSensitivityPolicySettings()(*SensitivityPolicySettings) {

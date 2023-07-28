@@ -109,7 +109,7 @@ func (m *ItemItemsItemWorkbookFunctionsCumIPmtPostRequestBody) GetFieldDeseriali
             return err
         }
         if val != nil {
-            m.SetType(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable))
+            m.SetTypeEscaped(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable))
         }
         return nil
     }
@@ -159,8 +159,8 @@ func (m *ItemItemsItemWorkbookFunctionsCumIPmtPostRequestBody) GetStartPeriod()(
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *ItemItemsItemWorkbookFunctionsCumIPmtPostRequestBody) GetType()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *ItemItemsItemWorkbookFunctionsCumIPmtPostRequestBody) GetTypeEscaped()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -203,7 +203,7 @@ func (m *ItemItemsItemWorkbookFunctionsCumIPmtPostRequestBody) Serialize(writer 
         }
     }
     {
-        err := writer.WriteObjectValue("type", m.GetType())
+        err := writer.WriteObjectValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -262,8 +262,8 @@ func (m *ItemItemsItemWorkbookFunctionsCumIPmtPostRequestBody) SetStartPeriod(va
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *ItemItemsItemWorkbookFunctionsCumIPmtPostRequestBody) SetType(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *ItemItemsItemWorkbookFunctionsCumIPmtPostRequestBody) SetTypeEscaped(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -280,12 +280,12 @@ type ItemItemsItemWorkbookFunctionsCumIPmtPostRequestBodyable interface {
     GetPv()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)
     GetRate()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)
     GetStartPeriod()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)
-    GetType()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)
+    GetTypeEscaped()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetEndPeriod(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)()
     SetNper(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)()
     SetPv(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)()
     SetRate(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)()
     SetStartPeriod(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)()
-    SetType(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)()
+    SetTypeEscaped(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)()
 }

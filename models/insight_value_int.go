@@ -7,8 +7,6 @@ import (
 // InsightValueInt the value in an user experience analytics insight.
 type InsightValueInt struct {
     UserExperienceAnalyticsInsightValue
-    // The OdataType property
-    OdataType *string
 }
 // NewInsightValueInt instantiates a new insightValueInt and sets the default values.
 func NewInsightValueInt()(*InsightValueInt) {

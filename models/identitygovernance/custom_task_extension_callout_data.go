@@ -25,16 +25,6 @@ func CreateCustomTaskExtensionCalloutDataFromDiscriminatorValue(parseNode i878a8
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CustomTaskExtensionCalloutData) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CustomExtensionData.GetFieldDeserializers()
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["subject"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUserFromDiscriminatorValue)
         if err != nil {
@@ -76,17 +66,6 @@ func (m *CustomTaskExtensionCalloutData) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *CustomTaskExtensionCalloutData) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetSubject gets the subject property value. The subject property
 func (m *CustomTaskExtensionCalloutData) GetSubject()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable) {
@@ -139,12 +118,6 @@ func (m *CustomTaskExtensionCalloutData) Serialize(writer i878a80d2330e89d268963
         return err
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("subject", m.GetSubject())
         if err != nil {
             return err
@@ -169,13 +142,6 @@ func (m *CustomTaskExtensionCalloutData) Serialize(writer i878a80d2330e89d268963
         }
     }
     return nil
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *CustomTaskExtensionCalloutData) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
 }
 // SetSubject sets the subject property value. The subject property
 func (m *CustomTaskExtensionCalloutData) SetSubject(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)() {
@@ -209,12 +175,10 @@ func (m *CustomTaskExtensionCalloutData) SetWorkflow(value Workflowable)() {
 type CustomTaskExtensionCalloutDataable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomExtensionDataable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOdataType()(*string)
     GetSubject()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)
     GetTask()(Taskable)
     GetTaskProcessingresult()(TaskProcessingResultable)
     GetWorkflow()(Workflowable)
-    SetOdataType(value *string)()
     SetSubject(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)()
     SetTask(value Taskable)()
     SetTaskProcessingresult(value TaskProcessingResultable)()

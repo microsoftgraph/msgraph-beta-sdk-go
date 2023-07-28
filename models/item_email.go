@@ -72,14 +72,14 @@ func (m *ItemEmail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
             return err
         }
         if val != nil {
-            m.SetType(val.(*EmailType))
+            m.SetTypeEscaped(val.(*EmailType))
         }
         return nil
     }
     return res
 }
-// GetType gets the type property value. The type property
-func (m *ItemEmail) GetType()(*EmailType) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *ItemEmail) GetTypeEscaped()(*EmailType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -107,8 +107,8 @@ func (m *ItemEmail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -130,8 +130,8 @@ func (m *ItemEmail) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *ItemEmail) SetType(value *EmailType)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *ItemEmail) SetTypeEscaped(value *EmailType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -143,8 +143,8 @@ type ItemEmailable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAddress()(*string)
     GetDisplayName()(*string)
-    GetType()(*EmailType)
+    GetTypeEscaped()(*EmailType)
     SetAddress(value *string)()
     SetDisplayName(value *string)()
-    SetType(value *EmailType)()
+    SetTypeEscaped(value *EmailType)()
 }

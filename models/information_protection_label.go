@@ -7,8 +7,6 @@ import (
 // InformationProtectionLabel 
 type InformationProtectionLabel struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewInformationProtectionLabel instantiates a new informationProtectionLabel and sets the default values.
 func NewInformationProtectionLabel()(*InformationProtectionLabel) {

@@ -7,8 +7,6 @@ import (
 // DeviceManagementConfigurationExchangeOnlineSettingApplicability applicability for an Exchange Online Setting
 type DeviceManagementConfigurationExchangeOnlineSettingApplicability struct {
     DeviceManagementConfigurationSettingApplicability
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementConfigurationExchangeOnlineSettingApplicability instantiates a new deviceManagementConfigurationExchangeOnlineSettingApplicability and sets the default values.
 func NewDeviceManagementConfigurationExchangeOnlineSettingApplicability()(*DeviceManagementConfigurationExchangeOnlineSettingApplicability) {

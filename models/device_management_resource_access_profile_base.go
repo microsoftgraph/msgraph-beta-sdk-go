@@ -8,8 +8,6 @@ import (
 // DeviceManagementResourceAccessProfileBase base Profile Type for Resource Access
 type DeviceManagementResourceAccessProfileBase struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementResourceAccessProfileBase instantiates a new deviceManagementResourceAccessProfileBase and sets the default values.
 func NewDeviceManagementResourceAccessProfileBase()(*DeviceManagementResourceAccessProfileBase) {

@@ -7,8 +7,6 @@ import (
 // WindowsDefenderScanActionResult windows Defender last scan result
 type WindowsDefenderScanActionResult struct {
     DeviceActionResult
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsDefenderScanActionResult instantiates a new windowsDefenderScanActionResult and sets the default values.
 func NewWindowsDefenderScanActionResult()(*WindowsDefenderScanActionResult) {

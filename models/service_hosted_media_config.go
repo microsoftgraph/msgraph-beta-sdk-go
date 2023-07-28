@@ -7,8 +7,6 @@ import (
 // ServiceHostedMediaConfig 
 type ServiceHostedMediaConfig struct {
     MediaConfig
-    // The OdataType property
-    OdataType *string
 }
 // NewServiceHostedMediaConfig instantiates a new serviceHostedMediaConfig and sets the default values.
 func NewServiceHostedMediaConfig()(*ServiceHostedMediaConfig) {

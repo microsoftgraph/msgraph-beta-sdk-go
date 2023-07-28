@@ -8,8 +8,6 @@ import (
 // Subscription 
 type Subscription struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewSubscription instantiates a new subscription and sets the default values.
 func NewSubscription()(*Subscription) {

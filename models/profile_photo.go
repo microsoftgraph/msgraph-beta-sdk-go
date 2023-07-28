@@ -7,8 +7,6 @@ import (
 // ProfilePhoto 
 type ProfilePhoto struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewProfilePhoto instantiates a new profilePhoto and sets the default values.
 func NewProfilePhoto()(*ProfilePhoto) {

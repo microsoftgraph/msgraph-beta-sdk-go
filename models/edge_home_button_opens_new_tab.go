@@ -7,8 +7,6 @@ import (
 // EdgeHomeButtonOpensNewTab show the home button; clicking the home button loads the New tab page.
 type EdgeHomeButtonOpensNewTab struct {
     EdgeHomeButtonConfiguration
-    // The OdataType property
-    OdataType *string
 }
 // NewEdgeHomeButtonOpensNewTab instantiates a new edgeHomeButtonOpensNewTab and sets the default values.
 func NewEdgeHomeButtonOpensNewTab()(*EdgeHomeButtonOpensNewTab) {

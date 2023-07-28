@@ -7,8 +7,6 @@ import (
 // UnifiedRoleAssignmentMultiple 
 type UnifiedRoleAssignmentMultiple struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewUnifiedRoleAssignmentMultiple instantiates a new unifiedRoleAssignmentMultiple and sets the default values.
 func NewUnifiedRoleAssignmentMultiple()(*UnifiedRoleAssignmentMultiple) {

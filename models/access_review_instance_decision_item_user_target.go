@@ -7,8 +7,6 @@ import (
 // AccessReviewInstanceDecisionItemUserTarget 
 type AccessReviewInstanceDecisionItemUserTarget struct {
     AccessReviewInstanceDecisionItemTarget
-    // The OdataType property
-    OdataType *string
 }
 // NewAccessReviewInstanceDecisionItemUserTarget instantiates a new accessReviewInstanceDecisionItemUserTarget and sets the default values.
 func NewAccessReviewInstanceDecisionItemUserTarget()(*AccessReviewInstanceDecisionItemUserTarget) {

@@ -7,8 +7,6 @@ import (
 // DeviceManagementSettingStringLengthConstraint constraint enforcing a given string length range
 type DeviceManagementSettingStringLengthConstraint struct {
     DeviceManagementConstraint
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementSettingStringLengthConstraint instantiates a new deviceManagementSettingStringLengthConstraint and sets the default values.
 func NewDeviceManagementSettingStringLengthConstraint()(*DeviceManagementSettingStringLengthConstraint) {

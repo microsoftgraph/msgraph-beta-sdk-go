@@ -7,8 +7,6 @@ import (
 // PlannerGroup 
 type PlannerGroup struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewPlannerGroup instantiates a new plannerGroup and sets the default values.
 func NewPlannerGroup()(*PlannerGroup) {

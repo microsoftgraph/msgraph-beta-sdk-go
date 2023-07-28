@@ -7,8 +7,6 @@ import (
 // KeyStringValuePair a key-value pair with a string key and a string value.
 type KeyStringValuePair struct {
     KeyTypedValuePair
-    // The OdataType property
-    OdataType *string
 }
 // NewKeyStringValuePair instantiates a new keyStringValuePair and sets the default values.
 func NewKeyStringValuePair()(*KeyStringValuePair) {

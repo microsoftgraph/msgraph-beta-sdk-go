@@ -7,8 +7,6 @@ import (
 // BusinessFlow 
 type BusinessFlow struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewBusinessFlow instantiates a new businessFlow and sets the default values.
 func NewBusinessFlow()(*BusinessFlow) {

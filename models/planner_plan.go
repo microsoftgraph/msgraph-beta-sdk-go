@@ -8,8 +8,6 @@ import (
 // PlannerPlan 
 type PlannerPlan struct {
     PlannerDelta
-    // The OdataType property
-    OdataType *string
 }
 // NewPlannerPlan instantiates a new plannerPlan and sets the default values.
 func NewPlannerPlan()(*PlannerPlan) {

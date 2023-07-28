@@ -7,8 +7,6 @@ import (
 // AzureCommunicationServicesUserConversationMember 
 type AzureCommunicationServicesUserConversationMember struct {
     ConversationMember
-    // The OdataType property
-    OdataType *string
 }
 // NewAzureCommunicationServicesUserConversationMember instantiates a new azureCommunicationServicesUserConversationMember and sets the default values.
 func NewAzureCommunicationServicesUserConversationMember()(*AzureCommunicationServicesUserConversationMember) {

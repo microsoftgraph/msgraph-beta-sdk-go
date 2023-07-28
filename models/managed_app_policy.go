@@ -8,8 +8,6 @@ import (
 // ManagedAppPolicy the ManagedAppPolicy resource represents a base type for platform specific policies.
 type ManagedAppPolicy struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewManagedAppPolicy instantiates a new managedAppPolicy and sets the default values.
 func NewManagedAppPolicy()(*ManagedAppPolicy) {

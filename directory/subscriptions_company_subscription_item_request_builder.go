@@ -18,7 +18,7 @@ type SubscriptionsCompanySubscriptionItemRequestBuilderDeleteRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SubscriptionsCompanySubscriptionItemRequestBuilderGetQueryParameters get subscriptions from directory
+// SubscriptionsCompanySubscriptionItemRequestBuilderGetQueryParameters get a specific commercial subscription that an organization has acquired.
 type SubscriptionsCompanySubscriptionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *SubscriptionsCompanySubscriptionItemRequestBuilder) Delete(ctx context.
     }
     return nil
 }
-// Get get subscriptions from directory
+// Get get a specific commercial subscription that an organization has acquired.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/companysubscription-get?view=graph-rest-1.0
 func (m *SubscriptionsCompanySubscriptionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SubscriptionsCompanySubscriptionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CompanySubscriptionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *SubscriptionsCompanySubscriptionItemRequestBuilder) ToDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get subscriptions from directory
+// ToGetRequestInformation get a specific commercial subscription that an organization has acquired.
 func (m *SubscriptionsCompanySubscriptionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubscriptionsCompanySubscriptionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

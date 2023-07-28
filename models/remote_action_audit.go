@@ -8,8 +8,6 @@ import (
 // RemoteActionAudit report of remote actions initiated on the devices belonging to a certain tenant.
 type RemoteActionAudit struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewRemoteActionAudit instantiates a new remoteActionAudit and sets the default values.
 func NewRemoteActionAudit()(*RemoteActionAudit) {

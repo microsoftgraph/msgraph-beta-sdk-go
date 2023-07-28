@@ -7,8 +7,6 @@ import (
 // BasicAuthentication 
 type BasicAuthentication struct {
     ApiAuthenticationConfigurationBase
-    // The OdataType property
-    OdataType *string
 }
 // NewBasicAuthentication instantiates a new basicAuthentication and sets the default values.
 func NewBasicAuthentication()(*BasicAuthentication) {

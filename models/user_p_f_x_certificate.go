@@ -8,8 +8,6 @@ import (
 // UserPFXCertificate entity that encapsulates all information required for a user's PFX certificates.
 type UserPFXCertificate struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewUserPFXCertificate instantiates a new userPFXCertificate and sets the default values.
 func NewUserPFXCertificate()(*UserPFXCertificate) {

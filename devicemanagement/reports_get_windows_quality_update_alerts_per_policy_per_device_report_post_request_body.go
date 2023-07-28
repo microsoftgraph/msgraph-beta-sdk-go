@@ -115,7 +115,7 @@ func (m *ReportsGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequest
                     res[i] = *(v.(*string))
                 }
             }
-            m.SetSelect(res)
+            m.SetSelectEscaped(res)
         }
         return nil
     }
@@ -206,8 +206,8 @@ func (m *ReportsGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequest
     }
     return nil
 }
-// GetSelect gets the select property value. The select property
-func (m *ReportsGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody) GetSelect()([]string) {
+// GetSelectEscaped gets the select property value. The select property
+func (m *ReportsGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody) GetSelectEscaped()([]string) {
     val, err := m.GetBackingStore().Get("selectEscaped")
     if err != nil {
         panic(err)
@@ -282,8 +282,8 @@ func (m *ReportsGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequest
             return err
         }
     }
-    if m.GetSelect() != nil {
-        err := writer.WriteCollectionOfStringValues("select", m.GetSelect())
+    if m.GetSelectEscaped() != nil {
+        err := writer.WriteCollectionOfStringValues("select", m.GetSelectEscaped())
         if err != nil {
             return err
         }
@@ -360,8 +360,8 @@ func (m *ReportsGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequest
         panic(err)
     }
 }
-// SetSelect sets the select property value. The select property
-func (m *ReportsGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody) SetSelect(value []string)() {
+// SetSelectEscaped sets the select property value. The select property
+func (m *ReportsGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody) SetSelectEscaped(value []string)() {
     err := m.GetBackingStore().Set("selectEscaped", value)
     if err != nil {
         panic(err)
@@ -399,7 +399,7 @@ type ReportsGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody
     GetName()(*string)
     GetOrderBy()([]string)
     GetSearch()(*string)
-    GetSelect()([]string)
+    GetSelectEscaped()([]string)
     GetSessionId()(*string)
     GetSkip()(*int32)
     GetTop()(*int32)
@@ -409,7 +409,7 @@ type ReportsGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody
     SetName(value *string)()
     SetOrderBy(value []string)()
     SetSearch(value *string)()
-    SetSelect(value []string)()
+    SetSelectEscaped(value []string)()
     SetSessionId(value *string)()
     SetSkip(value *int32)()
     SetTop(value *int32)()

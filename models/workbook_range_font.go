@@ -7,8 +7,6 @@ import (
 // WorkbookRangeFont 
 type WorkbookRangeFont struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWorkbookRangeFont instantiates a new workbookRangeFont and sets the default values.
 func NewWorkbookRangeFont()(*WorkbookRangeFont) {

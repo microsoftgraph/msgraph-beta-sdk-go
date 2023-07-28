@@ -218,16 +218,6 @@ func (m *TermsAndConditions) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -296,17 +286,6 @@ func (m *TermsAndConditions) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3a
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *TermsAndConditions) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -427,12 +406,6 @@ func (m *TermsAndConditions) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetRoleScopeTagIds() != nil {
         err = writer.WriteCollectionOfStringValues("roleScopeTagIds", m.GetRoleScopeTagIds())
         if err != nil {
@@ -523,13 +496,6 @@ func (m *TermsAndConditions) SetModifiedDateTime(value *i336074805fc853987abe6f7
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *TermsAndConditions) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
 func (m *TermsAndConditions) SetRoleScopeTagIds(value []string)() {
     err := m.GetBackingStore().Set("roleScopeTagIds", value)
@@ -565,7 +531,6 @@ type TermsAndConditionsable interface {
     GetGroupAssignments()([]TermsAndConditionsGroupAssignmentable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetOdataType()(*string)
     GetRoleScopeTagIds()([]string)
     GetTitle()(*string)
     GetVersion()(*int32)
@@ -579,7 +544,6 @@ type TermsAndConditionsable interface {
     SetGroupAssignments(value []TermsAndConditionsGroupAssignmentable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetOdataType(value *string)()
     SetRoleScopeTagIds(value []string)()
     SetTitle(value *string)()
     SetVersion(value *int32)()

@@ -6,17 +6,13 @@ import (
 
 // SitePage 
 type SitePage struct {
-    BaseItem
-    // The OdataType property
-    OdataType *string
+    BaseSitePage
 }
 // NewSitePage instantiates a new sitePage and sets the default values.
 func NewSitePage()(*SitePage) {
     m := &SitePage{
-        BaseItem: *NewBaseItem(),
+        BaseSitePage: *NewBaseSitePage(),
     }
-    odataTypeValue := "#microsoft.graph.sitePage"
-    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateSitePageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -34,20 +30,9 @@ func (m *SitePage) GetCanvasLayout()(CanvasLayoutable) {
     }
     return nil
 }
-// GetContentType gets the contentType property value. The contentType property
-func (m *SitePage) GetContentType()(ContentTypeInfoable) {
-    val, err := m.GetBackingStore().Get("contentType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(ContentTypeInfoable)
-    }
-    return nil
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SitePage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.BaseItem.GetFieldDeserializers()
+    res := m.BaseSitePage.GetFieldDeserializers()
     res["canvasLayout"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCanvasLayoutFromDiscriminatorValue)
         if err != nil {
@@ -58,26 +43,6 @@ func (m *SitePage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
-    res["contentType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateContentTypeInfoFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContentType(val.(ContentTypeInfoable))
-        }
-        return nil
-    }
-    res["pageLayout"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePageLayoutType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPageLayout(val.(*PageLayoutType))
-        }
-        return nil
-    }
     res["promotionKind"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePagePromotionType)
         if err != nil {
@@ -85,16 +50,6 @@ func (m *SitePage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         if val != nil {
             m.SetPromotionKind(val.(*PagePromotionType))
-        }
-        return nil
-    }
-    res["publishingState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreatePublicationFacetFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPublishingState(val.(PublicationFacetable))
         }
         return nil
     }
@@ -138,16 +93,6 @@ func (m *SitePage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
-    res["title"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTitle(val)
-        }
-        return nil
-    }
     res["titleArea"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTitleAreaFromDiscriminatorValue)
         if err != nil {
@@ -176,17 +121,6 @@ func (m *SitePage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetPageLayout gets the pageLayout property value. The pageLayout property
-func (m *SitePage) GetPageLayout()(*PageLayoutType) {
-    val, err := m.GetBackingStore().Get("pageLayout")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*PageLayoutType)
-    }
-    return nil
-}
 // GetPromotionKind gets the promotionKind property value. Indicates the promotion kind of the sitePage. The possible values are: microsoftReserved, page, newsPost, unknownFutureValue.
 func (m *SitePage) GetPromotionKind()(*PagePromotionType) {
     val, err := m.GetBackingStore().Get("promotionKind")
@@ -195,17 +129,6 @@ func (m *SitePage) GetPromotionKind()(*PagePromotionType) {
     }
     if val != nil {
         return val.(*PagePromotionType)
-    }
-    return nil
-}
-// GetPublishingState gets the publishingState property value. The publishingState property
-func (m *SitePage) GetPublishingState()(PublicationFacetable) {
-    val, err := m.GetBackingStore().Get("publishingState")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(PublicationFacetable)
     }
     return nil
 }
@@ -253,17 +176,6 @@ func (m *SitePage) GetThumbnailWebUrl()(*string) {
     }
     return nil
 }
-// GetTitle gets the title property value. The title property
-func (m *SitePage) GetTitle()(*string) {
-    val, err := m.GetBackingStore().Get("title")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetTitleArea gets the titleArea property value. Title area on the SharePoint page.
 func (m *SitePage) GetTitleArea()(TitleAreaable) {
     val, err := m.GetBackingStore().Get("titleArea")
@@ -288,7 +200,7 @@ func (m *SitePage) GetWebParts()([]WebPartable) {
 }
 // Serialize serializes information the current object
 func (m *SitePage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.BaseItem.Serialize(writer)
+    err := m.BaseSitePage.Serialize(writer)
     if err != nil {
         return err
     }
@@ -298,28 +210,9 @@ func (m *SitePage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
-    {
-        err = writer.WriteObjectValue("contentType", m.GetContentType())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetPageLayout() != nil {
-        cast := (*m.GetPageLayout()).String()
-        err = writer.WriteStringValue("pageLayout", &cast)
-        if err != nil {
-            return err
-        }
-    }
     if m.GetPromotionKind() != nil {
         cast := (*m.GetPromotionKind()).String()
         err = writer.WriteStringValue("promotionKind", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("publishingState", m.GetPublishingState())
         if err != nil {
             return err
         }
@@ -344,12 +237,6 @@ func (m *SitePage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     {
         err = writer.WriteStringValue("thumbnailWebUrl", m.GetThumbnailWebUrl())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("title", m.GetTitle())
         if err != nil {
             return err
         }
@@ -381,30 +268,9 @@ func (m *SitePage) SetCanvasLayout(value CanvasLayoutable)() {
         panic(err)
     }
 }
-// SetContentType sets the contentType property value. The contentType property
-func (m *SitePage) SetContentType(value ContentTypeInfoable)() {
-    err := m.GetBackingStore().Set("contentType", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetPageLayout sets the pageLayout property value. The pageLayout property
-func (m *SitePage) SetPageLayout(value *PageLayoutType)() {
-    err := m.GetBackingStore().Set("pageLayout", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetPromotionKind sets the promotionKind property value. Indicates the promotion kind of the sitePage. The possible values are: microsoftReserved, page, newsPost, unknownFutureValue.
 func (m *SitePage) SetPromotionKind(value *PagePromotionType)() {
     err := m.GetBackingStore().Set("promotionKind", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetPublishingState sets the publishingState property value. The publishingState property
-func (m *SitePage) SetPublishingState(value PublicationFacetable)() {
-    err := m.GetBackingStore().Set("publishingState", value)
     if err != nil {
         panic(err)
     }
@@ -437,13 +303,6 @@ func (m *SitePage) SetThumbnailWebUrl(value *string)() {
         panic(err)
     }
 }
-// SetTitle sets the title property value. The title property
-func (m *SitePage) SetTitle(value *string)() {
-    err := m.GetBackingStore().Set("title", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetTitleArea sets the titleArea property value. Title area on the SharePoint page.
 func (m *SitePage) SetTitleArea(value TitleAreaable)() {
     err := m.GetBackingStore().Set("titleArea", value)
@@ -460,30 +319,22 @@ func (m *SitePage) SetWebParts(value []WebPartable)() {
 }
 // SitePageable 
 type SitePageable interface {
-    BaseItemable
+    BaseSitePageable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCanvasLayout()(CanvasLayoutable)
-    GetContentType()(ContentTypeInfoable)
-    GetPageLayout()(*PageLayoutType)
     GetPromotionKind()(*PagePromotionType)
-    GetPublishingState()(PublicationFacetable)
     GetReactions()(ReactionsFacetable)
     GetShowComments()(*bool)
     GetShowRecommendedPages()(*bool)
     GetThumbnailWebUrl()(*string)
-    GetTitle()(*string)
     GetTitleArea()(TitleAreaable)
     GetWebParts()([]WebPartable)
     SetCanvasLayout(value CanvasLayoutable)()
-    SetContentType(value ContentTypeInfoable)()
-    SetPageLayout(value *PageLayoutType)()
     SetPromotionKind(value *PagePromotionType)()
-    SetPublishingState(value PublicationFacetable)()
     SetReactions(value ReactionsFacetable)()
     SetShowComments(value *bool)()
     SetShowRecommendedPages(value *bool)()
     SetThumbnailWebUrl(value *string)()
-    SetTitle(value *string)()
     SetTitleArea(value TitleAreaable)()
     SetWebParts(value []WebPartable)()
 }

@@ -67,7 +67,7 @@ func (m *DeviceManagementExchangeDeviceClass) GetFieldDeserializers()(map[string
             return err
         }
         if val != nil {
-            m.SetType(val.(*DeviceManagementExchangeAccessRuleType))
+            m.SetTypeEscaped(val.(*DeviceManagementExchangeAccessRuleType))
         }
         return nil
     }
@@ -95,8 +95,8 @@ func (m *DeviceManagementExchangeDeviceClass) GetOdataType()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. Criteria which defines the type of device this access rule will apply to
-func (m *DeviceManagementExchangeDeviceClass) GetType()(*DeviceManagementExchangeAccessRuleType) {
+// GetTypeEscaped gets the type property value. Criteria which defines the type of device this access rule will apply to
+func (m *DeviceManagementExchangeDeviceClass) GetTypeEscaped()(*DeviceManagementExchangeAccessRuleType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -120,8 +120,8 @@ func (m *DeviceManagementExchangeDeviceClass) Serialize(writer i878a80d2330e89d2
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -160,8 +160,8 @@ func (m *DeviceManagementExchangeDeviceClass) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. Criteria which defines the type of device this access rule will apply to
-func (m *DeviceManagementExchangeDeviceClass) SetType(value *DeviceManagementExchangeAccessRuleType)() {
+// SetTypeEscaped sets the type property value. Criteria which defines the type of device this access rule will apply to
+func (m *DeviceManagementExchangeDeviceClass) SetTypeEscaped(value *DeviceManagementExchangeAccessRuleType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -175,9 +175,9 @@ type DeviceManagementExchangeDeviceClassable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetName()(*string)
     GetOdataType()(*string)
-    GetType()(*DeviceManagementExchangeAccessRuleType)
+    GetTypeEscaped()(*DeviceManagementExchangeAccessRuleType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetName(value *string)()
     SetOdataType(value *string)()
-    SetType(value *DeviceManagementExchangeAccessRuleType)()
+    SetTypeEscaped(value *DeviceManagementExchangeAccessRuleType)()
 }

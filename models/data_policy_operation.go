@@ -8,8 +8,6 @@ import (
 // DataPolicyOperation 
 type DataPolicyOperation struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDataPolicyOperation instantiates a new dataPolicyOperation and sets the default values.
 func NewDataPolicyOperation()(*DataPolicyOperation) {

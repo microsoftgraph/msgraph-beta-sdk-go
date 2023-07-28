@@ -48,14 +48,14 @@ func (m *ItemItemsItemWorkbookFunctionsCountBlankPostRequestBody) GetFieldDeseri
             return err
         }
         if val != nil {
-            m.SetRange(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable))
+            m.SetRangeEscaped(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable))
         }
         return nil
     }
     return res
 }
-// GetRange gets the range property value. The range property
-func (m *ItemItemsItemWorkbookFunctionsCountBlankPostRequestBody) GetRange()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable) {
+// GetRangeEscaped gets the range property value. The range property
+func (m *ItemItemsItemWorkbookFunctionsCountBlankPostRequestBody) GetRangeEscaped()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable) {
     val, err := m.GetBackingStore().Get("rangeEscaped")
     if err != nil {
         panic(err)
@@ -68,7 +68,7 @@ func (m *ItemItemsItemWorkbookFunctionsCountBlankPostRequestBody) GetRange()(ie2
 // Serialize serializes information the current object
 func (m *ItemItemsItemWorkbookFunctionsCountBlankPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteObjectValue("range", m.GetRange())
+        err := writer.WriteObjectValue("range", m.GetRangeEscaped())
         if err != nil {
             return err
         }
@@ -92,8 +92,8 @@ func (m *ItemItemsItemWorkbookFunctionsCountBlankPostRequestBody) SetAdditionalD
 func (m *ItemItemsItemWorkbookFunctionsCountBlankPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetRange sets the range property value. The range property
-func (m *ItemItemsItemWorkbookFunctionsCountBlankPostRequestBody) SetRange(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)() {
+// SetRangeEscaped sets the range property value. The range property
+func (m *ItemItemsItemWorkbookFunctionsCountBlankPostRequestBody) SetRangeEscaped(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)() {
     err := m.GetBackingStore().Set("rangeEscaped", value)
     if err != nil {
         panic(err)
@@ -105,7 +105,7 @@ type ItemItemsItemWorkbookFunctionsCountBlankPostRequestBodyable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetRange()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)
+    GetRangeEscaped()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetRange(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)()
+    SetRangeEscaped(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)()
 }

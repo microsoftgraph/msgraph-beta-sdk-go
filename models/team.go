@@ -8,8 +8,6 @@ import (
 // Team 
 type Team struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewTeam instantiates a new team and sets the default values.
 func NewTeam()(*Team) {

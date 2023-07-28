@@ -24,16 +24,6 @@ func CreateWindowsAppXAppAssignmentSettingsFromDiscriminatorValue(parseNode i878
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsAppXAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileAppAssignmentSettings.GetFieldDeserializers()
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["useDeviceContext"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -46,18 +36,7 @@ func (m *WindowsAppXAppAssignmentSettings) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *WindowsAppXAppAssignmentSettings) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetUseDeviceContext gets the useDeviceContext property value. Whether or not to use device execution context for Windows AppX mobile app.
+// GetUseDeviceContext gets the useDeviceContext property value. When TRUE, indicates that device execution context will be used for the AppX mobile app. When FALSE, indicates that user context will be used for the AppX mobile app. By default, this property is set to FALSE. Once this property has been set to TRUE it cannot be changed.
 func (m *WindowsAppXAppAssignmentSettings) GetUseDeviceContext()(*bool) {
     val, err := m.GetBackingStore().Get("useDeviceContext")
     if err != nil {
@@ -75,12 +54,6 @@ func (m *WindowsAppXAppAssignmentSettings) Serialize(writer i878a80d2330e89d2689
         return err
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteBoolValue("useDeviceContext", m.GetUseDeviceContext())
         if err != nil {
             return err
@@ -88,14 +61,7 @@ func (m *WindowsAppXAppAssignmentSettings) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *WindowsAppXAppAssignmentSettings) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetUseDeviceContext sets the useDeviceContext property value. Whether or not to use device execution context for Windows AppX mobile app.
+// SetUseDeviceContext sets the useDeviceContext property value. When TRUE, indicates that device execution context will be used for the AppX mobile app. When FALSE, indicates that user context will be used for the AppX mobile app. By default, this property is set to FALSE. Once this property has been set to TRUE it cannot be changed.
 func (m *WindowsAppXAppAssignmentSettings) SetUseDeviceContext(value *bool)() {
     err := m.GetBackingStore().Set("useDeviceContext", value)
     if err != nil {
@@ -106,8 +72,6 @@ func (m *WindowsAppXAppAssignmentSettings) SetUseDeviceContext(value *bool)() {
 type WindowsAppXAppAssignmentSettingsable interface {
     MobileAppAssignmentSettingsable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOdataType()(*string)
     GetUseDeviceContext()(*bool)
-    SetOdataType(value *string)()
     SetUseDeviceContext(value *bool)()
 }

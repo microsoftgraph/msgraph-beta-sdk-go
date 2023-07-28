@@ -79,7 +79,7 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemTaskReportsItemTaskProcessin
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -96,8 +96,8 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemTaskReportsItemTaskProcessin
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemTaskReportsItemTaskProcessingResultsItemMicrosoftGraphIdentityGovernanceResumeResumePostRequestBody) GetType()(*string) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemTaskReportsItemTaskProcessingResultsItemMicrosoftGraphIdentityGovernanceResumeResumePostRequestBody) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -122,7 +122,7 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemTaskReportsItemTaskProcessin
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -160,8 +160,8 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemTaskReportsItemTaskProcessin
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemTaskReportsItemTaskProcessingResultsItemMicrosoftGraphIdentityGovernanceResumeResumePostRequestBody) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemTaskReportsItemTaskProcessingResultsItemMicrosoftGraphIdentityGovernanceResumeResumePostRequestBody) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -175,9 +175,9 @@ type LifecycleWorkflowsDeletedItemsWorkflowsItemTaskReportsItemTaskProcessingRes
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetData()(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.CustomTaskExtensionCallbackDataable)
     GetSource()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetData(value i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.CustomTaskExtensionCallbackDataable)()
     SetSource(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // Sharepoint 
 type Sharepoint struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewSharepoint instantiates a new sharepoint and sets the default values.
 func NewSharepoint()(*Sharepoint) {

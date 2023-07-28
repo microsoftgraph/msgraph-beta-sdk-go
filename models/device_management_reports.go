@@ -7,8 +7,6 @@ import (
 // DeviceManagementReports singleton entity that acts as a container for all reports functionality.
 type DeviceManagementReports struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementReports instantiates a new deviceManagementReports and sets the default values.
 func NewDeviceManagementReports()(*DeviceManagementReports) {

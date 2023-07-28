@@ -7,8 +7,6 @@ import (
 // SubjectRightsRequestEnumeratedSiteLocation 
 type SubjectRightsRequestEnumeratedSiteLocation struct {
     SubjectRightsRequestSiteLocation
-    // The OdataType property
-    OdataType *string
 }
 // NewSubjectRightsRequestEnumeratedSiteLocation instantiates a new subjectRightsRequestEnumeratedSiteLocation and sets the default values.
 func NewSubjectRightsRequestEnumeratedSiteLocation()(*SubjectRightsRequestEnumeratedSiteLocation) {

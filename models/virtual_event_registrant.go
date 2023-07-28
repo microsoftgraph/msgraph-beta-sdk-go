@@ -85,16 +85,6 @@ func (m *VirtualEventRegistrant) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["registrationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -157,17 +147,6 @@ func (m *VirtualEventRegistrant) GetFirstName()(*string) {
 // GetLastName gets the lastName property value. Last name of the registrant.
 func (m *VirtualEventRegistrant) GetLastName()(*string) {
     val, err := m.GetBackingStore().Get("lastName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *VirtualEventRegistrant) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -251,12 +230,6 @@ func (m *VirtualEventRegistrant) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteTimeValue("registrationDateTime", m.GetRegistrationDateTime())
         if err != nil {
             return err
@@ -317,13 +290,6 @@ func (m *VirtualEventRegistrant) SetLastName(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *VirtualEventRegistrant) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetRegistrationDateTime sets the registrationDateTime property value. Time in UTC when the registrant registers for the virtual event.
 func (m *VirtualEventRegistrant) SetRegistrationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("registrationDateTime", value)
@@ -360,7 +326,6 @@ type VirtualEventRegistrantable interface {
     GetEmail()(*string)
     GetFirstName()(*string)
     GetLastName()(*string)
-    GetOdataType()(*string)
     GetRegistrationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRegistrationQuestionAnswers()([]VirtualEventRegistrationQuestionAnswerable)
     GetStatus()(*VirtualEventAttendeeRegistrationStatus)
@@ -369,7 +334,6 @@ type VirtualEventRegistrantable interface {
     SetEmail(value *string)()
     SetFirstName(value *string)()
     SetLastName(value *string)()
-    SetOdataType(value *string)()
     SetRegistrationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRegistrationQuestionAnswers(value []VirtualEventRegistrationQuestionAnswerable)()
     SetStatus(value *VirtualEventAttendeeRegistrationStatus)()

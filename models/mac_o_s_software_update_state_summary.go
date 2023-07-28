@@ -8,8 +8,6 @@ import (
 // MacOSSoftwareUpdateStateSummary macOS software update state summary for a device and user
 type MacOSSoftwareUpdateStateSummary struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewMacOSSoftwareUpdateStateSummary instantiates a new macOSSoftwareUpdateStateSummary and sets the default values.
 func NewMacOSSoftwareUpdateStateSummary()(*MacOSSoftwareUpdateStateSummary) {

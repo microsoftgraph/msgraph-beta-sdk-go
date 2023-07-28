@@ -7,8 +7,6 @@ import (
 // WindowsKioskLocalGroup the class used to identify a local group for the kiosk configuration
 type WindowsKioskLocalGroup struct {
     WindowsKioskUser
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsKioskLocalGroup instantiates a new windowsKioskLocalGroup and sets the default values.
 func NewWindowsKioskLocalGroup()(*WindowsKioskLocalGroup) {

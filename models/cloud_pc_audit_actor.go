@@ -139,7 +139,7 @@ func (m *CloudPcAuditActor) GetFieldDeserializers()(map[string]func(i878a80d2330
             return err
         }
         if val != nil {
-            m.SetType(val.(*CloudPcAuditActorType))
+            m.SetTypeEscaped(val.(*CloudPcAuditActorType))
         }
         return nil
     }
@@ -252,8 +252,8 @@ func (m *CloudPcAuditActor) GetServicePrincipalName()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *CloudPcAuditActor) GetType()(*CloudPcAuditActorType) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *CloudPcAuditActor) GetTypeEscaped()(*CloudPcAuditActorType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -351,8 +351,8 @@ func (m *CloudPcAuditActor) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -456,8 +456,8 @@ func (m *CloudPcAuditActor) SetServicePrincipalName(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *CloudPcAuditActor) SetType(value *CloudPcAuditActorType)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *CloudPcAuditActor) SetTypeEscaped(value *CloudPcAuditActorType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -504,7 +504,7 @@ type CloudPcAuditActorable interface {
     GetRemoteTenantId()(*string)
     GetRemoteUserId()(*string)
     GetServicePrincipalName()(*string)
-    GetType()(*CloudPcAuditActorType)
+    GetTypeEscaped()(*CloudPcAuditActorType)
     GetUserId()(*string)
     GetUserPermissions()([]string)
     GetUserPrincipalName()(*string)
@@ -517,7 +517,7 @@ type CloudPcAuditActorable interface {
     SetRemoteTenantId(value *string)()
     SetRemoteUserId(value *string)()
     SetServicePrincipalName(value *string)()
-    SetType(value *CloudPcAuditActorType)()
+    SetTypeEscaped(value *CloudPcAuditActorType)()
     SetUserId(value *string)()
     SetUserPermissions(value []string)()
     SetUserPrincipalName(value *string)()

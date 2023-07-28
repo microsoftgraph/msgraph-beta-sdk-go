@@ -7,8 +7,6 @@ import (
 // IPv4CidrRange 
 type IPv4CidrRange struct {
     IpRange
-    // The OdataType property
-    OdataType *string
 }
 // NewIPv4CidrRange instantiates a new iPv4CidrRange and sets the default values.
 func NewIPv4CidrRange()(*IPv4CidrRange) {

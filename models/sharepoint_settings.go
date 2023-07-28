@@ -8,8 +8,6 @@ import (
 // SharepointSettings 
 type SharepointSettings struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewSharepointSettings instantiates a new sharepointSettings and sets the default values.
 func NewSharepointSettings()(*SharepointSettings) {

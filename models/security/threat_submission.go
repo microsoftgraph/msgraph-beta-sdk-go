@@ -180,16 +180,6 @@ func (m *ThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["result"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSubmissionResultFromDiscriminatorValue)
         if err != nil {
@@ -231,17 +221,6 @@ func (m *ThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *ThreatSubmission) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetResult gets the result property value. Specifies the result of the analysis performed by Microsoft.
 func (m *ThreatSubmission) GetResult()(SubmissionResultable) {
@@ -333,12 +312,6 @@ func (m *ThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("result", m.GetResult())
         if err != nil {
             return err
@@ -408,13 +381,6 @@ func (m *ThreatSubmission) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *ThreatSubmission) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetResult sets the result property value. Specifies the result of the analysis performed by Microsoft.
 func (m *ThreatSubmission) SetResult(value SubmissionResultable)() {
     err := m.GetBackingStore().Set("result", value)
@@ -453,7 +419,6 @@ type ThreatSubmissionable interface {
     GetContentType()(*SubmissionContentType)
     GetCreatedBy()(SubmissionUserIdentityable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetOdataType()(*string)
     GetResult()(SubmissionResultable)
     GetSource()(*SubmissionSource)
     GetStatus()(*LongRunningOperationStatus)
@@ -464,7 +429,6 @@ type ThreatSubmissionable interface {
     SetContentType(value *SubmissionContentType)()
     SetCreatedBy(value SubmissionUserIdentityable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetOdataType(value *string)()
     SetResult(value SubmissionResultable)()
     SetSource(value *SubmissionSource)()
     SetStatus(value *LongRunningOperationStatus)()

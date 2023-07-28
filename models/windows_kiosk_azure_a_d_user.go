@@ -7,8 +7,6 @@ import (
 // WindowsKioskAzureADUser the class used to identify an AzureAD user account for the kiosk configuration
 type WindowsKioskAzureADUser struct {
     WindowsKioskUser
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsKioskAzureADUser instantiates a new windowsKioskAzureADUser and sets the default values.
 func NewWindowsKioskAzureADUser()(*WindowsKioskAzureADUser) {

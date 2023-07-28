@@ -7,8 +7,6 @@ import (
 // UnsupportedGroupPolicyExtension unsupported Group Policy Extension.
 type UnsupportedGroupPolicyExtension struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewUnsupportedGroupPolicyExtension instantiates a new unsupportedGroupPolicyExtension and sets the default values.
 func NewUnsupportedGroupPolicyExtension()(*UnsupportedGroupPolicyExtension) {

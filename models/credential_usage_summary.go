@@ -7,8 +7,6 @@ import (
 // CredentialUsageSummary 
 type CredentialUsageSummary struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewCredentialUsageSummary instantiates a new credentialUsageSummary and sets the default values.
 func NewCredentialUsageSummary()(*CredentialUsageSummary) {

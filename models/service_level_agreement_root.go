@@ -7,8 +7,6 @@ import (
 // ServiceLevelAgreementRoot 
 type ServiceLevelAgreementRoot struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewServiceLevelAgreementRoot instantiates a new serviceLevelAgreementRoot and sets the default values.
 func NewServiceLevelAgreementRoot()(*ServiceLevelAgreementRoot) {

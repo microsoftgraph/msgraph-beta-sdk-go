@@ -7,8 +7,6 @@ import (
 // EdiscoveryExportOperation 
 type EdiscoveryExportOperation struct {
     CaseOperation
-    // The OdataType property
-    OdataType *string
 }
 // NewEdiscoveryExportOperation instantiates a new ediscoveryExportOperation and sets the default values.
 func NewEdiscoveryExportOperation()(*EdiscoveryExportOperation) {

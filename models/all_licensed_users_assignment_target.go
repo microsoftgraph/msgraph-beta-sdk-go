@@ -7,8 +7,6 @@ import (
 // AllLicensedUsersAssignmentTarget represents an assignment to all licensed users in the tenant.
 type AllLicensedUsersAssignmentTarget struct {
     DeviceAndAppManagementAssignmentTarget
-    // The OdataType property
-    OdataType *string
 }
 // NewAllLicensedUsersAssignmentTarget instantiates a new allLicensedUsersAssignmentTarget and sets the default values.
 func NewAllLicensedUsersAssignmentTarget()(*AllLicensedUsersAssignmentTarget) {

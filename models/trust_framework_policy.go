@@ -7,8 +7,6 @@ import (
 // TrustFrameworkPolicy 
 type TrustFrameworkPolicy struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewTrustFrameworkPolicy instantiates a new trustFrameworkPolicy and sets the default values.
 func NewTrustFrameworkPolicy()(*TrustFrameworkPolicy) {

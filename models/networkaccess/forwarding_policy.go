@@ -7,8 +7,6 @@ import (
 // ForwardingPolicy 
 type ForwardingPolicy struct {
     Policy
-    // The OdataType property
-    OdataType *string
 }
 // NewForwardingPolicy instantiates a new forwardingPolicy and sets the default values.
 func NewForwardingPolicy()(*ForwardingPolicy) {

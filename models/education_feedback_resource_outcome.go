@@ -7,8 +7,6 @@ import (
 // EducationFeedbackResourceOutcome 
 type EducationFeedbackResourceOutcome struct {
     EducationOutcome
-    // The OdataType property
-    OdataType *string
 }
 // NewEducationFeedbackResourceOutcome instantiates a new educationFeedbackResourceOutcome and sets the default values.
 func NewEducationFeedbackResourceOutcome()(*EducationFeedbackResourceOutcome) {

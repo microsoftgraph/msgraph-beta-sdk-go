@@ -7,8 +7,6 @@ import (
 // DeviceManagementSettingCollectionConstraint constraint that enforces the maximum number of elements a collection
 type DeviceManagementSettingCollectionConstraint struct {
     DeviceManagementConstraint
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementSettingCollectionConstraint instantiates a new deviceManagementSettingCollectionConstraint and sets the default values.
 func NewDeviceManagementSettingCollectionConstraint()(*DeviceManagementSettingCollectionConstraint) {

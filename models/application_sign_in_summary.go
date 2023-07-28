@@ -64,16 +64,6 @@ func (m *ApplicationSignInSummary) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["successfulSignInCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -95,17 +85,6 @@ func (m *ApplicationSignInSummary) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *ApplicationSignInSummary) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetSuccessfulSignInCount gets the successfulSignInCount property value. Count of successful sign-ins made by the application.
 func (m *ApplicationSignInSummary) GetSuccessfulSignInCount()(*int64) {
@@ -148,12 +127,6 @@ func (m *ApplicationSignInSummary) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteInt64Value("successfulSignInCount", m.GetSuccessfulSignInCount())
         if err != nil {
             return err
@@ -181,13 +154,6 @@ func (m *ApplicationSignInSummary) SetFailedSignInCount(value *int64)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *ApplicationSignInSummary) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetSuccessfulSignInCount sets the successfulSignInCount property value. Count of successful sign-ins made by the application.
 func (m *ApplicationSignInSummary) SetSuccessfulSignInCount(value *int64)() {
     err := m.GetBackingStore().Set("successfulSignInCount", value)
@@ -208,12 +174,10 @@ type ApplicationSignInSummaryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAppDisplayName()(*string)
     GetFailedSignInCount()(*int64)
-    GetOdataType()(*string)
     GetSuccessfulSignInCount()(*int64)
     GetSuccessPercentage()(*float64)
     SetAppDisplayName(value *string)()
     SetFailedSignInCount(value *int64)()
-    SetOdataType(value *string)()
     SetSuccessfulSignInCount(value *int64)()
     SetSuccessPercentage(value *float64)()
 }

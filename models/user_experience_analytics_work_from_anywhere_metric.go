@@ -7,8 +7,6 @@ import (
 // UserExperienceAnalyticsWorkFromAnywhereMetric the user experience analytics metric for work from anywhere report.
 type UserExperienceAnalyticsWorkFromAnywhereMetric struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewUserExperienceAnalyticsWorkFromAnywhereMetric instantiates a new userExperienceAnalyticsWorkFromAnywhereMetric and sets the default values.
 func NewUserExperienceAnalyticsWorkFromAnywhereMetric()(*UserExperienceAnalyticsWorkFromAnywhereMetric) {

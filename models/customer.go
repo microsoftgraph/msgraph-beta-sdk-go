@@ -362,7 +362,7 @@ func (m *Customer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -554,8 +554,8 @@ func (m *Customer) GetTaxRegistrationNumber()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *Customer) GetType()(*string) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *Customer) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -723,7 +723,7 @@ func (m *Customer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -914,8 +914,8 @@ func (m *Customer) SetTaxRegistrationNumber(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *Customer) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *Customer) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -957,7 +957,7 @@ type Customerable interface {
     GetTaxAreaId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetTaxLiable()(*bool)
     GetTaxRegistrationNumber()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     GetWebsite()(*string)
     SetAddress(value PostalAddressTypeable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
@@ -983,6 +983,6 @@ type Customerable interface {
     SetTaxAreaId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetTaxLiable(value *bool)()
     SetTaxRegistrationNumber(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
     SetWebsite(value *string)()
 }

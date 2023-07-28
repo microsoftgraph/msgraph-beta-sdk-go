@@ -7,8 +7,6 @@ import (
 // PlannerProgressTaskBoardTaskFormat 
 type PlannerProgressTaskBoardTaskFormat struct {
     PlannerDelta
-    // The OdataType property
-    OdataType *string
 }
 // NewPlannerProgressTaskBoardTaskFormat instantiates a new plannerProgressTaskBoardTaskFormat and sets the default values.
 func NewPlannerProgressTaskBoardTaskFormat()(*PlannerProgressTaskBoardTaskFormat) {

@@ -34,16 +34,6 @@ func (m *LogicAppTriggerEndpointConfiguration) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["resourceGroupName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -79,17 +69,6 @@ func (m *LogicAppTriggerEndpointConfiguration) GetFieldDeserializers()(map[strin
 // GetLogicAppWorkflowName gets the logicAppWorkflowName property value. The name of the logic app.
 func (m *LogicAppTriggerEndpointConfiguration) GetLogicAppWorkflowName()(*string) {
     val, err := m.GetBackingStore().Get("logicAppWorkflowName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *LogicAppTriggerEndpointConfiguration) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -144,12 +123,6 @@ func (m *LogicAppTriggerEndpointConfiguration) Serialize(writer i878a80d2330e89d
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("resourceGroupName", m.GetResourceGroupName())
         if err != nil {
             return err
@@ -172,13 +145,6 @@ func (m *LogicAppTriggerEndpointConfiguration) Serialize(writer i878a80d2330e89d
 // SetLogicAppWorkflowName sets the logicAppWorkflowName property value. The name of the logic app.
 func (m *LogicAppTriggerEndpointConfiguration) SetLogicAppWorkflowName(value *string)() {
     err := m.GetBackingStore().Set("logicAppWorkflowName", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *LogicAppTriggerEndpointConfiguration) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -209,12 +175,10 @@ type LogicAppTriggerEndpointConfigurationable interface {
     CustomExtensionEndpointConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetLogicAppWorkflowName()(*string)
-    GetOdataType()(*string)
     GetResourceGroupName()(*string)
     GetSubscriptionId()(*string)
     GetUrl()(*string)
     SetLogicAppWorkflowName(value *string)()
-    SetOdataType(value *string)()
     SetResourceGroupName(value *string)()
     SetSubscriptionId(value *string)()
     SetUrl(value *string)()

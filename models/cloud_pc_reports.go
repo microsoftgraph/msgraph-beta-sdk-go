@@ -7,8 +7,6 @@ import (
 // CloudPcReports 
 type CloudPcReports struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewCloudPcReports instantiates a new cloudPcReports and sets the default values.
 func NewCloudPcReports()(*CloudPcReports) {

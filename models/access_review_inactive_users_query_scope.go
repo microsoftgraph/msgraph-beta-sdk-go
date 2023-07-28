@@ -34,16 +34,6 @@ func (m *AccessReviewInactiveUsersQueryScope) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetInactiveDuration gets the inactiveDuration property value. Defines the duration of inactivity. Inactivity is based on the last sign in date of the user compared to the access review instance's start date. If this property is not specified, it's assigned the default value PT0S.
@@ -54,17 +44,6 @@ func (m *AccessReviewInactiveUsersQueryScope) GetInactiveDuration()(*i878a80d233
     }
     if val != nil {
         return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *AccessReviewInactiveUsersQueryScope) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -80,12 +59,6 @@ func (m *AccessReviewInactiveUsersQueryScope) Serialize(writer i878a80d2330e89d2
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetInactiveDuration sets the inactiveDuration property value. Defines the duration of inactivity. Inactivity is based on the last sign in date of the user compared to the access review instance's start date. If this property is not specified, it's assigned the default value PT0S.
@@ -95,19 +68,10 @@ func (m *AccessReviewInactiveUsersQueryScope) SetInactiveDuration(value *i878a80
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *AccessReviewInactiveUsersQueryScope) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // AccessReviewInactiveUsersQueryScopeable 
 type AccessReviewInactiveUsersQueryScopeable interface {
     AccessReviewQueryScopeable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetInactiveDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
-    GetOdataType()(*string)
     SetInactiveDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
-    SetOdataType(value *string)()
 }

@@ -43,16 +43,6 @@ func (m *VerticalSection) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["webparts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWebPartFromDiscriminatorValue)
         if err != nil {
@@ -70,17 +60,6 @@ func (m *VerticalSection) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *VerticalSection) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetWebparts gets the webparts property value. The set of web parts in this section.
 func (m *VerticalSection) GetWebparts()([]WebPartable) {
@@ -106,12 +85,6 @@ func (m *VerticalSection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetWebparts() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWebparts()))
         for i, v := range m.GetWebparts() {
@@ -133,13 +106,6 @@ func (m *VerticalSection) SetEmphasis(value *SectionEmphasisType)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *VerticalSection) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetWebparts sets the webparts property value. The set of web parts in this section.
 func (m *VerticalSection) SetWebparts(value []WebPartable)() {
     err := m.GetBackingStore().Set("webparts", value)
@@ -152,9 +118,7 @@ type VerticalSectionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEmphasis()(*SectionEmphasisType)
-    GetOdataType()(*string)
     GetWebparts()([]WebPartable)
     SetEmphasis(value *SectionEmphasisType)()
-    SetOdataType(value *string)()
     SetWebparts(value []WebPartable)()
 }

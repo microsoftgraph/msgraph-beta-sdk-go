@@ -160,7 +160,7 @@ func (m *AuditActor) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -273,8 +273,8 @@ func (m *AuditActor) GetServicePrincipalName()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. Actor Type.
-func (m *AuditActor) GetType()(*string) {
+// GetTypeEscaped gets the type property value. Actor Type.
+func (m *AuditActor) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -379,7 +379,7 @@ func (m *AuditActor) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -489,8 +489,8 @@ func (m *AuditActor) SetServicePrincipalName(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. Actor Type.
-func (m *AuditActor) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. Actor Type.
+func (m *AuditActor) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -538,7 +538,7 @@ type AuditActorable interface {
     GetRemoteTenantId()(*string)
     GetRemoteUserId()(*string)
     GetServicePrincipalName()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     GetUserId()(*string)
     GetUserPermissions()([]string)
     GetUserPrincipalName()(*string)
@@ -552,7 +552,7 @@ type AuditActorable interface {
     SetRemoteTenantId(value *string)()
     SetRemoteUserId(value *string)()
     SetServicePrincipalName(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
     SetUserId(value *string)()
     SetUserPermissions(value []string)()
     SetUserPrincipalName(value *string)()

@@ -7,8 +7,6 @@ import (
 // PrintUsageByPrinter 
 type PrintUsageByPrinter struct {
     PrintUsage
-    // The OdataType property
-    OdataType *string
 }
 // NewPrintUsageByPrinter instantiates a new printUsageByPrinter and sets the default values.
 func NewPrintUsageByPrinter()(*PrintUsageByPrinter) {

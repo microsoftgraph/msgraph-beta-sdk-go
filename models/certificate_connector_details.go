@@ -8,8 +8,6 @@ import (
 // CertificateConnectorDetails entity used to retrieve information about Intune Certificate Connectors.
 type CertificateConnectorDetails struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewCertificateConnectorDetails instantiates a new certificateConnectorDetails and sets the default values.
 func NewCertificateConnectorDetails()(*CertificateConnectorDetails) {

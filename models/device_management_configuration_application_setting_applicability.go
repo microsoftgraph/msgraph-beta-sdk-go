@@ -7,8 +7,6 @@ import (
 // DeviceManagementConfigurationApplicationSettingApplicability applicability for a setting that can be targeted on managed Applications by Intune
 type DeviceManagementConfigurationApplicationSettingApplicability struct {
     DeviceManagementConfigurationSettingApplicability
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementConfigurationApplicationSettingApplicability instantiates a new deviceManagementConfigurationApplicationSettingApplicability and sets the default values.
 func NewDeviceManagementConfigurationApplicationSettingApplicability()(*DeviceManagementConfigurationApplicationSettingApplicability) {

@@ -7,8 +7,6 @@ import (
 // RotateBitLockerKeysDeviceActionResult rotateBitLockerKeys device action result
 type RotateBitLockerKeysDeviceActionResult struct {
     DeviceActionResult
-    // The OdataType property
-    OdataType *string
 }
 // NewRotateBitLockerKeysDeviceActionResult instantiates a new rotateBitLockerKeysDeviceActionResult and sets the default values.
 func NewRotateBitLockerKeysDeviceActionResult()(*RotateBitLockerKeysDeviceActionResult) {

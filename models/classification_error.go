@@ -7,8 +7,6 @@ import (
 // ClassificationError 
 type ClassificationError struct {
     ClassifcationErrorBase
-    // The OdataType property
-    OdataType *string
 }
 // NewClassificationError instantiates a new classificationError and sets the default values.
 func NewClassificationError()(*ClassificationError) {

@@ -8,8 +8,6 @@ import (
 // ManagedDeviceMobileAppConfigurationUserStatus contains properties, inherited properties and actions for an MDM mobile app configuration status for a user.
 type ManagedDeviceMobileAppConfigurationUserStatus struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewManagedDeviceMobileAppConfigurationUserStatus instantiates a new managedDeviceMobileAppConfigurationUserStatus and sets the default values.
 func NewManagedDeviceMobileAppConfigurationUserStatus()(*ManagedDeviceMobileAppConfigurationUserStatus) {

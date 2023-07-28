@@ -7,8 +7,6 @@ import (
 // OnPremisesPublishingProfile 
 type OnPremisesPublishingProfile struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewOnPremisesPublishingProfile instantiates a new onPremisesPublishingProfile and sets the default values.
 func NewOnPremisesPublishingProfile()(*OnPremisesPublishingProfile) {

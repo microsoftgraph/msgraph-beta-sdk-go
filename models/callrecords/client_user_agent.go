@@ -7,8 +7,6 @@ import (
 // ClientUserAgent 
 type ClientUserAgent struct {
     UserAgent
-    // The OdataType property
-    OdataType *string
 }
 // NewClientUserAgent instantiates a new clientUserAgent and sets the default values.
 func NewClientUserAgent()(*ClientUserAgent) {

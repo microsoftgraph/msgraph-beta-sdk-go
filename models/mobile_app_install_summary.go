@@ -7,8 +7,6 @@ import (
 // MobileAppInstallSummary contains properties for the installation summary of a mobile app. This will be deprecated starting May, 2023 (Intune Release 2305).
 type MobileAppInstallSummary struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewMobileAppInstallSummary instantiates a new mobileAppInstallSummary and sets the default values.
 func NewMobileAppInstallSummary()(*MobileAppInstallSummary) {

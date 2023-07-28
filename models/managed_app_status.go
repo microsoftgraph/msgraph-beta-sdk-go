@@ -7,8 +7,6 @@ import (
 // ManagedAppStatus represents app protection and configuration status for the organization.
 type ManagedAppStatus struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewManagedAppStatus instantiates a new managedAppStatus and sets the default values.
 func NewManagedAppStatus()(*ManagedAppStatus) {

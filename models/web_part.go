@@ -7,8 +7,6 @@ import (
 // WebPart 
 type WebPart struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWebPart instantiates a new webPart and sets the default values.
 func NewWebPart()(*WebPart) {

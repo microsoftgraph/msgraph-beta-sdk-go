@@ -8,8 +8,6 @@ import (
 // SequentialActivationRenewalsAlertIncident 
 type SequentialActivationRenewalsAlertIncident struct {
     UnifiedRoleManagementAlertIncident
-    // The OdataType property
-    OdataType *string
 }
 // NewSequentialActivationRenewalsAlertIncident instantiates a new sequentialActivationRenewalsAlertIncident and sets the default values.
 func NewSequentialActivationRenewalsAlertIncident()(*SequentialActivationRenewalsAlertIncident) {

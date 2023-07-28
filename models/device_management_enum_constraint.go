@@ -7,8 +7,6 @@ import (
 // DeviceManagementEnumConstraint constraint that enforces the setting value is from a permitted set of strings
 type DeviceManagementEnumConstraint struct {
     DeviceManagementConstraint
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceManagementEnumConstraint instantiates a new deviceManagementEnumConstraint and sets the default values.
 func NewDeviceManagementEnumConstraint()(*DeviceManagementEnumConstraint) {

@@ -7,8 +7,6 @@ import (
 // ConfigurationManagerActionResult result of the ConfigurationManager action
 type ConfigurationManagerActionResult struct {
     DeviceActionResult
-    // The OdataType property
-    OdataType *string
 }
 // NewConfigurationManagerActionResult instantiates a new configurationManagerActionResult and sets the default values.
 func NewConfigurationManagerActionResult()(*ConfigurationManagerActionResult) {

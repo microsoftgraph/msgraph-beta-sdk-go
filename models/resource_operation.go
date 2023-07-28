@@ -85,16 +85,6 @@ func (m *ResourceOperation) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["resource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -116,17 +106,6 @@ func (m *ResourceOperation) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *ResourceOperation) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetResource gets the resource property value. Resource category to which this Operation belongs. This property is read-only.
 func (m *ResourceOperation) GetResource()(*string) {
@@ -169,12 +148,6 @@ func (m *ResourceOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("resourceName", m.GetResourceName())
         if err != nil {
             return err
@@ -203,13 +176,6 @@ func (m *ResourceOperation) SetEnabledForScopeValidation(value *bool)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *ResourceOperation) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetResource sets the resource property value. Resource category to which this Operation belongs. This property is read-only.
 func (m *ResourceOperation) SetResource(value *string)() {
     err := m.GetBackingStore().Set("resource", value)
@@ -231,13 +197,11 @@ type ResourceOperationable interface {
     GetActionName()(*string)
     GetDescription()(*string)
     GetEnabledForScopeValidation()(*bool)
-    GetOdataType()(*string)
     GetResource()(*string)
     GetResourceName()(*string)
     SetActionName(value *string)()
     SetDescription(value *string)()
     SetEnabledForScopeValidation(value *bool)()
-    SetOdataType(value *string)()
     SetResource(value *string)()
     SetResourceName(value *string)()
 }

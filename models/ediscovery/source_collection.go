@@ -271,16 +271,6 @@ func (m *SourceCollection) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetLastEstimateStatisticsOperation gets the lastEstimateStatisticsOperation property value. The last estimate operation associated with the sourceCollection.
@@ -324,17 +314,6 @@ func (m *SourceCollection) GetNoncustodialSources()([]NoncustodialDataSourceable
     }
     if val != nil {
         return val.([]NoncustodialDataSourceable)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *SourceCollection) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -441,12 +420,6 @@ func (m *SourceCollection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetAdditionalSources sets the additionalSources property value. Adds an additional source to the sourceCollection.
@@ -540,13 +513,6 @@ func (m *SourceCollection) SetNoncustodialSources(value []NoncustodialDataSource
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *SourceCollection) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SourceCollectionable 
 type SourceCollectionable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
@@ -564,7 +530,6 @@ type SourceCollectionable interface {
     GetLastModifiedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetNoncustodialSources()([]NoncustodialDataSourceable)
-    GetOdataType()(*string)
     SetAdditionalSources(value []DataSourceable)()
     SetAddToReviewSetOperation(value AddToReviewSetOperationable)()
     SetContentQuery(value *string)()
@@ -578,5 +543,4 @@ type SourceCollectionable interface {
     SetLastModifiedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetNoncustodialSources(value []NoncustodialDataSourceable)()
-    SetOdataType(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // Win32LobAppProductCodeDetection contains product code and version properties to detect a Win32 App
 type Win32LobAppProductCodeDetection struct {
     Win32LobAppDetection
-    // The OdataType property
-    OdataType *string
 }
 // NewWin32LobAppProductCodeDetection instantiates a new win32LobAppProductCodeDetection and sets the default values.
 func NewWin32LobAppProductCodeDetection()(*Win32LobAppProductCodeDetection) {

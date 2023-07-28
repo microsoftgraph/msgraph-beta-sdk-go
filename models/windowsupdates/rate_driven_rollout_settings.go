@@ -7,8 +7,6 @@ import (
 // RateDrivenRolloutSettings 
 type RateDrivenRolloutSettings struct {
     GradualRolloutSettings
-    // The OdataType property
-    OdataType *string
 }
 // NewRateDrivenRolloutSettings instantiates a new rateDrivenRolloutSettings and sets the default values.
 func NewRateDrivenRolloutSettings()(*RateDrivenRolloutSettings) {

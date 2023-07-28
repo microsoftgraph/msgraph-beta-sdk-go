@@ -7,8 +7,6 @@ import (
 // RoleScopeTag role Scope Tag
 type RoleScopeTag struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewRoleScopeTag instantiates a new roleScopeTag and sets the default values.
 func NewRoleScopeTag()(*RoleScopeTag) {

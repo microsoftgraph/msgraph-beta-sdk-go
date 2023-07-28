@@ -7,8 +7,6 @@ import (
 // DeviceHealthScriptBooleanParameter properties of the  Booolean script parameter.
 type DeviceHealthScriptBooleanParameter struct {
     DeviceHealthScriptParameter
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceHealthScriptBooleanParameter instantiates a new deviceHealthScriptBooleanParameter and sets the default values.
 func NewDeviceHealthScriptBooleanParameter()(*DeviceHealthScriptBooleanParameter) {

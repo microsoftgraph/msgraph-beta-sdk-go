@@ -22,16 +22,6 @@ func CreateEdiscoveryAddToReviewSetOperationFromDiscriminatorValue(parseNode i87
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EdiscoveryAddToReviewSetOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CaseOperation.GetFieldDeserializers()
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["reviewSet"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEdiscoveryReviewSetFromDiscriminatorValue)
         if err != nil {
@@ -53,17 +43,6 @@ func (m *EdiscoveryAddToReviewSetOperation) GetFieldDeserializers()(map[string]f
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *EdiscoveryAddToReviewSetOperation) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetReviewSet gets the reviewSet property value. eDiscovery review set to which items matching source collection query gets added.
 func (m *EdiscoveryAddToReviewSetOperation) GetReviewSet()(EdiscoveryReviewSetable) {
@@ -94,12 +73,6 @@ func (m *EdiscoveryAddToReviewSetOperation) Serialize(writer i878a80d2330e89d268
         return err
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("reviewSet", m.GetReviewSet())
         if err != nil {
             return err
@@ -112,13 +85,6 @@ func (m *EdiscoveryAddToReviewSetOperation) Serialize(writer i878a80d2330e89d268
         }
     }
     return nil
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *EdiscoveryAddToReviewSetOperation) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
 }
 // SetReviewSet sets the reviewSet property value. eDiscovery review set to which items matching source collection query gets added.
 func (m *EdiscoveryAddToReviewSetOperation) SetReviewSet(value EdiscoveryReviewSetable)() {
@@ -138,10 +104,8 @@ func (m *EdiscoveryAddToReviewSetOperation) SetSearch(value EdiscoverySearchable
 type EdiscoveryAddToReviewSetOperationable interface {
     CaseOperationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOdataType()(*string)
     GetReviewSet()(EdiscoveryReviewSetable)
     GetSearch()(EdiscoverySearchable)
-    SetOdataType(value *string)()
     SetReviewSet(value EdiscoveryReviewSetable)()
     SetSearch(value EdiscoverySearchable)()
 }

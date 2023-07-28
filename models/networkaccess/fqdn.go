@@ -7,8 +7,6 @@ import (
 // Fqdn 
 type Fqdn struct {
     RuleDestination
-    // The OdataType property
-    OdataType *string
 }
 // NewFqdn instantiates a new fqdn and sets the default values.
 func NewFqdn()(*Fqdn) {

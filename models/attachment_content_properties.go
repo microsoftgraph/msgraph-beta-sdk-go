@@ -7,8 +7,6 @@ import (
 // AttachmentContentProperties 
 type AttachmentContentProperties struct {
     ContentProperties
-    // The OdataType property
-    OdataType *string
 }
 // NewAttachmentContentProperties instantiates a new attachmentContentProperties and sets the default values.
 func NewAttachmentContentProperties()(*AttachmentContentProperties) {

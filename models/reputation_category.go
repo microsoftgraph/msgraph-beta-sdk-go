@@ -88,7 +88,7 @@ func (m *ReputationCategory) GetFieldDeserializers()(map[string]func(i878a80d233
             return err
         }
         if val != nil {
-            m.SetVendor(val)
+            m.SetVendorEscaped(val)
         }
         return nil
     }
@@ -116,8 +116,8 @@ func (m *ReputationCategory) GetOdataType()(*string) {
     }
     return nil
 }
-// GetVendor gets the vendor property value. The vendor property
-func (m *ReputationCategory) GetVendor()(*string) {
+// GetVendorEscaped gets the vendor property value. The vendor property
+func (m *ReputationCategory) GetVendorEscaped()(*string) {
     val, err := m.GetBackingStore().Get("vendorEscaped")
     if err != nil {
         panic(err)
@@ -148,7 +148,7 @@ func (m *ReputationCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
-        err := writer.WriteStringValue("vendor", m.GetVendor())
+        err := writer.WriteStringValue("vendor", m.GetVendorEscaped())
         if err != nil {
             return err
         }
@@ -193,8 +193,8 @@ func (m *ReputationCategory) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetVendor sets the vendor property value. The vendor property
-func (m *ReputationCategory) SetVendor(value *string)() {
+// SetVendorEscaped sets the vendor property value. The vendor property
+func (m *ReputationCategory) SetVendorEscaped(value *string)() {
     err := m.GetBackingStore().Set("vendorEscaped", value)
     if err != nil {
         panic(err)
@@ -209,10 +209,10 @@ type ReputationCategoryable interface {
     GetDescription()(*string)
     GetName()(*string)
     GetOdataType()(*string)
-    GetVendor()(*string)
+    GetVendorEscaped()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDescription(value *string)()
     SetName(value *string)()
     SetOdataType(value *string)()
-    SetVendor(value *string)()
+    SetVendorEscaped(value *string)()
 }

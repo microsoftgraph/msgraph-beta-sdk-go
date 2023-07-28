@@ -7,8 +7,6 @@ import (
 // EducationOneRosterApiDataProvider 
 type EducationOneRosterApiDataProvider struct {
     EducationSynchronizationDataProvider
-    // The OdataType property
-    OdataType *string
 }
 // NewEducationOneRosterApiDataProvider instantiates a new educationOneRosterApiDataProvider and sets the default values.
 func NewEducationOneRosterApiDataProvider()(*EducationOneRosterApiDataProvider) {

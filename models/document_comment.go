@@ -7,8 +7,6 @@ import (
 // DocumentComment 
 type DocumentComment struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDocumentComment instantiates a new documentComment and sets the default values.
 func NewDocumentComment()(*DocumentComment) {

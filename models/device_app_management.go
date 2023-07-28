@@ -8,8 +8,6 @@ import (
 // DeviceAppManagement singleton entity that acts as a container for all device app management functionality.
 type DeviceAppManagement struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceAppManagement instantiates a new deviceAppManagement and sets the default values.
 func NewDeviceAppManagement()(*DeviceAppManagement) {

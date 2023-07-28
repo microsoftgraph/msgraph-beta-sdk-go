@@ -8,8 +8,6 @@ import (
 // EnterpriseCodeSigningCertificate 
 type EnterpriseCodeSigningCertificate struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewEnterpriseCodeSigningCertificate instantiates a new enterpriseCodeSigningCertificate and sets the default values.
 func NewEnterpriseCodeSigningCertificate()(*EnterpriseCodeSigningCertificate) {

@@ -7,8 +7,6 @@ import (
 // SubCategoryTemplate 
 type SubCategoryTemplate struct {
     FilePlanDescriptorTemplate
-    // The OdataType property
-    OdataType *string
 }
 // NewSubCategoryTemplate instantiates a new subCategoryTemplate and sets the default values.
 func NewSubCategoryTemplate()(*SubCategoryTemplate) {

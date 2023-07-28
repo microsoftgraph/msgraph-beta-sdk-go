@@ -7,8 +7,6 @@ import (
 // DataClassificationService 
 type DataClassificationService struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDataClassificationService instantiates a new dataClassificationService and sets the default values.
 func NewDataClassificationService()(*DataClassificationService) {

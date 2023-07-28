@@ -7,8 +7,6 @@ import (
 // EducationSynchronizationProfile 
 type EducationSynchronizationProfile struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewEducationSynchronizationProfile instantiates a new educationSynchronizationProfile and sets the default values.
 func NewEducationSynchronizationProfile()(*EducationSynchronizationProfile) {

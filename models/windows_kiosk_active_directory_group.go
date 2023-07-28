@@ -7,8 +7,6 @@ import (
 // WindowsKioskActiveDirectoryGroup the class used to identify an Azure Directory group for the kiosk configuration
 type WindowsKioskActiveDirectoryGroup struct {
     WindowsKioskUser
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsKioskActiveDirectoryGroup instantiates a new windowsKioskActiveDirectoryGroup and sets the default values.
 func NewWindowsKioskActiveDirectoryGroup()(*WindowsKioskActiveDirectoryGroup) {
