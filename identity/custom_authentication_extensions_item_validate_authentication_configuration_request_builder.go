@@ -34,7 +34,7 @@ func NewCustomAuthenticationExtensionsItemValidateAuthenticationConfigurationReq
 // Post an API to check validity of the endpoint and and authentication configuration for a customAuthenticationExtension.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/customauthenticationextension-validateauthenticationconfiguration?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/customauthenticationextension-validateauthenticationconfiguration?view=graph-rest-1.0
 func (m *CustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRequestBuilder) Post(ctx context.Context, requestConfiguration *CustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationConfigurationValidationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

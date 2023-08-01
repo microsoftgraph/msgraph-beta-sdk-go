@@ -73,7 +73,7 @@ func (m *AppsAndServicesRequestBuilder) Delete(ctx context.Context, requestConfi
 // Get read the properties and relationships of a adminAppsAndServices object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/adminappsandservices-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/adminappsandservices-get?view=graph-rest-1.0
 func (m *AppsAndServicesRequestBuilder) Get(ctx context.Context, requestConfiguration *AppsAndServicesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminAppsAndServicesable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *AppsAndServicesRequestBuilder) Get(ctx context.Context, requestConfigur
 // Patch update the properties of a adminAppsAndServices object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/adminappsandservices-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/adminappsandservices-update?view=graph-rest-1.0
 func (m *AppsAndServicesRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminAppsAndServicesable, requestConfiguration *AppsAndServicesRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminAppsAndServicesable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

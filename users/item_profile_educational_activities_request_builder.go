@@ -77,7 +77,7 @@ func (m *ItemProfileEducationalActivitiesRequestBuilder) Count()(*ItemProfileEdu
 // Get retrieve a list of educationalActivity objects from a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/profile-list-educationalactivities?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/profile-list-educationalactivities?view=graph-rest-1.0
 func (m *ItemProfileEducationalActivitiesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileEducationalActivitiesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ItemProfileEducationalActivitiesRequestBuilder) Get(ctx context.Context
 // Post create a new educationalActivity in a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/profile-post-educationalactivities?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/profile-post-educationalactivities?view=graph-rest-1.0
 func (m *ItemProfileEducationalActivitiesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityable, requestConfiguration *ItemProfileEducationalActivitiesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

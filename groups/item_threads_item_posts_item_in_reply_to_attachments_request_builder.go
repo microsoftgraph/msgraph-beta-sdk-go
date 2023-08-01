@@ -79,7 +79,7 @@ func (m *ItemThreadsItemPostsItemInReplyToAttachmentsRequestBuilder) CreateUploa
 // Get retrieve a list of attachment objects attached to a post.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/post-list-attachments?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/post-list-attachments?view=graph-rest-1.0
 func (m *ItemThreadsItemPostsItemInReplyToAttachmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemThreadsItemPostsItemInReplyToAttachmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

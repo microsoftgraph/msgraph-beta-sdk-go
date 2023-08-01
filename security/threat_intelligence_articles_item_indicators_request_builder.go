@@ -70,7 +70,7 @@ func (m *ThreatIntelligenceArticlesItemIndicatorsRequestBuilder) Count()(*Threat
 // Get get a list of articleIndicator objects that represent indicators of threat or compromise related to the contents of an article.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-article-list-indicators?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-article-list-indicators?view=graph-rest-1.0
 func (m *ThreatIntelligenceArticlesItemIndicatorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceArticlesItemIndicatorsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ArticleIndicatorCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

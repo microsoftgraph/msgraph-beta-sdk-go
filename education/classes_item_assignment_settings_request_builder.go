@@ -73,7 +73,7 @@ func (m *ClassesItemAssignmentSettingsRequestBuilder) Delete(ctx context.Context
 // Get read the properties and relationships of an educationAssignmentSettings object. Only teachers can perform this operation.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationassignmentsettings-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationassignmentsettings-get?view=graph-rest-1.0
 func (m *ClassesItemAssignmentSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemAssignmentSettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ClassesItemAssignmentSettingsRequestBuilder) GradingCategories()(*Class
 // Patch update the properties of an educationAssignmentSettings object. Only Teachers can update these settings.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationassignmentsettings-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationassignmentsettings-update?view=graph-rest-1.0
 func (m *ClassesItemAssignmentSettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentSettingsable, requestConfiguration *ClassesItemAssignmentSettingsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

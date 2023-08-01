@@ -77,7 +77,7 @@ func (m *ItemProfileSkillsRequestBuilder) Count()(*ItemProfileSkillsCountRequest
 // Get retrieve a list of skillProficiency objects in a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/profile-list-skills?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/profile-list-skills?view=graph-rest-1.0
 func (m *ItemProfileSkillsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileSkillsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ItemProfileSkillsRequestBuilder) Get(ctx context.Context, requestConfig
 // Post use this API to create a new skillProficiency object in a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/profile-post-skills?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/profile-post-skills?view=graph-rest-1.0
 func (m *ItemProfileSkillsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable, requestConfiguration *ItemProfileSkillsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

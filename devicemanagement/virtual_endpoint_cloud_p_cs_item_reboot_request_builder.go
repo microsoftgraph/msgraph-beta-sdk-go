@@ -33,7 +33,7 @@ func NewVirtualEndpointCloudPCsItemRebootRequestBuilder(rawUrl string, requestAd
 // Post reboot a specific Cloud PC.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpc-reboot?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-reboot?view=graph-rest-1.0
 func (m *VirtualEndpointCloudPCsItemRebootRequestBuilder) Post(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemRebootRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

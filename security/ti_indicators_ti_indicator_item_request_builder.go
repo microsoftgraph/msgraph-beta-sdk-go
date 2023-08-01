@@ -57,7 +57,7 @@ func NewTiIndicatorsTiIndicatorItemRequestBuilder(rawUrl string, requestAdapter 
 // Delete delete a tiIndicator object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/tiindicator-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-delete?view=graph-rest-1.0
 func (m *TiIndicatorsTiIndicatorItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TiIndicatorsTiIndicatorItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *TiIndicatorsTiIndicatorItemRequestBuilder) Delete(ctx context.Context, 
 // Get retrieve the properties and relationships of a tiIndicator object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/tiindicator-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-get?view=graph-rest-1.0
 func (m *TiIndicatorsTiIndicatorItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TiIndicatorsTiIndicatorItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TiIndicatorable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *TiIndicatorsTiIndicatorItemRequestBuilder) Get(ctx context.Context, req
 // Patch update the properties of a tiIndicator object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/tiindicator-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-update?view=graph-rest-1.0
 func (m *TiIndicatorsTiIndicatorItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TiIndicatorable, requestConfiguration *TiIndicatorsTiIndicatorItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TiIndicatorable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

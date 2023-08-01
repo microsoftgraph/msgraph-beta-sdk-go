@@ -73,7 +73,7 @@ func (m *SynchronizationProfilesItemProfileStatusRequestBuilder) Delete(ctx cont
 // Get get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationsynchronizationprofilestatus-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationsynchronizationprofilestatus-get?view=graph-rest-1.0
 func (m *SynchronizationProfilesItemProfileStatusRequestBuilder) Get(ctx context.Context, requestConfiguration *SynchronizationProfilesItemProfileStatusRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSynchronizationProfileStatusable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

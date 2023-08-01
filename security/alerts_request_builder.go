@@ -77,7 +77,7 @@ func (m *AlertsRequestBuilder) Count()(*AlertsCountRequestBuilder) {
 // Get retrieve a list of alert objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/alert-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/alert-list?view=graph-rest-1.0
 func (m *AlertsRequestBuilder) Get(ctx context.Context, requestConfiguration *AlertsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AlertCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

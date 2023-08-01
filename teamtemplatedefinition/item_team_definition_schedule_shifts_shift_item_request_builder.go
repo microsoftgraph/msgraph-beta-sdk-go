@@ -55,7 +55,7 @@ func NewItemTeamDefinitionScheduleShiftsShiftItemRequestBuilder(rawUrl string, r
 // Delete delete a shift from the schedule.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/shift-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/shift-delete?view=graph-rest-1.0
 func (m *ItemTeamDefinitionScheduleShiftsShiftItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleShiftsShiftItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -74,7 +74,7 @@ func (m *ItemTeamDefinitionScheduleShiftsShiftItemRequestBuilder) Delete(ctx con
 // Get retrieve the properties and relationships of a shift object by ID.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/shift-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/shift-get?view=graph-rest-1.0
 func (m *ItemTeamDefinitionScheduleShiftsShiftItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleShiftsShiftItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Shiftable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,10 +93,10 @@ func (m *ItemTeamDefinitionScheduleShiftsShiftItemRequestBuilder) Get(ctx contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Shiftable), nil
 }
-// Patch replace an existing shift. If the specified shift doesn't exist, this method returns `404 Not found`. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
+// Patch replace an existing shift. If the specified shift doesn't exist, this method returns 404 Not found. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/shift-put?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/shift-put?view=graph-rest-1.0
 func (m *ItemTeamDefinitionScheduleShiftsShiftItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Shiftable, requestConfiguration *ItemTeamDefinitionScheduleShiftsShiftItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Shiftable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -143,7 +143,7 @@ func (m *ItemTeamDefinitionScheduleShiftsShiftItemRequestBuilder) ToGetRequestIn
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation replace an existing shift. If the specified shift doesn't exist, this method returns `404 Not found`. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
+// ToPatchRequestInformation replace an existing shift. If the specified shift doesn't exist, this method returns 404 Not found. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
 func (m *ItemTeamDefinitionScheduleShiftsShiftItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Shiftable, requestConfiguration *ItemTeamDefinitionScheduleShiftsShiftItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

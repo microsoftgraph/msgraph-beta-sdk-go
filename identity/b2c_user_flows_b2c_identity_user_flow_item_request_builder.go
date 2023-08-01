@@ -57,7 +57,7 @@ func NewB2cUserFlowsB2cIdentityUserFlowItemRequestBuilder(rawUrl string, request
 // Delete delete a b2cIdentityUserFlow object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/b2cidentityuserflow-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/b2cidentityuserflow-delete?view=graph-rest-1.0
 func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) Delete(ctx context.C
 // Get retrieve the properties and relationships of a b2cUserFlow object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/b2cidentityuserflow-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/b2cidentityuserflow-get?view=graph-rest-1.0
 func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) Get(ctx context.Context, requestConfiguration *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cIdentityUserFlowable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -106,7 +106,7 @@ func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) Languages()(*B2cUser
 // Patch update the properties of a b2cIdentityUserFlow object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/b2cidentityuserflow-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/b2cidentityuserflow-update?view=graph-rest-1.0
 func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cIdentityUserFlowable, requestConfiguration *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cIdentityUserFlowable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -31,10 +31,10 @@ func NewRecommendationsItemDismissRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewRecommendationsItemDismissRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post dismiss a recommendation object that you consider to be inapplicable to your tenant and update its **status** to `dismissed` .
+// Post dismiss a recommendation object that you consider to be inapplicable to your tenant and update its status to dismissed .
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/recommendation-dismiss?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/recommendation-dismiss?view=graph-rest-1.0
 func (m *RecommendationsItemDismissRequestBuilder) Post(ctx context.Context, body RecommendationsItemDismissPostRequestBodyable, requestConfiguration *RecommendationsItemDismissRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Recommendationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -53,7 +53,7 @@ func (m *RecommendationsItemDismissRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Recommendationable), nil
 }
-// ToPostRequestInformation dismiss a recommendation object that you consider to be inapplicable to your tenant and update its **status** to `dismissed` .
+// ToPostRequestInformation dismiss a recommendation object that you consider to be inapplicable to your tenant and update its status to dismissed .
 func (m *RecommendationsItemDismissRequestBuilder) ToPostRequestInformation(ctx context.Context, body RecommendationsItemDismissPostRequestBodyable, requestConfiguration *RecommendationsItemDismissRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

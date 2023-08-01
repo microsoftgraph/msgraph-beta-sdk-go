@@ -93,7 +93,7 @@ func (m *TeamItemRequestBuilder) Delete(ctx context.Context, requestConfiguratio
 // Get retrieve the properties and relationships of the specified team.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/team-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-get?view=graph-rest-1.0
 func (m *TeamItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *TeamItemRequestBuilder) Owners()(*ItemOwnersRequestBuilder) {
 // Patch update the properties of the specified team.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/team-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-update?view=graph-rest-1.0
 func (m *TeamItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable, requestConfiguration *TeamItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

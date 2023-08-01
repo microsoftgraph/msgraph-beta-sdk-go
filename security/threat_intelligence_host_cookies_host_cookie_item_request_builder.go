@@ -73,7 +73,7 @@ func (m *ThreatIntelligenceHostCookiesHostCookieItemRequestBuilder) Delete(ctx c
 // Get read the properties and relationships of a hostCookie object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-hostcookie-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-hostcookie-get?view=graph-rest-1.0
 func (m *ThreatIntelligenceHostCookiesHostCookieItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostCookiesHostCookieItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostCookieable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -65,7 +65,7 @@ func NewWindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder(rawUrl string
 // Delete delete an updatePolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/windowsupdates-updatepolicy-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-updatepolicy-delete?view=graph-rest-1.0
 func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -84,7 +84,7 @@ func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) Delete(ctx 
 // Get read the properties and relationships of an updatePolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/windowsupdates-updatepolicy-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-updatepolicy-get?view=graph-rest-1.0
 func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatePolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -106,7 +106,7 @@ func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) Get(ctx con
 // Patch update the properties of an updatePolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/windowsupdates-updatepolicy-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-updatepolicy-update?view=graph-rest-1.0
 func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) Patch(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatePolicyable, requestConfiguration *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderPatchRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatePolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

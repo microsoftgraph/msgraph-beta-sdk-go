@@ -40,7 +40,7 @@ func NewItemIncludedGroupsItemRefRequestBuilder(rawUrl string, requestAdapter i2
 // Delete delete a group from the list of groups included in a mobile app management policy.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/mobileappmanagementpolicies-delete-includedgroups?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-delete-includedgroups?view=graph-rest-1.0
 func (m *ItemIncludedGroupsItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemIncludedGroupsItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

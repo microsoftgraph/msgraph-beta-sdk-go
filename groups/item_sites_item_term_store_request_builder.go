@@ -73,7 +73,7 @@ func (m *ItemSitesItemTermStoreRequestBuilder) Delete(ctx context.Context, reque
 // Get read the properties and relationships of a store object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/termstore-store-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-store-get?view=graph-rest-1.0
 func (m *ItemSitesItemTermStoreRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreRequestBuilderGetRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Storeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -81,7 +81,7 @@ func (m *ItemScheduleTimeCardsRequestBuilder) Count()(*ItemScheduleTimeCardsCoun
 // Get retrieve a list of timeCard entries in a schedule.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/timecard-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/timecard-list?view=graph-rest-1.0
 func (m *ItemScheduleTimeCardsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemScheduleTimeCardsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -103,7 +103,7 @@ func (m *ItemScheduleTimeCardsRequestBuilder) Get(ctx context.Context, requestCo
 // Post create a timeCard instance in a schedule.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/timecard-post?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/timecard-post?view=graph-rest-1.0
 func (m *ItemScheduleTimeCardsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, requestConfiguration *ItemScheduleTimeCardsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

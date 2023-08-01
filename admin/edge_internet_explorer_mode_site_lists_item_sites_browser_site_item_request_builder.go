@@ -57,7 +57,7 @@ func NewEdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder(
 // Delete delete a browserSite from a browserSiteList.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/browsersitelist-delete-sites?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/browsersitelist-delete-sites?view=graph-rest-1.0
 func (m *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder
 // Get get a browserSite that resides on a browserSiteList.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/browsersite-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/browsersite-get?view=graph-rest-1.0
 func (m *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowserSiteable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder
 // Patch update the properties of a browserSite object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/browsersite-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/browsersite-update?view=graph-rest-1.0
 func (m *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowserSiteable, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowserSiteable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

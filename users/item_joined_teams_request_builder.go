@@ -70,7 +70,7 @@ func (m *ItemJoinedTeamsRequestBuilder) Count()(*ItemJoinedTeamsCountRequestBuil
 // Get get the teams in Microsoft Teams that the user is a direct member of.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-list-joinedteams?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-list-joinedteams?view=graph-rest-1.0
 func (m *ItemJoinedTeamsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedTeamsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

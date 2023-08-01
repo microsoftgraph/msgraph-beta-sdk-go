@@ -77,7 +77,7 @@ func (m *WindowsUpdatesDeploymentsRequestBuilder) Count()(*WindowsUpdatesDeploym
 // Get get a list of deployment objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/adminwindowsupdates-list-deployments?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/adminwindowsupdates-list-deployments?view=graph-rest-1.0
 func (m *WindowsUpdatesDeploymentsRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *WindowsUpdatesDeploymentsRequestBuilder) Get(ctx context.Context, reque
 // Post create a new deployment object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/adminwindowsupdates-post-deployments?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/adminwindowsupdates-post-deployments?view=graph-rest-1.0
 func (m *WindowsUpdatesDeploymentsRequestBuilder) Post(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable, requestConfiguration *WindowsUpdatesDeploymentsRequestBuilderPostRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -52,7 +52,7 @@ func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) 
 // Delete delete a taskFileAttachment object from a todoTask resource.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/taskfileattachment-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/taskfileattachment-delete?view=graph-rest-1.0
 func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -71,7 +71,7 @@ func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) 
 // Get read the properties and relationships of a taskFileAttachment object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/taskfileattachment-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/taskfileattachment-get?view=graph-rest-1.0
 func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentBaseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

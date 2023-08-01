@@ -70,7 +70,7 @@ func (m *ItemTeamIncomingChannelsRequestBuilder) Count()(*ItemTeamIncomingChanne
 // Get get the list of incoming channels (channels shared with a team).
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/team-list-incomingchannels?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-list-incomingchannels?view=graph-rest-1.0
 func (m *ItemTeamIncomingChannelsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamIncomingChannelsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChannelCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

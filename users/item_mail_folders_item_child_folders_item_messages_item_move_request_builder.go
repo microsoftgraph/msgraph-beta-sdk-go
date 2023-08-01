@@ -34,7 +34,7 @@ func NewItemMailFoldersItemChildFoldersItemMessagesItemMoveRequestBuilder(rawUrl
 // Post move a message to another folder within the specified user's mailbox. This creates a new copy of the message in the destination folder and removes the original message.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/message-move?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/message-move?view=graph-rest-1.0
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemMoveRequestBuilder) Post(ctx context.Context, body ItemMailFoldersItemChildFoldersItemMessagesItemMovePostRequestBodyable, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemMoveRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

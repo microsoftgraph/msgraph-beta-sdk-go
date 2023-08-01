@@ -57,7 +57,7 @@ func NewItemServicesBookingServiceItemRequestBuilder(rawUrl string, requestAdapt
 // Delete delete a bookingService object in the specified bookingBusiness.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingservice-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingservice-delete?view=graph-rest-1.0
 func (m *ItemServicesBookingServiceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemServicesBookingServiceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemServicesBookingServiceItemRequestBuilder) Delete(ctx context.Contex
 // Get get the properties and relationships of a bookingService object in the specified bookingBusiness.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingservice-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingservice-get?view=graph-rest-1.0
 func (m *ItemServicesBookingServiceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemServicesBookingServiceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingServiceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ItemServicesBookingServiceItemRequestBuilder) Get(ctx context.Context, 
 // Patch update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:- Price- Typical length of an appointment- Reminders- Any time buffer to set up before or finish up after the service- Scheduling policy parameters such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingservice-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingservice-update?view=graph-rest-1.0
 func (m *ItemServicesBookingServiceItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingServiceable, requestConfiguration *ItemServicesBookingServiceItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingServiceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

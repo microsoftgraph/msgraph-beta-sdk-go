@@ -19,7 +19,7 @@ func NewUnifiedRoleDefinition()(*UnifiedRoleDefinition) {
 func CreateUnifiedRoleDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleDefinition(), nil
 }
-// GetAllowedPrincipalTypes gets the allowedPrincipalTypes property value. The allowedPrincipalTypes property
+// GetAllowedPrincipalTypes gets the allowedPrincipalTypes property value. Types of principals that can be assigned the role. Read-only. The possible values are: user, servicePrincipal, group, unknownFutureValue. This is a multi-valued enumeration that can contain up to three values as a comma-separated string. For example, user, group. Supports $filter (eq).
 func (m *UnifiedRoleDefinition) GetAllowedPrincipalTypes()(*AllowedRolePrincipalTypes) {
     val, err := m.GetBackingStore().Get("allowedPrincipalTypes")
     if err != nil {
@@ -41,7 +41,7 @@ func (m *UnifiedRoleDefinition) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).
+// GetDisplayName gets the displayName property value. The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith).
 func (m *UnifiedRoleDefinition) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -196,7 +196,7 @@ func (m *UnifiedRoleDefinition) GetInheritsPermissionsFrom()([]UnifiedRoleDefini
     }
     return nil
 }
-// GetIsBuiltIn gets the isBuiltIn property value. Flag indicating if the unifiedRoleDefinition is part of the default set included with the product or custom. Read-only.  Supports $filter (eq operator only).
+// GetIsBuiltIn gets the isBuiltIn property value. Flag indicating if the unifiedRoleDefinition is part of the default set included with the product or custom. Read-only.  Supports $filter (eq).
 func (m *UnifiedRoleDefinition) GetIsBuiltIn()(*bool) {
     val, err := m.GetBackingStore().Get("isBuiltIn")
     if err != nil {
@@ -229,7 +229,7 @@ func (m *UnifiedRoleDefinition) GetIsPrivileged()(*bool) {
     }
     return nil
 }
-// GetResourceScopes gets the resourceScopes property value. List of scopes permissions granted by the role definition apply to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment
+// GetResourceScopes gets the resourceScopes property value. List of scopes permissions granted by the role definition apply to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.
 func (m *UnifiedRoleDefinition) GetResourceScopes()([]string) {
     val, err := m.GetBackingStore().Get("resourceScopes")
     if err != nil {
@@ -262,7 +262,7 @@ func (m *UnifiedRoleDefinition) GetTemplateId()(*string) {
     }
     return nil
 }
-// GetVersion gets the version property value. Indicates version of the unifiedRoleDefinition. Read-only when isBuiltIn is true.
+// GetVersion gets the version property value. Indicates the version of the unifiedRoleDefinition object. Read-only when isBuiltIn is true.
 func (m *UnifiedRoleDefinition) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -360,7 +360,7 @@ func (m *UnifiedRoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetAllowedPrincipalTypes sets the allowedPrincipalTypes property value. The allowedPrincipalTypes property
+// SetAllowedPrincipalTypes sets the allowedPrincipalTypes property value. Types of principals that can be assigned the role. Read-only. The possible values are: user, servicePrincipal, group, unknownFutureValue. This is a multi-valued enumeration that can contain up to three values as a comma-separated string. For example, user, group. Supports $filter (eq).
 func (m *UnifiedRoleDefinition) SetAllowedPrincipalTypes(value *AllowedRolePrincipalTypes)() {
     err := m.GetBackingStore().Set("allowedPrincipalTypes", value)
     if err != nil {
@@ -374,7 +374,7 @@ func (m *UnifiedRoleDefinition) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).
+// SetDisplayName sets the displayName property value. The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith).
 func (m *UnifiedRoleDefinition) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -388,7 +388,7 @@ func (m *UnifiedRoleDefinition) SetInheritsPermissionsFrom(value []UnifiedRoleDe
         panic(err)
     }
 }
-// SetIsBuiltIn sets the isBuiltIn property value. Flag indicating if the unifiedRoleDefinition is part of the default set included with the product or custom. Read-only.  Supports $filter (eq operator only).
+// SetIsBuiltIn sets the isBuiltIn property value. Flag indicating if the unifiedRoleDefinition is part of the default set included with the product or custom. Read-only.  Supports $filter (eq).
 func (m *UnifiedRoleDefinition) SetIsBuiltIn(value *bool)() {
     err := m.GetBackingStore().Set("isBuiltIn", value)
     if err != nil {
@@ -409,7 +409,7 @@ func (m *UnifiedRoleDefinition) SetIsPrivileged(value *bool)() {
         panic(err)
     }
 }
-// SetResourceScopes sets the resourceScopes property value. List of scopes permissions granted by the role definition apply to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment
+// SetResourceScopes sets the resourceScopes property value. List of scopes permissions granted by the role definition apply to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.
 func (m *UnifiedRoleDefinition) SetResourceScopes(value []string)() {
     err := m.GetBackingStore().Set("resourceScopes", value)
     if err != nil {
@@ -430,7 +430,7 @@ func (m *UnifiedRoleDefinition) SetTemplateId(value *string)() {
         panic(err)
     }
 }
-// SetVersion sets the version property value. Indicates version of the unifiedRoleDefinition. Read-only when isBuiltIn is true.
+// SetVersion sets the version property value. Indicates the version of the unifiedRoleDefinition object. Read-only when isBuiltIn is true.
 func (m *UnifiedRoleDefinition) SetVersion(value *string)() {
     err := m.GetBackingStore().Set("version", value)
     if err != nil {

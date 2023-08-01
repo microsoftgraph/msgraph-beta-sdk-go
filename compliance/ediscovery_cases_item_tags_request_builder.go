@@ -79,7 +79,7 @@ func (m *EdiscoveryCasesItemTagsRequestBuilder) Count()(*EdiscoveryCasesItemTags
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-case-list-tags?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-case-list-tags?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemTagsRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemTagsRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.TagCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -106,7 +106,7 @@ func (m *EdiscoveryCasesItemTagsRequestBuilder) MicrosoftGraphEdiscoveryAsHierar
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-case-post-tags?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-case-post-tags?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemTagsRequestBuilder) Post(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Tagable, requestConfiguration *EdiscoveryCasesItemTagsRequestBuilderPostRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Tagable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

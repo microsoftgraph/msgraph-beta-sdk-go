@@ -70,7 +70,7 @@ func (m *ItemFollowedSitesRequestBuilder) Count()(*ItemFollowedSitesCountRequest
 // Get list the sites that have been followed by the signed in user.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/sites-list-followed?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/sites-list-followed?view=graph-rest-1.0
 func (m *ItemFollowedSitesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemFollowedSitesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

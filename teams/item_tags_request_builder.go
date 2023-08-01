@@ -77,7 +77,7 @@ func (m *ItemTagsRequestBuilder) Count()(*ItemTagsCountRequestBuilder) {
 // Get get a list of the tag objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/teamworktag-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamworktag-list?view=graph-rest-1.0
 func (m *ItemTagsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTagsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ItemTagsRequestBuilder) Get(ctx context.Context, requestConfiguration *
 // Post create a standard tag for members in the team. 
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/teamworktag-post?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamworktag-post?view=graph-rest-1.0
 func (m *ItemTagsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagable, requestConfiguration *ItemTagsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

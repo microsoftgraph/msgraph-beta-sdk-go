@@ -75,6 +75,9 @@ func (m *DailyPrintUsageByPrinterRequestBuilder) Count()(*DailyPrintUsageByPrint
     return NewDailyPrintUsageByPrinterCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve a list of daily print usage summaries, grouped by printer.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-list-dailyprintusagebyprinter?view=graph-rest-1.0
 func (m *DailyPrintUsageByPrinterRequestBuilder) Get(ctx context.Context, requestConfiguration *DailyPrintUsageByPrinterRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

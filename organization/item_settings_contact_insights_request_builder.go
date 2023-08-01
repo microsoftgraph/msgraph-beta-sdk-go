@@ -73,7 +73,7 @@ func (m *ItemSettingsContactInsightsRequestBuilder) Delete(ctx context.Context, 
 // Get get the properties of an insightsSettings object for displaying or returning contact insights in an organization.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/organizationsettings-list-contactinsights?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/organizationsettings-list-contactinsights?view=graph-rest-1.0
 func (m *ItemSettingsContactInsightsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsContactInsightsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InsightsSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *ItemSettingsContactInsightsRequestBuilder) Get(ctx context.Context, req
 // Patch update the privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/insightssettings-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/insightssettings-update?view=graph-rest-1.0
 func (m *ItemSettingsContactInsightsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InsightsSettingsable, requestConfiguration *ItemSettingsContactInsightsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InsightsSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

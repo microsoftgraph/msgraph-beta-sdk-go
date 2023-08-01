@@ -73,7 +73,7 @@ func (m *IndustryDataRoleGroupsRoleGroupItemRequestBuilder) Delete(ctx context.C
 // Get read the properties and relationships of a roleGroup object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/industrydata-rolegroup-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-rolegroup-get?view=graph-rest-1.0
 func (m *IndustryDataRoleGroupsRoleGroupItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataRoleGroupsRoleGroupItemRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.RoleGroupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

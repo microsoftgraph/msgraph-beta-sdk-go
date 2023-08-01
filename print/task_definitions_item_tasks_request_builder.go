@@ -77,7 +77,7 @@ func (m *TaskDefinitionsItemTasksRequestBuilder) Count()(*TaskDefinitionsItemTas
 // Get retrieve a list of tasks associated with a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/printtaskdefinition-list-tasks?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/printtaskdefinition-list-tasks?view=graph-rest-1.0
 func (m *TaskDefinitionsItemTasksRequestBuilder) Get(ctx context.Context, requestConfiguration *TaskDefinitionsItemTasksRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

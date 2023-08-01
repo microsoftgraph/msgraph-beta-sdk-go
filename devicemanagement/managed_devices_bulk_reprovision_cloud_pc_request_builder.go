@@ -34,7 +34,7 @@ func NewManagedDevicesBulkReprovisionCloudPcRequestBuilder(rawUrl string, reques
 // Post bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/manageddevice-bulkreprovisioncloudpc?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/manageddevice-bulkreprovisioncloudpc?view=graph-rest-1.0
 func (m *ManagedDevicesBulkReprovisionCloudPcRequestBuilder) Post(ctx context.Context, body ManagedDevicesBulkReprovisionCloudPcPostRequestBodyable, requestConfiguration *ManagedDevicesBulkReprovisionCloudPcRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkRemoteActionResultable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

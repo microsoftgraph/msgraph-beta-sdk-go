@@ -34,7 +34,7 @@ func NewCallsItemSubscribeToToneRequestBuilder(rawUrl string, requestAdapter i2a
 // Post subscribe to DTMF (dual-tone multi-frequency signaling). This allows you to be notified when the user presses keys on a 'Dialpad'.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/call-subscribetotone?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/call-subscribetotone?view=graph-rest-1.0
 func (m *CallsItemSubscribeToToneRequestBuilder) Post(ctx context.Context, body CallsItemSubscribeToTonePostRequestBodyable, requestConfiguration *CallsItemSubscribeToToneRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubscribeToToneOperationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

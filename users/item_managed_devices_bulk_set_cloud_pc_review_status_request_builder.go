@@ -34,7 +34,7 @@ func NewItemManagedDevicesBulkSetCloudPcReviewStatusRequestBuilder(rawUrl string
 // Post set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/manageddevice-bulksetcloudpcreviewstatus?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/manageddevice-bulksetcloudpcreviewstatus?view=graph-rest-1.0
 func (m *ItemManagedDevicesBulkSetCloudPcReviewStatusRequestBuilder) Post(ctx context.Context, body ItemManagedDevicesBulkSetCloudPcReviewStatusPostRequestBodyable, requestConfiguration *ItemManagedDevicesBulkSetCloudPcReviewStatusRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkRemoteActionResultable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

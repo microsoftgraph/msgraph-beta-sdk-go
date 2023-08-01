@@ -38,10 +38,10 @@ func NewVirtualEventsEventsItemSessionsItemTranscriptsItemContentRequestBuilder(
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEventsEventsItemSessionsItemTranscriptsItemContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get a field that represents the content of the transcript. Read-only.
+// Get the content of the transcript. Read-only.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
 func (m *VirtualEventsEventsItemSessionsItemTranscriptsItemContentRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsItemTranscriptsItemContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -60,7 +60,7 @@ func (m *VirtualEventsEventsItemSessionsItemTranscriptsItemContentRequestBuilder
     }
     return res.([]byte), nil
 }
-// Put a field that represents the content of the transcript. Read-only.
+// Put the content of the transcript. Read-only.
 func (m *VirtualEventsEventsItemSessionsItemTranscriptsItemContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *VirtualEventsEventsItemSessionsItemTranscriptsItemContentRequestBuilderPutRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallTranscriptable, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -79,7 +79,7 @@ func (m *VirtualEventsEventsItemSessionsItemTranscriptsItemContentRequestBuilder
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallTranscriptable), nil
 }
-// ToGetRequestInformation a field that represents the content of the transcript. Read-only.
+// ToGetRequestInformation the content of the transcript. Read-only.
 func (m *VirtualEventsEventsItemSessionsItemTranscriptsItemContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsItemTranscriptsItemContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -91,7 +91,7 @@ func (m *VirtualEventsEventsItemSessionsItemTranscriptsItemContentRequestBuilder
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation a field that represents the content of the transcript. Read-only.
+// ToPutRequestInformation the content of the transcript. Read-only.
 func (m *VirtualEventsEventsItemSessionsItemTranscriptsItemContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *VirtualEventsEventsItemSessionsItemTranscriptsItemContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

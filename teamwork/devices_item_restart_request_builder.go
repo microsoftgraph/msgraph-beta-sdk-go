@@ -33,7 +33,7 @@ func NewDevicesItemRestartRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 // Post restart the specified Microsoft Teams-enabled device asynchronously.  A device is restarted after the async operation completes successfully, which might occur subsequent to a response from this API.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/teamworkdevice-restart?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamworkdevice-restart?view=graph-rest-1.0
 func (m *DevicesItemRestartRequestBuilder) Post(ctx context.Context, requestConfiguration *DevicesItemRestartRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -57,7 +57,7 @@ func NewItemProfileLanguagesLanguageProficiencyItemRequestBuilder(rawUrl string,
 // Delete delete a languageProficiency object from a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/languageproficiency-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/languageproficiency-delete?view=graph-rest-1.0
 func (m *ItemProfileLanguagesLanguageProficiencyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileLanguagesLanguageProficiencyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemProfileLanguagesLanguageProficiencyItemRequestBuilder) Delete(ctx c
 // Get retrieve the properties and relationships of a languageProficiency object within a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/languageproficiency-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/languageproficiency-get?view=graph-rest-1.0
 func (m *ItemProfileLanguagesLanguageProficiencyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileLanguagesLanguageProficiencyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LanguageProficiencyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ItemProfileLanguagesLanguageProficiencyItemRequestBuilder) Get(ctx cont
 // Patch update the properties of a languageProficiency object in a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/languageproficiency-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/languageproficiency-update?view=graph-rest-1.0
 func (m *ItemProfileLanguagesLanguageProficiencyItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LanguageProficiencyable, requestConfiguration *ItemProfileLanguagesLanguageProficiencyItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LanguageProficiencyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

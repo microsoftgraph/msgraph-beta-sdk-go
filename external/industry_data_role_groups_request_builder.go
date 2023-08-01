@@ -77,7 +77,7 @@ func (m *IndustryDataRoleGroupsRequestBuilder) Count()(*IndustryDataRoleGroupsCo
 // Get get a list of the roleGroup objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/industrydata-rolegroup-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-rolegroup-list?view=graph-rest-1.0
 func (m *IndustryDataRoleGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataRoleGroupsRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.RoleGroupCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

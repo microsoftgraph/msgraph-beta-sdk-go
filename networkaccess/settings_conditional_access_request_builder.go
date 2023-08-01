@@ -73,7 +73,7 @@ func (m *SettingsConditionalAccessRequestBuilder) Delete(ctx context.Context, re
 // Get retrieve the conditional access settings, which include the preservation of the original source IP address in network traffic for accurate identification and tracking, as well as the establishment of scalable network connectivity through the Global Secure Access services.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-conditionalaccesssettings-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-conditionalaccesssettings-get?view=graph-rest-1.0
 func (m *SettingsConditionalAccessRequestBuilder) Get(ctx context.Context, requestConfiguration *SettingsConditionalAccessRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ConditionalAccessSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *SettingsConditionalAccessRequestBuilder) Get(ctx context.Context, reque
 // Patch update the conditional access settings to include the preservation of the original source IP address in network traffic for accurate identification and tracking, as well as the establishment of scalable network connectivity through the Global Secure Access services.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-conditionalaccesssettings-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-conditionalaccesssettings-update?view=graph-rest-1.0
 func (m *SettingsConditionalAccessRequestBuilder) Patch(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ConditionalAccessSettingsable, requestConfiguration *SettingsConditionalAccessRequestBuilderPatchRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ConditionalAccessSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

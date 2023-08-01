@@ -71,7 +71,7 @@ func (m *PrinterSharesItemAllowedUsersRequestBuilder) Count()(*PrinterSharesItem
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/printershare-list-allowedusers?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/printershare-list-allowedusers?view=graph-rest-1.0
 func (m *PrinterSharesItemAllowedUsersRequestBuilder) Get(ctx context.Context, requestConfiguration *PrinterSharesItemAllowedUsersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

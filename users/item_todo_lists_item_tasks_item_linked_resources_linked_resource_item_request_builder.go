@@ -57,7 +57,7 @@ func NewItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilde
 // Delete deletes a linkedResource object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/linkedresource-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/linkedresource-delete?view=graph-rest-1.0
 func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuild
 // Get read the properties and relationships of a linkedResource object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/linkedresource-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/linkedresource-get?view=graph-rest-1.0
 func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LinkedResourceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuild
 // Patch update the properties of a linkedResource object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/linkedresource-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/linkedresource-update?view=graph-rest-1.0
 func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LinkedResourceable, requestConfiguration *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LinkedResourceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

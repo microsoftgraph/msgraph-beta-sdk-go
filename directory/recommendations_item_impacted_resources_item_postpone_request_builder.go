@@ -31,10 +31,10 @@ func NewRecommendationsItemImpactedResourcesItemPostponeRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewRecommendationsItemImpactedResourcesItemPostponeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post postpone action on an impactedResource object to a specified future date and time by marking its **status** as `postponed`. On the specified date and time, Azure AD will automatically mark the status of the **impactedResource** object to `active`.
+// Post postpone action on an impactedResource object to a specified future date and time by marking its status as postponed. On the specified date and time, Azure AD will automatically mark the status of the impactedResource object to active.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/impactedresource-postpone?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/impactedresource-postpone?view=graph-rest-1.0
 func (m *RecommendationsItemImpactedResourcesItemPostponeRequestBuilder) Post(ctx context.Context, body RecommendationsItemImpactedResourcesItemPostponePostRequestBodyable, requestConfiguration *RecommendationsItemImpactedResourcesItemPostponeRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImpactedResourceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -53,7 +53,7 @@ func (m *RecommendationsItemImpactedResourcesItemPostponeRequestBuilder) Post(ct
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImpactedResourceable), nil
 }
-// ToPostRequestInformation postpone action on an impactedResource object to a specified future date and time by marking its **status** as `postponed`. On the specified date and time, Azure AD will automatically mark the status of the **impactedResource** object to `active`.
+// ToPostRequestInformation postpone action on an impactedResource object to a specified future date and time by marking its status as postponed. On the specified date and time, Azure AD will automatically mark the status of the impactedResource object to active.
 func (m *RecommendationsItemImpactedResourcesItemPostponeRequestBuilder) ToPostRequestInformation(ctx context.Context, body RecommendationsItemImpactedResourcesItemPostponePostRequestBodyable, requestConfiguration *RecommendationsItemImpactedResourcesItemPostponeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

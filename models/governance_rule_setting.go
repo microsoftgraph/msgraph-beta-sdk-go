@@ -95,7 +95,7 @@ func (m *GovernanceRuleSetting) GetRuleIdentifier()(*string) {
     }
     return nil
 }
-// GetSetting gets the setting property value. The settings of the rule. The value is a JSON string with a list of pairs in the format of Parameter_Name:Parameter_Value. For example, {'permanentAssignment':false,'maximumGrantPeriodInMinutes':129600}
+// GetSetting gets the setting property value. The settings of the rule. The value is a JSON string with a list of pairs in the format of ParameterName:ParameterValue. For example, {'permanentAssignment':false,'maximumGrantPeriodInMinutes':129600}
 func (m *GovernanceRuleSetting) GetSetting()(*string) {
     val, err := m.GetBackingStore().Get("setting")
     if err != nil {
@@ -159,7 +159,7 @@ func (m *GovernanceRuleSetting) SetRuleIdentifier(value *string)() {
         panic(err)
     }
 }
-// SetSetting sets the setting property value. The settings of the rule. The value is a JSON string with a list of pairs in the format of Parameter_Name:Parameter_Value. For example, {'permanentAssignment':false,'maximumGrantPeriodInMinutes':129600}
+// SetSetting sets the setting property value. The settings of the rule. The value is a JSON string with a list of pairs in the format of ParameterName:ParameterValue. For example, {'permanentAssignment':false,'maximumGrantPeriodInMinutes':129600}
 func (m *GovernanceRuleSetting) SetSetting(value *string)() {
     err := m.GetBackingStore().Set("setting", value)
     if err != nil {

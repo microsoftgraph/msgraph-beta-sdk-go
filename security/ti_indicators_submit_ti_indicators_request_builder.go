@@ -33,7 +33,7 @@ func NewTiIndicatorsSubmitTiIndicatorsRequestBuilder(rawUrl string, requestAdapt
 // Post upload multiple threat intelligence (TI) indicators in one request instead of multiple requests.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/tiindicator-submittiindicators?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-submittiindicators?view=graph-rest-1.0
 func (m *TiIndicatorsSubmitTiIndicatorsRequestBuilder) Post(ctx context.Context, body TiIndicatorsSubmitTiIndicatorsPostRequestBodyable, requestConfiguration *TiIndicatorsSubmitTiIndicatorsRequestBuilderPostRequestConfiguration)(TiIndicatorsSubmitTiIndicatorsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

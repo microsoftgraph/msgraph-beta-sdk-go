@@ -33,7 +33,7 @@ func NewItemGroupLifecyclePoliciesRenewGroupRequestBuilder(rawUrl string, reques
 // Post renew a group's expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/grouplifecyclepolicy-renewgroup?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-renewgroup?view=graph-rest-1.0
 func (m *ItemGroupLifecyclePoliciesRenewGroupRequestBuilder) Post(ctx context.Context, body ItemGroupLifecyclePoliciesRenewGroupPostRequestBodyable, requestConfiguration *ItemGroupLifecyclePoliciesRenewGroupRequestBuilderPostRequestConfiguration)(ItemGroupLifecyclePoliciesRenewGroupResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

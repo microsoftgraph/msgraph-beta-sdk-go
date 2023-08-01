@@ -93,7 +93,7 @@ func (m *ItemTeamDefinitionRequestBuilder) Delete(ctx context.Context, requestCo
 // Get get the properties of the team associated with a teamTemplateDefinition object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/teamtemplatedefinition-get-teamdefinition?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamtemplatedefinition-get-teamdefinition?view=graph-rest-1.0
 func (m *ItemTeamDefinitionRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamDefinitionRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

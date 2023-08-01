@@ -81,7 +81,7 @@ func (m *DevicesRequestBuilder) Delta()(*DeltaRequestBuilder) {
 // Get retrieve a list of devices registered in the directory. 
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/device-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/device-list?view=graph-rest-1.0
 func (m *DevicesRequestBuilder) Get(ctx context.Context, requestConfiguration *DevicesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -111,7 +111,7 @@ func (m *DevicesRequestBuilder) GetUserOwnedObjects()(*GetUserOwnedObjectsReques
 // Post create a new device.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/device-post-devices?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/device-post-devices?view=graph-rest-1.0
 func (m *DevicesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, requestConfiguration *DevicesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

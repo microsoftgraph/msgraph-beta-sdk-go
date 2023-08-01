@@ -77,7 +77,7 @@ func (m *MonitoringAlertRulesRequestBuilder) Count()(*MonitoringAlertRulesCountR
 // Get get a list of the alertRule objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/devicemanagement-alertrule-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/devicemanagement-alertrule-list?view=graph-rest-1.0
 func (m *MonitoringAlertRulesRequestBuilder) Get(ctx context.Context, requestConfiguration *MonitoringAlertRulesRequestBuilderGetRequestConfiguration)(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRuleCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *MonitoringAlertRulesRequestBuilder) Get(ctx context.Context, requestCon
 // Post create an alertRule object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/devicemanagement-alertrule-post?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/devicemanagement-alertrule-post?view=graph-rest-1.0
 func (m *MonitoringAlertRulesRequestBuilder) Post(ctx context.Context, body i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRuleable, requestConfiguration *MonitoringAlertRulesRequestBuilderPostRequestConfiguration)(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRuleable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

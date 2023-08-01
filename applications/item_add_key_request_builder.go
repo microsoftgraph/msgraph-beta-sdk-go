@@ -34,7 +34,7 @@ func NewItemAddKeyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 // Post add a key credential to an application. This method, along with removeKey, can be used by an application to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.  Applications that don’t have any existing valid certificates (no certificates have been added yet, or all certificates have expired), won’t be able to use this service action. You can use the Update application operation to perform an update instead.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/application-addkey?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/application-addkey?view=graph-rest-1.0
 func (m *ItemAddKeyRequestBuilder) Post(ctx context.Context, body ItemAddKeyPostRequestBodyable, requestConfiguration *ItemAddKeyRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyCredentialable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

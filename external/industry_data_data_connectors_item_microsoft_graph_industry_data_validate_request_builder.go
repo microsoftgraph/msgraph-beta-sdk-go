@@ -33,7 +33,7 @@ func NewIndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestB
 // Post perform validations applicable for the specific instance of the data connector.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/industrydata-industrydataconnector-validate?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-validate?view=graph-rest-1.0
 func (m *IndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilder) Post(ctx context.Context, requestConfiguration *IndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -57,7 +57,7 @@ func NewClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilder(rawUr
 // Delete delete an existing category. Only teachers can perform this operation.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationcategory-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationcategory-delete?view=graph-rest-1.0
 func (m *ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilder) Del
 // Get retrieve an educationCategory object. Only teachers, students, and applications with application permissions can perform this operation.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationcategory-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationcategory-get?view=graph-rest-1.0
 func (m *ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationCategoryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

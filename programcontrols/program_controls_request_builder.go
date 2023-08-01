@@ -77,7 +77,7 @@ func (m *ProgramControlsRequestBuilder) Count()(*CountRequestBuilder) {
 // Get in the Azure AD access reviews feature, list all the programControl objects, across all programs in the tenant.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/programcontrol-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/programcontrol-list?view=graph-rest-1.0
 func (m *ProgramControlsRequestBuilder) Get(ctx context.Context, requestConfiguration *ProgramControlsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProgramControlCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ProgramControlsRequestBuilder) Get(ctx context.Context, requestConfigur
 // Post in the Azure AD access reviews feature, create a new programControl object.  This links an access review to a program. Prior to making this request, the caller must have previously
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/programcontrol-create?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/programcontrol-create?view=graph-rest-1.0
 func (m *ProgramControlsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProgramControlable, requestConfiguration *ProgramControlsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProgramControlable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

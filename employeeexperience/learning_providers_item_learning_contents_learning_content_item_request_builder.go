@@ -57,7 +57,7 @@ func NewLearningProvidersItemLearningContentsLearningContentItemRequestBuilder(r
 // Delete delete the specified learningContent resource that represents the metadata of the specified provider's ingested content.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/learningprovider-delete-learningcontents?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/learningprovider-delete-learningcontents?view=graph-rest-1.0
 func (m *LearningProvidersItemLearningContentsLearningContentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *LearningProvidersItemLearningContentsLearningContentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *LearningProvidersItemLearningContentsLearningContentItemRequestBuilder)
 // Get get the specified learningContent resource which represents the metadata of the specified provider's ingested content.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/learningcontent-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/learningcontent-get?view=graph-rest-1.0
 func (m *LearningProvidersItemLearningContentsLearningContentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LearningProvidersItemLearningContentsLearningContentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningContentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *LearningProvidersItemLearningContentsLearningContentItemRequestBuilder)
 // Patch update the specified learningContent resource. Used by a learning provider to ingest or update the metadata for their content in Viva Learning. If the specified learning content doesn't yet exist for the specified provider, this operation creates the metadata for the new content. Otherwise, this operation replaces the metadata of the existing content.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/learningcontent-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/learningcontent-update?view=graph-rest-1.0
 func (m *LearningProvidersItemLearningContentsLearningContentItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningContentable, requestConfiguration *LearningProvidersItemLearningContentsLearningContentItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningContentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

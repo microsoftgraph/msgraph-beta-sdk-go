@@ -77,7 +77,7 @@ func (m *BookmarksRequestBuilder) Count()(*BookmarksCountRequestBuilder) {
 // Get get a list of bookmark objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/search-searchentity-list-bookmarks?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/search-searchentity-list-bookmarks?view=graph-rest-1.0
 func (m *BookmarksRequestBuilder) Get(ctx context.Context, requestConfiguration *BookmarksRequestBuilderGetRequestConfiguration)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.BookmarkCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *BookmarksRequestBuilder) Get(ctx context.Context, requestConfiguration 
 // Post create a new bookmark object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/search-searchentity-post-bookmarks?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/search-searchentity-post-bookmarks?view=graph-rest-1.0
 func (m *BookmarksRequestBuilder) Post(ctx context.Context, body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Bookmarkable, requestConfiguration *BookmarksRequestBuilderPostRequestConfiguration)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Bookmarkable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

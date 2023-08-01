@@ -33,7 +33,7 @@ func NewVirtualEndpointCloudPCsItemStartRequestBuilder(rawUrl string, requestAda
 // Post start a specific Cloud PC for a user. Currently, only Windows 365 Frontline Cloud PCs are supported.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpc-start?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-start?view=graph-rest-1.0
 func (m *VirtualEndpointCloudPCsItemStartRequestBuilder) Post(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemStartRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -73,7 +73,7 @@ func (m *MonitoringAlertRulesAlertRuleItemRequestBuilder) Delete(ctx context.Con
 // Get read the properties and relationships of an alertRule object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/devicemanagement-alertrule-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/devicemanagement-alertrule-get?view=graph-rest-1.0
 func (m *MonitoringAlertRulesAlertRuleItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MonitoringAlertRulesAlertRuleItemRequestBuilderGetRequestConfiguration)(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRuleable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *MonitoringAlertRulesAlertRuleItemRequestBuilder) Get(ctx context.Contex
 // Patch update the properties of an alertRule object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/devicemanagement-alertrule-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/devicemanagement-alertrule-update?view=graph-rest-1.0
 func (m *MonitoringAlertRulesAlertRuleItemRequestBuilder) Patch(ctx context.Context, body i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRuleable, requestConfiguration *MonitoringAlertRulesAlertRuleItemRequestBuilderPatchRequestConfiguration)(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRuleable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

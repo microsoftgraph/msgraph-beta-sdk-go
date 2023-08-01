@@ -77,7 +77,7 @@ func (m *WindowsUpdatesUpdatePoliciesRequestBuilder) Count()(*WindowsUpdatesUpda
 // Get get a list of updatePolicy objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/adminwindowsupdates-list-updatepolicies?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/adminwindowsupdates-list-updatepolicies?view=graph-rest-1.0
 func (m *WindowsUpdatesUpdatePoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatePoliciesRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatePolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *WindowsUpdatesUpdatePoliciesRequestBuilder) Get(ctx context.Context, re
 // Post create a new updatePolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/adminwindowsupdates-post-updatepolicies?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/adminwindowsupdates-post-updatepolicies?view=graph-rest-1.0
 func (m *WindowsUpdatesUpdatePoliciesRequestBuilder) Post(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatePolicyable, requestConfiguration *WindowsUpdatesUpdatePoliciesRequestBuilderPostRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatePolicyable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

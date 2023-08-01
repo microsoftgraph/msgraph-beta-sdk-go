@@ -73,7 +73,7 @@ func (m *SignInsSignInItemRequestBuilder) Delete(ctx context.Context, requestCon
 // Get get a signIn object that contains a specific user sign-in event for your tenant. This includes sign-ins where a user is asked to enter a username or password, and session tokens.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/signin-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/signin-get?view=graph-rest-1.0
 func (m *SignInsSignInItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SignInsSignInItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

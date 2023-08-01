@@ -70,7 +70,7 @@ func (m *UsersItemSchoolsRequestBuilder) Count()(*UsersItemSchoolsCountRequestBu
 // Get retrieve a list of schools for a user.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationuser-list-schools?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationuser-list-schools?view=graph-rest-1.0
 func (m *UsersItemSchoolsRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersItemSchoolsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSchoolCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

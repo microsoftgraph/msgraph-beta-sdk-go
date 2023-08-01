@@ -34,7 +34,7 @@ func NewCallsItemParticipantsItemStopHoldMusicRequestBuilder(rawUrl string, requ
 // Post reincorporate a participant previously put on hold to the call.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/participant-stopholdmusic?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/participant-stopholdmusic?view=graph-rest-1.0
 func (m *CallsItemParticipantsItemStopHoldMusicRequestBuilder) Post(ctx context.Context, body CallsItemParticipantsItemStopHoldMusicPostRequestBodyable, requestConfiguration *CallsItemParticipantsItemStopHoldMusicRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StopHoldMusicOperationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

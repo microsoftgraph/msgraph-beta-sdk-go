@@ -77,7 +77,7 @@ func (m *TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) Delete(ctx context
 // Get get details about a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/printtask-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/printtask-get?view=graph-rest-1.0
 func (m *TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TaskDefinitionsItemTasksPrintTaskItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) Get(ctx context.Co
 // Patch update a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/printtaskdefinition-update-task?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/printtaskdefinition-update-task?view=graph-rest-1.0
 func (m *TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskable, requestConfiguration *TaskDefinitionsItemTasksPrintTaskItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

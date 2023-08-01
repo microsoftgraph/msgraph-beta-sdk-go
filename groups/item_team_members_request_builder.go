@@ -81,7 +81,7 @@ func (m *ItemTeamMembersRequestBuilder) Count()(*ItemTeamMembersCountRequestBuil
 // Get get the conversationMember collection of a team.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/team-list-members?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-list-members?view=graph-rest-1.0
 func (m *ItemTeamMembersRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamMembersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -103,7 +103,7 @@ func (m *ItemTeamMembersRequestBuilder) Get(ctx context.Context, requestConfigur
 // Post add a new conversation member to a team.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/team-post-members?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-post-members?view=graph-rest-1.0
 func (m *ItemTeamMembersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable, requestConfiguration *ItemTeamMembersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

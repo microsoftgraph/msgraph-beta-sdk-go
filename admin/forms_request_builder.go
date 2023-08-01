@@ -73,7 +73,7 @@ func (m *FormsRequestBuilder) Delete(ctx context.Context, requestConfiguration *
 // Get read the properties and relationships of a adminForms object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/adminforms-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/adminforms-get?view=graph-rest-1.0
 func (m *FormsRequestBuilder) Get(ctx context.Context, requestConfiguration *FormsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminFormsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *FormsRequestBuilder) Get(ctx context.Context, requestConfiguration *For
 // Patch update the properties of a adminForms object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/adminforms-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/adminforms-update?view=graph-rest-1.0
 func (m *FormsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminFormsable, requestConfiguration *FormsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminFormsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

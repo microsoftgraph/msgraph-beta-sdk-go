@@ -34,7 +34,7 @@ func (m *CryptographySuite) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAuthenticationTransformConstants gets the authenticationTransformConstants property value. Authentication Transform Constants. Possible values are: md5_96, sha1_96, sha_256_128, aes128Gcm, aes192Gcm, aes256Gcm.
+// GetAuthenticationTransformConstants gets the authenticationTransformConstants property value. Authentication Transform Constants. Possible values are: md596, sha196, sha256128, aes128Gcm, aes192Gcm, aes256Gcm.
 func (m *CryptographySuite) GetAuthenticationTransformConstants()(*AuthenticationTransformConstant) {
     val, err := m.GetBackingStore().Get("authenticationTransformConstants")
     if err != nil {
@@ -157,7 +157,7 @@ func (m *CryptographySuite) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetIntegrityCheckMethod gets the integrityCheckMethod property value. Integrity Check Method. Possible values are: sha2_256, sha1_96, sha1_160, sha2_384, sha2_512, md5.
+// GetIntegrityCheckMethod gets the integrityCheckMethod property value. Integrity Check Method. Possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.
 func (m *CryptographySuite) GetIntegrityCheckMethod()(*VpnIntegrityAlgorithmType) {
     val, err := m.GetBackingStore().Get("integrityCheckMethod")
     if err != nil {
@@ -255,7 +255,7 @@ func (m *CryptographySuite) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAuthenticationTransformConstants sets the authenticationTransformConstants property value. Authentication Transform Constants. Possible values are: md5_96, sha1_96, sha_256_128, aes128Gcm, aes192Gcm, aes256Gcm.
+// SetAuthenticationTransformConstants sets the authenticationTransformConstants property value. Authentication Transform Constants. Possible values are: md596, sha196, sha256128, aes128Gcm, aes192Gcm, aes256Gcm.
 func (m *CryptographySuite) SetAuthenticationTransformConstants(value *AuthenticationTransformConstant)() {
     err := m.GetBackingStore().Set("authenticationTransformConstants", value)
     if err != nil {
@@ -287,7 +287,7 @@ func (m *CryptographySuite) SetEncryptionMethod(value *VpnEncryptionAlgorithmTyp
         panic(err)
     }
 }
-// SetIntegrityCheckMethod sets the integrityCheckMethod property value. Integrity Check Method. Possible values are: sha2_256, sha1_96, sha1_160, sha2_384, sha2_512, md5.
+// SetIntegrityCheckMethod sets the integrityCheckMethod property value. Integrity Check Method. Possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.
 func (m *CryptographySuite) SetIntegrityCheckMethod(value *VpnIntegrityAlgorithmType)() {
     err := m.GetBackingStore().Set("integrityCheckMethod", value)
     if err != nil {

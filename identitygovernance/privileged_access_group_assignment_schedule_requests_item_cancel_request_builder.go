@@ -33,7 +33,7 @@ func NewPrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder(
 // Post cancel an access assignment request to a group whose membership and ownership are governed by PIM.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/privilegedaccessgroupassignmentschedulerequest-cancel?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentschedulerequest-cancel?view=graph-rest-1.0
 func (m *PrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder) Post(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

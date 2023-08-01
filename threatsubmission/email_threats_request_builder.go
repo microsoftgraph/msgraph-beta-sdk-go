@@ -77,7 +77,7 @@ func (m *EmailThreatsRequestBuilder) Count()(*EmailThreatsCountRequestBuilder) {
 // Get get a list of the emailThreatSubmission objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-emailthreatsubmission-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-emailthreatsubmission-list?view=graph-rest-1.0
 func (m *EmailThreatsRequestBuilder) Get(ctx context.Context, requestConfiguration *EmailThreatsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EmailThreatSubmissionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *EmailThreatsRequestBuilder) Get(ctx context.Context, requestConfigurati
 // Post create a new emailThreatSubmission object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-emailthreatsubmission-post-emailthreats?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-emailthreatsubmission-post-emailthreats?view=graph-rest-1.0
 func (m *EmailThreatsRequestBuilder) Post(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EmailThreatSubmissionable, requestConfiguration *EmailThreatsRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EmailThreatSubmissionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

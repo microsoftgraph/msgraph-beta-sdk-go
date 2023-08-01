@@ -77,7 +77,7 @@ func (m *AcronymsRequestBuilder) Count()(*AcronymsCountRequestBuilder) {
 // Get get a list of the acronym objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/search-searchentity-list-acronyms?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/search-searchentity-list-acronyms?view=graph-rest-1.0
 func (m *AcronymsRequestBuilder) Get(ctx context.Context, requestConfiguration *AcronymsRequestBuilderGetRequestConfiguration)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.AcronymCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *AcronymsRequestBuilder) Get(ctx context.Context, requestConfiguration *
 // Post create a new acronym object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/search-searchentity-post-acronyms?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/search-searchentity-post-acronyms?view=graph-rest-1.0
 func (m *AcronymsRequestBuilder) Post(ctx context.Context, body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Acronymable, requestConfiguration *AcronymsRequestBuilderPostRequestConfiguration)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Acronymable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

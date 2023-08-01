@@ -73,7 +73,7 @@ func (m *ItemSettingsRegionalAndLanguageSettingsRequestBuilder) Delete(ctx conte
 // Get retrieve the properties of a user's regionalAndLanguageSettings.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/regionalandlanguagesettings-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/regionalandlanguagesettings-get?view=graph-rest-1.0
 func (m *ItemSettingsRegionalAndLanguageSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsRegionalAndLanguageSettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RegionalAndLanguageSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *ItemSettingsRegionalAndLanguageSettingsRequestBuilder) Get(ctx context.
 // Patch update some or all of the properties of a regionalAndLanguageSettings object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/regionalandlanguagesettings-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/regionalandlanguagesettings-update?view=graph-rest-1.0
 func (m *ItemSettingsRegionalAndLanguageSettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RegionalAndLanguageSettingsable, requestConfiguration *ItemSettingsRegionalAndLanguageSettingsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RegionalAndLanguageSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -31,7 +31,7 @@ func (m *ExternalConnection) GetActivitySettings()(ActivitySettingsable) {
     }
     return nil
 }
-// GetComplianceSettings gets the complianceSettings property value. The settings required for the connection to participate in eDiscovery, such as the display templates for eDiscovery results.
+// GetComplianceSettings gets the complianceSettings property value. The complianceSettings property
 func (m *ExternalConnection) GetComplianceSettings()(ComplianceSettingsable) {
     val, err := m.GetBackingStore().Get("complianceSettings")
     if err != nil {
@@ -75,7 +75,7 @@ func (m *ExternalConnection) GetDescription()(*string) {
     }
     return nil
 }
-// GetEnabledContentExperiences gets the enabledContentExperiences property value. The list of content experiences the connection will participate in. Possible values are search and compliance.
+// GetEnabledContentExperiences gets the enabledContentExperiences property value. The list of content experiences the connection will participate in. Possible values are search.
 func (m *ExternalConnection) GetEnabledContentExperiences()(*ContentExperienceType) {
     val, err := m.GetBackingStore().Get("enabledContentExperiences")
     if err != nil {
@@ -476,7 +476,7 @@ func (m *ExternalConnection) SetActivitySettings(value ActivitySettingsable)() {
         panic(err)
     }
 }
-// SetComplianceSettings sets the complianceSettings property value. The settings required for the connection to participate in eDiscovery, such as the display templates for eDiscovery results.
+// SetComplianceSettings sets the complianceSettings property value. The complianceSettings property
 func (m *ExternalConnection) SetComplianceSettings(value ComplianceSettingsable)() {
     err := m.GetBackingStore().Set("complianceSettings", value)
     if err != nil {
@@ -504,7 +504,7 @@ func (m *ExternalConnection) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetEnabledContentExperiences sets the enabledContentExperiences property value. The list of content experiences the connection will participate in. Possible values are search and compliance.
+// SetEnabledContentExperiences sets the enabledContentExperiences property value. The list of content experiences the connection will participate in. Possible values are search.
 func (m *ExternalConnection) SetEnabledContentExperiences(value *ContentExperienceType)() {
     err := m.GetBackingStore().Set("enabledContentExperiences", value)
     if err != nil {

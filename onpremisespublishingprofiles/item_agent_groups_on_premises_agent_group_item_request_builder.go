@@ -61,7 +61,7 @@ func NewItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder(rawUrl string, req
 // Delete delete an onPremisesAgentGroup object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/onpremisesagentgroup-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/onpremisesagentgroup-delete?view=graph-rest-1.0
 func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,7 +80,7 @@ func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) Delete(ctx conte
 // Get retrieve the properties and relationships of an onPremisesAgentGroup object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/onpremisesagentgroup-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/onpremisesagentgroup-get?view=graph-rest-1.0
 func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -102,7 +102,7 @@ func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) Get(ctx context.
 // Patch update the properties of an onPremisesAgentGroup object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/onpremisesagentgroup-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/onpremisesagentgroup-update?view=graph-rest-1.0
 func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable, requestConfiguration *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

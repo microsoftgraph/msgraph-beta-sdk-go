@@ -65,7 +65,7 @@ func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) CopyToSection()(*ItemOne
 // Delete delete a OneNote page.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/page-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/page-delete?view=graph-rest-1.0
 func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOnenotePagesOnenotePageItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

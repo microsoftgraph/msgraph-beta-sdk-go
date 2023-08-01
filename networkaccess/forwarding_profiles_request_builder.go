@@ -77,7 +77,7 @@ func (m *ForwardingProfilesRequestBuilder) Count()(*ForwardingProfilesCountReque
 // Get retrieve a list of forwarding profiles.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-networkaccessroot-list-forwardingprofiles?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-list-forwardingprofiles?view=graph-rest-1.0
 func (m *ForwardingProfilesRequestBuilder) Get(ctx context.Context, requestConfiguration *ForwardingProfilesRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingProfileCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

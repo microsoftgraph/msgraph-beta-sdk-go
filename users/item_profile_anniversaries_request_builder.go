@@ -77,7 +77,7 @@ func (m *ItemProfileAnniversariesRequestBuilder) Count()(*ItemProfileAnniversari
 // Get retrieve a list of personAnniversary objects for the given user from their profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/profile-list-anniversaries?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/profile-list-anniversaries?view=graph-rest-1.0
 func (m *ItemProfileAnniversariesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileAnniversariesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnualEventCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ItemProfileAnniversariesRequestBuilder) Get(ctx context.Context, reques
 // Post use this API to create a new personAnniversary object in a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/profile-post-anniversaries?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/profile-post-anniversaries?view=graph-rest-1.0
 func (m *ItemProfileAnniversariesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnualEventable, requestConfiguration *ItemProfileAnniversariesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnualEventable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

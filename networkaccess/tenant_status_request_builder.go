@@ -73,7 +73,7 @@ func (m *TenantStatusRequestBuilder) Delete(ctx context.Context, requestConfigur
 // Get retrieve the onboarding status of a specific tenant.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-tenantstatus-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-tenantstatus-get?view=graph-rest-1.0
 func (m *TenantStatusRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantStatusRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.TenantStatusable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -115,7 +115,7 @@ func (m *PasswordSingleSignOnField) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetFieldId gets the fieldId property value. Id used to identity the field type. This is an internal id and possible values are param_1, param_2, param_userName, param_password.
+// GetFieldId gets the fieldId property value. Id used to identity the field type. This is an internal id and possible values are param1, param2, paramuserName, parampassword.
 func (m *PasswordSingleSignOnField) GetFieldId()(*string) {
     val, err := m.GetBackingStore().Get("fieldId")
     if err != nil {
@@ -213,7 +213,7 @@ func (m *PasswordSingleSignOnField) SetDefaultLabel(value *string)() {
         panic(err)
     }
 }
-// SetFieldId sets the fieldId property value. Id used to identity the field type. This is an internal id and possible values are param_1, param_2, param_userName, param_password.
+// SetFieldId sets the fieldId property value. Id used to identity the field type. This is an internal id and possible values are param1, param2, paramuserName, parampassword.
 func (m *PasswordSingleSignOnField) SetFieldId(value *string)() {
     err := m.GetBackingStore().Set("fieldId", value)
     if err != nil {

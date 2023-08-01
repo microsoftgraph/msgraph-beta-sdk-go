@@ -57,7 +57,7 @@ func NewQnasQnaItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 // Delete delete a qna object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/search-qna-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/search-qna-delete?view=graph-rest-1.0
 func (m *QnasQnaItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *QnasQnaItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *QnasQnaItemRequestBuilder) Delete(ctx context.Context, requestConfigura
 // Get read the properties and relationships of a qna object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/search-qna-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/search-qna-get?view=graph-rest-1.0
 func (m *QnasQnaItemRequestBuilder) Get(ctx context.Context, requestConfiguration *QnasQnaItemRequestBuilderGetRequestConfiguration)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Qnaable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *QnasQnaItemRequestBuilder) Get(ctx context.Context, requestConfiguratio
 // Patch update the properties of a qna object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/search-qna-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/search-qna-update?view=graph-rest-1.0
 func (m *QnasQnaItemRequestBuilder) Patch(ctx context.Context, body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Qnaable, requestConfiguration *QnasQnaItemRequestBuilderPatchRequestConfiguration)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Qnaable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

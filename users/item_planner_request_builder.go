@@ -81,7 +81,7 @@ func (m *ItemPlannerRequestBuilder) FavoritePlans()(*ItemPlannerFavoritePlansReq
 // Get retrieve the properties and relationships of a plannerUser object. The returned properties include the user's favorite plans and recently viewed plans. 
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/planneruser-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/planneruser-get?view=graph-rest-1.0
 func (m *ItemPlannerRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPlannerRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerUserable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -103,7 +103,7 @@ func (m *ItemPlannerRequestBuilder) Get(ctx context.Context, requestConfiguratio
 // Patch update the navigation property planner in users
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/planneruser-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/planneruser-update?view=graph-rest-1.0
 func (m *ItemPlannerRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerUserable, requestConfiguration *ItemPlannerRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerUserable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

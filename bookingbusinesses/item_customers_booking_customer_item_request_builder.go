@@ -57,7 +57,7 @@ func NewItemCustomersBookingCustomerItemRequestBuilder(rawUrl string, requestAda
 // Delete delete the specified bookingCustomer object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingcustomer-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingcustomer-delete?view=graph-rest-1.0
 func (m *ItemCustomersBookingCustomerItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemCustomersBookingCustomerItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemCustomersBookingCustomerItemRequestBuilder) Delete(ctx context.Cont
 // Get get the properties and relationships of a bookingCustomer object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingcustomer-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingcustomer-get?view=graph-rest-1.0
 func (m *ItemCustomersBookingCustomerItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCustomersBookingCustomerItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomerable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ItemCustomersBookingCustomerItemRequestBuilder) Get(ctx context.Context
 // Patch update the properties of a bookingCustomer object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingcustomer-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingcustomer-update?view=graph-rest-1.0
 func (m *ItemCustomersBookingCustomerItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomerable, requestConfiguration *ItemCustomersBookingCustomerItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomerable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

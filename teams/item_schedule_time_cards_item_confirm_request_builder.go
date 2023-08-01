@@ -34,7 +34,7 @@ func NewItemScheduleTimeCardsItemConfirmRequestBuilder(rawUrl string, requestAda
 // Post confirm a specific timeCard.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/timecard-confirm?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/timecard-confirm?view=graph-rest-1.0
 func (m *ItemScheduleTimeCardsItemConfirmRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemScheduleTimeCardsItemConfirmRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

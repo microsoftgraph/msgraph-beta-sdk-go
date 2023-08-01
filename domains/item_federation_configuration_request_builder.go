@@ -96,7 +96,7 @@ func (m *ItemFederationConfigurationRequestBuilder) Get(ctx context.Context, req
 // Post create a new internalDomainFederation object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/domain-post-federationconfiguration?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/domain-post-federationconfiguration?view=graph-rest-1.0
 func (m *ItemFederationConfigurationRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InternalDomainFederationable, requestConfiguration *ItemFederationConfigurationRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InternalDomainFederationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

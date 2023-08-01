@@ -77,7 +77,7 @@ func (m *AttributeSetsRequestBuilder) Count()(*AttributeSetsCountRequestBuilder)
 // Get get a list of the attributeSet objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/directory-list-attributesets?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/directory-list-attributesets?view=graph-rest-1.0
 func (m *AttributeSetsRequestBuilder) Get(ctx context.Context, requestConfiguration *AttributeSetsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttributeSetCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *AttributeSetsRequestBuilder) Get(ctx context.Context, requestConfigurat
 // Post create a new attributeSet object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/directory-post-attributesets?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/directory-post-attributesets?view=graph-rest-1.0
 func (m *AttributeSetsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttributeSetable, requestConfiguration *AttributeSetsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttributeSetable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

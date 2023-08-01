@@ -77,7 +77,7 @@ func (m *ItemProfileAccountRequestBuilder) Count()(*ItemProfileAccountCountReque
 // Get retrieves properties related to the user's accounts from the profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/profile-list-accounts?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/profile-list-accounts?view=graph-rest-1.0
 func (m *ItemProfileAccountRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileAccountRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAccountInformationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ItemProfileAccountRequestBuilder) Get(ctx context.Context, requestConfi
 // Post create a new userAccountInformation object in a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/profile-post-accounts?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/profile-post-accounts?view=graph-rest-1.0
 func (m *ItemProfileAccountRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAccountInformationable, requestConfiguration *ItemProfileAccountRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAccountInformationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

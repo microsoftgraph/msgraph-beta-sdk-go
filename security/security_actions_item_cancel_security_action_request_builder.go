@@ -33,7 +33,7 @@ func NewSecurityActionsItemCancelSecurityActionRequestBuilder(rawUrl string, req
 // Post cancel a security operation.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/securityaction-cancelsecurityaction?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/securityaction-cancelsecurityaction?view=graph-rest-1.0
 func (m *SecurityActionsItemCancelSecurityActionRequestBuilder) Post(ctx context.Context, requestConfiguration *SecurityActionsItemCancelSecurityActionRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

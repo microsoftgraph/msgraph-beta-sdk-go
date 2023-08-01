@@ -61,7 +61,7 @@ func NewWindowsUpdatesDeploymentsDeploymentItemRequestBuilder(rawUrl string, req
 // Delete delete a deployment object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/windowsupdates-deployment-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-deployment-delete?view=graph-rest-1.0
 func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsDeploymentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,7 +80,7 @@ func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) Delete(ctx conte
 // Get read the properties and relationships of a deployment object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/windowsupdates-deployment-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-deployment-get?view=graph-rest-1.0
 func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsDeploymentItemRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -102,7 +102,7 @@ func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) Get(ctx context.
 // Patch update the properties of a deployment object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/windowsupdates-deployment-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-deployment-update?view=graph-rest-1.0
 func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) Patch(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable, requestConfiguration *WindowsUpdatesDeploymentsDeploymentItemRequestBuilderPatchRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

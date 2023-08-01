@@ -33,7 +33,7 @@ func NewItemDevicesGetByIdsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 // Post return the directory objects specified in a list of IDs. Some common uses for this function are to:
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
 func (m *ItemDevicesGetByIdsRequestBuilder) Post(ctx context.Context, body ItemDevicesGetByIdsPostRequestBodyable, requestConfiguration *ItemDevicesGetByIdsRequestBuilderPostRequestConfiguration)(ItemDevicesGetByIdsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

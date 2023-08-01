@@ -73,7 +73,7 @@ func (m *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) Delete(ctx con
 // Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/outlooktaskgroup-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/outlooktaskgroup-get?view=graph-rest-1.0
 func (m *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskGroupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

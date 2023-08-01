@@ -33,7 +33,7 @@ func NewItemCloudPCsItemStartRequestBuilder(rawUrl string, requestAdapter i2ae41
 // Post start a specific Cloud PC for a user. Currently, only Windows 365 Frontline Cloud PCs are supported.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpc-start?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-start?view=graph-rest-1.0
 func (m *ItemCloudPCsItemStartRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemCloudPCsItemStartRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

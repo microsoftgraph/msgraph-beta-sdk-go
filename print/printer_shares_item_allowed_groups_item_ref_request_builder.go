@@ -41,7 +41,7 @@ func NewPrinterSharesItemAllowedGroupsItemRefRequestBuilder(rawUrl string, reque
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/printershare-delete-allowedgroup?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/printershare-delete-allowedgroup?view=graph-rest-1.0
 func (m *PrinterSharesItemAllowedGroupsItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *PrinterSharesItemAllowedGroupsItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

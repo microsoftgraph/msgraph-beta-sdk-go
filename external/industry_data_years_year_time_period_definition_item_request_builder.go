@@ -57,7 +57,7 @@ func NewIndustryDataYearsYearTimePeriodDefinitionItemRequestBuilder(rawUrl strin
 // Delete delete a yearTimePeriodDefinition object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-delete?view=graph-rest-1.0
 func (m *IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilder) Delete(ctx
 // Get read the properties and relationships of a yearTimePeriodDefinition object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-get?view=graph-rest-1.0
 func (m *IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.YearTimePeriodDefinitionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilder) Get(ctx co
 // Patch update the properties of a yearTimePeriodDefinition object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-update?view=graph-rest-1.0
 func (m *IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilder) Patch(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.YearTimePeriodDefinitionable, requestConfiguration *IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilderPatchRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.YearTimePeriodDefinitionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

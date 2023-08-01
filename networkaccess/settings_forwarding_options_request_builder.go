@@ -73,7 +73,7 @@ func (m *SettingsForwardingOptionsRequestBuilder) Delete(ctx context.Context, re
 // Get retrieve the forwarding options for the tenant, with a specific focus on the 'skipDnsLookupState' flag. This flag determines whether DNS lookup will be skipped, allowing Microsoft 365 traffic to be forwarded directly to the Front Door using the client-resolved destination.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-forwardingoptions-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-forwardingoptions-get?view=graph-rest-1.0
 func (m *SettingsForwardingOptionsRequestBuilder) Get(ctx context.Context, requestConfiguration *SettingsForwardingOptionsRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingOptionsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *SettingsForwardingOptionsRequestBuilder) Get(ctx context.Context, reque
 // Patch the forwarding options for the tenant, with a specific focus on the skipDnsLookupState flag. This flag determines whether DNS lookup will be skipped, allowing Microsoft 365 traffic to be forwarded directly to the Front Door using the client-resolved destination.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-forwardingoptions-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-forwardingoptions-update?view=graph-rest-1.0
 func (m *SettingsForwardingOptionsRequestBuilder) Patch(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingOptionsable, requestConfiguration *SettingsForwardingOptionsRequestBuilderPatchRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingOptionsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

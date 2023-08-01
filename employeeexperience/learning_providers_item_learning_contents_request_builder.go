@@ -77,7 +77,7 @@ func (m *LearningProvidersItemLearningContentsRequestBuilder) Count()(*LearningP
 // Get get a list of the learningContent resources and their properties. This list represents the metadata of the specified provider's content in Viva Learning.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/learningprovider-list-learningcontents?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/learningprovider-list-learningcontents?view=graph-rest-1.0
 func (m *LearningProvidersItemLearningContentsRequestBuilder) Get(ctx context.Context, requestConfiguration *LearningProvidersItemLearningContentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningContentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

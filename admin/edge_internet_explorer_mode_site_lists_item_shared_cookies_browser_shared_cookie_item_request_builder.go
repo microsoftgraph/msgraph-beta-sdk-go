@@ -57,7 +57,7 @@ func NewEdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieIte
 // Delete delete a browserSharedCookie from a browserSiteList.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/browsersitelist-delete-sharedcookies?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/browsersitelist-delete-sharedcookies?view=graph-rest-1.0
 func (m *EdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieIt
 // Get get a session cookie that can be shared between a Microsoft Edge process and an Internet Explorer process, while using Internet Explorer mode.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/browsersharedcookie-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/browsersharedcookie-get?view=graph-rest-1.0
 func (m *EdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowserSharedCookieable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieIt
 // Patch update the properties of a browserSharedCookie object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/browsersharedcookie-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/browsersharedcookie-update?view=graph-rest-1.0
 func (m *EdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowserSharedCookieable, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowserSharedCookieable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

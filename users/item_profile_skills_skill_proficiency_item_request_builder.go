@@ -57,7 +57,7 @@ func NewItemProfileSkillsSkillProficiencyItemRequestBuilder(rawUrl string, reque
 // Delete delete a skillProficiency object from a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/skillproficiency-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/skillproficiency-delete?view=graph-rest-1.0
 func (m *ItemProfileSkillsSkillProficiencyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileSkillsSkillProficiencyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemProfileSkillsSkillProficiencyItemRequestBuilder) Delete(ctx context
 // Get retrieve the properties and relationships of a skillproficiency object in a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/skillproficiency-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/skillproficiency-get?view=graph-rest-1.0
 func (m *ItemProfileSkillsSkillProficiencyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileSkillsSkillProficiencyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ItemProfileSkillsSkillProficiencyItemRequestBuilder) Get(ctx context.Co
 // Patch update the properties of a skillProficiency object in a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/skillproficiency-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/skillproficiency-update?view=graph-rest-1.0
 func (m *ItemProfileSkillsSkillProficiencyItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable, requestConfiguration *ItemProfileSkillsSkillProficiencyItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

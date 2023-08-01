@@ -57,7 +57,7 @@ func NewLabelsAuthoritiesAuthorityTemplateItemRequestBuilder(rawUrl string, requ
 // Delete delete a authorityTemplate object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-labelsroot-delete-authorities?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-delete-authorities?view=graph-rest-1.0
 func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *LabelsAuthoritiesAuthorityTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) Delete(ctx contex
 // Get read the properties and relationships of a authorityTemplate object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-authoritytemplate-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-authoritytemplate-get?view=graph-rest-1.0
 func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsAuthoritiesAuthorityTemplateItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AuthorityTemplateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

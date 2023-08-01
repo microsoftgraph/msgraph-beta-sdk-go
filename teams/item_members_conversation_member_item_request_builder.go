@@ -57,7 +57,7 @@ func NewItemMembersConversationMemberItemRequestBuilder(rawUrl string, requestAd
 // Delete remove a conversationMember from a team.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/team-delete-members?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-delete-members?view=graph-rest-1.0
 func (m *ItemMembersConversationMemberItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemMembersConversationMemberItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemMembersConversationMemberItemRequestBuilder) Delete(ctx context.Con
 // Get get a conversationMember from a team.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/team-get-members?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-get-members?view=graph-rest-1.0
 func (m *ItemMembersConversationMemberItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMembersConversationMemberItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ItemMembersConversationMemberItemRequestBuilder) Get(ctx context.Contex
 // Patch update the role of a conversationMember in a team.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/team-update-members?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-update-members?view=graph-rest-1.0
 func (m *ItemMembersConversationMemberItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable, requestConfiguration *ItemMembersConversationMemberItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

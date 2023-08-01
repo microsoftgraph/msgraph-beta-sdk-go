@@ -70,7 +70,7 @@ func (m *SchoolsItemClassesRequestBuilder) Count()(*SchoolsItemClassesCountReque
 // Get retrieve a list of classes owned by a school.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationschool-list-classes?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-list-classes?view=graph-rest-1.0
 func (m *SchoolsItemClassesRequestBuilder) Get(ctx context.Context, requestConfiguration *SchoolsItemClassesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationClassCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

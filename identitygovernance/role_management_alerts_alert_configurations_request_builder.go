@@ -77,7 +77,7 @@ func (m *RoleManagementAlertsAlertConfigurationsRequestBuilder) Count()(*RoleMan
 // Get get a list of the alert configurations. The alert configurations are a collection of following types that are derived from the unifiedRoleManagementAlertConfiguration object:
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/rolemanagementalert-list-alertconfigurations?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/rolemanagementalert-list-alertconfigurations?view=graph-rest-1.0
 func (m *RoleManagementAlertsAlertConfigurationsRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleManagementAlertsAlertConfigurationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementAlertConfigurationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

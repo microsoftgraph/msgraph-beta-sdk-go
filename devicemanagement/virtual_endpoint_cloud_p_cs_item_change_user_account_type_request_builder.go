@@ -33,7 +33,7 @@ func NewVirtualEndpointCloudPCsItemChangeUserAccountTypeRequestBuilder(rawUrl st
 // Post change the account type of the user on a specific Cloud PC.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpc-changeuseraccounttype?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-changeuseraccounttype?view=graph-rest-1.0
 func (m *VirtualEndpointCloudPCsItemChangeUserAccountTypeRequestBuilder) Post(ctx context.Context, body VirtualEndpointCloudPCsItemChangeUserAccountTypePostRequestBodyable, requestConfiguration *VirtualEndpointCloudPCsItemChangeUserAccountTypeRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

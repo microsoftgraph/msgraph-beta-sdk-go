@@ -73,7 +73,7 @@ func (m *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder) Delete
 // Get read the properties and relationships of a hostComponent object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-hostcomponent-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-hostcomponent-get?view=graph-rest-1.0
 func (m *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostComponentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

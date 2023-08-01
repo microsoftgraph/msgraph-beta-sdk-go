@@ -73,7 +73,7 @@ func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) Count()(*ItemCalendarGro
 // Get retrieve a list of calendars belonging to a calendar group.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/calendargroup-list-calendars?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/calendargroup-list-calendars?view=graph-rest-1.0
 func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) Get(ctx context.Context,
 // Post use this API to create a new calendar in a calendar group for a user.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/calendargroup-post-calendars?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/calendargroup-post-calendars?view=graph-rest-1.0
 func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Calendarable, requestConfiguration *ItemCalendarGroupsItemCalendarsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Calendarable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

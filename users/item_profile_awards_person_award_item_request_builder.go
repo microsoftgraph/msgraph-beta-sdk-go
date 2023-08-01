@@ -57,7 +57,7 @@ func NewItemProfileAwardsPersonAwardItemRequestBuilder(rawUrl string, requestAda
 // Delete deletes a personAward object from a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/personaward-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/personaward-delete?view=graph-rest-1.0
 func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileAwardsPersonAwardItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) Delete(ctx context.Cont
 // Get read the properties and relationships of a personAward object from a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/personaward-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/personaward-get?view=graph-rest-1.0
 func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileAwardsPersonAwardItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) Get(ctx context.Context
 // Patch update the properties of a personAward object from a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/personaward-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/personaward-update?view=graph-rest-1.0
 func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardable, requestConfiguration *ItemProfileAwardsPersonAwardItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

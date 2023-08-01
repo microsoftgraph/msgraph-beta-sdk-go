@@ -65,7 +65,7 @@ func NewItemTeamScheduleTimeCardsTimeCardItemRequestBuilder(rawUrl string, reque
 // Delete delete a timeCard instance in a schedule.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/timecard-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/timecard-delete?view=graph-rest-1.0
 func (m *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -88,7 +88,7 @@ func (m *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) EndBreak()(*ItemTe
 // Get get the properties and relationships of a timeCard object by ID.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/timecard-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/timecard-get?view=graph-rest-1.0
 func (m *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -110,7 +110,7 @@ func (m *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) Get(ctx context.Co
 // Patch replace an existing timeCard with updated values.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/timecard-replace?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/timecard-replace?view=graph-rest-1.0
 func (m *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, requestConfiguration *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

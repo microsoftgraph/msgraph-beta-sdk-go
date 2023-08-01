@@ -73,7 +73,7 @@ func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequ
 // Get read the properties and relationships of an allowedValue object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/allowedvalue-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/allowedvalue-get?view=graph-rest-1.0
 func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AllowedValueable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequ
 // Patch update the properties of an allowedValue object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/allowedvalue-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/allowedvalue-update?view=graph-rest-1.0
 func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AllowedValueable, requestConfiguration *CustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AllowedValueable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

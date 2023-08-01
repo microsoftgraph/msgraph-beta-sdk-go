@@ -73,7 +73,7 @@ func (m *ItemSettingsItemInsightsRequestBuilder) Delete(ctx context.Context, req
 // Get get the user-customizable privacy settings for itemInsights and meeting hours insights.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/userinsightssettings-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/userinsightssettings-get?view=graph-rest-1.0
 func (m *ItemSettingsItemInsightsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsItemInsightsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInsightsSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *ItemSettingsItemInsightsRequestBuilder) Get(ctx context.Context, reques
 // Patch update the privacy settings for itemInsights and meeting hours insights of a user.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/userinsightssettings-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/userinsightssettings-update?view=graph-rest-1.0
 func (m *ItemSettingsItemInsightsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInsightsSettingsable, requestConfiguration *ItemSettingsItemInsightsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInsightsSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -81,7 +81,7 @@ func (m *ItemContactsRequestBuilder) Delta()(*ItemContactsDeltaRequestBuilder) {
 // Get get contacts in the user's mailbox. There are two scenarios where an app can get contacts in another user's contact folder:
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-list-contacts?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-list-contacts?view=graph-rest-1.0
 func (m *ItemContactsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemContactsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -103,7 +103,7 @@ func (m *ItemContactsRequestBuilder) Get(ctx context.Context, requestConfigurati
 // Post add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-post-contacts?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-post-contacts?view=graph-rest-1.0
 func (m *ItemContactsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contactable, requestConfiguration *ItemContactsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contactable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -77,7 +77,7 @@ func (m *ItemPublishedResourcesPublishedResourceItemRequestBuilder) Delete(ctx c
 // Get retrieve the properties and relationships of publishedResource object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/publishedresource-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/publishedresource-get?view=graph-rest-1.0
 func (m *ItemPublishedResourcesPublishedResourceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPublishedResourcesPublishedResourceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublishedResourceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ItemPublishedResourcesPublishedResourceItemRequestBuilder) Get(ctx cont
 // Patch update the properties of publishedresource  publishedResource object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/publishedresource-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/publishedresource-update?view=graph-rest-1.0
 func (m *ItemPublishedResourcesPublishedResourceItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublishedResourceable, requestConfiguration *ItemPublishedResourcesPublishedResourceItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublishedResourceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

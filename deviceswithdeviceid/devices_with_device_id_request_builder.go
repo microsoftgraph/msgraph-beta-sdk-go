@@ -18,7 +18,7 @@ type DevicesWithDeviceIdRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DevicesWithDeviceIdRequestBuilderGetQueryParameters get the properties and relationships of a device object. Since the **device** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **device** instance.
+// DevicesWithDeviceIdRequestBuilderGetQueryParameters get the properties and relationships of a device object. Since the device resource supports extensions, you can also use the GET operation to get custom properties and extension data in a device instance.
 type DevicesWithDeviceIdRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -60,7 +60,7 @@ func NewDevicesWithDeviceIdRequestBuilder(rawUrl string, requestAdapter i2ae4187
 // Delete delete a registered device.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/device-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/device-delete?view=graph-rest-1.0
 func (m *DevicesWithDeviceIdRequestBuilder) Delete(ctx context.Context, requestConfiguration *DevicesWithDeviceIdRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,10 +76,10 @@ func (m *DevicesWithDeviceIdRequestBuilder) Delete(ctx context.Context, requestC
     }
     return nil
 }
-// Get get the properties and relationships of a device object. Since the **device** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **device** instance.
+// Get get the properties and relationships of a device object. Since the device resource supports extensions, you can also use the GET operation to get custom properties and extension data in a device instance.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/device-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/device-get?view=graph-rest-1.0
 func (m *DevicesWithDeviceIdRequestBuilder) Get(ctx context.Context, requestConfiguration *DevicesWithDeviceIdRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,7 +101,7 @@ func (m *DevicesWithDeviceIdRequestBuilder) Get(ctx context.Context, requestConf
 // Patch update the properties of a device. Only certain properties of a device can be updated through approved Mobile Device Management (MDM) apps.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/device-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/device-update?view=graph-rest-1.0
 func (m *DevicesWithDeviceIdRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, requestConfiguration *DevicesWithDeviceIdRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *DevicesWithDeviceIdRequestBuilder) ToDeleteRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of a device object. Since the **device** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **device** instance.
+// ToGetRequestInformation get the properties and relationships of a device object. Since the device resource supports extensions, you can also use the GET operation to get custom properties and extension data in a device instance.
 func (m *DevicesWithDeviceIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DevicesWithDeviceIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

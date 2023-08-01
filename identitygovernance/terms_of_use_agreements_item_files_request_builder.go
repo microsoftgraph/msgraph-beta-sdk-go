@@ -96,7 +96,7 @@ func (m *TermsOfUseAgreementsItemFilesRequestBuilder) Get(ctx context.Context, r
 // Post create a new localized agreement file.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/agreement-post-files?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/agreement-post-files?view=graph-rest-1.0
 func (m *TermsOfUseAgreementsItemFilesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationable, requestConfiguration *TermsOfUseAgreementsItemFilesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

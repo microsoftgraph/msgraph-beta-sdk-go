@@ -32,7 +32,7 @@ func (m *IntelligenceProfile) GetAliases()([]string) {
     }
     return nil
 }
-// GetCountriesOrRegionsOfOrigin gets the countriesOrRegionsOfOrigin property value. The countriesOrRegionsOfOrigin property
+// GetCountriesOrRegionsOfOrigin gets the countriesOrRegionsOfOrigin property value. The country/region of origin for the given actor or threat associated with this intelligenceProfile.
 func (m *IntelligenceProfile) GetCountriesOrRegionsOfOrigin()([]IntelligenceProfileCountryOrRegionOfOriginable) {
     val, err := m.GetBackingStore().Get("countriesOrRegionsOfOrigin")
     if err != nil {
@@ -348,7 +348,7 @@ func (m *IntelligenceProfile) SetAliases(value []string)() {
         panic(err)
     }
 }
-// SetCountriesOrRegionsOfOrigin sets the countriesOrRegionsOfOrigin property value. The countriesOrRegionsOfOrigin property
+// SetCountriesOrRegionsOfOrigin sets the countriesOrRegionsOfOrigin property value. The country/region of origin for the given actor or threat associated with this intelligenceProfile.
 func (m *IntelligenceProfile) SetCountriesOrRegionsOfOrigin(value []IntelligenceProfileCountryOrRegionOfOriginable)() {
     err := m.GetBackingStore().Set("countriesOrRegionsOfOrigin", value)
     if err != nil {

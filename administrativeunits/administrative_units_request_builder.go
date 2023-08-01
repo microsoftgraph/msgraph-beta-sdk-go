@@ -81,7 +81,7 @@ func (m *AdministrativeUnitsRequestBuilder) Delta()(*DeltaRequestBuilder) {
 // Get retrieve a list of administrativeUnit objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/directory-list-administrativeunits?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/directory-list-administrativeunits?view=graph-rest-1.0
 func (m *AdministrativeUnitsRequestBuilder) Get(ctx context.Context, requestConfiguration *AdministrativeUnitsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -111,7 +111,7 @@ func (m *AdministrativeUnitsRequestBuilder) GetUserOwnedObjects()(*GetUserOwnedO
 // Post use this API to create a new administrativeUnit.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/directory-post-administrativeunits?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/directory-post-administrativeunits?view=graph-rest-1.0
 func (m *AdministrativeUnitsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, requestConfiguration *AdministrativeUnitsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -66,7 +66,7 @@ func (m *ItemPhotosRequestBuilder) Count()(*ItemPhotosCountRequestBuilder) {
 // Get retrieve a list of profilePhoto objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/group-list-photos?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-list-photos?view=graph-rest-1.0
 func (m *ItemPhotosRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPhotosRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfilePhotoCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

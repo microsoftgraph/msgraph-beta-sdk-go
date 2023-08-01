@@ -57,7 +57,7 @@ func NewLearningProvidersItemLearningCourseActivitiesLearningCourseActivityItemR
 // Delete delete a learningCourseActivity object by using the course activity ID of either an assignment or a self-initiated activity.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/learningcourseactivity-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/learningcourseactivity-delete?view=graph-rest-1.0
 func (m *LearningProvidersItemLearningCourseActivitiesLearningCourseActivityItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *LearningProvidersItemLearningCourseActivitiesLearningCourseActivityItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *LearningProvidersItemLearningCourseActivitiesLearningCourseActivityItem
 // Patch update the properties of a learningCourseActivity object. 
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/learningcourseactivity-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/learningcourseactivity-update?view=graph-rest-1.0
 func (m *LearningProvidersItemLearningCourseActivitiesLearningCourseActivityItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningCourseActivityable, requestConfiguration *LearningProvidersItemLearningCourseActivitiesLearningCourseActivityItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningCourseActivityable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

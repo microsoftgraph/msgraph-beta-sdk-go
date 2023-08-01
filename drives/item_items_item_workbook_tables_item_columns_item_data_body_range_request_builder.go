@@ -34,7 +34,7 @@ func NewItemItemsItemWorkbookTablesItemColumnsItemDataBodyRangeRequestBuilder(ra
 // Get gets the range object associated with the data body of the column.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/tablecolumn-databodyrange?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/tablecolumn-databodyrange?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookTablesItemColumnsItemDataBodyRangeRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemColumnsItemDataBodyRangeRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookRangeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

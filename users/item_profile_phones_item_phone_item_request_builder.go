@@ -57,7 +57,7 @@ func NewItemProfilePhonesItemPhoneItemRequestBuilder(rawUrl string, requestAdapt
 // Delete delete an itemPhone object from the user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/itemphone-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/itemphone-delete?view=graph-rest-1.0
 func (m *ItemProfilePhonesItemPhoneItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfilePhonesItemPhoneItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemProfilePhonesItemPhoneItemRequestBuilder) Delete(ctx context.Contex
 // Get retrieve the properties and relationships of an itemPhone object in a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/itemphone-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/itemphone-get?view=graph-rest-1.0
 func (m *ItemProfilePhonesItemPhoneItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfilePhonesItemPhoneItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPhoneable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ItemProfilePhonesItemPhoneItemRequestBuilder) Get(ctx context.Context, 
 // Patch update the properties of an itemPhone object in a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/itemphone-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/itemphone-update?view=graph-rest-1.0
 func (m *ItemProfilePhonesItemPhoneItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPhoneable, requestConfiguration *ItemProfilePhonesItemPhoneItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPhoneable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

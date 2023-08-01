@@ -77,7 +77,7 @@ func (m *ItemScopedRoleMemberOfRequestBuilder) Count()(*ItemScopedRoleMemberOfCo
 // Get retrieve a list of scopedRoleMembership for the user.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-list-scopedrolememberof?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-list-scopedrolememberof?view=graph-rest-1.0
 func (m *ItemScopedRoleMemberOfRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemScopedRoleMemberOfRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ScopedRoleMembershipCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

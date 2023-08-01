@@ -77,7 +77,7 @@ func (m *ManagedTenantsMyRolesRequestBuilder) Count()(*ManagedTenantsMyRolesCoun
 // Get get the roles that a signed-in user has through a delegated relationship across managed tenants. For information on the types of delegated relationships between a Managed Service Provider (MSP) who uses Microsoft 365 Lighthouse, and their business customers with Microsoft 365 Business Premium tenants, see the following articles on the Partner Center:- Delegated administration privileges (DAP)- Granular delegated admin privileges (GDAP)
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-myroles?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-myroles?view=graph-rest-1.0
 func (m *ManagedTenantsMyRolesRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsMyRolesRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.MyRoleCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

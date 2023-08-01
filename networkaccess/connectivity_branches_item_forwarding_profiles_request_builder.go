@@ -77,7 +77,7 @@ func (m *ConnectivityBranchesItemForwardingProfilesRequestBuilder) Count()(*Conn
 // Get retrieve a list of traffic forwarding profiles associated with a branch.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-branchsite-list-forwardingprofiles?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-branchsite-list-forwardingprofiles?view=graph-rest-1.0
 func (m *ConnectivityBranchesItemForwardingProfilesRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityBranchesItemForwardingProfilesRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingProfileCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

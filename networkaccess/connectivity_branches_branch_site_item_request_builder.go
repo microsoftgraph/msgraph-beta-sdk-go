@@ -57,7 +57,7 @@ func NewConnectivityBranchesBranchSiteItemRequestBuilder(rawUrl string, requestA
 // Delete delete a specific branch.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-branchsite-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-branchsite-delete?view=graph-rest-1.0
 func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConnectivityBranchesBranchSiteItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -84,7 +84,7 @@ func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) ForwardingProfiles()(
 // Get retrieve information about a specific branch.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-branchsite-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-branchsite-get?view=graph-rest-1.0
 func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityBranchesBranchSiteItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -106,7 +106,7 @@ func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) Get(ctx context.Conte
 // Patch update the configuration or properties of a specific branch.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-branchsite-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-branchsite-update?view=graph-rest-1.0
 func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) Patch(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable, requestConfiguration *ConnectivityBranchesBranchSiteItemRequestBuilderPatchRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

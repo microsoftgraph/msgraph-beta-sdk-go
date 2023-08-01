@@ -77,7 +77,7 @@ func (m *ItemOnenoteNotebooksItemSectionsRequestBuilder) Count()(*ItemOnenoteNot
 // Get retrieve a list of section objects from the specified notebook.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/notebook-list-sections?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/notebook-list-sections?view=graph-rest-1.0
 func (m *ItemOnenoteNotebooksItemSectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnenoteNotebooksItemSectionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteSectionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ItemOnenoteNotebooksItemSectionsRequestBuilder) Get(ctx context.Context
 // Post create a new section in the specified notebook.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/notebook-post-sections?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/notebook-post-sections?view=graph-rest-1.0
 func (m *ItemOnenoteNotebooksItemSectionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteSectionable, requestConfiguration *ItemOnenoteNotebooksItemSectionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteSectionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -85,7 +85,7 @@ func (m *SignInsRequestBuilder) Count()(*SignInsCountRequestBuilder) {
 // Get get a list of signIn objects. The list contains the user sign-ins for your Azure Active Directory tenant. Sign-ins where a username and password are passed as part of authorization token, and successful federated sign-ins are currently included in the sign-in logs. The maximum and default page size is 1,000 objects and by default, the most recent sign-ins are returned first. Only sign-in events that occurred within the Azure Active Directory (Azure AD) default retention period are available.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/signin-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/signin-list?view=graph-rest-1.0
 func (m *SignInsRequestBuilder) Get(ctx context.Context, requestConfiguration *SignInsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -47,11 +47,11 @@ func NewB2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewB2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an identity provider from a b2xIdentityUserFlow object. For self-service sign up user flows, the values can be `Google-OAUTH` or `Facebook-OAUTH`.
+// Delete delete an identity provider from a b2xIdentityUserFlow object. For self-service sign up user flows, the values can be Google-OAUTH or Facebook-OAUTH.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/b2xidentityuserflow-delete-identityproviders?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/b2xidentityuserflow-delete-identityproviders?view=graph-rest-1.0
 func (m *B2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *B2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -87,7 +87,7 @@ func (m *B2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilder) Ge
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderable), nil
 }
-// ToDeleteRequestInformation delete an identity provider from a b2xIdentityUserFlow object. For self-service sign up user flows, the values can be `Google-OAUTH` or `Facebook-OAUTH`.
+// ToDeleteRequestInformation delete an identity provider from a b2xIdentityUserFlow object. For self-service sign up user flows, the values can be Google-OAUTH or Facebook-OAUTH.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 func (m *B2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *B2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

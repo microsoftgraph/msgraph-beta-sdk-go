@@ -77,7 +77,7 @@ func (m *ItemAppointmentsRequestBuilder) Count()(*ItemAppointmentsCountRequestBu
 // Get get a list of bookingAppointment objects for the specified bookingBusiness.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingbusiness-list-appointments?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-list-appointments?view=graph-rest-1.0
 func (m *ItemAppointmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAppointmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingAppointmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ItemAppointmentsRequestBuilder) Get(ctx context.Context, requestConfigu
 // Post create a new bookingAppointment for the specified bookingBusiness.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingbusiness-post-appointments?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-post-appointments?view=graph-rest-1.0
 func (m *ItemAppointmentsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingAppointmentable, requestConfiguration *ItemAppointmentsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingAppointmentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

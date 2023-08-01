@@ -11,7 +11,7 @@ import (
 type ItemPlannerPlansRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemPlannerPlansRequestBuilderGetQueryParameters retrieve a list of **plannerPlan** objects owned by a group object.
+// ItemPlannerPlansRequestBuilderGetQueryParameters retrieve a list of plannerPlan objects owned by a group object.
 type ItemPlannerPlansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,10 +78,10 @@ func (m *ItemPlannerPlansRequestBuilder) Count()(*ItemPlannerPlansCountRequestBu
 func (m *ItemPlannerPlansRequestBuilder) Delta()(*ItemPlannerPlansDeltaRequestBuilder) {
     return NewItemPlannerPlansDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of **plannerPlan** objects owned by a group object.
+// Get retrieve a list of plannerPlan objects owned by a group object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/plannergroup-list-plans?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannergroup-list-plans?view=graph-rest-1.0
 func (m *ItemPlannerPlansRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPlannerPlansRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +119,7 @@ func (m *ItemPlannerPlansRequestBuilder) Post(ctx context.Context, body ie233ee7
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanable), nil
 }
-// ToGetRequestInformation retrieve a list of **plannerPlan** objects owned by a group object.
+// ToGetRequestInformation retrieve a list of plannerPlan objects owned by a group object.
 func (m *ItemPlannerPlansRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerPlansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

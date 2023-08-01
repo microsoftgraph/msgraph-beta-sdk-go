@@ -34,7 +34,7 @@ func NewItemItemsItemWorkbookWorksheetsItemNamesAddFormulaLocalRequestBuilder(ra
 // Post adds a new name to the collection of the given scope using the user's locale for the formula.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/nameditem-addformulalocal?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/nameditem-addformulalocal?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemNamesAddFormulaLocalRequestBuilder) Post(ctx context.Context, body ItemItemsItemWorkbookWorksheetsItemNamesAddFormulaLocalPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemNamesAddFormulaLocalRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookNamedItemable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

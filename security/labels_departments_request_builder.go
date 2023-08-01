@@ -77,7 +77,7 @@ func (m *LabelsDepartmentsRequestBuilder) Count()(*LabelsDepartmentsCountRequest
 // Get get a list of the departmentTemplate objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-labelsroot-list-departments?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-list-departments?view=graph-rest-1.0
 func (m *LabelsDepartmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsDepartmentsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DepartmentTemplateCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *LabelsDepartmentsRequestBuilder) Get(ctx context.Context, requestConfig
 // Post create a new departmentTemplate object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-labelsroot-post-departments?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-post-departments?view=graph-rest-1.0
 func (m *LabelsDepartmentsRequestBuilder) Post(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DepartmentTemplateable, requestConfiguration *LabelsDepartmentsRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DepartmentTemplateable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

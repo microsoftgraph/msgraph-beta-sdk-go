@@ -33,7 +33,7 @@ func NewItemCloudPCsItemReprovisionRequestBuilder(rawUrl string, requestAdapter 
 // Post reprovision a specific Cloud PC.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpc-reprovision?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-reprovision?view=graph-rest-1.0
 func (m *ItemCloudPCsItemReprovisionRequestBuilder) Post(ctx context.Context, body ItemCloudPCsItemReprovisionPostRequestBodyable, requestConfiguration *ItemCloudPCsItemReprovisionRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

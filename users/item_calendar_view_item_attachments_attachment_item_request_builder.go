@@ -50,7 +50,7 @@ func NewItemCalendarViewItemAttachmentsAttachmentItemRequestBuilder(rawUrl strin
 // Delete delete an attachment from a user calendar event, message, Outlook task, or post.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
 func (m *ItemCalendarViewItemAttachmentsAttachmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemCalendarViewItemAttachmentsAttachmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -69,7 +69,7 @@ func (m *ItemCalendarViewItemAttachmentsAttachmentItemRequestBuilder) Delete(ctx
 // Get read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post.  An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. 
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/attachment-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/attachment-get?view=graph-rest-1.0
 func (m *ItemCalendarViewItemAttachmentsAttachmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarViewItemAttachmentsAttachmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

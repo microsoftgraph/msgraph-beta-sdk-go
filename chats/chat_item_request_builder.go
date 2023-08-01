@@ -73,7 +73,7 @@ func (m *ChatItemRequestBuilder) Delete(ctx context.Context, requestConfiguratio
 // Get retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chat-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-get?view=graph-rest-1.0
 func (m *ChatItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ChatItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Chatable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -127,7 +127,7 @@ func (m *ChatItemRequestBuilder) Operations()(*ItemOperationsRequestBuilder) {
 // Patch update the properties of a chat object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chat-patch?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-patch?view=graph-rest-1.0
 func (m *ChatItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Chatable, requestConfiguration *ChatItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Chatable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

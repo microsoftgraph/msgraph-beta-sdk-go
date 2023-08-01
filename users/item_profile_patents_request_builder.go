@@ -77,7 +77,7 @@ func (m *ItemProfilePatentsRequestBuilder) Count()(*ItemProfilePatentsCountReque
 // Get retrieve a list of itemPatent objects from a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/profile-list-patents?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/profile-list-patents?view=graph-rest-1.0
 func (m *ItemProfilePatentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfilePatentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ItemProfilePatentsRequestBuilder) Get(ctx context.Context, requestConfi
 // Post create a new itemPatent object within a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/profile-post-patents?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/profile-post-patents?view=graph-rest-1.0
 func (m *ItemProfilePatentsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentable, requestConfiguration *ItemProfilePatentsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

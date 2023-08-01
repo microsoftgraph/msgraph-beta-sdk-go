@@ -20,7 +20,7 @@ func NewZebraFotaConnector()(*ZebraFotaConnector) {
 func CreateZebraFotaConnectorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewZebraFotaConnector(), nil
 }
-// GetEnrollmentAuthorizationUrl gets the enrollmentAuthorizationUrl property value. Complete account enrollment authorization URL. This corresponds to verification_uri_complete in the Zebra API documentations.
+// GetEnrollmentAuthorizationUrl gets the enrollmentAuthorizationUrl property value. Complete account enrollment authorization URL. This corresponds to verificationuricomplete in the Zebra API documentations.
 func (m *ZebraFotaConnector) GetEnrollmentAuthorizationUrl()(*string) {
     val, err := m.GetBackingStore().Get("enrollmentAuthorizationUrl")
     if err != nil {
@@ -169,7 +169,7 @@ func (m *ZebraFotaConnector) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetEnrollmentAuthorizationUrl sets the enrollmentAuthorizationUrl property value. Complete account enrollment authorization URL. This corresponds to verification_uri_complete in the Zebra API documentations.
+// SetEnrollmentAuthorizationUrl sets the enrollmentAuthorizationUrl property value. Complete account enrollment authorization URL. This corresponds to verificationuricomplete in the Zebra API documentations.
 func (m *ZebraFotaConnector) SetEnrollmentAuthorizationUrl(value *string)() {
     err := m.GetBackingStore().Set("enrollmentAuthorizationUrl", value)
     if err != nil {

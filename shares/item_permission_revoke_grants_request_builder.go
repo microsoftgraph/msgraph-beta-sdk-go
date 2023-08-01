@@ -34,7 +34,7 @@ func NewItemPermissionRevokeGrantsRequestBuilder(rawUrl string, requestAdapter i
 // Post revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/permission-revokegrants?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/permission-revokegrants?view=graph-rest-1.0
 func (m *ItemPermissionRevokeGrantsRequestBuilder) Post(ctx context.Context, body ItemPermissionRevokeGrantsPostRequestBodyable, requestConfiguration *ItemPermissionRevokeGrantsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

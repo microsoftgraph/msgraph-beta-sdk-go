@@ -57,7 +57,7 @@ func NewConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder(rawUrl s
 // Delete removes the link between the branch and the CPE device, effectively removing the connection and associated configuration between them.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-branchsite-delete-devicelinks?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-branchsite-delete-devicelinks?view=graph-rest-1.0
 func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) Delete
 // Get retrieve the device link associated with a specific branch.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-devicelink-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-devicelink-get?view=graph-rest-1.0
 func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) Get(ct
 // Patch update the device link associated with a specific branch.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-devicelink-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-devicelink-update?view=graph-rest-1.0
 func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) Patch(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable, requestConfiguration *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilderPatchRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

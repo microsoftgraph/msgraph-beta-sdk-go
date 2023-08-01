@@ -34,7 +34,7 @@ func NewItemTeamDefinitionScheduleTimeCardsClockInRequestBuilder(rawUrl string, 
 // Post clock in to start a timeCard.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/timecard-clockin?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/timecard-clockin?view=graph-rest-1.0
 func (m *ItemTeamDefinitionScheduleTimeCardsClockInRequestBuilder) Post(ctx context.Context, body ItemTeamDefinitionScheduleTimeCardsClockInPostRequestBodyable, requestConfiguration *ItemTeamDefinitionScheduleTimeCardsClockInRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

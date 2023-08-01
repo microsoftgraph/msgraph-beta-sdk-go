@@ -73,7 +73,7 @@ func (m *CallsItemOperationsCommsOperationItemRequestBuilder) Delete(ctx context
 // Get get the status of an operation that adds the large gallery view to a call.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/addlargegalleryviewoperation-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/addlargegalleryviewoperation-get?view=graph-rest-1.0
 func (m *CallsItemOperationsCommsOperationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CallsItemOperationsCommsOperationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CommsOperationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

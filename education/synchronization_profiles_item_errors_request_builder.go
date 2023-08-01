@@ -77,7 +77,7 @@ func (m *SynchronizationProfilesItemErrorsRequestBuilder) Count()(*Synchronizati
 // Get get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationsynchronizationerrors-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationsynchronizationerrors-get?view=graph-rest-1.0
 func (m *SynchronizationProfilesItemErrorsRequestBuilder) Get(ctx context.Context, requestConfiguration *SynchronizationProfilesItemErrorsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSynchronizationErrorCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

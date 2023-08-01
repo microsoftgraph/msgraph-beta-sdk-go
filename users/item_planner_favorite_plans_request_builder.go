@@ -70,7 +70,7 @@ func (m *ItemPlannerFavoritePlansRequestBuilder) Count()(*ItemPlannerFavoritePla
 // Get retrieve a list of plannerPlans that are marked as favorite by a user. You can mark a plan as favorite by updating the plannerUser resource.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/planneruser-list-favoriteplans?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/planneruser-list-favoriteplans?view=graph-rest-1.0
 func (m *ItemPlannerFavoritePlansRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPlannerFavoritePlansRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -57,7 +57,7 @@ func NewItemProfileWebsitesPersonWebsiteItemRequestBuilder(rawUrl string, reques
 // Delete deletes a personWebsite object from a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/personwebsite-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/personwebsite-delete?view=graph-rest-1.0
 func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileWebsitesPersonWebsiteItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) Delete(ctx context.
 // Get retrieve the properties and relationships of a personWebsite object from a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/personwebsite-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/personwebsite-get?view=graph-rest-1.0
 func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileWebsitesPersonWebsiteItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonWebsiteable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) Get(ctx context.Con
 // Patch update the properties of personWebsite object in a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/personwebsite-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/personwebsite-update?view=graph-rest-1.0
 func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonWebsiteable, requestConfiguration *ItemProfileWebsitesPersonWebsiteItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonWebsiteable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

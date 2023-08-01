@@ -75,7 +75,7 @@ func (m *EdiscoveryCasesItemSettingsRequestBuilder) Delete(ctx context.Context, 
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-casesettings-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-casesettings-get?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemSettingsRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -102,7 +102,7 @@ func (m *EdiscoveryCasesItemSettingsRequestBuilder) MicrosoftGraphEdiscoveryRese
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-casesettings-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-casesettings-update?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemSettingsRequestBuilder) Patch(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseSettingsable, requestConfiguration *EdiscoveryCasesItemSettingsRequestBuilderPatchRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

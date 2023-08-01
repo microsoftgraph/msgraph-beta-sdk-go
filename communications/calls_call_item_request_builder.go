@@ -81,7 +81,7 @@ func (m *CallsCallItemRequestBuilder) ContentSharingSessions()(*CallsItemContent
 // Delete delete or hang up an active call. For group calls, this will only delete your call leg and the underlying group call will still continue.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/call-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/call-delete?view=graph-rest-1.0
 func (m *CallsCallItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CallsCallItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,7 +100,7 @@ func (m *CallsCallItemRequestBuilder) Delete(ctx context.Context, requestConfigu
 // Get retrieve the properties and relationships of a call object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/call-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/call-get?view=graph-rest-1.0
 func (m *CallsCallItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CallsCallItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Callable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -77,7 +77,7 @@ func (m *ConnectivityBranchesRequestBuilder) Count()(*ConnectivityBranchesCountR
 // Get retrieve a list of branches within a tenant connected to the Global Secure Access services.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-connectivity-list-branches?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-connectivity-list-branches?view=graph-rest-1.0
 func (m *ConnectivityBranchesRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityBranchesRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ConnectivityBranchesRequestBuilder) Get(ctx context.Context, requestCon
 // Post create a new branch.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-connectivity-post-branches?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-connectivity-post-branches?view=graph-rest-1.0
 func (m *ConnectivityBranchesRequestBuilder) Post(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable, requestConfiguration *ConnectivityBranchesRequestBuilderPostRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

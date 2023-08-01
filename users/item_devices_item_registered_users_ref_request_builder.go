@@ -58,7 +58,7 @@ func NewItemDevicesItemRegisteredUsersRefRequestBuilder(rawUrl string, requestAd
 // Get collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0
 func (m *ItemDevicesItemRegisteredUsersRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDevicesItemRegisteredUsersRefRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,7 +80,7 @@ func (m *ItemDevicesItemRegisteredUsersRefRequestBuilder) Get(ctx context.Contex
 // Post add a registered user for the device.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/device-post-registeredusers?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/device-post-registeredusers?view=graph-rest-1.0
 func (m *ItemDevicesItemRegisteredUsersRefRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *ItemDevicesItemRegisteredUsersRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

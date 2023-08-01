@@ -33,7 +33,7 @@ func NewAccessReviewsDecisionsItemInstanceSendReminderRequestBuilder(rawUrl stri
 // Post send a reminder to the reviewers of a currently active accessReviewInstance.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/accessreviewinstance-sendreminder?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewinstance-sendreminder?view=graph-rest-1.0
 func (m *AccessReviewsDecisionsItemInstanceSendReminderRequestBuilder) Post(ctx context.Context, requestConfiguration *AccessReviewsDecisionsItemInstanceSendReminderRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

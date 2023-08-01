@@ -77,7 +77,7 @@ func (m *ThreatIntelligenceIntelProfilesRequestBuilder) Count()(*ThreatIntellige
 // Get get a list of the intelligenceProfile objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-intelligenceprofile-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-intelligenceprofile-list?view=graph-rest-1.0
 func (m *ThreatIntelligenceIntelProfilesRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceIntelProfilesRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.IntelligenceProfileCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -33,7 +33,7 @@ func NewTiIndicatorsUpdateTiIndicatorsRequestBuilder(rawUrl string, requestAdapt
 // Post update multiple threat intelligence (TI) indicators in one request instead of multiple requests.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/tiindicator-updatetiindicators?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-updatetiindicators?view=graph-rest-1.0
 func (m *TiIndicatorsUpdateTiIndicatorsRequestBuilder) Post(ctx context.Context, body TiIndicatorsUpdateTiIndicatorsPostRequestBodyable, requestConfiguration *TiIndicatorsUpdateTiIndicatorsRequestBuilderPostRequestConfiguration)(TiIndicatorsUpdateTiIndicatorsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

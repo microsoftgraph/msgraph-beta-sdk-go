@@ -20,7 +20,7 @@ func NewSignIn()(*SignIn) {
 func CreateSignInFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSignIn(), nil
 }
-// GetAppDisplayName gets the appDisplayName property value. The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
+// GetAppDisplayName gets the appDisplayName property value. The application name displayed in the Azure Portal.  Supports $filter (eq, startsWith).
 func (m *SignIn) GetAppDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("appDisplayName")
     if err != nil {
@@ -31,7 +31,7 @@ func (m *SignIn) GetAppDisplayName()(*string) {
     }
     return nil
 }
-// GetAppId gets the appId property value. The application identifier in Azure Active Directory. Supports $filter (eq operator only).
+// GetAppId gets the appId property value. The application identifier in Azure Active Directory.  Supports $filter (eq).
 func (m *SignIn) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -141,7 +141,7 @@ func (m *SignIn) GetAuthenticationProtocol()(*ProtocolType) {
     }
     return nil
 }
-// GetAuthenticationRequirement gets the authenticationRequirement property value. This holds the highest level of authentication needed through all the sign-in steps, for sign-in to succeed. Supports $filter (eq and startsWith operators only).
+// GetAuthenticationRequirement gets the authenticationRequirement property value. This holds the highest level of authentication needed through all the sign-in steps, for sign-in to succeed.  Supports $filter (eq, startsWith).
 func (m *SignIn) GetAuthenticationRequirement()(*string) {
     val, err := m.GetBackingStore().Get("authenticationRequirement")
     if err != nil {
@@ -185,7 +185,7 @@ func (m *SignIn) GetAzureResourceId()(*string) {
     }
     return nil
 }
-// GetClientAppUsed gets the clientAppUsed property value. The legacy client used for sign-in activity. For example: Browser, Exchange ActiveSync, Modern clients, IMAP, MAPI, SMTP, or POP. Supports $filter (eq operator only).
+// GetClientAppUsed gets the clientAppUsed property value. The legacy client used for sign-in activity. For example: Browser, Exchange ActiveSync, Modern clients, IMAP, MAPI, SMTP, or POP.  Supports $filter (eq).
 func (m *SignIn) GetClientAppUsed()(*string) {
     val, err := m.GetBackingStore().Get("clientAppUsed")
     if err != nil {
@@ -207,7 +207,7 @@ func (m *SignIn) GetClientCredentialType()(*ClientCredentialType) {
     }
     return nil
 }
-// GetConditionalAccessStatus gets the conditionalAccessStatus property value. The status of the conditional access policy triggered. Possible values: success, failure, notApplied, or unknownFutureValue. Supports $filter (eq operator only).
+// GetConditionalAccessStatus gets the conditionalAccessStatus property value. The status of the conditional access policy triggered. Possible values: success, failure, notApplied, or unknownFutureValue.  Supports $filter (eq).
 func (m *SignIn) GetConditionalAccessStatus()(*ConditionalAccessStatus) {
     val, err := m.GetBackingStore().Get("conditionalAccessStatus")
     if err != nil {
@@ -218,7 +218,7 @@ func (m *SignIn) GetConditionalAccessStatus()(*ConditionalAccessStatus) {
     }
     return nil
 }
-// GetCorrelationId gets the correlationId property value. The identifier that's sent from the client when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support. Supports $filter (eq operator only).
+// GetCorrelationId gets the correlationId property value. The identifier that's sent from the client when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support.  Supports $filter (eq).
 func (m *SignIn) GetCorrelationId()(*string) {
     val, err := m.GetBackingStore().Get("correlationId")
     if err != nil {
@@ -229,7 +229,7 @@ func (m *SignIn) GetCorrelationId()(*string) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).
+// GetCreatedDateTime gets the createdDateTime property value. The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $orderby, $filter (eq, le, and ge).
 func (m *SignIn) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -251,7 +251,7 @@ func (m *SignIn) GetCrossTenantAccessType()(*SignInAccessType) {
     }
     return nil
 }
-// GetDeviceDetail gets the deviceDetail property value. The device information from where the sign-in occurred. Includes information such as deviceId, OS, and browser. Supports $filter (eq and startsWith operators only) on browser and operatingSystem properties.
+// GetDeviceDetail gets the deviceDetail property value. The device information from where the sign-in occurred. Includes information such as deviceId, OS, and browser.  Supports $filter (eq, startsWith) on browser and operatingSystem properties.
 func (m *SignIn) GetDeviceDetail()(DeviceDetailable) {
     val, err := m.GetBackingStore().Get("deviceDetail")
     if err != nil {
@@ -1034,7 +1034,7 @@ func (m *SignIn) GetIncomingTokenType()(*IncomingTokenType) {
     }
     return nil
 }
-// GetIpAddress gets the ipAddress property value. The IP address of the client from where the sign-in occurred. Supports $filter (eq and startsWith operators only).
+// GetIpAddress gets the ipAddress property value. The IP address of the client from where the sign-in occurred.  Supports $filter (eq, startsWith).
 func (m *SignIn) GetIpAddress()(*string) {
     val, err := m.GetBackingStore().Get("ipAddress")
     if err != nil {
@@ -1078,7 +1078,7 @@ func (m *SignIn) GetIsTenantRestricted()(*bool) {
     }
     return nil
 }
-// GetLocation gets the location property value. The city, state, and 2 letter country code from where the sign-in occurred. Supports $filter (eq and startsWith operators only) on city, state, and countryOrRegion properties.
+// GetLocation gets the location property value. The city, state, and 2 letter country code from where the sign-in occurred.  Supports $filter (eq, startsWith) on city, state, and countryOrRegion properties.
 func (m *SignIn) GetLocation()(SignInLocationable) {
     val, err := m.GetBackingStore().Get("location")
     if err != nil {
@@ -1122,7 +1122,7 @@ func (m *SignIn) GetNetworkLocationDetails()([]NetworkLocationDetailable) {
     }
     return nil
 }
-// GetOriginalRequestId gets the originalRequestId property value. The request identifier of the first request in the authentication sequence. Supports $filter (eq operator only).
+// GetOriginalRequestId gets the originalRequestId property value. The request identifier of the first request in the authentication sequence.  Supports $filter (eq).
 func (m *SignIn) GetOriginalRequestId()(*string) {
     val, err := m.GetBackingStore().Get("originalRequestId")
     if err != nil {
@@ -1155,7 +1155,7 @@ func (m *SignIn) GetProcessingTimeInMilliseconds()(*int32) {
     }
     return nil
 }
-// GetResourceDisplayName gets the resourceDisplayName property value. The name of the resource that the user signed in to. Supports $filter (eq operator only).
+// GetResourceDisplayName gets the resourceDisplayName property value. The name of the resource that the user signed in to.  Supports $filter (eq).
 func (m *SignIn) GetResourceDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("resourceDisplayName")
     if err != nil {
@@ -1166,7 +1166,7 @@ func (m *SignIn) GetResourceDisplayName()(*string) {
     }
     return nil
 }
-// GetResourceId gets the resourceId property value. The identifier of the resource that the user signed in to. Supports $filter (eq operator only).
+// GetResourceId gets the resourceId property value. The identifier of the resource that the user signed in to.  Supports $filter (eq).
 func (m *SignIn) GetResourceId()(*string) {
     val, err := m.GetBackingStore().Get("resourceId")
     if err != nil {
@@ -1199,7 +1199,7 @@ func (m *SignIn) GetResourceTenantId()(*string) {
     }
     return nil
 }
-// GetRiskDetail gets the riskDetail property value. The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+// GetRiskDetail gets the riskDetail property value. The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
 func (m *SignIn) GetRiskDetail()(*RiskDetail) {
     val, err := m.GetBackingStore().Get("riskDetail")
     if err != nil {
@@ -1210,7 +1210,7 @@ func (m *SignIn) GetRiskDetail()(*RiskDetail) {
     }
     return nil
 }
-// GetRiskEventTypesV2 gets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).
+// GetRiskEventTypesV2 gets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue.  Supports $filter (eq, startsWith).
 func (m *SignIn) GetRiskEventTypesV2()([]string) {
     val, err := m.GetBackingStore().Get("riskEventTypes_v2")
     if err != nil {
@@ -1221,7 +1221,7 @@ func (m *SignIn) GetRiskEventTypesV2()([]string) {
     }
     return nil
 }
-// GetRiskLevelAggregated gets the riskLevelAggregated property value. The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+// GetRiskLevelAggregated gets the riskLevelAggregated property value. The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
 func (m *SignIn) GetRiskLevelAggregated()(*RiskLevel) {
     val, err := m.GetBackingStore().Get("riskLevelAggregated")
     if err != nil {
@@ -1232,7 +1232,7 @@ func (m *SignIn) GetRiskLevelAggregated()(*RiskLevel) {
     }
     return nil
 }
-// GetRiskLevelDuringSignIn gets the riskLevelDuringSignIn property value. The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+// GetRiskLevelDuringSignIn gets the riskLevelDuringSignIn property value. The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
 func (m *SignIn) GetRiskLevelDuringSignIn()(*RiskLevel) {
     val, err := m.GetBackingStore().Get("riskLevelDuringSignIn")
     if err != nil {
@@ -1243,7 +1243,7 @@ func (m *SignIn) GetRiskLevelDuringSignIn()(*RiskLevel) {
     }
     return nil
 }
-// GetRiskState gets the riskState property value. The risk state of a risky user, sign-in, or a risk event. Possible values: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, or unknownFutureValue. Supports $filter (eq operator only).
+// GetRiskState gets the riskState property value. The risk state of a risky user, sign-in, or a risk event. Possible values: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, or unknownFutureValue.  Supports $filter (eq).
 func (m *SignIn) GetRiskState()(*RiskState) {
     val, err := m.GetBackingStore().Get("riskState")
     if err != nil {
@@ -1276,7 +1276,7 @@ func (m *SignIn) GetServicePrincipalCredentialThumbprint()(*string) {
     }
     return nil
 }
-// GetServicePrincipalId gets the servicePrincipalId property value. The application identifier used for sign-in. This field is populated when you are signing in using an application. Supports $filter (eq and startsWith operators only).
+// GetServicePrincipalId gets the servicePrincipalId property value. The application identifier used for sign-in. This field is populated when you are signing in using an application.  Supports $filter (eq, startsWith).
 func (m *SignIn) GetServicePrincipalId()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalId")
     if err != nil {
@@ -1287,7 +1287,7 @@ func (m *SignIn) GetServicePrincipalId()(*string) {
     }
     return nil
 }
-// GetServicePrincipalName gets the servicePrincipalName property value. The application name used for sign-in. This field is populated when you are signing in using an application. Supports $filter (eq and startsWith operators only).
+// GetServicePrincipalName gets the servicePrincipalName property value. The application name used for sign-in. This field is populated when you are signing in using an application.  Supports $filter (eq, startsWith).
 func (m *SignIn) GetServicePrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalName")
     if err != nil {
@@ -1309,7 +1309,7 @@ func (m *SignIn) GetSessionLifetimePolicies()([]SessionLifetimePolicyable) {
     }
     return nil
 }
-// GetSignInEventTypes gets the signInEventTypes property value. Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue. Supports $filter (eq, ne).
+// GetSignInEventTypes gets the signInEventTypes property value. Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue.  Supports $filter (eq, ne).
 func (m *SignIn) GetSignInEventTypes()([]string) {
     val, err := m.GetBackingStore().Get("signInEventTypes")
     if err != nil {
@@ -1342,7 +1342,7 @@ func (m *SignIn) GetSignInIdentifierType()(*SignInIdentifierType) {
     }
     return nil
 }
-// GetStatus gets the status property value. The sign-in status. Includes the error code and description of the error (in case of a sign-in failure). Supports $filter (eq operator only) on errorCode property.
+// GetStatus gets the status property value. The sign-in status. Includes the error code and description of the error (in case of a sign-in failure).  Supports $filter (eq) on errorCode property.
 func (m *SignIn) GetStatus()(SignInStatusable) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -1353,7 +1353,7 @@ func (m *SignIn) GetStatus()(SignInStatusable) {
     }
     return nil
 }
-// GetTokenIssuerName gets the tokenIssuerName property value. The name of the identity provider. For example, sts.microsoft.com. Supports $filter (eq operator only).
+// GetTokenIssuerName gets the tokenIssuerName property value. The name of the identity provider. For example, sts.microsoft.com.  Supports $filter (eq).
 func (m *SignIn) GetTokenIssuerName()(*string) {
     val, err := m.GetBackingStore().Get("tokenIssuerName")
     if err != nil {
@@ -1386,7 +1386,7 @@ func (m *SignIn) GetUniqueTokenIdentifier()(*string) {
     }
     return nil
 }
-// GetUserAgent gets the userAgent property value. The user agent information related to sign-in. Supports $filter (eq and startsWith operators only).
+// GetUserAgent gets the userAgent property value. The user agent information related to sign-in.  Supports $filter (eq, startsWith).
 func (m *SignIn) GetUserAgent()(*string) {
     val, err := m.GetBackingStore().Get("userAgent")
     if err != nil {
@@ -1397,7 +1397,7 @@ func (m *SignIn) GetUserAgent()(*string) {
     }
     return nil
 }
-// GetUserDisplayName gets the userDisplayName property value. The display name of the user. Supports $filter (eq and startsWith operators only).
+// GetUserDisplayName gets the userDisplayName property value. The display name of the user.  Supports $filter (eq, startsWith).
 func (m *SignIn) GetUserDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("userDisplayName")
     if err != nil {
@@ -1408,7 +1408,7 @@ func (m *SignIn) GetUserDisplayName()(*string) {
     }
     return nil
 }
-// GetUserId gets the userId property value. The identifier of the user. Supports $filter (eq operator only).
+// GetUserId gets the userId property value. The identifier of the user.  Supports $filter (eq).
 func (m *SignIn) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -1419,7 +1419,7 @@ func (m *SignIn) GetUserId()(*string) {
     }
     return nil
 }
-// GetUserPrincipalName gets the userPrincipalName property value. The UPN of the user. Supports $filter (eq and startsWith operators only).
+// GetUserPrincipalName gets the userPrincipalName property value. The UPN of the user.  Supports $filter (eq, startsWith).
 func (m *SignIn) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -1899,14 +1899,14 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     }
     return nil
 }
-// SetAppDisplayName sets the appDisplayName property value. The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
+// SetAppDisplayName sets the appDisplayName property value. The application name displayed in the Azure Portal.  Supports $filter (eq, startsWith).
 func (m *SignIn) SetAppDisplayName(value *string)() {
     err := m.GetBackingStore().Set("appDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAppId sets the appId property value. The application identifier in Azure Active Directory. Supports $filter (eq operator only).
+// SetAppId sets the appId property value. The application identifier in Azure Active Directory.  Supports $filter (eq).
 func (m *SignIn) SetAppId(value *string)() {
     err := m.GetBackingStore().Set("appId", value)
     if err != nil {
@@ -1976,7 +1976,7 @@ func (m *SignIn) SetAuthenticationProtocol(value *ProtocolType)() {
         panic(err)
     }
 }
-// SetAuthenticationRequirement sets the authenticationRequirement property value. This holds the highest level of authentication needed through all the sign-in steps, for sign-in to succeed. Supports $filter (eq and startsWith operators only).
+// SetAuthenticationRequirement sets the authenticationRequirement property value. This holds the highest level of authentication needed through all the sign-in steps, for sign-in to succeed.  Supports $filter (eq, startsWith).
 func (m *SignIn) SetAuthenticationRequirement(value *string)() {
     err := m.GetBackingStore().Set("authenticationRequirement", value)
     if err != nil {
@@ -2004,7 +2004,7 @@ func (m *SignIn) SetAzureResourceId(value *string)() {
         panic(err)
     }
 }
-// SetClientAppUsed sets the clientAppUsed property value. The legacy client used for sign-in activity. For example: Browser, Exchange ActiveSync, Modern clients, IMAP, MAPI, SMTP, or POP. Supports $filter (eq operator only).
+// SetClientAppUsed sets the clientAppUsed property value. The legacy client used for sign-in activity. For example: Browser, Exchange ActiveSync, Modern clients, IMAP, MAPI, SMTP, or POP.  Supports $filter (eq).
 func (m *SignIn) SetClientAppUsed(value *string)() {
     err := m.GetBackingStore().Set("clientAppUsed", value)
     if err != nil {
@@ -2018,21 +2018,21 @@ func (m *SignIn) SetClientCredentialType(value *ClientCredentialType)() {
         panic(err)
     }
 }
-// SetConditionalAccessStatus sets the conditionalAccessStatus property value. The status of the conditional access policy triggered. Possible values: success, failure, notApplied, or unknownFutureValue. Supports $filter (eq operator only).
+// SetConditionalAccessStatus sets the conditionalAccessStatus property value. The status of the conditional access policy triggered. Possible values: success, failure, notApplied, or unknownFutureValue.  Supports $filter (eq).
 func (m *SignIn) SetConditionalAccessStatus(value *ConditionalAccessStatus)() {
     err := m.GetBackingStore().Set("conditionalAccessStatus", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCorrelationId sets the correlationId property value. The identifier that's sent from the client when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support. Supports $filter (eq operator only).
+// SetCorrelationId sets the correlationId property value. The identifier that's sent from the client when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support.  Supports $filter (eq).
 func (m *SignIn) SetCorrelationId(value *string)() {
     err := m.GetBackingStore().Set("correlationId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).
+// SetCreatedDateTime sets the createdDateTime property value. The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $orderby, $filter (eq, le, and ge).
 func (m *SignIn) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
@@ -2046,7 +2046,7 @@ func (m *SignIn) SetCrossTenantAccessType(value *SignInAccessType)() {
         panic(err)
     }
 }
-// SetDeviceDetail sets the deviceDetail property value. The device information from where the sign-in occurred. Includes information such as deviceId, OS, and browser. Supports $filter (eq and startsWith operators only) on browser and operatingSystem properties.
+// SetDeviceDetail sets the deviceDetail property value. The device information from where the sign-in occurred. Includes information such as deviceId, OS, and browser.  Supports $filter (eq, startsWith) on browser and operatingSystem properties.
 func (m *SignIn) SetDeviceDetail(value DeviceDetailable)() {
     err := m.GetBackingStore().Set("deviceDetail", value)
     if err != nil {
@@ -2088,7 +2088,7 @@ func (m *SignIn) SetIncomingTokenType(value *IncomingTokenType)() {
         panic(err)
     }
 }
-// SetIpAddress sets the ipAddress property value. The IP address of the client from where the sign-in occurred. Supports $filter (eq and startsWith operators only).
+// SetIpAddress sets the ipAddress property value. The IP address of the client from where the sign-in occurred.  Supports $filter (eq, startsWith).
 func (m *SignIn) SetIpAddress(value *string)() {
     err := m.GetBackingStore().Set("ipAddress", value)
     if err != nil {
@@ -2116,7 +2116,7 @@ func (m *SignIn) SetIsTenantRestricted(value *bool)() {
         panic(err)
     }
 }
-// SetLocation sets the location property value. The city, state, and 2 letter country code from where the sign-in occurred. Supports $filter (eq and startsWith operators only) on city, state, and countryOrRegion properties.
+// SetLocation sets the location property value. The city, state, and 2 letter country code from where the sign-in occurred.  Supports $filter (eq, startsWith) on city, state, and countryOrRegion properties.
 func (m *SignIn) SetLocation(value SignInLocationable)() {
     err := m.GetBackingStore().Set("location", value)
     if err != nil {
@@ -2144,7 +2144,7 @@ func (m *SignIn) SetNetworkLocationDetails(value []NetworkLocationDetailable)() 
         panic(err)
     }
 }
-// SetOriginalRequestId sets the originalRequestId property value. The request identifier of the first request in the authentication sequence. Supports $filter (eq operator only).
+// SetOriginalRequestId sets the originalRequestId property value. The request identifier of the first request in the authentication sequence.  Supports $filter (eq).
 func (m *SignIn) SetOriginalRequestId(value *string)() {
     err := m.GetBackingStore().Set("originalRequestId", value)
     if err != nil {
@@ -2165,14 +2165,14 @@ func (m *SignIn) SetProcessingTimeInMilliseconds(value *int32)() {
         panic(err)
     }
 }
-// SetResourceDisplayName sets the resourceDisplayName property value. The name of the resource that the user signed in to. Supports $filter (eq operator only).
+// SetResourceDisplayName sets the resourceDisplayName property value. The name of the resource that the user signed in to.  Supports $filter (eq).
 func (m *SignIn) SetResourceDisplayName(value *string)() {
     err := m.GetBackingStore().Set("resourceDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResourceId sets the resourceId property value. The identifier of the resource that the user signed in to. Supports $filter (eq operator only).
+// SetResourceId sets the resourceId property value. The identifier of the resource that the user signed in to.  Supports $filter (eq).
 func (m *SignIn) SetResourceId(value *string)() {
     err := m.GetBackingStore().Set("resourceId", value)
     if err != nil {
@@ -2193,35 +2193,35 @@ func (m *SignIn) SetResourceTenantId(value *string)() {
         panic(err)
     }
 }
-// SetRiskDetail sets the riskDetail property value. The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+// SetRiskDetail sets the riskDetail property value. The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
 func (m *SignIn) SetRiskDetail(value *RiskDetail)() {
     err := m.GetBackingStore().Set("riskDetail", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRiskEventTypesV2 sets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).
+// SetRiskEventTypesV2 sets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue.  Supports $filter (eq, startsWith).
 func (m *SignIn) SetRiskEventTypesV2(value []string)() {
     err := m.GetBackingStore().Set("riskEventTypes_v2", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRiskLevelAggregated sets the riskLevelAggregated property value. The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+// SetRiskLevelAggregated sets the riskLevelAggregated property value. The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
 func (m *SignIn) SetRiskLevelAggregated(value *RiskLevel)() {
     err := m.GetBackingStore().Set("riskLevelAggregated", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRiskLevelDuringSignIn sets the riskLevelDuringSignIn property value. The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+// SetRiskLevelDuringSignIn sets the riskLevelDuringSignIn property value. The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
 func (m *SignIn) SetRiskLevelDuringSignIn(value *RiskLevel)() {
     err := m.GetBackingStore().Set("riskLevelDuringSignIn", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRiskState sets the riskState property value. The risk state of a risky user, sign-in, or a risk event. Possible values: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, or unknownFutureValue. Supports $filter (eq operator only).
+// SetRiskState sets the riskState property value. The risk state of a risky user, sign-in, or a risk event. Possible values: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, or unknownFutureValue.  Supports $filter (eq).
 func (m *SignIn) SetRiskState(value *RiskState)() {
     err := m.GetBackingStore().Set("riskState", value)
     if err != nil {
@@ -2242,14 +2242,14 @@ func (m *SignIn) SetServicePrincipalCredentialThumbprint(value *string)() {
         panic(err)
     }
 }
-// SetServicePrincipalId sets the servicePrincipalId property value. The application identifier used for sign-in. This field is populated when you are signing in using an application. Supports $filter (eq and startsWith operators only).
+// SetServicePrincipalId sets the servicePrincipalId property value. The application identifier used for sign-in. This field is populated when you are signing in using an application.  Supports $filter (eq, startsWith).
 func (m *SignIn) SetServicePrincipalId(value *string)() {
     err := m.GetBackingStore().Set("servicePrincipalId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetServicePrincipalName sets the servicePrincipalName property value. The application name used for sign-in. This field is populated when you are signing in using an application. Supports $filter (eq and startsWith operators only).
+// SetServicePrincipalName sets the servicePrincipalName property value. The application name used for sign-in. This field is populated when you are signing in using an application.  Supports $filter (eq, startsWith).
 func (m *SignIn) SetServicePrincipalName(value *string)() {
     err := m.GetBackingStore().Set("servicePrincipalName", value)
     if err != nil {
@@ -2263,7 +2263,7 @@ func (m *SignIn) SetSessionLifetimePolicies(value []SessionLifetimePolicyable)()
         panic(err)
     }
 }
-// SetSignInEventTypes sets the signInEventTypes property value. Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue. Supports $filter (eq, ne).
+// SetSignInEventTypes sets the signInEventTypes property value. Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue.  Supports $filter (eq, ne).
 func (m *SignIn) SetSignInEventTypes(value []string)() {
     err := m.GetBackingStore().Set("signInEventTypes", value)
     if err != nil {
@@ -2284,14 +2284,14 @@ func (m *SignIn) SetSignInIdentifierType(value *SignInIdentifierType)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The sign-in status. Includes the error code and description of the error (in case of a sign-in failure). Supports $filter (eq operator only) on errorCode property.
+// SetStatus sets the status property value. The sign-in status. Includes the error code and description of the error (in case of a sign-in failure).  Supports $filter (eq) on errorCode property.
 func (m *SignIn) SetStatus(value SignInStatusable)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTokenIssuerName sets the tokenIssuerName property value. The name of the identity provider. For example, sts.microsoft.com. Supports $filter (eq operator only).
+// SetTokenIssuerName sets the tokenIssuerName property value. The name of the identity provider. For example, sts.microsoft.com.  Supports $filter (eq).
 func (m *SignIn) SetTokenIssuerName(value *string)() {
     err := m.GetBackingStore().Set("tokenIssuerName", value)
     if err != nil {
@@ -2312,28 +2312,28 @@ func (m *SignIn) SetUniqueTokenIdentifier(value *string)() {
         panic(err)
     }
 }
-// SetUserAgent sets the userAgent property value. The user agent information related to sign-in. Supports $filter (eq and startsWith operators only).
+// SetUserAgent sets the userAgent property value. The user agent information related to sign-in.  Supports $filter (eq, startsWith).
 func (m *SignIn) SetUserAgent(value *string)() {
     err := m.GetBackingStore().Set("userAgent", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserDisplayName sets the userDisplayName property value. The display name of the user. Supports $filter (eq and startsWith operators only).
+// SetUserDisplayName sets the userDisplayName property value. The display name of the user.  Supports $filter (eq, startsWith).
 func (m *SignIn) SetUserDisplayName(value *string)() {
     err := m.GetBackingStore().Set("userDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. The identifier of the user. Supports $filter (eq operator only).
+// SetUserId sets the userId property value. The identifier of the user.  Supports $filter (eq).
 func (m *SignIn) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserPrincipalName sets the userPrincipalName property value. The UPN of the user. Supports $filter (eq and startsWith operators only).
+// SetUserPrincipalName sets the userPrincipalName property value. The UPN of the user.  Supports $filter (eq, startsWith).
 func (m *SignIn) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
     if err != nil {

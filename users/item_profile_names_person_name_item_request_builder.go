@@ -57,7 +57,7 @@ func NewItemProfileNamesPersonNameItemRequestBuilder(rawUrl string, requestAdapt
 // Delete delete a personName object from a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/personname-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/personname-delete?view=graph-rest-1.0
 func (m *ItemProfileNamesPersonNameItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileNamesPersonNameItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemProfileNamesPersonNameItemRequestBuilder) Delete(ctx context.Contex
 // Get retrieve the properties and relationships of a personName object in a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/personname-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/personname-get?view=graph-rest-1.0
 func (m *ItemProfileNamesPersonNameItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileNamesPersonNameItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonNameable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ItemProfileNamesPersonNameItemRequestBuilder) Get(ctx context.Context, 
 // Patch update the properties of a personName object in a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/personname-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/personname-update?view=graph-rest-1.0
 func (m *ItemProfileNamesPersonNameItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonNameable, requestConfiguration *ItemProfileNamesPersonNameItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonNameable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

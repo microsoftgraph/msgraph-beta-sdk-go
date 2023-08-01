@@ -77,7 +77,7 @@ func (m *ItemItemsItemPermissionsRequestBuilder) Count()(*ItemItemsItemPermissio
 // Get list the effective sharing permissions on a driveItem.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/driveitem-list-permissions?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-list-permissions?view=graph-rest-1.0
 func (m *ItemItemsItemPermissionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemPermissionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

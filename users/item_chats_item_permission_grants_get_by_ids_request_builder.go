@@ -33,7 +33,7 @@ func NewItemChatsItemPermissionGrantsGetByIdsRequestBuilder(rawUrl string, reque
 // Post return the directory objects specified in a list of IDs. Some common uses for this function are to:
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
 func (m *ItemChatsItemPermissionGrantsGetByIdsRequestBuilder) Post(ctx context.Context, body ItemChatsItemPermissionGrantsGetByIdsPostRequestBodyable, requestConfiguration *ItemChatsItemPermissionGrantsGetByIdsRequestBuilderPostRequestConfiguration)(ItemChatsItemPermissionGrantsGetByIdsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

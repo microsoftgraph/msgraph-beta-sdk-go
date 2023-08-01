@@ -57,7 +57,7 @@ func NewProgramControlItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 // Delete in the Azure AD access reviews feature, delete a programControl object.  This unlinks an access review from a program.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/programcontrol-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/programcontrol-delete?view=graph-rest-1.0
 func (m *ProgramControlItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ProgramControlItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

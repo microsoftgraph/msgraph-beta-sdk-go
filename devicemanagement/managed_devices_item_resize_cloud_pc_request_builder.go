@@ -33,7 +33,7 @@ func NewManagedDevicesItemResizeCloudPcRequestBuilder(rawUrl string, requestAdap
 // Post upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/manageddevice-resizecloudpc?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/manageddevice-resizecloudpc?view=graph-rest-1.0
 func (m *ManagedDevicesItemResizeCloudPcRequestBuilder) Post(ctx context.Context, body ManagedDevicesItemResizeCloudPcPostRequestBodyable, requestConfiguration *ManagedDevicesItemResizeCloudPcRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

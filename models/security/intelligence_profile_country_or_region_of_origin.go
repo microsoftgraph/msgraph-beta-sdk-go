@@ -38,7 +38,7 @@ func (m *IntelligenceProfileCountryOrRegionOfOrigin) GetAdditionalData()(map[str
 func (m *IntelligenceProfileCountryOrRegionOfOrigin) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCode gets the code property value. The code property
+// GetCode gets the code property value. A codified representation for this country/region of origin.
 func (m *IntelligenceProfileCountryOrRegionOfOrigin) GetCode()(*string) {
     val, err := m.GetBackingStore().Get("code")
     if err != nil {
@@ -84,7 +84,7 @@ func (m *IntelligenceProfileCountryOrRegionOfOrigin) GetFieldDeserializers()(map
     }
     return res
 }
-// GetLabel gets the label property value. The label property
+// GetLabel gets the label property value. A display label for this ountry/region of origin.
 func (m *IntelligenceProfileCountryOrRegionOfOrigin) GetLabel()(*string) {
     val, err := m.GetBackingStore().Get("label")
     if err != nil {
@@ -145,14 +145,14 @@ func (m *IntelligenceProfileCountryOrRegionOfOrigin) SetAdditionalData(value map
 func (m *IntelligenceProfileCountryOrRegionOfOrigin) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCode sets the code property value. The code property
+// SetCode sets the code property value. A codified representation for this country/region of origin.
 func (m *IntelligenceProfileCountryOrRegionOfOrigin) SetCode(value *string)() {
     err := m.GetBackingStore().Set("code", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLabel sets the label property value. The label property
+// SetLabel sets the label property value. A display label for this ountry/region of origin.
 func (m *IntelligenceProfileCountryOrRegionOfOrigin) SetLabel(value *string)() {
     err := m.GetBackingStore().Set("label", value)
     if err != nil {
