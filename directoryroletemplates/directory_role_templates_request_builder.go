@@ -79,7 +79,7 @@ func (m *DirectoryRoleTemplatesRequestBuilder) Delta()(*DeltaRequestBuilder) {
 // Get retrieve a list of directoryroletemplate objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/directoryroletemplate-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/directoryroletemplate-list?view=graph-rest-1.0
 func (m *DirectoryRoleTemplatesRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryRoleTemplatesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleTemplateCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

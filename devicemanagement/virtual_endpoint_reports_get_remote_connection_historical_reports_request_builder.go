@@ -33,7 +33,7 @@ func NewVirtualEndpointReportsGetRemoteConnectionHistoricalReportsRequestBuilder
 // Post get the remote connection history records of a Cloud PC during a given period.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpcreports-getremoteconnectionhistoricalreports?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcreports-getremoteconnectionhistoricalreports?view=graph-rest-1.0
 func (m *VirtualEndpointReportsGetRemoteConnectionHistoricalReportsRequestBuilder) Post(ctx context.Context, body VirtualEndpointReportsGetRemoteConnectionHistoricalReportsPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetRemoteConnectionHistoricalReportsRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

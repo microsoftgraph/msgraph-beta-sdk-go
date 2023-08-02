@@ -77,7 +77,7 @@ func (m *VirtualEventsWebinarsItemSessionsItemTranscriptsCallTranscriptItemReque
 // Get retrieve a callTranscript object associated with an onlineMeeting. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0
 func (m *VirtualEventsWebinarsItemSessionsItemTranscriptsCallTranscriptItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemSessionsItemTranscriptsCallTranscriptItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallTranscriptable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

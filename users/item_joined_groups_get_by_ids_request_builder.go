@@ -33,7 +33,7 @@ func NewItemJoinedGroupsGetByIdsRequestBuilder(rawUrl string, requestAdapter i2a
 // Post return the directory objects specified in a list of IDs. Some common uses for this function are to:
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
 func (m *ItemJoinedGroupsGetByIdsRequestBuilder) Post(ctx context.Context, body ItemJoinedGroupsGetByIdsPostRequestBodyable, requestConfiguration *ItemJoinedGroupsGetByIdsRequestBuilderPostRequestConfiguration)(ItemJoinedGroupsGetByIdsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

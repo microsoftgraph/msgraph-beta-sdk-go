@@ -81,7 +81,7 @@ func (m *UsersRequestBuilder) Delta()(*UsersDeltaRequestBuilder) {
 // Get retrieve a list of user objects. These user objects will include education-specific properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationroot-list-users?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationroot-list-users?view=graph-rest-1.0
 func (m *UsersRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationUserCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -103,7 +103,7 @@ func (m *UsersRequestBuilder) Get(ctx context.Context, requestConfiguration *Use
 // Post create a new user.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationroot-post-users?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationroot-post-users?view=graph-rest-1.0
 func (m *UsersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationUserable, requestConfiguration *UsersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationUserable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

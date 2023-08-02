@@ -166,7 +166,7 @@ func (m *CloudPcUserSetting) GetLocalAdminEnabled()(*bool) {
     }
     return nil
 }
-// GetResetEnabled gets the resetEnabled property value. The resetEnabled property
+// GetResetEnabled gets the resetEnabled property value. Indicates whether an end user is allowed to reset their Cloud PC. When true, the user is allowed to reset their Cloud PC. When false, end-user initiated reset is not allowed. The default value is false.
 func (m *CloudPcUserSetting) GetResetEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("resetEnabled")
     if err != nil {
@@ -296,7 +296,7 @@ func (m *CloudPcUserSetting) SetLocalAdminEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetResetEnabled sets the resetEnabled property value. The resetEnabled property
+// SetResetEnabled sets the resetEnabled property value. Indicates whether an end user is allowed to reset their Cloud PC. When true, the user is allowed to reset their Cloud PC. When false, end-user initiated reset is not allowed. The default value is false.
 func (m *CloudPcUserSetting) SetResetEnabled(value *bool)() {
     err := m.GetBackingStore().Set("resetEnabled", value)
     if err != nil {

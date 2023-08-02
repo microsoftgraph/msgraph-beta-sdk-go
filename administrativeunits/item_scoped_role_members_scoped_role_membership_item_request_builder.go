@@ -57,7 +57,7 @@ func NewItemScopedRoleMembersScopedRoleMembershipItemRequestBuilder(rawUrl strin
 // Delete remove an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/administrativeunit-delete-scopedrolemembers?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/administrativeunit-delete-scopedrolemembers?view=graph-rest-1.0
 func (m *ItemScopedRoleMembersScopedRoleMembershipItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemScopedRoleMembersScopedRoleMembershipItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemScopedRoleMembersScopedRoleMembershipItemRequestBuilder) Delete(ctx
 // Get get an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/administrativeunit-get-scopedrolemembers?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/administrativeunit-get-scopedrolemembers?view=graph-rest-1.0
 func (m *ItemScopedRoleMembersScopedRoleMembershipItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemScopedRoleMembersScopedRoleMembershipItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ScopedRoleMembershipable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

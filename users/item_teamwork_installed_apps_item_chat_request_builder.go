@@ -43,7 +43,7 @@ func NewItemTeamworkInstalledAppsItemChatRequestBuilder(rawUrl string, requestAd
 // Get retrieve the chat of the specified user and Teams app.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/userscopeteamsappinstallation-get-chat?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/userscopeteamsappinstallation-get-chat?view=graph-rest-1.0
 func (m *ItemTeamworkInstalledAppsItemChatRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamworkInstalledAppsItemChatRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Chatable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -47,7 +47,7 @@ func NewIndustryDataRunsIndustryDataRunItemRequestBuilder(rawUrl string, request
 // Get read the properties and relationships of an industryDataRun object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/industrydata-industrydatarun-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-industrydatarun-get?view=graph-rest-1.0
 func (m *IndustryDataRunsIndustryDataRunItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataRunsIndustryDataRunItemRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataRunable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

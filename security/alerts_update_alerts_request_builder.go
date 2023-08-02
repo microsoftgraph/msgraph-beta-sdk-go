@@ -33,7 +33,7 @@ func NewAlertsUpdateAlertsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 // Post update multiple alerts in one request instead of multiple requests.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/alert-updatealerts?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/alert-updatealerts?view=graph-rest-1.0
 func (m *AlertsUpdateAlertsRequestBuilder) Post(ctx context.Context, body AlertsUpdateAlertsPostRequestBodyable, requestConfiguration *AlertsUpdateAlertsRequestBuilderPostRequestConfiguration)(AlertsUpdateAlertsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

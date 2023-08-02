@@ -73,7 +73,7 @@ func (m *ItemConnectorsConnectorItemRequestBuilder) Delete(ctx context.Context, 
 // Get retrieve the properties and relationships of a connector object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/connector-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/connector-get?view=graph-rest-1.0
 func (m *ItemConnectorsConnectorItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemConnectorsConnectorItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

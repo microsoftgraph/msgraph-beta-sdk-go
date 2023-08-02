@@ -96,7 +96,7 @@ func (m *ConditionalAccessPlatforms) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetIncludePlatforms gets the includePlatforms property value. Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue,linux``.
+// GetIncludePlatforms gets the includePlatforms property value. Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue,linux.
 func (m *ConditionalAccessPlatforms) GetIncludePlatforms()([]ConditionalAccessDevicePlatform) {
     val, err := m.GetBackingStore().Get("includePlatforms")
     if err != nil {
@@ -164,7 +164,7 @@ func (m *ConditionalAccessPlatforms) SetExcludePlatforms(value []ConditionalAcce
         panic(err)
     }
 }
-// SetIncludePlatforms sets the includePlatforms property value. Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue,linux``.
+// SetIncludePlatforms sets the includePlatforms property value. Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue,linux.
 func (m *ConditionalAccessPlatforms) SetIncludePlatforms(value []ConditionalAccessDevicePlatform)() {
     err := m.GetBackingStore().Set("includePlatforms", value)
     if err != nil {

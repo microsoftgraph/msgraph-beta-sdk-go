@@ -57,7 +57,7 @@ func NewItemExtensionPropertiesExtensionPropertyItemRequestBuilder(rawUrl string
 // Delete delete a directory extension definition represented by an extensionProperty object. You can delete only directory extensions that aren't synced from on-premises active directory (AD).
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/extensionproperty-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/extensionproperty-delete?view=graph-rest-1.0
 func (m *ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemExtensionPropertiesExtensionPropertyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) Delete(ctx 
 // Get read a directory extension definition represented by an extensionProperty object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/extensionproperty-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/extensionproperty-get?view=graph-rest-1.0
 func (m *ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemExtensionPropertiesExtensionPropertyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExtensionPropertyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

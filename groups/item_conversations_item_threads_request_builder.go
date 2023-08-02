@@ -75,7 +75,7 @@ func (m *ItemConversationsItemThreadsRequestBuilder) Count()(*ItemConversationsI
 // Get get all the threads in a group conversation.Note: You can also get all the threads of a group. 
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/conversation-list-threads?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversation-list-threads?view=graph-rest-1.0
 func (m *ItemConversationsItemThreadsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemConversationsItemThreadsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -97,7 +97,7 @@ func (m *ItemConversationsItemThreadsRequestBuilder) Get(ctx context.Context, re
 // Post create a new thread in the specified conversation. A thread and post are created as specified. Use reply thread to further postto that thread. Or, if you get the post ID, you can also reply to that post in that thread. Note: You can also start a new conversation by first creating a thread.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/conversation-post-threads?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversation-post-threads?view=graph-rest-1.0
 func (m *ItemConversationsItemThreadsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadable, requestConfiguration *ItemConversationsItemThreadsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

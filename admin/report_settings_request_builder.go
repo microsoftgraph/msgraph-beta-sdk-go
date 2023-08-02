@@ -73,7 +73,7 @@ func (m *ReportSettingsRequestBuilder) Delete(ctx context.Context, requestConfig
 // Get get the tenant-level settings for Microsoft 365 reports.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/adminreportsettings-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/adminreportsettings-get?view=graph-rest-1.0
 func (m *ReportSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportSettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminReportSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *ReportSettingsRequestBuilder) Get(ctx context.Context, requestConfigura
 // Patch update tenant-level settings for Microsoft 365 reports.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/adminreportsettings-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/adminreportsettings-update?view=graph-rest-1.0
 func (m *ReportSettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminReportSettingsable, requestConfiguration *ReportSettingsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminReportSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

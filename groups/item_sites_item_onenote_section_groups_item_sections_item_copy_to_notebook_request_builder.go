@@ -34,7 +34,7 @@ func NewItemSitesItemOnenoteSectionGroupsItemSectionsItemCopyToNotebookRequestBu
 // Post copies a section to a specific notebook. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
 func (m *ItemSitesItemOnenoteSectionGroupsItemSectionsItemCopyToNotebookRequestBuilder) Post(ctx context.Context, body ItemSitesItemOnenoteSectionGroupsItemSectionsItemCopyToNotebookPostRequestBodyable, requestConfiguration *ItemSitesItemOnenoteSectionGroupsItemSectionsItemCopyToNotebookRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteOperationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

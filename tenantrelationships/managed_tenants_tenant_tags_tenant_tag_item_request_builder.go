@@ -57,7 +57,7 @@ func NewManagedTenantsTenantTagsTenantTagItemRequestBuilder(rawUrl string, reque
 // Delete delete a tenantTag object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/managedtenants-tenanttag-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-tenanttag-delete?view=graph-rest-1.0
 func (m *ManagedTenantsTenantTagsTenantTagItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedTenantsTenantTagsTenantTagItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ManagedTenantsTenantTagsTenantTagItemRequestBuilder) Delete(ctx context
 // Get read the properties and relationships of a tenantTag object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/managedtenants-tenanttag-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-tenanttag-get?view=graph-rest-1.0
 func (m *ManagedTenantsTenantTagsTenantTagItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsTenantTagsTenantTagItemRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -106,7 +106,7 @@ func (m *ManagedTenantsTenantTagsTenantTagItemRequestBuilder) MicrosoftGraphMana
 // Patch update the properties of a tenantTag object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/managedtenants-tenanttag-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-tenanttag-update?view=graph-rest-1.0
 func (m *ManagedTenantsTenantTagsTenantTagItemRequestBuilder) Patch(ctx context.Context, body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable, requestConfiguration *ManagedTenantsTenantTagsTenantTagItemRequestBuilderPatchRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

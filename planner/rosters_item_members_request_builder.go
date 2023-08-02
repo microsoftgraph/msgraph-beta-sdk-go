@@ -77,7 +77,7 @@ func (m *RostersItemMembersRequestBuilder) Count()(*RostersItemMembersCountReque
 // Get get the list of plannerRosterMembers from a plannerRoster.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/plannerroster-list-members?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannerroster-list-members?view=graph-rest-1.0
 func (m *RostersItemMembersRequestBuilder) Get(ctx context.Context, requestConfiguration *RostersItemMembersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterMemberCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *RostersItemMembersRequestBuilder) Get(ctx context.Context, requestConfi
 // Post add a member to the plannerRoster object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/plannerroster-post-members?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannerroster-post-members?view=graph-rest-1.0
 func (m *RostersItemMembersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterMemberable, requestConfiguration *RostersItemMembersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterMemberable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

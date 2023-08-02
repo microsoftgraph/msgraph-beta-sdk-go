@@ -57,7 +57,7 @@ func NewAcronymsAcronymItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
 // Delete deletes an acronym object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/search-acronym-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/search-acronym-delete?view=graph-rest-1.0
 func (m *AcronymsAcronymItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AcronymsAcronymItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *AcronymsAcronymItemRequestBuilder) Delete(ctx context.Context, requestC
 // Get read the properties and relationships of an acronym object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/search-acronym-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/search-acronym-get?view=graph-rest-1.0
 func (m *AcronymsAcronymItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AcronymsAcronymItemRequestBuilderGetRequestConfiguration)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Acronymable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *AcronymsAcronymItemRequestBuilder) Get(ctx context.Context, requestConf
 // Patch update the properties of an acronym object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/search-acronym-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/search-acronym-update?view=graph-rest-1.0
 func (m *AcronymsAcronymItemRequestBuilder) Patch(ctx context.Context, body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Acronymable, requestConfiguration *AcronymsAcronymItemRequestBuilderPatchRequestConfiguration)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Acronymable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -79,7 +79,7 @@ func (m *ItemContactFoldersItemChildFoldersRequestBuilder) Delta()(*ItemContactF
 // Get get a collection of child folders under the specified contact folder.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/contactfolder-list-childfolders?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/contactfolder-list-childfolders?view=graph-rest-1.0
 func (m *ItemContactFoldersItemChildFoldersRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,7 +101,7 @@ func (m *ItemContactFoldersItemChildFoldersRequestBuilder) Get(ctx context.Conte
 // Post create a new contactFolder as a child of a specified folder.  You can also create a new contactFolder under the user's default contact folder.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/contactfolder-post-childfolders?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/contactfolder-post-childfolders?view=graph-rest-1.0
 func (m *ItemContactFoldersItemChildFoldersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderable, requestConfiguration *ItemContactFoldersItemChildFoldersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

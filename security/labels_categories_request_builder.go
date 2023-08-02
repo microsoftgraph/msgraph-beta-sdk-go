@@ -77,7 +77,7 @@ func (m *LabelsCategoriesRequestBuilder) Count()(*LabelsCategoriesCountRequestBu
 // Get get a list of the categoryTemplate objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-labelsroot-list-categories?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-list-categories?view=graph-rest-1.0
 func (m *LabelsCategoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsCategoriesRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CategoryTemplateCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *LabelsCategoriesRequestBuilder) Get(ctx context.Context, requestConfigu
 // Post create a new categoryTemplate object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-labelsroot-post-categories?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-post-categories?view=graph-rest-1.0
 func (m *LabelsCategoriesRequestBuilder) Post(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CategoryTemplateable, requestConfiguration *LabelsCategoriesRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CategoryTemplateable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

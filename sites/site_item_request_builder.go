@@ -11,7 +11,7 @@ import (
 type SiteItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SiteItemRequestBuilderGetQueryParameters retrieve properties and relationships for a [site][] resource.A **site** resource represents a team site in SharePoint.
+// SiteItemRequestBuilderGetQueryParameters retrieve properties and relationships for a [site][] resource.A site resource represents a team site in SharePoint.
 type SiteItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,10 +75,10 @@ func (m *SiteItemRequestBuilder) Drives()(*ItemDrivesRequestBuilder) {
 func (m *SiteItemRequestBuilder) ExternalColumns()(*ItemExternalColumnsRequestBuilder) {
     return NewItemExternalColumnsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve properties and relationships for a [site][] resource.A **site** resource represents a team site in SharePoint.
+// Get retrieve properties and relationships for a [site][] resource.A site resource represents a team site in SharePoint.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/site-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-get?view=graph-rest-1.0
 func (m *SiteItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SiteItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -168,7 +168,7 @@ func (m *SiteItemRequestBuilder) Sites()(*ItemSitesRequestBuilder) {
 func (m *SiteItemRequestBuilder) TermStore()(*ItemTermStoreRequestBuilder) {
     return NewItemTermStoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation retrieve properties and relationships for a [site][] resource.A **site** resource represents a team site in SharePoint.
+// ToGetRequestInformation retrieve properties and relationships for a [site][] resource.A site resource represents a team site in SharePoint.
 func (m *SiteItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SiteItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

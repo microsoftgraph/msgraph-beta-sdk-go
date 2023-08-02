@@ -81,7 +81,7 @@ func (m *ClassesItemAssignmentCategoriesRequestBuilder) Delta()(*ClassesItemAssi
 // Get retrieve a list of educationCategory objects. Only teachers can perform this operation.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationclass-list-categories?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-list-categories?view=graph-rest-1.0
 func (m *ClassesItemAssignmentCategoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemAssignmentCategoriesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationCategoryCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -103,7 +103,7 @@ func (m *ClassesItemAssignmentCategoriesRequestBuilder) Get(ctx context.Context,
 // Post creates a new educationCategory on an educationClass. Only teachers can perform this operation.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationclass-post-category?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-post-category?view=graph-rest-1.0
 func (m *ClassesItemAssignmentCategoriesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationCategoryable, requestConfiguration *ClassesItemAssignmentCategoriesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationCategoryable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

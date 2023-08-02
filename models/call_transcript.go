@@ -20,7 +20,7 @@ func NewCallTranscript()(*CallTranscript) {
 func CreateCallTranscriptFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCallTranscript(), nil
 }
-// GetContent gets the content property value. A field that represents the content of the transcript. Read-only.
+// GetContent gets the content property value. The content of the transcript. Read-only.
 func (m *CallTranscript) GetContent()([]byte) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -77,7 +77,7 @@ func (m *CallTranscript) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetMetadataContent gets the metadataContent property value. A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+// GetMetadataContent gets the metadataContent property value. The time-aligned metadata of the utterances in the transcript. Read-only.
 func (m *CallTranscript) GetMetadataContent()([]byte) {
     val, err := m.GetBackingStore().Get("metadataContent")
     if err != nil {
@@ -114,7 +114,7 @@ func (m *CallTranscript) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetContent sets the content property value. A field that represents the content of the transcript. Read-only.
+// SetContent sets the content property value. The content of the transcript. Read-only.
 func (m *CallTranscript) SetContent(value []byte)() {
     err := m.GetBackingStore().Set("content", value)
     if err != nil {
@@ -128,7 +128,7 @@ func (m *CallTranscript) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad
         panic(err)
     }
 }
-// SetMetadataContent sets the metadataContent property value. A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+// SetMetadataContent sets the metadataContent property value. The time-aligned metadata of the utterances in the transcript. Read-only.
 func (m *CallTranscript) SetMetadataContent(value []byte)() {
     err := m.GetBackingStore().Set("metadataContent", value)
     if err != nil {

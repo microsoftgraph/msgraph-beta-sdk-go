@@ -45,7 +45,7 @@ func (m *AccessPackageResourceAttribute) GetAttributeDestination()(AccessPackage
     }
     return nil
 }
-// GetAttributeName gets the attributeName property value. The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension_2b676109c7c74ae2b41549205f1947ed_personalTitle.
+// GetAttributeName gets the attributeName property value. The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension2b676109c7c74ae2b41549205f1947edpersonalTitle.
 func (m *AccessPackageResourceAttribute) GetAttributeName()(*string) {
     val, err := m.GetBackingStore().Get("attributeName")
     if err != nil {
@@ -256,7 +256,7 @@ func (m *AccessPackageResourceAttribute) SetAttributeDestination(value AccessPac
         panic(err)
     }
 }
-// SetAttributeName sets the attributeName property value. The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension_2b676109c7c74ae2b41549205f1947ed_personalTitle.
+// SetAttributeName sets the attributeName property value. The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension2b676109c7c74ae2b41549205f1947edpersonalTitle.
 func (m *AccessPackageResourceAttribute) SetAttributeName(value *string)() {
     err := m.GetBackingStore().Set("attributeName", value)
     if err != nil {

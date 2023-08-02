@@ -77,7 +77,7 @@ func (m *LabelsAuthoritiesRequestBuilder) Count()(*LabelsAuthoritiesCountRequest
 // Get get a list of the authorityTemplate objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-labelsroot-list-authorities?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-list-authorities?view=graph-rest-1.0
 func (m *LabelsAuthoritiesRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsAuthoritiesRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AuthorityTemplateCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *LabelsAuthoritiesRequestBuilder) Get(ctx context.Context, requestConfig
 // Post create a new authorityTemplate object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-labelsroot-post-authorities?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-post-authorities?view=graph-rest-1.0
 func (m *LabelsAuthoritiesRequestBuilder) Post(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AuthorityTemplateable, requestConfiguration *LabelsAuthoritiesRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AuthorityTemplateable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

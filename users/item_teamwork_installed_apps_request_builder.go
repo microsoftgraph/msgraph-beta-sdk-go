@@ -77,7 +77,7 @@ func (m *ItemTeamworkInstalledAppsRequestBuilder) Count()(*ItemTeamworkInstalled
 // Get retrieve the list of apps installed in the personal scope of the specified user.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/userteamwork-list-installedapps?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/userteamwork-list-installedapps?view=graph-rest-1.0
 func (m *ItemTeamworkInstalledAppsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamworkInstalledAppsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserScopeTeamsAppInstallationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ItemTeamworkInstalledAppsRequestBuilder) Get(ctx context.Context, reque
 // Post install an app in the personal scope of the specified user.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/userteamwork-post-installedapps?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/userteamwork-post-installedapps?view=graph-rest-1.0
 func (m *ItemTeamworkInstalledAppsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserScopeTeamsAppInstallationable, requestConfiguration *ItemTeamworkInstalledAppsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserScopeTeamsAppInstallationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

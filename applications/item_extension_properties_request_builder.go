@@ -77,7 +77,7 @@ func (m *ItemExtensionPropertiesRequestBuilder) Count()(*ItemExtensionProperties
 // Get retrieve the list of directory extension definitions, represented by extensionProperty objects on an application.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/application-list-extensionproperty?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/application-list-extensionproperty?view=graph-rest-1.0
 func (m *ItemExtensionPropertiesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemExtensionPropertiesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExtensionPropertyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ItemExtensionPropertiesRequestBuilder) Get(ctx context.Context, request
 // Post create a new directory extension definition, represented by an extensionProperty object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/application-post-extensionproperty?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/application-post-extensionproperty?view=graph-rest-1.0
 func (m *ItemExtensionPropertiesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExtensionPropertyable, requestConfiguration *ItemExtensionPropertiesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExtensionPropertyable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

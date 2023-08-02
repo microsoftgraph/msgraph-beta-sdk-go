@@ -33,7 +33,7 @@ func NewInboundSharedUserProfilesItemExportPersonalDataRequestBuilder(rawUrl str
 // Post create a request to export the personal data for an inboundSharedUserProfile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/inboundshareduserprofile-exportpersonaldata?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/inboundshareduserprofile-exportpersonaldata?view=graph-rest-1.0
 func (m *InboundSharedUserProfilesItemExportPersonalDataRequestBuilder) Post(ctx context.Context, body InboundSharedUserProfilesItemExportPersonalDataPostRequestBodyable, requestConfiguration *InboundSharedUserProfilesItemExportPersonalDataRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

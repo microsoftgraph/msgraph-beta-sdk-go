@@ -77,7 +77,7 @@ func (m *LogsTrafficRequestBuilder) Count()(*LogsTrafficCountRequestBuilder) {
 // Get get a list of log events for traffic routed through the Global Secure Access services.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-logs-list-traffic?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-logs-list-traffic?view=graph-rest-1.0
 func (m *LogsTrafficRequestBuilder) Get(ctx context.Context, requestConfiguration *LogsTrafficRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.NetworkAccessTrafficCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

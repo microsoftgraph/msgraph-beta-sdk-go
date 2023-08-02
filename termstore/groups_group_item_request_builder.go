@@ -57,7 +57,7 @@ func NewGroupsGroupItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 // Delete delete a group object in a term [store].
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/termstore-group-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-group-delete?view=graph-rest-1.0
 func (m *GroupsGroupItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *GroupsGroupItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *GroupsGroupItemRequestBuilder) Delete(ctx context.Context, requestConfi
 // Get read the properties and relationships of a term store group object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/termstore-group-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-group-get?view=graph-rest-1.0
 func (m *GroupsGroupItemRequestBuilder) Get(ctx context.Context, requestConfiguration *GroupsGroupItemRequestBuilderGetRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Groupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -73,7 +73,7 @@ func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) Delete(ctx contex
 // Get retrieve the properties and relationships of a permission object on a site.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/site-get-permission?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-get-permission?view=graph-rest-1.0
 func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemPermissionsPermissionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) Grant()(*ItemSite
 // Patch update the permission object on a site.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/site-update-permission?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-update-permission?view=graph-rest-1.0
 func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, requestConfiguration *ItemSitesItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

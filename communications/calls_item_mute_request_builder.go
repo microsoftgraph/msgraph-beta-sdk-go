@@ -34,7 +34,7 @@ func NewCallsItemMuteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 // Post allows the application to mute itself. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more details about how to handle mute operations, see muteParticipantOperation
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/call-mute?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/call-mute?view=graph-rest-1.0
 func (m *CallsItemMuteRequestBuilder) Post(ctx context.Context, body CallsItemMutePostRequestBodyable, requestConfiguration *CallsItemMuteRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MuteParticipantOperationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

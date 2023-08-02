@@ -33,7 +33,7 @@ func NewItemInstancesItemSendReminderRequestBuilder(rawUrl string, requestAdapte
 // Post in the Azure AD access reviews feature, send a reminder to the reviewers of a currently active accessReview.  The target object can be either a one-time access review, or an instance of a recurring access review. 
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/accessreview-sendreminder?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/accessreview-sendreminder?view=graph-rest-1.0
 func (m *ItemInstancesItemSendReminderRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemInstancesItemSendReminderRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -77,7 +77,7 @@ func (m *ItemAgentsOnPremisesAgentItemRequestBuilder) Delete(ctx context.Context
 // Get retrieve the properties and relationships of an onPremisesAgent object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/onpremisesagent-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/onpremisesagent-get?view=graph-rest-1.0
 func (m *ItemAgentsOnPremisesAgentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAgentsOnPremisesAgentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

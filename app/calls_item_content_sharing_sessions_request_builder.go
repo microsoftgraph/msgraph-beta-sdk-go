@@ -77,7 +77,7 @@ func (m *CallsItemContentSharingSessionsRequestBuilder) Count()(*CallsItemConten
 // Get retrieve a list of contentSharingSession objects in a call.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/call-list-contentsharingsessions?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/call-list-contentsharingsessions?view=graph-rest-1.0
 func (m *CallsItemContentSharingSessionsRequestBuilder) Get(ctx context.Context, requestConfiguration *CallsItemContentSharingSessionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentSharingSessionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

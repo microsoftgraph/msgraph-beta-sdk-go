@@ -65,7 +65,7 @@ func NewItemScheduleTimeCardsTimeCardItemRequestBuilder(rawUrl string, requestAd
 // Delete delete a timeCard instance in a schedule.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/timecard-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/timecard-delete?view=graph-rest-1.0
 func (m *ItemScheduleTimeCardsTimeCardItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemScheduleTimeCardsTimeCardItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -88,7 +88,7 @@ func (m *ItemScheduleTimeCardsTimeCardItemRequestBuilder) EndBreak()(*ItemSchedu
 // Get get the properties and relationships of a timeCard object by ID.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/timecard-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/timecard-get?view=graph-rest-1.0
 func (m *ItemScheduleTimeCardsTimeCardItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemScheduleTimeCardsTimeCardItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -110,7 +110,7 @@ func (m *ItemScheduleTimeCardsTimeCardItemRequestBuilder) Get(ctx context.Contex
 // Patch replace an existing timeCard with updated values.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/timecard-replace?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/timecard-replace?view=graph-rest-1.0
 func (m *ItemScheduleTimeCardsTimeCardItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, requestConfiguration *ItemScheduleTimeCardsTimeCardItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

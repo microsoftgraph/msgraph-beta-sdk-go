@@ -57,7 +57,7 @@ func NewAuthenticationEventListenersAuthenticationEventListenerItemRequestBuilde
 // Delete deletes an authenticationEventListener object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/authenticationeventlistener-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationeventlistener-delete?view=graph-rest-1.0
 func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,10 +92,10 @@ func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuild
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventListenerable), nil
 }
-// Patch update the properties of an authenticationEventListener object. You must specify the **@odata.type** property and the value of the authenticationEventListener object type to update.
+// Patch update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/authenticationeventlistener-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationeventlistener-update?view=graph-rest-1.0
 func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventListenerable, requestConfiguration *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventListenerable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -142,7 +142,7 @@ func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuild
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an authenticationEventListener object. You must specify the **@odata.type** property and the value of the authenticationEventListener object type to update.
+// ToPatchRequestInformation update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update.
 func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventListenerable, requestConfiguration *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

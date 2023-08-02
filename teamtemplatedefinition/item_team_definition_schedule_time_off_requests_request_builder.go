@@ -75,7 +75,7 @@ func (m *ItemTeamDefinitionScheduleTimeOffRequestsRequestBuilder) Count()(*ItemT
 // Get retrieve a list of timeoffrequest objects in the team.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/timeoffrequest-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/timeoffrequest-list?view=graph-rest-1.0
 func (m *ItemTeamDefinitionScheduleTimeOffRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleTimeOffRequestsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffRequestCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

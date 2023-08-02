@@ -38,7 +38,7 @@ func (m *ComplianceSettings) GetAdditionalData()(map[string]any) {
 func (m *ComplianceSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetEDiscoveryResultTemplates gets the eDiscoveryResultTemplates property value. Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed. Maximum of two eDiscovery result templates per connection.
+// GetEDiscoveryResultTemplates gets the eDiscoveryResultTemplates property value. The eDiscoveryResultTemplates property
 func (m *ComplianceSettings) GetEDiscoveryResultTemplates()([]DisplayTemplateable) {
     val, err := m.GetBackingStore().Get("eDiscoveryResultTemplates")
     if err != nil {
@@ -130,7 +130,7 @@ func (m *ComplianceSettings) SetAdditionalData(value map[string]any)() {
 func (m *ComplianceSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetEDiscoveryResultTemplates sets the eDiscoveryResultTemplates property value. Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed. Maximum of two eDiscovery result templates per connection.
+// SetEDiscoveryResultTemplates sets the eDiscoveryResultTemplates property value. The eDiscoveryResultTemplates property
 func (m *ComplianceSettings) SetEDiscoveryResultTemplates(value []DisplayTemplateable)() {
     err := m.GetBackingStore().Set("eDiscoveryResultTemplates", value)
     if err != nil {

@@ -77,7 +77,7 @@ func (m *ExchangeCustomAppScopesRequestBuilder) Count()(*ExchangeCustomAppScopes
 // Get get a list of customAppScope objects for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/unifiedrbacapplication-list-customappscopes?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/unifiedrbacapplication-list-customappscopes?view=graph-rest-1.0
 func (m *ExchangeCustomAppScopesRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeCustomAppScopesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAppScopeCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ExchangeCustomAppScopesRequestBuilder) Get(ctx context.Context, request
 // Post create a new customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/unifiedrbacapplication-post-customappscope?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/unifiedrbacapplication-post-customappscope?view=graph-rest-1.0
 func (m *ExchangeCustomAppScopesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAppScopeable, requestConfiguration *ExchangeCustomAppScopesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAppScopeable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

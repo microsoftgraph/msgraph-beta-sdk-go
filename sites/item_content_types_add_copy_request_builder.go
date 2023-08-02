@@ -34,7 +34,7 @@ func NewItemContentTypesAddCopyRequestBuilder(rawUrl string, requestAdapter i2ae
 // Post add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0
 func (m *ItemContentTypesAddCopyRequestBuilder) Post(ctx context.Context, body ItemContentTypesAddCopyPostRequestBodyable, requestConfiguration *ItemContentTypesAddCopyRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

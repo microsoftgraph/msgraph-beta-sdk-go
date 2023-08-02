@@ -77,7 +77,7 @@ func (m *ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder) Count()(
 // Get get a list of the microsoft.graph.security.vulnerabilityComponent objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-vulnerability-list-components?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-vulnerability-list-components?view=graph-rest-1.0
 func (m *ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.VulnerabilityComponentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

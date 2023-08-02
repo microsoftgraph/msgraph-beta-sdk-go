@@ -57,7 +57,7 @@ func NewItemProfileInterestsPersonInterestItemRequestBuilder(rawUrl string, requ
 // Delete deletes a personInterest object from a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/personinterest-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/personinterest-delete?view=graph-rest-1.0
 func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileInterestsPersonInterestItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) Delete(ctx contex
 // Get retrieve the properties and relationships of a personInterest object in a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/personinterest-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/personinterest-get?view=graph-rest-1.0
 func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileInterestsPersonInterestItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonInterestable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) Get(ctx context.C
 // Patch update the properties of a personInterest object in a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/personinterest-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/personinterest-update?view=graph-rest-1.0
 func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonInterestable, requestConfiguration *ItemProfileInterestsPersonInterestItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonInterestable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -77,7 +77,7 @@ func (m *OnlineMeetingsItemMeetingAttendanceReportRequestBuilder) Delete(ctx con
 // Get get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
 func (m *OnlineMeetingsItemMeetingAttendanceReportRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemMeetingAttendanceReportRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

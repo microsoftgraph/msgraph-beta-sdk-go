@@ -137,7 +137,7 @@ func (m *AirPrintDestination) GetPort()(*int32) {
     }
     return nil
 }
-// GetResourcePath gets the resourcePath property value. The Resource Path associated with the printer. This corresponds to the rp parameter of the ipps.tcp Bonjour record. For example: printers/Canon_MG5300_series, printers/Xerox_Phaser_7600, ipp/print, Epson_IPP_Printer.
+// GetResourcePath gets the resourcePath property value. The Resource Path associated with the printer. This corresponds to the rp parameter of the ipps.tcp Bonjour record. For example: printers/CanonMG5300series, printers/XeroxPhaser7600, ipp/print, EpsonIPPPrinter.
 func (m *AirPrintDestination) GetResourcePath()(*string) {
     val, err := m.GetBackingStore().Get("resourcePath")
     if err != nil {
@@ -227,7 +227,7 @@ func (m *AirPrintDestination) SetPort(value *int32)() {
         panic(err)
     }
 }
-// SetResourcePath sets the resourcePath property value. The Resource Path associated with the printer. This corresponds to the rp parameter of the ipps.tcp Bonjour record. For example: printers/Canon_MG5300_series, printers/Xerox_Phaser_7600, ipp/print, Epson_IPP_Printer.
+// SetResourcePath sets the resourcePath property value. The Resource Path associated with the printer. This corresponds to the rp parameter of the ipps.tcp Bonjour record. For example: printers/CanonMG5300series, printers/XeroxPhaser7600, ipp/print, EpsonIPPPrinter.
 func (m *AirPrintDestination) SetResourcePath(value *string)() {
     err := m.GetBackingStore().Set("resourcePath", value)
     if err != nil {

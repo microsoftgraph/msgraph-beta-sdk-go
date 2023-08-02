@@ -61,7 +61,7 @@ func (m *PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilder) Definition(
 // Delete delete a printer's task trigger to prevent related print events from triggering tasks on the specified printer.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/printer-delete-tasktrigger?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/printer-delete-tasktrigger?view=graph-rest-1.0
 func (m *PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,7 +80,7 @@ func (m *PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilder) Delete(ctx 
 // Get get a task trigger from a printer. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/printtasktrigger-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/printtasktrigger-get?view=graph-rest-1.0
 func (m *PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskTriggerable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

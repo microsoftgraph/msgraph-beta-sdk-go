@@ -77,7 +77,7 @@ func (m *VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsRequest
 // Get get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-1.0
 func (m *VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsRequest
 // Post create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-1.0
 func (m *VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionable, requestConfiguration *VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

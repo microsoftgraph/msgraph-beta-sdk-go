@@ -121,7 +121,7 @@ func (m *ContentInfo) GetIdentifier()(*string) {
     }
     return nil
 }
-// GetMetadata gets the metadata property value. Existing Microsoft Purview Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.
+// GetMetadata gets the metadata property value. Existing Microsoft Purview Information Protection metadata is passed as key/value pairs, where the key is the MSIPLabelGUID_PropName.
 func (m *ContentInfo) GetMetadata()([]KeyValuePairable) {
     val, err := m.GetBackingStore().Get("metadata")
     if err != nil {
@@ -227,7 +227,7 @@ func (m *ContentInfo) SetIdentifier(value *string)() {
         panic(err)
     }
 }
-// SetMetadata sets the metadata property value. Existing Microsoft Purview Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.
+// SetMetadata sets the metadata property value. Existing Microsoft Purview Information Protection metadata is passed as key/value pairs, where the key is the MSIPLabelGUID_PropName.
 func (m *ContentInfo) SetMetadata(value []KeyValuePairable)() {
     err := m.GetBackingStore().Set("metadata", value)
     if err != nil {

@@ -77,7 +77,7 @@ func (m *VirtualEndpointDeviceImagesRequestBuilder) Count()(*VirtualEndpointDevi
 // Get list the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/virtualendpoint-list-deviceimages?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-list-deviceimages?view=graph-rest-1.0
 func (m *VirtualEndpointDeviceImagesRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -103,7 +103,7 @@ func (m *VirtualEndpointDeviceImagesRequestBuilder) GetSourceImages()(*VirtualEn
 // Post create a new cloudPcDeviceImage object. Upload a custom OS image that you can later provision on Cloud PCs.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/virtualendpoint-post-deviceimages?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-post-deviceimages?view=graph-rest-1.0
 func (m *VirtualEndpointDeviceImagesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable, requestConfiguration *VirtualEndpointDeviceImagesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

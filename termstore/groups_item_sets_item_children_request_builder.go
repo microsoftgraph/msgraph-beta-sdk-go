@@ -77,7 +77,7 @@ func (m *GroupsItemSetsItemChildrenRequestBuilder) Count()(*GroupsItemSetsItemCh
 // Get get the first level children of a [set] or [term] resource using the children navigation property.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/termstore-term-list-children?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-term-list-children?view=graph-rest-1.0
 func (m *GroupsItemSetsItemChildrenRequestBuilder) Get(ctx context.Context, requestConfiguration *GroupsItemSetsItemChildrenRequestBuilderGetRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.TermCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *GroupsItemSetsItemChildrenRequestBuilder) Get(ctx context.Context, requ
 // Post create a new term object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/termstore-term-post?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-term-post?view=graph-rest-1.0
 func (m *GroupsItemSetsItemChildrenRequestBuilder) Post(ctx context.Context, body i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Termable, requestConfiguration *GroupsItemSetsItemChildrenRequestBuilderPostRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Termable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

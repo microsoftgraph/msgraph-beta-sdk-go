@@ -81,7 +81,7 @@ func (m *ApplicationsRequestBuilder) Delta()(*DeltaRequestBuilder) {
 // Get get the list of applications in this organization.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/application-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/application-list?view=graph-rest-1.0
 func (m *ApplicationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ApplicationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -111,7 +111,7 @@ func (m *ApplicationsRequestBuilder) GetUserOwnedObjects()(*GetUserOwnedObjectsR
 // Post create a new application object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/application-post-applications?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/application-post-applications?view=graph-rest-1.0
 func (m *ApplicationsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable, requestConfiguration *ApplicationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

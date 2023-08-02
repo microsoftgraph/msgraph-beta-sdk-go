@@ -77,7 +77,7 @@ func (m *VirtualEndpointSupportedRegionsRequestBuilder) Count()(*VirtualEndpoint
 // Get list the supported regions that are available for creating Cloud PC connections.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/virtualendpoint-list-supportedregions?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-list-supportedregions?view=graph-rest-1.0
 func (m *VirtualEndpointSupportedRegionsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointSupportedRegionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSupportedRegionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -57,7 +57,7 @@ func NewDirectorySettingItemRequestBuilder(rawUrl string, requestAdapter i2ae418
 // Delete delete a directory setting.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/directorysetting-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/directorysetting-delete?view=graph-rest-1.0
 func (m *DirectorySettingItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DirectorySettingItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *DirectorySettingItemRequestBuilder) Delete(ctx context.Context, request
 // Get retrieve the properties of a specific directory setting object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/directorysetting-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/directorysetting-get?view=graph-rest-1.0
 func (m *DirectorySettingItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectorySettingItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *DirectorySettingItemRequestBuilder) Get(ctx context.Context, requestCon
 // Patch update the properties of a specific directory setting object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/directorysetting-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/directorysetting-update?view=graph-rest-1.0
 func (m *DirectorySettingItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingable, requestConfiguration *DirectorySettingItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

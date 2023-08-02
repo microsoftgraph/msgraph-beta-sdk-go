@@ -1010,6 +1010,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewEducationFeedbackResourceOutcome(), nil
                     case "#microsoft.graph.educationGradingCategory":
                         return NewEducationGradingCategory(), nil
+                    case "#microsoft.graph.educationModule":
+                        return NewEducationModule(), nil
+                    case "#microsoft.graph.educationModuleResource":
+                        return NewEducationModuleResource(), nil
                     case "#microsoft.graph.educationOrganization":
                         return NewEducationOrganization(), nil
                     case "#microsoft.graph.educationOutcome":

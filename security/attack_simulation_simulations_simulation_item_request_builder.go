@@ -57,7 +57,7 @@ func NewAttackSimulationSimulationsSimulationItemRequestBuilder(rawUrl string, r
 // Delete delete an attack simulation campaign for a tenant.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/simulation-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/simulation-delete?view=graph-rest-1.0
 func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AttackSimulationSimulationsSimulationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) Delete(ctx con
 // Get get an attack simulation campaign for a tenant.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/simulation-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/simulation-get?view=graph-rest-1.0
 func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationSimulationsSimulationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Simulationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -106,7 +106,7 @@ func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) LoginPage()(*A
 // Patch update an attack simulation campaign for a tenant.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/simulation-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/simulation-update?view=graph-rest-1.0
 func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Simulationable, requestConfiguration *AttackSimulationSimulationsSimulationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Simulationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -33,7 +33,7 @@ func NewSynchronizationProfilesItemResetRequestBuilder(rawUrl string, requestAda
 // Post reset the sync of a specific school data synchronization profile in the tenant.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationsynchronizationprofile-reset?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationsynchronizationprofile-reset?view=graph-rest-1.0
 func (m *SynchronizationProfilesItemResetRequestBuilder) Post(ctx context.Context, requestConfiguration *SynchronizationProfilesItemResetRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

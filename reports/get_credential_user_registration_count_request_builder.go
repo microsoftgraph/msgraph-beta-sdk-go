@@ -52,7 +52,7 @@ func NewGetCredentialUserRegistrationCountRequestBuilder(rawUrl string, requestA
 // Get report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/reportroot-getcredentialuserregistrationcount?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getcredentialuserregistrationcount?view=graph-rest-1.0
 func (m *GetCredentialUserRegistrationCountRequestBuilder) Get(ctx context.Context, requestConfiguration *GetCredentialUserRegistrationCountRequestBuilderGetRequestConfiguration)(GetCredentialUserRegistrationCountResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

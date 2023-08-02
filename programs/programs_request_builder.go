@@ -77,7 +77,7 @@ func (m *ProgramsRequestBuilder) Count()(*CountRequestBuilder) {
 // Get in the Azure AD access reviews feature, list all the program objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/program-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/program-list?view=graph-rest-1.0
 func (m *ProgramsRequestBuilder) Get(ctx context.Context, requestConfiguration *ProgramsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProgramCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ProgramsRequestBuilder) Get(ctx context.Context, requestConfiguration *
 // Post in the Azure AD access reviews feature, create a new program object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/program-create?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/program-create?view=graph-rest-1.0
 func (m *ProgramsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Programable, requestConfiguration *ProgramsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Programable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

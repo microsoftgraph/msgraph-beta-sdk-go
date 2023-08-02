@@ -57,7 +57,7 @@ func NewExchangeCustomAppScopesCustomAppScopeItemRequestBuilder(rawUrl string, r
 // Delete delete a customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/customappscope-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/customappscope-delete?view=graph-rest-1.0
 func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) Delete(ctx con
 // Get get the properties of a customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/customappscope-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/customappscope-get?view=graph-rest-1.0
 func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAppScopeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) Get(ctx contex
 // Patch update an existing customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/customappscope-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/customappscope-update?view=graph-rest-1.0
 func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAppScopeable, requestConfiguration *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAppScopeable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

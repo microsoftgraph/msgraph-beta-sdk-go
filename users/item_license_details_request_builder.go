@@ -77,7 +77,7 @@ func (m *ItemLicenseDetailsRequestBuilder) Count()(*ItemLicenseDetailsCountReque
 // Get retrieve a list of licenseDetails objects for enterprise users. This API returns details for licenses that are directly assigned and those transitively assigned through memberships in licensed groups.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-list-licensedetails?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-list-licensedetails?view=graph-rest-1.0
 func (m *ItemLicenseDetailsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemLicenseDetailsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LicenseDetailsCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

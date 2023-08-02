@@ -50,7 +50,7 @@ func NewItemManagerRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 // Delete remove a user's manager.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-delete-manager?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-delete-manager?view=graph-rest-1.0
 func (m *ItemManagerRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemManagerRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -69,7 +69,7 @@ func (m *ItemManagerRequestBuilder) Delete(ctx context.Context, requestConfigura
 // Get returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
 func (m *ItemManagerRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemManagerRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

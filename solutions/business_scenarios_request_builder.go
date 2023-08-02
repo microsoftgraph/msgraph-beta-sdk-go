@@ -77,7 +77,7 @@ func (m *BusinessScenariosRequestBuilder) Count()(*BusinessScenariosCountRequest
 // Get get a list of all businessScenario objects in an organization.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/solutionsroot-list-businessscenarios?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/solutionsroot-list-businessscenarios?view=graph-rest-1.0
 func (m *BusinessScenariosRequestBuilder) Get(ctx context.Context, requestConfiguration *BusinessScenariosRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *BusinessScenariosRequestBuilder) Get(ctx context.Context, requestConfig
 // Post create a new businessScenario object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/solutionsroot-post-businessscenarios?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/solutionsroot-post-businessscenarios?view=graph-rest-1.0
 func (m *BusinessScenariosRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioable, requestConfiguration *BusinessScenariosRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

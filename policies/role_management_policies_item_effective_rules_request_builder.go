@@ -77,7 +77,7 @@ func (m *RoleManagementPoliciesItemEffectiveRulesRequestBuilder) Count()(*RoleMa
 // Get get the unifiedRoleManagementPolicyRule resources from the effectiveRules navigation property. To retrieve rules for a policy that applies to Azure RBAC, use the Azure REST PIM API for role management policies.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicy-list-effectiverules?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/unifiedrolemanagementpolicy-list-effectiverules?view=graph-rest-1.0
 func (m *RoleManagementPoliciesItemEffectiveRulesRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleManagementPoliciesItemEffectiveRulesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementPolicyRuleCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

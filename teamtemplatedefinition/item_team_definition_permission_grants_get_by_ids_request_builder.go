@@ -33,7 +33,7 @@ func NewItemTeamDefinitionPermissionGrantsGetByIdsRequestBuilder(rawUrl string, 
 // Post return the directory objects specified in a list of IDs. Some common uses for this function are to:
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
 func (m *ItemTeamDefinitionPermissionGrantsGetByIdsRequestBuilder) Post(ctx context.Context, body ItemTeamDefinitionPermissionGrantsGetByIdsPostRequestBodyable, requestConfiguration *ItemTeamDefinitionPermissionGrantsGetByIdsRequestBuilderPostRequestConfiguration)(ItemTeamDefinitionPermissionGrantsGetByIdsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

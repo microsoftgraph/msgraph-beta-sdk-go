@@ -83,7 +83,7 @@ func (m *ItemConnectorGroupRefRequestBuilder) Get(ctx context.Context, requestCo
 // Put assign a connectorGroup to an application.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/connectorgroup-post-applications?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/connectorgroup-post-applications?view=graph-rest-1.0
 func (m *ItemConnectorGroupRefRequestBuilder) Put(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceUpdateable, requestConfiguration *ItemConnectorGroupRefRequestBuilderPutRequestConfiguration)(error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

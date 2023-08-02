@@ -57,7 +57,7 @@ func NewItemProfileEmailsItemEmailItemRequestBuilder(rawUrl string, requestAdapt
 // Delete delete an itemEmail object from a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/itememail-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/itememail-delete?view=graph-rest-1.0
 func (m *ItemProfileEmailsItemEmailItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileEmailsItemEmailItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemProfileEmailsItemEmailItemRequestBuilder) Delete(ctx context.Contex
 // Get retrieve the properties and relationships of an itemEmail object in a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/itememail-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/itememail-get?view=graph-rest-1.0
 func (m *ItemProfileEmailsItemEmailItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileEmailsItemEmailItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemEmailable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ItemProfileEmailsItemEmailItemRequestBuilder) Get(ctx context.Context, 
 // Patch update the properties of an itemEmail object in a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/itememail-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/itememail-update?view=graph-rest-1.0
 func (m *ItemProfileEmailsItemEmailItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemEmailable, requestConfiguration *ItemProfileEmailsItemEmailItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemEmailable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

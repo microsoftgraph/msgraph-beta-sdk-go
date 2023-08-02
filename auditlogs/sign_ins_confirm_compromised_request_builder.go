@@ -33,7 +33,7 @@ func NewSignInsConfirmCompromisedRequestBuilder(rawUrl string, requestAdapter i2
 // Post allow admins to mark an event in the Azure AD sign in logs as risky. Events marked as risky by an admin are immediately flagged as high risk in Azure AD Identity Protection, overriding previous risk states. Admins can confirm that events flagged as risky by Azure AD Identity Protection are in fact risky. For details about investigating Identity Protection risks, see How to investigate risk.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/signin-confirmcompromised?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/signin-confirmcompromised?view=graph-rest-1.0
 func (m *SignInsConfirmCompromisedRequestBuilder) Post(ctx context.Context, body SignInsConfirmCompromisedPostRequestBodyable, requestConfiguration *SignInsConfirmCompromisedRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

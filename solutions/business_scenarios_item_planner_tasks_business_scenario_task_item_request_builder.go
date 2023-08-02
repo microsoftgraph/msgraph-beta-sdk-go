@@ -65,7 +65,7 @@ func NewBusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder(
 // Delete delete a businessScenarioTask object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/businessscenarioplanner-delete-tasks?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/businessscenarioplanner-delete-tasks?view=graph-rest-1.0
 func (m *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -88,7 +88,7 @@ func (m *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder
 // Get read the properties and relationships of a businessScenarioTask object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/businessscenariotask-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/businessscenariotask-get?view=graph-rest-1.0
 func (m *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -110,7 +110,7 @@ func (m *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder
 // Patch update the properties of a businessScenarioTask object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/businessscenariotask-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/businessscenariotask-update?view=graph-rest-1.0
 func (m *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable, requestConfiguration *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

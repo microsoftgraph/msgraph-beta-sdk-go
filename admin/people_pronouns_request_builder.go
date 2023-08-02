@@ -73,7 +73,7 @@ func (m *PeoplePronounsRequestBuilder) Delete(ctx context.Context, requestConfig
 // Get get the properties of the pronounsSettings resource for an organization.  For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/peopleadminsettings-list-pronouns?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/peopleadminsettings-list-pronouns?view=graph-rest-1.0
 func (m *PeoplePronounsRequestBuilder) Get(ctx context.Context, requestConfiguration *PeoplePronounsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PronounsSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *PeoplePronounsRequestBuilder) Get(ctx context.Context, requestConfigura
 // Patch update the properties of a pronounsSettings in an organization. For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/pronounssettings-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/pronounssettings-update?view=graph-rest-1.0
 func (m *PeoplePronounsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PronounsSettingsable, requestConfiguration *PeoplePronounsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PronounsSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

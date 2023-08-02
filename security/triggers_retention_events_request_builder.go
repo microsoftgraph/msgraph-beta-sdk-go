@@ -77,7 +77,7 @@ func (m *TriggersRetentionEventsRequestBuilder) Count()(*TriggersRetentionEvents
 // Get get a list of the retentionEvent objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-retentionevent-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-retentionevent-list?view=graph-rest-1.0
 func (m *TriggersRetentionEventsRequestBuilder) Get(ctx context.Context, requestConfiguration *TriggersRetentionEventsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *TriggersRetentionEventsRequestBuilder) Get(ctx context.Context, request
 // Post create a new retentionEvent object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-retentionevent-post?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-retentionevent-post?view=graph-rest-1.0
 func (m *TriggersRetentionEventsRequestBuilder) Post(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventable, requestConfiguration *TriggersRetentionEventsRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

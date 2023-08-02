@@ -77,7 +77,7 @@ func (m *ItemFileLocalizationsRequestBuilder) Count()(*ItemFileLocalizationsCoun
 // Get get a list of the default and localized agreement files.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/agreementfile-list-localizations?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/agreementfile-list-localizations?view=graph-rest-1.0
 func (m *ItemFileLocalizationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemFileLocalizationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

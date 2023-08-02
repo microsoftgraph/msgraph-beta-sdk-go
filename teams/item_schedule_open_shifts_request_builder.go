@@ -77,7 +77,7 @@ func (m *ItemScheduleOpenShiftsRequestBuilder) Count()(*ItemScheduleOpenShiftsCo
 // Get list openshift objects in a team.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/openshift-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/openshift-list?view=graph-rest-1.0
 func (m *ItemScheduleOpenShiftsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemScheduleOpenShiftsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ItemScheduleOpenShiftsRequestBuilder) Get(ctx context.Context, requestC
 // Post create an instance of an openshift object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/openshift-post?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/openshift-post?view=graph-rest-1.0
 func (m *ItemScheduleOpenShiftsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftable, requestConfiguration *ItemScheduleOpenShiftsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

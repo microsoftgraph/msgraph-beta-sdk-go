@@ -79,7 +79,7 @@ func (m *ItemContactFoldersRequestBuilder) Delta()(*ItemContactFoldersDeltaReque
 // Get get all the contact folders in the signed-in user's mailbox.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-list-contactfolders?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-list-contactfolders?view=graph-rest-1.0
 func (m *ItemContactFoldersRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemContactFoldersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,7 +101,7 @@ func (m *ItemContactFoldersRequestBuilder) Get(ctx context.Context, requestConfi
 // Post create a new contactFolder under the user's default contacts folder. You can also create a new contactfolder as a child of any specified contact folder.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-post-contactfolders?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-post-contactfolders?view=graph-rest-1.0
 func (m *ItemContactFoldersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderable, requestConfiguration *ItemContactFoldersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

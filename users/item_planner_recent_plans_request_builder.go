@@ -70,7 +70,7 @@ func (m *ItemPlannerRecentPlansRequestBuilder) Count()(*ItemPlannerRecentPlansCo
 // Get retrieve a list of plannerPlans recently viewed by a user. You can update recently viewed plans by updating the plannerUser resource.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/planneruser-list-recentplans?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/planneruser-list-recentplans?view=graph-rest-1.0
 func (m *ItemPlannerRecentPlansRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPlannerRecentPlansRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

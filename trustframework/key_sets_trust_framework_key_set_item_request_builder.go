@@ -57,7 +57,7 @@ func NewKeySetsTrustFrameworkKeySetItemRequestBuilder(rawUrl string, requestAdap
 // Delete delete a trustFrameworkKeySet.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/trustframeworkkeyset-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/trustframeworkkeyset-delete?view=graph-rest-1.0
 func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *KeySetsTrustFrameworkKeySetItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,7 +80,7 @@ func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) GenerateKey()(*KeySetsIt
 // Get retrieve the properties and associations for a Trustframeworkkeyset.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/trustframeworkkeyset-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/trustframeworkkeyset-get?view=graph-rest-1.0
 func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) Get(ctx context.Context, requestConfiguration *KeySetsTrustFrameworkKeySetItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeySetable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -106,7 +106,7 @@ func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) GetActiveKey()(*KeySetsI
 // Patch update the properties of a trustFrameworkKeyset. This operation will replace the content of an existing keyset. Specifying the ID in the request payload is optional.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/trustframeworkkeyset-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/trustframeworkkeyset-update?view=graph-rest-1.0
 func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeySetable, requestConfiguration *KeySetsTrustFrameworkKeySetItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeySetable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

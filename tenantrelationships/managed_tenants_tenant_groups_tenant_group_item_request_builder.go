@@ -73,7 +73,7 @@ func (m *ManagedTenantsTenantGroupsTenantGroupItemRequestBuilder) Delete(ctx con
 // Get read the properties and relationships of a tenantGroup object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/managedtenants-tenantgroup-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-tenantgroup-get?view=graph-rest-1.0
 func (m *ManagedTenantsTenantGroupsTenantGroupItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsTenantGroupsTenantGroupItemRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

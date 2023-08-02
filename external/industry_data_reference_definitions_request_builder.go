@@ -77,7 +77,7 @@ func (m *IndustryDataReferenceDefinitionsRequestBuilder) Count()(*IndustryDataRe
 // Get get a list of the referenceDefinition objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/industrydata-referencedefinition-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-referencedefinition-list?view=graph-rest-1.0
 func (m *IndustryDataReferenceDefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataReferenceDefinitionsRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.ReferenceDefinitionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

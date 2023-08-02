@@ -57,7 +57,7 @@ func NewItemChatsItemTabsTeamsTabItemRequestBuilder(rawUrl string, requestAdapte
 // Delete remove (unpin) a tab from the specified chat. 
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chat-delete-tabs?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-delete-tabs?view=graph-rest-1.0
 func (m *ItemChatsItemTabsTeamsTabItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemChatsItemTabsTeamsTabItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemChatsItemTabsTeamsTabItemRequestBuilder) Delete(ctx context.Context
 // Get retrieve the properties and relationships of the specified tab in a chat. 
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chat-get-tabs?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-get-tabs?view=graph-rest-1.0
 func (m *ItemChatsItemTabsTeamsTabItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemChatsItemTabsTeamsTabItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsTabable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ItemChatsItemTabsTeamsTabItemRequestBuilder) Get(ctx context.Context, r
 // Patch update the properties of the specified tab in a chat. This can be used to configure the content of the tab.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chat-patch-tabs?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-patch-tabs?view=graph-rest-1.0
 func (m *ItemChatsItemTabsTeamsTabItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsTabable, requestConfiguration *ItemChatsItemTabsTeamsTabItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsTabable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

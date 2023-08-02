@@ -77,7 +77,7 @@ func (m *VirtualEndpointExternalPartnerSettingsRequestBuilder) Count()(*VirtualE
 // Get get a list of the cloudPcExternalPartnerSetting objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/virtualendpoint-list-externalpartnersettings?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-list-externalpartnersettings?view=graph-rest-1.0
 func (m *VirtualEndpointExternalPartnerSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointExternalPartnerSettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerSettingCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *VirtualEndpointExternalPartnerSettingsRequestBuilder) Get(ctx context.C
 // Post create a new cloudPcExternalPartnerSetting object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/virtualendpoint-post-externalpartnersettings?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-post-externalpartnersettings?view=graph-rest-1.0
 func (m *VirtualEndpointExternalPartnerSettingsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerSettingable, requestConfiguration *VirtualEndpointExternalPartnerSettingsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerSettingable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

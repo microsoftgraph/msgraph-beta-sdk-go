@@ -33,7 +33,7 @@ func NewSynchronizationProfilesItemResumeRequestBuilder(rawUrl string, requestAd
 // Post resume the sync of a specific school data synchronization profile in the tenant.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationsynchronizationprofile-resume?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationsynchronizationprofile-resume?view=graph-rest-1.0
 func (m *SynchronizationProfilesItemResumeRequestBuilder) Post(ctx context.Context, requestConfiguration *SynchronizationProfilesItemResumeRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

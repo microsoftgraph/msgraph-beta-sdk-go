@@ -81,7 +81,7 @@ func (m *PlansRequestBuilder) Delta()(*PlansDeltaRequestBuilder) {
 // Get get a list of plannerPlan objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/planner-list-plans?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/planner-list-plans?view=graph-rest-1.0
 func (m *PlansRequestBuilder) Get(ctx context.Context, requestConfiguration *PlansRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,10 +100,10 @@ func (m *PlansRequestBuilder) Get(ctx context.Context, requestConfiguration *Pla
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanCollectionResponseable), nil
 }
-// Post create a new **plannerPlan**.
+// Post create a new plannerPlan.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/planner-post-plans?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/planner-post-plans?view=graph-rest-1.0
 func (m *PlansRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanable, requestConfiguration *PlansRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -138,7 +138,7 @@ func (m *PlansRequestBuilder) ToGetRequestInformation(ctx context.Context, reque
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new **plannerPlan**.
+// ToPostRequestInformation create a new plannerPlan.
 func (m *PlansRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanable, requestConfiguration *PlansRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -77,7 +77,7 @@ func (m *AppCredentialSignInActivitiesRequestBuilder) Count()(*AppCredentialSign
 // Get get a list of appCredentialSignInActivity objects that contains recent activity of application credentials.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/reportroot-list-appcredentialsigninactivities?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-list-appcredentialsigninactivities?view=graph-rest-1.0
 func (m *AppCredentialSignInActivitiesRequestBuilder) Get(ctx context.Context, requestConfiguration *AppCredentialSignInActivitiesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppCredentialSignInActivityCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -77,7 +77,7 @@ func (m *ServiceAnnouncementMessagesItemAttachmentsServiceAnnouncementAttachment
 // Get read the properties and relationships of a serviceAnnouncementAttachment object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/serviceannouncementattachment-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/serviceannouncementattachment-get?view=graph-rest-1.0
 func (m *ServiceAnnouncementMessagesItemAttachmentsServiceAnnouncementAttachmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ServiceAnnouncementMessagesItemAttachmentsServiceAnnouncementAttachmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceAnnouncementAttachmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

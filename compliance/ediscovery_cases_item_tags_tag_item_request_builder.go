@@ -62,7 +62,7 @@ func NewEdiscoveryCasesItemTagsTagItemRequestBuilder(rawUrl string, requestAdapt
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-tag-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-tag-delete?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemTagsTagItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EdiscoveryCasesItemTagsTagItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -82,7 +82,7 @@ func (m *EdiscoveryCasesItemTagsTagItemRequestBuilder) Delete(ctx context.Contex
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-tag-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-tag-get?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemTagsTagItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemTagsTagItemRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Tagable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -109,7 +109,7 @@ func (m *EdiscoveryCasesItemTagsTagItemRequestBuilder) Parent()(*EdiscoveryCases
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-tag-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-tag-update?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemTagsTagItemRequestBuilder) Patch(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Tagable, requestConfiguration *EdiscoveryCasesItemTagsTagItemRequestBuilderPatchRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Tagable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

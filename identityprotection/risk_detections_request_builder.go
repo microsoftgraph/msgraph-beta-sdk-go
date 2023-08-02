@@ -11,7 +11,7 @@ import (
 type RiskDetectionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RiskDetectionsRequestBuilderGetQueryParameters retrieve the properties of a collection of **riskDetection** objects.
+// RiskDetectionsRequestBuilderGetQueryParameters retrieve the properties of a collection of riskDetection objects.
 type RiskDetectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,10 @@ func NewRiskDetectionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *RiskDetectionsRequestBuilder) Count()(*RiskDetectionsCountRequestBuilder) {
     return NewRiskDetectionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties of a collection of **riskDetection** objects.
+// Get retrieve the properties of a collection of riskDetection objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/riskdetection-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/riskdetection-list?view=graph-rest-1.0
 func (m *RiskDetectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *RiskDetectionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskDetectionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +115,7 @@ func (m *RiskDetectionsRequestBuilder) Post(ctx context.Context, body ie233ee762
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskDetectionable), nil
 }
-// ToGetRequestInformation retrieve the properties of a collection of **riskDetection** objects.
+// ToGetRequestInformation retrieve the properties of a collection of riskDetection objects.
 func (m *RiskDetectionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RiskDetectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

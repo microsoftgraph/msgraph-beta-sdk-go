@@ -11,7 +11,7 @@ import (
 type ItemCalendarsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCalendarsRequestBuilderGetQueryParameters get all the user's calendars (`/calendars` navigation property), get the calendars from the default calendar group or from a specific calendar group. 
+// ItemCalendarsRequestBuilderGetQueryParameters get all the user's calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group. 
 type ItemCalendarsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,10 +72,10 @@ func NewItemCalendarsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *ItemCalendarsRequestBuilder) Count()(*ItemCalendarsCountRequestBuilder) {
     return NewItemCalendarsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get all the user's calendars (`/calendars` navigation property), get the calendars from the default calendar group or from a specific calendar group. 
+// Get get all the user's calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group. 
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-list-calendars?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-list-calendars?view=graph-rest-1.0
 func (m *ItemCalendarsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -97,7 +97,7 @@ func (m *ItemCalendarsRequestBuilder) Get(ctx context.Context, requestConfigurat
 // Post create a new calendar for a user.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-post-calendars?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-post-calendars?view=graph-rest-1.0
 func (m *ItemCalendarsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Calendarable, requestConfiguration *ItemCalendarsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Calendarable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +116,7 @@ func (m *ItemCalendarsRequestBuilder) Post(ctx context.Context, body ie233ee762e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Calendarable), nil
 }
-// ToGetRequestInformation get all the user's calendars (`/calendars` navigation property), get the calendars from the default calendar group or from a specific calendar group. 
+// ToGetRequestInformation get all the user's calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group. 
 func (m *ItemCalendarsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

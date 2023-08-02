@@ -57,7 +57,7 @@ func NewItemProfileNotesPersonAnnotationItemRequestBuilder(rawUrl string, reques
 // Delete deletes a personAnnotation object from a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/personannotation-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/personannotation-delete?view=graph-rest-1.0
 func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileNotesPersonAnnotationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) Delete(ctx context.
 // Get read the properties and relationships of a personAnnotation object from a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/personannotation-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/personannotation-get?view=graph-rest-1.0
 func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileNotesPersonAnnotationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnotationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) Get(ctx context.Con
 // Patch update the properties of a personAnnotation object in a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/personannotation-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/personannotation-update?view=graph-rest-1.0
 func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnotationable, requestConfiguration *ItemProfileNotesPersonAnnotationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnotationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

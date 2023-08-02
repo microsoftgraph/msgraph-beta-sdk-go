@@ -57,7 +57,7 @@ func NewItemProfileAccountUserAccountInformationItemRequestBuilder(rawUrl string
 // Delete delete an userAccountInformation object from a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/useraccountinformation-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/useraccountinformation-delete?view=graph-rest-1.0
 func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileAccountUserAccountInformationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) Delete(ctx 
 // Get retrieve the properties and relationships of an userAccountInformation object in a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/useraccountinformation-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/useraccountinformation-get?view=graph-rest-1.0
 func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileAccountUserAccountInformationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAccountInformationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) Get(ctx con
 // Patch update the properties of an userAccountInformation object in a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/useraccountinformation-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/useraccountinformation-update?view=graph-rest-1.0
 func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAccountInformationable, requestConfiguration *ItemProfileAccountUserAccountInformationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAccountInformationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

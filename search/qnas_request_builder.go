@@ -77,7 +77,7 @@ func (m *QnasRequestBuilder) Count()(*QnasCountRequestBuilder) {
 // Get get a list of the qna objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/search-searchentity-list-qnas?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/search-searchentity-list-qnas?view=graph-rest-1.0
 func (m *QnasRequestBuilder) Get(ctx context.Context, requestConfiguration *QnasRequestBuilderGetRequestConfiguration)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.QnaCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *QnasRequestBuilder) Get(ctx context.Context, requestConfiguration *Qnas
 // Post create a new qna object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/search-searchentity-post-qnas?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/search-searchentity-post-qnas?view=graph-rest-1.0
 func (m *QnasRequestBuilder) Post(ctx context.Context, body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Qnaable, requestConfiguration *QnasRequestBuilderPostRequestConfiguration)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Qnaable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

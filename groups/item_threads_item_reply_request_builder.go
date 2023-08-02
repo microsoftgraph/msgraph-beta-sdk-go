@@ -33,7 +33,7 @@ func NewItemThreadsItemReplyRequestBuilder(rawUrl string, requestAdapter i2ae418
 // Post reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation in the request, or, you can specify just the thread without the parent conversation.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
 func (m *ItemThreadsItemReplyRequestBuilder) Post(ctx context.Context, body ItemThreadsItemReplyPostRequestBodyable, requestConfiguration *ItemThreadsItemReplyRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -73,7 +73,7 @@ func (m *DynamicsRequestBuilder) Delete(ctx context.Context, requestConfiguratio
 // Get read the properties and relationships of a adminDynamics object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/admindynamics-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/admindynamics-get?view=graph-rest-1.0
 func (m *DynamicsRequestBuilder) Get(ctx context.Context, requestConfiguration *DynamicsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminDynamicsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *DynamicsRequestBuilder) Get(ctx context.Context, requestConfiguration *
 // Patch update the properties of a adminDynamics object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/admindynamics-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/admindynamics-update?view=graph-rest-1.0
 func (m *DynamicsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminDynamicsable, requestConfiguration *DynamicsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminDynamicsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

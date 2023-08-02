@@ -73,7 +73,7 @@ func (m *ItemSettingsShiftPreferencesRequestBuilder) Delete(ctx context.Context,
 // Get retrieve the properties and relationships of a shiftPreferences object by ID.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/shiftpreferences-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/shiftpreferences-get?view=graph-rest-1.0
 func (m *ItemSettingsShiftPreferencesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsShiftPreferencesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftPreferencesable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *ItemSettingsShiftPreferencesRequestBuilder) Get(ctx context.Context, re
 // Patch update the properties and relationships of a shiftPreferences object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/shiftpreferences-put?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/shiftpreferences-put?view=graph-rest-1.0
 func (m *ItemSettingsShiftPreferencesRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftPreferencesable, requestConfiguration *ItemSettingsShiftPreferencesRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftPreferencesable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

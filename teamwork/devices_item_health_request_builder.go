@@ -73,7 +73,7 @@ func (m *DevicesItemHealthRequestBuilder) Delete(ctx context.Context, requestCon
 // Get get the health details of a Microsoft Teams-enabled device. Device health is calculated based on the device configuration and other device parameters.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/teamworkdevicehealth-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamworkdevicehealth-get?view=graph-rest-1.0
 func (m *DevicesItemHealthRequestBuilder) Get(ctx context.Context, requestConfiguration *DevicesItemHealthRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceHealthable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

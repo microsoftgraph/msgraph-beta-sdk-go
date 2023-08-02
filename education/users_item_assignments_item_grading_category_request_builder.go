@@ -50,7 +50,7 @@ func NewUsersItemAssignmentsItemGradingCategoryRequestBuilder(rawUrl string, req
 // Delete remove a gradingCategory from an educationAssignment. Only teachers can perform this operation.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationassignment-delete-gradingcategory?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-delete-gradingcategory?view=graph-rest-1.0
 func (m *UsersItemAssignmentsItemGradingCategoryRequestBuilder) Delete(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemGradingCategoryRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

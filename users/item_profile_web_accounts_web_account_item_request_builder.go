@@ -57,7 +57,7 @@ func NewItemProfileWebAccountsWebAccountItemRequestBuilder(rawUrl string, reques
 // Delete delete a webAccount object from a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/webaccount-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/webaccount-delete?view=graph-rest-1.0
 func (m *ItemProfileWebAccountsWebAccountItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileWebAccountsWebAccountItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemProfileWebAccountsWebAccountItemRequestBuilder) Delete(ctx context.
 // Get retrieve the properties and relationships of a webAccount object from a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/webaccount-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/webaccount-get?view=graph-rest-1.0
 func (m *ItemProfileWebAccountsWebAccountItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileWebAccountsWebAccountItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebAccountable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ItemProfileWebAccountsWebAccountItemRequestBuilder) Get(ctx context.Con
 // Patch update the properties of a webAccount object in a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/webaccount-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/webaccount-update?view=graph-rest-1.0
 func (m *ItemProfileWebAccountsWebAccountItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebAccountable, requestConfiguration *ItemProfileWebAccountsWebAccountItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebAccountable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -30,10 +30,10 @@ func NewItemCloudPCsItemRenameRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewItemCloudPCsItemRenameRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post rename a specific Cloud PC. Use this API to update the **displayName** for the Cloud PC entity.
+// Post rename a specific Cloud PC. Use this API to update the displayName for the Cloud PC entity.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpc-rename?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-rename?view=graph-rest-1.0
 func (m *ItemCloudPCsItemRenameRequestBuilder) Post(ctx context.Context, body ItemCloudPCsItemRenamePostRequestBodyable, requestConfiguration *ItemCloudPCsItemRenameRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +49,7 @@ func (m *ItemCloudPCsItemRenameRequestBuilder) Post(ctx context.Context, body It
     }
     return nil
 }
-// ToPostRequestInformation rename a specific Cloud PC. Use this API to update the **displayName** for the Cloud PC entity.
+// ToPostRequestInformation rename a specific Cloud PC. Use this API to update the displayName for the Cloud PC entity.
 func (m *ItemCloudPCsItemRenameRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCloudPCsItemRenamePostRequestBodyable, requestConfiguration *ItemCloudPCsItemRenameRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

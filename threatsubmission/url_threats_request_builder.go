@@ -77,7 +77,7 @@ func (m *UrlThreatsRequestBuilder) Count()(*UrlThreatsCountRequestBuilder) {
 // Get get a list of the urlThreatSubmission objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-urlthreatsubmission-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-urlthreatsubmission-list?view=graph-rest-1.0
 func (m *UrlThreatsRequestBuilder) Get(ctx context.Context, requestConfiguration *UrlThreatsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UrlThreatSubmissionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *UrlThreatsRequestBuilder) Get(ctx context.Context, requestConfiguration
 // Post create a new urlThreatSubmission object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-urlthreatsubmission-post-urlthreats?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-urlthreatsubmission-post-urlthreats?view=graph-rest-1.0
 func (m *UrlThreatsRequestBuilder) Post(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UrlThreatSubmissionable, requestConfiguration *UrlThreatsRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UrlThreatSubmissionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

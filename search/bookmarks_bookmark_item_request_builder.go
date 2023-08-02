@@ -57,7 +57,7 @@ func NewBookmarksBookmarkItemRequestBuilder(rawUrl string, requestAdapter i2ae41
 // Delete delete a bookmark object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/search-bookmark-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/search-bookmark-delete?view=graph-rest-1.0
 func (m *BookmarksBookmarkItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BookmarksBookmarkItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *BookmarksBookmarkItemRequestBuilder) Delete(ctx context.Context, reques
 // Get read the properties and relationships of a bookmark object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/search-bookmark-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/search-bookmark-get?view=graph-rest-1.0
 func (m *BookmarksBookmarkItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BookmarksBookmarkItemRequestBuilderGetRequestConfiguration)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Bookmarkable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *BookmarksBookmarkItemRequestBuilder) Get(ctx context.Context, requestCo
 // Patch update the properties of a bookmark object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/search-bookmark-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/search-bookmark-update?view=graph-rest-1.0
 func (m *BookmarksBookmarkItemRequestBuilder) Patch(ctx context.Context, body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Bookmarkable, requestConfiguration *BookmarksBookmarkItemRequestBuilderPatchRequestConfiguration)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Bookmarkable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

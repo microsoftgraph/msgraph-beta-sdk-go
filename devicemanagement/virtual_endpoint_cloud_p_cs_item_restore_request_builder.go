@@ -33,7 +33,7 @@ func NewVirtualEndpointCloudPCsItemRestoreRequestBuilder(rawUrl string, requestA
 // Post restore a specific Cloud PC. Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpc-restore?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-restore?view=graph-rest-1.0
 func (m *VirtualEndpointCloudPCsItemRestoreRequestBuilder) Post(ctx context.Context, body VirtualEndpointCloudPCsItemRestorePostRequestBodyable, requestConfiguration *VirtualEndpointCloudPCsItemRestoreRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

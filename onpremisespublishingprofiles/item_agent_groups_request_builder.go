@@ -77,7 +77,7 @@ func (m *ItemAgentGroupsRequestBuilder) Count()(*ItemAgentGroupsCountRequestBuil
 // Get retrieve a list of onPremisesAgentGroup objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/onpremisesagentgroup-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/onpremisesagentgroup-list?view=graph-rest-1.0
 func (m *ItemAgentGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAgentGroupsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ItemAgentGroupsRequestBuilder) Get(ctx context.Context, requestConfigur
 // Post create a new onPremisesAgentGroup object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/onpremisesagentgroup-post?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/onpremisesagentgroup-post?view=graph-rest-1.0
 func (m *ItemAgentGroupsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable, requestConfiguration *ItemAgentGroupsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

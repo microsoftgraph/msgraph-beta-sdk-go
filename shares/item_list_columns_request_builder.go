@@ -77,7 +77,7 @@ func (m *ItemListColumnsRequestBuilder) Count()(*ItemListColumnsCountRequestBuil
 // Get get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [list][list].
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/list-list-columns?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/list-list-columns?view=graph-rest-1.0
 func (m *ItemListColumnsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListColumnsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ItemListColumnsRequestBuilder) Get(ctx context.Context, requestConfigur
 // Post create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/list-post-columns?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/list-post-columns?view=graph-rest-1.0
 func (m *ItemListColumnsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable, requestConfiguration *ItemListColumnsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

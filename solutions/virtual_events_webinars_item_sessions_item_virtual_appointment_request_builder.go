@@ -58,7 +58,7 @@ func NewVirtualEventsWebinarsItemSessionsItemVirtualAppointmentRequestBuilder(ra
 // Deprecated: The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API. as of 2023-04/VirtualAppointment on 2023-04-04 and will be removed 2023-05-31
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/virtualappointment-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualappointment-delete?view=graph-rest-1.0
 func (m *VirtualEventsWebinarsItemSessionsItemVirtualAppointmentRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemSessionsItemVirtualAppointmentRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,7 +78,7 @@ func (m *VirtualEventsWebinarsItemSessionsItemVirtualAppointmentRequestBuilder) 
 // Deprecated: The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API. as of 2023-04/VirtualAppointment on 2023-04-04 and will be removed 2023-05-31
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/virtualappointment-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualappointment-get?view=graph-rest-1.0
 func (m *VirtualEventsWebinarsItemSessionsItemVirtualAppointmentRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemSessionsItemVirtualAppointmentRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualAppointmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,7 +101,7 @@ func (m *VirtualEventsWebinarsItemSessionsItemVirtualAppointmentRequestBuilder) 
 // Deprecated: The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API. as of 2023-04/VirtualAppointment on 2023-04-04 and will be removed 2023-05-31
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/virtualappointment-put?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualappointment-put?view=graph-rest-1.0
 func (m *VirtualEventsWebinarsItemSessionsItemVirtualAppointmentRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualAppointmentable, requestConfiguration *VirtualEventsWebinarsItemSessionsItemVirtualAppointmentRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualAppointmentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

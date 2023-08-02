@@ -73,7 +73,7 @@ func (m *ItemOutlookMasterCategoriesRequestBuilder) Count()(*ItemOutlookMasterCa
 // Get get all the categories that have been defined for the user.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/outlookuser-list-mastercategories?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/outlookuser-list-mastercategories?view=graph-rest-1.0
 func (m *ItemOutlookMasterCategoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOutlookMasterCategoriesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookCategoryCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *ItemOutlookMasterCategoriesRequestBuilder) Get(ctx context.Context, req
 // Post create an outlookCategory object in the user's master list of categories.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/outlookuser-post-mastercategories?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/outlookuser-post-mastercategories?view=graph-rest-1.0
 func (m *ItemOutlookMasterCategoriesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookCategoryable, requestConfiguration *ItemOutlookMasterCategoriesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookCategoryable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -238,7 +238,7 @@ func (m *AssignmentReviewSettings) GetReviewers()([]UserSetable) {
     }
     return nil
 }
-// GetReviewerType gets the reviewerType property value. Who should be asked to do the review, either Self or Reviewers.
+// GetReviewerType gets the reviewerType property value. Who should be asked to do the review, either Self, Reviewers or Manager.
 func (m *AssignmentReviewSettings) GetReviewerType()(*string) {
     val, err := m.GetBackingStore().Get("reviewerType")
     if err != nil {
@@ -404,7 +404,7 @@ func (m *AssignmentReviewSettings) SetReviewers(value []UserSetable)() {
         panic(err)
     }
 }
-// SetReviewerType sets the reviewerType property value. Who should be asked to do the review, either Self or Reviewers.
+// SetReviewerType sets the reviewerType property value. Who should be asked to do the review, either Self, Reviewers or Manager.
 func (m *AssignmentReviewSettings) SetReviewerType(value *string)() {
     err := m.GetBackingStore().Set("reviewerType", value)
     if err != nil {

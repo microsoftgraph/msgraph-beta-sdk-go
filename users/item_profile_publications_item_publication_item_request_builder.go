@@ -57,7 +57,7 @@ func NewItemProfilePublicationsItemPublicationItemRequestBuilder(rawUrl string, 
 // Delete deletes an itemPublication object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/itempublication-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/itempublication-delete?view=graph-rest-1.0
 func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfilePublicationsItemPublicationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) Delete(ctx co
 // Get read the properties and relationships of an itemPublication object in a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/itempublication-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/itempublication-get?view=graph-rest-1.0
 func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfilePublicationsItemPublicationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPublicationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) Get(ctx conte
 // Patch update the properties of an itemPublication object in a user's profile.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/itempublication-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/itempublication-update?view=graph-rest-1.0
 func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPublicationable, requestConfiguration *ItemProfilePublicationsItemPublicationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPublicationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

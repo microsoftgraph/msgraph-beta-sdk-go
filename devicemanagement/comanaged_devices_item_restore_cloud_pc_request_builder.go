@@ -33,7 +33,7 @@ func NewComanagedDevicesItemRestoreCloudPcRequestBuilder(rawUrl string, requestA
 // Post restore a Cloud PC device to a previous state with an Intune managed device ID.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/manageddevice-restorecloudpc?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/manageddevice-restorecloudpc?view=graph-rest-1.0
 func (m *ComanagedDevicesItemRestoreCloudPcRequestBuilder) Post(ctx context.Context, body ComanagedDevicesItemRestoreCloudPcPostRequestBodyable, requestConfiguration *ComanagedDevicesItemRestoreCloudPcRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

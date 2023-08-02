@@ -70,7 +70,7 @@ func (m *ItemCreatedObjectsRequestBuilder) Count()(*ItemCreatedObjectsCountReque
 // Get get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn't in any administrator role; otherwise, it returns an empty object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-list-createdobjects?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-list-createdobjects?view=graph-rest-1.0
 func (m *ItemCreatedObjectsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCreatedObjectsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

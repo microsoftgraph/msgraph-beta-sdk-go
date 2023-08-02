@@ -33,7 +33,7 @@ func NewVirtualEndpointCloudPCsValidateBulkResizeRequestBuilder(rawUrl string, r
 // Post validate that a set of cloudPC devices meet the requirements to be bulk resized.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpc-validatebulkresize?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-validatebulkresize?view=graph-rest-1.0
 func (m *VirtualEndpointCloudPCsValidateBulkResizeRequestBuilder) Post(ctx context.Context, body VirtualEndpointCloudPCsValidateBulkResizePostRequestBodyable, requestConfiguration *VirtualEndpointCloudPCsValidateBulkResizeRequestBuilderPostRequestConfiguration)(VirtualEndpointCloudPCsValidateBulkResizeResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

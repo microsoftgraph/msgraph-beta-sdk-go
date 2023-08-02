@@ -77,7 +77,7 @@ func (m *DevicesRequestBuilder) Count()(*DevicesCountRequestBuilder) {
 // Get get a list of all Microsoft Teams-enabled devices provisioned for a tenant.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/teamworkdevice-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamworkdevice-list?view=graph-rest-1.0
 func (m *DevicesRequestBuilder) Get(ctx context.Context, requestConfiguration *DevicesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

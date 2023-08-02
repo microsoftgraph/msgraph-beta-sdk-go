@@ -77,7 +77,7 @@ func (m *ItemTeamworkAssociatedTeamsRequestBuilder) Count()(*ItemTeamworkAssocia
 // Get get the list of teams in Microsoft Teams that a user is associated with.Currently, a user can be associated with a team in two different ways:* A user can be a direct member of a team.* A user can be a member of a shared channel that is hosted inside a team.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/associatedteaminfo-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/associatedteaminfo-list?view=graph-rest-1.0
 func (m *ItemTeamworkAssociatedTeamsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamworkAssociatedTeamsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssociatedTeamInfoCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

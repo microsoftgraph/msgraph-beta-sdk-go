@@ -60,7 +60,7 @@ func NewApplicationsWithAppIdRequestBuilder(rawUrl string, requestAdapter i2ae41
 // Delete deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/application-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/application-delete?view=graph-rest-1.0
 func (m *ApplicationsWithAppIdRequestBuilder) Delete(ctx context.Context, requestConfiguration *ApplicationsWithAppIdRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -79,7 +79,7 @@ func (m *ApplicationsWithAppIdRequestBuilder) Delete(ctx context.Context, reques
 // Get get the properties and relationships of an application object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/application-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/application-get?view=graph-rest-1.0
 func (m *ApplicationsWithAppIdRequestBuilder) Get(ctx context.Context, requestConfiguration *ApplicationsWithAppIdRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,7 +101,7 @@ func (m *ApplicationsWithAppIdRequestBuilder) Get(ctx context.Context, requestCo
 // Patch update the properties of an application object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/application-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/application-update?view=graph-rest-1.0
 func (m *ApplicationsWithAppIdRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable, requestConfiguration *ApplicationsWithAppIdRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

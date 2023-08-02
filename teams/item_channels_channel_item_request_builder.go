@@ -61,7 +61,7 @@ func NewItemChannelsChannelItemRequestBuilder(rawUrl string, requestAdapter i2ae
 // Delete delete the channel.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/channel-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/channel-delete?view=graph-rest-1.0
 func (m *ItemChannelsChannelItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemChannelsChannelItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -88,7 +88,7 @@ func (m *ItemChannelsChannelItemRequestBuilder) FilesFolder()(*ItemChannelsItemF
 // Get retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/channel-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/channel-get?view=graph-rest-1.0
 func (m *ItemChannelsChannelItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemChannelsChannelItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -118,7 +118,7 @@ func (m *ItemChannelsChannelItemRequestBuilder) Messages()(*ItemChannelsItemMess
 // Patch update the properties of the specified channel.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/channel-patch?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/channel-patch?view=graph-rest-1.0
 func (m *ItemChannelsChannelItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, requestConfiguration *ItemChannelsChannelItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

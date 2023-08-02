@@ -77,7 +77,7 @@ func (m *TermsOfUseAgreementsRequestBuilder) Count()(*TermsOfUseAgreementsCountR
 // Get retrieve a list of agreement objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/termsofusecontainer-list-agreements?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/termsofusecontainer-list-agreements?view=graph-rest-1.0
 func (m *TermsOfUseAgreementsRequestBuilder) Get(ctx context.Context, requestConfiguration *TermsOfUseAgreementsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *TermsOfUseAgreementsRequestBuilder) Get(ctx context.Context, requestCon
 // Post create a new agreement object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/termsofusecontainer-post-agreements?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/termsofusecontainer-post-agreements?view=graph-rest-1.0
 func (m *TermsOfUseAgreementsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Agreementable, requestConfiguration *TermsOfUseAgreementsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Agreementable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

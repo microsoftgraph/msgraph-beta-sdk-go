@@ -57,7 +57,7 @@ func NewCallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder(rawUrl st
 // Delete delete the specified audioRoutingGroup.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/audioroutinggroup-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/audioroutinggroup-delete?view=graph-rest-1.0
 func (m *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder) Delete(
 // Get retrieve the properties and relationships of an audioRoutingGroup object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/audioroutinggroup-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/audioroutinggroup-get?view=graph-rest-1.0
 func (m *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AudioRoutingGroupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder) Get(ctx
 // Patch modify sources and receivers of an audioRoutingGroup.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/audioroutinggroup-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/audioroutinggroup-update?view=graph-rest-1.0
 func (m *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AudioRoutingGroupable, requestConfiguration *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AudioRoutingGroupable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
