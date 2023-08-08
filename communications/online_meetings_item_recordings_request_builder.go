@@ -11,7 +11,7 @@ import (
 type OnlineMeetingsItemRecordingsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// OnlineMeetingsItemRecordingsRequestBuilderGetQueryParameters get recordings from communications
+// OnlineMeetingsItemRecordingsRequestBuilderGetQueryParameters get a callRecording object associated with an onlineMeeting. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of text associated with the recording.
 type OnlineMeetingsItemRecordingsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewOnlineMeetingsItemRecordingsRequestBuilder(rawUrl string, requestAdapter
 func (m *OnlineMeetingsItemRecordingsRequestBuilder) Count()(*OnlineMeetingsItemRecordingsCountRequestBuilder) {
     return NewOnlineMeetingsItemRecordingsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get recordings from communications
+// Get get a callRecording object associated with an onlineMeeting. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of text associated with the recording.
 func (m *OnlineMeetingsItemRecordingsRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemRecordingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallRecordingCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *OnlineMeetingsItemRecordingsRequestBuilder) Post(ctx context.Context, b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallRecordingable), nil
 }
-// ToGetRequestInformation get recordings from communications
+// ToGetRequestInformation get a callRecording object associated with an onlineMeeting. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of text associated with the recording.
 func (m *OnlineMeetingsItemRecordingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemRecordingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

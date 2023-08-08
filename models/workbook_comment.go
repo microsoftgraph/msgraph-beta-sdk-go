@@ -80,6 +80,16 @@ func (m *WorkbookComment) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["task"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWorkbookDocumentTaskFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTask(val.(WorkbookDocumentTaskable))
+        }
+        return nil
+    }
     return res
 }
 // GetReplies gets the replies property value. The replies property
@@ -90,6 +100,17 @@ func (m *WorkbookComment) GetReplies()([]WorkbookCommentReplyable) {
     }
     if val != nil {
         return val.([]WorkbookCommentReplyable)
+    }
+    return nil
+}
+// GetTask gets the task property value. The task property
+func (m *WorkbookComment) GetTask()(WorkbookDocumentTaskable) {
+    val, err := m.GetBackingStore().Get("task")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WorkbookDocumentTaskable)
     }
     return nil
 }
@@ -123,6 +144,12 @@ func (m *WorkbookComment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("task", m.GetTask())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetContent sets the content property value. The content of the comment.
@@ -146,6 +173,13 @@ func (m *WorkbookComment) SetReplies(value []WorkbookCommentReplyable)() {
         panic(err)
     }
 }
+// SetTask sets the task property value. The task property
+func (m *WorkbookComment) SetTask(value WorkbookDocumentTaskable)() {
+    err := m.GetBackingStore().Set("task", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // WorkbookCommentable 
 type WorkbookCommentable interface {
     Entityable
@@ -153,7 +187,9 @@ type WorkbookCommentable interface {
     GetContent()(*string)
     GetContentType()(*string)
     GetReplies()([]WorkbookCommentReplyable)
+    GetTask()(WorkbookDocumentTaskable)
     SetContent(value *string)()
     SetContentType(value *string)()
     SetReplies(value []WorkbookCommentReplyable)()
+    SetTask(value WorkbookDocumentTaskable)()
 }

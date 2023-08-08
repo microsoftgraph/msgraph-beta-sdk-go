@@ -97,11 +97,11 @@ func (m *VirtualEventsWebinarsItemSessionsItemVirtualAppointmentRequestBuilder) 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualAppointmentable), nil
 }
-// Patch create a new virtualAppointment object.
+// Patch update the properties of a virtualAppointment object.
 // Deprecated: The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API. as of 2023-04/VirtualAppointment on 2023-04-04 and will be removed 2023-05-31
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/virtualappointment-put?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualappointment-update?view=graph-rest-1.0
 func (m *VirtualEventsWebinarsItemSessionsItemVirtualAppointmentRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualAppointmentable, requestConfiguration *VirtualEventsWebinarsItemSessionsItemVirtualAppointmentRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualAppointmentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -150,7 +150,7 @@ func (m *VirtualEventsWebinarsItemSessionsItemVirtualAppointmentRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation create a new virtualAppointment object.
+// ToPatchRequestInformation update the properties of a virtualAppointment object.
 // Deprecated: The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API. as of 2023-04/VirtualAppointment on 2023-04-04 and will be removed 2023-05-31
 func (m *VirtualEventsWebinarsItemSessionsItemVirtualAppointmentRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualAppointmentable, requestConfiguration *VirtualEventsWebinarsItemSessionsItemVirtualAppointmentRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

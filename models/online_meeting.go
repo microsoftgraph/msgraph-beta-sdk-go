@@ -814,7 +814,7 @@ func (m *OnlineMeeting) GetRecording()([]byte) {
     }
     return nil
 }
-// GetRecordings gets the recordings property value. The recordings property
+// GetRecordings gets the recordings property value. The recordings of an online meeting. Read-only.
 func (m *OnlineMeeting) GetRecordings()([]CallRecordingable) {
     val, err := m.GetBackingStore().Get("recordings")
     if err != nil {
@@ -1399,7 +1399,7 @@ func (m *OnlineMeeting) SetRecording(value []byte)() {
         panic(err)
     }
 }
-// SetRecordings sets the recordings property value. The recordings property
+// SetRecordings sets the recordings property value. The recordings of an online meeting. Read-only.
 func (m *OnlineMeeting) SetRecordings(value []CallRecordingable)() {
     err := m.GetBackingStore().Set("recordings", value)
     if err != nil {

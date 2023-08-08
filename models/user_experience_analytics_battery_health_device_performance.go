@@ -30,6 +30,17 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetBatteryAgeInD
     }
     return nil
 }
+// GetDeviceBatteryCount gets the deviceBatteryCount property value. Number of batteries in a user device. Valid values 1 to 2147483647
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceBatteryCount()(*int32) {
+    val, err := m.GetBackingStore().Get("deviceBatteryCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
 // GetDeviceBatteryHealthScore gets the deviceBatteryHealthScore property value. A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceBatteryHealthScore()(*int32) {
     val, err := m.GetBackingStore().Get("deviceBatteryHealthScore")
@@ -87,6 +98,16 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
         }
         return nil
     }
+    res["deviceBatteryCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceBatteryCount(val)
+        }
+        return nil
+    }
     res["deviceBatteryHealthScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -124,6 +145,16 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
         }
         if val != nil {
             m.SetEstimatedRuntimeInMinutes(val)
+        }
+        return nil
+    }
+    res["fullBatteryDrainCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFullBatteryDrainCount(val)
         }
         return nil
     }
@@ -168,6 +199,17 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
         return nil
     }
     return res
+}
+// GetFullBatteryDrainCount gets the fullBatteryDrainCount property value. Number of times the battery has been discharged an amount that equals 100% of its capacity, but not necessarily by discharging it from 100% to 0%. Valid values 0 to 2147483647
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFullBatteryDrainCount()(*int32) {
+    val, err := m.GetBackingStore().Get("fullBatteryDrainCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetHealthStatus gets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
@@ -226,6 +268,12 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) Serialize(writer
         }
     }
     {
+        err = writer.WriteInt32Value("deviceBatteryCount", m.GetDeviceBatteryCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("deviceBatteryHealthScore", m.GetDeviceBatteryHealthScore())
         if err != nil {
             return err
@@ -245,6 +293,12 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) Serialize(writer
     }
     {
         err = writer.WriteInt32Value("estimatedRuntimeInMinutes", m.GetEstimatedRuntimeInMinutes())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("fullBatteryDrainCount", m.GetFullBatteryDrainCount())
         if err != nil {
             return err
         }
@@ -283,6 +337,13 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetBatteryAgeInD
         panic(err)
     }
 }
+// SetDeviceBatteryCount sets the deviceBatteryCount property value. Number of batteries in a user device. Valid values 1 to 2147483647
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetDeviceBatteryCount(value *int32)() {
+    err := m.GetBackingStore().Set("deviceBatteryCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDeviceBatteryHealthScore sets the deviceBatteryHealthScore property value. A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetDeviceBatteryHealthScore(value *int32)() {
     err := m.GetBackingStore().Set("deviceBatteryHealthScore", value)
@@ -307,6 +368,13 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetDeviceName(va
 // SetEstimatedRuntimeInMinutes sets the estimatedRuntimeInMinutes property value. The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetEstimatedRuntimeInMinutes(value *int32)() {
     err := m.GetBackingStore().Set("estimatedRuntimeInMinutes", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetFullBatteryDrainCount sets the fullBatteryDrainCount property value. Number of times the battery has been discharged an amount that equals 100% of its capacity, but not necessarily by discharging it from 100% to 0%. Valid values 0 to 2147483647
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetFullBatteryDrainCount(value *int32)() {
+    err := m.GetBackingStore().Set("fullBatteryDrainCount", value)
     if err != nil {
         panic(err)
     }
@@ -344,19 +412,23 @@ type UserExperienceAnalyticsBatteryHealthDevicePerformanceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBatteryAgeInDays()(*int32)
+    GetDeviceBatteryCount()(*int32)
     GetDeviceBatteryHealthScore()(*int32)
     GetDeviceId()(*string)
     GetDeviceName()(*string)
     GetEstimatedRuntimeInMinutes()(*int32)
+    GetFullBatteryDrainCount()(*int32)
     GetHealthStatus()(*UserExperienceAnalyticsHealthState)
     GetManufacturer()(*string)
     GetMaxCapacityPercentage()(*int32)
     GetModel()(*string)
     SetBatteryAgeInDays(value *int32)()
+    SetDeviceBatteryCount(value *int32)()
     SetDeviceBatteryHealthScore(value *int32)()
     SetDeviceId(value *string)()
     SetDeviceName(value *string)()
     SetEstimatedRuntimeInMinutes(value *int32)()
+    SetFullBatteryDrainCount(value *int32)()
     SetHealthStatus(value *UserExperienceAnalyticsHealthState)()
     SetManufacturer(value *string)()
     SetMaxCapacityPercentage(value *int32)()

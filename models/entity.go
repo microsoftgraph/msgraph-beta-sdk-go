@@ -1458,8 +1458,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMacOSImportedPFXCertificateProfile(), nil
                     case "#microsoft.graph.macOSLobApp":
                         return NewMacOSLobApp(), nil
-                    case "#microsoft.graph.macOSMdatpApp":
-                        return NewMacOSMdatpApp(), nil
                     case "#microsoft.graph.macOSMicrosoftDefenderApp":
                         return NewMacOSMicrosoftDefenderApp(), nil
                     case "#microsoft.graph.macOSMicrosoftEdgeApp":
@@ -1488,6 +1486,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMacOsVppApp(), nil
                     case "#microsoft.graph.macOsVppAppAssignedLicense":
                         return NewMacOsVppAppAssignedLicense(), nil
+                    case "#microsoft.graph.macOSWebClip":
+                        return NewMacOSWebClip(), nil
                     case "#microsoft.graph.macOSWiFiConfiguration":
                         return NewMacOSWiFiConfiguration(), nil
                     case "#microsoft.graph.macOSWiredNetworkConfiguration":
@@ -1656,6 +1656,16 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMobileThreatDefenseConnector(), nil
                     case "#microsoft.graph.mobilityManagementPolicy":
                         return NewMobilityManagementPolicy(), nil
+                    case "#microsoft.graph.multiTenantOrganization":
+                        return NewMultiTenantOrganization(), nil
+                    case "#microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate":
+                        return NewMultiTenantOrganizationIdentitySyncPolicyTemplate(), nil
+                    case "#microsoft.graph.multiTenantOrganizationJoinRequestRecord":
+                        return NewMultiTenantOrganizationJoinRequestRecord(), nil
+                    case "#microsoft.graph.multiTenantOrganizationMember":
+                        return NewMultiTenantOrganizationMember(), nil
+                    case "#microsoft.graph.multiTenantOrganizationPartnerConfigurationTemplate":
+                        return NewMultiTenantOrganizationPartnerConfigurationTemplate(), nil
                     case "#microsoft.graph.multiValueLegacyExtendedProperty":
                         return NewMultiValueLegacyExtendedProperty(), nil
                     case "#microsoft.graph.muteParticipantOperation":
@@ -1872,6 +1882,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewPolicySetAssignment(), nil
                     case "#microsoft.graph.policySetItem":
                         return NewPolicySetItem(), nil
+                    case "#microsoft.graph.policyTemplate":
+                        return NewPolicyTemplate(), nil
                     case "#microsoft.graph.post":
                         return NewPost(), nil
                     case "#microsoft.graph.presence":
@@ -2838,6 +2850,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewWorkbookComment(), nil
                     case "#microsoft.graph.workbookCommentReply":
                         return NewWorkbookCommentReply(), nil
+                    case "#microsoft.graph.workbookDocumentTask":
+                        return NewWorkbookDocumentTask(), nil
+                    case "#microsoft.graph.workbookDocumentTaskChange":
+                        return NewWorkbookDocumentTaskChange(), nil
                     case "#microsoft.graph.workbookFilter":
                         return NewWorkbookFilter(), nil
                     case "#microsoft.graph.workbookFormatProtection":

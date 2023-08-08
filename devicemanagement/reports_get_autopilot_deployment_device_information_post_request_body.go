@@ -5,25 +5,25 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ReportsGetAutopilotDeploymentStatusPostRequestBody 
-type ReportsGetAutopilotDeploymentStatusPostRequestBody struct {
+// ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody 
+type ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewReportsGetAutopilotDeploymentStatusPostRequestBody instantiates a new ReportsGetAutopilotDeploymentStatusPostRequestBody and sets the default values.
-func NewReportsGetAutopilotDeploymentStatusPostRequestBody()(*ReportsGetAutopilotDeploymentStatusPostRequestBody) {
-    m := &ReportsGetAutopilotDeploymentStatusPostRequestBody{
+// NewReportsGetAutopilotDeploymentDeviceInformationPostRequestBody instantiates a new ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody and sets the default values.
+func NewReportsGetAutopilotDeploymentDeviceInformationPostRequestBody()(*ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody) {
+    m := &ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody{
     }
     m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
-// CreateReportsGetAutopilotDeploymentStatusPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateReportsGetAutopilotDeploymentStatusPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewReportsGetAutopilotDeploymentStatusPostRequestBody(), nil
+// CreateReportsGetAutopilotDeploymentDeviceInformationPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateReportsGetAutopilotDeploymentDeviceInformationPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewReportsGetAutopilotDeploymentDeviceInformationPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) GetAdditionalData()(map[string]any) {
+func (m *ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
         panic(err)
@@ -35,11 +35,11 @@ func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) GetAdditionalData()
     return val.(map[string]any)
 }
 // GetBackingStore gets the backingStore property value. Stores model information.
-func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+func (m *ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["filter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
@@ -152,7 +152,7 @@ func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) GetFieldDeserialize
     return res
 }
 // GetFilter gets the filter property value. The filter property
-func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) GetFilter()(*string) {
+func (m *ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody) GetFilter()(*string) {
     val, err := m.GetBackingStore().Get("filter")
     if err != nil {
         panic(err)
@@ -163,7 +163,7 @@ func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) GetFilter()(*string
     return nil
 }
 // GetGroupBy gets the groupBy property value. The groupBy property
-func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) GetGroupBy()([]string) {
+func (m *ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody) GetGroupBy()([]string) {
     val, err := m.GetBackingStore().Get("groupBy")
     if err != nil {
         panic(err)
@@ -174,7 +174,7 @@ func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) GetGroupBy()([]stri
     return nil
 }
 // GetName gets the name property value. The name property
-func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) GetName()(*string) {
+func (m *ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
         panic(err)
@@ -185,7 +185,7 @@ func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) GetName()(*string) 
     return nil
 }
 // GetOrderBy gets the orderBy property value. The orderBy property
-func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) GetOrderBy()([]string) {
+func (m *ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody) GetOrderBy()([]string) {
     val, err := m.GetBackingStore().Get("orderBy")
     if err != nil {
         panic(err)
@@ -196,7 +196,7 @@ func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) GetOrderBy()([]stri
     return nil
 }
 // GetSearch gets the search property value. The search property
-func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) GetSearch()(*string) {
+func (m *ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody) GetSearch()(*string) {
     val, err := m.GetBackingStore().Get("search")
     if err != nil {
         panic(err)
@@ -207,7 +207,7 @@ func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) GetSearch()(*string
     return nil
 }
 // GetSelectEscaped gets the select property value. The select property
-func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) GetSelectEscaped()([]string) {
+func (m *ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody) GetSelectEscaped()([]string) {
     val, err := m.GetBackingStore().Get("selectEscaped")
     if err != nil {
         panic(err)
@@ -218,7 +218,7 @@ func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) GetSelectEscaped()(
     return nil
 }
 // GetSessionId gets the sessionId property value. The sessionId property
-func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) GetSessionId()(*string) {
+func (m *ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody) GetSessionId()(*string) {
     val, err := m.GetBackingStore().Get("sessionId")
     if err != nil {
         panic(err)
@@ -229,7 +229,7 @@ func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) GetSessionId()(*str
     return nil
 }
 // GetSkip gets the skip property value. The skip property
-func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) GetSkip()(*int32) {
+func (m *ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody) GetSkip()(*int32) {
     val, err := m.GetBackingStore().Get("skip")
     if err != nil {
         panic(err)
@@ -240,7 +240,7 @@ func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) GetSkip()(*int32) {
     return nil
 }
 // GetTop gets the top property value. The top property
-func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) GetTop()(*int32) {
+func (m *ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody) GetTop()(*int32) {
     val, err := m.GetBackingStore().Get("top")
     if err != nil {
         panic(err)
@@ -251,7 +251,7 @@ func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) GetTop()(*int32) {
     return nil
 }
 // Serialize serializes information the current object
-func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+func (m *ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("filter", m.GetFilter())
         if err != nil {
@@ -315,81 +315,81 @@ func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) Serialize(writer i8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) SetAdditionalData(value map[string]any)() {
+func (m *ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
     if err != nil {
         panic(err)
     }
 }
 // SetBackingStore sets the backingStore property value. Stores model information.
-func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+func (m *ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
 // SetFilter sets the filter property value. The filter property
-func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) SetFilter(value *string)() {
+func (m *ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody) SetFilter(value *string)() {
     err := m.GetBackingStore().Set("filter", value)
     if err != nil {
         panic(err)
     }
 }
 // SetGroupBy sets the groupBy property value. The groupBy property
-func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) SetGroupBy(value []string)() {
+func (m *ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody) SetGroupBy(value []string)() {
     err := m.GetBackingStore().Set("groupBy", value)
     if err != nil {
         panic(err)
     }
 }
 // SetName sets the name property value. The name property
-func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) SetName(value *string)() {
+func (m *ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
 // SetOrderBy sets the orderBy property value. The orderBy property
-func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) SetOrderBy(value []string)() {
+func (m *ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody) SetOrderBy(value []string)() {
     err := m.GetBackingStore().Set("orderBy", value)
     if err != nil {
         panic(err)
     }
 }
 // SetSearch sets the search property value. The search property
-func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) SetSearch(value *string)() {
+func (m *ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody) SetSearch(value *string)() {
     err := m.GetBackingStore().Set("search", value)
     if err != nil {
         panic(err)
     }
 }
 // SetSelectEscaped sets the select property value. The select property
-func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) SetSelectEscaped(value []string)() {
+func (m *ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody) SetSelectEscaped(value []string)() {
     err := m.GetBackingStore().Set("selectEscaped", value)
     if err != nil {
         panic(err)
     }
 }
 // SetSessionId sets the sessionId property value. The sessionId property
-func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) SetSessionId(value *string)() {
+func (m *ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody) SetSessionId(value *string)() {
     err := m.GetBackingStore().Set("sessionId", value)
     if err != nil {
         panic(err)
     }
 }
 // SetSkip sets the skip property value. The skip property
-func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) SetSkip(value *int32)() {
+func (m *ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody) SetSkip(value *int32)() {
     err := m.GetBackingStore().Set("skip", value)
     if err != nil {
         panic(err)
     }
 }
 // SetTop sets the top property value. The top property
-func (m *ReportsGetAutopilotDeploymentStatusPostRequestBody) SetTop(value *int32)() {
+func (m *ReportsGetAutopilotDeploymentDeviceInformationPostRequestBody) SetTop(value *int32)() {
     err := m.GetBackingStore().Set("top", value)
     if err != nil {
         panic(err)
     }
 }
-// ReportsGetAutopilotDeploymentStatusPostRequestBodyable 
-type ReportsGetAutopilotDeploymentStatusPostRequestBodyable interface {
+// ReportsGetAutopilotDeploymentDeviceInformationPostRequestBodyable 
+type ReportsGetAutopilotDeploymentDeviceInformationPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

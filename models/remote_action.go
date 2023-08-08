@@ -70,10 +70,16 @@ const (
     ROTATELOCALADMINPASSWORD_REMOTEACTION
     // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_REMOTEACTION
+    // Add device action of Remote Help Launch
+    LAUNCHREMOTEHELP_REMOTEACTION
+    // Revoke all Apple Vpp licenses for a device
+    REVOKEAPPLEVPPLICENSES_REMOTEACTION
+    // Indicate IT Admin initiates an action to remove devices from Device Firmware Configuration Interface management
+    REMOVEDEVICEFIRMWARECONFIGURATIONINTERFACEMANAGEMENT_REMOTEACTION
 )
 
 func (i RemoteAction) String() string {
-    return []string{"unknown", "factoryReset", "removeCompanyData", "resetPasscode", "remoteLock", "enableLostMode", "disableLostMode", "locateDevice", "rebootNow", "recoverPasscode", "cleanWindowsDevice", "logoutSharedAppleDeviceActiveUser", "quickScan", "fullScan", "windowsDefenderUpdateSignatures", "factoryResetKeepEnrollmentData", "updateDeviceAccount", "automaticRedeployment", "shutDown", "rotateBitLockerKeys", "rotateFileVaultKey", "getFileVaultKey", "setDeviceName", "activateDeviceEsim", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "initiateMobileDeviceManagementKeyRecovery", "initiateOnDemandProactiveRemediation", "rotateLocalAdminPassword", "unknownFutureValue"}[i]
+    return []string{"unknown", "factoryReset", "removeCompanyData", "resetPasscode", "remoteLock", "enableLostMode", "disableLostMode", "locateDevice", "rebootNow", "recoverPasscode", "cleanWindowsDevice", "logoutSharedAppleDeviceActiveUser", "quickScan", "fullScan", "windowsDefenderUpdateSignatures", "factoryResetKeepEnrollmentData", "updateDeviceAccount", "automaticRedeployment", "shutDown", "rotateBitLockerKeys", "rotateFileVaultKey", "getFileVaultKey", "setDeviceName", "activateDeviceEsim", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "initiateMobileDeviceManagementKeyRecovery", "initiateOnDemandProactiveRemediation", "rotateLocalAdminPassword", "unknownFutureValue", "launchRemoteHelp", "revokeAppleVppLicenses", "removeDeviceFirmwareConfigurationInterfaceManagement"}[i]
 }
 func ParseRemoteAction(v string) (any, error) {
     result := UNKNOWN_REMOTEACTION
@@ -142,6 +148,12 @@ func ParseRemoteAction(v string) (any, error) {
             result = ROTATELOCALADMINPASSWORD_REMOTEACTION
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REMOTEACTION
+        case "launchRemoteHelp":
+            result = LAUNCHREMOTEHELP_REMOTEACTION
+        case "revokeAppleVppLicenses":
+            result = REVOKEAPPLEVPPLICENSES_REMOTEACTION
+        case "removeDeviceFirmwareConfigurationInterfaceManagement":
+            result = REMOVEDEVICEFIRMWARECONFIGURATIONINTERFACEMANAGEMENT_REMOTEACTION
         default:
             return 0, errors.New("Unknown RemoteAction value: " + v)
     }

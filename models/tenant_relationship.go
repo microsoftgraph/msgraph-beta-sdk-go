@@ -95,6 +95,16 @@ func (m *TenantRelationship) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["multiTenantOrganization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateMultiTenantOrganizationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMultiTenantOrganization(val.(MultiTenantOrganizationable))
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -106,6 +116,17 @@ func (m *TenantRelationship) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     return res
+}
+// GetMultiTenantOrganization gets the multiTenantOrganization property value. The multiTenantOrganization property
+func (m *TenantRelationship) GetMultiTenantOrganization()(MultiTenantOrganizationable) {
+    val, err := m.GetBackingStore().Get("multiTenantOrganization")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MultiTenantOrganizationable)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TenantRelationship) GetOdataType()(*string) {
@@ -140,6 +161,12 @@ func (m *TenantRelationship) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             }
         }
         err := writer.WriteCollectionOfObjectValues("delegatedAdminRelationships", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("multiTenantOrganization", m.GetMultiTenantOrganization())
         if err != nil {
             return err
         }
@@ -183,6 +210,13 @@ func (m *TenantRelationship) SetDelegatedAdminRelationships(value []DelegatedAdm
         panic(err)
     }
 }
+// SetMultiTenantOrganization sets the multiTenantOrganization property value. The multiTenantOrganization property
+func (m *TenantRelationship) SetMultiTenantOrganization(value MultiTenantOrganizationable)() {
+    err := m.GetBackingStore().Set("multiTenantOrganization", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TenantRelationship) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -198,9 +232,11 @@ type TenantRelationshipable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDelegatedAdminCustomers()([]DelegatedAdminCustomerable)
     GetDelegatedAdminRelationships()([]DelegatedAdminRelationshipable)
+    GetMultiTenantOrganization()(MultiTenantOrganizationable)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDelegatedAdminCustomers(value []DelegatedAdminCustomerable)()
     SetDelegatedAdminRelationships(value []DelegatedAdminRelationshipable)()
+    SetMultiTenantOrganization(value MultiTenantOrganizationable)()
     SetOdataType(value *string)()
 }

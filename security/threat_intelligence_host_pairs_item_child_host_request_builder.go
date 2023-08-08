@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceHostPairsItemChildHostRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceHostPairsItemChildHostRequestBuilderGetQueryParameters get childHost from security
+// ThreatIntelligenceHostPairsItemChildHostRequestBuilderGetQueryParameters host reached via the parentHost.
 type ThreatIntelligenceHostPairsItemChildHostRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewThreatIntelligenceHostPairsItemChildHostRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewThreatIntelligenceHostPairsItemChildHostRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get childHost from security
+// Get host reached via the parentHost.
 func (m *ThreatIntelligenceHostPairsItemChildHostRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostPairsItemChildHostRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Hostable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ThreatIntelligenceHostPairsItemChildHostRequestBuilder) Get(ctx context
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Hostable), nil
 }
-// ToGetRequestInformation get childHost from security
+// ToGetRequestInformation host reached via the parentHost.
 func (m *ThreatIntelligenceHostPairsItemChildHostRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostPairsItemChildHostRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

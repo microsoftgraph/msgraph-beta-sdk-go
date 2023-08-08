@@ -182,6 +182,22 @@ func (m *AndroidDeviceOwnerVpnConfiguration) GetFieldDeserializers()(map[string]
         }
         return nil
     }
+    res["proxyExclusionList"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetProxyExclusionList(res)
+        }
+        return nil
+    }
     res["proxyServer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateVpnProxyServerFromDiscriminatorValue)
         if err != nil {
@@ -245,6 +261,17 @@ func (m *AndroidDeviceOwnerVpnConfiguration) GetMicrosoftTunnelSiteId()(*string)
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetProxyExclusionList gets the proxyExclusionList property value. List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as *.example.com.
+func (m *AndroidDeviceOwnerVpnConfiguration) GetProxyExclusionList()([]string) {
+    val, err := m.GetBackingStore().Get("proxyExclusionList")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
     }
     return nil
 }
@@ -348,6 +375,12 @@ func (m *AndroidDeviceOwnerVpnConfiguration) Serialize(writer i878a80d2330e89d26
             return err
         }
     }
+    if m.GetProxyExclusionList() != nil {
+        err = writer.WriteCollectionOfStringValues("proxyExclusionList", m.GetProxyExclusionList())
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("proxyServer", m.GetProxyServer())
         if err != nil {
@@ -430,6 +463,13 @@ func (m *AndroidDeviceOwnerVpnConfiguration) SetMicrosoftTunnelSiteId(value *str
         panic(err)
     }
 }
+// SetProxyExclusionList sets the proxyExclusionList property value. List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as *.example.com.
+func (m *AndroidDeviceOwnerVpnConfiguration) SetProxyExclusionList(value []string)() {
+    err := m.GetBackingStore().Set("proxyExclusionList", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProxyServer sets the proxyServer property value. Proxy server.
 func (m *AndroidDeviceOwnerVpnConfiguration) SetProxyServer(value VpnProxyServerable)() {
     err := m.GetBackingStore().Set("proxyServer", value)
@@ -463,6 +503,7 @@ type AndroidDeviceOwnerVpnConfigurationable interface {
     GetDerivedCredentialSettings()(DeviceManagementDerivedCredentialSettingsable)
     GetIdentityCertificate()(AndroidDeviceOwnerCertificateProfileBaseable)
     GetMicrosoftTunnelSiteId()(*string)
+    GetProxyExclusionList()([]string)
     GetProxyServer()(VpnProxyServerable)
     GetTargetedMobileApps()([]AppListItemable)
     GetTargetedPackageIds()([]string)
@@ -474,6 +515,7 @@ type AndroidDeviceOwnerVpnConfigurationable interface {
     SetDerivedCredentialSettings(value DeviceManagementDerivedCredentialSettingsable)()
     SetIdentityCertificate(value AndroidDeviceOwnerCertificateProfileBaseable)()
     SetMicrosoftTunnelSiteId(value *string)()
+    SetProxyExclusionList(value []string)()
     SetProxyServer(value VpnProxyServerable)()
     SetTargetedMobileApps(value []AppListItemable)()
     SetTargetedPackageIds(value []string)()

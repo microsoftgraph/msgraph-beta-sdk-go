@@ -18,7 +18,7 @@ type ItemOnlineMeetingsItemRegistrationRequestBuilderDeleteRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemOnlineMeetingsItemRegistrationRequestBuilderGetQueryParameters get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+// ItemOnlineMeetingsItemRegistrationRequestBuilderGetQueryParameters get the externalMeetingRegistration details associated with an onlineMeeting.
 type ItemOnlineMeetingsItemRegistrationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,10 +58,10 @@ func NewItemOnlineMeetingsItemRegistrationRequestBuilder(rawUrl string, requestA
 func (m *ItemOnlineMeetingsItemRegistrationRequestBuilder) CustomQuestions()(*ItemOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) {
     return NewItemOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+// Delete disable and delete the externalMeetingRegistration of an onlineMeeting.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
 func (m *ItemOnlineMeetingsItemRegistrationRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemRegistrationRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -77,10 +77,10 @@ func (m *ItemOnlineMeetingsItemRegistrationRequestBuilder) Delete(ctx context.Co
     }
     return nil
 }
-// Get get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+// Get get the externalMeetingRegistration details associated with an onlineMeeting.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
 func (m *ItemOnlineMeetingsItemRegistrationRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemRegistrationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *ItemOnlineMeetingsItemRegistrationRequestBuilder) Patch(ctx context.Con
 func (m *ItemOnlineMeetingsItemRegistrationRequestBuilder) Registrants()(*ItemOnlineMeetingsItemRegistrationRegistrantsRequestBuilder) {
     return NewItemOnlineMeetingsItemRegistrationRegistrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+// ToDeleteRequestInformation disable and delete the externalMeetingRegistration of an onlineMeeting.
 func (m *ItemOnlineMeetingsItemRegistrationRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemRegistrationRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -137,7 +137,7 @@ func (m *ItemOnlineMeetingsItemRegistrationRequestBuilder) ToDeleteRequestInform
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+// ToGetRequestInformation get the externalMeetingRegistration details associated with an onlineMeeting.
 func (m *ItemOnlineMeetingsItemRegistrationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemRegistrationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

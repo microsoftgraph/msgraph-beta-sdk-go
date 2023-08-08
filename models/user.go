@@ -275,6 +275,17 @@ func (m *User) GetCloudPCs()([]CloudPCable) {
     }
     return nil
 }
+// GetCloudRealtimeCommunicationInfo gets the cloudRealtimeCommunicationInfo property value. The cloudRealtimeCommunicationInfo property
+func (m *User) GetCloudRealtimeCommunicationInfo()(CloudRealtimeCommunicationInfoable) {
+    val, err := m.GetBackingStore().Get("cloudRealtimeCommunicationInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudRealtimeCommunicationInfoable)
+    }
+    return nil
+}
 // GetCompanyName gets the companyName property value. The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetCompanyName()(*string) {
     val, err := m.GetBackingStore().Get("companyName")
@@ -919,6 +930,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
                 }
             }
             m.SetCloudPCs(res)
+        }
+        return nil
+    }
+    res["cloudRealtimeCommunicationInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudRealtimeCommunicationInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCloudRealtimeCommunicationInfo(val.(CloudRealtimeCommunicationInfoable))
         }
         return nil
     }
@@ -1865,6 +1886,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         if val != nil {
             m.SetOnPremisesSecurityIdentifier(val)
+        }
+        return nil
+    }
+    res["onPremisesSipInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateOnPremisesSipInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOnPremisesSipInfo(val.(OnPremisesSipInfoable))
         }
         return nil
     }
@@ -2992,6 +3023,17 @@ func (m *User) GetOnPremisesSecurityIdentifier()(*string) {
     }
     return nil
 }
+// GetOnPremisesSipInfo gets the onPremisesSipInfo property value. The onPremisesSipInfo property
+func (m *User) GetOnPremisesSipInfo()(OnPremisesSipInfoable) {
+    val, err := m.GetBackingStore().Get("onPremisesSipInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(OnPremisesSipInfoable)
+    }
+    return nil
+}
 // GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
 func (m *User) GetOnPremisesSyncEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("onPremisesSyncEnabled")
@@ -3754,6 +3796,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteObjectValue("cloudRealtimeCommunicationInfo", m.GetCloudRealtimeCommunicationInfo())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("companyName", m.GetCompanyName())
         if err != nil {
             return err
@@ -4378,6 +4426,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteObjectValue("onPremisesSipInfo", m.GetOnPremisesSipInfo())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("onPremisesSyncEnabled", m.GetOnPremisesSyncEnabled())
         if err != nil {
             return err
@@ -4924,6 +4978,13 @@ func (m *User) SetCloudPCs(value []CloudPCable)() {
         panic(err)
     }
 }
+// SetCloudRealtimeCommunicationInfo sets the cloudRealtimeCommunicationInfo property value. The cloudRealtimeCommunicationInfo property
+func (m *User) SetCloudRealtimeCommunicationInfo(value CloudRealtimeCommunicationInfoable)() {
+    err := m.GetBackingStore().Set("cloudRealtimeCommunicationInfo", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCompanyName sets the companyName property value. The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetCompanyName(value *string)() {
     err := m.GetBackingStore().Set("companyName", value)
@@ -5456,6 +5517,13 @@ func (m *User) SetOnPremisesSecurityIdentifier(value *string)() {
         panic(err)
     }
 }
+// SetOnPremisesSipInfo sets the onPremisesSipInfo property value. The onPremisesSipInfo property
+func (m *User) SetOnPremisesSipInfo(value OnPremisesSipInfoable)() {
+    err := m.GetBackingStore().Set("onPremisesSipInfo", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
 func (m *User) SetOnPremisesSyncEnabled(value *bool)() {
     err := m.GetBackingStore().Set("onPremisesSyncEnabled", value)
@@ -5826,6 +5894,7 @@ type Userable interface {
     GetChats()([]Chatable)
     GetCity()(*string)
     GetCloudPCs()([]CloudPCable)
+    GetCloudRealtimeCommunicationInfo()(CloudRealtimeCommunicationInfoable)
     GetCompanyName()(*string)
     GetConsentProvidedForMinor()(*string)
     GetContactFolders()([]ContactFolderable)
@@ -5902,6 +5971,7 @@ type Userable interface {
     GetOnPremisesProvisioningErrors()([]OnPremisesProvisioningErrorable)
     GetOnPremisesSamAccountName()(*string)
     GetOnPremisesSecurityIdentifier()(*string)
+    GetOnPremisesSipInfo()(OnPremisesSipInfoable)
     GetOnPremisesSyncEnabled()(*bool)
     GetOnPremisesUserPrincipalName()(*string)
     GetOtherMails()([]string)
@@ -5974,6 +6044,7 @@ type Userable interface {
     SetChats(value []Chatable)()
     SetCity(value *string)()
     SetCloudPCs(value []CloudPCable)()
+    SetCloudRealtimeCommunicationInfo(value CloudRealtimeCommunicationInfoable)()
     SetCompanyName(value *string)()
     SetConsentProvidedForMinor(value *string)()
     SetContactFolders(value []ContactFolderable)()
@@ -6050,6 +6121,7 @@ type Userable interface {
     SetOnPremisesProvisioningErrors(value []OnPremisesProvisioningErrorable)()
     SetOnPremisesSamAccountName(value *string)()
     SetOnPremisesSecurityIdentifier(value *string)()
+    SetOnPremisesSipInfo(value OnPremisesSipInfoable)()
     SetOnPremisesSyncEnabled(value *bool)()
     SetOnPremisesUserPrincipalName(value *string)()
     SetOtherMails(value []string)()

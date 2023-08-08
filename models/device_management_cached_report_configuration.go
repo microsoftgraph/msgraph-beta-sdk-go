@@ -212,19 +212,7 @@ func (m *DeviceManagementCachedReportConfiguration) Serialize(writer i878a80d233
         return err
     }
     {
-        err = writer.WriteTimeValue("expirationDateTime", m.GetExpirationDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("filter", m.GetFilter())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("lastRefreshDateTime", m.GetLastRefreshDateTime())
         if err != nil {
             return err
         }
@@ -237,12 +225,6 @@ func (m *DeviceManagementCachedReportConfiguration) Serialize(writer i878a80d233
     }
     if m.GetOrderBy() != nil {
         err = writer.WriteCollectionOfStringValues("orderBy", m.GetOrderBy())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("reportName", m.GetReportName())
         if err != nil {
             return err
         }

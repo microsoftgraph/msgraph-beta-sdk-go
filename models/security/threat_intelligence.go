@@ -309,7 +309,7 @@ func (m *ThreatIntelligence) GetHostCookies()([]HostCookieable) {
     }
     return nil
 }
-// GetHostPairs gets the hostPairs property value. The hostPairs property
+// GetHostPairs gets the hostPairs property value. Retrieve details about microsoft.graph.security.hostTracker objects.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) GetHostPairs()([]HostPairable) {
     val, err := m.GetBackingStore().Get("hostPairs")
     if err != nil {
@@ -646,7 +646,7 @@ func (m *ThreatIntelligence) SetHostCookies(value []HostCookieable)() {
         panic(err)
     }
 }
-// SetHostPairs sets the hostPairs property value. The hostPairs property
+// SetHostPairs sets the hostPairs property value. Retrieve details about microsoft.graph.security.hostTracker objects.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) SetHostPairs(value []HostPairable)() {
     err := m.GetBackingStore().Set("hostPairs", value)
     if err != nil {

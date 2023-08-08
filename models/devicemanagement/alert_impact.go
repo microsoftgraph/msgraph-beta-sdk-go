@@ -2,6 +2,7 @@ package devicemanagement
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
@@ -45,6 +46,17 @@ func (m *AlertImpact) GetAggregationType()(*AggregationType) {
     }
     return nil
 }
+// GetAlertImpactDetails gets the alertImpactDetails property value. The detail information of the impact. For example, if the Frontline Cloud PCs near concurrency limit alert is triggered, the details contain the impacted Frontline license SKU name, such as Windows 365 Frontline 2 vCPU/8GB/128GB, and the corresponding impacted value.
+func (m *AlertImpact) GetAlertImpactDetails()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyValuePairable) {
+    val, err := m.GetBackingStore().Get("alertImpactDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyValuePairable)
+    }
+    return nil
+}
 // GetBackingStore gets the backingStore property value. Stores model information.
 func (m *AlertImpact) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
@@ -59,6 +71,22 @@ func (m *AlertImpact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         if val != nil {
             m.SetAggregationType(val.(*AggregationType))
+        }
+        return nil
+    }
+    res["alertImpactDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateKeyValuePairFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyValuePairable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyValuePairable)
+                }
+            }
+            m.SetAlertImpactDetails(res)
         }
         return nil
     }
@@ -115,6 +143,18 @@ func (m *AlertImpact) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    if m.GetAlertImpactDetails() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAlertImpactDetails()))
+        for i, v := range m.GetAlertImpactDetails() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("alertImpactDetails", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
@@ -149,6 +189,13 @@ func (m *AlertImpact) SetAggregationType(value *AggregationType)() {
         panic(err)
     }
 }
+// SetAlertImpactDetails sets the alertImpactDetails property value. The detail information of the impact. For example, if the Frontline Cloud PCs near concurrency limit alert is triggered, the details contain the impacted Frontline license SKU name, such as Windows 365 Frontline 2 vCPU/8GB/128GB, and the corresponding impacted value.
+func (m *AlertImpact) SetAlertImpactDetails(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyValuePairable)() {
+    err := m.GetBackingStore().Set("alertImpactDetails", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetBackingStore sets the backingStore property value. Stores model information.
 func (m *AlertImpact) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
@@ -173,10 +220,12 @@ type AlertImpactable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAggregationType()(*AggregationType)
+    GetAlertImpactDetails()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyValuePairable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetValue()(*int32)
     SetAggregationType(value *AggregationType)()
+    SetAlertImpactDetails(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyValuePairable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetValue(value *int32)()

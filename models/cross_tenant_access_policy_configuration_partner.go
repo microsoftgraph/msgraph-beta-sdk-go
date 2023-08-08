@@ -166,6 +166,16 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetFieldDeserializers()(ma
         }
         return nil
     }
+    res["isInMultiTenantOrganization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsInMultiTenantOrganization(val)
+        }
+        return nil
+    }
     res["isServiceProvider"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -227,6 +237,17 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetInboundTrust()(CrossTen
     }
     if val != nil {
         return val.(CrossTenantAccessPolicyInboundTrustable)
+    }
+    return nil
+}
+// GetIsInMultiTenantOrganization gets the isInMultiTenantOrganization property value. The isInMultiTenantOrganization property
+func (m *CrossTenantAccessPolicyConfigurationPartner) GetIsInMultiTenantOrganization()(*bool) {
+    val, err := m.GetBackingStore().Get("isInMultiTenantOrganization")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
     }
     return nil
 }
@@ -314,6 +335,12 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) Serialize(writer i878a80d2
     }
     {
         err := writer.WriteObjectValue("inboundTrust", m.GetInboundTrust())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("isInMultiTenantOrganization", m.GetIsInMultiTenantOrganization())
         if err != nil {
             return err
         }
@@ -410,6 +437,13 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) SetInboundTrust(value Cros
         panic(err)
     }
 }
+// SetIsInMultiTenantOrganization sets the isInMultiTenantOrganization property value. The isInMultiTenantOrganization property
+func (m *CrossTenantAccessPolicyConfigurationPartner) SetIsInMultiTenantOrganization(value *bool)() {
+    err := m.GetBackingStore().Set("isInMultiTenantOrganization", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsServiceProvider sets the isServiceProvider property value. Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetIsServiceProvider(value *bool)() {
     err := m.GetBackingStore().Set("isServiceProvider", value)
@@ -451,6 +485,7 @@ type CrossTenantAccessPolicyConfigurationPartnerable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetIdentitySynchronization()(CrossTenantIdentitySyncPolicyPartnerable)
     GetInboundTrust()(CrossTenantAccessPolicyInboundTrustable)
+    GetIsInMultiTenantOrganization()(*bool)
     GetIsServiceProvider()(*bool)
     GetOdataType()(*string)
     GetTenantId()(*string)
@@ -463,6 +498,7 @@ type CrossTenantAccessPolicyConfigurationPartnerable interface {
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetIdentitySynchronization(value CrossTenantIdentitySyncPolicyPartnerable)()
     SetInboundTrust(value CrossTenantAccessPolicyInboundTrustable)()
+    SetIsInMultiTenantOrganization(value *bool)()
     SetIsServiceProvider(value *bool)()
     SetOdataType(value *string)()
     SetTenantId(value *string)()

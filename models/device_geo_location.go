@@ -93,16 +93,6 @@ func (m *DeviceGeoLocation) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
-    res["lastCollectedDateTimeUtc"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastCollectedDateTimeUtc(val)
-        }
-        return nil
-    }
     res["latitude"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
@@ -180,17 +170,6 @@ func (m *DeviceGeoLocation) GetHorizontalAccuracy()(*float64) {
 // GetLastCollectedDateTime gets the lastCollectedDateTime property value. Time at which location was recorded, relative to UTC
 func (m *DeviceGeoLocation) GetLastCollectedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastCollectedDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
-}
-// GetLastCollectedDateTimeUtc gets the lastCollectedDateTimeUtc property value. Time at which location was recorded, relative to UTC
-func (m *DeviceGeoLocation) GetLastCollectedDateTimeUtc()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("lastCollectedDateTimeUtc")
     if err != nil {
         panic(err)
     }
@@ -281,12 +260,6 @@ func (m *DeviceGeoLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
-        err := writer.WriteTimeValue("lastCollectedDateTimeUtc", m.GetLastCollectedDateTimeUtc())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err := writer.WriteFloat64Value("latitude", m.GetLatitude())
         if err != nil {
             return err
@@ -363,13 +336,6 @@ func (m *DeviceGeoLocation) SetLastCollectedDateTime(value *i336074805fc853987ab
         panic(err)
     }
 }
-// SetLastCollectedDateTimeUtc sets the lastCollectedDateTimeUtc property value. Time at which location was recorded, relative to UTC
-func (m *DeviceGeoLocation) SetLastCollectedDateTimeUtc(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("lastCollectedDateTimeUtc", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetLatitude sets the latitude property value. Latitude coordinate of the device's location
 func (m *DeviceGeoLocation) SetLatitude(value *float64)() {
     err := m.GetBackingStore().Set("latitude", value)
@@ -415,7 +381,6 @@ type DeviceGeoLocationable interface {
     GetHeading()(*float64)
     GetHorizontalAccuracy()(*float64)
     GetLastCollectedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetLastCollectedDateTimeUtc()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLatitude()(*float64)
     GetLongitude()(*float64)
     GetOdataType()(*string)
@@ -426,7 +391,6 @@ type DeviceGeoLocationable interface {
     SetHeading(value *float64)()
     SetHorizontalAccuracy(value *float64)()
     SetLastCollectedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetLastCollectedDateTimeUtc(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLatitude(value *float64)()
     SetLongitude(value *float64)()
     SetOdataType(value *string)()
