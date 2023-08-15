@@ -41,7 +41,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetConflictDeviceCount()(*in
     }
     return nil
 }
-// GetDeviceComplianceSettingStates gets the deviceComplianceSettingStates property value. Not yet documented
+// GetDeviceComplianceSettingStates gets the deviceComplianceSettingStates property value. The deviceComplianceSettingStates property
 func (m *DeviceCompliancePolicySettingStateSummary) GetDeviceComplianceSettingStates()([]DeviceComplianceSettingStateable) {
     val, err := m.GetBackingStore().Get("deviceComplianceSettingStates")
     if err != nil {
@@ -356,7 +356,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) SetConflictDeviceCount(value
         panic(err)
     }
 }
-// SetDeviceComplianceSettingStates sets the deviceComplianceSettingStates property value. Not yet documented
+// SetDeviceComplianceSettingStates sets the deviceComplianceSettingStates property value. The deviceComplianceSettingStates property
 func (m *DeviceCompliancePolicySettingStateSummary) SetDeviceComplianceSettingStates(value []DeviceComplianceSettingStateable)() {
     err := m.GetBackingStore().Set("deviceComplianceSettingStates", value)
     if err != nil {

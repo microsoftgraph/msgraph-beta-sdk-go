@@ -38,7 +38,7 @@ func (m *MacOSIncludedApp) GetAdditionalData()(map[string]any) {
 func (m *MacOSIncludedApp) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBundleId gets the bundleId property value. The CFBundleIdentifier.
+// GetBundleId gets the bundleId property value. The bundleId of the app. This maps to the CFBundleIdentifier in the app's bundle configuration.
 func (m *MacOSIncludedApp) GetBundleId()(*string) {
     val, err := m.GetBackingStore().Get("bundleId")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *MacOSIncludedApp) GetBundleId()(*string) {
     }
     return nil
 }
-// GetBundleVersion gets the bundleVersion property value. The CFBundleVersion.
+// GetBundleVersion gets the bundleVersion property value. The version of the app. This maps to the CFBundleShortVersion in the app's bundle configuration.
 func (m *MacOSIncludedApp) GetBundleVersion()(*string) {
     val, err := m.GetBackingStore().Get("bundleVersion")
     if err != nil {
@@ -145,14 +145,14 @@ func (m *MacOSIncludedApp) SetAdditionalData(value map[string]any)() {
 func (m *MacOSIncludedApp) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBundleId sets the bundleId property value. The CFBundleIdentifier.
+// SetBundleId sets the bundleId property value. The bundleId of the app. This maps to the CFBundleIdentifier in the app's bundle configuration.
 func (m *MacOSIncludedApp) SetBundleId(value *string)() {
     err := m.GetBackingStore().Set("bundleId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBundleVersion sets the bundleVersion property value. The CFBundleVersion.
+// SetBundleVersion sets the bundleVersion property value. The version of the app. This maps to the CFBundleShortVersion in the app's bundle configuration.
 func (m *MacOSIncludedApp) SetBundleVersion(value *string)() {
     err := m.GetBackingStore().Set("bundleVersion", value)
     if err != nil {

@@ -86,6 +86,10 @@ func (m *TenantRelationshipsRequestBuilder) Get(ctx context.Context, requestConf
 func (m *TenantRelationshipsRequestBuilder) ManagedTenants()(*ManagedTenantsRequestBuilder) {
     return NewManagedTenantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// MultiTenantOrganization provides operations to manage the multiTenantOrganization property of the microsoft.graph.tenantRelationship entity.
+func (m *TenantRelationshipsRequestBuilder) MultiTenantOrganization()(*MultiTenantOrganizationRequestBuilder) {
+    return NewMultiTenantOrganizationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update tenantRelationships
 func (m *TenantRelationshipsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantRelationshipable, requestConfiguration *TenantRelationshipsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantRelationshipable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

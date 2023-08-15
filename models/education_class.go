@@ -457,7 +457,7 @@ func (m *EducationClass) GetMembers()([]EducationUserable) {
     }
     return nil
 }
-// GetModules gets the modules property value. The modules property
+// GetModules gets the modules property value. All modules in the class. Nullable.
 func (m *EducationClass) GetModules()([]EducationModuleable) {
     val, err := m.GetBackingStore().Get("modules")
     if err != nil {
@@ -791,7 +791,7 @@ func (m *EducationClass) SetMembers(value []EducationUserable)() {
         panic(err)
     }
 }
-// SetModules sets the modules property value. The modules property
+// SetModules sets the modules property value. All modules in the class. Nullable.
 func (m *EducationClass) SetModules(value []EducationModuleable)() {
     err := m.GetBackingStore().Set("modules", value)
     if err != nil {

@@ -34,10 +34,12 @@ const (
     UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
     // Template Family for device configuration scripts
     DEVICECONFIGURATIONSCRIPTS_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+    // Template Family for device configuration policies
+    DEVICECONFIGURATIONPOLICIES_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
 )
 
 func (i DeviceManagementConfigurationTemplateFamily) String() string {
-    return []string{"none", "endpointSecurityAntivirus", "endpointSecurityDiskEncryption", "endpointSecurityFirewall", "endpointSecurityEndpointDetectionAndResponse", "endpointSecurityAttackSurfaceReduction", "endpointSecurityAccountProtection", "endpointSecurityApplicationControl", "endpointSecurityEndpointPrivilegeManagement", "enrollmentConfiguration", "appQuietTime", "baseline", "unknownFutureValue", "deviceConfigurationScripts"}[i]
+    return []string{"none", "endpointSecurityAntivirus", "endpointSecurityDiskEncryption", "endpointSecurityFirewall", "endpointSecurityEndpointDetectionAndResponse", "endpointSecurityAttackSurfaceReduction", "endpointSecurityAccountProtection", "endpointSecurityApplicationControl", "endpointSecurityEndpointPrivilegeManagement", "enrollmentConfiguration", "appQuietTime", "baseline", "unknownFutureValue", "deviceConfigurationScripts", "deviceConfigurationPolicies"}[i]
 }
 func ParseDeviceManagementConfigurationTemplateFamily(v string) (any, error) {
     result := NONE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
@@ -70,6 +72,8 @@ func ParseDeviceManagementConfigurationTemplateFamily(v string) (any, error) {
             result = UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
         case "deviceConfigurationScripts":
             result = DEVICECONFIGURATIONSCRIPTS_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+        case "deviceConfigurationPolicies":
+            result = DEVICECONFIGURATIONPOLICIES_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
         default:
             return 0, errors.New("Unknown DeviceManagementConfigurationTemplateFamily value: " + v)
     }

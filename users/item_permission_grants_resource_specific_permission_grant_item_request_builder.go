@@ -18,7 +18,7 @@ type ItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters get permissionGrants from users
+// ItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters list all resource-specific permission grants of a user.
 type ItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -78,7 +78,7 @@ func (m *ItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) 
     }
     return nil
 }
-// Get get permissionGrants from users
+// Get list all resource-specific permission grants of a user.
 func (m *ItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -140,7 +140,7 @@ func (m *ItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get permissionGrants from users
+// ToGetRequestInformation list all resource-specific permission grants of a user.
 func (m *ItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

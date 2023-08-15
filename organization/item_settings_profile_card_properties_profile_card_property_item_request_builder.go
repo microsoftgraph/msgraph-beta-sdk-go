@@ -18,7 +18,7 @@ type ItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilderDelet
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a profileCardProperty entity, which contains the profile card customizations that exist in your Microsoft 365 organization for a given field. The profileCardProperty is identified by its directoryPropertyName property.
+// ItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilderGetQueryParameters get profileCardProperties from organization
 type ItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *ItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilder)
     }
     return nil
 }
-// Get retrieve the properties and relationships of a profileCardProperty entity, which contains the profile card customizations that exist in your Microsoft 365 organization for a given field. The profileCardProperty is identified by its directoryPropertyName property.
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/profilecardproperty-get?view=graph-rest-1.0
+// Get get profileCardProperties from organization
 func (m *ItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfileCardPropertyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -123,7 +120,7 @@ func (m *ItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilder)
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a profileCardProperty entity, which contains the profile card customizations that exist in your Microsoft 365 organization for a given field. The profileCardProperty is identified by its directoryPropertyName property.
+// ToGetRequestInformation get profileCardProperties from organization
 func (m *ItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

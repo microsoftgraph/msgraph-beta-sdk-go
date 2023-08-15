@@ -32,6 +32,17 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAccountsBlockModificat
     }
     return nil
 }
+// GetAndroidDeviceOwnerDelegatedScopeAppSettings gets the androidDeviceOwnerDelegatedScopeAppSettings property value. Specifies the list of managed apps with app details and its associated delegated scope(s). This collection can contain a maximum of 500 elements.
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAndroidDeviceOwnerDelegatedScopeAppSettings()([]AndroidDeviceOwnerDelegatedScopeAppSettingable) {
+    val, err := m.GetBackingStore().Get("androidDeviceOwnerDelegatedScopeAppSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidDeviceOwnerDelegatedScopeAppSettingable)
+    }
+    return nil
+}
 // GetAppsAllowInstallFromUnknownSources gets the appsAllowInstallFromUnknownSources property value. Indicates whether or not the user is allowed to enable to unknown sources setting.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAppsAllowInstallFromUnknownSources()(*bool) {
     val, err := m.GetBackingStore().Get("appsAllowInstallFromUnknownSources")
@@ -262,6 +273,22 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         }
         if val != nil {
             m.SetAccountsBlockModification(val)
+        }
+        return nil
+    }
+    res["androidDeviceOwnerDelegatedScopeAppSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAndroidDeviceOwnerDelegatedScopeAppSettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AndroidDeviceOwnerDelegatedScopeAppSettingable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AndroidDeviceOwnerDelegatedScopeAppSettingable)
+                }
+            }
+            m.SetAndroidDeviceOwnerDelegatedScopeAppSettings(res)
         }
         return nil
     }
@@ -2954,6 +2981,18 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
             return err
         }
     }
+    if m.GetAndroidDeviceOwnerDelegatedScopeAppSettings() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAndroidDeviceOwnerDelegatedScopeAppSettings()))
+        for i, v := range m.GetAndroidDeviceOwnerDelegatedScopeAppSettings() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("androidDeviceOwnerDelegatedScopeAppSettings", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("appsAllowInstallFromUnknownSources", m.GetAppsAllowInstallFromUnknownSources())
         if err != nil {
@@ -3826,6 +3865,13 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
 // SetAccountsBlockModification sets the accountsBlockModification property value. Indicates whether or not adding or removing accounts is disabled.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetAccountsBlockModification(value *bool)() {
     err := m.GetBackingStore().Set("accountsBlockModification", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAndroidDeviceOwnerDelegatedScopeAppSettings sets the androidDeviceOwnerDelegatedScopeAppSettings property value. Specifies the list of managed apps with app details and its associated delegated scope(s). This collection can contain a maximum of 500 elements.
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetAndroidDeviceOwnerDelegatedScopeAppSettings(value []AndroidDeviceOwnerDelegatedScopeAppSettingable)() {
+    err := m.GetBackingStore().Set("androidDeviceOwnerDelegatedScopeAppSettings", value)
     if err != nil {
         panic(err)
     }
@@ -4780,6 +4826,7 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAccountsBlockModification()(*bool)
+    GetAndroidDeviceOwnerDelegatedScopeAppSettings()([]AndroidDeviceOwnerDelegatedScopeAppSettingable)
     GetAppsAllowInstallFromUnknownSources()(*bool)
     GetAppsAutoUpdatePolicy()(*AndroidDeviceOwnerAppAutoUpdatePolicyType)
     GetAppsDefaultPermissionPolicy()(*AndroidDeviceOwnerDefaultAppPermissionPolicyType)
@@ -4916,6 +4963,7 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     GetWorkProfilePasswordRequireUnlock()(*AndroidDeviceOwnerRequiredPasswordUnlock)
     GetWorkProfilePasswordSignInFailureCountBeforeFactoryReset()(*int32)
     SetAccountsBlockModification(value *bool)()
+    SetAndroidDeviceOwnerDelegatedScopeAppSettings(value []AndroidDeviceOwnerDelegatedScopeAppSettingable)()
     SetAppsAllowInstallFromUnknownSources(value *bool)()
     SetAppsAutoUpdatePolicy(value *AndroidDeviceOwnerAppAutoUpdatePolicyType)()
     SetAppsDefaultPermissionPolicy(value *AndroidDeviceOwnerDefaultAppPermissionPolicyType)()

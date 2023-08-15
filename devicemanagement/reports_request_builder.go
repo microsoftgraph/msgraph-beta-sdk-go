@@ -117,9 +117,9 @@ func (m *ReportsRequestBuilder) GetAppsInstallSummaryReport()(*ReportsGetAppsIns
 func (m *ReportsRequestBuilder) GetAppStatusOverviewReport()(*ReportsGetAppStatusOverviewReportRequestBuilder) {
     return NewReportsGetAppStatusOverviewReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// GetAutopilotDeploymentStatus provides operations to call the getAutopilotDeploymentStatus method.
-func (m *ReportsRequestBuilder) GetAutopilotDeploymentStatus()(*ReportsGetAutopilotDeploymentStatusRequestBuilder) {
-    return NewReportsGetAutopilotDeploymentStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// GetAutopilotDeploymentDeviceInformation provides operations to call the getAutopilotDeploymentDeviceInformation method.
+func (m *ReportsRequestBuilder) GetAutopilotDeploymentDeviceInformation()(*ReportsGetAutopilotDeploymentDeviceInformationRequestBuilder) {
+    return NewReportsGetAutopilotDeploymentDeviceInformationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetCachedReport provides operations to call the getCachedReport method.
 func (m *ReportsRequestBuilder) GetCachedReport()(*ReportsGetCachedReportRequestBuilder) {

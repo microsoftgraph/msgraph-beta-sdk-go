@@ -20,7 +20,7 @@ func NewUserExperienceAnalyticsBatteryHealthRuntimeDetails()(*UserExperienceAnal
 func CreateUserExperienceAnalyticsBatteryHealthRuntimeDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsBatteryHealthRuntimeDetails(), nil
 }
-// GetActiveDevices gets the activeDevices property value. Number of active devices within the tenant. Valid values -2147483648 to 2147483647
+// GetActiveDevices gets the activeDevices property value. Number of active devices within the tenant. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) GetActiveDevices()(*int32) {
     val, err := m.GetBackingStore().Get("activeDevices")
     if err != nil {
@@ -31,7 +31,7 @@ func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) GetActiveDevices()(
     }
     return nil
 }
-// GetBatteryRuntimeFair gets the batteryRuntimeFair property value. Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values -2147483648 to 2147483647
+// GetBatteryRuntimeFair gets the batteryRuntimeFair property value. Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) GetBatteryRuntimeFair()(*int32) {
     val, err := m.GetBackingStore().Get("batteryRuntimeFair")
     if err != nil {
@@ -42,7 +42,7 @@ func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) GetBatteryRuntimeFa
     }
     return nil
 }
-// GetBatteryRuntimeGood gets the batteryRuntimeGood property value. Number of devices  whose active runtime is greater than 5 hours. Valid values -2147483648 to 2147483647
+// GetBatteryRuntimeGood gets the batteryRuntimeGood property value. Number of devices  whose active runtime is greater than 5 hours. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) GetBatteryRuntimeGood()(*int32) {
     val, err := m.GetBackingStore().Get("batteryRuntimeGood")
     if err != nil {
@@ -53,7 +53,7 @@ func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) GetBatteryRuntimeGo
     }
     return nil
 }
-// GetBatteryRuntimePoor gets the batteryRuntimePoor property value. Number of devices whose active runtime is lesser than 3 hours. Valid values -2147483648 to 2147483647
+// GetBatteryRuntimePoor gets the batteryRuntimePoor property value. Number of devices whose active runtime is lesser than 3 hours. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) GetBatteryRuntimePoor()(*int32) {
     val, err := m.GetBackingStore().Get("batteryRuntimePoor")
     if err != nil {
@@ -168,28 +168,28 @@ func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) Serialize(writer i8
     }
     return nil
 }
-// SetActiveDevices sets the activeDevices property value. Number of active devices within the tenant. Valid values -2147483648 to 2147483647
+// SetActiveDevices sets the activeDevices property value. Number of active devices within the tenant. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) SetActiveDevices(value *int32)() {
     err := m.GetBackingStore().Set("activeDevices", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBatteryRuntimeFair sets the batteryRuntimeFair property value. Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values -2147483648 to 2147483647
+// SetBatteryRuntimeFair sets the batteryRuntimeFair property value. Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) SetBatteryRuntimeFair(value *int32)() {
     err := m.GetBackingStore().Set("batteryRuntimeFair", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBatteryRuntimeGood sets the batteryRuntimeGood property value. Number of devices  whose active runtime is greater than 5 hours. Valid values -2147483648 to 2147483647
+// SetBatteryRuntimeGood sets the batteryRuntimeGood property value. Number of devices  whose active runtime is greater than 5 hours. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) SetBatteryRuntimeGood(value *int32)() {
     err := m.GetBackingStore().Set("batteryRuntimeGood", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBatteryRuntimePoor sets the batteryRuntimePoor property value. Number of devices whose active runtime is lesser than 3 hours. Valid values -2147483648 to 2147483647
+// SetBatteryRuntimePoor sets the batteryRuntimePoor property value. Number of devices whose active runtime is lesser than 3 hours. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) SetBatteryRuntimePoor(value *int32)() {
     err := m.GetBackingStore().Set("batteryRuntimePoor", value)
     if err != nil {

@@ -19,7 +19,7 @@ func NewUserExperienceAnalyticsBatteryHealthModelPerformance()(*UserExperienceAn
 func CreateUserExperienceAnalyticsBatteryHealthModelPerformanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsBatteryHealthModelPerformance(), nil
 }
-// GetActiveDevices gets the activeDevices property value. Number of active devices for that model. Valid values -2147483648 to 2147483647
+// GetActiveDevices gets the activeDevices property value. Number of active devices for that model. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetActiveDevices()(*int32) {
     val, err := m.GetBackingStore().Get("activeDevices")
     if err != nil {
@@ -30,7 +30,7 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetActiveDevices(
     }
     return nil
 }
-// GetAverageBatteryAgeInDays gets the averageBatteryAgeInDays property value. The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values -2147483648 to 2147483647
+// GetAverageBatteryAgeInDays gets the averageBatteryAgeInDays property value. The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetAverageBatteryAgeInDays()(*int32) {
     val, err := m.GetBackingStore().Get("averageBatteryAgeInDays")
     if err != nil {
@@ -41,7 +41,7 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetAverageBattery
     }
     return nil
 }
-// GetAverageEstimatedRuntimeInMinutes gets the averageEstimatedRuntimeInMinutes property value. The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values -2147483648 to 2147483647
+// GetAverageEstimatedRuntimeInMinutes gets the averageEstimatedRuntimeInMinutes property value. The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetAverageEstimatedRuntimeInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("averageEstimatedRuntimeInMinutes")
     if err != nil {
@@ -52,7 +52,7 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetAverageEstimat
     }
     return nil
 }
-// GetAverageMaxCapacityPercentage gets the averageMaxCapacityPercentage property value. The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647
+// GetAverageMaxCapacityPercentage gets the averageMaxCapacityPercentage property value. The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetAverageMaxCapacityPercentage()(*int32) {
     val, err := m.GetBackingStore().Get("averageMaxCapacityPercentage")
     if err != nil {
@@ -116,6 +116,46 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetFieldDeseriali
         }
         return nil
     }
+    res["meanFullBatteryDrainCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMeanFullBatteryDrainCount(val)
+        }
+        return nil
+    }
+    res["medianEstimatedRuntimeInMinutes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMedianEstimatedRuntimeInMinutes(val)
+        }
+        return nil
+    }
+    res["medianFullBatteryDrainCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMedianFullBatteryDrainCount(val)
+        }
+        return nil
+    }
+    res["medianMaxCapacityPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMedianMaxCapacityPercentage(val)
+        }
+        return nil
+    }
     res["model"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -136,6 +176,16 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetFieldDeseriali
         }
         return nil
     }
+    res["modelHealthStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseUserExperienceAnalyticsHealthState)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetModelHealthStatus(val.(*UserExperienceAnalyticsHealthState))
+        }
+        return nil
+    }
     return res
 }
 // GetManufacturer gets the manufacturer property value. Name of the device manufacturer.
@@ -146,6 +196,50 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetManufacturer()
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetMeanFullBatteryDrainCount gets the meanFullBatteryDrainCount property value. The mean of number of times the battery has been discharged an amount that equals 100% of its capacity for all devices of a given model in a tenant. Valid values 0 to 2147483647
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetMeanFullBatteryDrainCount()(*int32) {
+    val, err := m.GetBackingStore().Get("meanFullBatteryDrainCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetMedianEstimatedRuntimeInMinutes gets the medianEstimatedRuntimeInMinutes property value. The median of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values 0 to 2147483647
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetMedianEstimatedRuntimeInMinutes()(*int32) {
+    val, err := m.GetBackingStore().Get("medianEstimatedRuntimeInMinutes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetMedianFullBatteryDrainCount gets the medianFullBatteryDrainCount property value. The median of number of times the battery has been discharged an amount that equals 100% of its capacity for all devices of a given model in a tenant. Valid values 0 to 2147483647
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetMedianFullBatteryDrainCount()(*int32) {
+    val, err := m.GetBackingStore().Get("medianFullBatteryDrainCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetMedianMaxCapacityPercentage gets the medianMaxCapacityPercentage property value. The median of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetMedianMaxCapacityPercentage()(*int32) {
+    val, err := m.GetBackingStore().Get("medianMaxCapacityPercentage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
     }
     return nil
 }
@@ -160,7 +254,7 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetModel()(*strin
     }
     return nil
 }
-// GetModelBatteryHealthScore gets the modelBatteryHealthScore property value. A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
+// GetModelBatteryHealthScore gets the modelBatteryHealthScore property value. A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetModelBatteryHealthScore()(*int32) {
     val, err := m.GetBackingStore().Get("modelBatteryHealthScore")
     if err != nil {
@@ -168,6 +262,17 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetModelBatteryHe
     }
     if val != nil {
         return val.(*int32)
+    }
+    return nil
+}
+// GetModelHealthStatus gets the modelHealthStatus property value. The modelHealthStatus property
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetModelHealthStatus()(*UserExperienceAnalyticsHealthState) {
+    val, err := m.GetBackingStore().Get("modelHealthStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*UserExperienceAnalyticsHealthState)
     }
     return nil
 }
@@ -208,6 +313,30 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) Serialize(writer 
         }
     }
     {
+        err = writer.WriteInt32Value("meanFullBatteryDrainCount", m.GetMeanFullBatteryDrainCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("medianEstimatedRuntimeInMinutes", m.GetMedianEstimatedRuntimeInMinutes())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("medianFullBatteryDrainCount", m.GetMedianFullBatteryDrainCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("medianMaxCapacityPercentage", m.GetMedianMaxCapacityPercentage())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("model", m.GetModel())
         if err != nil {
             return err
@@ -219,30 +348,37 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) Serialize(writer 
             return err
         }
     }
+    if m.GetModelHealthStatus() != nil {
+        cast := (*m.GetModelHealthStatus()).String()
+        err = writer.WriteStringValue("modelHealthStatus", &cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
-// SetActiveDevices sets the activeDevices property value. Number of active devices for that model. Valid values -2147483648 to 2147483647
+// SetActiveDevices sets the activeDevices property value. Number of active devices for that model. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetActiveDevices(value *int32)() {
     err := m.GetBackingStore().Set("activeDevices", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAverageBatteryAgeInDays sets the averageBatteryAgeInDays property value. The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values -2147483648 to 2147483647
+// SetAverageBatteryAgeInDays sets the averageBatteryAgeInDays property value. The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetAverageBatteryAgeInDays(value *int32)() {
     err := m.GetBackingStore().Set("averageBatteryAgeInDays", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAverageEstimatedRuntimeInMinutes sets the averageEstimatedRuntimeInMinutes property value. The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values -2147483648 to 2147483647
+// SetAverageEstimatedRuntimeInMinutes sets the averageEstimatedRuntimeInMinutes property value. The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetAverageEstimatedRuntimeInMinutes(value *int32)() {
     err := m.GetBackingStore().Set("averageEstimatedRuntimeInMinutes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAverageMaxCapacityPercentage sets the averageMaxCapacityPercentage property value. The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647
+// SetAverageMaxCapacityPercentage sets the averageMaxCapacityPercentage property value. The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetAverageMaxCapacityPercentage(value *int32)() {
     err := m.GetBackingStore().Set("averageMaxCapacityPercentage", value)
     if err != nil {
@@ -256,6 +392,34 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetManufacturer(v
         panic(err)
     }
 }
+// SetMeanFullBatteryDrainCount sets the meanFullBatteryDrainCount property value. The mean of number of times the battery has been discharged an amount that equals 100% of its capacity for all devices of a given model in a tenant. Valid values 0 to 2147483647
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetMeanFullBatteryDrainCount(value *int32)() {
+    err := m.GetBackingStore().Set("meanFullBatteryDrainCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMedianEstimatedRuntimeInMinutes sets the medianEstimatedRuntimeInMinutes property value. The median of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values 0 to 2147483647
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetMedianEstimatedRuntimeInMinutes(value *int32)() {
+    err := m.GetBackingStore().Set("medianEstimatedRuntimeInMinutes", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMedianFullBatteryDrainCount sets the medianFullBatteryDrainCount property value. The median of number of times the battery has been discharged an amount that equals 100% of its capacity for all devices of a given model in a tenant. Valid values 0 to 2147483647
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetMedianFullBatteryDrainCount(value *int32)() {
+    err := m.GetBackingStore().Set("medianFullBatteryDrainCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMedianMaxCapacityPercentage sets the medianMaxCapacityPercentage property value. The median of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetMedianMaxCapacityPercentage(value *int32)() {
+    err := m.GetBackingStore().Set("medianMaxCapacityPercentage", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetModel sets the model property value. The model name of the device.
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetModel(value *string)() {
     err := m.GetBackingStore().Set("model", value)
@@ -263,9 +427,16 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetModel(value *s
         panic(err)
     }
 }
-// SetModelBatteryHealthScore sets the modelBatteryHealthScore property value. A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
+// SetModelBatteryHealthScore sets the modelBatteryHealthScore property value. A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetModelBatteryHealthScore(value *int32)() {
     err := m.GetBackingStore().Set("modelBatteryHealthScore", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetModelHealthStatus sets the modelHealthStatus property value. The modelHealthStatus property
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetModelHealthStatus(value *UserExperienceAnalyticsHealthState)() {
+    err := m.GetBackingStore().Set("modelHealthStatus", value)
     if err != nil {
         panic(err)
     }
@@ -279,13 +450,23 @@ type UserExperienceAnalyticsBatteryHealthModelPerformanceable interface {
     GetAverageEstimatedRuntimeInMinutes()(*int32)
     GetAverageMaxCapacityPercentage()(*int32)
     GetManufacturer()(*string)
+    GetMeanFullBatteryDrainCount()(*int32)
+    GetMedianEstimatedRuntimeInMinutes()(*int32)
+    GetMedianFullBatteryDrainCount()(*int32)
+    GetMedianMaxCapacityPercentage()(*int32)
     GetModel()(*string)
     GetModelBatteryHealthScore()(*int32)
+    GetModelHealthStatus()(*UserExperienceAnalyticsHealthState)
     SetActiveDevices(value *int32)()
     SetAverageBatteryAgeInDays(value *int32)()
     SetAverageEstimatedRuntimeInMinutes(value *int32)()
     SetAverageMaxCapacityPercentage(value *int32)()
     SetManufacturer(value *string)()
+    SetMeanFullBatteryDrainCount(value *int32)()
+    SetMedianEstimatedRuntimeInMinutes(value *int32)()
+    SetMedianFullBatteryDrainCount(value *int32)()
+    SetMedianMaxCapacityPercentage(value *int32)()
     SetModel(value *string)()
     SetModelBatteryHealthScore(value *int32)()
+    SetModelHealthStatus(value *UserExperienceAnalyticsHealthState)()
 }

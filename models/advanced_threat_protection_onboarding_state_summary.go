@@ -19,7 +19,7 @@ func NewAdvancedThreatProtectionOnboardingStateSummary()(*AdvancedThreatProtecti
 func CreateAdvancedThreatProtectionOnboardingStateSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAdvancedThreatProtectionOnboardingStateSummary(), nil
 }
-// GetAdvancedThreatProtectionOnboardingDeviceSettingStates gets the advancedThreatProtectionOnboardingDeviceSettingStates property value. Not yet documented
+// GetAdvancedThreatProtectionOnboardingDeviceSettingStates gets the advancedThreatProtectionOnboardingDeviceSettingStates property value. The advancedThreatProtectionOnboardingDeviceSettingStates property
 func (m *AdvancedThreatProtectionOnboardingStateSummary) GetAdvancedThreatProtectionOnboardingDeviceSettingStates()([]AdvancedThreatProtectionOnboardingDeviceSettingStateable) {
     val, err := m.GetBackingStore().Get("advancedThreatProtectionOnboardingDeviceSettingStates")
     if err != nil {
@@ -287,7 +287,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) Serialize(writer i878a8
     }
     return nil
 }
-// SetAdvancedThreatProtectionOnboardingDeviceSettingStates sets the advancedThreatProtectionOnboardingDeviceSettingStates property value. Not yet documented
+// SetAdvancedThreatProtectionOnboardingDeviceSettingStates sets the advancedThreatProtectionOnboardingDeviceSettingStates property value. The advancedThreatProtectionOnboardingDeviceSettingStates property
 func (m *AdvancedThreatProtectionOnboardingStateSummary) SetAdvancedThreatProtectionOnboardingDeviceSettingStates(value []AdvancedThreatProtectionOnboardingDeviceSettingStateable)() {
     err := m.GetBackingStore().Set("advancedThreatProtectionOnboardingDeviceSettingStates", value)
     if err != nil {

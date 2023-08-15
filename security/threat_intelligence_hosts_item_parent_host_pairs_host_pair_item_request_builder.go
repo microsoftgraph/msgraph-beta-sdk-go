@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceHostsItemParentHostPairsHostPairItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceHostsItemParentHostPairsHostPairItemRequestBuilderGetQueryParameters get parentHostPairs from security
+// ThreatIntelligenceHostsItemParentHostPairsHostPairItemRequestBuilderGetQueryParameters the hostPairs that are associated with a host, where that host is the childHost and has an incoming pairing with a parentHost.
 type ThreatIntelligenceHostsItemParentHostPairsHostPairItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewThreatIntelligenceHostsItemParentHostPairsHostPairItemRequestBuilder(raw
     urlParams["request-raw-url"] = rawUrl
     return NewThreatIntelligenceHostsItemParentHostPairsHostPairItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get parentHostPairs from security
+// Get the hostPairs that are associated with a host, where that host is the childHost and has an incoming pairing with a parentHost.
 func (m *ThreatIntelligenceHostsItemParentHostPairsHostPairItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemParentHostPairsHostPairItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostPairable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ThreatIntelligenceHostsItemParentHostPairsHostPairItemRequestBuilder) G
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostPairable), nil
 }
-// ToGetRequestInformation get parentHostPairs from security
+// ToGetRequestInformation the hostPairs that are associated with a host, where that host is the childHost and has an incoming pairing with a parentHost.
 func (m *ThreatIntelligenceHostsItemParentHostPairsHostPairItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemParentHostPairsHostPairItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

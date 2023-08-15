@@ -31,7 +31,10 @@ func NewClassesItemModulesItemPinRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemModulesItemPinRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action pin
+// Post pin an educationModule in the classwork list. This action sets the isPinned property to true for an educationModule. Only teachers can perform this action and only one module at a time can be pinned in the classwork list.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationmodule-pin?view=graph-rest-1.0
 func (m *ClassesItemModulesItemPinRequestBuilder) Post(ctx context.Context, requestConfiguration *ClassesItemModulesItemPinRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationModuleable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *ClassesItemModulesItemPinRequestBuilder) Post(ctx context.Context, requ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationModuleable), nil
 }
-// ToPostRequestInformation invoke action pin
+// ToPostRequestInformation pin an educationModule in the classwork list. This action sets the isPinned property to true for an educationModule. Only teachers can perform this action and only one module at a time can be pinned in the classwork list.
 func (m *ClassesItemModulesItemPinRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ClassesItemModulesItemPinRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

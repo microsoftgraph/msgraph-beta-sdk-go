@@ -18,7 +18,7 @@ type WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderGetQueryParameters read the properties and relationships of a resourceConnection object.
+// WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderGetQueryParameters read the properties and relationships of an operationalInsightsConnection object.
 type WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,10 +73,10 @@ func (m *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) 
     }
     return nil
 }
-// Get read the properties and relationships of a resourceConnection object.
+// Get read the properties and relationships of an operationalInsightsConnection object.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-resourceconnection-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-get?view=graph-rest-1.0
 func (m *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ResourceConnectionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -126,7 +126,7 @@ func (m *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a resourceConnection object.
+// ToGetRequestInformation read the properties and relationships of an operationalInsightsConnection object.
 func (m *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

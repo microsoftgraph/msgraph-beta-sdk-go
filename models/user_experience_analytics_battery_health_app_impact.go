@@ -19,7 +19,7 @@ func NewUserExperienceAnalyticsBatteryHealthAppImpact()(*UserExperienceAnalytics
 func CreateUserExperienceAnalyticsBatteryHealthAppImpactFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsBatteryHealthAppImpact(), nil
 }
-// GetActiveDevices gets the activeDevices property value. Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647
+// GetActiveDevices gets the activeDevices property value. Number of active devices for using that app over a 14-day period. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetActiveDevices()(*int32) {
     val, err := m.GetBackingStore().Get("activeDevices")
     if err != nil {
@@ -63,7 +63,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetAppPublisher()(*strin
     }
     return nil
 }
-// GetBatteryUsagePercentage gets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// GetBatteryUsagePercentage gets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values 0 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetBatteryUsagePercentage()(*float64) {
     val, err := m.GetBackingStore().Get("batteryUsagePercentage")
     if err != nil {
@@ -194,7 +194,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) Serialize(writer i878a80
     }
     return nil
 }
-// SetActiveDevices sets the activeDevices property value. Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647
+// SetActiveDevices sets the activeDevices property value. Number of active devices for using that app over a 14-day period. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) SetActiveDevices(value *int32)() {
     err := m.GetBackingStore().Set("activeDevices", value)
     if err != nil {
@@ -222,7 +222,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) SetAppPublisher(value *s
         panic(err)
     }
 }
-// SetBatteryUsagePercentage sets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// SetBatteryUsagePercentage sets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values 0 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) SetBatteryUsagePercentage(value *float64)() {
     err := m.GetBackingStore().Set("batteryUsagePercentage", value)
     if err != nil {

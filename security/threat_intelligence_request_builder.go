@@ -209,6 +209,10 @@ func (m *ThreatIntelligenceRequestBuilder) ToPatchRequestInformation(ctx context
 func (m *ThreatIntelligenceRequestBuilder) Vulnerabilities()(*ThreatIntelligenceVulnerabilitiesRequestBuilder) {
     return NewThreatIntelligenceVulnerabilitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WhoisHistoryRecords provides operations to manage the whoisHistoryRecords property of the microsoft.graph.security.threatIntelligence entity.
+func (m *ThreatIntelligenceRequestBuilder) WhoisHistoryRecords()(*ThreatIntelligenceWhoisHistoryRecordsRequestBuilder) {
+    return NewThreatIntelligenceWhoisHistoryRecordsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // WhoisRecords provides operations to manage the whoisRecords property of the microsoft.graph.security.threatIntelligence entity.
 func (m *ThreatIntelligenceRequestBuilder) WhoisRecords()(*ThreatIntelligenceWhoisRecordsRequestBuilder) {
     return NewThreatIntelligenceWhoisRecordsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

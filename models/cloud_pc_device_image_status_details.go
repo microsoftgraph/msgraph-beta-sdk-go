@@ -12,10 +12,14 @@ const (
     SOURCEIMAGEINVALID_CLOUDPCDEVICEIMAGESTATUSDETAILS
     SOURCEIMAGENOTGENERALIZED_CLOUDPCDEVICEIMAGESTATUSDETAILS
     UNKNOWNFUTUREVALUE_CLOUDPCDEVICEIMAGESTATUSDETAILS
+    VMALREADYAZUREADJOINED_CLOUDPCDEVICEIMAGESTATUSDETAILS
+    PAIDSOURCEIMAGENOTSUPPORT_CLOUDPCDEVICEIMAGESTATUSDETAILS
+    SOURCEIMAGENOTSUPPORTCUSTOMIZEVMNAME_CLOUDPCDEVICEIMAGESTATUSDETAILS
+    SOURCEIMAGESIZEEXCEEDSLIMITATION_CLOUDPCDEVICEIMAGESTATUSDETAILS
 )
 
 func (i CloudPcDeviceImageStatusDetails) String() string {
-    return []string{"internalServerError", "sourceImageNotFound", "osVersionNotSupported", "sourceImageInvalid", "sourceImageNotGeneralized", "unknownFutureValue"}[i]
+    return []string{"internalServerError", "sourceImageNotFound", "osVersionNotSupported", "sourceImageInvalid", "sourceImageNotGeneralized", "unknownFutureValue", "vmAlreadyAzureAdjoined", "paidSourceImageNotSupport", "sourceImageNotSupportCustomizeVMName", "sourceImageSizeExceedsLimitation"}[i]
 }
 func ParseCloudPcDeviceImageStatusDetails(v string) (any, error) {
     result := INTERNALSERVERERROR_CLOUDPCDEVICEIMAGESTATUSDETAILS
@@ -32,6 +36,14 @@ func ParseCloudPcDeviceImageStatusDetails(v string) (any, error) {
             result = SOURCEIMAGENOTGENERALIZED_CLOUDPCDEVICEIMAGESTATUSDETAILS
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCDEVICEIMAGESTATUSDETAILS
+        case "vmAlreadyAzureAdjoined":
+            result = VMALREADYAZUREADJOINED_CLOUDPCDEVICEIMAGESTATUSDETAILS
+        case "paidSourceImageNotSupport":
+            result = PAIDSOURCEIMAGENOTSUPPORT_CLOUDPCDEVICEIMAGESTATUSDETAILS
+        case "sourceImageNotSupportCustomizeVMName":
+            result = SOURCEIMAGENOTSUPPORTCUSTOMIZEVMNAME_CLOUDPCDEVICEIMAGESTATUSDETAILS
+        case "sourceImageSizeExceedsLimitation":
+            result = SOURCEIMAGESIZEEXCEEDSLIMITATION_CLOUDPCDEVICEIMAGESTATUSDETAILS
         default:
             return 0, errors.New("Unknown CloudPcDeviceImageStatusDetails value: " + v)
     }

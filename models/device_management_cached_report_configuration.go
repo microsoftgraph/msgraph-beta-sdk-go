@@ -20,7 +20,7 @@ func NewDeviceManagementCachedReportConfiguration()(*DeviceManagementCachedRepor
 func CreateDeviceManagementCachedReportConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementCachedReportConfiguration(), nil
 }
-// GetExpirationDateTime gets the expirationDateTime property value. Time that the cached report expires
+// GetExpirationDateTime gets the expirationDateTime property value. Time that the cached report expires. This property is read-only.
 func (m *DeviceManagementCachedReportConfiguration) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -139,7 +139,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetFilter()(*string) {
     }
     return nil
 }
-// GetLastRefreshDateTime gets the lastRefreshDateTime property value. Time that the cached report was last refreshed
+// GetLastRefreshDateTime gets the lastRefreshDateTime property value. Time that the cached report was last refreshed. This property is read-only.
 func (m *DeviceManagementCachedReportConfiguration) GetLastRefreshDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastRefreshDateTime")
     if err != nil {
@@ -172,7 +172,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetOrderBy()([]string) {
     }
     return nil
 }
-// GetReportName gets the reportName property value. Name of the report
+// GetReportName gets the reportName property value. Name of the report. This property is read-only.
 func (m *DeviceManagementCachedReportConfiguration) GetReportName()(*string) {
     val, err := m.GetBackingStore().Get("reportName")
     if err != nil {
@@ -212,19 +212,7 @@ func (m *DeviceManagementCachedReportConfiguration) Serialize(writer i878a80d233
         return err
     }
     {
-        err = writer.WriteTimeValue("expirationDateTime", m.GetExpirationDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("filter", m.GetFilter())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("lastRefreshDateTime", m.GetLastRefreshDateTime())
         if err != nil {
             return err
         }
@@ -237,12 +225,6 @@ func (m *DeviceManagementCachedReportConfiguration) Serialize(writer i878a80d233
     }
     if m.GetOrderBy() != nil {
         err = writer.WriteCollectionOfStringValues("orderBy", m.GetOrderBy())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("reportName", m.GetReportName())
         if err != nil {
             return err
         }
@@ -262,7 +244,7 @@ func (m *DeviceManagementCachedReportConfiguration) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetExpirationDateTime sets the expirationDateTime property value. Time that the cached report expires
+// SetExpirationDateTime sets the expirationDateTime property value. Time that the cached report expires. This property is read-only.
 func (m *DeviceManagementCachedReportConfiguration) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expirationDateTime", value)
     if err != nil {
@@ -276,7 +258,7 @@ func (m *DeviceManagementCachedReportConfiguration) SetFilter(value *string)() {
         panic(err)
     }
 }
-// SetLastRefreshDateTime sets the lastRefreshDateTime property value. Time that the cached report was last refreshed
+// SetLastRefreshDateTime sets the lastRefreshDateTime property value. Time that the cached report was last refreshed. This property is read-only.
 func (m *DeviceManagementCachedReportConfiguration) SetLastRefreshDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastRefreshDateTime", value)
     if err != nil {
@@ -297,7 +279,7 @@ func (m *DeviceManagementCachedReportConfiguration) SetOrderBy(value []string)()
         panic(err)
     }
 }
-// SetReportName sets the reportName property value. Name of the report
+// SetReportName sets the reportName property value. Name of the report. This property is read-only.
 func (m *DeviceManagementCachedReportConfiguration) SetReportName(value *string)() {
     err := m.GetBackingStore().Set("reportName", value)
     if err != nil {

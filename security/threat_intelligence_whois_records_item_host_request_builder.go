@@ -7,7 +7,7 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// ThreatIntelligenceWhoisRecordsItemHostRequestBuilder provides operations to manage the host property of the microsoft.graph.security.whoisRecord entity.
+// ThreatIntelligenceWhoisRecordsItemHostRequestBuilder provides operations to manage the host property of the microsoft.graph.security.whoisBaseRecord entity.
 type ThreatIntelligenceWhoisRecordsItemHostRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }

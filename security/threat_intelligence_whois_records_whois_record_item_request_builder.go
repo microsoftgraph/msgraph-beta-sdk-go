@@ -89,7 +89,11 @@ func (m *ThreatIntelligenceWhoisRecordsWhoisRecordItemRequestBuilder) Get(ctx co
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.WhoisRecordable), nil
 }
-// Host provides operations to manage the host property of the microsoft.graph.security.whoisRecord entity.
+// History provides operations to manage the history property of the microsoft.graph.security.whoisRecord entity.
+func (m *ThreatIntelligenceWhoisRecordsWhoisRecordItemRequestBuilder) History()(*ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilder) {
+    return NewThreatIntelligenceWhoisRecordsItemHistoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Host provides operations to manage the host property of the microsoft.graph.security.whoisBaseRecord entity.
 func (m *ThreatIntelligenceWhoisRecordsWhoisRecordItemRequestBuilder) Host()(*ThreatIntelligenceWhoisRecordsItemHostRequestBuilder) {
     return NewThreatIntelligenceWhoisRecordsItemHostRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

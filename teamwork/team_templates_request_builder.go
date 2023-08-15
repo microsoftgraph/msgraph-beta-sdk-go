@@ -11,7 +11,7 @@ import (
 type TeamTemplatesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TeamTemplatesRequestBuilderGetQueryParameters get the list of teamTemplate objects that are available for a tenant. 
+// TeamTemplatesRequestBuilderGetQueryParameters list the teamTemplateDefinition objects associated with a teamTemplate. 
 type TeamTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,10 @@ func NewTeamTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *TeamTemplatesRequestBuilder) Count()(*TeamTemplatesCountRequestBuilder) {
     return NewTeamTemplatesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of teamTemplate objects that are available for a tenant. 
+// Get list the teamTemplateDefinition objects associated with a teamTemplate. 
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/teamwork-list-teamtemplates?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamtemplate-list-definitions?view=graph-rest-1.0
 func (m *TeamTemplatesRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamTemplatesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +115,7 @@ func (m *TeamTemplatesRequestBuilder) Post(ctx context.Context, body ie233ee762e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateable), nil
 }
-// ToGetRequestInformation get the list of teamTemplate objects that are available for a tenant. 
+// ToGetRequestInformation list the teamTemplateDefinition objects associated with a teamTemplate. 
 func (m *TeamTemplatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

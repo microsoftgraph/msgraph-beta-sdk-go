@@ -256,7 +256,7 @@ func (m *CredentialUserRegistrationsSummary) GetTenantId()(*string) {
     }
     return nil
 }
-// GetTenantLicenseType gets the tenantLicenseType property value. The tenantLicenseType property
+// GetTenantLicenseType gets the tenantLicenseType property value. The license type associated with the tenant; for example, AADFree, AADPremium1, AADPremium2.
 func (m *CredentialUserRegistrationsSummary) GetTenantLicenseType()(*string) {
     val, err := m.GetBackingStore().Get("tenantLicenseType")
     if err != nil {
@@ -428,7 +428,7 @@ func (m *CredentialUserRegistrationsSummary) SetTenantId(value *string)() {
         panic(err)
     }
 }
-// SetTenantLicenseType sets the tenantLicenseType property value. The tenantLicenseType property
+// SetTenantLicenseType sets the tenantLicenseType property value. The license type associated with the tenant; for example, AADFree, AADPremium1, AADPremium2.
 func (m *CredentialUserRegistrationsSummary) SetTenantLicenseType(value *string)() {
     err := m.GetBackingStore().Set("tenantLicenseType", value)
     if err != nil {

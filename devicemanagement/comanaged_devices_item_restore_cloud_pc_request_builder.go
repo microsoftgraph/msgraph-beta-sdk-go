@@ -31,6 +31,7 @@ func NewComanagedDevicesItemRestoreCloudPcRequestBuilder(rawUrl string, requestA
     return NewComanagedDevicesItemRestoreCloudPcRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post restore a Cloud PC device to a previous state with an Intune managed device ID.
+// Deprecated: The restoreCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use restore instead as of 2023-07/restoreCloudPc on 2023-07-17 and will be removed 2023-09-30
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/manageddevice-restorecloudpc?view=graph-rest-1.0
@@ -50,6 +51,7 @@ func (m *ComanagedDevicesItemRestoreCloudPcRequestBuilder) Post(ctx context.Cont
     return nil
 }
 // ToPostRequestInformation restore a Cloud PC device to a previous state with an Intune managed device ID.
+// Deprecated: The restoreCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use restore instead as of 2023-07/restoreCloudPc on 2023-07-17 and will be removed 2023-09-30
 func (m *ComanagedDevicesItemRestoreCloudPcRequestBuilder) ToPostRequestInformation(ctx context.Context, body ComanagedDevicesItemRestoreCloudPcPostRequestBodyable, requestConfiguration *ComanagedDevicesItemRestoreCloudPcRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

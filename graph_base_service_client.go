@@ -4,6 +4,7 @@ import (
     i25911dc319edd61cbac496af7eab5ef20b6069a42515e22ec6a9bc97bf598488 "github.com/microsoft/kiota-serialization-json-go"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i4bcdc892e61ac17e2afc10b5e2b536b29f4fd6c1ad30f4a5a68df47495db3347 "github.com/microsoft/kiota-serialization-form-go"
+    i56887720f41ac882814261620b1c8459c4a992a0207af547c4453dd39fabc426 "github.com/microsoft/kiota-serialization-multipart-go"
     i7294a22093d408fdca300f11b81a887d89c47b764af06c8b803e2323973fdb83 "github.com/microsoft/kiota-serialization-text-go"
     i0281e791d6eedd5b4b6d3c18b07336722b6152b5db6a2e9dc8385e98f565f677 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials"
     i054b68521cee54ec767d07cf7a8a6d50a0d24b6e6fc43b8296c34730fd8ca465 "github.com/microsoftgraph/msgraph-beta-sdk-go/functions"
@@ -50,6 +51,7 @@ import (
     i4b923a0ffb143d5def24980fce5d55c68c9634d5b55c33bb0b3029ac68415dd1 "github.com/microsoftgraph/msgraph-beta-sdk-go/employeeexperience"
     i4cb6edb865a0e38bb1799dcb0c7881b92feed59596c1912cfe5e6142b61f9c91 "github.com/microsoftgraph/msgraph-beta-sdk-go/invitations"
     i531b1efd1768fd272d51921ff5812bdeba5b46e0eeec0e4c818250cb7116aed5 "github.com/microsoftgraph/msgraph-beta-sdk-go/identityproviders"
+    i55ae935853de1792fdb46948985a94b1dba6c75d346e01b97f5bd49309b8959b "github.com/microsoftgraph/msgraph-beta-sdk-go/applicationswithuniquename"
     i56ad7deac03a612015589ab4fade2313d6df08086c7ee8d46177fc8ddc5b0053 "github.com/microsoftgraph/msgraph-beta-sdk-go/messagerecipients"
     i5840582f75a8eb78900edf3bd78566223ffee7aa1dc2f4cdca943ef635f6503e "github.com/microsoftgraph/msgraph-beta-sdk-go/search"
     i5b4eb770497618728398e41e6ed415ad2b92d20f7ad45ba75277a5800d9a2a12 "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryroletemplates"
@@ -69,6 +71,7 @@ import (
     i716e3204a4c47d24737c05f3b4c2ef2462fa5a1df29b57365f338e8f68ee16ef "github.com/microsoftgraph/msgraph-beta-sdk-go/contacts"
     i7282246c788c7b44fcd028d8a1500ce1ffd32f655bee3b580b6a33d9ec10f610 "github.com/microsoftgraph/msgraph-beta-sdk-go/solutions"
     i73583652789c7aab226ac5bae66bc7b5fd924607d28350c4478c2a20524fd624 "github.com/microsoftgraph/msgraph-beta-sdk-go/shares"
+    i74f9164c3d2d3eadced923419244ab3c32717c28ae93424103196d4b781b759e "github.com/microsoftgraph/msgraph-beta-sdk-go/groupswithuniquename"
     i75b6dc07087cda1a9afc465878b0aa56ca3703a3ed530d5a22119b0960d159d3 "github.com/microsoftgraph/msgraph-beta-sdk-go/print"
     i761e9f0dec20dbf36c7fd626d107fb81ef94cafa7369422d2b2af143ffa16184 "github.com/microsoftgraph/msgraph-beta-sdk-go/security"
     i79f2b866e8bec3ee9349dc885ecb3691e94b20459995d83b3dbf9f05341c7a89 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups"
@@ -177,6 +180,10 @@ func (m *GraphBaseServiceClient) Applications()(*ie1b2fd35e4b1f7cbc7bd808e462c96
 func (m *GraphBaseServiceClient) ApplicationsWithAppId(appId *string)(*i1feaf5e7874bc1012d47d3fb9128ea97140f17a0526b7e8dd267bdb120026eae.ApplicationsWithAppIdRequestBuilder) {
     return i1feaf5e7874bc1012d47d3fb9128ea97140f17a0526b7e8dd267bdb120026eae.NewApplicationsWithAppIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, appId)
 }
+// ApplicationsWithUniqueName provides operations to manage the collection of application entities.
+func (m *GraphBaseServiceClient) ApplicationsWithUniqueName(uniqueName *string)(*i55ae935853de1792fdb46948985a94b1dba6c75d346e01b97f5bd49309b8959b.ApplicationsWithUniqueNameRequestBuilder) {
+    return i55ae935853de1792fdb46948985a94b1dba6c75d346e01b97f5bd49309b8959b.NewApplicationsWithUniqueNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, uniqueName)
+}
 // ApplicationTemplates provides operations to manage the collection of applicationTemplate entities.
 func (m *GraphBaseServiceClient) ApplicationTemplates()(*i9fb9a4d9d99571d2cc1de51809c0dfccf1dae8bd81c7eb39e51d1382c2ec81ba.ApplicationTemplatesRequestBuilder) {
     return i9fb9a4d9d99571d2cc1de51809c0dfccf1dae8bd81c7eb39e51d1382c2ec81ba.NewApplicationTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -245,6 +252,7 @@ func NewGraphBaseServiceClient(requestAdapter i2ae4187f7daee263371cb1c977df63981
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RegisterDefaultSerializer(func() i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriterFactory { return i25911dc319edd61cbac496af7eab5ef20b6069a42515e22ec6a9bc97bf598488.NewJsonSerializationWriterFactory() })
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RegisterDefaultSerializer(func() i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriterFactory { return i7294a22093d408fdca300f11b81a887d89c47b764af06c8b803e2323973fdb83.NewTextSerializationWriterFactory() })
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RegisterDefaultSerializer(func() i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriterFactory { return i4bcdc892e61ac17e2afc10b5e2b536b29f4fd6c1ad30f4a5a68df47495db3347.NewFormSerializationWriterFactory() })
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RegisterDefaultSerializer(func() i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriterFactory { return i56887720f41ac882814261620b1c8459c4a992a0207af547c4453dd39fabc426.NewMultipartSerializationWriterFactory() })
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RegisterDefaultDeserializer(func() i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNodeFactory { return i25911dc319edd61cbac496af7eab5ef20b6069a42515e22ec6a9bc97bf598488.NewJsonParseNodeFactory() })
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RegisterDefaultDeserializer(func() i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNodeFactory { return i7294a22093d408fdca300f11b81a887d89c47b764af06c8b803e2323973fdb83.NewTextParseNodeFactory() })
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RegisterDefaultDeserializer(func() i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNodeFactory { return i4bcdc892e61ac17e2afc10b5e2b536b29f4fd6c1ad30f4a5a68df47495db3347.NewFormParseNodeFactory() })
@@ -382,6 +390,10 @@ func (m *GraphBaseServiceClient) GroupLifecyclePolicies()(*i71438b4a3f9d4a17f8c8
 // Groups provides operations to manage the collection of group entities.
 func (m *GraphBaseServiceClient) Groups()(*i79f2b866e8bec3ee9349dc885ecb3691e94b20459995d83b3dbf9f05341c7a89.GroupsRequestBuilder) {
     return i79f2b866e8bec3ee9349dc885ecb3691e94b20459995d83b3dbf9f05341c7a89.NewGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GroupsWithUniqueName provides operations to manage the collection of group entities.
+func (m *GraphBaseServiceClient) GroupsWithUniqueName(uniqueName *string)(*i74f9164c3d2d3eadced923419244ab3c32717c28ae93424103196d4b781b759e.GroupsWithUniqueNameRequestBuilder) {
+    return i74f9164c3d2d3eadced923419244ab3c32717c28ae93424103196d4b781b759e.NewGroupsWithUniqueNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, uniqueName)
 }
 // Identity provides operations to manage the identityContainer singleton.
 func (m *GraphBaseServiceClient) Identity()(*i20702653f98186060bd39b9fe8136743eafc0ddaa43435e527665ac75229a33a.IdentityRequestBuilder) {

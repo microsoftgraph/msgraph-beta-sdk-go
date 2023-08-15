@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsUniversalAppX contains properties and inherited properties for Windows Universal AppX Line Of Business apps.
+// WindowsUniversalAppX contains properties and inherited properties for Windows Universal AppX Line Of Business apps. Inherits from `mobileLobApp`.
 type WindowsUniversalAppX struct {
     MobileLobApp
 }
@@ -32,7 +32,7 @@ func (m *WindowsUniversalAppX) GetApplicableArchitectures()(*WindowsArchitecture
     }
     return nil
 }
-// GetApplicableDeviceTypes gets the applicableDeviceTypes property value. Contains properties for Windows device type.
+// GetApplicableDeviceTypes gets the applicableDeviceTypes property value. Contains properties for Windows device type. Multiple values can be selected. Default value is `none`.
 func (m *WindowsUniversalAppX) GetApplicableDeviceTypes()(*WindowsDeviceType) {
     val, err := m.GetBackingStore().Get("applicableDeviceTypes")
     if err != nil {
@@ -155,7 +155,7 @@ func (m *WindowsUniversalAppX) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetIdentityName gets the identityName property value. The Identity Name.
+// GetIdentityName gets the identityName property value. The Identity Name of the app, parsed from the appx file when it is uploaded through the Intune MEM console. For example: 'Contoso.DemoApp'.
 func (m *WindowsUniversalAppX) GetIdentityName()(*string) {
     val, err := m.GetBackingStore().Get("identityName")
     if err != nil {
@@ -166,7 +166,7 @@ func (m *WindowsUniversalAppX) GetIdentityName()(*string) {
     }
     return nil
 }
-// GetIdentityPublisherHash gets the identityPublisherHash property value. The Identity Publisher Hash.
+// GetIdentityPublisherHash gets the identityPublisherHash property value. The Identity Publisher Hash of the app, parsed from the appx file when it is uploaded through the Intune MEM console. For example: 'AB82CD0XYZ'.
 func (m *WindowsUniversalAppX) GetIdentityPublisherHash()(*string) {
     val, err := m.GetBackingStore().Get("identityPublisherHash")
     if err != nil {
@@ -177,7 +177,7 @@ func (m *WindowsUniversalAppX) GetIdentityPublisherHash()(*string) {
     }
     return nil
 }
-// GetIdentityResourceIdentifier gets the identityResourceIdentifier property value. The Identity Resource Identifier.
+// GetIdentityResourceIdentifier gets the identityResourceIdentifier property value. The Identity Resource Identifier of the app, parsed from the appx file when it is uploaded through the Intune MEM console. For example: 'TestResourceId'.
 func (m *WindowsUniversalAppX) GetIdentityResourceIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("identityResourceIdentifier")
     if err != nil {
@@ -188,7 +188,7 @@ func (m *WindowsUniversalAppX) GetIdentityResourceIdentifier()(*string) {
     }
     return nil
 }
-// GetIdentityVersion gets the identityVersion property value. The identity version.
+// GetIdentityVersion gets the identityVersion property value. The Identity Version of the app, parsed from the appx file when it is uploaded through the Intune MEM console.  For example: '1.0.0.0'.
 func (m *WindowsUniversalAppX) GetIdentityVersion()(*string) {
     val, err := m.GetBackingStore().Get("identityVersion")
     if err != nil {
@@ -199,7 +199,7 @@ func (m *WindowsUniversalAppX) GetIdentityVersion()(*string) {
     }
     return nil
 }
-// GetIsBundle gets the isBundle property value. Whether or not the app is a bundle.
+// GetIsBundle gets the isBundle property value. Whether or not the app is a bundle. If TRUE, app is a bundle; if FALSE, app is not a bundle.
 func (m *WindowsUniversalAppX) GetIsBundle()(*bool) {
     val, err := m.GetBackingStore().Get("isBundle")
     if err != nil {
@@ -298,7 +298,7 @@ func (m *WindowsUniversalAppX) SetApplicableArchitectures(value *WindowsArchitec
         panic(err)
     }
 }
-// SetApplicableDeviceTypes sets the applicableDeviceTypes property value. Contains properties for Windows device type.
+// SetApplicableDeviceTypes sets the applicableDeviceTypes property value. Contains properties for Windows device type. Multiple values can be selected. Default value is `none`.
 func (m *WindowsUniversalAppX) SetApplicableDeviceTypes(value *WindowsDeviceType)() {
     err := m.GetBackingStore().Set("applicableDeviceTypes", value)
     if err != nil {
@@ -312,35 +312,35 @@ func (m *WindowsUniversalAppX) SetCommittedContainedApps(value []MobileContained
         panic(err)
     }
 }
-// SetIdentityName sets the identityName property value. The Identity Name.
+// SetIdentityName sets the identityName property value. The Identity Name of the app, parsed from the appx file when it is uploaded through the Intune MEM console. For example: 'Contoso.DemoApp'.
 func (m *WindowsUniversalAppX) SetIdentityName(value *string)() {
     err := m.GetBackingStore().Set("identityName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIdentityPublisherHash sets the identityPublisherHash property value. The Identity Publisher Hash.
+// SetIdentityPublisherHash sets the identityPublisherHash property value. The Identity Publisher Hash of the app, parsed from the appx file when it is uploaded through the Intune MEM console. For example: 'AB82CD0XYZ'.
 func (m *WindowsUniversalAppX) SetIdentityPublisherHash(value *string)() {
     err := m.GetBackingStore().Set("identityPublisherHash", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIdentityResourceIdentifier sets the identityResourceIdentifier property value. The Identity Resource Identifier.
+// SetIdentityResourceIdentifier sets the identityResourceIdentifier property value. The Identity Resource Identifier of the app, parsed from the appx file when it is uploaded through the Intune MEM console. For example: 'TestResourceId'.
 func (m *WindowsUniversalAppX) SetIdentityResourceIdentifier(value *string)() {
     err := m.GetBackingStore().Set("identityResourceIdentifier", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIdentityVersion sets the identityVersion property value. The identity version.
+// SetIdentityVersion sets the identityVersion property value. The Identity Version of the app, parsed from the appx file when it is uploaded through the Intune MEM console.  For example: '1.0.0.0'.
 func (m *WindowsUniversalAppX) SetIdentityVersion(value *string)() {
     err := m.GetBackingStore().Set("identityVersion", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsBundle sets the isBundle property value. Whether or not the app is a bundle.
+// SetIsBundle sets the isBundle property value. Whether or not the app is a bundle. If TRUE, app is a bundle; if FALSE, app is not a bundle.
 func (m *WindowsUniversalAppX) SetIsBundle(value *bool)() {
     err := m.GetBackingStore().Set("isBundle", value)
     if err != nil {
