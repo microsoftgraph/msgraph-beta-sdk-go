@@ -32,6 +32,17 @@ func (m *BranchSite) GetBandwidthCapacity()(*int64) {
     }
     return nil
 }
+// GetConnectivityConfiguration gets the connectivityConfiguration property value. The connectivityConfiguration property
+func (m *BranchSite) GetConnectivityConfiguration()(BranchConnectivityConfigurationable) {
+    val, err := m.GetBackingStore().Get("connectivityConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(BranchConnectivityConfigurationable)
+    }
+    return nil
+}
 // GetConnectivityState gets the connectivityState property value. Determines the branch site status. The possible values are: pending, connected, inactive, error.
 func (m *BranchSite) GetConnectivityState()(*ConnectivityState) {
     val, err := m.GetBackingStore().Get("connectivityState")
@@ -75,6 +86,16 @@ func (m *BranchSite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         if val != nil {
             m.SetBandwidthCapacity(val)
+        }
+        return nil
+    }
+    res["connectivityConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateBranchConnectivityConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetConnectivityConfiguration(val.(BranchConnectivityConfigurationable))
         }
         return nil
     }
@@ -239,6 +260,12 @@ func (m *BranchSite) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("connectivityConfiguration", m.GetConnectivityConfiguration())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetConnectivityState() != nil {
         cast := (*m.GetConnectivityState()).String()
         err = writer.WriteStringValue("connectivityState", &cast)
@@ -310,6 +337,13 @@ func (m *BranchSite) SetBandwidthCapacity(value *int64)() {
         panic(err)
     }
 }
+// SetConnectivityConfiguration sets the connectivityConfiguration property value. The connectivityConfiguration property
+func (m *BranchSite) SetConnectivityConfiguration(value BranchConnectivityConfigurationable)() {
+    err := m.GetBackingStore().Set("connectivityConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetConnectivityState sets the connectivityState property value. Determines the branch site status. The possible values are: pending, connected, inactive, error.
 func (m *BranchSite) SetConnectivityState(value *ConnectivityState)() {
     err := m.GetBackingStore().Set("connectivityState", value)
@@ -371,6 +405,7 @@ type BranchSiteable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBandwidthCapacity()(*int64)
+    GetConnectivityConfiguration()(BranchConnectivityConfigurationable)
     GetConnectivityState()(*ConnectivityState)
     GetCountry()(*string)
     GetDeviceLinks()([]DeviceLinkable)
@@ -380,6 +415,7 @@ type BranchSiteable interface {
     GetRegion()(*Region)
     GetVersion()(*string)
     SetBandwidthCapacity(value *int64)()
+    SetConnectivityConfiguration(value BranchConnectivityConfigurationable)()
     SetConnectivityState(value *ConnectivityState)()
     SetCountry(value *string)()
     SetDeviceLinks(value []DeviceLinkable)()

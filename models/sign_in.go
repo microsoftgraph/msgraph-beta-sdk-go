@@ -64,6 +64,17 @@ func (m *SignIn) GetAppliedEventListeners()([]AppliedAuthenticationEventListener
     }
     return nil
 }
+// GetAppTokenProtectionStatus gets the appTokenProtectionStatus property value. The appTokenProtectionStatus property
+func (m *SignIn) GetAppTokenProtectionStatus()(*TokenProtectionStatus) {
+    val, err := m.GetBackingStore().Get("appTokenProtectionStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*TokenProtectionStatus)
+    }
+    return nil
+}
 // GetAuthenticationAppDeviceDetails gets the authenticationAppDeviceDetails property value. Provides details about the app and device used during an Azure AD authentication step.
 func (m *SignIn) GetAuthenticationAppDeviceDetails()(AuthenticationAppDeviceDetailsable) {
     val, err := m.GetBackingStore().Get("authenticationAppDeviceDetails")
@@ -325,6 +336,16 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
                 }
             }
             m.SetAppliedEventListeners(res)
+        }
+        return nil
+    }
+    res["appTokenProtectionStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseTokenProtectionStatus)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppTokenProtectionStatus(val.(*TokenProtectionStatus))
         }
         return nil
     }
@@ -690,6 +711,16 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["originalTransferMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseOriginalTransferMethods)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOriginalTransferMethod(val.(*OriginalTransferMethods))
+        }
+        return nil
+    }
     res["privateLinkDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePrivateLinkDetailsFromDiscriminatorValue)
         if err != nil {
@@ -898,6 +929,16 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["signInTokenProtectionStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseTokenProtectionStatus)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSignInTokenProtectionStatus(val.(*TokenProtectionStatus))
+        }
+        return nil
+    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSignInStatusFromDiscriminatorValue)
         if err != nil {
@@ -1089,7 +1130,7 @@ func (m *SignIn) GetLocation()(SignInLocationable) {
     }
     return nil
 }
-// GetManagedServiceIdentity gets the managedServiceIdentity property value. Contains information about the managed identity used for the sign in, including its type and associated Azure Resource Manager (ARM) resource ID.
+// GetManagedServiceIdentity gets the managedServiceIdentity property value. Contains information about the managed identity used for the sign in, including its type, associated Azure Resource Manager (ARM) resource ID, and federated token information.
 func (m *SignIn) GetManagedServiceIdentity()(ManagedIdentityable) {
     val, err := m.GetBackingStore().Get("managedServiceIdentity")
     if err != nil {
@@ -1130,6 +1171,17 @@ func (m *SignIn) GetOriginalRequestId()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetOriginalTransferMethod gets the originalTransferMethod property value. The originalTransferMethod property
+func (m *SignIn) GetOriginalTransferMethod()(*OriginalTransferMethods) {
+    val, err := m.GetBackingStore().Get("originalTransferMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*OriginalTransferMethods)
     }
     return nil
 }
@@ -1342,6 +1394,17 @@ func (m *SignIn) GetSignInIdentifierType()(*SignInIdentifierType) {
     }
     return nil
 }
+// GetSignInTokenProtectionStatus gets the signInTokenProtectionStatus property value. The signInTokenProtectionStatus property
+func (m *SignIn) GetSignInTokenProtectionStatus()(*TokenProtectionStatus) {
+    val, err := m.GetBackingStore().Get("signInTokenProtectionStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*TokenProtectionStatus)
+    }
+    return nil
+}
 // GetStatus gets the status property value. The sign-in status. Includes the error code and description of the error (in case of a sign-in failure).  Supports $filter (eq) on errorCode property.
 func (m *SignIn) GetStatus()(SignInStatusable) {
     val, err := m.GetBackingStore().Get("status")
@@ -1479,6 +1542,13 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
             }
         }
         err = writer.WriteCollectionOfObjectValues("appliedEventListeners", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetAppTokenProtectionStatus() != nil {
+        cast := (*m.GetAppTokenProtectionStatus()).String()
+        err = writer.WriteStringValue("appTokenProtectionStatus", &cast)
         if err != nil {
             return err
         }
@@ -1716,6 +1786,13 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
             return err
         }
     }
+    if m.GetOriginalTransferMethod() != nil {
+        cast := (*m.GetOriginalTransferMethod()).String()
+        err = writer.WriteStringValue("originalTransferMethod", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("privateLinkDetails", m.GetPrivateLinkDetails())
         if err != nil {
@@ -1841,6 +1918,13 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
             return err
         }
     }
+    if m.GetSignInTokenProtectionStatus() != nil {
+        cast := (*m.GetSignInTokenProtectionStatus()).String()
+        err = writer.WriteStringValue("signInTokenProtectionStatus", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("status", m.GetStatus())
         if err != nil {
@@ -1923,6 +2007,13 @@ func (m *SignIn) SetAppliedConditionalAccessPolicies(value []AppliedConditionalA
 // SetAppliedEventListeners sets the appliedEventListeners property value. Detailed information about the listeners, such as Azure Logic Apps and Azure Functions, that were triggered by the corresponding events in the sign-in event.
 func (m *SignIn) SetAppliedEventListeners(value []AppliedAuthenticationEventListenerable)() {
     err := m.GetBackingStore().Set("appliedEventListeners", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAppTokenProtectionStatus sets the appTokenProtectionStatus property value. The appTokenProtectionStatus property
+func (m *SignIn) SetAppTokenProtectionStatus(value *TokenProtectionStatus)() {
+    err := m.GetBackingStore().Set("appTokenProtectionStatus", value)
     if err != nil {
         panic(err)
     }
@@ -2123,7 +2214,7 @@ func (m *SignIn) SetLocation(value SignInLocationable)() {
         panic(err)
     }
 }
-// SetManagedServiceIdentity sets the managedServiceIdentity property value. Contains information about the managed identity used for the sign in, including its type and associated Azure Resource Manager (ARM) resource ID.
+// SetManagedServiceIdentity sets the managedServiceIdentity property value. Contains information about the managed identity used for the sign in, including its type, associated Azure Resource Manager (ARM) resource ID, and federated token information.
 func (m *SignIn) SetManagedServiceIdentity(value ManagedIdentityable)() {
     err := m.GetBackingStore().Set("managedServiceIdentity", value)
     if err != nil {
@@ -2147,6 +2238,13 @@ func (m *SignIn) SetNetworkLocationDetails(value []NetworkLocationDetailable)() 
 // SetOriginalRequestId sets the originalRequestId property value. The request identifier of the first request in the authentication sequence.  Supports $filter (eq).
 func (m *SignIn) SetOriginalRequestId(value *string)() {
     err := m.GetBackingStore().Set("originalRequestId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOriginalTransferMethod sets the originalTransferMethod property value. The originalTransferMethod property
+func (m *SignIn) SetOriginalTransferMethod(value *OriginalTransferMethods)() {
+    err := m.GetBackingStore().Set("originalTransferMethod", value)
     if err != nil {
         panic(err)
     }
@@ -2284,6 +2382,13 @@ func (m *SignIn) SetSignInIdentifierType(value *SignInIdentifierType)() {
         panic(err)
     }
 }
+// SetSignInTokenProtectionStatus sets the signInTokenProtectionStatus property value. The signInTokenProtectionStatus property
+func (m *SignIn) SetSignInTokenProtectionStatus(value *TokenProtectionStatus)() {
+    err := m.GetBackingStore().Set("signInTokenProtectionStatus", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStatus sets the status property value. The sign-in status. Includes the error code and description of the error (in case of a sign-in failure).  Supports $filter (eq) on errorCode property.
 func (m *SignIn) SetStatus(value SignInStatusable)() {
     err := m.GetBackingStore().Set("status", value)
@@ -2355,6 +2460,7 @@ type SignInable interface {
     GetAppId()(*string)
     GetAppliedConditionalAccessPolicies()([]AppliedConditionalAccessPolicyable)
     GetAppliedEventListeners()([]AppliedAuthenticationEventListenerable)
+    GetAppTokenProtectionStatus()(*TokenProtectionStatus)
     GetAuthenticationAppDeviceDetails()(AuthenticationAppDeviceDetailsable)
     GetAuthenticationAppPolicyEvaluationDetails()([]AuthenticationAppPolicyDetailsable)
     GetAuthenticationContextClassReferences()([]AuthenticationContextable)
@@ -2387,6 +2493,7 @@ type SignInable interface {
     GetMfaDetail()(MfaDetailable)
     GetNetworkLocationDetails()([]NetworkLocationDetailable)
     GetOriginalRequestId()(*string)
+    GetOriginalTransferMethod()(*OriginalTransferMethods)
     GetPrivateLinkDetails()(PrivateLinkDetailsable)
     GetProcessingTimeInMilliseconds()(*int32)
     GetResourceDisplayName()(*string)
@@ -2406,6 +2513,7 @@ type SignInable interface {
     GetSignInEventTypes()([]string)
     GetSignInIdentifier()(*string)
     GetSignInIdentifierType()(*SignInIdentifierType)
+    GetSignInTokenProtectionStatus()(*TokenProtectionStatus)
     GetStatus()(SignInStatusable)
     GetTokenIssuerName()(*string)
     GetTokenIssuerType()(*TokenIssuerType)
@@ -2419,6 +2527,7 @@ type SignInable interface {
     SetAppId(value *string)()
     SetAppliedConditionalAccessPolicies(value []AppliedConditionalAccessPolicyable)()
     SetAppliedEventListeners(value []AppliedAuthenticationEventListenerable)()
+    SetAppTokenProtectionStatus(value *TokenProtectionStatus)()
     SetAuthenticationAppDeviceDetails(value AuthenticationAppDeviceDetailsable)()
     SetAuthenticationAppPolicyEvaluationDetails(value []AuthenticationAppPolicyDetailsable)()
     SetAuthenticationContextClassReferences(value []AuthenticationContextable)()
@@ -2451,6 +2560,7 @@ type SignInable interface {
     SetMfaDetail(value MfaDetailable)()
     SetNetworkLocationDetails(value []NetworkLocationDetailable)()
     SetOriginalRequestId(value *string)()
+    SetOriginalTransferMethod(value *OriginalTransferMethods)()
     SetPrivateLinkDetails(value PrivateLinkDetailsable)()
     SetProcessingTimeInMilliseconds(value *int32)()
     SetResourceDisplayName(value *string)()
@@ -2470,6 +2580,7 @@ type SignInable interface {
     SetSignInEventTypes(value []string)()
     SetSignInIdentifier(value *string)()
     SetSignInIdentifierType(value *SignInIdentifierType)()
+    SetSignInTokenProtectionStatus(value *TokenProtectionStatus)()
     SetStatus(value SignInStatusable)()
     SetTokenIssuerName(value *string)()
     SetTokenIssuerType(value *TokenIssuerType)()

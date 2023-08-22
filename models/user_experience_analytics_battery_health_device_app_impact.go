@@ -52,7 +52,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) GetAppPublisher()(
     }
     return nil
 }
-// GetBatteryUsagePercentage gets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// GetBatteryUsagePercentage gets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values 0 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) GetBatteryUsagePercentage()(*float64) {
     val, err := m.GetBackingStore().Get("batteryUsagePercentage")
     if err != nil {
@@ -215,7 +215,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) SetAppPublisher(va
         panic(err)
     }
 }
-// SetBatteryUsagePercentage sets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// SetBatteryUsagePercentage sets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values 0 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) SetBatteryUsagePercentage(value *float64)() {
     err := m.GetBackingStore().Set("batteryUsagePercentage", value)
     if err != nil {

@@ -32,6 +32,7 @@ func NewItemManagedDevicesBulkReprovisionCloudPcRequestBuilder(rawUrl string, re
     return NewItemManagedDevicesBulkReprovisionCloudPcRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
+// Deprecated: The bulkReprovisionCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkReprovisionCloudPc on 2023-05-24 and will be removed 2023-09-24
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/manageddevice-bulkreprovisioncloudpc?view=graph-rest-1.0
@@ -54,6 +55,7 @@ func (m *ItemManagedDevicesBulkReprovisionCloudPcRequestBuilder) Post(ctx contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkRemoteActionResultable), nil
 }
 // ToPostRequestInformation bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
+// Deprecated: The bulkReprovisionCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkReprovisionCloudPc on 2023-05-24 and will be removed 2023-09-24
 func (m *ItemManagedDevicesBulkReprovisionCloudPcRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemManagedDevicesBulkReprovisionCloudPcPostRequestBodyable, requestConfiguration *ItemManagedDevicesBulkReprovisionCloudPcRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

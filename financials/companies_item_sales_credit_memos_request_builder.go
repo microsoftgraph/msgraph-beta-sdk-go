@@ -3,6 +3,7 @@ package financials
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
@@ -40,6 +41,7 @@ type CompaniesItemSalesCreditMemosRequestBuilderGetRequestConfiguration struct {
     QueryParameters *CompaniesItemSalesCreditMemosRequestBuilderGetQueryParameters
 }
 // BySalesCreditMemoId provides operations to manage the salesCreditMemos property of the microsoft.graph.company entity.
+// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 func (m *CompaniesItemSalesCreditMemosRequestBuilder) BySalesCreditMemoId(salesCreditMemoId string)(*CompaniesItemSalesCreditMemosSalesCreditMemoItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -48,6 +50,15 @@ func (m *CompaniesItemSalesCreditMemosRequestBuilder) BySalesCreditMemoId(salesC
     if salesCreditMemoId != "" {
         urlTplParams["salesCreditMemo%2Did"] = salesCreditMemoId
     }
+    return NewCompaniesItemSalesCreditMemosSalesCreditMemoItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
+// BySalesCreditMemoIdGuid provides operations to manage the salesCreditMemos property of the microsoft.graph.company entity.
+func (m *CompaniesItemSalesCreditMemosRequestBuilder) BySalesCreditMemoIdGuid(salesCreditMemoId i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)(*CompaniesItemSalesCreditMemosSalesCreditMemoItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    urlTplParams["salesCreditMemo%2Did"] = salesCreditMemoId.String()
     return NewCompaniesItemSalesCreditMemosSalesCreditMemoItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewCompaniesItemSalesCreditMemosRequestBuilderInternal instantiates a new SalesCreditMemosRequestBuilder and sets the default values.

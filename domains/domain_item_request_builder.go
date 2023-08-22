@@ -133,6 +133,10 @@ func (m *DomainItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29
 func (m *DomainItemRequestBuilder) Promote()(*ItemPromoteRequestBuilder) {
     return NewItemPromoteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// PromoteToInitial provides operations to call the promoteToInitial method.
+func (m *DomainItemRequestBuilder) PromoteToInitial()(*ItemPromoteToInitialRequestBuilder) {
+    return NewItemPromoteToInitialRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ServiceConfigurationRecords provides operations to manage the serviceConfigurationRecords property of the microsoft.graph.domain entity.
 func (m *DomainItemRequestBuilder) ServiceConfigurationRecords()(*ItemServiceConfigurationRecordsRequestBuilder) {
     return NewItemServiceConfigurationRecordsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

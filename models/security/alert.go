@@ -32,6 +32,17 @@ func (m *Alert) GetActorDisplayName()(*string) {
     }
     return nil
 }
+// GetAlertPolicyId gets the alertPolicyId property value. The alertPolicyId property
+func (m *Alert) GetAlertPolicyId()(*string) {
+    val, err := m.GetBackingStore().Get("alertPolicyId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetAlertWebUrl gets the alertWebUrl property value. URL for the alert page in the Microsoft 365 Defender portal.
 func (m *Alert) GetAlertWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("alertWebUrl")
@@ -65,7 +76,7 @@ func (m *Alert) GetCategory()(*string) {
     }
     return nil
 }
-// GetClassification gets the classification property value. Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, benignPositive, unknownFutureValue.
+// GetClassification gets the classification property value. Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
 func (m *Alert) GetClassification()(*AlertClassification) {
     val, err := m.GetBackingStore().Get("classification")
     if err != nil {
@@ -163,6 +174,16 @@ func (m *Alert) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         if val != nil {
             m.SetActorDisplayName(val)
+        }
+        return nil
+    }
+    res["alertPolicyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAlertPolicyId(val)
         }
         return nil
     }
@@ -672,6 +693,12 @@ func (m *Alert) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         }
     }
     {
+        err = writer.WriteStringValue("alertPolicyId", m.GetAlertPolicyId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("alertWebUrl", m.GetAlertWebUrl())
         if err != nil {
             return err
@@ -866,6 +893,13 @@ func (m *Alert) SetActorDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetAlertPolicyId sets the alertPolicyId property value. The alertPolicyId property
+func (m *Alert) SetAlertPolicyId(value *string)() {
+    err := m.GetBackingStore().Set("alertPolicyId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAlertWebUrl sets the alertWebUrl property value. URL for the alert page in the Microsoft 365 Defender portal.
 func (m *Alert) SetAlertWebUrl(value *string)() {
     err := m.GetBackingStore().Set("alertWebUrl", value)
@@ -887,7 +921,7 @@ func (m *Alert) SetCategory(value *string)() {
         panic(err)
     }
 }
-// SetClassification sets the classification property value. Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, benignPositive, unknownFutureValue.
+// SetClassification sets the classification property value. Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
 func (m *Alert) SetClassification(value *AlertClassification)() {
     err := m.GetBackingStore().Set("classification", value)
     if err != nil {
@@ -1067,6 +1101,7 @@ type Alertable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetActorDisplayName()(*string)
+    GetAlertPolicyId()(*string)
     GetAlertWebUrl()(*string)
     GetAssignedTo()(*string)
     GetCategory()(*string)
@@ -1096,6 +1131,7 @@ type Alertable interface {
     GetThreatFamilyName()(*string)
     GetTitle()(*string)
     SetActorDisplayName(value *string)()
+    SetAlertPolicyId(value *string)()
     SetAlertWebUrl(value *string)()
     SetAssignedTo(value *string)()
     SetCategory(value *string)()

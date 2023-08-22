@@ -42,7 +42,7 @@ func CreateHostFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
     }
     return NewHost(), nil
 }
-// GetChildHostPairs gets the childHostPairs property value. The childHostPairs property
+// GetChildHostPairs gets the childHostPairs property value. The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
 func (m *Host) GetChildHostPairs()([]HostPairable) {
     val, err := m.GetBackingStore().Get("childHostPairs")
     if err != nil {
@@ -291,7 +291,7 @@ func (m *Host) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a
     }
     return nil
 }
-// GetHostPairs gets the hostPairs property value. The hostPairs property
+// GetHostPairs gets the hostPairs property value. The hostPairs that are associated with this host, where this host is either the parentHost or childHost.
 func (m *Host) GetHostPairs()([]HostPairable) {
     val, err := m.GetBackingStore().Get("hostPairs")
     if err != nil {
@@ -313,7 +313,7 @@ func (m *Host) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a1
     }
     return nil
 }
-// GetParentHostPairs gets the parentHostPairs property value. The parentHostPairs property
+// GetParentHostPairs gets the parentHostPairs property value. The hostPairs that are associated with a host, where that host is the childHost and has an incoming pairing with a parentHost.
 func (m *Host) GetParentHostPairs()([]HostPairable) {
     val, err := m.GetBackingStore().Get("parentHostPairs")
     if err != nil {
@@ -553,7 +553,7 @@ func (m *Host) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     return nil
 }
-// SetChildHostPairs sets the childHostPairs property value. The childHostPairs property
+// SetChildHostPairs sets the childHostPairs property value. The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
 func (m *Host) SetChildHostPairs(value []HostPairable)() {
     err := m.GetBackingStore().Set("childHostPairs", value)
     if err != nil {
@@ -581,7 +581,7 @@ func (m *Host) SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3
         panic(err)
     }
 }
-// SetHostPairs sets the hostPairs property value. The hostPairs property
+// SetHostPairs sets the hostPairs property value. The hostPairs that are associated with this host, where this host is either the parentHost or childHost.
 func (m *Host) SetHostPairs(value []HostPairable)() {
     err := m.GetBackingStore().Set("hostPairs", value)
     if err != nil {
@@ -595,7 +595,7 @@ func (m *Host) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f30
         panic(err)
     }
 }
-// SetParentHostPairs sets the parentHostPairs property value. The parentHostPairs property
+// SetParentHostPairs sets the parentHostPairs property value. The hostPairs that are associated with a host, where that host is the childHost and has an incoming pairing with a parentHost.
 func (m *Host) SetParentHostPairs(value []HostPairable)() {
     err := m.GetBackingStore().Set("parentHostPairs", value)
     if err != nil {

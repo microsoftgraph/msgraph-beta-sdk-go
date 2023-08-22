@@ -18,7 +18,7 @@ type EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowEx
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsCustomCalloutExtensionItemRequestBuilderGetQueryParameters read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
+// EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsCustomCalloutExtensionItemRequestBuilderGetQueryParameters read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
 type EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsCustomCalloutExtensionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -71,11 +71,11 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkfl
     }
     return nil
 }
-// Get read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
+// Get read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-get?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsCustomCalloutExtensionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsCustomCalloutExtensionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomCalloutExtensionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -130,7 +130,7 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkfl
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
+// ToGetRequestInformation read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsCustomCalloutExtensionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsCustomCalloutExtensionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

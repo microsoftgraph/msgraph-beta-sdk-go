@@ -20,7 +20,7 @@ func NewUnifiedRoleManagementAlert()(*UnifiedRoleManagementAlert) {
 func CreateUnifiedRoleManagementAlertFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleManagementAlert(), nil
 }
-// GetAlertConfiguration gets the alertConfiguration property value. The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $expand.
+// GetAlertConfiguration gets the alertConfiguration property value. The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $filter for the isEnabled property and $expand.
 func (m *UnifiedRoleManagementAlert) GetAlertConfiguration()(UnifiedRoleManagementAlertConfigurationable) {
     val, err := m.GetBackingStore().Get("alertConfiguration")
     if err != nil {
@@ -315,7 +315,7 @@ func (m *UnifiedRoleManagementAlert) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetAlertConfiguration sets the alertConfiguration property value. The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $expand.
+// SetAlertConfiguration sets the alertConfiguration property value. The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $filter for the isEnabled property and $expand.
 func (m *UnifiedRoleManagementAlert) SetAlertConfiguration(value UnifiedRoleManagementAlertConfigurationable)() {
     err := m.GetBackingStore().Set("alertConfiguration", value)
     if err != nil {

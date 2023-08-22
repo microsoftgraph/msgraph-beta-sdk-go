@@ -38,7 +38,7 @@ func NewItemOnlineMeetingsItemRecordingsItemContentRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewItemOnlineMeetingsItemRecordingsItemContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get content for the navigation property recordings from users
+// Get the content of the recording. Read-only.
 func (m *ItemOnlineMeetingsItemRecordingsItemContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemRecordingsItemContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -57,7 +57,7 @@ func (m *ItemOnlineMeetingsItemRecordingsItemContentRequestBuilder) Get(ctx cont
     }
     return res.([]byte), nil
 }
-// Put update content for the navigation property recordings in users
+// Put the content of the recording. Read-only.
 func (m *ItemOnlineMeetingsItemRecordingsItemContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemOnlineMeetingsItemRecordingsItemContentRequestBuilderPutRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallRecordingable, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemOnlineMeetingsItemRecordingsItemContentRequestBuilder) Put(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallRecordingable), nil
 }
-// ToGetRequestInformation get content for the navigation property recordings from users
+// ToGetRequestInformation the content of the recording. Read-only.
 func (m *ItemOnlineMeetingsItemRecordingsItemContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemRecordingsItemContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -88,7 +88,7 @@ func (m *ItemOnlineMeetingsItemRecordingsItemContentRequestBuilder) ToGetRequest
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation update content for the navigation property recordings in users
+// ToPutRequestInformation the content of the recording. Read-only.
 func (m *ItemOnlineMeetingsItemRecordingsItemContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemOnlineMeetingsItemRecordingsItemContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

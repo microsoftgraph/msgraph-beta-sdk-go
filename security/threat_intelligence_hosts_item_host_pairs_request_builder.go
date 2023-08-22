@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceHostsItemHostPairsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceHostsItemHostPairsRequestBuilderGetQueryParameters get hostPairs from security
+// ThreatIntelligenceHostsItemHostPairsRequestBuilderGetQueryParameters get the list of hostPair resources associated with a host, where that host is *either* the *parent* or the *child*.
 type ThreatIntelligenceHostsItemHostPairsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,10 @@ func NewThreatIntelligenceHostsItemHostPairsRequestBuilder(rawUrl string, reques
 func (m *ThreatIntelligenceHostsItemHostPairsRequestBuilder) Count()(*ThreatIntelligenceHostsItemHostPairsCountRequestBuilder) {
     return NewThreatIntelligenceHostsItemHostPairsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get hostPairs from security
+// Get get the list of hostPair resources associated with a host, where that host is *either* the *parent* or the *child*.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-host-list-hostpairs?view=graph-rest-1.0
 func (m *ThreatIntelligenceHostsItemHostPairsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemHostPairsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostPairCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +89,7 @@ func (m *ThreatIntelligenceHostsItemHostPairsRequestBuilder) Get(ctx context.Con
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostPairCollectionResponseable), nil
 }
-// ToGetRequestInformation get hostPairs from security
+// ToGetRequestInformation get the list of hostPair resources associated with a host, where that host is *either* the *parent* or the *child*.
 func (m *ThreatIntelligenceHostsItemHostPairsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemHostPairsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -115,9 +115,13 @@ func (m *VirtualEventsWebinarsVirtualEventWebinarItemRequestBuilder) Patch(ctx c
 func (m *VirtualEventsWebinarsVirtualEventWebinarItemRequestBuilder) Presenters()(*VirtualEventsWebinarsItemPresentersRequestBuilder) {
     return NewVirtualEventsWebinarsItemPresentersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Registration provides operations to manage the registration property of the microsoft.graph.virtualEventWebinar entity.
-func (m *VirtualEventsWebinarsVirtualEventWebinarItemRequestBuilder) Registration()(*VirtualEventsWebinarsItemRegistrationRequestBuilder) {
-    return NewVirtualEventsWebinarsItemRegistrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// RegistrationConfiguration provides operations to manage the registrationConfiguration property of the microsoft.graph.virtualEventWebinar entity.
+func (m *VirtualEventsWebinarsVirtualEventWebinarItemRequestBuilder) RegistrationConfiguration()(*VirtualEventsWebinarsItemRegistrationConfigurationRequestBuilder) {
+    return NewVirtualEventsWebinarsItemRegistrationConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Registrations provides operations to manage the registrations property of the microsoft.graph.virtualEventWebinar entity.
+func (m *VirtualEventsWebinarsVirtualEventWebinarItemRequestBuilder) Registrations()(*VirtualEventsWebinarsItemRegistrationsRequestBuilder) {
+    return NewVirtualEventsWebinarsItemRegistrationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Sessions provides operations to manage the sessions property of the microsoft.graph.virtualEvent entity.
 func (m *VirtualEventsWebinarsVirtualEventWebinarItemRequestBuilder) Sessions()(*VirtualEventsWebinarsItemSessionsRequestBuilder) {

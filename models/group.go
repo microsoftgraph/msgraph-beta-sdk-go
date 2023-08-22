@@ -1187,6 +1187,16 @@ func (m *Group) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["uniqueName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUniqueName(val)
+        }
+        return nil
+    }
     res["unseenConversationsCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -1811,6 +1821,17 @@ func (m *Group) GetTransitiveMembers()([]DirectoryObjectable) {
     }
     return nil
 }
+// GetUniqueName gets the uniqueName property value. The uniqueName property
+func (m *Group) GetUniqueName()(*string) {
+    val, err := m.GetBackingStore().Get("uniqueName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetUnseenConversationsCount gets the unseenConversationsCount property value. Count of conversations that have been delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
 func (m *Group) GetUnseenConversationsCount()(*int32) {
     val, err := m.GetBackingStore().Get("unseenConversationsCount")
@@ -1844,7 +1865,7 @@ func (m *Group) GetUnseenMessagesCount()(*int32) {
     }
     return nil
 }
-// GetVisibility gets the visibility property value. Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
+// GetVisibility gets the visibility property value. Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.
 func (m *Group) GetVisibility()(*string) {
     val, err := m.GetBackingStore().Get("visibility")
     if err != nil {
@@ -2468,6 +2489,12 @@ func (m *Group) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         }
     }
     {
+        err = writer.WriteStringValue("uniqueName", m.GetUniqueName())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("unseenConversationsCount", m.GetUnseenConversationsCount())
         if err != nil {
             return err
@@ -3017,6 +3044,13 @@ func (m *Group) SetTransitiveMembers(value []DirectoryObjectable)() {
         panic(err)
     }
 }
+// SetUniqueName sets the uniqueName property value. The uniqueName property
+func (m *Group) SetUniqueName(value *string)() {
+    err := m.GetBackingStore().Set("uniqueName", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUnseenConversationsCount sets the unseenConversationsCount property value. Count of conversations that have been delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
 func (m *Group) SetUnseenConversationsCount(value *int32)() {
     err := m.GetBackingStore().Set("unseenConversationsCount", value)
@@ -3038,7 +3072,7 @@ func (m *Group) SetUnseenMessagesCount(value *int32)() {
         panic(err)
     }
 }
-// SetVisibility sets the visibility property value. Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
+// SetVisibility sets the visibility property value. Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.
 func (m *Group) SetVisibility(value *string)() {
     err := m.GetBackingStore().Set("visibility", value)
     if err != nil {
@@ -3130,6 +3164,7 @@ type Groupable interface {
     GetThreads()([]ConversationThreadable)
     GetTransitiveMemberOf()([]DirectoryObjectable)
     GetTransitiveMembers()([]DirectoryObjectable)
+    GetUniqueName()(*string)
     GetUnseenConversationsCount()(*int32)
     GetUnseenCount()(*int32)
     GetUnseenMessagesCount()(*int32)
@@ -3209,6 +3244,7 @@ type Groupable interface {
     SetThreads(value []ConversationThreadable)()
     SetTransitiveMemberOf(value []DirectoryObjectable)()
     SetTransitiveMembers(value []DirectoryObjectable)()
+    SetUniqueName(value *string)()
     SetUnseenConversationsCount(value *int32)()
     SetUnseenCount(value *int32)()
     SetUnseenMessagesCount(value *int32)()

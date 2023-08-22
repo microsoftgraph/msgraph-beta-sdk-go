@@ -199,7 +199,3 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) ToPatchRequestInform
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) Transcripts()(*ItemOnlineMeetingsItemTranscriptsRequestBuilder) {
     return NewItemOnlineMeetingsItemTranscriptsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// VirtualAppointment provides operations to manage the virtualAppointment property of the microsoft.graph.onlineMeeting entity.
-func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) VirtualAppointment()(*ItemOnlineMeetingsItemVirtualAppointmentRequestBuilder) {
-    return NewItemOnlineMeetingsItemVirtualAppointmentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}

@@ -532,6 +532,16 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCloudPcBulkPowerOff(), nil
                     case "#microsoft.graph.cloudPcBulkPowerOn":
                         return NewCloudPcBulkPowerOn(), nil
+                    case "#microsoft.graph.cloudPcBulkReprovision":
+                        return NewCloudPcBulkReprovision(), nil
+                    case "#microsoft.graph.cloudPcBulkResize":
+                        return NewCloudPcBulkResize(), nil
+                    case "#microsoft.graph.cloudPcBulkRestart":
+                        return NewCloudPcBulkRestart(), nil
+                    case "#microsoft.graph.cloudPcBulkRestore":
+                        return NewCloudPcBulkRestore(), nil
+                    case "#microsoft.graph.cloudPcBulkTroubleshoot":
+                        return NewCloudPcBulkTroubleshoot(), nil
                     case "#microsoft.graph.cloudPCConnectivityIssue":
                         return NewCloudPCConnectivityIssue(), nil
                     case "#microsoft.graph.cloudPcCrossCloudGovernmentOrganizationMapping":
@@ -1458,8 +1468,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMacOSImportedPFXCertificateProfile(), nil
                     case "#microsoft.graph.macOSLobApp":
                         return NewMacOSLobApp(), nil
-                    case "#microsoft.graph.macOSMdatpApp":
-                        return NewMacOSMdatpApp(), nil
                     case "#microsoft.graph.macOSMicrosoftDefenderApp":
                         return NewMacOSMicrosoftDefenderApp(), nil
                     case "#microsoft.graph.macOSMicrosoftEdgeApp":
@@ -1488,6 +1496,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMacOsVppApp(), nil
                     case "#microsoft.graph.macOsVppAppAssignedLicense":
                         return NewMacOsVppAppAssignedLicense(), nil
+                    case "#microsoft.graph.macOSWebClip":
+                        return NewMacOSWebClip(), nil
                     case "#microsoft.graph.macOSWiFiConfiguration":
                         return NewMacOSWiFiConfiguration(), nil
                     case "#microsoft.graph.macOSWiredNetworkConfiguration":
@@ -1656,6 +1666,16 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMobileThreatDefenseConnector(), nil
                     case "#microsoft.graph.mobilityManagementPolicy":
                         return NewMobilityManagementPolicy(), nil
+                    case "#microsoft.graph.multiTenantOrganization":
+                        return NewMultiTenantOrganization(), nil
+                    case "#microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate":
+                        return NewMultiTenantOrganizationIdentitySyncPolicyTemplate(), nil
+                    case "#microsoft.graph.multiTenantOrganizationJoinRequestRecord":
+                        return NewMultiTenantOrganizationJoinRequestRecord(), nil
+                    case "#microsoft.graph.multiTenantOrganizationMember":
+                        return NewMultiTenantOrganizationMember(), nil
+                    case "#microsoft.graph.multiTenantOrganizationPartnerConfigurationTemplate":
+                        return NewMultiTenantOrganizationPartnerConfigurationTemplate(), nil
                     case "#microsoft.graph.multiValueLegacyExtendedProperty":
                         return NewMultiValueLegacyExtendedProperty(), nil
                     case "#microsoft.graph.muteParticipantOperation":
@@ -1872,6 +1892,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewPolicySetAssignment(), nil
                     case "#microsoft.graph.policySetItem":
                         return NewPolicySetItem(), nil
+                    case "#microsoft.graph.policyTemplate":
+                        return NewPolicyTemplate(), nil
                     case "#microsoft.graph.post":
                         return NewPost(), nil
                     case "#microsoft.graph.presence":
@@ -2006,6 +2028,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewReportRoot(), nil
                     case "#microsoft.graph.request":
                         return NewRequest(), nil
+                    case "#microsoft.graph.resellerDelegatedAdminRelationship":
+                        return NewResellerDelegatedAdminRelationship(), nil
                     case "#microsoft.graph.resourceOperation":
                         return NewResourceOperation(), nil
                     case "#microsoft.graph.resourceSpecificPermissionGrant":
@@ -2544,18 +2568,16 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserTeamwork(), nil
                     case "#microsoft.graph.verticalSection":
                         return NewVerticalSection(), nil
-                    case "#microsoft.graph.virtualAppointment":
-                        return NewVirtualAppointment(), nil
                     case "#microsoft.graph.virtualEndpoint":
                         return NewVirtualEndpoint(), nil
                     case "#microsoft.graph.virtualEvent":
                         return NewVirtualEvent(), nil
                     case "#microsoft.graph.virtualEventPresenter":
                         return NewVirtualEventPresenter(), nil
-                    case "#microsoft.graph.virtualEventRegistrant":
-                        return NewVirtualEventRegistrant(), nil
                     case "#microsoft.graph.virtualEventRegistration":
                         return NewVirtualEventRegistration(), nil
+                    case "#microsoft.graph.virtualEventRegistrationConfiguration":
+                        return NewVirtualEventRegistrationConfiguration(), nil
                     case "#microsoft.graph.virtualEventRegistrationQuestion":
                         return NewVirtualEventRegistrationQuestion(), nil
                     case "#microsoft.graph.virtualEventSession":
@@ -2564,6 +2586,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewVirtualEventsRoot(), nil
                     case "#microsoft.graph.virtualEventWebinar":
                         return NewVirtualEventWebinar(), nil
+                    case "#microsoft.graph.virtualEventWebinarRegistrationConfiguration":
+                        return NewVirtualEventWebinarRegistrationConfiguration(), nil
                     case "#microsoft.graph.voiceAuthenticationMethodConfiguration":
                         return NewVoiceAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.voiceAuthenticationMethodTarget":
@@ -2838,6 +2862,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewWorkbookComment(), nil
                     case "#microsoft.graph.workbookCommentReply":
                         return NewWorkbookCommentReply(), nil
+                    case "#microsoft.graph.workbookDocumentTask":
+                        return NewWorkbookDocumentTask(), nil
+                    case "#microsoft.graph.workbookDocumentTaskChange":
+                        return NewWorkbookDocumentTaskChange(), nil
                     case "#microsoft.graph.workbookFilter":
                         return NewWorkbookFilter(), nil
                     case "#microsoft.graph.workbookFormatProtection":

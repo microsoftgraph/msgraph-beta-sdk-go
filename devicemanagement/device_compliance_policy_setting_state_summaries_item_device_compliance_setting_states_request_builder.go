@@ -11,7 +11,7 @@ import (
 type DeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesRequestBuilderGetQueryParameters not yet documented
+// DeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesRequestBuilderGetQueryParameters get deviceComplianceSettingStates from deviceManagement
 type DeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewDeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingSt
 func (m *DeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesRequestBuilder) Count()(*DeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesCountRequestBuilder) {
     return NewDeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get not yet documented
+// Get get deviceComplianceSettingStates from deviceManagement
 func (m *DeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceSettingStateCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *DeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingS
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceSettingStateable), nil
 }
-// ToGetRequestInformation not yet documented
+// ToGetRequestInformation get deviceComplianceSettingStates from deviceManagement
 func (m *DeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

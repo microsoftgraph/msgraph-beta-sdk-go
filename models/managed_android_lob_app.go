@@ -64,6 +64,16 @@ func (m *ManagedAndroidLobApp) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["targetedPlatforms"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAndroidTargetedPlatforms)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTargetedPlatforms(val.(*AndroidTargetedPlatforms))
+        }
+        return nil
+    }
     res["versionCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -130,6 +140,17 @@ func (m *ManagedAndroidLobApp) GetPackageId()(*string) {
     }
     return nil
 }
+// GetTargetedPlatforms gets the targetedPlatforms property value. Specifies which platform(s) can be targeted for a given Android LOB application or Managed Android LOB application.
+func (m *ManagedAndroidLobApp) GetTargetedPlatforms()(*AndroidTargetedPlatforms) {
+    val, err := m.GetBackingStore().Get("targetedPlatforms")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidTargetedPlatforms)
+    }
+    return nil
+}
 // GetVersionCode gets the versionCode property value. The version code of managed Android Line of Business (LoB) app.
 func (m *ManagedAndroidLobApp) GetVersionCode()(*string) {
     val, err := m.GetBackingStore().Get("versionCode")
@@ -182,6 +203,13 @@ func (m *ManagedAndroidLobApp) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    if m.GetTargetedPlatforms() != nil {
+        cast := (*m.GetTargetedPlatforms()).String()
+        err = writer.WriteStringValue("targetedPlatforms", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("versionCode", m.GetVersionCode())
         if err != nil {
@@ -224,6 +252,13 @@ func (m *ManagedAndroidLobApp) SetPackageId(value *string)() {
         panic(err)
     }
 }
+// SetTargetedPlatforms sets the targetedPlatforms property value. Specifies which platform(s) can be targeted for a given Android LOB application or Managed Android LOB application.
+func (m *ManagedAndroidLobApp) SetTargetedPlatforms(value *AndroidTargetedPlatforms)() {
+    err := m.GetBackingStore().Set("targetedPlatforms", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetVersionCode sets the versionCode property value. The version code of managed Android Line of Business (LoB) app.
 func (m *ManagedAndroidLobApp) SetVersionCode(value *string)() {
     err := m.GetBackingStore().Set("versionCode", value)
@@ -246,12 +281,14 @@ type ManagedAndroidLobAppable interface {
     GetIdentityVersion()(*string)
     GetMinimumSupportedOperatingSystem()(AndroidMinimumOperatingSystemable)
     GetPackageId()(*string)
+    GetTargetedPlatforms()(*AndroidTargetedPlatforms)
     GetVersionCode()(*string)
     GetVersionName()(*string)
     SetIdentityName(value *string)()
     SetIdentityVersion(value *string)()
     SetMinimumSupportedOperatingSystem(value AndroidMinimumOperatingSystemable)()
     SetPackageId(value *string)()
+    SetTargetedPlatforms(value *AndroidTargetedPlatforms)()
     SetVersionCode(value *string)()
     SetVersionName(value *string)()
 }

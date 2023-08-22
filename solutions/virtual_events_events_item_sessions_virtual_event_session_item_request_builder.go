@@ -18,7 +18,7 @@ type VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilderDeleteR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilderGetQueryParameters read the properties and relationships of a virtualEventSession object.
+// VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilderGetQueryParameters sessions of the virtual event.
 type VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -86,10 +86,7 @@ func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) D
     }
     return nil
 }
-// Get read the properties and relationships of a virtualEventSession object.
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/virtualeventsession-get?view=graph-rest-1.0
+// Get sessions of the virtual event.
 func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventSessionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -143,6 +140,10 @@ func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) R
 func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) Registration()(*VirtualEventsEventsItemSessionsItemRegistrationRequestBuilder) {
     return NewVirtualEventsEventsItemSessionsItemRegistrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Registrations provides operations to manage the registrations property of the microsoft.graph.virtualEventSession entity.
+func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) Registrations()(*VirtualEventsEventsItemSessionsItemRegistrationsRequestBuilder) {
+    return NewVirtualEventsEventsItemSessionsItemRegistrationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property sessions for solutions
 func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -155,7 +156,7 @@ func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) T
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a virtualEventSession object.
+// ToGetRequestInformation sessions of the virtual event.
 func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -191,8 +192,4 @@ func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) T
 // Transcripts provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
 func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) Transcripts()(*VirtualEventsEventsItemSessionsItemTranscriptsRequestBuilder) {
     return NewVirtualEventsEventsItemSessionsItemTranscriptsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// VirtualAppointment provides operations to manage the virtualAppointment property of the microsoft.graph.onlineMeeting entity.
-func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) VirtualAppointment()(*VirtualEventsEventsItemSessionsItemVirtualAppointmentRequestBuilder) {
-    return NewVirtualEventsEventsItemSessionsItemVirtualAppointmentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

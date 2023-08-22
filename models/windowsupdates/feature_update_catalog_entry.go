@@ -21,9 +21,30 @@ func NewFeatureUpdateCatalogEntry()(*FeatureUpdateCatalogEntry) {
 func CreateFeatureUpdateCatalogEntryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFeatureUpdateCatalogEntry(), nil
 }
+// GetBuildNumber gets the buildNumber property value. The buildNumber property
+func (m *FeatureUpdateCatalogEntry) GetBuildNumber()(*string) {
+    val, err := m.GetBackingStore().Get("buildNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *FeatureUpdateCatalogEntry) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.SoftwareUpdateCatalogEntry.GetFieldDeserializers()
+    res["buildNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBuildNumber(val)
+        }
+        return nil
+    }
     res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -54,12 +75,25 @@ func (m *FeatureUpdateCatalogEntry) Serialize(writer i878a80d2330e89d26896388a3f
         return err
     }
     {
+        err = writer.WriteStringValue("buildNumber", m.GetBuildNumber())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("version", m.GetVersion())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetBuildNumber sets the buildNumber property value. The buildNumber property
+func (m *FeatureUpdateCatalogEntry) SetBuildNumber(value *string)() {
+    err := m.GetBackingStore().Set("buildNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVersion sets the version property value. The version of the feature update. Read-only.
 func (m *FeatureUpdateCatalogEntry) SetVersion(value *string)() {
@@ -72,6 +106,8 @@ func (m *FeatureUpdateCatalogEntry) SetVersion(value *string)() {
 type FeatureUpdateCatalogEntryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     SoftwareUpdateCatalogEntryable
+    GetBuildNumber()(*string)
     GetVersion()(*string)
+    SetBuildNumber(value *string)()
     SetVersion(value *string)()
 }

@@ -127,6 +127,22 @@ func (m *WorkbookWorksheet) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["tasks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateWorkbookDocumentTaskFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]WorkbookDocumentTaskable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(WorkbookDocumentTaskable)
+                }
+            }
+            m.SetTasks(res)
+        }
+        return nil
+    }
     res["visibility"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -202,6 +218,17 @@ func (m *WorkbookWorksheet) GetTables()([]WorkbookTableable) {
     }
     if val != nil {
         return val.([]WorkbookTableable)
+    }
+    return nil
+}
+// GetTasks gets the tasks property value. The tasks property
+func (m *WorkbookWorksheet) GetTasks()([]WorkbookDocumentTaskable) {
+    val, err := m.GetBackingStore().Get("tasks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WorkbookDocumentTaskable)
     }
     return nil
 }
@@ -288,6 +315,18 @@ func (m *WorkbookWorksheet) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    if m.GetTasks() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTasks()))
+        for i, v := range m.GetTasks() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("tasks", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("visibility", m.GetVisibility())
         if err != nil {
@@ -345,6 +384,13 @@ func (m *WorkbookWorksheet) SetTables(value []WorkbookTableable)() {
         panic(err)
     }
 }
+// SetTasks sets the tasks property value. The tasks property
+func (m *WorkbookWorksheet) SetTasks(value []WorkbookDocumentTaskable)() {
+    err := m.GetBackingStore().Set("tasks", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetVisibility sets the visibility property value. The Visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
 func (m *WorkbookWorksheet) SetVisibility(value *string)() {
     err := m.GetBackingStore().Set("visibility", value)
@@ -363,6 +409,7 @@ type WorkbookWorksheetable interface {
     GetPosition()(*int32)
     GetProtection()(WorkbookWorksheetProtectionable)
     GetTables()([]WorkbookTableable)
+    GetTasks()([]WorkbookDocumentTaskable)
     GetVisibility()(*string)
     SetCharts(value []WorkbookChartable)()
     SetName(value *string)()
@@ -371,5 +418,6 @@ type WorkbookWorksheetable interface {
     SetPosition(value *int32)()
     SetProtection(value WorkbookWorksheetProtectionable)()
     SetTables(value []WorkbookTableable)()
+    SetTasks(value []WorkbookDocumentTaskable)()
     SetVisibility(value *string)()
 }

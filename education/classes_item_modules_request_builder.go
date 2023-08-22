@@ -11,7 +11,7 @@ import (
 type ClassesItemModulesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ClassesItemModulesRequestBuilderGetQueryParameters get modules from education
+// ClassesItemModulesRequestBuilderGetQueryParameters retrieve a list of module objects. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can see all module objects for the class. Students can only see published modules.
 type ClassesItemModulesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewClassesItemModulesRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *ClassesItemModulesRequestBuilder) Count()(*ClassesItemModulesCountRequestBuilder) {
     return NewClassesItemModulesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get modules from education
+// Get retrieve a list of module objects. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can see all module objects for the class. Students can only see published modules.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-list-modules?view=graph-rest-1.0
 func (m *ClassesItemModulesRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemModulesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationModuleCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *ClassesItemModulesRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationModuleCollectionResponseable), nil
 }
-// Post create new navigation property to modules for education
+// Post create a new module in a class. Only teachers in a class can create a module. Modules start in the draft state, which means that students will not see the modules until publication.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-post-module?view=graph-rest-1.0
 func (m *ClassesItemModulesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationModuleable, requestConfiguration *ClassesItemModulesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationModuleable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *ClassesItemModulesRequestBuilder) Post(ctx context.Context, body ie233e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationModuleable), nil
 }
-// ToGetRequestInformation get modules from education
+// ToGetRequestInformation retrieve a list of module objects. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can see all module objects for the class. Students can only see published modules.
 func (m *ClassesItemModulesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemModulesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *ClassesItemModulesRequestBuilder) ToGetRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to modules for education
+// ToPostRequestInformation create a new module in a class. Only teachers in a class can create a module. Modules start in the draft state, which means that students will not see the modules until publication.
 func (m *ClassesItemModulesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationModuleable, requestConfiguration *ClassesItemModulesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

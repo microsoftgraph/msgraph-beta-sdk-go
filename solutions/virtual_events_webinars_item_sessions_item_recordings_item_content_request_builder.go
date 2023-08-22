@@ -38,7 +38,7 @@ func NewVirtualEventsWebinarsItemSessionsItemRecordingsItemContentRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEventsWebinarsItemSessionsItemRecordingsItemContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get content for the navigation property recordings from solutions
+// Get the content of the recording. Read-only.
 func (m *VirtualEventsWebinarsItemSessionsItemRecordingsItemContentRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemSessionsItemRecordingsItemContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -57,7 +57,7 @@ func (m *VirtualEventsWebinarsItemSessionsItemRecordingsItemContentRequestBuilde
     }
     return res.([]byte), nil
 }
-// Put update content for the navigation property recordings in solutions
+// Put the content of the recording. Read-only.
 func (m *VirtualEventsWebinarsItemSessionsItemRecordingsItemContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *VirtualEventsWebinarsItemSessionsItemRecordingsItemContentRequestBuilderPutRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallRecordingable, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *VirtualEventsWebinarsItemSessionsItemRecordingsItemContentRequestBuilde
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallRecordingable), nil
 }
-// ToGetRequestInformation get content for the navigation property recordings from solutions
+// ToGetRequestInformation the content of the recording. Read-only.
 func (m *VirtualEventsWebinarsItemSessionsItemRecordingsItemContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemSessionsItemRecordingsItemContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -88,7 +88,7 @@ func (m *VirtualEventsWebinarsItemSessionsItemRecordingsItemContentRequestBuilde
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation update content for the navigation property recordings in solutions
+// ToPutRequestInformation the content of the recording. Read-only.
 func (m *VirtualEventsWebinarsItemSessionsItemRecordingsItemContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *VirtualEventsWebinarsItemSessionsItemRecordingsItemContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

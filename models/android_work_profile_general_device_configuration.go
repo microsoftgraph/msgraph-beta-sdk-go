@@ -32,6 +32,17 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetAllowedGoogleAccountDo
     }
     return nil
 }
+// GetBlockUnifiedPasswordForWorkProfile gets the blockUnifiedPasswordForWorkProfile property value. Prevent using unified password for unlocking device and work profile.
+func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetBlockUnifiedPasswordForWorkProfile()(*bool) {
+    val, err := m.GetBackingStore().Get("blockUnifiedPasswordForWorkProfile")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
@@ -48,6 +59,16 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetFieldDeserializers()(m
                 }
             }
             m.SetAllowedGoogleAccountDomains(res)
+        }
+        return nil
+    }
+    res["blockUnifiedPasswordForWorkProfile"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBlockUnifiedPasswordForWorkProfile(val)
         }
         return nil
     }
@@ -1032,6 +1053,12 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) Serialize(writer i878a80d
         }
     }
     {
+        err = writer.WriteBoolValue("blockUnifiedPasswordForWorkProfile", m.GetBlockUnifiedPasswordForWorkProfile())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("passwordBlockFaceUnlock", m.GetPasswordBlockFaceUnlock())
         if err != nil {
             return err
@@ -1319,6 +1346,13 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) Serialize(writer i878a80d
 // SetAllowedGoogleAccountDomains sets the allowedGoogleAccountDomains property value. Determine domains allow-list for accounts that can be added to work profile.
 func (m *AndroidWorkProfileGeneralDeviceConfiguration) SetAllowedGoogleAccountDomains(value []string)() {
     err := m.GetBackingStore().Set("allowedGoogleAccountDomains", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBlockUnifiedPasswordForWorkProfile sets the blockUnifiedPasswordForWorkProfile property value. Prevent using unified password for unlocking device and work profile.
+func (m *AndroidWorkProfileGeneralDeviceConfiguration) SetBlockUnifiedPasswordForWorkProfile(value *bool)() {
+    err := m.GetBackingStore().Set("blockUnifiedPasswordForWorkProfile", value)
     if err != nil {
         panic(err)
     }
@@ -1650,6 +1684,7 @@ type AndroidWorkProfileGeneralDeviceConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAllowedGoogleAccountDomains()([]string)
+    GetBlockUnifiedPasswordForWorkProfile()(*bool)
     GetPasswordBlockFaceUnlock()(*bool)
     GetPasswordBlockFingerprintUnlock()(*bool)
     GetPasswordBlockIrisUnlock()(*bool)
@@ -1697,6 +1732,7 @@ type AndroidWorkProfileGeneralDeviceConfigurationable interface {
     GetWorkProfileRequiredPasswordComplexity()(*AndroidRequiredPasswordComplexity)
     GetWorkProfileRequirePassword()(*bool)
     SetAllowedGoogleAccountDomains(value []string)()
+    SetBlockUnifiedPasswordForWorkProfile(value *bool)()
     SetPasswordBlockFaceUnlock(value *bool)()
     SetPasswordBlockFingerprintUnlock(value *bool)()
     SetPasswordBlockIrisUnlock(value *bool)()

@@ -543,7 +543,7 @@ func (m *EducationAssignment) GetLastModifiedDateTime()(*i336074805fc853987abe6f
     }
     return nil
 }
-// GetModuleUrl gets the moduleUrl property value. The moduleUrl property
+// GetModuleUrl gets the moduleUrl property value. The URL of the module from which to access the assignment.
 func (m *EducationAssignment) GetModuleUrl()(*string) {
     val, err := m.GetBackingStore().Get("moduleUrl")
     if err != nil {
@@ -907,7 +907,7 @@ func (m *EducationAssignment) SetLastModifiedDateTime(value *i336074805fc853987a
         panic(err)
     }
 }
-// SetModuleUrl sets the moduleUrl property value. The moduleUrl property
+// SetModuleUrl sets the moduleUrl property value. The URL of the module from which to access the assignment.
 func (m *EducationAssignment) SetModuleUrl(value *string)() {
     err := m.GetBackingStore().Set("moduleUrl", value)
     if err != nil {

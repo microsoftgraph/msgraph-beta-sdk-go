@@ -3,6 +3,7 @@ package financials
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
@@ -47,6 +48,7 @@ type CompaniesItemJournalsItemJournalLinesRequestBuilderPostRequestConfiguration
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByJournalLineId provides operations to manage the journalLines property of the microsoft.graph.journal entity.
+// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 func (m *CompaniesItemJournalsItemJournalLinesRequestBuilder) ByJournalLineId(journalLineId string)(*CompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -55,6 +57,15 @@ func (m *CompaniesItemJournalsItemJournalLinesRequestBuilder) ByJournalLineId(jo
     if journalLineId != "" {
         urlTplParams["journalLine%2Did"] = journalLineId
     }
+    return NewCompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
+// ByJournalLineIdGuid provides operations to manage the journalLines property of the microsoft.graph.journal entity.
+func (m *CompaniesItemJournalsItemJournalLinesRequestBuilder) ByJournalLineIdGuid(journalLineId i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)(*CompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    urlTplParams["journalLine%2Did"] = journalLineId.String()
     return NewCompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewCompaniesItemJournalsItemJournalLinesRequestBuilderInternal instantiates a new JournalLinesRequestBuilder and sets the default values.

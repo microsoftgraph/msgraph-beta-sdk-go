@@ -65,7 +65,7 @@ func (m *TeamsAppSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetIsChatResourceSpecificConsentEnabled gets the isChatResourceSpecificConsentEnabled property value. Indicates whether resource-specific consent for chats/meetings has been enabled for the tenant. If true, Teams apps that are allowed in the tenant and require resource-specific permissions can be installed inside chats and meetings. If false, the installation of any Teams app that requires resource-specific permissions in a chat or a meeting will be blocked.
+// GetIsChatResourceSpecificConsentEnabled gets the isChatResourceSpecificConsentEnabled property value. Indicates whether resource-specific consent for chats/meetings has been enabled for the tenant. True indicates that Teams apps that are allowed in the tenant and require resource-specific permissions can be installed inside chats and meetings. False blocks the installation of any Teams app that requires resource-specific permissions in a chat or a meeting.
 func (m *TeamsAppSettings) GetIsChatResourceSpecificConsentEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isChatResourceSpecificConsentEnabled")
     if err != nil {
@@ -76,7 +76,7 @@ func (m *TeamsAppSettings) GetIsChatResourceSpecificConsentEnabled()(*bool) {
     }
     return nil
 }
-// GetIsUserPersonalScopeResourceSpecificConsentEnabled gets the isUserPersonalScopeResourceSpecificConsentEnabled property value. The isUserPersonalScopeResourceSpecificConsentEnabled property
+// GetIsUserPersonalScopeResourceSpecificConsentEnabled gets the isUserPersonalScopeResourceSpecificConsentEnabled property value. Indicates whether resource-specific consent for personal scope in Teams apps has been enabled for the tenant. True indicates that Teams apps that are allowed in the tenant and require resource-specific permissions can be installed in the personal scope. False blocks the installation of any Teams app that requires resource-specific permissions in the personal scope.
 func (m *TeamsAppSettings) GetIsUserPersonalScopeResourceSpecificConsentEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isUserPersonalScopeResourceSpecificConsentEnabled")
     if err != nil {
@@ -120,14 +120,14 @@ func (m *TeamsAppSettings) SetAllowUserRequestsForAppAccess(value *bool)() {
         panic(err)
     }
 }
-// SetIsChatResourceSpecificConsentEnabled sets the isChatResourceSpecificConsentEnabled property value. Indicates whether resource-specific consent for chats/meetings has been enabled for the tenant. If true, Teams apps that are allowed in the tenant and require resource-specific permissions can be installed inside chats and meetings. If false, the installation of any Teams app that requires resource-specific permissions in a chat or a meeting will be blocked.
+// SetIsChatResourceSpecificConsentEnabled sets the isChatResourceSpecificConsentEnabled property value. Indicates whether resource-specific consent for chats/meetings has been enabled for the tenant. True indicates that Teams apps that are allowed in the tenant and require resource-specific permissions can be installed inside chats and meetings. False blocks the installation of any Teams app that requires resource-specific permissions in a chat or a meeting.
 func (m *TeamsAppSettings) SetIsChatResourceSpecificConsentEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isChatResourceSpecificConsentEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsUserPersonalScopeResourceSpecificConsentEnabled sets the isUserPersonalScopeResourceSpecificConsentEnabled property value. The isUserPersonalScopeResourceSpecificConsentEnabled property
+// SetIsUserPersonalScopeResourceSpecificConsentEnabled sets the isUserPersonalScopeResourceSpecificConsentEnabled property value. Indicates whether resource-specific consent for personal scope in Teams apps has been enabled for the tenant. True indicates that Teams apps that are allowed in the tenant and require resource-specific permissions can be installed in the personal scope. False blocks the installation of any Teams app that requires resource-specific permissions in the personal scope.
 func (m *TeamsAppSettings) SetIsUserPersonalScopeResourceSpecificConsentEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isUserPersonalScopeResourceSpecificConsentEnabled", value)
     if err != nil {

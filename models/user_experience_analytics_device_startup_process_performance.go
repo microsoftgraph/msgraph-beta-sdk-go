@@ -53,16 +53,6 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetFieldDeseria
         }
         return nil
     }
-    res["medianImpactInMs2"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMedianImpactInMs2(val)
-        }
-        return nil
-    }
     res["processName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -103,32 +93,11 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetFieldDeseria
         }
         return nil
     }
-    res["totalImpactInMs2"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTotalImpactInMs2(val)
-        }
-        return nil
-    }
     return res
 }
 // GetMedianImpactInMs gets the medianImpactInMs property value. The median impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetMedianImpactInMs()(*int64) {
     val, err := m.GetBackingStore().Get("medianImpactInMs")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int64)
-    }
-    return nil
-}
-// GetMedianImpactInMs2 gets the medianImpactInMs2 property value. The median impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.
-func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetMedianImpactInMs2()(*int64) {
-    val, err := m.GetBackingStore().Get("medianImpactInMs2")
     if err != nil {
         panic(err)
     }
@@ -181,17 +150,6 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetTotalImpactI
     }
     return nil
 }
-// GetTotalImpactInMs2 gets the totalImpactInMs2 property value. The total impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.
-func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetTotalImpactInMs2()(*int64) {
-    val, err := m.GetBackingStore().Get("totalImpactInMs2")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int64)
-    }
-    return nil
-}
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -206,12 +164,6 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) Serialize(write
     }
     {
         err = writer.WriteInt64Value("medianImpactInMs", m.GetMedianImpactInMs())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt64Value("medianImpactInMs2", m.GetMedianImpactInMs2())
         if err != nil {
             return err
         }
@@ -240,12 +192,6 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) Serialize(write
             return err
         }
     }
-    {
-        err = writer.WriteInt64Value("totalImpactInMs2", m.GetTotalImpactInMs2())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetDeviceCount sets the deviceCount property value. The count of devices which initiated this process on startup. Supports: $filter, $select, $OrderBy. Read-only.
@@ -258,13 +204,6 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetDeviceCount(
 // SetMedianImpactInMs sets the medianImpactInMs property value. The median impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetMedianImpactInMs(value *int64)() {
     err := m.GetBackingStore().Set("medianImpactInMs", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetMedianImpactInMs2 sets the medianImpactInMs2 property value. The median impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.
-func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetMedianImpactInMs2(value *int64)() {
-    err := m.GetBackingStore().Set("medianImpactInMs2", value)
     if err != nil {
         panic(err)
     }
@@ -297,31 +236,20 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetTotalImpactI
         panic(err)
     }
 }
-// SetTotalImpactInMs2 sets the totalImpactInMs2 property value. The total impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.
-func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetTotalImpactInMs2(value *int64)() {
-    err := m.GetBackingStore().Set("totalImpactInMs2", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // UserExperienceAnalyticsDeviceStartupProcessPerformanceable 
 type UserExperienceAnalyticsDeviceStartupProcessPerformanceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDeviceCount()(*int64)
     GetMedianImpactInMs()(*int64)
-    GetMedianImpactInMs2()(*int64)
     GetProcessName()(*string)
     GetProductName()(*string)
     GetPublisher()(*string)
     GetTotalImpactInMs()(*int64)
-    GetTotalImpactInMs2()(*int64)
     SetDeviceCount(value *int64)()
     SetMedianImpactInMs(value *int64)()
-    SetMedianImpactInMs2(value *int64)()
     SetProcessName(value *string)()
     SetProductName(value *string)()
     SetPublisher(value *string)()
     SetTotalImpactInMs(value *int64)()
-    SetTotalImpactInMs2(value *int64)()
 }

@@ -1313,6 +1313,16 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["securityPatchLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSecurityPatchLevel(val)
+        }
+        return nil
+    }
     res["serialNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -1880,6 +1890,17 @@ func (m *ManagedDevice) GetSecurityBaselineStates()([]SecurityBaselineStateable)
     }
     if val != nil {
         return val.([]SecurityBaselineStateable)
+    }
+    return nil
+}
+// GetSecurityPatchLevel gets the securityPatchLevel property value. This indicates the security patch level of the operating system. These special updates contain important security fixes. For iOS/MacOS they are in (a) format. For android its in 2017-08-07 format. This property is read-only.
+func (m *ManagedDevice) GetSecurityPatchLevel()(*string) {
+    val, err := m.GetBackingStore().Get("securityPatchLevel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -2897,6 +2918,13 @@ func (m *ManagedDevice) SetSecurityBaselineStates(value []SecurityBaselineStatea
         panic(err)
     }
 }
+// SetSecurityPatchLevel sets the securityPatchLevel property value. This indicates the security patch level of the operating system. These special updates contain important security fixes. For iOS/MacOS they are in (a) format. For android its in 2017-08-07 format. This property is read-only.
+func (m *ManagedDevice) SetSecurityPatchLevel(value *string)() {
+    err := m.GetBackingStore().Set("securityPatchLevel", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSerialNumber sets the serialNumber property value. SerialNumber. This property is read-only.
 func (m *ManagedDevice) SetSerialNumber(value *string)() {
     err := m.GetBackingStore().Set("serialNumber", value)
@@ -3089,6 +3117,7 @@ type ManagedDeviceable interface {
     GetRetireAfterDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRoleScopeTagIds()([]string)
     GetSecurityBaselineStates()([]SecurityBaselineStateable)
+    GetSecurityPatchLevel()(*string)
     GetSerialNumber()(*string)
     GetSkuFamily()(*string)
     GetSkuNumber()(*int32)
@@ -3181,6 +3210,7 @@ type ManagedDeviceable interface {
     SetRetireAfterDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRoleScopeTagIds(value []string)()
     SetSecurityBaselineStates(value []SecurityBaselineStateable)()
+    SetSecurityPatchLevel(value *string)()
     SetSerialNumber(value *string)()
     SetSkuFamily(value *string)()
     SetSkuNumber(value *int32)()
