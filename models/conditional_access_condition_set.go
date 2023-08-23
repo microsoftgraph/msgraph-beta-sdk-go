@@ -60,7 +60,7 @@ func (m *ConditionalAccessConditionSet) GetClientApplications()(ConditionalAcces
     }
     return nil
 }
-// GetClientAppTypes gets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
+// GetClientAppTypes gets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync which includes EAS supported and unsupported platforms.
 func (m *ConditionalAccessConditionSet) GetClientAppTypes()([]ConditionalAccessClientApp) {
     val, err := m.GetBackingStore().Get("clientAppTypes")
     if err != nil {
@@ -82,7 +82,7 @@ func (m *ConditionalAccessConditionSet) GetDevices()(ConditionalAccessDevicesabl
     }
     return nil
 }
-// GetDeviceStates gets the deviceStates property value. Device states in the policy.
+// GetDeviceStates gets the deviceStates property value. Device states in the policy. To be deprecated and removed. Use the devices property instead.
 func (m *ConditionalAccessConditionSet) GetDeviceStates()(ConditionalAccessDeviceStatesable) {
     val, err := m.GetBackingStore().Get("deviceStates")
     if err != nil {
@@ -426,7 +426,7 @@ func (m *ConditionalAccessConditionSet) SetClientApplications(value ConditionalA
         panic(err)
     }
 }
-// SetClientAppTypes sets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
+// SetClientAppTypes sets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync which includes EAS supported and unsupported platforms.
 func (m *ConditionalAccessConditionSet) SetClientAppTypes(value []ConditionalAccessClientApp)() {
     err := m.GetBackingStore().Set("clientAppTypes", value)
     if err != nil {
@@ -440,7 +440,7 @@ func (m *ConditionalAccessConditionSet) SetDevices(value ConditionalAccessDevice
         panic(err)
     }
 }
-// SetDeviceStates sets the deviceStates property value. Device states in the policy.
+// SetDeviceStates sets the deviceStates property value. Device states in the policy. To be deprecated and removed. Use the devices property instead.
 func (m *ConditionalAccessConditionSet) SetDeviceStates(value ConditionalAccessDeviceStatesable)() {
     err := m.GetBackingStore().Set("deviceStates", value)
     if err != nil {

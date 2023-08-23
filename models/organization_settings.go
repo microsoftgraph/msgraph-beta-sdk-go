@@ -134,7 +134,7 @@ func (m *OrganizationSettings) GetPeopleInsights()(InsightsSettingsable) {
     }
     return nil
 }
-// GetProfileCardProperties gets the profileCardProperties property value. Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
+// GetProfileCardProperties gets the profileCardProperties property value. The profileCardProperties property
 func (m *OrganizationSettings) GetProfileCardProperties()([]ProfileCardPropertyable) {
     val, err := m.GetBackingStore().Get("profileCardProperties")
     if err != nil {
@@ -234,7 +234,7 @@ func (m *OrganizationSettings) SetPeopleInsights(value InsightsSettingsable)() {
         panic(err)
     }
 }
-// SetProfileCardProperties sets the profileCardProperties property value. Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
+// SetProfileCardProperties sets the profileCardProperties property value. The profileCardProperties property
 func (m *OrganizationSettings) SetProfileCardProperties(value []ProfileCardPropertyable)() {
     err := m.GetBackingStore().Set("profileCardProperties", value)
     if err != nil {

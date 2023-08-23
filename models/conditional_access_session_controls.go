@@ -189,7 +189,7 @@ func (m *ConditionalAccessSessionControls) GetPersistentBrowser()(PersistentBrow
     }
     return nil
 }
-// GetSecureSignInSession gets the secureSignInSession property value. The secureSignInSession property
+// GetSecureSignInSession gets the secureSignInSession property value. Session control to require sign in sessions to be bound to a device.
 func (m *ConditionalAccessSessionControls) GetSecureSignInSession()(SecureSignInSessionControlable) {
     val, err := m.GetBackingStore().Get("secureSignInSession")
     if err != nil {
@@ -322,7 +322,7 @@ func (m *ConditionalAccessSessionControls) SetPersistentBrowser(value Persistent
         panic(err)
     }
 }
-// SetSecureSignInSession sets the secureSignInSession property value. The secureSignInSession property
+// SetSecureSignInSession sets the secureSignInSession property value. Session control to require sign in sessions to be bound to a device.
 func (m *ConditionalAccessSessionControls) SetSecureSignInSession(value SecureSignInSessionControlable)() {
     err := m.GetBackingStore().Set("secureSignInSession", value)
     if err != nil {

@@ -14,10 +14,16 @@ const (
     ENABLED_MOBILETHREATPARTNERTENANTSTATE
     // Partner is unresponsive.
     UNRESPONSIVE_MOBILETHREATPARTNERTENANTSTATE
+    // Indicates that the partner connector is not set up. This can occur when the connector is not provisioned and Intune has not received a heartbeat for the connector. Please see https://go.microsoft.com/fwlink/?linkid=2239039 for more information on connector states.
+    NOTSETUP_MOBILETHREATPARTNERTENANTSTATE
+    // Indicates that the partner connector is in an error state. This can occur when the connector has a non-zero error code set due to an internal error in processing. Please see https://go.microsoft.com/fwlink/?linkid=2239039 for more information on connector states.
+    ERROR_MOBILETHREATPARTNERTENANTSTATE
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_MOBILETHREATPARTNERTENANTSTATE
 )
 
 func (i MobileThreatPartnerTenantState) String() string {
-    return []string{"unavailable", "available", "enabled", "unresponsive"}[i]
+    return []string{"unavailable", "available", "enabled", "unresponsive", "notSetUp", "error", "unknownFutureValue"}[i]
 }
 func ParseMobileThreatPartnerTenantState(v string) (any, error) {
     result := UNAVAILABLE_MOBILETHREATPARTNERTENANTSTATE
@@ -30,6 +36,12 @@ func ParseMobileThreatPartnerTenantState(v string) (any, error) {
             result = ENABLED_MOBILETHREATPARTNERTENANTSTATE
         case "unresponsive":
             result = UNRESPONSIVE_MOBILETHREATPARTNERTENANTSTATE
+        case "notSetUp":
+            result = NOTSETUP_MOBILETHREATPARTNERTENANTSTATE
+        case "error":
+            result = ERROR_MOBILETHREATPARTNERTENANTSTATE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_MOBILETHREATPARTNERTENANTSTATE
         default:
             return 0, errors.New("Unknown MobileThreatPartnerTenantState value: " + v)
     }

@@ -97,6 +97,14 @@ func (m *OnlineMeetingsRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingCollectionResponseable), nil
 }
+// GetAllRecordings provides operations to call the getAllRecordings method.
+func (m *OnlineMeetingsRequestBuilder) GetAllRecordings()(*OnlineMeetingsGetAllRecordingsRequestBuilder) {
+    return NewOnlineMeetingsGetAllRecordingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GetAllTranscripts provides operations to call the getAllTranscripts method.
+func (m *OnlineMeetingsRequestBuilder) GetAllTranscripts()(*OnlineMeetingsGetAllTranscriptsRequestBuilder) {
+    return NewOnlineMeetingsGetAllTranscriptsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Post create new navigation property to onlineMeetings for app
 func (m *OnlineMeetingsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable, requestConfiguration *OnlineMeetingsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);

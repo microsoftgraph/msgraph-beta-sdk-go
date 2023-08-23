@@ -30,7 +30,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetDeviceId()
     }
     return nil
 }
-// GetEstimatedRuntimeInMinutes gets the estimatedRuntimeInMinutes property value. The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
+// GetEstimatedRuntimeInMinutes gets the estimatedRuntimeInMinutes property value. The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetEstimatedRuntimeInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("estimatedRuntimeInMinutes")
     if err != nil {
@@ -120,7 +120,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) SetDeviceId(v
         panic(err)
     }
 }
-// SetEstimatedRuntimeInMinutes sets the estimatedRuntimeInMinutes property value. The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
+// SetEstimatedRuntimeInMinutes sets the estimatedRuntimeInMinutes property value. The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) SetEstimatedRuntimeInMinutes(value *int32)() {
     err := m.GetBackingStore().Set("estimatedRuntimeInMinutes", value)
     if err != nil {

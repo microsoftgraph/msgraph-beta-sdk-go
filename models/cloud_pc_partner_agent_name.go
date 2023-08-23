@@ -8,10 +8,11 @@ type CloudPcPartnerAgentName int
 const (
     CITRIX_CLOUDPCPARTNERAGENTNAME CloudPcPartnerAgentName = iota
     UNKNOWNFUTUREVALUE_CLOUDPCPARTNERAGENTNAME
+    VMWARE_CLOUDPCPARTNERAGENTNAME
 )
 
 func (i CloudPcPartnerAgentName) String() string {
-    return []string{"citrix", "unknownFutureValue"}[i]
+    return []string{"citrix", "unknownFutureValue", "vMware"}[i]
 }
 func ParseCloudPcPartnerAgentName(v string) (any, error) {
     result := CITRIX_CLOUDPCPARTNERAGENTNAME
@@ -20,6 +21,8 @@ func ParseCloudPcPartnerAgentName(v string) (any, error) {
             result = CITRIX_CLOUDPCPARTNERAGENTNAME
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCPARTNERAGENTNAME
+        case "vMware":
+            result = VMWARE_CLOUDPCPARTNERAGENTNAME
         default:
             return 0, errors.New("Unknown CloudPcPartnerAgentName value: " + v)
     }

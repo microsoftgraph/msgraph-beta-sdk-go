@@ -20,7 +20,7 @@ func NewCallRecording()(*CallRecording) {
 func CreateCallRecordingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCallRecording(), nil
 }
-// GetContent gets the content property value. The content property
+// GetContent gets the content property value. The content of the recording. Read-only.
 func (m *CallRecording) GetContent()([]byte) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -31,7 +31,7 @@ func (m *CallRecording) GetContent()([]byte) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *CallRecording) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -65,7 +65,70 @@ func (m *CallRecording) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["meetingId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMeetingId(val)
+        }
+        return nil
+    }
+    res["meetingOrganizerId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMeetingOrganizerId(val)
+        }
+        return nil
+    }
+    res["recordingContentUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRecordingContentUrl(val)
+        }
+        return nil
+    }
     return res
+}
+// GetMeetingId gets the meetingId property value. The unique identifier of the onlineMeeting related to this recording. Read-only.
+func (m *CallRecording) GetMeetingId()(*string) {
+    val, err := m.GetBackingStore().Get("meetingId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetMeetingOrganizerId gets the meetingOrganizerId property value. The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
+func (m *CallRecording) GetMeetingOrganizerId()(*string) {
+    val, err := m.GetBackingStore().Get("meetingOrganizerId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetRecordingContentUrl gets the recordingContentUrl property value. The URL which can be used to access the content of the recording. Read-only.
+func (m *CallRecording) GetRecordingContentUrl()(*string) {
+    val, err := m.GetBackingStore().Get("recordingContentUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CallRecording) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -85,18 +148,57 @@ func (m *CallRecording) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("meetingId", m.GetMeetingId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("meetingOrganizerId", m.GetMeetingOrganizerId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("recordingContentUrl", m.GetRecordingContentUrl())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
-// SetContent sets the content property value. The content property
+// SetContent sets the content property value. The content of the recording. Read-only.
 func (m *CallRecording) SetContent(value []byte)() {
     err := m.GetBackingStore().Set("content", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *CallRecording) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMeetingId sets the meetingId property value. The unique identifier of the onlineMeeting related to this recording. Read-only.
+func (m *CallRecording) SetMeetingId(value *string)() {
+    err := m.GetBackingStore().Set("meetingId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMeetingOrganizerId sets the meetingOrganizerId property value. The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
+func (m *CallRecording) SetMeetingOrganizerId(value *string)() {
+    err := m.GetBackingStore().Set("meetingOrganizerId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetRecordingContentUrl sets the recordingContentUrl property value. The URL which can be used to access the content of the recording. Read-only.
+func (m *CallRecording) SetRecordingContentUrl(value *string)() {
+    err := m.GetBackingStore().Set("recordingContentUrl", value)
     if err != nil {
         panic(err)
     }
@@ -107,6 +209,12 @@ type CallRecordingable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetContent()([]byte)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetMeetingId()(*string)
+    GetMeetingOrganizerId()(*string)
+    GetRecordingContentUrl()(*string)
     SetContent(value []byte)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetMeetingId(value *string)()
+    SetMeetingOrganizerId(value *string)()
+    SetRecordingContentUrl(value *string)()
 }

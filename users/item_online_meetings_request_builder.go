@@ -100,6 +100,14 @@ func (m *ItemOnlineMeetingsRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingCollectionResponseable), nil
 }
+// GetAllRecordings provides operations to call the getAllRecordings method.
+func (m *ItemOnlineMeetingsRequestBuilder) GetAllRecordings()(*ItemOnlineMeetingsGetAllRecordingsRequestBuilder) {
+    return NewItemOnlineMeetingsGetAllRecordingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GetAllTranscripts provides operations to call the getAllTranscripts method.
+func (m *ItemOnlineMeetingsRequestBuilder) GetAllTranscripts()(*ItemOnlineMeetingsGetAllTranscriptsRequestBuilder) {
+    return NewItemOnlineMeetingsGetAllTranscriptsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Post create an online meeting on behalf of a user.
 // [Find more info here]
 // 

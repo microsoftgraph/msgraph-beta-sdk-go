@@ -64,7 +64,28 @@ func (m *WorkbookCommentReply) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["task"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWorkbookDocumentTaskFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTask(val.(WorkbookDocumentTaskable))
+        }
+        return nil
+    }
     return res
+}
+// GetTask gets the task property value. The task property
+func (m *WorkbookCommentReply) GetTask()(WorkbookDocumentTaskable) {
+    val, err := m.GetBackingStore().Get("task")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WorkbookDocumentTaskable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WorkbookCommentReply) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,6 +101,12 @@ func (m *WorkbookCommentReply) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err = writer.WriteStringValue("contentType", m.GetContentType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("task", m.GetTask())
         if err != nil {
             return err
         }
@@ -100,12 +127,21 @@ func (m *WorkbookCommentReply) SetContentType(value *string)() {
         panic(err)
     }
 }
+// SetTask sets the task property value. The task property
+func (m *WorkbookCommentReply) SetTask(value WorkbookDocumentTaskable)() {
+    err := m.GetBackingStore().Set("task", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // WorkbookCommentReplyable 
 type WorkbookCommentReplyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetContent()(*string)
     GetContentType()(*string)
+    GetTask()(WorkbookDocumentTaskable)
     SetContent(value *string)()
     SetContentType(value *string)()
+    SetTask(value WorkbookDocumentTaskable)()
 }

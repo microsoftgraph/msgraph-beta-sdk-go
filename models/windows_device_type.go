@@ -2,24 +2,26 @@ package models
 import (
     "errors"
 )
-// Contains properties for Windows device type.
+// Contains properties for Windows device type. Multiple values can be selected. Default value is `none`.
 type WindowsDeviceType int
 
 const (
-    // No flags set.
+    // No device types supported. Default value.
     NONE_WINDOWSDEVICETYPE WindowsDeviceType = iota
-    // Whether or not the Desktop Windows device type is supported.
+    // Indicates support for Desktop Windows device type.
     DESKTOP_WINDOWSDEVICETYPE
-    // Whether or not the Mobile Windows device type is supported.
+    // Indicates support for Mobile Windows device type.
     MOBILE_WINDOWSDEVICETYPE
-    // Whether or not the Holographic Windows device type is supported.
+    // Indicates support for Holographic Windows device type.
     HOLOGRAPHIC_WINDOWSDEVICETYPE
-    // Whether or not the Team Windows device type is supported.
+    // Indicates support for Team Windows device type.
     TEAM_WINDOWSDEVICETYPE
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_WINDOWSDEVICETYPE
 )
 
 func (i WindowsDeviceType) String() string {
-    return []string{"none", "desktop", "mobile", "holographic", "team"}[i]
+    return []string{"none", "desktop", "mobile", "holographic", "team", "unknownFutureValue"}[i]
 }
 func ParseWindowsDeviceType(v string) (any, error) {
     result := NONE_WINDOWSDEVICETYPE
@@ -34,6 +36,8 @@ func ParseWindowsDeviceType(v string) (any, error) {
             result = HOLOGRAPHIC_WINDOWSDEVICETYPE
         case "team":
             result = TEAM_WINDOWSDEVICETYPE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_WINDOWSDEVICETYPE
         default:
             return 0, errors.New("Unknown WindowsDeviceType value: " + v)
     }

@@ -41,6 +41,10 @@ type ConnectivityBranchesBranchSiteItemRequestBuilderPatchRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ConnectivityConfiguration provides operations to manage the connectivityConfiguration property of the microsoft.graph.networkaccess.branchSite entity.
+func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) ConnectivityConfiguration()(*ConnectivityBranchesItemConnectivityConfigurationRequestBuilder) {
+    return NewConnectivityBranchesItemConnectivityConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewConnectivityBranchesBranchSiteItemRequestBuilderInternal instantiates a new BranchSiteItemRequestBuilder and sets the default values.
 func NewConnectivityBranchesBranchSiteItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectivityBranchesBranchSiteItemRequestBuilder) {
     m := &ConnectivityBranchesBranchSiteItemRequestBuilder{

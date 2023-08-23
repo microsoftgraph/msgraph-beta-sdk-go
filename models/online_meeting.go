@@ -225,6 +225,17 @@ func (m *OnlineMeeting) GetChatInfo()(ChatInfoable) {
     }
     return nil
 }
+// GetChatRestrictions gets the chatRestrictions property value. The chatRestrictions property
+func (m *OnlineMeeting) GetChatRestrictions()(ChatRestrictionsable) {
+    val, err := m.GetBackingStore().Get("chatRestrictions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ChatRestrictionsable)
+    }
+    return nil
+}
 // GetCreationDateTime gets the creationDateTime property value. The meeting creation time in UTC. Read-only.
 func (m *OnlineMeeting) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("creationDateTime")
@@ -446,6 +457,16 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetChatInfo(val.(ChatInfoable))
+        }
+        return nil
+    }
+    res["chatRestrictions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateChatRestrictionsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetChatRestrictions(val.(ChatRestrictionsable))
         }
         return nil
     }
@@ -671,16 +692,6 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
-    res["virtualAppointment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateVirtualAppointmentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetVirtualAppointment(val.(VirtualAppointmentable))
-        }
-        return nil
-    }
     res["watermarkProtection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWatermarkProtectionValuesFromDiscriminatorValue)
         if err != nil {
@@ -814,7 +825,7 @@ func (m *OnlineMeeting) GetRecording()([]byte) {
     }
     return nil
 }
-// GetRecordings gets the recordings property value. The recordings property
+// GetRecordings gets the recordings property value. The recordings of an online meeting. Read-only.
 func (m *OnlineMeeting) GetRecordings()([]CallRecordingable) {
     val, err := m.GetBackingStore().Get("recordings")
     if err != nil {
@@ -888,17 +899,6 @@ func (m *OnlineMeeting) GetVideoTeleconferenceId()(*string) {
     }
     if val != nil {
         return val.(*string)
-    }
-    return nil
-}
-// GetVirtualAppointment gets the virtualAppointment property value. The virtualAppointment property
-func (m *OnlineMeeting) GetVirtualAppointment()(VirtualAppointmentable) {
-    val, err := m.GetBackingStore().Get("virtualAppointment")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(VirtualAppointmentable)
     }
     return nil
 }
@@ -1025,6 +1025,12 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err = writer.WriteObjectValue("chatInfo", m.GetChatInfo())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("chatRestrictions", m.GetChatRestrictions())
         if err != nil {
             return err
         }
@@ -1169,12 +1175,6 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
-        err = writer.WriteObjectValue("virtualAppointment", m.GetVirtualAppointment())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("watermarkProtection", m.GetWatermarkProtection())
         if err != nil {
             return err
@@ -1301,6 +1301,13 @@ func (m *OnlineMeeting) SetChatInfo(value ChatInfoable)() {
         panic(err)
     }
 }
+// SetChatRestrictions sets the chatRestrictions property value. The chatRestrictions property
+func (m *OnlineMeeting) SetChatRestrictions(value ChatRestrictionsable)() {
+    err := m.GetBackingStore().Set("chatRestrictions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCreationDateTime sets the creationDateTime property value. The meeting creation time in UTC. Read-only.
 func (m *OnlineMeeting) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("creationDateTime", value)
@@ -1399,7 +1406,7 @@ func (m *OnlineMeeting) SetRecording(value []byte)() {
         panic(err)
     }
 }
-// SetRecordings sets the recordings property value. The recordings property
+// SetRecordings sets the recordings property value. The recordings of an online meeting. Read-only.
 func (m *OnlineMeeting) SetRecordings(value []CallRecordingable)() {
     err := m.GetBackingStore().Set("recordings", value)
     if err != nil {
@@ -1448,13 +1455,6 @@ func (m *OnlineMeeting) SetVideoTeleconferenceId(value *string)() {
         panic(err)
     }
 }
-// SetVirtualAppointment sets the virtualAppointment property value. The virtualAppointment property
-func (m *OnlineMeeting) SetVirtualAppointment(value VirtualAppointmentable)() {
-    err := m.GetBackingStore().Set("virtualAppointment", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetWatermarkProtection sets the watermarkProtection property value. Specifies whether a watermark should be applied to a content type by the client application.
 func (m *OnlineMeeting) SetWatermarkProtection(value WatermarkProtectionValuesable)() {
     err := m.GetBackingStore().Set("watermarkProtection", value)
@@ -1483,6 +1483,7 @@ type OnlineMeetingable interface {
     GetBroadcastSettings()(BroadcastMeetingSettingsable)
     GetCapabilities()([]MeetingCapabilities)
     GetChatInfo()(ChatInfoable)
+    GetChatRestrictions()(ChatRestrictionsable)
     GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetExternalId()(*string)
@@ -1504,7 +1505,6 @@ type OnlineMeetingable interface {
     GetSubject()(*string)
     GetTranscripts()([]CallTranscriptable)
     GetVideoTeleconferenceId()(*string)
-    GetVirtualAppointment()(VirtualAppointmentable)
     GetWatermarkProtection()(WatermarkProtectionValuesable)
     SetAllowAttendeeToEnableCamera(value *bool)()
     SetAllowAttendeeToEnableMic(value *bool)()
@@ -1523,6 +1523,7 @@ type OnlineMeetingable interface {
     SetBroadcastSettings(value BroadcastMeetingSettingsable)()
     SetCapabilities(value []MeetingCapabilities)()
     SetChatInfo(value ChatInfoable)()
+    SetChatRestrictions(value ChatRestrictionsable)()
     SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetExternalId(value *string)()
@@ -1544,6 +1545,5 @@ type OnlineMeetingable interface {
     SetSubject(value *string)()
     SetTranscripts(value []CallTranscriptable)()
     SetVideoTeleconferenceId(value *string)()
-    SetVirtualAppointment(value VirtualAppointmentable)()
     SetWatermarkProtection(value WatermarkProtectionValuesable)()
 }

@@ -84,7 +84,7 @@ func (m *AuthenticationBehaviors) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRemoveUnverifiedEmailClaim gets the removeUnverifiedEmailClaim property value. Removes the email claim from tokens sent to an application when the email address's domain cannot be verified.
+// GetRemoveUnverifiedEmailClaim gets the removeUnverifiedEmailClaim property value. Removes the email claim from tokens sent to an application when the email address's domain can't be verified.
 func (m *AuthenticationBehaviors) GetRemoveUnverifiedEmailClaim()(*bool) {
     val, err := m.GetBackingStore().Get("removeUnverifiedEmailClaim")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *AuthenticationBehaviors) GetRemoveUnverifiedEmailClaim()(*bool) {
     }
     return nil
 }
-// GetRequireClientServicePrincipal gets the requireClientServicePrincipal property value. The requireClientServicePrincipal property
+// GetRequireClientServicePrincipal gets the requireClientServicePrincipal property value. Requires multitenant applications to have a service principal in the resource tenant as part of authorization checks before they're granted access tokens. This property is only modifiable for multi-tenant resource applications that rely on access from clients without a service principal and had this behavior as set to false by Microsoft. Tenant administrators should respond to security advisories sent through Azure Health Service events and the Microsoft 365 message center.
 func (m *AuthenticationBehaviors) GetRequireClientServicePrincipal()(*bool) {
     val, err := m.GetBackingStore().Get("requireClientServicePrincipal")
     if err != nil {
@@ -152,14 +152,14 @@ func (m *AuthenticationBehaviors) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRemoveUnverifiedEmailClaim sets the removeUnverifiedEmailClaim property value. Removes the email claim from tokens sent to an application when the email address's domain cannot be verified.
+// SetRemoveUnverifiedEmailClaim sets the removeUnverifiedEmailClaim property value. Removes the email claim from tokens sent to an application when the email address's domain can't be verified.
 func (m *AuthenticationBehaviors) SetRemoveUnverifiedEmailClaim(value *bool)() {
     err := m.GetBackingStore().Set("removeUnverifiedEmailClaim", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRequireClientServicePrincipal sets the requireClientServicePrincipal property value. The requireClientServicePrincipal property
+// SetRequireClientServicePrincipal sets the requireClientServicePrincipal property value. Requires multitenant applications to have a service principal in the resource tenant as part of authorization checks before they're granted access tokens. This property is only modifiable for multi-tenant resource applications that rely on access from clients without a service principal and had this behavior as set to false by Microsoft. Tenant administrators should respond to security advisories sent through Azure Health Service events and the Microsoft 365 message center.
 func (m *AuthenticationBehaviors) SetRequireClientServicePrincipal(value *bool)() {
     err := m.GetBackingStore().Set("requireClientServicePrincipal", value)
     if err != nil {

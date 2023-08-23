@@ -269,6 +269,22 @@ func (m *ThreatIntelligence) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["whoisHistoryRecords"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateWhoisHistoryRecordFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]WhoisHistoryRecordable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(WhoisHistoryRecordable)
+                }
+            }
+            m.SetWhoisHistoryRecords(res)
+        }
+        return nil
+    }
     res["whoisRecords"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWhoisRecordFromDiscriminatorValue)
         if err != nil {
@@ -309,7 +325,7 @@ func (m *ThreatIntelligence) GetHostCookies()([]HostCookieable) {
     }
     return nil
 }
-// GetHostPairs gets the hostPairs property value. The hostPairs property
+// GetHostPairs gets the hostPairs property value. Retrieve details about microsoft.graph.security.hostTracker objects.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) GetHostPairs()([]HostPairable) {
     val, err := m.GetBackingStore().Get("hostPairs")
     if err != nil {
@@ -416,6 +432,17 @@ func (m *ThreatIntelligence) GetVulnerabilities()([]Vulnerabilityable) {
     }
     if val != nil {
         return val.([]Vulnerabilityable)
+    }
+    return nil
+}
+// GetWhoisHistoryRecords gets the whoisHistoryRecords property value. The whoisHistoryRecords property
+func (m *ThreatIntelligence) GetWhoisHistoryRecords()([]WhoisHistoryRecordable) {
+    val, err := m.GetBackingStore().Get("whoisHistoryRecords")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WhoisHistoryRecordable)
     }
     return nil
 }
@@ -604,6 +631,18 @@ func (m *ThreatIntelligence) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    if m.GetWhoisHistoryRecords() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWhoisHistoryRecords()))
+        for i, v := range m.GetWhoisHistoryRecords() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("whoisHistoryRecords", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetWhoisRecords() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWhoisRecords()))
         for i, v := range m.GetWhoisRecords() {
@@ -646,7 +685,7 @@ func (m *ThreatIntelligence) SetHostCookies(value []HostCookieable)() {
         panic(err)
     }
 }
-// SetHostPairs sets the hostPairs property value. The hostPairs property
+// SetHostPairs sets the hostPairs property value. Retrieve details about microsoft.graph.security.hostTracker objects.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) SetHostPairs(value []HostPairable)() {
     err := m.GetBackingStore().Set("hostPairs", value)
     if err != nil {
@@ -716,6 +755,13 @@ func (m *ThreatIntelligence) SetVulnerabilities(value []Vulnerabilityable)() {
         panic(err)
     }
 }
+// SetWhoisHistoryRecords sets the whoisHistoryRecords property value. The whoisHistoryRecords property
+func (m *ThreatIntelligence) SetWhoisHistoryRecords(value []WhoisHistoryRecordable)() {
+    err := m.GetBackingStore().Set("whoisHistoryRecords", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetWhoisRecords sets the whoisRecords property value. The whoisRecords property
 func (m *ThreatIntelligence) SetWhoisRecords(value []WhoisRecordable)() {
     err := m.GetBackingStore().Set("whoisRecords", value)
@@ -741,6 +787,7 @@ type ThreatIntelligenceable interface {
     GetSslCertificates()([]SslCertificateable)
     GetSubdomains()([]Subdomainable)
     GetVulnerabilities()([]Vulnerabilityable)
+    GetWhoisHistoryRecords()([]WhoisHistoryRecordable)
     GetWhoisRecords()([]WhoisRecordable)
     SetArticleIndicators(value []ArticleIndicatorable)()
     SetArticles(value []Articleable)()
@@ -756,5 +803,6 @@ type ThreatIntelligenceable interface {
     SetSslCertificates(value []SslCertificateable)()
     SetSubdomains(value []Subdomainable)()
     SetVulnerabilities(value []Vulnerabilityable)()
+    SetWhoisHistoryRecords(value []WhoisHistoryRecordable)()
     SetWhoisRecords(value []WhoisRecordable)()
 }

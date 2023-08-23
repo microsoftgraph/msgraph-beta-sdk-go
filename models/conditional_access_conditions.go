@@ -22,10 +22,12 @@ const (
     UNKNOWNFUTUREVALUE_CONDITIONALACCESSCONDITIONS
     SERVICEPRINCIPALS_CONDITIONALACCESSCONDITIONS
     SERVICEPRINCIPALRISK_CONDITIONALACCESSCONDITIONS
+    AUTHENTICATIONFLOWS_CONDITIONALACCESSCONDITIONS
+    INSIDERRISK_CONDITIONALACCESSCONDITIONS
 )
 
 func (i ConditionalAccessConditions) String() string {
-    return []string{"none", "application", "users", "devicePlatform", "location", "clientType", "signInRisk", "userRisk", "time", "deviceState", "client", "ipAddressSeenByAzureAD", "ipAddressSeenByResourceProvider", "unknownFutureValue", "servicePrincipals", "servicePrincipalRisk"}[i]
+    return []string{"none", "application", "users", "devicePlatform", "location", "clientType", "signInRisk", "userRisk", "time", "deviceState", "client", "ipAddressSeenByAzureAD", "ipAddressSeenByResourceProvider", "unknownFutureValue", "servicePrincipals", "servicePrincipalRisk", "authenticationFlows", "insiderRisk"}[i]
 }
 func ParseConditionalAccessConditions(v string) (any, error) {
     result := NONE_CONDITIONALACCESSCONDITIONS
@@ -62,6 +64,10 @@ func ParseConditionalAccessConditions(v string) (any, error) {
             result = SERVICEPRINCIPALS_CONDITIONALACCESSCONDITIONS
         case "servicePrincipalRisk":
             result = SERVICEPRINCIPALRISK_CONDITIONALACCESSCONDITIONS
+        case "authenticationFlows":
+            result = AUTHENTICATIONFLOWS_CONDITIONALACCESSCONDITIONS
+        case "insiderRisk":
+            result = INSIDERRISK_CONDITIONALACCESSCONDITIONS
         default:
             return 0, errors.New("Unknown ConditionalAccessConditions value: " + v)
     }

@@ -469,7 +469,6 @@ type Adminable interface {
     SetWindows(value AdminWindowsable)()
 }
 
-
 // AdminWindows 
 type AdminWindows struct {
     Entity

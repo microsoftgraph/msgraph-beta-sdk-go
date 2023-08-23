@@ -11,7 +11,7 @@ import (
 type PeopleProfileCardPropertiesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PeopleProfileCardPropertiesRequestBuilderGetQueryParameters get profileCardProperties from admin
+// PeopleProfileCardPropertiesRequestBuilderGetQueryParameters get a collection of profileCardProperty resources for an organization. Each resource is identified by its directoryPropertyName property.
 type PeopleProfileCardPropertiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewPeopleProfileCardPropertiesRequestBuilder(rawUrl string, requestAdapter 
 func (m *PeopleProfileCardPropertiesRequestBuilder) Count()(*PeopleProfileCardPropertiesCountRequestBuilder) {
     return NewPeopleProfileCardPropertiesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get profileCardProperties from admin
+// Get get a collection of profileCardProperty resources for an organization. Each resource is identified by its directoryPropertyName property.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/peopleadminsettings-list-profilecardproperties?view=graph-rest-1.0
 func (m *PeopleProfileCardPropertiesRequestBuilder) Get(ctx context.Context, requestConfiguration *PeopleProfileCardPropertiesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfileCardPropertyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *PeopleProfileCardPropertiesRequestBuilder) Get(ctx context.Context, req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfileCardPropertyCollectionResponseable), nil
 }
-// Post create new navigation property to profileCardProperties for admin
+// Post create a new profileCardProperty for an organization. The new property is identified by its directoryPropertyName property. For more information about how to add properties to the profile card for an organization, see Add or delete custom attributes on a profile card using the profile card API.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/peopleadminsettings-post-profilecardproperties?view=graph-rest-1.0
 func (m *PeopleProfileCardPropertiesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfileCardPropertyable, requestConfiguration *PeopleProfileCardPropertiesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfileCardPropertyable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *PeopleProfileCardPropertiesRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfileCardPropertyable), nil
 }
-// ToGetRequestInformation get profileCardProperties from admin
+// ToGetRequestInformation get a collection of profileCardProperty resources for an organization. Each resource is identified by its directoryPropertyName property.
 func (m *PeopleProfileCardPropertiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PeopleProfileCardPropertiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *PeopleProfileCardPropertiesRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to profileCardProperties for admin
+// ToPostRequestInformation create a new profileCardProperty for an organization. The new property is identified by its directoryPropertyName property. For more information about how to add properties to the profile card for an organization, see Add or delete custom attributes on a profile card using the profile card API.
 func (m *PeopleProfileCardPropertiesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfileCardPropertyable, requestConfiguration *PeopleProfileCardPropertiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

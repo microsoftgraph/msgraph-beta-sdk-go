@@ -40,10 +40,13 @@ const (
     OTHEREXTERNALUSER_CONDITIONALACCESSRULE
     SERVICEPROVIDER_CONDITIONALACCESSRULE
     MICROSOFTADMINPORTALS_CONDITIONALACCESSRULE
+    DEVICECODEFLOW_CONDITIONALACCESSRULE
+    AUTHENTICATIONTRANSFER_CONDITIONALACCESSRULE
+    INSIDERRISK_CONDITIONALACCESSRULE
 )
 
 func (i ConditionalAccessRule) String() string {
-    return []string{"allApps", "firstPartyApps", "office365", "appId", "acr", "appFilter", "allUsers", "guest", "groupId", "roleId", "userId", "allDevicePlatforms", "devicePlatform", "allLocations", "insideCorpnet", "allTrustedLocations", "locationId", "allDevices", "deviceFilter", "deviceState", "unknownFutureValue", "deviceFilterIncludeRuleNotMatched", "allDeviceStates", "anonymizedIPAddress", "unfamiliarFeatures", "nationStateIPAddress", "realTimeThreatIntelligence", "internalGuest", "b2bCollaborationGuest", "b2bCollaborationMember", "b2bDirectConnectUser", "otherExternalUser", "serviceProvider", "microsoftAdminPortals"}[i]
+    return []string{"allApps", "firstPartyApps", "office365", "appId", "acr", "appFilter", "allUsers", "guest", "groupId", "roleId", "userId", "allDevicePlatforms", "devicePlatform", "allLocations", "insideCorpnet", "allTrustedLocations", "locationId", "allDevices", "deviceFilter", "deviceState", "unknownFutureValue", "deviceFilterIncludeRuleNotMatched", "allDeviceStates", "anonymizedIPAddress", "unfamiliarFeatures", "nationStateIPAddress", "realTimeThreatIntelligence", "internalGuest", "b2bCollaborationGuest", "b2bCollaborationMember", "b2bDirectConnectUser", "otherExternalUser", "serviceProvider", "microsoftAdminPortals", "deviceCodeFlow", "authenticationTransfer", "insiderRisk"}[i]
 }
 func ParseConditionalAccessRule(v string) (any, error) {
     result := ALLAPPS_CONDITIONALACCESSRULE
@@ -116,6 +119,12 @@ func ParseConditionalAccessRule(v string) (any, error) {
             result = SERVICEPROVIDER_CONDITIONALACCESSRULE
         case "microsoftAdminPortals":
             result = MICROSOFTADMINPORTALS_CONDITIONALACCESSRULE
+        case "deviceCodeFlow":
+            result = DEVICECODEFLOW_CONDITIONALACCESSRULE
+        case "authenticationTransfer":
+            result = AUTHENTICATIONTRANSFER_CONDITIONALACCESSRULE
+        case "insiderRisk":
+            result = INSIDERRISK_CONDITIONALACCESSRULE
         default:
             return 0, errors.New("Unknown ConditionalAccessRule value: " + v)
     }

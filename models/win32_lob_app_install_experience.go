@@ -62,6 +62,16 @@ func (m *Win32LobAppInstallExperience) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["maxRunTimeInMinutes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMaxRunTimeInMinutes(val)
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -83,6 +93,17 @@ func (m *Win32LobAppInstallExperience) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetMaxRunTimeInMinutes gets the maxRunTimeInMinutes property value. The number of minutes the system will wait for install program to finish. Default value is 60 minutes.
+func (m *Win32LobAppInstallExperience) GetMaxRunTimeInMinutes()(*int32) {
+    val, err := m.GetBackingStore().Get("maxRunTimeInMinutes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Win32LobAppInstallExperience) GetOdataType()(*string) {
@@ -111,6 +132,12 @@ func (m *Win32LobAppInstallExperience) Serialize(writer i878a80d2330e89d26896388
     if m.GetDeviceRestartBehavior() != nil {
         cast := (*m.GetDeviceRestartBehavior()).String()
         err := writer.WriteStringValue("deviceRestartBehavior", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteInt32Value("maxRunTimeInMinutes", m.GetMaxRunTimeInMinutes())
         if err != nil {
             return err
         }
@@ -154,6 +181,13 @@ func (m *Win32LobAppInstallExperience) SetDeviceRestartBehavior(value *Win32LobA
         panic(err)
     }
 }
+// SetMaxRunTimeInMinutes sets the maxRunTimeInMinutes property value. The number of minutes the system will wait for install program to finish. Default value is 60 minutes.
+func (m *Win32LobAppInstallExperience) SetMaxRunTimeInMinutes(value *int32)() {
+    err := m.GetBackingStore().Set("maxRunTimeInMinutes", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Win32LobAppInstallExperience) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -175,10 +209,12 @@ type Win32LobAppInstallExperienceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDeviceRestartBehavior()(*Win32LobAppRestartBehavior)
+    GetMaxRunTimeInMinutes()(*int32)
     GetOdataType()(*string)
     GetRunAsAccount()(*RunAsAccountType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDeviceRestartBehavior(value *Win32LobAppRestartBehavior)()
+    SetMaxRunTimeInMinutes(value *int32)()
     SetOdataType(value *string)()
     SetRunAsAccount(value *RunAsAccountType)()
 }

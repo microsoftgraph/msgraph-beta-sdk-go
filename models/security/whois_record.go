@@ -1,701 +1,89 @@
 package security
 
 import (
-    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 // WhoisRecord 
 type WhoisRecord struct {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+    WhoisBaseRecord
 }
 // NewWhoisRecord instantiates a new whoisRecord and sets the default values.
 func NewWhoisRecord()(*WhoisRecord) {
     m := &WhoisRecord{
-        Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
+        WhoisBaseRecord: *NewWhoisBaseRecord(),
     }
+    odataTypeValue := "#microsoft.graph.security.whoisRecord"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWhoisRecordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWhoisRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWhoisRecord(), nil
 }
-// GetAbuse gets the abuse property value. The abuse property
-func (m *WhoisRecord) GetAbuse()(WhoisContactable) {
-    val, err := m.GetBackingStore().Get("abuse")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(WhoisContactable)
-    }
-    return nil
-}
-// GetAdmin gets the admin property value. The admin property
-func (m *WhoisRecord) GetAdmin()(WhoisContactable) {
-    val, err := m.GetBackingStore().Get("admin")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(WhoisContactable)
-    }
-    return nil
-}
-// GetBilling gets the billing property value. The billing property
-func (m *WhoisRecord) GetBilling()(WhoisContactable) {
-    val, err := m.GetBackingStore().Get("billing")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(WhoisContactable)
-    }
-    return nil
-}
-// GetDomainStatus gets the domainStatus property value. The domainStatus property
-func (m *WhoisRecord) GetDomainStatus()(*string) {
-    val, err := m.GetBackingStore().Get("domainStatus")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
-func (m *WhoisRecord) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("expirationDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WhoisRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["abuse"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWhoisContactFromDiscriminatorValue)
+    res := m.WhoisBaseRecord.GetFieldDeserializers()
+    res["history"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateWhoisHistoryRecordFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAbuse(val.(WhoisContactable))
-        }
-        return nil
-    }
-    res["admin"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWhoisContactFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAdmin(val.(WhoisContactable))
-        }
-        return nil
-    }
-    res["billing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWhoisContactFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBilling(val.(WhoisContactable))
-        }
-        return nil
-    }
-    res["domainStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDomainStatus(val)
-        }
-        return nil
-    }
-    res["expirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetExpirationDateTime(val)
-        }
-        return nil
-    }
-    res["firstSeenDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFirstSeenDateTime(val)
-        }
-        return nil
-    }
-    res["host"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateHostFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetHost(val.(Hostable))
-        }
-        return nil
-    }
-    res["lastSeenDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastSeenDateTime(val)
-        }
-        return nil
-    }
-    res["lastUpdateDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastUpdateDateTime(val)
-        }
-        return nil
-    }
-    res["nameservers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWhoisNameserverFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WhoisNameserverable, len(val))
+            res := make([]WhoisHistoryRecordable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(WhoisNameserverable)
+                    res[i] = v.(WhoisHistoryRecordable)
                 }
             }
-            m.SetNameservers(res)
-        }
-        return nil
-    }
-    res["noc"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWhoisContactFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetNoc(val.(WhoisContactable))
-        }
-        return nil
-    }
-    res["rawWhoisText"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRawWhoisText(val)
-        }
-        return nil
-    }
-    res["registrant"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWhoisContactFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRegistrant(val.(WhoisContactable))
-        }
-        return nil
-    }
-    res["registrar"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWhoisContactFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRegistrar(val.(WhoisContactable))
-        }
-        return nil
-    }
-    res["registrationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRegistrationDateTime(val)
-        }
-        return nil
-    }
-    res["technical"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWhoisContactFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTechnical(val.(WhoisContactable))
-        }
-        return nil
-    }
-    res["whoisServer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWhoisServer(val)
-        }
-        return nil
-    }
-    res["zone"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWhoisContactFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetZone(val.(WhoisContactable))
+            m.SetHistory(res)
         }
         return nil
     }
     return res
 }
-// GetFirstSeenDateTime gets the firstSeenDateTime property value. The firstSeenDateTime property
-func (m *WhoisRecord) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("firstSeenDateTime")
+// GetHistory gets the history property value. The history property
+func (m *WhoisRecord) GetHistory()([]WhoisHistoryRecordable) {
+    val, err := m.GetBackingStore().Get("history")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
-}
-// GetHost gets the host property value. The host property
-func (m *WhoisRecord) GetHost()(Hostable) {
-    val, err := m.GetBackingStore().Get("host")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(Hostable)
-    }
-    return nil
-}
-// GetLastSeenDateTime gets the lastSeenDateTime property value. The lastSeenDateTime property
-func (m *WhoisRecord) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("lastSeenDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
-}
-// GetLastUpdateDateTime gets the lastUpdateDateTime property value. The lastUpdateDateTime property
-func (m *WhoisRecord) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("lastUpdateDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
-}
-// GetNameservers gets the nameservers property value. The nameservers property
-func (m *WhoisRecord) GetNameservers()([]WhoisNameserverable) {
-    val, err := m.GetBackingStore().Get("nameservers")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]WhoisNameserverable)
-    }
-    return nil
-}
-// GetNoc gets the noc property value. The noc property
-func (m *WhoisRecord) GetNoc()(WhoisContactable) {
-    val, err := m.GetBackingStore().Get("noc")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(WhoisContactable)
-    }
-    return nil
-}
-// GetRawWhoisText gets the rawWhoisText property value. The rawWhoisText property
-func (m *WhoisRecord) GetRawWhoisText()(*string) {
-    val, err := m.GetBackingStore().Get("rawWhoisText")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetRegistrant gets the registrant property value. The registrant property
-func (m *WhoisRecord) GetRegistrant()(WhoisContactable) {
-    val, err := m.GetBackingStore().Get("registrant")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(WhoisContactable)
-    }
-    return nil
-}
-// GetRegistrar gets the registrar property value. The registrar property
-func (m *WhoisRecord) GetRegistrar()(WhoisContactable) {
-    val, err := m.GetBackingStore().Get("registrar")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(WhoisContactable)
-    }
-    return nil
-}
-// GetRegistrationDateTime gets the registrationDateTime property value. The registrationDateTime property
-func (m *WhoisRecord) GetRegistrationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("registrationDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
-}
-// GetTechnical gets the technical property value. The technical property
-func (m *WhoisRecord) GetTechnical()(WhoisContactable) {
-    val, err := m.GetBackingStore().Get("technical")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(WhoisContactable)
-    }
-    return nil
-}
-// GetWhoisServer gets the whoisServer property value. The whoisServer property
-func (m *WhoisRecord) GetWhoisServer()(*string) {
-    val, err := m.GetBackingStore().Get("whoisServer")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetZone gets the zone property value. The zone property
-func (m *WhoisRecord) GetZone()(WhoisContactable) {
-    val, err := m.GetBackingStore().Get("zone")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(WhoisContactable)
+        return val.([]WhoisHistoryRecordable)
     }
     return nil
 }
 // Serialize serializes information the current object
 func (m *WhoisRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
+    err := m.WhoisBaseRecord.Serialize(writer)
     if err != nil {
         return err
     }
-    {
-        err = writer.WriteObjectValue("abuse", m.GetAbuse())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("admin", m.GetAdmin())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("billing", m.GetBilling())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("domainStatus", m.GetDomainStatus())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("expirationDateTime", m.GetExpirationDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("firstSeenDateTime", m.GetFirstSeenDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("host", m.GetHost())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("lastSeenDateTime", m.GetLastSeenDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("lastUpdateDateTime", m.GetLastUpdateDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetNameservers() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNameservers()))
-        for i, v := range m.GetNameservers() {
+    if m.GetHistory() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHistory()))
+        for i, v := range m.GetHistory() {
             if v != nil {
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("nameservers", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("noc", m.GetNoc())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("rawWhoisText", m.GetRawWhoisText())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("registrant", m.GetRegistrant())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("registrar", m.GetRegistrar())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("registrationDateTime", m.GetRegistrationDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("technical", m.GetTechnical())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("whoisServer", m.GetWhoisServer())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("zone", m.GetZone())
+        err = writer.WriteCollectionOfObjectValues("history", cast)
         if err != nil {
             return err
         }
     }
     return nil
 }
-// SetAbuse sets the abuse property value. The abuse property
-func (m *WhoisRecord) SetAbuse(value WhoisContactable)() {
-    err := m.GetBackingStore().Set("abuse", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetAdmin sets the admin property value. The admin property
-func (m *WhoisRecord) SetAdmin(value WhoisContactable)() {
-    err := m.GetBackingStore().Set("admin", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetBilling sets the billing property value. The billing property
-func (m *WhoisRecord) SetBilling(value WhoisContactable)() {
-    err := m.GetBackingStore().Set("billing", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetDomainStatus sets the domainStatus property value. The domainStatus property
-func (m *WhoisRecord) SetDomainStatus(value *string)() {
-    err := m.GetBackingStore().Set("domainStatus", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetExpirationDateTime sets the expirationDateTime property value. The expirationDateTime property
-func (m *WhoisRecord) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("expirationDateTime", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetFirstSeenDateTime sets the firstSeenDateTime property value. The firstSeenDateTime property
-func (m *WhoisRecord) SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("firstSeenDateTime", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetHost sets the host property value. The host property
-func (m *WhoisRecord) SetHost(value Hostable)() {
-    err := m.GetBackingStore().Set("host", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetLastSeenDateTime sets the lastSeenDateTime property value. The lastSeenDateTime property
-func (m *WhoisRecord) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("lastSeenDateTime", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetLastUpdateDateTime sets the lastUpdateDateTime property value. The lastUpdateDateTime property
-func (m *WhoisRecord) SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("lastUpdateDateTime", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetNameservers sets the nameservers property value. The nameservers property
-func (m *WhoisRecord) SetNameservers(value []WhoisNameserverable)() {
-    err := m.GetBackingStore().Set("nameservers", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetNoc sets the noc property value. The noc property
-func (m *WhoisRecord) SetNoc(value WhoisContactable)() {
-    err := m.GetBackingStore().Set("noc", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetRawWhoisText sets the rawWhoisText property value. The rawWhoisText property
-func (m *WhoisRecord) SetRawWhoisText(value *string)() {
-    err := m.GetBackingStore().Set("rawWhoisText", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetRegistrant sets the registrant property value. The registrant property
-func (m *WhoisRecord) SetRegistrant(value WhoisContactable)() {
-    err := m.GetBackingStore().Set("registrant", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetRegistrar sets the registrar property value. The registrar property
-func (m *WhoisRecord) SetRegistrar(value WhoisContactable)() {
-    err := m.GetBackingStore().Set("registrar", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetRegistrationDateTime sets the registrationDateTime property value. The registrationDateTime property
-func (m *WhoisRecord) SetRegistrationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("registrationDateTime", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetTechnical sets the technical property value. The technical property
-func (m *WhoisRecord) SetTechnical(value WhoisContactable)() {
-    err := m.GetBackingStore().Set("technical", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetWhoisServer sets the whoisServer property value. The whoisServer property
-func (m *WhoisRecord) SetWhoisServer(value *string)() {
-    err := m.GetBackingStore().Set("whoisServer", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetZone sets the zone property value. The zone property
-func (m *WhoisRecord) SetZone(value WhoisContactable)() {
-    err := m.GetBackingStore().Set("zone", value)
+// SetHistory sets the history property value. The history property
+func (m *WhoisRecord) SetHistory(value []WhoisHistoryRecordable)() {
+    err := m.GetBackingStore().Set("history", value)
     if err != nil {
         panic(err)
     }
 }
 // WhoisRecordable 
 type WhoisRecordable interface {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAbuse()(WhoisContactable)
-    GetAdmin()(WhoisContactable)
-    GetBilling()(WhoisContactable)
-    GetDomainStatus()(*string)
-    GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetHost()(Hostable)
-    GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetNameservers()([]WhoisNameserverable)
-    GetNoc()(WhoisContactable)
-    GetRawWhoisText()(*string)
-    GetRegistrant()(WhoisContactable)
-    GetRegistrar()(WhoisContactable)
-    GetRegistrationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetTechnical()(WhoisContactable)
-    GetWhoisServer()(*string)
-    GetZone()(WhoisContactable)
-    SetAbuse(value WhoisContactable)()
-    SetAdmin(value WhoisContactable)()
-    SetBilling(value WhoisContactable)()
-    SetDomainStatus(value *string)()
-    SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetHost(value Hostable)()
-    SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetNameservers(value []WhoisNameserverable)()
-    SetNoc(value WhoisContactable)()
-    SetRawWhoisText(value *string)()
-    SetRegistrant(value WhoisContactable)()
-    SetRegistrar(value WhoisContactable)()
-    SetRegistrationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetTechnical(value WhoisContactable)()
-    SetWhoisServer(value *string)()
-    SetZone(value WhoisContactable)()
+    WhoisBaseRecordable
+    GetHistory()([]WhoisHistoryRecordable)
+    SetHistory(value []WhoisHistoryRecordable)()
 }

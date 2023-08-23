@@ -160,7 +160,7 @@ func (m *ConditionalAccessDevices) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetIncludeDevices gets the includeDevices property value. States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFIlter is set.
+// GetIncludeDevices gets the includeDevices property value. States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFilter is set.
 func (m *ConditionalAccessDevices) GetIncludeDevices()([]string) {
     val, err := m.GetBackingStore().Get("includeDevices")
     if err != nil {
@@ -271,7 +271,7 @@ func (m *ConditionalAccessDevices) SetExcludeDeviceStates(value []string)() {
         panic(err)
     }
 }
-// SetIncludeDevices sets the includeDevices property value. States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFIlter is set.
+// SetIncludeDevices sets the includeDevices property value. States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFilter is set.
 func (m *ConditionalAccessDevices) SetIncludeDevices(value []string)() {
     err := m.GetBackingStore().Set("includeDevices", value)
     if err != nil {

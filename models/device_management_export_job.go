@@ -20,7 +20,7 @@ func NewDeviceManagementExportJob()(*DeviceManagementExportJob) {
 func CreateDeviceManagementExportJobFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementExportJob(), nil
 }
-// GetExpirationDateTime gets the expirationDateTime property value. Time that the exported report expires
+// GetExpirationDateTime gets the expirationDateTime property value. Time that the exported report expires. This property is read-only.
 func (m *DeviceManagementExportJob) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -186,7 +186,7 @@ func (m *DeviceManagementExportJob) GetReportName()(*string) {
     }
     return nil
 }
-// GetRequestDateTime gets the requestDateTime property value. Time that the exported report was requested
+// GetRequestDateTime gets the requestDateTime property value. Time that the exported report was requested. This property is read-only.
 func (m *DeviceManagementExportJob) GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("requestDateTime")
     if err != nil {
@@ -230,7 +230,7 @@ func (m *DeviceManagementExportJob) GetStatus()(*DeviceManagementReportStatus) {
     }
     return nil
 }
-// GetUrl gets the url property value. Temporary location of the exported report
+// GetUrl gets the url property value. Temporary location of the exported report. This property is read-only.
 func (m *DeviceManagementExportJob) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
     if err != nil {
@@ -246,12 +246,6 @@ func (m *DeviceManagementExportJob) Serialize(writer i878a80d2330e89d26896388a3f
     err := m.Entity.Serialize(writer)
     if err != nil {
         return err
-    }
-    {
-        err = writer.WriteTimeValue("expirationDateTime", m.GetExpirationDateTime())
-        if err != nil {
-            return err
-        }
     }
     {
         err = writer.WriteStringValue("filter", m.GetFilter())
@@ -279,12 +273,6 @@ func (m *DeviceManagementExportJob) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
-    {
-        err = writer.WriteTimeValue("requestDateTime", m.GetRequestDateTime())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetSelectEscaped() != nil {
         err = writer.WriteCollectionOfStringValues("select", m.GetSelectEscaped())
         if err != nil {
@@ -304,15 +292,9 @@ func (m *DeviceManagementExportJob) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("url", m.GetUrl())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
-// SetExpirationDateTime sets the expirationDateTime property value. Time that the exported report expires
+// SetExpirationDateTime sets the expirationDateTime property value. Time that the exported report expires. This property is read-only.
 func (m *DeviceManagementExportJob) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expirationDateTime", value)
     if err != nil {
@@ -347,7 +329,7 @@ func (m *DeviceManagementExportJob) SetReportName(value *string)() {
         panic(err)
     }
 }
-// SetRequestDateTime sets the requestDateTime property value. Time that the exported report was requested
+// SetRequestDateTime sets the requestDateTime property value. Time that the exported report was requested. This property is read-only.
 func (m *DeviceManagementExportJob) SetRequestDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("requestDateTime", value)
     if err != nil {
@@ -375,7 +357,7 @@ func (m *DeviceManagementExportJob) SetStatus(value *DeviceManagementReportStatu
         panic(err)
     }
 }
-// SetUrl sets the url property value. Temporary location of the exported report
+// SetUrl sets the url property value. Temporary location of the exported report. This property is read-only.
 func (m *DeviceManagementExportJob) SetUrl(value *string)() {
     err := m.GetBackingStore().Set("url", value)
     if err != nil {

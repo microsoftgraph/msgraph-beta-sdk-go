@@ -34,6 +34,16 @@ func CreateCloudPcBulkActionFromDiscriminatorValue(parseNode i878a80d2330e89d268
                         return NewCloudPcBulkPowerOff(), nil
                     case "#microsoft.graph.cloudPcBulkPowerOn":
                         return NewCloudPcBulkPowerOn(), nil
+                    case "#microsoft.graph.cloudPcBulkReprovision":
+                        return NewCloudPcBulkReprovision(), nil
+                    case "#microsoft.graph.cloudPcBulkResize":
+                        return NewCloudPcBulkResize(), nil
+                    case "#microsoft.graph.cloudPcBulkRestart":
+                        return NewCloudPcBulkRestart(), nil
+                    case "#microsoft.graph.cloudPcBulkRestore":
+                        return NewCloudPcBulkRestore(), nil
+                    case "#microsoft.graph.cloudPcBulkTroubleshoot":
+                        return NewCloudPcBulkTroubleshoot(), nil
                 }
             }
         }
