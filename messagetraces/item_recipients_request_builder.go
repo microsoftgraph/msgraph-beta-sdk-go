@@ -46,8 +46,8 @@ type ItemRecipientsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMessageRecipientId provides operations to manage the recipients property of the microsoft.graph.messageTrace entity.
-func (m *ItemRecipientsRequestBuilder) ByMessageRecipientId(messageRecipientId string)(*ItemRecipientsMessageRecipientItemRequestBuilder) {
+// ByMessageRecipientIdString provides operations to manage the recipients property of the microsoft.graph.messageTrace entity.
+func (m *ItemRecipientsRequestBuilder) ByMessageRecipientIdString(messageRecipientId string)(*ItemRecipientsMessageRecipientItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

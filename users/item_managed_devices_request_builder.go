@@ -62,8 +62,8 @@ func (m *ItemManagedDevicesRequestBuilder) BulkRestoreCloudPc()(*ItemManagedDevi
 func (m *ItemManagedDevicesRequestBuilder) BulkSetCloudPcReviewStatus()(*ItemManagedDevicesBulkSetCloudPcReviewStatusRequestBuilder) {
     return NewItemManagedDevicesBulkSetCloudPcReviewStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByManagedDeviceId provides operations to manage the managedDevices property of the microsoft.graph.user entity.
-func (m *ItemManagedDevicesRequestBuilder) ByManagedDeviceId(managedDeviceId string)(*ItemManagedDevicesManagedDeviceItemRequestBuilder) {
+// ByManagedDeviceIdString provides operations to manage the managedDevices property of the microsoft.graph.user entity.
+func (m *ItemManagedDevicesRequestBuilder) ByManagedDeviceIdString(managedDeviceId string)(*ItemManagedDevicesManagedDeviceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

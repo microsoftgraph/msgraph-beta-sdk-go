@@ -36,7 +36,7 @@ func (m *WindowsUniversalAppXAppAssignmentSettings) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetUseDeviceContext gets the useDeviceContext property value. If true, uses device execution context for Windows Universal AppX mobile app. Device-context install is not allowed when this type of app is targeted with Available intent. Defaults to false.
+// GetUseDeviceContext gets the useDeviceContext property value. Whether or not to use device execution context for Windows Universal AppX mobile app.
 func (m *WindowsUniversalAppXAppAssignmentSettings) GetUseDeviceContext()(*bool) {
     val, err := m.GetBackingStore().Get("useDeviceContext")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *WindowsUniversalAppXAppAssignmentSettings) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetUseDeviceContext sets the useDeviceContext property value. If true, uses device execution context for Windows Universal AppX mobile app. Device-context install is not allowed when this type of app is targeted with Available intent. Defaults to false.
+// SetUseDeviceContext sets the useDeviceContext property value. Whether or not to use device execution context for Windows Universal AppX mobile app.
 func (m *WindowsUniversalAppXAppAssignmentSettings) SetUseDeviceContext(value *bool)() {
     err := m.GetBackingStore().Set("useDeviceContext", value)
     if err != nil {

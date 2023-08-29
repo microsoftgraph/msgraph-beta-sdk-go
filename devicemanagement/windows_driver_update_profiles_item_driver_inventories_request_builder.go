@@ -46,8 +46,8 @@ type WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilderPostRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWindowsDriverUpdateInventoryId provides operations to manage the driverInventories property of the microsoft.graph.windowsDriverUpdateProfile entity.
-func (m *WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder) ByWindowsDriverUpdateInventoryId(windowsDriverUpdateInventoryId string)(*WindowsDriverUpdateProfilesItemDriverInventoriesWindowsDriverUpdateInventoryItemRequestBuilder) {
+// ByWindowsDriverUpdateInventoryIdString provides operations to manage the driverInventories property of the microsoft.graph.windowsDriverUpdateProfile entity.
+func (m *WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder) ByWindowsDriverUpdateInventoryIdString(windowsDriverUpdateInventoryId string)(*WindowsDriverUpdateProfilesItemDriverInventoriesWindowsDriverUpdateInventoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCertificateBasedApplicationConfigurationId provides operations to manage the certificateBasedApplicationConfigurations property of the microsoft.graph.certificateAuthorityPath entity.
-func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuilder) ByCertificateBasedApplicationConfigurationId(certificateBasedApplicationConfigurationId string)(*CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilder) {
+// ByCertificateBasedApplicationConfigurationIdString provides operations to manage the certificateBasedApplicationConfigurations property of the microsoft.graph.certificateAuthorityPath entity.
+func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuilder) ByCertificateBasedApplicationConfigurationIdString(certificateBasedApplicationConfigurationId string)(*CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

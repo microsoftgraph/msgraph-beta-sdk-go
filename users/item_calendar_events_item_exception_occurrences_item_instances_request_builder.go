@@ -39,8 +39,8 @@ type ItemCalendarEventsItemExceptionOccurrencesItemInstancesRequestBuilderGetReq
     // Request query parameters
     QueryParameters *ItemCalendarEventsItemExceptionOccurrencesItemInstancesRequestBuilderGetQueryParameters
 }
-// ByEventId2 provides operations to manage the instances property of the microsoft.graph.event entity.
-func (m *ItemCalendarEventsItemExceptionOccurrencesItemInstancesRequestBuilder) ByEventId2(eventId2 string)(*ItemCalendarEventsItemExceptionOccurrencesItemInstancesEventItemRequestBuilder) {
+// ByEventId2String provides operations to manage the instances property of the microsoft.graph.event entity.
+func (m *ItemCalendarEventsItemExceptionOccurrencesItemInstancesRequestBuilder) ByEventId2String(eventId2 string)(*ItemCalendarEventsItemExceptionOccurrencesItemInstancesEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

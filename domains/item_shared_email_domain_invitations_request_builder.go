@@ -46,8 +46,8 @@ type ItemSharedEmailDomainInvitationsRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySharedEmailDomainInvitationId provides operations to manage the sharedEmailDomainInvitations property of the microsoft.graph.domain entity.
-func (m *ItemSharedEmailDomainInvitationsRequestBuilder) BySharedEmailDomainInvitationId(sharedEmailDomainInvitationId string)(*ItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuilder) {
+// BySharedEmailDomainInvitationIdString provides operations to manage the sharedEmailDomainInvitations property of the microsoft.graph.domain entity.
+func (m *ItemSharedEmailDomainInvitationsRequestBuilder) BySharedEmailDomainInvitationIdString(sharedEmailDomainInvitationId string)(*ItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

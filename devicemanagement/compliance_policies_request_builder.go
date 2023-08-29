@@ -46,8 +46,8 @@ type CompliancePoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementCompliancePolicyId provides operations to manage the compliancePolicies property of the microsoft.graph.deviceManagement entity.
-func (m *CompliancePoliciesRequestBuilder) ByDeviceManagementCompliancePolicyId(deviceManagementCompliancePolicyId string)(*CompliancePoliciesDeviceManagementCompliancePolicyItemRequestBuilder) {
+// ByDeviceManagementCompliancePolicyIdString provides operations to manage the compliancePolicies property of the microsoft.graph.deviceManagement entity.
+func (m *CompliancePoliciesRequestBuilder) ByDeviceManagementCompliancePolicyIdString(deviceManagementCompliancePolicyId string)(*CompliancePoliciesDeviceManagementCompliancePolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

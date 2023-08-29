@@ -50,9 +50,9 @@ type VirtualEndpointProvisioningPoliciesRequestBuilderPostRequestConfiguration s
 func (m *VirtualEndpointProvisioningPoliciesRequestBuilder) ApplyConfig()(*VirtualEndpointProvisioningPoliciesApplyConfigRequestBuilder) {
     return NewVirtualEndpointProvisioningPoliciesApplyConfigRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByCloudPcProvisioningPolicyId provides operations to manage the provisioningPolicies property of the microsoft.graph.virtualEndpoint entity.
+// ByCloudPcProvisioningPolicyIdString provides operations to manage the provisioningPolicies property of the microsoft.graph.virtualEndpoint entity.
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId on 2023-03-16 and will be removed 2023-07-30
-func (m *VirtualEndpointProvisioningPoliciesRequestBuilder) ByCloudPcProvisioningPolicyId(cloudPcProvisioningPolicyId string)(*VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilder) {
+func (m *VirtualEndpointProvisioningPoliciesRequestBuilder) ByCloudPcProvisioningPolicyIdString(cloudPcProvisioningPolicyId string)(*VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

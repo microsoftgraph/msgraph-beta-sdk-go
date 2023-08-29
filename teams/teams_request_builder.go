@@ -50,8 +50,8 @@ type TeamsRequestBuilderPostRequestConfiguration struct {
 func (m *TeamsRequestBuilder) AllMessages()(*AllMessagesRequestBuilder) {
     return NewAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByTeamId provides operations to manage the collection of team entities.
-func (m *TeamsRequestBuilder) ByTeamId(teamId string)(*TeamItemRequestBuilder) {
+// ByTeamIdString provides operations to manage the collection of team entities.
+func (m *TeamsRequestBuilder) ByTeamIdString(teamId string)(*TeamItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

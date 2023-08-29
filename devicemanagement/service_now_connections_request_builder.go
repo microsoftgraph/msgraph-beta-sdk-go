@@ -46,8 +46,8 @@ type ServiceNowConnectionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByServiceNowConnectionId provides operations to manage the serviceNowConnections property of the microsoft.graph.deviceManagement entity.
-func (m *ServiceNowConnectionsRequestBuilder) ByServiceNowConnectionId(serviceNowConnectionId string)(*ServiceNowConnectionsServiceNowConnectionItemRequestBuilder) {
+// ByServiceNowConnectionIdString provides operations to manage the serviceNowConnections property of the microsoft.graph.deviceManagement entity.
+func (m *ServiceNowConnectionsRequestBuilder) ByServiceNowConnectionIdString(serviceNowConnectionId string)(*ServiceNowConnectionsServiceNowConnectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

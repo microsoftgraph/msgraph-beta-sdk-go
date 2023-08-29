@@ -43,8 +43,8 @@ type SitesRequestBuilderGetRequestConfiguration struct {
 func (m *SitesRequestBuilder) Add()(*AddRequestBuilder) {
     return NewAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// BySiteId provides operations to manage the collection of site entities.
-func (m *SitesRequestBuilder) BySiteId(siteId string)(*SiteItemRequestBuilder) {
+// BySiteIdString provides operations to manage the collection of site entities.
+func (m *SitesRequestBuilder) BySiteIdString(siteId string)(*SiteItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

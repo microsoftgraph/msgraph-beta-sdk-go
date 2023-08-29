@@ -46,8 +46,8 @@ type TemplateInsightsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementTemplateInsightsDefinitionId provides operations to manage the templateInsights property of the microsoft.graph.deviceManagement entity.
-func (m *TemplateInsightsRequestBuilder) ByDeviceManagementTemplateInsightsDefinitionId(deviceManagementTemplateInsightsDefinitionId string)(*TemplateInsightsDeviceManagementTemplateInsightsDefinitionItemRequestBuilder) {
+// ByDeviceManagementTemplateInsightsDefinitionIdString provides operations to manage the templateInsights property of the microsoft.graph.deviceManagement entity.
+func (m *TemplateInsightsRequestBuilder) ByDeviceManagementTemplateInsightsDefinitionIdString(deviceManagementTemplateInsightsDefinitionId string)(*TemplateInsightsDeviceManagementTemplateInsightsDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

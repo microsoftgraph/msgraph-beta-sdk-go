@@ -46,8 +46,8 @@ type ItemMessagesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByChatMessageId provides operations to manage the messages property of the microsoft.graph.chat entity.
-func (m *ItemMessagesRequestBuilder) ByChatMessageId(chatMessageId string)(*ItemMessagesChatMessageItemRequestBuilder) {
+// ByChatMessageIdString provides operations to manage the messages property of the microsoft.graph.chat entity.
+func (m *ItemMessagesRequestBuilder) ByChatMessageIdString(chatMessageId string)(*ItemMessagesChatMessageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

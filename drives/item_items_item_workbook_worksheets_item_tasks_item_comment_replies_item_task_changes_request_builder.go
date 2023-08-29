@@ -46,8 +46,8 @@ type ItemItemsItemWorkbookWorksheetsItemTasksItemCommentRepliesItemTaskChangesRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWorkbookDocumentTaskChangeId provides operations to manage the changes property of the microsoft.graph.workbookDocumentTask entity.
-func (m *ItemItemsItemWorkbookWorksheetsItemTasksItemCommentRepliesItemTaskChangesRequestBuilder) ByWorkbookDocumentTaskChangeId(workbookDocumentTaskChangeId string)(*ItemItemsItemWorkbookWorksheetsItemTasksItemCommentRepliesItemTaskChangesWorkbookDocumentTaskChangeItemRequestBuilder) {
+// ByWorkbookDocumentTaskChangeIdString provides operations to manage the changes property of the microsoft.graph.workbookDocumentTask entity.
+func (m *ItemItemsItemWorkbookWorksheetsItemTasksItemCommentRepliesItemTaskChangesRequestBuilder) ByWorkbookDocumentTaskChangeIdString(workbookDocumentTaskChangeId string)(*ItemItemsItemWorkbookWorksheetsItemTasksItemCommentRepliesItemTaskChangesWorkbookDocumentTaskChangeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -39,8 +39,8 @@ type VirtualEventsEventsItemSessionsItemRegistrationsRequestBuilderGetRequestCon
     // Request query parameters
     QueryParameters *VirtualEventsEventsItemSessionsItemRegistrationsRequestBuilderGetQueryParameters
 }
-// ByVirtualEventRegistrationId provides operations to manage the registrations property of the microsoft.graph.virtualEventSession entity.
-func (m *VirtualEventsEventsItemSessionsItemRegistrationsRequestBuilder) ByVirtualEventRegistrationId(virtualEventRegistrationId string)(*VirtualEventsEventsItemSessionsItemRegistrationsVirtualEventRegistrationItemRequestBuilder) {
+// ByVirtualEventRegistrationIdString provides operations to manage the registrations property of the microsoft.graph.virtualEventSession entity.
+func (m *VirtualEventsEventsItemSessionsItemRegistrationsRequestBuilder) ByVirtualEventRegistrationIdString(virtualEventRegistrationId string)(*VirtualEventsEventsItemSessionsItemRegistrationsVirtualEventRegistrationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

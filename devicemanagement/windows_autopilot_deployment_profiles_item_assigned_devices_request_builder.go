@@ -46,8 +46,8 @@ type WindowsAutopilotDeploymentProfilesItemAssignedDevicesRequestBuilderPostRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWindowsAutopilotDeviceIdentityId provides operations to manage the assignedDevices property of the microsoft.graph.windowsAutopilotDeploymentProfile entity.
-func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesRequestBuilder) ByWindowsAutopilotDeviceIdentityId(windowsAutopilotDeviceIdentityId string)(*WindowsAutopilotDeploymentProfilesItemAssignedDevicesWindowsAutopilotDeviceIdentityItemRequestBuilder) {
+// ByWindowsAutopilotDeviceIdentityIdString provides operations to manage the assignedDevices property of the microsoft.graph.windowsAutopilotDeploymentProfile entity.
+func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesRequestBuilder) ByWindowsAutopilotDeviceIdentityIdString(windowsAutopilotDeviceIdentityId string)(*WindowsAutopilotDeploymentProfilesItemAssignedDevicesWindowsAutopilotDeviceIdentityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

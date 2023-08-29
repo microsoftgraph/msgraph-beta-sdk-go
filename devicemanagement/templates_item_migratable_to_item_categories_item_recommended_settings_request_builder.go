@@ -46,8 +46,8 @@ type TemplatesItemMigratableToItemCategoriesItemRecommendedSettingsRequestBuilde
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementSettingInstanceId provides operations to manage the recommendedSettings property of the microsoft.graph.deviceManagementTemplateSettingCategory entity.
-func (m *TemplatesItemMigratableToItemCategoriesItemRecommendedSettingsRequestBuilder) ByDeviceManagementSettingInstanceId(deviceManagementSettingInstanceId string)(*TemplatesItemMigratableToItemCategoriesItemRecommendedSettingsDeviceManagementSettingInstanceItemRequestBuilder) {
+// ByDeviceManagementSettingInstanceIdString provides operations to manage the recommendedSettings property of the microsoft.graph.deviceManagementTemplateSettingCategory entity.
+func (m *TemplatesItemMigratableToItemCategoriesItemRecommendedSettingsRequestBuilder) ByDeviceManagementSettingInstanceIdString(deviceManagementSettingInstanceId string)(*TemplatesItemMigratableToItemCategoriesItemRecommendedSettingsDeviceManagementSettingInstanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

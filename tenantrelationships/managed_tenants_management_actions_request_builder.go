@@ -46,8 +46,8 @@ type ManagedTenantsManagementActionsRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByManagementActionId provides operations to manage the managementActions property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsManagementActionsRequestBuilder) ByManagementActionId(managementActionId string)(*ManagedTenantsManagementActionsManagementActionItemRequestBuilder) {
+// ByManagementActionIdString provides operations to manage the managementActions property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsManagementActionsRequestBuilder) ByManagementActionIdString(managementActionId string)(*ManagedTenantsManagementActionsManagementActionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

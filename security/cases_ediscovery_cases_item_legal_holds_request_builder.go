@@ -46,8 +46,8 @@ type CasesEdiscoveryCasesItemLegalHoldsRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEdiscoveryHoldPolicyId provides operations to manage the legalHolds property of the microsoft.graph.security.ediscoveryCase entity.
-func (m *CasesEdiscoveryCasesItemLegalHoldsRequestBuilder) ByEdiscoveryHoldPolicyId(ediscoveryHoldPolicyId string)(*CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilder) {
+// ByEdiscoveryHoldPolicyIdString provides operations to manage the legalHolds property of the microsoft.graph.security.ediscoveryCase entity.
+func (m *CasesEdiscoveryCasesItemLegalHoldsRequestBuilder) ByEdiscoveryHoldPolicyIdString(ediscoveryHoldPolicyId string)(*CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

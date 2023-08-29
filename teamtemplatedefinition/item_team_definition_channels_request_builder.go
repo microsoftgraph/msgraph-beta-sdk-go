@@ -50,8 +50,8 @@ type ItemTeamDefinitionChannelsRequestBuilderPostRequestConfiguration struct {
 func (m *ItemTeamDefinitionChannelsRequestBuilder) AllMessages()(*ItemTeamDefinitionChannelsAllMessagesRequestBuilder) {
     return NewItemTeamDefinitionChannelsAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByChannelId provides operations to manage the channels property of the microsoft.graph.team entity.
-func (m *ItemTeamDefinitionChannelsRequestBuilder) ByChannelId(channelId string)(*ItemTeamDefinitionChannelsChannelItemRequestBuilder) {
+// ByChannelIdString provides operations to manage the channels property of the microsoft.graph.team entity.
+func (m *ItemTeamDefinitionChannelsRequestBuilder) ByChannelIdString(channelId string)(*ItemTeamDefinitionChannelsChannelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -39,8 +39,8 @@ type ThreatIntelligenceHostsItemHostPairsRequestBuilderGetRequestConfiguration s
     // Request query parameters
     QueryParameters *ThreatIntelligenceHostsItemHostPairsRequestBuilderGetQueryParameters
 }
-// ByHostPairId provides operations to manage the hostPairs property of the microsoft.graph.security.host entity.
-func (m *ThreatIntelligenceHostsItemHostPairsRequestBuilder) ByHostPairId(hostPairId string)(*ThreatIntelligenceHostsItemHostPairsHostPairItemRequestBuilder) {
+// ByHostPairIdString provides operations to manage the hostPairs property of the microsoft.graph.security.host entity.
+func (m *ThreatIntelligenceHostsItemHostPairsRequestBuilder) ByHostPairIdString(hostPairId string)(*ThreatIntelligenceHostsItemHostPairsHostPairItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

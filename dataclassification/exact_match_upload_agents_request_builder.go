@@ -46,8 +46,8 @@ type ExactMatchUploadAgentsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByExactMatchUploadAgentId provides operations to manage the exactMatchUploadAgents property of the microsoft.graph.dataClassificationService entity.
-func (m *ExactMatchUploadAgentsRequestBuilder) ByExactMatchUploadAgentId(exactMatchUploadAgentId string)(*ExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilder) {
+// ByExactMatchUploadAgentIdString provides operations to manage the exactMatchUploadAgents property of the microsoft.graph.dataClassificationService entity.
+func (m *ExactMatchUploadAgentsRequestBuilder) ByExactMatchUploadAgentIdString(exactMatchUploadAgentId string)(*ExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

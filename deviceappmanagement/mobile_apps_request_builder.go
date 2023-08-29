@@ -46,8 +46,8 @@ type MobileAppsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMobileAppId provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.
-func (m *MobileAppsRequestBuilder) ByMobileAppId(mobileAppId string)(*MobileAppsMobileAppItemRequestBuilder) {
+// ByMobileAppIdString provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.
+func (m *MobileAppsRequestBuilder) ByMobileAppIdString(mobileAppId string)(*MobileAppsMobileAppItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

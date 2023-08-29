@@ -46,8 +46,8 @@ type ReportsCachedReportConfigurationsRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementCachedReportConfigurationId provides operations to manage the cachedReportConfigurations property of the microsoft.graph.deviceManagementReports entity.
-func (m *ReportsCachedReportConfigurationsRequestBuilder) ByDeviceManagementCachedReportConfigurationId(deviceManagementCachedReportConfigurationId string)(*ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilder) {
+// ByDeviceManagementCachedReportConfigurationIdString provides operations to manage the cachedReportConfigurations property of the microsoft.graph.deviceManagementReports entity.
+func (m *ReportsCachedReportConfigurationsRequestBuilder) ByDeviceManagementCachedReportConfigurationIdString(deviceManagementCachedReportConfigurationId string)(*ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,9 +46,9 @@ type CredentialUserRegistrationDetailsRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCredentialUserRegistrationDetailsId provides operations to manage the credentialUserRegistrationDetails property of the microsoft.graph.reportRoot entity.
+// ByCredentialUserRegistrationDetailsIdString provides operations to manage the credentialUserRegistrationDetails property of the microsoft.graph.reportRoot entity.
 // Deprecated: The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
-func (m *CredentialUserRegistrationDetailsRequestBuilder) ByCredentialUserRegistrationDetailsId(credentialUserRegistrationDetailsId string)(*CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRequestBuilder) {
+func (m *CredentialUserRegistrationDetailsRequestBuilder) ByCredentialUserRegistrationDetailsIdString(credentialUserRegistrationDetailsId string)(*CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

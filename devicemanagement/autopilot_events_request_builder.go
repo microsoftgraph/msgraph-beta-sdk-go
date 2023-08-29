@@ -46,8 +46,8 @@ type AutopilotEventsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementAutopilotEventId provides operations to manage the autopilotEvents property of the microsoft.graph.deviceManagement entity.
-func (m *AutopilotEventsRequestBuilder) ByDeviceManagementAutopilotEventId(deviceManagementAutopilotEventId string)(*AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) {
+// ByDeviceManagementAutopilotEventIdString provides operations to manage the autopilotEvents property of the microsoft.graph.deviceManagement entity.
+func (m *AutopilotEventsRequestBuilder) ByDeviceManagementAutopilotEventIdString(deviceManagementAutopilotEventId string)(*AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

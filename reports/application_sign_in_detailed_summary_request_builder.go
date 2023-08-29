@@ -46,8 +46,8 @@ type ApplicationSignInDetailedSummaryRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByApplicationSignInDetailedSummaryId provides operations to manage the applicationSignInDetailedSummary property of the microsoft.graph.reportRoot entity.
-func (m *ApplicationSignInDetailedSummaryRequestBuilder) ByApplicationSignInDetailedSummaryId(applicationSignInDetailedSummaryId string)(*ApplicationSignInDetailedSummaryApplicationSignInDetailedSummaryItemRequestBuilder) {
+// ByApplicationSignInDetailedSummaryIdString provides operations to manage the applicationSignInDetailedSummary property of the microsoft.graph.reportRoot entity.
+func (m *ApplicationSignInDetailedSummaryRequestBuilder) ByApplicationSignInDetailedSummaryIdString(applicationSignInDetailedSummaryId string)(*ApplicationSignInDetailedSummaryApplicationSignInDetailedSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type CompliancePoliciesItemAssignmentsRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementConfigurationPolicyAssignmentId provides operations to manage the assignments property of the microsoft.graph.deviceManagementCompliancePolicy entity.
-func (m *CompliancePoliciesItemAssignmentsRequestBuilder) ByDeviceManagementConfigurationPolicyAssignmentId(deviceManagementConfigurationPolicyAssignmentId string)(*CompliancePoliciesItemAssignmentsDeviceManagementConfigurationPolicyAssignmentItemRequestBuilder) {
+// ByDeviceManagementConfigurationPolicyAssignmentIdString provides operations to manage the assignments property of the microsoft.graph.deviceManagementCompliancePolicy entity.
+func (m *CompliancePoliciesItemAssignmentsRequestBuilder) ByDeviceManagementConfigurationPolicyAssignmentIdString(deviceManagementConfigurationPolicyAssignmentId string)(*CompliancePoliciesItemAssignmentsDeviceManagementConfigurationPolicyAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -39,8 +39,8 @@ type ItemJoinedTeamsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemJoinedTeamsRequestBuilderGetQueryParameters
 }
-// ByTeamId provides operations to manage the joinedTeams property of the microsoft.graph.user entity.
-func (m *ItemJoinedTeamsRequestBuilder) ByTeamId(teamId string)(*ItemJoinedTeamsTeamItemRequestBuilder) {
+// ByTeamIdString provides operations to manage the joinedTeams property of the microsoft.graph.user entity.
+func (m *ItemJoinedTeamsRequestBuilder) ByTeamIdString(teamId string)(*ItemJoinedTeamsTeamItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

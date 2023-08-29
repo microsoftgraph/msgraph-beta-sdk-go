@@ -46,8 +46,8 @@ type MicrosoftTunnelSitesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMicrosoftTunnelSiteId provides operations to manage the microsoftTunnelSites property of the microsoft.graph.deviceManagement entity.
-func (m *MicrosoftTunnelSitesRequestBuilder) ByMicrosoftTunnelSiteId(microsoftTunnelSiteId string)(*MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) {
+// ByMicrosoftTunnelSiteIdString provides operations to manage the microsoftTunnelSites property of the microsoft.graph.deviceManagement entity.
+func (m *MicrosoftTunnelSitesRequestBuilder) ByMicrosoftTunnelSiteIdString(microsoftTunnelSiteId string)(*MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

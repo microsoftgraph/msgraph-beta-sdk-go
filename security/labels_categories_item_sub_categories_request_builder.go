@@ -46,8 +46,8 @@ type LabelsCategoriesItemSubCategoriesRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySubCategoryTemplateId provides operations to manage the subCategories property of the microsoft.graph.security.categoryTemplate entity.
-func (m *LabelsCategoriesItemSubCategoriesRequestBuilder) BySubCategoryTemplateId(subCategoryTemplateId string)(*LabelsCategoriesItemSubCategoriesSubCategoryTemplateItemRequestBuilder) {
+// BySubCategoryTemplateIdString provides operations to manage the subCategories property of the microsoft.graph.security.categoryTemplate entity.
+func (m *LabelsCategoriesItemSubCategoriesRequestBuilder) BySubCategoryTemplateIdString(subCategoryTemplateId string)(*LabelsCategoriesItemSubCategoriesSubCategoryTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

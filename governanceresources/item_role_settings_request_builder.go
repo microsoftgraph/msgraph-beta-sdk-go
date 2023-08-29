@@ -46,8 +46,8 @@ type ItemRoleSettingsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByGovernanceRoleSettingId provides operations to manage the roleSettings property of the microsoft.graph.governanceResource entity.
-func (m *ItemRoleSettingsRequestBuilder) ByGovernanceRoleSettingId(governanceRoleSettingId string)(*ItemRoleSettingsGovernanceRoleSettingItemRequestBuilder) {
+// ByGovernanceRoleSettingIdString provides operations to manage the roleSettings property of the microsoft.graph.governanceResource entity.
+func (m *ItemRoleSettingsRequestBuilder) ByGovernanceRoleSettingIdString(governanceRoleSettingId string)(*ItemRoleSettingsGovernanceRoleSettingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

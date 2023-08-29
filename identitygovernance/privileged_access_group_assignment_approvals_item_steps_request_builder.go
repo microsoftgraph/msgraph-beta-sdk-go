@@ -46,8 +46,8 @@ type PrivilegedAccessGroupAssignmentApprovalsItemStepsRequestBuilderPostRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByApprovalStepId provides operations to manage the steps property of the microsoft.graph.approval entity.
-func (m *PrivilegedAccessGroupAssignmentApprovalsItemStepsRequestBuilder) ByApprovalStepId(approvalStepId string)(*PrivilegedAccessGroupAssignmentApprovalsItemStepsApprovalStepItemRequestBuilder) {
+// ByApprovalStepIdString provides operations to manage the steps property of the microsoft.graph.approval entity.
+func (m *PrivilegedAccessGroupAssignmentApprovalsItemStepsRequestBuilder) ByApprovalStepIdString(approvalStepId string)(*PrivilegedAccessGroupAssignmentApprovalsItemStepsApprovalStepItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -39,8 +39,8 @@ type ItemRoleInfoAssignmentsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemRoleInfoAssignmentsRequestBuilderGetQueryParameters
 }
-// ByPrivilegedRoleAssignmentId provides operations to manage the assignments property of the microsoft.graph.privilegedRole entity.
-func (m *ItemRoleInfoAssignmentsRequestBuilder) ByPrivilegedRoleAssignmentId(privilegedRoleAssignmentId string)(*ItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilder) {
+// ByPrivilegedRoleAssignmentIdString provides operations to manage the assignments property of the microsoft.graph.privilegedRole entity.
+func (m *ItemRoleInfoAssignmentsRequestBuilder) ByPrivilegedRoleAssignmentIdString(privilegedRoleAssignmentId string)(*ItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

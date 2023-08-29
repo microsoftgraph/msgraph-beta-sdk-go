@@ -39,8 +39,8 @@ type ItemTransitiveReportsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemTransitiveReportsRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectId provides operations to manage the transitiveReports property of the microsoft.graph.user entity.
-func (m *ItemTransitiveReportsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemTransitiveReportsDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectIdString provides operations to manage the transitiveReports property of the microsoft.graph.user entity.
+func (m *ItemTransitiveReportsRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ItemTransitiveReportsDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

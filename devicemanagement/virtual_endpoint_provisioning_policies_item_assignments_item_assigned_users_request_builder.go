@@ -39,9 +39,9 @@ type VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestB
     // Request query parameters
     QueryParameters *VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilderGetQueryParameters
 }
-// ByUserId provides operations to manage the assignedUsers property of the microsoft.graph.cloudPcProvisioningPolicyAssignment entity.
+// ByUserIdString provides operations to manage the assignedUsers property of the microsoft.graph.cloudPcProvisioningPolicyAssignment entity.
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId on 2023-03-16 and will be removed 2023-07-30
-func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilder) ByUserId(userId string)(*VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersUserItemRequestBuilder) {
+func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilder) ByUserIdString(userId string)(*VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -39,8 +39,8 @@ type MobileAppManagementPoliciesItemIncludedGroupsRequestBuilderGetRequestConfig
     // Request query parameters
     QueryParameters *MobileAppManagementPoliciesItemIncludedGroupsRequestBuilderGetQueryParameters
 }
-// ByGroupId gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.mobileAppManagementPolicies.item.includedGroups.item collection
-func (m *MobileAppManagementPoliciesItemIncludedGroupsRequestBuilder) ByGroupId(groupId string)(*MobileAppManagementPoliciesItemIncludedGroupsGroupItemRequestBuilder) {
+// ByGroupIdString gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.mobileAppManagementPolicies.item.includedGroups.item collection
+func (m *MobileAppManagementPoliciesItemIncludedGroupsRequestBuilder) ByGroupIdString(groupId string)(*MobileAppManagementPoliciesItemIncludedGroupsGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

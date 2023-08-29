@@ -46,8 +46,8 @@ type AssignmentFiltersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceAndAppManagementAssignmentFilterId provides operations to manage the assignmentFilters property of the microsoft.graph.deviceManagement entity.
-func (m *AssignmentFiltersRequestBuilder) ByDeviceAndAppManagementAssignmentFilterId(deviceAndAppManagementAssignmentFilterId string)(*AssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuilder) {
+// ByDeviceAndAppManagementAssignmentFilterIdString provides operations to manage the assignmentFilters property of the microsoft.graph.deviceManagement entity.
+func (m *AssignmentFiltersRequestBuilder) ByDeviceAndAppManagementAssignmentFilterIdString(deviceAndAppManagementAssignmentFilterId string)(*AssignmentFiltersDeviceAndAppManagementAssignmentFilterItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

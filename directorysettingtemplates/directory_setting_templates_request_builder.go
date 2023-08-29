@@ -46,8 +46,8 @@ type DirectorySettingTemplatesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDirectorySettingTemplateId provides operations to manage the collection of directorySettingTemplate entities.
-func (m *DirectorySettingTemplatesRequestBuilder) ByDirectorySettingTemplateId(directorySettingTemplateId string)(*DirectorySettingTemplateItemRequestBuilder) {
+// ByDirectorySettingTemplateIdString provides operations to manage the collection of directorySettingTemplate entities.
+func (m *DirectorySettingTemplatesRequestBuilder) ByDirectorySettingTemplateIdString(directorySettingTemplateId string)(*DirectorySettingTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

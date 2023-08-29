@@ -46,8 +46,8 @@ type ItemProfilePhonesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByItemPhoneId provides operations to manage the phones property of the microsoft.graph.profile entity.
-func (m *ItemProfilePhonesRequestBuilder) ByItemPhoneId(itemPhoneId string)(*ItemProfilePhonesItemPhoneItemRequestBuilder) {
+// ByItemPhoneIdString provides operations to manage the phones property of the microsoft.graph.profile entity.
+func (m *ItemProfilePhonesRequestBuilder) ByItemPhoneIdString(itemPhoneId string)(*ItemProfilePhonesItemPhoneItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

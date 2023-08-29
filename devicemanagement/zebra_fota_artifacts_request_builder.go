@@ -46,8 +46,8 @@ type ZebraFotaArtifactsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByZebraFotaArtifactId provides operations to manage the zebraFotaArtifacts property of the microsoft.graph.deviceManagement entity.
-func (m *ZebraFotaArtifactsRequestBuilder) ByZebraFotaArtifactId(zebraFotaArtifactId string)(*ZebraFotaArtifactsZebraFotaArtifactItemRequestBuilder) {
+// ByZebraFotaArtifactIdString provides operations to manage the zebraFotaArtifacts property of the microsoft.graph.deviceManagement entity.
+func (m *ZebraFotaArtifactsRequestBuilder) ByZebraFotaArtifactIdString(zebraFotaArtifactId string)(*ZebraFotaArtifactsZebraFotaArtifactItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

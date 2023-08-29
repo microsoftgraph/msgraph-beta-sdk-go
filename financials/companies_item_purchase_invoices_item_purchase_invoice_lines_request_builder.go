@@ -39,8 +39,8 @@ type CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilderGetReque
     // Request query parameters
     QueryParameters *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilderGetQueryParameters
 }
-// ByPurchaseInvoiceLineId provides operations to manage the purchaseInvoiceLines property of the microsoft.graph.purchaseInvoice entity.
-func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder) ByPurchaseInvoiceLineId(purchaseInvoiceLineId string)(*CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesPurchaseInvoiceLineItemRequestBuilder) {
+// ByPurchaseInvoiceLineIdString provides operations to manage the purchaseInvoiceLines property of the microsoft.graph.purchaseInvoice entity.
+func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder) ByPurchaseInvoiceLineIdString(purchaseInvoiceLineId string)(*CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesPurchaseInvoiceLineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -37,8 +37,8 @@ type ItemCalendarCalendarViewItemInstancesItemExceptionOccurrencesRequestBuilder
     // Request query parameters
     QueryParameters *ItemCalendarCalendarViewItemInstancesItemExceptionOccurrencesRequestBuilderGetQueryParameters
 }
-// ByEventId2 provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.
-func (m *ItemCalendarCalendarViewItemInstancesItemExceptionOccurrencesRequestBuilder) ByEventId2(eventId2 string)(*ItemCalendarCalendarViewItemInstancesItemExceptionOccurrencesEventItemRequestBuilder) {
+// ByEventId2String provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.
+func (m *ItemCalendarCalendarViewItemInstancesItemExceptionOccurrencesRequestBuilder) ByEventId2String(eventId2 string)(*ItemCalendarCalendarViewItemInstancesItemExceptionOccurrencesEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

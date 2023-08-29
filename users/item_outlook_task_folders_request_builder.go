@@ -42,9 +42,9 @@ type ItemOutlookTaskFoldersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByOutlookTaskFolderId provides operations to manage the taskFolders property of the microsoft.graph.outlookUser entity.
+// ByOutlookTaskFolderIdString provides operations to manage the taskFolders property of the microsoft.graph.outlookUser entity.
 // Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20
-func (m *ItemOutlookTaskFoldersRequestBuilder) ByOutlookTaskFolderId(outlookTaskFolderId string)(*ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) {
+func (m *ItemOutlookTaskFoldersRequestBuilder) ByOutlookTaskFolderIdString(outlookTaskFolderId string)(*ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

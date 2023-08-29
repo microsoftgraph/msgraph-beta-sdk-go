@@ -46,8 +46,8 @@ type ItemProfileAnniversariesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPersonAnnualEventId provides operations to manage the anniversaries property of the microsoft.graph.profile entity.
-func (m *ItemProfileAnniversariesRequestBuilder) ByPersonAnnualEventId(personAnnualEventId string)(*ItemProfileAnniversariesPersonAnnualEventItemRequestBuilder) {
+// ByPersonAnnualEventIdString provides operations to manage the anniversaries property of the microsoft.graph.profile entity.
+func (m *ItemProfileAnniversariesRequestBuilder) ByPersonAnnualEventIdString(personAnnualEventId string)(*ItemProfileAnniversariesPersonAnnualEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type ItemInformationProtectionSensitivityLabelsRequestBuilderPostRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySensitivityLabelId provides operations to manage the sensitivityLabels property of the microsoft.graph.informationProtection entity.
-func (m *ItemInformationProtectionSensitivityLabelsRequestBuilder) BySensitivityLabelId(sensitivityLabelId string)(*ItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) {
+// BySensitivityLabelIdString provides operations to manage the sensitivityLabels property of the microsoft.graph.informationProtection entity.
+func (m *ItemInformationProtectionSensitivityLabelsRequestBuilder) BySensitivityLabelIdString(sensitivityLabelId string)(*ItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

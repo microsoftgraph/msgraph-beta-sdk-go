@@ -39,8 +39,8 @@ type CasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsRequestBuilderGetRequest
     // Request query parameters
     QueryParameters *CasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsRequestBuilderGetQueryParameters
 }
-// ByEdiscoveryReviewTagId provides operations to manage the tags property of the microsoft.graph.security.ediscoveryFile entity.
-func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsRequestBuilder) ByEdiscoveryReviewTagId(ediscoveryReviewTagId string)(*CasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsEdiscoveryReviewTagItemRequestBuilder) {
+// ByEdiscoveryReviewTagIdString provides operations to manage the tags property of the microsoft.graph.security.ediscoveryFile entity.
+func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsRequestBuilder) ByEdiscoveryReviewTagIdString(ediscoveryReviewTagId string)(*CasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsEdiscoveryReviewTagItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

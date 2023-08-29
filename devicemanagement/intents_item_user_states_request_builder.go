@@ -46,8 +46,8 @@ type IntentsItemUserStatesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementIntentUserStateId provides operations to manage the userStates property of the microsoft.graph.deviceManagementIntent entity.
-func (m *IntentsItemUserStatesRequestBuilder) ByDeviceManagementIntentUserStateId(deviceManagementIntentUserStateId string)(*IntentsItemUserStatesDeviceManagementIntentUserStateItemRequestBuilder) {
+// ByDeviceManagementIntentUserStateIdString provides operations to manage the userStates property of the microsoft.graph.deviceManagementIntent entity.
+func (m *IntentsItemUserStatesRequestBuilder) ByDeviceManagementIntentUserStateIdString(deviceManagementIntentUserStateId string)(*IntentsItemUserStatesDeviceManagementIntentUserStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

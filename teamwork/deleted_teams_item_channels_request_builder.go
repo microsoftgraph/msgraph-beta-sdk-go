@@ -50,8 +50,8 @@ type DeletedTeamsItemChannelsRequestBuilderPostRequestConfiguration struct {
 func (m *DeletedTeamsItemChannelsRequestBuilder) AllMessages()(*DeletedTeamsItemChannelsAllMessagesRequestBuilder) {
     return NewDeletedTeamsItemChannelsAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByChannelId provides operations to manage the channels property of the microsoft.graph.deletedTeam entity.
-func (m *DeletedTeamsItemChannelsRequestBuilder) ByChannelId(channelId string)(*DeletedTeamsItemChannelsChannelItemRequestBuilder) {
+// ByChannelIdString provides operations to manage the channels property of the microsoft.graph.deletedTeam entity.
+func (m *DeletedTeamsItemChannelsRequestBuilder) ByChannelIdString(channelId string)(*DeletedTeamsItemChannelsChannelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

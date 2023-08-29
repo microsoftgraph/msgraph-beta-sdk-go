@@ -46,8 +46,8 @@ type ItemAppConsentRequestsForApprovalRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAppConsentRequestId provides operations to manage the appConsentRequestsForApproval property of the microsoft.graph.user entity.
-func (m *ItemAppConsentRequestsForApprovalRequestBuilder) ByAppConsentRequestId(appConsentRequestId string)(*ItemAppConsentRequestsForApprovalAppConsentRequestItemRequestBuilder) {
+// ByAppConsentRequestIdString provides operations to manage the appConsentRequestsForApproval property of the microsoft.graph.user entity.
+func (m *ItemAppConsentRequestsForApprovalRequestBuilder) ByAppConsentRequestIdString(appConsentRequestId string)(*ItemAppConsentRequestsForApprovalAppConsentRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

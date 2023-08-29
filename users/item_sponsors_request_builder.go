@@ -39,8 +39,8 @@ type ItemSponsorsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemSponsorsRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectId provides operations to manage the sponsors property of the microsoft.graph.user entity.
-func (m *ItemSponsorsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemSponsorsDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectIdString provides operations to manage the sponsors property of the microsoft.graph.user entity.
+func (m *ItemSponsorsRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ItemSponsorsDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

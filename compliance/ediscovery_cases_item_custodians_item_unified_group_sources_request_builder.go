@@ -46,9 +46,9 @@ type EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilderPostReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUnifiedGroupSourceId provides operations to manage the unifiedGroupSources property of the microsoft.graph.ediscovery.custodian entity.
+// ByUnifiedGroupSourceIdString provides operations to manage the unifiedGroupSources property of the microsoft.graph.ediscovery.custodian entity.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
-func (m *EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilder) ByUnifiedGroupSourceId(unifiedGroupSourceId string)(*EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesUnifiedGroupSourceItemRequestBuilder) {
+func (m *EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilder) ByUnifiedGroupSourceIdString(unifiedGroupSourceId string)(*EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesUnifiedGroupSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

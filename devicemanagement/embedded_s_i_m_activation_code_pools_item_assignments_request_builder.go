@@ -46,8 +46,8 @@ type EmbeddedSIMActivationCodePoolsItemAssignmentsRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEmbeddedSIMActivationCodePoolAssignmentId provides operations to manage the assignments property of the microsoft.graph.embeddedSIMActivationCodePool entity.
-func (m *EmbeddedSIMActivationCodePoolsItemAssignmentsRequestBuilder) ByEmbeddedSIMActivationCodePoolAssignmentId(embeddedSIMActivationCodePoolAssignmentId string)(*EmbeddedSIMActivationCodePoolsItemAssignmentsEmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder) {
+// ByEmbeddedSIMActivationCodePoolAssignmentIdString provides operations to manage the assignments property of the microsoft.graph.embeddedSIMActivationCodePool entity.
+func (m *EmbeddedSIMActivationCodePoolsItemAssignmentsRequestBuilder) ByEmbeddedSIMActivationCodePoolAssignmentIdString(embeddedSIMActivationCodePoolAssignmentId string)(*EmbeddedSIMActivationCodePoolsItemAssignmentsEmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type TargetedManagedAppConfigurationsItemSettingsRequestBuilderPostRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementConfigurationSettingId provides operations to manage the settings property of the microsoft.graph.managedAppConfiguration entity.
-func (m *TargetedManagedAppConfigurationsItemSettingsRequestBuilder) ByDeviceManagementConfigurationSettingId(deviceManagementConfigurationSettingId string)(*TargetedManagedAppConfigurationsItemSettingsDeviceManagementConfigurationSettingItemRequestBuilder) {
+// ByDeviceManagementConfigurationSettingIdString provides operations to manage the settings property of the microsoft.graph.managedAppConfiguration entity.
+func (m *TargetedManagedAppConfigurationsItemSettingsRequestBuilder) ByDeviceManagementConfigurationSettingIdString(deviceManagementConfigurationSettingId string)(*TargetedManagedAppConfigurationsItemSettingsDeviceManagementConfigurationSettingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

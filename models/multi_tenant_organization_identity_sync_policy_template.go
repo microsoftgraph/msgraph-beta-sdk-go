@@ -55,7 +55,7 @@ func (m *MultiTenantOrganizationIdentitySyncPolicyTemplate) GetTemplateApplicati
     }
     return nil
 }
-// GetUserSyncInbound gets the userSyncInbound property value. The userSyncInbound property
+// GetUserSyncInbound gets the userSyncInbound property value. Defines whether users can be synchronized from the partner tenant.
 func (m *MultiTenantOrganizationIdentitySyncPolicyTemplate) GetUserSyncInbound()(CrossTenantUserSyncInboundable) {
     val, err := m.GetBackingStore().Get("userSyncInbound")
     if err != nil {
@@ -94,7 +94,7 @@ func (m *MultiTenantOrganizationIdentitySyncPolicyTemplate) SetTemplateApplicati
         panic(err)
     }
 }
-// SetUserSyncInbound sets the userSyncInbound property value. The userSyncInbound property
+// SetUserSyncInbound sets the userSyncInbound property value. Defines whether users can be synchronized from the partner tenant.
 func (m *MultiTenantOrganizationIdentitySyncPolicyTemplate) SetUserSyncInbound(value CrossTenantUserSyncInboundable)() {
     err := m.GetBackingStore().Set("userSyncInbound", value)
     if err != nil {

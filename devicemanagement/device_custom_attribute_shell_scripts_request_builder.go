@@ -46,8 +46,8 @@ type DeviceCustomAttributeShellScriptsRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceCustomAttributeShellScriptId provides operations to manage the deviceCustomAttributeShellScripts property of the microsoft.graph.deviceManagement entity.
-func (m *DeviceCustomAttributeShellScriptsRequestBuilder) ByDeviceCustomAttributeShellScriptId(deviceCustomAttributeShellScriptId string)(*DeviceCustomAttributeShellScriptsDeviceCustomAttributeShellScriptItemRequestBuilder) {
+// ByDeviceCustomAttributeShellScriptIdString provides operations to manage the deviceCustomAttributeShellScripts property of the microsoft.graph.deviceManagement entity.
+func (m *DeviceCustomAttributeShellScriptsRequestBuilder) ByDeviceCustomAttributeShellScriptIdString(deviceCustomAttributeShellScriptId string)(*DeviceCustomAttributeShellScriptsDeviceCustomAttributeShellScriptItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

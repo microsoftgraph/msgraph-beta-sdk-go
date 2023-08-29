@@ -39,8 +39,8 @@ type ItemConnectorGroupsItemApplicationsRequestBuilderGetRequestConfiguration st
     // Request query parameters
     QueryParameters *ItemConnectorGroupsItemApplicationsRequestBuilderGetQueryParameters
 }
-// ByApplicationId provides operations to manage the applications property of the microsoft.graph.connectorGroup entity.
-func (m *ItemConnectorGroupsItemApplicationsRequestBuilder) ByApplicationId(applicationId string)(*ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder) {
+// ByApplicationIdString provides operations to manage the applications property of the microsoft.graph.connectorGroup entity.
+func (m *ItemConnectorGroupsItemApplicationsRequestBuilder) ByApplicationIdString(applicationId string)(*ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type ConnectivityBranchesItemConnectivityConfigurationLinksRequestBuilderPostReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByConnectivityConfigurationLinkId provides operations to manage the links property of the microsoft.graph.networkaccess.branchConnectivityConfiguration entity.
-func (m *ConnectivityBranchesItemConnectivityConfigurationLinksRequestBuilder) ByConnectivityConfigurationLinkId(connectivityConfigurationLinkId string)(*ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilder) {
+// ByConnectivityConfigurationLinkIdString provides operations to manage the links property of the microsoft.graph.networkaccess.branchConnectivityConfiguration entity.
+func (m *ConnectivityBranchesItemConnectivityConfigurationLinksRequestBuilder) ByConnectivityConfigurationLinkIdString(connectivityConfigurationLinkId string)(*ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

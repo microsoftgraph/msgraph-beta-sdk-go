@@ -39,8 +39,8 @@ type B2cUserFlowsItemIdentityProvidersRequestBuilderGetRequestConfiguration stru
     // Request query parameters
     QueryParameters *B2cUserFlowsItemIdentityProvidersRequestBuilderGetQueryParameters
 }
-// ByIdentityProviderId gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2cUserFlows.item.identityProviders.item collection
-func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) ByIdentityProviderId(identityProviderId string)(*B2cUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilder) {
+// ByIdentityProviderIdString gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2cUserFlows.item.identityProviders.item collection
+func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) ByIdentityProviderIdString(identityProviderId string)(*B2cUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type GroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUnsupportedGroupPolicyExtensionId provides operations to manage the unsupportedGroupPolicyExtensions property of the microsoft.graph.groupPolicyMigrationReport entity.
-func (m *GroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsRequestBuilder) ByUnsupportedGroupPolicyExtensionId(unsupportedGroupPolicyExtensionId string)(*GroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsUnsupportedGroupPolicyExtensionItemRequestBuilder) {
+// ByUnsupportedGroupPolicyExtensionIdString provides operations to manage the unsupportedGroupPolicyExtensions property of the microsoft.graph.groupPolicyMigrationReport entity.
+func (m *GroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsRequestBuilder) ByUnsupportedGroupPolicyExtensionIdString(unsupportedGroupPolicyExtensionId string)(*GroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsUnsupportedGroupPolicyExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

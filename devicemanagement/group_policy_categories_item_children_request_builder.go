@@ -39,8 +39,8 @@ type GroupPolicyCategoriesItemChildrenRequestBuilderGetRequestConfiguration stru
     // Request query parameters
     QueryParameters *GroupPolicyCategoriesItemChildrenRequestBuilderGetQueryParameters
 }
-// ByGroupPolicyCategoryId1 provides operations to manage the children property of the microsoft.graph.groupPolicyCategory entity.
-func (m *GroupPolicyCategoriesItemChildrenRequestBuilder) ByGroupPolicyCategoryId1(groupPolicyCategoryId1 string)(*GroupPolicyCategoriesItemChildrenGroupPolicyCategoryItemRequestBuilder) {
+// ByGroupPolicyCategoryId1String provides operations to manage the children property of the microsoft.graph.groupPolicyCategory entity.
+func (m *GroupPolicyCategoriesItemChildrenRequestBuilder) ByGroupPolicyCategoryId1String(groupPolicyCategoryId1 string)(*GroupPolicyCategoriesItemChildrenGroupPolicyCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

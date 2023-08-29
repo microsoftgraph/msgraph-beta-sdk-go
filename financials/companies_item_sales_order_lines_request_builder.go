@@ -39,8 +39,8 @@ type CompaniesItemSalesOrderLinesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *CompaniesItemSalesOrderLinesRequestBuilderGetQueryParameters
 }
-// BySalesOrderLineId provides operations to manage the salesOrderLines property of the microsoft.graph.company entity.
-func (m *CompaniesItemSalesOrderLinesRequestBuilder) BySalesOrderLineId(salesOrderLineId string)(*CompaniesItemSalesOrderLinesSalesOrderLineItemRequestBuilder) {
+// BySalesOrderLineIdString provides operations to manage the salesOrderLines property of the microsoft.graph.company entity.
+func (m *CompaniesItemSalesOrderLinesRequestBuilder) BySalesOrderLineIdString(salesOrderLineId string)(*CompaniesItemSalesOrderLinesSalesOrderLineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

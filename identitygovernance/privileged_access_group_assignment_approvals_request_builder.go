@@ -46,8 +46,8 @@ type PrivilegedAccessGroupAssignmentApprovalsRequestBuilderPostRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByApprovalId provides operations to manage the assignmentApprovals property of the microsoft.graph.privilegedAccessGroup entity.
-func (m *PrivilegedAccessGroupAssignmentApprovalsRequestBuilder) ByApprovalId(approvalId string)(*PrivilegedAccessGroupAssignmentApprovalsApprovalItemRequestBuilder) {
+// ByApprovalIdString provides operations to manage the assignmentApprovals property of the microsoft.graph.privilegedAccessGroup entity.
+func (m *PrivilegedAccessGroupAssignmentApprovalsRequestBuilder) ByApprovalIdString(approvalId string)(*PrivilegedAccessGroupAssignmentApprovalsApprovalItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

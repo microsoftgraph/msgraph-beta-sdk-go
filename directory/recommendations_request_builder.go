@@ -46,8 +46,8 @@ type RecommendationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByRecommendationId provides operations to manage the recommendations property of the microsoft.graph.directory entity.
-func (m *RecommendationsRequestBuilder) ByRecommendationId(recommendationId string)(*RecommendationsRecommendationItemRequestBuilder) {
+// ByRecommendationIdString provides operations to manage the recommendations property of the microsoft.graph.directory entity.
+func (m *RecommendationsRequestBuilder) ByRecommendationIdString(recommendationId string)(*RecommendationsRecommendationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

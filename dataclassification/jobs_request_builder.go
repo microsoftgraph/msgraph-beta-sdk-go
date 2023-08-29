@@ -46,8 +46,8 @@ type JobsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByJobResponseBaseId provides operations to manage the jobs property of the microsoft.graph.dataClassificationService entity.
-func (m *JobsRequestBuilder) ByJobResponseBaseId(jobResponseBaseId string)(*JobsJobResponseBaseItemRequestBuilder) {
+// ByJobResponseBaseIdString provides operations to manage the jobs property of the microsoft.graph.dataClassificationService entity.
+func (m *JobsRequestBuilder) ByJobResponseBaseIdString(jobResponseBaseId string)(*JobsJobResponseBaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

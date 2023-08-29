@@ -46,8 +46,8 @@ type ExchangeResourceNamespacesItemResourceActionsRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUnifiedRbacResourceActionId provides operations to manage the resourceActions property of the microsoft.graph.unifiedRbacResourceNamespace entity.
-func (m *ExchangeResourceNamespacesItemResourceActionsRequestBuilder) ByUnifiedRbacResourceActionId(unifiedRbacResourceActionId string)(*ExchangeResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder) {
+// ByUnifiedRbacResourceActionIdString provides operations to manage the resourceActions property of the microsoft.graph.unifiedRbacResourceNamespace entity.
+func (m *ExchangeResourceNamespacesItemResourceActionsRequestBuilder) ByUnifiedRbacResourceActionIdString(unifiedRbacResourceActionId string)(*ExchangeResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

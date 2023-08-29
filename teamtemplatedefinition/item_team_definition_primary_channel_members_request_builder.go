@@ -50,8 +50,8 @@ type ItemTeamDefinitionPrimaryChannelMembersRequestBuilderPostRequestConfigurati
 func (m *ItemTeamDefinitionPrimaryChannelMembersRequestBuilder) Add()(*ItemTeamDefinitionPrimaryChannelMembersAddRequestBuilder) {
     return NewItemTeamDefinitionPrimaryChannelMembersAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByConversationMemberId provides operations to manage the members property of the microsoft.graph.channel entity.
-func (m *ItemTeamDefinitionPrimaryChannelMembersRequestBuilder) ByConversationMemberId(conversationMemberId string)(*ItemTeamDefinitionPrimaryChannelMembersConversationMemberItemRequestBuilder) {
+// ByConversationMemberIdString provides operations to manage the members property of the microsoft.graph.channel entity.
+func (m *ItemTeamDefinitionPrimaryChannelMembersRequestBuilder) ByConversationMemberIdString(conversationMemberId string)(*ItemTeamDefinitionPrimaryChannelMembersConversationMemberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

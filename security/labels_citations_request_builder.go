@@ -46,8 +46,8 @@ type LabelsCitationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCitationTemplateId provides operations to manage the citations property of the microsoft.graph.security.labelsRoot entity.
-func (m *LabelsCitationsRequestBuilder) ByCitationTemplateId(citationTemplateId string)(*LabelsCitationsCitationTemplateItemRequestBuilder) {
+// ByCitationTemplateIdString provides operations to manage the citations property of the microsoft.graph.security.labelsRoot entity.
+func (m *LabelsCitationsRequestBuilder) ByCitationTemplateIdString(citationTemplateId string)(*LabelsCitationsCitationTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

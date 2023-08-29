@@ -39,8 +39,8 @@ type ManagedTenantsManagedTenantAlertsItemEmailNotificationsRequestBuilderGetReq
     // Request query parameters
     QueryParameters *ManagedTenantsManagedTenantAlertsItemEmailNotificationsRequestBuilderGetQueryParameters
 }
-// ByManagedTenantEmailNotificationId provides operations to manage the emailNotifications property of the microsoft.graph.managedTenants.managedTenantAlert entity.
-func (m *ManagedTenantsManagedTenantAlertsItemEmailNotificationsRequestBuilder) ByManagedTenantEmailNotificationId(managedTenantEmailNotificationId string)(*ManagedTenantsManagedTenantAlertsItemEmailNotificationsManagedTenantEmailNotificationItemRequestBuilder) {
+// ByManagedTenantEmailNotificationIdString provides operations to manage the emailNotifications property of the microsoft.graph.managedTenants.managedTenantAlert entity.
+func (m *ManagedTenantsManagedTenantAlertsItemEmailNotificationsRequestBuilder) ByManagedTenantEmailNotificationIdString(managedTenantEmailNotificationId string)(*ManagedTenantsManagedTenantAlertsItemEmailNotificationsManagedTenantEmailNotificationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

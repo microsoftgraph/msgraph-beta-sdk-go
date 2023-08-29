@@ -46,8 +46,8 @@ type KeySetsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTrustFrameworkKeySetId provides operations to manage the keySets property of the microsoft.graph.trustFramework entity.
-func (m *KeySetsRequestBuilder) ByTrustFrameworkKeySetId(trustFrameworkKeySetId string)(*KeySetsTrustFrameworkKeySetItemRequestBuilder) {
+// ByTrustFrameworkKeySetIdString provides operations to manage the keySets property of the microsoft.graph.trustFramework entity.
+func (m *KeySetsRequestBuilder) ByTrustFrameworkKeySetIdString(trustFrameworkKeySetId string)(*KeySetsTrustFrameworkKeySetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

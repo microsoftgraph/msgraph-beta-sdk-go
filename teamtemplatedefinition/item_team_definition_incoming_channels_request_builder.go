@@ -39,8 +39,8 @@ type ItemTeamDefinitionIncomingChannelsRequestBuilderGetRequestConfiguration str
     // Request query parameters
     QueryParameters *ItemTeamDefinitionIncomingChannelsRequestBuilderGetQueryParameters
 }
-// ByChannelId provides operations to manage the incomingChannels property of the microsoft.graph.team entity.
-func (m *ItemTeamDefinitionIncomingChannelsRequestBuilder) ByChannelId(channelId string)(*ItemTeamDefinitionIncomingChannelsChannelItemRequestBuilder) {
+// ByChannelIdString provides operations to manage the incomingChannels property of the microsoft.graph.team entity.
+func (m *ItemTeamDefinitionIncomingChannelsRequestBuilder) ByChannelIdString(channelId string)(*ItemTeamDefinitionIncomingChannelsChannelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

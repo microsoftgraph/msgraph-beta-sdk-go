@@ -39,8 +39,8 @@ type CloudPCRoleAssignmentsItemDirectoryScopesRequestBuilderGetRequestConfigurat
     // Request query parameters
     QueryParameters *CloudPCRoleAssignmentsItemDirectoryScopesRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectId provides operations to manage the directoryScopes property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.
-func (m *CloudPCRoleAssignmentsItemDirectoryScopesRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*CloudPCRoleAssignmentsItemDirectoryScopesDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectIdString provides operations to manage the directoryScopes property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.
+func (m *CloudPCRoleAssignmentsItemDirectoryScopesRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*CloudPCRoleAssignmentsItemDirectoryScopesDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

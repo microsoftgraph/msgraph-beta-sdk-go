@@ -1,6 +1,7 @@
 package models
 
 import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -27,6 +28,17 @@ func (m *AccessPackageSubject) GetAltSecId()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetCleanupScheduledDateTime gets the cleanupScheduledDateTime property value. The cleanupScheduledDateTime property
+func (m *AccessPackageSubject) GetCleanupScheduledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("cleanupScheduledDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     }
     return nil
 }
@@ -84,6 +96,16 @@ func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetAltSecId(val)
+        }
+        return nil
+    }
+    res["cleanupScheduledDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCleanupScheduledDateTime(val)
         }
         return nil
     }
@@ -247,6 +269,12 @@ func (m *AccessPackageSubject) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err = writer.WriteTimeValue("cleanupScheduledDateTime", m.GetCleanupScheduledDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("connectedOrganization", m.GetConnectedOrganization())
         if err != nil {
             return err
@@ -306,6 +334,13 @@ func (m *AccessPackageSubject) Serialize(writer i878a80d2330e89d26896388a3f487ee
 // SetAltSecId sets the altSecId property value. Not Supported.
 func (m *AccessPackageSubject) SetAltSecId(value *string)() {
     err := m.GetBackingStore().Set("altSecId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCleanupScheduledDateTime sets the cleanupScheduledDateTime property value. The cleanupScheduledDateTime property
+func (m *AccessPackageSubject) SetCleanupScheduledDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("cleanupScheduledDateTime", value)
     if err != nil {
         panic(err)
     }
@@ -378,6 +413,7 @@ type AccessPackageSubjectable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAltSecId()(*string)
+    GetCleanupScheduledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetConnectedOrganization()(ConnectedOrganizationable)
     GetConnectedOrganizationId()(*string)
     GetDisplayName()(*string)
@@ -388,6 +424,7 @@ type AccessPackageSubjectable interface {
     GetSubjectLifecycle()(*AccessPackageSubjectLifecycle)
     GetTypeEscaped()(*string)
     SetAltSecId(value *string)()
+    SetCleanupScheduledDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetConnectedOrganization(value ConnectedOrganizationable)()
     SetConnectedOrganizationId(value *string)()
     SetDisplayName(value *string)()

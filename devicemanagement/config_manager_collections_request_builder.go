@@ -46,8 +46,8 @@ type ConfigManagerCollectionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByConfigManagerCollectionId provides operations to manage the configManagerCollections property of the microsoft.graph.deviceManagement entity.
-func (m *ConfigManagerCollectionsRequestBuilder) ByConfigManagerCollectionId(configManagerCollectionId string)(*ConfigManagerCollectionsConfigManagerCollectionItemRequestBuilder) {
+// ByConfigManagerCollectionIdString provides operations to manage the configManagerCollections property of the microsoft.graph.deviceManagement entity.
+func (m *ConfigManagerCollectionsRequestBuilder) ByConfigManagerCollectionIdString(configManagerCollectionId string)(*ConfigManagerCollectionsConfigManagerCollectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type UserExperienceAnalyticsImpactingProcessRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserExperienceAnalyticsImpactingProcessId provides operations to manage the userExperienceAnalyticsImpactingProcess property of the microsoft.graph.deviceManagement entity.
-func (m *UserExperienceAnalyticsImpactingProcessRequestBuilder) ByUserExperienceAnalyticsImpactingProcessId(userExperienceAnalyticsImpactingProcessId string)(*UserExperienceAnalyticsImpactingProcessUserExperienceAnalyticsImpactingProcessItemRequestBuilder) {
+// ByUserExperienceAnalyticsImpactingProcessIdString provides operations to manage the userExperienceAnalyticsImpactingProcess property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsImpactingProcessRequestBuilder) ByUserExperienceAnalyticsImpactingProcessIdString(userExperienceAnalyticsImpactingProcessId string)(*UserExperienceAnalyticsImpactingProcessUserExperienceAnalyticsImpactingProcessItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

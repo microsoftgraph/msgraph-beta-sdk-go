@@ -50,8 +50,8 @@ type ItemCloudPCsRequestBuilderPostRequestConfiguration struct {
 func (m *ItemCloudPCsRequestBuilder) BulkResize()(*ItemCloudPCsBulkResizeRequestBuilder) {
     return NewItemCloudPCsBulkResizeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByCloudPCId provides operations to manage the cloudPCs property of the microsoft.graph.user entity.
-func (m *ItemCloudPCsRequestBuilder) ByCloudPCId(cloudPCId string)(*ItemCloudPCsCloudPCItemRequestBuilder) {
+// ByCloudPCIdString provides operations to manage the cloudPCs property of the microsoft.graph.user entity.
+func (m *ItemCloudPCsRequestBuilder) ByCloudPCIdString(cloudPCId string)(*ItemCloudPCsCloudPCItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

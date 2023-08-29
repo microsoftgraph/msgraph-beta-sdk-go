@@ -46,9 +46,9 @@ type VirtualEndpointSharedUseServicePlansRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCloudPcSharedUseServicePlanId provides operations to manage the sharedUseServicePlans property of the microsoft.graph.virtualEndpoint entity.
+// ByCloudPcSharedUseServicePlanIdString provides operations to manage the sharedUseServicePlans property of the microsoft.graph.virtualEndpoint entity.
 // Deprecated: The sharedUseServicePlans property is deprecated and will not be supported starting Oct 8, 2023. This property will not be included as part of the API response. as of 2023-03/sharedUseServicePlans on 2023-06-08 and will be removed 2023-10-08
-func (m *VirtualEndpointSharedUseServicePlansRequestBuilder) ByCloudPcSharedUseServicePlanId(cloudPcSharedUseServicePlanId string)(*VirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemRequestBuilder) {
+func (m *VirtualEndpointSharedUseServicePlansRequestBuilder) ByCloudPcSharedUseServicePlanIdString(cloudPcSharedUseServicePlanId string)(*VirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type DirectoryTransitiveRoleAssignmentsRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUnifiedRoleAssignmentId provides operations to manage the transitiveRoleAssignments property of the microsoft.graph.rbacApplication entity.
-func (m *DirectoryTransitiveRoleAssignmentsRequestBuilder) ByUnifiedRoleAssignmentId(unifiedRoleAssignmentId string)(*DirectoryTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) {
+// ByUnifiedRoleAssignmentIdString provides operations to manage the transitiveRoleAssignments property of the microsoft.graph.rbacApplication entity.
+func (m *DirectoryTransitiveRoleAssignmentsRequestBuilder) ByUnifiedRoleAssignmentIdString(unifiedRoleAssignmentId string)(*DirectoryTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

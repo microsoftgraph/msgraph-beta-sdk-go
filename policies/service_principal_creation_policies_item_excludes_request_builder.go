@@ -46,8 +46,8 @@ type ServicePrincipalCreationPoliciesItemExcludesRequestBuilderPostRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByServicePrincipalCreationConditionSetId provides operations to manage the excludes property of the microsoft.graph.servicePrincipalCreationPolicy entity.
-func (m *ServicePrincipalCreationPoliciesItemExcludesRequestBuilder) ByServicePrincipalCreationConditionSetId(servicePrincipalCreationConditionSetId string)(*ServicePrincipalCreationPoliciesItemExcludesServicePrincipalCreationConditionSetItemRequestBuilder) {
+// ByServicePrincipalCreationConditionSetIdString provides operations to manage the excludes property of the microsoft.graph.servicePrincipalCreationPolicy entity.
+func (m *ServicePrincipalCreationPoliciesItemExcludesRequestBuilder) ByServicePrincipalCreationConditionSetIdString(servicePrincipalCreationConditionSetId string)(*ServicePrincipalCreationPoliciesItemExcludesServicePrincipalCreationConditionSetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

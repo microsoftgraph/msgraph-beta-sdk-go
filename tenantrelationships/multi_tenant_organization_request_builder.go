@@ -18,7 +18,7 @@ type MultiTenantOrganizationRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MultiTenantOrganizationRequestBuilderGetQueryParameters get multiTenantOrganization from tenantRelationships
+// MultiTenantOrganizationRequestBuilderGetQueryParameters get properties of the multi-tenant organization.
 type MultiTenantOrganizationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -34,8 +34,8 @@ type MultiTenantOrganizationRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *MultiTenantOrganizationRequestBuilderGetQueryParameters
 }
-// MultiTenantOrganizationRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type MultiTenantOrganizationRequestBuilderPutRequestConfiguration struct {
+// MultiTenantOrganizationRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type MultiTenantOrganizationRequestBuilderPatchRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
@@ -70,7 +70,10 @@ func (m *MultiTenantOrganizationRequestBuilder) Delete(ctx context.Context, requ
     }
     return nil
 }
-// Get get multiTenantOrganization from tenantRelationships
+// Get get properties of the multi-tenant organization.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/multitenantorganization-get?view=graph-rest-1.0
 func (m *MultiTenantOrganizationRequestBuilder) Get(ctx context.Context, requestConfiguration *MultiTenantOrganizationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiTenantOrganizationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,9 +96,12 @@ func (m *MultiTenantOrganizationRequestBuilder) Get(ctx context.Context, request
 func (m *MultiTenantOrganizationRequestBuilder) JoinRequest()(*MultiTenantOrganizationJoinRequestRequestBuilder) {
     return NewMultiTenantOrganizationJoinRequestRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Put update the navigation property multiTenantOrganization in tenantRelationships
-func (m *MultiTenantOrganizationRequestBuilder) Put(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiTenantOrganizationable, requestConfiguration *MultiTenantOrganizationRequestBuilderPutRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiTenantOrganizationable, error) {
-    requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
+// Patch update the properties of a multi-tenant organization.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/multitenantorganization-update?view=graph-rest-1.0
+func (m *MultiTenantOrganizationRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiTenantOrganizationable, requestConfiguration *MultiTenantOrganizationRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiTenantOrganizationable, error) {
+    requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -128,7 +134,7 @@ func (m *MultiTenantOrganizationRequestBuilder) ToDeleteRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get multiTenantOrganization from tenantRelationships
+// ToGetRequestInformation get properties of the multi-tenant organization.
 func (m *MultiTenantOrganizationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MultiTenantOrganizationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -144,12 +150,12 @@ func (m *MultiTenantOrganizationRequestBuilder) ToGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation update the navigation property multiTenantOrganization in tenantRelationships
-func (m *MultiTenantOrganizationRequestBuilder) ToPutRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiTenantOrganizationable, requestConfiguration *MultiTenantOrganizationRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// ToPatchRequestInformation update the properties of a multi-tenant organization.
+func (m *MultiTenantOrganizationRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiTenantOrganizationable, requestConfiguration *MultiTenantOrganizationRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

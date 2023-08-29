@@ -46,8 +46,8 @@ type ItemProfileLanguagesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByLanguageProficiencyId provides operations to manage the languages property of the microsoft.graph.profile entity.
-func (m *ItemProfileLanguagesRequestBuilder) ByLanguageProficiencyId(languageProficiencyId string)(*ItemProfileLanguagesLanguageProficiencyItemRequestBuilder) {
+// ByLanguageProficiencyIdString provides operations to manage the languages property of the microsoft.graph.profile entity.
+func (m *ItemProfileLanguagesRequestBuilder) ByLanguageProficiencyIdString(languageProficiencyId string)(*ItemProfileLanguagesLanguageProficiencyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

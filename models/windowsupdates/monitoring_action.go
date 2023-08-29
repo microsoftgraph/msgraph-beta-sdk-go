@@ -7,18 +7,21 @@ type MonitoringAction int
 
 const (
     ALERTERROR_MONITORINGACTION MonitoringAction = iota
+    OFFERFALLBACK_MONITORINGACTION
     PAUSEDEPLOYMENT_MONITORINGACTION
     UNKNOWNFUTUREVALUE_MONITORINGACTION
 )
 
 func (i MonitoringAction) String() string {
-    return []string{"alertError", "pauseDeployment", "unknownFutureValue"}[i]
+    return []string{"alertError", "offerFallback", "pauseDeployment", "unknownFutureValue"}[i]
 }
 func ParseMonitoringAction(v string) (any, error) {
     result := ALERTERROR_MONITORINGACTION
     switch v {
         case "alertError":
             result = ALERTERROR_MONITORINGACTION
+        case "offerFallback":
+            result = OFFERFALLBACK_MONITORINGACTION
         case "pauseDeployment":
             result = PAUSEDEPLOYMENT_MONITORINGACTION
         case "unknownFutureValue":

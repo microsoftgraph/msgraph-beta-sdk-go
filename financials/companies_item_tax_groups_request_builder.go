@@ -46,8 +46,8 @@ type CompaniesItemTaxGroupsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTaxGroupId provides operations to manage the taxGroups property of the microsoft.graph.company entity.
-func (m *CompaniesItemTaxGroupsRequestBuilder) ByTaxGroupId(taxGroupId string)(*CompaniesItemTaxGroupsTaxGroupItemRequestBuilder) {
+// ByTaxGroupIdString provides operations to manage the taxGroups property of the microsoft.graph.company entity.
+func (m *CompaniesItemTaxGroupsRequestBuilder) ByTaxGroupIdString(taxGroupId string)(*CompaniesItemTaxGroupsTaxGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type ConnectivityBranchesItemForwardingProfilesRequestBuilderPostRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByForwardingProfileId provides operations to manage the forwardingProfiles property of the microsoft.graph.networkaccess.branchSite entity.
-func (m *ConnectivityBranchesItemForwardingProfilesRequestBuilder) ByForwardingProfileId(forwardingProfileId string)(*ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilder) {
+// ByForwardingProfileIdString provides operations to manage the forwardingProfiles property of the microsoft.graph.networkaccess.branchSite entity.
+func (m *ConnectivityBranchesItemForwardingProfilesRequestBuilder) ByForwardingProfileIdString(forwardingProfileId string)(*ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

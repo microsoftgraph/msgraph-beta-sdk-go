@@ -46,8 +46,8 @@ type SubscriptionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCompanySubscriptionId provides operations to manage the subscriptions property of the microsoft.graph.directory entity.
-func (m *SubscriptionsRequestBuilder) ByCompanySubscriptionId(companySubscriptionId string)(*SubscriptionsCompanySubscriptionItemRequestBuilder) {
+// ByCompanySubscriptionIdString provides operations to manage the subscriptions property of the microsoft.graph.directory entity.
+func (m *SubscriptionsRequestBuilder) ByCompanySubscriptionIdString(companySubscriptionId string)(*SubscriptionsCompanySubscriptionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

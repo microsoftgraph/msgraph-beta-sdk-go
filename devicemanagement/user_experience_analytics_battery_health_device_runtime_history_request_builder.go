@@ -46,8 +46,8 @@ type UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderPostR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryId provides operations to manage the userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory property of the microsoft.graph.deviceManagement entity.
-func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder) ByUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryId(userExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryId string)(*UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilder) {
+// ByUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryIdString provides operations to manage the userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder) ByUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryIdString(userExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryId string)(*UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

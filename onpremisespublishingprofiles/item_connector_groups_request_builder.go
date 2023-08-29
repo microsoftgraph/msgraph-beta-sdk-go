@@ -46,8 +46,8 @@ type ItemConnectorGroupsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByConnectorGroupId provides operations to manage the connectorGroups property of the microsoft.graph.onPremisesPublishingProfile entity.
-func (m *ItemConnectorGroupsRequestBuilder) ByConnectorGroupId(connectorGroupId string)(*ItemConnectorGroupsConnectorGroupItemRequestBuilder) {
+// ByConnectorGroupIdString provides operations to manage the connectorGroups property of the microsoft.graph.onPremisesPublishingProfile entity.
+func (m *ItemConnectorGroupsRequestBuilder) ByConnectorGroupIdString(connectorGroupId string)(*ItemConnectorGroupsConnectorGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

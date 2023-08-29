@@ -46,8 +46,8 @@ type ItemPagesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByBaseSitePageId provides operations to manage the pages property of the microsoft.graph.site entity.
-func (m *ItemPagesRequestBuilder) ByBaseSitePageId(baseSitePageId string)(*ItemPagesBaseSitePageItemRequestBuilder) {
+// ByBaseSitePageIdString provides operations to manage the pages property of the microsoft.graph.site entity.
+func (m *ItemPagesRequestBuilder) ByBaseSitePageIdString(baseSitePageId string)(*ItemPagesBaseSitePageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

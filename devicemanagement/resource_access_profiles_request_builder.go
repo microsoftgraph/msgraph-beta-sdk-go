@@ -46,8 +46,8 @@ type ResourceAccessProfilesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementResourceAccessProfileBaseId provides operations to manage the resourceAccessProfiles property of the microsoft.graph.deviceManagement entity.
-func (m *ResourceAccessProfilesRequestBuilder) ByDeviceManagementResourceAccessProfileBaseId(deviceManagementResourceAccessProfileBaseId string)(*ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) {
+// ByDeviceManagementResourceAccessProfileBaseIdString provides operations to manage the resourceAccessProfiles property of the microsoft.graph.deviceManagement entity.
+func (m *ResourceAccessProfilesRequestBuilder) ByDeviceManagementResourceAccessProfileBaseIdString(deviceManagementResourceAccessProfileBaseId string)(*ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

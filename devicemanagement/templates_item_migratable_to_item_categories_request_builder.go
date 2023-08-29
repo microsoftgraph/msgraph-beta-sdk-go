@@ -46,8 +46,8 @@ type TemplatesItemMigratableToItemCategoriesRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementTemplateSettingCategoryId provides operations to manage the categories property of the microsoft.graph.deviceManagementTemplate entity.
-func (m *TemplatesItemMigratableToItemCategoriesRequestBuilder) ByDeviceManagementTemplateSettingCategoryId(deviceManagementTemplateSettingCategoryId string)(*TemplatesItemMigratableToItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilder) {
+// ByDeviceManagementTemplateSettingCategoryIdString provides operations to manage the categories property of the microsoft.graph.deviceManagementTemplate entity.
+func (m *TemplatesItemMigratableToItemCategoriesRequestBuilder) ByDeviceManagementTemplateSettingCategoryIdString(deviceManagementTemplateSettingCategoryId string)(*TemplatesItemMigratableToItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

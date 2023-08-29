@@ -46,8 +46,8 @@ type ManagedTenantsCredentialUserRegistrationsSummariesRequestBuilderPostRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCredentialUserRegistrationsSummaryId provides operations to manage the credentialUserRegistrationsSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsCredentialUserRegistrationsSummariesRequestBuilder) ByCredentialUserRegistrationsSummaryId(credentialUserRegistrationsSummaryId string)(*ManagedTenantsCredentialUserRegistrationsSummariesCredentialUserRegistrationsSummaryItemRequestBuilder) {
+// ByCredentialUserRegistrationsSummaryIdString provides operations to manage the credentialUserRegistrationsSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsCredentialUserRegistrationsSummariesRequestBuilder) ByCredentialUserRegistrationsSummaryIdString(credentialUserRegistrationsSummaryId string)(*ManagedTenantsCredentialUserRegistrationsSummariesCredentialUserRegistrationsSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

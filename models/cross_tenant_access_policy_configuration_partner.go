@@ -240,7 +240,7 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetInboundTrust()(CrossTen
     }
     return nil
 }
-// GetIsInMultiTenantOrganization gets the isInMultiTenantOrganization property value. The isInMultiTenantOrganization property
+// GetIsInMultiTenantOrganization gets the isInMultiTenantOrganization property value. Identifies whether a tenant is a member of a multi-tenant organization.
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetIsInMultiTenantOrganization()(*bool) {
     val, err := m.GetBackingStore().Get("isInMultiTenantOrganization")
     if err != nil {
@@ -437,7 +437,7 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) SetInboundTrust(value Cros
         panic(err)
     }
 }
-// SetIsInMultiTenantOrganization sets the isInMultiTenantOrganization property value. The isInMultiTenantOrganization property
+// SetIsInMultiTenantOrganization sets the isInMultiTenantOrganization property value. Identifies whether a tenant is a member of a multi-tenant organization.
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetIsInMultiTenantOrganization(value *bool)() {
     err := m.GetBackingStore().Set("isInMultiTenantOrganization", value)
     if err != nil {

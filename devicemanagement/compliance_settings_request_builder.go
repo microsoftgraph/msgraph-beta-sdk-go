@@ -46,8 +46,8 @@ type ComplianceSettingsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementConfigurationSettingDefinitionId provides operations to manage the complianceSettings property of the microsoft.graph.deviceManagement entity.
-func (m *ComplianceSettingsRequestBuilder) ByDeviceManagementConfigurationSettingDefinitionId(deviceManagementConfigurationSettingDefinitionId string)(*ComplianceSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
+// ByDeviceManagementConfigurationSettingDefinitionIdString provides operations to manage the complianceSettings property of the microsoft.graph.deviceManagement entity.
+func (m *ComplianceSettingsRequestBuilder) ByDeviceManagementConfigurationSettingDefinitionIdString(deviceManagementConfigurationSettingDefinitionId string)(*ComplianceSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

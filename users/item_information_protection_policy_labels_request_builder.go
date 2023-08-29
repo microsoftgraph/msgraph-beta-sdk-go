@@ -46,9 +46,9 @@ type ItemInformationProtectionPolicyLabelsRequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByInformationProtectionLabelId provides operations to manage the labels property of the microsoft.graph.informationProtectionPolicy entity.
+// ByInformationProtectionLabelIdString provides operations to manage the labels property of the microsoft.graph.informationProtectionPolicy entity.
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
-func (m *ItemInformationProtectionPolicyLabelsRequestBuilder) ByInformationProtectionLabelId(informationProtectionLabelId string)(*ItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder) {
+func (m *ItemInformationProtectionPolicyLabelsRequestBuilder) ByInformationProtectionLabelIdString(informationProtectionLabelId string)(*ItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

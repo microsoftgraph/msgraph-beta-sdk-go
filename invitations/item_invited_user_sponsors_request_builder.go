@@ -39,8 +39,8 @@ type ItemInvitedUserSponsorsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemInvitedUserSponsorsRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectId provides operations to manage the invitedUserSponsors property of the microsoft.graph.invitation entity.
-func (m *ItemInvitedUserSponsorsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemInvitedUserSponsorsDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectIdString provides operations to manage the invitedUserSponsors property of the microsoft.graph.invitation entity.
+func (m *ItemInvitedUserSponsorsRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ItemInvitedUserSponsorsDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

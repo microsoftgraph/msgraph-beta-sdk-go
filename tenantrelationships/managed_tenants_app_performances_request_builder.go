@@ -46,8 +46,8 @@ type ManagedTenantsAppPerformancesRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAppPerformanceId provides operations to manage the appPerformances property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsAppPerformancesRequestBuilder) ByAppPerformanceId(appPerformanceId string)(*ManagedTenantsAppPerformancesAppPerformanceItemRequestBuilder) {
+// ByAppPerformanceIdString provides operations to manage the appPerformances property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsAppPerformancesRequestBuilder) ByAppPerformanceIdString(appPerformanceId string)(*ManagedTenantsAppPerformancesAppPerformanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

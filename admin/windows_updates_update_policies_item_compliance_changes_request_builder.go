@@ -46,8 +46,8 @@ type WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilderPostRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByComplianceChangeId provides operations to manage the complianceChanges property of the microsoft.graph.windowsUpdates.updatePolicy entity.
-func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) ByComplianceChangeId(complianceChangeId string)(*WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilder) {
+// ByComplianceChangeIdString provides operations to manage the complianceChanges property of the microsoft.graph.windowsUpdates.updatePolicy entity.
+func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) ByComplianceChangeIdString(complianceChangeId string)(*WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

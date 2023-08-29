@@ -46,8 +46,8 @@ type IndustryDataReferenceDefinitionsRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByReferenceDefinitionId provides operations to manage the referenceDefinitions property of the microsoft.graph.industryData.industryDataRoot entity.
-func (m *IndustryDataReferenceDefinitionsRequestBuilder) ByReferenceDefinitionId(referenceDefinitionId string)(*IndustryDataReferenceDefinitionsReferenceDefinitionItemRequestBuilder) {
+// ByReferenceDefinitionIdString provides operations to manage the referenceDefinitions property of the microsoft.graph.industryData.industryDataRoot entity.
+func (m *IndustryDataReferenceDefinitionsRequestBuilder) ByReferenceDefinitionIdString(referenceDefinitionId string)(*IndustryDataReferenceDefinitionsReferenceDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

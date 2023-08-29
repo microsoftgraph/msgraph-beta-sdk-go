@@ -46,8 +46,8 @@ type ManagedTenantsManagedTenantAlertLogsRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByManagedTenantAlertLogId provides operations to manage the managedTenantAlertLogs property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsManagedTenantAlertLogsRequestBuilder) ByManagedTenantAlertLogId(managedTenantAlertLogId string)(*ManagedTenantsManagedTenantAlertLogsManagedTenantAlertLogItemRequestBuilder) {
+// ByManagedTenantAlertLogIdString provides operations to manage the managedTenantAlertLogs property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsManagedTenantAlertLogsRequestBuilder) ByManagedTenantAlertLogIdString(managedTenantAlertLogId string)(*ManagedTenantsManagedTenantAlertLogsManagedTenantAlertLogItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

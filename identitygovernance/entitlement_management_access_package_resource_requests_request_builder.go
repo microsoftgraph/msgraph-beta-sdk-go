@@ -46,8 +46,8 @@ type EntitlementManagementAccessPackageResourceRequestsRequestBuilderPostRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAccessPackageResourceRequestId provides operations to manage the accessPackageResourceRequests property of the microsoft.graph.entitlementManagement entity.
-func (m *EntitlementManagementAccessPackageResourceRequestsRequestBuilder) ByAccessPackageResourceRequestId(accessPackageResourceRequestId string)(*EntitlementManagementAccessPackageResourceRequestsAccessPackageResourceRequestItemRequestBuilder) {
+// ByAccessPackageResourceRequestIdString provides operations to manage the accessPackageResourceRequests property of the microsoft.graph.entitlementManagement entity.
+func (m *EntitlementManagementAccessPackageResourceRequestsRequestBuilder) ByAccessPackageResourceRequestIdString(accessPackageResourceRequestId string)(*EntitlementManagementAccessPackageResourceRequestsAccessPackageResourceRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

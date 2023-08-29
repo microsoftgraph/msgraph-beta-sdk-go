@@ -46,8 +46,8 @@ type DeviceManagementRoleDefinitionsItemInheritsPermissionsFromRequestBuilderPos
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUnifiedRoleDefinitionId1 provides operations to manage the inheritsPermissionsFrom property of the microsoft.graph.unifiedRoleDefinition entity.
-func (m *DeviceManagementRoleDefinitionsItemInheritsPermissionsFromRequestBuilder) ByUnifiedRoleDefinitionId1(unifiedRoleDefinitionId1 string)(*DeviceManagementRoleDefinitionsItemInheritsPermissionsFromUnifiedRoleDefinitionItemRequestBuilder) {
+// ByUnifiedRoleDefinitionId1String provides operations to manage the inheritsPermissionsFrom property of the microsoft.graph.unifiedRoleDefinition entity.
+func (m *DeviceManagementRoleDefinitionsItemInheritsPermissionsFromRequestBuilder) ByUnifiedRoleDefinitionId1String(unifiedRoleDefinitionId1 string)(*DeviceManagementRoleDefinitionsItemInheritsPermissionsFromUnifiedRoleDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

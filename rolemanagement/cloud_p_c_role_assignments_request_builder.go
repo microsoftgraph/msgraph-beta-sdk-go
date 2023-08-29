@@ -46,8 +46,8 @@ type CloudPCRoleAssignmentsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUnifiedRoleAssignmentMultipleId provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplicationMultiple entity.
-func (m *CloudPCRoleAssignmentsRequestBuilder) ByUnifiedRoleAssignmentMultipleId(unifiedRoleAssignmentMultipleId string)(*CloudPCRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) {
+// ByUnifiedRoleAssignmentMultipleIdString provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplicationMultiple entity.
+func (m *CloudPCRoleAssignmentsRequestBuilder) ByUnifiedRoleAssignmentMultipleIdString(unifiedRoleAssignmentMultipleId string)(*CloudPCRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -77,7 +77,7 @@ func (m *CloudPCRoleAssignmentsRequestBuilder) Count()(*CloudPCRoleAssignmentsCo
 // Get get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
 func (m *CloudPCRoleAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *CloudPCRoleAssignmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentMultipleCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -46,8 +46,8 @@ type ManagedTenantsManagementTemplatesRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByManagementTemplateId provides operations to manage the managementTemplates property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsManagementTemplatesRequestBuilder) ByManagementTemplateId(managementTemplateId string)(*ManagedTenantsManagementTemplatesManagementTemplateItemRequestBuilder) {
+// ByManagementTemplateIdString provides operations to manage the managementTemplates property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsManagementTemplatesRequestBuilder) ByManagementTemplateIdString(managementTemplateId string)(*ManagedTenantsManagementTemplatesManagementTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

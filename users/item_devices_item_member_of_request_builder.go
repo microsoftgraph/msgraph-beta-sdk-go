@@ -39,8 +39,8 @@ type ItemDevicesItemMemberOfRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemDevicesItemMemberOfRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectId provides operations to manage the memberOf property of the microsoft.graph.device entity.
-func (m *ItemDevicesItemMemberOfRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemDevicesItemMemberOfDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectIdString provides operations to manage the memberOf property of the microsoft.graph.device entity.
+func (m *ItemDevicesItemMemberOfRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ItemDevicesItemMemberOfDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

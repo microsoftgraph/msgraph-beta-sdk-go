@@ -44,8 +44,8 @@ type ItemThreadsItemPostsItemMentionsRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMentionId provides operations to manage the mentions property of the microsoft.graph.post entity.
-func (m *ItemThreadsItemPostsItemMentionsRequestBuilder) ByMentionId(mentionId string)(*ItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) {
+// ByMentionIdString provides operations to manage the mentions property of the microsoft.graph.post entity.
+func (m *ItemThreadsItemPostsItemMentionsRequestBuilder) ByMentionIdString(mentionId string)(*ItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

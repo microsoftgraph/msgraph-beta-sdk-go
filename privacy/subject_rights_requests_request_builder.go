@@ -46,9 +46,9 @@ type SubjectRightsRequestsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySubjectRightsRequestId provides operations to manage the subjectRightsRequests property of the microsoft.graph.privacy entity.
+// BySubjectRightsRequestIdString provides operations to manage the subjectRightsRequests property of the microsoft.graph.privacy entity.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
-func (m *SubjectRightsRequestsRequestBuilder) BySubjectRightsRequestId(subjectRightsRequestId string)(*SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) {
+func (m *SubjectRightsRequestsRequestBuilder) BySubjectRightsRequestIdString(subjectRightsRequestId string)(*SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

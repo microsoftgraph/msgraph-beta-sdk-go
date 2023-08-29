@@ -39,8 +39,8 @@ type ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilderGetRequestCo
     // Request query parameters
     QueryParameters *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilderGetQueryParameters
 }
-// ByHostId provides operations to manage the relatedHosts property of the microsoft.graph.security.sslCertificate entity.
-func (m *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder) ByHostId(hostId string)(*ThreatIntelligenceSslCertificatesItemRelatedHostsHostItemRequestBuilder) {
+// ByHostIdString provides operations to manage the relatedHosts property of the microsoft.graph.security.sslCertificate entity.
+func (m *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder) ByHostIdString(hostId string)(*ThreatIntelligenceSslCertificatesItemRelatedHostsHostItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

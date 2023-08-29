@@ -39,8 +39,8 @@ type ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilderGetRequest
     // Request query parameters
     QueryParameters *ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilderGetQueryParameters
 }
-// ByWindowsInformationProtectionDeviceRegistrationId provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.user entity.
-func (m *ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilder) ByWindowsInformationProtectionDeviceRegistrationId(windowsInformationProtectionDeviceRegistrationId string)(*ItemWindowsInformationProtectionDeviceRegistrationsWindowsInformationProtectionDeviceRegistrationItemRequestBuilder) {
+// ByWindowsInformationProtectionDeviceRegistrationIdString provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.user entity.
+func (m *ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilder) ByWindowsInformationProtectionDeviceRegistrationIdString(windowsInformationProtectionDeviceRegistrationId string)(*ItemWindowsInformationProtectionDeviceRegistrationsWindowsInformationProtectionDeviceRegistrationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

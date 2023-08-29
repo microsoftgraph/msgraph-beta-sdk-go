@@ -39,8 +39,8 @@ type ThreatIntelligenceHostsItemSubdomainsRequestBuilderGetRequestConfiguration 
     // Request query parameters
     QueryParameters *ThreatIntelligenceHostsItemSubdomainsRequestBuilderGetQueryParameters
 }
-// BySubdomainId provides operations to manage the subdomains property of the microsoft.graph.security.host entity.
-func (m *ThreatIntelligenceHostsItemSubdomainsRequestBuilder) BySubdomainId(subdomainId string)(*ThreatIntelligenceHostsItemSubdomainsSubdomainItemRequestBuilder) {
+// BySubdomainIdString provides operations to manage the subdomains property of the microsoft.graph.security.host entity.
+func (m *ThreatIntelligenceHostsItemSubdomainsRequestBuilder) BySubdomainIdString(subdomainId string)(*ThreatIntelligenceHostsItemSubdomainsSubdomainItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

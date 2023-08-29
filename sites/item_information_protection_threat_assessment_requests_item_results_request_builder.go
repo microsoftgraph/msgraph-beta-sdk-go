@@ -46,8 +46,8 @@ type ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilderP
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByThreatAssessmentResultId provides operations to manage the results property of the microsoft.graph.threatAssessmentRequest entity.
-func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder) ByThreatAssessmentResultId(threatAssessmentResultId string)(*ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilder) {
+// ByThreatAssessmentResultIdString provides operations to manage the results property of the microsoft.graph.threatAssessmentRequest entity.
+func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder) ByThreatAssessmentResultIdString(threatAssessmentResultId string)(*ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

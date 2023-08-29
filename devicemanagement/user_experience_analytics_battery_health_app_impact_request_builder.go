@@ -46,8 +46,8 @@ type UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserExperienceAnalyticsBatteryHealthAppImpactId provides operations to manage the userExperienceAnalyticsBatteryHealthAppImpact property of the microsoft.graph.deviceManagement entity.
-func (m *UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder) ByUserExperienceAnalyticsBatteryHealthAppImpactId(userExperienceAnalyticsBatteryHealthAppImpactId string)(*UserExperienceAnalyticsBatteryHealthAppImpactUserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) {
+// ByUserExperienceAnalyticsBatteryHealthAppImpactIdString provides operations to manage the userExperienceAnalyticsBatteryHealthAppImpact property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder) ByUserExperienceAnalyticsBatteryHealthAppImpactIdString(userExperienceAnalyticsBatteryHealthAppImpactId string)(*UserExperienceAnalyticsBatteryHealthAppImpactUserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

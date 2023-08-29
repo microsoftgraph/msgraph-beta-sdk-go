@@ -38,8 +38,8 @@ type DeviceLocalCredentialsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceLocalCredentialInfoId provides operations to manage the collection of deviceLocalCredentialInfo entities.
-func (m *DeviceLocalCredentialsRequestBuilder) ByDeviceLocalCredentialInfoId(deviceLocalCredentialInfoId string)(*DeviceLocalCredentialInfoItemRequestBuilder) {
+// ByDeviceLocalCredentialInfoIdString provides operations to manage the collection of deviceLocalCredentialInfo entities.
+func (m *DeviceLocalCredentialsRequestBuilder) ByDeviceLocalCredentialInfoIdString(deviceLocalCredentialInfoId string)(*DeviceLocalCredentialInfoItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

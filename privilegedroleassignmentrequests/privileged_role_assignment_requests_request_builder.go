@@ -46,8 +46,8 @@ type PrivilegedRoleAssignmentRequestsRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPrivilegedRoleAssignmentRequestId provides operations to manage the collection of privilegedRoleAssignmentRequest entities.
-func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) ByPrivilegedRoleAssignmentRequestId(privilegedRoleAssignmentRequestId string)(*PrivilegedRoleAssignmentRequestItemRequestBuilder) {
+// ByPrivilegedRoleAssignmentRequestIdString provides operations to manage the collection of privilegedRoleAssignmentRequest entities.
+func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) ByPrivilegedRoleAssignmentRequestIdString(privilegedRoleAssignmentRequestId string)(*PrivilegedRoleAssignmentRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

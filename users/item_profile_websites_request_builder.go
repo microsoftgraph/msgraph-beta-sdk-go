@@ -46,8 +46,8 @@ type ItemProfileWebsitesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPersonWebsiteId provides operations to manage the websites property of the microsoft.graph.profile entity.
-func (m *ItemProfileWebsitesRequestBuilder) ByPersonWebsiteId(personWebsiteId string)(*ItemProfileWebsitesPersonWebsiteItemRequestBuilder) {
+// ByPersonWebsiteIdString provides operations to manage the websites property of the microsoft.graph.profile entity.
+func (m *ItemProfileWebsitesRequestBuilder) ByPersonWebsiteIdString(personWebsiteId string)(*ItemProfileWebsitesPersonWebsiteItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

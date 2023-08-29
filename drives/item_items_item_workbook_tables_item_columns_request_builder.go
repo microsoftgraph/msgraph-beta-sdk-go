@@ -50,8 +50,8 @@ type ItemItemsItemWorkbookTablesItemColumnsRequestBuilderPostRequestConfiguratio
 func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) Add()(*ItemItemsItemWorkbookTablesItemColumnsAddRequestBuilder) {
     return NewItemItemsItemWorkbookTablesItemColumnsAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByWorkbookTableColumnId provides operations to manage the columns property of the microsoft.graph.workbookTable entity.
-func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) ByWorkbookTableColumnId(workbookTableColumnId string)(*ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilder) {
+// ByWorkbookTableColumnIdString provides operations to manage the columns property of the microsoft.graph.workbookTable entity.
+func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) ByWorkbookTableColumnIdString(workbookTableColumnId string)(*ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

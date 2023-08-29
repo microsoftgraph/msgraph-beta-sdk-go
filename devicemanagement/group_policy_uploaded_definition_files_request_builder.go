@@ -46,8 +46,8 @@ type GroupPolicyUploadedDefinitionFilesRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByGroupPolicyUploadedDefinitionFileId provides operations to manage the groupPolicyUploadedDefinitionFiles property of the microsoft.graph.deviceManagement entity.
-func (m *GroupPolicyUploadedDefinitionFilesRequestBuilder) ByGroupPolicyUploadedDefinitionFileId(groupPolicyUploadedDefinitionFileId string)(*GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder) {
+// ByGroupPolicyUploadedDefinitionFileIdString provides operations to manage the groupPolicyUploadedDefinitionFiles property of the microsoft.graph.deviceManagement entity.
+func (m *GroupPolicyUploadedDefinitionFilesRequestBuilder) ByGroupPolicyUploadedDefinitionFileIdString(groupPolicyUploadedDefinitionFileId string)(*GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

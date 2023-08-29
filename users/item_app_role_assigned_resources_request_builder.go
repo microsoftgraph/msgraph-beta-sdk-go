@@ -39,8 +39,8 @@ type ItemAppRoleAssignedResourcesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemAppRoleAssignedResourcesRequestBuilderGetQueryParameters
 }
-// ByServicePrincipalId provides operations to manage the appRoleAssignedResources property of the microsoft.graph.user entity.
-func (m *ItemAppRoleAssignedResourcesRequestBuilder) ByServicePrincipalId(servicePrincipalId string)(*ItemAppRoleAssignedResourcesServicePrincipalItemRequestBuilder) {
+// ByServicePrincipalIdString provides operations to manage the appRoleAssignedResources property of the microsoft.graph.user entity.
+func (m *ItemAppRoleAssignedResourcesRequestBuilder) ByServicePrincipalIdString(servicePrincipalId string)(*ItemAppRoleAssignedResourcesServicePrincipalItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type MessageRecipientsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMessageRecipientId provides operations to manage the collection of messageRecipient entities.
-func (m *MessageRecipientsRequestBuilder) ByMessageRecipientId(messageRecipientId string)(*MessageRecipientItemRequestBuilder) {
+// ByMessageRecipientIdString provides operations to manage the collection of messageRecipient entities.
+func (m *MessageRecipientsRequestBuilder) ByMessageRecipientIdString(messageRecipientId string)(*MessageRecipientItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

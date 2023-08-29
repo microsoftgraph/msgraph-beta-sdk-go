@@ -46,9 +46,9 @@ type UserFlowsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByIdentityUserFlowId provides operations to manage the userFlows property of the microsoft.graph.identityContainer entity.
+// ByIdentityUserFlowIdString provides operations to manage the userFlows property of the microsoft.graph.identityContainer entity.
 // Deprecated: The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider on 2021-05-21 and will be removed 2022-01-15
-func (m *UserFlowsRequestBuilder) ByIdentityUserFlowId(identityUserFlowId string)(*UserFlowsIdentityUserFlowItemRequestBuilder) {
+func (m *UserFlowsRequestBuilder) ByIdentityUserFlowIdString(identityUserFlowId string)(*UserFlowsIdentityUserFlowItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

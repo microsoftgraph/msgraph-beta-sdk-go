@@ -50,8 +50,8 @@ type ChatsRequestBuilderPostRequestConfiguration struct {
 func (m *ChatsRequestBuilder) AllMessages()(*AllMessagesRequestBuilder) {
     return NewAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByChatId provides operations to manage the collection of chat entities.
-func (m *ChatsRequestBuilder) ByChatId(chatId string)(*ChatItemRequestBuilder) {
+// ByChatIdString provides operations to manage the collection of chat entities.
+func (m *ChatsRequestBuilder) ByChatIdString(chatId string)(*ChatItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

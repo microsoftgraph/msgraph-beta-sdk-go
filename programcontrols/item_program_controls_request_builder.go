@@ -46,8 +46,8 @@ type ItemProgramControlsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByProgramControlId1 provides operations to manage the controls property of the microsoft.graph.program entity.
-func (m *ItemProgramControlsRequestBuilder) ByProgramControlId1(programControlId1 string)(*ItemProgramControlsProgramControlItemRequestBuilder) {
+// ByProgramControlId1String provides operations to manage the controls property of the microsoft.graph.program entity.
+func (m *ItemProgramControlsRequestBuilder) ByProgramControlId1String(programControlId1 string)(*ItemProgramControlsProgramControlItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

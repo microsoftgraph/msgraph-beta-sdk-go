@@ -39,8 +39,8 @@ type B2cUserFlowsItemUserFlowIdentityProvidersRequestBuilderGetRequestConfigurat
     // Request query parameters
     QueryParameters *B2cUserFlowsItemUserFlowIdentityProvidersRequestBuilderGetQueryParameters
 }
-// ByIdentityProviderBaseId provides operations to manage the userFlowIdentityProviders property of the microsoft.graph.b2cIdentityUserFlow entity.
-func (m *B2cUserFlowsItemUserFlowIdentityProvidersRequestBuilder) ByIdentityProviderBaseId(identityProviderBaseId string)(*B2cUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequestBuilder) {
+// ByIdentityProviderBaseIdString provides operations to manage the userFlowIdentityProviders property of the microsoft.graph.b2cIdentityUserFlow entity.
+func (m *B2cUserFlowsItemUserFlowIdentityProvidersRequestBuilder) ByIdentityProviderBaseIdString(identityProviderBaseId string)(*B2cUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

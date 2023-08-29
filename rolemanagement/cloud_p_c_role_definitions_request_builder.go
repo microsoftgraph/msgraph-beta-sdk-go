@@ -46,8 +46,8 @@ type CloudPCRoleDefinitionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUnifiedRoleDefinitionId provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplicationMultiple entity.
-func (m *CloudPCRoleDefinitionsRequestBuilder) ByUnifiedRoleDefinitionId(unifiedRoleDefinitionId string)(*CloudPCRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) {
+// ByUnifiedRoleDefinitionIdString provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplicationMultiple entity.
+func (m *CloudPCRoleDefinitionsRequestBuilder) ByUnifiedRoleDefinitionIdString(unifiedRoleDefinitionId string)(*CloudPCRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
