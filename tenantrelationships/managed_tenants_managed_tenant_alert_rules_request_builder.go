@@ -46,8 +46,8 @@ type ManagedTenantsManagedTenantAlertRulesRequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByManagedTenantAlertRuleId provides operations to manage the managedTenantAlertRules property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsManagedTenantAlertRulesRequestBuilder) ByManagedTenantAlertRuleId(managedTenantAlertRuleId string)(*ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilder) {
+// ByManagedTenantAlertRuleIdString provides operations to manage the managedTenantAlertRules property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsManagedTenantAlertRulesRequestBuilder) ByManagedTenantAlertRuleIdString(managedTenantAlertRuleId string)(*ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type DataLossPreventionPoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDataLossPreventionPolicyId provides operations to manage the dataLossPreventionPolicies property of the microsoft.graph.informationProtection entity.
-func (m *DataLossPreventionPoliciesRequestBuilder) ByDataLossPreventionPolicyId(dataLossPreventionPolicyId string)(*DataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) {
+// ByDataLossPreventionPolicyIdString provides operations to manage the dataLossPreventionPolicies property of the microsoft.graph.informationProtection entity.
+func (m *DataLossPreventionPoliciesRequestBuilder) ByDataLossPreventionPolicyIdString(dataLossPreventionPolicyId string)(*DataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

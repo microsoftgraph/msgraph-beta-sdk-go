@@ -46,8 +46,8 @@ type ItemPolicyTemplatesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByGovernancePolicyTemplateId provides operations to manage the policyTemplates property of the microsoft.graph.approvalWorkflowProvider entity.
-func (m *ItemPolicyTemplatesRequestBuilder) ByGovernancePolicyTemplateId(governancePolicyTemplateId string)(*ItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilder) {
+// ByGovernancePolicyTemplateIdString provides operations to manage the policyTemplates property of the microsoft.graph.approvalWorkflowProvider entity.
+func (m *ItemPolicyTemplatesRequestBuilder) ByGovernancePolicyTemplateIdString(governancePolicyTemplateId string)(*ItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

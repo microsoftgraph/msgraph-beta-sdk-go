@@ -39,8 +39,8 @@ type ItemDevicesItemRegisteredOwnersRequestBuilderGetRequestConfiguration struct
     // Request query parameters
     QueryParameters *ItemDevicesItemRegisteredOwnersRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectId gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.devices.item.registeredOwners.item collection
-func (m *ItemDevicesItemRegisteredOwnersRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectIdString gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.devices.item.registeredOwners.item collection
+func (m *ItemDevicesItemRegisteredOwnersRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

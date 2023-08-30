@@ -39,8 +39,8 @@ type TargetedManagedAppConfigurationsItemSettingsItemSettingDefinitionsRequestBu
     // Request query parameters
     QueryParameters *TargetedManagedAppConfigurationsItemSettingsItemSettingDefinitionsRequestBuilderGetQueryParameters
 }
-// ByDeviceManagementConfigurationSettingDefinitionId provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementConfigurationSetting entity.
-func (m *TargetedManagedAppConfigurationsItemSettingsItemSettingDefinitionsRequestBuilder) ByDeviceManagementConfigurationSettingDefinitionId(deviceManagementConfigurationSettingDefinitionId string)(*TargetedManagedAppConfigurationsItemSettingsItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
+// ByDeviceManagementConfigurationSettingDefinitionIdString provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementConfigurationSetting entity.
+func (m *TargetedManagedAppConfigurationsItemSettingsItemSettingDefinitionsRequestBuilder) ByDeviceManagementConfigurationSettingDefinitionIdString(deviceManagementConfigurationSettingDefinitionId string)(*TargetedManagedAppConfigurationsItemSettingsItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

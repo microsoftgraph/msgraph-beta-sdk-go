@@ -46,8 +46,8 @@ type ImpactedResourcesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByImpactedResourceId provides operations to manage the impactedResources property of the microsoft.graph.directory entity.
-func (m *ImpactedResourcesRequestBuilder) ByImpactedResourceId(impactedResourceId string)(*ImpactedResourcesImpactedResourceItemRequestBuilder) {
+// ByImpactedResourceIdString provides operations to manage the impactedResources property of the microsoft.graph.directory entity.
+func (m *ImpactedResourcesRequestBuilder) ByImpactedResourceIdString(impactedResourceId string)(*ImpactedResourcesImpactedResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

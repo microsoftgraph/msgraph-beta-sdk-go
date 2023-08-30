@@ -39,8 +39,8 @@ type ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGe
     // Request query parameters
     QueryParameters *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters
 }
-// ByPasswordlessMicrosoftAuthenticatorAuthenticationMethodId provides operations to manage the passwordlessMicrosoftAuthenticatorMethods property of the microsoft.graph.authentication entity.
-func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) ByPasswordlessMicrosoftAuthenticatorAuthenticationMethodId(passwordlessMicrosoftAuthenticatorAuthenticationMethodId string)(*ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsPasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) {
+// ByPasswordlessMicrosoftAuthenticatorAuthenticationMethodIdString provides operations to manage the passwordlessMicrosoftAuthenticatorMethods property of the microsoft.graph.authentication entity.
+func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) ByPasswordlessMicrosoftAuthenticatorAuthenticationMethodIdString(passwordlessMicrosoftAuthenticatorAuthenticationMethodId string)(*ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsPasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

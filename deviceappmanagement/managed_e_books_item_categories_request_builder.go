@@ -39,8 +39,8 @@ type ManagedEBooksItemCategoriesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ManagedEBooksItemCategoriesRequestBuilderGetQueryParameters
 }
-// ByManagedEBookCategoryId provides operations to manage the categories property of the microsoft.graph.managedEBook entity.
-func (m *ManagedEBooksItemCategoriesRequestBuilder) ByManagedEBookCategoryId(managedEBookCategoryId string)(*ManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilder) {
+// ByManagedEBookCategoryIdString provides operations to manage the categories property of the microsoft.graph.managedEBook entity.
+func (m *ManagedEBooksItemCategoriesRequestBuilder) ByManagedEBookCategoryIdString(managedEBookCategoryId string)(*ManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

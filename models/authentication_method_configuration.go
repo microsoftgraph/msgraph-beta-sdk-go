@@ -33,6 +33,8 @@ func CreateAuthenticationMethodConfigurationFromDiscriminatorValue(parseNode i87
                         return NewEmailAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.fido2AuthenticationMethodConfiguration":
                         return NewFido2AuthenticationMethodConfiguration(), nil
+                    case "#microsoft.graph.hardwareOathAuthenticationMethodConfiguration":
+                        return NewHardwareOathAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodConfiguration":
                         return NewMicrosoftAuthenticatorAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.smsAuthenticationMethodConfiguration":

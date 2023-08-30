@@ -7,17 +7,20 @@ type MonitoringSignal int
 
 const (
     ROLLBACK_MONITORINGSIGNAL MonitoringSignal = iota
+    INELIGIBLE_MONITORINGSIGNAL
     UNKNOWNFUTUREVALUE_MONITORINGSIGNAL
 )
 
 func (i MonitoringSignal) String() string {
-    return []string{"rollback", "unknownFutureValue"}[i]
+    return []string{"rollback", "ineligible", "unknownFutureValue"}[i]
 }
 func ParseMonitoringSignal(v string) (any, error) {
     result := ROLLBACK_MONITORINGSIGNAL
     switch v {
         case "rollback":
             result = ROLLBACK_MONITORINGSIGNAL
+        case "ineligible":
+            result = INELIGIBLE_MONITORINGSIGNAL
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MONITORINGSIGNAL
         default:

@@ -1234,6 +1234,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewGroupPolicyUploadedDefinitionFile(), nil
                     case "#microsoft.graph.groupPolicyUploadedPresentation":
                         return NewGroupPolicyUploadedPresentation(), nil
+                    case "#microsoft.graph.hardwareOathAuthenticationMethodConfiguration":
+                        return NewHardwareOathAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.homeRealmDiscoveryPolicy":
                         return NewHomeRealmDiscoveryPolicy(), nil
                     case "#microsoft.graph.horizontalSection":

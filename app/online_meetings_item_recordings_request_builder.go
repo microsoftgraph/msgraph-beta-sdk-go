@@ -46,8 +46,8 @@ type OnlineMeetingsItemRecordingsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCallRecordingId provides operations to manage the recordings property of the microsoft.graph.onlineMeeting entity.
-func (m *OnlineMeetingsItemRecordingsRequestBuilder) ByCallRecordingId(callRecordingId string)(*OnlineMeetingsItemRecordingsCallRecordingItemRequestBuilder) {
+// ByCallRecordingIdString provides operations to manage the recordings property of the microsoft.graph.onlineMeeting entity.
+func (m *OnlineMeetingsItemRecordingsRequestBuilder) ByCallRecordingIdString(callRecordingId string)(*OnlineMeetingsItemRecordingsCallRecordingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -73,6 +73,10 @@ func NewOnlineMeetingsItemRecordingsRequestBuilder(rawUrl string, requestAdapter
 // Count provides operations to count the resources in the collection.
 func (m *OnlineMeetingsItemRecordingsRequestBuilder) Count()(*OnlineMeetingsItemRecordingsCountRequestBuilder) {
     return NewOnlineMeetingsItemRecordingsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Delta provides operations to call the delta method.
+func (m *OnlineMeetingsItemRecordingsRequestBuilder) Delta()(*OnlineMeetingsItemRecordingsDeltaRequestBuilder) {
+    return NewOnlineMeetingsItemRecordingsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a callRecording object associated with an onlineMeeting. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of text associated with the recording.
 func (m *OnlineMeetingsItemRecordingsRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemRecordingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallRecordingCollectionResponseable, error) {

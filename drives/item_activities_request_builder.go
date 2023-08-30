@@ -46,8 +46,8 @@ type ItemActivitiesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByItemActivityOLDId provides operations to manage the activities property of the microsoft.graph.drive entity.
-func (m *ItemActivitiesRequestBuilder) ByItemActivityOLDId(itemActivityOLDId string)(*ItemActivitiesItemActivityOLDItemRequestBuilder) {
+// ByItemActivityOLDIdString provides operations to manage the activities property of the microsoft.graph.drive entity.
+func (m *ItemActivitiesRequestBuilder) ByItemActivityOLDIdString(itemActivityOLDId string)(*ItemActivitiesItemActivityOLDItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

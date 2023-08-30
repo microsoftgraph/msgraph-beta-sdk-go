@@ -46,8 +46,8 @@ type AccessReviewsDecisionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAccessReviewInstanceDecisionItemId provides operations to manage the decisions property of the microsoft.graph.accessReviewSet entity.
-func (m *AccessReviewsDecisionsRequestBuilder) ByAccessReviewInstanceDecisionItemId(accessReviewInstanceDecisionItemId string)(*AccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) {
+// ByAccessReviewInstanceDecisionItemIdString provides operations to manage the decisions property of the microsoft.graph.accessReviewSet entity.
+func (m *AccessReviewsDecisionsRequestBuilder) ByAccessReviewInstanceDecisionItemIdString(accessReviewInstanceDecisionItemId string)(*AccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

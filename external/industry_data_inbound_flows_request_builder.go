@@ -46,8 +46,8 @@ type IndustryDataInboundFlowsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByInboundFlowId provides operations to manage the inboundFlows property of the microsoft.graph.industryData.industryDataRoot entity.
-func (m *IndustryDataInboundFlowsRequestBuilder) ByInboundFlowId(inboundFlowId string)(*IndustryDataInboundFlowsInboundFlowItemRequestBuilder) {
+// ByInboundFlowIdString provides operations to manage the inboundFlows property of the microsoft.graph.industryData.industryDataRoot entity.
+func (m *IndustryDataInboundFlowsRequestBuilder) ByInboundFlowIdString(inboundFlowId string)(*IndustryDataInboundFlowsInboundFlowItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -96,10 +96,10 @@ func (m *IndustryDataInboundFlowsRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowCollectionResponseable), nil
 }
-// Post create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow:
+// Post create a new inboundFileFlow object. The following prerequisite resources are required when you create an inboundFileFlow:
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundflow-post?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-post?view=graph-rest-1.0
 func (m *IndustryDataInboundFlowsRequestBuilder) Post(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable, requestConfiguration *IndustryDataInboundFlowsRequestBuilderPostRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -134,7 +134,7 @@ func (m *IndustryDataInboundFlowsRequestBuilder) ToGetRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow:
+// ToPostRequestInformation create a new inboundFileFlow object. The following prerequisite resources are required when you create an inboundFileFlow:
 func (m *IndustryDataInboundFlowsRequestBuilder) ToPostRequestInformation(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable, requestConfiguration *IndustryDataInboundFlowsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

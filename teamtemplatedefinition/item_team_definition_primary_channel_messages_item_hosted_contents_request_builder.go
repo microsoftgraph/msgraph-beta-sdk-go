@@ -46,8 +46,8 @@ type ItemTeamDefinitionPrimaryChannelMessagesItemHostedContentsRequestBuilderPos
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByChatMessageHostedContentId provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
-func (m *ItemTeamDefinitionPrimaryChannelMessagesItemHostedContentsRequestBuilder) ByChatMessageHostedContentId(chatMessageHostedContentId string)(*ItemTeamDefinitionPrimaryChannelMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilder) {
+// ByChatMessageHostedContentIdString provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
+func (m *ItemTeamDefinitionPrimaryChannelMessagesItemHostedContentsRequestBuilder) ByChatMessageHostedContentIdString(chatMessageHostedContentId string)(*ItemTeamDefinitionPrimaryChannelMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type ConnectivityBranchesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByBranchSiteId provides operations to manage the branches property of the microsoft.graph.networkaccess.connectivity entity.
-func (m *ConnectivityBranchesRequestBuilder) ByBranchSiteId(branchSiteId string)(*ConnectivityBranchesBranchSiteItemRequestBuilder) {
+// ByBranchSiteIdString provides operations to manage the branches property of the microsoft.graph.networkaccess.connectivity entity.
+func (m *ConnectivityBranchesRequestBuilder) ByBranchSiteIdString(branchSiteId string)(*ConnectivityBranchesBranchSiteItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

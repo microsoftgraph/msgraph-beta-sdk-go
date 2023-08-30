@@ -39,9 +39,9 @@ type SubjectRightsRequestsItemCollaboratorsRequestBuilderGetRequestConfiguration
     // Request query parameters
     QueryParameters *SubjectRightsRequestsItemCollaboratorsRequestBuilderGetQueryParameters
 }
-// ByUserId provides operations to manage the collaborators property of the microsoft.graph.subjectRightsRequest entity.
+// ByUserIdString provides operations to manage the collaborators property of the microsoft.graph.subjectRightsRequest entity.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
-func (m *SubjectRightsRequestsItemCollaboratorsRequestBuilder) ByUserId(userId string)(*SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilder) {
+func (m *SubjectRightsRequestsItemCollaboratorsRequestBuilder) ByUserIdString(userId string)(*SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

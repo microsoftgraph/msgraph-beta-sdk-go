@@ -46,9 +46,9 @@ type ItemNotificationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByNotificationId provides operations to manage the notifications property of the microsoft.graph.user entity.
+// ByNotificationIdString provides operations to manage the notifications property of the microsoft.graph.user entity.
 // Deprecated: The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation on 2023-03-09 and will be removed 2023-03-20
-func (m *ItemNotificationsRequestBuilder) ByNotificationId(notificationId string)(*ItemNotificationsNotificationItemRequestBuilder) {
+func (m *ItemNotificationsRequestBuilder) ByNotificationIdString(notificationId string)(*ItemNotificationsNotificationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

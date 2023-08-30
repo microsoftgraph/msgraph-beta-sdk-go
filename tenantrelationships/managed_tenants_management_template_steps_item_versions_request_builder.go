@@ -39,8 +39,8 @@ type ManagedTenantsManagementTemplateStepsItemVersionsRequestBuilderGetRequestCo
     // Request query parameters
     QueryParameters *ManagedTenantsManagementTemplateStepsItemVersionsRequestBuilderGetQueryParameters
 }
-// ByManagementTemplateStepVersionId provides operations to manage the versions property of the microsoft.graph.managedTenants.managementTemplateStep entity.
-func (m *ManagedTenantsManagementTemplateStepsItemVersionsRequestBuilder) ByManagementTemplateStepVersionId(managementTemplateStepVersionId string)(*ManagedTenantsManagementTemplateStepsItemVersionsManagementTemplateStepVersionItemRequestBuilder) {
+// ByManagementTemplateStepVersionIdString provides operations to manage the versions property of the microsoft.graph.managedTenants.managementTemplateStep entity.
+func (m *ManagedTenantsManagementTemplateStepsItemVersionsRequestBuilder) ByManagementTemplateStepVersionIdString(managementTemplateStepVersionId string)(*ManagedTenantsManagementTemplateStepsItemVersionsManagementTemplateStepVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

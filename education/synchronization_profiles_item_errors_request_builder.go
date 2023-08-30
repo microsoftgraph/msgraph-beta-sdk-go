@@ -46,8 +46,8 @@ type SynchronizationProfilesItemErrorsRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEducationSynchronizationErrorId provides operations to manage the errors property of the microsoft.graph.educationSynchronizationProfile entity.
-func (m *SynchronizationProfilesItemErrorsRequestBuilder) ByEducationSynchronizationErrorId(educationSynchronizationErrorId string)(*SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilder) {
+// ByEducationSynchronizationErrorIdString provides operations to manage the errors property of the microsoft.graph.educationSynchronizationProfile entity.
+func (m *SynchronizationProfilesItemErrorsRequestBuilder) ByEducationSynchronizationErrorIdString(educationSynchronizationErrorId string)(*SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

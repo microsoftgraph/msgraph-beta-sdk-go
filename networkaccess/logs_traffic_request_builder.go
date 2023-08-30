@@ -46,8 +46,8 @@ type LogsTrafficRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByNetworkAccessTrafficTransactionId provides operations to manage the traffic property of the microsoft.graph.networkaccess.logs entity.
-func (m *LogsTrafficRequestBuilder) ByNetworkAccessTrafficTransactionId(networkAccessTrafficTransactionId string)(*LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) {
+// ByNetworkAccessTrafficTransactionIdString provides operations to manage the traffic property of the microsoft.graph.networkaccess.logs entity.
+func (m *LogsTrafficRequestBuilder) ByNetworkAccessTrafficTransactionIdString(networkAccessTrafficTransactionId string)(*LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

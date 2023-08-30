@@ -39,8 +39,8 @@ type CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilderGetRequestConfigur
     // Request query parameters
     QueryParameters *CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilderGetQueryParameters
 }
-// BySalesQuoteLineId provides operations to manage the salesQuoteLines property of the microsoft.graph.salesQuote entity.
-func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder) BySalesQuoteLineId(salesQuoteLineId string)(*CompaniesItemSalesQuotesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilder) {
+// BySalesQuoteLineIdString provides operations to manage the salesQuoteLines property of the microsoft.graph.salesQuote entity.
+func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder) BySalesQuoteLineIdString(salesQuoteLineId string)(*CompaniesItemSalesQuotesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

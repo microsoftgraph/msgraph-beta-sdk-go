@@ -46,8 +46,8 @@ type ItemTeamDefinitionInstalledAppsRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTeamsAppInstallationId provides operations to manage the installedApps property of the microsoft.graph.team entity.
-func (m *ItemTeamDefinitionInstalledAppsRequestBuilder) ByTeamsAppInstallationId(teamsAppInstallationId string)(*ItemTeamDefinitionInstalledAppsTeamsAppInstallationItemRequestBuilder) {
+// ByTeamsAppInstallationIdString provides operations to manage the installedApps property of the microsoft.graph.team entity.
+func (m *ItemTeamDefinitionInstalledAppsRequestBuilder) ByTeamsAppInstallationIdString(teamsAppInstallationId string)(*ItemTeamDefinitionInstalledAppsTeamsAppInstallationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

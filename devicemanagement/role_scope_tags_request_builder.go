@@ -46,8 +46,8 @@ type RoleScopeTagsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByRoleScopeTagId provides operations to manage the roleScopeTags property of the microsoft.graph.deviceManagement entity.
-func (m *RoleScopeTagsRequestBuilder) ByRoleScopeTagId(roleScopeTagId string)(*RoleScopeTagsRoleScopeTagItemRequestBuilder) {
+// ByRoleScopeTagIdString provides operations to manage the roleScopeTags property of the microsoft.graph.deviceManagement entity.
+func (m *RoleScopeTagsRequestBuilder) ByRoleScopeTagIdString(roleScopeTagId string)(*RoleScopeTagsRoleScopeTagItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

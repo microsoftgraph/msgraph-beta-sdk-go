@@ -39,8 +39,8 @@ type ItemItemsItemActivitiesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemItemsItemActivitiesRequestBuilderGetQueryParameters
 }
-// ByItemActivityOLDId provides operations to manage the activities property of the microsoft.graph.driveItem entity.
-func (m *ItemItemsItemActivitiesRequestBuilder) ByItemActivityOLDId(itemActivityOLDId string)(*ItemItemsItemActivitiesItemActivityOLDItemRequestBuilder) {
+// ByItemActivityOLDIdString provides operations to manage the activities property of the microsoft.graph.driveItem entity.
+func (m *ItemItemsItemActivitiesRequestBuilder) ByItemActivityOLDIdString(itemActivityOLDId string)(*ItemItemsItemActivitiesItemActivityOLDItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

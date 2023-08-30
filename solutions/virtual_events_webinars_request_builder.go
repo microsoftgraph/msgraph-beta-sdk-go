@@ -46,8 +46,8 @@ type VirtualEventsWebinarsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByVirtualEventWebinarId provides operations to manage the webinars property of the microsoft.graph.virtualEventsRoot entity.
-func (m *VirtualEventsWebinarsRequestBuilder) ByVirtualEventWebinarId(virtualEventWebinarId string)(*VirtualEventsWebinarsVirtualEventWebinarItemRequestBuilder) {
+// ByVirtualEventWebinarIdString provides operations to manage the webinars property of the microsoft.graph.virtualEventsRoot entity.
+func (m *VirtualEventsWebinarsRequestBuilder) ByVirtualEventWebinarIdString(virtualEventWebinarId string)(*VirtualEventsWebinarsVirtualEventWebinarItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

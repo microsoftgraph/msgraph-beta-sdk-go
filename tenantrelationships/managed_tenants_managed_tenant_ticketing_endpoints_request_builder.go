@@ -46,8 +46,8 @@ type ManagedTenantsManagedTenantTicketingEndpointsRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByManagedTenantTicketingEndpointId provides operations to manage the managedTenantTicketingEndpoints property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsManagedTenantTicketingEndpointsRequestBuilder) ByManagedTenantTicketingEndpointId(managedTenantTicketingEndpointId string)(*ManagedTenantsManagedTenantTicketingEndpointsManagedTenantTicketingEndpointItemRequestBuilder) {
+// ByManagedTenantTicketingEndpointIdString provides operations to manage the managedTenantTicketingEndpoints property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsManagedTenantTicketingEndpointsRequestBuilder) ByManagedTenantTicketingEndpointIdString(managedTenantTicketingEndpointId string)(*ManagedTenantsManagedTenantTicketingEndpointsManagedTenantTicketingEndpointItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type SharedEmailDomainsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySharedEmailDomainId provides operations to manage the sharedEmailDomains property of the microsoft.graph.directory entity.
-func (m *SharedEmailDomainsRequestBuilder) BySharedEmailDomainId(sharedEmailDomainId string)(*SharedEmailDomainsSharedEmailDomainItemRequestBuilder) {
+// BySharedEmailDomainIdString provides operations to manage the sharedEmailDomains property of the microsoft.graph.directory entity.
+func (m *SharedEmailDomainsRequestBuilder) BySharedEmailDomainIdString(sharedEmailDomainId string)(*SharedEmailDomainsSharedEmailDomainItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

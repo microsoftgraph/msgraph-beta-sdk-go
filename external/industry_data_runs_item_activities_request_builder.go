@@ -39,8 +39,8 @@ type IndustryDataRunsItemActivitiesRequestBuilderGetRequestConfiguration struct 
     // Request query parameters
     QueryParameters *IndustryDataRunsItemActivitiesRequestBuilderGetQueryParameters
 }
-// ByIndustryDataRunActivityId provides operations to manage the activities property of the microsoft.graph.industryData.industryDataRun entity.
-func (m *IndustryDataRunsItemActivitiesRequestBuilder) ByIndustryDataRunActivityId(industryDataRunActivityId string)(*IndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilder) {
+// ByIndustryDataRunActivityIdString provides operations to manage the activities property of the microsoft.graph.industryData.industryDataRun entity.
+func (m *IndustryDataRunsItemActivitiesRequestBuilder) ByIndustryDataRunActivityIdString(industryDataRunActivityId string)(*IndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

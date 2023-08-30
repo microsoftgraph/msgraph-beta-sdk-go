@@ -46,8 +46,8 @@ type ItemChatsItemOperationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTeamsAsyncOperationId provides operations to manage the operations property of the microsoft.graph.chat entity.
-func (m *ItemChatsItemOperationsRequestBuilder) ByTeamsAsyncOperationId(teamsAsyncOperationId string)(*ItemChatsItemOperationsTeamsAsyncOperationItemRequestBuilder) {
+// ByTeamsAsyncOperationIdString provides operations to manage the operations property of the microsoft.graph.chat entity.
+func (m *ItemChatsItemOperationsRequestBuilder) ByTeamsAsyncOperationIdString(teamsAsyncOperationId string)(*ItemChatsItemOperationsTeamsAsyncOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type IntentsItemCategoriesItemSettingsRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementSettingInstanceId provides operations to manage the settings property of the microsoft.graph.deviceManagementIntentSettingCategory entity.
-func (m *IntentsItemCategoriesItemSettingsRequestBuilder) ByDeviceManagementSettingInstanceId(deviceManagementSettingInstanceId string)(*IntentsItemCategoriesItemSettingsDeviceManagementSettingInstanceItemRequestBuilder) {
+// ByDeviceManagementSettingInstanceIdString provides operations to manage the settings property of the microsoft.graph.deviceManagementIntentSettingCategory entity.
+func (m *IntentsItemCategoriesItemSettingsRequestBuilder) ByDeviceManagementSettingInstanceIdString(deviceManagementSettingInstanceId string)(*IntentsItemCategoriesItemSettingsDeviceManagementSettingInstanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

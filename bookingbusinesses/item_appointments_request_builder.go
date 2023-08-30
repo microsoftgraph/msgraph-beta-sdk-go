@@ -46,8 +46,8 @@ type ItemAppointmentsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByBookingAppointmentId provides operations to manage the appointments property of the microsoft.graph.bookingBusiness entity.
-func (m *ItemAppointmentsRequestBuilder) ByBookingAppointmentId(bookingAppointmentId string)(*ItemAppointmentsBookingAppointmentItemRequestBuilder) {
+// ByBookingAppointmentIdString provides operations to manage the appointments property of the microsoft.graph.bookingBusiness entity.
+func (m *ItemAppointmentsRequestBuilder) ByBookingAppointmentIdString(bookingAppointmentId string)(*ItemAppointmentsBookingAppointmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

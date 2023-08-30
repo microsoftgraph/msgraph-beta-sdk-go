@@ -46,8 +46,8 @@ type AccessReviewDecisionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAccessReviewDecisionId provides operations to manage the collection of accessReviewDecision entities.
-func (m *AccessReviewDecisionsRequestBuilder) ByAccessReviewDecisionId(accessReviewDecisionId string)(*AccessReviewDecisionItemRequestBuilder) {
+// ByAccessReviewDecisionIdString provides operations to manage the collection of accessReviewDecision entities.
+func (m *AccessReviewDecisionsRequestBuilder) ByAccessReviewDecisionIdString(accessReviewDecisionId string)(*AccessReviewDecisionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

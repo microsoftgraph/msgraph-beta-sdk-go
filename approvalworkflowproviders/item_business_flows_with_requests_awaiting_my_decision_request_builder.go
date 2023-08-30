@@ -46,8 +46,8 @@ type ItemBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderPostRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByBusinessFlowId provides operations to manage the businessFlowsWithRequestsAwaitingMyDecision property of the microsoft.graph.approvalWorkflowProvider entity.
-func (m *ItemBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) ByBusinessFlowId(businessFlowId string)(*ItemBusinessFlowsWithRequestsAwaitingMyDecisionBusinessFlowItemRequestBuilder) {
+// ByBusinessFlowIdString provides operations to manage the businessFlowsWithRequestsAwaitingMyDecision property of the microsoft.graph.approvalWorkflowProvider entity.
+func (m *ItemBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) ByBusinessFlowIdString(businessFlowId string)(*ItemBusinessFlowsWithRequestsAwaitingMyDecisionBusinessFlowItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

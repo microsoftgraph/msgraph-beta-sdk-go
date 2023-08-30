@@ -46,8 +46,8 @@ type ItemCustomersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByBookingCustomerId provides operations to manage the customers property of the microsoft.graph.bookingBusiness entity.
-func (m *ItemCustomersRequestBuilder) ByBookingCustomerId(bookingCustomerId string)(*ItemCustomersBookingCustomerItemRequestBuilder) {
+// ByBookingCustomerIdString provides operations to manage the customers property of the microsoft.graph.bookingBusiness entity.
+func (m *ItemCustomersRequestBuilder) ByBookingCustomerIdString(bookingCustomerId string)(*ItemCustomersBookingCustomerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type UserExperienceAnalyticsDeviceScopesRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserExperienceAnalyticsDeviceScopeId provides operations to manage the userExperienceAnalyticsDeviceScopes property of the microsoft.graph.deviceManagement entity.
-func (m *UserExperienceAnalyticsDeviceScopesRequestBuilder) ByUserExperienceAnalyticsDeviceScopeId(userExperienceAnalyticsDeviceScopeId string)(*UserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeItemRequestBuilder) {
+// ByUserExperienceAnalyticsDeviceScopeIdString provides operations to manage the userExperienceAnalyticsDeviceScopes property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsDeviceScopesRequestBuilder) ByUserExperienceAnalyticsDeviceScopeIdString(userExperienceAnalyticsDeviceScopeId string)(*UserExperienceAnalyticsDeviceScopesUserExperienceAnalyticsDeviceScopeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type ThreatIntelligenceSubdomainsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySubdomainId provides operations to manage the subdomains property of the microsoft.graph.security.threatIntelligence entity.
-func (m *ThreatIntelligenceSubdomainsRequestBuilder) BySubdomainId(subdomainId string)(*ThreatIntelligenceSubdomainsSubdomainItemRequestBuilder) {
+// BySubdomainIdString provides operations to manage the subdomains property of the microsoft.graph.security.threatIntelligence entity.
+func (m *ThreatIntelligenceSubdomainsRequestBuilder) BySubdomainIdString(subdomainId string)(*ThreatIntelligenceSubdomainsSubdomainItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

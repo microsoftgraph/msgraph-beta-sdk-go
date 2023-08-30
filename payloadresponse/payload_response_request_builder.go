@@ -46,8 +46,8 @@ type PayloadResponseRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPayloadResponseId provides operations to manage the collection of payloadResponse entities.
-func (m *PayloadResponseRequestBuilder) ByPayloadResponseId(payloadResponseId string)(*PayloadResponseItemRequestBuilder) {
+// ByPayloadResponseIdString provides operations to manage the collection of payloadResponse entities.
+func (m *PayloadResponseRequestBuilder) ByPayloadResponseIdString(payloadResponseId string)(*PayloadResponseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

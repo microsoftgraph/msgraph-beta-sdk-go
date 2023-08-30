@@ -46,8 +46,8 @@ type ServicePrincipalCreationPoliciesItemIncludesRequestBuilderPostRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByServicePrincipalCreationConditionSetId provides operations to manage the includes property of the microsoft.graph.servicePrincipalCreationPolicy entity.
-func (m *ServicePrincipalCreationPoliciesItemIncludesRequestBuilder) ByServicePrincipalCreationConditionSetId(servicePrincipalCreationConditionSetId string)(*ServicePrincipalCreationPoliciesItemIncludesServicePrincipalCreationConditionSetItemRequestBuilder) {
+// ByServicePrincipalCreationConditionSetIdString provides operations to manage the includes property of the microsoft.graph.servicePrincipalCreationPolicy entity.
+func (m *ServicePrincipalCreationPoliciesItemIncludesRequestBuilder) ByServicePrincipalCreationConditionSetIdString(servicePrincipalCreationConditionSetId string)(*ServicePrincipalCreationPoliciesItemIncludesServicePrincipalCreationConditionSetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

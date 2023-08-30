@@ -46,8 +46,8 @@ type AuthorizationPolicyItemDefaultUserRoleOverridesRequestBuilderPostRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDefaultUserRoleOverrideId provides operations to manage the defaultUserRoleOverrides property of the microsoft.graph.authorizationPolicy entity.
-func (m *AuthorizationPolicyItemDefaultUserRoleOverridesRequestBuilder) ByDefaultUserRoleOverrideId(defaultUserRoleOverrideId string)(*AuthorizationPolicyItemDefaultUserRoleOverridesDefaultUserRoleOverrideItemRequestBuilder) {
+// ByDefaultUserRoleOverrideIdString provides operations to manage the defaultUserRoleOverrides property of the microsoft.graph.authorizationPolicy entity.
+func (m *AuthorizationPolicyItemDefaultUserRoleOverridesRequestBuilder) ByDefaultUserRoleOverrideIdString(defaultUserRoleOverrideId string)(*AuthorizationPolicyItemDefaultUserRoleOverridesDefaultUserRoleOverrideItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

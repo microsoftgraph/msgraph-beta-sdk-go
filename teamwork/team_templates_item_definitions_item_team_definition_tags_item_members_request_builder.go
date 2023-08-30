@@ -46,8 +46,8 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersRequestBuilder
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTeamworkTagMemberId provides operations to manage the members property of the microsoft.graph.teamworkTag entity.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersRequestBuilder) ByTeamworkTagMemberId(teamworkTagMemberId string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilder) {
+// ByTeamworkTagMemberIdString provides operations to manage the members property of the microsoft.graph.teamworkTag entity.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersRequestBuilder) ByTeamworkTagMemberIdString(teamworkTagMemberId string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -40,8 +40,8 @@ type ItemMessagesItemAttachmentsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAttachmentId provides operations to manage the attachments property of the microsoft.graph.message entity.
-func (m *ItemMessagesItemAttachmentsRequestBuilder) ByAttachmentId(attachmentId string)(*ItemMessagesItemAttachmentsAttachmentItemRequestBuilder) {
+// ByAttachmentIdString provides operations to manage the attachments property of the microsoft.graph.message entity.
+func (m *ItemMessagesItemAttachmentsRequestBuilder) ByAttachmentIdString(attachmentId string)(*ItemMessagesItemAttachmentsAttachmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

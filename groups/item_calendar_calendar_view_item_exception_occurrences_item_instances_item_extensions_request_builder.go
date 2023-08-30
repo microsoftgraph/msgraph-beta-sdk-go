@@ -44,8 +44,8 @@ type ItemCalendarCalendarViewItemExceptionOccurrencesItemInstancesItemExtensions
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByExtensionId provides operations to manage the extensions property of the microsoft.graph.event entity.
-func (m *ItemCalendarCalendarViewItemExceptionOccurrencesItemInstancesItemExtensionsRequestBuilder) ByExtensionId(extensionId string)(*ItemCalendarCalendarViewItemExceptionOccurrencesItemInstancesItemExtensionsExtensionItemRequestBuilder) {
+// ByExtensionIdString provides operations to manage the extensions property of the microsoft.graph.event entity.
+func (m *ItemCalendarCalendarViewItemExceptionOccurrencesItemInstancesItemExtensionsRequestBuilder) ByExtensionIdString(extensionId string)(*ItemCalendarCalendarViewItemExceptionOccurrencesItemInstancesItemExtensionsExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

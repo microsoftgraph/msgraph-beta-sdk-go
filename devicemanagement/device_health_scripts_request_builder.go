@@ -50,8 +50,8 @@ type DeviceHealthScriptsRequestBuilderPostRequestConfiguration struct {
 func (m *DeviceHealthScriptsRequestBuilder) AreGlobalScriptsAvailable()(*DeviceHealthScriptsAreGlobalScriptsAvailableRequestBuilder) {
     return NewDeviceHealthScriptsAreGlobalScriptsAvailableRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByDeviceHealthScriptId provides operations to manage the deviceHealthScripts property of the microsoft.graph.deviceManagement entity.
-func (m *DeviceHealthScriptsRequestBuilder) ByDeviceHealthScriptId(deviceHealthScriptId string)(*DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) {
+// ByDeviceHealthScriptIdString provides operations to manage the deviceHealthScripts property of the microsoft.graph.deviceManagement entity.
+func (m *DeviceHealthScriptsRequestBuilder) ByDeviceHealthScriptIdString(deviceHealthScriptId string)(*DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

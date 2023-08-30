@@ -46,8 +46,8 @@ type ItemReviewersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAccessReviewReviewerId provides operations to manage the reviewers property of the microsoft.graph.accessReview entity.
-func (m *ItemReviewersRequestBuilder) ByAccessReviewReviewerId(accessReviewReviewerId string)(*ItemReviewersAccessReviewReviewerItemRequestBuilder) {
+// ByAccessReviewReviewerIdString provides operations to manage the reviewers property of the microsoft.graph.accessReview entity.
+func (m *ItemReviewersRequestBuilder) ByAccessReviewReviewerIdString(accessReviewReviewerId string)(*ItemReviewersAccessReviewReviewerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

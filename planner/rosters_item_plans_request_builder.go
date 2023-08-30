@@ -39,8 +39,8 @@ type RostersItemPlansRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *RostersItemPlansRequestBuilderGetQueryParameters
 }
-// ByPlannerPlanId provides operations to manage the plans property of the microsoft.graph.plannerRoster entity.
-func (m *RostersItemPlansRequestBuilder) ByPlannerPlanId(plannerPlanId string)(*RostersItemPlansPlannerPlanItemRequestBuilder) {
+// ByPlannerPlanIdString provides operations to manage the plans property of the microsoft.graph.plannerRoster entity.
+func (m *RostersItemPlansRequestBuilder) ByPlannerPlanIdString(plannerPlanId string)(*RostersItemPlansPlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

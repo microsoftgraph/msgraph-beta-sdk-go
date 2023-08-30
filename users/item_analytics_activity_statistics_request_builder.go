@@ -46,8 +46,8 @@ type ItemAnalyticsActivityStatisticsRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByActivityStatisticsId provides operations to manage the activityStatistics property of the microsoft.graph.userAnalytics entity.
-func (m *ItemAnalyticsActivityStatisticsRequestBuilder) ByActivityStatisticsId(activityStatisticsId string)(*ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder) {
+// ByActivityStatisticsIdString provides operations to manage the activityStatistics property of the microsoft.graph.userAnalytics entity.
+func (m *ItemAnalyticsActivityStatisticsRequestBuilder) ByActivityStatisticsIdString(activityStatisticsId string)(*ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

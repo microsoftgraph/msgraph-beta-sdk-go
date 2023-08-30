@@ -46,8 +46,8 @@ type DeviceManagementScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilderPo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementScriptDeviceStateId provides operations to manage the deviceRunStates property of the microsoft.graph.deviceManagementScriptUserState entity.
-func (m *DeviceManagementScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder) ByDeviceManagementScriptDeviceStateId(deviceManagementScriptDeviceStateId string)(*DeviceManagementScriptsItemUserRunStatesItemDeviceRunStatesDeviceManagementScriptDeviceStateItemRequestBuilder) {
+// ByDeviceManagementScriptDeviceStateIdString provides operations to manage the deviceRunStates property of the microsoft.graph.deviceManagementScriptUserState entity.
+func (m *DeviceManagementScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder) ByDeviceManagementScriptDeviceStateIdString(deviceManagementScriptDeviceStateId string)(*DeviceManagementScriptsItemUserRunStatesItemDeviceRunStatesDeviceManagementScriptDeviceStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

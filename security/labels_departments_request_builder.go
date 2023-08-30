@@ -46,8 +46,8 @@ type LabelsDepartmentsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDepartmentTemplateId provides operations to manage the departments property of the microsoft.graph.security.labelsRoot entity.
-func (m *LabelsDepartmentsRequestBuilder) ByDepartmentTemplateId(departmentTemplateId string)(*LabelsDepartmentsDepartmentTemplateItemRequestBuilder) {
+// ByDepartmentTemplateIdString provides operations to manage the departments property of the microsoft.graph.security.labelsRoot entity.
+func (m *LabelsDepartmentsRequestBuilder) ByDepartmentTemplateIdString(departmentTemplateId string)(*LabelsDepartmentsDepartmentTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

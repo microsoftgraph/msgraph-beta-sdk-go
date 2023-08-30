@@ -39,8 +39,8 @@ type PrinterSharesItemAllowedUsersRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *PrinterSharesItemAllowedUsersRequestBuilderGetQueryParameters
 }
-// ByUserId gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.print.printerShares.item.allowedUsers.item collection
-func (m *PrinterSharesItemAllowedUsersRequestBuilder) ByUserId(userId string)(*PrinterSharesItemAllowedUsersUserItemRequestBuilder) {
+// ByUserIdString gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.print.printerShares.item.allowedUsers.item collection
+func (m *PrinterSharesItemAllowedUsersRequestBuilder) ByUserIdString(userId string)(*PrinterSharesItemAllowedUsersUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

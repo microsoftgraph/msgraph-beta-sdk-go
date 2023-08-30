@@ -46,8 +46,8 @@ type ThreatIntelligenceWhoisHistoryRecordsRequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWhoisHistoryRecordId provides operations to manage the whoisHistoryRecords property of the microsoft.graph.security.threatIntelligence entity.
-func (m *ThreatIntelligenceWhoisHistoryRecordsRequestBuilder) ByWhoisHistoryRecordId(whoisHistoryRecordId string)(*ThreatIntelligenceWhoisHistoryRecordsWhoisHistoryRecordItemRequestBuilder) {
+// ByWhoisHistoryRecordIdString provides operations to manage the whoisHistoryRecords property of the microsoft.graph.security.threatIntelligence entity.
+func (m *ThreatIntelligenceWhoisHistoryRecordsRequestBuilder) ByWhoisHistoryRecordIdString(whoisHistoryRecordId string)(*ThreatIntelligenceWhoisHistoryRecordsWhoisHistoryRecordItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

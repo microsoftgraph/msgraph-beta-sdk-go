@@ -46,8 +46,8 @@ type ItemItemsItemWorkbookWorksheetsItemTasksRequestBuilderPostRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWorkbookDocumentTaskId provides operations to manage the tasks property of the microsoft.graph.workbookWorksheet entity.
-func (m *ItemItemsItemWorkbookWorksheetsItemTasksRequestBuilder) ByWorkbookDocumentTaskId(workbookDocumentTaskId string)(*ItemItemsItemWorkbookWorksheetsItemTasksWorkbookDocumentTaskItemRequestBuilder) {
+// ByWorkbookDocumentTaskIdString provides operations to manage the tasks property of the microsoft.graph.workbookWorksheet entity.
+func (m *ItemItemsItemWorkbookWorksheetsItemTasksRequestBuilder) ByWorkbookDocumentTaskIdString(workbookDocumentTaskId string)(*ItemItemsItemWorkbookWorksheetsItemTasksWorkbookDocumentTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

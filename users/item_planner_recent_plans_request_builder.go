@@ -39,8 +39,8 @@ type ItemPlannerRecentPlansRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemPlannerRecentPlansRequestBuilderGetQueryParameters
 }
-// ByPlannerPlanId provides operations to manage the recentPlans property of the microsoft.graph.plannerUser entity.
-func (m *ItemPlannerRecentPlansRequestBuilder) ByPlannerPlanId(plannerPlanId string)(*ItemPlannerRecentPlansPlannerPlanItemRequestBuilder) {
+// ByPlannerPlanIdString provides operations to manage the recentPlans property of the microsoft.graph.plannerUser entity.
+func (m *ItemPlannerRecentPlansRequestBuilder) ByPlannerPlanIdString(plannerPlanId string)(*ItemPlannerRecentPlansPlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

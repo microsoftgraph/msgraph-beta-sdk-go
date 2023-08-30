@@ -46,8 +46,8 @@ type UserExperienceAnalyticsAnomalyDeviceRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserExperienceAnalyticsAnomalyDeviceId provides operations to manage the userExperienceAnalyticsAnomalyDevice property of the microsoft.graph.deviceManagement entity.
-func (m *UserExperienceAnalyticsAnomalyDeviceRequestBuilder) ByUserExperienceAnalyticsAnomalyDeviceId(userExperienceAnalyticsAnomalyDeviceId string)(*UserExperienceAnalyticsAnomalyDeviceUserExperienceAnalyticsAnomalyDeviceItemRequestBuilder) {
+// ByUserExperienceAnalyticsAnomalyDeviceIdString provides operations to manage the userExperienceAnalyticsAnomalyDevice property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsAnomalyDeviceRequestBuilder) ByUserExperienceAnalyticsAnomalyDeviceIdString(userExperienceAnalyticsAnomalyDeviceId string)(*UserExperienceAnalyticsAnomalyDeviceUserExperienceAnalyticsAnomalyDeviceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

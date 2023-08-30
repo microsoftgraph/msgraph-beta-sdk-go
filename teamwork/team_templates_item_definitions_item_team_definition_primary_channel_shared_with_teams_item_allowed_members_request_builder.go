@@ -39,8 +39,8 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelSharedWithTeams
     // Request query parameters
     QueryParameters *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelSharedWithTeamsItemAllowedMembersRequestBuilderGetQueryParameters
 }
-// ByConversationMemberId provides operations to manage the allowedMembers property of the microsoft.graph.sharedWithChannelTeamInfo entity.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelSharedWithTeamsItemAllowedMembersRequestBuilder) ByConversationMemberId(conversationMemberId string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelSharedWithTeamsItemAllowedMembersConversationMemberItemRequestBuilder) {
+// ByConversationMemberIdString provides operations to manage the allowedMembers property of the microsoft.graph.sharedWithChannelTeamInfo entity.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelSharedWithTeamsItemAllowedMembersRequestBuilder) ByConversationMemberIdString(conversationMemberId string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelSharedWithTeamsItemAllowedMembersConversationMemberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

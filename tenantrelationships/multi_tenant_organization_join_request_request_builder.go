@@ -18,7 +18,7 @@ type MultiTenantOrganizationJoinRequestRequestBuilderDeleteRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MultiTenantOrganizationJoinRequestRequestBuilderGetQueryParameters get joinRequest from tenantRelationships
+// MultiTenantOrganizationJoinRequestRequestBuilderGetQueryParameters get the status of a tenant joining a multi-tenant organization.
 type MultiTenantOrganizationJoinRequestRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *MultiTenantOrganizationJoinRequestRequestBuilder) Delete(ctx context.Co
     }
     return nil
 }
-// Get get joinRequest from tenantRelationships
+// Get get the status of a tenant joining a multi-tenant organization.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/multitenantorganizationjoinrequestrecord-get?view=graph-rest-1.0
 func (m *MultiTenantOrganizationJoinRequestRequestBuilder) Get(ctx context.Context, requestConfiguration *MultiTenantOrganizationJoinRequestRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiTenantOrganizationJoinRequestRecordable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,10 @@ func (m *MultiTenantOrganizationJoinRequestRequestBuilder) Get(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiTenantOrganizationJoinRequestRecordable), nil
 }
-// Patch update the navigation property joinRequest in tenantRelationships
+// Patch join a multi-tenant organization, after the owner of the multi-tenant organization has added your tenant to the multi-tenant organization as pending. Before a tenant added to a multi-tenant organization can participate in the multi-tenant organization, the administrator of the joining tenant must submit a join request. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization. Furthermore, to allow for asynchronous processing, you must wait up to 4 hours before joining a multi-tenant organization is completed.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/multitenantorganizationjoinrequestrecord-update?view=graph-rest-1.0
 func (m *MultiTenantOrganizationJoinRequestRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiTenantOrganizationJoinRequestRecordable, requestConfiguration *MultiTenantOrganizationJoinRequestRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiTenantOrganizationJoinRequestRecordable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,7 +126,7 @@ func (m *MultiTenantOrganizationJoinRequestRequestBuilder) ToDeleteRequestInform
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get joinRequest from tenantRelationships
+// ToGetRequestInformation get the status of a tenant joining a multi-tenant organization.
 func (m *MultiTenantOrganizationJoinRequestRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MultiTenantOrganizationJoinRequestRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +142,7 @@ func (m *MultiTenantOrganizationJoinRequestRequestBuilder) ToGetRequestInformati
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property joinRequest in tenantRelationships
+// ToPatchRequestInformation join a multi-tenant organization, after the owner of the multi-tenant organization has added your tenant to the multi-tenant organization as pending. Before a tenant added to a multi-tenant organization can participate in the multi-tenant organization, the administrator of the joining tenant must submit a join request. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization. Furthermore, to allow for asynchronous processing, you must wait up to 4 hours before joining a multi-tenant organization is completed.
 func (m *MultiTenantOrganizationJoinRequestRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiTenantOrganizationJoinRequestRecordable, requestConfiguration *MultiTenantOrganizationJoinRequestRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

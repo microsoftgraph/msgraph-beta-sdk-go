@@ -46,8 +46,8 @@ type ItemPlannerAllRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPlannerDeltaId provides operations to manage the all property of the microsoft.graph.plannerUser entity.
-func (m *ItemPlannerAllRequestBuilder) ByPlannerDeltaId(plannerDeltaId string)(*ItemPlannerAllPlannerDeltaItemRequestBuilder) {
+// ByPlannerDeltaIdString provides operations to manage the all property of the microsoft.graph.plannerUser entity.
+func (m *ItemPlannerAllRequestBuilder) ByPlannerDeltaIdString(plannerDeltaId string)(*ItemPlannerAllPlannerDeltaItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

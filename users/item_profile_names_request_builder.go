@@ -46,8 +46,8 @@ type ItemProfileNamesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPersonNameId provides operations to manage the names property of the microsoft.graph.profile entity.
-func (m *ItemProfileNamesRequestBuilder) ByPersonNameId(personNameId string)(*ItemProfileNamesPersonNameItemRequestBuilder) {
+// ByPersonNameIdString provides operations to manage the names property of the microsoft.graph.profile entity.
+func (m *ItemProfileNamesRequestBuilder) ByPersonNameIdString(personNameId string)(*ItemProfileNamesPersonNameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

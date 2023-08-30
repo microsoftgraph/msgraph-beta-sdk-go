@@ -46,8 +46,8 @@ type WindowsUpdatesCatalogEntriesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCatalogEntryId provides operations to manage the entries property of the microsoft.graph.windowsUpdates.catalog entity.
-func (m *WindowsUpdatesCatalogEntriesRequestBuilder) ByCatalogEntryId(catalogEntryId string)(*WindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilder) {
+// ByCatalogEntryIdString provides operations to manage the entries property of the microsoft.graph.windowsUpdates.catalog entity.
+func (m *WindowsUpdatesCatalogEntriesRequestBuilder) ByCatalogEntryIdString(catalogEntryId string)(*WindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

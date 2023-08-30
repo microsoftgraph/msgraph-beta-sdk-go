@@ -46,8 +46,8 @@ type ItemPublishedResourcesItemAgentGroupsRequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByOnPremisesAgentGroupId gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.publishedResources.item.agentGroups.item collection
-func (m *ItemPublishedResourcesItemAgentGroupsRequestBuilder) ByOnPremisesAgentGroupId(onPremisesAgentGroupId string)(*ItemPublishedResourcesItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) {
+// ByOnPremisesAgentGroupIdString gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.publishedResources.item.agentGroups.item collection
+func (m *ItemPublishedResourcesItemAgentGroupsRequestBuilder) ByOnPremisesAgentGroupIdString(onPremisesAgentGroupId string)(*ItemPublishedResourcesItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

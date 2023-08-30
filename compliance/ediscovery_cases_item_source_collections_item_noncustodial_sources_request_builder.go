@@ -39,9 +39,9 @@ type EdiscoveryCasesItemSourceCollectionsItemNoncustodialSourcesRequestBuilderGe
     // Request query parameters
     QueryParameters *EdiscoveryCasesItemSourceCollectionsItemNoncustodialSourcesRequestBuilderGetQueryParameters
 }
-// ByNoncustodialDataSourceId provides operations to manage the noncustodialSources property of the microsoft.graph.ediscovery.sourceCollection entity.
+// ByNoncustodialDataSourceIdString provides operations to manage the noncustodialSources property of the microsoft.graph.ediscovery.sourceCollection entity.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
-func (m *EdiscoveryCasesItemSourceCollectionsItemNoncustodialSourcesRequestBuilder) ByNoncustodialDataSourceId(noncustodialDataSourceId string)(*EdiscoveryCasesItemSourceCollectionsItemNoncustodialSourcesNoncustodialDataSourceItemRequestBuilder) {
+func (m *EdiscoveryCasesItemSourceCollectionsItemNoncustodialSourcesRequestBuilder) ByNoncustodialDataSourceIdString(noncustodialDataSourceId string)(*EdiscoveryCasesItemSourceCollectionsItemNoncustodialSourcesNoncustodialDataSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type TermsAndConditionsItemGroupAssignmentsRequestBuilderPostRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTermsAndConditionsGroupAssignmentId provides operations to manage the groupAssignments property of the microsoft.graph.termsAndConditions entity.
-func (m *TermsAndConditionsItemGroupAssignmentsRequestBuilder) ByTermsAndConditionsGroupAssignmentId(termsAndConditionsGroupAssignmentId string)(*TermsAndConditionsItemGroupAssignmentsTermsAndConditionsGroupAssignmentItemRequestBuilder) {
+// ByTermsAndConditionsGroupAssignmentIdString provides operations to manage the groupAssignments property of the microsoft.graph.termsAndConditions entity.
+func (m *TermsAndConditionsItemGroupAssignmentsRequestBuilder) ByTermsAndConditionsGroupAssignmentIdString(termsAndConditionsGroupAssignmentId string)(*TermsAndConditionsItemGroupAssignmentsTermsAndConditionsGroupAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

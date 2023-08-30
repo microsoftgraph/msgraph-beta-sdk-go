@@ -39,8 +39,8 @@ type EntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackage
     // Request query parameters
     QueryParameters *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackagesIncompatibleWithRequestBuilderGetQueryParameters
 }
-// ByAccessPackageId provides operations to manage the accessPackagesIncompatibleWith property of the microsoft.graph.accessPackage entity.
-func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackagesIncompatibleWithRequestBuilder) ByAccessPackageId(accessPackageId string)(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackagesIncompatibleWithAccessPackageItemRequestBuilder) {
+// ByAccessPackageIdString provides operations to manage the accessPackagesIncompatibleWith property of the microsoft.graph.accessPackage entity.
+func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackagesIncompatibleWithRequestBuilder) ByAccessPackageIdString(accessPackageId string)(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageAccessPackagesIncompatibleWithAccessPackageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

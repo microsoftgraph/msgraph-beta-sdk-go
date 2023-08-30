@@ -39,8 +39,8 @@ type ItemConnectorGroupsItemMembersRequestBuilderGetRequestConfiguration struct 
     // Request query parameters
     QueryParameters *ItemConnectorGroupsItemMembersRequestBuilderGetQueryParameters
 }
-// ByConnectorId gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.connectorGroups.item.members.item collection
-func (m *ItemConnectorGroupsItemMembersRequestBuilder) ByConnectorId(connectorId string)(*ItemConnectorGroupsItemMembersConnectorItemRequestBuilder) {
+// ByConnectorIdString gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.connectorGroups.item.members.item collection
+func (m *ItemConnectorGroupsItemMembersRequestBuilder) ByConnectorIdString(connectorId string)(*ItemConnectorGroupsItemMembersConnectorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

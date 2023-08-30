@@ -39,8 +39,8 @@ type CompaniesItemSalesInvoicesItemSalesInvoiceLinesRequestBuilderGetRequestConf
     // Request query parameters
     QueryParameters *CompaniesItemSalesInvoicesItemSalesInvoiceLinesRequestBuilderGetQueryParameters
 }
-// BySalesInvoiceLineId provides operations to manage the salesInvoiceLines property of the microsoft.graph.salesInvoice entity.
-func (m *CompaniesItemSalesInvoicesItemSalesInvoiceLinesRequestBuilder) BySalesInvoiceLineId(salesInvoiceLineId string)(*CompaniesItemSalesInvoicesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilder) {
+// BySalesInvoiceLineIdString provides operations to manage the salesInvoiceLines property of the microsoft.graph.salesInvoice entity.
+func (m *CompaniesItemSalesInvoicesItemSalesInvoiceLinesRequestBuilder) BySalesInvoiceLineIdString(salesInvoiceLineId string)(*CompaniesItemSalesInvoicesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

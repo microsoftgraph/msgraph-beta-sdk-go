@@ -35,8 +35,8 @@ type ItemMailFoldersItemUserConfigurationsRequestBuilderGetRequestConfiguration 
     // Request query parameters
     QueryParameters *ItemMailFoldersItemUserConfigurationsRequestBuilderGetQueryParameters
 }
-// ByUserConfigurationId provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.
-func (m *ItemMailFoldersItemUserConfigurationsRequestBuilder) ByUserConfigurationId(userConfigurationId string)(*ItemMailFoldersItemUserConfigurationsUserConfigurationItemRequestBuilder) {
+// ByUserConfigurationIdString provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.
+func (m *ItemMailFoldersItemUserConfigurationsRequestBuilder) ByUserConfigurationIdString(userConfigurationId string)(*ItemMailFoldersItemUserConfigurationsUserConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

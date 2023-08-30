@@ -46,8 +46,8 @@ type CloudAppSecurityProfilesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCloudAppSecurityProfileId provides operations to manage the cloudAppSecurityProfiles property of the microsoft.graph.security entity.
-func (m *CloudAppSecurityProfilesRequestBuilder) ByCloudAppSecurityProfileId(cloudAppSecurityProfileId string)(*CloudAppSecurityProfilesCloudAppSecurityProfileItemRequestBuilder) {
+// ByCloudAppSecurityProfileIdString provides operations to manage the cloudAppSecurityProfiles property of the microsoft.graph.security entity.
+func (m *CloudAppSecurityProfilesRequestBuilder) ByCloudAppSecurityProfileIdString(cloudAppSecurityProfileId string)(*CloudAppSecurityProfilesCloudAppSecurityProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

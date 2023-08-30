@@ -39,8 +39,8 @@ type SubjectRightsRequestsItemCollaboratorsRequestBuilderGetRequestConfiguration
     // Request query parameters
     QueryParameters *SubjectRightsRequestsItemCollaboratorsRequestBuilderGetQueryParameters
 }
-// ByUserId provides operations to manage the collaborators property of the microsoft.graph.subjectRightsRequest entity.
-func (m *SubjectRightsRequestsItemCollaboratorsRequestBuilder) ByUserId(userId string)(*SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilder) {
+// ByUserIdString provides operations to manage the collaborators property of the microsoft.graph.subjectRightsRequest entity.
+func (m *SubjectRightsRequestsItemCollaboratorsRequestBuilder) ByUserIdString(userId string)(*SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

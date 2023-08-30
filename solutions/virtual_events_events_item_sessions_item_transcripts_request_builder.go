@@ -46,8 +46,8 @@ type VirtualEventsEventsItemSessionsItemTranscriptsRequestBuilderPostRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCallTranscriptId provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
-func (m *VirtualEventsEventsItemSessionsItemTranscriptsRequestBuilder) ByCallTranscriptId(callTranscriptId string)(*VirtualEventsEventsItemSessionsItemTranscriptsCallTranscriptItemRequestBuilder) {
+// ByCallTranscriptIdString provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
+func (m *VirtualEventsEventsItemSessionsItemTranscriptsRequestBuilder) ByCallTranscriptIdString(callTranscriptId string)(*VirtualEventsEventsItemSessionsItemTranscriptsCallTranscriptItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -73,6 +73,10 @@ func NewVirtualEventsEventsItemSessionsItemTranscriptsRequestBuilder(rawUrl stri
 // Count provides operations to count the resources in the collection.
 func (m *VirtualEventsEventsItemSessionsItemTranscriptsRequestBuilder) Count()(*VirtualEventsEventsItemSessionsItemTranscriptsCountRequestBuilder) {
     return NewVirtualEventsEventsItemSessionsItemTranscriptsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Delta provides operations to call the delta method.
+func (m *VirtualEventsEventsItemSessionsItemTranscriptsRequestBuilder) Delta()(*VirtualEventsEventsItemSessionsItemTranscriptsDeltaRequestBuilder) {
+    return NewVirtualEventsEventsItemSessionsItemTranscriptsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve the list of callTranscript objects associated with an onlineMeeting.
 // [Find more info here]

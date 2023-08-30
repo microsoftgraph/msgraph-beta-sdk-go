@@ -46,8 +46,8 @@ type MacOSSoftwareUpdateAccountSummariesRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMacOSSoftwareUpdateAccountSummaryId provides operations to manage the macOSSoftwareUpdateAccountSummaries property of the microsoft.graph.deviceManagement entity.
-func (m *MacOSSoftwareUpdateAccountSummariesRequestBuilder) ByMacOSSoftwareUpdateAccountSummaryId(macOSSoftwareUpdateAccountSummaryId string)(*MacOSSoftwareUpdateAccountSummariesMacOSSoftwareUpdateAccountSummaryItemRequestBuilder) {
+// ByMacOSSoftwareUpdateAccountSummaryIdString provides operations to manage the macOSSoftwareUpdateAccountSummaries property of the microsoft.graph.deviceManagement entity.
+func (m *MacOSSoftwareUpdateAccountSummariesRequestBuilder) ByMacOSSoftwareUpdateAccountSummaryIdString(macOSSoftwareUpdateAccountSummaryId string)(*MacOSSoftwareUpdateAccountSummariesMacOSSoftwareUpdateAccountSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

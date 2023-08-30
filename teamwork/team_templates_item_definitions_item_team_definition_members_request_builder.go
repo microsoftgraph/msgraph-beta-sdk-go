@@ -50,8 +50,8 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionMembersRequestBuilderPostRequ
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionMembersRequestBuilder) Add()(*TeamTemplatesItemDefinitionsItemTeamDefinitionMembersAddRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionMembersAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByConversationMemberId provides operations to manage the members property of the microsoft.graph.team entity.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionMembersRequestBuilder) ByConversationMemberId(conversationMemberId string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionMembersConversationMemberItemRequestBuilder) {
+// ByConversationMemberIdString provides operations to manage the members property of the microsoft.graph.team entity.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionMembersRequestBuilder) ByConversationMemberIdString(conversationMemberId string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionMembersConversationMemberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

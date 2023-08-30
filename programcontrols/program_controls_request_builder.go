@@ -46,8 +46,8 @@ type ProgramControlsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByProgramControlId provides operations to manage the collection of programControl entities.
-func (m *ProgramControlsRequestBuilder) ByProgramControlId(programControlId string)(*ProgramControlItemRequestBuilder) {
+// ByProgramControlIdString provides operations to manage the collection of programControl entities.
+func (m *ProgramControlsRequestBuilder) ByProgramControlIdString(programControlId string)(*ProgramControlItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

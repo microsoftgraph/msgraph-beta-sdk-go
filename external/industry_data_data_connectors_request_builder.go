@@ -46,8 +46,8 @@ type IndustryDataDataConnectorsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByIndustryDataConnectorId provides operations to manage the dataConnectors property of the microsoft.graph.industryData.industryDataRoot entity.
-func (m *IndustryDataDataConnectorsRequestBuilder) ByIndustryDataConnectorId(industryDataConnectorId string)(*IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) {
+// ByIndustryDataConnectorIdString provides operations to manage the dataConnectors property of the microsoft.graph.industryData.industryDataRoot entity.
+func (m *IndustryDataDataConnectorsRequestBuilder) ByIndustryDataConnectorIdString(industryDataConnectorId string)(*IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type PolicySetsItemItemsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPolicySetItemId provides operations to manage the items property of the microsoft.graph.policySet entity.
-func (m *PolicySetsItemItemsRequestBuilder) ByPolicySetItemId(policySetItemId string)(*PolicySetsItemItemsPolicySetItemItemRequestBuilder) {
+// ByPolicySetItemIdString provides operations to manage the items property of the microsoft.graph.policySet entity.
+func (m *PolicySetsItemItemsRequestBuilder) ByPolicySetItemIdString(policySetItemId string)(*PolicySetsItemItemsPolicySetItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

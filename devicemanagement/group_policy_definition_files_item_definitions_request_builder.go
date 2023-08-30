@@ -39,8 +39,8 @@ type GroupPolicyDefinitionFilesItemDefinitionsRequestBuilderGetRequestConfigurat
     // Request query parameters
     QueryParameters *GroupPolicyDefinitionFilesItemDefinitionsRequestBuilderGetQueryParameters
 }
-// ByGroupPolicyDefinitionId provides operations to manage the definitions property of the microsoft.graph.groupPolicyDefinitionFile entity.
-func (m *GroupPolicyDefinitionFilesItemDefinitionsRequestBuilder) ByGroupPolicyDefinitionId(groupPolicyDefinitionId string)(*GroupPolicyDefinitionFilesItemDefinitionsGroupPolicyDefinitionItemRequestBuilder) {
+// ByGroupPolicyDefinitionIdString provides operations to manage the definitions property of the microsoft.graph.groupPolicyDefinitionFile entity.
+func (m *GroupPolicyDefinitionFilesItemDefinitionsRequestBuilder) ByGroupPolicyDefinitionIdString(groupPolicyDefinitionId string)(*GroupPolicyDefinitionFilesItemDefinitionsGroupPolicyDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

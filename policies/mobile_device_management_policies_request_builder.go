@@ -46,8 +46,8 @@ type MobileDeviceManagementPoliciesRequestBuilderPostRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMobilityManagementPolicyId provides operations to manage the mobileDeviceManagementPolicies property of the microsoft.graph.policyRoot entity.
-func (m *MobileDeviceManagementPoliciesRequestBuilder) ByMobilityManagementPolicyId(mobilityManagementPolicyId string)(*MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilder) {
+// ByMobilityManagementPolicyIdString provides operations to manage the mobileDeviceManagementPolicies property of the microsoft.graph.policyRoot entity.
+func (m *MobileDeviceManagementPoliciesRequestBuilder) ByMobilityManagementPolicyIdString(mobilityManagementPolicyId string)(*MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

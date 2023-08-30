@@ -46,8 +46,8 @@ type RemoteActionAuditsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByRemoteActionAuditId provides operations to manage the remoteActionAudits property of the microsoft.graph.deviceManagement entity.
-func (m *RemoteActionAuditsRequestBuilder) ByRemoteActionAuditId(remoteActionAuditId string)(*RemoteActionAuditsRemoteActionAuditItemRequestBuilder) {
+// ByRemoteActionAuditIdString provides operations to manage the remoteActionAudits property of the microsoft.graph.deviceManagement entity.
+func (m *RemoteActionAuditsRequestBuilder) ByRemoteActionAuditIdString(remoteActionAuditId string)(*RemoteActionAuditsRemoteActionAuditItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

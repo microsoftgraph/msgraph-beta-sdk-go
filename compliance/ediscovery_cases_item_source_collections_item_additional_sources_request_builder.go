@@ -46,9 +46,9 @@ type EdiscoveryCasesItemSourceCollectionsItemAdditionalSourcesRequestBuilderPost
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDataSourceId provides operations to manage the additionalSources property of the microsoft.graph.ediscovery.sourceCollection entity.
+// ByDataSourceIdString provides operations to manage the additionalSources property of the microsoft.graph.ediscovery.sourceCollection entity.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
-func (m *EdiscoveryCasesItemSourceCollectionsItemAdditionalSourcesRequestBuilder) ByDataSourceId(dataSourceId string)(*EdiscoveryCasesItemSourceCollectionsItemAdditionalSourcesDataSourceItemRequestBuilder) {
+func (m *EdiscoveryCasesItemSourceCollectionsItemAdditionalSourcesRequestBuilder) ByDataSourceIdString(dataSourceId string)(*EdiscoveryCasesItemSourceCollectionsItemAdditionalSourcesDataSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

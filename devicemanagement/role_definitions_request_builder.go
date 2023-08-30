@@ -46,8 +46,8 @@ type RoleDefinitionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByRoleDefinitionId provides operations to manage the roleDefinitions property of the microsoft.graph.deviceManagement entity.
-func (m *RoleDefinitionsRequestBuilder) ByRoleDefinitionId(roleDefinitionId string)(*RoleDefinitionsRoleDefinitionItemRequestBuilder) {
+// ByRoleDefinitionIdString provides operations to manage the roleDefinitions property of the microsoft.graph.deviceManagement entity.
+func (m *RoleDefinitionsRequestBuilder) ByRoleDefinitionIdString(roleDefinitionId string)(*RoleDefinitionsRoleDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type VirtualEventsWebinarsItemSessionsItemRecordingsRequestBuilderPostRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCallRecordingId provides operations to manage the recordings property of the microsoft.graph.onlineMeeting entity.
-func (m *VirtualEventsWebinarsItemSessionsItemRecordingsRequestBuilder) ByCallRecordingId(callRecordingId string)(*VirtualEventsWebinarsItemSessionsItemRecordingsCallRecordingItemRequestBuilder) {
+// ByCallRecordingIdString provides operations to manage the recordings property of the microsoft.graph.onlineMeeting entity.
+func (m *VirtualEventsWebinarsItemSessionsItemRecordingsRequestBuilder) ByCallRecordingIdString(callRecordingId string)(*VirtualEventsWebinarsItemSessionsItemRecordingsCallRecordingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -73,6 +73,10 @@ func NewVirtualEventsWebinarsItemSessionsItemRecordingsRequestBuilder(rawUrl str
 // Count provides operations to count the resources in the collection.
 func (m *VirtualEventsWebinarsItemSessionsItemRecordingsRequestBuilder) Count()(*VirtualEventsWebinarsItemSessionsItemRecordingsCountRequestBuilder) {
     return NewVirtualEventsWebinarsItemSessionsItemRecordingsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Delta provides operations to call the delta method.
+func (m *VirtualEventsWebinarsItemSessionsItemRecordingsRequestBuilder) Delta()(*VirtualEventsWebinarsItemSessionsItemRecordingsDeltaRequestBuilder) {
+    return NewVirtualEventsWebinarsItemSessionsItemRecordingsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a callRecording object associated with an onlineMeeting. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of text associated with the recording.
 func (m *VirtualEventsWebinarsItemSessionsItemRecordingsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemSessionsItemRecordingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallRecordingCollectionResponseable, error) {

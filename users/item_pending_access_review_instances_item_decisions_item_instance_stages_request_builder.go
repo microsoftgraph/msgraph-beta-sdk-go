@@ -46,8 +46,8 @@ type ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAccessReviewStageId provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.
-func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesRequestBuilder) ByAccessReviewStageId(accessReviewStageId string)(*ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesAccessReviewStageItemRequestBuilder) {
+// ByAccessReviewStageIdString provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.
+func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesRequestBuilder) ByAccessReviewStageIdString(accessReviewStageId string)(*ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesAccessReviewStageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

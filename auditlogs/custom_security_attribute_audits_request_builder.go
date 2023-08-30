@@ -46,8 +46,8 @@ type CustomSecurityAttributeAuditsRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCustomSecurityAttributeAuditId provides operations to manage the customSecurityAttributeAudits property of the microsoft.graph.auditLogRoot entity.
-func (m *CustomSecurityAttributeAuditsRequestBuilder) ByCustomSecurityAttributeAuditId(customSecurityAttributeAuditId string)(*CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder) {
+// ByCustomSecurityAttributeAuditIdString provides operations to manage the customSecurityAttributeAudits property of the microsoft.graph.auditLogRoot entity.
+func (m *CustomSecurityAttributeAuditsRequestBuilder) ByCustomSecurityAttributeAuditIdString(customSecurityAttributeAuditId string)(*CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

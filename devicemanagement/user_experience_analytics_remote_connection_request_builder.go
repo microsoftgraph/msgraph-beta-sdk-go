@@ -46,8 +46,8 @@ type UserExperienceAnalyticsRemoteConnectionRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserExperienceAnalyticsRemoteConnectionId provides operations to manage the userExperienceAnalyticsRemoteConnection property of the microsoft.graph.deviceManagement entity.
-func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) ByUserExperienceAnalyticsRemoteConnectionId(userExperienceAnalyticsRemoteConnectionId string)(*UserExperienceAnalyticsRemoteConnectionUserExperienceAnalyticsRemoteConnectionItemRequestBuilder) {
+// ByUserExperienceAnalyticsRemoteConnectionIdString provides operations to manage the userExperienceAnalyticsRemoteConnection property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) ByUserExperienceAnalyticsRemoteConnectionIdString(userExperienceAnalyticsRemoteConnectionId string)(*UserExperienceAnalyticsRemoteConnectionUserExperienceAnalyticsRemoteConnectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -39,8 +39,8 @@ type ItemPlannerFavoritePlansRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemPlannerFavoritePlansRequestBuilderGetQueryParameters
 }
-// ByPlannerPlanId provides operations to manage the favoritePlans property of the microsoft.graph.plannerUser entity.
-func (m *ItemPlannerFavoritePlansRequestBuilder) ByPlannerPlanId(plannerPlanId string)(*ItemPlannerFavoritePlansPlannerPlanItemRequestBuilder) {
+// ByPlannerPlanIdString provides operations to manage the favoritePlans property of the microsoft.graph.plannerUser entity.
+func (m *ItemPlannerFavoritePlansRequestBuilder) ByPlannerPlanIdString(plannerPlanId string)(*ItemPlannerFavoritePlansPlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

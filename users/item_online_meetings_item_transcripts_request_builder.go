@@ -46,8 +46,8 @@ type ItemOnlineMeetingsItemTranscriptsRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCallTranscriptId provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
-func (m *ItemOnlineMeetingsItemTranscriptsRequestBuilder) ByCallTranscriptId(callTranscriptId string)(*ItemOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilder) {
+// ByCallTranscriptIdString provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
+func (m *ItemOnlineMeetingsItemTranscriptsRequestBuilder) ByCallTranscriptIdString(callTranscriptId string)(*ItemOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -73,6 +73,10 @@ func NewItemOnlineMeetingsItemTranscriptsRequestBuilder(rawUrl string, requestAd
 // Count provides operations to count the resources in the collection.
 func (m *ItemOnlineMeetingsItemTranscriptsRequestBuilder) Count()(*ItemOnlineMeetingsItemTranscriptsCountRequestBuilder) {
     return NewItemOnlineMeetingsItemTranscriptsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Delta provides operations to call the delta method.
+func (m *ItemOnlineMeetingsItemTranscriptsRequestBuilder) Delta()(*ItemOnlineMeetingsItemTranscriptsDeltaRequestBuilder) {
+    return NewItemOnlineMeetingsItemTranscriptsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve the list of callTranscript objects associated with an onlineMeeting.
 // [Find more info here]

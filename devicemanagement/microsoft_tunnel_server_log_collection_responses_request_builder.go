@@ -46,8 +46,8 @@ type MicrosoftTunnelServerLogCollectionResponsesRequestBuilderPostRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMicrosoftTunnelServerLogCollectionResponseId provides operations to manage the microsoftTunnelServerLogCollectionResponses property of the microsoft.graph.deviceManagement entity.
-func (m *MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) ByMicrosoftTunnelServerLogCollectionResponseId(microsoftTunnelServerLogCollectionResponseId string)(*MicrosoftTunnelServerLogCollectionResponsesMicrosoftTunnelServerLogCollectionResponseItemRequestBuilder) {
+// ByMicrosoftTunnelServerLogCollectionResponseIdString provides operations to manage the microsoftTunnelServerLogCollectionResponses property of the microsoft.graph.deviceManagement entity.
+func (m *MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) ByMicrosoftTunnelServerLogCollectionResponseIdString(microsoftTunnelServerLogCollectionResponseId string)(*MicrosoftTunnelServerLogCollectionResponsesMicrosoftTunnelServerLogCollectionResponseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

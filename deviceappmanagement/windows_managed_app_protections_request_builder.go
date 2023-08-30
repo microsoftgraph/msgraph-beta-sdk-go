@@ -46,8 +46,8 @@ type WindowsManagedAppProtectionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWindowsManagedAppProtectionId provides operations to manage the windowsManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
-func (m *WindowsManagedAppProtectionsRequestBuilder) ByWindowsManagedAppProtectionId(windowsManagedAppProtectionId string)(*WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) {
+// ByWindowsManagedAppProtectionIdString provides operations to manage the windowsManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
+func (m *WindowsManagedAppProtectionsRequestBuilder) ByWindowsManagedAppProtectionIdString(windowsManagedAppProtectionId string)(*WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

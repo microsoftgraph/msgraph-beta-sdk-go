@@ -46,8 +46,8 @@ type OnlineMeetingsItemRegistrationRegistrantsRequestBuilderPostRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMeetingRegistrantBaseId provides operations to manage the registrants property of the microsoft.graph.meetingRegistrationBase entity.
-func (m *OnlineMeetingsItemRegistrationRegistrantsRequestBuilder) ByMeetingRegistrantBaseId(meetingRegistrantBaseId string)(*OnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilder) {
+// ByMeetingRegistrantBaseIdString provides operations to manage the registrants property of the microsoft.graph.meetingRegistrationBase entity.
+func (m *OnlineMeetingsItemRegistrationRegistrantsRequestBuilder) ByMeetingRegistrantBaseIdString(meetingRegistrantBaseId string)(*OnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

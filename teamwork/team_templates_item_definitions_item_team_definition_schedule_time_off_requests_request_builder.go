@@ -44,8 +44,8 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffRequestsReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTimeOffRequestId provides operations to manage the timeOffRequests property of the microsoft.graph.schedule entity.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffRequestsRequestBuilder) ByTimeOffRequestId(timeOffRequestId string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffRequestsTimeOffRequestItemRequestBuilder) {
+// ByTimeOffRequestIdString provides operations to manage the timeOffRequests property of the microsoft.graph.schedule entity.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffRequestsRequestBuilder) ByTimeOffRequestIdString(timeOffRequestId string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffRequestsTimeOffRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

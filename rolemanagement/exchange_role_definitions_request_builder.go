@@ -46,8 +46,8 @@ type ExchangeRoleDefinitionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUnifiedRoleDefinitionId provides operations to manage the roleDefinitions property of the microsoft.graph.unifiedRbacApplication entity.
-func (m *ExchangeRoleDefinitionsRequestBuilder) ByUnifiedRoleDefinitionId(unifiedRoleDefinitionId string)(*ExchangeRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) {
+// ByUnifiedRoleDefinitionIdString provides operations to manage the roleDefinitions property of the microsoft.graph.unifiedRbacApplication entity.
+func (m *ExchangeRoleDefinitionsRequestBuilder) ByUnifiedRoleDefinitionIdString(unifiedRoleDefinitionId string)(*ExchangeRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

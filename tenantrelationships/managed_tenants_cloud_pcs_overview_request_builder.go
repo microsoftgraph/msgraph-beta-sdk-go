@@ -46,8 +46,8 @@ type ManagedTenantsCloudPcsOverviewRequestBuilderPostRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCloudPcOverviewTenantId provides operations to manage the cloudPcsOverview property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsCloudPcsOverviewRequestBuilder) ByCloudPcOverviewTenantId(cloudPcOverviewTenantId string)(*ManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilder) {
+// ByCloudPcOverviewTenantIdString provides operations to manage the cloudPcsOverview property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsCloudPcsOverviewRequestBuilder) ByCloudPcOverviewTenantIdString(cloudPcOverviewTenantId string)(*ManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

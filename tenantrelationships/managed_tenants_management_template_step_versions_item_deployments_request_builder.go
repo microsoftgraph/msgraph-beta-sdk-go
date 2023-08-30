@@ -46,8 +46,8 @@ type ManagedTenantsManagementTemplateStepVersionsItemDeploymentsRequestBuilderPo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByManagementTemplateStepDeploymentId provides operations to manage the deployments property of the microsoft.graph.managedTenants.managementTemplateStepVersion entity.
-func (m *ManagedTenantsManagementTemplateStepVersionsItemDeploymentsRequestBuilder) ByManagementTemplateStepDeploymentId(managementTemplateStepDeploymentId string)(*ManagedTenantsManagementTemplateStepVersionsItemDeploymentsManagementTemplateStepDeploymentItemRequestBuilder) {
+// ByManagementTemplateStepDeploymentIdString provides operations to manage the deployments property of the microsoft.graph.managedTenants.managementTemplateStepVersion entity.
+func (m *ManagedTenantsManagementTemplateStepVersionsItemDeploymentsRequestBuilder) ByManagementTemplateStepDeploymentIdString(managementTemplateStepDeploymentId string)(*ManagedTenantsManagementTemplateStepVersionsItemDeploymentsManagementTemplateStepDeploymentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

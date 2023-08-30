@@ -46,8 +46,8 @@ type ItemUsageRightsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUsageRightId provides operations to manage the usageRights property of the microsoft.graph.user entity.
-func (m *ItemUsageRightsRequestBuilder) ByUsageRightId(usageRightId string)(*ItemUsageRightsUsageRightItemRequestBuilder) {
+// ByUsageRightIdString provides operations to manage the usageRights property of the microsoft.graph.user entity.
+func (m *ItemUsageRightsRequestBuilder) ByUsageRightIdString(usageRightId string)(*ItemUsageRightsUsageRightItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

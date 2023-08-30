@@ -46,8 +46,8 @@ type ExactMatchDataStoresItemSessionsRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByExactMatchSessionId provides operations to manage the sessions property of the microsoft.graph.exactMatchDataStore entity.
-func (m *ExactMatchDataStoresItemSessionsRequestBuilder) ByExactMatchSessionId(exactMatchSessionId string)(*ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder) {
+// ByExactMatchSessionIdString provides operations to manage the sessions property of the microsoft.graph.exactMatchDataStore entity.
+func (m *ExactMatchDataStoresItemSessionsRequestBuilder) ByExactMatchSessionIdString(exactMatchSessionId string)(*ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

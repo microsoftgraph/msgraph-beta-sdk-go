@@ -39,8 +39,8 @@ type IndustryDataRunsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *IndustryDataRunsRequestBuilderGetQueryParameters
 }
-// ByIndustryDataRunId provides operations to manage the runs property of the microsoft.graph.industryData.industryDataRoot entity.
-func (m *IndustryDataRunsRequestBuilder) ByIndustryDataRunId(industryDataRunId string)(*IndustryDataRunsIndustryDataRunItemRequestBuilder) {
+// ByIndustryDataRunIdString provides operations to manage the runs property of the microsoft.graph.industryData.industryDataRoot entity.
+func (m *IndustryDataRunsRequestBuilder) ByIndustryDataRunIdString(industryDataRunId string)(*IndustryDataRunsIndustryDataRunItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

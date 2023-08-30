@@ -1174,7 +1174,7 @@ func (m *SignIn) GetOriginalRequestId()(*string) {
     }
     return nil
 }
-// GetOriginalTransferMethod gets the originalTransferMethod property value. The originalTransferMethod property
+// GetOriginalTransferMethod gets the originalTransferMethod property value. Transfer method used to initiate a session throughout all subsequent request. The possible values are: none, deviceCodeFlow, authenticationTransfer, unknownFutureValue.
 func (m *SignIn) GetOriginalTransferMethod()(*OriginalTransferMethods) {
     val, err := m.GetBackingStore().Get("originalTransferMethod")
     if err != nil {
@@ -1394,7 +1394,7 @@ func (m *SignIn) GetSignInIdentifierType()(*SignInIdentifierType) {
     }
     return nil
 }
-// GetSignInTokenProtectionStatus gets the signInTokenProtectionStatus property value. The signInTokenProtectionStatus property
+// GetSignInTokenProtectionStatus gets the signInTokenProtectionStatus property value. Token protection creates a cryptographically secure tie between the token and the device it's issued to. This field indicates whether the signin token was bound to the device or not. The possible values are: none, bound, unbound, unknownFutureValue.
 func (m *SignIn) GetSignInTokenProtectionStatus()(*TokenProtectionStatus) {
     val, err := m.GetBackingStore().Get("signInTokenProtectionStatus")
     if err != nil {
@@ -2242,7 +2242,7 @@ func (m *SignIn) SetOriginalRequestId(value *string)() {
         panic(err)
     }
 }
-// SetOriginalTransferMethod sets the originalTransferMethod property value. The originalTransferMethod property
+// SetOriginalTransferMethod sets the originalTransferMethod property value. Transfer method used to initiate a session throughout all subsequent request. The possible values are: none, deviceCodeFlow, authenticationTransfer, unknownFutureValue.
 func (m *SignIn) SetOriginalTransferMethod(value *OriginalTransferMethods)() {
     err := m.GetBackingStore().Set("originalTransferMethod", value)
     if err != nil {
@@ -2382,7 +2382,7 @@ func (m *SignIn) SetSignInIdentifierType(value *SignInIdentifierType)() {
         panic(err)
     }
 }
-// SetSignInTokenProtectionStatus sets the signInTokenProtectionStatus property value. The signInTokenProtectionStatus property
+// SetSignInTokenProtectionStatus sets the signInTokenProtectionStatus property value. Token protection creates a cryptographically secure tie between the token and the device it's issued to. This field indicates whether the signin token was bound to the device or not. The possible values are: none, bound, unbound, unknownFutureValue.
 func (m *SignIn) SetSignInTokenProtectionStatus(value *TokenProtectionStatus)() {
     err := m.GetBackingStore().Set("signInTokenProtectionStatus", value)
     if err != nil {

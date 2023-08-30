@@ -46,8 +46,8 @@ type GroupPolicyConfigurationsItemDefinitionValuesRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByGroupPolicyDefinitionValueId provides operations to manage the definitionValues property of the microsoft.graph.groupPolicyConfiguration entity.
-func (m *GroupPolicyConfigurationsItemDefinitionValuesRequestBuilder) ByGroupPolicyDefinitionValueId(groupPolicyDefinitionValueId string)(*GroupPolicyConfigurationsItemDefinitionValuesGroupPolicyDefinitionValueItemRequestBuilder) {
+// ByGroupPolicyDefinitionValueIdString provides operations to manage the definitionValues property of the microsoft.graph.groupPolicyConfiguration entity.
+func (m *GroupPolicyConfigurationsItemDefinitionValuesRequestBuilder) ByGroupPolicyDefinitionValueIdString(groupPolicyDefinitionValueId string)(*GroupPolicyConfigurationsItemDefinitionValuesGroupPolicyDefinitionValueItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -39,8 +39,8 @@ type RoleAssignmentsItemRoleScopeTagsRequestBuilderGetRequestConfiguration struc
     // Request query parameters
     QueryParameters *RoleAssignmentsItemRoleScopeTagsRequestBuilderGetQueryParameters
 }
-// ByRoleScopeTagId provides operations to manage the roleScopeTags property of the microsoft.graph.deviceAndAppManagementRoleAssignment entity.
-func (m *RoleAssignmentsItemRoleScopeTagsRequestBuilder) ByRoleScopeTagId(roleScopeTagId string)(*RoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilder) {
+// ByRoleScopeTagIdString provides operations to manage the roleScopeTags property of the microsoft.graph.deviceAndAppManagementRoleAssignment entity.
+func (m *RoleAssignmentsItemRoleScopeTagsRequestBuilder) ByRoleScopeTagIdString(roleScopeTagId string)(*RoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type ItemCustomQuestionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByBookingCustomQuestionId provides operations to manage the customQuestions property of the microsoft.graph.bookingBusiness entity.
-func (m *ItemCustomQuestionsRequestBuilder) ByBookingCustomQuestionId(bookingCustomQuestionId string)(*ItemCustomQuestionsBookingCustomQuestionItemRequestBuilder) {
+// ByBookingCustomQuestionIdString provides operations to manage the customQuestions property of the microsoft.graph.bookingBusiness entity.
+func (m *ItemCustomQuestionsRequestBuilder) ByBookingCustomQuestionIdString(bookingCustomQuestionId string)(*ItemCustomQuestionsBookingCustomQuestionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

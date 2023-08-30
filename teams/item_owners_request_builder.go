@@ -39,8 +39,8 @@ type ItemOwnersRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemOwnersRequestBuilderGetQueryParameters
 }
-// ByUserId provides operations to manage the owners property of the microsoft.graph.team entity.
-func (m *ItemOwnersRequestBuilder) ByUserId(userId string)(*ItemOwnersUserItemRequestBuilder) {
+// ByUserIdString provides operations to manage the owners property of the microsoft.graph.team entity.
+func (m *ItemOwnersRequestBuilder) ByUserIdString(userId string)(*ItemOwnersUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

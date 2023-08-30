@@ -39,8 +39,8 @@ type ItemIncludedGroupsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemIncludedGroupsRequestBuilderGetQueryParameters
 }
-// ByGroupId gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.mobilityManagementPolicies.item.includedGroups.item collection
-func (m *ItemIncludedGroupsRequestBuilder) ByGroupId(groupId string)(*ItemIncludedGroupsGroupItemRequestBuilder) {
+// ByGroupIdString gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.mobilityManagementPolicies.item.includedGroups.item collection
+func (m *ItemIncludedGroupsRequestBuilder) ByGroupIdString(groupId string)(*ItemIncludedGroupsGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

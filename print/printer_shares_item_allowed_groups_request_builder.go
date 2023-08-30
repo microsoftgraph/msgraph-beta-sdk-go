@@ -39,8 +39,8 @@ type PrinterSharesItemAllowedGroupsRequestBuilderGetRequestConfiguration struct 
     // Request query parameters
     QueryParameters *PrinterSharesItemAllowedGroupsRequestBuilderGetQueryParameters
 }
-// ByGroupId gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.print.printerShares.item.allowedGroups.item collection
-func (m *PrinterSharesItemAllowedGroupsRequestBuilder) ByGroupId(groupId string)(*PrinterSharesItemAllowedGroupsGroupItemRequestBuilder) {
+// ByGroupIdString gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.print.printerShares.item.allowedGroups.item collection
+func (m *PrinterSharesItemAllowedGroupsRequestBuilder) ByGroupIdString(groupId string)(*PrinterSharesItemAllowedGroupsGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

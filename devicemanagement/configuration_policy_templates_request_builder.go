@@ -46,8 +46,8 @@ type ConfigurationPolicyTemplatesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementConfigurationPolicyTemplateId provides operations to manage the configurationPolicyTemplates property of the microsoft.graph.deviceManagement entity.
-func (m *ConfigurationPolicyTemplatesRequestBuilder) ByDeviceManagementConfigurationPolicyTemplateId(deviceManagementConfigurationPolicyTemplateId string)(*ConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilder) {
+// ByDeviceManagementConfigurationPolicyTemplateIdString provides operations to manage the configurationPolicyTemplates property of the microsoft.graph.deviceManagement entity.
+func (m *ConfigurationPolicyTemplatesRequestBuilder) ByDeviceManagementConfigurationPolicyTemplateIdString(deviceManagementConfigurationPolicyTemplateId string)(*ConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

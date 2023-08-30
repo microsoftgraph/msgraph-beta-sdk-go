@@ -50,8 +50,8 @@ type DeletedTeamsItemChannelsItemMembersRequestBuilderPostRequestConfiguration s
 func (m *DeletedTeamsItemChannelsItemMembersRequestBuilder) Add()(*DeletedTeamsItemChannelsItemMembersAddRequestBuilder) {
     return NewDeletedTeamsItemChannelsItemMembersAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByConversationMemberId provides operations to manage the members property of the microsoft.graph.channel entity.
-func (m *DeletedTeamsItemChannelsItemMembersRequestBuilder) ByConversationMemberId(conversationMemberId string)(*DeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilder) {
+// ByConversationMemberIdString provides operations to manage the members property of the microsoft.graph.channel entity.
+func (m *DeletedTeamsItemChannelsItemMembersRequestBuilder) ByConversationMemberIdString(conversationMemberId string)(*DeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type AndroidDeviceOwnerEnrollmentProfilesRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAndroidDeviceOwnerEnrollmentProfileId provides operations to manage the androidDeviceOwnerEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
-func (m *AndroidDeviceOwnerEnrollmentProfilesRequestBuilder) ByAndroidDeviceOwnerEnrollmentProfileId(androidDeviceOwnerEnrollmentProfileId string)(*AndroidDeviceOwnerEnrollmentProfilesAndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) {
+// ByAndroidDeviceOwnerEnrollmentProfileIdString provides operations to manage the androidDeviceOwnerEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
+func (m *AndroidDeviceOwnerEnrollmentProfilesRequestBuilder) ByAndroidDeviceOwnerEnrollmentProfileIdString(androidDeviceOwnerEnrollmentProfileId string)(*AndroidDeviceOwnerEnrollmentProfilesAndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
