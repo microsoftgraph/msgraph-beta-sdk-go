@@ -145,3 +145,7 @@ func (m *DerivedCredentialsRequestBuilder) ToPostRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DerivedCredentialsRequestBuilder) WithUrl(rawUrl string)(*DerivedCredentialsRequestBuilder) {
+    return NewDerivedCredentialsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

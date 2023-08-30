@@ -145,3 +145,7 @@ func (m *GroupPolicyUploadedDefinitionFilesItemGroupPolicyOperationsRequestBuild
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GroupPolicyUploadedDefinitionFilesItemGroupPolicyOperationsRequestBuilder) WithUrl(rawUrl string)(*GroupPolicyUploadedDefinitionFilesItemGroupPolicyOperationsRequestBuilder) {
+    return NewGroupPolicyUploadedDefinitionFilesItemGroupPolicyOperationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

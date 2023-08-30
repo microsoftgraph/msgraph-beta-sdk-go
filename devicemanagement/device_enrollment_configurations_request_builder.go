@@ -153,3 +153,7 @@ func (m *DeviceEnrollmentConfigurationsRequestBuilder) ToPostRequestInformation(
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceEnrollmentConfigurationsRequestBuilder) WithUrl(rawUrl string)(*DeviceEnrollmentConfigurationsRequestBuilder) {
+    return NewDeviceEnrollmentConfigurationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

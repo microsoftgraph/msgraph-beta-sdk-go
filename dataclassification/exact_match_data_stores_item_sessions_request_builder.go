@@ -145,3 +145,7 @@ func (m *ExactMatchDataStoresItemSessionsRequestBuilder) ToPostRequestInformatio
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ExactMatchDataStoresItemSessionsRequestBuilder) WithUrl(rawUrl string)(*ExactMatchDataStoresItemSessionsRequestBuilder) {
+    return NewExactMatchDataStoresItemSessionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -155,3 +155,7 @@ func (m *ItemChatsItemMessagesRequestBuilder) ToPostRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemChatsItemMessagesRequestBuilder) WithUrl(rawUrl string)(*ItemChatsItemMessagesRequestBuilder) {
+    return NewItemChatsItemMessagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

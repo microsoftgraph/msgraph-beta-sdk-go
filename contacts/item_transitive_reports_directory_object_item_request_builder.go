@@ -75,3 +75,7 @@ func (m *ItemTransitiveReportsDirectoryObjectItemRequestBuilder) ToGetRequestInf
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTransitiveReportsDirectoryObjectItemRequestBuilder) WithUrl(rawUrl string)(*ItemTransitiveReportsDirectoryObjectItemRequestBuilder) {
+    return NewItemTransitiveReportsDirectoryObjectItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

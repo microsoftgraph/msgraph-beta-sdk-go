@@ -145,3 +145,7 @@ func (m *ItemOnlineMeetingsItemRegistrationRegistrantsRequestBuilder) ToPostRequ
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemOnlineMeetingsItemRegistrationRegistrantsRequestBuilder) WithUrl(rawUrl string)(*ItemOnlineMeetingsItemRegistrationRegistrantsRequestBuilder) {
+    return NewItemOnlineMeetingsItemRegistrationRegistrantsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

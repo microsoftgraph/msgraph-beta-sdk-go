@@ -145,3 +145,7 @@ func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) ToPostRequest
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) WithUrl(rawUrl string)(*AndroidManagedStoreAppConfigurationSchemasRequestBuilder) {
+    return NewAndroidManagedStoreAppConfigurationSchemasRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

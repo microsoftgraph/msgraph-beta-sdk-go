@@ -173,3 +173,7 @@ func (m *ItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBui
 func (m *ItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilder) UpdateRequest()(*ItemRoleAssignmentRequestsItemUpdateRequestRequestBuilder) {
     return NewItemRoleAssignmentRequestsItemUpdateRequestRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilder) WithUrl(rawUrl string)(*ItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilder) {
+    return NewItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

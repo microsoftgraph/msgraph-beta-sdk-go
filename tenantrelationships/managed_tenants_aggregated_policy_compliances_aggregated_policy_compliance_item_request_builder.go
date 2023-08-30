@@ -153,3 +153,7 @@ func (m *ManagedTenantsAggregatedPolicyCompliancesAggregatedPolicyComplianceItem
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedTenantsAggregatedPolicyCompliancesAggregatedPolicyComplianceItemRequestBuilder) WithUrl(rawUrl string)(*ManagedTenantsAggregatedPolicyCompliancesAggregatedPolicyComplianceItemRequestBuilder) {
+    return NewManagedTenantsAggregatedPolicyCompliancesAggregatedPolicyComplianceItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

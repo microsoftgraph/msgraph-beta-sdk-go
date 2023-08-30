@@ -118,3 +118,7 @@ func (m *SubjectRightsRequestsItemApproversItemMailboxSettingsRequestBuilder) To
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SubjectRightsRequestsItemApproversItemMailboxSettingsRequestBuilder) WithUrl(rawUrl string)(*SubjectRightsRequestsItemApproversItemMailboxSettingsRequestBuilder) {
+    return NewSubjectRightsRequestsItemApproversItemMailboxSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

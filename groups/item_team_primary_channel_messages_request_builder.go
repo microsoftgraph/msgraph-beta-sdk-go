@@ -100,10 +100,10 @@ func (m *ItemTeamPrimaryChannelMessagesRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageCollectionResponseable), nil
 }
-// Post send a new chatMessage in the specified channel or a chat.
+// Post send a new chatMessage in the specified channel.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
 func (m *ItemTeamPrimaryChannelMessagesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, requestConfiguration *ItemTeamPrimaryChannelMessagesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -138,7 +138,7 @@ func (m *ItemTeamPrimaryChannelMessagesRequestBuilder) ToGetRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation send a new chatMessage in the specified channel or a chat.
+// ToPostRequestInformation send a new chatMessage in the specified channel.
 func (m *ItemTeamPrimaryChannelMessagesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, requestConfiguration *ItemTeamPrimaryChannelMessagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -154,4 +154,8 @@ func (m *ItemTeamPrimaryChannelMessagesRequestBuilder) ToPostRequestInformation(
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTeamPrimaryChannelMessagesRequestBuilder) WithUrl(rawUrl string)(*ItemTeamPrimaryChannelMessagesRequestBuilder) {
+    return NewItemTeamPrimaryChannelMessagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

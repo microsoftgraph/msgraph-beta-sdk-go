@@ -170,3 +170,7 @@ func (m *B2cUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilde
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *B2cUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilder) WithUrl(rawUrl string)(*B2cUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilder) {
+    return NewB2cUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

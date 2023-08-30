@@ -67,3 +67,8 @@ func (m *ManagedDevicesItemRestoreCloudPcRequestBuilder) ToPostRequestInformatio
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The restoreCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use restore instead as of 2023-07/restoreCloudPc on 2023-07-17 and will be removed 2023-09-30
+func (m *ManagedDevicesItemRestoreCloudPcRequestBuilder) WithUrl(rawUrl string)(*ManagedDevicesItemRestoreCloudPcRequestBuilder) {
+    return NewManagedDevicesItemRestoreCloudPcRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

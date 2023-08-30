@@ -574,3 +574,7 @@ func (m *UserItemRequestBuilder) WipeManagedAppRegistrationsByAzureAdDeviceId()(
 func (m *UserItemRequestBuilder) WipeManagedAppRegistrationsByDeviceTag()(*ItemWipeManagedAppRegistrationsByDeviceTagRequestBuilder) {
     return NewItemWipeManagedAppRegistrationsByDeviceTagRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *UserItemRequestBuilder) WithUrl(rawUrl string)(*UserItemRequestBuilder) {
+    return NewUserItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

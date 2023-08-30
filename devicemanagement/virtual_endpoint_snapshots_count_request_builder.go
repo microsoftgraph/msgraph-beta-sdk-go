@@ -74,3 +74,7 @@ func (m *VirtualEndpointSnapshotsCountRequestBuilder) ToGetRequestInformation(ct
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEndpointSnapshotsCountRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointSnapshotsCountRequestBuilder) {
+    return NewVirtualEndpointSnapshotsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

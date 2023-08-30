@@ -152,3 +152,7 @@ func (m *PrivilegedAccessGroupAssignmentSchedulesRequestBuilder) ToPostRequestIn
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *PrivilegedAccessGroupAssignmentSchedulesRequestBuilder) WithUrl(rawUrl string)(*PrivilegedAccessGroupAssignmentSchedulesRequestBuilder) {
+    return NewPrivilegedAccessGroupAssignmentSchedulesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

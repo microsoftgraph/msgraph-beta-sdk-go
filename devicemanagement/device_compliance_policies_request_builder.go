@@ -169,3 +169,7 @@ func (m *DeviceCompliancePoliciesRequestBuilder) ToPostRequestInformation(ctx co
 func (m *DeviceCompliancePoliciesRequestBuilder) ValidateComplianceScript()(*DeviceCompliancePoliciesValidateComplianceScriptRequestBuilder) {
     return NewDeviceCompliancePoliciesValidateComplianceScriptRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceCompliancePoliciesRequestBuilder) WithUrl(rawUrl string)(*DeviceCompliancePoliciesRequestBuilder) {
+    return NewDeviceCompliancePoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

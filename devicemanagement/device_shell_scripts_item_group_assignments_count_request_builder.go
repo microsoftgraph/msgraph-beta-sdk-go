@@ -74,3 +74,7 @@ func (m *DeviceShellScriptsItemGroupAssignmentsCountRequestBuilder) ToGetRequest
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceShellScriptsItemGroupAssignmentsCountRequestBuilder) WithUrl(rawUrl string)(*DeviceShellScriptsItemGroupAssignmentsCountRequestBuilder) {
+    return NewDeviceShellScriptsItemGroupAssignmentsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

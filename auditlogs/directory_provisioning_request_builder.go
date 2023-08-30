@@ -145,3 +145,7 @@ func (m *DirectoryProvisioningRequestBuilder) ToPostRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DirectoryProvisioningRequestBuilder) WithUrl(rawUrl string)(*DirectoryProvisioningRequestBuilder) {
+    return NewDirectoryProvisioningRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

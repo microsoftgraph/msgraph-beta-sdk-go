@@ -11,7 +11,7 @@ import (
 type PermissionGrantPoliciesItemExcludesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PermissionGrantPoliciesItemExcludesRequestBuilderGetQueryParameters retrieve the condition sets which are *excluded* in a permissionGrantPolicy.
+// PermissionGrantPoliciesItemExcludesRequestBuilderGetQueryParameters retrieve the condition sets that are *excluded* in a permissionGrantPolicy.
 type PermissionGrantPoliciesItemExcludesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewPermissionGrantPoliciesItemExcludesRequestBuilder(rawUrl string, request
 func (m *PermissionGrantPoliciesItemExcludesRequestBuilder) Count()(*PermissionGrantPoliciesItemExcludesCountRequestBuilder) {
     return NewPermissionGrantPoliciesItemExcludesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the condition sets which are *excluded* in a permissionGrantPolicy.
+// Get retrieve the condition sets that are *excluded* in a permissionGrantPolicy.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/permissiongrantpolicy-list-excludes?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *PermissionGrantPoliciesItemExcludesRequestBuilder) Post(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionGrantConditionSetable), nil
 }
-// ToGetRequestInformation retrieve the condition sets which are *excluded* in a permissionGrantPolicy.
+// ToGetRequestInformation retrieve the condition sets that are *excluded* in a permissionGrantPolicy.
 func (m *PermissionGrantPoliciesItemExcludesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PermissionGrantPoliciesItemExcludesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -150,4 +150,8 @@ func (m *PermissionGrantPoliciesItemExcludesRequestBuilder) ToPostRequestInforma
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *PermissionGrantPoliciesItemExcludesRequestBuilder) WithUrl(rawUrl string)(*PermissionGrantPoliciesItemExcludesRequestBuilder) {
+    return NewPermissionGrantPoliciesItemExcludesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

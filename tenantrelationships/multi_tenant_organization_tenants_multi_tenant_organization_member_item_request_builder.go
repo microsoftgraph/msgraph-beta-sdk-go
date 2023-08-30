@@ -18,7 +18,7 @@ type MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuilderGetQueryParameters get tenants from tenantRelationships
+// MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuilderGetQueryParameters get a tenant and its properties in the multi-tenant organization.
 type MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewMultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBu
     urlParams["request-raw-url"] = rawUrl
     return NewMultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property tenants for tenantRelationships
+// Delete remove a tenant from a multi-tenant organization. A tenant can be removed in the following scenarios: To allow for asynchronous processing, you must wait for up to 2 hours before removal of a tenant is completed.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/multitenantorganization-delete-tenants?view=graph-rest-1.0
 func (m *MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestB
     }
     return nil
 }
-// Get get tenants from tenantRelationships
+// Get get a tenant and its properties in the multi-tenant organization.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/multitenantorganizationmember-get?view=graph-rest-1.0
 func (m *MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiTenantOrganizationMemberable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -108,7 +114,7 @@ func (m *MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestB
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiTenantOrganizationMemberable), nil
 }
-// ToDeleteRequestInformation delete navigation property tenants for tenantRelationships
+// ToDeleteRequestInformation remove a tenant from a multi-tenant organization. A tenant can be removed in the following scenarios: To allow for asynchronous processing, you must wait for up to 2 hours before removal of a tenant is completed.
 func (m *MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +126,7 @@ func (m *MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestB
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get tenants from tenantRelationships
+// ToGetRequestInformation get a tenant and its properties in the multi-tenant organization.
 func (m *MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -152,4 +158,8 @@ func (m *MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestB
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuilder) WithUrl(rawUrl string)(*MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuilder) {
+    return NewMultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

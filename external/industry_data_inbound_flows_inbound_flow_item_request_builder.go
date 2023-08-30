@@ -18,7 +18,7 @@ type IndustryDataInboundFlowsInboundFlowItemRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IndustryDataInboundFlowsInboundFlowItemRequestBuilderGetQueryParameters read the properties and relationships of an inboundFileFlow object.
+// IndustryDataInboundFlowsInboundFlowItemRequestBuilderGetQueryParameters read the properties and relationships of an inboundFlow object.
 type IndustryDataInboundFlowsInboundFlowItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,10 +58,10 @@ func NewIndustryDataInboundFlowsInboundFlowItemRequestBuilder(rawUrl string, req
 func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) DataConnector()(*IndustryDataInboundFlowsItemDataConnectorRequestBuilder) {
     return NewIndustryDataInboundFlowsItemDataConnectorRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete delete an inboundFileFlow object.
+// Delete delete an inboundFlow object.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundflow-delete?view=graph-rest-1.0
 func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IndustryDataInboundFlowsInboundFlowItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -77,10 +77,10 @@ func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) Delete(ctx conte
     }
     return nil
 }
-// Get read the properties and relationships of an inboundFileFlow object.
+// Get read the properties and relationships of an inboundFlow object.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundflow-get?view=graph-rest-1.0
 func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataInboundFlowsInboundFlowItemRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,10 +99,10 @@ func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) Get(ctx context.
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable), nil
 }
-// Patch update the properties of an inboundFileFlow object.
+// Patch update the properties of an inboundFlow object.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundflow-update?view=graph-rest-1.0
 func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) Patch(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable, requestConfiguration *IndustryDataInboundFlowsInboundFlowItemRequestBuilderPatchRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +121,7 @@ func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) Patch(ctx contex
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable), nil
 }
-// ToDeleteRequestInformation delete an inboundFileFlow object.
+// ToDeleteRequestInformation delete an inboundFlow object.
 func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *IndustryDataInboundFlowsInboundFlowItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -133,7 +133,7 @@ func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) ToDeleteRequestI
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an inboundFileFlow object.
+// ToGetRequestInformation read the properties and relationships of an inboundFlow object.
 func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataInboundFlowsInboundFlowItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -149,7 +149,7 @@ func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) ToGetRequestInfo
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an inboundFileFlow object.
+// ToPatchRequestInformation update the properties of an inboundFlow object.
 func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable, requestConfiguration *IndustryDataInboundFlowsInboundFlowItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -165,6 +165,10 @@ func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) ToPatchRequestIn
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) WithUrl(rawUrl string)(*IndustryDataInboundFlowsInboundFlowItemRequestBuilder) {
+    return NewIndustryDataInboundFlowsInboundFlowItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }
 // Year provides operations to manage the year property of the microsoft.graph.industryData.inboundFlow entity.
 func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) Year()(*IndustryDataInboundFlowsItemYearRequestBuilder) {

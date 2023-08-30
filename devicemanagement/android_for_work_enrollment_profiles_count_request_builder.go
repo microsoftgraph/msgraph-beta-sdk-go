@@ -74,3 +74,7 @@ func (m *AndroidForWorkEnrollmentProfilesCountRequestBuilder) ToGetRequestInform
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AndroidForWorkEnrollmentProfilesCountRequestBuilder) WithUrl(rawUrl string)(*AndroidForWorkEnrollmentProfilesCountRequestBuilder) {
+    return NewAndroidForWorkEnrollmentProfilesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

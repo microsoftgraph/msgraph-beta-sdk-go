@@ -220,3 +220,7 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) ToPatchRequestInformation(ctx co
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) Troubleshoot()(*ItemCloudPCsItemTroubleshootRequestBuilder) {
     return NewItemCloudPCsItemTroubleshootRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) WithUrl(rawUrl string)(*ItemCloudPCsCloudPCItemRequestBuilder) {
+    return NewItemCloudPCsCloudPCItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

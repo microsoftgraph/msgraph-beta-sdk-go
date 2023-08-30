@@ -61,3 +61,7 @@ func (m *VirtualEndpointCloudPCsItemEndGracePeriodRequestBuilder) ToPostRequestI
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEndpointCloudPCsItemEndGracePeriodRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointCloudPCsItemEndGracePeriodRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemEndGracePeriodRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

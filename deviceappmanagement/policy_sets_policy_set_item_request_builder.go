@@ -165,3 +165,7 @@ func (m *PolicySetsPolicySetItemRequestBuilder) ToPatchRequestInformation(ctx co
 func (m *PolicySetsPolicySetItemRequestBuilder) Update()(*PolicySetsItemUpdateRequestBuilder) {
     return NewPolicySetsItemUpdateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *PolicySetsPolicySetItemRequestBuilder) WithUrl(rawUrl string)(*PolicySetsPolicySetItemRequestBuilder) {
+    return NewPolicySetsPolicySetItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

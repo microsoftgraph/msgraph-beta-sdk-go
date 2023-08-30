@@ -214,3 +214,7 @@ func (m *SecurityRequestBuilder) TriggerTypes()(*TriggerTypesRequestBuilder) {
 func (m *SecurityRequestBuilder) UserSecurityProfiles()(*UserSecurityProfilesRequestBuilder) {
     return NewUserSecurityProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SecurityRequestBuilder) WithUrl(rawUrl string)(*SecurityRequestBuilder) {
+    return NewSecurityRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

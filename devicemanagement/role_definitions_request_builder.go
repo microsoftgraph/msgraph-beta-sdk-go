@@ -145,3 +145,7 @@ func (m *RoleDefinitionsRequestBuilder) ToPostRequestInformation(ctx context.Con
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *RoleDefinitionsRequestBuilder) WithUrl(rawUrl string)(*RoleDefinitionsRequestBuilder) {
+    return NewRoleDefinitionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

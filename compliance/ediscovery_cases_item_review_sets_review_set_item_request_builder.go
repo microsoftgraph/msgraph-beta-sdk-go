@@ -174,3 +174,8 @@ func (m *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) ToPatchReques
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
+func (m *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) WithUrl(rawUrl string)(*EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) {
+    return NewEdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

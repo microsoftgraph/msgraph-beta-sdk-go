@@ -104,3 +104,8 @@ func (m *ItemSynchronizationJobsItemBulkUploadValueContentRequestBuilder) ToPutR
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-10/PrivatePreview:HRInboundPushApi on 2022-10-04 and will be removed 2023-06-14
+func (m *ItemSynchronizationJobsItemBulkUploadValueContentRequestBuilder) WithUrl(rawUrl string)(*ItemSynchronizationJobsItemBulkUploadValueContentRequestBuilder) {
+    return NewItemSynchronizationJobsItemBulkUploadValueContentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

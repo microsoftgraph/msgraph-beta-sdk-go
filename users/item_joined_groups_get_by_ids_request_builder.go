@@ -69,3 +69,7 @@ func (m *ItemJoinedGroupsGetByIdsRequestBuilder) ToPostRequestInformation(ctx co
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemJoinedGroupsGetByIdsRequestBuilder) WithUrl(rawUrl string)(*ItemJoinedGroupsGetByIdsRequestBuilder) {
+    return NewItemJoinedGroupsGetByIdsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

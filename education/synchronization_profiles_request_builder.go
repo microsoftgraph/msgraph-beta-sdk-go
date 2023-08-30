@@ -148,3 +148,7 @@ func (m *SynchronizationProfilesRequestBuilder) ToPostRequestInformation(ctx con
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SynchronizationProfilesRequestBuilder) WithUrl(rawUrl string)(*SynchronizationProfilesRequestBuilder) {
+    return NewSynchronizationProfilesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

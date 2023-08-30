@@ -74,3 +74,7 @@ func (m *ComanagementEligibleDevicesCountRequestBuilder) ToGetRequestInformation
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ComanagementEligibleDevicesCountRequestBuilder) WithUrl(rawUrl string)(*ComanagementEligibleDevicesCountRequestBuilder) {
+    return NewComanagementEligibleDevicesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

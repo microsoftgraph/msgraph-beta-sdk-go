@@ -145,3 +145,7 @@ func (m *ServicePrincipalCreationPoliciesItemExcludesRequestBuilder) ToPostReque
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ServicePrincipalCreationPoliciesItemExcludesRequestBuilder) WithUrl(rawUrl string)(*ServicePrincipalCreationPoliciesItemExcludesRequestBuilder) {
+    return NewServicePrincipalCreationPoliciesItemExcludesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

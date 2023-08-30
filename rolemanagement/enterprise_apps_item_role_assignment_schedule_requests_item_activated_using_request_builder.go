@@ -75,3 +75,7 @@ func (m *EnterpriseAppsItemRoleAssignmentScheduleRequestsItemActivatedUsingReque
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EnterpriseAppsItemRoleAssignmentScheduleRequestsItemActivatedUsingRequestBuilder) WithUrl(rawUrl string)(*EnterpriseAppsItemRoleAssignmentScheduleRequestsItemActivatedUsingRequestBuilder) {
+    return NewEnterpriseAppsItemRoleAssignmentScheduleRequestsItemActivatedUsingRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

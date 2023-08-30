@@ -58,3 +58,7 @@ func (m *EnableUnlicensedAdminstratorsRequestBuilder) ToPostRequestInformation(c
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EnableUnlicensedAdminstratorsRequestBuilder) WithUrl(rawUrl string)(*EnableUnlicensedAdminstratorsRequestBuilder) {
+    return NewEnableUnlicensedAdminstratorsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

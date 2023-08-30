@@ -164,3 +164,7 @@ func (m *ItemTeamPermissionGrantsRequestBuilder) ToPostRequestInformation(ctx co
 func (m *ItemTeamPermissionGrantsRequestBuilder) ValidateProperties()(*ItemTeamPermissionGrantsValidatePropertiesRequestBuilder) {
     return NewItemTeamPermissionGrantsValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTeamPermissionGrantsRequestBuilder) WithUrl(rawUrl string)(*ItemTeamPermissionGrantsRequestBuilder) {
+    return NewItemTeamPermissionGrantsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

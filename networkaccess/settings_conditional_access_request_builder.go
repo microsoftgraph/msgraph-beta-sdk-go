@@ -159,3 +159,7 @@ func (m *SettingsConditionalAccessRequestBuilder) ToPatchRequestInformation(ctx 
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SettingsConditionalAccessRequestBuilder) WithUrl(rawUrl string)(*SettingsConditionalAccessRequestBuilder) {
+    return NewSettingsConditionalAccessRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

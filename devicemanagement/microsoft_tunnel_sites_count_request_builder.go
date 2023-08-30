@@ -74,3 +74,7 @@ func (m *MicrosoftTunnelSitesCountRequestBuilder) ToGetRequestInformation(ctx co
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MicrosoftTunnelSitesCountRequestBuilder) WithUrl(rawUrl string)(*MicrosoftTunnelSitesCountRequestBuilder) {
+    return NewMicrosoftTunnelSitesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

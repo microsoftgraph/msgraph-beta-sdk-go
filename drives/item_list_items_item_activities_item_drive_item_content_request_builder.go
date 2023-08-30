@@ -102,3 +102,7 @@ func (m *ItemListItemsItemActivitiesItemDriveItemContentRequestBuilder) ToPutReq
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemListItemsItemActivitiesItemDriveItemContentRequestBuilder) WithUrl(rawUrl string)(*ItemListItemsItemActivitiesItemDriveItemContentRequestBuilder) {
+    return NewItemListItemsItemActivitiesItemDriveItemContentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -153,3 +153,7 @@ func (m *NdesConnectorsNdesConnectorItemRequestBuilder) ToPatchRequestInformatio
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *NdesConnectorsNdesConnectorItemRequestBuilder) WithUrl(rawUrl string)(*NdesConnectorsNdesConnectorItemRequestBuilder) {
+    return NewNdesConnectorsNdesConnectorItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

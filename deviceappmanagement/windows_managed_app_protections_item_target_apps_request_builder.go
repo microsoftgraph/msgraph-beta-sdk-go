@@ -62,3 +62,7 @@ func (m *WindowsManagedAppProtectionsItemTargetAppsRequestBuilder) ToPostRequest
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsManagedAppProtectionsItemTargetAppsRequestBuilder) WithUrl(rawUrl string)(*WindowsManagedAppProtectionsItemTargetAppsRequestBuilder) {
+    return NewWindowsManagedAppProtectionsItemTargetAppsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

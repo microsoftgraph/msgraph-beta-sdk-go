@@ -157,3 +157,7 @@ func (m *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestB
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilder) WithUrl(rawUrl string)(*ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilder) {
+    return NewConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

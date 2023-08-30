@@ -157,3 +157,7 @@ func (m *ConnectivityBranchesItemConnectivityConfigurationRequestBuilder) ToPatc
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ConnectivityBranchesItemConnectivityConfigurationRequestBuilder) WithUrl(rawUrl string)(*ConnectivityBranchesItemConnectivityConfigurationRequestBuilder) {
+    return NewConnectivityBranchesItemConnectivityConfigurationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

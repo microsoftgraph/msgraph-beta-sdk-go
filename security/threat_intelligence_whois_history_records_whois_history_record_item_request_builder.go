@@ -157,3 +157,7 @@ func (m *ThreatIntelligenceWhoisHistoryRecordsWhoisHistoryRecordItemRequestBuild
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ThreatIntelligenceWhoisHistoryRecordsWhoisHistoryRecordItemRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceWhoisHistoryRecordsWhoisHistoryRecordItemRequestBuilder) {
+    return NewThreatIntelligenceWhoisHistoryRecordsWhoisHistoryRecordItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

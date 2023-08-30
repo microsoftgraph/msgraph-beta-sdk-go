@@ -85,7 +85,7 @@ func (m *ItemItemsItemWorkbookNamesRequestBuilder) Count()(*ItemItemsItemWorkboo
 // Get retrieve a list of nameditem objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/nameditem-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/workbook-list-names?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookNamesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookNamesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookNamedItemCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -155,4 +155,8 @@ func (m *ItemItemsItemWorkbookNamesRequestBuilder) ToPostRequestInformation(ctx 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemWorkbookNamesRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookNamesRequestBuilder) {
+    return NewItemItemsItemWorkbookNamesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

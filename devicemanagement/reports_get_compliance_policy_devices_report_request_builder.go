@@ -65,3 +65,7 @@ func (m *ReportsGetCompliancePolicyDevicesReportRequestBuilder) ToPostRequestInf
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ReportsGetCompliancePolicyDevicesReportRequestBuilder) WithUrl(rawUrl string)(*ReportsGetCompliancePolicyDevicesReportRequestBuilder) {
+    return NewReportsGetCompliancePolicyDevicesReportRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

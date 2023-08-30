@@ -149,3 +149,7 @@ func (m *GovernanceResourcesRequestBuilder) ToPostRequestInformation(ctx context
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GovernanceResourcesRequestBuilder) WithUrl(rawUrl string)(*GovernanceResourcesRequestBuilder) {
+    return NewGovernanceResourcesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

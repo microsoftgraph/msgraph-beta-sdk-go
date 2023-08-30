@@ -145,3 +145,7 @@ func (m *CloudPCRoleDefinitionsItemInheritsPermissionsFromRequestBuilder) ToPost
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CloudPCRoleDefinitionsItemInheritsPermissionsFromRequestBuilder) WithUrl(rawUrl string)(*CloudPCRoleDefinitionsItemInheritsPermissionsFromRequestBuilder) {
+    return NewCloudPCRoleDefinitionsItemInheritsPermissionsFromRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

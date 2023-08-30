@@ -61,3 +61,7 @@ func (m *VirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilder)
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

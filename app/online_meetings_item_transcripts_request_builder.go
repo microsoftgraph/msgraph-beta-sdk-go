@@ -74,6 +74,10 @@ func NewOnlineMeetingsItemTranscriptsRequestBuilder(rawUrl string, requestAdapte
 func (m *OnlineMeetingsItemTranscriptsRequestBuilder) Count()(*OnlineMeetingsItemTranscriptsCountRequestBuilder) {
     return NewOnlineMeetingsItemTranscriptsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Delta provides operations to call the delta method.
+func (m *OnlineMeetingsItemTranscriptsRequestBuilder) Delta()(*OnlineMeetingsItemTranscriptsDeltaRequestBuilder) {
+    return NewOnlineMeetingsItemTranscriptsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get retrieve the list of callTranscript objects associated with an onlineMeeting.
 // [Find more info here]
 // 
@@ -147,4 +151,8 @@ func (m *OnlineMeetingsItemTranscriptsRequestBuilder) ToPostRequestInformation(c
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *OnlineMeetingsItemTranscriptsRequestBuilder) WithUrl(rawUrl string)(*OnlineMeetingsItemTranscriptsRequestBuilder) {
+    return NewOnlineMeetingsItemTranscriptsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

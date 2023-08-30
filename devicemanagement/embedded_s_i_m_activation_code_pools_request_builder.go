@@ -145,3 +145,7 @@ func (m *EmbeddedSIMActivationCodePoolsRequestBuilder) ToPostRequestInformation(
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EmbeddedSIMActivationCodePoolsRequestBuilder) WithUrl(rawUrl string)(*EmbeddedSIMActivationCodePoolsRequestBuilder) {
+    return NewEmbeddedSIMActivationCodePoolsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

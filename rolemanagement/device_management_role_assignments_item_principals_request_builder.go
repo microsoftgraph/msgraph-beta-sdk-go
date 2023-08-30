@@ -102,3 +102,7 @@ func (m *DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilder) ToGetReque
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilder) WithUrl(rawUrl string)(*DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilder) {
+    return NewDeviceManagementRoleAssignmentsItemPrincipalsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -74,6 +74,10 @@ func NewVirtualEventsEventsItemSessionsItemTranscriptsRequestBuilder(rawUrl stri
 func (m *VirtualEventsEventsItemSessionsItemTranscriptsRequestBuilder) Count()(*VirtualEventsEventsItemSessionsItemTranscriptsCountRequestBuilder) {
     return NewVirtualEventsEventsItemSessionsItemTranscriptsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Delta provides operations to call the delta method.
+func (m *VirtualEventsEventsItemSessionsItemTranscriptsRequestBuilder) Delta()(*VirtualEventsEventsItemSessionsItemTranscriptsDeltaRequestBuilder) {
+    return NewVirtualEventsEventsItemSessionsItemTranscriptsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get retrieve the list of callTranscript objects associated with an onlineMeeting.
 // [Find more info here]
 // 
@@ -147,4 +151,8 @@ func (m *VirtualEventsEventsItemSessionsItemTranscriptsRequestBuilder) ToPostReq
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEventsEventsItemSessionsItemTranscriptsRequestBuilder) WithUrl(rawUrl string)(*VirtualEventsEventsItemSessionsItemTranscriptsRequestBuilder) {
+    return NewVirtualEventsEventsItemSessionsItemTranscriptsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

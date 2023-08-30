@@ -177,3 +177,7 @@ func (m *DeviceShellScriptsDeviceShellScriptItemRequestBuilder) ToPatchRequestIn
 func (m *DeviceShellScriptsDeviceShellScriptItemRequestBuilder) UserRunStates()(*DeviceShellScriptsItemUserRunStatesRequestBuilder) {
     return NewDeviceShellScriptsItemUserRunStatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceShellScriptsDeviceShellScriptItemRequestBuilder) WithUrl(rawUrl string)(*DeviceShellScriptsDeviceShellScriptItemRequestBuilder) {
+    return NewDeviceShellScriptsDeviceShellScriptItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

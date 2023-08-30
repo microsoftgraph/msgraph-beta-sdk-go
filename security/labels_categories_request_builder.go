@@ -151,3 +151,7 @@ func (m *LabelsCategoriesRequestBuilder) ToPostRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *LabelsCategoriesRequestBuilder) WithUrl(rawUrl string)(*LabelsCategoriesRequestBuilder) {
+    return NewLabelsCategoriesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

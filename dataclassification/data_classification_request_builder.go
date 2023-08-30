@@ -162,3 +162,7 @@ func (m *DataClassificationRequestBuilder) ToPatchRequestInformation(ctx context
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DataClassificationRequestBuilder) WithUrl(rawUrl string)(*DataClassificationRequestBuilder) {
+    return NewDataClassificationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

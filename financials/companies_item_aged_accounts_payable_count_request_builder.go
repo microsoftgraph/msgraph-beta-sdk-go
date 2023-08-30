@@ -74,3 +74,7 @@ func (m *CompaniesItemAgedAccountsPayableCountRequestBuilder) ToGetRequestInform
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CompaniesItemAgedAccountsPayableCountRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemAgedAccountsPayableCountRequestBuilder) {
+    return NewCompaniesItemAgedAccountsPayableCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

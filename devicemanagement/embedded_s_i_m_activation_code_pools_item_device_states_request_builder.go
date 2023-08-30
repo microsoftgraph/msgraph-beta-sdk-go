@@ -145,3 +145,7 @@ func (m *EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder) ToPostReq
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder) WithUrl(rawUrl string)(*EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder) {
+    return NewEmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -162,3 +162,7 @@ func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) ToPatchRequest
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) WithUrl(rawUrl string)(*ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) {
+    return NewExchangeCustomAppScopesCustomAppScopeItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

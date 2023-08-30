@@ -74,3 +74,7 @@ func (m *DeviceConfigurationRestrictedAppsViolationsCountRequestBuilder) ToGetRe
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceConfigurationRestrictedAppsViolationsCountRequestBuilder) WithUrl(rawUrl string)(*DeviceConfigurationRestrictedAppsViolationsCountRequestBuilder) {
+    return NewDeviceConfigurationRestrictedAppsViolationsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

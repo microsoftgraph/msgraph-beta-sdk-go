@@ -164,3 +164,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBu
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBuilder) ValidateProperties()(*TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsValidatePropertiesRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBuilder) WithUrl(rawUrl string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -20,7 +20,7 @@ func NewMultiTenantOrganization()(*MultiTenantOrganization) {
 func CreateMultiTenantOrganizationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMultiTenantOrganization(), nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Date when multi-tenant organization was created. Read-only.
 func (m *MultiTenantOrganization) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -31,7 +31,7 @@ func (m *MultiTenantOrganization) GetCreatedDateTime()(*i336074805fc853987abe6f7
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. Description of the multi-tenant organization.
 func (m *MultiTenantOrganization) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -42,7 +42,7 @@ func (m *MultiTenantOrganization) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Display name of the multi-tenant organization.
 func (m *MultiTenantOrganization) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -124,7 +124,7 @@ func (m *MultiTenantOrganization) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetJoinRequest gets the joinRequest property value. The joinRequest property
+// GetJoinRequest gets the joinRequest property value. Defines the status of a tenant joining a multi-tenant organization.
 func (m *MultiTenantOrganization) GetJoinRequest()(MultiTenantOrganizationJoinRequestRecordable) {
     val, err := m.GetBackingStore().Get("joinRequest")
     if err != nil {
@@ -135,7 +135,7 @@ func (m *MultiTenantOrganization) GetJoinRequest()(MultiTenantOrganizationJoinRe
     }
     return nil
 }
-// GetState gets the state property value. The state property
+// GetState gets the state property value. State of the multi-tenant organization. The possible values are: active, inactive, unknownFutureValue. active indicates the multi-tenant organization is created. inactive indicates the multi-tenant organization is not created. Read-only.
 func (m *MultiTenantOrganization) GetState()(*MultiTenantOrganizationState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -146,7 +146,7 @@ func (m *MultiTenantOrganization) GetState()(*MultiTenantOrganizationState) {
     }
     return nil
 }
-// GetTenants gets the tenants property value. The tenants property
+// GetTenants gets the tenants property value. Defines tenants added to a multi-tenant organization.
 func (m *MultiTenantOrganization) GetTenants()([]MultiTenantOrganizationMemberable) {
     val, err := m.GetBackingStore().Get("tenants")
     if err != nil {
@@ -208,42 +208,42 @@ func (m *MultiTenantOrganization) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Date when multi-tenant organization was created. Read-only.
 func (m *MultiTenantOrganization) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. Description of the multi-tenant organization.
 func (m *MultiTenantOrganization) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Display name of the multi-tenant organization.
 func (m *MultiTenantOrganization) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetJoinRequest sets the joinRequest property value. The joinRequest property
+// SetJoinRequest sets the joinRequest property value. Defines the status of a tenant joining a multi-tenant organization.
 func (m *MultiTenantOrganization) SetJoinRequest(value MultiTenantOrganizationJoinRequestRecordable)() {
     err := m.GetBackingStore().Set("joinRequest", value)
     if err != nil {
         panic(err)
     }
 }
-// SetState sets the state property value. The state property
+// SetState sets the state property value. State of the multi-tenant organization. The possible values are: active, inactive, unknownFutureValue. active indicates the multi-tenant organization is created. inactive indicates the multi-tenant organization is not created. Read-only.
 func (m *MultiTenantOrganization) SetState(value *MultiTenantOrganizationState)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTenants sets the tenants property value. The tenants property
+// SetTenants sets the tenants property value. Defines tenants added to a multi-tenant organization.
 func (m *MultiTenantOrganization) SetTenants(value []MultiTenantOrganizationMemberable)() {
     err := m.GetBackingStore().Set("tenants", value)
     if err != nil {

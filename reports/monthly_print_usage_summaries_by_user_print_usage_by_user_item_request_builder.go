@@ -159,3 +159,8 @@ func (m *MonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) ToP
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The monthlyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the monthlyPrintUsageByUser navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
+func (m *MonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) WithUrl(rawUrl string)(*MonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) {
+    return NewMonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

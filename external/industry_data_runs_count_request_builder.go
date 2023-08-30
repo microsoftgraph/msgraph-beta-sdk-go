@@ -74,3 +74,7 @@ func (m *IndustryDataRunsCountRequestBuilder) ToGetRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IndustryDataRunsCountRequestBuilder) WithUrl(rawUrl string)(*IndustryDataRunsCountRequestBuilder) {
+    return NewIndustryDataRunsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

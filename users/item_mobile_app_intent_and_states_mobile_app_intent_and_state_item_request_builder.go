@@ -153,3 +153,7 @@ func (m *ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder) 
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder) WithUrl(rawUrl string)(*ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder) {
+    return NewItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

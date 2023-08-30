@@ -145,3 +145,7 @@ func (m *ExactMatchDataStoresRequestBuilder) ToPostRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ExactMatchDataStoresRequestBuilder) WithUrl(rawUrl string)(*ExactMatchDataStoresRequestBuilder) {
+    return NewExactMatchDataStoresRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

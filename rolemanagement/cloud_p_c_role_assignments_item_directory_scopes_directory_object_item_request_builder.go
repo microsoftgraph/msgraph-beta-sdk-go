@@ -75,3 +75,7 @@ func (m *CloudPCRoleAssignmentsItemDirectoryScopesDirectoryObjectItemRequestBuil
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CloudPCRoleAssignmentsItemDirectoryScopesDirectoryObjectItemRequestBuilder) WithUrl(rawUrl string)(*CloudPCRoleAssignmentsItemDirectoryScopesDirectoryObjectItemRequestBuilder) {
+    return NewCloudPCRoleAssignmentsItemDirectoryScopesDirectoryObjectItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

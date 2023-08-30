@@ -148,3 +148,7 @@ func (m *VirtualEndpointGalleryImagesRequestBuilder) ToPostRequestInformation(ct
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEndpointGalleryImagesRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointGalleryImagesRequestBuilder) {
+    return NewVirtualEndpointGalleryImagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

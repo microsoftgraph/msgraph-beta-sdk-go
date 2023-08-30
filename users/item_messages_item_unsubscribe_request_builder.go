@@ -61,3 +61,7 @@ func (m *ItemMessagesItemUnsubscribeRequestBuilder) ToPostRequestInformation(ctx
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemMessagesItemUnsubscribeRequestBuilder) WithUrl(rawUrl string)(*ItemMessagesItemUnsubscribeRequestBuilder) {
+    return NewItemMessagesItemUnsubscribeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

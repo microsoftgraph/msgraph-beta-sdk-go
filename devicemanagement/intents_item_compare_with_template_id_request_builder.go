@@ -83,3 +83,7 @@ func (m *IntentsItemCompareWithTemplateIdRequestBuilder) ToGetRequestInformation
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IntentsItemCompareWithTemplateIdRequestBuilder) WithUrl(rawUrl string)(*IntentsItemCompareWithTemplateIdRequestBuilder) {
+    return NewIntentsItemCompareWithTemplateIdRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

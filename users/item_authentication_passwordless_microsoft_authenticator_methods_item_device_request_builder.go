@@ -75,3 +75,7 @@ func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRe
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) WithUrl(rawUrl string)(*ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) {
+    return NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

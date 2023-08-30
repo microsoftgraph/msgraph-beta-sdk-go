@@ -145,3 +145,7 @@ func (m *UserExperienceAnalyticsDeviceTimelineEventRequestBuilder) ToPostRequest
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *UserExperienceAnalyticsDeviceTimelineEventRequestBuilder) WithUrl(rawUrl string)(*UserExperienceAnalyticsDeviceTimelineEventRequestBuilder) {
+    return NewUserExperienceAnalyticsDeviceTimelineEventRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

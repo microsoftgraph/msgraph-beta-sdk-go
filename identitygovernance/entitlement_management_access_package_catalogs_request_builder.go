@@ -160,3 +160,8 @@ func (m *EntitlementManagementAccessPackageCatalogsRequestBuilder) ToPostRequest
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
+func (m *EntitlementManagementAccessPackageCatalogsRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackageCatalogsRequestBuilder) {
+    return NewEntitlementManagementAccessPackageCatalogsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

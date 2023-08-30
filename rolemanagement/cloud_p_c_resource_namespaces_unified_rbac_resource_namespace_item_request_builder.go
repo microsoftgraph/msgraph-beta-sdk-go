@@ -161,3 +161,7 @@ func (m *CloudPCResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CloudPCResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) WithUrl(rawUrl string)(*CloudPCResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) {
+    return NewCloudPCResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

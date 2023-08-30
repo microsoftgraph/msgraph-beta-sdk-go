@@ -113,3 +113,7 @@ func (m *ItemSponsorsDirectoryObjectItemRequestBuilder) ToGetRequestInformation(
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemSponsorsDirectoryObjectItemRequestBuilder) WithUrl(rawUrl string)(*ItemSponsorsDirectoryObjectItemRequestBuilder) {
+    return NewItemSponsorsDirectoryObjectItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

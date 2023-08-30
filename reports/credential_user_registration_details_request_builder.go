@@ -153,3 +153,8 @@ func (m *CredentialUserRegistrationDetailsRequestBuilder) ToPostRequestInformati
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
+func (m *CredentialUserRegistrationDetailsRequestBuilder) WithUrl(rawUrl string)(*CredentialUserRegistrationDetailsRequestBuilder) {
+    return NewCredentialUserRegistrationDetailsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

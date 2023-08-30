@@ -150,3 +150,8 @@ func (m *ItemNotificationsRequestBuilder) ToPostRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation on 2023-03-09 and will be removed 2023-03-20
+func (m *ItemNotificationsRequestBuilder) WithUrl(rawUrl string)(*ItemNotificationsRequestBuilder) {
+    return NewItemNotificationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

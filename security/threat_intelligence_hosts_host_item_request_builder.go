@@ -204,3 +204,7 @@ func (m *ThreatIntelligenceHostsHostItemRequestBuilder) Trackers()(*ThreatIntell
 func (m *ThreatIntelligenceHostsHostItemRequestBuilder) Whois()(*ThreatIntelligenceHostsItemWhoisRequestBuilder) {
     return NewThreatIntelligenceHostsItemWhoisRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ThreatIntelligenceHostsHostItemRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceHostsHostItemRequestBuilder) {
+    return NewThreatIntelligenceHostsHostItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

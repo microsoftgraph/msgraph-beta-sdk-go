@@ -74,3 +74,7 @@ func (m *DirectoryTransitiveRoleAssignmentsCountRequestBuilder) ToGetRequestInfo
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DirectoryTransitiveRoleAssignmentsCountRequestBuilder) WithUrl(rawUrl string)(*DirectoryTransitiveRoleAssignmentsCountRequestBuilder) {
+    return NewDirectoryTransitiveRoleAssignmentsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

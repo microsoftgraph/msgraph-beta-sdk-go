@@ -74,3 +74,7 @@ func (m *IpSecurityProfilesCountRequestBuilder) ToGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IpSecurityProfilesCountRequestBuilder) WithUrl(rawUrl string)(*IpSecurityProfilesCountRequestBuilder) {
+    return NewIpSecurityProfilesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

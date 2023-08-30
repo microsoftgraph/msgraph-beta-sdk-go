@@ -62,3 +62,7 @@ func (m *ManagedDevicesItemEnableLostModeRequestBuilder) ToPostRequestInformatio
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedDevicesItemEnableLostModeRequestBuilder) WithUrl(rawUrl string)(*ManagedDevicesItemEnableLostModeRequestBuilder) {
+    return NewManagedDevicesItemEnableLostModeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

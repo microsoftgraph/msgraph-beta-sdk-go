@@ -161,3 +161,7 @@ func (m *ExchangeResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilde
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ExchangeResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) WithUrl(rawUrl string)(*ExchangeResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) {
+    return NewExchangeResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

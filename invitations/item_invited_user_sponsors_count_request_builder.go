@@ -74,3 +74,7 @@ func (m *ItemInvitedUserSponsorsCountRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemInvitedUserSponsorsCountRequestBuilder) WithUrl(rawUrl string)(*ItemInvitedUserSponsorsCountRequestBuilder) {
+    return NewItemInvitedUserSponsorsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -145,3 +145,7 @@ func (m *AutopilotEventsRequestBuilder) ToPostRequestInformation(ctx context.Con
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AutopilotEventsRequestBuilder) WithUrl(rawUrl string)(*AutopilotEventsRequestBuilder) {
+    return NewAutopilotEventsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

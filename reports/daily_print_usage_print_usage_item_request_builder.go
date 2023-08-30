@@ -153,3 +153,7 @@ func (m *DailyPrintUsagePrintUsageItemRequestBuilder) ToPatchRequestInformation(
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DailyPrintUsagePrintUsageItemRequestBuilder) WithUrl(rawUrl string)(*DailyPrintUsagePrintUsageItemRequestBuilder) {
+    return NewDailyPrintUsagePrintUsageItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

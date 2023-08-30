@@ -62,3 +62,7 @@ func (m *TemplatesImportOffice365DeviceConfigurationPoliciesRequestBuilder) ToPo
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TemplatesImportOffice365DeviceConfigurationPoliciesRequestBuilder) WithUrl(rawUrl string)(*TemplatesImportOffice365DeviceConfigurationPoliciesRequestBuilder) {
+    return NewTemplatesImportOffice365DeviceConfigurationPoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

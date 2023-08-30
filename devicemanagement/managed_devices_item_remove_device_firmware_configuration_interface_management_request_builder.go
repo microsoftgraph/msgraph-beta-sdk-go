@@ -58,3 +58,7 @@ func (m *ManagedDevicesItemRemoveDeviceFirmwareConfigurationInterfaceManagementR
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedDevicesItemRemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilder) WithUrl(rawUrl string)(*ManagedDevicesItemRemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilder) {
+    return NewManagedDevicesItemRemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

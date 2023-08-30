@@ -63,3 +63,7 @@ func (m *IndustryDataRunsMicrosoftGraphIndustryDataGetStatisticsRequestBuilder) 
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IndustryDataRunsMicrosoftGraphIndustryDataGetStatisticsRequestBuilder) WithUrl(rawUrl string)(*IndustryDataRunsMicrosoftGraphIndustryDataGetStatisticsRequestBuilder) {
+    return NewIndustryDataRunsMicrosoftGraphIndustryDataGetStatisticsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

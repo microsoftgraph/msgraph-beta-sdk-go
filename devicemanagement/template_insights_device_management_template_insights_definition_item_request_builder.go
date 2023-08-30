@@ -153,3 +153,7 @@ func (m *TemplateInsightsDeviceManagementTemplateInsightsDefinitionItemRequestBu
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TemplateInsightsDeviceManagementTemplateInsightsDefinitionItemRequestBuilder) WithUrl(rawUrl string)(*TemplateInsightsDeviceManagementTemplateInsightsDefinitionItemRequestBuilder) {
+    return NewTemplateInsightsDeviceManagementTemplateInsightsDefinitionItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -151,3 +151,7 @@ func (m *LabelsAuthoritiesRequestBuilder) ToPostRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *LabelsAuthoritiesRequestBuilder) WithUrl(rawUrl string)(*LabelsAuthoritiesRequestBuilder) {
+    return NewLabelsAuthoritiesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -145,3 +145,7 @@ func (m *CompliancePoliciesItemScheduledActionsForRuleRequestBuilder) ToPostRequ
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CompliancePoliciesItemScheduledActionsForRuleRequestBuilder) WithUrl(rawUrl string)(*CompliancePoliciesItemScheduledActionsForRuleRequestBuilder) {
+    return NewCompliancePoliciesItemScheduledActionsForRuleRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -164,3 +164,7 @@ func (m *ItemPagesBaseSitePageItemRequestBuilder) ToPatchRequestInformation(ctx 
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemPagesBaseSitePageItemRequestBuilder) WithUrl(rawUrl string)(*ItemPagesBaseSitePageItemRequestBuilder) {
+    return NewItemPagesBaseSitePageItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

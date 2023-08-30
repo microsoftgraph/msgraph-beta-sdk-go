@@ -38,7 +38,7 @@ func (m *MultiTenantOrganizationJoinRequestTransitionDetails) GetAdditionalData(
 func (m *MultiTenantOrganizationJoinRequestTransitionDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDesiredMemberState gets the desiredMemberState property value. The desiredMemberState property
+// GetDesiredMemberState gets the desiredMemberState property value. State of the tenant in the multi-tenant organization currently being processed. The possible values are: pending, active, removed, unknownFutureValue. Read-only.
 func (m *MultiTenantOrganizationJoinRequestTransitionDetails) GetDesiredMemberState()(*MultiTenantOrganizationMemberState) {
     val, err := m.GetBackingStore().Get("desiredMemberState")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *MultiTenantOrganizationJoinRequestTransitionDetails) GetDesiredMemberSt
     }
     return nil
 }
-// GetDetails gets the details property value. The details property
+// GetDetails gets the details property value. Details that explain the processing status if any. Read-only.
 func (m *MultiTenantOrganizationJoinRequestTransitionDetails) GetDetails()(*string) {
     val, err := m.GetBackingStore().Get("details")
     if err != nil {
@@ -116,7 +116,7 @@ func (m *MultiTenantOrganizationJoinRequestTransitionDetails) GetOdataType()(*st
     }
     return nil
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. Processing state of the asynchronous job. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue. Read-only.
 func (m *MultiTenantOrganizationJoinRequestTransitionDetails) GetStatus()(*MultiTenantOrganizationMemberProcessingStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -174,14 +174,14 @@ func (m *MultiTenantOrganizationJoinRequestTransitionDetails) SetAdditionalData(
 func (m *MultiTenantOrganizationJoinRequestTransitionDetails) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDesiredMemberState sets the desiredMemberState property value. The desiredMemberState property
+// SetDesiredMemberState sets the desiredMemberState property value. State of the tenant in the multi-tenant organization currently being processed. The possible values are: pending, active, removed, unknownFutureValue. Read-only.
 func (m *MultiTenantOrganizationJoinRequestTransitionDetails) SetDesiredMemberState(value *MultiTenantOrganizationMemberState)() {
     err := m.GetBackingStore().Set("desiredMemberState", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDetails sets the details property value. The details property
+// SetDetails sets the details property value. Details that explain the processing status if any. Read-only.
 func (m *MultiTenantOrganizationJoinRequestTransitionDetails) SetDetails(value *string)() {
     err := m.GetBackingStore().Set("details", value)
     if err != nil {
@@ -195,7 +195,7 @@ func (m *MultiTenantOrganizationJoinRequestTransitionDetails) SetOdataType(value
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. Processing state of the asynchronous job. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue. Read-only.
 func (m *MultiTenantOrganizationJoinRequestTransitionDetails) SetStatus(value *MultiTenantOrganizationMemberProcessingStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

@@ -161,3 +161,7 @@ func (m *ItemDevicesRequestBuilder) ToPostRequestInformation(ctx context.Context
 func (m *ItemDevicesRequestBuilder) ValidateProperties()(*ItemDevicesValidatePropertiesRequestBuilder) {
     return NewItemDevicesValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemDevicesRequestBuilder) WithUrl(rawUrl string)(*ItemDevicesRequestBuilder) {
+    return NewItemDevicesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

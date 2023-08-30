@@ -149,3 +149,7 @@ func (m *DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder) T
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder) WithUrl(rawUrl string)(*DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder) {
+    return NewDepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

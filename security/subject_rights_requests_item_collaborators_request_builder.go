@@ -102,3 +102,7 @@ func (m *SubjectRightsRequestsItemCollaboratorsRequestBuilder) ToGetRequestInfor
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SubjectRightsRequestsItemCollaboratorsRequestBuilder) WithUrl(rawUrl string)(*SubjectRightsRequestsItemCollaboratorsRequestBuilder) {
+    return NewSubjectRightsRequestsItemCollaboratorsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

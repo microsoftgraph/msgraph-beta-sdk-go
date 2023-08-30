@@ -62,3 +62,7 @@ func (m *AndroidForWorkSettingsCompleteSignupRequestBuilder) ToPostRequestInform
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AndroidForWorkSettingsCompleteSignupRequestBuilder) WithUrl(rawUrl string)(*AndroidForWorkSettingsCompleteSignupRequestBuilder) {
+    return NewAndroidForWorkSettingsCompleteSignupRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

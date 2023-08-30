@@ -74,3 +74,7 @@ func (m *VirtualEndpointSupportedRegionsCountRequestBuilder) ToGetRequestInforma
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEndpointSupportedRegionsCountRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointSupportedRegionsCountRequestBuilder) {
+    return NewVirtualEndpointSupportedRegionsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

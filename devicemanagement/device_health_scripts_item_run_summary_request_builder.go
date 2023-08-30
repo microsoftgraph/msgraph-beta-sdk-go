@@ -153,3 +153,7 @@ func (m *DeviceHealthScriptsItemRunSummaryRequestBuilder) ToPatchRequestInformat
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceHealthScriptsItemRunSummaryRequestBuilder) WithUrl(rawUrl string)(*DeviceHealthScriptsItemRunSummaryRequestBuilder) {
+    return NewDeviceHealthScriptsItemRunSummaryRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

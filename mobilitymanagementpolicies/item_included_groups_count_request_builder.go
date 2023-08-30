@@ -74,3 +74,7 @@ func (m *ItemIncludedGroupsCountRequestBuilder) ToGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemIncludedGroupsCountRequestBuilder) WithUrl(rawUrl string)(*ItemIncludedGroupsCountRequestBuilder) {
+    return NewItemIncludedGroupsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

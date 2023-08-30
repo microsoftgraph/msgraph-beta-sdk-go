@@ -84,3 +84,7 @@ func (m *ItemTeamDefinitionChannelsItemMessagesDeltaRequestBuilder) ToGetRequest
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTeamDefinitionChannelsItemMessagesDeltaRequestBuilder) WithUrl(rawUrl string)(*ItemTeamDefinitionChannelsItemMessagesDeltaRequestBuilder) {
+    return NewItemTeamDefinitionChannelsItemMessagesDeltaRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

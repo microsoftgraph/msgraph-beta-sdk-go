@@ -156,3 +156,7 @@ func (m *ManagedTenantsCloudPcDevicesCloudPcDeviceItemRequestBuilder) ToPatchReq
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedTenantsCloudPcDevicesCloudPcDeviceItemRequestBuilder) WithUrl(rawUrl string)(*ManagedTenantsCloudPcDevicesCloudPcDeviceItemRequestBuilder) {
+    return NewManagedTenantsCloudPcDevicesCloudPcDeviceItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

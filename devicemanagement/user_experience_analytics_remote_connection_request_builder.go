@@ -149,3 +149,7 @@ func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) ToPostRequestInf
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) WithUrl(rawUrl string)(*UserExperienceAnalyticsRemoteConnectionRequestBuilder) {
+    return NewUserExperienceAnalyticsRemoteConnectionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

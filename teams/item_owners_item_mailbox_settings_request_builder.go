@@ -118,3 +118,7 @@ func (m *ItemOwnersItemMailboxSettingsRequestBuilder) ToPatchRequestInformation(
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemOwnersItemMailboxSettingsRequestBuilder) WithUrl(rawUrl string)(*ItemOwnersItemMailboxSettingsRequestBuilder) {
+    return NewItemOwnersItemMailboxSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

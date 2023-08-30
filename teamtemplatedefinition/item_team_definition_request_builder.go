@@ -236,3 +236,7 @@ func (m *ItemTeamDefinitionRequestBuilder) ToPatchRequestInformation(ctx context
 func (m *ItemTeamDefinitionRequestBuilder) Unarchive()(*ItemTeamDefinitionUnarchiveRequestBuilder) {
     return NewItemTeamDefinitionUnarchiveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTeamDefinitionRequestBuilder) WithUrl(rawUrl string)(*ItemTeamDefinitionRequestBuilder) {
+    return NewItemTeamDefinitionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

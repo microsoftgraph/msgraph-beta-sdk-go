@@ -74,3 +74,7 @@ func (m *VirtualEventsEventsItemSessionsItemRegistrationRegistrantsCountRequestB
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEventsEventsItemSessionsItemRegistrationRegistrantsCountRequestBuilder) WithUrl(rawUrl string)(*VirtualEventsEventsItemSessionsItemRegistrationRegistrantsCountRequestBuilder) {
+    return NewVirtualEventsEventsItemSessionsItemRegistrationRegistrantsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

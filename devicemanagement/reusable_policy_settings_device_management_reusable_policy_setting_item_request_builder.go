@@ -161,3 +161,7 @@ func (m *ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestB
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilder) WithUrl(rawUrl string)(*ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilder) {
+    return NewReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

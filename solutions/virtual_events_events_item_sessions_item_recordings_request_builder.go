@@ -74,6 +74,10 @@ func NewVirtualEventsEventsItemSessionsItemRecordingsRequestBuilder(rawUrl strin
 func (m *VirtualEventsEventsItemSessionsItemRecordingsRequestBuilder) Count()(*VirtualEventsEventsItemSessionsItemRecordingsCountRequestBuilder) {
     return NewVirtualEventsEventsItemSessionsItemRecordingsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Delta provides operations to call the delta method.
+func (m *VirtualEventsEventsItemSessionsItemRecordingsRequestBuilder) Delta()(*VirtualEventsEventsItemSessionsItemRecordingsDeltaRequestBuilder) {
+    return NewVirtualEventsEventsItemSessionsItemRecordingsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get a callRecording object associated with an onlineMeeting. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of text associated with the recording.
 func (m *VirtualEventsEventsItemSessionsItemRecordingsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsItemRecordingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallRecordingCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -144,4 +148,8 @@ func (m *VirtualEventsEventsItemSessionsItemRecordingsRequestBuilder) ToPostRequ
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEventsEventsItemSessionsItemRecordingsRequestBuilder) WithUrl(rawUrl string)(*VirtualEventsEventsItemSessionsItemRecordingsRequestBuilder) {
+    return NewVirtualEventsEventsItemSessionsItemRecordingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

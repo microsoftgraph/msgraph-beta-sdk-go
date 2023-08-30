@@ -171,3 +171,7 @@ func (m *ItemTeamDefinitionInstalledAppsTeamsAppInstallationItemRequestBuilder) 
 func (m *ItemTeamDefinitionInstalledAppsTeamsAppInstallationItemRequestBuilder) Upgrade()(*ItemTeamDefinitionInstalledAppsItemUpgradeRequestBuilder) {
     return NewItemTeamDefinitionInstalledAppsItemUpgradeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTeamDefinitionInstalledAppsTeamsAppInstallationItemRequestBuilder) WithUrl(rawUrl string)(*ItemTeamDefinitionInstalledAppsTeamsAppInstallationItemRequestBuilder) {
+    return NewItemTeamDefinitionInstalledAppsTeamsAppInstallationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

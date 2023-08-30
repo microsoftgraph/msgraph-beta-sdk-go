@@ -65,3 +65,7 @@ func (m *ManagedDevicesItemResizeCloudPcRequestBuilder) ToPostRequestInformation
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedDevicesItemResizeCloudPcRequestBuilder) WithUrl(rawUrl string)(*ManagedDevicesItemResizeCloudPcRequestBuilder) {
+    return NewManagedDevicesItemResizeCloudPcRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

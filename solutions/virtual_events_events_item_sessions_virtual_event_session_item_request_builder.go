@@ -193,3 +193,7 @@ func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) T
 func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) Transcripts()(*VirtualEventsEventsItemSessionsItemTranscriptsRequestBuilder) {
     return NewVirtualEventsEventsItemSessionsItemTranscriptsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) WithUrl(rawUrl string)(*VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) {
+    return NewVirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -145,3 +145,7 @@ func (m *TemplatesItemCategoriesItemRecommendedSettingsRequestBuilder) ToPostReq
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TemplatesItemCategoriesItemRecommendedSettingsRequestBuilder) WithUrl(rawUrl string)(*TemplatesItemCategoriesItemRecommendedSettingsRequestBuilder) {
+    return NewTemplatesItemCategoriesItemRecommendedSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

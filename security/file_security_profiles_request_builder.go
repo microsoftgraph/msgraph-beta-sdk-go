@@ -145,3 +145,7 @@ func (m *FileSecurityProfilesRequestBuilder) ToPostRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *FileSecurityProfilesRequestBuilder) WithUrl(rawUrl string)(*FileSecurityProfilesRequestBuilder) {
+    return NewFileSecurityProfilesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

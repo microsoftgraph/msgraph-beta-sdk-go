@@ -153,3 +153,7 @@ func (m *ItemPlannerAllPlannerDeltaItemRequestBuilder) ToPatchRequestInformation
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemPlannerAllPlannerDeltaItemRequestBuilder) WithUrl(rawUrl string)(*ItemPlannerAllPlannerDeltaItemRequestBuilder) {
+    return NewItemPlannerAllPlannerDeltaItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

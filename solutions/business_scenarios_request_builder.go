@@ -151,3 +151,7 @@ func (m *BusinessScenariosRequestBuilder) ToPostRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *BusinessScenariosRequestBuilder) WithUrl(rawUrl string)(*BusinessScenariosRequestBuilder) {
+    return NewBusinessScenariosRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

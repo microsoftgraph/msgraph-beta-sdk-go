@@ -166,3 +166,7 @@ func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRe
 func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilder) UpdatePolicy()(*WindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyRequestBuilder) {
     return NewWindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilder) WithUrl(rawUrl string)(*WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilder) {
+    return NewWindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

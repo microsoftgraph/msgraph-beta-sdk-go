@@ -74,3 +74,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpactCountRequestBuilder) ToGet
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *UserExperienceAnalyticsBatteryHealthAppImpactCountRequestBuilder) WithUrl(rawUrl string)(*UserExperienceAnalyticsBatteryHealthAppImpactCountRequestBuilder) {
+    return NewUserExperienceAnalyticsBatteryHealthAppImpactCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

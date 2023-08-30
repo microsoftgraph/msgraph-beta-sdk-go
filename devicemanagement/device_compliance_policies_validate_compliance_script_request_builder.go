@@ -67,3 +67,7 @@ func (m *DeviceCompliancePoliciesValidateComplianceScriptRequestBuilder) ToPostR
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceCompliancePoliciesValidateComplianceScriptRequestBuilder) WithUrl(rawUrl string)(*DeviceCompliancePoliciesValidateComplianceScriptRequestBuilder) {
+    return NewDeviceCompliancePoliciesValidateComplianceScriptRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -74,3 +74,7 @@ func (m *EmailThreatsCountRequestBuilder) ToGetRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EmailThreatsCountRequestBuilder) WithUrl(rawUrl string)(*EmailThreatsCountRequestBuilder) {
+    return NewEmailThreatsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

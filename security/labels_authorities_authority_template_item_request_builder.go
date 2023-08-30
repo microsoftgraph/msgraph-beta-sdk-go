@@ -159,3 +159,7 @@ func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) ToPatchRequestInf
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) WithUrl(rawUrl string)(*LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) {
+    return NewLabelsAuthoritiesAuthorityTemplateItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

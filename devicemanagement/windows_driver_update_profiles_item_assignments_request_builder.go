@@ -145,3 +145,7 @@ func (m *WindowsDriverUpdateProfilesItemAssignmentsRequestBuilder) ToPostRequest
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsDriverUpdateProfilesItemAssignmentsRequestBuilder) WithUrl(rawUrl string)(*WindowsDriverUpdateProfilesItemAssignmentsRequestBuilder) {
+    return NewWindowsDriverUpdateProfilesItemAssignmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

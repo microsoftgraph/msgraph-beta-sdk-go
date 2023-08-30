@@ -151,3 +151,7 @@ func (m *ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder) ToPos
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder) WithUrl(rawUrl string)(*ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder) {
+    return NewItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}
