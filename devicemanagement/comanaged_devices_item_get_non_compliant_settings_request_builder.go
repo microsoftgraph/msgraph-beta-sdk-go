@@ -80,3 +80,7 @@ func (m *ComanagedDevicesItemGetNonCompliantSettingsRequestBuilder) ToGetRequest
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ComanagedDevicesItemGetNonCompliantSettingsRequestBuilder) WithUrl(rawUrl string)(*ComanagedDevicesItemGetNonCompliantSettingsRequestBuilder) {
+    return NewComanagedDevicesItemGetNonCompliantSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

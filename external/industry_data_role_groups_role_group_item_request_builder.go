@@ -156,3 +156,7 @@ func (m *IndustryDataRoleGroupsRoleGroupItemRequestBuilder) ToPatchRequestInform
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IndustryDataRoleGroupsRoleGroupItemRequestBuilder) WithUrl(rawUrl string)(*IndustryDataRoleGroupsRoleGroupItemRequestBuilder) {
+    return NewIndustryDataRoleGroupsRoleGroupItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

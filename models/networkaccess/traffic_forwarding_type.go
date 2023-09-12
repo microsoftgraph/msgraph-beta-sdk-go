@@ -38,3 +38,6 @@ func SerializeTrafficForwardingType(values []TrafficForwardingType) []string {
     }
     return result
 }
+func (i TrafficForwardingType) isMultiValue() bool {
+    return false
+}

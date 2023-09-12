@@ -34,3 +34,6 @@ func SerializeUserEmailSource(values []UserEmailSource) []string {
     }
     return result
 }
+func (i UserEmailSource) isMultiValue() bool {
+    return false
+}

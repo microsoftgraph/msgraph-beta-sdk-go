@@ -46,8 +46,8 @@ type AccessReviewsDecisionsItemInstanceContactedReviewersRequestBuilderPostReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAccessReviewReviewerIdString provides operations to manage the contactedReviewers property of the microsoft.graph.accessReviewInstance entity.
-func (m *AccessReviewsDecisionsItemInstanceContactedReviewersRequestBuilder) ByAccessReviewReviewerIdString(accessReviewReviewerId string)(*AccessReviewsDecisionsItemInstanceContactedReviewersAccessReviewReviewerItemRequestBuilder) {
+// ByAccessReviewReviewerId provides operations to manage the contactedReviewers property of the microsoft.graph.accessReviewInstance entity.
+func (m *AccessReviewsDecisionsItemInstanceContactedReviewersRequestBuilder) ByAccessReviewReviewerId(accessReviewReviewerId string)(*AccessReviewsDecisionsItemInstanceContactedReviewersAccessReviewReviewerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *AccessReviewsDecisionsItemInstanceContactedReviewersRequestBuilder) ToP
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AccessReviewsDecisionsItemInstanceContactedReviewersRequestBuilder) WithUrl(rawUrl string)(*AccessReviewsDecisionsItemInstanceContactedReviewersRequestBuilder) {
+    return NewAccessReviewsDecisionsItemInstanceContactedReviewersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

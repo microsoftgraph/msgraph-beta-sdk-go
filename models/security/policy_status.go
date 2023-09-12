@@ -38,3 +38,6 @@ func SerializePolicyStatus(values []PolicyStatus) []string {
     }
     return result
 }
+func (i PolicyStatus) isMultiValue() bool {
+    return false
+}

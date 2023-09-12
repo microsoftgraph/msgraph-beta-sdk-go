@@ -34,3 +34,6 @@ func SerializeManagedInstallerStatus(values []ManagedInstallerStatus) []string {
     }
     return result
 }
+func (i ManagedInstallerStatus) isMultiValue() bool {
+    return false
+}

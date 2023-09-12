@@ -74,3 +74,7 @@ func (m *CompaniesItemJournalsCountRequestBuilder) ToGetRequestInformation(ctx c
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CompaniesItemJournalsCountRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemJournalsCountRequestBuilder) {
+    return NewCompaniesItemJournalsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

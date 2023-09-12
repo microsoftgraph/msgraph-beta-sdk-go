@@ -42,3 +42,6 @@ func SerializeDeviceGuardLocalSystemAuthorityCredentialGuardType(values []Device
     }
     return result
 }
+func (i DeviceGuardLocalSystemAuthorityCredentialGuardType) isMultiValue() bool {
+    return false
+}

@@ -42,3 +42,6 @@ func SerializeErrorCode(values []ErrorCode) []string {
     }
     return result
 }
+func (i ErrorCode) isMultiValue() bool {
+    return false
+}

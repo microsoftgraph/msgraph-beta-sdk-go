@@ -41,3 +41,6 @@ func SerializeRetentionTrigger(values []RetentionTrigger) []string {
     }
     return result
 }
+func (i RetentionTrigger) isMultiValue() bool {
+    return false
+}

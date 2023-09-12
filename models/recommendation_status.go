@@ -44,3 +44,6 @@ func SerializeRecommendationStatus(values []RecommendationStatus) []string {
     }
     return result
 }
+func (i RecommendationStatus) isMultiValue() bool {
+    return false
+}

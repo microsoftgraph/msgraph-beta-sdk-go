@@ -170,3 +170,7 @@ func (m *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) ToPatc
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) {
+    return NewVirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

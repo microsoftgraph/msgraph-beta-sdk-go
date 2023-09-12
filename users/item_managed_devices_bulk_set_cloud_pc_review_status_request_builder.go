@@ -70,3 +70,7 @@ func (m *ItemManagedDevicesBulkSetCloudPcReviewStatusRequestBuilder) ToPostReque
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemManagedDevicesBulkSetCloudPcReviewStatusRequestBuilder) WithUrl(rawUrl string)(*ItemManagedDevicesBulkSetCloudPcReviewStatusRequestBuilder) {
+    return NewItemManagedDevicesBulkSetCloudPcReviewStatusRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

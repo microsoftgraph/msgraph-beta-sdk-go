@@ -46,8 +46,8 @@ type BusinessFlowTemplatesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByBusinessFlowTemplateIdString provides operations to manage the collection of businessFlowTemplate entities.
-func (m *BusinessFlowTemplatesRequestBuilder) ByBusinessFlowTemplateIdString(businessFlowTemplateId string)(*BusinessFlowTemplateItemRequestBuilder) {
+// ByBusinessFlowTemplateId provides operations to manage the collection of businessFlowTemplate entities.
+func (m *BusinessFlowTemplatesRequestBuilder) ByBusinessFlowTemplateId(businessFlowTemplateId string)(*BusinessFlowTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *BusinessFlowTemplatesRequestBuilder) ToPostRequestInformation(ctx conte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *BusinessFlowTemplatesRequestBuilder) WithUrl(rawUrl string)(*BusinessFlowTemplatesRequestBuilder) {
+    return NewBusinessFlowTemplatesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

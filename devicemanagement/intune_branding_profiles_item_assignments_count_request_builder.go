@@ -74,3 +74,7 @@ func (m *IntuneBrandingProfilesItemAssignmentsCountRequestBuilder) ToGetRequestI
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IntuneBrandingProfilesItemAssignmentsCountRequestBuilder) WithUrl(rawUrl string)(*IntuneBrandingProfilesItemAssignmentsCountRequestBuilder) {
+    return NewIntuneBrandingProfilesItemAssignmentsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

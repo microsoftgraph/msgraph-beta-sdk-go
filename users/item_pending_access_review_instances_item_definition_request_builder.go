@@ -75,3 +75,7 @@ func (m *ItemPendingAccessReviewInstancesItemDefinitionRequestBuilder) ToGetRequ
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemPendingAccessReviewInstancesItemDefinitionRequestBuilder) WithUrl(rawUrl string)(*ItemPendingAccessReviewInstancesItemDefinitionRequestBuilder) {
+    return NewItemPendingAccessReviewInstancesItemDefinitionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

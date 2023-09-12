@@ -32,3 +32,6 @@ func SerializePageOrientation(values []PageOrientation) []string {
     }
     return result
 }
+func (i PageOrientation) isMultiValue() bool {
+    return false
+}

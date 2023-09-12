@@ -58,3 +58,7 @@ func (m *WindowsAutopilotSettingsSyncRequestBuilder) ToPostRequestInformation(ct
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsAutopilotSettingsSyncRequestBuilder) WithUrl(rawUrl string)(*WindowsAutopilotSettingsSyncRequestBuilder) {
+    return NewWindowsAutopilotSettingsSyncRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

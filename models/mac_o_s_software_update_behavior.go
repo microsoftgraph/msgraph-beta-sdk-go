@@ -50,3 +50,6 @@ func SerializeMacOSSoftwareUpdateBehavior(values []MacOSSoftwareUpdateBehavior) 
     }
     return result
 }
+func (i MacOSSoftwareUpdateBehavior) isMultiValue() bool {
+    return false
+}

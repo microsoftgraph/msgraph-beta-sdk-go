@@ -46,8 +46,8 @@ type AttackSimulationOperationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAttackSimulationOperationIdString provides operations to manage the operations property of the microsoft.graph.attackSimulationRoot entity.
-func (m *AttackSimulationOperationsRequestBuilder) ByAttackSimulationOperationIdString(attackSimulationOperationId string)(*AttackSimulationOperationsAttackSimulationOperationItemRequestBuilder) {
+// ByAttackSimulationOperationId provides operations to manage the operations property of the microsoft.graph.attackSimulationRoot entity.
+func (m *AttackSimulationOperationsRequestBuilder) ByAttackSimulationOperationId(attackSimulationOperationId string)(*AttackSimulationOperationsAttackSimulationOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *AttackSimulationOperationsRequestBuilder) ToPostRequestInformation(ctx 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AttackSimulationOperationsRequestBuilder) WithUrl(rawUrl string)(*AttackSimulationOperationsRequestBuilder) {
+    return NewAttackSimulationOperationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

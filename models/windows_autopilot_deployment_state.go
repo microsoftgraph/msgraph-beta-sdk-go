@@ -58,3 +58,6 @@ func SerializeWindowsAutopilotDeploymentState(values []WindowsAutopilotDeploymen
     }
     return result
 }
+func (i WindowsAutopilotDeploymentState) isMultiValue() bool {
+    return false
+}

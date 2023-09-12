@@ -41,3 +41,6 @@ func SerializeTitleAreaLayoutType(values []TitleAreaLayoutType) []string {
     }
     return result
 }
+func (i TitleAreaLayoutType) isMultiValue() bool {
+    return false
+}

@@ -34,3 +34,6 @@ func SerializeDriverUpdateProfileApprovalType(values []DriverUpdateProfileApprov
     }
     return result
 }
+func (i DriverUpdateProfileApprovalType) isMultiValue() bool {
+    return false
+}

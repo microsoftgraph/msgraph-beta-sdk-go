@@ -80,3 +80,6 @@ func SerializeAuthenticationAppPolicyStatus(values []AuthenticationAppPolicyStat
     }
     return result
 }
+func (i AuthenticationAppPolicyStatus) isMultiValue() bool {
+    return false
+}

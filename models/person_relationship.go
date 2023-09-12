@@ -74,3 +74,6 @@ func SerializePersonRelationship(values []PersonRelationship) []string {
     }
     return result
 }
+func (i PersonRelationship) isMultiValue() bool {
+    return false
+}

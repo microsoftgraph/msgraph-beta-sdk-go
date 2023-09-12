@@ -41,3 +41,6 @@ func SerializeAuthenticationAttributeCollectionInputType(values []Authentication
     }
     return result
 }
+func (i AuthenticationAttributeCollectionInputType) isMultiValue() bool {
+    return false
+}

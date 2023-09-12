@@ -58,3 +58,7 @@ func (m *CompaniesItemSalesInvoicesItemCancelAndSendRequestBuilder) ToPostReques
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CompaniesItemSalesInvoicesItemCancelAndSendRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemSalesInvoicesItemCancelAndSendRequestBuilder) {
+    return NewCompaniesItemSalesInvoicesItemCancelAndSendRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

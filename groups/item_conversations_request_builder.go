@@ -44,8 +44,8 @@ type ItemConversationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByConversationIdString provides operations to manage the conversations property of the microsoft.graph.group entity.
-func (m *ItemConversationsRequestBuilder) ByConversationIdString(conversationId string)(*ItemConversationsConversationItemRequestBuilder) {
+// ByConversationId provides operations to manage the conversations property of the microsoft.graph.group entity.
+func (m *ItemConversationsRequestBuilder) ByConversationId(conversationId string)(*ItemConversationsConversationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -148,4 +148,8 @@ func (m *ItemConversationsRequestBuilder) ToPostRequestInformation(ctx context.C
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemConversationsRequestBuilder) WithUrl(rawUrl string)(*ItemConversationsRequestBuilder) {
+    return NewItemConversationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

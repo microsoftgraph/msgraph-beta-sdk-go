@@ -62,3 +62,6 @@ func SerializeEnrollmentRestrictionPlatformType(values []EnrollmentRestrictionPl
     }
     return result
 }
+func (i EnrollmentRestrictionPlatformType) isMultiValue() bool {
+    return false
+}

@@ -153,3 +153,7 @@ func (m *CloudAppSecurityProfilesCloudAppSecurityProfileItemRequestBuilder) ToPa
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CloudAppSecurityProfilesCloudAppSecurityProfileItemRequestBuilder) WithUrl(rawUrl string)(*CloudAppSecurityProfilesCloudAppSecurityProfileItemRequestBuilder) {
+    return NewCloudAppSecurityProfilesCloudAppSecurityProfileItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

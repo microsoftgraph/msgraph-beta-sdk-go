@@ -50,3 +50,6 @@ func SerializeVpnIntegrityAlgorithmType(values []VpnIntegrityAlgorithmType) []st
     }
     return result
 }
+func (i VpnIntegrityAlgorithmType) isMultiValue() bool {
+    return false
+}

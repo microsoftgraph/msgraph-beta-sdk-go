@@ -74,3 +74,7 @@ func (m *ItemCloudPCsCountRequestBuilder) ToGetRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemCloudPCsCountRequestBuilder) WithUrl(rawUrl string)(*ItemCloudPCsCountRequestBuilder) {
+    return NewItemCloudPCsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

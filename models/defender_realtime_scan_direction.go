@@ -38,3 +38,6 @@ func SerializeDefenderRealtimeScanDirection(values []DefenderRealtimeScanDirecti
     }
     return result
 }
+func (i DefenderRealtimeScanDirection) isMultiValue() bool {
+    return false
+}

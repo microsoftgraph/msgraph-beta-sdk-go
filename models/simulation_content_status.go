@@ -44,3 +44,6 @@ func SerializeSimulationContentStatus(values []SimulationContentStatus) []string
     }
     return result
 }
+func (i SimulationContentStatus) isMultiValue() bool {
+    return false
+}

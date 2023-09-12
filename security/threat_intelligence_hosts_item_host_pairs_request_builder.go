@@ -39,8 +39,8 @@ type ThreatIntelligenceHostsItemHostPairsRequestBuilderGetRequestConfiguration s
     // Request query parameters
     QueryParameters *ThreatIntelligenceHostsItemHostPairsRequestBuilderGetQueryParameters
 }
-// ByHostPairIdString provides operations to manage the hostPairs property of the microsoft.graph.security.host entity.
-func (m *ThreatIntelligenceHostsItemHostPairsRequestBuilder) ByHostPairIdString(hostPairId string)(*ThreatIntelligenceHostsItemHostPairsHostPairItemRequestBuilder) {
+// ByHostPairId provides operations to manage the hostPairs property of the microsoft.graph.security.host entity.
+func (m *ThreatIntelligenceHostsItemHostPairsRequestBuilder) ByHostPairId(hostPairId string)(*ThreatIntelligenceHostsItemHostPairsHostPairItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *ThreatIntelligenceHostsItemHostPairsRequestBuilder) ToGetRequestInforma
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ThreatIntelligenceHostsItemHostPairsRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceHostsItemHostPairsRequestBuilder) {
+    return NewThreatIntelligenceHostsItemHostPairsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

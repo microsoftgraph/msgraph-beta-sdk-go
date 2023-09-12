@@ -46,8 +46,8 @@ type ManagedTenantsManagementTemplateStepTenantSummariesRequestBuilderPostReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByManagementTemplateStepTenantSummaryIdString provides operations to manage the managementTemplateStepTenantSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsManagementTemplateStepTenantSummariesRequestBuilder) ByManagementTemplateStepTenantSummaryIdString(managementTemplateStepTenantSummaryId string)(*ManagedTenantsManagementTemplateStepTenantSummariesManagementTemplateStepTenantSummaryItemRequestBuilder) {
+// ByManagementTemplateStepTenantSummaryId provides operations to manage the managementTemplateStepTenantSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsManagementTemplateStepTenantSummariesRequestBuilder) ByManagementTemplateStepTenantSummaryId(managementTemplateStepTenantSummaryId string)(*ManagedTenantsManagementTemplateStepTenantSummariesManagementTemplateStepTenantSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ManagedTenantsManagementTemplateStepTenantSummariesRequestBuilder) ToPo
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedTenantsManagementTemplateStepTenantSummariesRequestBuilder) WithUrl(rawUrl string)(*ManagedTenantsManagementTemplateStepTenantSummariesRequestBuilder) {
+    return NewManagedTenantsManagementTemplateStepTenantSummariesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

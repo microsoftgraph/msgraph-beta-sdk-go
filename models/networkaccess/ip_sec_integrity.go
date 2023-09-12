@@ -41,3 +41,6 @@ func SerializeIpSecIntegrity(values []IpSecIntegrity) []string {
     }
     return result
 }
+func (i IpSecIntegrity) isMultiValue() bool {
+    return false
+}

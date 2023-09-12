@@ -42,3 +42,6 @@ func SerializeAndroidDeviceOwnerBatteryPluggedMode(values []AndroidDeviceOwnerBa
     }
     return result
 }
+func (i AndroidDeviceOwnerBatteryPluggedMode) isMultiValue() bool {
+    return false
+}

@@ -46,8 +46,8 @@ type ItemCommandsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCommandIdString provides operations to manage the commands property of the microsoft.graph.device entity.
-func (m *ItemCommandsRequestBuilder) ByCommandIdString(commandId string)(*ItemCommandsCommandItemRequestBuilder) {
+// ByCommandId provides operations to manage the commands property of the microsoft.graph.device entity.
+func (m *ItemCommandsRequestBuilder) ByCommandId(commandId string)(*ItemCommandsCommandItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ItemCommandsRequestBuilder) ToPostRequestInformation(ctx context.Contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemCommandsRequestBuilder) WithUrl(rawUrl string)(*ItemCommandsRequestBuilder) {
+    return NewItemCommandsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

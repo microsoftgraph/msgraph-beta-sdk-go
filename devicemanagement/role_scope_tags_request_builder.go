@@ -46,8 +46,8 @@ type RoleScopeTagsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByRoleScopeTagIdString provides operations to manage the roleScopeTags property of the microsoft.graph.deviceManagement entity.
-func (m *RoleScopeTagsRequestBuilder) ByRoleScopeTagIdString(roleScopeTagId string)(*RoleScopeTagsRoleScopeTagItemRequestBuilder) {
+// ByRoleScopeTagId provides operations to manage the roleScopeTags property of the microsoft.graph.deviceManagement entity.
+func (m *RoleScopeTagsRequestBuilder) ByRoleScopeTagId(roleScopeTagId string)(*RoleScopeTagsRoleScopeTagItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -152,4 +152,8 @@ func (m *RoleScopeTagsRequestBuilder) ToPostRequestInformation(ctx context.Conte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *RoleScopeTagsRequestBuilder) WithUrl(rawUrl string)(*RoleScopeTagsRequestBuilder) {
+    return NewRoleScopeTagsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -38,3 +38,6 @@ func SerializeMacOSSoftwareUpdateScheduleType(values []MacOSSoftwareUpdateSchedu
     }
     return result
 }
+func (i MacOSSoftwareUpdateScheduleType) isMultiValue() bool {
+    return false
+}

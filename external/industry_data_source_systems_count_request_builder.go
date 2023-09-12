@@ -74,3 +74,7 @@ func (m *IndustryDataSourceSystemsCountRequestBuilder) ToGetRequestInformation(c
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IndustryDataSourceSystemsCountRequestBuilder) WithUrl(rawUrl string)(*IndustryDataSourceSystemsCountRequestBuilder) {
+    return NewIndustryDataSourceSystemsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

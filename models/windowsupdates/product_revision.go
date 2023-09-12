@@ -21,7 +21,7 @@ func NewProductRevision()(*ProductRevision) {
 func CreateProductRevisionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProductRevision(), nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the content. Read-only.
 func (m *ProductRevision) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -97,7 +97,7 @@ func (m *ProductRevision) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetKnowledgeBaseArticle gets the knowledgeBaseArticle property value. The knowledgeBaseArticle property
+// GetKnowledgeBaseArticle gets the knowledgeBaseArticle property value. The knowledge base article associated with the product revision.
 func (m *ProductRevision) GetKnowledgeBaseArticle()(KnowledgeBaseArticleable) {
     val, err := m.GetBackingStore().Get("knowledgeBaseArticle")
     if err != nil {
@@ -119,7 +119,7 @@ func (m *ProductRevision) GetOsBuild()(BuildVersionDetailsable) {
     }
     return nil
 }
-// GetProduct gets the product property value. The product property
+// GetProduct gets the product property value. The product of the revision. Possible values are: Windows 10, Windows 11. Read-only.
 func (m *ProductRevision) GetProduct()(*string) {
     val, err := m.GetBackingStore().Get("product")
     if err != nil {
@@ -130,7 +130,7 @@ func (m *ProductRevision) GetProduct()(*string) {
     }
     return nil
 }
-// GetReleaseDateTime gets the releaseDateTime property value. The releaseDateTime property
+// GetReleaseDateTime gets the releaseDateTime property value. The release date for the content. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *ProductRevision) GetReleaseDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("releaseDateTime")
     if err != nil {
@@ -141,7 +141,7 @@ func (m *ProductRevision) GetReleaseDateTime()(*i336074805fc853987abe6f7fe3ad97a
     }
     return nil
 }
-// GetVersion gets the version property value. The version property
+// GetVersion gets the version property value. The version of the feature update. Read-only.
 func (m *ProductRevision) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -196,14 +196,14 @@ func (m *ProductRevision) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the content. Read-only.
 func (m *ProductRevision) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetKnowledgeBaseArticle sets the knowledgeBaseArticle property value. The knowledgeBaseArticle property
+// SetKnowledgeBaseArticle sets the knowledgeBaseArticle property value. The knowledge base article associated with the product revision.
 func (m *ProductRevision) SetKnowledgeBaseArticle(value KnowledgeBaseArticleable)() {
     err := m.GetBackingStore().Set("knowledgeBaseArticle", value)
     if err != nil {
@@ -217,21 +217,21 @@ func (m *ProductRevision) SetOsBuild(value BuildVersionDetailsable)() {
         panic(err)
     }
 }
-// SetProduct sets the product property value. The product property
+// SetProduct sets the product property value. The product of the revision. Possible values are: Windows 10, Windows 11. Read-only.
 func (m *ProductRevision) SetProduct(value *string)() {
     err := m.GetBackingStore().Set("product", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReleaseDateTime sets the releaseDateTime property value. The releaseDateTime property
+// SetReleaseDateTime sets the releaseDateTime property value. The release date for the content. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *ProductRevision) SetReleaseDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("releaseDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetVersion sets the version property value. The version property
+// SetVersion sets the version property value. The version of the feature update. Read-only.
 func (m *ProductRevision) SetVersion(value *string)() {
     err := m.GetBackingStore().Set("version", value)
     if err != nil {

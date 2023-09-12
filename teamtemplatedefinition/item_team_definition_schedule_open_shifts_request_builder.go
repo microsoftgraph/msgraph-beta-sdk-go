@@ -46,8 +46,8 @@ type ItemTeamDefinitionScheduleOpenShiftsRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByOpenShiftIdString provides operations to manage the openShifts property of the microsoft.graph.schedule entity.
-func (m *ItemTeamDefinitionScheduleOpenShiftsRequestBuilder) ByOpenShiftIdString(openShiftId string)(*ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilder) {
+// ByOpenShiftId provides operations to manage the openShifts property of the microsoft.graph.schedule entity.
+func (m *ItemTeamDefinitionScheduleOpenShiftsRequestBuilder) ByOpenShiftId(openShiftId string)(*ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemTeamDefinitionScheduleOpenShiftsRequestBuilder) ToPostRequestInform
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTeamDefinitionScheduleOpenShiftsRequestBuilder) WithUrl(rawUrl string)(*ItemTeamDefinitionScheduleOpenShiftsRequestBuilder) {
+    return NewItemTeamDefinitionScheduleOpenShiftsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

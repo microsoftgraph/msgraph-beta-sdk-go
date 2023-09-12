@@ -47,3 +47,6 @@ func SerializeSingleSignOnMode(values []SingleSignOnMode) []string {
     }
     return result
 }
+func (i SingleSignOnMode) isMultiValue() bool {
+    return false
+}

@@ -50,3 +50,6 @@ func SerializeSetupStatus(values []SetupStatus) []string {
     }
     return result
 }
+func (i SetupStatus) isMultiValue() bool {
+    return false
+}

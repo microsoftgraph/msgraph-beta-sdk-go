@@ -46,8 +46,8 @@ type ItemPendingAccessReviewInstancesRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAccessReviewInstanceIdString provides operations to manage the pendingAccessReviewInstances property of the microsoft.graph.user entity.
-func (m *ItemPendingAccessReviewInstancesRequestBuilder) ByAccessReviewInstanceIdString(accessReviewInstanceId string)(*ItemPendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilder) {
+// ByAccessReviewInstanceId provides operations to manage the pendingAccessReviewInstances property of the microsoft.graph.user entity.
+func (m *ItemPendingAccessReviewInstancesRequestBuilder) ByAccessReviewInstanceId(accessReviewInstanceId string)(*ItemPendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -151,4 +151,8 @@ func (m *ItemPendingAccessReviewInstancesRequestBuilder) ToPostRequestInformatio
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemPendingAccessReviewInstancesRequestBuilder) WithUrl(rawUrl string)(*ItemPendingAccessReviewInstancesRequestBuilder) {
+    return NewItemPendingAccessReviewInstancesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

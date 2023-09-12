@@ -84,7 +84,7 @@ func (m *HostSslCertificatePort) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetFirstSeenDateTime gets the firstSeenDateTime property value. The firstSeenDateTime property
+// GetFirstSeenDateTime gets the firstSeenDateTime property value. The first date and time that this port was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *HostSslCertificatePort) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstSeenDateTime")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *HostSslCertificatePort) GetFirstSeenDateTime()(*i336074805fc853987abe6f
     }
     return nil
 }
-// GetLastSeenDateTime gets the lastSeenDateTime property value. The lastSeenDateTime property
+// GetLastSeenDateTime gets the lastSeenDateTime property value. The most recent date and time that this port was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *HostSslCertificatePort) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSeenDateTime")
     if err != nil {
@@ -117,7 +117,7 @@ func (m *HostSslCertificatePort) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPort gets the port property value. The port property
+// GetPort gets the port property value. The port number.
 func (m *HostSslCertificatePort) GetPort()(*int32) {
     val, err := m.GetBackingStore().Get("port")
     if err != nil {
@@ -173,14 +173,14 @@ func (m *HostSslCertificatePort) SetAdditionalData(value map[string]any)() {
 func (m *HostSslCertificatePort) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetFirstSeenDateTime sets the firstSeenDateTime property value. The firstSeenDateTime property
+// SetFirstSeenDateTime sets the firstSeenDateTime property value. The first date and time that this port was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *HostSslCertificatePort) SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("firstSeenDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastSeenDateTime sets the lastSeenDateTime property value. The lastSeenDateTime property
+// SetLastSeenDateTime sets the lastSeenDateTime property value. The most recent date and time that this port was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *HostSslCertificatePort) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastSeenDateTime", value)
     if err != nil {
@@ -194,7 +194,7 @@ func (m *HostSslCertificatePort) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPort sets the port property value. The port property
+// SetPort sets the port property value. The port number.
 func (m *HostSslCertificatePort) SetPort(value *int32)() {
     err := m.GetBackingStore().Set("port", value)
     if err != nil {

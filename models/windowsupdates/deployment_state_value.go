@@ -44,3 +44,6 @@ func SerializeDeploymentStateValue(values []DeploymentStateValue) []string {
     }
     return result
 }
+func (i DeploymentStateValue) isMultiValue() bool {
+    return false
+}

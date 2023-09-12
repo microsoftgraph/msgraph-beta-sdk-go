@@ -39,8 +39,8 @@ type RoleAssignmentsItemRoleScopeTagsRequestBuilderGetRequestConfiguration struc
     // Request query parameters
     QueryParameters *RoleAssignmentsItemRoleScopeTagsRequestBuilderGetQueryParameters
 }
-// ByRoleScopeTagIdString provides operations to manage the roleScopeTags property of the microsoft.graph.deviceAndAppManagementRoleAssignment entity.
-func (m *RoleAssignmentsItemRoleScopeTagsRequestBuilder) ByRoleScopeTagIdString(roleScopeTagId string)(*RoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilder) {
+// ByRoleScopeTagId provides operations to manage the roleScopeTags property of the microsoft.graph.deviceAndAppManagementRoleAssignment entity.
+func (m *RoleAssignmentsItemRoleScopeTagsRequestBuilder) ByRoleScopeTagId(roleScopeTagId string)(*RoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *RoleAssignmentsItemRoleScopeTagsRequestBuilder) ToGetRequestInformation
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *RoleAssignmentsItemRoleScopeTagsRequestBuilder) WithUrl(rawUrl string)(*RoleAssignmentsItemRoleScopeTagsRequestBuilder) {
+    return NewRoleAssignmentsItemRoleScopeTagsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

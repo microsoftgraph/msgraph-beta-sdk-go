@@ -41,3 +41,6 @@ func SerializeEducationUserRole(values []EducationUserRole) []string {
     }
     return result
 }
+func (i EducationUserRole) isMultiValue() bool {
+    return false
+}

@@ -70,3 +70,6 @@ func SerializeAssignmentFilterOperator(values []AssignmentFilterOperator) []stri
     }
     return result
 }
+func (i AssignmentFilterOperator) isMultiValue() bool {
+    return false
+}

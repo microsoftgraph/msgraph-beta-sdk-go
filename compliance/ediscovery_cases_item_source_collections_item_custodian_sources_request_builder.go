@@ -39,9 +39,9 @@ type EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilderGetRe
     // Request query parameters
     QueryParameters *EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilderGetQueryParameters
 }
-// ByDataSourceIdString provides operations to manage the custodianSources property of the microsoft.graph.ediscovery.sourceCollection entity.
+// ByDataSourceId provides operations to manage the custodianSources property of the microsoft.graph.ediscovery.sourceCollection entity.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
-func (m *EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilder) ByDataSourceIdString(dataSourceId string)(*EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesDataSourceItemRequestBuilder) {
+func (m *EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilder) ByDataSourceId(dataSourceId string)(*EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesDataSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -107,4 +107,9 @@ func (m *EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilder)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
+func (m *EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilder) WithUrl(rawUrl string)(*EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilder) {
+    return NewEdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

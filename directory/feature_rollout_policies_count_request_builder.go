@@ -76,3 +76,8 @@ func (m *FeatureRolloutPoliciesCountRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Feature Rollout Policies have been grouped with other policies under /policies. The existing /directory/featureRolloutPolicies is deprecated and will stop returning data on 06/30/2021. Please use /policies/featureRolloutPolicies. as of 2021-01/DirectoryFeatureRolloutPolicies on 2021-03-05 and will be removed 2021-06-30
+func (m *FeatureRolloutPoliciesCountRequestBuilder) WithUrl(rawUrl string)(*FeatureRolloutPoliciesCountRequestBuilder) {
+    return NewFeatureRolloutPoliciesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

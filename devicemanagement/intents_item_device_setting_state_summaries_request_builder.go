@@ -46,8 +46,8 @@ type IntentsItemDeviceSettingStateSummariesRequestBuilderPostRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementIntentDeviceSettingStateSummaryIdString provides operations to manage the deviceSettingStateSummaries property of the microsoft.graph.deviceManagementIntent entity.
-func (m *IntentsItemDeviceSettingStateSummariesRequestBuilder) ByDeviceManagementIntentDeviceSettingStateSummaryIdString(deviceManagementIntentDeviceSettingStateSummaryId string)(*IntentsItemDeviceSettingStateSummariesDeviceManagementIntentDeviceSettingStateSummaryItemRequestBuilder) {
+// ByDeviceManagementIntentDeviceSettingStateSummaryId provides operations to manage the deviceSettingStateSummaries property of the microsoft.graph.deviceManagementIntent entity.
+func (m *IntentsItemDeviceSettingStateSummariesRequestBuilder) ByDeviceManagementIntentDeviceSettingStateSummaryId(deviceManagementIntentDeviceSettingStateSummaryId string)(*IntentsItemDeviceSettingStateSummariesDeviceManagementIntentDeviceSettingStateSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *IntentsItemDeviceSettingStateSummariesRequestBuilder) ToPostRequestInfo
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IntentsItemDeviceSettingStateSummariesRequestBuilder) WithUrl(rawUrl string)(*IntentsItemDeviceSettingStateSummariesRequestBuilder) {
+    return NewIntentsItemDeviceSettingStateSummariesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

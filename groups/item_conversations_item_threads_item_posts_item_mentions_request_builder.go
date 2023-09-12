@@ -44,8 +44,8 @@ type ItemConversationsItemThreadsItemPostsItemMentionsRequestBuilderPostRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMentionIdString provides operations to manage the mentions property of the microsoft.graph.post entity.
-func (m *ItemConversationsItemThreadsItemPostsItemMentionsRequestBuilder) ByMentionIdString(mentionId string)(*ItemConversationsItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) {
+// ByMentionId provides operations to manage the mentions property of the microsoft.graph.post entity.
+func (m *ItemConversationsItemThreadsItemPostsItemMentionsRequestBuilder) ByMentionId(mentionId string)(*ItemConversationsItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -142,4 +142,8 @@ func (m *ItemConversationsItemThreadsItemPostsItemMentionsRequestBuilder) ToPost
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemConversationsItemThreadsItemPostsItemMentionsRequestBuilder) WithUrl(rawUrl string)(*ItemConversationsItemThreadsItemPostsItemMentionsRequestBuilder) {
+    return NewItemConversationsItemThreadsItemPostsItemMentionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

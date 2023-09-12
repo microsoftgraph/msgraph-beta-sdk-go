@@ -39,8 +39,8 @@ type ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGe
     // Request query parameters
     QueryParameters *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters
 }
-// ByPasswordlessMicrosoftAuthenticatorAuthenticationMethodIdString provides operations to manage the passwordlessMicrosoftAuthenticatorMethods property of the microsoft.graph.authentication entity.
-func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) ByPasswordlessMicrosoftAuthenticatorAuthenticationMethodIdString(passwordlessMicrosoftAuthenticatorAuthenticationMethodId string)(*ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsPasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) {
+// ByPasswordlessMicrosoftAuthenticatorAuthenticationMethodId provides operations to manage the passwordlessMicrosoftAuthenticatorMethods property of the microsoft.graph.authentication entity.
+func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) ByPasswordlessMicrosoftAuthenticatorAuthenticationMethodId(passwordlessMicrosoftAuthenticatorAuthenticationMethodId string)(*ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsPasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuild
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) WithUrl(rawUrl string)(*ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) {
+    return NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

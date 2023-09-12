@@ -42,3 +42,6 @@ func SerializeDeviceManagementDerivedCredentialIssuer(values []DeviceManagementD
     }
     return result
 }
+func (i DeviceManagementDerivedCredentialIssuer) isMultiValue() bool {
+    return false
+}

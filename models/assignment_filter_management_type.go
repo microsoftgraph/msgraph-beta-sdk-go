@@ -38,3 +38,6 @@ func SerializeAssignmentFilterManagementType(values []AssignmentFilterManagement
     }
     return result
 }
+func (i AssignmentFilterManagementType) isMultiValue() bool {
+    return false
+}

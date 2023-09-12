@@ -46,8 +46,8 @@ type ServicePrincipalSignInActivitiesRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByServicePrincipalSignInActivityIdString provides operations to manage the servicePrincipalSignInActivities property of the microsoft.graph.reportRoot entity.
-func (m *ServicePrincipalSignInActivitiesRequestBuilder) ByServicePrincipalSignInActivityIdString(servicePrincipalSignInActivityId string)(*ServicePrincipalSignInActivitiesServicePrincipalSignInActivityItemRequestBuilder) {
+// ByServicePrincipalSignInActivityId provides operations to manage the servicePrincipalSignInActivities property of the microsoft.graph.reportRoot entity.
+func (m *ServicePrincipalSignInActivitiesRequestBuilder) ByServicePrincipalSignInActivityId(servicePrincipalSignInActivityId string)(*ServicePrincipalSignInActivitiesServicePrincipalSignInActivityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ServicePrincipalSignInActivitiesRequestBuilder) ToPostRequestInformatio
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ServicePrincipalSignInActivitiesRequestBuilder) WithUrl(rawUrl string)(*ServicePrincipalSignInActivitiesRequestBuilder) {
+    return NewServicePrincipalSignInActivitiesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

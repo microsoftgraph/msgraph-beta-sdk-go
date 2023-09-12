@@ -74,3 +74,7 @@ func (m *EmbeddedSIMActivationCodePoolsItemAssignmentsCountRequestBuilder) ToGet
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EmbeddedSIMActivationCodePoolsItemAssignmentsCountRequestBuilder) WithUrl(rawUrl string)(*EmbeddedSIMActivationCodePoolsItemAssignmentsCountRequestBuilder) {
+    return NewEmbeddedSIMActivationCodePoolsItemAssignmentsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

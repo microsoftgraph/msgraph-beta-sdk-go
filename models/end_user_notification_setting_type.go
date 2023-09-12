@@ -41,3 +41,6 @@ func SerializeEndUserNotificationSettingType(values []EndUserNotificationSetting
     }
     return result
 }
+func (i EndUserNotificationSettingType) isMultiValue() bool {
+    return false
+}

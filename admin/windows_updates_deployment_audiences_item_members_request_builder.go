@@ -46,8 +46,8 @@ type WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilderPostRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUpdatableAssetIdString provides operations to manage the members property of the microsoft.graph.windowsUpdates.deploymentAudience entity.
-func (m *WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) ByUpdatableAssetIdString(updatableAssetId string)(*WindowsUpdatesDeploymentAudiencesItemMembersUpdatableAssetItemRequestBuilder) {
+// ByUpdatableAssetId provides operations to manage the members property of the microsoft.graph.windowsUpdates.deploymentAudience entity.
+func (m *WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) ByUpdatableAssetId(updatableAssetId string)(*WindowsUpdatesDeploymentAudiencesItemMembersUpdatableAssetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -163,4 +163,8 @@ func (m *WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) ToPostReque
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) WithUrl(rawUrl string)(*WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) {
+    return NewWindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

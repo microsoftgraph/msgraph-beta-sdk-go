@@ -38,3 +38,6 @@ func SerializeInkAccessSetting(values []InkAccessSetting) []string {
     }
     return result
 }
+func (i InkAccessSetting) isMultiValue() bool {
+    return false
+}

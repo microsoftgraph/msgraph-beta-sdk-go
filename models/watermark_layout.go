@@ -32,3 +32,6 @@ func SerializeWatermarkLayout(values []WatermarkLayout) []string {
     }
     return result
 }
+func (i WatermarkLayout) isMultiValue() bool {
+    return false
+}

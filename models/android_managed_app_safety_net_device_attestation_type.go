@@ -38,3 +38,6 @@ func SerializeAndroidManagedAppSafetyNetDeviceAttestationType(values []AndroidMa
     }
     return result
 }
+func (i AndroidManagedAppSafetyNetDeviceAttestationType) isMultiValue() bool {
+    return false
+}

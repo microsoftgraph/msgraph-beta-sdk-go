@@ -42,3 +42,6 @@ func SerializeMacOSContentCachingPeerPolicy(values []MacOSContentCachingPeerPoli
     }
     return result
 }
+func (i MacOSContentCachingPeerPolicy) isMultiValue() bool {
+    return false
+}

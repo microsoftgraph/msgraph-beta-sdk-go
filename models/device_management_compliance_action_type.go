@@ -58,3 +58,6 @@ func SerializeDeviceManagementComplianceActionType(values []DeviceManagementComp
     }
     return result
 }
+func (i DeviceManagementComplianceActionType) isMultiValue() bool {
+    return false
+}

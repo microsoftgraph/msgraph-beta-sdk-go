@@ -50,3 +50,6 @@ func SerializeAppleUserInitiatedEnrollmentType(values []AppleUserInitiatedEnroll
     }
     return result
 }
+func (i AppleUserInitiatedEnrollmentType) isMultiValue() bool {
+    return false
+}

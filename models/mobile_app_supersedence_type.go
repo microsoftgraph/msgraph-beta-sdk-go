@@ -34,3 +34,6 @@ func SerializeMobileAppSupersedenceType(values []MobileAppSupersedenceType) []st
     }
     return result
 }
+func (i MobileAppSupersedenceType) isMultiValue() bool {
+    return false
+}

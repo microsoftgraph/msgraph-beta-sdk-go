@@ -42,3 +42,6 @@ func SerializeZebraFotaUpdateType(values []ZebraFotaUpdateType) []string {
     }
     return result
 }
+func (i ZebraFotaUpdateType) isMultiValue() bool {
+    return false
+}

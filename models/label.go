@@ -53,3 +53,6 @@ func SerializeLabel(values []Label) []string {
     }
     return result
 }
+func (i Label) isMultiValue() bool {
+    return false
+}

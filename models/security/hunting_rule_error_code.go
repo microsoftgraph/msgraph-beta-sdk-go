@@ -53,3 +53,6 @@ func SerializeHuntingRuleErrorCode(values []HuntingRuleErrorCode) []string {
     }
     return result
 }
+func (i HuntingRuleErrorCode) isMultiValue() bool {
+    return false
+}

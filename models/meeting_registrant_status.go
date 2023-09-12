@@ -38,3 +38,6 @@ func SerializeMeetingRegistrantStatus(values []MeetingRegistrantStatus) []string
     }
     return result
 }
+func (i MeetingRegistrantStatus) isMultiValue() bool {
+    return false
+}

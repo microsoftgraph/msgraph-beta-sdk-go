@@ -46,8 +46,8 @@ type WindowsUpdatesDeploymentsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeploymentIdString provides operations to manage the deployments property of the microsoft.graph.adminWindowsUpdates entity.
-func (m *WindowsUpdatesDeploymentsRequestBuilder) ByDeploymentIdString(deploymentId string)(*WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) {
+// ByDeploymentId provides operations to manage the deployments property of the microsoft.graph.adminWindowsUpdates entity.
+func (m *WindowsUpdatesDeploymentsRequestBuilder) ByDeploymentId(deploymentId string)(*WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *WindowsUpdatesDeploymentsRequestBuilder) ToPostRequestInformation(ctx c
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsUpdatesDeploymentsRequestBuilder) WithUrl(rawUrl string)(*WindowsUpdatesDeploymentsRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

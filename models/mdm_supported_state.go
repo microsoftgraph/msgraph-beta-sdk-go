@@ -42,3 +42,6 @@ func SerializeMdmSupportedState(values []MdmSupportedState) []string {
     }
     return result
 }
+func (i MdmSupportedState) isMultiValue() bool {
+    return false
+}

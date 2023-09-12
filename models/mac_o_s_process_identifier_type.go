@@ -34,3 +34,6 @@ func SerializeMacOSProcessIdentifierType(values []MacOSProcessIdentifierType) []
     }
     return result
 }
+func (i MacOSProcessIdentifierType) isMultiValue() bool {
+    return false
+}

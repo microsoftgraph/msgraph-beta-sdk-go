@@ -34,3 +34,6 @@ func SerializeRestrictedAppsState(values []RestrictedAppsState) []string {
     }
     return result
 }
+func (i RestrictedAppsState) isMultiValue() bool {
+    return false
+}

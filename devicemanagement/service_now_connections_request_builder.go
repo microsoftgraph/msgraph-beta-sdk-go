@@ -46,8 +46,8 @@ type ServiceNowConnectionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByServiceNowConnectionIdString provides operations to manage the serviceNowConnections property of the microsoft.graph.deviceManagement entity.
-func (m *ServiceNowConnectionsRequestBuilder) ByServiceNowConnectionIdString(serviceNowConnectionId string)(*ServiceNowConnectionsServiceNowConnectionItemRequestBuilder) {
+// ByServiceNowConnectionId provides operations to manage the serviceNowConnections property of the microsoft.graph.deviceManagement entity.
+func (m *ServiceNowConnectionsRequestBuilder) ByServiceNowConnectionId(serviceNowConnectionId string)(*ServiceNowConnectionsServiceNowConnectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ServiceNowConnectionsRequestBuilder) ToPostRequestInformation(ctx conte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ServiceNowConnectionsRequestBuilder) WithUrl(rawUrl string)(*ServiceNowConnectionsRequestBuilder) {
+    return NewServiceNowConnectionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -35,3 +35,6 @@ func SerializeTrainingType(values []TrainingType) []string {
     }
     return result
 }
+func (i TrainingType) isMultiValue() bool {
+    return false
+}

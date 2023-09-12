@@ -46,8 +46,8 @@ type ItemProfileLanguagesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByLanguageProficiencyIdString provides operations to manage the languages property of the microsoft.graph.profile entity.
-func (m *ItemProfileLanguagesRequestBuilder) ByLanguageProficiencyIdString(languageProficiencyId string)(*ItemProfileLanguagesLanguageProficiencyItemRequestBuilder) {
+// ByLanguageProficiencyId provides operations to manage the languages property of the microsoft.graph.profile entity.
+func (m *ItemProfileLanguagesRequestBuilder) ByLanguageProficiencyId(languageProficiencyId string)(*ItemProfileLanguagesLanguageProficiencyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemProfileLanguagesRequestBuilder) ToPostRequestInformation(ctx contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemProfileLanguagesRequestBuilder) WithUrl(rawUrl string)(*ItemProfileLanguagesRequestBuilder) {
+    return NewItemProfileLanguagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

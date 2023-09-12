@@ -35,3 +35,6 @@ func SerializeSubmissionClientSource(values []SubmissionClientSource) []string {
     }
     return result
 }
+func (i SubmissionClientSource) isMultiValue() bool {
+    return false
+}

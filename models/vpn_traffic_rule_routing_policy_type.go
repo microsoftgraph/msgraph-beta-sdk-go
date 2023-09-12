@@ -38,3 +38,6 @@ func SerializeVpnTrafficRuleRoutingPolicyType(values []VpnTrafficRuleRoutingPoli
     }
     return result
 }
+func (i VpnTrafficRuleRoutingPolicyType) isMultiValue() bool {
+    return false
+}

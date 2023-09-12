@@ -50,9 +50,9 @@ type VirtualEndpointProvisioningPoliciesRequestBuilderPostRequestConfiguration s
 func (m *VirtualEndpointProvisioningPoliciesRequestBuilder) ApplyConfig()(*VirtualEndpointProvisioningPoliciesApplyConfigRequestBuilder) {
     return NewVirtualEndpointProvisioningPoliciesApplyConfigRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByCloudPcProvisioningPolicyIdString provides operations to manage the provisioningPolicies property of the microsoft.graph.virtualEndpoint entity.
+// ByCloudPcProvisioningPolicyId provides operations to manage the provisioningPolicies property of the microsoft.graph.virtualEndpoint entity.
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId on 2023-03-16 and will be removed 2023-07-30
-func (m *VirtualEndpointProvisioningPoliciesRequestBuilder) ByCloudPcProvisioningPolicyIdString(cloudPcProvisioningPolicyId string)(*VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilder) {
+func (m *VirtualEndpointProvisioningPoliciesRequestBuilder) ByCloudPcProvisioningPolicyId(cloudPcProvisioningPolicyId string)(*VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -159,4 +159,9 @@ func (m *VirtualEndpointProvisioningPoliciesRequestBuilder) ToPostRequestInforma
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId on 2023-03-16 and will be removed 2023-07-30
+func (m *VirtualEndpointProvisioningPoliciesRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointProvisioningPoliciesRequestBuilder) {
+    return NewVirtualEndpointProvisioningPoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

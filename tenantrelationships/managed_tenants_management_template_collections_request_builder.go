@@ -46,8 +46,8 @@ type ManagedTenantsManagementTemplateCollectionsRequestBuilderPostRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByManagementTemplateCollectionIdString provides operations to manage the managementTemplateCollections property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsManagementTemplateCollectionsRequestBuilder) ByManagementTemplateCollectionIdString(managementTemplateCollectionId string)(*ManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilder) {
+// ByManagementTemplateCollectionId provides operations to manage the managementTemplateCollections property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsManagementTemplateCollectionsRequestBuilder) ByManagementTemplateCollectionId(managementTemplateCollectionId string)(*ManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ManagedTenantsManagementTemplateCollectionsRequestBuilder) ToPostReques
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedTenantsManagementTemplateCollectionsRequestBuilder) WithUrl(rawUrl string)(*ManagedTenantsManagementTemplateCollectionsRequestBuilder) {
+    return NewManagedTenantsManagementTemplateCollectionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

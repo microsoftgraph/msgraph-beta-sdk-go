@@ -46,8 +46,8 @@ type EnterpriseAppsItemRoleDefinitionsRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUnifiedRoleDefinitionIdString provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplication entity.
-func (m *EnterpriseAppsItemRoleDefinitionsRequestBuilder) ByUnifiedRoleDefinitionIdString(unifiedRoleDefinitionId string)(*EnterpriseAppsItemRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) {
+// ByUnifiedRoleDefinitionId provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplication entity.
+func (m *EnterpriseAppsItemRoleDefinitionsRequestBuilder) ByUnifiedRoleDefinitionId(unifiedRoleDefinitionId string)(*EnterpriseAppsItemRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *EnterpriseAppsItemRoleDefinitionsRequestBuilder) ToPostRequestInformati
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EnterpriseAppsItemRoleDefinitionsRequestBuilder) WithUrl(rawUrl string)(*EnterpriseAppsItemRoleDefinitionsRequestBuilder) {
+    return NewEnterpriseAppsItemRoleDefinitionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

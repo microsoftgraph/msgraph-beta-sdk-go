@@ -178,3 +178,7 @@ func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) UserAttributeAssignm
 func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) UserFlowIdentityProviders()(*B2cUserFlowsItemUserFlowIdentityProvidersRequestBuilder) {
     return NewB2cUserFlowsItemUserFlowIdentityProvidersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) WithUrl(rawUrl string)(*B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) {
+    return NewB2cUserFlowsB2cIdentityUserFlowItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

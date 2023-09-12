@@ -46,8 +46,8 @@ type VirtualEndpointSnapshotsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCloudPcSnapshotIdString provides operations to manage the snapshots property of the microsoft.graph.virtualEndpoint entity.
-func (m *VirtualEndpointSnapshotsRequestBuilder) ByCloudPcSnapshotIdString(cloudPcSnapshotId string)(*VirtualEndpointSnapshotsCloudPcSnapshotItemRequestBuilder) {
+// ByCloudPcSnapshotId provides operations to manage the snapshots property of the microsoft.graph.virtualEndpoint entity.
+func (m *VirtualEndpointSnapshotsRequestBuilder) ByCloudPcSnapshotId(cloudPcSnapshotId string)(*VirtualEndpointSnapshotsCloudPcSnapshotItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -155,4 +155,8 @@ func (m *VirtualEndpointSnapshotsRequestBuilder) ToPostRequestInformation(ctx co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEndpointSnapshotsRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointSnapshotsRequestBuilder) {
+    return NewVirtualEndpointSnapshotsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -156,3 +156,7 @@ func (m *VirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilder) ToPatchR
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilder) {
+    return NewVirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

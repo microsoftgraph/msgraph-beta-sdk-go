@@ -162,3 +162,7 @@ func (m *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder) To
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder) WithUrl(rawUrl string)(*AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder) {
+    return NewAuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

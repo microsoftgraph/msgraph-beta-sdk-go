@@ -46,9 +46,9 @@ type ItemSitesItemInformationProtectionPolicyLabelsRequestBuilderPostRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByInformationProtectionLabelIdString provides operations to manage the labels property of the microsoft.graph.informationProtectionPolicy entity.
+// ByInformationProtectionLabelId provides operations to manage the labels property of the microsoft.graph.informationProtectionPolicy entity.
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
-func (m *ItemSitesItemInformationProtectionPolicyLabelsRequestBuilder) ByInformationProtectionLabelIdString(informationProtectionLabelId string)(*ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder) {
+func (m *ItemSitesItemInformationProtectionPolicyLabelsRequestBuilder) ByInformationProtectionLabelId(informationProtectionLabelId string)(*ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -168,4 +168,9 @@ func (m *ItemSitesItemInformationProtectionPolicyLabelsRequestBuilder) ToPostReq
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
+func (m *ItemSitesItemInformationProtectionPolicyLabelsRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemInformationProtectionPolicyLabelsRequestBuilder) {
+    return NewItemSitesItemInformationProtectionPolicyLabelsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

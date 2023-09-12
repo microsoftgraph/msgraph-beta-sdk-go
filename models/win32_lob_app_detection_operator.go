@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // Contains properties for detection operator.
 type Win32LobAppDetectionOperator int
@@ -23,27 +24,36 @@ const (
 )
 
 func (i Win32LobAppDetectionOperator) String() string {
-    return []string{"notConfigured", "equal", "notEqual", "greaterThan", "greaterThanOrEqual", "lessThan", "lessThanOrEqual"}[i]
+    var values []string
+    for p := Win32LobAppDetectionOperator(1); p <= LESSTHANOREQUAL_WIN32LOBAPPDETECTIONOPERATOR; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"notConfigured", "equal", "notEqual", "greaterThan", "greaterThanOrEqual", "lessThan", "lessThanOrEqual"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseWin32LobAppDetectionOperator(v string) (any, error) {
-    result := NOTCONFIGURED_WIN32LOBAPPDETECTIONOPERATOR
-    switch v {
-        case "notConfigured":
-            result = NOTCONFIGURED_WIN32LOBAPPDETECTIONOPERATOR
-        case "equal":
-            result = EQUAL_WIN32LOBAPPDETECTIONOPERATOR
-        case "notEqual":
-            result = NOTEQUAL_WIN32LOBAPPDETECTIONOPERATOR
-        case "greaterThan":
-            result = GREATERTHAN_WIN32LOBAPPDETECTIONOPERATOR
-        case "greaterThanOrEqual":
-            result = GREATERTHANOREQUAL_WIN32LOBAPPDETECTIONOPERATOR
-        case "lessThan":
-            result = LESSTHAN_WIN32LOBAPPDETECTIONOPERATOR
-        case "lessThanOrEqual":
-            result = LESSTHANOREQUAL_WIN32LOBAPPDETECTIONOPERATOR
-        default:
-            return 0, errors.New("Unknown Win32LobAppDetectionOperator value: " + v)
+    var result Win32LobAppDetectionOperator
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "notConfigured":
+                result |= NOTCONFIGURED_WIN32LOBAPPDETECTIONOPERATOR
+            case "equal":
+                result |= EQUAL_WIN32LOBAPPDETECTIONOPERATOR
+            case "notEqual":
+                result |= NOTEQUAL_WIN32LOBAPPDETECTIONOPERATOR
+            case "greaterThan":
+                result |= GREATERTHAN_WIN32LOBAPPDETECTIONOPERATOR
+            case "greaterThanOrEqual":
+                result |= GREATERTHANOREQUAL_WIN32LOBAPPDETECTIONOPERATOR
+            case "lessThan":
+                result |= LESSTHAN_WIN32LOBAPPDETECTIONOPERATOR
+            case "lessThanOrEqual":
+                result |= LESSTHANOREQUAL_WIN32LOBAPPDETECTIONOPERATOR
+            default:
+                return 0, errors.New("Unknown Win32LobAppDetectionOperator value: " + v)
+        }
     }
     return &result, nil
 }
@@ -53,4 +63,7 @@ func SerializeWin32LobAppDetectionOperator(values []Win32LobAppDetectionOperator
         result[i] = v.String()
     }
     return result
+}
+func (i Win32LobAppDetectionOperator) isMultiValue() bool {
+    return true
 }

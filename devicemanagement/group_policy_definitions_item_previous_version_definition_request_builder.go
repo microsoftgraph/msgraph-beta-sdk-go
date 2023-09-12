@@ -169,3 +169,7 @@ func (m *GroupPolicyDefinitionsItemPreviousVersionDefinitionRequestBuilder) ToPa
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GroupPolicyDefinitionsItemPreviousVersionDefinitionRequestBuilder) WithUrl(rawUrl string)(*GroupPolicyDefinitionsItemPreviousVersionDefinitionRequestBuilder) {
+    return NewGroupPolicyDefinitionsItemPreviousVersionDefinitionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

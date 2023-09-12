@@ -225,3 +225,7 @@ func (m *VirtualEndpointRequestBuilder) ToPatchRequestInformation(ctx context.Co
 func (m *VirtualEndpointRequestBuilder) UserSettings()(*VirtualEndpointUserSettingsRequestBuilder) {
     return NewVirtualEndpointUserSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEndpointRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointRequestBuilder) {
+    return NewVirtualEndpointRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

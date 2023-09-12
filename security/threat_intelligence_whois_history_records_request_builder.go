@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceWhoisHistoryRecordsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceWhoisHistoryRecordsRequestBuilderGetQueryParameters get whoisHistoryRecords from security
+// ThreatIntelligenceWhoisHistoryRecordsRequestBuilderGetQueryParameters retrieve details about whoisHistoryRecord objects.Note: List retrieval is not yet supported.
 type ThreatIntelligenceWhoisHistoryRecordsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -46,8 +46,8 @@ type ThreatIntelligenceWhoisHistoryRecordsRequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWhoisHistoryRecordIdString provides operations to manage the whoisHistoryRecords property of the microsoft.graph.security.threatIntelligence entity.
-func (m *ThreatIntelligenceWhoisHistoryRecordsRequestBuilder) ByWhoisHistoryRecordIdString(whoisHistoryRecordId string)(*ThreatIntelligenceWhoisHistoryRecordsWhoisHistoryRecordItemRequestBuilder) {
+// ByWhoisHistoryRecordId provides operations to manage the whoisHistoryRecords property of the microsoft.graph.security.threatIntelligence entity.
+func (m *ThreatIntelligenceWhoisHistoryRecordsRequestBuilder) ByWhoisHistoryRecordId(whoisHistoryRecordId string)(*ThreatIntelligenceWhoisHistoryRecordsWhoisHistoryRecordItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -74,7 +74,7 @@ func NewThreatIntelligenceWhoisHistoryRecordsRequestBuilder(rawUrl string, reque
 func (m *ThreatIntelligenceWhoisHistoryRecordsRequestBuilder) Count()(*ThreatIntelligenceWhoisHistoryRecordsCountRequestBuilder) {
     return NewThreatIntelligenceWhoisHistoryRecordsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get whoisHistoryRecords from security
+// Get retrieve details about whoisHistoryRecord objects.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligenceWhoisHistoryRecordsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceWhoisHistoryRecordsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.WhoisHistoryRecordCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ThreatIntelligenceWhoisHistoryRecordsRequestBuilder) Post(ctx context.C
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.WhoisHistoryRecordable), nil
 }
-// ToGetRequestInformation get whoisHistoryRecords from security
+// ToGetRequestInformation retrieve details about whoisHistoryRecord objects.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligenceWhoisHistoryRecordsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceWhoisHistoryRecordsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -144,4 +144,8 @@ func (m *ThreatIntelligenceWhoisHistoryRecordsRequestBuilder) ToPostRequestInfor
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ThreatIntelligenceWhoisHistoryRecordsRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceWhoisHistoryRecordsRequestBuilder) {
+    return NewThreatIntelligenceWhoisHistoryRecordsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

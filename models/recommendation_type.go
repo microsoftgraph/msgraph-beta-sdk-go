@@ -122,3 +122,6 @@ func SerializeRecommendationType(values []RecommendationType) []string {
     }
     return result
 }
+func (i RecommendationType) isMultiValue() bool {
+    return false
+}

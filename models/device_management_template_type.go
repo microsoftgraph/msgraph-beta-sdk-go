@@ -74,3 +74,6 @@ func SerializeDeviceManagementTemplateType(values []DeviceManagementTemplateType
     }
     return result
 }
+func (i DeviceManagementTemplateType) isMultiValue() bool {
+    return false
+}

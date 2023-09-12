@@ -46,8 +46,8 @@ type DepOnboardingSettingsItemEnrollmentProfilesRequestBuilderPostRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEnrollmentProfileIdString provides operations to manage the enrollmentProfiles property of the microsoft.graph.depOnboardingSetting entity.
-func (m *DepOnboardingSettingsItemEnrollmentProfilesRequestBuilder) ByEnrollmentProfileIdString(enrollmentProfileId string)(*DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder) {
+// ByEnrollmentProfileId provides operations to manage the enrollmentProfiles property of the microsoft.graph.depOnboardingSetting entity.
+func (m *DepOnboardingSettingsItemEnrollmentProfilesRequestBuilder) ByEnrollmentProfileId(enrollmentProfileId string)(*DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *DepOnboardingSettingsItemEnrollmentProfilesRequestBuilder) ToPostReques
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DepOnboardingSettingsItemEnrollmentProfilesRequestBuilder) WithUrl(rawUrl string)(*DepOnboardingSettingsItemEnrollmentProfilesRequestBuilder) {
+    return NewDepOnboardingSettingsItemEnrollmentProfilesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

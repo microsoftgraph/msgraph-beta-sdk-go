@@ -63,7 +63,7 @@ func (m *UnifiedRoleAssignmentMultiple) GetDescription()(*string) {
     }
     return nil
 }
-// GetDirectoryScopeIds gets the directoryScopeIds property value. Ids of the directory objects representing the scopes of the assignment. The scopes of an assignment determine the set of resources for which the principals have been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
+// GetDirectoryScopeIds gets the directoryScopeIds property value. Ids of the directory objects that represent the scopes of the assignment. The scopes of an assignment determine the set of resources for which the principals have been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
 func (m *UnifiedRoleAssignmentMultiple) GetDirectoryScopeIds()([]string) {
     val, err := m.GetBackingStore().Get("directoryScopeIds")
     if err != nil {
@@ -74,7 +74,7 @@ func (m *UnifiedRoleAssignmentMultiple) GetDirectoryScopeIds()([]string) {
     }
     return nil
 }
-// GetDirectoryScopes gets the directoryScopes property value. Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+// GetDirectoryScopes gets the directoryScopes property value. Read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
 func (m *UnifiedRoleAssignmentMultiple) GetDirectoryScopes()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("directoryScopes")
     if err != nil {
@@ -258,7 +258,7 @@ func (m *UnifiedRoleAssignmentMultiple) GetPrincipalIds()([]string) {
     }
     return nil
 }
-// GetPrincipals gets the principals property value. Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+// GetPrincipals gets the principals property value. Read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
 func (m *UnifiedRoleAssignmentMultiple) GetPrincipals()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("principals")
     if err != nil {
@@ -411,14 +411,14 @@ func (m *UnifiedRoleAssignmentMultiple) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetDirectoryScopeIds sets the directoryScopeIds property value. Ids of the directory objects representing the scopes of the assignment. The scopes of an assignment determine the set of resources for which the principals have been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
+// SetDirectoryScopeIds sets the directoryScopeIds property value. Ids of the directory objects that represent the scopes of the assignment. The scopes of an assignment determine the set of resources for which the principals have been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
 func (m *UnifiedRoleAssignmentMultiple) SetDirectoryScopeIds(value []string)() {
     err := m.GetBackingStore().Set("directoryScopeIds", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDirectoryScopes sets the directoryScopes property value. Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+// SetDirectoryScopes sets the directoryScopes property value. Read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
 func (m *UnifiedRoleAssignmentMultiple) SetDirectoryScopes(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("directoryScopes", value)
     if err != nil {
@@ -439,7 +439,7 @@ func (m *UnifiedRoleAssignmentMultiple) SetPrincipalIds(value []string)() {
         panic(err)
     }
 }
-// SetPrincipals sets the principals property value. Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+// SetPrincipals sets the principals property value. Read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
 func (m *UnifiedRoleAssignmentMultiple) SetPrincipals(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("principals", value)
     if err != nil {

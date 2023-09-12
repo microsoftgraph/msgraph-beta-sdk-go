@@ -46,8 +46,8 @@ type MicrosoftTunnelServerLogCollectionResponsesRequestBuilderPostRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMicrosoftTunnelServerLogCollectionResponseIdString provides operations to manage the microsoftTunnelServerLogCollectionResponses property of the microsoft.graph.deviceManagement entity.
-func (m *MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) ByMicrosoftTunnelServerLogCollectionResponseIdString(microsoftTunnelServerLogCollectionResponseId string)(*MicrosoftTunnelServerLogCollectionResponsesMicrosoftTunnelServerLogCollectionResponseItemRequestBuilder) {
+// ByMicrosoftTunnelServerLogCollectionResponseId provides operations to manage the microsoftTunnelServerLogCollectionResponses property of the microsoft.graph.deviceManagement entity.
+func (m *MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) ByMicrosoftTunnelServerLogCollectionResponseId(microsoftTunnelServerLogCollectionResponseId string)(*MicrosoftTunnelServerLogCollectionResponsesMicrosoftTunnelServerLogCollectionResponseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) ToPostReques
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) WithUrl(rawUrl string)(*MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) {
+    return NewMicrosoftTunnelServerLogCollectionResponsesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

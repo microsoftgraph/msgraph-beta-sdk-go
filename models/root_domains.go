@@ -47,3 +47,6 @@ func SerializeRootDomains(values []RootDomains) []string {
     }
     return result
 }
+func (i RootDomains) isMultiValue() bool {
+    return false
+}

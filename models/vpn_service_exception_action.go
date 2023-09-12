@@ -38,3 +38,6 @@ func SerializeVpnServiceExceptionAction(values []VpnServiceExceptionAction) []st
     }
     return result
 }
+func (i VpnServiceExceptionAction) isMultiValue() bool {
+    return false
+}

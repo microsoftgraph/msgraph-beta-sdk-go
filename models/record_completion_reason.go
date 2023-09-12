@@ -53,3 +53,6 @@ func SerializeRecordCompletionReason(values []RecordCompletionReason) []string {
     }
     return result
 }
+func (i RecordCompletionReason) isMultiValue() bool {
+    return false
+}

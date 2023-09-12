@@ -11,7 +11,7 @@ import (
 type IndustryDataDataConnectorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IndustryDataDataConnectorsRequestBuilderGetQueryParameters get the industryDataConnector resources from the dataConnector navigation property.
+// IndustryDataDataConnectorsRequestBuilderGetQueryParameters get a list of the azureDataLakeConnector objects and their properties.
 type IndustryDataDataConnectorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -46,8 +46,8 @@ type IndustryDataDataConnectorsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByIndustryDataConnectorIdString provides operations to manage the dataConnectors property of the microsoft.graph.industryData.industryDataRoot entity.
-func (m *IndustryDataDataConnectorsRequestBuilder) ByIndustryDataConnectorIdString(industryDataConnectorId string)(*IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) {
+// ByIndustryDataConnectorId provides operations to manage the dataConnectors property of the microsoft.graph.industryData.industryDataRoot entity.
+func (m *IndustryDataDataConnectorsRequestBuilder) ByIndustryDataConnectorId(industryDataConnectorId string)(*IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -74,10 +74,10 @@ func NewIndustryDataDataConnectorsRequestBuilder(rawUrl string, requestAdapter i
 func (m *IndustryDataDataConnectorsRequestBuilder) Count()(*IndustryDataDataConnectorsCountRequestBuilder) {
     return NewIndustryDataDataConnectorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the industryDataConnector resources from the dataConnector navigation property.
+// Get get a list of the azureDataLakeConnector objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-list?view=graph-rest-1.0
 func (m *IndustryDataDataConnectorsRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataDataConnectorsRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -118,7 +118,7 @@ func (m *IndustryDataDataConnectorsRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable), nil
 }
-// ToGetRequestInformation get the industryDataConnector resources from the dataConnector navigation property.
+// ToGetRequestInformation get a list of the azureDataLakeConnector objects and their properties.
 func (m *IndustryDataDataConnectorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataDataConnectorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -150,4 +150,8 @@ func (m *IndustryDataDataConnectorsRequestBuilder) ToPostRequestInformation(ctx 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IndustryDataDataConnectorsRequestBuilder) WithUrl(rawUrl string)(*IndustryDataDataConnectorsRequestBuilder) {
+    return NewIndustryDataDataConnectorsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

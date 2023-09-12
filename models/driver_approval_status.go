@@ -42,3 +42,6 @@ func SerializeDriverApprovalStatus(values []DriverApprovalStatus) []string {
     }
     return result
 }
+func (i DriverApprovalStatus) isMultiValue() bool {
+    return false
+}

@@ -38,3 +38,6 @@ func SerializeVpnLocalIdentifier(values []VpnLocalIdentifier) []string {
     }
     return result
 }
+func (i VpnLocalIdentifier) isMultiValue() bool {
+    return false
+}

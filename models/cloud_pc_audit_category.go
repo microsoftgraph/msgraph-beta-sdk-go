@@ -32,3 +32,6 @@ func SerializeCloudPcAuditCategory(values []CloudPcAuditCategory) []string {
     }
     return result
 }
+func (i CloudPcAuditCategory) isMultiValue() bool {
+    return false
+}

@@ -38,3 +38,6 @@ func SerializeGlobalDeviceHealthScriptState(values []GlobalDeviceHealthScriptSta
     }
     return result
 }
+func (i GlobalDeviceHealthScriptState) isMultiValue() bool {
+    return false
+}

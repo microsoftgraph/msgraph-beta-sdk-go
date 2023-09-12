@@ -76,3 +76,8 @@ func (m *VirtualEndpointSharedUseServicePlansCountRequestBuilder) ToGetRequestIn
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The sharedUseServicePlans property is deprecated and will not be supported starting Oct 8, 2023. This property will not be included as part of the API response. as of 2023-03/sharedUseServicePlans on 2023-06-08 and will be removed 2023-10-08
+func (m *VirtualEndpointSharedUseServicePlansCountRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointSharedUseServicePlansCountRequestBuilder) {
+    return NewVirtualEndpointSharedUseServicePlansCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

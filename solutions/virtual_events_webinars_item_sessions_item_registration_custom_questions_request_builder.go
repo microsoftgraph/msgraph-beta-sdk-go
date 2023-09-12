@@ -46,8 +46,8 @@ type VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsRequestBuil
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMeetingRegistrationQuestionIdString provides operations to manage the customQuestions property of the microsoft.graph.meetingRegistration entity.
-func (m *VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsRequestBuilder) ByMeetingRegistrationQuestionIdString(meetingRegistrationQuestionId string)(*VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilder) {
+// ByMeetingRegistrationQuestionId provides operations to manage the customQuestions property of the microsoft.graph.meetingRegistration entity.
+func (m *VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsRequestBuilder) ByMeetingRegistrationQuestionId(meetingRegistrationQuestionId string)(*VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsRequest
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsRequestBuilder) WithUrl(rawUrl string)(*VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsRequestBuilder) {
+    return NewVirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

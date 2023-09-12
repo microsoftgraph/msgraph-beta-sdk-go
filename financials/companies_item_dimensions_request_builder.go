@@ -113,3 +113,7 @@ func (m *CompaniesItemDimensionsRequestBuilder) ToGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CompaniesItemDimensionsRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemDimensionsRequestBuilder) {
+    return NewCompaniesItemDimensionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

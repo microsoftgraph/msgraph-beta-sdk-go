@@ -35,3 +35,6 @@ func SerializeWorkloadActionCategory(values []WorkloadActionCategory) []string {
     }
     return result
 }
+func (i WorkloadActionCategory) isMultiValue() bool {
+    return false
+}

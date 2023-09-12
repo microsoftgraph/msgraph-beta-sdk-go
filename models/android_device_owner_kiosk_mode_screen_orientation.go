@@ -42,3 +42,6 @@ func SerializeAndroidDeviceOwnerKioskModeScreenOrientation(values []AndroidDevic
     }
     return result
 }
+func (i AndroidDeviceOwnerKioskModeScreenOrientation) isMultiValue() bool {
+    return false
+}

@@ -32,3 +32,6 @@ func SerializeRelationType(values []RelationType) []string {
     }
     return result
 }
+func (i RelationType) isMultiValue() bool {
+    return false
+}

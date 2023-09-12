@@ -38,3 +38,6 @@ func SerializeServiceStartType(values []ServiceStartType) []string {
     }
     return result
 }
+func (i ServiceStartType) isMultiValue() bool {
+    return false
+}

@@ -38,3 +38,6 @@ func SerializeVpnTunnelConfigurationType(values []VpnTunnelConfigurationType) []
     }
     return result
 }
+func (i VpnTunnelConfigurationType) isMultiValue() bool {
+    return false
+}

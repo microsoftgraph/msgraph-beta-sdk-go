@@ -39,8 +39,8 @@ type ItemAssignmentsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemAssignmentsRequestBuilderGetQueryParameters
 }
-// ByPrivilegedRoleAssignmentIdString provides operations to manage the assignments property of the microsoft.graph.privilegedRole entity.
-func (m *ItemAssignmentsRequestBuilder) ByPrivilegedRoleAssignmentIdString(privilegedRoleAssignmentId string)(*ItemAssignmentsPrivilegedRoleAssignmentItemRequestBuilder) {
+// ByPrivilegedRoleAssignmentId provides operations to manage the assignments property of the microsoft.graph.privilegedRole entity.
+func (m *ItemAssignmentsRequestBuilder) ByPrivilegedRoleAssignmentId(privilegedRoleAssignmentId string)(*ItemAssignmentsPrivilegedRoleAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *ItemAssignmentsRequestBuilder) ToGetRequestInformation(ctx context.Cont
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemAssignmentsRequestBuilder) WithUrl(rawUrl string)(*ItemAssignmentsRequestBuilder) {
+    return NewItemAssignmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

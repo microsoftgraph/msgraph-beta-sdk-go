@@ -46,8 +46,8 @@ type ItemProfileNotesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPersonAnnotationIdString provides operations to manage the notes property of the microsoft.graph.profile entity.
-func (m *ItemProfileNotesRequestBuilder) ByPersonAnnotationIdString(personAnnotationId string)(*ItemProfileNotesPersonAnnotationItemRequestBuilder) {
+// ByPersonAnnotationId provides operations to manage the notes property of the microsoft.graph.profile entity.
+func (m *ItemProfileNotesRequestBuilder) ByPersonAnnotationId(personAnnotationId string)(*ItemProfileNotesPersonAnnotationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemProfileNotesRequestBuilder) ToPostRequestInformation(ctx context.Co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemProfileNotesRequestBuilder) WithUrl(rawUrl string)(*ItemProfileNotesRequestBuilder) {
+    return NewItemProfileNotesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

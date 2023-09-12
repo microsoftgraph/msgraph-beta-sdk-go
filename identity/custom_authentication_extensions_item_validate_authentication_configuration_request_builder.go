@@ -66,3 +66,7 @@ func (m *CustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRe
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRequestBuilder) WithUrl(rawUrl string)(*CustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRequestBuilder) {
+    return NewCustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

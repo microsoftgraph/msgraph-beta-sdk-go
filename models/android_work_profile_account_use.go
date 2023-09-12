@@ -42,3 +42,6 @@ func SerializeAndroidWorkProfileAccountUse(values []AndroidWorkProfileAccountUse
     }
     return result
 }
+func (i AndroidWorkProfileAccountUse) isMultiValue() bool {
+    return false
+}

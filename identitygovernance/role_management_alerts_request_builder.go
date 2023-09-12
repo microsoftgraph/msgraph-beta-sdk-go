@@ -169,3 +169,7 @@ func (m *RoleManagementAlertsRequestBuilder) ToPatchRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *RoleManagementAlertsRequestBuilder) WithUrl(rawUrl string)(*RoleManagementAlertsRequestBuilder) {
+    return NewRoleManagementAlertsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

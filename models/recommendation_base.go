@@ -316,6 +316,16 @@ func (m *RecommendationBase) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["releaseType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetReleaseType(val)
+        }
+        return nil
+    }
     res["remediationImpact"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -456,6 +466,17 @@ func (m *RecommendationBase) GetRecommendationType()(*RecommendationType) {
     }
     if val != nil {
         return val.(*RecommendationType)
+    }
+    return nil
+}
+// GetReleaseType gets the releaseType property value. The current release type of the recommendation. The possible values are: preview or generallyAvailable.
+func (m *RecommendationBase) GetReleaseType()(*string) {
+    val, err := m.GetBackingStore().Get("releaseType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -611,6 +632,12 @@ func (m *RecommendationBase) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteStringValue("releaseType", m.GetReleaseType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("remediationImpact", m.GetRemediationImpact())
         if err != nil {
             return err
@@ -751,6 +778,13 @@ func (m *RecommendationBase) SetRecommendationType(value *RecommendationType)() 
         panic(err)
     }
 }
+// SetReleaseType sets the releaseType property value. The current release type of the recommendation. The possible values are: preview or generallyAvailable.
+func (m *RecommendationBase) SetReleaseType(value *string)() {
+    err := m.GetBackingStore().Set("releaseType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRemediationImpact sets the remediationImpact property value. Description of the impact on users of the remediation. Only applies to recommendations with category set to identitySecureScore.
 func (m *RecommendationBase) SetRemediationImpact(value *string)() {
     err := m.GetBackingStore().Set("remediationImpact", value)
@@ -787,6 +821,7 @@ type RecommendationBaseable interface {
     GetPostponeUntilDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetPriority()(*RecommendationPriority)
     GetRecommendationType()(*RecommendationType)
+    GetReleaseType()(*string)
     GetRemediationImpact()(*string)
     GetStatus()(*RecommendationStatus)
     SetActionSteps(value []ActionStepable)()
@@ -807,6 +842,7 @@ type RecommendationBaseable interface {
     SetPostponeUntilDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetPriority(value *RecommendationPriority)()
     SetRecommendationType(value *RecommendationType)()
+    SetReleaseType(value *string)()
     SetRemediationImpact(value *string)()
     SetStatus(value *RecommendationStatus)()
 }

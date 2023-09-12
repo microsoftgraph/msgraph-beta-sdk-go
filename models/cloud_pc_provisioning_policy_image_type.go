@@ -32,3 +32,6 @@ func SerializeCloudPcProvisioningPolicyImageType(values []CloudPcProvisioningPol
     }
     return result
 }
+func (i CloudPcProvisioningPolicyImageType) isMultiValue() bool {
+    return false
+}

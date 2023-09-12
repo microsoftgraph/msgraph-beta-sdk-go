@@ -58,3 +58,6 @@ func SerializeMicrosoftTunnelServerHealthStatus(values []MicrosoftTunnelServerHe
     }
     return result
 }
+func (i MicrosoftTunnelServerHealthStatus) isMultiValue() bool {
+    return false
+}

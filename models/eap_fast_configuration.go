@@ -42,3 +42,6 @@ func SerializeEapFastConfiguration(values []EapFastConfiguration) []string {
     }
     return result
 }
+func (i EapFastConfiguration) isMultiValue() bool {
+    return false
+}

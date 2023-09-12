@@ -102,3 +102,6 @@ func SerializeAppleVpnConnectionType(values []AppleVpnConnectionType) []string {
     }
     return result
 }
+func (i AppleVpnConnectionType) isMultiValue() bool {
+    return false
+}

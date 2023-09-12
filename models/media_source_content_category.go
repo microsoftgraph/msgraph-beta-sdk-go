@@ -41,3 +41,6 @@ func SerializeMediaSourceContentCategory(values []MediaSourceContentCategory) []
     }
     return result
 }
+func (i MediaSourceContentCategory) isMultiValue() bool {
+    return false
+}

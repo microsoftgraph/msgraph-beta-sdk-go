@@ -42,3 +42,6 @@ func SerializeMacOSGatekeeperAppSources(values []MacOSGatekeeperAppSources) []st
     }
     return result
 }
+func (i MacOSGatekeeperAppSources) isMultiValue() bool {
+    return false
+}

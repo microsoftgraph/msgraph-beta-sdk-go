@@ -35,3 +35,6 @@ func SerializeOpenIdConnectResponseMode(values []OpenIdConnectResponseMode) []st
     }
     return result
 }
+func (i OpenIdConnectResponseMode) isMultiValue() bool {
+    return false
+}

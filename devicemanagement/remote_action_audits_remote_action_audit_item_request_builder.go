@@ -153,3 +153,7 @@ func (m *RemoteActionAuditsRemoteActionAuditItemRequestBuilder) ToPatchRequestIn
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *RemoteActionAuditsRemoteActionAuditItemRequestBuilder) WithUrl(rawUrl string)(*RemoteActionAuditsRemoteActionAuditItemRequestBuilder) {
+    return NewRemoteActionAuditsRemoteActionAuditItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

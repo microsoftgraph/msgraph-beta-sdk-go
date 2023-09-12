@@ -35,3 +35,6 @@ func SerializeContentState(values []ContentState) []string {
     }
     return result
 }
+func (i ContentState) isMultiValue() bool {
+    return false
+}

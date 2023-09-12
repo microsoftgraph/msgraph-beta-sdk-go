@@ -157,3 +157,7 @@ func (m *WindowsRequestBuilder) ToPatchRequestInformation(ctx context.Context, b
 func (m *WindowsRequestBuilder) Updates()(*WindowsUpdatesRequestBuilder) {
     return NewWindowsUpdatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsRequestBuilder) WithUrl(rawUrl string)(*WindowsRequestBuilder) {
+    return NewWindowsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

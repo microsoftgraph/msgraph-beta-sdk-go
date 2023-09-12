@@ -47,3 +47,6 @@ func SerializeDefaultMfaMethodType(values []DefaultMfaMethodType) []string {
     }
     return result
 }
+func (i DefaultMfaMethodType) isMultiValue() bool {
+    return false
+}

@@ -46,3 +46,6 @@ func SerializeFolderProtectionType(values []FolderProtectionType) []string {
     }
     return result
 }
+func (i FolderProtectionType) isMultiValue() bool {
+    return false
+}

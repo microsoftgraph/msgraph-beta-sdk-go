@@ -42,3 +42,6 @@ func SerializeLocalSecurityOptionsStandardUserElevationPromptBehaviorType(values
     }
     return result
 }
+func (i LocalSecurityOptionsStandardUserElevationPromptBehaviorType) isMultiValue() bool {
+    return false
+}

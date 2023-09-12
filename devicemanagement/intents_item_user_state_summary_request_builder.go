@@ -153,3 +153,7 @@ func (m *IntentsItemUserStateSummaryRequestBuilder) ToPatchRequestInformation(ct
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IntentsItemUserStateSummaryRequestBuilder) WithUrl(rawUrl string)(*IntentsItemUserStateSummaryRequestBuilder) {
+    return NewIntentsItemUserStateSummaryRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

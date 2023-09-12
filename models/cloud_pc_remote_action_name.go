@@ -56,3 +56,6 @@ func SerializeCloudPcRemoteActionName(values []CloudPcRemoteActionName) []string
     }
     return result
 }
+func (i CloudPcRemoteActionName) isMultiValue() bool {
+    return false
+}

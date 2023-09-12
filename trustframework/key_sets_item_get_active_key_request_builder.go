@@ -63,3 +63,7 @@ func (m *KeySetsItemGetActiveKeyRequestBuilder) ToGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *KeySetsItemGetActiveKeyRequestBuilder) WithUrl(rawUrl string)(*KeySetsItemGetActiveKeyRequestBuilder) {
+    return NewKeySetsItemGetActiveKeyRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

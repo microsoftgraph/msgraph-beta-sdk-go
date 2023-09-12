@@ -38,3 +38,6 @@ func SerializeDeviceScopeOperator(values []DeviceScopeOperator) []string {
     }
     return result
 }
+func (i DeviceScopeOperator) isMultiValue() bool {
+    return false
+}

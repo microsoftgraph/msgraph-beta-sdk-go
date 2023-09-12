@@ -35,3 +35,6 @@ func SerializeCloudPcDomainJoinType(values []CloudPcDomainJoinType) []string {
     }
     return result
 }
+func (i CloudPcDomainJoinType) isMultiValue() bool {
+    return false
+}

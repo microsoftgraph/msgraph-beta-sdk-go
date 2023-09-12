@@ -46,8 +46,8 @@ type ItemRoleSettingsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByGovernanceRoleSettingIdString provides operations to manage the roleSettings property of the microsoft.graph.governanceResource entity.
-func (m *ItemRoleSettingsRequestBuilder) ByGovernanceRoleSettingIdString(governanceRoleSettingId string)(*ItemRoleSettingsGovernanceRoleSettingItemRequestBuilder) {
+// ByGovernanceRoleSettingId provides operations to manage the roleSettings property of the microsoft.graph.governanceResource entity.
+func (m *ItemRoleSettingsRequestBuilder) ByGovernanceRoleSettingId(governanceRoleSettingId string)(*ItemRoleSettingsGovernanceRoleSettingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ItemRoleSettingsRequestBuilder) ToPostRequestInformation(ctx context.Co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemRoleSettingsRequestBuilder) WithUrl(rawUrl string)(*ItemRoleSettingsRequestBuilder) {
+    return NewItemRoleSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

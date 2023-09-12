@@ -42,3 +42,6 @@ func SerializeIosKioskModeAppType(values []IosKioskModeAppType) []string {
     }
     return result
 }
+func (i IosKioskModeAppType) isMultiValue() bool {
+    return false
+}

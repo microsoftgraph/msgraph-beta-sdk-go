@@ -62,3 +62,7 @@ func (m *DeviceHealthScriptsItemGetGlobalScriptHighestAvailableVersionRequestBui
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceHealthScriptsItemGetGlobalScriptHighestAvailableVersionRequestBuilder) WithUrl(rawUrl string)(*DeviceHealthScriptsItemGetGlobalScriptHighestAvailableVersionRequestBuilder) {
+    return NewDeviceHealthScriptsItemGetGlobalScriptHighestAvailableVersionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

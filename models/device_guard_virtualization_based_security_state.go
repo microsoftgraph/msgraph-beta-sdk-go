@@ -54,3 +54,6 @@ func SerializeDeviceGuardVirtualizationBasedSecurityState(values []DeviceGuardVi
     }
     return result
 }
+func (i DeviceGuardVirtualizationBasedSecurityState) isMultiValue() bool {
+    return false
+}

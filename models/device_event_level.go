@@ -54,3 +54,6 @@ func SerializeDeviceEventLevel(values []DeviceEventLevel) []string {
     }
     return result
 }
+func (i DeviceEventLevel) isMultiValue() bool {
+    return false
+}

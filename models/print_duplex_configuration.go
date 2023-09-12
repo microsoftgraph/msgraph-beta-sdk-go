@@ -35,3 +35,6 @@ func SerializePrintDuplexConfiguration(values []PrintDuplexConfiguration) []stri
     }
     return result
 }
+func (i PrintDuplexConfiguration) isMultiValue() bool {
+    return false
+}

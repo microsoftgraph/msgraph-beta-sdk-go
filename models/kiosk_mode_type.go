@@ -38,3 +38,6 @@ func SerializeKioskModeType(values []KioskModeType) []string {
     }
     return result
 }
+func (i KioskModeType) isMultiValue() bool {
+    return false
+}

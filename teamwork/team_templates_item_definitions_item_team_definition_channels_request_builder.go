@@ -50,8 +50,8 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilderPostReq
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilder) AllMessages()(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsAllMessagesRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByChannelIdString provides operations to manage the channels property of the microsoft.graph.team entity.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilder) ByChannelIdString(channelId string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsChannelItemRequestBuilder) {
+// ByChannelId provides operations to manage the channels property of the microsoft.graph.team entity.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilder) ByChannelId(channelId string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsChannelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -158,4 +158,8 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilder) T
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilder) WithUrl(rawUrl string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

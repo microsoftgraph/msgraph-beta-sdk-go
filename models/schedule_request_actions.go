@@ -56,3 +56,6 @@ func SerializeScheduleRequestActions(values []ScheduleRequestActions) []string {
     }
     return result
 }
+func (i ScheduleRequestActions) isMultiValue() bool {
+    return false
+}

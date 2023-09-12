@@ -11,7 +11,7 @@ import (
 type RiskDetectionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RiskDetectionsRequestBuilderGetQueryParameters retrieve the properties of a riskDetection object.
+// RiskDetectionsRequestBuilderGetQueryParameters retrieve the properties of a collection of riskDetection objects.
 type RiskDetectionsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -42,8 +42,8 @@ type RiskDetectionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByRiskDetectionIdString provides operations to manage the collection of riskDetection entities.
-func (m *RiskDetectionsRequestBuilder) ByRiskDetectionIdString(riskDetectionId string)(*RiskDetectionItemRequestBuilder) {
+// ByRiskDetectionId provides operations to manage the collection of riskDetection entities.
+func (m *RiskDetectionsRequestBuilder) ByRiskDetectionId(riskDetectionId string)(*RiskDetectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -66,10 +66,10 @@ func NewRiskDetectionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewRiskDetectionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieve the properties of a riskDetection object.
+// Get retrieve the properties of a collection of riskDetection objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/riskdetection-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/riskdetection-list?view=graph-rest-1.0
 func (m *RiskDetectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *RiskDetectionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskDetectionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -107,7 +107,7 @@ func (m *RiskDetectionsRequestBuilder) Post(ctx context.Context, body ie233ee762
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskDetectionable), nil
 }
-// ToGetRequestInformation retrieve the properties of a riskDetection object.
+// ToGetRequestInformation retrieve the properties of a collection of riskDetection objects.
 func (m *RiskDetectionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RiskDetectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -139,4 +139,8 @@ func (m *RiskDetectionsRequestBuilder) ToPostRequestInformation(ctx context.Cont
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *RiskDetectionsRequestBuilder) WithUrl(rawUrl string)(*RiskDetectionsRequestBuilder) {
+    return NewRiskDetectionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

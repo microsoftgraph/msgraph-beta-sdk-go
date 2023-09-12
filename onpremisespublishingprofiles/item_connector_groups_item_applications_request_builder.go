@@ -39,8 +39,8 @@ type ItemConnectorGroupsItemApplicationsRequestBuilderGetRequestConfiguration st
     // Request query parameters
     QueryParameters *ItemConnectorGroupsItemApplicationsRequestBuilderGetQueryParameters
 }
-// ByApplicationIdString provides operations to manage the applications property of the microsoft.graph.connectorGroup entity.
-func (m *ItemConnectorGroupsItemApplicationsRequestBuilder) ByApplicationIdString(applicationId string)(*ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder) {
+// ByApplicationId provides operations to manage the applications property of the microsoft.graph.connectorGroup entity.
+func (m *ItemConnectorGroupsItemApplicationsRequestBuilder) ByApplicationId(applicationId string)(*ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *ItemConnectorGroupsItemApplicationsRequestBuilder) ToGetRequestInformat
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemConnectorGroupsItemApplicationsRequestBuilder) WithUrl(rawUrl string)(*ItemConnectorGroupsItemApplicationsRequestBuilder) {
+    return NewItemConnectorGroupsItemApplicationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

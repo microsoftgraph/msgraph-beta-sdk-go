@@ -38,3 +38,6 @@ func SerializeLegalHoldStatus(values []LegalHoldStatus) []string {
     }
     return result
 }
+func (i LegalHoldStatus) isMultiValue() bool {
+    return false
+}

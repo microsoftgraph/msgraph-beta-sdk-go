@@ -34,3 +34,6 @@ func SerializeMobileAppDependencyType(values []MobileAppDependencyType) []string
     }
     return result
 }
+func (i MobileAppDependencyType) isMultiValue() bool {
+    return false
+}

@@ -35,3 +35,6 @@ func SerializePlannerExternalTaskSourceDisplayType(values []PlannerExternalTaskS
     }
     return result
 }
+func (i PlannerExternalTaskSourceDisplayType) isMultiValue() bool {
+    return false
+}

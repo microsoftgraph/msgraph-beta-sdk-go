@@ -46,8 +46,8 @@ type DevicesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTeamworkDeviceIdString provides operations to manage the devices property of the microsoft.graph.teamwork entity.
-func (m *DevicesRequestBuilder) ByTeamworkDeviceIdString(teamworkDeviceId string)(*DevicesTeamworkDeviceItemRequestBuilder) {
+// ByTeamworkDeviceId provides operations to manage the devices property of the microsoft.graph.teamwork entity.
+func (m *DevicesRequestBuilder) ByTeamworkDeviceId(teamworkDeviceId string)(*DevicesTeamworkDeviceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *DevicesRequestBuilder) ToPostRequestInformation(ctx context.Context, bo
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DevicesRequestBuilder) WithUrl(rawUrl string)(*DevicesRequestBuilder) {
+    return NewDevicesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

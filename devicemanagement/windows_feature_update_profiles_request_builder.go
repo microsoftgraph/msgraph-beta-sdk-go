@@ -46,8 +46,8 @@ type WindowsFeatureUpdateProfilesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWindowsFeatureUpdateProfileIdString provides operations to manage the windowsFeatureUpdateProfiles property of the microsoft.graph.deviceManagement entity.
-func (m *WindowsFeatureUpdateProfilesRequestBuilder) ByWindowsFeatureUpdateProfileIdString(windowsFeatureUpdateProfileId string)(*WindowsFeatureUpdateProfilesWindowsFeatureUpdateProfileItemRequestBuilder) {
+// ByWindowsFeatureUpdateProfileId provides operations to manage the windowsFeatureUpdateProfiles property of the microsoft.graph.deviceManagement entity.
+func (m *WindowsFeatureUpdateProfilesRequestBuilder) ByWindowsFeatureUpdateProfileId(windowsFeatureUpdateProfileId string)(*WindowsFeatureUpdateProfilesWindowsFeatureUpdateProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *WindowsFeatureUpdateProfilesRequestBuilder) ToPostRequestInformation(ct
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsFeatureUpdateProfilesRequestBuilder) WithUrl(rawUrl string)(*WindowsFeatureUpdateProfilesRequestBuilder) {
+    return NewWindowsFeatureUpdateProfilesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

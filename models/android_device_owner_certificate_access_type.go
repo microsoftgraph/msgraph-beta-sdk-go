@@ -38,3 +38,6 @@ func SerializeAndroidDeviceOwnerCertificateAccessType(values []AndroidDeviceOwne
     }
     return result
 }
+func (i AndroidDeviceOwnerCertificateAccessType) isMultiValue() bool {
+    return false
+}

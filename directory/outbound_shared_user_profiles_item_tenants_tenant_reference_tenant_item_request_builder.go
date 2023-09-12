@@ -157,3 +157,7 @@ func (m *OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBu
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilder) WithUrl(rawUrl string)(*OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilder) {
+    return NewOutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

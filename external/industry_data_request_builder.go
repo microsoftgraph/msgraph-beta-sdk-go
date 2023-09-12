@@ -103,6 +103,10 @@ func (m *IndustryDataRequestBuilder) ToGetRequestInformation(ctx context.Context
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IndustryDataRequestBuilder) WithUrl(rawUrl string)(*IndustryDataRequestBuilder) {
+    return NewIndustryDataRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}
 // Years provides operations to manage the years property of the microsoft.graph.industryData.industryDataRoot entity.
 func (m *IndustryDataRequestBuilder) Years()(*IndustryDataYearsRequestBuilder) {
     return NewIndustryDataYearsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

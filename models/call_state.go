@@ -59,3 +59,6 @@ func SerializeCallState(values []CallState) []string {
     }
     return result
 }
+func (i CallState) isMultiValue() bool {
+    return false
+}

@@ -38,3 +38,6 @@ func SerializePlayPromptCompletionReason(values []PlayPromptCompletionReason) []
     }
     return result
 }
+func (i PlayPromptCompletionReason) isMultiValue() bool {
+    return false
+}

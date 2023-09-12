@@ -41,3 +41,6 @@ func SerializeBehaviorDuringRetentionPeriod(values []BehaviorDuringRetentionPeri
     }
     return result
 }
+func (i BehaviorDuringRetentionPeriod) isMultiValue() bool {
+    return false
+}

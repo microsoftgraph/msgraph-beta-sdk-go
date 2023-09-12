@@ -34,3 +34,6 @@ func SerializeDeviceConfigAssignmentIntent(values []DeviceConfigAssignmentIntent
     }
     return result
 }
+func (i DeviceConfigAssignmentIntent) isMultiValue() bool {
+    return false
+}

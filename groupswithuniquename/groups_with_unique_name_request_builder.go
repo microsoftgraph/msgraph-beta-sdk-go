@@ -165,3 +165,7 @@ func (m *GroupsWithUniqueNameRequestBuilder) ToPatchRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GroupsWithUniqueNameRequestBuilder) WithUrl(rawUrl string)(*GroupsWithUniqueNameRequestBuilder) {
+    return NewGroupsWithUniqueNameRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

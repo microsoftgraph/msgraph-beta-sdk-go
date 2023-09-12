@@ -44,3 +44,6 @@ func SerializeEducationSynchronizationProfileState(values []EducationSynchroniza
     }
     return result
 }
+func (i EducationSynchronizationProfileState) isMultiValue() bool {
+    return false
+}

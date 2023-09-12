@@ -44,3 +44,6 @@ func SerializeDiamondModel(values []DiamondModel) []string {
     }
     return result
 }
+func (i DiamondModel) isMultiValue() bool {
+    return false
+}

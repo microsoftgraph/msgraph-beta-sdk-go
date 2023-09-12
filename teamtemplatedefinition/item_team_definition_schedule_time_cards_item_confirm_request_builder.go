@@ -66,3 +66,7 @@ func (m *ItemTeamDefinitionScheduleTimeCardsItemConfirmRequestBuilder) ToPostReq
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTeamDefinitionScheduleTimeCardsItemConfirmRequestBuilder) WithUrl(rawUrl string)(*ItemTeamDefinitionScheduleTimeCardsItemConfirmRequestBuilder) {
+    return NewItemTeamDefinitionScheduleTimeCardsItemConfirmRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

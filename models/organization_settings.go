@@ -73,32 +73,6 @@ func (m *OrganizationSettings) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
-    res["profileCardProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateProfileCardPropertyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ProfileCardPropertyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ProfileCardPropertyable)
-                }
-            }
-            m.SetProfileCardProperties(res)
-        }
-        return nil
-    }
-    res["pronouns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreatePronounsSettingsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPronouns(val.(PronounsSettingsable))
-        }
-        return nil
-    }
     return res
 }
 // GetItemInsights gets the itemInsights property value. Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. List itemInsights returns the settings to display or return item insights in an organization.
@@ -134,28 +108,6 @@ func (m *OrganizationSettings) GetPeopleInsights()(InsightsSettingsable) {
     }
     return nil
 }
-// GetProfileCardProperties gets the profileCardProperties property value. The profileCardProperties property
-func (m *OrganizationSettings) GetProfileCardProperties()([]ProfileCardPropertyable) {
-    val, err := m.GetBackingStore().Get("profileCardProperties")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ProfileCardPropertyable)
-    }
-    return nil
-}
-// GetPronouns gets the pronouns property value. The pronouns property
-func (m *OrganizationSettings) GetPronouns()(PronounsSettingsable) {
-    val, err := m.GetBackingStore().Get("pronouns")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(PronounsSettingsable)
-    }
-    return nil
-}
 // Serialize serializes information the current object
 func (m *OrganizationSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -182,24 +134,6 @@ func (m *OrganizationSettings) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err = writer.WriteObjectValue("peopleInsights", m.GetPeopleInsights())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetProfileCardProperties() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProfileCardProperties()))
-        for i, v := range m.GetProfileCardProperties() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("profileCardProperties", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("pronouns", m.GetPronouns())
         if err != nil {
             return err
         }
@@ -234,20 +168,6 @@ func (m *OrganizationSettings) SetPeopleInsights(value InsightsSettingsable)() {
         panic(err)
     }
 }
-// SetProfileCardProperties sets the profileCardProperties property value. The profileCardProperties property
-func (m *OrganizationSettings) SetProfileCardProperties(value []ProfileCardPropertyable)() {
-    err := m.GetBackingStore().Set("profileCardProperties", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetPronouns sets the pronouns property value. The pronouns property
-func (m *OrganizationSettings) SetPronouns(value PronounsSettingsable)() {
-    err := m.GetBackingStore().Set("pronouns", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // OrganizationSettingsable 
 type OrganizationSettingsable interface {
     Entityable
@@ -256,12 +176,8 @@ type OrganizationSettingsable interface {
     GetItemInsights()(InsightsSettingsable)
     GetMicrosoftApplicationDataAccess()(MicrosoftApplicationDataAccessSettingsable)
     GetPeopleInsights()(InsightsSettingsable)
-    GetProfileCardProperties()([]ProfileCardPropertyable)
-    GetPronouns()(PronounsSettingsable)
     SetContactInsights(value InsightsSettingsable)()
     SetItemInsights(value InsightsSettingsable)()
     SetMicrosoftApplicationDataAccess(value MicrosoftApplicationDataAccessSettingsable)()
     SetPeopleInsights(value InsightsSettingsable)()
-    SetProfileCardProperties(value []ProfileCardPropertyable)()
-    SetPronouns(value PronounsSettingsable)()
 }

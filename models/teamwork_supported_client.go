@@ -44,3 +44,6 @@ func SerializeTeamworkSupportedClient(values []TeamworkSupportedClient) []string
     }
     return result
 }
+func (i TeamworkSupportedClient) isMultiValue() bool {
+    return false
+}

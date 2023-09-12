@@ -38,3 +38,6 @@ func SerializeDiscoverySource(values []DiscoverySource) []string {
     }
     return result
 }
+func (i DiscoverySource) isMultiValue() bool {
+    return false
+}

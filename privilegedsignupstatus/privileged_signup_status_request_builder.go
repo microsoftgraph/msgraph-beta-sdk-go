@@ -46,8 +46,8 @@ type PrivilegedSignupStatusRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPrivilegedSignupStatusIdString provides operations to manage the collection of privilegedSignupStatus entities.
-func (m *PrivilegedSignupStatusRequestBuilder) ByPrivilegedSignupStatusIdString(privilegedSignupStatusId string)(*PrivilegedSignupStatusItemRequestBuilder) {
+// ByPrivilegedSignupStatusId provides operations to manage the collection of privilegedSignupStatus entities.
+func (m *PrivilegedSignupStatusRequestBuilder) ByPrivilegedSignupStatusId(privilegedSignupStatusId string)(*PrivilegedSignupStatusItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -160,4 +160,8 @@ func (m *PrivilegedSignupStatusRequestBuilder) ToPostRequestInformation(ctx cont
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *PrivilegedSignupStatusRequestBuilder) WithUrl(rawUrl string)(*PrivilegedSignupStatusRequestBuilder) {
+    return NewPrivilegedSignupStatusRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

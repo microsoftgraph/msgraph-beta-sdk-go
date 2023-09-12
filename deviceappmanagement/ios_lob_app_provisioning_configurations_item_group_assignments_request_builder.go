@@ -46,8 +46,8 @@ type IosLobAppProvisioningConfigurationsItemGroupAssignmentsRequestBuilderPostRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMobileAppProvisioningConfigGroupAssignmentIdString provides operations to manage the groupAssignments property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.
-func (m *IosLobAppProvisioningConfigurationsItemGroupAssignmentsRequestBuilder) ByMobileAppProvisioningConfigGroupAssignmentIdString(mobileAppProvisioningConfigGroupAssignmentId string)(*IosLobAppProvisioningConfigurationsItemGroupAssignmentsMobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) {
+// ByMobileAppProvisioningConfigGroupAssignmentId provides operations to manage the groupAssignments property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.
+func (m *IosLobAppProvisioningConfigurationsItemGroupAssignmentsRequestBuilder) ByMobileAppProvisioningConfigGroupAssignmentId(mobileAppProvisioningConfigGroupAssignmentId string)(*IosLobAppProvisioningConfigurationsItemGroupAssignmentsMobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *IosLobAppProvisioningConfigurationsItemGroupAssignmentsRequestBuilder) 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IosLobAppProvisioningConfigurationsItemGroupAssignmentsRequestBuilder) WithUrl(rawUrl string)(*IosLobAppProvisioningConfigurationsItemGroupAssignmentsRequestBuilder) {
+    return NewIosLobAppProvisioningConfigurationsItemGroupAssignmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -167,3 +167,7 @@ func (m *RostersPlannerRosterItemRequestBuilder) ToPatchRequestInformation(ctx c
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *RostersPlannerRosterItemRequestBuilder) WithUrl(rawUrl string)(*RostersPlannerRosterItemRequestBuilder) {
+    return NewRostersPlannerRosterItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

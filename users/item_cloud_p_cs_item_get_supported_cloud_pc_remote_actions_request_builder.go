@@ -80,3 +80,7 @@ func (m *ItemCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilder) ToGetRe
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilder) WithUrl(rawUrl string)(*ItemCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilder) {
+    return NewItemCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

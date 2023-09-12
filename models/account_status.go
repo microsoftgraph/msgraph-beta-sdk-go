@@ -44,3 +44,6 @@ func SerializeAccountStatus(values []AccountStatus) []string {
     }
     return result
 }
+func (i AccountStatus) isMultiValue() bool {
+    return false
+}

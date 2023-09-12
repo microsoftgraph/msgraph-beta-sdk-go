@@ -161,3 +161,7 @@ func (m *ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestB
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilder) WithUrl(rawUrl string)(*ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilder) {
+    return NewManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

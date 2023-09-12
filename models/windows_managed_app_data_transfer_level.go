@@ -34,3 +34,6 @@ func SerializeWindowsManagedAppDataTransferLevel(values []WindowsManagedAppDataT
     }
     return result
 }
+func (i WindowsManagedAppDataTransferLevel) isMultiValue() bool {
+    return false
+}

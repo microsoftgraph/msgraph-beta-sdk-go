@@ -46,8 +46,8 @@ type ConnectivityBranchesItemForwardingProfilesRequestBuilderPostRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByForwardingProfileIdString provides operations to manage the forwardingProfiles property of the microsoft.graph.networkaccess.branchSite entity.
-func (m *ConnectivityBranchesItemForwardingProfilesRequestBuilder) ByForwardingProfileIdString(forwardingProfileId string)(*ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilder) {
+// ByForwardingProfileId provides operations to manage the forwardingProfiles property of the microsoft.graph.networkaccess.branchSite entity.
+func (m *ConnectivityBranchesItemForwardingProfilesRequestBuilder) ByForwardingProfileId(forwardingProfileId string)(*ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ConnectivityBranchesItemForwardingProfilesRequestBuilder) ToPostRequest
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ConnectivityBranchesItemForwardingProfilesRequestBuilder) WithUrl(rawUrl string)(*ConnectivityBranchesItemForwardingProfilesRequestBuilder) {
+    return NewConnectivityBranchesItemForwardingProfilesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

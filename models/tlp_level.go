@@ -44,3 +44,6 @@ func SerializeTlpLevel(values []TlpLevel) []string {
     }
     return result
 }
+func (i TlpLevel) isMultiValue() bool {
+    return false
+}

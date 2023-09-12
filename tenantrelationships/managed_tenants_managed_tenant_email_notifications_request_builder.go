@@ -46,8 +46,8 @@ type ManagedTenantsManagedTenantEmailNotificationsRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByManagedTenantEmailNotificationIdString provides operations to manage the managedTenantEmailNotifications property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsManagedTenantEmailNotificationsRequestBuilder) ByManagedTenantEmailNotificationIdString(managedTenantEmailNotificationId string)(*ManagedTenantsManagedTenantEmailNotificationsManagedTenantEmailNotificationItemRequestBuilder) {
+// ByManagedTenantEmailNotificationId provides operations to manage the managedTenantEmailNotifications property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsManagedTenantEmailNotificationsRequestBuilder) ByManagedTenantEmailNotificationId(managedTenantEmailNotificationId string)(*ManagedTenantsManagedTenantEmailNotificationsManagedTenantEmailNotificationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ManagedTenantsManagedTenantEmailNotificationsRequestBuilder) ToPostRequ
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedTenantsManagedTenantEmailNotificationsRequestBuilder) WithUrl(rawUrl string)(*ManagedTenantsManagedTenantEmailNotificationsRequestBuilder) {
+    return NewManagedTenantsManagedTenantEmailNotificationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

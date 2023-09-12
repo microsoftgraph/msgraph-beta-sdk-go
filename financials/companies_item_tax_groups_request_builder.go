@@ -46,8 +46,8 @@ type CompaniesItemTaxGroupsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTaxGroupIdString provides operations to manage the taxGroups property of the microsoft.graph.company entity.
-func (m *CompaniesItemTaxGroupsRequestBuilder) ByTaxGroupIdString(taxGroupId string)(*CompaniesItemTaxGroupsTaxGroupItemRequestBuilder) {
+// ByTaxGroupId provides operations to manage the taxGroups property of the microsoft.graph.company entity.
+func (m *CompaniesItemTaxGroupsRequestBuilder) ByTaxGroupId(taxGroupId string)(*CompaniesItemTaxGroupsTaxGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *CompaniesItemTaxGroupsRequestBuilder) ToPostRequestInformation(ctx cont
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CompaniesItemTaxGroupsRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemTaxGroupsRequestBuilder) {
+    return NewCompaniesItemTaxGroupsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

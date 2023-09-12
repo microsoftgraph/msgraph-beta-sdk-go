@@ -158,3 +158,7 @@ func (m *InformationProtectionRequestBuilder) ToPatchRequestInformation(ctx cont
 func (m *InformationProtectionRequestBuilder) VerifySignature()(*VerifySignatureRequestBuilder) {
     return NewVerifySignatureRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *InformationProtectionRequestBuilder) WithUrl(rawUrl string)(*InformationProtectionRequestBuilder) {
+    return NewInformationProtectionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

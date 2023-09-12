@@ -35,3 +35,6 @@ func SerializeWorkloadOnboardingStatus(values []WorkloadOnboardingStatus) []stri
     }
     return result
 }
+func (i WorkloadOnboardingStatus) isMultiValue() bool {
+    return false
+}

@@ -35,3 +35,6 @@ func SerializeTranslationBehavior(values []TranslationBehavior) []string {
     }
     return result
 }
+func (i TranslationBehavior) isMultiValue() bool {
+    return false
+}

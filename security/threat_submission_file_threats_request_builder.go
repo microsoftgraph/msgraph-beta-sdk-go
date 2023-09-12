@@ -46,8 +46,8 @@ type ThreatSubmissionFileThreatsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByFileThreatSubmissionIdString provides operations to manage the fileThreats property of the microsoft.graph.security.threatSubmissionRoot entity.
-func (m *ThreatSubmissionFileThreatsRequestBuilder) ByFileThreatSubmissionIdString(fileThreatSubmissionId string)(*ThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilder) {
+// ByFileThreatSubmissionId provides operations to manage the fileThreats property of the microsoft.graph.security.threatSubmissionRoot entity.
+func (m *ThreatSubmissionFileThreatsRequestBuilder) ByFileThreatSubmissionId(fileThreatSubmissionId string)(*ThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ThreatSubmissionFileThreatsRequestBuilder) ToPostRequestInformation(ctx
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ThreatSubmissionFileThreatsRequestBuilder) WithUrl(rawUrl string)(*ThreatSubmissionFileThreatsRequestBuilder) {
+    return NewThreatSubmissionFileThreatsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

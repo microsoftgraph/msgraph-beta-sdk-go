@@ -47,3 +47,6 @@ func SerializeExpirationRequirement(values []ExpirationRequirement) []string {
     }
     return result
 }
+func (i ExpirationRequirement) isMultiValue() bool {
+    return false
+}

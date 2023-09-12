@@ -50,3 +50,6 @@ func SerializeAndroidForWorkVpnConnectionType(values []AndroidForWorkVpnConnecti
     }
     return result
 }
+func (i AndroidForWorkVpnConnectionType) isMultiValue() bool {
+    return false
+}

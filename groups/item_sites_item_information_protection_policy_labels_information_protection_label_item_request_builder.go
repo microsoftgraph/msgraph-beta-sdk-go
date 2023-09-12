@@ -162,3 +162,8 @@ func (m *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabe
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
+func (m *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder) {
+    return NewItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

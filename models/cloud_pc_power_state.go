@@ -35,3 +35,6 @@ func SerializeCloudPcPowerState(values []CloudPcPowerState) []string {
     }
     return result
 }
+func (i CloudPcPowerState) isMultiValue() bool {
+    return false
+}

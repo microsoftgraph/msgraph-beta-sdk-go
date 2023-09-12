@@ -42,3 +42,6 @@ func SerializeEndpointSecurityConfigurationApplicablePlatform(values []EndpointS
     }
     return result
 }
+func (i EndpointSecurityConfigurationApplicablePlatform) isMultiValue() bool {
+    return false
+}

@@ -169,3 +169,7 @@ func (m *ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder) To
 func (m *ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder) UploadAgent()(*ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder) {
     return NewExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder) WithUrl(rawUrl string)(*ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder) {
+    return NewExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

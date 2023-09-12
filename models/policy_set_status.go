@@ -50,3 +50,6 @@ func SerializePolicySetStatus(values []PolicySetStatus) []string {
     }
     return result
 }
+func (i PolicySetStatus) isMultiValue() bool {
+    return false
+}

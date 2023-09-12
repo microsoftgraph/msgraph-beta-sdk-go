@@ -38,3 +38,6 @@ func SerializeAdminConsentState(values []AdminConsentState) []string {
     }
     return result
 }
+func (i AdminConsentState) isMultiValue() bool {
+    return false
+}

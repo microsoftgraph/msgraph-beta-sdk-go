@@ -41,3 +41,6 @@ func SerializeCloudPcAuditActivityResult(values []CloudPcAuditActivityResult) []
     }
     return result
 }
+func (i CloudPcAuditActivityResult) isMultiValue() bool {
+    return false
+}

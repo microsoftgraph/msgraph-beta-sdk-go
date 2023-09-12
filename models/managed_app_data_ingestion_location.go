@@ -42,3 +42,6 @@ func SerializeManagedAppDataIngestionLocation(values []ManagedAppDataIngestionLo
     }
     return result
 }
+func (i ManagedAppDataIngestionLocation) isMultiValue() bool {
+    return false
+}

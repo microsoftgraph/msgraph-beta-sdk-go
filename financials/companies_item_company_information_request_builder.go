@@ -113,3 +113,7 @@ func (m *CompaniesItemCompanyInformationRequestBuilder) ToGetRequestInformation(
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CompaniesItemCompanyInformationRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemCompanyInformationRequestBuilder) {
+    return NewCompaniesItemCompanyInformationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

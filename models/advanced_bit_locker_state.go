@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // Advanced BitLocker State
 type AdvancedBitLockerState int
@@ -43,47 +44,56 @@ const (
 )
 
 func (i AdvancedBitLockerState) String() string {
-    return []string{"success", "noUserConsent", "osVolumeUnprotected", "osVolumeTpmRequired", "osVolumeTpmOnlyRequired", "osVolumeTpmPinRequired", "osVolumeTpmStartupKeyRequired", "osVolumeTpmPinStartupKeyRequired", "osVolumeEncryptionMethodMismatch", "recoveryKeyBackupFailed", "fixedDriveNotEncrypted", "fixedDriveEncryptionMethodMismatch", "loggedOnUserNonAdmin", "windowsRecoveryEnvironmentNotConfigured", "tpmNotAvailable", "tpmNotReady", "networkError"}[i]
+    var values []string
+    for p := AdvancedBitLockerState(1); p <= NETWORKERROR_ADVANCEDBITLOCKERSTATE; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"success", "noUserConsent", "osVolumeUnprotected", "osVolumeTpmRequired", "osVolumeTpmOnlyRequired", "osVolumeTpmPinRequired", "osVolumeTpmStartupKeyRequired", "osVolumeTpmPinStartupKeyRequired", "osVolumeEncryptionMethodMismatch", "recoveryKeyBackupFailed", "fixedDriveNotEncrypted", "fixedDriveEncryptionMethodMismatch", "loggedOnUserNonAdmin", "windowsRecoveryEnvironmentNotConfigured", "tpmNotAvailable", "tpmNotReady", "networkError"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseAdvancedBitLockerState(v string) (any, error) {
-    result := SUCCESS_ADVANCEDBITLOCKERSTATE
-    switch v {
-        case "success":
-            result = SUCCESS_ADVANCEDBITLOCKERSTATE
-        case "noUserConsent":
-            result = NOUSERCONSENT_ADVANCEDBITLOCKERSTATE
-        case "osVolumeUnprotected":
-            result = OSVOLUMEUNPROTECTED_ADVANCEDBITLOCKERSTATE
-        case "osVolumeTpmRequired":
-            result = OSVOLUMETPMREQUIRED_ADVANCEDBITLOCKERSTATE
-        case "osVolumeTpmOnlyRequired":
-            result = OSVOLUMETPMONLYREQUIRED_ADVANCEDBITLOCKERSTATE
-        case "osVolumeTpmPinRequired":
-            result = OSVOLUMETPMPINREQUIRED_ADVANCEDBITLOCKERSTATE
-        case "osVolumeTpmStartupKeyRequired":
-            result = OSVOLUMETPMSTARTUPKEYREQUIRED_ADVANCEDBITLOCKERSTATE
-        case "osVolumeTpmPinStartupKeyRequired":
-            result = OSVOLUMETPMPINSTARTUPKEYREQUIRED_ADVANCEDBITLOCKERSTATE
-        case "osVolumeEncryptionMethodMismatch":
-            result = OSVOLUMEENCRYPTIONMETHODMISMATCH_ADVANCEDBITLOCKERSTATE
-        case "recoveryKeyBackupFailed":
-            result = RECOVERYKEYBACKUPFAILED_ADVANCEDBITLOCKERSTATE
-        case "fixedDriveNotEncrypted":
-            result = FIXEDDRIVENOTENCRYPTED_ADVANCEDBITLOCKERSTATE
-        case "fixedDriveEncryptionMethodMismatch":
-            result = FIXEDDRIVEENCRYPTIONMETHODMISMATCH_ADVANCEDBITLOCKERSTATE
-        case "loggedOnUserNonAdmin":
-            result = LOGGEDONUSERNONADMIN_ADVANCEDBITLOCKERSTATE
-        case "windowsRecoveryEnvironmentNotConfigured":
-            result = WINDOWSRECOVERYENVIRONMENTNOTCONFIGURED_ADVANCEDBITLOCKERSTATE
-        case "tpmNotAvailable":
-            result = TPMNOTAVAILABLE_ADVANCEDBITLOCKERSTATE
-        case "tpmNotReady":
-            result = TPMNOTREADY_ADVANCEDBITLOCKERSTATE
-        case "networkError":
-            result = NETWORKERROR_ADVANCEDBITLOCKERSTATE
-        default:
-            return 0, errors.New("Unknown AdvancedBitLockerState value: " + v)
+    var result AdvancedBitLockerState
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "success":
+                result |= SUCCESS_ADVANCEDBITLOCKERSTATE
+            case "noUserConsent":
+                result |= NOUSERCONSENT_ADVANCEDBITLOCKERSTATE
+            case "osVolumeUnprotected":
+                result |= OSVOLUMEUNPROTECTED_ADVANCEDBITLOCKERSTATE
+            case "osVolumeTpmRequired":
+                result |= OSVOLUMETPMREQUIRED_ADVANCEDBITLOCKERSTATE
+            case "osVolumeTpmOnlyRequired":
+                result |= OSVOLUMETPMONLYREQUIRED_ADVANCEDBITLOCKERSTATE
+            case "osVolumeTpmPinRequired":
+                result |= OSVOLUMETPMPINREQUIRED_ADVANCEDBITLOCKERSTATE
+            case "osVolumeTpmStartupKeyRequired":
+                result |= OSVOLUMETPMSTARTUPKEYREQUIRED_ADVANCEDBITLOCKERSTATE
+            case "osVolumeTpmPinStartupKeyRequired":
+                result |= OSVOLUMETPMPINSTARTUPKEYREQUIRED_ADVANCEDBITLOCKERSTATE
+            case "osVolumeEncryptionMethodMismatch":
+                result |= OSVOLUMEENCRYPTIONMETHODMISMATCH_ADVANCEDBITLOCKERSTATE
+            case "recoveryKeyBackupFailed":
+                result |= RECOVERYKEYBACKUPFAILED_ADVANCEDBITLOCKERSTATE
+            case "fixedDriveNotEncrypted":
+                result |= FIXEDDRIVENOTENCRYPTED_ADVANCEDBITLOCKERSTATE
+            case "fixedDriveEncryptionMethodMismatch":
+                result |= FIXEDDRIVEENCRYPTIONMETHODMISMATCH_ADVANCEDBITLOCKERSTATE
+            case "loggedOnUserNonAdmin":
+                result |= LOGGEDONUSERNONADMIN_ADVANCEDBITLOCKERSTATE
+            case "windowsRecoveryEnvironmentNotConfigured":
+                result |= WINDOWSRECOVERYENVIRONMENTNOTCONFIGURED_ADVANCEDBITLOCKERSTATE
+            case "tpmNotAvailable":
+                result |= TPMNOTAVAILABLE_ADVANCEDBITLOCKERSTATE
+            case "tpmNotReady":
+                result |= TPMNOTREADY_ADVANCEDBITLOCKERSTATE
+            case "networkError":
+                result |= NETWORKERROR_ADVANCEDBITLOCKERSTATE
+            default:
+                return 0, errors.New("Unknown AdvancedBitLockerState value: " + v)
+        }
     }
     return &result, nil
 }
@@ -93,4 +103,7 @@ func SerializeAdvancedBitLockerState(values []AdvancedBitLockerState) []string {
         result[i] = v.String()
     }
     return result
+}
+func (i AdvancedBitLockerState) isMultiValue() bool {
+    return true
 }

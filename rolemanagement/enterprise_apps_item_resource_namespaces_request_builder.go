@@ -46,8 +46,8 @@ type EnterpriseAppsItemResourceNamespacesRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUnifiedRbacResourceNamespaceIdString provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplication entity.
-func (m *EnterpriseAppsItemResourceNamespacesRequestBuilder) ByUnifiedRbacResourceNamespaceIdString(unifiedRbacResourceNamespaceId string)(*EnterpriseAppsItemResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) {
+// ByUnifiedRbacResourceNamespaceId provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplication entity.
+func (m *EnterpriseAppsItemResourceNamespacesRequestBuilder) ByUnifiedRbacResourceNamespaceId(unifiedRbacResourceNamespaceId string)(*EnterpriseAppsItemResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *EnterpriseAppsItemResourceNamespacesRequestBuilder) ToPostRequestInform
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EnterpriseAppsItemResourceNamespacesRequestBuilder) WithUrl(rawUrl string)(*EnterpriseAppsItemResourceNamespacesRequestBuilder) {
+    return NewEnterpriseAppsItemResourceNamespacesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

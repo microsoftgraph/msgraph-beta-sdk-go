@@ -35,3 +35,6 @@ func SerializeReplyRestriction(values []ReplyRestriction) []string {
     }
     return result
 }
+func (i ReplyRestriction) isMultiValue() bool {
+    return false
+}

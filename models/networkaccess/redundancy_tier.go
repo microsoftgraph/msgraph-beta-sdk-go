@@ -35,3 +35,6 @@ func SerializeRedundancyTier(values []RedundancyTier) []string {
     }
     return result
 }
+func (i RedundancyTier) isMultiValue() bool {
+    return false
+}

@@ -42,3 +42,6 @@ func SerializeVpnOnDemandRuleInterfaceTypeMatch(values []VpnOnDemandRuleInterfac
     }
     return result
 }
+func (i VpnOnDemandRuleInterfaceTypeMatch) isMultiValue() bool {
+    return false
+}

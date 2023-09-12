@@ -80,3 +80,7 @@ func (m *ItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder) ToGetReque
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder) WithUrl(rawUrl string)(*ItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder) {
+    return NewItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

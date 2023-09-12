@@ -54,3 +54,6 @@ func SerializeEapType(values []EapType) []string {
     }
     return result
 }
+func (i EapType) isMultiValue() bool {
+    return false
+}

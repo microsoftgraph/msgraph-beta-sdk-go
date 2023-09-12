@@ -54,3 +54,6 @@ func SerializeMobileAppIntent(values []MobileAppIntent) []string {
     }
     return result
 }
+func (i MobileAppIntent) isMultiValue() bool {
+    return false
+}

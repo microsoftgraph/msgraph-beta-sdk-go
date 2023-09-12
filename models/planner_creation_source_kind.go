@@ -38,3 +38,6 @@ func SerializePlannerCreationSourceKind(values []PlannerCreationSourceKind) []st
     }
     return result
 }
+func (i PlannerCreationSourceKind) isMultiValue() bool {
+    return false
+}

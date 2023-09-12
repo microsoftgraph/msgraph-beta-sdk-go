@@ -46,8 +46,8 @@ type WindowsUpdatesDeploymentAudiencesRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeploymentAudienceIdString provides operations to manage the deploymentAudiences property of the microsoft.graph.adminWindowsUpdates entity.
-func (m *WindowsUpdatesDeploymentAudiencesRequestBuilder) ByDeploymentAudienceIdString(deploymentAudienceId string)(*WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) {
+// ByDeploymentAudienceId provides operations to manage the deploymentAudiences property of the microsoft.graph.adminWindowsUpdates entity.
+func (m *WindowsUpdatesDeploymentAudiencesRequestBuilder) ByDeploymentAudienceId(deploymentAudienceId string)(*WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *WindowsUpdatesDeploymentAudiencesRequestBuilder) ToPostRequestInformati
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsUpdatesDeploymentAudiencesRequestBuilder) WithUrl(rawUrl string)(*WindowsUpdatesDeploymentAudiencesRequestBuilder) {
+    return NewWindowsUpdatesDeploymentAudiencesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

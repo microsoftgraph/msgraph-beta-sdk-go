@@ -32,3 +32,6 @@ func SerializeAgentStatus(values []AgentStatus) []string {
     }
     return result
 }
+func (i AgentStatus) isMultiValue() bool {
+    return false
+}

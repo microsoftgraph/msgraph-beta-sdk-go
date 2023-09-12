@@ -70,3 +70,7 @@ func (m *InformationProtectionSensitivityLabelsMicrosoftGraphSecurityExtractCont
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *InformationProtectionSensitivityLabelsMicrosoftGraphSecurityExtractContentLabelRequestBuilder) WithUrl(rawUrl string)(*InformationProtectionSensitivityLabelsMicrosoftGraphSecurityExtractContentLabelRequestBuilder) {
+    return NewInformationProtectionSensitivityLabelsMicrosoftGraphSecurityExtractContentLabelRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

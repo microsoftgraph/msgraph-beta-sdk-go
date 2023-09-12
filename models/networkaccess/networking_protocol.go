@@ -95,3 +95,6 @@ func SerializeNetworkingProtocol(values []NetworkingProtocol) []string {
     }
     return result
 }
+func (i NetworkingProtocol) isMultiValue() bool {
+    return false
+}

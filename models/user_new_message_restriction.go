@@ -38,3 +38,6 @@ func SerializeUserNewMessageRestriction(values []UserNewMessageRestriction) []st
     }
     return result
 }
+func (i UserNewMessageRestriction) isMultiValue() bool {
+    return false
+}

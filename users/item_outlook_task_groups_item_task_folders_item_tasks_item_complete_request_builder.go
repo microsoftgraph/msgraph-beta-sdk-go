@@ -67,3 +67,8 @@ func (m *ItemOutlookTaskGroupsItemTaskFoldersItemTasksItemCompleteRequestBuilder
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20
+func (m *ItemOutlookTaskGroupsItemTaskFoldersItemTasksItemCompleteRequestBuilder) WithUrl(rawUrl string)(*ItemOutlookTaskGroupsItemTaskFoldersItemTasksItemCompleteRequestBuilder) {
+    return NewItemOutlookTaskGroupsItemTaskFoldersItemTasksItemCompleteRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

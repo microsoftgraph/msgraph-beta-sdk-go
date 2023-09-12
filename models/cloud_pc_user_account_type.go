@@ -35,3 +35,6 @@ func SerializeCloudPcUserAccountType(values []CloudPcUserAccountType) []string {
     }
     return result
 }
+func (i CloudPcUserAccountType) isMultiValue() bool {
+    return false
+}

@@ -42,3 +42,6 @@ func SerializeNonEapAuthenticationMethodForEapTtlsType(values []NonEapAuthentica
     }
     return result
 }
+func (i NonEapAuthenticationMethodForEapTtlsType) isMultiValue() bool {
+    return false
+}

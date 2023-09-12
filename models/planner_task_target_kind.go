@@ -32,3 +32,6 @@ func SerializePlannerTaskTargetKind(values []PlannerTaskTargetKind) []string {
     }
     return result
 }
+func (i PlannerTaskTargetKind) isMultiValue() bool {
+    return false
+}

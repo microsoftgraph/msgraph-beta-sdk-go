@@ -39,8 +39,8 @@ type EntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageReso
     // Request query parameters
     QueryParameters *EntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesRequestBuilderGetQueryParameters
 }
-// ByAccessPackageResourceIdString provides operations to manage the accessPackageResources property of the microsoft.graph.accessPackageResourceEnvironment entity.
-func (m *EntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesRequestBuilder) ByAccessPackageResourceIdString(accessPackageResourceId string)(*EntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilder) {
+// ByAccessPackageResourceId provides operations to manage the accessPackageResources property of the microsoft.graph.accessPackageResourceEnvironment entity.
+func (m *EntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesRequestBuilder) ByAccessPackageResourceId(accessPackageResourceId string)(*EntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *EntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackage
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesRequestBuilder) {
+    return NewEntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

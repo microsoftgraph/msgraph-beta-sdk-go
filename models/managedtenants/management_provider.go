@@ -41,3 +41,6 @@ func SerializeManagementProvider(values []ManagementProvider) []string {
     }
     return result
 }
+func (i ManagementProvider) isMultiValue() bool {
+    return false
+}

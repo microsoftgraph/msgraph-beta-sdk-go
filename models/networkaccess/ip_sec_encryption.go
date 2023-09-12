@@ -41,3 +41,6 @@ func SerializeIpSecEncryption(values []IpSecEncryption) []string {
     }
     return result
 }
+func (i IpSecEncryption) isMultiValue() bool {
+    return false
+}

@@ -58,3 +58,6 @@ func SerializeEmbeddedSIMDeviceStateValue(values []EmbeddedSIMDeviceStateValue) 
     }
     return result
 }
+func (i EmbeddedSIMDeviceStateValue) isMultiValue() bool {
+    return false
+}

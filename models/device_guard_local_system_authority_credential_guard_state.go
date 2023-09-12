@@ -46,3 +46,6 @@ func SerializeDeviceGuardLocalSystemAuthorityCredentialGuardState(values []Devic
     }
     return result
 }
+func (i DeviceGuardLocalSystemAuthorityCredentialGuardState) isMultiValue() bool {
+    return false
+}

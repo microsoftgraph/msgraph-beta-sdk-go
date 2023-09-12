@@ -42,3 +42,6 @@ func SerializeMicrosoftTunnelLogCollectionStatus(values []MicrosoftTunnelLogColl
     }
     return result
 }
+func (i MicrosoftTunnelLogCollectionStatus) isMultiValue() bool {
+    return false
+}

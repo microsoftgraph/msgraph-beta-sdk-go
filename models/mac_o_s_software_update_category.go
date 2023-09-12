@@ -42,3 +42,6 @@ func SerializeMacOSSoftwareUpdateCategory(values []MacOSSoftwareUpdateCategory) 
     }
     return result
 }
+func (i MacOSSoftwareUpdateCategory) isMultiValue() bool {
+    return false
+}

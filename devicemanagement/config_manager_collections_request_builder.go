@@ -46,8 +46,8 @@ type ConfigManagerCollectionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByConfigManagerCollectionIdString provides operations to manage the configManagerCollections property of the microsoft.graph.deviceManagement entity.
-func (m *ConfigManagerCollectionsRequestBuilder) ByConfigManagerCollectionIdString(configManagerCollectionId string)(*ConfigManagerCollectionsConfigManagerCollectionItemRequestBuilder) {
+// ByConfigManagerCollectionId provides operations to manage the configManagerCollections property of the microsoft.graph.deviceManagement entity.
+func (m *ConfigManagerCollectionsRequestBuilder) ByConfigManagerCollectionId(configManagerCollectionId string)(*ConfigManagerCollectionsConfigManagerCollectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -148,4 +148,8 @@ func (m *ConfigManagerCollectionsRequestBuilder) ToPostRequestInformation(ctx co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ConfigManagerCollectionsRequestBuilder) WithUrl(rawUrl string)(*ConfigManagerCollectionsRequestBuilder) {
+    return NewConfigManagerCollectionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

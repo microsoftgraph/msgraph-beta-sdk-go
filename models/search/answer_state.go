@@ -38,3 +38,6 @@ func SerializeAnswerState(values []AnswerState) []string {
     }
     return result
 }
+func (i AnswerState) isMultiValue() bool {
+    return false
+}

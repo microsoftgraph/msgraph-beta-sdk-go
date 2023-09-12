@@ -35,3 +35,6 @@ func SerializeAlignment(values []Alignment) []string {
     }
     return result
 }
+func (i Alignment) isMultiValue() bool {
+    return false
+}

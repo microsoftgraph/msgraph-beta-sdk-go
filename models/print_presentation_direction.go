@@ -50,3 +50,6 @@ func SerializePrintPresentationDirection(values []PrintPresentationDirection) []
     }
     return result
 }
+func (i PrintPresentationDirection) isMultiValue() bool {
+    return false
+}

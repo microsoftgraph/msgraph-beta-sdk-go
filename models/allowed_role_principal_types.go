@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // 
 type AllowedRolePrincipalTypes int
@@ -13,21 +14,30 @@ const (
 )
 
 func (i AllowedRolePrincipalTypes) String() string {
-    return []string{"user", "servicePrincipal", "group", "unknownFutureValue"}[i]
+    var values []string
+    for p := AllowedRolePrincipalTypes(1); p <= UNKNOWNFUTUREVALUE_ALLOWEDROLEPRINCIPALTYPES; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"user", "servicePrincipal", "group", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseAllowedRolePrincipalTypes(v string) (any, error) {
-    result := USER_ALLOWEDROLEPRINCIPALTYPES
-    switch v {
-        case "user":
-            result = USER_ALLOWEDROLEPRINCIPALTYPES
-        case "servicePrincipal":
-            result = SERVICEPRINCIPAL_ALLOWEDROLEPRINCIPALTYPES
-        case "group":
-            result = GROUP_ALLOWEDROLEPRINCIPALTYPES
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_ALLOWEDROLEPRINCIPALTYPES
-        default:
-            return 0, errors.New("Unknown AllowedRolePrincipalTypes value: " + v)
+    var result AllowedRolePrincipalTypes
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "user":
+                result |= USER_ALLOWEDROLEPRINCIPALTYPES
+            case "servicePrincipal":
+                result |= SERVICEPRINCIPAL_ALLOWEDROLEPRINCIPALTYPES
+            case "group":
+                result |= GROUP_ALLOWEDROLEPRINCIPALTYPES
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_ALLOWEDROLEPRINCIPALTYPES
+            default:
+                return 0, errors.New("Unknown AllowedRolePrincipalTypes value: " + v)
+        }
     }
     return &result, nil
 }
@@ -37,4 +47,7 @@ func SerializeAllowedRolePrincipalTypes(values []AllowedRolePrincipalTypes) []st
         result[i] = v.String()
     }
     return result
+}
+func (i AllowedRolePrincipalTypes) isMultiValue() bool {
+    return true
 }

@@ -156,3 +156,7 @@ func (m *AttackSimulationOperationsAttackSimulationOperationItemRequestBuilder) 
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AttackSimulationOperationsAttackSimulationOperationItemRequestBuilder) WithUrl(rawUrl string)(*AttackSimulationOperationsAttackSimulationOperationItemRequestBuilder) {
+    return NewAttackSimulationOperationsAttackSimulationOperationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

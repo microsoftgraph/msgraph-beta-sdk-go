@@ -74,3 +74,7 @@ func (m *ItemProfileAnniversariesCountRequestBuilder) ToGetRequestInformation(ct
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemProfileAnniversariesCountRequestBuilder) WithUrl(rawUrl string)(*ItemProfileAnniversariesCountRequestBuilder) {
+    return NewItemProfileAnniversariesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -66,3 +66,7 @@ func (m *TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder) ToPostRe
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder) WithUrl(rawUrl string)(*TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder) {
+    return NewTargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

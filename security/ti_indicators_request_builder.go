@@ -46,8 +46,8 @@ type TiIndicatorsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTiIndicatorIdString provides operations to manage the tiIndicators property of the microsoft.graph.security entity.
-func (m *TiIndicatorsRequestBuilder) ByTiIndicatorIdString(tiIndicatorId string)(*TiIndicatorsTiIndicatorItemRequestBuilder) {
+// ByTiIndicatorId provides operations to manage the tiIndicators property of the microsoft.graph.security entity.
+func (m *TiIndicatorsRequestBuilder) ByTiIndicatorId(tiIndicatorId string)(*TiIndicatorsTiIndicatorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -166,4 +166,8 @@ func (m *TiIndicatorsRequestBuilder) ToPostRequestInformation(ctx context.Contex
 // UpdateTiIndicators provides operations to call the updateTiIndicators method.
 func (m *TiIndicatorsRequestBuilder) UpdateTiIndicators()(*TiIndicatorsUpdateTiIndicatorsRequestBuilder) {
     return NewTiIndicatorsUpdateTiIndicatorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TiIndicatorsRequestBuilder) WithUrl(rawUrl string)(*TiIndicatorsRequestBuilder) {
+    return NewTiIndicatorsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

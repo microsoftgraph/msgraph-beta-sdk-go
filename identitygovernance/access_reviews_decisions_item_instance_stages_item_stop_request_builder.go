@@ -61,3 +61,7 @@ func (m *AccessReviewsDecisionsItemInstanceStagesItemStopRequestBuilder) ToPostR
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AccessReviewsDecisionsItemInstanceStagesItemStopRequestBuilder) WithUrl(rawUrl string)(*AccessReviewsDecisionsItemInstanceStagesItemStopRequestBuilder) {
+    return NewAccessReviewsDecisionsItemInstanceStagesItemStopRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

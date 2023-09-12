@@ -22,7 +22,7 @@ func NewMonitoringRule()(*MonitoringRule) {
 func CreateMonitoringRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMonitoringRule(), nil
 }
-// GetAction gets the action property value. The action triggered when the threshold for the given signal is met. Possible values are: alertError, pauseDeployment, unknownFutureValue.
+// GetAction gets the action property value. The action triggered when the threshold for the given signal is reached. Possible values are: alertError, pauseDeployment, offerFallback, unknownFutureValue. The offerFallback member is only supported on feature update deployments of Windows 11 and must be paired with the ineligible signal. The fallback version offered is the version 22H2 of Windows 10.
 func (m *MonitoringRule) GetAction()(*MonitoringAction) {
     val, err := m.GetBackingStore().Get("action")
     if err != nil {
@@ -105,7 +105,7 @@ func (m *MonitoringRule) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSignal gets the signal property value. The signal to monitor. Possible values are: rollback, unknownFutureValue.
+// GetSignal gets the signal property value. The signal to monitor. Possible values are: rollback, ineligible, unknownFutureValue. The ineligible member is only supported on feature update deployments of Windows 11 and must be paired with the offerFallback action.
 func (m *MonitoringRule) GetSignal()(*MonitoringSignal) {
     val, err := m.GetBackingStore().Get("signal")
     if err != nil {
@@ -116,7 +116,7 @@ func (m *MonitoringRule) GetSignal()(*MonitoringSignal) {
     }
     return nil
 }
-// GetThreshold gets the threshold property value. The threshold for a signal at which to trigger action. An integer from 1 to 100 (inclusive).
+// GetThreshold gets the threshold property value. The threshold for a signal at which to trigger the action. An integer from 1 to 100 (inclusive). This value is ignored when the signal is ineligible and the action is offerFallback.
 func (m *MonitoringRule) GetThreshold()(*int32) {
     val, err := m.GetBackingStore().Get("threshold")
     if err != nil {
@@ -163,7 +163,7 @@ func (m *MonitoringRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetAction sets the action property value. The action triggered when the threshold for the given signal is met. Possible values are: alertError, pauseDeployment, unknownFutureValue.
+// SetAction sets the action property value. The action triggered when the threshold for the given signal is reached. Possible values are: alertError, pauseDeployment, offerFallback, unknownFutureValue. The offerFallback member is only supported on feature update deployments of Windows 11 and must be paired with the ineligible signal. The fallback version offered is the version 22H2 of Windows 10.
 func (m *MonitoringRule) SetAction(value *MonitoringAction)() {
     err := m.GetBackingStore().Set("action", value)
     if err != nil {
@@ -188,14 +188,14 @@ func (m *MonitoringRule) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSignal sets the signal property value. The signal to monitor. Possible values are: rollback, unknownFutureValue.
+// SetSignal sets the signal property value. The signal to monitor. Possible values are: rollback, ineligible, unknownFutureValue. The ineligible member is only supported on feature update deployments of Windows 11 and must be paired with the offerFallback action.
 func (m *MonitoringRule) SetSignal(value *MonitoringSignal)() {
     err := m.GetBackingStore().Set("signal", value)
     if err != nil {
         panic(err)
     }
 }
-// SetThreshold sets the threshold property value. The threshold for a signal at which to trigger action. An integer from 1 to 100 (inclusive).
+// SetThreshold sets the threshold property value. The threshold for a signal at which to trigger the action. An integer from 1 to 100 (inclusive). This value is ignored when the signal is ineligible and the action is offerFallback.
 func (m *MonitoringRule) SetThreshold(value *int32)() {
     err := m.GetBackingStore().Set("threshold", value)
     if err != nil {

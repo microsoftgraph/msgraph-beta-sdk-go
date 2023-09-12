@@ -46,3 +46,6 @@ func SerializeAndroidDeviceOwnerAppAutoUpdatePolicyType(values []AndroidDeviceOw
     }
     return result
 }
+func (i AndroidDeviceOwnerAppAutoUpdatePolicyType) isMultiValue() bool {
+    return false
+}

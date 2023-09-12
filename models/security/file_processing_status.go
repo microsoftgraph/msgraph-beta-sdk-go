@@ -83,3 +83,6 @@ func SerializeFileProcessingStatus(values []FileProcessingStatus) []string {
     }
     return result
 }
+func (i FileProcessingStatus) isMultiValue() bool {
+    return false
+}

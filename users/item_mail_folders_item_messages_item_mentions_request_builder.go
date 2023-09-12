@@ -44,8 +44,8 @@ type ItemMailFoldersItemMessagesItemMentionsRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMentionIdString provides operations to manage the mentions property of the microsoft.graph.message entity.
-func (m *ItemMailFoldersItemMessagesItemMentionsRequestBuilder) ByMentionIdString(mentionId string)(*ItemMailFoldersItemMessagesItemMentionsMentionItemRequestBuilder) {
+// ByMentionId provides operations to manage the mentions property of the microsoft.graph.message entity.
+func (m *ItemMailFoldersItemMessagesItemMentionsRequestBuilder) ByMentionId(mentionId string)(*ItemMailFoldersItemMessagesItemMentionsMentionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -142,4 +142,8 @@ func (m *ItemMailFoldersItemMessagesItemMentionsRequestBuilder) ToPostRequestInf
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemMailFoldersItemMessagesItemMentionsRequestBuilder) WithUrl(rawUrl string)(*ItemMailFoldersItemMessagesItemMentionsRequestBuilder) {
+    return NewItemMailFoldersItemMessagesItemMentionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -50,3 +50,6 @@ func SerializeLanManagerAuthenticationLevel(values []LanManagerAuthenticationLev
     }
     return result
 }
+func (i LanManagerAuthenticationLevel) isMultiValue() bool {
+    return false
+}

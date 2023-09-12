@@ -46,3 +46,6 @@ func SerializeDeliveryOptimizationGroupIdOptionsType(values []DeliveryOptimizati
     }
     return result
 }
+func (i DeliveryOptimizationGroupIdOptionsType) isMultiValue() bool {
+    return false
+}

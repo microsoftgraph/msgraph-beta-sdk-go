@@ -46,8 +46,8 @@ type AutopilotEventsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementAutopilotEventIdString provides operations to manage the autopilotEvents property of the microsoft.graph.deviceManagement entity.
-func (m *AutopilotEventsRequestBuilder) ByDeviceManagementAutopilotEventIdString(deviceManagementAutopilotEventId string)(*AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) {
+// ByDeviceManagementAutopilotEventId provides operations to manage the autopilotEvents property of the microsoft.graph.deviceManagement entity.
+func (m *AutopilotEventsRequestBuilder) ByDeviceManagementAutopilotEventId(deviceManagementAutopilotEventId string)(*AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *AutopilotEventsRequestBuilder) ToPostRequestInformation(ctx context.Con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AutopilotEventsRequestBuilder) WithUrl(rawUrl string)(*AutopilotEventsRequestBuilder) {
+    return NewAutopilotEventsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

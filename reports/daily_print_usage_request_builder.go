@@ -46,8 +46,8 @@ type DailyPrintUsageRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPrintUsageIdString provides operations to manage the dailyPrintUsage property of the microsoft.graph.reportRoot entity.
-func (m *DailyPrintUsageRequestBuilder) ByPrintUsageIdString(printUsageId string)(*DailyPrintUsagePrintUsageItemRequestBuilder) {
+// ByPrintUsageId provides operations to manage the dailyPrintUsage property of the microsoft.graph.reportRoot entity.
+func (m *DailyPrintUsageRequestBuilder) ByPrintUsageId(printUsageId string)(*DailyPrintUsagePrintUsageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *DailyPrintUsageRequestBuilder) ToPostRequestInformation(ctx context.Con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DailyPrintUsageRequestBuilder) WithUrl(rawUrl string)(*DailyPrintUsageRequestBuilder) {
+    return NewDailyPrintUsageRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

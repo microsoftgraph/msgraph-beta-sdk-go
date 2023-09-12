@@ -38,3 +38,6 @@ func SerializeWindows10VpnProfileTarget(values []Windows10VpnProfileTarget) []st
     }
     return result
 }
+func (i Windows10VpnProfileTarget) isMultiValue() bool {
+    return false
+}

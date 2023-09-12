@@ -159,3 +159,7 @@ func (m *LabelsCategoriesItemSubCategoriesSubCategoryTemplateItemRequestBuilder)
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *LabelsCategoriesItemSubCategoriesSubCategoryTemplateItemRequestBuilder) WithUrl(rawUrl string)(*LabelsCategoriesItemSubCategoriesSubCategoryTemplateItemRequestBuilder) {
+    return NewLabelsCategoriesItemSubCategoriesSubCategoryTemplateItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceSslCertificatesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceSslCertificatesRequestBuilderGetQueryParameters get sslCertificates from security
+// ThreatIntelligenceSslCertificatesRequestBuilderGetQueryParameters get a list of sslCertificate objects and their properties.
 type ThreatIntelligenceSslCertificatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -46,8 +46,8 @@ type ThreatIntelligenceSslCertificatesRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySslCertificateIdString provides operations to manage the sslCertificates property of the microsoft.graph.security.threatIntelligence entity.
-func (m *ThreatIntelligenceSslCertificatesRequestBuilder) BySslCertificateIdString(sslCertificateId string)(*ThreatIntelligenceSslCertificatesSslCertificateItemRequestBuilder) {
+// BySslCertificateId provides operations to manage the sslCertificates property of the microsoft.graph.security.threatIntelligence entity.
+func (m *ThreatIntelligenceSslCertificatesRequestBuilder) BySslCertificateId(sslCertificateId string)(*ThreatIntelligenceSslCertificatesSslCertificateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -74,7 +74,10 @@ func NewThreatIntelligenceSslCertificatesRequestBuilder(rawUrl string, requestAd
 func (m *ThreatIntelligenceSslCertificatesRequestBuilder) Count()(*ThreatIntelligenceSslCertificatesCountRequestBuilder) {
     return NewThreatIntelligenceSslCertificatesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get sslCertificates from security
+// Get get a list of sslCertificate objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-sslcertificate-list?view=graph-rest-1.0
 func (m *ThreatIntelligenceSslCertificatesRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceSslCertificatesRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SslCertificateCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *ThreatIntelligenceSslCertificatesRequestBuilder) Post(ctx context.Conte
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SslCertificateable), nil
 }
-// ToGetRequestInformation get sslCertificates from security
+// ToGetRequestInformation get a list of sslCertificate objects and their properties.
 func (m *ThreatIntelligenceSslCertificatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceSslCertificatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -144,4 +147,8 @@ func (m *ThreatIntelligenceSslCertificatesRequestBuilder) ToPostRequestInformati
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ThreatIntelligenceSslCertificatesRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceSslCertificatesRequestBuilder) {
+    return NewThreatIntelligenceSslCertificatesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

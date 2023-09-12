@@ -34,3 +34,6 @@ func SerializeAndroidManagedAppSafetyNetAppsVerificationType(values []AndroidMan
     }
     return result
 }
+func (i AndroidManagedAppSafetyNetAppsVerificationType) isMultiValue() bool {
+    return false
+}

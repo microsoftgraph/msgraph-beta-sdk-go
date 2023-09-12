@@ -39,8 +39,8 @@ type GroupPolicyUploadedDefinitionFilesItemDefinitionsRequestBuilderGetRequestCo
     // Request query parameters
     QueryParameters *GroupPolicyUploadedDefinitionFilesItemDefinitionsRequestBuilderGetQueryParameters
 }
-// ByGroupPolicyDefinitionIdString provides operations to manage the definitions property of the microsoft.graph.groupPolicyDefinitionFile entity.
-func (m *GroupPolicyUploadedDefinitionFilesItemDefinitionsRequestBuilder) ByGroupPolicyDefinitionIdString(groupPolicyDefinitionId string)(*GroupPolicyUploadedDefinitionFilesItemDefinitionsGroupPolicyDefinitionItemRequestBuilder) {
+// ByGroupPolicyDefinitionId provides operations to manage the definitions property of the microsoft.graph.groupPolicyDefinitionFile entity.
+func (m *GroupPolicyUploadedDefinitionFilesItemDefinitionsRequestBuilder) ByGroupPolicyDefinitionId(groupPolicyDefinitionId string)(*GroupPolicyUploadedDefinitionFilesItemDefinitionsGroupPolicyDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *GroupPolicyUploadedDefinitionFilesItemDefinitionsRequestBuilder) ToGetR
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GroupPolicyUploadedDefinitionFilesItemDefinitionsRequestBuilder) WithUrl(rawUrl string)(*GroupPolicyUploadedDefinitionFilesItemDefinitionsRequestBuilder) {
+    return NewGroupPolicyUploadedDefinitionFilesItemDefinitionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

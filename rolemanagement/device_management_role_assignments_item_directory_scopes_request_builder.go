@@ -11,7 +11,7 @@ import (
 type DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilderGetQueryParameters read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+// DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilderGetQueryParameters read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
 type DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -39,8 +39,8 @@ type DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilderGetRequestC
     // Request query parameters
     QueryParameters *DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectIdString provides operations to manage the directoryScopes property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.
-func (m *DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*DeviceManagementRoleAssignmentsItemDirectoryScopesDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectId provides operations to manage the directoryScopes property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.
+func (m *DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*DeviceManagementRoleAssignmentsItemDirectoryScopesDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -67,7 +67,7 @@ func NewDeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilder(rawUrl 
 func (m *DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilder) Count()(*DeviceManagementRoleAssignmentsItemDirectoryScopesCountRequestBuilder) {
     return NewDeviceManagementRoleAssignmentsItemDirectoryScopesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+// Get read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
 func (m *DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +86,7 @@ func (m *DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilder) Get(c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
-// ToGetRequestInformation read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+// ToGetRequestInformation read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
 func (m *DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -101,4 +101,8 @@ func (m *DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilder) ToGet
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilder) WithUrl(rawUrl string)(*DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilder) {
+    return NewDeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

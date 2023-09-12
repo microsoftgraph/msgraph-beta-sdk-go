@@ -50,3 +50,6 @@ func SerializeUserExperienceAnalyticsAnomalyDeviceFeatureType(values []UserExper
     }
     return result
 }
+func (i UserExperienceAnalyticsAnomalyDeviceFeatureType) isMultiValue() bool {
+    return false
+}

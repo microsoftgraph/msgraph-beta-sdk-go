@@ -46,3 +46,6 @@ func SerializeAndroidDeviceOwnerDelegatedAppScopeType(values []AndroidDeviceOwne
     }
     return result
 }
+func (i AndroidDeviceOwnerDelegatedAppScopeType) isMultiValue() bool {
+    return false
+}

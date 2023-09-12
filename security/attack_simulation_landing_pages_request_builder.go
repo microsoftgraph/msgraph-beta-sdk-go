@@ -46,8 +46,8 @@ type AttackSimulationLandingPagesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByLandingPageIdString provides operations to manage the landingPages property of the microsoft.graph.attackSimulationRoot entity.
-func (m *AttackSimulationLandingPagesRequestBuilder) ByLandingPageIdString(landingPageId string)(*AttackSimulationLandingPagesLandingPageItemRequestBuilder) {
+// ByLandingPageId provides operations to manage the landingPages property of the microsoft.graph.attackSimulationRoot entity.
+func (m *AttackSimulationLandingPagesRequestBuilder) ByLandingPageId(landingPageId string)(*AttackSimulationLandingPagesLandingPageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *AttackSimulationLandingPagesRequestBuilder) ToPostRequestInformation(ct
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AttackSimulationLandingPagesRequestBuilder) WithUrl(rawUrl string)(*AttackSimulationLandingPagesRequestBuilder) {
+    return NewAttackSimulationLandingPagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

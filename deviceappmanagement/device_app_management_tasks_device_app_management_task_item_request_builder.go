@@ -157,3 +157,7 @@ func (m *DeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilder) ToPa
 func (m *DeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilder) UpdateStatus()(*DeviceAppManagementTasksItemUpdateStatusRequestBuilder) {
     return NewDeviceAppManagementTasksItemUpdateStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilder) WithUrl(rawUrl string)(*DeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilder) {
+    return NewDeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

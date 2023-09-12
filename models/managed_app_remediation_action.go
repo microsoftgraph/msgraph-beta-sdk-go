@@ -38,3 +38,6 @@ func SerializeManagedAppRemediationAction(values []ManagedAppRemediationAction) 
     }
     return result
 }
+func (i ManagedAppRemediationAction) isMultiValue() bool {
+    return false
+}

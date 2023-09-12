@@ -153,3 +153,7 @@ func (m *MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder) ToP
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder) WithUrl(rawUrl string)(*MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder) {
+    return NewMicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

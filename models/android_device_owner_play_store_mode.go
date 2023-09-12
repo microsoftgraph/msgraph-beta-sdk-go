@@ -38,3 +38,6 @@ func SerializeAndroidDeviceOwnerPlayStoreMode(values []AndroidDeviceOwnerPlaySto
     }
     return result
 }
+func (i AndroidDeviceOwnerPlayStoreMode) isMultiValue() bool {
+    return false
+}

@@ -184,3 +184,7 @@ func (m *DevicesTeamworkDeviceItemRequestBuilder) ToPatchRequestInformation(ctx 
 func (m *DevicesTeamworkDeviceItemRequestBuilder) UpdateSoftware()(*DevicesItemUpdateSoftwareRequestBuilder) {
     return NewDevicesItemUpdateSoftwareRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DevicesTeamworkDeviceItemRequestBuilder) WithUrl(rawUrl string)(*DevicesTeamworkDeviceItemRequestBuilder) {
+    return NewDevicesTeamworkDeviceItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

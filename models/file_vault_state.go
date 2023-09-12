@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // FileVault State
 type FileVaultState int
@@ -17,21 +18,30 @@ const (
 )
 
 func (i FileVaultState) String() string {
-    return []string{"success", "driveEncryptedByUser", "userDeferredEncryption", "escrowNotEnabled"}[i]
+    var values []string
+    for p := FileVaultState(1); p <= ESCROWNOTENABLED_FILEVAULTSTATE; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"success", "driveEncryptedByUser", "userDeferredEncryption", "escrowNotEnabled"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseFileVaultState(v string) (any, error) {
-    result := SUCCESS_FILEVAULTSTATE
-    switch v {
-        case "success":
-            result = SUCCESS_FILEVAULTSTATE
-        case "driveEncryptedByUser":
-            result = DRIVEENCRYPTEDBYUSER_FILEVAULTSTATE
-        case "userDeferredEncryption":
-            result = USERDEFERREDENCRYPTION_FILEVAULTSTATE
-        case "escrowNotEnabled":
-            result = ESCROWNOTENABLED_FILEVAULTSTATE
-        default:
-            return 0, errors.New("Unknown FileVaultState value: " + v)
+    var result FileVaultState
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "success":
+                result |= SUCCESS_FILEVAULTSTATE
+            case "driveEncryptedByUser":
+                result |= DRIVEENCRYPTEDBYUSER_FILEVAULTSTATE
+            case "userDeferredEncryption":
+                result |= USERDEFERREDENCRYPTION_FILEVAULTSTATE
+            case "escrowNotEnabled":
+                result |= ESCROWNOTENABLED_FILEVAULTSTATE
+            default:
+                return 0, errors.New("Unknown FileVaultState value: " + v)
+        }
     }
     return &result, nil
 }
@@ -41,4 +51,7 @@ func SerializeFileVaultState(values []FileVaultState) []string {
         result[i] = v.String()
     }
     return result
+}
+func (i FileVaultState) isMultiValue() bool {
+    return true
 }

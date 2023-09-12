@@ -62,3 +62,7 @@ func (m *ComanagedDevicesItemWipeRequestBuilder) ToPostRequestInformation(ctx co
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ComanagedDevicesItemWipeRequestBuilder) WithUrl(rawUrl string)(*ComanagedDevicesItemWipeRequestBuilder) {
+    return NewComanagedDevicesItemWipeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

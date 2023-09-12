@@ -46,3 +46,6 @@ func SerializeWindowsDefenderApplicationControlSupplementalPolicyStatuses(values
     }
     return result
 }
+func (i WindowsDefenderApplicationControlSupplementalPolicyStatuses) isMultiValue() bool {
+    return false
+}

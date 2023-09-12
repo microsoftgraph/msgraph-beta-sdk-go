@@ -38,3 +38,6 @@ func SerializeEnrollmentNotificationTemplateType(values []EnrollmentNotification
     }
     return result
 }
+func (i EnrollmentNotificationTemplateType) isMultiValue() bool {
+    return false
+}

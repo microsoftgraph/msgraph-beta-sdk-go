@@ -41,3 +41,6 @@ func SerializeTeamworkDeviceActivityState(values []TeamworkDeviceActivityState) 
     }
     return result
 }
+func (i TeamworkDeviceActivityState) isMultiValue() bool {
+    return false
+}

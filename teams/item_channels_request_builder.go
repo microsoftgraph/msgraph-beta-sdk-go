@@ -50,8 +50,8 @@ type ItemChannelsRequestBuilderPostRequestConfiguration struct {
 func (m *ItemChannelsRequestBuilder) AllMessages()(*ItemChannelsAllMessagesRequestBuilder) {
     return NewItemChannelsAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByChannelIdString provides operations to manage the channels property of the microsoft.graph.team entity.
-func (m *ItemChannelsRequestBuilder) ByChannelIdString(channelId string)(*ItemChannelsChannelItemRequestBuilder) {
+// ByChannelId provides operations to manage the channels property of the microsoft.graph.team entity.
+func (m *ItemChannelsRequestBuilder) ByChannelId(channelId string)(*ItemChannelsChannelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -158,4 +158,8 @@ func (m *ItemChannelsRequestBuilder) ToPostRequestInformation(ctx context.Contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemChannelsRequestBuilder) WithUrl(rawUrl string)(*ItemChannelsRequestBuilder) {
+    return NewItemChannelsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

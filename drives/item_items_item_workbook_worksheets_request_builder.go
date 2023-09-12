@@ -50,8 +50,8 @@ type ItemItemsItemWorkbookWorksheetsRequestBuilderPostRequestConfiguration struc
 func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) Add()(*ItemItemsItemWorkbookWorksheetsAddRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByWorkbookWorksheetIdString provides operations to manage the worksheets property of the microsoft.graph.workbook entity.
-func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) ByWorkbookWorksheetIdString(workbookWorksheetId string)(*ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) {
+// ByWorkbookWorksheetId provides operations to manage the worksheets property of the microsoft.graph.workbook entity.
+func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) ByWorkbookWorksheetId(workbookWorksheetId string)(*ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -151,4 +151,8 @@ func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) ToPostRequestInformation
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookWorksheetsRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

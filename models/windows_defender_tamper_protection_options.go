@@ -38,3 +38,6 @@ func SerializeWindowsDefenderTamperProtectionOptions(values []WindowsDefenderTam
     }
     return result
 }
+func (i WindowsDefenderTamperProtectionOptions) isMultiValue() bool {
+    return false
+}

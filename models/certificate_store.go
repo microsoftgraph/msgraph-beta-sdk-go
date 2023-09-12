@@ -32,3 +32,6 @@ func SerializeCertificateStore(values []CertificateStore) []string {
     }
     return result
 }
+func (i CertificateStore) isMultiValue() bool {
+    return false
+}

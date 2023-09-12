@@ -46,3 +46,6 @@ func SerializeEdgeOpenOptions(values []EdgeOpenOptions) []string {
     }
     return result
 }
+func (i EdgeOpenOptions) isMultiValue() bool {
+    return false
+}

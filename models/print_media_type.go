@@ -65,3 +65,6 @@ func SerializePrintMediaType(values []PrintMediaType) []string {
     }
     return result
 }
+func (i PrintMediaType) isMultiValue() bool {
+    return false
+}

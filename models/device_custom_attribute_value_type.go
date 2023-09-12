@@ -38,3 +38,6 @@ func SerializeDeviceCustomAttributeValueType(values []DeviceCustomAttributeValue
     }
     return result
 }
+func (i DeviceCustomAttributeValueType) isMultiValue() bool {
+    return false
+}

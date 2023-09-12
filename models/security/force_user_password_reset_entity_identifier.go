@@ -1,6 +1,7 @@
 package security
 import (
     "errors"
+    "strings"
 )
 // 
 type ForceUserPasswordResetEntityIdentifier int
@@ -14,23 +15,32 @@ const (
 )
 
 func (i ForceUserPasswordResetEntityIdentifier) String() string {
-    return []string{"accountSid", "initiatingProcessAccountSid", "requestAccountSid", "onPremSid", "unknownFutureValue"}[i]
+    var values []string
+    for p := ForceUserPasswordResetEntityIdentifier(1); p <= UNKNOWNFUTUREVALUE_FORCEUSERPASSWORDRESETENTITYIDENTIFIER; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"accountSid", "initiatingProcessAccountSid", "requestAccountSid", "onPremSid", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseForceUserPasswordResetEntityIdentifier(v string) (any, error) {
-    result := ACCOUNTSID_FORCEUSERPASSWORDRESETENTITYIDENTIFIER
-    switch v {
-        case "accountSid":
-            result = ACCOUNTSID_FORCEUSERPASSWORDRESETENTITYIDENTIFIER
-        case "initiatingProcessAccountSid":
-            result = INITIATINGPROCESSACCOUNTSID_FORCEUSERPASSWORDRESETENTITYIDENTIFIER
-        case "requestAccountSid":
-            result = REQUESTACCOUNTSID_FORCEUSERPASSWORDRESETENTITYIDENTIFIER
-        case "onPremSid":
-            result = ONPREMSID_FORCEUSERPASSWORDRESETENTITYIDENTIFIER
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_FORCEUSERPASSWORDRESETENTITYIDENTIFIER
-        default:
-            return 0, errors.New("Unknown ForceUserPasswordResetEntityIdentifier value: " + v)
+    var result ForceUserPasswordResetEntityIdentifier
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "accountSid":
+                result |= ACCOUNTSID_FORCEUSERPASSWORDRESETENTITYIDENTIFIER
+            case "initiatingProcessAccountSid":
+                result |= INITIATINGPROCESSACCOUNTSID_FORCEUSERPASSWORDRESETENTITYIDENTIFIER
+            case "requestAccountSid":
+                result |= REQUESTACCOUNTSID_FORCEUSERPASSWORDRESETENTITYIDENTIFIER
+            case "onPremSid":
+                result |= ONPREMSID_FORCEUSERPASSWORDRESETENTITYIDENTIFIER
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_FORCEUSERPASSWORDRESETENTITYIDENTIFIER
+            default:
+                return 0, errors.New("Unknown ForceUserPasswordResetEntityIdentifier value: " + v)
+        }
     }
     return &result, nil
 }
@@ -40,4 +50,7 @@ func SerializeForceUserPasswordResetEntityIdentifier(values []ForceUserPasswordR
         result[i] = v.String()
     }
     return result
+}
+func (i ForceUserPasswordResetEntityIdentifier) isMultiValue() bool {
+    return true
 }

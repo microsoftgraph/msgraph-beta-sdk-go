@@ -35,3 +35,6 @@ func SerializePrivilegedAccessGroupRelationships(values []PrivilegedAccessGroupR
     }
     return result
 }
+func (i PrivilegedAccessGroupRelationships) isMultiValue() bool {
+    return false
+}

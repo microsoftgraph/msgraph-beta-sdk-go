@@ -205,3 +205,7 @@ func (m *DirectoryRequestBuilder) ToPatchRequestInformation(ctx context.Context,
 func (m *DirectoryRequestBuilder) TransitiveRoleAssignments()(*DirectoryTransitiveRoleAssignmentsRequestBuilder) {
     return NewDirectoryTransitiveRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DirectoryRequestBuilder) WithUrl(rawUrl string)(*DirectoryRequestBuilder) {
+    return NewDirectoryRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

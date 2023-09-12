@@ -357,7 +357,7 @@ func (m *Host) GetReputation()(HostReputationable) {
     }
     return nil
 }
-// GetSslCertificates gets the sslCertificates property value. The sslCertificates property
+// GetSslCertificates gets the sslCertificates property value. The hostSslCertificates that are associated with this host.
 func (m *Host) GetSslCertificates()([]HostSslCertificateable) {
     val, err := m.GetBackingStore().Get("sslCertificates")
     if err != nil {
@@ -390,7 +390,7 @@ func (m *Host) GetTrackers()([]HostTrackerable) {
     }
     return nil
 }
-// GetWhois gets the whois property value. The whois property
+// GetWhois gets the whois property value. The most recent whoisRecord for this host.
 func (m *Host) GetWhois()(WhoisRecordable) {
     val, err := m.GetBackingStore().Get("whois")
     if err != nil {
@@ -623,7 +623,7 @@ func (m *Host) SetReputation(value HostReputationable)() {
         panic(err)
     }
 }
-// SetSslCertificates sets the sslCertificates property value. The sslCertificates property
+// SetSslCertificates sets the sslCertificates property value. The hostSslCertificates that are associated with this host.
 func (m *Host) SetSslCertificates(value []HostSslCertificateable)() {
     err := m.GetBackingStore().Set("sslCertificates", value)
     if err != nil {
@@ -644,7 +644,7 @@ func (m *Host) SetTrackers(value []HostTrackerable)() {
         panic(err)
     }
 }
-// SetWhois sets the whois property value. The whois property
+// SetWhois sets the whois property value. The most recent whoisRecord for this host.
 func (m *Host) SetWhois(value WhoisRecordable)() {
     err := m.GetBackingStore().Set("whois", value)
     if err != nil {

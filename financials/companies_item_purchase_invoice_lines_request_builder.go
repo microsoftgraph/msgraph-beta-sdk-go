@@ -39,8 +39,8 @@ type CompaniesItemPurchaseInvoiceLinesRequestBuilderGetRequestConfiguration stru
     // Request query parameters
     QueryParameters *CompaniesItemPurchaseInvoiceLinesRequestBuilderGetQueryParameters
 }
-// ByPurchaseInvoiceLineIdString provides operations to manage the purchaseInvoiceLines property of the microsoft.graph.company entity.
-func (m *CompaniesItemPurchaseInvoiceLinesRequestBuilder) ByPurchaseInvoiceLineIdString(purchaseInvoiceLineId string)(*CompaniesItemPurchaseInvoiceLinesPurchaseInvoiceLineItemRequestBuilder) {
+// ByPurchaseInvoiceLineId provides operations to manage the purchaseInvoiceLines property of the microsoft.graph.company entity.
+func (m *CompaniesItemPurchaseInvoiceLinesRequestBuilder) ByPurchaseInvoiceLineId(purchaseInvoiceLineId string)(*CompaniesItemPurchaseInvoiceLinesPurchaseInvoiceLineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *CompaniesItemPurchaseInvoiceLinesRequestBuilder) ToGetRequestInformatio
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CompaniesItemPurchaseInvoiceLinesRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemPurchaseInvoiceLinesRequestBuilder) {
+    return NewCompaniesItemPurchaseInvoiceLinesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

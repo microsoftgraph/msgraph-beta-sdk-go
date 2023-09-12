@@ -35,3 +35,6 @@ func SerializeAndroidPermissionActionType(values []AndroidPermissionActionType) 
     }
     return result
 }
+func (i AndroidPermissionActionType) isMultiValue() bool {
+    return false
+}

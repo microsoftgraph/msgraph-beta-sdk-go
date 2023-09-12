@@ -46,8 +46,8 @@ type ItemSettingsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDirectorySettingIdString provides operations to manage the settings property of the microsoft.graph.group entity.
-func (m *ItemSettingsRequestBuilder) ByDirectorySettingIdString(directorySettingId string)(*ItemSettingsDirectorySettingItemRequestBuilder) {
+// ByDirectorySettingId provides operations to manage the settings property of the microsoft.graph.group entity.
+func (m *ItemSettingsRequestBuilder) ByDirectorySettingId(directorySettingId string)(*ItemSettingsDirectorySettingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ItemSettingsRequestBuilder) ToPostRequestInformation(ctx context.Contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemSettingsRequestBuilder) WithUrl(rawUrl string)(*ItemSettingsRequestBuilder) {
+    return NewItemSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

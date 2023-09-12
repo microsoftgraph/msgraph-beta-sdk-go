@@ -41,3 +41,6 @@ func SerializeAggregationType(values []AggregationType) []string {
     }
     return result
 }
+func (i AggregationType) isMultiValue() bool {
+    return false
+}

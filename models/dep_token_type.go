@@ -38,3 +38,6 @@ func SerializeDepTokenType(values []DepTokenType) []string {
     }
     return result
 }
+func (i DepTokenType) isMultiValue() bool {
+    return false
+}

@@ -46,8 +46,8 @@ type UrlThreatsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUrlThreatSubmissionIdString provides operations to manage the urlThreats property of the microsoft.graph.security.threatSubmissionRoot entity.
-func (m *UrlThreatsRequestBuilder) ByUrlThreatSubmissionIdString(urlThreatSubmissionId string)(*UrlThreatsUrlThreatSubmissionItemRequestBuilder) {
+// ByUrlThreatSubmissionId provides operations to manage the urlThreats property of the microsoft.graph.security.threatSubmissionRoot entity.
+func (m *UrlThreatsRequestBuilder) ByUrlThreatSubmissionId(urlThreatSubmissionId string)(*UrlThreatsUrlThreatSubmissionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *UrlThreatsRequestBuilder) ToPostRequestInformation(ctx context.Context,
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *UrlThreatsRequestBuilder) WithUrl(rawUrl string)(*UrlThreatsRequestBuilder) {
+    return NewUrlThreatsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

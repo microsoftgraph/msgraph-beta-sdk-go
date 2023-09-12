@@ -46,8 +46,8 @@ type ItemConnectorsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByConnectorIdString provides operations to manage the connectors property of the microsoft.graph.onPremisesPublishingProfile entity.
-func (m *ItemConnectorsRequestBuilder) ByConnectorIdString(connectorId string)(*ItemConnectorsConnectorItemRequestBuilder) {
+// ByConnectorId provides operations to manage the connectors property of the microsoft.graph.onPremisesPublishingProfile entity.
+func (m *ItemConnectorsRequestBuilder) ByConnectorId(connectorId string)(*ItemConnectorsConnectorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ItemConnectorsRequestBuilder) ToPostRequestInformation(ctx context.Cont
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemConnectorsRequestBuilder) WithUrl(rawUrl string)(*ItemConnectorsRequestBuilder) {
+    return NewItemConnectorsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

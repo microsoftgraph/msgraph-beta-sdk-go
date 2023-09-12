@@ -92,3 +92,6 @@ func SerializePayloadIndustry(values []PayloadIndustry) []string {
     }
     return result
 }
+func (i PayloadIndustry) isMultiValue() bool {
+    return false
+}

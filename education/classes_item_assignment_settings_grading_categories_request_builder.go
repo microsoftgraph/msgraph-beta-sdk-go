@@ -46,8 +46,8 @@ type ClassesItemAssignmentSettingsGradingCategoriesRequestBuilderPostRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEducationGradingCategoryIdString provides operations to manage the gradingCategories property of the microsoft.graph.educationAssignmentSettings entity.
-func (m *ClassesItemAssignmentSettingsGradingCategoriesRequestBuilder) ByEducationGradingCategoryIdString(educationGradingCategoryId string)(*ClassesItemAssignmentSettingsGradingCategoriesEducationGradingCategoryItemRequestBuilder) {
+// ByEducationGradingCategoryId provides operations to manage the gradingCategories property of the microsoft.graph.educationAssignmentSettings entity.
+func (m *ClassesItemAssignmentSettingsGradingCategoriesRequestBuilder) ByEducationGradingCategoryId(educationGradingCategoryId string)(*ClassesItemAssignmentSettingsGradingCategoriesEducationGradingCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ClassesItemAssignmentSettingsGradingCategoriesRequestBuilder) ToPostReq
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ClassesItemAssignmentSettingsGradingCategoriesRequestBuilder) WithUrl(rawUrl string)(*ClassesItemAssignmentSettingsGradingCategoriesRequestBuilder) {
+    return NewClassesItemAssignmentSettingsGradingCategoriesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

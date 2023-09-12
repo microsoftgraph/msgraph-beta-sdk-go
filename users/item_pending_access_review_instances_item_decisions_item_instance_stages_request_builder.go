@@ -46,8 +46,8 @@ type ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAccessReviewStageIdString provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.
-func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesRequestBuilder) ByAccessReviewStageIdString(accessReviewStageId string)(*ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesAccessReviewStageItemRequestBuilder) {
+// ByAccessReviewStageId provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.
+func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesRequestBuilder) ByAccessReviewStageId(accessReviewStageId string)(*ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesAccessReviewStageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -151,4 +151,8 @@ func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesRequestB
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesRequestBuilder) WithUrl(rawUrl string)(*ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesRequestBuilder) {
+    return NewItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

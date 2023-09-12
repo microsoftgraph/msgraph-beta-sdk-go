@@ -42,3 +42,6 @@ func SerializeAndroidRequiredPasswordComplexity(values []AndroidRequiredPassword
     }
     return result
 }
+func (i AndroidRequiredPasswordComplexity) isMultiValue() bool {
+    return false
+}

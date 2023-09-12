@@ -46,8 +46,8 @@ type DeviceShellScriptsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceShellScriptIdString provides operations to manage the deviceShellScripts property of the microsoft.graph.deviceManagement entity.
-func (m *DeviceShellScriptsRequestBuilder) ByDeviceShellScriptIdString(deviceShellScriptId string)(*DeviceShellScriptsDeviceShellScriptItemRequestBuilder) {
+// ByDeviceShellScriptId provides operations to manage the deviceShellScripts property of the microsoft.graph.deviceManagement entity.
+func (m *DeviceShellScriptsRequestBuilder) ByDeviceShellScriptId(deviceShellScriptId string)(*DeviceShellScriptsDeviceShellScriptItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *DeviceShellScriptsRequestBuilder) ToPostRequestInformation(ctx context.
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceShellScriptsRequestBuilder) WithUrl(rawUrl string)(*DeviceShellScriptsRequestBuilder) {
+    return NewDeviceShellScriptsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

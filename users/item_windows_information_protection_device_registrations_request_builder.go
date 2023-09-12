@@ -39,8 +39,8 @@ type ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilderGetRequest
     // Request query parameters
     QueryParameters *ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilderGetQueryParameters
 }
-// ByWindowsInformationProtectionDeviceRegistrationIdString provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.user entity.
-func (m *ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilder) ByWindowsInformationProtectionDeviceRegistrationIdString(windowsInformationProtectionDeviceRegistrationId string)(*ItemWindowsInformationProtectionDeviceRegistrationsWindowsInformationProtectionDeviceRegistrationItemRequestBuilder) {
+// ByWindowsInformationProtectionDeviceRegistrationId provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.user entity.
+func (m *ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilder) ByWindowsInformationProtectionDeviceRegistrationId(windowsInformationProtectionDeviceRegistrationId string)(*ItemWindowsInformationProtectionDeviceRegistrationsWindowsInformationProtectionDeviceRegistrationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilder) ToGe
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilder) WithUrl(rawUrl string)(*ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilder) {
+    return NewItemWindowsInformationProtectionDeviceRegistrationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -46,8 +46,8 @@ type DeviceConfigurationsItemGroupAssignmentsRequestBuilderPostRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceConfigurationGroupAssignmentIdString provides operations to manage the groupAssignments property of the microsoft.graph.deviceConfiguration entity.
-func (m *DeviceConfigurationsItemGroupAssignmentsRequestBuilder) ByDeviceConfigurationGroupAssignmentIdString(deviceConfigurationGroupAssignmentId string)(*DeviceConfigurationsItemGroupAssignmentsDeviceConfigurationGroupAssignmentItemRequestBuilder) {
+// ByDeviceConfigurationGroupAssignmentId provides operations to manage the groupAssignments property of the microsoft.graph.deviceConfiguration entity.
+func (m *DeviceConfigurationsItemGroupAssignmentsRequestBuilder) ByDeviceConfigurationGroupAssignmentId(deviceConfigurationGroupAssignmentId string)(*DeviceConfigurationsItemGroupAssignmentsDeviceConfigurationGroupAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *DeviceConfigurationsItemGroupAssignmentsRequestBuilder) ToPostRequestIn
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceConfigurationsItemGroupAssignmentsRequestBuilder) WithUrl(rawUrl string)(*DeviceConfigurationsItemGroupAssignmentsRequestBuilder) {
+    return NewDeviceConfigurationsItemGroupAssignmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

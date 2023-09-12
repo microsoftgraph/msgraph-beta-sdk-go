@@ -39,8 +39,8 @@ type ItemAppRoleAssignedResourcesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemAppRoleAssignedResourcesRequestBuilderGetQueryParameters
 }
-// ByServicePrincipalIdString provides operations to manage the appRoleAssignedResources property of the microsoft.graph.user entity.
-func (m *ItemAppRoleAssignedResourcesRequestBuilder) ByServicePrincipalIdString(servicePrincipalId string)(*ItemAppRoleAssignedResourcesServicePrincipalItemRequestBuilder) {
+// ByServicePrincipalId provides operations to manage the appRoleAssignedResources property of the microsoft.graph.user entity.
+func (m *ItemAppRoleAssignedResourcesRequestBuilder) ByServicePrincipalId(servicePrincipalId string)(*ItemAppRoleAssignedResourcesServicePrincipalItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *ItemAppRoleAssignedResourcesRequestBuilder) ToGetRequestInformation(ctx
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemAppRoleAssignedResourcesRequestBuilder) WithUrl(rawUrl string)(*ItemAppRoleAssignedResourcesRequestBuilder) {
+    return NewItemAppRoleAssignedResourcesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -131,3 +131,6 @@ func SerializePrinterProcessingStateReason(values []PrinterProcessingStateReason
     }
     return result
 }
+func (i PrinterProcessingStateReason) isMultiValue() bool {
+    return false
+}

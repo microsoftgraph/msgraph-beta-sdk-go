@@ -38,3 +38,6 @@ func SerializeUsernameSource(values []UsernameSource) []string {
     }
     return result
 }
+func (i UsernameSource) isMultiValue() bool {
+    return false
+}

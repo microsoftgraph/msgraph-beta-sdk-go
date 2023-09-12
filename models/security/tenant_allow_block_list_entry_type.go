@@ -41,3 +41,6 @@ func SerializeTenantAllowBlockListEntryType(values []TenantAllowBlockListEntryTy
     }
     return result
 }
+func (i TenantAllowBlockListEntryType) isMultiValue() bool {
+    return false
+}

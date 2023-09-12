@@ -35,3 +35,6 @@ func SerializeAndroidProfileApplicability(values []AndroidProfileApplicability) 
     }
     return result
 }
+func (i AndroidProfileApplicability) isMultiValue() bool {
+    return false
+}

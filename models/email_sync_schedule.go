@@ -54,3 +54,6 @@ func SerializeEmailSyncSchedule(values []EmailSyncSchedule) []string {
     }
     return result
 }
+func (i EmailSyncSchedule) isMultiValue() bool {
+    return false
+}

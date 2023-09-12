@@ -46,9 +46,9 @@ type VirtualEndpointProvisioningPoliciesItemAssignmentsRequestBuilderPostRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCloudPcProvisioningPolicyAssignmentIdString provides operations to manage the assignments property of the microsoft.graph.cloudPcProvisioningPolicy entity.
+// ByCloudPcProvisioningPolicyAssignmentId provides operations to manage the assignments property of the microsoft.graph.cloudPcProvisioningPolicy entity.
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId on 2023-03-16 and will be removed 2023-07-30
-func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsRequestBuilder) ByCloudPcProvisioningPolicyAssignmentIdString(cloudPcProvisioningPolicyAssignmentId string)(*VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder) {
+func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsRequestBuilder) ByCloudPcProvisioningPolicyAssignmentId(cloudPcProvisioningPolicyAssignmentId string)(*VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -149,4 +149,9 @@ func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsRequestBuilder) ToPos
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId on 2023-03-16 and will be removed 2023-07-30
+func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointProvisioningPoliciesItemAssignmentsRequestBuilder) {
+    return NewVirtualEndpointProvisioningPoliciesItemAssignmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -39,8 +39,8 @@ type ItemPlannerRecentPlansRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemPlannerRecentPlansRequestBuilderGetQueryParameters
 }
-// ByPlannerPlanIdString provides operations to manage the recentPlans property of the microsoft.graph.plannerUser entity.
-func (m *ItemPlannerRecentPlansRequestBuilder) ByPlannerPlanIdString(plannerPlanId string)(*ItemPlannerRecentPlansPlannerPlanItemRequestBuilder) {
+// ByPlannerPlanId provides operations to manage the recentPlans property of the microsoft.graph.plannerUser entity.
+func (m *ItemPlannerRecentPlansRequestBuilder) ByPlannerPlanId(plannerPlanId string)(*ItemPlannerRecentPlansPlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *ItemPlannerRecentPlansRequestBuilder) ToGetRequestInformation(ctx conte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemPlannerRecentPlansRequestBuilder) WithUrl(rawUrl string)(*ItemPlannerRecentPlansRequestBuilder) {
+    return NewItemPlannerRecentPlansRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

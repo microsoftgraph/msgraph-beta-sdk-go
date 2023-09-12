@@ -32,3 +32,6 @@ func SerializePlannerUserRoleKind(values []PlannerUserRoleKind) []string {
     }
     return result
 }
+func (i PlannerUserRoleKind) isMultiValue() bool {
+    return false
+}

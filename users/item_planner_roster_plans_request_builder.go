@@ -39,8 +39,8 @@ type ItemPlannerRosterPlansRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemPlannerRosterPlansRequestBuilderGetQueryParameters
 }
-// ByPlannerPlanIdString provides operations to manage the rosterPlans property of the microsoft.graph.plannerUser entity.
-func (m *ItemPlannerRosterPlansRequestBuilder) ByPlannerPlanIdString(plannerPlanId string)(*ItemPlannerRosterPlansPlannerPlanItemRequestBuilder) {
+// ByPlannerPlanId provides operations to manage the rosterPlans property of the microsoft.graph.plannerUser entity.
+func (m *ItemPlannerRosterPlansRequestBuilder) ByPlannerPlanId(plannerPlanId string)(*ItemPlannerRosterPlansPlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *ItemPlannerRosterPlansRequestBuilder) ToGetRequestInformation(ctx conte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemPlannerRosterPlansRequestBuilder) WithUrl(rawUrl string)(*ItemPlannerRosterPlansRequestBuilder) {
+    return NewItemPlannerRosterPlansRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

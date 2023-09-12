@@ -30,7 +30,10 @@ func NewDeletedChatsItemUndoDeleteRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedChatsItemUndoDeleteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action undoDelete
+// Post restore a  deletedChat to an active chat.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/deletedchat-undodelete?view=graph-rest-1.0
 func (m *DeletedChatsItemUndoDeleteRequestBuilder) Post(ctx context.Context, requestConfiguration *DeletedChatsItemUndoDeleteRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *DeletedChatsItemUndoDeleteRequestBuilder) Post(ctx context.Context, req
     }
     return nil
 }
-// ToPostRequestInformation invoke action undoDelete
+// ToPostRequestInformation restore a  deletedChat to an active chat.
 func (m *DeletedChatsItemUndoDeleteRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *DeletedChatsItemUndoDeleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -57,4 +60,8 @@ func (m *DeletedChatsItemUndoDeleteRequestBuilder) ToPostRequestInformation(ctx 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeletedChatsItemUndoDeleteRequestBuilder) WithUrl(rawUrl string)(*DeletedChatsItemUndoDeleteRequestBuilder) {
+    return NewDeletedChatsItemUndoDeleteRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

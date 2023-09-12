@@ -42,3 +42,6 @@ func SerializeLocalSecurityOptionsMinimumSessionSecurity(values []LocalSecurityO
     }
     return result
 }
+func (i LocalSecurityOptionsMinimumSessionSecurity) isMultiValue() bool {
+    return false
+}

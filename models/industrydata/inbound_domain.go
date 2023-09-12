@@ -32,3 +32,6 @@ func SerializeInboundDomain(values []InboundDomain) []string {
     }
     return result
 }
+func (i InboundDomain) isMultiValue() bool {
+    return false
+}

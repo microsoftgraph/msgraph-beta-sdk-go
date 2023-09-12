@@ -169,3 +169,7 @@ func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) ToPatc
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) WithUrl(rawUrl string)(*DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) {
+    return NewDeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

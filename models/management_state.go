@@ -74,3 +74,6 @@ func SerializeManagementState(values []ManagementState) []string {
     }
     return result
 }
+func (i ManagementState) isMultiValue() bool {
+    return false
+}

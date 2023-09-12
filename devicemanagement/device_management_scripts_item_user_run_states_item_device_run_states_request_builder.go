@@ -46,8 +46,8 @@ type DeviceManagementScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilderPo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementScriptDeviceStateIdString provides operations to manage the deviceRunStates property of the microsoft.graph.deviceManagementScriptUserState entity.
-func (m *DeviceManagementScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder) ByDeviceManagementScriptDeviceStateIdString(deviceManagementScriptDeviceStateId string)(*DeviceManagementScriptsItemUserRunStatesItemDeviceRunStatesDeviceManagementScriptDeviceStateItemRequestBuilder) {
+// ByDeviceManagementScriptDeviceStateId provides operations to manage the deviceRunStates property of the microsoft.graph.deviceManagementScriptUserState entity.
+func (m *DeviceManagementScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder) ByDeviceManagementScriptDeviceStateId(deviceManagementScriptDeviceStateId string)(*DeviceManagementScriptsItemUserRunStatesItemDeviceRunStatesDeviceManagementScriptDeviceStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *DeviceManagementScriptsItemUserRunStatesItemDeviceRunStatesRequestBuild
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceManagementScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder) WithUrl(rawUrl string)(*DeviceManagementScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder) {
+    return NewDeviceManagementScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

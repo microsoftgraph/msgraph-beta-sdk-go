@@ -34,3 +34,6 @@ func SerializeDeviceManagementConfigurationDeviceMode(values []DeviceManagementC
     }
     return result
 }
+func (i DeviceManagementConfigurationDeviceMode) isMultiValue() bool {
+    return false
+}

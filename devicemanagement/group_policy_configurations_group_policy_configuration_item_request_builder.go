@@ -169,3 +169,7 @@ func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) To
 func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) UpdateDefinitionValues()(*GroupPolicyConfigurationsItemUpdateDefinitionValuesRequestBuilder) {
     return NewGroupPolicyConfigurationsItemUpdateDefinitionValuesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) WithUrl(rawUrl string)(*GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) {
+    return NewGroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

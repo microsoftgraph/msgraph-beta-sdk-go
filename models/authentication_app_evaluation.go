@@ -35,3 +35,6 @@ func SerializeAuthenticationAppEvaluation(values []AuthenticationAppEvaluation) 
     }
     return result
 }
+func (i AuthenticationAppEvaluation) isMultiValue() bool {
+    return false
+}

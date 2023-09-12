@@ -177,3 +177,7 @@ func (m *WindowsUpdatesRequestBuilder) UpdatableAssets()(*WindowsUpdatesUpdatabl
 func (m *WindowsUpdatesRequestBuilder) UpdatePolicies()(*WindowsUpdatesUpdatePoliciesRequestBuilder) {
     return NewWindowsUpdatesUpdatePoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsUpdatesRequestBuilder) WithUrl(rawUrl string)(*WindowsUpdatesRequestBuilder) {
+    return NewWindowsUpdatesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

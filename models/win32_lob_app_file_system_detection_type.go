@@ -54,3 +54,6 @@ func SerializeWin32LobAppFileSystemDetectionType(values []Win32LobAppFileSystemD
     }
     return result
 }
+func (i Win32LobAppFileSystemDetectionType) isMultiValue() bool {
+    return false
+}

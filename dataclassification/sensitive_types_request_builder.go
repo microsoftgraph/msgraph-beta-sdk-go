@@ -46,8 +46,8 @@ type SensitiveTypesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySensitiveTypeIdString provides operations to manage the sensitiveTypes property of the microsoft.graph.dataClassificationService entity.
-func (m *SensitiveTypesRequestBuilder) BySensitiveTypeIdString(sensitiveTypeId string)(*SensitiveTypesSensitiveTypeItemRequestBuilder) {
+// BySensitiveTypeId provides operations to manage the sensitiveTypes property of the microsoft.graph.dataClassificationService entity.
+func (m *SensitiveTypesRequestBuilder) BySensitiveTypeId(sensitiveTypeId string)(*SensitiveTypesSensitiveTypeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *SensitiveTypesRequestBuilder) ToPostRequestInformation(ctx context.Cont
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SensitiveTypesRequestBuilder) WithUrl(rawUrl string)(*SensitiveTypesRequestBuilder) {
+    return NewSensitiveTypesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

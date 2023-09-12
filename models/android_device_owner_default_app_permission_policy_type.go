@@ -42,3 +42,6 @@ func SerializeAndroidDeviceOwnerDefaultAppPermissionPolicyType(values []AndroidD
     }
     return result
 }
+func (i AndroidDeviceOwnerDefaultAppPermissionPolicyType) isMultiValue() bool {
+    return false
+}

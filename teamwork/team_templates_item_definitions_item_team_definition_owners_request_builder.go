@@ -39,8 +39,8 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilderGetReques
     // Request query parameters
     QueryParameters *TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilderGetQueryParameters
 }
-// ByUserIdString provides operations to manage the owners property of the microsoft.graph.team entity.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilder) ByUserIdString(userId string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersUserItemRequestBuilder) {
+// ByUserId provides operations to manage the owners property of the microsoft.graph.team entity.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilder) ByUserId(userId string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilder) ToG
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilder) WithUrl(rawUrl string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -38,3 +38,6 @@ func SerializeTrainingCompletionDuration(values []TrainingCompletionDuration) []
     }
     return result
 }
+func (i TrainingCompletionDuration) isMultiValue() bool {
+    return false
+}

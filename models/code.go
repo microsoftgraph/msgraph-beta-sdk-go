@@ -154,3 +154,6 @@ func SerializeCode(values []Code) []string {
     }
     return result
 }
+func (i Code) isMultiValue() bool {
+    return false
+}

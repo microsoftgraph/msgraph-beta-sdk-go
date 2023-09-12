@@ -103,3 +103,7 @@ func (m *ItemJoinedGroupsRequestBuilder) ToGetRequestInformation(ctx context.Con
 func (m *ItemJoinedGroupsRequestBuilder) ValidateProperties()(*ItemJoinedGroupsValidatePropertiesRequestBuilder) {
     return NewItemJoinedGroupsValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemJoinedGroupsRequestBuilder) WithUrl(rawUrl string)(*ItemJoinedGroupsRequestBuilder) {
+    return NewItemJoinedGroupsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

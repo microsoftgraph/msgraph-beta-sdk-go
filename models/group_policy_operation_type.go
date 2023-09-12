@@ -54,3 +54,6 @@ func SerializeGroupPolicyOperationType(values []GroupPolicyOperationType) []stri
     }
     return result
 }
+func (i GroupPolicyOperationType) isMultiValue() bool {
+    return false
+}

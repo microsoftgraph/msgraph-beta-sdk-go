@@ -11,7 +11,7 @@ import (
 type DeletedChatsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DeletedChatsRequestBuilderGetQueryParameters get deletedChats from teamwork
+// DeletedChatsRequestBuilderGetQueryParameters read the properties and relationships of a deletedChat object.
 type DeletedChatsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -46,8 +46,8 @@ type DeletedChatsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeletedChatIdString provides operations to manage the deletedChats property of the microsoft.graph.teamwork entity.
-func (m *DeletedChatsRequestBuilder) ByDeletedChatIdString(deletedChatId string)(*DeletedChatsDeletedChatItemRequestBuilder) {
+// ByDeletedChatId provides operations to manage the deletedChats property of the microsoft.graph.teamwork entity.
+func (m *DeletedChatsRequestBuilder) ByDeletedChatId(deletedChatId string)(*DeletedChatsDeletedChatItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -74,7 +74,7 @@ func NewDeletedChatsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *DeletedChatsRequestBuilder) Count()(*DeletedChatsCountRequestBuilder) {
     return NewDeletedChatsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get deletedChats from teamwork
+// Get read the properties and relationships of a deletedChat object.
 func (m *DeletedChatsRequestBuilder) Get(ctx context.Context, requestConfiguration *DeletedChatsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedChatCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *DeletedChatsRequestBuilder) Post(ctx context.Context, body ie233ee762e2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedChatable), nil
 }
-// ToGetRequestInformation get deletedChats from teamwork
+// ToGetRequestInformation read the properties and relationships of a deletedChat object.
 func (m *DeletedChatsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeletedChatsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -144,4 +144,8 @@ func (m *DeletedChatsRequestBuilder) ToPostRequestInformation(ctx context.Contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeletedChatsRequestBuilder) WithUrl(rawUrl string)(*DeletedChatsRequestBuilder) {
+    return NewDeletedChatsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

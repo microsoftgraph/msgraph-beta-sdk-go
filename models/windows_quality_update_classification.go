@@ -38,3 +38,6 @@ func SerializeWindowsQualityUpdateClassification(values []WindowsQualityUpdateCl
     }
     return result
 }
+func (i WindowsQualityUpdateClassification) isMultiValue() bool {
+    return false
+}

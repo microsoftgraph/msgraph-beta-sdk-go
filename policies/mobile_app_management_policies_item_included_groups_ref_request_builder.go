@@ -128,3 +128,7 @@ func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) ToPostR
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) WithUrl(rawUrl string)(*MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) {
+    return NewMobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

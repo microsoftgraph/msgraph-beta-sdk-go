@@ -46,8 +46,8 @@ type VirtualEndpointReportsExportJobsRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCloudPcExportJobIdString provides operations to manage the exportJobs property of the microsoft.graph.cloudPcReports entity.
-func (m *VirtualEndpointReportsExportJobsRequestBuilder) ByCloudPcExportJobIdString(cloudPcExportJobId string)(*VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilder) {
+// ByCloudPcExportJobId provides operations to manage the exportJobs property of the microsoft.graph.cloudPcReports entity.
+func (m *VirtualEndpointReportsExportJobsRequestBuilder) ByCloudPcExportJobId(cloudPcExportJobId string)(*VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *VirtualEndpointReportsExportJobsRequestBuilder) ToPostRequestInformatio
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEndpointReportsExportJobsRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointReportsExportJobsRequestBuilder) {
+    return NewVirtualEndpointReportsExportJobsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

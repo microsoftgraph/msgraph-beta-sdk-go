@@ -65,3 +65,7 @@ func (m *ReportsGetWindowsUpdateAlertSummaryReportRequestBuilder) ToPostRequestI
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ReportsGetWindowsUpdateAlertSummaryReportRequestBuilder) WithUrl(rawUrl string)(*ReportsGetWindowsUpdateAlertSummaryReportRequestBuilder) {
+    return NewReportsGetWindowsUpdateAlertSummaryReportRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -29,3 +29,6 @@ func SerializeConnectorGroupType(values []ConnectorGroupType) []string {
     }
     return result
 }
+func (i ConnectorGroupType) isMultiValue() bool {
+    return false
+}

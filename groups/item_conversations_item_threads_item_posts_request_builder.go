@@ -37,8 +37,8 @@ type ItemConversationsItemThreadsItemPostsRequestBuilderGetRequestConfiguration 
     // Request query parameters
     QueryParameters *ItemConversationsItemThreadsItemPostsRequestBuilderGetQueryParameters
 }
-// ByPostIdString provides operations to manage the posts property of the microsoft.graph.conversationThread entity.
-func (m *ItemConversationsItemThreadsItemPostsRequestBuilder) ByPostIdString(postId string)(*ItemConversationsItemThreadsItemPostsPostItemRequestBuilder) {
+// ByPostId provides operations to manage the posts property of the microsoft.graph.conversationThread entity.
+func (m *ItemConversationsItemThreadsItemPostsRequestBuilder) ByPostId(postId string)(*ItemConversationsItemThreadsItemPostsPostItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -102,4 +102,8 @@ func (m *ItemConversationsItemThreadsItemPostsRequestBuilder) ToGetRequestInform
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemConversationsItemThreadsItemPostsRequestBuilder) WithUrl(rawUrl string)(*ItemConversationsItemThreadsItemPostsRequestBuilder) {
+    return NewItemConversationsItemThreadsItemPostsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

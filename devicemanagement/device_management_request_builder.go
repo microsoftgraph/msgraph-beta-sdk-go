@@ -822,6 +822,10 @@ func (m *DeviceManagementRequestBuilder) WindowsQualityUpdateProfiles()(*Windows
 func (m *DeviceManagementRequestBuilder) WindowsUpdateCatalogItems()(*WindowsUpdateCatalogItemsRequestBuilder) {
     return NewWindowsUpdateCatalogItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceManagementRequestBuilder) WithUrl(rawUrl string)(*DeviceManagementRequestBuilder) {
+    return NewDeviceManagementRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}
 // ZebraFotaArtifacts provides operations to manage the zebraFotaArtifacts property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ZebraFotaArtifacts()(*ZebraFotaArtifactsRequestBuilder) {
     return NewZebraFotaArtifactsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

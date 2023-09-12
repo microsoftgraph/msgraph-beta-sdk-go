@@ -38,3 +38,6 @@ func SerializeZebraFotaScheduleMode(values []ZebraFotaScheduleMode) []string {
     }
     return result
 }
+func (i ZebraFotaScheduleMode) isMultiValue() bool {
+    return false
+}

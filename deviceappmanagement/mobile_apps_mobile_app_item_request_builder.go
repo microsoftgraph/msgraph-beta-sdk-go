@@ -181,3 +181,7 @@ func (m *MobileAppsMobileAppItemRequestBuilder) ToPatchRequestInformation(ctx co
 func (m *MobileAppsMobileAppItemRequestBuilder) UpdateRelationships()(*MobileAppsItemUpdateRelationshipsRequestBuilder) {
     return NewMobileAppsItemUpdateRelationshipsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MobileAppsMobileAppItemRequestBuilder) WithUrl(rawUrl string)(*MobileAppsMobileAppItemRequestBuilder) {
+    return NewMobileAppsMobileAppItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

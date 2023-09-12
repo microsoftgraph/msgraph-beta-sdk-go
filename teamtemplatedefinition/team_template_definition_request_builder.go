@@ -46,8 +46,8 @@ type TeamTemplateDefinitionRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTeamTemplateDefinitionIdString provides operations to manage the collection of teamTemplateDefinition entities.
-func (m *TeamTemplateDefinitionRequestBuilder) ByTeamTemplateDefinitionIdString(teamTemplateDefinitionId string)(*TeamTemplateDefinitionItemRequestBuilder) {
+// ByTeamTemplateDefinitionId provides operations to manage the collection of teamTemplateDefinition entities.
+func (m *TeamTemplateDefinitionRequestBuilder) ByTeamTemplateDefinitionId(teamTemplateDefinitionId string)(*TeamTemplateDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *TeamTemplateDefinitionRequestBuilder) ToPostRequestInformation(ctx cont
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TeamTemplateDefinitionRequestBuilder) WithUrl(rawUrl string)(*TeamTemplateDefinitionRequestBuilder) {
+    return NewTeamTemplateDefinitionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

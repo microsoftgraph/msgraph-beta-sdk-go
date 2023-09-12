@@ -165,3 +165,7 @@ func (m *PrivilegedRoleAssignmentItemRequestBuilder) ToPatchRequestInformation(c
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *PrivilegedRoleAssignmentItemRequestBuilder) WithUrl(rawUrl string)(*PrivilegedRoleAssignmentItemRequestBuilder) {
+    return NewPrivilegedRoleAssignmentItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

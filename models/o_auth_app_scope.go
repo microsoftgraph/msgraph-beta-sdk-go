@@ -53,3 +53,6 @@ func SerializeOAuthAppScope(values []OAuthAppScope) []string {
     }
     return result
 }
+func (i OAuthAppScope) isMultiValue() bool {
+    return false
+}

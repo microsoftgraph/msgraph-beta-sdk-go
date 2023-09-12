@@ -38,3 +38,6 @@ func SerializeMobileThreatDefensePartnerPriority(values []MobileThreatDefensePar
     }
     return result
 }
+func (i MobileThreatDefensePartnerPriority) isMultiValue() bool {
+    return false
+}

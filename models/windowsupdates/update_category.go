@@ -38,3 +38,6 @@ func SerializeUpdateCategory(values []UpdateCategory) []string {
     }
     return result
 }
+func (i UpdateCategory) isMultiValue() bool {
+    return false
+}

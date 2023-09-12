@@ -50,3 +50,6 @@ func SerializeRecommendationFeatureAreas(values []RecommendationFeatureAreas) []
     }
     return result
 }
+func (i RecommendationFeatureAreas) isMultiValue() bool {
+    return false
+}

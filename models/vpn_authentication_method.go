@@ -46,3 +46,6 @@ func SerializeVpnAuthenticationMethod(values []VpnAuthenticationMethod) []string
     }
     return result
 }
+func (i VpnAuthenticationMethod) isMultiValue() bool {
+    return false
+}

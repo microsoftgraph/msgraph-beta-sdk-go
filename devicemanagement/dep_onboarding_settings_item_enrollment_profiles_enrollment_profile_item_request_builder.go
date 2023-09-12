@@ -165,3 +165,7 @@ func (m *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequest
 func (m *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder) UpdateDeviceProfileAssignment()(*DepOnboardingSettingsItemEnrollmentProfilesItemUpdateDeviceProfileAssignmentRequestBuilder) {
     return NewDepOnboardingSettingsItemEnrollmentProfilesItemUpdateDeviceProfileAssignmentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder) WithUrl(rawUrl string)(*DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder) {
+    return NewDepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

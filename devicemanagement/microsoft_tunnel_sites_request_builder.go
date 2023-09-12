@@ -46,8 +46,8 @@ type MicrosoftTunnelSitesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMicrosoftTunnelSiteIdString provides operations to manage the microsoftTunnelSites property of the microsoft.graph.deviceManagement entity.
-func (m *MicrosoftTunnelSitesRequestBuilder) ByMicrosoftTunnelSiteIdString(microsoftTunnelSiteId string)(*MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) {
+// ByMicrosoftTunnelSiteId provides operations to manage the microsoftTunnelSites property of the microsoft.graph.deviceManagement entity.
+func (m *MicrosoftTunnelSitesRequestBuilder) ByMicrosoftTunnelSiteId(microsoftTunnelSiteId string)(*MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *MicrosoftTunnelSitesRequestBuilder) ToPostRequestInformation(ctx contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MicrosoftTunnelSitesRequestBuilder) WithUrl(rawUrl string)(*MicrosoftTunnelSitesRequestBuilder) {
+    return NewMicrosoftTunnelSitesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

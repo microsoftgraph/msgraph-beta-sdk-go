@@ -46,8 +46,8 @@ type CustomSecurityAttributeAuditsRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCustomSecurityAttributeAuditIdString provides operations to manage the customSecurityAttributeAudits property of the microsoft.graph.auditLogRoot entity.
-func (m *CustomSecurityAttributeAuditsRequestBuilder) ByCustomSecurityAttributeAuditIdString(customSecurityAttributeAuditId string)(*CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder) {
+// ByCustomSecurityAttributeAuditId provides operations to manage the customSecurityAttributeAudits property of the microsoft.graph.auditLogRoot entity.
+func (m *CustomSecurityAttributeAuditsRequestBuilder) ByCustomSecurityAttributeAuditId(customSecurityAttributeAuditId string)(*CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *CustomSecurityAttributeAuditsRequestBuilder) ToPostRequestInformation(c
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CustomSecurityAttributeAuditsRequestBuilder) WithUrl(rawUrl string)(*CustomSecurityAttributeAuditsRequestBuilder) {
+    return NewCustomSecurityAttributeAuditsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

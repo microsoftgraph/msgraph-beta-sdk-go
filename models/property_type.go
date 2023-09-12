@@ -53,3 +53,6 @@ func SerializePropertyType(values []PropertyType) []string {
     }
     return result
 }
+func (i PropertyType) isMultiValue() bool {
+    return false
+}

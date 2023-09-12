@@ -170,3 +170,7 @@ func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) ToPa
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) WithUrl(rawUrl string)(*IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) {
+    return NewIndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

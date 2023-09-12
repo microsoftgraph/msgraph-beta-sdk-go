@@ -38,3 +38,6 @@ func SerializeDeviceManagementConfigurationSecretSettingValueState(values []Devi
     }
     return result
 }
+func (i DeviceManagementConfigurationSecretSettingValueState) isMultiValue() bool {
+    return false
+}

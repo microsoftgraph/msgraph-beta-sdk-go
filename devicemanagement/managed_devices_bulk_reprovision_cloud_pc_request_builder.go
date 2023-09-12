@@ -72,3 +72,8 @@ func (m *ManagedDevicesBulkReprovisionCloudPcRequestBuilder) ToPostRequestInform
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The bulkReprovisionCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkReprovisionCloudPc on 2023-05-24 and will be removed 2023-09-24
+func (m *ManagedDevicesBulkReprovisionCloudPcRequestBuilder) WithUrl(rawUrl string)(*ManagedDevicesBulkReprovisionCloudPcRequestBuilder) {
+    return NewManagedDevicesBulkReprovisionCloudPcRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

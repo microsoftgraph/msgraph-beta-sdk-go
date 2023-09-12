@@ -46,9 +46,9 @@ type ConditionalAccessAuthenticationStrengthsPoliciesRequestBuilderPostRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAuthenticationStrengthPolicyIdString provides operations to manage the policies property of the microsoft.graph.authenticationStrengthRoot entity.
+// ByAuthenticationStrengthPolicyId provides operations to manage the policies property of the microsoft.graph.authenticationStrengthRoot entity.
 // Deprecated: The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove on 2023-02-01 and will be removed 2023-03-31
-func (m *ConditionalAccessAuthenticationStrengthsPoliciesRequestBuilder) ByAuthenticationStrengthPolicyIdString(authenticationStrengthPolicyId string)(*ConditionalAccessAuthenticationStrengthsPoliciesAuthenticationStrengthPolicyItemRequestBuilder) {
+func (m *ConditionalAccessAuthenticationStrengthsPoliciesRequestBuilder) ByAuthenticationStrengthPolicyId(authenticationStrengthPolicyId string)(*ConditionalAccessAuthenticationStrengthsPoliciesAuthenticationStrengthPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -154,4 +154,9 @@ func (m *ConditionalAccessAuthenticationStrengthsPoliciesRequestBuilder) ToPostR
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove on 2023-02-01 and will be removed 2023-03-31
+func (m *ConditionalAccessAuthenticationStrengthsPoliciesRequestBuilder) WithUrl(rawUrl string)(*ConditionalAccessAuthenticationStrengthsPoliciesRequestBuilder) {
+    return NewConditionalAccessAuthenticationStrengthsPoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -44,3 +44,6 @@ func SerializeSignInIdentifierType(values []SignInIdentifierType) []string {
     }
     return result
 }
+func (i SignInIdentifierType) isMultiValue() bool {
+    return false
+}

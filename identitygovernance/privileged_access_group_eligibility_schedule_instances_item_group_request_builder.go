@@ -75,3 +75,7 @@ func (m *PrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilde
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *PrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilder) WithUrl(rawUrl string)(*PrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilder) {
+    return NewPrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

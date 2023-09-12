@@ -47,3 +47,6 @@ func SerializeTeamworkSoftwareType(values []TeamworkSoftwareType) []string {
     }
     return result
 }
+func (i TeamworkSoftwareType) isMultiValue() bool {
+    return false
+}

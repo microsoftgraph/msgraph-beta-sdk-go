@@ -38,3 +38,6 @@ func SerializeKioskModeManagedHomeScreenPinComplexity(values []KioskModeManagedH
     }
     return result
 }
+func (i KioskModeManagedHomeScreenPinComplexity) isMultiValue() bool {
+    return false
+}

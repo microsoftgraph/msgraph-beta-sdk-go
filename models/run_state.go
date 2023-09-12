@@ -50,3 +50,6 @@ func SerializeRunState(values []RunState) []string {
     }
     return result
 }
+func (i RunState) isMultiValue() bool {
+    return false
+}

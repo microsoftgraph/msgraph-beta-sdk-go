@@ -46,3 +46,6 @@ func SerializeManagedDeviceArchitecture(values []ManagedDeviceArchitecture) []st
     }
     return result
 }
+func (i ManagedDeviceArchitecture) isMultiValue() bool {
+    return false
+}

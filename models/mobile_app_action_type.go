@@ -46,3 +46,6 @@ func SerializeMobileAppActionType(values []MobileAppActionType) []string {
     }
     return result
 }
+func (i MobileAppActionType) isMultiValue() bool {
+    return false
+}

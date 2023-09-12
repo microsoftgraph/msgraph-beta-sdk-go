@@ -54,3 +54,6 @@ func SerializePerfectForwardSecrecyGroup(values []PerfectForwardSecrecyGroup) []
     }
     return result
 }
+func (i PerfectForwardSecrecyGroup) isMultiValue() bool {
+    return false
+}

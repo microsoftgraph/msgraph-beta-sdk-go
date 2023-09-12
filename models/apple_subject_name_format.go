@@ -50,3 +50,6 @@ func SerializeAppleSubjectNameFormat(values []AppleSubjectNameFormat) []string {
     }
     return result
 }
+func (i AppleSubjectNameFormat) isMultiValue() bool {
+    return false
+}

@@ -154,3 +154,6 @@ func SerializeDeviceComplianceScriptRulesValidationError(values []DeviceComplian
     }
     return result
 }
+func (i DeviceComplianceScriptRulesValidationError) isMultiValue() bool {
+    return false
+}

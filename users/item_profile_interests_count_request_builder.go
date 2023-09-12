@@ -74,3 +74,7 @@ func (m *ItemProfileInterestsCountRequestBuilder) ToGetRequestInformation(ctx co
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemProfileInterestsCountRequestBuilder) WithUrl(rawUrl string)(*ItemProfileInterestsCountRequestBuilder) {
+    return NewItemProfileInterestsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

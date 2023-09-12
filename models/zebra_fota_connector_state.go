@@ -42,3 +42,6 @@ func SerializeZebraFotaConnectorState(values []ZebraFotaConnectorState) []string
     }
     return result
 }
+func (i ZebraFotaConnectorState) isMultiValue() bool {
+    return false
+}

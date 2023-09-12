@@ -74,3 +74,7 @@ func (m *ManagedDeviceEncryptionStatesCountRequestBuilder) ToGetRequestInformati
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedDeviceEncryptionStatesCountRequestBuilder) WithUrl(rawUrl string)(*ManagedDeviceEncryptionStatesCountRequestBuilder) {
+    return NewManagedDeviceEncryptionStatesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

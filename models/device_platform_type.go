@@ -78,3 +78,6 @@ func SerializeDevicePlatformType(values []DevicePlatformType) []string {
     }
     return result
 }
+func (i DevicePlatformType) isMultiValue() bool {
+    return false
+}

@@ -38,3 +38,6 @@ func SerializeOwnerType(values []OwnerType) []string {
     }
     return result
 }
+func (i OwnerType) isMultiValue() bool {
+    return false
+}

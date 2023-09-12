@@ -35,3 +35,6 @@ func SerializeCloudPcUserAccessLevel(values []CloudPcUserAccessLevel) []string {
     }
     return result
 }
+func (i CloudPcUserAccessLevel) isMultiValue() bool {
+    return false
+}

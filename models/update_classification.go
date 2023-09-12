@@ -42,3 +42,6 @@ func SerializeUpdateClassification(values []UpdateClassification) []string {
     }
     return result
 }
+func (i UpdateClassification) isMultiValue() bool {
+    return false
+}

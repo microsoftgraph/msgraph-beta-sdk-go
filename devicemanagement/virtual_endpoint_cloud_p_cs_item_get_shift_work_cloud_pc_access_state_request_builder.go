@@ -63,3 +63,7 @@ func (m *VirtualEndpointCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilder
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEndpointCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -46,3 +46,6 @@ func SerializeCertificateRevocationStatus(values []CertificateRevocationStatus) 
     }
     return result
 }
+func (i CertificateRevocationStatus) isMultiValue() bool {
+    return false
+}

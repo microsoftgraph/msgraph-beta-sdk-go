@@ -35,3 +35,6 @@ func SerializeIsolationType(values []IsolationType) []string {
     }
     return result
 }
+func (i IsolationType) isMultiValue() bool {
+    return false
+}

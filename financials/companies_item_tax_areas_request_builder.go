@@ -156,3 +156,7 @@ func (m *CompaniesItemTaxAreasRequestBuilder) ToPostRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CompaniesItemTaxAreasRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemTaxAreasRequestBuilder) {
+    return NewCompaniesItemTaxAreasRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

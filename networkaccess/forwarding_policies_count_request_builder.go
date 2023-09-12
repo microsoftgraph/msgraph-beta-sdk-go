@@ -74,3 +74,7 @@ func (m *ForwardingPoliciesCountRequestBuilder) ToGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ForwardingPoliciesCountRequestBuilder) WithUrl(rawUrl string)(*ForwardingPoliciesCountRequestBuilder) {
+    return NewForwardingPoliciesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

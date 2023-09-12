@@ -50,3 +50,6 @@ func SerializeConfigurationManagerClientState(values []ConfigurationManagerClien
     }
     return result
 }
+func (i ConfigurationManagerClientState) isMultiValue() bool {
+    return false
+}

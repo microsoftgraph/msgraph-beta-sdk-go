@@ -38,3 +38,6 @@ func SerializeTeamworkSoftwareFreshness(values []TeamworkSoftwareFreshness) []st
     }
     return result
 }
+func (i TeamworkSoftwareFreshness) isMultiValue() bool {
+    return false
+}

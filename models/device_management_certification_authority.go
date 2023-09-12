@@ -38,3 +38,6 @@ func SerializeDeviceManagementCertificationAuthority(values []DeviceManagementCe
     }
     return result
 }
+func (i DeviceManagementCertificationAuthority) isMultiValue() bool {
+    return false
+}

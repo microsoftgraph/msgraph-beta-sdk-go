@@ -39,8 +39,8 @@ type IndustryDataRunsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *IndustryDataRunsRequestBuilderGetQueryParameters
 }
-// ByIndustryDataRunIdString provides operations to manage the runs property of the microsoft.graph.industryData.industryDataRoot entity.
-func (m *IndustryDataRunsRequestBuilder) ByIndustryDataRunIdString(industryDataRunId string)(*IndustryDataRunsIndustryDataRunItemRequestBuilder) {
+// ByIndustryDataRunId provides operations to manage the runs property of the microsoft.graph.industryData.industryDataRoot entity.
+func (m *IndustryDataRunsRequestBuilder) ByIndustryDataRunId(industryDataRunId string)(*IndustryDataRunsIndustryDataRunItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -108,4 +108,8 @@ func (m *IndustryDataRunsRequestBuilder) ToGetRequestInformation(ctx context.Con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IndustryDataRunsRequestBuilder) WithUrl(rawUrl string)(*IndustryDataRunsRequestBuilder) {
+    return NewIndustryDataRunsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -126,7 +126,7 @@ func (m *CloudPcPartnerAgentInstallResult) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPartnerAgentName gets the partnerAgentName property value. Indicates the name of a partner agent and includes first-party and third-party. Currently, Citrix is the only third-party value. Read-Only.
+// GetPartnerAgentName gets the partnerAgentName property value. The name of the partner agent, whether first party or third party. Possible values for third-party partners are Citrix and VMware. Read-Only.
 func (m *CloudPcPartnerAgentInstallResult) GetPartnerAgentName()(*CloudPcPartnerAgentName) {
     val, err := m.GetBackingStore().Get("partnerAgentName")
     if err != nil {
@@ -222,7 +222,7 @@ func (m *CloudPcPartnerAgentInstallResult) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPartnerAgentName sets the partnerAgentName property value. Indicates the name of a partner agent and includes first-party and third-party. Currently, Citrix is the only third-party value. Read-Only.
+// SetPartnerAgentName sets the partnerAgentName property value. The name of the partner agent, whether first party or third party. Possible values for third-party partners are Citrix and VMware. Read-Only.
 func (m *CloudPcPartnerAgentInstallResult) SetPartnerAgentName(value *CloudPcPartnerAgentName)() {
     err := m.GetBackingStore().Set("partnerAgentName", value)
     if err != nil {

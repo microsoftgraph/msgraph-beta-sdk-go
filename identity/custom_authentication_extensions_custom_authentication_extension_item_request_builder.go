@@ -18,7 +18,7 @@ type CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderGetQueryParameters read the properties and relationships of a customAuthenticationExtension object.
+// CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderGetQueryParameters read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
 type CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,10 +73,10 @@ func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestB
     }
     return nil
 }
-// Get read the properties and relationships of a customAuthenticationExtension object.
+// Get read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/customauthenticationextension-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationeventlistener-get?view=graph-rest-1.0
 func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAuthenticationExtensionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -126,7 +126,7 @@ func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestB
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a customAuthenticationExtension object.
+// ToGetRequestInformation read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
 func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -162,4 +162,8 @@ func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestB
 // ValidateAuthenticationConfiguration provides operations to call the validateAuthenticationConfiguration method.
 func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) ValidateAuthenticationConfiguration()(*CustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRequestBuilder) {
     return NewCustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) WithUrl(rawUrl string)(*CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) {
+    return NewCustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

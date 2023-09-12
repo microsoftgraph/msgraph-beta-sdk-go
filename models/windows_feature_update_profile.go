@@ -176,6 +176,16 @@ func (m *WindowsFeatureUpdateProfile) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["installLatestWindows10OnWindows11IneligibleDevice"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInstallLatestWindows10OnWindows11IneligibleDevice(val)
+        }
+        return nil
+    }
     res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -213,6 +223,17 @@ func (m *WindowsFeatureUpdateProfile) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     return res
+}
+// GetInstallLatestWindows10OnWindows11IneligibleDevice gets the installLatestWindows10OnWindows11IneligibleDevice property value. If true, the latest Microsoft Windows 10 update will be installed on devices ineligible for Microsoft Windows 11
+func (m *WindowsFeatureUpdateProfile) GetInstallLatestWindows10OnWindows11IneligibleDevice()(*bool) {
+    val, err := m.GetBackingStore().Get("installLatestWindows10OnWindows11IneligibleDevice")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date time that the profile was last modified.
 func (m *WindowsFeatureUpdateProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -302,6 +323,12 @@ func (m *WindowsFeatureUpdateProfile) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteBoolValue("installLatestWindows10OnWindows11IneligibleDevice", m.GetInstallLatestWindows10OnWindows11IneligibleDevice())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
         if err != nil {
             return err
@@ -370,6 +397,13 @@ func (m *WindowsFeatureUpdateProfile) SetFeatureUpdateVersion(value *string)() {
         panic(err)
     }
 }
+// SetInstallLatestWindows10OnWindows11IneligibleDevice sets the installLatestWindows10OnWindows11IneligibleDevice property value. If true, the latest Microsoft Windows 10 update will be installed on devices ineligible for Microsoft Windows 11
+func (m *WindowsFeatureUpdateProfile) SetInstallLatestWindows10OnWindows11IneligibleDevice(value *bool)() {
+    err := m.GetBackingStore().Set("installLatestWindows10OnWindows11IneligibleDevice", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date time that the profile was last modified.
 func (m *WindowsFeatureUpdateProfile) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
@@ -402,6 +436,7 @@ type WindowsFeatureUpdateProfileable interface {
     GetDisplayName()(*string)
     GetEndOfSupportDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetFeatureUpdateVersion()(*string)
+    GetInstallLatestWindows10OnWindows11IneligibleDevice()(*bool)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRoleScopeTagIds()([]string)
     GetRolloutSettings()(WindowsUpdateRolloutSettingsable)
@@ -412,6 +447,7 @@ type WindowsFeatureUpdateProfileable interface {
     SetDisplayName(value *string)()
     SetEndOfSupportDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetFeatureUpdateVersion(value *string)()
+    SetInstallLatestWindows10OnWindows11IneligibleDevice(value *bool)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRoleScopeTagIds(value []string)()
     SetRolloutSettings(value WindowsUpdateRolloutSettingsable)()

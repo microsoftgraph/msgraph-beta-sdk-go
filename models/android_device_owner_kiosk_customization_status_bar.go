@@ -38,3 +38,6 @@ func SerializeAndroidDeviceOwnerKioskCustomizationStatusBar(values []AndroidDevi
     }
     return result
 }
+func (i AndroidDeviceOwnerKioskCustomizationStatusBar) isMultiValue() bool {
+    return false
+}

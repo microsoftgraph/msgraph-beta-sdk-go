@@ -44,3 +44,6 @@ func SerializePlannerRelationshipUserRoles(values []PlannerRelationshipUserRoles
     }
     return result
 }
+func (i PlannerRelationshipUserRoles) isMultiValue() bool {
+    return false
+}

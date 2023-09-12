@@ -38,3 +38,6 @@ func SerializeMacOSPriority(values []MacOSPriority) []string {
     }
     return result
 }
+func (i MacOSPriority) isMultiValue() bool {
+    return false
+}

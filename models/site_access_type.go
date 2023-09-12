@@ -35,3 +35,6 @@ func SerializeSiteAccessType(values []SiteAccessType) []string {
     }
     return result
 }
+func (i SiteAccessType) isMultiValue() bool {
+    return false
+}

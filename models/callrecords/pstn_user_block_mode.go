@@ -35,3 +35,6 @@ func SerializePstnUserBlockMode(values []PstnUserBlockMode) []string {
     }
     return result
 }
+func (i PstnUserBlockMode) isMultiValue() bool {
+    return false
+}

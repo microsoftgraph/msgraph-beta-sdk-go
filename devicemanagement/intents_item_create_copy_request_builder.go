@@ -67,3 +67,7 @@ func (m *IntentsItemCreateCopyRequestBuilder) ToPostRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IntentsItemCreateCopyRequestBuilder) WithUrl(rawUrl string)(*IntentsItemCreateCopyRequestBuilder) {
+    return NewIntentsItemCreateCopyRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

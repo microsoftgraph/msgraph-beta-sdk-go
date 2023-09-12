@@ -301,3 +301,7 @@ func (m *ManagedTenantsRequestBuilder) WindowsDeviceMalwareStates()(*ManagedTena
 func (m *ManagedTenantsRequestBuilder) WindowsProtectionStates()(*ManagedTenantsWindowsProtectionStatesRequestBuilder) {
     return NewManagedTenantsWindowsProtectionStatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedTenantsRequestBuilder) WithUrl(rawUrl string)(*ManagedTenantsRequestBuilder) {
+    return NewManagedTenantsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

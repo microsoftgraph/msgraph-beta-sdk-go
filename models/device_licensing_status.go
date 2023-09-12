@@ -90,3 +90,6 @@ func SerializeDeviceLicensingStatus(values []DeviceLicensingStatus) []string {
     }
     return result
 }
+func (i DeviceLicensingStatus) isMultiValue() bool {
+    return false
+}

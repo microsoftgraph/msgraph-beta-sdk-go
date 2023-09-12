@@ -20,7 +20,7 @@ func NewThreatIntelligence()(*ThreatIntelligence) {
 func CreateThreatIntelligenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewThreatIntelligence(), nil
 }
-// GetArticleIndicators gets the articleIndicators property value. Refers to indicators of threat or compromise highlighted in an microsoft.graph.security.article.Note: List retrieval is not yet supported.
+// GetArticleIndicators gets the articleIndicators property value. Refers to indicators of threat or compromise highlighted in an article.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) GetArticleIndicators()([]ArticleIndicatorable) {
     val, err := m.GetBackingStore().Get("articleIndicators")
     if err != nil {
@@ -303,7 +303,7 @@ func (m *ThreatIntelligence) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetHostComponents gets the hostComponents property value. Retrieve details about microsoft.graph.security.hostComponent objects.Note: List retrieval is not yet supported.
+// GetHostComponents gets the hostComponents property value. Retrieve details about hostComponent objects.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) GetHostComponents()([]HostComponentable) {
     val, err := m.GetBackingStore().Get("hostComponents")
     if err != nil {
@@ -314,7 +314,7 @@ func (m *ThreatIntelligence) GetHostComponents()([]HostComponentable) {
     }
     return nil
 }
-// GetHostCookies gets the hostCookies property value. Retrieve details about microsoft.graph.security.hostCookie objects.Note: List retrieval is not yet supported.
+// GetHostCookies gets the hostCookies property value. Retrieve details about hostCookie objects.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) GetHostCookies()([]HostCookieable) {
     val, err := m.GetBackingStore().Get("hostCookies")
     if err != nil {
@@ -325,7 +325,7 @@ func (m *ThreatIntelligence) GetHostCookies()([]HostCookieable) {
     }
     return nil
 }
-// GetHostPairs gets the hostPairs property value. Retrieve details about microsoft.graph.security.hostTracker objects.Note: List retrieval is not yet supported.
+// GetHostPairs gets the hostPairs property value. Retrieve details about hostTracker objects.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) GetHostPairs()([]HostPairable) {
     val, err := m.GetBackingStore().Get("hostPairs")
     if err != nil {
@@ -336,7 +336,7 @@ func (m *ThreatIntelligence) GetHostPairs()([]HostPairable) {
     }
     return nil
 }
-// GetHosts gets the hosts property value. Refers to microsoft.graph.security.host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.
+// GetHosts gets the hosts property value. Refers to host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) GetHosts()([]Hostable) {
     val, err := m.GetBackingStore().Get("hosts")
     if err != nil {
@@ -347,7 +347,7 @@ func (m *ThreatIntelligence) GetHosts()([]Hostable) {
     }
     return nil
 }
-// GetHostSslCertificates gets the hostSslCertificates property value. The hostSslCertificates property
+// GetHostSslCertificates gets the hostSslCertificates property value. Retrieve details about hostSslCertificate objects.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) GetHostSslCertificates()([]HostSslCertificateable) {
     val, err := m.GetBackingStore().Get("hostSslCertificates")
     if err != nil {
@@ -358,7 +358,7 @@ func (m *ThreatIntelligence) GetHostSslCertificates()([]HostSslCertificateable) 
     }
     return nil
 }
-// GetHostTrackers gets the hostTrackers property value. Retrieve details about microsoft.graph.security.hostTracker objects.Note: List retrieval is not yet supported.
+// GetHostTrackers gets the hostTrackers property value. Retrieve details about hostTracker objects.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) GetHostTrackers()([]HostTrackerable) {
     val, err := m.GetBackingStore().Get("hostTrackers")
     if err != nil {
@@ -391,7 +391,7 @@ func (m *ThreatIntelligence) GetIntelProfiles()([]IntelligenceProfileable) {
     }
     return nil
 }
-// GetPassiveDnsRecords gets the passiveDnsRecords property value. Retrieve details about microsoft.graph.security.passiveDnsRecord objects.Note: List retrieval is not yet supported.
+// GetPassiveDnsRecords gets the passiveDnsRecords property value. Retrieve details about passiveDnsRecord objects.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) GetPassiveDnsRecords()([]PassiveDnsRecordable) {
     val, err := m.GetBackingStore().Get("passiveDnsRecords")
     if err != nil {
@@ -402,7 +402,7 @@ func (m *ThreatIntelligence) GetPassiveDnsRecords()([]PassiveDnsRecordable) {
     }
     return nil
 }
-// GetSslCertificates gets the sslCertificates property value. The sslCertificates property
+// GetSslCertificates gets the sslCertificates property value. Retrieve details about sslCertificate objects.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) GetSslCertificates()([]SslCertificateable) {
     val, err := m.GetBackingStore().Get("sslCertificates")
     if err != nil {
@@ -413,7 +413,7 @@ func (m *ThreatIntelligence) GetSslCertificates()([]SslCertificateable) {
     }
     return nil
 }
-// GetSubdomains gets the subdomains property value. Retrieve details about the microsoft.graph.security.subdomain.Note: List retrieval is not yet supported.
+// GetSubdomains gets the subdomains property value. Retrieve details about the subdomain.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) GetSubdomains()([]Subdomainable) {
     val, err := m.GetBackingStore().Get("subdomains")
     if err != nil {
@@ -424,7 +424,7 @@ func (m *ThreatIntelligence) GetSubdomains()([]Subdomainable) {
     }
     return nil
 }
-// GetVulnerabilities gets the vulnerabilities property value. Retrieve details about microsoft.graph.security.vulnerabilities.Note: List retrieval is not yet supported.
+// GetVulnerabilities gets the vulnerabilities property value. Retrieve details about vulnerabilities.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) GetVulnerabilities()([]Vulnerabilityable) {
     val, err := m.GetBackingStore().Get("vulnerabilities")
     if err != nil {
@@ -435,7 +435,7 @@ func (m *ThreatIntelligence) GetVulnerabilities()([]Vulnerabilityable) {
     }
     return nil
 }
-// GetWhoisHistoryRecords gets the whoisHistoryRecords property value. The whoisHistoryRecords property
+// GetWhoisHistoryRecords gets the whoisHistoryRecords property value. Retrieve details about whoisHistoryRecord objects.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) GetWhoisHistoryRecords()([]WhoisHistoryRecordable) {
     val, err := m.GetBackingStore().Get("whoisHistoryRecords")
     if err != nil {
@@ -446,7 +446,7 @@ func (m *ThreatIntelligence) GetWhoisHistoryRecords()([]WhoisHistoryRecordable) 
     }
     return nil
 }
-// GetWhoisRecords gets the whoisRecords property value. The whoisRecords property
+// GetWhoisRecords gets the whoisRecords property value. A list of whoisRecord objects.
 func (m *ThreatIntelligence) GetWhoisRecords()([]WhoisRecordable) {
     val, err := m.GetBackingStore().Get("whoisRecords")
     if err != nil {
@@ -657,7 +657,7 @@ func (m *ThreatIntelligence) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetArticleIndicators sets the articleIndicators property value. Refers to indicators of threat or compromise highlighted in an microsoft.graph.security.article.Note: List retrieval is not yet supported.
+// SetArticleIndicators sets the articleIndicators property value. Refers to indicators of threat or compromise highlighted in an article.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) SetArticleIndicators(value []ArticleIndicatorable)() {
     err := m.GetBackingStore().Set("articleIndicators", value)
     if err != nil {
@@ -671,42 +671,42 @@ func (m *ThreatIntelligence) SetArticles(value []Articleable)() {
         panic(err)
     }
 }
-// SetHostComponents sets the hostComponents property value. Retrieve details about microsoft.graph.security.hostComponent objects.Note: List retrieval is not yet supported.
+// SetHostComponents sets the hostComponents property value. Retrieve details about hostComponent objects.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) SetHostComponents(value []HostComponentable)() {
     err := m.GetBackingStore().Set("hostComponents", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHostCookies sets the hostCookies property value. Retrieve details about microsoft.graph.security.hostCookie objects.Note: List retrieval is not yet supported.
+// SetHostCookies sets the hostCookies property value. Retrieve details about hostCookie objects.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) SetHostCookies(value []HostCookieable)() {
     err := m.GetBackingStore().Set("hostCookies", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHostPairs sets the hostPairs property value. Retrieve details about microsoft.graph.security.hostTracker objects.Note: List retrieval is not yet supported.
+// SetHostPairs sets the hostPairs property value. Retrieve details about hostTracker objects.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) SetHostPairs(value []HostPairable)() {
     err := m.GetBackingStore().Set("hostPairs", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHosts sets the hosts property value. Refers to microsoft.graph.security.host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.
+// SetHosts sets the hosts property value. Refers to host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) SetHosts(value []Hostable)() {
     err := m.GetBackingStore().Set("hosts", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHostSslCertificates sets the hostSslCertificates property value. The hostSslCertificates property
+// SetHostSslCertificates sets the hostSslCertificates property value. Retrieve details about hostSslCertificate objects.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) SetHostSslCertificates(value []HostSslCertificateable)() {
     err := m.GetBackingStore().Set("hostSslCertificates", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHostTrackers sets the hostTrackers property value. Retrieve details about microsoft.graph.security.hostTracker objects.Note: List retrieval is not yet supported.
+// SetHostTrackers sets the hostTrackers property value. Retrieve details about hostTracker objects.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) SetHostTrackers(value []HostTrackerable)() {
     err := m.GetBackingStore().Set("hostTrackers", value)
     if err != nil {
@@ -727,42 +727,42 @@ func (m *ThreatIntelligence) SetIntelProfiles(value []IntelligenceProfileable)()
         panic(err)
     }
 }
-// SetPassiveDnsRecords sets the passiveDnsRecords property value. Retrieve details about microsoft.graph.security.passiveDnsRecord objects.Note: List retrieval is not yet supported.
+// SetPassiveDnsRecords sets the passiveDnsRecords property value. Retrieve details about passiveDnsRecord objects.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) SetPassiveDnsRecords(value []PassiveDnsRecordable)() {
     err := m.GetBackingStore().Set("passiveDnsRecords", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSslCertificates sets the sslCertificates property value. The sslCertificates property
+// SetSslCertificates sets the sslCertificates property value. Retrieve details about sslCertificate objects.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) SetSslCertificates(value []SslCertificateable)() {
     err := m.GetBackingStore().Set("sslCertificates", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSubdomains sets the subdomains property value. Retrieve details about the microsoft.graph.security.subdomain.Note: List retrieval is not yet supported.
+// SetSubdomains sets the subdomains property value. Retrieve details about the subdomain.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) SetSubdomains(value []Subdomainable)() {
     err := m.GetBackingStore().Set("subdomains", value)
     if err != nil {
         panic(err)
     }
 }
-// SetVulnerabilities sets the vulnerabilities property value. Retrieve details about microsoft.graph.security.vulnerabilities.Note: List retrieval is not yet supported.
+// SetVulnerabilities sets the vulnerabilities property value. Retrieve details about vulnerabilities.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) SetVulnerabilities(value []Vulnerabilityable)() {
     err := m.GetBackingStore().Set("vulnerabilities", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWhoisHistoryRecords sets the whoisHistoryRecords property value. The whoisHistoryRecords property
+// SetWhoisHistoryRecords sets the whoisHistoryRecords property value. Retrieve details about whoisHistoryRecord objects.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) SetWhoisHistoryRecords(value []WhoisHistoryRecordable)() {
     err := m.GetBackingStore().Set("whoisHistoryRecords", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWhoisRecords sets the whoisRecords property value. The whoisRecords property
+// SetWhoisRecords sets the whoisRecords property value. A list of whoisRecord objects.
 func (m *ThreatIntelligence) SetWhoisRecords(value []WhoisRecordable)() {
     err := m.GetBackingStore().Set("whoisRecords", value)
     if err != nil {

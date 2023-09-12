@@ -46,8 +46,8 @@ type WindowsInformationProtectionWipeActionsRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWindowsInformationProtectionWipeActionIdString provides operations to manage the windowsInformationProtectionWipeActions property of the microsoft.graph.deviceAppManagement entity.
-func (m *WindowsInformationProtectionWipeActionsRequestBuilder) ByWindowsInformationProtectionWipeActionIdString(windowsInformationProtectionWipeActionId string)(*WindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeActionItemRequestBuilder) {
+// ByWindowsInformationProtectionWipeActionId provides operations to manage the windowsInformationProtectionWipeActions property of the microsoft.graph.deviceAppManagement entity.
+func (m *WindowsInformationProtectionWipeActionsRequestBuilder) ByWindowsInformationProtectionWipeActionId(windowsInformationProtectionWipeActionId string)(*WindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeActionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *WindowsInformationProtectionWipeActionsRequestBuilder) ToPostRequestInf
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsInformationProtectionWipeActionsRequestBuilder) WithUrl(rawUrl string)(*WindowsInformationProtectionWipeActionsRequestBuilder) {
+    return NewWindowsInformationProtectionWipeActionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

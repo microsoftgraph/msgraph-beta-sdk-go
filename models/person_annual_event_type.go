@@ -41,3 +41,6 @@ func SerializePersonAnnualEventType(values []PersonAnnualEventType) []string {
     }
     return result
 }
+func (i PersonAnnualEventType) isMultiValue() bool {
+    return false
+}

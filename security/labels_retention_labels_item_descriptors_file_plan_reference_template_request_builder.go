@@ -75,3 +75,7 @@ func (m *LabelsRetentionLabelsItemDescriptorsFilePlanReferenceTemplateRequestBui
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *LabelsRetentionLabelsItemDescriptorsFilePlanReferenceTemplateRequestBuilder) WithUrl(rawUrl string)(*LabelsRetentionLabelsItemDescriptorsFilePlanReferenceTemplateRequestBuilder) {
+    return NewLabelsRetentionLabelsItemDescriptorsFilePlanReferenceTemplateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -38,3 +38,6 @@ func SerializeMacOSContentCachingType(values []MacOSContentCachingType) []string
     }
     return result
 }
+func (i MacOSContentCachingType) isMultiValue() bool {
+    return false
+}

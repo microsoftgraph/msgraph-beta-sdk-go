@@ -161,3 +161,7 @@ func (m *ItemSecurityInformationProtectionRequestBuilder) ToPatchRequestInformat
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemSecurityInformationProtectionRequestBuilder) WithUrl(rawUrl string)(*ItemSecurityInformationProtectionRequestBuilder) {
+    return NewItemSecurityInformationProtectionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

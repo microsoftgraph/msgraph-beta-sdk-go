@@ -50,3 +50,6 @@ func SerializeUserPfxPaddingScheme(values []UserPfxPaddingScheme) []string {
     }
     return result
 }
+func (i UserPfxPaddingScheme) isMultiValue() bool {
+    return false
+}

@@ -124,14 +124,6 @@ func (m *ItemSettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e
 func (m *ItemSettingsRequestBuilder) PeopleInsights()(*ItemSettingsPeopleInsightsRequestBuilder) {
     return NewItemSettingsPeopleInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ProfileCardProperties provides operations to manage the profileCardProperties property of the microsoft.graph.organizationSettings entity.
-func (m *ItemSettingsRequestBuilder) ProfileCardProperties()(*ItemSettingsProfileCardPropertiesRequestBuilder) {
-    return NewItemSettingsProfileCardPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// Pronouns provides operations to manage the pronouns property of the microsoft.graph.organizationSettings entity.
-func (m *ItemSettingsRequestBuilder) Pronouns()(*ItemSettingsPronounsRequestBuilder) {
-    return NewItemSettingsPronounsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property settings for organization
 func (m *ItemSettingsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -176,4 +168,8 @@ func (m *ItemSettingsRequestBuilder) ToPatchRequestInformation(ctx context.Conte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemSettingsRequestBuilder) WithUrl(rawUrl string)(*ItemSettingsRequestBuilder) {
+    return NewItemSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

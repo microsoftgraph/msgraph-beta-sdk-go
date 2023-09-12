@@ -46,8 +46,8 @@ type ItemSitesItemInformationProtectionThreatAssessmentRequestsItemResultsReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByThreatAssessmentResultIdString provides operations to manage the results property of the microsoft.graph.threatAssessmentRequest entity.
-func (m *ItemSitesItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder) ByThreatAssessmentResultIdString(threatAssessmentResultId string)(*ItemSitesItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilder) {
+// ByThreatAssessmentResultId provides operations to manage the results property of the microsoft.graph.threatAssessmentRequest entity.
+func (m *ItemSitesItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder) ByThreatAssessmentResultId(threatAssessmentResultId string)(*ItemSitesItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ItemSitesItemInformationProtectionThreatAssessmentRequestsItemResultsRe
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemSitesItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder) {
+    return NewItemSitesItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

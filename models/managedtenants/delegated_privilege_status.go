@@ -41,3 +41,6 @@ func SerializeDelegatedPrivilegeStatus(values []DelegatedPrivilegeStatus) []stri
     }
     return result
 }
+func (i DelegatedPrivilegeStatus) isMultiValue() bool {
+    return false
+}

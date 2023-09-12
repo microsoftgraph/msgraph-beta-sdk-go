@@ -46,8 +46,8 @@ type ItemProfileAccountRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserAccountInformationIdString provides operations to manage the account property of the microsoft.graph.profile entity.
-func (m *ItemProfileAccountRequestBuilder) ByUserAccountInformationIdString(userAccountInformationId string)(*ItemProfileAccountUserAccountInformationItemRequestBuilder) {
+// ByUserAccountInformationId provides operations to manage the account property of the microsoft.graph.profile entity.
+func (m *ItemProfileAccountRequestBuilder) ByUserAccountInformationId(userAccountInformationId string)(*ItemProfileAccountUserAccountInformationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemProfileAccountRequestBuilder) ToPostRequestInformation(ctx context.
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemProfileAccountRequestBuilder) WithUrl(rawUrl string)(*ItemProfileAccountRequestBuilder) {
+    return NewItemProfileAccountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

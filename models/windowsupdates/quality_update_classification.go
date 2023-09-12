@@ -38,3 +38,6 @@ func SerializeQualityUpdateClassification(values []QualityUpdateClassification) 
     }
     return result
 }
+func (i QualityUpdateClassification) isMultiValue() bool {
+    return false
+}

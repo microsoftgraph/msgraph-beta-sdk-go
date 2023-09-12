@@ -205,3 +205,7 @@ func (m *EntitlementManagementRequestBuilder) ToPatchRequestInformation(ctx cont
 func (m *EntitlementManagementRequestBuilder) TransitiveRoleAssignments()(*EntitlementManagementTransitiveRoleAssignmentsRequestBuilder) {
     return NewEntitlementManagementTransitiveRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EntitlementManagementRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementRequestBuilder) {
+    return NewEntitlementManagementRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -35,3 +35,6 @@ func SerializeRecommendationCategory(values []RecommendationCategory) []string {
     }
     return result
 }
+func (i RecommendationCategory) isMultiValue() bool {
+    return false
+}

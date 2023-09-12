@@ -74,3 +74,7 @@ func (m *ZebraFotaArtifactsCountRequestBuilder) ToGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ZebraFotaArtifactsCountRequestBuilder) WithUrl(rawUrl string)(*ZebraFotaArtifactsCountRequestBuilder) {
+    return NewZebraFotaArtifactsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}
