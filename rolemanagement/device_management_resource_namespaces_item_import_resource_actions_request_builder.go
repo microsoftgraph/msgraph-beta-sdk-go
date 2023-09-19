@@ -67,3 +67,7 @@ func (m *DeviceManagementResourceNamespacesItemImportResourceActionsRequestBuild
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceManagementResourceNamespacesItemImportResourceActionsRequestBuilder) WithUrl(rawUrl string)(*DeviceManagementResourceNamespacesItemImportResourceActionsRequestBuilder) {
+    return NewDeviceManagementResourceNamespacesItemImportResourceActionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

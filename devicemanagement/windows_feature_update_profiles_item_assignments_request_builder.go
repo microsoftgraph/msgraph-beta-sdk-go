@@ -46,8 +46,8 @@ type WindowsFeatureUpdateProfilesItemAssignmentsRequestBuilderPostRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWindowsFeatureUpdateProfileAssignmentIdString provides operations to manage the assignments property of the microsoft.graph.windowsFeatureUpdateProfile entity.
-func (m *WindowsFeatureUpdateProfilesItemAssignmentsRequestBuilder) ByWindowsFeatureUpdateProfileAssignmentIdString(windowsFeatureUpdateProfileAssignmentId string)(*WindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssignmentItemRequestBuilder) {
+// ByWindowsFeatureUpdateProfileAssignmentId provides operations to manage the assignments property of the microsoft.graph.windowsFeatureUpdateProfile entity.
+func (m *WindowsFeatureUpdateProfilesItemAssignmentsRequestBuilder) ByWindowsFeatureUpdateProfileAssignmentId(windowsFeatureUpdateProfileAssignmentId string)(*WindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *WindowsFeatureUpdateProfilesItemAssignmentsRequestBuilder) ToPostReques
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsFeatureUpdateProfilesItemAssignmentsRequestBuilder) WithUrl(rawUrl string)(*WindowsFeatureUpdateProfilesItemAssignmentsRequestBuilder) {
+    return NewWindowsFeatureUpdateProfilesItemAssignmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

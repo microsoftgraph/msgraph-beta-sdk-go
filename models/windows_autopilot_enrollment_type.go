@@ -53,3 +53,6 @@ func SerializeWindowsAutopilotEnrollmentType(values []WindowsAutopilotEnrollment
     }
     return result
 }
+func (i WindowsAutopilotEnrollmentType) isMultiValue() bool {
+    return false
+}

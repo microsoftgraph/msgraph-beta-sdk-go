@@ -46,8 +46,8 @@ type B2cUserFlowsItemLanguagesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserFlowLanguageConfigurationIdString provides operations to manage the languages property of the microsoft.graph.b2cIdentityUserFlow entity.
-func (m *B2cUserFlowsItemLanguagesRequestBuilder) ByUserFlowLanguageConfigurationIdString(userFlowLanguageConfigurationId string)(*B2cUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilder) {
+// ByUserFlowLanguageConfigurationId provides operations to manage the languages property of the microsoft.graph.b2cIdentityUserFlow entity.
+func (m *B2cUserFlowsItemLanguagesRequestBuilder) ByUserFlowLanguageConfigurationId(userFlowLanguageConfigurationId string)(*B2cUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *B2cUserFlowsItemLanguagesRequestBuilder) ToPostRequestInformation(ctx c
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *B2cUserFlowsItemLanguagesRequestBuilder) WithUrl(rawUrl string)(*B2cUserFlowsItemLanguagesRequestBuilder) {
+    return NewB2cUserFlowsItemLanguagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

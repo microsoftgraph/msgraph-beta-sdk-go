@@ -41,3 +41,6 @@ func SerializeTrainingSettingType(values []TrainingSettingType) []string {
     }
     return result
 }
+func (i TrainingSettingType) isMultiValue() bool {
+    return false
+}

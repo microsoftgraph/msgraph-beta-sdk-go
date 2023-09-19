@@ -565,7 +565,7 @@ func (m *PstnCallLogRow) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOperator gets the operator property value. The telecommunications operator which provided PSTN services for this call. This may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
+// GetOperator gets the operator property value. The telecommunications operator that provided PSTN services for this call. This may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
 func (m *PstnCallLogRow) GetOperator()(*string) {
     val, err := m.GetBackingStore().Get("operator")
     if err != nil {
@@ -576,7 +576,7 @@ func (m *PstnCallLogRow) GetOperator()(*string) {
     }
     return nil
 }
-// GetOtherPartyCountryCode gets the otherPartyCountryCode property value. Country code of the caller in case of an incoming call, or callee in case of an outgoing call. For details, see ISO 3166-1 alpha-2.
+// GetOtherPartyCountryCode gets the otherPartyCountryCode property value. Country code of the caller for an incoming call, or callee for an outgoing call. For details, see ISO 3166-1 alpha-2.
 func (m *PstnCallLogRow) GetOtherPartyCountryCode()(*string) {
     val, err := m.GetBackingStore().Get("otherPartyCountryCode")
     if err != nil {
@@ -996,14 +996,14 @@ func (m *PstnCallLogRow) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOperator sets the operator property value. The telecommunications operator which provided PSTN services for this call. This may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
+// SetOperator sets the operator property value. The telecommunications operator that provided PSTN services for this call. This may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
 func (m *PstnCallLogRow) SetOperator(value *string)() {
     err := m.GetBackingStore().Set("operator", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOtherPartyCountryCode sets the otherPartyCountryCode property value. Country code of the caller in case of an incoming call, or callee in case of an outgoing call. For details, see ISO 3166-1 alpha-2.
+// SetOtherPartyCountryCode sets the otherPartyCountryCode property value. Country code of the caller for an incoming call, or callee for an outgoing call. For details, see ISO 3166-1 alpha-2.
 func (m *PstnCallLogRow) SetOtherPartyCountryCode(value *string)() {
     err := m.GetBackingStore().Set("otherPartyCountryCode", value)
     if err != nil {

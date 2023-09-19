@@ -44,3 +44,6 @@ func SerializeSkillProficiencyLevel(values []SkillProficiencyLevel) []string {
     }
     return result
 }
+func (i SkillProficiencyLevel) isMultiValue() bool {
+    return false
+}

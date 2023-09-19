@@ -56,3 +56,6 @@ func SerializeTeamworkUserIdentityType(values []TeamworkUserIdentityType) []stri
     }
     return result
 }
+func (i TeamworkUserIdentityType) isMultiValue() bool {
+    return false
+}

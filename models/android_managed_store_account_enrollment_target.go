@@ -38,3 +38,6 @@ func SerializeAndroidManagedStoreAccountEnrollmentTarget(values []AndroidManaged
     }
     return result
 }
+func (i AndroidManagedStoreAccountEnrollmentTarget) isMultiValue() bool {
+    return false
+}

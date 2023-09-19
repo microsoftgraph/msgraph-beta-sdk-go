@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // Supported setting types
 type DeviceManagementConfigurationSettingUsage int
@@ -17,21 +18,30 @@ const (
 )
 
 func (i DeviceManagementConfigurationSettingUsage) String() string {
-    return []string{"none", "configuration", "compliance", "unknownFutureValue"}[i]
+    var values []string
+    for p := DeviceManagementConfigurationSettingUsage(1); p <= UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"none", "configuration", "compliance", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseDeviceManagementConfigurationSettingUsage(v string) (any, error) {
-    result := NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
-    switch v {
-        case "none":
-            result = NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
-        case "configuration":
-            result = CONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
-        case "compliance":
-            result = COMPLIANCE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
-        default:
-            return 0, errors.New("Unknown DeviceManagementConfigurationSettingUsage value: " + v)
+    var result DeviceManagementConfigurationSettingUsage
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "none":
+                result |= NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
+            case "configuration":
+                result |= CONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
+            case "compliance":
+                result |= COMPLIANCE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
+            default:
+                return 0, errors.New("Unknown DeviceManagementConfigurationSettingUsage value: " + v)
+        }
     }
     return &result, nil
 }
@@ -41,4 +51,7 @@ func SerializeDeviceManagementConfigurationSettingUsage(values []DeviceManagemen
         result[i] = v.String()
     }
     return result
+}
+func (i DeviceManagementConfigurationSettingUsage) isMultiValue() bool {
+    return true
 }

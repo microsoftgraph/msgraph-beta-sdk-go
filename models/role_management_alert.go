@@ -19,7 +19,7 @@ func NewRoleManagementAlert()(*RoleManagementAlert) {
 func CreateRoleManagementAlertFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRoleManagementAlert(), nil
 }
-// GetAlertConfigurations gets the alertConfigurations property value. The various configurations of an alert for Azure AD roles. The configurations are pre-defined and cannot be created or deleted, but some of the configurations can be modified.
+// GetAlertConfigurations gets the alertConfigurations property value. The various configurations of an alert for Azure AD roles. The configurations are predefined and can't be created or deleted, but some of the configurations can be modified.
 func (m *RoleManagementAlert) GetAlertConfigurations()([]UnifiedRoleManagementAlertConfigurationable) {
     val, err := m.GetBackingStore().Get("alertConfigurations")
     if err != nil {
@@ -188,7 +188,7 @@ func (m *RoleManagementAlert) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetAlertConfigurations sets the alertConfigurations property value. The various configurations of an alert for Azure AD roles. The configurations are pre-defined and cannot be created or deleted, but some of the configurations can be modified.
+// SetAlertConfigurations sets the alertConfigurations property value. The various configurations of an alert for Azure AD roles. The configurations are predefined and can't be created or deleted, but some of the configurations can be modified.
 func (m *RoleManagementAlert) SetAlertConfigurations(value []UnifiedRoleManagementAlertConfigurationable)() {
     err := m.GetBackingStore().Set("alertConfigurations", value)
     if err != nil {

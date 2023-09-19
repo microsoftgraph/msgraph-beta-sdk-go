@@ -86,3 +86,6 @@ func SerializeDeviceManagementConfigurationTemplateFamily(values []DeviceManagem
     }
     return result
 }
+func (i DeviceManagementConfigurationTemplateFamily) isMultiValue() bool {
+    return false
+}

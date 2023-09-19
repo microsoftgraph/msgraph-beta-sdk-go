@@ -236,7 +236,7 @@ func (m *GovernanceResource) GetRoleAssignments()([]GovernanceRoleAssignmentable
     }
     return nil
 }
-// GetRoleDefinitions gets the roleDefinitions property value. The collection of role defintions for the resource.
+// GetRoleDefinitions gets the roleDefinitions property value. The collection of role definitions for the resource.
 func (m *GovernanceResource) GetRoleDefinitions()([]GovernanceRoleDefinitionable) {
     val, err := m.GetBackingStore().Get("roleDefinitions")
     if err != nil {
@@ -427,7 +427,7 @@ func (m *GovernanceResource) SetRoleAssignments(value []GovernanceRoleAssignment
         panic(err)
     }
 }
-// SetRoleDefinitions sets the roleDefinitions property value. The collection of role defintions for the resource.
+// SetRoleDefinitions sets the roleDefinitions property value. The collection of role definitions for the resource.
 func (m *GovernanceResource) SetRoleDefinitions(value []GovernanceRoleDefinitionable)() {
     err := m.GetBackingStore().Set("roleDefinitions", value)
     if err != nil {

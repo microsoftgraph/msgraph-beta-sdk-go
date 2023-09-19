@@ -41,3 +41,6 @@ func SerializeManagementCategory(values []ManagementCategory) []string {
     }
     return result
 }
+func (i ManagementCategory) isMultiValue() bool {
+    return false
+}

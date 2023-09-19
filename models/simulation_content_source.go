@@ -38,3 +38,6 @@ func SerializeSimulationContentSource(values []SimulationContentSource) []string
     }
     return result
 }
+func (i SimulationContentSource) isMultiValue() bool {
+    return false
+}

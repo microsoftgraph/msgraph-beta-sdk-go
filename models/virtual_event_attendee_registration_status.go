@@ -44,3 +44,6 @@ func SerializeVirtualEventAttendeeRegistrationStatus(values []VirtualEventAttend
     }
     return result
 }
+func (i VirtualEventAttendeeRegistrationStatus) isMultiValue() bool {
+    return false
+}

@@ -38,3 +38,6 @@ func SerializePagePromotionType(values []PagePromotionType) []string {
     }
     return result
 }
+func (i PagePromotionType) isMultiValue() bool {
+    return false
+}

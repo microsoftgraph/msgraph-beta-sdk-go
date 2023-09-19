@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
 type EnrollmentNotificationBrandingOptions int
@@ -23,27 +24,36 @@ const (
 )
 
 func (i EnrollmentNotificationBrandingOptions) String() string {
-    return []string{"none", "includeCompanyLogo", "includeCompanyName", "includeContactInformation", "includeCompanyPortalLink", "includeDeviceDetails", "unknownFutureValue"}[i]
+    var values []string
+    for p := EnrollmentNotificationBrandingOptions(1); p <= UNKNOWNFUTUREVALUE_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"none", "includeCompanyLogo", "includeCompanyName", "includeContactInformation", "includeCompanyPortalLink", "includeDeviceDetails", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseEnrollmentNotificationBrandingOptions(v string) (any, error) {
-    result := NONE_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
-    switch v {
-        case "none":
-            result = NONE_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
-        case "includeCompanyLogo":
-            result = INCLUDECOMPANYLOGO_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
-        case "includeCompanyName":
-            result = INCLUDECOMPANYNAME_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
-        case "includeContactInformation":
-            result = INCLUDECONTACTINFORMATION_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
-        case "includeCompanyPortalLink":
-            result = INCLUDECOMPANYPORTALLINK_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
-        case "includeDeviceDetails":
-            result = INCLUDEDEVICEDETAILS_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
-        default:
-            return 0, errors.New("Unknown EnrollmentNotificationBrandingOptions value: " + v)
+    var result EnrollmentNotificationBrandingOptions
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "none":
+                result |= NONE_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
+            case "includeCompanyLogo":
+                result |= INCLUDECOMPANYLOGO_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
+            case "includeCompanyName":
+                result |= INCLUDECOMPANYNAME_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
+            case "includeContactInformation":
+                result |= INCLUDECONTACTINFORMATION_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
+            case "includeCompanyPortalLink":
+                result |= INCLUDECOMPANYPORTALLINK_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
+            case "includeDeviceDetails":
+                result |= INCLUDEDEVICEDETAILS_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
+            default:
+                return 0, errors.New("Unknown EnrollmentNotificationBrandingOptions value: " + v)
+        }
     }
     return &result, nil
 }
@@ -53,4 +63,7 @@ func SerializeEnrollmentNotificationBrandingOptions(values []EnrollmentNotificat
         result[i] = v.String()
     }
     return result
+}
+func (i EnrollmentNotificationBrandingOptions) isMultiValue() bool {
+    return true
 }

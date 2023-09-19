@@ -50,3 +50,6 @@ func SerializeDeviceManangementIntentValueType(values []DeviceManangementIntentV
     }
     return result
 }
+func (i DeviceManangementIntentValueType) isMultiValue() bool {
+    return false
+}

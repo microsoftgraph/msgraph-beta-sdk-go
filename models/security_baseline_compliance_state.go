@@ -50,3 +50,6 @@ func SerializeSecurityBaselineComplianceState(values []SecurityBaselineComplianc
     }
     return result
 }
+func (i SecurityBaselineComplianceState) isMultiValue() bool {
+    return false
+}

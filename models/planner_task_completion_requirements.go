@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // 
 type PlannerTaskCompletionRequirements int
@@ -12,19 +13,28 @@ const (
 )
 
 func (i PlannerTaskCompletionRequirements) String() string {
-    return []string{"none", "checklistCompletion", "unknownFutureValue"}[i]
+    var values []string
+    for p := PlannerTaskCompletionRequirements(1); p <= UNKNOWNFUTUREVALUE_PLANNERTASKCOMPLETIONREQUIREMENTS; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"none", "checklistCompletion", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParsePlannerTaskCompletionRequirements(v string) (any, error) {
-    result := NONE_PLANNERTASKCOMPLETIONREQUIREMENTS
-    switch v {
-        case "none":
-            result = NONE_PLANNERTASKCOMPLETIONREQUIREMENTS
-        case "checklistCompletion":
-            result = CHECKLISTCOMPLETION_PLANNERTASKCOMPLETIONREQUIREMENTS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_PLANNERTASKCOMPLETIONREQUIREMENTS
-        default:
-            return 0, errors.New("Unknown PlannerTaskCompletionRequirements value: " + v)
+    var result PlannerTaskCompletionRequirements
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "none":
+                result |= NONE_PLANNERTASKCOMPLETIONREQUIREMENTS
+            case "checklistCompletion":
+                result |= CHECKLISTCOMPLETION_PLANNERTASKCOMPLETIONREQUIREMENTS
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_PLANNERTASKCOMPLETIONREQUIREMENTS
+            default:
+                return 0, errors.New("Unknown PlannerTaskCompletionRequirements value: " + v)
+        }
     }
     return &result, nil
 }
@@ -34,4 +44,7 @@ func SerializePlannerTaskCompletionRequirements(values []PlannerTaskCompletionRe
         result[i] = v.String()
     }
     return result
+}
+func (i PlannerTaskCompletionRequirements) isMultiValue() bool {
+    return true
 }

@@ -46,8 +46,8 @@ type WindowsUpdateCatalogItemsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWindowsUpdateCatalogItemIdString provides operations to manage the windowsUpdateCatalogItems property of the microsoft.graph.deviceManagement entity.
-func (m *WindowsUpdateCatalogItemsRequestBuilder) ByWindowsUpdateCatalogItemIdString(windowsUpdateCatalogItemId string)(*WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilder) {
+// ByWindowsUpdateCatalogItemId provides operations to manage the windowsUpdateCatalogItems property of the microsoft.graph.deviceManagement entity.
+func (m *WindowsUpdateCatalogItemsRequestBuilder) ByWindowsUpdateCatalogItemId(windowsUpdateCatalogItemId string)(*WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *WindowsUpdateCatalogItemsRequestBuilder) ToPostRequestInformation(ctx c
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsUpdateCatalogItemsRequestBuilder) WithUrl(rawUrl string)(*WindowsUpdateCatalogItemsRequestBuilder) {
+    return NewWindowsUpdateCatalogItemsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

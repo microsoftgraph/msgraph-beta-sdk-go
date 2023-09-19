@@ -173,3 +173,7 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) ToPatchRequestInformatio
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *OnPremisesPublishingProfileItemRequestBuilder) WithUrl(rawUrl string)(*OnPremisesPublishingProfileItemRequestBuilder) {
+    return NewOnPremisesPublishingProfileItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

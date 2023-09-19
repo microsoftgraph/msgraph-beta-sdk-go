@@ -42,3 +42,6 @@ func SerializeAndroidDeviceOwnerSystemUpdateInstallType(values []AndroidDeviceOw
     }
     return result
 }
+func (i AndroidDeviceOwnerSystemUpdateInstallType) isMultiValue() bool {
+    return false
+}

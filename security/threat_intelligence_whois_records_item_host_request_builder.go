@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceWhoisRecordsItemHostRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceWhoisRecordsItemHostRequestBuilderGetQueryParameters get host from security
+// ThreatIntelligenceWhoisRecordsItemHostRequestBuilderGetQueryParameters the host associated to this WHOIS object.
 type ThreatIntelligenceWhoisRecordsItemHostRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewThreatIntelligenceWhoisRecordsItemHostRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewThreatIntelligenceWhoisRecordsItemHostRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get host from security
+// Get the host associated to this WHOIS object.
 func (m *ThreatIntelligenceWhoisRecordsItemHostRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceWhoisRecordsItemHostRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Hostable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ThreatIntelligenceWhoisRecordsItemHostRequestBuilder) Get(ctx context.C
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Hostable), nil
 }
-// ToGetRequestInformation get host from security
+// ToGetRequestInformation the host associated to this WHOIS object.
 func (m *ThreatIntelligenceWhoisRecordsItemHostRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceWhoisRecordsItemHostRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -74,4 +74,8 @@ func (m *ThreatIntelligenceWhoisRecordsItemHostRequestBuilder) ToGetRequestInfor
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ThreatIntelligenceWhoisRecordsItemHostRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceWhoisRecordsItemHostRequestBuilder) {
+    return NewThreatIntelligenceWhoisRecordsItemHostRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

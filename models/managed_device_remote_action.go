@@ -102,3 +102,6 @@ func SerializeManagedDeviceRemoteAction(values []ManagedDeviceRemoteAction) []st
     }
     return result
 }
+func (i ManagedDeviceRemoteAction) isMultiValue() bool {
+    return false
+}

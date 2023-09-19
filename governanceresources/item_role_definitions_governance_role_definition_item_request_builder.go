@@ -18,7 +18,7 @@ type ItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilderGetQueryParameters the collection of role defintions for the resource.
+// ItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilderGetQueryParameters the collection of role definitions for the resource.
 type ItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get the collection of role defintions for the resource.
+// Get the collection of role definitions for the resource.
 func (m *ItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -128,7 +128,7 @@ func (m *ItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilder) ToDelete
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the collection of role defintions for the resource.
+// ToGetRequestInformation the collection of role definitions for the resource.
 func (m *ItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -160,4 +160,8 @@ func (m *ItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilder) ToPatchR
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilder) WithUrl(rawUrl string)(*ItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilder) {
+    return NewItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

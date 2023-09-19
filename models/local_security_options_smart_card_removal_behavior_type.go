@@ -42,3 +42,6 @@ func SerializeLocalSecurityOptionsSmartCardRemovalBehaviorType(values []LocalSec
     }
     return result
 }
+func (i LocalSecurityOptionsSmartCardRemovalBehaviorType) isMultiValue() bool {
+    return false
+}

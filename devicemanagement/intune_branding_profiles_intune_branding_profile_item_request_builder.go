@@ -161,3 +161,7 @@ func (m *IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder) ToPatchR
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder) WithUrl(rawUrl string)(*IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder) {
+    return NewIntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

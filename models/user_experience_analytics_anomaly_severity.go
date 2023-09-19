@@ -50,3 +50,6 @@ func SerializeUserExperienceAnalyticsAnomalySeverity(values []UserExperienceAnal
     }
     return result
 }
+func (i UserExperienceAnalyticsAnomalySeverity) isMultiValue() bool {
+    return false
+}

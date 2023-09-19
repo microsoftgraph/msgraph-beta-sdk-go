@@ -42,3 +42,6 @@ func SerializeLocalSecurityOptionsInformationDisplayedOnLockScreenType(values []
     }
     return result
 }
+func (i LocalSecurityOptionsInformationDisplayedOnLockScreenType) isMultiValue() bool {
+    return false
+}

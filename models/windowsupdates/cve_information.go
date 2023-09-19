@@ -73,7 +73,7 @@ func (m *CveInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetNumber gets the number property value. The number property
+// GetNumber gets the number property value. Identifies the number of the CVE. Read-only.
 func (m *CveInformation) GetNumber()(*string) {
     val, err := m.GetBackingStore().Get("number")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *CveInformation) GetOdataType()(*string) {
     }
     return nil
 }
-// GetUrl gets the url property value. The url property
+// GetUrl gets the url property value. URL to the full CVE information. Read-only.
 func (m *CveInformation) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
     if err != nil {
@@ -145,7 +145,7 @@ func (m *CveInformation) SetAdditionalData(value map[string]any)() {
 func (m *CveInformation) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetNumber sets the number property value. The number property
+// SetNumber sets the number property value. Identifies the number of the CVE. Read-only.
 func (m *CveInformation) SetNumber(value *string)() {
     err := m.GetBackingStore().Set("number", value)
     if err != nil {
@@ -159,7 +159,7 @@ func (m *CveInformation) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetUrl sets the url property value. The url property
+// SetUrl sets the url property value. URL to the full CVE information. Read-only.
 func (m *CveInformation) SetUrl(value *string)() {
     err := m.GetBackingStore().Set("url", value)
     if err != nil {

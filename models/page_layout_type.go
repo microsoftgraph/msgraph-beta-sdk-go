@@ -38,3 +38,6 @@ func SerializePageLayoutType(values []PageLayoutType) []string {
     }
     return result
 }
+func (i PageLayoutType) isMultiValue() bool {
+    return false
+}

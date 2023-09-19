@@ -41,3 +41,6 @@ func SerializeCloudPcConnectivityStatus(values []CloudPcConnectivityStatus) []st
     }
     return result
 }
+func (i CloudPcConnectivityStatus) isMultiValue() bool {
+    return false
+}

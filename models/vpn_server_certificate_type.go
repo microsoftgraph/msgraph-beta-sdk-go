@@ -42,3 +42,6 @@ func SerializeVpnServerCertificateType(values []VpnServerCertificateType) []stri
     }
     return result
 }
+func (i VpnServerCertificateType) isMultiValue() bool {
+    return false
+}

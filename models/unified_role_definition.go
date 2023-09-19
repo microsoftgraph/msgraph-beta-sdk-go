@@ -218,7 +218,7 @@ func (m *UnifiedRoleDefinition) GetIsEnabled()(*bool) {
     }
     return nil
 }
-// GetIsPrivileged gets the isPrivileged property value. The isPrivileged property
+// GetIsPrivileged gets the isPrivileged property value. Flag indicating if the role is privileged. Azure AD defines a role as privileged if it contains at least one sensitive resource action in the rolePermissions and allowedResourceActions objects. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
 func (m *UnifiedRoleDefinition) GetIsPrivileged()(*bool) {
     val, err := m.GetBackingStore().Get("isPrivileged")
     if err != nil {
@@ -402,7 +402,7 @@ func (m *UnifiedRoleDefinition) SetIsEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetIsPrivileged sets the isPrivileged property value. The isPrivileged property
+// SetIsPrivileged sets the isPrivileged property value. Flag indicating if the role is privileged. Azure AD defines a role as privileged if it contains at least one sensitive resource action in the rolePermissions and allowedResourceActions objects. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
 func (m *UnifiedRoleDefinition) SetIsPrivileged(value *bool)() {
     err := m.GetBackingStore().Set("isPrivileged", value)
     if err != nil {

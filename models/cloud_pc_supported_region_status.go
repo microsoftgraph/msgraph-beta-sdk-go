@@ -38,3 +38,6 @@ func SerializeCloudPcSupportedRegionStatus(values []CloudPcSupportedRegionStatus
     }
     return result
 }
+func (i CloudPcSupportedRegionStatus) isMultiValue() bool {
+    return false
+}

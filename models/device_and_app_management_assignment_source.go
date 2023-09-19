@@ -34,3 +34,6 @@ func SerializeDeviceAndAppManagementAssignmentSource(values []DeviceAndAppManage
     }
     return result
 }
+func (i DeviceAndAppManagementAssignmentSource) isMultiValue() bool {
+    return false
+}

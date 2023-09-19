@@ -19,7 +19,7 @@ func NewContentType()(*ContentType) {
 func CreateContentTypeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewContentType(), nil
 }
-// GetAssociatedHubsUrls gets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+// GetAssociatedHubsUrls gets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
 func (m *ContentType) GetAssociatedHubsUrls()([]string) {
     val, err := m.GetBackingStore().Get("associatedHubsUrls")
     if err != nil {
@@ -431,7 +431,7 @@ func (m *ContentType) GetPropagateChanges()(*bool) {
     }
     return nil
 }
-// GetReadOnly gets the readOnly property value. If true, the content type cannot be modified unless this value is first set to false.
+// GetReadOnly gets the readOnly property value. If true, the content type can't be modified unless this value is first set to false.
 func (m *ContentType) GetReadOnly()(*bool) {
     val, err := m.GetBackingStore().Get("readOnly")
     if err != nil {
@@ -442,7 +442,7 @@ func (m *ContentType) GetReadOnly()(*bool) {
     }
     return nil
 }
-// GetSealed gets the sealed property value. If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
+// GetSealed gets the sealed property value. If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
 func (m *ContentType) GetSealed()(*bool) {
     val, err := m.GetBackingStore().Get("sealed")
     if err != nil {
@@ -599,7 +599,7 @@ func (m *ContentType) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetAssociatedHubsUrls sets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+// SetAssociatedHubsUrls sets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
 func (m *ContentType) SetAssociatedHubsUrls(value []string)() {
     err := m.GetBackingStore().Set("associatedHubsUrls", value)
     if err != nil {
@@ -718,14 +718,14 @@ func (m *ContentType) SetPropagateChanges(value *bool)() {
         panic(err)
     }
 }
-// SetReadOnly sets the readOnly property value. If true, the content type cannot be modified unless this value is first set to false.
+// SetReadOnly sets the readOnly property value. If true, the content type can't be modified unless this value is first set to false.
 func (m *ContentType) SetReadOnly(value *bool)() {
     err := m.GetBackingStore().Set("readOnly", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSealed sets the sealed property value. If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
+// SetSealed sets the sealed property value. If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
 func (m *ContentType) SetSealed(value *bool)() {
     err := m.GetBackingStore().Set("sealed", value)
     if err != nil {

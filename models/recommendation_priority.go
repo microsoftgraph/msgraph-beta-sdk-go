@@ -35,3 +35,6 @@ func SerializeRecommendationPriority(values []RecommendationPriority) []string {
     }
     return result
 }
+func (i RecommendationPriority) isMultiValue() bool {
+    return false
+}

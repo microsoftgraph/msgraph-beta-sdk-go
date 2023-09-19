@@ -41,3 +41,6 @@ func SerializeMembershipRuleProcessingStatusDetails(values []MembershipRuleProce
     }
     return result
 }
+func (i MembershipRuleProcessingStatusDetails) isMultiValue() bool {
+    return false
+}

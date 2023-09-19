@@ -41,3 +41,6 @@ func SerializeCloudPcExternalPartnerStatus(values []CloudPcExternalPartnerStatus
     }
     return result
 }
+func (i CloudPcExternalPartnerStatus) isMultiValue() bool {
+    return false
+}

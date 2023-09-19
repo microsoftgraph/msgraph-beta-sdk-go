@@ -67,3 +67,7 @@ func (m *DirectoryResourceNamespacesItemImportResourceActionsRequestBuilder) ToP
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DirectoryResourceNamespacesItemImportResourceActionsRequestBuilder) WithUrl(rawUrl string)(*DirectoryResourceNamespacesItemImportResourceActionsRequestBuilder) {
+    return NewDirectoryResourceNamespacesItemImportResourceActionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -83,3 +83,7 @@ func (m *VirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdRequestBuil
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdRequestBuilder) {
+    return NewVirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

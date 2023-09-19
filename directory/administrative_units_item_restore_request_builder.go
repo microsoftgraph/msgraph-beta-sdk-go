@@ -66,3 +66,7 @@ func (m *AdministrativeUnitsItemRestoreRequestBuilder) ToPostRequestInformation(
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AdministrativeUnitsItemRestoreRequestBuilder) WithUrl(rawUrl string)(*AdministrativeUnitsItemRestoreRequestBuilder) {
+    return NewAdministrativeUnitsItemRestoreRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

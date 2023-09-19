@@ -138,3 +138,7 @@ func (m *ComanagedDevicesItemDeviceHealthScriptStatesRequestBuilder) ToPostReque
 func (m *ComanagedDevicesItemDeviceHealthScriptStatesRequestBuilder) WithIdWithPolicyIdWithDeviceId(deviceId *string, id *string, policyId *string)(*ComanagedDevicesItemDeviceHealthScriptStatesWithIdWithPolicyIdWithDeviceIdRequestBuilder) {
     return NewComanagedDevicesItemDeviceHealthScriptStatesWithIdWithPolicyIdWithDeviceIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, deviceId, id, policyId)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ComanagedDevicesItemDeviceHealthScriptStatesRequestBuilder) WithUrl(rawUrl string)(*ComanagedDevicesItemDeviceHealthScriptStatesRequestBuilder) {
+    return NewComanagedDevicesItemDeviceHealthScriptStatesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

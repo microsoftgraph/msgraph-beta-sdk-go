@@ -42,7 +42,7 @@ func (m *ServiceHostedMediaConfig) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetPreFetchMedia gets the preFetchMedia property value. The list of media to pre-fetch.
+// GetPreFetchMedia gets the preFetchMedia property value. The list of media to prefetch.
 func (m *ServiceHostedMediaConfig) GetPreFetchMedia()([]MediaInfoable) {
     val, err := m.GetBackingStore().Get("preFetchMedia")
     if err != nil {
@@ -73,7 +73,7 @@ func (m *ServiceHostedMediaConfig) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetPreFetchMedia sets the preFetchMedia property value. The list of media to pre-fetch.
+// SetPreFetchMedia sets the preFetchMedia property value. The list of media to prefetch.
 func (m *ServiceHostedMediaConfig) SetPreFetchMedia(value []MediaInfoable)() {
     err := m.GetBackingStore().Set("preFetchMedia", value)
     if err != nil {

@@ -46,8 +46,8 @@ type PeopleProfileCardPropertiesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByProfileCardPropertyIdString provides operations to manage the profileCardProperties property of the microsoft.graph.peopleAdminSettings entity.
-func (m *PeopleProfileCardPropertiesRequestBuilder) ByProfileCardPropertyIdString(profileCardPropertyId string)(*PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilder) {
+// ByProfileCardPropertyId provides operations to manage the profileCardProperties property of the microsoft.graph.peopleAdminSettings entity.
+func (m *PeopleProfileCardPropertiesRequestBuilder) ByProfileCardPropertyId(profileCardPropertyId string)(*PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *PeopleProfileCardPropertiesRequestBuilder) ToPostRequestInformation(ctx
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *PeopleProfileCardPropertiesRequestBuilder) WithUrl(rawUrl string)(*PeopleProfileCardPropertiesRequestBuilder) {
+    return NewPeopleProfileCardPropertiesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

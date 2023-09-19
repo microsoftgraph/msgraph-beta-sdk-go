@@ -41,3 +41,6 @@ func SerializeMultiTenantOrganizationMemberProcessingStatus(values []MultiTenant
     }
     return result
 }
+func (i MultiTenantOrganizationMemberProcessingStatus) isMultiValue() bool {
+    return false
+}

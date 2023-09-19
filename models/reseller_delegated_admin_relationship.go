@@ -44,7 +44,7 @@ func (m *ResellerDelegatedAdminRelationship) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetIndirectProviderTenantId gets the indirectProviderTenantId property value. The indirectProviderTenantId property
+// GetIndirectProviderTenantId gets the indirectProviderTenantId property value. The tenant ID of the indirect provider partner who created the relationship for the indirect reseller partner.
 func (m *ResellerDelegatedAdminRelationship) GetIndirectProviderTenantId()(*string) {
     val, err := m.GetBackingStore().Get("indirectProviderTenantId")
     if err != nil {
@@ -55,7 +55,7 @@ func (m *ResellerDelegatedAdminRelationship) GetIndirectProviderTenantId()(*stri
     }
     return nil
 }
-// GetIsPartnerConsentPending gets the isPartnerConsentPending property value. The isPartnerConsentPending property
+// GetIsPartnerConsentPending gets the isPartnerConsentPending property value. Indicates the indirect reseller partner consent status. true indicates that the partner has yet to review the relationship; false indicates that the partner has already provided consent by approving or rejecting the relationship.
 func (m *ResellerDelegatedAdminRelationship) GetIsPartnerConsentPending()(*bool) {
     val, err := m.GetBackingStore().Get("isPartnerConsentPending")
     if err != nil {
@@ -86,14 +86,14 @@ func (m *ResellerDelegatedAdminRelationship) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetIndirectProviderTenantId sets the indirectProviderTenantId property value. The indirectProviderTenantId property
+// SetIndirectProviderTenantId sets the indirectProviderTenantId property value. The tenant ID of the indirect provider partner who created the relationship for the indirect reseller partner.
 func (m *ResellerDelegatedAdminRelationship) SetIndirectProviderTenantId(value *string)() {
     err := m.GetBackingStore().Set("indirectProviderTenantId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsPartnerConsentPending sets the isPartnerConsentPending property value. The isPartnerConsentPending property
+// SetIsPartnerConsentPending sets the isPartnerConsentPending property value. Indicates the indirect reseller partner consent status. true indicates that the partner has yet to review the relationship; false indicates that the partner has already provided consent by approving or rejecting the relationship.
 func (m *ResellerDelegatedAdminRelationship) SetIsPartnerConsentPending(value *bool)() {
     err := m.GetBackingStore().Set("isPartnerConsentPending", value)
     if err != nil {

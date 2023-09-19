@@ -42,3 +42,6 @@ func SerializeDefenderSubmitSamplesConsentType(values []DefenderSubmitSamplesCon
     }
     return result
 }
+func (i DefenderSubmitSamplesConsentType) isMultiValue() bool {
+    return false
+}

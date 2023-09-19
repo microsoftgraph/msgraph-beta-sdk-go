@@ -38,7 +38,7 @@ func (m *BuildVersionDetails) GetAdditionalData()(map[string]any) {
 func (m *BuildVersionDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBuildNumber gets the buildNumber property value. The buildNumber property
+// GetBuildNumber gets the buildNumber property value. The build number of the product release. Read-only.
 func (m *BuildVersionDetails) GetBuildNumber()(*int32) {
     val, err := m.GetBackingStore().Get("buildNumber")
     if err != nil {
@@ -104,7 +104,7 @@ func (m *BuildVersionDetails) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetMajorVersion gets the majorVersion property value. The majorVersion property
+// GetMajorVersion gets the majorVersion property value. The major version of the product release. Read-only.
 func (m *BuildVersionDetails) GetMajorVersion()(*int32) {
     val, err := m.GetBackingStore().Get("majorVersion")
     if err != nil {
@@ -115,7 +115,7 @@ func (m *BuildVersionDetails) GetMajorVersion()(*int32) {
     }
     return nil
 }
-// GetMinorVersion gets the minorVersion property value. The minorVersion property
+// GetMinorVersion gets the minorVersion property value. The minor version of the product release. Read-only.
 func (m *BuildVersionDetails) GetMinorVersion()(*int32) {
     val, err := m.GetBackingStore().Get("minorVersion")
     if err != nil {
@@ -137,7 +137,7 @@ func (m *BuildVersionDetails) GetOdataType()(*string) {
     }
     return nil
 }
-// GetUpdateBuildRevision gets the updateBuildRevision property value. The updateBuildRevision property
+// GetUpdateBuildRevision gets the updateBuildRevision property value. The update build revision number of the product revision. Read-only.
 func (m *BuildVersionDetails) GetUpdateBuildRevision()(*int32) {
     val, err := m.GetBackingStore().Get("updateBuildRevision")
     if err != nil {
@@ -199,21 +199,21 @@ func (m *BuildVersionDetails) SetAdditionalData(value map[string]any)() {
 func (m *BuildVersionDetails) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBuildNumber sets the buildNumber property value. The buildNumber property
+// SetBuildNumber sets the buildNumber property value. The build number of the product release. Read-only.
 func (m *BuildVersionDetails) SetBuildNumber(value *int32)() {
     err := m.GetBackingStore().Set("buildNumber", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMajorVersion sets the majorVersion property value. The majorVersion property
+// SetMajorVersion sets the majorVersion property value. The major version of the product release. Read-only.
 func (m *BuildVersionDetails) SetMajorVersion(value *int32)() {
     err := m.GetBackingStore().Set("majorVersion", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMinorVersion sets the minorVersion property value. The minorVersion property
+// SetMinorVersion sets the minorVersion property value. The minor version of the product release. Read-only.
 func (m *BuildVersionDetails) SetMinorVersion(value *int32)() {
     err := m.GetBackingStore().Set("minorVersion", value)
     if err != nil {
@@ -227,7 +227,7 @@ func (m *BuildVersionDetails) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetUpdateBuildRevision sets the updateBuildRevision property value. The updateBuildRevision property
+// SetUpdateBuildRevision sets the updateBuildRevision property value. The update build revision number of the product revision. Read-only.
 func (m *BuildVersionDetails) SetUpdateBuildRevision(value *int32)() {
     err := m.GetBackingStore().Set("updateBuildRevision", value)
     if err != nil {

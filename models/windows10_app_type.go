@@ -34,3 +34,6 @@ func SerializeWindows10AppType(values []Windows10AppType) []string {
     }
     return result
 }
+func (i Windows10AppType) isMultiValue() bool {
+    return false
+}

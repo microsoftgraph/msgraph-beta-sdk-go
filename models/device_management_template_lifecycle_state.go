@@ -50,3 +50,6 @@ func SerializeDeviceManagementTemplateLifecycleState(values []DeviceManagementTe
     }
     return result
 }
+func (i DeviceManagementTemplateLifecycleState) isMultiValue() bool {
+    return false
+}

@@ -20,7 +20,7 @@ func NewConnectivity()(*Connectivity) {
 func CreateConnectivityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConnectivity(), nil
 }
-// GetBranches gets the branches property value. Branch represent locations for connectivity.
+// GetBranches gets the branches property value. Branches represent locations for connectivity.
 func (m *Connectivity) GetBranches()([]BranchSiteable) {
     val, err := m.GetBackingStore().Get("branches")
     if err != nil {
@@ -72,7 +72,7 @@ func (m *Connectivity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetBranches sets the branches property value. Branch represent locations for connectivity.
+// SetBranches sets the branches property value. Branches represent locations for connectivity.
 func (m *Connectivity) SetBranches(value []BranchSiteable)() {
     err := m.GetBackingStore().Set("branches", value)
     if err != nil {

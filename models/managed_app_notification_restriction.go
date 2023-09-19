@@ -38,3 +38,6 @@ func SerializeManagedAppNotificationRestriction(values []ManagedAppNotificationR
     }
     return result
 }
+func (i ManagedAppNotificationRestriction) isMultiValue() bool {
+    return false
+}

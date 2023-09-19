@@ -39,8 +39,8 @@ type ItemInformationProtectionBitlockerRecoveryKeysRequestBuilderGetRequestConfi
     // Request query parameters
     QueryParameters *ItemInformationProtectionBitlockerRecoveryKeysRequestBuilderGetQueryParameters
 }
-// ByBitlockerRecoveryKeyIdString provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.
-func (m *ItemInformationProtectionBitlockerRecoveryKeysRequestBuilder) ByBitlockerRecoveryKeyIdString(bitlockerRecoveryKeyId string)(*ItemInformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilder) {
+// ByBitlockerRecoveryKeyId provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.
+func (m *ItemInformationProtectionBitlockerRecoveryKeysRequestBuilder) ByBitlockerRecoveryKeyId(bitlockerRecoveryKeyId string)(*ItemInformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *ItemInformationProtectionBitlockerRecoveryKeysRequestBuilder) ToGetRequ
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemInformationProtectionBitlockerRecoveryKeysRequestBuilder) WithUrl(rawUrl string)(*ItemInformationProtectionBitlockerRecoveryKeysRequestBuilder) {
+    return NewItemInformationProtectionBitlockerRecoveryKeysRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

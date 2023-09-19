@@ -46,8 +46,8 @@ type ExactMatchDataStoresItemSessionsRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByExactMatchSessionIdString provides operations to manage the sessions property of the microsoft.graph.exactMatchDataStore entity.
-func (m *ExactMatchDataStoresItemSessionsRequestBuilder) ByExactMatchSessionIdString(exactMatchSessionId string)(*ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder) {
+// ByExactMatchSessionId provides operations to manage the sessions property of the microsoft.graph.exactMatchDataStore entity.
+func (m *ExactMatchDataStoresItemSessionsRequestBuilder) ByExactMatchSessionId(exactMatchSessionId string)(*ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ExactMatchDataStoresItemSessionsRequestBuilder) ToPostRequestInformatio
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ExactMatchDataStoresItemSessionsRequestBuilder) WithUrl(rawUrl string)(*ExactMatchDataStoresItemSessionsRequestBuilder) {
+    return NewExactMatchDataStoresItemSessionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

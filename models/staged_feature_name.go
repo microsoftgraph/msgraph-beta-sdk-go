@@ -44,3 +44,6 @@ func SerializeStagedFeatureName(values []StagedFeatureName) []string {
     }
     return result
 }
+func (i StagedFeatureName) isMultiValue() bool {
+    return false
+}

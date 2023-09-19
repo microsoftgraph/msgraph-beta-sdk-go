@@ -65,3 +65,7 @@ func (m *ItemEventsItemExceptionOccurrencesItemCancelRequestBuilder) ToPostReque
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemEventsItemExceptionOccurrencesItemCancelRequestBuilder) WithUrl(rawUrl string)(*ItemEventsItemExceptionOccurrencesItemCancelRequestBuilder) {
+    return NewItemEventsItemExceptionOccurrencesItemCancelRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

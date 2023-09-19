@@ -46,8 +46,8 @@ type DeviceShellScriptsItemGroupAssignmentsRequestBuilderPostRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementScriptGroupAssignmentIdString provides operations to manage the groupAssignments property of the microsoft.graph.deviceShellScript entity.
-func (m *DeviceShellScriptsItemGroupAssignmentsRequestBuilder) ByDeviceManagementScriptGroupAssignmentIdString(deviceManagementScriptGroupAssignmentId string)(*DeviceShellScriptsItemGroupAssignmentsDeviceManagementScriptGroupAssignmentItemRequestBuilder) {
+// ByDeviceManagementScriptGroupAssignmentId provides operations to manage the groupAssignments property of the microsoft.graph.deviceShellScript entity.
+func (m *DeviceShellScriptsItemGroupAssignmentsRequestBuilder) ByDeviceManagementScriptGroupAssignmentId(deviceManagementScriptGroupAssignmentId string)(*DeviceShellScriptsItemGroupAssignmentsDeviceManagementScriptGroupAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *DeviceShellScriptsItemGroupAssignmentsRequestBuilder) ToPostRequestInfo
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceShellScriptsItemGroupAssignmentsRequestBuilder) WithUrl(rawUrl string)(*DeviceShellScriptsItemGroupAssignmentsRequestBuilder) {
+    return NewDeviceShellScriptsItemGroupAssignmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

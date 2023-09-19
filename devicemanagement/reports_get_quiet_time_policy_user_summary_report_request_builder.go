@@ -65,3 +65,7 @@ func (m *ReportsGetQuietTimePolicyUserSummaryReportRequestBuilder) ToPostRequest
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ReportsGetQuietTimePolicyUserSummaryReportRequestBuilder) WithUrl(rawUrl string)(*ReportsGetQuietTimePolicyUserSummaryReportRequestBuilder) {
+    return NewReportsGetQuietTimePolicyUserSummaryReportRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

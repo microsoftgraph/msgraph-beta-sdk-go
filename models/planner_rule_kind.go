@@ -38,3 +38,6 @@ func SerializePlannerRuleKind(values []PlannerRuleKind) []string {
     }
     return result
 }
+func (i PlannerRuleKind) isMultiValue() bool {
+    return false
+}

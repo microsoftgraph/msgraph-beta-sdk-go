@@ -38,3 +38,6 @@ func SerializeGroupPolicySettingScope(values []GroupPolicySettingScope) []string
     }
     return result
 }
+func (i GroupPolicySettingScope) isMultiValue() bool {
+    return false
+}

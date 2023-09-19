@@ -38,3 +38,6 @@ func SerializeAccessPackageSubjectLifecycle(values []AccessPackageSubjectLifecyc
     }
     return result
 }
+func (i AccessPackageSubjectLifecycle) isMultiValue() bool {
+    return false
+}

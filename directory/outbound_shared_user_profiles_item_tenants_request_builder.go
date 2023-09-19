@@ -46,8 +46,8 @@ type OutboundSharedUserProfilesItemTenantsRequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTenantReferenceTenantIdString provides operations to manage the tenants property of the microsoft.graph.outboundSharedUserProfile entity.
-func (m *OutboundSharedUserProfilesItemTenantsRequestBuilder) ByTenantReferenceTenantIdString(tenantReferenceTenantId string)(*OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilder) {
+// ByTenantReferenceTenantId provides operations to manage the tenants property of the microsoft.graph.outboundSharedUserProfile entity.
+func (m *OutboundSharedUserProfilesItemTenantsRequestBuilder) ByTenantReferenceTenantId(tenantReferenceTenantId string)(*OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *OutboundSharedUserProfilesItemTenantsRequestBuilder) ToPostRequestInfor
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *OutboundSharedUserProfilesItemTenantsRequestBuilder) WithUrl(rawUrl string)(*OutboundSharedUserProfilesItemTenantsRequestBuilder) {
+    return NewOutboundSharedUserProfilesItemTenantsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

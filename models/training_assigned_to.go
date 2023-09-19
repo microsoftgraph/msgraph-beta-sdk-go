@@ -50,3 +50,6 @@ func SerializeTrainingAssignedTo(values []TrainingAssignedTo) []string {
     }
     return result
 }
+func (i TrainingAssignedTo) isMultiValue() bool {
+    return false
+}

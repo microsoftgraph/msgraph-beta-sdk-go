@@ -46,8 +46,8 @@ type IosLobAppProvisioningConfigurationsRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByIosLobAppProvisioningConfigurationIdString provides operations to manage the iosLobAppProvisioningConfigurations property of the microsoft.graph.deviceAppManagement entity.
-func (m *IosLobAppProvisioningConfigurationsRequestBuilder) ByIosLobAppProvisioningConfigurationIdString(iosLobAppProvisioningConfigurationId string)(*IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRequestBuilder) {
+// ByIosLobAppProvisioningConfigurationId provides operations to manage the iosLobAppProvisioningConfigurations property of the microsoft.graph.deviceAppManagement entity.
+func (m *IosLobAppProvisioningConfigurationsRequestBuilder) ByIosLobAppProvisioningConfigurationId(iosLobAppProvisioningConfigurationId string)(*IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -148,4 +148,8 @@ func (m *IosLobAppProvisioningConfigurationsRequestBuilder) ToPostRequestInforma
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IosLobAppProvisioningConfigurationsRequestBuilder) WithUrl(rawUrl string)(*IosLobAppProvisioningConfigurationsRequestBuilder) {
+    return NewIosLobAppProvisioningConfigurationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

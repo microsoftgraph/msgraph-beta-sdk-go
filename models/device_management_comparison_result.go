@@ -46,3 +46,6 @@ func SerializeDeviceManagementComparisonResult(values []DeviceManagementComparis
     }
     return result
 }
+func (i DeviceManagementComparisonResult) isMultiValue() bool {
+    return false
+}

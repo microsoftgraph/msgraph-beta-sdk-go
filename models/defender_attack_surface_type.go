@@ -46,3 +46,6 @@ func SerializeDefenderAttackSurfaceType(values []DefenderAttackSurfaceType) []st
     }
     return result
 }
+func (i DefenderAttackSurfaceType) isMultiValue() bool {
+    return false
+}

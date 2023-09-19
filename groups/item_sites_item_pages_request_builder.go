@@ -46,8 +46,8 @@ type ItemSitesItemPagesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByBaseSitePageIdString provides operations to manage the pages property of the microsoft.graph.site entity.
-func (m *ItemSitesItemPagesRequestBuilder) ByBaseSitePageIdString(baseSitePageId string)(*ItemSitesItemPagesBaseSitePageItemRequestBuilder) {
+// ByBaseSitePageId provides operations to manage the pages property of the microsoft.graph.site entity.
+func (m *ItemSitesItemPagesRequestBuilder) ByBaseSitePageId(baseSitePageId string)(*ItemSitesItemPagesBaseSitePageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemSitesItemPagesRequestBuilder) ToPostRequestInformation(ctx context.
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemSitesItemPagesRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemPagesRequestBuilder) {
+    return NewItemSitesItemPagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -1,6 +1,7 @@
 package externalconnectors
 import (
     "errors"
+    "strings"
 )
 // 
 type ContentExperienceType int
@@ -12,19 +13,28 @@ const (
 )
 
 func (i ContentExperienceType) String() string {
-    return []string{"search", "compliance", "unknownFutureValue"}[i]
+    var values []string
+    for p := ContentExperienceType(1); p <= UNKNOWNFUTUREVALUE_CONTENTEXPERIENCETYPE; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"search", "compliance", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseContentExperienceType(v string) (any, error) {
-    result := SEARCH_CONTENTEXPERIENCETYPE
-    switch v {
-        case "search":
-            result = SEARCH_CONTENTEXPERIENCETYPE
-        case "compliance":
-            result = COMPLIANCE_CONTENTEXPERIENCETYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CONTENTEXPERIENCETYPE
-        default:
-            return 0, errors.New("Unknown ContentExperienceType value: " + v)
+    var result ContentExperienceType
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "search":
+                result |= SEARCH_CONTENTEXPERIENCETYPE
+            case "compliance":
+                result |= COMPLIANCE_CONTENTEXPERIENCETYPE
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_CONTENTEXPERIENCETYPE
+            default:
+                return 0, errors.New("Unknown ContentExperienceType value: " + v)
+        }
     }
     return &result, nil
 }
@@ -34,4 +44,7 @@ func SerializeContentExperienceType(values []ContentExperienceType) []string {
         result[i] = v.String()
     }
     return result
+}
+func (i ContentExperienceType) isMultiValue() bool {
+    return true
 }

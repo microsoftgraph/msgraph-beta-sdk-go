@@ -42,3 +42,6 @@ func SerializeDeviceManagementConfigurationAzureAdTrustType(values []DeviceManag
     }
     return result
 }
+func (i DeviceManagementConfigurationAzureAdTrustType) isMultiValue() bool {
+    return false
+}

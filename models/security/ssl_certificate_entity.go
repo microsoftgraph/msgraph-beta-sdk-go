@@ -35,7 +35,7 @@ func (m *SslCertificateEntity) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAddress gets the address property value. The address property
+// GetAddress gets the address property value. A physical address of the entity.
 func (m *SslCertificateEntity) GetAddress()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PhysicalAddressable) {
     val, err := m.GetBackingStore().Get("address")
     if err != nil {
@@ -46,7 +46,7 @@ func (m *SslCertificateEntity) GetAddress()(ie233ee762e29b4ba6970aa2a2efce4b7fde
     }
     return nil
 }
-// GetAlternateNames gets the alternateNames property value. The alternateNames property
+// GetAlternateNames gets the alternateNames property value. Alternate names for this entity that are part of the certificate.
 func (m *SslCertificateEntity) GetAlternateNames()([]string) {
     val, err := m.GetBackingStore().Get("alternateNames")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *SslCertificateEntity) GetAlternateNames()([]string) {
 func (m *SslCertificateEntity) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCommonName gets the commonName property value. The commonName property
+// GetCommonName gets the commonName property value. A common name for this entity.
 func (m *SslCertificateEntity) GetCommonName()(*string) {
     val, err := m.GetBackingStore().Get("commonName")
     if err != nil {
@@ -72,7 +72,7 @@ func (m *SslCertificateEntity) GetCommonName()(*string) {
     }
     return nil
 }
-// GetEmail gets the email property value. The email property
+// GetEmail gets the email property value. An email for this entity.
 func (m *SslCertificateEntity) GetEmail()(*string) {
     val, err := m.GetBackingStore().Get("email")
     if err != nil {
@@ -194,7 +194,7 @@ func (m *SslCertificateEntity) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetGivenName gets the givenName property value. The givenName property
+// GetGivenName gets the givenName property value. If the entity is a person, this is the person's given name (first name).
 func (m *SslCertificateEntity) GetGivenName()(*string) {
     val, err := m.GetBackingStore().Get("givenName")
     if err != nil {
@@ -216,7 +216,7 @@ func (m *SslCertificateEntity) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOrganizationName gets the organizationName property value. The organizationName property
+// GetOrganizationName gets the organizationName property value. If the entity is an organization, this is the name of the organization.
 func (m *SslCertificateEntity) GetOrganizationName()(*string) {
     val, err := m.GetBackingStore().Get("organizationName")
     if err != nil {
@@ -227,7 +227,7 @@ func (m *SslCertificateEntity) GetOrganizationName()(*string) {
     }
     return nil
 }
-// GetOrganizationUnitName gets the organizationUnitName property value. The organizationUnitName property
+// GetOrganizationUnitName gets the organizationUnitName property value. If the entity is an organization, this communicates if a unit in the organization is named on the entity.
 func (m *SslCertificateEntity) GetOrganizationUnitName()(*string) {
     val, err := m.GetBackingStore().Get("organizationUnitName")
     if err != nil {
@@ -238,7 +238,7 @@ func (m *SslCertificateEntity) GetOrganizationUnitName()(*string) {
     }
     return nil
 }
-// GetSerialNumber gets the serialNumber property value. The serialNumber property
+// GetSerialNumber gets the serialNumber property value. A serial number assigned to the entity; usually only available if the entity is the issuer.
 func (m *SslCertificateEntity) GetSerialNumber()(*string) {
     val, err := m.GetBackingStore().Get("serialNumber")
     if err != nil {
@@ -249,7 +249,7 @@ func (m *SslCertificateEntity) GetSerialNumber()(*string) {
     }
     return nil
 }
-// GetSurname gets the surname property value. The surname property
+// GetSurname gets the surname property value. If the entity is a person, this is the person's surname (last name).
 func (m *SslCertificateEntity) GetSurname()(*string) {
     val, err := m.GetBackingStore().Get("surname")
     if err != nil {
@@ -337,14 +337,14 @@ func (m *SslCertificateEntity) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAddress sets the address property value. The address property
+// SetAddress sets the address property value. A physical address of the entity.
 func (m *SslCertificateEntity) SetAddress(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PhysicalAddressable)() {
     err := m.GetBackingStore().Set("address", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAlternateNames sets the alternateNames property value. The alternateNames property
+// SetAlternateNames sets the alternateNames property value. Alternate names for this entity that are part of the certificate.
 func (m *SslCertificateEntity) SetAlternateNames(value []string)() {
     err := m.GetBackingStore().Set("alternateNames", value)
     if err != nil {
@@ -355,21 +355,21 @@ func (m *SslCertificateEntity) SetAlternateNames(value []string)() {
 func (m *SslCertificateEntity) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCommonName sets the commonName property value. The commonName property
+// SetCommonName sets the commonName property value. A common name for this entity.
 func (m *SslCertificateEntity) SetCommonName(value *string)() {
     err := m.GetBackingStore().Set("commonName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEmail sets the email property value. The email property
+// SetEmail sets the email property value. An email for this entity.
 func (m *SslCertificateEntity) SetEmail(value *string)() {
     err := m.GetBackingStore().Set("email", value)
     if err != nil {
         panic(err)
     }
 }
-// SetGivenName sets the givenName property value. The givenName property
+// SetGivenName sets the givenName property value. If the entity is a person, this is the person's given name (first name).
 func (m *SslCertificateEntity) SetGivenName(value *string)() {
     err := m.GetBackingStore().Set("givenName", value)
     if err != nil {
@@ -383,28 +383,28 @@ func (m *SslCertificateEntity) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOrganizationName sets the organizationName property value. The organizationName property
+// SetOrganizationName sets the organizationName property value. If the entity is an organization, this is the name of the organization.
 func (m *SslCertificateEntity) SetOrganizationName(value *string)() {
     err := m.GetBackingStore().Set("organizationName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOrganizationUnitName sets the organizationUnitName property value. The organizationUnitName property
+// SetOrganizationUnitName sets the organizationUnitName property value. If the entity is an organization, this communicates if a unit in the organization is named on the entity.
 func (m *SslCertificateEntity) SetOrganizationUnitName(value *string)() {
     err := m.GetBackingStore().Set("organizationUnitName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSerialNumber sets the serialNumber property value. The serialNumber property
+// SetSerialNumber sets the serialNumber property value. A serial number assigned to the entity; usually only available if the entity is the issuer.
 func (m *SslCertificateEntity) SetSerialNumber(value *string)() {
     err := m.GetBackingStore().Set("serialNumber", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSurname sets the surname property value. The surname property
+// SetSurname sets the surname property value. If the entity is a person, this is the person's surname (last name).
 func (m *SslCertificateEntity) SetSurname(value *string)() {
     err := m.GetBackingStore().Set("surname", value)
     if err != nil {

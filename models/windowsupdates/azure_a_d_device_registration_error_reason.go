@@ -41,3 +41,6 @@ func SerializeAzureADDeviceRegistrationErrorReason(values []AzureADDeviceRegistr
     }
     return result
 }
+func (i AzureADDeviceRegistrationErrorReason) isMultiValue() bool {
+    return false
+}

@@ -46,8 +46,8 @@ type ClassesItemModulesItemResourcesRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEducationModuleResourceIdString provides operations to manage the resources property of the microsoft.graph.educationModule entity.
-func (m *ClassesItemModulesItemResourcesRequestBuilder) ByEducationModuleResourceIdString(educationModuleResourceId string)(*ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilder) {
+// ByEducationModuleResourceId provides operations to manage the resources property of the microsoft.graph.educationModule entity.
+func (m *ClassesItemModulesItemResourcesRequestBuilder) ByEducationModuleResourceId(educationModuleResourceId string)(*ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ClassesItemModulesItemResourcesRequestBuilder) ToPostRequestInformation
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ClassesItemModulesItemResourcesRequestBuilder) WithUrl(rawUrl string)(*ClassesItemModulesItemResourcesRequestBuilder) {
+    return NewClassesItemModulesItemResourcesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

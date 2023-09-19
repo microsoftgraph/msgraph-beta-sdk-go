@@ -101,13 +101,89 @@ func (m *MobileAppsMobileAppItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppable), nil
 }
+// GraphAndroidForWorkApp casts the previous resource to androidForWorkApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphAndroidForWorkApp()(*MobileAppsItemGraphAndroidForWorkAppRequestBuilder) {
+    return NewMobileAppsItemGraphAndroidForWorkAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphAndroidLobApp casts the previous resource to androidLobApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphAndroidLobApp()(*MobileAppsItemGraphAndroidLobAppRequestBuilder) {
+    return NewMobileAppsItemGraphAndroidLobAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphAndroidManagedStoreApp casts the previous resource to androidManagedStoreApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphAndroidManagedStoreApp()(*MobileAppsItemGraphAndroidManagedStoreAppRequestBuilder) {
+    return NewMobileAppsItemGraphAndroidManagedStoreAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphAndroidStoreApp casts the previous resource to androidStoreApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphAndroidStoreApp()(*MobileAppsItemGraphAndroidStoreAppRequestBuilder) {
+    return NewMobileAppsItemGraphAndroidStoreAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphIosLobApp casts the previous resource to iosLobApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphIosLobApp()(*MobileAppsItemGraphIosLobAppRequestBuilder) {
+    return NewMobileAppsItemGraphIosLobAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphIosStoreApp casts the previous resource to iosStoreApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphIosStoreApp()(*MobileAppsItemGraphIosStoreAppRequestBuilder) {
+    return NewMobileAppsItemGraphIosStoreAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphIosVppApp casts the previous resource to iosVppApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphIosVppApp()(*MobileAppsItemGraphIosVppAppRequestBuilder) {
+    return NewMobileAppsItemGraphIosVppAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphMacOSDmgApp casts the previous resource to macOSDmgApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphMacOSDmgApp()(*MobileAppsItemGraphMacOSDmgAppRequestBuilder) {
+    return NewMobileAppsItemGraphMacOSDmgAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphMacOSLobApp casts the previous resource to macOSLobApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphMacOSLobApp()(*MobileAppsItemGraphMacOSLobAppRequestBuilder) {
+    return NewMobileAppsItemGraphMacOSLobAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphMacOSPkgApp casts the previous resource to macOSPkgApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphMacOSPkgApp()(*MobileAppsItemGraphMacOSPkgAppRequestBuilder) {
+    return NewMobileAppsItemGraphMacOSPkgAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphManagedAndroidLobApp casts the previous resource to managedAndroidLobApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphManagedAndroidLobApp()(*MobileAppsItemGraphManagedAndroidLobAppRequestBuilder) {
+    return NewMobileAppsItemGraphManagedAndroidLobAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphManagedIOSLobApp casts the previous resource to managedIOSLobApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphManagedIOSLobApp()(*MobileAppsItemGraphManagedIOSLobAppRequestBuilder) {
+    return NewMobileAppsItemGraphManagedIOSLobAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GraphManagedMobileLobApp casts the previous resource to managedMobileLobApp.
 func (m *MobileAppsMobileAppItemRequestBuilder) GraphManagedMobileLobApp()(*MobileAppsItemGraphManagedMobileLobAppRequestBuilder) {
     return NewMobileAppsItemGraphManagedMobileLobAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// GraphMobileLobApp casts the previous resource to mobileLobApp.
-func (m *MobileAppsMobileAppItemRequestBuilder) GraphMobileLobApp()(*MobileAppsItemGraphMobileLobAppRequestBuilder) {
-    return NewMobileAppsItemGraphMobileLobAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// GraphMicrosoftStoreForBusinessApp casts the previous resource to microsoftStoreForBusinessApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphMicrosoftStoreForBusinessApp()(*MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilder) {
+    return NewMobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphWin32LobApp casts the previous resource to win32LobApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphWin32LobApp()(*MobileAppsItemGraphWin32LobAppRequestBuilder) {
+    return NewMobileAppsItemGraphWin32LobAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphWindowsAppX casts the previous resource to windowsAppX.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphWindowsAppX()(*MobileAppsItemGraphWindowsAppXRequestBuilder) {
+    return NewMobileAppsItemGraphWindowsAppXRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphWindowsMobileMSI casts the previous resource to windowsMobileMSI.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphWindowsMobileMSI()(*MobileAppsItemGraphWindowsMobileMSIRequestBuilder) {
+    return NewMobileAppsItemGraphWindowsMobileMSIRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphWindowsStoreApp casts the previous resource to windowsStoreApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphWindowsStoreApp()(*MobileAppsItemGraphWindowsStoreAppRequestBuilder) {
+    return NewMobileAppsItemGraphWindowsStoreAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphWindowsUniversalAppX casts the previous resource to windowsUniversalAppX.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphWindowsUniversalAppX()(*MobileAppsItemGraphWindowsUniversalAppXRequestBuilder) {
+    return NewMobileAppsItemGraphWindowsUniversalAppXRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphWindowsWebApp casts the previous resource to windowsWebApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphWindowsWebApp()(*MobileAppsItemGraphWindowsWebAppRequestBuilder) {
+    return NewMobileAppsItemGraphWindowsWebAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphWinGetApp casts the previous resource to winGetApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphWinGetApp()(*MobileAppsItemGraphWinGetAppRequestBuilder) {
+    return NewMobileAppsItemGraphWinGetAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property mobileApps in deviceAppManagement
 func (m *MobileAppsMobileAppItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppable, requestConfiguration *MobileAppsMobileAppItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppable, error) {
@@ -180,4 +256,8 @@ func (m *MobileAppsMobileAppItemRequestBuilder) ToPatchRequestInformation(ctx co
 // UpdateRelationships provides operations to call the updateRelationships method.
 func (m *MobileAppsMobileAppItemRequestBuilder) UpdateRelationships()(*MobileAppsItemUpdateRelationshipsRequestBuilder) {
     return NewMobileAppsItemUpdateRelationshipsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MobileAppsMobileAppItemRequestBuilder) WithUrl(rawUrl string)(*MobileAppsMobileAppItemRequestBuilder) {
+    return NewMobileAppsMobileAppItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -170,3 +170,6 @@ func SerializeResultantAppStateDetail(values []ResultantAppStateDetail) []string
     }
     return result
 }
+func (i ResultantAppStateDetail) isMultiValue() bool {
+    return false
+}

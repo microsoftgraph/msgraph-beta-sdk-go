@@ -47,3 +47,6 @@ func SerializeLanguageProficiencyLevel(values []LanguageProficiencyLevel) []stri
     }
     return result
 }
+func (i LanguageProficiencyLevel) isMultiValue() bool {
+    return false
+}

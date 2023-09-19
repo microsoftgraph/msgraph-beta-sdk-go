@@ -62,8 +62,8 @@ func (m *ComanagedDevicesRequestBuilder) BulkRestoreCloudPc()(*ComanagedDevicesB
 func (m *ComanagedDevicesRequestBuilder) BulkSetCloudPcReviewStatus()(*ComanagedDevicesBulkSetCloudPcReviewStatusRequestBuilder) {
     return NewComanagedDevicesBulkSetCloudPcReviewStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByManagedDeviceIdString provides operations to manage the comanagedDevices property of the microsoft.graph.deviceManagement entity.
-func (m *ComanagedDevicesRequestBuilder) ByManagedDeviceIdString(managedDeviceId string)(*ComanagedDevicesManagedDeviceItemRequestBuilder) {
+// ByManagedDeviceId provides operations to manage the comanagedDevices property of the microsoft.graph.deviceManagement entity.
+func (m *ComanagedDevicesRequestBuilder) ByManagedDeviceId(managedDeviceId string)(*ComanagedDevicesManagedDeviceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -172,4 +172,8 @@ func (m *ComanagedDevicesRequestBuilder) ToPostRequestInformation(ctx context.Co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ComanagedDevicesRequestBuilder) WithUrl(rawUrl string)(*ComanagedDevicesRequestBuilder) {
+    return NewComanagedDevicesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

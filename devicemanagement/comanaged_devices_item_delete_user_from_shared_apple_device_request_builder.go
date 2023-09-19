@@ -62,3 +62,7 @@ func (m *ComanagedDevicesItemDeleteUserFromSharedAppleDeviceRequestBuilder) ToPo
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ComanagedDevicesItemDeleteUserFromSharedAppleDeviceRequestBuilder) WithUrl(rawUrl string)(*ComanagedDevicesItemDeleteUserFromSharedAppleDeviceRequestBuilder) {
+    return NewComanagedDevicesItemDeleteUserFromSharedAppleDeviceRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -41,7 +41,7 @@ func (m *DeviceRegistrationPolicy) GetAzureADRegistration()(AzureADRegistrationP
     }
     return nil
 }
-// GetDescription gets the description property value. The description of the device registration policy. It is always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.
+// GetDescription gets the description property value. The description of the device registration policy. It's always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.
 func (m *DeviceRegistrationPolicy) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -52,7 +52,7 @@ func (m *DeviceRegistrationPolicy) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The name of the device registration policy. It is always set to Device Registration Policy. Read-only.
+// GetDisplayName gets the displayName property value. The name of the device registration policy. It's always set to Device Registration Policy. Read-only.
 func (m *DeviceRegistrationPolicy) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -160,7 +160,7 @@ func (m *DeviceRegistrationPolicy) GetMultiFactorAuthConfiguration()(*MultiFacto
     }
     return nil
 }
-// GetUserDeviceQuota gets the userDeviceQuota property value. Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property is not specified during the policy update operation, it is automatically reset to 0 to indicate that users are not allowed to join any devices.
+// GetUserDeviceQuota gets the userDeviceQuota property value. Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property isn't specified during the policy update operation, it's automatically reset to 0 to indicate that users aren't allowed to join any devices.
 func (m *DeviceRegistrationPolicy) GetUserDeviceQuota()(*int32) {
     val, err := m.GetBackingStore().Get("userDeviceQuota")
     if err != nil {
@@ -236,14 +236,14 @@ func (m *DeviceRegistrationPolicy) SetAzureADRegistration(value AzureADRegistrat
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description of the device registration policy. It is always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.
+// SetDescription sets the description property value. The description of the device registration policy. It's always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.
 func (m *DeviceRegistrationPolicy) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The name of the device registration policy. It is always set to Device Registration Policy. Read-only.
+// SetDisplayName sets the displayName property value. The name of the device registration policy. It's always set to Device Registration Policy. Read-only.
 func (m *DeviceRegistrationPolicy) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -264,7 +264,7 @@ func (m *DeviceRegistrationPolicy) SetMultiFactorAuthConfiguration(value *MultiF
         panic(err)
     }
 }
-// SetUserDeviceQuota sets the userDeviceQuota property value. Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property is not specified during the policy update operation, it is automatically reset to 0 to indicate that users are not allowed to join any devices.
+// SetUserDeviceQuota sets the userDeviceQuota property value. Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property isn't specified during the policy update operation, it's automatically reset to 0 to indicate that users aren't allowed to join any devices.
 func (m *DeviceRegistrationPolicy) SetUserDeviceQuota(value *int32)() {
     err := m.GetBackingStore().Set("userDeviceQuota", value)
     if err != nil {

@@ -46,8 +46,8 @@ type TargetedManagedAppConfigurationsItemSettingsRequestBuilderPostRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementConfigurationSettingIdString provides operations to manage the settings property of the microsoft.graph.managedAppConfiguration entity.
-func (m *TargetedManagedAppConfigurationsItemSettingsRequestBuilder) ByDeviceManagementConfigurationSettingIdString(deviceManagementConfigurationSettingId string)(*TargetedManagedAppConfigurationsItemSettingsDeviceManagementConfigurationSettingItemRequestBuilder) {
+// ByDeviceManagementConfigurationSettingId provides operations to manage the settings property of the microsoft.graph.managedAppConfiguration entity.
+func (m *TargetedManagedAppConfigurationsItemSettingsRequestBuilder) ByDeviceManagementConfigurationSettingId(deviceManagementConfigurationSettingId string)(*TargetedManagedAppConfigurationsItemSettingsDeviceManagementConfigurationSettingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *TargetedManagedAppConfigurationsItemSettingsRequestBuilder) ToPostReque
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TargetedManagedAppConfigurationsItemSettingsRequestBuilder) WithUrl(rawUrl string)(*TargetedManagedAppConfigurationsItemSettingsRequestBuilder) {
+    return NewTargetedManagedAppConfigurationsItemSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

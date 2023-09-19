@@ -74,3 +74,7 @@ func (m *ItemApprovalsItemStepsCountRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemApprovalsItemStepsCountRequestBuilder) WithUrl(rawUrl string)(*ItemApprovalsItemStepsCountRequestBuilder) {
+    return NewItemApprovalsItemStepsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

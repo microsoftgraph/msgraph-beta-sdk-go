@@ -70,3 +70,7 @@ func (m *KeySetsItemUploadPkcs12RequestBuilder) ToPostRequestInformation(ctx con
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *KeySetsItemUploadPkcs12RequestBuilder) WithUrl(rawUrl string)(*KeySetsItemUploadPkcs12RequestBuilder) {
+    return NewKeySetsItemUploadPkcs12RequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

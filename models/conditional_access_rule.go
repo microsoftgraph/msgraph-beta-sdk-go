@@ -137,3 +137,6 @@ func SerializeConditionalAccessRule(values []ConditionalAccessRule) []string {
     }
     return result
 }
+func (i ConditionalAccessRule) isMultiValue() bool {
+    return false
+}

@@ -74,3 +74,6 @@ func SerializeAssociatedAssignmentPayloadType(values []AssociatedAssignmentPaylo
     }
     return result
 }
+func (i AssociatedAssignmentPayloadType) isMultiValue() bool {
+    return false
+}

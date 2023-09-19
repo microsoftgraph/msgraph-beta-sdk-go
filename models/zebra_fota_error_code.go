@@ -58,3 +58,6 @@ func SerializeZebraFotaErrorCode(values []ZebraFotaErrorCode) []string {
     }
     return result
 }
+func (i ZebraFotaErrorCode) isMultiValue() bool {
+    return false
+}

@@ -62,3 +62,6 @@ func SerializeAndroidVpnConnectionType(values []AndroidVpnConnectionType) []stri
     }
     return result
 }
+func (i AndroidVpnConnectionType) isMultiValue() bool {
+    return false
+}

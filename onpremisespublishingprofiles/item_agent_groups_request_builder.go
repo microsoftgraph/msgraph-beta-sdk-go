@@ -46,8 +46,8 @@ type ItemAgentGroupsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByOnPremisesAgentGroupIdString provides operations to manage the agentGroups property of the microsoft.graph.onPremisesPublishingProfile entity.
-func (m *ItemAgentGroupsRequestBuilder) ByOnPremisesAgentGroupIdString(onPremisesAgentGroupId string)(*ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) {
+// ByOnPremisesAgentGroupId provides operations to manage the agentGroups property of the microsoft.graph.onPremisesPublishingProfile entity.
+func (m *ItemAgentGroupsRequestBuilder) ByOnPremisesAgentGroupId(onPremisesAgentGroupId string)(*ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemAgentGroupsRequestBuilder) ToPostRequestInformation(ctx context.Con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemAgentGroupsRequestBuilder) WithUrl(rawUrl string)(*ItemAgentGroupsRequestBuilder) {
+    return NewItemAgentGroupsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

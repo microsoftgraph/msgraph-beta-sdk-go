@@ -39,8 +39,8 @@ type ItemPlannerFavoritePlansRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemPlannerFavoritePlansRequestBuilderGetQueryParameters
 }
-// ByPlannerPlanIdString provides operations to manage the favoritePlans property of the microsoft.graph.plannerUser entity.
-func (m *ItemPlannerFavoritePlansRequestBuilder) ByPlannerPlanIdString(plannerPlanId string)(*ItemPlannerFavoritePlansPlannerPlanItemRequestBuilder) {
+// ByPlannerPlanId provides operations to manage the favoritePlans property of the microsoft.graph.plannerUser entity.
+func (m *ItemPlannerFavoritePlansRequestBuilder) ByPlannerPlanId(plannerPlanId string)(*ItemPlannerFavoritePlansPlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *ItemPlannerFavoritePlansRequestBuilder) ToGetRequestInformation(ctx con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemPlannerFavoritePlansRequestBuilder) WithUrl(rawUrl string)(*ItemPlannerFavoritePlansRequestBuilder) {
+    return NewItemPlannerFavoritePlansRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

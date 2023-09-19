@@ -38,3 +38,6 @@ func SerializeITunesPairingMode(values []ITunesPairingMode) []string {
     }
     return result
 }
+func (i ITunesPairingMode) isMultiValue() bool {
+    return false
+}

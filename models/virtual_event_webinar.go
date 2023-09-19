@@ -30,7 +30,7 @@ func (m *VirtualEventWebinar) GetAudience()(*MeetingAudience) {
     }
     return nil
 }
-// GetCoOrganizers gets the coOrganizers property value. Identity information of co-organizers of the webinar.
+// GetCoOrganizers gets the coOrganizers property value. Identity information of coorganizers of the webinar.
 func (m *VirtualEventWebinar) GetCoOrganizers()([]CommunicationsUserIdentityable) {
     val, err := m.GetBackingStore().Get("coOrganizers")
     if err != nil {
@@ -172,7 +172,7 @@ func (m *VirtualEventWebinar) SetAudience(value *MeetingAudience)() {
         panic(err)
     }
 }
-// SetCoOrganizers sets the coOrganizers property value. Identity information of co-organizers of the webinar.
+// SetCoOrganizers sets the coOrganizers property value. Identity information of coorganizers of the webinar.
 func (m *VirtualEventWebinar) SetCoOrganizers(value []CommunicationsUserIdentityable)() {
     err := m.GetBackingStore().Set("coOrganizers", value)
     if err != nil {

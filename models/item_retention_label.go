@@ -75,7 +75,7 @@ func (m *ItemRetentionLabel) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetIsLabelAppliedExplicitly gets the isLabelAppliedExplicitly property value. The isLabelAppliedExplicitly property
+// GetIsLabelAppliedExplicitly gets the isLabelAppliedExplicitly property value. Specifies whether the label is applied explicitly on the item. True indicates that the label is applied explicitly; otherwise, the label is inherited from its parent. Read-only.
 func (m *ItemRetentionLabel) GetIsLabelAppliedExplicitly()(*bool) {
     val, err := m.GetBackingStore().Get("isLabelAppliedExplicitly")
     if err != nil {
@@ -86,7 +86,7 @@ func (m *ItemRetentionLabel) GetIsLabelAppliedExplicitly()(*bool) {
     }
     return nil
 }
-// GetLabelAppliedBy gets the labelAppliedBy property value. The labelAppliedBy property
+// GetLabelAppliedBy gets the labelAppliedBy property value. Identity of the user who applied the label. Read-only.
 func (m *ItemRetentionLabel) GetLabelAppliedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("labelAppliedBy")
     if err != nil {
@@ -97,7 +97,7 @@ func (m *ItemRetentionLabel) GetLabelAppliedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetLabelAppliedDateTime gets the labelAppliedDateTime property value. The labelAppliedDateTime property
+// GetLabelAppliedDateTime gets the labelAppliedDateTime property value. The date and time when the label was applied on the item. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *ItemRetentionLabel) GetLabelAppliedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("labelAppliedDateTime")
     if err != nil {
@@ -108,7 +108,7 @@ func (m *ItemRetentionLabel) GetLabelAppliedDateTime()(*i336074805fc853987abe6f7
     }
     return nil
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The retention label on the document. Read-write.
 func (m *ItemRetentionLabel) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -119,7 +119,7 @@ func (m *ItemRetentionLabel) GetName()(*string) {
     }
     return nil
 }
-// GetRetentionSettings gets the retentionSettings property value. The retentionSettings property
+// GetRetentionSettings gets the retentionSettings property value. The retention settings enforced on the item. Read-write.
 func (m *ItemRetentionLabel) GetRetentionSettings()(RetentionLabelSettingsable) {
     val, err := m.GetBackingStore().Get("retentionSettings")
     if err != nil {
@@ -168,35 +168,35 @@ func (m *ItemRetentionLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetIsLabelAppliedExplicitly sets the isLabelAppliedExplicitly property value. The isLabelAppliedExplicitly property
+// SetIsLabelAppliedExplicitly sets the isLabelAppliedExplicitly property value. Specifies whether the label is applied explicitly on the item. True indicates that the label is applied explicitly; otherwise, the label is inherited from its parent. Read-only.
 func (m *ItemRetentionLabel) SetIsLabelAppliedExplicitly(value *bool)() {
     err := m.GetBackingStore().Set("isLabelAppliedExplicitly", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLabelAppliedBy sets the labelAppliedBy property value. The labelAppliedBy property
+// SetLabelAppliedBy sets the labelAppliedBy property value. Identity of the user who applied the label. Read-only.
 func (m *ItemRetentionLabel) SetLabelAppliedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("labelAppliedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLabelAppliedDateTime sets the labelAppliedDateTime property value. The labelAppliedDateTime property
+// SetLabelAppliedDateTime sets the labelAppliedDateTime property value. The date and time when the label was applied on the item. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *ItemRetentionLabel) SetLabelAppliedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("labelAppliedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The retention label on the document. Read-write.
 func (m *ItemRetentionLabel) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRetentionSettings sets the retentionSettings property value. The retentionSettings property
+// SetRetentionSettings sets the retentionSettings property value. The retention settings enforced on the item. Read-write.
 func (m *ItemRetentionLabel) SetRetentionSettings(value RetentionLabelSettingsable)() {
     err := m.GetBackingStore().Set("retentionSettings", value)
     if err != nil {

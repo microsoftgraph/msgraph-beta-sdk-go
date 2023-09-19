@@ -38,3 +38,6 @@ func SerializeVirtualEventStatus(values []VirtualEventStatus) []string {
     }
     return result
 }
+func (i VirtualEventStatus) isMultiValue() bool {
+    return false
+}

@@ -44,3 +44,6 @@ func SerializeConnectorGroupRegion(values []ConnectorGroupRegion) []string {
     }
     return result
 }
+func (i ConnectorGroupRegion) isMultiValue() bool {
+    return false
+}

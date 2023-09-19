@@ -42,3 +42,6 @@ func SerializeIosNotificationPreviewVisibility(values []IosNotificationPreviewVi
     }
     return result
 }
+func (i IosNotificationPreviewVisibility) isMultiValue() bool {
+    return false
+}

@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // Flags representing firewall rule interface types.
 type WindowsFirewallRuleInterfaceTypes int
@@ -17,21 +18,30 @@ const (
 )
 
 func (i WindowsFirewallRuleInterfaceTypes) String() string {
-    return []string{"notConfigured", "remoteAccess", "wireless", "lan"}[i]
+    var values []string
+    for p := WindowsFirewallRuleInterfaceTypes(1); p <= LAN_WINDOWSFIREWALLRULEINTERFACETYPES; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"notConfigured", "remoteAccess", "wireless", "lan"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseWindowsFirewallRuleInterfaceTypes(v string) (any, error) {
-    result := NOTCONFIGURED_WINDOWSFIREWALLRULEINTERFACETYPES
-    switch v {
-        case "notConfigured":
-            result = NOTCONFIGURED_WINDOWSFIREWALLRULEINTERFACETYPES
-        case "remoteAccess":
-            result = REMOTEACCESS_WINDOWSFIREWALLRULEINTERFACETYPES
-        case "wireless":
-            result = WIRELESS_WINDOWSFIREWALLRULEINTERFACETYPES
-        case "lan":
-            result = LAN_WINDOWSFIREWALLRULEINTERFACETYPES
-        default:
-            return 0, errors.New("Unknown WindowsFirewallRuleInterfaceTypes value: " + v)
+    var result WindowsFirewallRuleInterfaceTypes
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "notConfigured":
+                result |= NOTCONFIGURED_WINDOWSFIREWALLRULEINTERFACETYPES
+            case "remoteAccess":
+                result |= REMOTEACCESS_WINDOWSFIREWALLRULEINTERFACETYPES
+            case "wireless":
+                result |= WIRELESS_WINDOWSFIREWALLRULEINTERFACETYPES
+            case "lan":
+                result |= LAN_WINDOWSFIREWALLRULEINTERFACETYPES
+            default:
+                return 0, errors.New("Unknown WindowsFirewallRuleInterfaceTypes value: " + v)
+        }
     }
     return &result, nil
 }
@@ -41,4 +51,7 @@ func SerializeWindowsFirewallRuleInterfaceTypes(values []WindowsFirewallRuleInte
         result[i] = v.String()
     }
     return result
+}
+func (i WindowsFirewallRuleInterfaceTypes) isMultiValue() bool {
+    return true
 }

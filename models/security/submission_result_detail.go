@@ -188,3 +188,6 @@ func SerializeSubmissionResultDetail(values []SubmissionResultDetail) []string {
     }
     return result
 }
+func (i SubmissionResultDetail) isMultiValue() bool {
+    return false
+}

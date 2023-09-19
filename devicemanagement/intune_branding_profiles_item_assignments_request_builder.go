@@ -46,8 +46,8 @@ type IntuneBrandingProfilesItemAssignmentsRequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByIntuneBrandingProfileAssignmentIdString provides operations to manage the assignments property of the microsoft.graph.intuneBrandingProfile entity.
-func (m *IntuneBrandingProfilesItemAssignmentsRequestBuilder) ByIntuneBrandingProfileAssignmentIdString(intuneBrandingProfileAssignmentId string)(*IntuneBrandingProfilesItemAssignmentsIntuneBrandingProfileAssignmentItemRequestBuilder) {
+// ByIntuneBrandingProfileAssignmentId provides operations to manage the assignments property of the microsoft.graph.intuneBrandingProfile entity.
+func (m *IntuneBrandingProfilesItemAssignmentsRequestBuilder) ByIntuneBrandingProfileAssignmentId(intuneBrandingProfileAssignmentId string)(*IntuneBrandingProfilesItemAssignmentsIntuneBrandingProfileAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *IntuneBrandingProfilesItemAssignmentsRequestBuilder) ToPostRequestInfor
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IntuneBrandingProfilesItemAssignmentsRequestBuilder) WithUrl(rawUrl string)(*IntuneBrandingProfilesItemAssignmentsRequestBuilder) {
+    return NewIntuneBrandingProfilesItemAssignmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

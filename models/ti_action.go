@@ -41,3 +41,6 @@ func SerializeTiAction(values []TiAction) []string {
     }
     return result
 }
+func (i TiAction) isMultiValue() bool {
+    return false
+}

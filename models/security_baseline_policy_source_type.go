@@ -32,3 +32,6 @@ func SerializeSecurityBaselinePolicySourceType(values []SecurityBaselinePolicySo
     }
     return result
 }
+func (i SecurityBaselinePolicySourceType) isMultiValue() bool {
+    return false
+}

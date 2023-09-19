@@ -218,7 +218,7 @@ func (m *TiIndicator) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     }
     return nil
 }
-// GetExternalId gets the externalId property value. An identification number that ties the indicator back to the indicator provider’s system (e.g. a foreign key).
+// GetExternalId gets the externalId property value. An identification number that ties the indicator back to the indicator provider’s system (for example, a foreign key).
 func (m *TiIndicator) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -1003,7 +1003,7 @@ func (m *TiIndicator) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97
     }
     return nil
 }
-// GetMalwareFamilyNames gets the malwareFamilyNames property value. The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible which can be found via the Windows Defender Security Intelligence threat encyclopedia.
+// GetMalwareFamilyNames gets the malwareFamilyNames property value. The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible that can be found via the Windows Defender Security Intelligence threat encyclopedia.
 func (m *TiIndicator) GetMalwareFamilyNames()([]string) {
     val, err := m.GetBackingStore().Get("malwareFamilyNames")
     if err != nil {
@@ -1179,7 +1179,7 @@ func (m *TiIndicator) GetNetworkSourcePort()(*int32) {
     }
     return nil
 }
-// GetPassiveOnly gets the passiveOnly property value. Determines if the indicator should trigger an event that is visible to an end-user. When set to ‘true,’ security tools will not notify the end user that a ‘hit’ has occurred. This is most often treated as audit or silent mode by security products where they will simply log that a match occurred but will not perform the action. Default value is false.
+// GetPassiveOnly gets the passiveOnly property value. Determines if the indicator should trigger an event that is visible to an end-user. When set to ‘true,’ security tools won't notify the end user that a ‘hit’ has occurred. This is most often treated as audit or silent mode by security products where they'll simply log that a match occurred but won't perform the action. Default value is false.
 func (m *TiIndicator) GetPassiveOnly()(*bool) {
     val, err := m.GetBackingStore().Get("passiveOnly")
     if err != nil {
@@ -1190,7 +1190,7 @@ func (m *TiIndicator) GetPassiveOnly()(*bool) {
     }
     return nil
 }
-// GetSeverity gets the severity property value. An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 – 5 where 5 is the most severe and zero is not severe at all. Default value is 3.
+// GetSeverity gets the severity property value. An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 – 5 where 5 is the most severe and zero isn't severe at all. Default value is 3.
 func (m *TiIndicator) GetSeverity()(*int32) {
     val, err := m.GetBackingStore().Get("severity")
     if err != nil {
@@ -1753,7 +1753,7 @@ func (m *TiIndicator) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad
         panic(err)
     }
 }
-// SetExternalId sets the externalId property value. An identification number that ties the indicator back to the indicator provider’s system (e.g. a foreign key).
+// SetExternalId sets the externalId property value. An identification number that ties the indicator back to the indicator provider’s system (for example, a foreign key).
 func (m *TiIndicator) SetExternalId(value *string)() {
     err := m.GetBackingStore().Set("externalId", value)
     if err != nil {
@@ -1865,7 +1865,7 @@ func (m *TiIndicator) SetLastReportedDateTime(value *i336074805fc853987abe6f7fe3
         panic(err)
     }
 }
-// SetMalwareFamilyNames sets the malwareFamilyNames property value. The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible which can be found via the Windows Defender Security Intelligence threat encyclopedia.
+// SetMalwareFamilyNames sets the malwareFamilyNames property value. The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible that can be found via the Windows Defender Security Intelligence threat encyclopedia.
 func (m *TiIndicator) SetMalwareFamilyNames(value []string)() {
     err := m.GetBackingStore().Set("malwareFamilyNames", value)
     if err != nil {
@@ -1977,14 +1977,14 @@ func (m *TiIndicator) SetNetworkSourcePort(value *int32)() {
         panic(err)
     }
 }
-// SetPassiveOnly sets the passiveOnly property value. Determines if the indicator should trigger an event that is visible to an end-user. When set to ‘true,’ security tools will not notify the end user that a ‘hit’ has occurred. This is most often treated as audit or silent mode by security products where they will simply log that a match occurred but will not perform the action. Default value is false.
+// SetPassiveOnly sets the passiveOnly property value. Determines if the indicator should trigger an event that is visible to an end-user. When set to ‘true,’ security tools won't notify the end user that a ‘hit’ has occurred. This is most often treated as audit or silent mode by security products where they'll simply log that a match occurred but won't perform the action. Default value is false.
 func (m *TiIndicator) SetPassiveOnly(value *bool)() {
     err := m.GetBackingStore().Set("passiveOnly", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSeverity sets the severity property value. An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 – 5 where 5 is the most severe and zero is not severe at all. Default value is 3.
+// SetSeverity sets the severity property value. An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 – 5 where 5 is the most severe and zero isn't severe at all. Default value is 3.
 func (m *TiIndicator) SetSeverity(value *int32)() {
     err := m.GetBackingStore().Set("severity", value)
     if err != nil {

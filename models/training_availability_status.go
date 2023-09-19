@@ -44,3 +44,6 @@ func SerializeTrainingAvailabilityStatus(values []TrainingAvailabilityStatus) []
     }
     return result
 }
+func (i TrainingAvailabilityStatus) isMultiValue() bool {
+    return false
+}

@@ -46,8 +46,8 @@ type SharedEmailDomainsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySharedEmailDomainIdString provides operations to manage the sharedEmailDomains property of the microsoft.graph.directory entity.
-func (m *SharedEmailDomainsRequestBuilder) BySharedEmailDomainIdString(sharedEmailDomainId string)(*SharedEmailDomainsSharedEmailDomainItemRequestBuilder) {
+// BySharedEmailDomainId provides operations to manage the sharedEmailDomains property of the microsoft.graph.directory entity.
+func (m *SharedEmailDomainsRequestBuilder) BySharedEmailDomainId(sharedEmailDomainId string)(*SharedEmailDomainsSharedEmailDomainItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *SharedEmailDomainsRequestBuilder) ToPostRequestInformation(ctx context.
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SharedEmailDomainsRequestBuilder) WithUrl(rawUrl string)(*SharedEmailDomainsRequestBuilder) {
+    return NewSharedEmailDomainsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

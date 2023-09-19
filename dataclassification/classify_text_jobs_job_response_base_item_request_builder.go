@@ -153,3 +153,7 @@ func (m *ClassifyTextJobsJobResponseBaseItemRequestBuilder) ToPatchRequestInform
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ClassifyTextJobsJobResponseBaseItemRequestBuilder) WithUrl(rawUrl string)(*ClassifyTextJobsJobResponseBaseItemRequestBuilder) {
+    return NewClassifyTextJobsJobResponseBaseItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

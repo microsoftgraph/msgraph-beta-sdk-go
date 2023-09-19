@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // Supported setting types
 type DeviceManagementConfigurationSettingVisibility int
@@ -17,21 +18,30 @@ const (
 )
 
 func (i DeviceManagementConfigurationSettingVisibility) String() string {
-    return []string{"none", "settingsCatalog", "template", "unknownFutureValue"}[i]
+    var values []string
+    for p := DeviceManagementConfigurationSettingVisibility(1); p <= UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"none", "settingsCatalog", "template", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseDeviceManagementConfigurationSettingVisibility(v string) (any, error) {
-    result := NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
-    switch v {
-        case "none":
-            result = NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
-        case "settingsCatalog":
-            result = SETTINGSCATALOG_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
-        case "template":
-            result = TEMPLATE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
-        default:
-            return 0, errors.New("Unknown DeviceManagementConfigurationSettingVisibility value: " + v)
+    var result DeviceManagementConfigurationSettingVisibility
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "none":
+                result |= NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
+            case "settingsCatalog":
+                result |= SETTINGSCATALOG_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
+            case "template":
+                result |= TEMPLATE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
+            default:
+                return 0, errors.New("Unknown DeviceManagementConfigurationSettingVisibility value: " + v)
+        }
     }
     return &result, nil
 }
@@ -41,4 +51,7 @@ func SerializeDeviceManagementConfigurationSettingVisibility(values []DeviceMana
         result[i] = v.String()
     }
     return result
+}
+func (i DeviceManagementConfigurationSettingVisibility) isMultiValue() bool {
+    return true
 }

@@ -41,3 +41,6 @@ func SerializeIkeIntegrity(values []IkeIntegrity) []string {
     }
     return result
 }
+func (i IkeIntegrity) isMultiValue() bool {
+    return false
+}

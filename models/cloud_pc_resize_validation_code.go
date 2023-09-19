@@ -47,3 +47,6 @@ func SerializeCloudPcResizeValidationCode(values []CloudPcResizeValidationCode) 
     }
     return result
 }
+func (i CloudPcResizeValidationCode) isMultiValue() bool {
+    return false
+}

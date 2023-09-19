@@ -74,3 +74,7 @@ func (m *TermsAndConditionsItemGroupAssignmentsCountRequestBuilder) ToGetRequest
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TermsAndConditionsItemGroupAssignmentsCountRequestBuilder) WithUrl(rawUrl string)(*TermsAndConditionsItemGroupAssignmentsCountRequestBuilder) {
+    return NewTermsAndConditionsItemGroupAssignmentsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

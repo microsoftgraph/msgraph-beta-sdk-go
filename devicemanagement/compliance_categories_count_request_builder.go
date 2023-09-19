@@ -74,3 +74,7 @@ func (m *ComplianceCategoriesCountRequestBuilder) ToGetRequestInformation(ctx co
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ComplianceCategoriesCountRequestBuilder) WithUrl(rawUrl string)(*ComplianceCategoriesCountRequestBuilder) {
+    return NewComplianceCategoriesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -23,7 +23,7 @@ type ItemMailFoldersMailFolderItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
     // Include Hidden Folders
-    IncludeHiddenFolders *string
+    IncludeHiddenFolders *string `uriparametername:"includeHiddenFolders"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -187,4 +187,8 @@ func (m *ItemMailFoldersMailFolderItemRequestBuilder) ToPatchRequestInformation(
 // UserConfigurations provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.
 func (m *ItemMailFoldersMailFolderItemRequestBuilder) UserConfigurations()(*ItemMailFoldersItemUserConfigurationsRequestBuilder) {
     return NewItemMailFoldersItemUserConfigurationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemMailFoldersMailFolderItemRequestBuilder) WithUrl(rawUrl string)(*ItemMailFoldersMailFolderItemRequestBuilder) {
+    return NewItemMailFoldersMailFolderItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

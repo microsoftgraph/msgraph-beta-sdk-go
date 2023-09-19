@@ -92,3 +92,6 @@ func SerializeMessageEventType(values []MessageEventType) []string {
     }
     return result
 }
+func (i MessageEventType) isMultiValue() bool {
+    return false
+}

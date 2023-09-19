@@ -257,7 +257,7 @@ func (m *WorkflowBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetIsEnabled gets the isEnabled property value. Whether the workflow is enabled or disabled. If this setting is true, the workflow can be run on demand or on schedule when isSchedulingEnabled is true.
+// GetIsEnabled gets the isEnabled property value. Determines whether the workflow is enabled or disabled. If this setting is true, the workflow can be run on demand or on schedule when isSchedulingEnabled is true.
 func (m *WorkflowBase) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -268,7 +268,7 @@ func (m *WorkflowBase) GetIsEnabled()(*bool) {
     }
     return nil
 }
-// GetIsSchedulingEnabled gets the isSchedulingEnabled property value. If true, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Cannot be true for a disabled workflow (where isEnabled is false).
+// GetIsSchedulingEnabled gets the isSchedulingEnabled property value. If true, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Can't be true for a disabled workflow (where isEnabled is false).
 func (m *WorkflowBase) GetIsSchedulingEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isSchedulingEnabled")
     if err != nil {
@@ -465,14 +465,14 @@ func (m *WorkflowBase) SetExecutionConditions(value WorkflowExecutionConditionsa
         panic(err)
     }
 }
-// SetIsEnabled sets the isEnabled property value. Whether the workflow is enabled or disabled. If this setting is true, the workflow can be run on demand or on schedule when isSchedulingEnabled is true.
+// SetIsEnabled sets the isEnabled property value. Determines whether the workflow is enabled or disabled. If this setting is true, the workflow can be run on demand or on schedule when isSchedulingEnabled is true.
 func (m *WorkflowBase) SetIsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsSchedulingEnabled sets the isSchedulingEnabled property value. If true, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Cannot be true for a disabled workflow (where isEnabled is false).
+// SetIsSchedulingEnabled sets the isSchedulingEnabled property value. If true, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Can't be true for a disabled workflow (where isEnabled is false).
 func (m *WorkflowBase) SetIsSchedulingEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isSchedulingEnabled", value)
     if err != nil {

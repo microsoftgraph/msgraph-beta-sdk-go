@@ -38,3 +38,6 @@ func SerializeHealthState(values []HealthState) []string {
     }
     return result
 }
+func (i HealthState) isMultiValue() bool {
+    return false
+}

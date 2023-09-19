@@ -35,3 +35,6 @@ func SerializePrivilegedAccessGroupMemberType(values []PrivilegedAccessGroupMemb
     }
     return result
 }
+func (i PrivilegedAccessGroupMemberType) isMultiValue() bool {
+    return false
+}

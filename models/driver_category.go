@@ -38,3 +38,6 @@ func SerializeDriverCategory(values []DriverCategory) []string {
     }
     return result
 }
+func (i DriverCategory) isMultiValue() bool {
+    return false
+}

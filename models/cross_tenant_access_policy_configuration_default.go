@@ -137,6 +137,16 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) GetFieldDeserializers()(ma
         }
         return nil
     }
+    res["invitationRedemptionIdentityProviderConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDefaultInvitationRedemptionIdentityProviderConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInvitationRedemptionIdentityProviderConfiguration(val.(DefaultInvitationRedemptionIdentityProviderConfigurationable))
+        }
+        return nil
+    }
     res["isServiceDefault"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -167,6 +177,17 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) GetInboundTrust()(CrossTen
     }
     if val != nil {
         return val.(CrossTenantAccessPolicyInboundTrustable)
+    }
+    return nil
+}
+// GetInvitationRedemptionIdentityProviderConfiguration gets the invitationRedemptionIdentityProviderConfiguration property value. The invitationRedemptionIdentityProviderConfiguration property
+func (m *CrossTenantAccessPolicyConfigurationDefault) GetInvitationRedemptionIdentityProviderConfiguration()(DefaultInvitationRedemptionIdentityProviderConfigurationable) {
+    val, err := m.GetBackingStore().Get("invitationRedemptionIdentityProviderConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DefaultInvitationRedemptionIdentityProviderConfigurationable)
     }
     return nil
 }
@@ -235,6 +256,12 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) Serialize(writer i878a80d2
         }
     }
     {
+        err = writer.WriteObjectValue("invitationRedemptionIdentityProviderConfiguration", m.GetInvitationRedemptionIdentityProviderConfiguration())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isServiceDefault", m.GetIsServiceDefault())
         if err != nil {
             return err
@@ -290,6 +317,13 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) SetInboundTrust(value Cros
         panic(err)
     }
 }
+// SetInvitationRedemptionIdentityProviderConfiguration sets the invitationRedemptionIdentityProviderConfiguration property value. The invitationRedemptionIdentityProviderConfiguration property
+func (m *CrossTenantAccessPolicyConfigurationDefault) SetInvitationRedemptionIdentityProviderConfiguration(value DefaultInvitationRedemptionIdentityProviderConfigurationable)() {
+    err := m.GetBackingStore().Set("invitationRedemptionIdentityProviderConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsServiceDefault sets the isServiceDefault property value. If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.
 func (m *CrossTenantAccessPolicyConfigurationDefault) SetIsServiceDefault(value *bool)() {
     err := m.GetBackingStore().Set("isServiceDefault", value)
@@ -314,6 +348,7 @@ type CrossTenantAccessPolicyConfigurationDefaultable interface {
     GetB2bDirectConnectInbound()(CrossTenantAccessPolicyB2BSettingable)
     GetB2bDirectConnectOutbound()(CrossTenantAccessPolicyB2BSettingable)
     GetInboundTrust()(CrossTenantAccessPolicyInboundTrustable)
+    GetInvitationRedemptionIdentityProviderConfiguration()(DefaultInvitationRedemptionIdentityProviderConfigurationable)
     GetIsServiceDefault()(*bool)
     GetTenantRestrictions()(CrossTenantAccessPolicyTenantRestrictionsable)
     SetAutomaticUserConsentSettings(value InboundOutboundPolicyConfigurationable)()
@@ -322,6 +357,7 @@ type CrossTenantAccessPolicyConfigurationDefaultable interface {
     SetB2bDirectConnectInbound(value CrossTenantAccessPolicyB2BSettingable)()
     SetB2bDirectConnectOutbound(value CrossTenantAccessPolicyB2BSettingable)()
     SetInboundTrust(value CrossTenantAccessPolicyInboundTrustable)()
+    SetInvitationRedemptionIdentityProviderConfiguration(value DefaultInvitationRedemptionIdentityProviderConfigurationable)()
     SetIsServiceDefault(value *bool)()
     SetTenantRestrictions(value CrossTenantAccessPolicyTenantRestrictionsable)()
 }

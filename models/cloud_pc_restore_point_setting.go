@@ -95,7 +95,7 @@ func (m *CloudPcRestorePointSetting) GetOdataType()(*string) {
     }
     return nil
 }
-// GetUserRestoreEnabled gets the userRestoreEnabled property value. If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users cannot use snapshots to restore the Cloud PC.
+// GetUserRestoreEnabled gets the userRestoreEnabled property value. If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users can't use snapshots to restore the Cloud PC.
 func (m *CloudPcRestorePointSetting) GetUserRestoreEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("userRestoreEnabled")
     if err != nil {
@@ -159,7 +159,7 @@ func (m *CloudPcRestorePointSetting) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetUserRestoreEnabled sets the userRestoreEnabled property value. If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users cannot use snapshots to restore the Cloud PC.
+// SetUserRestoreEnabled sets the userRestoreEnabled property value. If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users can't use snapshots to restore the Cloud PC.
 func (m *CloudPcRestorePointSetting) SetUserRestoreEnabled(value *bool)() {
     err := m.GetBackingStore().Set("userRestoreEnabled", value)
     if err != nil {

@@ -34,3 +34,6 @@ func SerializeNonEapAuthenticationMethodForPeap(values []NonEapAuthenticationMet
     }
     return result
 }
+func (i NonEapAuthenticationMethodForPeap) isMultiValue() bool {
+    return false
+}

@@ -38,3 +38,6 @@ func SerializeAndroidDeviceOwnerKioskCustomizationSystemNavigation(values []Andr
     }
     return result
 }
+func (i AndroidDeviceOwnerKioskCustomizationSystemNavigation) isMultiValue() bool {
+    return false
+}

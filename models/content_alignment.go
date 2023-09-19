@@ -35,3 +35,6 @@ func SerializeContentAlignment(values []ContentAlignment) []string {
     }
     return result
 }
+func (i ContentAlignment) isMultiValue() bool {
+    return false
+}

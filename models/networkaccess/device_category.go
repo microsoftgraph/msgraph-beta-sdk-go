@@ -35,3 +35,6 @@ func SerializeDeviceCategory(values []DeviceCategory) []string {
     }
     return result
 }
+func (i DeviceCategory) isMultiValue() bool {
+    return false
+}

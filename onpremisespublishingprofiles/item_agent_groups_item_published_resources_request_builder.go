@@ -46,8 +46,8 @@ type ItemAgentGroupsItemPublishedResourcesRequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPublishedResourceIdString provides operations to manage the publishedResources property of the microsoft.graph.onPremisesAgentGroup entity.
-func (m *ItemAgentGroupsItemPublishedResourcesRequestBuilder) ByPublishedResourceIdString(publishedResourceId string)(*ItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilder) {
+// ByPublishedResourceId provides operations to manage the publishedResources property of the microsoft.graph.onPremisesAgentGroup entity.
+func (m *ItemAgentGroupsItemPublishedResourcesRequestBuilder) ByPublishedResourceId(publishedResourceId string)(*ItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ItemAgentGroupsItemPublishedResourcesRequestBuilder) ToPostRequestInfor
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemAgentGroupsItemPublishedResourcesRequestBuilder) WithUrl(rawUrl string)(*ItemAgentGroupsItemPublishedResourcesRequestBuilder) {
+    return NewItemAgentGroupsItemPublishedResourcesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

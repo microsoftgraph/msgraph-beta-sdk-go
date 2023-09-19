@@ -65,3 +65,7 @@ func (m *ReportsGetCertificatesReportRequestBuilder) ToPostRequestInformation(ct
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ReportsGetCertificatesReportRequestBuilder) WithUrl(rawUrl string)(*ReportsGetCertificatesReportRequestBuilder) {
+    return NewReportsGetCertificatesReportRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

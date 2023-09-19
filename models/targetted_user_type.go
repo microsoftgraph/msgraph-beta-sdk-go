@@ -41,3 +41,6 @@ func SerializeTargettedUserType(values []TargettedUserType) []string {
     }
     return result
 }
+func (i TargettedUserType) isMultiValue() bool {
+    return false
+}

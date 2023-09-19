@@ -74,3 +74,6 @@ func SerializeDeviceVendor(values []DeviceVendor) []string {
     }
     return result
 }
+func (i DeviceVendor) isMultiValue() bool {
+    return false
+}

@@ -32,3 +32,6 @@ func SerializeRoleSummaryStatus(values []RoleSummaryStatus) []string {
     }
     return result
 }
+func (i RoleSummaryStatus) isMultiValue() bool {
+    return false
+}

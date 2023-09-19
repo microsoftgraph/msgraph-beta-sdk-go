@@ -46,3 +46,6 @@ func SerializeWindowsAppStartLayoutTileSize(values []WindowsAppStartLayoutTileSi
     }
     return result
 }
+func (i WindowsAppStartLayoutTileSize) isMultiValue() bool {
+    return false
+}

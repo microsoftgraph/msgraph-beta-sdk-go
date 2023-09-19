@@ -50,8 +50,8 @@ type DeviceHealthScriptsRequestBuilderPostRequestConfiguration struct {
 func (m *DeviceHealthScriptsRequestBuilder) AreGlobalScriptsAvailable()(*DeviceHealthScriptsAreGlobalScriptsAvailableRequestBuilder) {
     return NewDeviceHealthScriptsAreGlobalScriptsAvailableRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByDeviceHealthScriptIdString provides operations to manage the deviceHealthScripts property of the microsoft.graph.deviceManagement entity.
-func (m *DeviceHealthScriptsRequestBuilder) ByDeviceHealthScriptIdString(deviceHealthScriptId string)(*DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) {
+// ByDeviceHealthScriptId provides operations to manage the deviceHealthScripts property of the microsoft.graph.deviceManagement entity.
+func (m *DeviceHealthScriptsRequestBuilder) ByDeviceHealthScriptId(deviceHealthScriptId string)(*DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -156,4 +156,8 @@ func (m *DeviceHealthScriptsRequestBuilder) ToPostRequestInformation(ctx context
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceHealthScriptsRequestBuilder) WithUrl(rawUrl string)(*DeviceHealthScriptsRequestBuilder) {
+    return NewDeviceHealthScriptsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

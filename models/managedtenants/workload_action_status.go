@@ -44,3 +44,6 @@ func SerializeWorkloadActionStatus(values []WorkloadActionStatus) []string {
     }
     return result
 }
+func (i WorkloadActionStatus) isMultiValue() bool {
+    return false
+}

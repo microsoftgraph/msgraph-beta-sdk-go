@@ -38,7 +38,7 @@ func (m *TrustFrameworkKey) GetAdditionalData()(map[string]any) {
 func (m *TrustFrameworkKey) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetD gets the d property value. RSA Key - private exponent. Field cannot be read back.
+// GetD gets the d property value. RSA Key - private exponent. Field can't be read back.
 func (m *TrustFrameworkKey) GetD()(*string) {
     val, err := m.GetBackingStore().Get("d")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *TrustFrameworkKey) GetD()(*string) {
     }
     return nil
 }
-// GetDp gets the dp property value. RSA Key - first exponent. Field cannot be read back.
+// GetDp gets the dp property value. RSA Key - first exponent. Field can't be read back.
 func (m *TrustFrameworkKey) GetDp()(*string) {
     val, err := m.GetBackingStore().Get("dp")
     if err != nil {
@@ -60,7 +60,7 @@ func (m *TrustFrameworkKey) GetDp()(*string) {
     }
     return nil
 }
-// GetDq gets the dq property value. RSA Key - second exponent. Field cannot be read back.
+// GetDq gets the dq property value. RSA Key - second exponent. Field can't be read back.
 func (m *TrustFrameworkKey) GetDq()(*string) {
     val, err := m.GetBackingStore().Get("dq")
     if err != nil {
@@ -274,7 +274,7 @@ func (m *TrustFrameworkKey) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetK gets the k property value. Symmetric Key for oct key type. Field cannot be read back.
+// GetK gets the k property value. Symmetric Key for oct key type. Field can't be read back.
 func (m *TrustFrameworkKey) GetK()(*string) {
     val, err := m.GetBackingStore().Get("k")
     if err != nil {
@@ -340,7 +340,7 @@ func (m *TrustFrameworkKey) GetOdataType()(*string) {
     }
     return nil
 }
-// GetP gets the p property value. RSA Key - first prime. Field cannot be read back.
+// GetP gets the p property value. RSA Key - first prime. Field can't be read back.
 func (m *TrustFrameworkKey) GetP()(*string) {
     val, err := m.GetBackingStore().Get("p")
     if err != nil {
@@ -351,7 +351,7 @@ func (m *TrustFrameworkKey) GetP()(*string) {
     }
     return nil
 }
-// GetQ gets the q property value. RSA Key - second prime. Field cannot be read back.
+// GetQ gets the q property value. RSA Key - second prime. Field can't be read back.
 func (m *TrustFrameworkKey) GetQ()(*string) {
     val, err := m.GetBackingStore().Get("q")
     if err != nil {
@@ -362,7 +362,7 @@ func (m *TrustFrameworkKey) GetQ()(*string) {
     }
     return nil
 }
-// GetQi gets the qi property value. RSA Key - Coefficient. Field cannot be read back.
+// GetQi gets the qi property value. RSA Key - Coefficient. Field can't be read back.
 func (m *TrustFrameworkKey) GetQi()(*string) {
     val, err := m.GetBackingStore().Get("qi")
     if err != nil {
@@ -395,7 +395,7 @@ func (m *TrustFrameworkKey) GetX5c()([]string) {
     }
     return nil
 }
-// GetX5t gets the x5t property value. The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (a.k.a. digest) of the DER encoding of an X.509 certificate RFC 5280.
+// GetX5t gets the x5t property value. The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (also known as digest) of the DER encoding of an X.509 certificate RFC 5280.
 func (m *TrustFrameworkKey) GetX5t()(*string) {
     val, err := m.GetBackingStore().Get("x5t")
     if err != nil {
@@ -529,21 +529,21 @@ func (m *TrustFrameworkKey) SetAdditionalData(value map[string]any)() {
 func (m *TrustFrameworkKey) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetD sets the d property value. RSA Key - private exponent. Field cannot be read back.
+// SetD sets the d property value. RSA Key - private exponent. Field can't be read back.
 func (m *TrustFrameworkKey) SetD(value *string)() {
     err := m.GetBackingStore().Set("d", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDp sets the dp property value. RSA Key - first exponent. Field cannot be read back.
+// SetDp sets the dp property value. RSA Key - first exponent. Field can't be read back.
 func (m *TrustFrameworkKey) SetDp(value *string)() {
     err := m.GetBackingStore().Set("dp", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDq sets the dq property value. RSA Key - second exponent. Field cannot be read back.
+// SetDq sets the dq property value. RSA Key - second exponent. Field can't be read back.
 func (m *TrustFrameworkKey) SetDq(value *string)() {
     err := m.GetBackingStore().Set("dq", value)
     if err != nil {
@@ -564,7 +564,7 @@ func (m *TrustFrameworkKey) SetExp(value *int64)() {
         panic(err)
     }
 }
-// SetK sets the k property value. Symmetric Key for oct key type. Field cannot be read back.
+// SetK sets the k property value. Symmetric Key for oct key type. Field can't be read back.
 func (m *TrustFrameworkKey) SetK(value *string)() {
     err := m.GetBackingStore().Set("k", value)
     if err != nil {
@@ -606,21 +606,21 @@ func (m *TrustFrameworkKey) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetP sets the p property value. RSA Key - first prime. Field cannot be read back.
+// SetP sets the p property value. RSA Key - first prime. Field can't be read back.
 func (m *TrustFrameworkKey) SetP(value *string)() {
     err := m.GetBackingStore().Set("p", value)
     if err != nil {
         panic(err)
     }
 }
-// SetQ sets the q property value. RSA Key - second prime. Field cannot be read back.
+// SetQ sets the q property value. RSA Key - second prime. Field can't be read back.
 func (m *TrustFrameworkKey) SetQ(value *string)() {
     err := m.GetBackingStore().Set("q", value)
     if err != nil {
         panic(err)
     }
 }
-// SetQi sets the qi property value. RSA Key - Coefficient. Field cannot be read back.
+// SetQi sets the qi property value. RSA Key - Coefficient. Field can't be read back.
 func (m *TrustFrameworkKey) SetQi(value *string)() {
     err := m.GetBackingStore().Set("qi", value)
     if err != nil {
@@ -641,7 +641,7 @@ func (m *TrustFrameworkKey) SetX5c(value []string)() {
         panic(err)
     }
 }
-// SetX5t sets the x5t property value. The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (a.k.a. digest) of the DER encoding of an X.509 certificate RFC 5280.
+// SetX5t sets the x5t property value. The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (also known as digest) of the DER encoding of an X.509 certificate RFC 5280.
 func (m *TrustFrameworkKey) SetX5t(value *string)() {
     err := m.GetBackingStore().Set("x5t", value)
     if err != nil {

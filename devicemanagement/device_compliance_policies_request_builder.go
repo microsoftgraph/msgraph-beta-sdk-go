@@ -46,8 +46,8 @@ type DeviceCompliancePoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceCompliancePolicyIdString provides operations to manage the deviceCompliancePolicies property of the microsoft.graph.deviceManagement entity.
-func (m *DeviceCompliancePoliciesRequestBuilder) ByDeviceCompliancePolicyIdString(deviceCompliancePolicyId string)(*DeviceCompliancePoliciesDeviceCompliancePolicyItemRequestBuilder) {
+// ByDeviceCompliancePolicyId provides operations to manage the deviceCompliancePolicies property of the microsoft.graph.deviceManagement entity.
+func (m *DeviceCompliancePoliciesRequestBuilder) ByDeviceCompliancePolicyId(deviceCompliancePolicyId string)(*DeviceCompliancePoliciesDeviceCompliancePolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -168,4 +168,8 @@ func (m *DeviceCompliancePoliciesRequestBuilder) ToPostRequestInformation(ctx co
 // ValidateComplianceScript provides operations to call the validateComplianceScript method.
 func (m *DeviceCompliancePoliciesRequestBuilder) ValidateComplianceScript()(*DeviceCompliancePoliciesValidateComplianceScriptRequestBuilder) {
     return NewDeviceCompliancePoliciesValidateComplianceScriptRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceCompliancePoliciesRequestBuilder) WithUrl(rawUrl string)(*DeviceCompliancePoliciesRequestBuilder) {
+    return NewDeviceCompliancePoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

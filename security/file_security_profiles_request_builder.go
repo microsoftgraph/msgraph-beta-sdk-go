@@ -46,8 +46,8 @@ type FileSecurityProfilesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByFileSecurityProfileIdString provides operations to manage the fileSecurityProfiles property of the microsoft.graph.security entity.
-func (m *FileSecurityProfilesRequestBuilder) ByFileSecurityProfileIdString(fileSecurityProfileId string)(*FileSecurityProfilesFileSecurityProfileItemRequestBuilder) {
+// ByFileSecurityProfileId provides operations to manage the fileSecurityProfiles property of the microsoft.graph.security entity.
+func (m *FileSecurityProfilesRequestBuilder) ByFileSecurityProfileId(fileSecurityProfileId string)(*FileSecurityProfilesFileSecurityProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *FileSecurityProfilesRequestBuilder) ToPostRequestInformation(ctx contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *FileSecurityProfilesRequestBuilder) WithUrl(rawUrl string)(*FileSecurityProfilesRequestBuilder) {
+    return NewFileSecurityProfilesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -38,7 +38,7 @@ func (m *ClaimsMapping) GetAdditionalData()(map[string]any) {
 func (m *ClaimsMapping) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDisplayName gets the displayName property value. The claim that provides the display name or full name for the user. It is a required propoerty.
+// GetDisplayName gets the displayName property value. The claim that provides the display name or full name for the user. It's a required property.
 func (m *ClaimsMapping) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -158,7 +158,7 @@ func (m *ClaimsMapping) GetSurname()(*string) {
     }
     return nil
 }
-// GetUserId gets the userId property value. The claim that provides the unique identifier for the signed-in user. It is a required propoerty.
+// GetUserId gets the userId property value. The claim that provides the unique identifier for the signed-in user. It is a required property.
 func (m *ClaimsMapping) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -226,7 +226,7 @@ func (m *ClaimsMapping) SetAdditionalData(value map[string]any)() {
 func (m *ClaimsMapping) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDisplayName sets the displayName property value. The claim that provides the display name or full name for the user. It is a required propoerty.
+// SetDisplayName sets the displayName property value. The claim that provides the display name or full name for the user. It's a required property.
 func (m *ClaimsMapping) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -261,7 +261,7 @@ func (m *ClaimsMapping) SetSurname(value *string)() {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. The claim that provides the unique identifier for the signed-in user. It is a required propoerty.
+// SetUserId sets the userId property value. The claim that provides the unique identifier for the signed-in user. It is a required property.
 func (m *ClaimsMapping) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {

@@ -42,3 +42,6 @@ func SerializeMicrosoftLauncherSearchBarPlacement(values []MicrosoftLauncherSear
     }
     return result
 }
+func (i MicrosoftLauncherSearchBarPlacement) isMultiValue() bool {
+    return false
+}

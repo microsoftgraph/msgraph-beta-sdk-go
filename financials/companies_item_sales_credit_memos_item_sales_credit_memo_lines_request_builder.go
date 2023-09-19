@@ -39,8 +39,8 @@ type CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilderGetReque
     // Request query parameters
     QueryParameters *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilderGetQueryParameters
 }
-// BySalesCreditMemoLineIdString provides operations to manage the salesCreditMemoLines property of the microsoft.graph.salesCreditMemo entity.
-func (m *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder) BySalesCreditMemoLineIdString(salesCreditMemoLineId string)(*CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilder) {
+// BySalesCreditMemoLineId provides operations to manage the salesCreditMemoLines property of the microsoft.graph.salesCreditMemo entity.
+func (m *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder) BySalesCreditMemoLineId(salesCreditMemoLineId string)(*CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder) To
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder) {
+    return NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -50,3 +50,6 @@ func SerializeTeamworkDeviceOperationType(values []TeamworkDeviceOperationType) 
     }
     return result
 }
+func (i TeamworkDeviceOperationType) isMultiValue() bool {
+    return false
+}

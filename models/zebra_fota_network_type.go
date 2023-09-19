@@ -46,3 +46,6 @@ func SerializeZebraFotaNetworkType(values []ZebraFotaNetworkType) []string {
     }
     return result
 }
+func (i ZebraFotaNetworkType) isMultiValue() bool {
+    return false
+}

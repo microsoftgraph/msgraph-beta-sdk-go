@@ -32,3 +32,6 @@ func SerializeEncryptWith(values []EncryptWith) []string {
     }
     return result
 }
+func (i EncryptWith) isMultiValue() bool {
+    return false
+}

@@ -46,8 +46,8 @@ type ExactMatchUploadAgentsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByExactMatchUploadAgentIdString provides operations to manage the exactMatchUploadAgents property of the microsoft.graph.dataClassificationService entity.
-func (m *ExactMatchUploadAgentsRequestBuilder) ByExactMatchUploadAgentIdString(exactMatchUploadAgentId string)(*ExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilder) {
+// ByExactMatchUploadAgentId provides operations to manage the exactMatchUploadAgents property of the microsoft.graph.dataClassificationService entity.
+func (m *ExactMatchUploadAgentsRequestBuilder) ByExactMatchUploadAgentId(exactMatchUploadAgentId string)(*ExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ExactMatchUploadAgentsRequestBuilder) ToPostRequestInformation(ctx cont
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ExactMatchUploadAgentsRequestBuilder) WithUrl(rawUrl string)(*ExactMatchUploadAgentsRequestBuilder) {
+    return NewExactMatchUploadAgentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

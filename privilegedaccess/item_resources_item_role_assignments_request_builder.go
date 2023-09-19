@@ -46,8 +46,8 @@ type ItemResourcesItemRoleAssignmentsRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByGovernanceRoleAssignmentIdString provides operations to manage the roleAssignments property of the microsoft.graph.governanceResource entity.
-func (m *ItemResourcesItemRoleAssignmentsRequestBuilder) ByGovernanceRoleAssignmentIdString(governanceRoleAssignmentId string)(*ItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder) {
+// ByGovernanceRoleAssignmentId provides operations to manage the roleAssignments property of the microsoft.graph.governanceResource entity.
+func (m *ItemResourcesItemRoleAssignmentsRequestBuilder) ByGovernanceRoleAssignmentId(governanceRoleAssignmentId string)(*ItemResourcesItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -148,4 +148,8 @@ func (m *ItemResourcesItemRoleAssignmentsRequestBuilder) ToPostRequestInformatio
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemResourcesItemRoleAssignmentsRequestBuilder) WithUrl(rawUrl string)(*ItemResourcesItemRoleAssignmentsRequestBuilder) {
+    return NewItemResourcesItemRoleAssignmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

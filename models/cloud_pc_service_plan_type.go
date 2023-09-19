@@ -35,3 +35,6 @@ func SerializeCloudPcServicePlanType(values []CloudPcServicePlanType) []string {
     }
     return result
 }
+func (i CloudPcServicePlanType) isMultiValue() bool {
+    return false
+}

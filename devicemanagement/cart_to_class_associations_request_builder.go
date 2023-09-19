@@ -46,8 +46,8 @@ type CartToClassAssociationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCartToClassAssociationIdString provides operations to manage the cartToClassAssociations property of the microsoft.graph.deviceManagement entity.
-func (m *CartToClassAssociationsRequestBuilder) ByCartToClassAssociationIdString(cartToClassAssociationId string)(*CartToClassAssociationsCartToClassAssociationItemRequestBuilder) {
+// ByCartToClassAssociationId provides operations to manage the cartToClassAssociations property of the microsoft.graph.deviceManagement entity.
+func (m *CartToClassAssociationsRequestBuilder) ByCartToClassAssociationId(cartToClassAssociationId string)(*CartToClassAssociationsCartToClassAssociationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *CartToClassAssociationsRequestBuilder) ToPostRequestInformation(ctx con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CartToClassAssociationsRequestBuilder) WithUrl(rawUrl string)(*CartToClassAssociationsRequestBuilder) {
+    return NewCartToClassAssociationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

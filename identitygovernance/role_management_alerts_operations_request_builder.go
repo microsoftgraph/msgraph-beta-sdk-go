@@ -46,8 +46,8 @@ type RoleManagementAlertsOperationsRequestBuilderPostRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByLongRunningOperationIdString provides operations to manage the operations property of the microsoft.graph.roleManagementAlert entity.
-func (m *RoleManagementAlertsOperationsRequestBuilder) ByLongRunningOperationIdString(longRunningOperationId string)(*RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilder) {
+// ByLongRunningOperationId provides operations to manage the operations property of the microsoft.graph.roleManagementAlert entity.
+func (m *RoleManagementAlertsOperationsRequestBuilder) ByLongRunningOperationId(longRunningOperationId string)(*RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *RoleManagementAlertsOperationsRequestBuilder) ToPostRequestInformation(
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *RoleManagementAlertsOperationsRequestBuilder) WithUrl(rawUrl string)(*RoleManagementAlertsOperationsRequestBuilder) {
+    return NewRoleManagementAlertsOperationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

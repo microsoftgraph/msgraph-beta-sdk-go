@@ -54,3 +54,6 @@ func SerializeMobileThreatPartnerTenantState(values []MobileThreatPartnerTenantS
     }
     return result
 }
+func (i MobileThreatPartnerTenantState) isMultiValue() bool {
+    return false
+}

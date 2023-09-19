@@ -38,3 +38,6 @@ func SerializeServiceNowConnectionStatus(values []ServiceNowConnectionStatus) []
     }
     return result
 }
+func (i ServiceNowConnectionStatus) isMultiValue() bool {
+    return false
+}

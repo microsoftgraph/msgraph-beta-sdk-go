@@ -38,3 +38,6 @@ func SerializeCloudPcGalleryImageStatus(values []CloudPcGalleryImageStatus) []st
     }
     return result
 }
+func (i CloudPcGalleryImageStatus) isMultiValue() bool {
+    return false
+}

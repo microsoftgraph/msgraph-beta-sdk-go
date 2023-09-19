@@ -74,3 +74,7 @@ func (m *CartToClassAssociationsCountRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CartToClassAssociationsCountRequestBuilder) WithUrl(rawUrl string)(*CartToClassAssociationsCountRequestBuilder) {
+    return NewCartToClassAssociationsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

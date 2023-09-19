@@ -46,8 +46,8 @@ type DomainJoinConnectorsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementDomainJoinConnectorIdString provides operations to manage the domainJoinConnectors property of the microsoft.graph.deviceManagement entity.
-func (m *DomainJoinConnectorsRequestBuilder) ByDeviceManagementDomainJoinConnectorIdString(deviceManagementDomainJoinConnectorId string)(*DomainJoinConnectorsDeviceManagementDomainJoinConnectorItemRequestBuilder) {
+// ByDeviceManagementDomainJoinConnectorId provides operations to manage the domainJoinConnectors property of the microsoft.graph.deviceManagement entity.
+func (m *DomainJoinConnectorsRequestBuilder) ByDeviceManagementDomainJoinConnectorId(deviceManagementDomainJoinConnectorId string)(*DomainJoinConnectorsDeviceManagementDomainJoinConnectorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *DomainJoinConnectorsRequestBuilder) ToPostRequestInformation(ctx contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DomainJoinConnectorsRequestBuilder) WithUrl(rawUrl string)(*DomainJoinConnectorsRequestBuilder) {
+    return NewDomainJoinConnectorsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

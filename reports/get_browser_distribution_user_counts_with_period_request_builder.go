@@ -64,3 +64,7 @@ func (m *GetBrowserDistributionUserCountsWithPeriodRequestBuilder) ToGetRequestI
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GetBrowserDistributionUserCountsWithPeriodRequestBuilder) WithUrl(rawUrl string)(*GetBrowserDistributionUserCountsWithPeriodRequestBuilder) {
+    return NewGetBrowserDistributionUserCountsWithPeriodRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

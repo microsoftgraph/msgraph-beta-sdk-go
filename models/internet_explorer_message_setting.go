@@ -42,3 +42,6 @@ func SerializeInternetExplorerMessageSetting(values []InternetExplorerMessageSet
     }
     return result
 }
+func (i InternetExplorerMessageSetting) isMultiValue() bool {
+    return false
+}

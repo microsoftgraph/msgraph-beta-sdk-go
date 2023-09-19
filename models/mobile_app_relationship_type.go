@@ -34,3 +34,6 @@ func SerializeMobileAppRelationshipType(values []MobileAppRelationshipType) []st
     }
     return result
 }
+func (i MobileAppRelationshipType) isMultiValue() bool {
+    return false
+}

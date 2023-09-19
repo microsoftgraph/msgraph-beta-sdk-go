@@ -38,3 +38,6 @@ func SerializeNetworkSingleSignOnType(values []NetworkSingleSignOnType) []string
     }
     return result
 }
+func (i NetworkSingleSignOnType) isMultiValue() bool {
+    return false
+}

@@ -95,3 +95,6 @@ func SerializeCertificateIssuanceStates(values []CertificateIssuanceStates) []st
     }
     return result
 }
+func (i CertificateIssuanceStates) isMultiValue() bool {
+    return false
+}

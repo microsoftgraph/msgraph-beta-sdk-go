@@ -21,7 +21,7 @@ func NewQna()(*Qna) {
 func CreateQnaFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewQna(), nil
 }
-// GetAvailabilityEndDateTime gets the availabilityEndDateTime property value. Timestamp of when the qna will stop to appear as a search result. Set as null for always available.
+// GetAvailabilityEndDateTime gets the availabilityEndDateTime property value. Timestamp of when the qna stops to appear as a search result. Set as null for always available.
 func (m *Qna) GetAvailabilityEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("availabilityEndDateTime")
     if err != nil {
@@ -32,7 +32,7 @@ func (m *Qna) GetAvailabilityEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     }
     return nil
 }
-// GetAvailabilityStartDateTime gets the availabilityStartDateTime property value. Timestamp of when the qna will start to appear as a search result. Set as null for always available.
+// GetAvailabilityStartDateTime gets the availabilityStartDateTime property value. Timestamp of when the qna starts to appear as a search result. Set as null for always available.
 func (m *Qna) GetAvailabilityStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("availabilityStartDateTime")
     if err != nil {
@@ -173,7 +173,7 @@ func (m *Qna) GetGroupIds()([]string) {
     }
     return nil
 }
-// GetIsSuggested gets the isSuggested property value. True if this qna was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.
+// GetIsSuggested gets the isSuggested property value. True if a user or Microsoft suggested this qna to the admin. Read-only.
 func (m *Qna) GetIsSuggested()(*bool) {
     val, err := m.GetBackingStore().Get("isSuggested")
     if err != nil {
@@ -228,7 +228,7 @@ func (m *Qna) GetState()(*AnswerState) {
     }
     return nil
 }
-// GetTargetedVariations gets the targetedVariations property value. Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.
+// GetTargetedVariations gets the targetedVariations property value. Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.
 func (m *Qna) GetTargetedVariations()([]AnswerVariantable) {
     val, err := m.GetBackingStore().Get("targetedVariations")
     if err != nil {
@@ -308,14 +308,14 @@ func (m *Qna) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493
     }
     return nil
 }
-// SetAvailabilityEndDateTime sets the availabilityEndDateTime property value. Timestamp of when the qna will stop to appear as a search result. Set as null for always available.
+// SetAvailabilityEndDateTime sets the availabilityEndDateTime property value. Timestamp of when the qna stops to appear as a search result. Set as null for always available.
 func (m *Qna) SetAvailabilityEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("availabilityEndDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAvailabilityStartDateTime sets the availabilityStartDateTime property value. Timestamp of when the qna will start to appear as a search result. Set as null for always available.
+// SetAvailabilityStartDateTime sets the availabilityStartDateTime property value. Timestamp of when the qna starts to appear as a search result. Set as null for always available.
 func (m *Qna) SetAvailabilityStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("availabilityStartDateTime", value)
     if err != nil {
@@ -329,7 +329,7 @@ func (m *Qna) SetGroupIds(value []string)() {
         panic(err)
     }
 }
-// SetIsSuggested sets the isSuggested property value. True if this qna was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.
+// SetIsSuggested sets the isSuggested property value. True if a user or Microsoft suggested this qna to the admin. Read-only.
 func (m *Qna) SetIsSuggested(value *bool)() {
     err := m.GetBackingStore().Set("isSuggested", value)
     if err != nil {
@@ -364,7 +364,7 @@ func (m *Qna) SetState(value *AnswerState)() {
         panic(err)
     }
 }
-// SetTargetedVariations sets the targetedVariations property value. Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.
+// SetTargetedVariations sets the targetedVariations property value. Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.
 func (m *Qna) SetTargetedVariations(value []AnswerVariantable)() {
     err := m.GetBackingStore().Set("targetedVariations", value)
     if err != nil {

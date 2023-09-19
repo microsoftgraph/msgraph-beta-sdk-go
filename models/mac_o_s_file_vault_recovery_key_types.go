@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // Recovery key types for macOS FileVault
 type MacOSFileVaultRecoveryKeyTypes int
@@ -15,19 +16,28 @@ const (
 )
 
 func (i MacOSFileVaultRecoveryKeyTypes) String() string {
-    return []string{"notConfigured", "institutionalRecoveryKey", "personalRecoveryKey"}[i]
+    var values []string
+    for p := MacOSFileVaultRecoveryKeyTypes(1); p <= PERSONALRECOVERYKEY_MACOSFILEVAULTRECOVERYKEYTYPES; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"notConfigured", "institutionalRecoveryKey", "personalRecoveryKey"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseMacOSFileVaultRecoveryKeyTypes(v string) (any, error) {
-    result := NOTCONFIGURED_MACOSFILEVAULTRECOVERYKEYTYPES
-    switch v {
-        case "notConfigured":
-            result = NOTCONFIGURED_MACOSFILEVAULTRECOVERYKEYTYPES
-        case "institutionalRecoveryKey":
-            result = INSTITUTIONALRECOVERYKEY_MACOSFILEVAULTRECOVERYKEYTYPES
-        case "personalRecoveryKey":
-            result = PERSONALRECOVERYKEY_MACOSFILEVAULTRECOVERYKEYTYPES
-        default:
-            return 0, errors.New("Unknown MacOSFileVaultRecoveryKeyTypes value: " + v)
+    var result MacOSFileVaultRecoveryKeyTypes
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "notConfigured":
+                result |= NOTCONFIGURED_MACOSFILEVAULTRECOVERYKEYTYPES
+            case "institutionalRecoveryKey":
+                result |= INSTITUTIONALRECOVERYKEY_MACOSFILEVAULTRECOVERYKEYTYPES
+            case "personalRecoveryKey":
+                result |= PERSONALRECOVERYKEY_MACOSFILEVAULTRECOVERYKEYTYPES
+            default:
+                return 0, errors.New("Unknown MacOSFileVaultRecoveryKeyTypes value: " + v)
+        }
     }
     return &result, nil
 }
@@ -37,4 +47,7 @@ func SerializeMacOSFileVaultRecoveryKeyTypes(values []MacOSFileVaultRecoveryKeyT
         result[i] = v.String()
     }
     return result
+}
+func (i MacOSFileVaultRecoveryKeyTypes) isMultiValue() bool {
+    return true
 }

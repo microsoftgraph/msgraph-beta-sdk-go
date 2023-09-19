@@ -74,3 +74,7 @@ func (m *ManagedTenantsManagementTemplateStepsItemVersionsCountRequestBuilder) T
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedTenantsManagementTemplateStepsItemVersionsCountRequestBuilder) WithUrl(rawUrl string)(*ManagedTenantsManagementTemplateStepsItemVersionsCountRequestBuilder) {
+    return NewManagedTenantsManagementTemplateStepsItemVersionsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

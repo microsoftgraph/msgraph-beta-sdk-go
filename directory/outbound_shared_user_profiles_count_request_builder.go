@@ -74,3 +74,7 @@ func (m *OutboundSharedUserProfilesCountRequestBuilder) ToGetRequestInformation(
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *OutboundSharedUserProfilesCountRequestBuilder) WithUrl(rawUrl string)(*OutboundSharedUserProfilesCountRequestBuilder) {
+    return NewOutboundSharedUserProfilesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

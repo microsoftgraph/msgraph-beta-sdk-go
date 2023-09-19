@@ -44,3 +44,6 @@ func SerializeIkeEncryption(values []IkeEncryption) []string {
     }
     return result
 }
+func (i IkeEncryption) isMultiValue() bool {
+    return false
+}

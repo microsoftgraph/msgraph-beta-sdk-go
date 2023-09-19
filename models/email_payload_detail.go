@@ -88,7 +88,7 @@ func (m *EmailPayloadDetail) GetFromName()(*string) {
     }
     return nil
 }
-// GetIsExternalSender gets the isExternalSender property value. Indicates whether the sender is not from the user's organization.
+// GetIsExternalSender gets the isExternalSender property value. Indicates whether the sender isn't from the user's organization.
 func (m *EmailPayloadDetail) GetIsExternalSender()(*bool) {
     val, err := m.GetBackingStore().Get("isExternalSender")
     if err != nil {
@@ -156,7 +156,7 @@ func (m *EmailPayloadDetail) SetFromName(value *string)() {
         panic(err)
     }
 }
-// SetIsExternalSender sets the isExternalSender property value. Indicates whether the sender is not from the user's organization.
+// SetIsExternalSender sets the isExternalSender property value. Indicates whether the sender isn't from the user's organization.
 func (m *EmailPayloadDetail) SetIsExternalSender(value *bool)() {
     err := m.GetBackingStore().Set("isExternalSender", value)
     if err != nil {

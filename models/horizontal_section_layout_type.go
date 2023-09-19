@@ -50,3 +50,6 @@ func SerializeHorizontalSectionLayoutType(values []HorizontalSectionLayoutType) 
     }
     return result
 }
+func (i HorizontalSectionLayoutType) isMultiValue() bool {
+    return false
+}

@@ -42,3 +42,6 @@ func SerializeMicrosoftLauncherDockPresence(values []MicrosoftLauncherDockPresen
     }
     return result
 }
+func (i MicrosoftLauncherDockPresence) isMultiValue() bool {
+    return false
+}

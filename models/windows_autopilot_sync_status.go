@@ -42,3 +42,6 @@ func SerializeWindowsAutopilotSyncStatus(values []WindowsAutopilotSyncStatus) []
     }
     return result
 }
+func (i WindowsAutopilotSyncStatus) isMultiValue() bool {
+    return false
+}

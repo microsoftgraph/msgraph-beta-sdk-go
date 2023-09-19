@@ -59,3 +59,6 @@ func SerializeTeamworkDeviceType(values []TeamworkDeviceType) []string {
     }
     return result
 }
+func (i TeamworkDeviceType) isMultiValue() bool {
+    return false
+}

@@ -38,3 +38,6 @@ func SerializeCompanyPortalAction(values []CompanyPortalAction) []string {
     }
     return result
 }
+func (i CompanyPortalAction) isMultiValue() bool {
+    return false
+}

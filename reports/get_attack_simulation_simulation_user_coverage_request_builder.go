@@ -82,3 +82,8 @@ func (m *GetAttackSimulationSimulationUserCoverageRequestBuilder) ToGetRequestIn
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans on 2022-05-24 and will be removed 2022-08-20
+func (m *GetAttackSimulationSimulationUserCoverageRequestBuilder) WithUrl(rawUrl string)(*GetAttackSimulationSimulationUserCoverageRequestBuilder) {
+    return NewGetAttackSimulationSimulationUserCoverageRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

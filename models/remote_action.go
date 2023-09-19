@@ -166,3 +166,6 @@ func SerializeRemoteAction(values []RemoteAction) []string {
     }
     return result
 }
+func (i RemoteAction) isMultiValue() bool {
+    return false
+}

@@ -35,3 +35,6 @@ func SerializeActionCapability(values []ActionCapability) []string {
     }
     return result
 }
+func (i ActionCapability) isMultiValue() bool {
+    return false
+}

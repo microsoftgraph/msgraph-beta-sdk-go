@@ -42,3 +42,6 @@ func SerializeApplicationGuardEnabledOptions(values []ApplicationGuardEnabledOpt
     }
     return result
 }
+func (i ApplicationGuardEnabledOptions) isMultiValue() bool {
+    return false
+}

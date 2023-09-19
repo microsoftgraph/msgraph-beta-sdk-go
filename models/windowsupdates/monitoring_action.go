@@ -38,3 +38,6 @@ func SerializeMonitoringAction(values []MonitoringAction) []string {
     }
     return result
 }
+func (i MonitoringAction) isMultiValue() bool {
+    return false
+}

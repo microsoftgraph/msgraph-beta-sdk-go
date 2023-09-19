@@ -39,8 +39,8 @@ type ItemTransitiveReportsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemTransitiveReportsRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectIdString provides operations to manage the transitiveReports property of the microsoft.graph.orgContact entity.
-func (m *ItemTransitiveReportsRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ItemTransitiveReportsDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectId provides operations to manage the transitiveReports property of the microsoft.graph.orgContact entity.
+func (m *ItemTransitiveReportsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemTransitiveReportsDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *ItemTransitiveReportsRequestBuilder) ToGetRequestInformation(ctx contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTransitiveReportsRequestBuilder) WithUrl(rawUrl string)(*ItemTransitiveReportsRequestBuilder) {
+    return NewItemTransitiveReportsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

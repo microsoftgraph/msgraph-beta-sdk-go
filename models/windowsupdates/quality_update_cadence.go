@@ -35,3 +35,6 @@ func SerializeQualityUpdateCadence(values []QualityUpdateCadence) []string {
     }
     return result
 }
+func (i QualityUpdateCadence) isMultiValue() bool {
+    return false
+}

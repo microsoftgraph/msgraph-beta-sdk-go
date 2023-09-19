@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // Describes which technology this setting can be deployed with
 type DeviceManagementConfigurationTechnologies int
@@ -31,35 +32,44 @@ const (
 )
 
 func (i DeviceManagementConfigurationTechnologies) String() string {
-    return []string{"none", "mdm", "windows10XManagement", "configManager", "appleRemoteManagement", "microsoftSense", "exchangeOnline", "linuxMdm", "enrollment", "endpointPrivilegeManagement", "unknownFutureValue"}[i]
+    var values []string
+    for p := DeviceManagementConfigurationTechnologies(1); p <= UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"none", "mdm", "windows10XManagement", "configManager", "appleRemoteManagement", "microsoftSense", "exchangeOnline", "linuxMdm", "enrollment", "endpointPrivilegeManagement", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseDeviceManagementConfigurationTechnologies(v string) (any, error) {
-    result := NONE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
-    switch v {
-        case "none":
-            result = NONE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
-        case "mdm":
-            result = MDM_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
-        case "windows10XManagement":
-            result = WINDOWS10XMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
-        case "configManager":
-            result = CONFIGMANAGER_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
-        case "appleRemoteManagement":
-            result = APPLEREMOTEMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
-        case "microsoftSense":
-            result = MICROSOFTSENSE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
-        case "exchangeOnline":
-            result = EXCHANGEONLINE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
-        case "linuxMdm":
-            result = LINUXMDM_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
-        case "enrollment":
-            result = ENROLLMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
-        case "endpointPrivilegeManagement":
-            result = ENDPOINTPRIVILEGEMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
-        default:
-            return 0, errors.New("Unknown DeviceManagementConfigurationTechnologies value: " + v)
+    var result DeviceManagementConfigurationTechnologies
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "none":
+                result |= NONE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+            case "mdm":
+                result |= MDM_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+            case "windows10XManagement":
+                result |= WINDOWS10XMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+            case "configManager":
+                result |= CONFIGMANAGER_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+            case "appleRemoteManagement":
+                result |= APPLEREMOTEMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+            case "microsoftSense":
+                result |= MICROSOFTSENSE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+            case "exchangeOnline":
+                result |= EXCHANGEONLINE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+            case "linuxMdm":
+                result |= LINUXMDM_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+            case "enrollment":
+                result |= ENROLLMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+            case "endpointPrivilegeManagement":
+                result |= ENDPOINTPRIVILEGEMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+            default:
+                return 0, errors.New("Unknown DeviceManagementConfigurationTechnologies value: " + v)
+        }
     }
     return &result, nil
 }
@@ -69,4 +79,7 @@ func SerializeDeviceManagementConfigurationTechnologies(values []DeviceManagemen
         result[i] = v.String()
     }
     return result
+}
+func (i DeviceManagementConfigurationTechnologies) isMultiValue() bool {
+    return true
 }

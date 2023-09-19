@@ -38,3 +38,6 @@ func SerializeNotificationDeliveryFrequency(values []NotificationDeliveryFrequen
     }
     return result
 }
+func (i NotificationDeliveryFrequency) isMultiValue() bool {
+    return false
+}

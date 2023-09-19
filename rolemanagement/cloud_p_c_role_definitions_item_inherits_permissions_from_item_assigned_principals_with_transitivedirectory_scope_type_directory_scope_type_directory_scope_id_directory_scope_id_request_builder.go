@@ -15,9 +15,9 @@ type CloudPCRoleDefinitionsItemInheritsPermissionsFromItemAssignedPrincipalsWith
     // Include count of items
     Count *bool `uriparametername:"%24count"`
     // Usage: directoryScopeId='@directoryScopeId'
-    DirectoryScopeId *string
+    DirectoryScopeId *string `uriparametername:"directoryScopeId"`
     // Usage: directoryScopeType='@directoryScopeType'
-    DirectoryScopeType *string
+    DirectoryScopeType *string `uriparametername:"directoryScopeType"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
@@ -31,7 +31,7 @@ type CloudPCRoleDefinitionsItemInheritsPermissionsFromItemAssignedPrincipalsWith
     // Show only the first n items
     Top *int32 `uriparametername:"%24top"`
     // Usage: transitive=@transitive
-    Transitive *bool
+    Transitive *bool `uriparametername:"transitive"`
 }
 // CloudPCRoleDefinitionsItemInheritsPermissionsFromItemAssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CloudPCRoleDefinitionsItemInheritsPermissionsFromItemAssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdRequestBuilderGetRequestConfiguration struct {
@@ -89,4 +89,8 @@ func (m *CloudPCRoleDefinitionsItemInheritsPermissionsFromItemAssignedPrincipals
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CloudPCRoleDefinitionsItemInheritsPermissionsFromItemAssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdRequestBuilder) WithUrl(rawUrl string)(*CloudPCRoleDefinitionsItemInheritsPermissionsFromItemAssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdRequestBuilder) {
+    return NewCloudPCRoleDefinitionsItemInheritsPermissionsFromItemAssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

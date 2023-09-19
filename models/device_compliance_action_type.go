@@ -58,3 +58,6 @@ func SerializeDeviceComplianceActionType(values []DeviceComplianceActionType) []
     }
     return result
 }
+func (i DeviceComplianceActionType) isMultiValue() bool {
+    return false
+}

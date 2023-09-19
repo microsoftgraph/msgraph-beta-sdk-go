@@ -77,7 +77,7 @@ func (m *CaseSettings) GetRedundancyDetection()(RedundancyDetectionSettingsable)
     }
     return nil
 }
-// GetTopicModeling gets the topicModeling property value. The Topic Modeling (Themes) settings for the case.
+// GetTopicModeling gets the topicModeling property value. The article Modeling (Themes) settings for the case.
 func (m *CaseSettings) GetTopicModeling()(TopicModelingSettingsable) {
     val, err := m.GetBackingStore().Get("topicModeling")
     if err != nil {
@@ -128,7 +128,7 @@ func (m *CaseSettings) SetRedundancyDetection(value RedundancyDetectionSettingsa
         panic(err)
     }
 }
-// SetTopicModeling sets the topicModeling property value. The Topic Modeling (Themes) settings for the case.
+// SetTopicModeling sets the topicModeling property value. The article Modeling (Themes) settings for the case.
 func (m *CaseSettings) SetTopicModeling(value TopicModelingSettingsable)() {
     err := m.GetBackingStore().Set("topicModeling", value)
     if err != nil {

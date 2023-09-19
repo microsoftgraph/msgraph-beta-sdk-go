@@ -35,3 +35,6 @@ func SerializeForwardingRuleAction(values []ForwardingRuleAction) []string {
     }
     return result
 }
+func (i ForwardingRuleAction) isMultiValue() bool {
+    return false
+}

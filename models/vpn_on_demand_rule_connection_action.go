@@ -42,3 +42,6 @@ func SerializeVpnOnDemandRuleConnectionAction(values []VpnOnDemandRuleConnection
     }
     return result
 }
+func (i VpnOnDemandRuleConnectionAction) isMultiValue() bool {
+    return false
+}

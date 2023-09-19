@@ -41,3 +41,6 @@ func SerializeSubmissionCategory(values []SubmissionCategory) []string {
     }
     return result
 }
+func (i SubmissionCategory) isMultiValue() bool {
+    return false
+}

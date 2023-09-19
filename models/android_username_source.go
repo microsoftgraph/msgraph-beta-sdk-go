@@ -42,3 +42,6 @@ func SerializeAndroidUsernameSource(values []AndroidUsernameSource) []string {
     }
     return result
 }
+func (i AndroidUsernameSource) isMultiValue() bool {
+    return false
+}

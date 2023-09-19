@@ -46,3 +46,6 @@ func SerializePowerActionType(values []PowerActionType) []string {
     }
     return result
 }
+func (i PowerActionType) isMultiValue() bool {
+    return false
+}

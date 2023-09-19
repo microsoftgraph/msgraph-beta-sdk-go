@@ -41,3 +41,6 @@ func SerializeEmailType(values []EmailType) []string {
     }
     return result
 }
+func (i EmailType) isMultiValue() bool {
+    return false
+}

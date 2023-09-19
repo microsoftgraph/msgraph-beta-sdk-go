@@ -32,3 +32,6 @@ func SerializeSensitiveTypeSource(values []SensitiveTypeSource) []string {
     }
     return result
 }
+func (i SensitiveTypeSource) isMultiValue() bool {
+    return false
+}

@@ -357,6 +357,16 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["firmwareProtection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseFirmwareProtectionType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFirmwareProtection(val.(*FirmwareProtectionType))
+        }
+        return nil
+    }
     res["healthAttestationSupportedStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -394,6 +404,26 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         }
         if val != nil {
             m.SetLastUpdateDateTime(val)
+        }
+        return nil
+    }
+    res["memoryAccessProtection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAzureAttestationSettingStatus)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMemoryAccessProtection(val.(*AzureAttestationSettingStatus))
+        }
+        return nil
+    }
+    res["memoryIntegrityProtection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAzureAttestationSettingStatus)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMemoryIntegrityProtection(val.(*AzureAttestationSettingStatus))
         }
         return nil
     }
@@ -497,6 +527,26 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["securedCorePC"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAzureAttestationSettingStatus)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSecuredCorePC(val.(*AzureAttestationSettingStatus))
+        }
+        return nil
+    }
+    res["systemManagementMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseSystemManagementModeLevel)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSystemManagementMode(val.(*SystemManagementModeLevel))
+        }
+        return nil
+    }
     res["testSigning"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -514,6 +564,16 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         }
         if val != nil {
             m.SetTpmVersion(val)
+        }
+        return nil
+    }
+    res["virtualizationBasedSecurity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAzureAttestationSettingStatus)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVirtualizationBasedSecurity(val.(*AzureAttestationSettingStatus))
         }
         return nil
     }
@@ -538,6 +598,17 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetFirmwareProtection gets the firmwareProtection property value. A list of possible Firmware protection type for a device. Firmware protection is a set of features that helps to ensure attackers can't get your device to start with untrusted or malicious firmware. Firmware protection type is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "systemGuardSecureLaunch" or "firmwareAttackSurfaceReduction" or "disabled". Windows 10 devices will have value "notApplicable".
+func (m *DeviceHealthAttestationState) GetFirmwareProtection()(*FirmwareProtectionType) {
+    val, err := m.GetBackingStore().Get("firmwareProtection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*FirmwareProtectionType)
+    }
+    return nil
 }
 // GetHealthAttestationSupportedStatus gets the healthAttestationSupportedStatus property value. This attribute indicates if DHA is supported for the device
 func (m *DeviceHealthAttestationState) GetHealthAttestationSupportedStatus()(*string) {
@@ -580,6 +651,28 @@ func (m *DeviceHealthAttestationState) GetLastUpdateDateTime()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetMemoryAccessProtection gets the memoryAccessProtection property value. A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "enabled" or "disabled". Windows 10 devices will have value "notApplicable".
+func (m *DeviceHealthAttestationState) GetMemoryAccessProtection()(*AzureAttestationSettingStatus) {
+    val, err := m.GetBackingStore().Get("memoryAccessProtection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AzureAttestationSettingStatus)
+    }
+    return nil
+}
+// GetMemoryIntegrityProtection gets the memoryIntegrityProtection property value. A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "enabled" or "disabled". Windows 10 devices will have value "notApplicable".
+func (m *DeviceHealthAttestationState) GetMemoryIntegrityProtection()(*AzureAttestationSettingStatus) {
+    val, err := m.GetBackingStore().Get("memoryIntegrityProtection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AzureAttestationSettingStatus)
     }
     return nil
 }
@@ -693,6 +786,28 @@ func (m *DeviceHealthAttestationState) GetSecureBootConfigurationPolicyFingerPri
     }
     return nil
 }
+// GetSecuredCorePC gets the securedCorePC property value. A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "enabled" or "disabled". Windows 10 devices will have value "notApplicable".
+func (m *DeviceHealthAttestationState) GetSecuredCorePC()(*AzureAttestationSettingStatus) {
+    val, err := m.GetBackingStore().Get("securedCorePC")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AzureAttestationSettingStatus)
+    }
+    return nil
+}
+// GetSystemManagementMode gets the systemManagementMode property value. A list of possible System Management Mode levels for a device. System Management Mode levels is determined by report sent from Microsoft Azure Attestation service. Only specific hardwares support System Management Mode. Windows 11 devices will have values "notApplicable", "level1", "level2" or "level3". Windows 10 devices will have value "notApplicable".
+func (m *DeviceHealthAttestationState) GetSystemManagementMode()(*SystemManagementModeLevel) {
+    val, err := m.GetBackingStore().Get("systemManagementMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SystemManagementModeLevel)
+    }
+    return nil
+}
 // GetTestSigning gets the testSigning property value. When test signing is allowed, the device does not enforce signature validation during boot
 func (m *DeviceHealthAttestationState) GetTestSigning()(*string) {
     val, err := m.GetBackingStore().Get("testSigning")
@@ -712,6 +827,17 @@ func (m *DeviceHealthAttestationState) GetTpmVersion()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetVirtualizationBasedSecurity gets the virtualizationBasedSecurity property value. A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "enabled" or "disabled". Windows 10 devices will have value "notApplicable".
+func (m *DeviceHealthAttestationState) GetVirtualizationBasedSecurity()(*AzureAttestationSettingStatus) {
+    val, err := m.GetBackingStore().Get("virtualizationBasedSecurity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AzureAttestationSettingStatus)
     }
     return nil
 }
@@ -829,6 +955,13 @@ func (m *DeviceHealthAttestationState) Serialize(writer i878a80d2330e89d26896388
             return err
         }
     }
+    if m.GetFirmwareProtection() != nil {
+        cast := (*m.GetFirmwareProtection()).String()
+        err := writer.WriteStringValue("firmwareProtection", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("healthAttestationSupportedStatus", m.GetHealthAttestationSupportedStatus())
         if err != nil {
@@ -849,6 +982,20 @@ func (m *DeviceHealthAttestationState) Serialize(writer i878a80d2330e89d26896388
     }
     {
         err := writer.WriteStringValue("lastUpdateDateTime", m.GetLastUpdateDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetMemoryAccessProtection() != nil {
+        cast := (*m.GetMemoryAccessProtection()).String()
+        err := writer.WriteStringValue("memoryAccessProtection", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetMemoryIntegrityProtection() != nil {
+        cast := (*m.GetMemoryIntegrityProtection()).String()
+        err := writer.WriteStringValue("memoryIntegrityProtection", &cast)
         if err != nil {
             return err
         }
@@ -913,6 +1060,20 @@ func (m *DeviceHealthAttestationState) Serialize(writer i878a80d2330e89d26896388
             return err
         }
     }
+    if m.GetSecuredCorePC() != nil {
+        cast := (*m.GetSecuredCorePC()).String()
+        err := writer.WriteStringValue("securedCorePC", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetSystemManagementMode() != nil {
+        cast := (*m.GetSystemManagementMode()).String()
+        err := writer.WriteStringValue("systemManagementMode", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("testSigning", m.GetTestSigning())
         if err != nil {
@@ -921,6 +1082,13 @@ func (m *DeviceHealthAttestationState) Serialize(writer i878a80d2330e89d26896388
     }
     {
         err := writer.WriteStringValue("tpmVersion", m.GetTpmVersion())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetVirtualizationBasedSecurity() != nil {
+        cast := (*m.GetVirtualizationBasedSecurity()).String()
+        err := writer.WriteStringValue("virtualizationBasedSecurity", &cast)
         if err != nil {
             return err
         }
@@ -1061,6 +1229,13 @@ func (m *DeviceHealthAttestationState) SetEarlyLaunchAntiMalwareDriverProtection
         panic(err)
     }
 }
+// SetFirmwareProtection sets the firmwareProtection property value. A list of possible Firmware protection type for a device. Firmware protection is a set of features that helps to ensure attackers can't get your device to start with untrusted or malicious firmware. Firmware protection type is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "systemGuardSecureLaunch" or "firmwareAttackSurfaceReduction" or "disabled". Windows 10 devices will have value "notApplicable".
+func (m *DeviceHealthAttestationState) SetFirmwareProtection(value *FirmwareProtectionType)() {
+    err := m.GetBackingStore().Set("firmwareProtection", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetHealthAttestationSupportedStatus sets the healthAttestationSupportedStatus property value. This attribute indicates if DHA is supported for the device
 func (m *DeviceHealthAttestationState) SetHealthAttestationSupportedStatus(value *string)() {
     err := m.GetBackingStore().Set("healthAttestationSupportedStatus", value)
@@ -1085,6 +1260,20 @@ func (m *DeviceHealthAttestationState) SetIssuedDateTime(value *i336074805fc8539
 // SetLastUpdateDateTime sets the lastUpdateDateTime property value. The Timestamp of the last update.
 func (m *DeviceHealthAttestationState) SetLastUpdateDateTime(value *string)() {
     err := m.GetBackingStore().Set("lastUpdateDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMemoryAccessProtection sets the memoryAccessProtection property value. A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "enabled" or "disabled". Windows 10 devices will have value "notApplicable".
+func (m *DeviceHealthAttestationState) SetMemoryAccessProtection(value *AzureAttestationSettingStatus)() {
+    err := m.GetBackingStore().Set("memoryAccessProtection", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMemoryIntegrityProtection sets the memoryIntegrityProtection property value. A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "enabled" or "disabled". Windows 10 devices will have value "notApplicable".
+func (m *DeviceHealthAttestationState) SetMemoryIntegrityProtection(value *AzureAttestationSettingStatus)() {
+    err := m.GetBackingStore().Set("memoryIntegrityProtection", value)
     if err != nil {
         panic(err)
     }
@@ -1159,6 +1348,20 @@ func (m *DeviceHealthAttestationState) SetSecureBootConfigurationPolicyFingerPri
         panic(err)
     }
 }
+// SetSecuredCorePC sets the securedCorePC property value. A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "enabled" or "disabled". Windows 10 devices will have value "notApplicable".
+func (m *DeviceHealthAttestationState) SetSecuredCorePC(value *AzureAttestationSettingStatus)() {
+    err := m.GetBackingStore().Set("securedCorePC", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSystemManagementMode sets the systemManagementMode property value. A list of possible System Management Mode levels for a device. System Management Mode levels is determined by report sent from Microsoft Azure Attestation service. Only specific hardwares support System Management Mode. Windows 11 devices will have values "notApplicable", "level1", "level2" or "level3". Windows 10 devices will have value "notApplicable".
+func (m *DeviceHealthAttestationState) SetSystemManagementMode(value *SystemManagementModeLevel)() {
+    err := m.GetBackingStore().Set("systemManagementMode", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTestSigning sets the testSigning property value. When test signing is allowed, the device does not enforce signature validation during boot
 func (m *DeviceHealthAttestationState) SetTestSigning(value *string)() {
     err := m.GetBackingStore().Set("testSigning", value)
@@ -1169,6 +1372,13 @@ func (m *DeviceHealthAttestationState) SetTestSigning(value *string)() {
 // SetTpmVersion sets the tpmVersion property value. The security version number of the Boot Application
 func (m *DeviceHealthAttestationState) SetTpmVersion(value *string)() {
     err := m.GetBackingStore().Set("tpmVersion", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetVirtualizationBasedSecurity sets the virtualizationBasedSecurity property value. A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "enabled" or "disabled". Windows 10 devices will have value "notApplicable".
+func (m *DeviceHealthAttestationState) SetVirtualizationBasedSecurity(value *AzureAttestationSettingStatus)() {
+    err := m.GetBackingStore().Set("virtualizationBasedSecurity", value)
     if err != nil {
         panic(err)
     }
@@ -1208,10 +1418,13 @@ type DeviceHealthAttestationStateable interface {
     GetDataExcutionPolicy()(*string)
     GetDeviceHealthAttestationStatus()(*string)
     GetEarlyLaunchAntiMalwareDriverProtection()(*string)
+    GetFirmwareProtection()(*FirmwareProtectionType)
     GetHealthAttestationSupportedStatus()(*string)
     GetHealthStatusMismatchInfo()(*string)
     GetIssuedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastUpdateDateTime()(*string)
+    GetMemoryAccessProtection()(*AzureAttestationSettingStatus)
+    GetMemoryIntegrityProtection()(*AzureAttestationSettingStatus)
     GetOdataType()(*string)
     GetOperatingSystemKernelDebugging()(*string)
     GetOperatingSystemRevListInfo()(*string)
@@ -1222,8 +1435,11 @@ type DeviceHealthAttestationStateable interface {
     GetSafeMode()(*string)
     GetSecureBoot()(*string)
     GetSecureBootConfigurationPolicyFingerPrint()(*string)
+    GetSecuredCorePC()(*AzureAttestationSettingStatus)
+    GetSystemManagementMode()(*SystemManagementModeLevel)
     GetTestSigning()(*string)
     GetTpmVersion()(*string)
+    GetVirtualizationBasedSecurity()(*AzureAttestationSettingStatus)
     GetVirtualSecureMode()(*string)
     GetWindowsPE()(*string)
     SetAttestationIdentityKey(value *string)()
@@ -1242,10 +1458,13 @@ type DeviceHealthAttestationStateable interface {
     SetDataExcutionPolicy(value *string)()
     SetDeviceHealthAttestationStatus(value *string)()
     SetEarlyLaunchAntiMalwareDriverProtection(value *string)()
+    SetFirmwareProtection(value *FirmwareProtectionType)()
     SetHealthAttestationSupportedStatus(value *string)()
     SetHealthStatusMismatchInfo(value *string)()
     SetIssuedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastUpdateDateTime(value *string)()
+    SetMemoryAccessProtection(value *AzureAttestationSettingStatus)()
+    SetMemoryIntegrityProtection(value *AzureAttestationSettingStatus)()
     SetOdataType(value *string)()
     SetOperatingSystemKernelDebugging(value *string)()
     SetOperatingSystemRevListInfo(value *string)()
@@ -1256,8 +1475,11 @@ type DeviceHealthAttestationStateable interface {
     SetSafeMode(value *string)()
     SetSecureBoot(value *string)()
     SetSecureBootConfigurationPolicyFingerPrint(value *string)()
+    SetSecuredCorePC(value *AzureAttestationSettingStatus)()
+    SetSystemManagementMode(value *SystemManagementModeLevel)()
     SetTestSigning(value *string)()
     SetTpmVersion(value *string)()
+    SetVirtualizationBasedSecurity(value *AzureAttestationSettingStatus)()
     SetVirtualSecureMode(value *string)()
     SetWindowsPE(value *string)()
 }

@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // Flag enum to determine whether to delay software updates for macOS.
 type MacOSSoftwareUpdateDelayPolicy int
@@ -19,23 +20,32 @@ const (
 )
 
 func (i MacOSSoftwareUpdateDelayPolicy) String() string {
-    return []string{"none", "delayOSUpdateVisibility", "delayAppUpdateVisibility", "unknownFutureValue", "delayMajorOsUpdateVisibility"}[i]
+    var values []string
+    for p := MacOSSoftwareUpdateDelayPolicy(1); p <= DELAYMAJOROSUPDATEVISIBILITY_MACOSSOFTWAREUPDATEDELAYPOLICY; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"none", "delayOSUpdateVisibility", "delayAppUpdateVisibility", "unknownFutureValue", "delayMajorOsUpdateVisibility"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseMacOSSoftwareUpdateDelayPolicy(v string) (any, error) {
-    result := NONE_MACOSSOFTWAREUPDATEDELAYPOLICY
-    switch v {
-        case "none":
-            result = NONE_MACOSSOFTWAREUPDATEDELAYPOLICY
-        case "delayOSUpdateVisibility":
-            result = DELAYOSUPDATEVISIBILITY_MACOSSOFTWAREUPDATEDELAYPOLICY
-        case "delayAppUpdateVisibility":
-            result = DELAYAPPUPDATEVISIBILITY_MACOSSOFTWAREUPDATEDELAYPOLICY
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_MACOSSOFTWAREUPDATEDELAYPOLICY
-        case "delayMajorOsUpdateVisibility":
-            result = DELAYMAJOROSUPDATEVISIBILITY_MACOSSOFTWAREUPDATEDELAYPOLICY
-        default:
-            return 0, errors.New("Unknown MacOSSoftwareUpdateDelayPolicy value: " + v)
+    var result MacOSSoftwareUpdateDelayPolicy
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "none":
+                result |= NONE_MACOSSOFTWAREUPDATEDELAYPOLICY
+            case "delayOSUpdateVisibility":
+                result |= DELAYOSUPDATEVISIBILITY_MACOSSOFTWAREUPDATEDELAYPOLICY
+            case "delayAppUpdateVisibility":
+                result |= DELAYAPPUPDATEVISIBILITY_MACOSSOFTWAREUPDATEDELAYPOLICY
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_MACOSSOFTWAREUPDATEDELAYPOLICY
+            case "delayMajorOsUpdateVisibility":
+                result |= DELAYMAJOROSUPDATEVISIBILITY_MACOSSOFTWAREUPDATEDELAYPOLICY
+            default:
+                return 0, errors.New("Unknown MacOSSoftwareUpdateDelayPolicy value: " + v)
+        }
     }
     return &result, nil
 }
@@ -45,4 +55,7 @@ func SerializeMacOSSoftwareUpdateDelayPolicy(values []MacOSSoftwareUpdateDelayPo
         result[i] = v.String()
     }
     return result
+}
+func (i MacOSSoftwareUpdateDelayPolicy) isMultiValue() bool {
+    return true
 }

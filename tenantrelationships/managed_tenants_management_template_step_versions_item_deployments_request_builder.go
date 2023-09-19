@@ -46,8 +46,8 @@ type ManagedTenantsManagementTemplateStepVersionsItemDeploymentsRequestBuilderPo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByManagementTemplateStepDeploymentIdString provides operations to manage the deployments property of the microsoft.graph.managedTenants.managementTemplateStepVersion entity.
-func (m *ManagedTenantsManagementTemplateStepVersionsItemDeploymentsRequestBuilder) ByManagementTemplateStepDeploymentIdString(managementTemplateStepDeploymentId string)(*ManagedTenantsManagementTemplateStepVersionsItemDeploymentsManagementTemplateStepDeploymentItemRequestBuilder) {
+// ByManagementTemplateStepDeploymentId provides operations to manage the deployments property of the microsoft.graph.managedTenants.managementTemplateStepVersion entity.
+func (m *ManagedTenantsManagementTemplateStepVersionsItemDeploymentsRequestBuilder) ByManagementTemplateStepDeploymentId(managementTemplateStepDeploymentId string)(*ManagedTenantsManagementTemplateStepVersionsItemDeploymentsManagementTemplateStepDeploymentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ManagedTenantsManagementTemplateStepVersionsItemDeploymentsRequestBuild
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedTenantsManagementTemplateStepVersionsItemDeploymentsRequestBuilder) WithUrl(rawUrl string)(*ManagedTenantsManagementTemplateStepVersionsItemDeploymentsRequestBuilder) {
+    return NewManagedTenantsManagementTemplateStepVersionsItemDeploymentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

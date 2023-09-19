@@ -70,3 +70,6 @@ func SerializeAndroidKeyguardFeature(values []AndroidKeyguardFeature) []string {
     }
     return result
 }
+func (i AndroidKeyguardFeature) isMultiValue() bool {
+    return false
+}

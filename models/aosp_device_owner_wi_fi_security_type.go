@@ -42,3 +42,6 @@ func SerializeAospDeviceOwnerWiFiSecurityType(values []AospDeviceOwnerWiFiSecuri
     }
     return result
 }
+func (i AospDeviceOwnerWiFiSecurityType) isMultiValue() bool {
+    return false
+}

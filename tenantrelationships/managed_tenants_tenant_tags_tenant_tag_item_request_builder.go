@@ -170,3 +170,7 @@ func (m *ManagedTenantsTenantTagsTenantTagItemRequestBuilder) ToPatchRequestInfo
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedTenantsTenantTagsTenantTagItemRequestBuilder) WithUrl(rawUrl string)(*ManagedTenantsTenantTagsTenantTagItemRequestBuilder) {
+    return NewManagedTenantsTenantTagsTenantTagItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

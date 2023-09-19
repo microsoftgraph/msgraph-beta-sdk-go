@@ -35,3 +35,6 @@ func SerializeMultiFactorAuthConfiguration(values []MultiFactorAuthConfiguration
     }
     return result
 }
+func (i MultiFactorAuthConfiguration) isMultiValue() bool {
+    return false
+}

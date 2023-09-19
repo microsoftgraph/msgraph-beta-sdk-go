@@ -46,8 +46,8 @@ type ItemControlsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByProgramControlIdString provides operations to manage the controls property of the microsoft.graph.program entity.
-func (m *ItemControlsRequestBuilder) ByProgramControlIdString(programControlId string)(*ItemControlsProgramControlItemRequestBuilder) {
+// ByProgramControlId provides operations to manage the controls property of the microsoft.graph.program entity.
+func (m *ItemControlsRequestBuilder) ByProgramControlId(programControlId string)(*ItemControlsProgramControlItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ItemControlsRequestBuilder) ToPostRequestInformation(ctx context.Contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemControlsRequestBuilder) WithUrl(rawUrl string)(*ItemControlsRequestBuilder) {
+    return NewItemControlsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

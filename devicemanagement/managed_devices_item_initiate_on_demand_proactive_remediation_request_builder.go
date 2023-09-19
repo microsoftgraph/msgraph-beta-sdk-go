@@ -62,3 +62,7 @@ func (m *ManagedDevicesItemInitiateOnDemandProactiveRemediationRequestBuilder) T
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedDevicesItemInitiateOnDemandProactiveRemediationRequestBuilder) WithUrl(rawUrl string)(*ManagedDevicesItemInitiateOnDemandProactiveRemediationRequestBuilder) {
+    return NewManagedDevicesItemInitiateOnDemandProactiveRemediationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -38,3 +38,6 @@ func SerializeAndroidEapType(values []AndroidEapType) []string {
     }
     return result
 }
+func (i AndroidEapType) isMultiValue() bool {
+    return false
+}

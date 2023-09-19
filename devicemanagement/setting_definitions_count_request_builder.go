@@ -74,3 +74,7 @@ func (m *SettingDefinitionsCountRequestBuilder) ToGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SettingDefinitionsCountRequestBuilder) WithUrl(rawUrl string)(*SettingDefinitionsCountRequestBuilder) {
+    return NewSettingDefinitionsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

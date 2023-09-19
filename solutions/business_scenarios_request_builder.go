@@ -46,8 +46,8 @@ type BusinessScenariosRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByBusinessScenarioIdString provides operations to manage the businessScenarios property of the microsoft.graph.solutionsRoot entity.
-func (m *BusinessScenariosRequestBuilder) ByBusinessScenarioIdString(businessScenarioId string)(*BusinessScenariosBusinessScenarioItemRequestBuilder) {
+// ByBusinessScenarioId provides operations to manage the businessScenarios property of the microsoft.graph.solutionsRoot entity.
+func (m *BusinessScenariosRequestBuilder) ByBusinessScenarioId(businessScenarioId string)(*BusinessScenariosBusinessScenarioItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *BusinessScenariosRequestBuilder) ToPostRequestInformation(ctx context.C
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *BusinessScenariosRequestBuilder) WithUrl(rawUrl string)(*BusinessScenariosRequestBuilder) {
+    return NewBusinessScenariosRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

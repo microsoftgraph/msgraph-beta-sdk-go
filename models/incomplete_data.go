@@ -74,7 +74,7 @@ func (m *IncompleteData) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetMissingDataBeforeDateTime gets the missingDataBeforeDateTime property value. The service does not have source data before the specified time.
+// GetMissingDataBeforeDateTime gets the missingDataBeforeDateTime property value. The service doesn't have source data before the specified time.
 func (m *IncompleteData) GetMissingDataBeforeDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("missingDataBeforeDateTime")
     if err != nil {
@@ -96,7 +96,7 @@ func (m *IncompleteData) GetOdataType()(*string) {
     }
     return nil
 }
-// GetWasThrottled gets the wasThrottled property value. Some data was not recorded due to excessive activity.
+// GetWasThrottled gets the wasThrottled property value. Some data wasn't recorded due to excessive activity.
 func (m *IncompleteData) GetWasThrottled()(*bool) {
     val, err := m.GetBackingStore().Get("wasThrottled")
     if err != nil {
@@ -146,7 +146,7 @@ func (m *IncompleteData) SetAdditionalData(value map[string]any)() {
 func (m *IncompleteData) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetMissingDataBeforeDateTime sets the missingDataBeforeDateTime property value. The service does not have source data before the specified time.
+// SetMissingDataBeforeDateTime sets the missingDataBeforeDateTime property value. The service doesn't have source data before the specified time.
 func (m *IncompleteData) SetMissingDataBeforeDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("missingDataBeforeDateTime", value)
     if err != nil {
@@ -160,7 +160,7 @@ func (m *IncompleteData) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetWasThrottled sets the wasThrottled property value. Some data was not recorded due to excessive activity.
+// SetWasThrottled sets the wasThrottled property value. Some data wasn't recorded due to excessive activity.
 func (m *IncompleteData) SetWasThrottled(value *bool)() {
     err := m.GetBackingStore().Set("wasThrottled", value)
     if err != nil {

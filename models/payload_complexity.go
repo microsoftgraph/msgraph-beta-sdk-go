@@ -41,3 +41,6 @@ func SerializePayloadComplexity(values []PayloadComplexity) []string {
     }
     return result
 }
+func (i PayloadComplexity) isMultiValue() bool {
+    return false
+}

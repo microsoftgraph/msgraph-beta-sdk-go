@@ -75,3 +75,7 @@ func (m *ExchangeResourceNamespacesItemResourceActionsItemAuthenticationContextR
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ExchangeResourceNamespacesItemResourceActionsItemAuthenticationContextRequestBuilder) WithUrl(rawUrl string)(*ExchangeResourceNamespacesItemResourceActionsItemAuthenticationContextRequestBuilder) {
+    return NewExchangeResourceNamespacesItemResourceActionsItemAuthenticationContextRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

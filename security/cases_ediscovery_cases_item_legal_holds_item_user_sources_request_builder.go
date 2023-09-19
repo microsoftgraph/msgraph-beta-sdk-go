@@ -46,8 +46,8 @@ type CasesEdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilderPostRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserSourceIdString provides operations to manage the userSources property of the microsoft.graph.security.ediscoveryHoldPolicy entity.
-func (m *CasesEdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) ByUserSourceIdString(userSourceId string)(*CasesEdiscoveryCasesItemLegalHoldsItemUserSourcesUserSourceItemRequestBuilder) {
+// ByUserSourceId provides operations to manage the userSources property of the microsoft.graph.security.ediscoveryHoldPolicy entity.
+func (m *CasesEdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) ByUserSourceId(userSourceId string)(*CasesEdiscoveryCasesItemLegalHoldsItemUserSourcesUserSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *CasesEdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) ToPost
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CasesEdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) WithUrl(rawUrl string)(*CasesEdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

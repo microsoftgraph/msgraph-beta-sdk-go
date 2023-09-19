@@ -38,3 +38,6 @@ func SerializeMigrationStatus(values []MigrationStatus) []string {
     }
     return result
 }
+func (i MigrationStatus) isMultiValue() bool {
+    return false
+}

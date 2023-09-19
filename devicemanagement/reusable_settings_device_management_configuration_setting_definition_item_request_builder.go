@@ -153,3 +153,7 @@ func (m *ReusableSettingsDeviceManagementConfigurationSettingDefinitionItemReque
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ReusableSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder) WithUrl(rawUrl string)(*ReusableSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
+    return NewReusableSettingsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

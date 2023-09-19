@@ -32,3 +32,6 @@ func SerializeSafeguardCategory(values []SafeguardCategory) []string {
     }
     return result
 }
+func (i SafeguardCategory) isMultiValue() bool {
+    return false
+}

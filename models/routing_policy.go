@@ -44,3 +44,6 @@ func SerializeRoutingPolicy(values []RoutingPolicy) []string {
     }
     return result
 }
+func (i RoutingPolicy) isMultiValue() bool {
+    return false
+}

@@ -50,3 +50,6 @@ func SerializeDriveItemSourceApplication(values []DriveItemSourceApplication) []
     }
     return result
 }
+func (i DriveItemSourceApplication) isMultiValue() bool {
+    return false
+}

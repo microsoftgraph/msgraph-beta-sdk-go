@@ -66,3 +66,7 @@ func (m *RecommendationsItemReactivateRequestBuilder) ToPostRequestInformation(c
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *RecommendationsItemReactivateRequestBuilder) WithUrl(rawUrl string)(*RecommendationsItemReactivateRequestBuilder) {
+    return NewRecommendationsItemReactivateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

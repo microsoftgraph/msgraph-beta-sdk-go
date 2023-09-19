@@ -46,8 +46,8 @@ type ItemProfilePublicationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByItemPublicationIdString provides operations to manage the publications property of the microsoft.graph.profile entity.
-func (m *ItemProfilePublicationsRequestBuilder) ByItemPublicationIdString(itemPublicationId string)(*ItemProfilePublicationsItemPublicationItemRequestBuilder) {
+// ByItemPublicationId provides operations to manage the publications property of the microsoft.graph.profile entity.
+func (m *ItemProfilePublicationsRequestBuilder) ByItemPublicationId(itemPublicationId string)(*ItemProfilePublicationsItemPublicationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemProfilePublicationsRequestBuilder) ToPostRequestInformation(ctx con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemProfilePublicationsRequestBuilder) WithUrl(rawUrl string)(*ItemProfilePublicationsRequestBuilder) {
+    return NewItemProfilePublicationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

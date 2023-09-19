@@ -46,8 +46,8 @@ type CustomAuthenticationExtensionsRequestBuilderPostRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCustomAuthenticationExtensionIdString provides operations to manage the customAuthenticationExtensions property of the microsoft.graph.identityContainer entity.
-func (m *CustomAuthenticationExtensionsRequestBuilder) ByCustomAuthenticationExtensionIdString(customAuthenticationExtensionId string)(*CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) {
+// ByCustomAuthenticationExtensionId provides operations to manage the customAuthenticationExtensions property of the microsoft.graph.identityContainer entity.
+func (m *CustomAuthenticationExtensionsRequestBuilder) ByCustomAuthenticationExtensionId(customAuthenticationExtensionId string)(*CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -154,4 +154,8 @@ func (m *CustomAuthenticationExtensionsRequestBuilder) ToPostRequestInformation(
 // ValidateAuthenticationConfiguration provides operations to call the validateAuthenticationConfiguration method.
 func (m *CustomAuthenticationExtensionsRequestBuilder) ValidateAuthenticationConfiguration()(*CustomAuthenticationExtensionsValidateAuthenticationConfigurationRequestBuilder) {
     return NewCustomAuthenticationExtensionsValidateAuthenticationConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CustomAuthenticationExtensionsRequestBuilder) WithUrl(rawUrl string)(*CustomAuthenticationExtensionsRequestBuilder) {
+    return NewCustomAuthenticationExtensionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -46,8 +46,8 @@ type WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilderPostRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWindowsDriverUpdateInventoryIdString provides operations to manage the driverInventories property of the microsoft.graph.windowsDriverUpdateProfile entity.
-func (m *WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder) ByWindowsDriverUpdateInventoryIdString(windowsDriverUpdateInventoryId string)(*WindowsDriverUpdateProfilesItemDriverInventoriesWindowsDriverUpdateInventoryItemRequestBuilder) {
+// ByWindowsDriverUpdateInventoryId provides operations to manage the driverInventories property of the microsoft.graph.windowsDriverUpdateProfile entity.
+func (m *WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder) ByWindowsDriverUpdateInventoryId(windowsDriverUpdateInventoryId string)(*WindowsDriverUpdateProfilesItemDriverInventoriesWindowsDriverUpdateInventoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder) ToPostR
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder) WithUrl(rawUrl string)(*WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder) {
+    return NewWindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

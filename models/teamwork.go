@@ -19,7 +19,7 @@ func NewTeamwork()(*Teamwork) {
 func CreateTeamworkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamwork(), nil
 }
-// GetDeletedChats gets the deletedChats property value. The deletedChats property
+// GetDeletedChats gets the deletedChats property value. A collection of deleted chats.
 func (m *Teamwork) GetDeletedChats()([]DeletedChatable) {
     val, err := m.GetBackingStore().Get("deletedChats")
     if err != nil {
@@ -254,7 +254,7 @@ func (m *Teamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetDeletedChats sets the deletedChats property value. The deletedChats property
+// SetDeletedChats sets the deletedChats property value. A collection of deleted chats.
 func (m *Teamwork) SetDeletedChats(value []DeletedChatable)() {
     err := m.GetBackingStore().Set("deletedChats", value)
     if err != nil {

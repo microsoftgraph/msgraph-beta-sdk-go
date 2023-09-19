@@ -46,8 +46,8 @@ type DeviceConfigurationConflictSummaryRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceConfigurationConflictSummaryIdString provides operations to manage the deviceConfigurationConflictSummary property of the microsoft.graph.deviceManagement entity.
-func (m *DeviceConfigurationConflictSummaryRequestBuilder) ByDeviceConfigurationConflictSummaryIdString(deviceConfigurationConflictSummaryId string)(*DeviceConfigurationConflictSummaryDeviceConfigurationConflictSummaryItemRequestBuilder) {
+// ByDeviceConfigurationConflictSummaryId provides operations to manage the deviceConfigurationConflictSummary property of the microsoft.graph.deviceManagement entity.
+func (m *DeviceConfigurationConflictSummaryRequestBuilder) ByDeviceConfigurationConflictSummaryId(deviceConfigurationConflictSummaryId string)(*DeviceConfigurationConflictSummaryDeviceConfigurationConflictSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *DeviceConfigurationConflictSummaryRequestBuilder) ToPostRequestInformat
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceConfigurationConflictSummaryRequestBuilder) WithUrl(rawUrl string)(*DeviceConfigurationConflictSummaryRequestBuilder) {
+    return NewDeviceConfigurationConflictSummaryRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

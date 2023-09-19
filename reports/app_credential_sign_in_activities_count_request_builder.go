@@ -74,3 +74,7 @@ func (m *AppCredentialSignInActivitiesCountRequestBuilder) ToGetRequestInformati
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AppCredentialSignInActivitiesCountRequestBuilder) WithUrl(rawUrl string)(*AppCredentialSignInActivitiesCountRequestBuilder) {
+    return NewAppCredentialSignInActivitiesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

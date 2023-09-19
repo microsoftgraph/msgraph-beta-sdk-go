@@ -156,3 +156,7 @@ func (m *CompaniesItemCountriesRegionsRequestBuilder) ToPostRequestInformation(c
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CompaniesItemCountriesRegionsRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemCountriesRegionsRequestBuilder) {
+    return NewCompaniesItemCountriesRegionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

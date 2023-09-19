@@ -38,3 +38,6 @@ func SerializeEnrollmentAvailabilityOptions(values []EnrollmentAvailabilityOptio
     }
     return result
 }
+func (i EnrollmentAvailabilityOptions) isMultiValue() bool {
+    return false
+}

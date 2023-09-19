@@ -81,3 +81,6 @@ func SerializeManagementAgentType(values []ManagementAgentType) []string {
     }
     return result
 }
+func (i ManagementAgentType) isMultiValue() bool {
+    return false
+}

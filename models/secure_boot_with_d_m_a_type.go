@@ -38,3 +38,6 @@ func SerializeSecureBootWithDMAType(values []SecureBootWithDMAType) []string {
     }
     return result
 }
+func (i SecureBootWithDMAType) isMultiValue() bool {
+    return false
+}

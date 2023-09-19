@@ -66,3 +66,7 @@ func (m *ImportedDeviceIdentitiesSearchExistingIdentitiesRequestBuilder) ToPostR
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ImportedDeviceIdentitiesSearchExistingIdentitiesRequestBuilder) WithUrl(rawUrl string)(*ImportedDeviceIdentitiesSearchExistingIdentitiesRequestBuilder) {
+    return NewImportedDeviceIdentitiesSearchExistingIdentitiesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

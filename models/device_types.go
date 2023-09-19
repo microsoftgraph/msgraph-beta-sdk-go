@@ -114,3 +114,6 @@ func SerializeDeviceTypes(values []DeviceTypes) []string {
     }
     return result
 }
+func (i DeviceTypes) isMultiValue() bool {
+    return false
+}

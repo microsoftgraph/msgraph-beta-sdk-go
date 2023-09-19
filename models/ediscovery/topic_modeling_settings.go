@@ -115,7 +115,7 @@ func (m *TopicModelingSettings) GetIgnoreNumbers()(*bool) {
     }
     return nil
 }
-// GetIsEnabled gets the isEnabled property value. Indicates whether themes is enabled for the case.
+// GetIsEnabled gets the isEnabled property value. Indicates whether themes are enabled for the case.
 func (m *TopicModelingSettings) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -213,7 +213,7 @@ func (m *TopicModelingSettings) SetIgnoreNumbers(value *bool)() {
         panic(err)
     }
 }
-// SetIsEnabled sets the isEnabled property value. Indicates whether themes is enabled for the case.
+// SetIsEnabled sets the isEnabled property value. Indicates whether themes are enabled for the case.
 func (m *TopicModelingSettings) SetIsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEnabled", value)
     if err != nil {

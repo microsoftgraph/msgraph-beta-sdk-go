@@ -38,3 +38,6 @@ func SerializePersonalProfilePersonalPlayStoreMode(values []PersonalProfilePerso
     }
     return result
 }
+func (i PersonalProfilePersonalPlayStoreMode) isMultiValue() bool {
+    return false
+}

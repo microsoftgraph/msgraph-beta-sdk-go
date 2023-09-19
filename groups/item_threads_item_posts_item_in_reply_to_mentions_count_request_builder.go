@@ -72,3 +72,7 @@ func (m *ItemThreadsItemPostsItemInReplyToMentionsCountRequestBuilder) ToGetRequ
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemThreadsItemPostsItemInReplyToMentionsCountRequestBuilder) WithUrl(rawUrl string)(*ItemThreadsItemPostsItemInReplyToMentionsCountRequestBuilder) {
+    return NewItemThreadsItemPostsItemInReplyToMentionsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -54,3 +54,6 @@ func SerializeEndpointSecurityConfigurationType(values []EndpointSecurityConfigu
     }
     return result
 }
+func (i EndpointSecurityConfigurationType) isMultiValue() bool {
+    return false
+}

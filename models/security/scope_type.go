@@ -32,3 +32,6 @@ func SerializeScopeType(values []ScopeType) []string {
     }
     return result
 }
+func (i ScopeType) isMultiValue() bool {
+    return false
+}

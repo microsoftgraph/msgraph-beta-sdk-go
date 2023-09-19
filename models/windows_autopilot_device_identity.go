@@ -415,6 +415,16 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["userlessEnrollmentStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseWindowsAutopilotUserlessEnrollmentStatus)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserlessEnrollmentStatus(val.(*WindowsAutopilotUserlessEnrollmentStatus))
+        }
+        return nil
+    }
     res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -578,6 +588,17 @@ func (m *WindowsAutopilotDeviceIdentity) GetSystemFamily()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetUserlessEnrollmentStatus gets the userlessEnrollmentStatus property value. Userless enrollment block status, indicating whether the next device enrollment will be blocked.
+func (m *WindowsAutopilotDeviceIdentity) GetUserlessEnrollmentStatus()(*WindowsAutopilotUserlessEnrollmentStatus) {
+    val, err := m.GetBackingStore().Get("userlessEnrollmentStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsAutopilotUserlessEnrollmentStatus)
     }
     return nil
 }
@@ -754,6 +775,13 @@ func (m *WindowsAutopilotDeviceIdentity) Serialize(writer i878a80d2330e89d268963
     }
     {
         err = writer.WriteStringValue("systemFamily", m.GetSystemFamily())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetUserlessEnrollmentStatus() != nil {
+        cast := (*m.GetUserlessEnrollmentStatus()).String()
+        err = writer.WriteStringValue("userlessEnrollmentStatus", &cast)
         if err != nil {
             return err
         }
@@ -948,6 +976,13 @@ func (m *WindowsAutopilotDeviceIdentity) SetSystemFamily(value *string)() {
         panic(err)
     }
 }
+// SetUserlessEnrollmentStatus sets the userlessEnrollmentStatus property value. Userless enrollment block status, indicating whether the next device enrollment will be blocked.
+func (m *WindowsAutopilotDeviceIdentity) SetUserlessEnrollmentStatus(value *WindowsAutopilotUserlessEnrollmentStatus)() {
+    err := m.GetBackingStore().Set("userlessEnrollmentStatus", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUserPrincipalName sets the userPrincipalName property value. User Principal Name.
 func (m *WindowsAutopilotDeviceIdentity) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
@@ -985,6 +1020,7 @@ type WindowsAutopilotDeviceIdentityable interface {
     GetSerialNumber()(*string)
     GetSkuNumber()(*string)
     GetSystemFamily()(*string)
+    GetUserlessEnrollmentStatus()(*WindowsAutopilotUserlessEnrollmentStatus)
     GetUserPrincipalName()(*string)
     SetAddressableUserName(value *string)()
     SetAzureActiveDirectoryDeviceId(value *string)()
@@ -1012,5 +1048,6 @@ type WindowsAutopilotDeviceIdentityable interface {
     SetSerialNumber(value *string)()
     SetSkuNumber(value *string)()
     SetSystemFamily(value *string)()
+    SetUserlessEnrollmentStatus(value *WindowsAutopilotUserlessEnrollmentStatus)()
     SetUserPrincipalName(value *string)()
 }

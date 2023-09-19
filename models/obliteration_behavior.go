@@ -46,3 +46,6 @@ func SerializeObliterationBehavior(values []ObliterationBehavior) []string {
     }
     return result
 }
+func (i ObliterationBehavior) isMultiValue() bool {
+    return false
+}

@@ -20,7 +20,7 @@ func NewWorkbookDocumentTaskChange()(*WorkbookDocumentTaskChange) {
 func CreateWorkbookDocumentTaskChangeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookDocumentTaskChange(), nil
 }
-// GetAssignee gets the assignee property value. The assignee property
+// GetAssignee gets the assignee property value. The user identity the task is assigned to. Only present when the type property is assign. Nullable.
 func (m *WorkbookDocumentTaskChange) GetAssignee()(WorkbookEmailIdentityable) {
     val, err := m.GetBackingStore().Get("assignee")
     if err != nil {
@@ -42,7 +42,7 @@ func (m *WorkbookDocumentTaskChange) GetChangedBy()(WorkbookEmailIdentityable) {
     }
     return nil
 }
-// GetCommentId gets the commentId property value. The commentId property
+// GetCommentId gets the commentId property value. The identifier of the associated comment.
 func (m *WorkbookDocumentTaskChange) GetCommentId()(*string) {
     val, err := m.GetBackingStore().Get("commentId")
     if err != nil {
@@ -53,7 +53,7 @@ func (m *WorkbookDocumentTaskChange) GetCommentId()(*string) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Date and time when the task was changed. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *WorkbookDocumentTaskChange) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -64,7 +64,7 @@ func (m *WorkbookDocumentTaskChange) GetCreatedDateTime()(*i336074805fc853987abe
     }
     return nil
 }
-// GetDueDateTime gets the dueDateTime property value. The dueDateTime property
+// GetDueDateTime gets the dueDateTime property value. The due date and time for the task. Only present when the type property is setSchedule. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *WorkbookDocumentTaskChange) GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("dueDateTime")
     if err != nil {
@@ -190,7 +190,7 @@ func (m *WorkbookDocumentTaskChange) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetPercentComplete gets the percentComplete property value. The percentComplete property
+// GetPercentComplete gets the percentComplete property value. An integer value from 0 to 100 that represents the percentage of the completion of the task and associated comment. 100 means that the task and associated comment are completed. If you change the completion from 100 to a lower value, the associated task and comment are reactivated. Only present when the type property is setPercentComplete. Nullable.
 func (m *WorkbookDocumentTaskChange) GetPercentComplete()(*int32) {
     val, err := m.GetBackingStore().Get("percentComplete")
     if err != nil {
@@ -201,7 +201,7 @@ func (m *WorkbookDocumentTaskChange) GetPercentComplete()(*int32) {
     }
     return nil
 }
-// GetPriority gets the priority property value. The priority property
+// GetPriority gets the priority property value. An integer value from 0 to 10 that represents the priority of the task. A lower value indicates a higher priority. 5 indicates the default priority if not set. Only present when the type property is setPriority. Nullable.
 func (m *WorkbookDocumentTaskChange) GetPriority()(*int32) {
     val, err := m.GetBackingStore().Get("priority")
     if err != nil {
@@ -212,7 +212,7 @@ func (m *WorkbookDocumentTaskChange) GetPriority()(*int32) {
     }
     return nil
 }
-// GetStartDateTime gets the startDateTime property value. The startDateTime property
+// GetStartDateTime gets the startDateTime property value. The start date and time for the task. Only present when the type property is setSchedule. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *WorkbookDocumentTaskChange) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -223,7 +223,7 @@ func (m *WorkbookDocumentTaskChange) GetStartDateTime()(*i336074805fc853987abe6f
     }
     return nil
 }
-// GetTitle gets the title property value. The title property
+// GetTitle gets the title property value. The title of the task. Only present when the type property is setTitle. Nullable.
 func (m *WorkbookDocumentTaskChange) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
     if err != nil {
@@ -234,7 +234,7 @@ func (m *WorkbookDocumentTaskChange) GetTitle()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The type property
+// GetTypeEscaped gets the type property value. The type of the change history. Possible values are: create, assign, unassign, unassignAll, setPriority, setTitle, setPercentComplete, setSchedule, remove, restore, undo.
 func (m *WorkbookDocumentTaskChange) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -245,7 +245,7 @@ func (m *WorkbookDocumentTaskChange) GetTypeEscaped()(*string) {
     }
     return nil
 }
-// GetUndoChangeId gets the undoChangeId property value. The undoChangeId property
+// GetUndoChangeId gets the undoChangeId property value. The ID of the workbookDocumentTaskChange that was undone for the undo change action. Only exists on an undo change history. Nullable.
 func (m *WorkbookDocumentTaskChange) GetUndoChangeId()(*string) {
     val, err := m.GetBackingStore().Get("undoChangeId")
     if err != nil {
@@ -330,7 +330,7 @@ func (m *WorkbookDocumentTaskChange) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetAssignee sets the assignee property value. The assignee property
+// SetAssignee sets the assignee property value. The user identity the task is assigned to. Only present when the type property is assign. Nullable.
 func (m *WorkbookDocumentTaskChange) SetAssignee(value WorkbookEmailIdentityable)() {
     err := m.GetBackingStore().Set("assignee", value)
     if err != nil {
@@ -344,63 +344,63 @@ func (m *WorkbookDocumentTaskChange) SetChangedBy(value WorkbookEmailIdentityabl
         panic(err)
     }
 }
-// SetCommentId sets the commentId property value. The commentId property
+// SetCommentId sets the commentId property value. The identifier of the associated comment.
 func (m *WorkbookDocumentTaskChange) SetCommentId(value *string)() {
     err := m.GetBackingStore().Set("commentId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Date and time when the task was changed. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *WorkbookDocumentTaskChange) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDueDateTime sets the dueDateTime property value. The dueDateTime property
+// SetDueDateTime sets the dueDateTime property value. The due date and time for the task. Only present when the type property is setSchedule. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *WorkbookDocumentTaskChange) SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("dueDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPercentComplete sets the percentComplete property value. The percentComplete property
+// SetPercentComplete sets the percentComplete property value. An integer value from 0 to 100 that represents the percentage of the completion of the task and associated comment. 100 means that the task and associated comment are completed. If you change the completion from 100 to a lower value, the associated task and comment are reactivated. Only present when the type property is setPercentComplete. Nullable.
 func (m *WorkbookDocumentTaskChange) SetPercentComplete(value *int32)() {
     err := m.GetBackingStore().Set("percentComplete", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPriority sets the priority property value. The priority property
+// SetPriority sets the priority property value. An integer value from 0 to 10 that represents the priority of the task. A lower value indicates a higher priority. 5 indicates the default priority if not set. Only present when the type property is setPriority. Nullable.
 func (m *WorkbookDocumentTaskChange) SetPriority(value *int32)() {
     err := m.GetBackingStore().Set("priority", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStartDateTime sets the startDateTime property value. The startDateTime property
+// SetStartDateTime sets the startDateTime property value. The start date and time for the task. Only present when the type property is setSchedule. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *WorkbookDocumentTaskChange) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTitle sets the title property value. The title property
+// SetTitle sets the title property value. The title of the task. Only present when the type property is setTitle. Nullable.
 func (m *WorkbookDocumentTaskChange) SetTitle(value *string)() {
     err := m.GetBackingStore().Set("title", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The type property
+// SetTypeEscaped sets the type property value. The type of the change history. Possible values are: create, assign, unassign, unassignAll, setPriority, setTitle, setPercentComplete, setSchedule, remove, restore, undo.
 func (m *WorkbookDocumentTaskChange) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUndoChangeId sets the undoChangeId property value. The undoChangeId property
+// SetUndoChangeId sets the undoChangeId property value. The ID of the workbookDocumentTaskChange that was undone for the undo change action. Only exists on an undo change history. Nullable.
 func (m *WorkbookDocumentTaskChange) SetUndoChangeId(value *string)() {
     err := m.GetBackingStore().Set("undoChangeId", value)
     if err != nil {

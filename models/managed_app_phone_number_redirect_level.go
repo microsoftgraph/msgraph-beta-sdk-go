@@ -42,3 +42,6 @@ func SerializeManagedAppPhoneNumberRedirectLevel(values []ManagedAppPhoneNumberR
     }
     return result
 }
+func (i ManagedAppPhoneNumberRedirectLevel) isMultiValue() bool {
+    return false
+}

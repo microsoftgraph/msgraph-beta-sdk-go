@@ -18,7 +18,7 @@ type DeletedChatsDeletedChatItemRequestBuilderDeleteRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DeletedChatsDeletedChatItemRequestBuilderGetQueryParameters get deletedChats from teamwork
+// DeletedChatsDeletedChatItemRequestBuilderGetQueryParameters read the properties and relationships of a deletedChat object.
 type DeletedChatsDeletedChatItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *DeletedChatsDeletedChatItemRequestBuilder) Delete(ctx context.Context, 
     }
     return nil
 }
-// Get get deletedChats from teamwork
+// Get read the properties and relationships of a deletedChat object.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/deletedchat-get?view=graph-rest-1.0
 func (m *DeletedChatsDeletedChatItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DeletedChatsDeletedChatItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedChatable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *DeletedChatsDeletedChatItemRequestBuilder) ToDeleteRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get deletedChats from teamwork
+// ToGetRequestInformation read the properties and relationships of a deletedChat object.
 func (m *DeletedChatsDeletedChatItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeletedChatsDeletedChatItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -156,4 +159,8 @@ func (m *DeletedChatsDeletedChatItemRequestBuilder) ToPatchRequestInformation(ct
 // UndoDelete provides operations to call the undoDelete method.
 func (m *DeletedChatsDeletedChatItemRequestBuilder) UndoDelete()(*DeletedChatsItemUndoDeleteRequestBuilder) {
     return NewDeletedChatsItemUndoDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeletedChatsDeletedChatItemRequestBuilder) WithUrl(rawUrl string)(*DeletedChatsDeletedChatItemRequestBuilder) {
+    return NewDeletedChatsDeletedChatItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -64,3 +64,7 @@ func (m *GetTeamsUserActivityTotalDistributionCountsWithPeriodRequestBuilder) To
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GetTeamsUserActivityTotalDistributionCountsWithPeriodRequestBuilder) WithUrl(rawUrl string)(*GetTeamsUserActivityTotalDistributionCountsWithPeriodRequestBuilder) {
+    return NewGetTeamsUserActivityTotalDistributionCountsWithPeriodRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

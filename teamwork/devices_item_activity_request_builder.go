@@ -156,3 +156,7 @@ func (m *DevicesItemActivityRequestBuilder) ToPatchRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DevicesItemActivityRequestBuilder) WithUrl(rawUrl string)(*DevicesItemActivityRequestBuilder) {
+    return NewDevicesItemActivityRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

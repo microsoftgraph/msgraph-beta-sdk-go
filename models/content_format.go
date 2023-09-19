@@ -32,3 +32,6 @@ func SerializeContentFormat(values []ContentFormat) []string {
     }
     return result
 }
+func (i ContentFormat) isMultiValue() bool {
+    return false
+}

@@ -46,8 +46,8 @@ type AcronymsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAcronymIdString provides operations to manage the acronyms property of the microsoft.graph.searchEntity entity.
-func (m *AcronymsRequestBuilder) ByAcronymIdString(acronymId string)(*AcronymsAcronymItemRequestBuilder) {
+// ByAcronymId provides operations to manage the acronyms property of the microsoft.graph.searchEntity entity.
+func (m *AcronymsRequestBuilder) ByAcronymId(acronymId string)(*AcronymsAcronymItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *AcronymsRequestBuilder) ToPostRequestInformation(ctx context.Context, b
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AcronymsRequestBuilder) WithUrl(rawUrl string)(*AcronymsRequestBuilder) {
+    return NewAcronymsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

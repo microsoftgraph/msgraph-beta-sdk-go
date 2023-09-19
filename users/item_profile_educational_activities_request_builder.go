@@ -46,8 +46,8 @@ type ItemProfileEducationalActivitiesRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEducationalActivityIdString provides operations to manage the educationalActivities property of the microsoft.graph.profile entity.
-func (m *ItemProfileEducationalActivitiesRequestBuilder) ByEducationalActivityIdString(educationalActivityId string)(*ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) {
+// ByEducationalActivityId provides operations to manage the educationalActivities property of the microsoft.graph.profile entity.
+func (m *ItemProfileEducationalActivitiesRequestBuilder) ByEducationalActivityId(educationalActivityId string)(*ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemProfileEducationalActivitiesRequestBuilder) ToPostRequestInformatio
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemProfileEducationalActivitiesRequestBuilder) WithUrl(rawUrl string)(*ItemProfileEducationalActivitiesRequestBuilder) {
+    return NewItemProfileEducationalActivitiesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

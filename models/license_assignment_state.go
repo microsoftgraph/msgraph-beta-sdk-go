@@ -62,7 +62,7 @@ func (m *LicenseAssignmentState) GetDisabledPlans()([]i561e97a8befe7661a44c8f546
     }
     return nil
 }
-// GetError gets the error property value. License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors see here.
+// GetError gets the error property value. License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors, see here.
 func (m *LicenseAssignmentState) GetError()(*string) {
     val, err := m.GetBackingStore().Get("error")
     if err != nil {
@@ -275,7 +275,7 @@ func (m *LicenseAssignmentState) SetDisabledPlans(value []i561e97a8befe7661a44c8
         panic(err)
     }
 }
-// SetError sets the error property value. License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors see here.
+// SetError sets the error property value. License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors, see here.
 func (m *LicenseAssignmentState) SetError(value *string)() {
     err := m.GetBackingStore().Set("error", value)
     if err != nil {

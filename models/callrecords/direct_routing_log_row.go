@@ -39,7 +39,7 @@ func (m *DirectRoutingLogRow) GetAdditionalData()(map[string]any) {
 func (m *DirectRoutingLogRow) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCalleeNumber gets the calleeNumber property value. Number of the user or bot who received the call (E.164 format, but may include additional data).
+// GetCalleeNumber gets the calleeNumber property value. Number of the user or bot who received the call (E.164 format, but may include more data).
 func (m *DirectRoutingLogRow) GetCalleeNumber()(*string) {
     val, err := m.GetBackingStore().Get("calleeNumber")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *DirectRoutingLogRow) GetCallEndSubReason()(*int32) {
     }
     return nil
 }
-// GetCallerNumber gets the callerNumber property value. Number of the user or bot who made the call (E.164 format, but may include additional data).
+// GetCallerNumber gets the callerNumber property value. Number of the user or bot who made the call (E.164 format, but may include more data).
 func (m *DirectRoutingLogRow) GetCallerNumber()(*string) {
     val, err := m.GetBackingStore().Get("callerNumber")
     if err != nil {
@@ -405,7 +405,7 @@ func (m *DirectRoutingLogRow) GetId()(*string) {
     }
     return nil
 }
-// GetInviteDateTime gets the inviteDateTime property value. When the initial invite was sent.
+// GetInviteDateTime gets the inviteDateTime property value. The date and time when the initial invite was sent.
 func (m *DirectRoutingLogRow) GetInviteDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("inviteDateTime")
     if err != nil {
@@ -449,7 +449,7 @@ func (m *DirectRoutingLogRow) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOtherPartyCountryCode gets the otherPartyCountryCode property value. Country code of the caller in case of an incoming call, or callee in case of an outgoing call. For details, see ISO 3166-1 alpha-2.
+// GetOtherPartyCountryCode gets the otherPartyCountryCode property value. Country code of the caller for an incoming call, or callee for an outgoing call. For details, see ISO 3166-1 alpha-2.
 func (m *DirectRoutingLogRow) GetOtherPartyCountryCode()(*string) {
     val, err := m.GetBackingStore().Get("otherPartyCountryCode")
     if err != nil {
@@ -526,7 +526,7 @@ func (m *DirectRoutingLogRow) GetUserDisplayName()(*string) {
     }
     return nil
 }
-// GetUserId gets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory. This and other user info will be null/empty for bot call types.
+// GetUserId gets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory. This and other user info is null/empty for bot call types.
 func (m *DirectRoutingLogRow) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -537,7 +537,7 @@ func (m *DirectRoutingLogRow) GetUserId()(*string) {
     }
     return nil
 }
-// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
+// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory, is usually the same as the user's SIP address, and can be same as the user's e-mail address.
 func (m *DirectRoutingLogRow) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -713,7 +713,7 @@ func (m *DirectRoutingLogRow) SetAdditionalData(value map[string]any)() {
 func (m *DirectRoutingLogRow) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCalleeNumber sets the calleeNumber property value. Number of the user or bot who received the call (E.164 format, but may include additional data).
+// SetCalleeNumber sets the calleeNumber property value. Number of the user or bot who received the call (E.164 format, but may include more data).
 func (m *DirectRoutingLogRow) SetCalleeNumber(value *string)() {
     err := m.GetBackingStore().Set("calleeNumber", value)
     if err != nil {
@@ -727,7 +727,7 @@ func (m *DirectRoutingLogRow) SetCallEndSubReason(value *int32)() {
         panic(err)
     }
 }
-// SetCallerNumber sets the callerNumber property value. Number of the user or bot who made the call (E.164 format, but may include additional data).
+// SetCallerNumber sets the callerNumber property value. Number of the user or bot who made the call (E.164 format, but may include more data).
 func (m *DirectRoutingLogRow) SetCallerNumber(value *string)() {
     err := m.GetBackingStore().Set("callerNumber", value)
     if err != nil {
@@ -790,7 +790,7 @@ func (m *DirectRoutingLogRow) SetId(value *string)() {
         panic(err)
     }
 }
-// SetInviteDateTime sets the inviteDateTime property value. When the initial invite was sent.
+// SetInviteDateTime sets the inviteDateTime property value. The date and time when the initial invite was sent.
 func (m *DirectRoutingLogRow) SetInviteDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("inviteDateTime", value)
     if err != nil {
@@ -818,7 +818,7 @@ func (m *DirectRoutingLogRow) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOtherPartyCountryCode sets the otherPartyCountryCode property value. Country code of the caller in case of an incoming call, or callee in case of an outgoing call. For details, see ISO 3166-1 alpha-2.
+// SetOtherPartyCountryCode sets the otherPartyCountryCode property value. Country code of the caller for an incoming call, or callee for an outgoing call. For details, see ISO 3166-1 alpha-2.
 func (m *DirectRoutingLogRow) SetOtherPartyCountryCode(value *string)() {
     err := m.GetBackingStore().Set("otherPartyCountryCode", value)
     if err != nil {
@@ -867,14 +867,14 @@ func (m *DirectRoutingLogRow) SetUserDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory. This and other user info will be null/empty for bot call types.
+// SetUserId sets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory. This and other user info is null/empty for bot call types.
 func (m *DirectRoutingLogRow) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserPrincipalName sets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
+// SetUserPrincipalName sets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory, is usually the same as the user's SIP address, and can be same as the user's e-mail address.
 func (m *DirectRoutingLogRow) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
     if err != nil {

@@ -103,3 +103,7 @@ func (m *TeamsAppsItemAppDefinitionsItemOutlineIconHostedContentValueContentRequ
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TeamsAppsItemAppDefinitionsItemOutlineIconHostedContentValueContentRequestBuilder) WithUrl(rawUrl string)(*TeamsAppsItemAppDefinitionsItemOutlineIconHostedContentValueContentRequestBuilder) {
+    return NewTeamsAppsItemAppDefinitionsItemOutlineIconHostedContentValueContentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

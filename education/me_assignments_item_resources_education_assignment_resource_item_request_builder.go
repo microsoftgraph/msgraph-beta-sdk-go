@@ -73,6 +73,10 @@ func (m *MeAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilder
     }
     return nil
 }
+// DependentResources provides operations to manage the dependentResources property of the microsoft.graph.educationAssignmentResource entity.
+func (m *MeAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilder) DependentResources()(*MeAssignmentsItemResourcesItemDependentResourcesRequestBuilder) {
+    return NewMeAssignmentsItemResourcesItemDependentResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get the properties of an education assignment resource associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
 // [Find more info here]
 // 
@@ -158,4 +162,8 @@ func (m *MeAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilder
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MeAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilder) WithUrl(rawUrl string)(*MeAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilder) {
+    return NewMeAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

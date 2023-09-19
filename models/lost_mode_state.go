@@ -34,3 +34,6 @@ func SerializeLostModeState(values []LostModeState) []string {
     }
     return result
 }
+func (i LostModeState) isMultiValue() bool {
+    return false
+}

@@ -34,3 +34,6 @@ func SerializeDomainNameSource(values []DomainNameSource) []string {
     }
     return result
 }
+func (i DomainNameSource) isMultiValue() bool {
+    return false
+}

@@ -41,3 +41,6 @@ func SerializeUsageRightState(values []UsageRightState) []string {
     }
     return result
 }
+func (i UsageRightState) isMultiValue() bool {
+    return false
+}

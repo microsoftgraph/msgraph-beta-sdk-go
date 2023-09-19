@@ -38,3 +38,6 @@ func SerializePhysicalAddressType(values []PhysicalAddressType) []string {
     }
     return result
 }
+func (i PhysicalAddressType) isMultiValue() bool {
+    return false
+}

@@ -39,8 +39,8 @@ type ManagedEBooksItemCategoriesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ManagedEBooksItemCategoriesRequestBuilderGetQueryParameters
 }
-// ByManagedEBookCategoryIdString provides operations to manage the categories property of the microsoft.graph.managedEBook entity.
-func (m *ManagedEBooksItemCategoriesRequestBuilder) ByManagedEBookCategoryIdString(managedEBookCategoryId string)(*ManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilder) {
+// ByManagedEBookCategoryId provides operations to manage the categories property of the microsoft.graph.managedEBook entity.
+func (m *ManagedEBooksItemCategoriesRequestBuilder) ByManagedEBookCategoryId(managedEBookCategoryId string)(*ManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *ManagedEBooksItemCategoriesRequestBuilder) ToGetRequestInformation(ctx 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedEBooksItemCategoriesRequestBuilder) WithUrl(rawUrl string)(*ManagedEBooksItemCategoriesRequestBuilder) {
+    return NewManagedEBooksItemCategoriesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

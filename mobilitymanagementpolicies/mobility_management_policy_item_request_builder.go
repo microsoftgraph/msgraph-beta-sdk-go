@@ -157,3 +157,7 @@ func (m *MobilityManagementPolicyItemRequestBuilder) ToPatchRequestInformation(c
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MobilityManagementPolicyItemRequestBuilder) WithUrl(rawUrl string)(*MobilityManagementPolicyItemRequestBuilder) {
+    return NewMobilityManagementPolicyItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

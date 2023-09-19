@@ -38,3 +38,6 @@ func SerializeAndroidDeviceOwnerVirtualHomeButtonType(values []AndroidDeviceOwne
     }
     return result
 }
+func (i AndroidDeviceOwnerVirtualHomeButtonType) isMultiValue() bool {
+    return false
+}

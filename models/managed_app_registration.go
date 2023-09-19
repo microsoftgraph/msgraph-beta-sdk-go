@@ -34,6 +34,8 @@ func CreateManagedAppRegistrationFromDiscriminatorValue(parseNode i878a80d2330e8
                         return NewAndroidManagedAppRegistration(), nil
                     case "#microsoft.graph.iosManagedAppRegistration":
                         return NewIosManagedAppRegistration(), nil
+                    case "#microsoft.graph.windowsManagedAppRegistration":
+                        return NewWindowsManagedAppRegistration(), nil
                 }
             }
         }

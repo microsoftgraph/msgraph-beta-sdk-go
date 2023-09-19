@@ -38,7 +38,7 @@ func (m *AccessPackageLocalizedContent) GetAdditionalData()(map[string]any) {
 func (m *AccessPackageLocalizedContent) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDefaultText gets the defaultText property value. The fallback string, which is used when a requested localization is not available. Required.
+// GetDefaultText gets the defaultText property value. The fallback string, which is used when a requested localization isn't available. Required.
 func (m *AccessPackageLocalizedContent) GetDefaultText()(*string) {
     val, err := m.GetBackingStore().Get("defaultText")
     if err != nil {
@@ -157,7 +157,7 @@ func (m *AccessPackageLocalizedContent) SetAdditionalData(value map[string]any)(
 func (m *AccessPackageLocalizedContent) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDefaultText sets the defaultText property value. The fallback string, which is used when a requested localization is not available. Required.
+// SetDefaultText sets the defaultText property value. The fallback string, which is used when a requested localization isn't available. Required.
 func (m *AccessPackageLocalizedContent) SetDefaultText(value *string)() {
     err := m.GetBackingStore().Set("defaultText", value)
     if err != nil {

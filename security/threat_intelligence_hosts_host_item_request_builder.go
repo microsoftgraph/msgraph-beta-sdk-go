@@ -139,6 +139,10 @@ func (m *ThreatIntelligenceHostsHostItemRequestBuilder) Patch(ctx context.Contex
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Hostable), nil
 }
+// Ports provides operations to manage the ports property of the microsoft.graph.security.host entity.
+func (m *ThreatIntelligenceHostsHostItemRequestBuilder) Ports()(*ThreatIntelligenceHostsItemPortsRequestBuilder) {
+    return NewThreatIntelligenceHostsItemPortsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Reputation provides operations to manage the reputation property of the microsoft.graph.security.host entity.
 func (m *ThreatIntelligenceHostsHostItemRequestBuilder) Reputation()(*ThreatIntelligenceHostsItemReputationRequestBuilder) {
     return NewThreatIntelligenceHostsItemReputationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -203,4 +207,8 @@ func (m *ThreatIntelligenceHostsHostItemRequestBuilder) Trackers()(*ThreatIntell
 // Whois provides operations to manage the whois property of the microsoft.graph.security.host entity.
 func (m *ThreatIntelligenceHostsHostItemRequestBuilder) Whois()(*ThreatIntelligenceHostsItemWhoisRequestBuilder) {
     return NewThreatIntelligenceHostsItemWhoisRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ThreatIntelligenceHostsHostItemRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceHostsHostItemRequestBuilder) {
+    return NewThreatIntelligenceHostsHostItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

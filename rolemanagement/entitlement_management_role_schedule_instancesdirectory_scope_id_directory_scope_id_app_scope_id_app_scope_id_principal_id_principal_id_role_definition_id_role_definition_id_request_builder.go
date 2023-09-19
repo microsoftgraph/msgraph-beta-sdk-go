@@ -13,19 +13,19 @@ type EntitlementManagementRoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdA
 // EntitlementManagementRoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilderGetQueryParameters invoke function roleScheduleInstances
 type EntitlementManagementRoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilderGetQueryParameters struct {
     // Usage: appScopeId='@appScopeId'
-    AppScopeId *string
+    AppScopeId *string `uriparametername:"appScopeId"`
     // Include count of items
     Count *bool `uriparametername:"%24count"`
     // Usage: directoryScopeId='@directoryScopeId'
-    DirectoryScopeId *string
+    DirectoryScopeId *string `uriparametername:"directoryScopeId"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
     Orderby []string `uriparametername:"%24orderby"`
     // Usage: principalId='@principalId'
-    PrincipalId *string
+    PrincipalId *string `uriparametername:"principalId"`
     // Usage: roleDefinitionId='@roleDefinitionId'
-    RoleDefinitionId *string
+    RoleDefinitionId *string `uriparametername:"roleDefinitionId"`
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
     // Select properties to be returned
@@ -91,4 +91,8 @@ func (m *EntitlementManagementRoleScheduleInstancesdirectoryScopeIdDirectoryScop
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EntitlementManagementRoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementRoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilder) {
+    return NewEntitlementManagementRoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -44,3 +44,6 @@ func SerializeTeamworkDeviceHealthStatus(values []TeamworkDeviceHealthStatus) []
     }
     return result
 }
+func (i TeamworkDeviceHealthStatus) isMultiValue() bool {
+    return false
+}

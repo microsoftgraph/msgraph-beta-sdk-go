@@ -173,3 +173,7 @@ func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) ToPatchRequestInform
 func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) UpdateRequest()(*ItemUpdateRequestRequestBuilder) {
     return NewItemUpdateRequestRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) WithUrl(rawUrl string)(*GovernanceRoleAssignmentRequestItemRequestBuilder) {
+    return NewGovernanceRoleAssignmentRequestItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

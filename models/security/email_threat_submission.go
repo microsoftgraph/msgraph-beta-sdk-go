@@ -42,7 +42,7 @@ func CreateEmailThreatSubmissionFromDiscriminatorValue(parseNode i878a80d2330e89
     }
     return NewEmailThreatSubmission(), nil
 }
-// GetAttackSimulationInfo gets the attackSimulationInfo property value. If the email is phishing simulation, this field will not be null.
+// GetAttackSimulationInfo gets the attackSimulationInfo property value. If the email is phishing simulation, this field won't be null.
 func (m *EmailThreatSubmission) GetAttackSimulationInfo()(AttackSimulationInfoable) {
     val, err := m.GetBackingStore().Get("attackSimulationInfo")
     if err != nil {
@@ -148,7 +148,7 @@ func (m *EmailThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetInternetMessageId gets the internetMessageId property value. Specifies the internet message id of the email being submitted. This information is present in the email header.
+// GetInternetMessageId gets the internetMessageId property value. Specifies the internet message ID of the email being submitted. This information is present in the email header.
 func (m *EmailThreatSubmission) GetInternetMessageId()(*string) {
     val, err := m.GetBackingStore().Get("internetMessageId")
     if err != nil {
@@ -214,7 +214,7 @@ func (m *EmailThreatSubmission) GetSenderIP()(*string) {
     }
     return nil
 }
-// GetSubject gets the subject property value. Specifies the subject of the email .
+// GetSubject gets the subject property value. Specifies the subject of the email.
 func (m *EmailThreatSubmission) GetSubject()(*string) {
     val, err := m.GetBackingStore().Get("subject")
     if err != nil {
@@ -225,7 +225,7 @@ func (m *EmailThreatSubmission) GetSubject()(*string) {
     }
     return nil
 }
-// GetTenantAllowOrBlockListAction gets the tenantAllowOrBlockListAction property value. It is used to automatically add allows for the components such as URL, file, sender; which are deemed bad by Microsoft so that similar messages in the future can be allowed.
+// GetTenantAllowOrBlockListAction gets the tenantAllowOrBlockListAction property value. It's used to automatically add allows for the components such as URL, file, sender; which are deemed bad by Microsoft so that similar messages in the future can be allowed.
 func (m *EmailThreatSubmission) GetTenantAllowOrBlockListAction()(TenantAllowOrBlockListActionable) {
     val, err := m.GetBackingStore().Get("tenantAllowOrBlockListAction")
     if err != nil {
@@ -299,14 +299,14 @@ func (m *EmailThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetAttackSimulationInfo sets the attackSimulationInfo property value. If the email is phishing simulation, this field will not be null.
+// SetAttackSimulationInfo sets the attackSimulationInfo property value. If the email is phishing simulation, this field won't be null.
 func (m *EmailThreatSubmission) SetAttackSimulationInfo(value AttackSimulationInfoable)() {
     err := m.GetBackingStore().Set("attackSimulationInfo", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInternetMessageId sets the internetMessageId property value. Specifies the internet message id of the email being submitted. This information is present in the email header.
+// SetInternetMessageId sets the internetMessageId property value. Specifies the internet message ID of the email being submitted. This information is present in the email header.
 func (m *EmailThreatSubmission) SetInternetMessageId(value *string)() {
     err := m.GetBackingStore().Set("internetMessageId", value)
     if err != nil {
@@ -348,14 +348,14 @@ func (m *EmailThreatSubmission) SetSenderIP(value *string)() {
         panic(err)
     }
 }
-// SetSubject sets the subject property value. Specifies the subject of the email .
+// SetSubject sets the subject property value. Specifies the subject of the email.
 func (m *EmailThreatSubmission) SetSubject(value *string)() {
     err := m.GetBackingStore().Set("subject", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTenantAllowOrBlockListAction sets the tenantAllowOrBlockListAction property value. It is used to automatically add allows for the components such as URL, file, sender; which are deemed bad by Microsoft so that similar messages in the future can be allowed.
+// SetTenantAllowOrBlockListAction sets the tenantAllowOrBlockListAction property value. It's used to automatically add allows for the components such as URL, file, sender; which are deemed bad by Microsoft so that similar messages in the future can be allowed.
 func (m *EmailThreatSubmission) SetTenantAllowOrBlockListAction(value TenantAllowOrBlockListActionable)() {
     err := m.GetBackingStore().Set("tenantAllowOrBlockListAction", value)
     if err != nil {

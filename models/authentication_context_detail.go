@@ -38,3 +38,6 @@ func SerializeAuthenticationContextDetail(values []AuthenticationContextDetail) 
     }
     return result
 }
+func (i AuthenticationContextDetail) isMultiValue() bool {
+    return false
+}

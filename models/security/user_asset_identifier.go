@@ -83,3 +83,6 @@ func SerializeUserAssetIdentifier(values []UserAssetIdentifier) []string {
     }
     return result
 }
+func (i UserAssetIdentifier) isMultiValue() bool {
+    return false
+}

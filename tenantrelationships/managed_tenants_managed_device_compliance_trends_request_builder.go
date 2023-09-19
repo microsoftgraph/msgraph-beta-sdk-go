@@ -46,8 +46,8 @@ type ManagedTenantsManagedDeviceComplianceTrendsRequestBuilderPostRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByManagedDeviceComplianceTrendIdString provides operations to manage the managedDeviceComplianceTrends property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsManagedDeviceComplianceTrendsRequestBuilder) ByManagedDeviceComplianceTrendIdString(managedDeviceComplianceTrendId string)(*ManagedTenantsManagedDeviceComplianceTrendsManagedDeviceComplianceTrendItemRequestBuilder) {
+// ByManagedDeviceComplianceTrendId provides operations to manage the managedDeviceComplianceTrends property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsManagedDeviceComplianceTrendsRequestBuilder) ByManagedDeviceComplianceTrendId(managedDeviceComplianceTrendId string)(*ManagedTenantsManagedDeviceComplianceTrendsManagedDeviceComplianceTrendItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ManagedTenantsManagedDeviceComplianceTrendsRequestBuilder) ToPostReques
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedTenantsManagedDeviceComplianceTrendsRequestBuilder) WithUrl(rawUrl string)(*ManagedTenantsManagedDeviceComplianceTrendsRequestBuilder) {
+    return NewManagedTenantsManagedDeviceComplianceTrendsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

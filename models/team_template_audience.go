@@ -38,3 +38,6 @@ func SerializeTeamTemplateAudience(values []TeamTemplateAudience) []string {
     }
     return result
 }
+func (i TeamTemplateAudience) isMultiValue() bool {
+    return false
+}

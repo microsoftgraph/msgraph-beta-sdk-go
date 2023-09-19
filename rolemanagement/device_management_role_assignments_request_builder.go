@@ -46,8 +46,8 @@ type DeviceManagementRoleAssignmentsRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUnifiedRoleAssignmentMultipleIdString provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplicationMultiple entity.
-func (m *DeviceManagementRoleAssignmentsRequestBuilder) ByUnifiedRoleAssignmentMultipleIdString(unifiedRoleAssignmentMultipleId string)(*DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) {
+// ByUnifiedRoleAssignmentMultipleId provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplicationMultiple entity.
+func (m *DeviceManagementRoleAssignmentsRequestBuilder) ByUnifiedRoleAssignmentMultipleId(unifiedRoleAssignmentMultipleId string)(*DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *DeviceManagementRoleAssignmentsRequestBuilder) ToPostRequestInformation
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceManagementRoleAssignmentsRequestBuilder) WithUrl(rawUrl string)(*DeviceManagementRoleAssignmentsRequestBuilder) {
+    return NewDeviceManagementRoleAssignmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

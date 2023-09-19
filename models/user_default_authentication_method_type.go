@@ -47,3 +47,6 @@ func SerializeUserDefaultAuthenticationMethodType(values []UserDefaultAuthentica
     }
     return result
 }
+func (i UserDefaultAuthenticationMethodType) isMultiValue() bool {
+    return false
+}

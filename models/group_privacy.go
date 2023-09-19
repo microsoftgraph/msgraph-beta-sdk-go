@@ -38,3 +38,6 @@ func SerializeGroupPrivacy(values []GroupPrivacy) []string {
     }
     return result
 }
+func (i GroupPrivacy) isMultiValue() bool {
+    return false
+}

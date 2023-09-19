@@ -41,3 +41,6 @@ func SerializeTenantOnboardingStatus(values []TenantOnboardingStatus) []string {
     }
     return result
 }
+func (i TenantOnboardingStatus) isMultiValue() bool {
+    return false
+}

@@ -46,8 +46,8 @@ type ComanagedDevicesItemLogCollectionRequestsRequestBuilderPostRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceLogCollectionResponseIdString provides operations to manage the logCollectionRequests property of the microsoft.graph.managedDevice entity.
-func (m *ComanagedDevicesItemLogCollectionRequestsRequestBuilder) ByDeviceLogCollectionResponseIdString(deviceLogCollectionResponseId string)(*ComanagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilder) {
+// ByDeviceLogCollectionResponseId provides operations to manage the logCollectionRequests property of the microsoft.graph.managedDevice entity.
+func (m *ComanagedDevicesItemLogCollectionRequestsRequestBuilder) ByDeviceLogCollectionResponseId(deviceLogCollectionResponseId string)(*ComanagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ComanagedDevicesItemLogCollectionRequestsRequestBuilder) ToPostRequestI
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ComanagedDevicesItemLogCollectionRequestsRequestBuilder) WithUrl(rawUrl string)(*ComanagedDevicesItemLogCollectionRequestsRequestBuilder) {
+    return NewComanagedDevicesItemLogCollectionRequestsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

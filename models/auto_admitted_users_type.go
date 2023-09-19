@@ -32,3 +32,6 @@ func SerializeAutoAdmittedUsersType(values []AutoAdmittedUsersType) []string {
     }
     return result
 }
+func (i AutoAdmittedUsersType) isMultiValue() bool {
+    return false
+}

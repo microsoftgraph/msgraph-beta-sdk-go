@@ -34,3 +34,6 @@ func SerializeDeliveryOptimizationRestrictPeerSelectionByOptions(values []Delive
     }
     return result
 }
+func (i DeliveryOptimizationRestrictPeerSelectionByOptions) isMultiValue() bool {
+    return false
+}

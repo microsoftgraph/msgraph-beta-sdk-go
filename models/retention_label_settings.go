@@ -103,7 +103,7 @@ func (m *RetentionLabelSettings) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetIsContentUpdateAllowed gets the isContentUpdateAllowed property value. The isContentUpdateAllowed property
+// GetIsContentUpdateAllowed gets the isContentUpdateAllowed property value. Specifies whether updates to document content are allowed. Read-only.
 func (m *RetentionLabelSettings) GetIsContentUpdateAllowed()(*bool) {
     val, err := m.GetBackingStore().Get("isContentUpdateAllowed")
     if err != nil {
@@ -114,7 +114,7 @@ func (m *RetentionLabelSettings) GetIsContentUpdateAllowed()(*bool) {
     }
     return nil
 }
-// GetIsDeleteAllowed gets the isDeleteAllowed property value. The isDeleteAllowed property
+// GetIsDeleteAllowed gets the isDeleteAllowed property value. Specifies whether the document deletion is allowed. Read-only.
 func (m *RetentionLabelSettings) GetIsDeleteAllowed()(*bool) {
     val, err := m.GetBackingStore().Get("isDeleteAllowed")
     if err != nil {
@@ -125,7 +125,7 @@ func (m *RetentionLabelSettings) GetIsDeleteAllowed()(*bool) {
     }
     return nil
 }
-// GetIsLabelUpdateAllowed gets the isLabelUpdateAllowed property value. The isLabelUpdateAllowed property
+// GetIsLabelUpdateAllowed gets the isLabelUpdateAllowed property value. Specifies whether you're allowed to change the retention label on the document. Read-only.
 func (m *RetentionLabelSettings) GetIsLabelUpdateAllowed()(*bool) {
     val, err := m.GetBackingStore().Get("isLabelUpdateAllowed")
     if err != nil {
@@ -136,7 +136,7 @@ func (m *RetentionLabelSettings) GetIsLabelUpdateAllowed()(*bool) {
     }
     return nil
 }
-// GetIsMetadataUpdateAllowed gets the isMetadataUpdateAllowed property value. The isMetadataUpdateAllowed property
+// GetIsMetadataUpdateAllowed gets the isMetadataUpdateAllowed property value. Specifies whether updates to the item metadata (for example, the Title field) are blocked. Read-only.
 func (m *RetentionLabelSettings) GetIsMetadataUpdateAllowed()(*bool) {
     val, err := m.GetBackingStore().Get("isMetadataUpdateAllowed")
     if err != nil {
@@ -147,7 +147,7 @@ func (m *RetentionLabelSettings) GetIsMetadataUpdateAllowed()(*bool) {
     }
     return nil
 }
-// GetIsRecordLocked gets the isRecordLocked property value. The isRecordLocked property
+// GetIsRecordLocked gets the isRecordLocked property value. Specifies whether the item is locked. Read-write.
 func (m *RetentionLabelSettings) GetIsRecordLocked()(*bool) {
     val, err := m.GetBackingStore().Get("isRecordLocked")
     if err != nil {
@@ -226,35 +226,35 @@ func (m *RetentionLabelSettings) SetAdditionalData(value map[string]any)() {
 func (m *RetentionLabelSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsContentUpdateAllowed sets the isContentUpdateAllowed property value. The isContentUpdateAllowed property
+// SetIsContentUpdateAllowed sets the isContentUpdateAllowed property value. Specifies whether updates to document content are allowed. Read-only.
 func (m *RetentionLabelSettings) SetIsContentUpdateAllowed(value *bool)() {
     err := m.GetBackingStore().Set("isContentUpdateAllowed", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsDeleteAllowed sets the isDeleteAllowed property value. The isDeleteAllowed property
+// SetIsDeleteAllowed sets the isDeleteAllowed property value. Specifies whether the document deletion is allowed. Read-only.
 func (m *RetentionLabelSettings) SetIsDeleteAllowed(value *bool)() {
     err := m.GetBackingStore().Set("isDeleteAllowed", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsLabelUpdateAllowed sets the isLabelUpdateAllowed property value. The isLabelUpdateAllowed property
+// SetIsLabelUpdateAllowed sets the isLabelUpdateAllowed property value. Specifies whether you're allowed to change the retention label on the document. Read-only.
 func (m *RetentionLabelSettings) SetIsLabelUpdateAllowed(value *bool)() {
     err := m.GetBackingStore().Set("isLabelUpdateAllowed", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsMetadataUpdateAllowed sets the isMetadataUpdateAllowed property value. The isMetadataUpdateAllowed property
+// SetIsMetadataUpdateAllowed sets the isMetadataUpdateAllowed property value. Specifies whether updates to the item metadata (for example, the Title field) are blocked. Read-only.
 func (m *RetentionLabelSettings) SetIsMetadataUpdateAllowed(value *bool)() {
     err := m.GetBackingStore().Set("isMetadataUpdateAllowed", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsRecordLocked sets the isRecordLocked property value. The isRecordLocked property
+// SetIsRecordLocked sets the isRecordLocked property value. Specifies whether the item is locked. Read-write.
 func (m *RetentionLabelSettings) SetIsRecordLocked(value *bool)() {
     err := m.GetBackingStore().Set("isRecordLocked", value)
     if err != nil {

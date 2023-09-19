@@ -46,8 +46,8 @@ type MonitoringAlertRecordsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAlertRecordIdString provides operations to manage the alertRecords property of the microsoft.graph.deviceManagement.monitoring entity.
-func (m *MonitoringAlertRecordsRequestBuilder) ByAlertRecordIdString(alertRecordId string)(*MonitoringAlertRecordsAlertRecordItemRequestBuilder) {
+// ByAlertRecordId provides operations to manage the alertRecords property of the microsoft.graph.deviceManagement.monitoring entity.
+func (m *MonitoringAlertRecordsRequestBuilder) ByAlertRecordId(alertRecordId string)(*MonitoringAlertRecordsAlertRecordItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -151,4 +151,8 @@ func (m *MonitoringAlertRecordsRequestBuilder) ToPostRequestInformation(ctx cont
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MonitoringAlertRecordsRequestBuilder) WithUrl(rawUrl string)(*MonitoringAlertRecordsRequestBuilder) {
+    return NewMonitoringAlertRecordsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

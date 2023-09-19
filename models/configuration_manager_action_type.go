@@ -54,3 +54,6 @@ func SerializeConfigurationManagerActionType(values []ConfigurationManagerAction
     }
     return result
 }
+func (i ConfigurationManagerActionType) isMultiValue() bool {
+    return false
+}

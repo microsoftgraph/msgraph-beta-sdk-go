@@ -34,3 +34,6 @@ func SerializeEncryptionState(values []EncryptionState) []string {
     }
     return result
 }
+func (i EncryptionState) isMultiValue() bool {
+    return false
+}

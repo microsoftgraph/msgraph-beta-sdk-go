@@ -56,3 +56,6 @@ func SerializePfsGroup(values []PfsGroup) []string {
     }
     return result
 }
+func (i PfsGroup) isMultiValue() bool {
+    return false
+}

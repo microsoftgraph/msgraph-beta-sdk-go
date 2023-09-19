@@ -41,3 +41,6 @@ func SerializePlannerContainerType(values []PlannerContainerType) []string {
     }
     return result
 }
+func (i PlannerContainerType) isMultiValue() bool {
+    return false
+}

@@ -65,3 +65,7 @@ func (m *ReportsGetEncryptionReportForDevicesRequestBuilder) ToPostRequestInform
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ReportsGetEncryptionReportForDevicesRequestBuilder) WithUrl(rawUrl string)(*ReportsGetEncryptionReportForDevicesRequestBuilder) {
+    return NewReportsGetEncryptionReportForDevicesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

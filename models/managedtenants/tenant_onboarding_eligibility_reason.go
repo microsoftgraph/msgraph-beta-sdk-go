@@ -44,3 +44,6 @@ func SerializeTenantOnboardingEligibilityReason(values []TenantOnboardingEligibi
     }
     return result
 }
+func (i TenantOnboardingEligibilityReason) isMultiValue() bool {
+    return false
+}

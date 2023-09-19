@@ -38,3 +38,6 @@ func SerializeBrowserSyncSetting(values []BrowserSyncSetting) []string {
     }
     return result
 }
+func (i BrowserSyncSetting) isMultiValue() bool {
+    return false
+}

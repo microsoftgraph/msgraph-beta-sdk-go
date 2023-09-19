@@ -50,3 +50,6 @@ func SerializeAndroidManagedStoreAppConfigurationSchemaItemDataType(values []And
     }
     return result
 }
+func (i AndroidManagedStoreAppConfigurationSchemaItemDataType) isMultiValue() bool {
+    return false
+}

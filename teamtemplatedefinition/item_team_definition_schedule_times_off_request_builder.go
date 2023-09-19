@@ -44,8 +44,8 @@ type ItemTeamDefinitionScheduleTimesOffRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTimeOffIdString provides operations to manage the timesOff property of the microsoft.graph.schedule entity.
-func (m *ItemTeamDefinitionScheduleTimesOffRequestBuilder) ByTimeOffIdString(timeOffId string)(*ItemTeamDefinitionScheduleTimesOffTimeOffItemRequestBuilder) {
+// ByTimeOffId provides operations to manage the timesOff property of the microsoft.graph.schedule entity.
+func (m *ItemTeamDefinitionScheduleTimesOffRequestBuilder) ByTimeOffId(timeOffId string)(*ItemTeamDefinitionScheduleTimesOffTimeOffItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -148,4 +148,8 @@ func (m *ItemTeamDefinitionScheduleTimesOffRequestBuilder) ToPostRequestInformat
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTeamDefinitionScheduleTimesOffRequestBuilder) WithUrl(rawUrl string)(*ItemTeamDefinitionScheduleTimesOffRequestBuilder) {
+    return NewItemTeamDefinitionScheduleTimesOffRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

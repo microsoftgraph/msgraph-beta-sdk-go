@@ -46,3 +46,6 @@ func SerializeUserPfxIntendedPurpose(values []UserPfxIntendedPurpose) []string {
     }
     return result
 }
+func (i UserPfxIntendedPurpose) isMultiValue() bool {
+    return false
+}

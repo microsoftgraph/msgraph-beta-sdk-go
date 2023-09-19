@@ -35,7 +35,7 @@ func (m *KnowledgeBaseArticle) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetUrl gets the url property value. The url property
+// GetUrl gets the url property value. The URL of the knowledge base article. Read-only.
 func (m *KnowledgeBaseArticle) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
     if err != nil {
@@ -60,7 +60,7 @@ func (m *KnowledgeBaseArticle) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetUrl sets the url property value. The url property
+// SetUrl sets the url property value. The URL of the knowledge base article. Read-only.
 func (m *KnowledgeBaseArticle) SetUrl(value *string)() {
     err := m.GetBackingStore().Set("url", value)
     if err != nil {

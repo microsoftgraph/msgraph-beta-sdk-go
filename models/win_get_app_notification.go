@@ -42,3 +42,6 @@ func SerializeWinGetAppNotification(values []WinGetAppNotification) []string {
     }
     return result
 }
+func (i WinGetAppNotification) isMultiValue() bool {
+    return false
+}

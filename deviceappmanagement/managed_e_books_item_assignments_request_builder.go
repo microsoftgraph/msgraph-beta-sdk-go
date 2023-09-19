@@ -46,8 +46,8 @@ type ManagedEBooksItemAssignmentsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByManagedEBookAssignmentIdString provides operations to manage the assignments property of the microsoft.graph.managedEBook entity.
-func (m *ManagedEBooksItemAssignmentsRequestBuilder) ByManagedEBookAssignmentIdString(managedEBookAssignmentId string)(*ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) {
+// ByManagedEBookAssignmentId provides operations to manage the assignments property of the microsoft.graph.managedEBook entity.
+func (m *ManagedEBooksItemAssignmentsRequestBuilder) ByManagedEBookAssignmentId(managedEBookAssignmentId string)(*ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ManagedEBooksItemAssignmentsRequestBuilder) ToPostRequestInformation(ct
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedEBooksItemAssignmentsRequestBuilder) WithUrl(rawUrl string)(*ManagedEBooksItemAssignmentsRequestBuilder) {
+    return NewManagedEBooksItemAssignmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

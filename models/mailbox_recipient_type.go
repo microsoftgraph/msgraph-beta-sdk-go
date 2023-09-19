@@ -47,3 +47,6 @@ func SerializeMailboxRecipientType(values []MailboxRecipientType) []string {
     }
     return result
 }
+func (i MailboxRecipientType) isMultiValue() bool {
+    return false
+}

@@ -42,3 +42,6 @@ func SerializeWindowsVpnConnectionType(values []WindowsVpnConnectionType) []stri
     }
     return result
 }
+func (i WindowsVpnConnectionType) isMultiValue() bool {
+    return false
+}

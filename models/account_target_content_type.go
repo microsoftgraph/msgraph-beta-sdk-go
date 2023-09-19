@@ -38,3 +38,6 @@ func SerializeAccountTargetContentType(values []AccountTargetContentType) []stri
     }
     return result
 }
+func (i AccountTargetContentType) isMultiValue() bool {
+    return false
+}

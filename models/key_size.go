@@ -38,3 +38,6 @@ func SerializeKeySize(values []KeySize) []string {
     }
     return result
 }
+func (i KeySize) isMultiValue() bool {
+    return false
+}

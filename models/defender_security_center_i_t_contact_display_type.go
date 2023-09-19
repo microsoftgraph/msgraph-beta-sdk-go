@@ -42,3 +42,6 @@ func SerializeDefenderSecurityCenterITContactDisplayType(values []DefenderSecuri
     }
     return result
 }
+func (i DefenderSecurityCenterITContactDisplayType) isMultiValue() bool {
+    return false
+}

@@ -38,3 +38,6 @@ func SerializeAndroidDeviceOwnerRequiredPasswordUnlock(values []AndroidDeviceOwn
     }
     return result
 }
+func (i AndroidDeviceOwnerRequiredPasswordUnlock) isMultiValue() bool {
+    return false
+}

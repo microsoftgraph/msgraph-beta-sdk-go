@@ -73,7 +73,7 @@ func (m *DowngradeJustification) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetIsDowngradeJustified gets the isDowngradeJustified property value. Indicates whether the downgrade is or is not justified.
+// GetIsDowngradeJustified gets the isDowngradeJustified property value. Indicates whether the downgrade is or isn't justified.
 func (m *DowngradeJustification) GetIsDowngradeJustified()(*bool) {
     val, err := m.GetBackingStore().Get("isDowngradeJustified")
     if err != nil {
@@ -84,7 +84,7 @@ func (m *DowngradeJustification) GetIsDowngradeJustified()(*bool) {
     }
     return nil
 }
-// GetJustificationMessage gets the justificationMessage property value. Message that indicates why a downgrade is justified. The message will appear in administrative logs.
+// GetJustificationMessage gets the justificationMessage property value. Message that indicates why a downgrade is justified. The message appears in administrative logs.
 func (m *DowngradeJustification) GetJustificationMessage()(*string) {
     val, err := m.GetBackingStore().Get("justificationMessage")
     if err != nil {
@@ -145,14 +145,14 @@ func (m *DowngradeJustification) SetAdditionalData(value map[string]any)() {
 func (m *DowngradeJustification) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsDowngradeJustified sets the isDowngradeJustified property value. Indicates whether the downgrade is or is not justified.
+// SetIsDowngradeJustified sets the isDowngradeJustified property value. Indicates whether the downgrade is or isn't justified.
 func (m *DowngradeJustification) SetIsDowngradeJustified(value *bool)() {
     err := m.GetBackingStore().Set("isDowngradeJustified", value)
     if err != nil {
         panic(err)
     }
 }
-// SetJustificationMessage sets the justificationMessage property value. Message that indicates why a downgrade is justified. The message will appear in administrative logs.
+// SetJustificationMessage sets the justificationMessage property value. Message that indicates why a downgrade is justified. The message appears in administrative logs.
 func (m *DowngradeJustification) SetJustificationMessage(value *string)() {
     err := m.GetBackingStore().Set("justificationMessage", value)
     if err != nil {

@@ -46,8 +46,8 @@ type RoleManagementAlertsAlertConfigurationsRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUnifiedRoleManagementAlertConfigurationIdString provides operations to manage the alertConfigurations property of the microsoft.graph.roleManagementAlert entity.
-func (m *RoleManagementAlertsAlertConfigurationsRequestBuilder) ByUnifiedRoleManagementAlertConfigurationIdString(unifiedRoleManagementAlertConfigurationId string)(*RoleManagementAlertsAlertConfigurationsUnifiedRoleManagementAlertConfigurationItemRequestBuilder) {
+// ByUnifiedRoleManagementAlertConfigurationId provides operations to manage the alertConfigurations property of the microsoft.graph.roleManagementAlert entity.
+func (m *RoleManagementAlertsAlertConfigurationsRequestBuilder) ByUnifiedRoleManagementAlertConfigurationId(unifiedRoleManagementAlertConfigurationId string)(*RoleManagementAlertsAlertConfigurationsUnifiedRoleManagementAlertConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *RoleManagementAlertsAlertConfigurationsRequestBuilder) ToPostRequestInf
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *RoleManagementAlertsAlertConfigurationsRequestBuilder) WithUrl(rawUrl string)(*RoleManagementAlertsAlertConfigurationsRequestBuilder) {
+    return NewRoleManagementAlertsAlertConfigurationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

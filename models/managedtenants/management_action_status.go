@@ -56,3 +56,6 @@ func SerializeManagementActionStatus(values []ManagementActionStatus) []string {
     }
     return result
 }
+func (i ManagementActionStatus) isMultiValue() bool {
+    return false
+}

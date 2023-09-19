@@ -100,7 +100,7 @@ func (m *QualityUpdateCveSeverityInformation) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetMaxBaseScore gets the maxBaseScore property value. The maxBaseScore property
+// GetMaxBaseScore gets the maxBaseScore property value. Highest base score that occurs of any CVE addressed by the quality update. Read-only.
 func (m *QualityUpdateCveSeverityInformation) GetMaxBaseScore()(*float64) {
     val, err := m.GetBackingStore().Get("maxBaseScore")
     if err != nil {
@@ -192,7 +192,7 @@ func (m *QualityUpdateCveSeverityInformation) SetExploitedCves(value []CveInform
         panic(err)
     }
 }
-// SetMaxBaseScore sets the maxBaseScore property value. The maxBaseScore property
+// SetMaxBaseScore sets the maxBaseScore property value. Highest base score that occurs of any CVE addressed by the quality update. Read-only.
 func (m *QualityUpdateCveSeverityInformation) SetMaxBaseScore(value *float64)() {
     err := m.GetBackingStore().Set("maxBaseScore", value)
     if err != nil {

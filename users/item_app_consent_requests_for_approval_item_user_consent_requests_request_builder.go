@@ -46,8 +46,8 @@ type ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilderPostR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserConsentRequestIdString provides operations to manage the userConsentRequests property of the microsoft.graph.appConsentRequest entity.
-func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder) ByUserConsentRequestIdString(userConsentRequestId string)(*ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) {
+// ByUserConsentRequestId provides operations to manage the userConsentRequests property of the microsoft.graph.appConsentRequest entity.
+func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder) ByUserConsentRequestId(userConsentRequestId string)(*ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -151,4 +151,8 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder) WithUrl(rawUrl string)(*ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder) {
+    return NewItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

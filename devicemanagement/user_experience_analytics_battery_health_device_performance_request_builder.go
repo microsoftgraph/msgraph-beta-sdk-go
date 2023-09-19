@@ -46,8 +46,8 @@ type UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilderPostRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserExperienceAnalyticsBatteryHealthDevicePerformanceIdString provides operations to manage the userExperienceAnalyticsBatteryHealthDevicePerformance property of the microsoft.graph.deviceManagement entity.
-func (m *UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder) ByUserExperienceAnalyticsBatteryHealthDevicePerformanceIdString(userExperienceAnalyticsBatteryHealthDevicePerformanceId string)(*UserExperienceAnalyticsBatteryHealthDevicePerformanceUserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilder) {
+// ByUserExperienceAnalyticsBatteryHealthDevicePerformanceId provides operations to manage the userExperienceAnalyticsBatteryHealthDevicePerformance property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder) ByUserExperienceAnalyticsBatteryHealthDevicePerformanceId(userExperienceAnalyticsBatteryHealthDevicePerformanceId string)(*UserExperienceAnalyticsBatteryHealthDevicePerformanceUserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder) To
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder) WithUrl(rawUrl string)(*UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder) {
+    return NewUserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

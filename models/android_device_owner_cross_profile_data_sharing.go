@@ -46,3 +46,6 @@ func SerializeAndroidDeviceOwnerCrossProfileDataSharing(values []AndroidDeviceOw
     }
     return result
 }
+func (i AndroidDeviceOwnerCrossProfileDataSharing) isMultiValue() bool {
+    return false
+}

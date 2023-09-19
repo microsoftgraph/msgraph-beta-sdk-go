@@ -44,3 +44,6 @@ func SerializeIndustryDataRunStatus(values []IndustryDataRunStatus) []string {
     }
     return result
 }
+func (i IndustryDataRunStatus) isMultiValue() bool {
+    return false
+}

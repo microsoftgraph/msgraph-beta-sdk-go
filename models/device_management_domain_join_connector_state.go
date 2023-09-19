@@ -38,3 +38,6 @@ func SerializeDeviceManagementDomainJoinConnectorState(values []DeviceManagement
     }
     return result
 }
+func (i DeviceManagementDomainJoinConnectorState) isMultiValue() bool {
+    return false
+}

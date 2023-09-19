@@ -42,3 +42,6 @@ func SerializeKeyStorageProviderOption(values []KeyStorageProviderOption) []stri
     }
     return result
 }
+func (i KeyStorageProviderOption) isMultiValue() bool {
+    return false
+}

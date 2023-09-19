@@ -176,3 +176,7 @@ func (m *DirectorySettingTemplateItemRequestBuilder) ToPatchRequestInformation(c
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DirectorySettingTemplateItemRequestBuilder) WithUrl(rawUrl string)(*DirectorySettingTemplateItemRequestBuilder) {
+    return NewDirectorySettingTemplateItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

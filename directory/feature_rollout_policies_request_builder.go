@@ -46,9 +46,9 @@ type FeatureRolloutPoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByFeatureRolloutPolicyIdString provides operations to manage the featureRolloutPolicies property of the microsoft.graph.directory entity.
+// ByFeatureRolloutPolicyId provides operations to manage the featureRolloutPolicies property of the microsoft.graph.directory entity.
 // Deprecated: Feature Rollout Policies have been grouped with other policies under /policies. The existing /directory/featureRolloutPolicies is deprecated and will stop returning data on 06/30/2021. Please use /policies/featureRolloutPolicies. as of 2021-01/DirectoryFeatureRolloutPolicies on 2021-03-05 and will be removed 2021-06-30
-func (m *FeatureRolloutPoliciesRequestBuilder) ByFeatureRolloutPolicyIdString(featureRolloutPolicyId string)(*FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) {
+func (m *FeatureRolloutPoliciesRequestBuilder) ByFeatureRolloutPolicyId(featureRolloutPolicyId string)(*FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -149,4 +149,9 @@ func (m *FeatureRolloutPoliciesRequestBuilder) ToPostRequestInformation(ctx cont
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Feature Rollout Policies have been grouped with other policies under /policies. The existing /directory/featureRolloutPolicies is deprecated and will stop returning data on 06/30/2021. Please use /policies/featureRolloutPolicies. as of 2021-01/DirectoryFeatureRolloutPolicies on 2021-03-05 and will be removed 2021-06-30
+func (m *FeatureRolloutPoliciesRequestBuilder) WithUrl(rawUrl string)(*FeatureRolloutPoliciesRequestBuilder) {
+    return NewFeatureRolloutPoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

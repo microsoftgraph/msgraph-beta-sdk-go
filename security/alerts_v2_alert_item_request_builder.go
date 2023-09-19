@@ -41,6 +41,10 @@ type Alerts_v2AlertItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Comments the comments property
+func (m *Alerts_v2AlertItemRequestBuilder) Comments()(*Alerts_v2ItemCommentsRequestBuilder) {
+    return NewAlerts_v2ItemCommentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewAlerts_v2AlertItemRequestBuilderInternal instantiates a new AlertItemRequestBuilder and sets the default values.
 func NewAlerts_v2AlertItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*Alerts_v2AlertItemRequestBuilder) {
     m := &Alerts_v2AlertItemRequestBuilder{
@@ -158,4 +162,8 @@ func (m *Alerts_v2AlertItemRequestBuilder) ToPatchRequestInformation(ctx context
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *Alerts_v2AlertItemRequestBuilder) WithUrl(rawUrl string)(*Alerts_v2AlertItemRequestBuilder) {
+    return NewAlerts_v2AlertItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

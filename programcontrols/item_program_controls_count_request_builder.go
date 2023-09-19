@@ -74,3 +74,7 @@ func (m *ItemProgramControlsCountRequestBuilder) ToGetRequestInformation(ctx con
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemProgramControlsCountRequestBuilder) WithUrl(rawUrl string)(*ItemProgramControlsCountRequestBuilder) {
+    return NewItemProgramControlsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

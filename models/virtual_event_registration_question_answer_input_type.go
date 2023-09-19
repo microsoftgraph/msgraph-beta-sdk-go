@@ -44,3 +44,6 @@ func SerializeVirtualEventRegistrationQuestionAnswerInputType(values []VirtualEv
     }
     return result
 }
+func (i VirtualEventRegistrationQuestionAnswerInputType) isMultiValue() bool {
+    return false
+}

@@ -42,3 +42,6 @@ func SerializeIngestionSource(values []IngestionSource) []string {
     }
     return result
 }
+func (i IngestionSource) isMultiValue() bool {
+    return false
+}

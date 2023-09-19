@@ -58,6 +58,10 @@ func NewVirtualEndpointCloudPCsCloudPCItemRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointCloudPCsCloudPCItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// CreateSnapshot provides operations to call the createSnapshot method.
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) CreateSnapshot()(*VirtualEndpointCloudPCsItemCreateSnapshotRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemCreateSnapshotRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete navigation property cloudPCs for deviceManagement
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsCloudPCItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -155,6 +159,10 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Rename()(*VirtualEndp
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Reprovision()(*VirtualEndpointCloudPCsItemReprovisionRequestBuilder) {
     return NewVirtualEndpointCloudPCsItemReprovisionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Resize provides operations to call the resize method.
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Resize()(*VirtualEndpointCloudPCsItemResizeRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemResizeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Restore provides operations to call the restore method.
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Restore()(*VirtualEndpointCloudPCsItemRestoreRequestBuilder) {
     return NewVirtualEndpointCloudPCsItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -219,4 +227,8 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) ToPatchRequestInforma
 // Troubleshoot provides operations to call the troubleshoot method.
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Troubleshoot()(*VirtualEndpointCloudPCsItemTroubleshootRequestBuilder) {
     return NewVirtualEndpointCloudPCsItemTroubleshootRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointCloudPCsCloudPCItemRequestBuilder) {
+    return NewVirtualEndpointCloudPCsCloudPCItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

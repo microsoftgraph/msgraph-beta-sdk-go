@@ -39,8 +39,8 @@ type CompaniesItemSalesOrderLinesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *CompaniesItemSalesOrderLinesRequestBuilderGetQueryParameters
 }
-// BySalesOrderLineIdString provides operations to manage the salesOrderLines property of the microsoft.graph.company entity.
-func (m *CompaniesItemSalesOrderLinesRequestBuilder) BySalesOrderLineIdString(salesOrderLineId string)(*CompaniesItemSalesOrderLinesSalesOrderLineItemRequestBuilder) {
+// BySalesOrderLineId provides operations to manage the salesOrderLines property of the microsoft.graph.company entity.
+func (m *CompaniesItemSalesOrderLinesRequestBuilder) BySalesOrderLineId(salesOrderLineId string)(*CompaniesItemSalesOrderLinesSalesOrderLineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *CompaniesItemSalesOrderLinesRequestBuilder) ToGetRequestInformation(ctx
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CompaniesItemSalesOrderLinesRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemSalesOrderLinesRequestBuilder) {
+    return NewCompaniesItemSalesOrderLinesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

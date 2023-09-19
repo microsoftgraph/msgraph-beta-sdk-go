@@ -153,3 +153,7 @@ func (m *WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilder) To
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilder) WithUrl(rawUrl string)(*WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilder) {
+    return NewWindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

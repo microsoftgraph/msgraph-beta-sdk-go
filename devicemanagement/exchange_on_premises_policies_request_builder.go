@@ -46,8 +46,8 @@ type ExchangeOnPremisesPoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementExchangeOnPremisesPolicyIdString provides operations to manage the exchangeOnPremisesPolicies property of the microsoft.graph.deviceManagement entity.
-func (m *ExchangeOnPremisesPoliciesRequestBuilder) ByDeviceManagementExchangeOnPremisesPolicyIdString(deviceManagementExchangeOnPremisesPolicyId string)(*ExchangeOnPremisesPoliciesDeviceManagementExchangeOnPremisesPolicyItemRequestBuilder) {
+// ByDeviceManagementExchangeOnPremisesPolicyId provides operations to manage the exchangeOnPremisesPolicies property of the microsoft.graph.deviceManagement entity.
+func (m *ExchangeOnPremisesPoliciesRequestBuilder) ByDeviceManagementExchangeOnPremisesPolicyId(deviceManagementExchangeOnPremisesPolicyId string)(*ExchangeOnPremisesPoliciesDeviceManagementExchangeOnPremisesPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ExchangeOnPremisesPoliciesRequestBuilder) ToPostRequestInformation(ctx 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ExchangeOnPremisesPoliciesRequestBuilder) WithUrl(rawUrl string)(*ExchangeOnPremisesPoliciesRequestBuilder) {
+    return NewExchangeOnPremisesPoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

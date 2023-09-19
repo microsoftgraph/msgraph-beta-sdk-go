@@ -50,3 +50,6 @@ func SerializeWiredNetworkAuthenticationType(values []WiredNetworkAuthentication
     }
     return result
 }
+func (i WiredNetworkAuthenticationType) isMultiValue() bool {
+    return false
+}

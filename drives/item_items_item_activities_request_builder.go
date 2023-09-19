@@ -39,8 +39,8 @@ type ItemItemsItemActivitiesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemItemsItemActivitiesRequestBuilderGetQueryParameters
 }
-// ByItemActivityOLDIdString provides operations to manage the activities property of the microsoft.graph.driveItem entity.
-func (m *ItemItemsItemActivitiesRequestBuilder) ByItemActivityOLDIdString(itemActivityOLDId string)(*ItemItemsItemActivitiesItemActivityOLDItemRequestBuilder) {
+// ByItemActivityOLDId provides operations to manage the activities property of the microsoft.graph.driveItem entity.
+func (m *ItemItemsItemActivitiesRequestBuilder) ByItemActivityOLDId(itemActivityOLDId string)(*ItemItemsItemActivitiesItemActivityOLDItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *ItemItemsItemActivitiesRequestBuilder) ToGetRequestInformation(ctx cont
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemActivitiesRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemActivitiesRequestBuilder) {
+    return NewItemItemsItemActivitiesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

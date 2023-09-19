@@ -38,3 +38,6 @@ func SerializeVpnTrafficRuleAppType(values []VpnTrafficRuleAppType) []string {
     }
     return result
 }
+func (i VpnTrafficRuleAppType) isMultiValue() bool {
+    return false
+}

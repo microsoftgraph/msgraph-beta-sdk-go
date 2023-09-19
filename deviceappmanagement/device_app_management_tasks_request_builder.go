@@ -46,8 +46,8 @@ type DeviceAppManagementTasksRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceAppManagementTaskIdString provides operations to manage the deviceAppManagementTasks property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementTasksRequestBuilder) ByDeviceAppManagementTaskIdString(deviceAppManagementTaskId string)(*DeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilder) {
+// ByDeviceAppManagementTaskId provides operations to manage the deviceAppManagementTasks property of the microsoft.graph.deviceAppManagement entity.
+func (m *DeviceAppManagementTasksRequestBuilder) ByDeviceAppManagementTaskId(deviceAppManagementTaskId string)(*DeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *DeviceAppManagementTasksRequestBuilder) ToPostRequestInformation(ctx co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceAppManagementTasksRequestBuilder) WithUrl(rawUrl string)(*DeviceAppManagementTasksRequestBuilder) {
+    return NewDeviceAppManagementTasksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

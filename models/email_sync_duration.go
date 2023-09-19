@@ -54,3 +54,6 @@ func SerializeEmailSyncDuration(values []EmailSyncDuration) []string {
     }
     return result
 }
+func (i EmailSyncDuration) isMultiValue() bool {
+    return false
+}

@@ -46,9 +46,9 @@ type PrinterSharesItemJobsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPrintJobIdString provides operations to manage the jobs property of the microsoft.graph.printerBase entity.
+// ByPrintJobId provides operations to manage the jobs property of the microsoft.graph.printerBase entity.
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
-func (m *PrinterSharesItemJobsRequestBuilder) ByPrintJobIdString(printJobId string)(*PrinterSharesItemJobsPrintJobItemRequestBuilder) {
+func (m *PrinterSharesItemJobsRequestBuilder) ByPrintJobId(printJobId string)(*PrinterSharesItemJobsPrintJobItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -149,4 +149,9 @@ func (m *PrinterSharesItemJobsRequestBuilder) ToPostRequestInformation(ctx conte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
+func (m *PrinterSharesItemJobsRequestBuilder) WithUrl(rawUrl string)(*PrinterSharesItemJobsRequestBuilder) {
+    return NewPrinterSharesItemJobsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

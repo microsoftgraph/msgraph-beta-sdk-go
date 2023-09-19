@@ -165,3 +165,7 @@ func (m *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder
 func (m *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder) UpdateScopeTags()(*GroupPolicyMigrationReportsItemUpdateScopeTagsRequestBuilder) {
     return NewGroupPolicyMigrationReportsItemUpdateScopeTagsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder) WithUrl(rawUrl string)(*GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder) {
+    return NewGroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

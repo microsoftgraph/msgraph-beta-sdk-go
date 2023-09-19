@@ -34,3 +34,6 @@ func SerializeManagedDeviceManagementFeatures(values []ManagedDeviceManagementFe
     }
     return result
 }
+func (i ManagedDeviceManagementFeatures) isMultiValue() bool {
+    return false
+}

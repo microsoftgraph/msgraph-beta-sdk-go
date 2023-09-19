@@ -39,7 +39,7 @@ func (m *TenantAllowBlockListEntryResult) GetAdditionalData()(map[string]any) {
 func (m *TenantAllowBlockListEntryResult) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetEntryType gets the entryType property value. The entry type of tenant allow block list. The possible values are: url, fileHash, sender, recipient and unkownFutureValue.
+// GetEntryType gets the entryType property value. The tenant allow-block list entry type. The possible values are: url, fileHash, sender, recipient and unkownFutureValue.
 func (m *TenantAllowBlockListEntryResult) GetEntryType()(*TenantAllowBlockListEntryType) {
     val, err := m.GetBackingStore().Get("entryType")
     if err != nil {
@@ -50,7 +50,7 @@ func (m *TenantAllowBlockListEntryResult) GetEntryType()(*TenantAllowBlockListEn
     }
     return nil
 }
-// GetExpirationDateTime gets the expirationDateTime property value. Specifies when will this entry expire in date time.
+// GetExpirationDateTime gets the expirationDateTime property value. Specifies the date and time when the entry expires.
 func (m *TenantAllowBlockListEntryResult) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -229,14 +229,14 @@ func (m *TenantAllowBlockListEntryResult) SetAdditionalData(value map[string]any
 func (m *TenantAllowBlockListEntryResult) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetEntryType sets the entryType property value. The entry type of tenant allow block list. The possible values are: url, fileHash, sender, recipient and unkownFutureValue.
+// SetEntryType sets the entryType property value. The tenant allow-block list entry type. The possible values are: url, fileHash, sender, recipient and unkownFutureValue.
 func (m *TenantAllowBlockListEntryResult) SetEntryType(value *TenantAllowBlockListEntryType)() {
     err := m.GetBackingStore().Set("entryType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExpirationDateTime sets the expirationDateTime property value. Specifies when will this entry expire in date time.
+// SetExpirationDateTime sets the expirationDateTime property value. Specifies the date and time when the entry expires.
 func (m *TenantAllowBlockListEntryResult) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expirationDateTime", value)
     if err != nil {

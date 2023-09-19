@@ -46,8 +46,8 @@ type BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilderPos
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPlannerPlanConfigurationLocalizationIdString provides operations to manage the localizations property of the microsoft.graph.plannerPlanConfiguration entity.
-func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder) ByPlannerPlanConfigurationLocalizationIdString(plannerPlanConfigurationLocalizationId string)(*BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilder) {
+// ByPlannerPlanConfigurationLocalizationId provides operations to manage the localizations property of the microsoft.graph.plannerPlanConfiguration entity.
+func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder) ByPlannerPlanConfigurationLocalizationId(plannerPlanConfigurationLocalizationId string)(*BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilde
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder) WithUrl(rawUrl string)(*BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder) {
+    return NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

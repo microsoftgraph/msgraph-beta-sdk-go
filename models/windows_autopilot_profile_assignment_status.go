@@ -54,3 +54,6 @@ func SerializeWindowsAutopilotProfileAssignmentStatus(values []WindowsAutopilotP
     }
     return result
 }
+func (i WindowsAutopilotProfileAssignmentStatus) isMultiValue() bool {
+    return false
+}

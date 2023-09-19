@@ -42,3 +42,6 @@ func SerializeConnectorHealthState(values []ConnectorHealthState) []string {
     }
     return result
 }
+func (i ConnectorHealthState) isMultiValue() bool {
+    return false
+}

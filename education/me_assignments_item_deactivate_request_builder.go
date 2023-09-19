@@ -66,3 +66,7 @@ func (m *MeAssignmentsItemDeactivateRequestBuilder) ToPostRequestInformation(ctx
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MeAssignmentsItemDeactivateRequestBuilder) WithUrl(rawUrl string)(*MeAssignmentsItemDeactivateRequestBuilder) {
+    return NewMeAssignmentsItemDeactivateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

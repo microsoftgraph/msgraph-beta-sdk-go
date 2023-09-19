@@ -71,3 +71,6 @@ func SerializeDeviceManagementConfigurationWindowsSkus(values []DeviceManagement
     }
     return result
 }
+func (i DeviceManagementConfigurationWindowsSkus) isMultiValue() bool {
+    return false
+}

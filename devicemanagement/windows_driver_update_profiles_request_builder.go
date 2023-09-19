@@ -46,8 +46,8 @@ type WindowsDriverUpdateProfilesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWindowsDriverUpdateProfileIdString provides operations to manage the windowsDriverUpdateProfiles property of the microsoft.graph.deviceManagement entity.
-func (m *WindowsDriverUpdateProfilesRequestBuilder) ByWindowsDriverUpdateProfileIdString(windowsDriverUpdateProfileId string)(*WindowsDriverUpdateProfilesWindowsDriverUpdateProfileItemRequestBuilder) {
+// ByWindowsDriverUpdateProfileId provides operations to manage the windowsDriverUpdateProfiles property of the microsoft.graph.deviceManagement entity.
+func (m *WindowsDriverUpdateProfilesRequestBuilder) ByWindowsDriverUpdateProfileId(windowsDriverUpdateProfileId string)(*WindowsDriverUpdateProfilesWindowsDriverUpdateProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *WindowsDriverUpdateProfilesRequestBuilder) ToPostRequestInformation(ctx
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsDriverUpdateProfilesRequestBuilder) WithUrl(rawUrl string)(*WindowsDriverUpdateProfilesRequestBuilder) {
+    return NewWindowsDriverUpdateProfilesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

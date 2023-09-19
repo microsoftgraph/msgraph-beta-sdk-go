@@ -18,7 +18,7 @@ type ItemSitesItemListsListItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSitesItemListsListItemRequestBuilderGetQueryParameters return the metadata for a [list][].
+// ItemSitesItemListsListItemRequestBuilderGetQueryParameters get the list of richLongRunningOperations associated with a list.
 type ItemSitesItemListsListItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -90,10 +90,10 @@ func (m *ItemSitesItemListsListItemRequestBuilder) Delete(ctx context.Context, r
 func (m *ItemSitesItemListsListItemRequestBuilder) Drive()(*ItemSitesItemListsItemDriveRequestBuilder) {
     return NewItemSitesItemListsItemDriveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get return the metadata for a [list][].
+// Get get the list of richLongRunningOperations associated with a list.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/list-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/list-list-operations?view=graph-rest-1.0
 func (m *ItemSitesItemListsListItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemListsListItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Listable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -159,7 +159,7 @@ func (m *ItemSitesItemListsListItemRequestBuilder) ToDeleteRequestInformation(ct
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation return the metadata for a [list][].
+// ToGetRequestInformation get the list of richLongRunningOperations associated with a list.
 func (m *ItemSitesItemListsListItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsListItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -191,4 +191,8 @@ func (m *ItemSitesItemListsListItemRequestBuilder) ToPatchRequestInformation(ctx
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemSitesItemListsListItemRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemListsListItemRequestBuilder) {
+    return NewItemSitesItemListsListItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -46,8 +46,8 @@ type ManagedTenantsAppPerformancesRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAppPerformanceIdString provides operations to manage the appPerformances property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsAppPerformancesRequestBuilder) ByAppPerformanceIdString(appPerformanceId string)(*ManagedTenantsAppPerformancesAppPerformanceItemRequestBuilder) {
+// ByAppPerformanceId provides operations to manage the appPerformances property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsAppPerformancesRequestBuilder) ByAppPerformanceId(appPerformanceId string)(*ManagedTenantsAppPerformancesAppPerformanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ManagedTenantsAppPerformancesRequestBuilder) ToPostRequestInformation(c
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedTenantsAppPerformancesRequestBuilder) WithUrl(rawUrl string)(*ManagedTenantsAppPerformancesRequestBuilder) {
+    return NewManagedTenantsAppPerformancesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

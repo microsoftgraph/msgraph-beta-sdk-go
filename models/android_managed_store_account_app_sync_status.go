@@ -44,3 +44,6 @@ func SerializeAndroidManagedStoreAccountAppSyncStatus(values []AndroidManagedSto
     }
     return result
 }
+func (i AndroidManagedStoreAccountAppSyncStatus) isMultiValue() bool {
+    return false
+}

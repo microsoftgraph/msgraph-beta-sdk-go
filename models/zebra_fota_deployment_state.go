@@ -58,3 +58,6 @@ func SerializeZebraFotaDeploymentState(values []ZebraFotaDeploymentState) []stri
     }
     return result
 }
+func (i ZebraFotaDeploymentState) isMultiValue() bool {
+    return false
+}

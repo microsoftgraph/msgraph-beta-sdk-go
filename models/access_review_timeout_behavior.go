@@ -38,3 +38,6 @@ func SerializeAccessReviewTimeoutBehavior(values []AccessReviewTimeoutBehavior) 
     }
     return result
 }
+func (i AccessReviewTimeoutBehavior) isMultiValue() bool {
+    return false
+}

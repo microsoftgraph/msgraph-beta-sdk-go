@@ -74,3 +74,7 @@ func (m *ThreatIntelligenceHostPairsCountRequestBuilder) ToGetRequestInformation
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ThreatIntelligenceHostPairsCountRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceHostPairsCountRequestBuilder) {
+    return NewThreatIntelligenceHostPairsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

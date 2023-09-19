@@ -173,3 +173,7 @@ func (m *ExchangeRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
 func (m *ExchangeRequestBuilder) TransitiveRoleAssignments()(*ExchangeTransitiveRoleAssignmentsRequestBuilder) {
     return NewExchangeTransitiveRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ExchangeRequestBuilder) WithUrl(rawUrl string)(*ExchangeRequestBuilder) {
+    return NewExchangeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -50,3 +50,6 @@ func SerializePrivilegeManagementElevationType(values []PrivilegeManagementEleva
     }
     return result
 }
+func (i PrivilegeManagementElevationType) isMultiValue() bool {
+    return false
+}

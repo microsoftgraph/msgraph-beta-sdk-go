@@ -41,3 +41,6 @@ func SerializeMicrosoftManagedDesktopType(values []MicrosoftManagedDesktopType) 
     }
     return result
 }
+func (i MicrosoftManagedDesktopType) isMultiValue() bool {
+    return false
+}

@@ -130,7 +130,7 @@ func (m *EducationUser) GetExternalSource()(*EducationExternalSource) {
     }
     return nil
 }
-// GetExternalSourceDetail gets the externalSourceDetail property value. The name of the external source this resources was generated from.
+// GetExternalSourceDetail gets the externalSourceDetail property value. The name of the external source this resource was generated from.
 func (m *EducationUser) GetExternalSourceDetail()(*string) {
     val, err := m.GetBackingStore().Get("externalSourceDetail")
     if err != nil {
@@ -608,7 +608,7 @@ func (m *EducationUser) GetMail()(*string) {
     }
     return nil
 }
-// GetMailingAddress gets the mailingAddress property value. Mail address of user. Note: type and postOfficeBox are not supported for educationUser resources.
+// GetMailingAddress gets the mailingAddress property value. Mail address of user. Note: type and postOfficeBox aren't supported for educationUser resources.
 func (m *EducationUser) GetMailingAddress()(PhysicalAddressable) {
     val, err := m.GetBackingStore().Get("mailingAddress")
     if err != nil {
@@ -663,7 +663,7 @@ func (m *EducationUser) GetOfficeLocation()(*string) {
     }
     return nil
 }
-// GetOnPremisesInfo gets the onPremisesInfo property value. Additional information used to associate the AAD user with it's Active Directory counterpart.
+// GetOnPremisesInfo gets the onPremisesInfo property value. Additional information used to associate the Azure Active Directory user with its Active Directory counterpart.
 func (m *EducationUser) GetOnPremisesInfo()(EducationOnPremisesInfoable) {
     val, err := m.GetBackingStore().Get("onPremisesInfo")
     if err != nil {
@@ -674,7 +674,7 @@ func (m *EducationUser) GetOnPremisesInfo()(EducationOnPremisesInfoable) {
     }
     return nil
 }
-// GetPasswordPolicies gets the passwordPolicies property value. Specifies password policies for the user. See standard [user] resource for additional details.
+// GetPasswordPolicies gets the passwordPolicies property value. Specifies password policies for the user. See standard [user] resource for more details.
 func (m *EducationUser) GetPasswordPolicies()(*string) {
     val, err := m.GetBackingStore().Get("passwordPolicies")
     if err != nil {
@@ -685,7 +685,7 @@ func (m *EducationUser) GetPasswordPolicies()(*string) {
     }
     return nil
 }
-// GetPasswordProfile gets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. See standard [user] resource for additional details.
+// GetPasswordProfile gets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. See standard [user] resource for more details.
 func (m *EducationUser) GetPasswordProfile()(PasswordProfileable) {
     val, err := m.GetBackingStore().Get("passwordProfile")
     if err != nil {
@@ -751,7 +751,7 @@ func (m *EducationUser) GetRelatedContacts()([]RelatedContactable) {
     }
     return nil
 }
-// GetResidenceAddress gets the residenceAddress property value. Address where user lives. Note: type and postOfficeBox are not supported for educationUser resources.
+// GetResidenceAddress gets the residenceAddress property value. Address where user lives. Note: type and postOfficeBox aren't supported for educationUser resources.
 func (m *EducationUser) GetResidenceAddress()(PhysicalAddressable) {
     val, err := m.GetBackingStore().Get("residenceAddress")
     if err != nil {
@@ -795,7 +795,7 @@ func (m *EducationUser) GetShowInAddressList()(*bool) {
     }
     return nil
 }
-// GetStudent gets the student property value. If the primary role is student, this block will contain student specific data.
+// GetStudent gets the student property value. If the primary role is student, this block contains student specific data.
 func (m *EducationUser) GetStudent()(EducationStudentable) {
     val, err := m.GetBackingStore().Get("student")
     if err != nil {
@@ -1245,7 +1245,7 @@ func (m *EducationUser) SetExternalSource(value *EducationExternalSource)() {
         panic(err)
     }
 }
-// SetExternalSourceDetail sets the externalSourceDetail property value. The name of the external source this resources was generated from.
+// SetExternalSourceDetail sets the externalSourceDetail property value. The name of the external source this resource was generated from.
 func (m *EducationUser) SetExternalSourceDetail(value *string)() {
     err := m.GetBackingStore().Set("externalSourceDetail", value)
     if err != nil {
@@ -1266,7 +1266,7 @@ func (m *EducationUser) SetMail(value *string)() {
         panic(err)
     }
 }
-// SetMailingAddress sets the mailingAddress property value. Mail address of user. Note: type and postOfficeBox are not supported for educationUser resources.
+// SetMailingAddress sets the mailingAddress property value. Mail address of user. Note: type and postOfficeBox aren't supported for educationUser resources.
 func (m *EducationUser) SetMailingAddress(value PhysicalAddressable)() {
     err := m.GetBackingStore().Set("mailingAddress", value)
     if err != nil {
@@ -1301,21 +1301,21 @@ func (m *EducationUser) SetOfficeLocation(value *string)() {
         panic(err)
     }
 }
-// SetOnPremisesInfo sets the onPremisesInfo property value. Additional information used to associate the AAD user with it's Active Directory counterpart.
+// SetOnPremisesInfo sets the onPremisesInfo property value. Additional information used to associate the Azure Active Directory user with its Active Directory counterpart.
 func (m *EducationUser) SetOnPremisesInfo(value EducationOnPremisesInfoable)() {
     err := m.GetBackingStore().Set("onPremisesInfo", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPasswordPolicies sets the passwordPolicies property value. Specifies password policies for the user. See standard [user] resource for additional details.
+// SetPasswordPolicies sets the passwordPolicies property value. Specifies password policies for the user. See standard [user] resource for more details.
 func (m *EducationUser) SetPasswordPolicies(value *string)() {
     err := m.GetBackingStore().Set("passwordPolicies", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPasswordProfile sets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. See standard [user] resource for additional details.
+// SetPasswordProfile sets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. See standard [user] resource for more details.
 func (m *EducationUser) SetPasswordProfile(value PasswordProfileable)() {
     err := m.GetBackingStore().Set("passwordProfile", value)
     if err != nil {
@@ -1357,7 +1357,7 @@ func (m *EducationUser) SetRelatedContacts(value []RelatedContactable)() {
         panic(err)
     }
 }
-// SetResidenceAddress sets the residenceAddress property value. Address where user lives. Note: type and postOfficeBox are not supported for educationUser resources.
+// SetResidenceAddress sets the residenceAddress property value. Address where user lives. Note: type and postOfficeBox aren't supported for educationUser resources.
 func (m *EducationUser) SetResidenceAddress(value PhysicalAddressable)() {
     err := m.GetBackingStore().Set("residenceAddress", value)
     if err != nil {
@@ -1385,7 +1385,7 @@ func (m *EducationUser) SetShowInAddressList(value *bool)() {
         panic(err)
     }
 }
-// SetStudent sets the student property value. If the primary role is student, this block will contain student specific data.
+// SetStudent sets the student property value. If the primary role is student, this block contains student specific data.
 func (m *EducationUser) SetStudent(value EducationStudentable)() {
     err := m.GetBackingStore().Set("student", value)
     if err != nil {

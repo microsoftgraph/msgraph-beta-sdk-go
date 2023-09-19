@@ -44,3 +44,6 @@ func SerializeBookingInvoiceStatus(values []BookingInvoiceStatus) []string {
     }
     return result
 }
+func (i BookingInvoiceStatus) isMultiValue() bool {
+    return false
+}

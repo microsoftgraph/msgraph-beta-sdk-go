@@ -122,3 +122,6 @@ func SerializePayloadTheme(values []PayloadTheme) []string {
     }
     return result
 }
+func (i PayloadTheme) isMultiValue() bool {
+    return false
+}

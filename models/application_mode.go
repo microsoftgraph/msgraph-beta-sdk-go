@@ -35,3 +35,6 @@ func SerializeApplicationMode(values []ApplicationMode) []string {
     }
     return result
 }
+func (i ApplicationMode) isMultiValue() bool {
+    return false
+}

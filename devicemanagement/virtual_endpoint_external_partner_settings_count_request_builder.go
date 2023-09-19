@@ -74,3 +74,7 @@ func (m *VirtualEndpointExternalPartnerSettingsCountRequestBuilder) ToGetRequest
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEndpointExternalPartnerSettingsCountRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointExternalPartnerSettingsCountRequestBuilder) {
+    return NewVirtualEndpointExternalPartnerSettingsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

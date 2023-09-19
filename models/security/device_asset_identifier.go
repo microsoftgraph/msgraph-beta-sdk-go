@@ -44,3 +44,6 @@ func SerializeDeviceAssetIdentifier(values []DeviceAssetIdentifier) []string {
     }
     return result
 }
+func (i DeviceAssetIdentifier) isMultiValue() bool {
+    return false
+}

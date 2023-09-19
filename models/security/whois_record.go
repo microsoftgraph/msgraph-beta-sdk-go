@@ -42,7 +42,7 @@ func (m *WhoisRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetHistory gets the history property value. The history property
+// GetHistory gets the history property value. The collection of historical records associated to this WHOIS object.
 func (m *WhoisRecord) GetHistory()([]WhoisHistoryRecordable) {
     val, err := m.GetBackingStore().Get("history")
     if err != nil {
@@ -73,7 +73,7 @@ func (m *WhoisRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetHistory sets the history property value. The history property
+// SetHistory sets the history property value. The collection of historical records associated to this WHOIS object.
 func (m *WhoisRecord) SetHistory(value []WhoisHistoryRecordable)() {
     err := m.GetBackingStore().Set("history", value)
     if err != nil {

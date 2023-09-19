@@ -11,7 +11,7 @@ import (
 type CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuilderGetQueryParameters get certificateBasedApplicationConfigurations from directory
+// CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuilderGetQueryParameters get a list of certificateBasedApplicationConfiguration objects.
 type CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -46,8 +46,8 @@ type CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCertificateBasedApplicationConfigurationIdString provides operations to manage the certificateBasedApplicationConfigurations property of the microsoft.graph.certificateAuthorityPath entity.
-func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuilder) ByCertificateBasedApplicationConfigurationIdString(certificateBasedApplicationConfigurationId string)(*CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilder) {
+// ByCertificateBasedApplicationConfigurationId provides operations to manage the certificateBasedApplicationConfigurations property of the microsoft.graph.certificateAuthorityPath entity.
+func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuilder) ByCertificateBasedApplicationConfigurationId(certificateBasedApplicationConfigurationId string)(*CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -74,7 +74,10 @@ func NewCertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBu
 func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuilder) Count()(*CertificateAuthoritiesCertificateBasedApplicationConfigurationsCountRequestBuilder) {
     return NewCertificateAuthoritiesCertificateBasedApplicationConfigurationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get certificateBasedApplicationConfigurations from directory
+// Get get a list of certificateBasedApplicationConfiguration objects.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/certificateauthoritypath-list-certificatebasedapplicationconfigurations?view=graph-rest-1.0
 func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuilder) Get(ctx context.Context, requestConfiguration *CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedApplicationConfigurationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestB
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedApplicationConfigurationable), nil
 }
-// ToGetRequestInformation get certificateBasedApplicationConfigurations from directory
+// ToGetRequestInformation get a list of certificateBasedApplicationConfiguration objects.
 func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -144,4 +147,8 @@ func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestB
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuilder) WithUrl(rawUrl string)(*CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuilder) {
+    return NewCertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

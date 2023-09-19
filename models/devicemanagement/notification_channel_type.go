@@ -41,3 +41,6 @@ func SerializeNotificationChannelType(values []NotificationChannelType) []string
     }
     return result
 }
+func (i NotificationChannelType) isMultiValue() bool {
+    return false
+}

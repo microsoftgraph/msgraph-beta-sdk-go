@@ -15,9 +15,9 @@ type CloudPCRoleDefinitionsItemAssignedPrincipalsWithTransitivedirectoryScopeTyp
     // Include count of items
     Count *bool `uriparametername:"%24count"`
     // Usage: directoryScopeId='@directoryScopeId'
-    DirectoryScopeId *string
+    DirectoryScopeId *string `uriparametername:"directoryScopeId"`
     // Usage: directoryScopeType='@directoryScopeType'
-    DirectoryScopeType *string
+    DirectoryScopeType *string `uriparametername:"directoryScopeType"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
@@ -31,7 +31,7 @@ type CloudPCRoleDefinitionsItemAssignedPrincipalsWithTransitivedirectoryScopeTyp
     // Show only the first n items
     Top *int32 `uriparametername:"%24top"`
     // Usage: transitive=@transitive
-    Transitive *bool
+    Transitive *bool `uriparametername:"transitive"`
 }
 // CloudPCRoleDefinitionsItemAssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CloudPCRoleDefinitionsItemAssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdRequestBuilderGetRequestConfiguration struct {
@@ -89,4 +89,8 @@ func (m *CloudPCRoleDefinitionsItemAssignedPrincipalsWithTransitivedirectoryScop
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CloudPCRoleDefinitionsItemAssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdRequestBuilder) WithUrl(rawUrl string)(*CloudPCRoleDefinitionsItemAssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdRequestBuilder) {
+    return NewCloudPCRoleDefinitionsItemAssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

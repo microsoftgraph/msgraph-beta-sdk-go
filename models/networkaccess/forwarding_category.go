@@ -38,3 +38,6 @@ func SerializeForwardingCategory(values []ForwardingCategory) []string {
     }
     return result
 }
+func (i ForwardingCategory) isMultiValue() bool {
+    return false
+}

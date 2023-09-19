@@ -224,3 +224,6 @@ func SerializeCloudPcOnPremisesConnectionHealthCheckErrorType(values []CloudPcOn
     }
     return result
 }
+func (i CloudPcOnPremisesConnectionHealthCheckErrorType) isMultiValue() bool {
+    return false
+}

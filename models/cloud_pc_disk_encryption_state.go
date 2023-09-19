@@ -41,3 +41,6 @@ func SerializeCloudPcDiskEncryptionState(values []CloudPcDiskEncryptionState) []
     }
     return result
 }
+func (i CloudPcDiskEncryptionState) isMultiValue() bool {
+    return false
+}

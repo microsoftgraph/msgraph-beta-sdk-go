@@ -56,3 +56,6 @@ func SerializeAuthenticationStrengthResult(values []AuthenticationStrengthResult
     }
     return result
 }
+func (i AuthenticationStrengthResult) isMultiValue() bool {
+    return false
+}

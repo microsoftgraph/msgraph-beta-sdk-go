@@ -35,3 +35,6 @@ func SerializeMonitoringSignal(values []MonitoringSignal) []string {
     }
     return result
 }
+func (i MonitoringSignal) isMultiValue() bool {
+    return false
+}

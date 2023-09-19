@@ -62,3 +62,6 @@ func SerializeSubjectNameFormat(values []SubjectNameFormat) []string {
     }
     return result
 }
+func (i SubjectNameFormat) isMultiValue() bool {
+    return false
+}

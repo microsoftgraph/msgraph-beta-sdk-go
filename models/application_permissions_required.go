@@ -47,3 +47,6 @@ func SerializeApplicationPermissionsRequired(values []ApplicationPermissionsRequ
     }
     return result
 }
+func (i ApplicationPermissionsRequired) isMultiValue() bool {
+    return false
+}

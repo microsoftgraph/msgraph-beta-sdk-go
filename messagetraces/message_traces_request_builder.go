@@ -46,8 +46,8 @@ type MessageTracesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMessageTraceIdString provides operations to manage the collection of messageTrace entities.
-func (m *MessageTracesRequestBuilder) ByMessageTraceIdString(messageTraceId string)(*MessageTraceItemRequestBuilder) {
+// ByMessageTraceId provides operations to manage the collection of messageTrace entities.
+func (m *MessageTracesRequestBuilder) ByMessageTraceId(messageTraceId string)(*MessageTraceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *MessageTracesRequestBuilder) ToPostRequestInformation(ctx context.Conte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MessageTracesRequestBuilder) WithUrl(rawUrl string)(*MessageTracesRequestBuilder) {
+    return NewMessageTracesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

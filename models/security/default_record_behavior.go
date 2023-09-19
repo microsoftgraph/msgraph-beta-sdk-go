@@ -35,3 +35,6 @@ func SerializeDefaultRecordBehavior(values []DefaultRecordBehavior) []string {
     }
     return result
 }
+func (i DefaultRecordBehavior) isMultiValue() bool {
+    return false
+}

@@ -42,3 +42,6 @@ func SerializeJoinType(values []JoinType) []string {
     }
     return result
 }
+func (i JoinType) isMultiValue() bool {
+    return false
+}

@@ -53,3 +53,6 @@ func SerializeManagementParameterValueType(values []ManagementParameterValueType
     }
     return result
 }
+func (i ManagementParameterValueType) isMultiValue() bool {
+    return false
+}

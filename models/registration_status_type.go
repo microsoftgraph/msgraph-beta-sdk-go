@@ -41,3 +41,6 @@ func SerializeRegistrationStatusType(values []RegistrationStatusType) []string {
     }
     return result
 }
+func (i RegistrationStatusType) isMultiValue() bool {
+    return false
+}

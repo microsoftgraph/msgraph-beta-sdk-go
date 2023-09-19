@@ -75,3 +75,7 @@ func (m *DirectoryTransitiveRoleAssignmentsItemDirectoryScopeRequestBuilder) ToG
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DirectoryTransitiveRoleAssignmentsItemDirectoryScopeRequestBuilder) WithUrl(rawUrl string)(*DirectoryTransitiveRoleAssignmentsItemDirectoryScopeRequestBuilder) {
+    return NewDirectoryTransitiveRoleAssignmentsItemDirectoryScopeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

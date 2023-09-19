@@ -74,3 +74,7 @@ func (m *GroupPolicyCategoriesCountRequestBuilder) ToGetRequestInformation(ctx c
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GroupPolicyCategoriesCountRequestBuilder) WithUrl(rawUrl string)(*GroupPolicyCategoriesCountRequestBuilder) {
+    return NewGroupPolicyCategoriesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

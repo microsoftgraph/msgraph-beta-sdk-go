@@ -41,3 +41,6 @@ func SerializeCloudPcExportJobStatus(values []CloudPcExportJobStatus) []string {
     }
     return result
 }
+func (i CloudPcExportJobStatus) isMultiValue() bool {
+    return false
+}

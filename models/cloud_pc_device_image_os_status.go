@@ -35,3 +35,6 @@ func SerializeCloudPcDeviceImageOsStatus(values []CloudPcDeviceImageOsStatus) []
     }
     return result
 }
+func (i CloudPcDeviceImageOsStatus) isMultiValue() bool {
+    return false
+}

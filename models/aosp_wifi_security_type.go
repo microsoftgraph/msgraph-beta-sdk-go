@@ -38,3 +38,6 @@ func SerializeAospWifiSecurityType(values []AospWifiSecurityType) []string {
     }
     return result
 }
+func (i AospWifiSecurityType) isMultiValue() bool {
+    return false
+}

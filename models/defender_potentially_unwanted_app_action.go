@@ -38,3 +38,6 @@ func SerializeDefenderPotentiallyUnwantedAppAction(values []DefenderPotentiallyU
     }
     return result
 }
+func (i DefenderPotentiallyUnwantedAppAction) isMultiValue() bool {
+    return false
+}

@@ -39,8 +39,8 @@ type ItemDevicesItemRegisteredOwnersRequestBuilderGetRequestConfiguration struct
     // Request query parameters
     QueryParameters *ItemDevicesItemRegisteredOwnersRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectIdString gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.devices.item.registeredOwners.item collection
-func (m *ItemDevicesItemRegisteredOwnersRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectId gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.devices.item.registeredOwners.item collection
+func (m *ItemDevicesItemRegisteredOwnersRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -120,4 +120,8 @@ func (m *ItemDevicesItemRegisteredOwnersRequestBuilder) ToGetRequestInformation(
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemDevicesItemRegisteredOwnersRequestBuilder) WithUrl(rawUrl string)(*ItemDevicesItemRegisteredOwnersRequestBuilder) {
+    return NewItemDevicesItemRegisteredOwnersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

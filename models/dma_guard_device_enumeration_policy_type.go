@@ -38,3 +38,6 @@ func SerializeDmaGuardDeviceEnumerationPolicyType(values []DmaGuardDeviceEnumera
     }
     return result
 }
+func (i DmaGuardDeviceEnumerationPolicyType) isMultiValue() bool {
+    return false
+}

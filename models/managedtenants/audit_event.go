@@ -21,7 +21,7 @@ func NewAuditEvent()(*AuditEvent) {
 func CreateAuditEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuditEvent(), nil
 }
-// GetActivity gets the activity property value. A string which uniquely represents the operation that occurred. Required. Read-only.
+// GetActivity gets the activity property value. A string that uniquely represents the operation that occurred. Required. Read-only.
 func (m *AuditEvent) GetActivity()(*string) {
     val, err := m.GetBackingStore().Get("activity")
     if err != nil {
@@ -32,7 +32,7 @@ func (m *AuditEvent) GetActivity()(*string) {
     }
     return nil
 }
-// GetActivityDateTime gets the activityDateTime property value. The time when the activity ocurred. Required. Read-only.
+// GetActivityDateTime gets the activityDateTime property value. The time when the activity occurred. Required. Read-only.
 func (m *AuditEvent) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("activityDateTime")
     if err != nil {
@@ -54,7 +54,7 @@ func (m *AuditEvent) GetActivityId()(*string) {
     }
     return nil
 }
-// GetCategory gets the category property value. A category which represents a logical grouping of activities. Required. Read-only.
+// GetCategory gets the category property value. A category that represents a logical grouping of activities. Required. Read-only.
 func (m *AuditEvent) GetCategory()(*string) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
@@ -277,7 +277,7 @@ func (m *AuditEvent) GetRequestUrl()(*string) {
     }
     return nil
 }
-// GetTenantIds gets the tenantIds property value. The collection of Azure Active Directory tenant identifiers for the managed tenants that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.
+// GetTenantIds gets the tenantIds property value. The collection of Azure Active Directory tenant identifiers for the managed tenants that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.
 func (m *AuditEvent) GetTenantIds()(*string) {
     val, err := m.GetBackingStore().Get("tenantIds")
     if err != nil {
@@ -288,7 +288,7 @@ func (m *AuditEvent) GetTenantIds()(*string) {
     }
     return nil
 }
-// GetTenantNames gets the tenantNames property value. The collection of tenant names that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.
+// GetTenantNames gets the tenantNames property value. The collection of tenant names that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.
 func (m *AuditEvent) GetTenantNames()(*string) {
     val, err := m.GetBackingStore().Get("tenantNames")
     if err != nil {
@@ -385,14 +385,14 @@ func (m *AuditEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetActivity sets the activity property value. A string which uniquely represents the operation that occurred. Required. Read-only.
+// SetActivity sets the activity property value. A string that uniquely represents the operation that occurred. Required. Read-only.
 func (m *AuditEvent) SetActivity(value *string)() {
     err := m.GetBackingStore().Set("activity", value)
     if err != nil {
         panic(err)
     }
 }
-// SetActivityDateTime sets the activityDateTime property value. The time when the activity ocurred. Required. Read-only.
+// SetActivityDateTime sets the activityDateTime property value. The time when the activity occurred. Required. Read-only.
 func (m *AuditEvent) SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("activityDateTime", value)
     if err != nil {
@@ -406,7 +406,7 @@ func (m *AuditEvent) SetActivityId(value *string)() {
         panic(err)
     }
 }
-// SetCategory sets the category property value. A category which represents a logical grouping of activities. Required. Read-only.
+// SetCategory sets the category property value. A category that represents a logical grouping of activities. Required. Read-only.
 func (m *AuditEvent) SetCategory(value *string)() {
     err := m.GetBackingStore().Set("category", value)
     if err != nil {
@@ -462,14 +462,14 @@ func (m *AuditEvent) SetRequestUrl(value *string)() {
         panic(err)
     }
 }
-// SetTenantIds sets the tenantIds property value. The collection of Azure Active Directory tenant identifiers for the managed tenants that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.
+// SetTenantIds sets the tenantIds property value. The collection of Azure Active Directory tenant identifiers for the managed tenants that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.
 func (m *AuditEvent) SetTenantIds(value *string)() {
     err := m.GetBackingStore().Set("tenantIds", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTenantNames sets the tenantNames property value. The collection of tenant names that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.
+// SetTenantNames sets the tenantNames property value. The collection of tenant names that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.
 func (m *AuditEvent) SetTenantNames(value *string)() {
     err := m.GetBackingStore().Set("tenantNames", value)
     if err != nil {

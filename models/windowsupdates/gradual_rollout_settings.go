@@ -60,7 +60,7 @@ func (m *GradualRolloutSettings) GetAdditionalData()(map[string]any) {
 func (m *GradualRolloutSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDurationBetweenOffers gets the durationBetweenOffers property value. The duration between each set of devices being offered the update. The value is represented in ISO 8601 format for duration. Default value is P1D (1 day).
+// GetDurationBetweenOffers gets the durationBetweenOffers property value. The duration between each set of devices being offered the update. The value is represented in ISO 8601 format for duration. Default value is P1D (one day).
 func (m *GradualRolloutSettings) GetDurationBetweenOffers()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("durationBetweenOffers")
     if err != nil {
@@ -140,7 +140,7 @@ func (m *GradualRolloutSettings) SetAdditionalData(value map[string]any)() {
 func (m *GradualRolloutSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDurationBetweenOffers sets the durationBetweenOffers property value. The duration between each set of devices being offered the update. The value is represented in ISO 8601 format for duration. Default value is P1D (1 day).
+// SetDurationBetweenOffers sets the durationBetweenOffers property value. The duration between each set of devices being offered the update. The value is represented in ISO 8601 format for duration. Default value is P1D (one day).
 func (m *GradualRolloutSettings) SetDurationBetweenOffers(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     err := m.GetBackingStore().Set("durationBetweenOffers", value)
     if err != nil {

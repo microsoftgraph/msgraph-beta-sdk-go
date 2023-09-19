@@ -50,3 +50,6 @@ func SerializeShiftWorkCloudPcAccessState(values []ShiftWorkCloudPcAccessState) 
     }
     return result
 }
+func (i ShiftWorkCloudPcAccessState) isMultiValue() bool {
+    return false
+}

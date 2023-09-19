@@ -38,3 +38,6 @@ func SerializeAndroidManagedStoreAccountBindStatus(values []AndroidManagedStoreA
     }
     return result
 }
+func (i AndroidManagedStoreAccountBindStatus) isMultiValue() bool {
+    return false
+}

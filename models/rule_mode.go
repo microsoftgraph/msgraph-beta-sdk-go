@@ -41,3 +41,6 @@ func SerializeRuleMode(values []RuleMode) []string {
     }
     return result
 }
+func (i RuleMode) isMultiValue() bool {
+    return false
+}

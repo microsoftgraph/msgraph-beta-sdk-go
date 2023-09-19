@@ -38,3 +38,6 @@ func SerializePlannerPlanAccessLevel(values []PlannerPlanAccessLevel) []string {
     }
     return result
 }
+func (i PlannerPlanAccessLevel) isMultiValue() bool {
+    return false
+}

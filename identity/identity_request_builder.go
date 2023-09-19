@@ -162,3 +162,7 @@ func (m *IdentityRequestBuilder) UserFlowAttributes()(*UserFlowAttributesRequest
 func (m *IdentityRequestBuilder) UserFlows()(*UserFlowsRequestBuilder) {
     return NewUserFlowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IdentityRequestBuilder) WithUrl(rawUrl string)(*IdentityRequestBuilder) {
+    return NewIdentityRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

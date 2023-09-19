@@ -38,3 +38,6 @@ func SerializeCloudPcAuditActorType(values []CloudPcAuditActorType) []string {
     }
     return result
 }
+func (i CloudPcAuditActorType) isMultiValue() bool {
+    return false
+}

@@ -38,3 +38,6 @@ func SerializeMeteredConnectionLimitType(values []MeteredConnectionLimitType) []
     }
     return result
 }
+func (i MeteredConnectionLimitType) isMultiValue() bool {
+    return false
+}

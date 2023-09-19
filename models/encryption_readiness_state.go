@@ -34,3 +34,6 @@ func SerializeEncryptionReadinessState(values []EncryptionReadinessState) []stri
     }
     return result
 }
+func (i EncryptionReadinessState) isMultiValue() bool {
+    return false
+}

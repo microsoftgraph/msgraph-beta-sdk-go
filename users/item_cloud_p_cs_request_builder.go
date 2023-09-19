@@ -50,8 +50,8 @@ type ItemCloudPCsRequestBuilderPostRequestConfiguration struct {
 func (m *ItemCloudPCsRequestBuilder) BulkResize()(*ItemCloudPCsBulkResizeRequestBuilder) {
     return NewItemCloudPCsBulkResizeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByCloudPCIdString provides operations to manage the cloudPCs property of the microsoft.graph.user entity.
-func (m *ItemCloudPCsRequestBuilder) ByCloudPCIdString(cloudPCId string)(*ItemCloudPCsCloudPCItemRequestBuilder) {
+// ByCloudPCId provides operations to manage the cloudPCs property of the microsoft.graph.user entity.
+func (m *ItemCloudPCsRequestBuilder) ByCloudPCId(cloudPCId string)(*ItemCloudPCsCloudPCItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -159,4 +159,8 @@ func (m *ItemCloudPCsRequestBuilder) ToPostRequestInformation(ctx context.Contex
 // ValidateBulkResize provides operations to call the validateBulkResize method.
 func (m *ItemCloudPCsRequestBuilder) ValidateBulkResize()(*ItemCloudPCsValidateBulkResizeRequestBuilder) {
     return NewItemCloudPCsValidateBulkResizeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemCloudPCsRequestBuilder) WithUrl(rawUrl string)(*ItemCloudPCsRequestBuilder) {
+    return NewItemCloudPCsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

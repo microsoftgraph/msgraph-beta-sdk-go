@@ -19,7 +19,7 @@ func NewPlannerTaskConfiguration()(*PlannerTaskConfiguration) {
 func CreatePlannerTaskConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerTaskConfiguration(), nil
 }
-// GetEditPolicy gets the editPolicy property value. Policy configuration for tasks created for the businessScenario when they are being changed outside of the scenario.
+// GetEditPolicy gets the editPolicy property value. Policy configuration for tasks created for the businessScenario when they're being changed outside of the scenario.
 func (m *PlannerTaskConfiguration) GetEditPolicy()(PlannerTaskPolicyable) {
     val, err := m.GetBackingStore().Get("editPolicy")
     if err != nil {
@@ -59,7 +59,7 @@ func (m *PlannerTaskConfiguration) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetEditPolicy sets the editPolicy property value. Policy configuration for tasks created for the businessScenario when they are being changed outside of the scenario.
+// SetEditPolicy sets the editPolicy property value. Policy configuration for tasks created for the businessScenario when they're being changed outside of the scenario.
 func (m *PlannerTaskConfiguration) SetEditPolicy(value PlannerTaskPolicyable)() {
     err := m.GetBackingStore().Set("editPolicy", value)
     if err != nil {

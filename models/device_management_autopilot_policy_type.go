@@ -38,3 +38,6 @@ func SerializeDeviceManagementAutopilotPolicyType(values []DeviceManagementAutop
     }
     return result
 }
+func (i DeviceManagementAutopilotPolicyType) isMultiValue() bool {
+    return false
+}

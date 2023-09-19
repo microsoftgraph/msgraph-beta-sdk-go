@@ -83,3 +83,7 @@ func (m *ItemDevicesItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) ToG
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemDevicesItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) WithUrl(rawUrl string)(*ItemDevicesItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) {
+    return NewItemDevicesItemTransitiveMemberOfDirectoryObjectItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

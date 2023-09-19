@@ -46,8 +46,8 @@ type CloudAppSecurityProfilesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCloudAppSecurityProfileIdString provides operations to manage the cloudAppSecurityProfiles property of the microsoft.graph.security entity.
-func (m *CloudAppSecurityProfilesRequestBuilder) ByCloudAppSecurityProfileIdString(cloudAppSecurityProfileId string)(*CloudAppSecurityProfilesCloudAppSecurityProfileItemRequestBuilder) {
+// ByCloudAppSecurityProfileId provides operations to manage the cloudAppSecurityProfiles property of the microsoft.graph.security entity.
+func (m *CloudAppSecurityProfilesRequestBuilder) ByCloudAppSecurityProfileId(cloudAppSecurityProfileId string)(*CloudAppSecurityProfilesCloudAppSecurityProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *CloudAppSecurityProfilesRequestBuilder) ToPostRequestInformation(ctx co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CloudAppSecurityProfilesRequestBuilder) WithUrl(rawUrl string)(*CloudAppSecurityProfilesRequestBuilder) {
+    return NewCloudAppSecurityProfilesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

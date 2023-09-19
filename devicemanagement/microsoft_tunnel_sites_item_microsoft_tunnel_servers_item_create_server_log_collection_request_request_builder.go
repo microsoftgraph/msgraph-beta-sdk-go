@@ -67,3 +67,7 @@ func (m *MicrosoftTunnelSitesItemMicrosoftTunnelServersItemCreateServerLogCollec
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MicrosoftTunnelSitesItemMicrosoftTunnelServersItemCreateServerLogCollectionRequestRequestBuilder) WithUrl(rawUrl string)(*MicrosoftTunnelSitesItemMicrosoftTunnelServersItemCreateServerLogCollectionRequestRequestBuilder) {
+    return NewMicrosoftTunnelSitesItemMicrosoftTunnelServersItemCreateServerLogCollectionRequestRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

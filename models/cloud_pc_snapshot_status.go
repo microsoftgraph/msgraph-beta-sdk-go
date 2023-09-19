@@ -32,3 +32,6 @@ func SerializeCloudPcSnapshotStatus(values []CloudPcSnapshotStatus) []string {
     }
     return result
 }
+func (i CloudPcSnapshotStatus) isMultiValue() bool {
+    return false
+}

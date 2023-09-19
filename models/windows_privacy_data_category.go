@@ -102,3 +102,6 @@ func SerializeWindowsPrivacyDataCategory(values []WindowsPrivacyDataCategory) []
     }
     return result
 }
+func (i WindowsPrivacyDataCategory) isMultiValue() bool {
+    return false
+}

@@ -46,3 +46,6 @@ func SerializeAndroidDeviceOwnerKioskModeFolderIcon(values []AndroidDeviceOwnerK
     }
     return result
 }
+func (i AndroidDeviceOwnerKioskModeFolderIcon) isMultiValue() bool {
+    return false
+}

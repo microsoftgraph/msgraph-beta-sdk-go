@@ -35,3 +35,6 @@ func SerializeTitleAreaTextAlignmentType(values []TitleAreaTextAlignmentType) []
     }
     return result
 }
+func (i TitleAreaTextAlignmentType) isMultiValue() bool {
+    return false
+}

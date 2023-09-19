@@ -46,8 +46,8 @@ type MacOSSoftwareUpdateAccountSummariesItemCategorySummariesRequestBuilderPostR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMacOSSoftwareUpdateCategorySummaryIdString provides operations to manage the categorySummaries property of the microsoft.graph.macOSSoftwareUpdateAccountSummary entity.
-func (m *MacOSSoftwareUpdateAccountSummariesItemCategorySummariesRequestBuilder) ByMacOSSoftwareUpdateCategorySummaryIdString(macOSSoftwareUpdateCategorySummaryId string)(*MacOSSoftwareUpdateAccountSummariesItemCategorySummariesMacOSSoftwareUpdateCategorySummaryItemRequestBuilder) {
+// ByMacOSSoftwareUpdateCategorySummaryId provides operations to manage the categorySummaries property of the microsoft.graph.macOSSoftwareUpdateAccountSummary entity.
+func (m *MacOSSoftwareUpdateAccountSummariesItemCategorySummariesRequestBuilder) ByMacOSSoftwareUpdateCategorySummaryId(macOSSoftwareUpdateCategorySummaryId string)(*MacOSSoftwareUpdateAccountSummariesItemCategorySummariesMacOSSoftwareUpdateCategorySummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *MacOSSoftwareUpdateAccountSummariesItemCategorySummariesRequestBuilder)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MacOSSoftwareUpdateAccountSummariesItemCategorySummariesRequestBuilder) WithUrl(rawUrl string)(*MacOSSoftwareUpdateAccountSummariesItemCategorySummariesRequestBuilder) {
+    return NewMacOSSoftwareUpdateAccountSummariesItemCategorySummariesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

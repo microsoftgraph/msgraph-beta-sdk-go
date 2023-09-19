@@ -35,3 +35,6 @@ func SerializeIdentityProviderState(values []IdentityProviderState) []string {
     }
     return result
 }
+func (i IdentityProviderState) isMultiValue() bool {
+    return false
+}

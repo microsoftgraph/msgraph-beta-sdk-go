@@ -89,3 +89,6 @@ func SerializePayloadBrand(values []PayloadBrand) []string {
     }
     return result
 }
+func (i PayloadBrand) isMultiValue() bool {
+    return false
+}

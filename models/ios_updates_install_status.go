@@ -92,3 +92,6 @@ func SerializeIosUpdatesInstallStatus(values []IosUpdatesInstallStatus) []string
     }
     return result
 }
+func (i IosUpdatesInstallStatus) isMultiValue() bool {
+    return false
+}

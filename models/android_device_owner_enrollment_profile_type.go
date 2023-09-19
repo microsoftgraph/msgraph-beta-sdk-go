@@ -38,3 +38,6 @@ func SerializeAndroidDeviceOwnerEnrollmentProfileType(values []AndroidDeviceOwne
     }
     return result
 }
+func (i AndroidDeviceOwnerEnrollmentProfileType) isMultiValue() bool {
+    return false
+}

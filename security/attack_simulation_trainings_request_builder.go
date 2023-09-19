@@ -46,8 +46,8 @@ type AttackSimulationTrainingsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTrainingIdString provides operations to manage the trainings property of the microsoft.graph.attackSimulationRoot entity.
-func (m *AttackSimulationTrainingsRequestBuilder) ByTrainingIdString(trainingId string)(*AttackSimulationTrainingsTrainingItemRequestBuilder) {
+// ByTrainingId provides operations to manage the trainings property of the microsoft.graph.attackSimulationRoot entity.
+func (m *AttackSimulationTrainingsRequestBuilder) ByTrainingId(trainingId string)(*AttackSimulationTrainingsTrainingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *AttackSimulationTrainingsRequestBuilder) ToPostRequestInformation(ctx c
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AttackSimulationTrainingsRequestBuilder) WithUrl(rawUrl string)(*AttackSimulationTrainingsRequestBuilder) {
+    return NewAttackSimulationTrainingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

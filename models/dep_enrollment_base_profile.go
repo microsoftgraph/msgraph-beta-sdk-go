@@ -355,6 +355,16 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["waitForDeviceConfiguredConfirmation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWaitForDeviceConfiguredConfirmation(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsDefault gets the isDefault property value. Indicates if this is the default profile
@@ -500,6 +510,17 @@ func (m *DepEnrollmentBaseProfile) GetTouchIdDisabled()(*bool) {
     }
     return nil
 }
+// GetWaitForDeviceConfiguredConfirmation gets the waitForDeviceConfiguredConfirmation property value. Indicates if the device will need to wait for configured confirmation
+func (m *DepEnrollmentBaseProfile) GetWaitForDeviceConfiguredConfirmation()(*bool) {
+    val, err := m.GetBackingStore().Get("waitForDeviceConfiguredConfirmation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *DepEnrollmentBaseProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.EnrollmentProfile.Serialize(writer)
@@ -628,6 +649,12 @@ func (m *DepEnrollmentBaseProfile) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     {
         err = writer.WriteBoolValue("touchIdDisabled", m.GetTouchIdDisabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("waitForDeviceConfiguredConfirmation", m.GetWaitForDeviceConfiguredConfirmation())
         if err != nil {
             return err
         }
@@ -781,6 +808,13 @@ func (m *DepEnrollmentBaseProfile) SetTouchIdDisabled(value *bool)() {
         panic(err)
     }
 }
+// SetWaitForDeviceConfiguredConfirmation sets the waitForDeviceConfiguredConfirmation property value. Indicates if the device will need to wait for configured confirmation
+func (m *DepEnrollmentBaseProfile) SetWaitForDeviceConfiguredConfirmation(value *bool)() {
+    err := m.GetBackingStore().Set("waitForDeviceConfiguredConfirmation", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // DepEnrollmentBaseProfileable 
 type DepEnrollmentBaseProfileable interface {
     EnrollmentProfileable
@@ -806,6 +840,7 @@ type DepEnrollmentBaseProfileable interface {
     GetSupportPhoneNumber()(*string)
     GetTermsAndConditionsDisabled()(*bool)
     GetTouchIdDisabled()(*bool)
+    GetWaitForDeviceConfiguredConfirmation()(*bool)
     SetAppleIdDisabled(value *bool)()
     SetApplePayDisabled(value *bool)()
     SetConfigurationWebUrl(value *bool)()
@@ -827,4 +862,5 @@ type DepEnrollmentBaseProfileable interface {
     SetSupportPhoneNumber(value *string)()
     SetTermsAndConditionsDisabled(value *bool)()
     SetTouchIdDisabled(value *bool)()
+    SetWaitForDeviceConfiguredConfirmation(value *bool)()
 }

@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // Hash Algorithm Options.
 type HashAlgorithms int
@@ -13,17 +14,26 @@ const (
 )
 
 func (i HashAlgorithms) String() string {
-    return []string{"sha1", "sha2"}[i]
+    var values []string
+    for p := HashAlgorithms(1); p <= SHA2_HASHALGORITHMS; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"sha1", "sha2"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseHashAlgorithms(v string) (any, error) {
-    result := SHA1_HASHALGORITHMS
-    switch v {
-        case "sha1":
-            result = SHA1_HASHALGORITHMS
-        case "sha2":
-            result = SHA2_HASHALGORITHMS
-        default:
-            return 0, errors.New("Unknown HashAlgorithms value: " + v)
+    var result HashAlgorithms
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "sha1":
+                result |= SHA1_HASHALGORITHMS
+            case "sha2":
+                result |= SHA2_HASHALGORITHMS
+            default:
+                return 0, errors.New("Unknown HashAlgorithms value: " + v)
+        }
     }
     return &result, nil
 }
@@ -33,4 +43,7 @@ func SerializeHashAlgorithms(values []HashAlgorithms) []string {
         result[i] = v.String()
     }
     return result
+}
+func (i HashAlgorithms) isMultiValue() bool {
+    return true
 }

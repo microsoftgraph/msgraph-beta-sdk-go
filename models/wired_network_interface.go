@@ -54,3 +54,6 @@ func SerializeWiredNetworkInterface(values []WiredNetworkInterface) []string {
     }
     return result
 }
+func (i WiredNetworkInterface) isMultiValue() bool {
+    return false
+}

@@ -46,8 +46,8 @@ type GroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUnsupportedGroupPolicyExtensionIdString provides operations to manage the unsupportedGroupPolicyExtensions property of the microsoft.graph.groupPolicyMigrationReport entity.
-func (m *GroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsRequestBuilder) ByUnsupportedGroupPolicyExtensionIdString(unsupportedGroupPolicyExtensionId string)(*GroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsUnsupportedGroupPolicyExtensionItemRequestBuilder) {
+// ByUnsupportedGroupPolicyExtensionId provides operations to manage the unsupportedGroupPolicyExtensions property of the microsoft.graph.groupPolicyMigrationReport entity.
+func (m *GroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsRequestBuilder) ByUnsupportedGroupPolicyExtensionId(unsupportedGroupPolicyExtensionId string)(*GroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsUnsupportedGroupPolicyExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *GroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsRequestB
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsRequestBuilder) WithUrl(rawUrl string)(*GroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsRequestBuilder) {
+    return NewGroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

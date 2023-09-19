@@ -53,3 +53,6 @@ func SerializeEducationSynchronizationStatus(values []EducationSynchronizationSt
     }
     return result
 }
+func (i EducationSynchronizationStatus) isMultiValue() bool {
+    return false
+}

@@ -35,8 +35,8 @@ type ItemMailFoldersItemUserConfigurationsRequestBuilderGetRequestConfiguration 
     // Request query parameters
     QueryParameters *ItemMailFoldersItemUserConfigurationsRequestBuilderGetQueryParameters
 }
-// ByUserConfigurationIdString provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.
-func (m *ItemMailFoldersItemUserConfigurationsRequestBuilder) ByUserConfigurationIdString(userConfigurationId string)(*ItemMailFoldersItemUserConfigurationsUserConfigurationItemRequestBuilder) {
+// ByUserConfigurationId provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.
+func (m *ItemMailFoldersItemUserConfigurationsRequestBuilder) ByUserConfigurationId(userConfigurationId string)(*ItemMailFoldersItemUserConfigurationsUserConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -97,4 +97,8 @@ func (m *ItemMailFoldersItemUserConfigurationsRequestBuilder) ToGetRequestInform
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemMailFoldersItemUserConfigurationsRequestBuilder) WithUrl(rawUrl string)(*ItemMailFoldersItemUserConfigurationsRequestBuilder) {
+    return NewItemMailFoldersItemUserConfigurationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

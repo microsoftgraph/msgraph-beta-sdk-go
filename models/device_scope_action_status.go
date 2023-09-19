@@ -38,3 +38,6 @@ func SerializeDeviceScopeActionStatus(values []DeviceScopeActionStatus) []string
     }
     return result
 }
+func (i DeviceScopeActionStatus) isMultiValue() bool {
+    return false
+}

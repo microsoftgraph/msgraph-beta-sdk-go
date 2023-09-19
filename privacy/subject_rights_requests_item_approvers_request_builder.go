@@ -39,9 +39,9 @@ type SubjectRightsRequestsItemApproversRequestBuilderGetRequestConfiguration str
     // Request query parameters
     QueryParameters *SubjectRightsRequestsItemApproversRequestBuilderGetQueryParameters
 }
-// ByUserIdString provides operations to manage the approvers property of the microsoft.graph.subjectRightsRequest entity.
+// ByUserId provides operations to manage the approvers property of the microsoft.graph.subjectRightsRequest entity.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
-func (m *SubjectRightsRequestsItemApproversRequestBuilder) ByUserIdString(userId string)(*SubjectRightsRequestsItemApproversUserItemRequestBuilder) {
+func (m *SubjectRightsRequestsItemApproversRequestBuilder) ByUserId(userId string)(*SubjectRightsRequestsItemApproversUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,9 @@ func (m *SubjectRightsRequestsItemApproversRequestBuilder) ToGetRequestInformati
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
+func (m *SubjectRightsRequestsItemApproversRequestBuilder) WithUrl(rawUrl string)(*SubjectRightsRequestsItemApproversRequestBuilder) {
+    return NewSubjectRightsRequestsItemApproversRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

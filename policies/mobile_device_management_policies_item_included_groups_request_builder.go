@@ -39,8 +39,8 @@ type MobileDeviceManagementPoliciesItemIncludedGroupsRequestBuilderGetRequestCon
     // Request query parameters
     QueryParameters *MobileDeviceManagementPoliciesItemIncludedGroupsRequestBuilderGetQueryParameters
 }
-// ByGroupIdString gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.mobileDeviceManagementPolicies.item.includedGroups.item collection
-func (m *MobileDeviceManagementPoliciesItemIncludedGroupsRequestBuilder) ByGroupIdString(groupId string)(*MobileDeviceManagementPoliciesItemIncludedGroupsGroupItemRequestBuilder) {
+// ByGroupId gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.mobileDeviceManagementPolicies.item.includedGroups.item collection
+func (m *MobileDeviceManagementPoliciesItemIncludedGroupsRequestBuilder) ByGroupId(groupId string)(*MobileDeviceManagementPoliciesItemIncludedGroupsGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -108,4 +108,8 @@ func (m *MobileDeviceManagementPoliciesItemIncludedGroupsRequestBuilder) ToGetRe
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MobileDeviceManagementPoliciesItemIncludedGroupsRequestBuilder) WithUrl(rawUrl string)(*MobileDeviceManagementPoliciesItemIncludedGroupsRequestBuilder) {
+    return NewMobileDeviceManagementPoliciesItemIncludedGroupsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

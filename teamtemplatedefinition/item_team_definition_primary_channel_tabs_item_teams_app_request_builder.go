@@ -75,3 +75,7 @@ func (m *ItemTeamDefinitionPrimaryChannelTabsItemTeamsAppRequestBuilder) ToGetRe
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTeamDefinitionPrimaryChannelTabsItemTeamsAppRequestBuilder) WithUrl(rawUrl string)(*ItemTeamDefinitionPrimaryChannelTabsItemTeamsAppRequestBuilder) {
+    return NewItemTeamDefinitionPrimaryChannelTabsItemTeamsAppRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

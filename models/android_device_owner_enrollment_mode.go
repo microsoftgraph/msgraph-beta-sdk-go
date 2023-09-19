@@ -43,3 +43,6 @@ func SerializeAndroidDeviceOwnerEnrollmentMode(values []AndroidDeviceOwnerEnroll
     }
     return result
 }
+func (i AndroidDeviceOwnerEnrollmentMode) isMultiValue() bool {
+    return false
+}

@@ -38,3 +38,6 @@ func SerializeWindowsDriverUpdateProfileInventorySyncState(values []WindowsDrive
     }
     return result
 }
+func (i WindowsDriverUpdateProfileInventorySyncState) isMultiValue() bool {
+    return false
+}

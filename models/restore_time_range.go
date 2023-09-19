@@ -38,3 +38,6 @@ func SerializeRestoreTimeRange(values []RestoreTimeRange) []string {
     }
     return result
 }
+func (i RestoreTimeRange) isMultiValue() bool {
+    return false
+}

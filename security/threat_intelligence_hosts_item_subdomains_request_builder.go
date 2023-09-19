@@ -39,8 +39,8 @@ type ThreatIntelligenceHostsItemSubdomainsRequestBuilderGetRequestConfiguration 
     // Request query parameters
     QueryParameters *ThreatIntelligenceHostsItemSubdomainsRequestBuilderGetQueryParameters
 }
-// BySubdomainIdString provides operations to manage the subdomains property of the microsoft.graph.security.host entity.
-func (m *ThreatIntelligenceHostsItemSubdomainsRequestBuilder) BySubdomainIdString(subdomainId string)(*ThreatIntelligenceHostsItemSubdomainsSubdomainItemRequestBuilder) {
+// BySubdomainId provides operations to manage the subdomains property of the microsoft.graph.security.host entity.
+func (m *ThreatIntelligenceHostsItemSubdomainsRequestBuilder) BySubdomainId(subdomainId string)(*ThreatIntelligenceHostsItemSubdomainsSubdomainItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *ThreatIntelligenceHostsItemSubdomainsRequestBuilder) ToGetRequestInform
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ThreatIntelligenceHostsItemSubdomainsRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceHostsItemSubdomainsRequestBuilder) {
+    return NewThreatIntelligenceHostsItemSubdomainsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

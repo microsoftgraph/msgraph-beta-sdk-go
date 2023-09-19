@@ -243,7 +243,7 @@ func (m *DeviceEvidence) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97
     }
     return nil
 }
-// GetHealthStatus gets the healthStatus property value. The health state of the device.The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
+// GetHealthStatus gets the healthStatus property value. The health state of the device. The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
 func (m *DeviceEvidence) GetHealthStatus()(*DeviceHealthStatus) {
     val, err := m.GetBackingStore().Get("healthStatus")
     if err != nil {
@@ -287,7 +287,7 @@ func (m *DeviceEvidence) GetMdeDeviceId()(*string) {
     }
     return nil
 }
-// GetOnboardingStatus gets the onboardingStatus property value. The status of the machine onboarding to Microsoft Defender for Endpoint.The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
+// GetOnboardingStatus gets the onboardingStatus property value. The status of the machine onboarding to Microsoft Defender for Endpoint. The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
 func (m *DeviceEvidence) GetOnboardingStatus()(*OnboardingStatus) {
     val, err := m.GetBackingStore().Get("onboardingStatus")
     if err != nil {
@@ -320,7 +320,7 @@ func (m *DeviceEvidence) GetOsPlatform()(*string) {
     }
     return nil
 }
-// GetRbacGroupId gets the rbacGroupId property value. The ID of the role-based access control (RBAC) device group.
+// GetRbacGroupId gets the rbacGroupId property value. The ID of the role-based access control device group.
 func (m *DeviceEvidence) GetRbacGroupId()(*int32) {
     val, err := m.GetBackingStore().Get("rbacGroupId")
     if err != nil {
@@ -331,7 +331,7 @@ func (m *DeviceEvidence) GetRbacGroupId()(*int32) {
     }
     return nil
 }
-// GetRbacGroupName gets the rbacGroupName property value. The name of the RBAC device group.
+// GetRbacGroupName gets the rbacGroupName property value. The name of the role-based access control device group.
 func (m *DeviceEvidence) GetRbacGroupName()(*string) {
     val, err := m.GetBackingStore().Get("rbacGroupName")
     if err != nil {
@@ -517,7 +517,7 @@ func (m *DeviceEvidence) SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3
         panic(err)
     }
 }
-// SetHealthStatus sets the healthStatus property value. The health state of the device.The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
+// SetHealthStatus sets the healthStatus property value. The health state of the device. The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
 func (m *DeviceEvidence) SetHealthStatus(value *DeviceHealthStatus)() {
     err := m.GetBackingStore().Set("healthStatus", value)
     if err != nil {
@@ -545,7 +545,7 @@ func (m *DeviceEvidence) SetMdeDeviceId(value *string)() {
         panic(err)
     }
 }
-// SetOnboardingStatus sets the onboardingStatus property value. The status of the machine onboarding to Microsoft Defender for Endpoint.The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
+// SetOnboardingStatus sets the onboardingStatus property value. The status of the machine onboarding to Microsoft Defender for Endpoint. The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
 func (m *DeviceEvidence) SetOnboardingStatus(value *OnboardingStatus)() {
     err := m.GetBackingStore().Set("onboardingStatus", value)
     if err != nil {
@@ -566,14 +566,14 @@ func (m *DeviceEvidence) SetOsPlatform(value *string)() {
         panic(err)
     }
 }
-// SetRbacGroupId sets the rbacGroupId property value. The ID of the role-based access control (RBAC) device group.
+// SetRbacGroupId sets the rbacGroupId property value. The ID of the role-based access control device group.
 func (m *DeviceEvidence) SetRbacGroupId(value *int32)() {
     err := m.GetBackingStore().Set("rbacGroupId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRbacGroupName sets the rbacGroupName property value. The name of the RBAC device group.
+// SetRbacGroupName sets the rbacGroupName property value. The name of the role-based access control device group.
 func (m *DeviceEvidence) SetRbacGroupName(value *string)() {
     err := m.GetBackingStore().Set("rbacGroupName", value)
     if err != nil {

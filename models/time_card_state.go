@@ -38,3 +38,6 @@ func SerializeTimeCardState(values []TimeCardState) []string {
     }
     return result
 }
+func (i TimeCardState) isMultiValue() bool {
+    return false
+}

@@ -70,3 +70,7 @@ func (m *DeletedItemsGetUserOwnedObjectsRequestBuilder) ToPostRequestInformation
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeletedItemsGetUserOwnedObjectsRequestBuilder) WithUrl(rawUrl string)(*DeletedItemsGetUserOwnedObjectsRequestBuilder) {
+    return NewDeletedItemsGetUserOwnedObjectsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

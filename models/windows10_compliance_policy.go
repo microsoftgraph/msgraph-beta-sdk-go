@@ -276,6 +276,36 @@ func (m *Windows10CompliancePolicy) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["firmwareProtectionEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFirmwareProtectionEnabled(val)
+        }
+        return nil
+    }
+    res["kernelDmaProtectionEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKernelDmaProtectionEnabled(val)
+        }
+        return nil
+    }
+    res["memoryIntegrityEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMemoryIntegrityEnabled(val)
+        }
+        return nil
+    }
     res["mobileOsMaximumVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -482,7 +512,50 @@ func (m *Windows10CompliancePolicy) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["virtualizationBasedSecurityEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVirtualizationBasedSecurityEnabled(val)
+        }
+        return nil
+    }
     return res
+}
+// GetFirmwareProtectionEnabled gets the firmwareProtectionEnabled property value. When TRUE, indicates that Firmware protection is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Firmware protection is not required to be reported as healthy. Devices that support either Dynamic Root of Trust for Measurement (DRTM) or Firmware Attack Surface Reduction (FASR) will report compliant for this setting. Default value is FALSE.
+func (m *Windows10CompliancePolicy) GetFirmwareProtectionEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("firmwareProtectionEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetKernelDmaProtectionEnabled gets the kernelDmaProtectionEnabled property value. When TRUE, indicates that Kernel Direct Memory Access (DMA) protection is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Kernel DMA Protection is not required to be reported as healthy. Default value is FALSE.
+func (m *Windows10CompliancePolicy) GetKernelDmaProtectionEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("kernelDmaProtectionEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetMemoryIntegrityEnabled gets the memoryIntegrityEnabled property value. When TRUE, indicates that Memory Integrity as known as Hypervisor-protected Code Integrity (HVCI) or Hypervisor Enforced Code Integrity protection is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Memory Integrity Protection is not required to be reported as healthy. Default value is FALSE.
+func (m *Windows10CompliancePolicy) GetMemoryIntegrityEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("memoryIntegrityEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMobileOsMaximumVersion gets the mobileOsMaximumVersion property value. Maximum Windows Phone version.
 func (m *Windows10CompliancePolicy) GetMobileOsMaximumVersion()(*string) {
@@ -704,6 +777,17 @@ func (m *Windows10CompliancePolicy) GetValidOperatingSystemBuildRanges()([]Opera
     }
     return nil
 }
+// GetVirtualizationBasedSecurityEnabled gets the virtualizationBasedSecurityEnabled property value. When TRUE, indicates that Virtualization-based Security is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Virtualization-based Security is not required to be reported as healthy. Default value is FALSE.
+func (m *Windows10CompliancePolicy) GetVirtualizationBasedSecurityEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("virtualizationBasedSecurityEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *Windows10CompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.DeviceCompliancePolicy.Serialize(writer)
@@ -779,6 +863,24 @@ func (m *Windows10CompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err = writer.WriteBoolValue("earlyLaunchAntiMalwareDriverEnabled", m.GetEarlyLaunchAntiMalwareDriverEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("firmwareProtectionEnabled", m.GetFirmwareProtectionEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("kernelDmaProtectionEnabled", m.GetKernelDmaProtectionEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("memoryIntegrityEnabled", m.GetMemoryIntegrityEnabled())
         if err != nil {
             return err
         }
@@ -910,6 +1012,12 @@ func (m *Windows10CompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("virtualizationBasedSecurityEnabled", m.GetVirtualizationBasedSecurityEnabled())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActiveFirewallRequired sets the activeFirewallRequired property value. Require active firewall on Windows devices.
@@ -992,6 +1100,27 @@ func (m *Windows10CompliancePolicy) SetDeviceThreatProtectionRequiredSecurityLev
 // SetEarlyLaunchAntiMalwareDriverEnabled sets the earlyLaunchAntiMalwareDriverEnabled property value. Require devices to be reported as healthy by Windows Device Health Attestation - early launch antimalware driver is enabled.
 func (m *Windows10CompliancePolicy) SetEarlyLaunchAntiMalwareDriverEnabled(value *bool)() {
     err := m.GetBackingStore().Set("earlyLaunchAntiMalwareDriverEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetFirmwareProtectionEnabled sets the firmwareProtectionEnabled property value. When TRUE, indicates that Firmware protection is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Firmware protection is not required to be reported as healthy. Devices that support either Dynamic Root of Trust for Measurement (DRTM) or Firmware Attack Surface Reduction (FASR) will report compliant for this setting. Default value is FALSE.
+func (m *Windows10CompliancePolicy) SetFirmwareProtectionEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("firmwareProtectionEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetKernelDmaProtectionEnabled sets the kernelDmaProtectionEnabled property value. When TRUE, indicates that Kernel Direct Memory Access (DMA) protection is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Kernel DMA Protection is not required to be reported as healthy. Default value is FALSE.
+func (m *Windows10CompliancePolicy) SetKernelDmaProtectionEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("kernelDmaProtectionEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMemoryIntegrityEnabled sets the memoryIntegrityEnabled property value. When TRUE, indicates that Memory Integrity as known as Hypervisor-protected Code Integrity (HVCI) or Hypervisor Enforced Code Integrity protection is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Memory Integrity Protection is not required to be reported as healthy. Default value is FALSE.
+func (m *Windows10CompliancePolicy) SetMemoryIntegrityEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("memoryIntegrityEnabled", value)
     if err != nil {
         panic(err)
     }
@@ -1136,6 +1265,13 @@ func (m *Windows10CompliancePolicy) SetValidOperatingSystemBuildRanges(value []O
         panic(err)
     }
 }
+// SetVirtualizationBasedSecurityEnabled sets the virtualizationBasedSecurityEnabled property value. When TRUE, indicates that Virtualization-based Security is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Virtualization-based Security is not required to be reported as healthy. Default value is FALSE.
+func (m *Windows10CompliancePolicy) SetVirtualizationBasedSecurityEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("virtualizationBasedSecurityEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // Windows10CompliancePolicyable 
 type Windows10CompliancePolicyable interface {
     DeviceCompliancePolicyable
@@ -1152,6 +1288,9 @@ type Windows10CompliancePolicyable interface {
     GetDeviceThreatProtectionEnabled()(*bool)
     GetDeviceThreatProtectionRequiredSecurityLevel()(*DeviceThreatProtectionLevel)
     GetEarlyLaunchAntiMalwareDriverEnabled()(*bool)
+    GetFirmwareProtectionEnabled()(*bool)
+    GetKernelDmaProtectionEnabled()(*bool)
+    GetMemoryIntegrityEnabled()(*bool)
     GetMobileOsMaximumVersion()(*string)
     GetMobileOsMinimumVersion()(*string)
     GetOsMaximumVersion()(*string)
@@ -1172,6 +1311,7 @@ type Windows10CompliancePolicyable interface {
     GetStorageRequireEncryption()(*bool)
     GetTpmRequired()(*bool)
     GetValidOperatingSystemBuildRanges()([]OperatingSystemVersionRangeable)
+    GetVirtualizationBasedSecurityEnabled()(*bool)
     SetActiveFirewallRequired(value *bool)()
     SetAntiSpywareRequired(value *bool)()
     SetAntivirusRequired(value *bool)()
@@ -1184,6 +1324,9 @@ type Windows10CompliancePolicyable interface {
     SetDeviceThreatProtectionEnabled(value *bool)()
     SetDeviceThreatProtectionRequiredSecurityLevel(value *DeviceThreatProtectionLevel)()
     SetEarlyLaunchAntiMalwareDriverEnabled(value *bool)()
+    SetFirmwareProtectionEnabled(value *bool)()
+    SetKernelDmaProtectionEnabled(value *bool)()
+    SetMemoryIntegrityEnabled(value *bool)()
     SetMobileOsMaximumVersion(value *string)()
     SetMobileOsMinimumVersion(value *string)()
     SetOsMaximumVersion(value *string)()
@@ -1204,4 +1347,5 @@ type Windows10CompliancePolicyable interface {
     SetStorageRequireEncryption(value *bool)()
     SetTpmRequired(value *bool)()
     SetValidOperatingSystemBuildRanges(value []OperatingSystemVersionRangeable)()
+    SetVirtualizationBasedSecurityEnabled(value *bool)()
 }

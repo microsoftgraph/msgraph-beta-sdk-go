@@ -42,3 +42,6 @@ func SerializeIosWallpaperDisplayLocation(values []IosWallpaperDisplayLocation) 
     }
     return result
 }
+func (i IosWallpaperDisplayLocation) isMultiValue() bool {
+    return false
+}

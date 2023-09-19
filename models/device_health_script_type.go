@@ -34,3 +34,6 @@ func SerializeDeviceHealthScriptType(values []DeviceHealthScriptType) []string {
     }
     return result
 }
+func (i DeviceHealthScriptType) isMultiValue() bool {
+    return false
+}

@@ -39,8 +39,8 @@ type CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilderGetRequestConfigur
     // Request query parameters
     QueryParameters *CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilderGetQueryParameters
 }
-// BySalesQuoteLineIdString provides operations to manage the salesQuoteLines property of the microsoft.graph.salesQuote entity.
-func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder) BySalesQuoteLineIdString(salesQuoteLineId string)(*CompaniesItemSalesQuotesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilder) {
+// BySalesQuoteLineId provides operations to manage the salesQuoteLines property of the microsoft.graph.salesQuote entity.
+func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder) BySalesQuoteLineId(salesQuoteLineId string)(*CompaniesItemSalesQuotesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder) ToGetRequest
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder) {
+    return NewCompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

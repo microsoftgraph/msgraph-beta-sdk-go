@@ -39,8 +39,8 @@ type ItemDevicesItemTransitiveMemberOfRequestBuilderGetRequestConfiguration stru
     // Request query parameters
     QueryParameters *ItemDevicesItemTransitiveMemberOfRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectIdString provides operations to manage the transitiveMemberOf property of the microsoft.graph.device entity.
-func (m *ItemDevicesItemTransitiveMemberOfRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ItemDevicesItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectId provides operations to manage the transitiveMemberOf property of the microsoft.graph.device entity.
+func (m *ItemDevicesItemTransitiveMemberOfRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemDevicesItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -112,4 +112,8 @@ func (m *ItemDevicesItemTransitiveMemberOfRequestBuilder) ToGetRequestInformatio
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemDevicesItemTransitiveMemberOfRequestBuilder) WithUrl(rawUrl string)(*ItemDevicesItemTransitiveMemberOfRequestBuilder) {
+    return NewItemDevicesItemTransitiveMemberOfRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -38,3 +38,6 @@ func SerializeTeamworkConnectionStatus(values []TeamworkConnectionStatus) []stri
     }
     return result
 }
+func (i TeamworkConnectionStatus) isMultiValue() bool {
+    return false
+}

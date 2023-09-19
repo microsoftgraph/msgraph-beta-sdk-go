@@ -46,8 +46,8 @@ type DirectorySettingTemplatesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDirectorySettingTemplateIdString provides operations to manage the collection of directorySettingTemplate entities.
-func (m *DirectorySettingTemplatesRequestBuilder) ByDirectorySettingTemplateIdString(directorySettingTemplateId string)(*DirectorySettingTemplateItemRequestBuilder) {
+// ByDirectorySettingTemplateId provides operations to manage the collection of directorySettingTemplate entities.
+func (m *DirectorySettingTemplatesRequestBuilder) ByDirectorySettingTemplateId(directorySettingTemplateId string)(*DirectorySettingTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -163,4 +163,8 @@ func (m *DirectorySettingTemplatesRequestBuilder) ToPostRequestInformation(ctx c
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *DirectorySettingTemplatesRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
     return NewValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DirectorySettingTemplatesRequestBuilder) WithUrl(rawUrl string)(*DirectorySettingTemplatesRequestBuilder) {
+    return NewDirectorySettingTemplatesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

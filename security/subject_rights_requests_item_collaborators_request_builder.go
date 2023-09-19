@@ -39,8 +39,8 @@ type SubjectRightsRequestsItemCollaboratorsRequestBuilderGetRequestConfiguration
     // Request query parameters
     QueryParameters *SubjectRightsRequestsItemCollaboratorsRequestBuilderGetQueryParameters
 }
-// ByUserIdString provides operations to manage the collaborators property of the microsoft.graph.subjectRightsRequest entity.
-func (m *SubjectRightsRequestsItemCollaboratorsRequestBuilder) ByUserIdString(userId string)(*SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilder) {
+// ByUserId provides operations to manage the collaborators property of the microsoft.graph.subjectRightsRequest entity.
+func (m *SubjectRightsRequestsItemCollaboratorsRequestBuilder) ByUserId(userId string)(*SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *SubjectRightsRequestsItemCollaboratorsRequestBuilder) ToGetRequestInfor
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SubjectRightsRequestsItemCollaboratorsRequestBuilder) WithUrl(rawUrl string)(*SubjectRightsRequestsItemCollaboratorsRequestBuilder) {
+    return NewSubjectRightsRequestsItemCollaboratorsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

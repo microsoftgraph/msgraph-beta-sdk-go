@@ -38,3 +38,6 @@ func SerializeNotificationDeliveryPreference(values []NotificationDeliveryPrefer
     }
     return result
 }
+func (i NotificationDeliveryPreference) isMultiValue() bool {
+    return false
+}

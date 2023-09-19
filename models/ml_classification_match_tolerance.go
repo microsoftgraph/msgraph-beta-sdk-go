@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // 
 type MlClassificationMatchTolerance int
@@ -11,17 +12,26 @@ const (
 )
 
 func (i MlClassificationMatchTolerance) String() string {
-    return []string{"exact", "near"}[i]
+    var values []string
+    for p := MlClassificationMatchTolerance(1); p <= NEAR_MLCLASSIFICATIONMATCHTOLERANCE; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"exact", "near"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseMlClassificationMatchTolerance(v string) (any, error) {
-    result := EXACT_MLCLASSIFICATIONMATCHTOLERANCE
-    switch v {
-        case "exact":
-            result = EXACT_MLCLASSIFICATIONMATCHTOLERANCE
-        case "near":
-            result = NEAR_MLCLASSIFICATIONMATCHTOLERANCE
-        default:
-            return 0, errors.New("Unknown MlClassificationMatchTolerance value: " + v)
+    var result MlClassificationMatchTolerance
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "exact":
+                result |= EXACT_MLCLASSIFICATIONMATCHTOLERANCE
+            case "near":
+                result |= NEAR_MLCLASSIFICATIONMATCHTOLERANCE
+            default:
+                return 0, errors.New("Unknown MlClassificationMatchTolerance value: " + v)
+        }
     }
     return &result, nil
 }
@@ -31,4 +41,7 @@ func SerializeMlClassificationMatchTolerance(values []MlClassificationMatchToler
         result[i] = v.String()
     }
     return result
+}
+func (i MlClassificationMatchTolerance) isMultiValue() bool {
+    return true
 }

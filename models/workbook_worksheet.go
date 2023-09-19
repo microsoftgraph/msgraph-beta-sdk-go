@@ -221,7 +221,7 @@ func (m *WorkbookWorksheet) GetTables()([]WorkbookTableable) {
     }
     return nil
 }
-// GetTasks gets the tasks property value. The tasks property
+// GetTasks gets the tasks property value. Collection of document tasks on this worksheet. Read-only.
 func (m *WorkbookWorksheet) GetTasks()([]WorkbookDocumentTaskable) {
     val, err := m.GetBackingStore().Get("tasks")
     if err != nil {
@@ -232,7 +232,7 @@ func (m *WorkbookWorksheet) GetTasks()([]WorkbookDocumentTaskable) {
     }
     return nil
 }
-// GetVisibility gets the visibility property value. The Visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
+// GetVisibility gets the visibility property value. The visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
 func (m *WorkbookWorksheet) GetVisibility()(*string) {
     val, err := m.GetBackingStore().Get("visibility")
     if err != nil {
@@ -384,14 +384,14 @@ func (m *WorkbookWorksheet) SetTables(value []WorkbookTableable)() {
         panic(err)
     }
 }
-// SetTasks sets the tasks property value. The tasks property
+// SetTasks sets the tasks property value. Collection of document tasks on this worksheet. Read-only.
 func (m *WorkbookWorksheet) SetTasks(value []WorkbookDocumentTaskable)() {
     err := m.GetBackingStore().Set("tasks", value)
     if err != nil {
         panic(err)
     }
 }
-// SetVisibility sets the visibility property value. The Visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
+// SetVisibility sets the visibility property value. The visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
 func (m *WorkbookWorksheet) SetVisibility(value *string)() {
     err := m.GetBackingStore().Set("visibility", value)
     if err != nil {

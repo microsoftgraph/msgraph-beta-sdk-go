@@ -38,7 +38,7 @@ func (m *WorkbookEmailIdentity) GetAdditionalData()(map[string]any) {
 func (m *WorkbookEmailIdentity) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Display name of the user.
 func (m *WorkbookEmailIdentity) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *WorkbookEmailIdentity) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetEmail gets the email property value. The email property
+// GetEmail gets the email property value. Email address of the user.
 func (m *WorkbookEmailIdentity) GetEmail()(*string) {
     val, err := m.GetBackingStore().Get("email")
     if err != nil {
@@ -105,7 +105,7 @@ func (m *WorkbookEmailIdentity) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetId gets the id property value. The id property
+// GetId gets the id property value. The unique identifier of the user.
 func (m *WorkbookEmailIdentity) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -172,21 +172,21 @@ func (m *WorkbookEmailIdentity) SetAdditionalData(value map[string]any)() {
 func (m *WorkbookEmailIdentity) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Display name of the user.
 func (m *WorkbookEmailIdentity) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEmail sets the email property value. The email property
+// SetEmail sets the email property value. Email address of the user.
 func (m *WorkbookEmailIdentity) SetEmail(value *string)() {
     err := m.GetBackingStore().Set("email", value)
     if err != nil {
         panic(err)
     }
 }
-// SetId sets the id property value. The id property
+// SetId sets the id property value. The unique identifier of the user.
 func (m *WorkbookEmailIdentity) SetId(value *string)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {
