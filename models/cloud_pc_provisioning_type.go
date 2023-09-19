@@ -35,3 +35,6 @@ func SerializeCloudPcProvisioningType(values []CloudPcProvisioningType) []string
     }
     return result
 }
+func (i CloudPcProvisioningType) isMultiValue() bool {
+    return false
+}

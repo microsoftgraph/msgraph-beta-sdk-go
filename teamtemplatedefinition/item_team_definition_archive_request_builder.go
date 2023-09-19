@@ -65,3 +65,7 @@ func (m *ItemTeamDefinitionArchiveRequestBuilder) ToPostRequestInformation(ctx c
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTeamDefinitionArchiveRequestBuilder) WithUrl(rawUrl string)(*ItemTeamDefinitionArchiveRequestBuilder) {
+    return NewItemTeamDefinitionArchiveRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

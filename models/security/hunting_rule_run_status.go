@@ -41,3 +41,6 @@ func SerializeHuntingRuleRunStatus(values []HuntingRuleRunStatus) []string {
     }
     return result
 }
+func (i HuntingRuleRunStatus) isMultiValue() bool {
+    return false
+}

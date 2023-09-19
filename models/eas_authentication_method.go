@@ -38,3 +38,6 @@ func SerializeEasAuthenticationMethod(values []EasAuthenticationMethod) []string
     }
     return result
 }
+func (i EasAuthenticationMethod) isMultiValue() bool {
+    return false
+}

@@ -74,3 +74,7 @@ func (m *CloudPCRoleDefinitionsCountRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CloudPCRoleDefinitionsCountRequestBuilder) WithUrl(rawUrl string)(*CloudPCRoleDefinitionsCountRequestBuilder) {
+    return NewCloudPCRoleDefinitionsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

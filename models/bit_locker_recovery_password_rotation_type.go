@@ -42,3 +42,6 @@ func SerializeBitLockerRecoveryPasswordRotationType(values []BitLockerRecoveryPa
     }
     return result
 }
+func (i BitLockerRecoveryPasswordRotationType) isMultiValue() bool {
+    return false
+}

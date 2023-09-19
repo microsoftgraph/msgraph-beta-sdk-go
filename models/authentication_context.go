@@ -84,7 +84,7 @@ func (m *AuthenticationContext) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetId gets the id property value. The identifier of a authentication context in your tenant.
+// GetId gets the id property value. The identifier of an authentication context in your tenant.
 func (m *AuthenticationContext) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -153,7 +153,7 @@ func (m *AuthenticationContext) SetDetail(value *AuthenticationContextDetail)() 
         panic(err)
     }
 }
-// SetId sets the id property value. The identifier of a authentication context in your tenant.
+// SetId sets the id property value. The identifier of an authentication context in your tenant.
 func (m *AuthenticationContext) SetId(value *string)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {

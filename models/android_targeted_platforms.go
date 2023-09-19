@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // Specifies which platform(s) can be targeted for a given Android LOB application or Managed Android LOB application.
 type AndroidTargetedPlatforms int
@@ -15,19 +16,28 @@ const (
 )
 
 func (i AndroidTargetedPlatforms) String() string {
-    return []string{"androidDeviceAdministrator", "androidOpenSourceProject", "unknownFutureValue"}[i]
+    var values []string
+    for p := AndroidTargetedPlatforms(1); p <= UNKNOWNFUTUREVALUE_ANDROIDTARGETEDPLATFORMS; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"androidDeviceAdministrator", "androidOpenSourceProject", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseAndroidTargetedPlatforms(v string) (any, error) {
-    result := ANDROIDDEVICEADMINISTRATOR_ANDROIDTARGETEDPLATFORMS
-    switch v {
-        case "androidDeviceAdministrator":
-            result = ANDROIDDEVICEADMINISTRATOR_ANDROIDTARGETEDPLATFORMS
-        case "androidOpenSourceProject":
-            result = ANDROIDOPENSOURCEPROJECT_ANDROIDTARGETEDPLATFORMS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_ANDROIDTARGETEDPLATFORMS
-        default:
-            return 0, errors.New("Unknown AndroidTargetedPlatforms value: " + v)
+    var result AndroidTargetedPlatforms
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "androidDeviceAdministrator":
+                result |= ANDROIDDEVICEADMINISTRATOR_ANDROIDTARGETEDPLATFORMS
+            case "androidOpenSourceProject":
+                result |= ANDROIDOPENSOURCEPROJECT_ANDROIDTARGETEDPLATFORMS
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_ANDROIDTARGETEDPLATFORMS
+            default:
+                return 0, errors.New("Unknown AndroidTargetedPlatforms value: " + v)
+        }
     }
     return &result, nil
 }
@@ -37,4 +47,7 @@ func SerializeAndroidTargetedPlatforms(values []AndroidTargetedPlatforms) []stri
         result[i] = v.String()
     }
     return result
+}
+func (i AndroidTargetedPlatforms) isMultiValue() bool {
+    return true
 }

@@ -38,3 +38,6 @@ func SerializeAndroidForWorkBindStatus(values []AndroidForWorkBindStatus) []stri
     }
     return result
 }
+func (i AndroidForWorkBindStatus) isMultiValue() bool {
+    return false
+}

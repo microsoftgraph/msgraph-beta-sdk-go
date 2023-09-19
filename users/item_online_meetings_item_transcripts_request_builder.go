@@ -11,7 +11,7 @@ import (
 type ItemOnlineMeetingsItemTranscriptsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOnlineMeetingsItemTranscriptsRequestBuilderGetQueryParameters retrieve the list of callTranscript objects associated with an onlineMeeting.
+// ItemOnlineMeetingsItemTranscriptsRequestBuilderGetQueryParameters retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API does not support getting call transcripts from channel meetings. 
 type ItemOnlineMeetingsItemTranscriptsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -46,8 +46,8 @@ type ItemOnlineMeetingsItemTranscriptsRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCallTranscriptIdString provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
-func (m *ItemOnlineMeetingsItemTranscriptsRequestBuilder) ByCallTranscriptIdString(callTranscriptId string)(*ItemOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilder) {
+// ByCallTranscriptId provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
+func (m *ItemOnlineMeetingsItemTranscriptsRequestBuilder) ByCallTranscriptId(callTranscriptId string)(*ItemOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -78,7 +78,7 @@ func (m *ItemOnlineMeetingsItemTranscriptsRequestBuilder) Count()(*ItemOnlineMee
 func (m *ItemOnlineMeetingsItemTranscriptsRequestBuilder) Delta()(*ItemOnlineMeetingsItemTranscriptsDeltaRequestBuilder) {
     return NewItemOnlineMeetingsItemTranscriptsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the list of callTranscript objects associated with an onlineMeeting.
+// Get retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API does not support getting call transcripts from channel meetings. 
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
@@ -119,7 +119,7 @@ func (m *ItemOnlineMeetingsItemTranscriptsRequestBuilder) Post(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallTranscriptable), nil
 }
-// ToGetRequestInformation retrieve the list of callTranscript objects associated with an onlineMeeting.
+// ToGetRequestInformation retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API does not support getting call transcripts from channel meetings. 
 func (m *ItemOnlineMeetingsItemTranscriptsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemTranscriptsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -151,4 +151,8 @@ func (m *ItemOnlineMeetingsItemTranscriptsRequestBuilder) ToPostRequestInformati
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemOnlineMeetingsItemTranscriptsRequestBuilder) WithUrl(rawUrl string)(*ItemOnlineMeetingsItemTranscriptsRequestBuilder) {
+    return NewItemOnlineMeetingsItemTranscriptsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

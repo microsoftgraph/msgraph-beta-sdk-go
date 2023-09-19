@@ -47,3 +47,6 @@ func SerializeCoachmarkLocationType(values []CoachmarkLocationType) []string {
     }
     return result
 }
+func (i CoachmarkLocationType) isMultiValue() bool {
+    return false
+}

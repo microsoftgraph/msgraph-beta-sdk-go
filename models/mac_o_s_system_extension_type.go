@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // Flag enum representing the allowed macOS system extension types.
 type MacOSSystemExtensionType int
@@ -15,19 +16,28 @@ const (
 )
 
 func (i MacOSSystemExtensionType) String() string {
-    return []string{"driverExtensionsAllowed", "networkExtensionsAllowed", "endpointSecurityExtensionsAllowed"}[i]
+    var values []string
+    for p := MacOSSystemExtensionType(1); p <= ENDPOINTSECURITYEXTENSIONSALLOWED_MACOSSYSTEMEXTENSIONTYPE; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"driverExtensionsAllowed", "networkExtensionsAllowed", "endpointSecurityExtensionsAllowed"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseMacOSSystemExtensionType(v string) (any, error) {
-    result := DRIVEREXTENSIONSALLOWED_MACOSSYSTEMEXTENSIONTYPE
-    switch v {
-        case "driverExtensionsAllowed":
-            result = DRIVEREXTENSIONSALLOWED_MACOSSYSTEMEXTENSIONTYPE
-        case "networkExtensionsAllowed":
-            result = NETWORKEXTENSIONSALLOWED_MACOSSYSTEMEXTENSIONTYPE
-        case "endpointSecurityExtensionsAllowed":
-            result = ENDPOINTSECURITYEXTENSIONSALLOWED_MACOSSYSTEMEXTENSIONTYPE
-        default:
-            return 0, errors.New("Unknown MacOSSystemExtensionType value: " + v)
+    var result MacOSSystemExtensionType
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "driverExtensionsAllowed":
+                result |= DRIVEREXTENSIONSALLOWED_MACOSSYSTEMEXTENSIONTYPE
+            case "networkExtensionsAllowed":
+                result |= NETWORKEXTENSIONSALLOWED_MACOSSYSTEMEXTENSIONTYPE
+            case "endpointSecurityExtensionsAllowed":
+                result |= ENDPOINTSECURITYEXTENSIONSALLOWED_MACOSSYSTEMEXTENSIONTYPE
+            default:
+                return 0, errors.New("Unknown MacOSSystemExtensionType value: " + v)
+        }
     }
     return &result, nil
 }
@@ -37,4 +47,7 @@ func SerializeMacOSSystemExtensionType(values []MacOSSystemExtensionType) []stri
         result[i] = v.String()
     }
     return result
+}
+func (i MacOSSystemExtensionType) isMultiValue() bool {
+    return true
 }

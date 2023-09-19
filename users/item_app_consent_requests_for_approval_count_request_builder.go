@@ -74,3 +74,7 @@ func (m *ItemAppConsentRequestsForApprovalCountRequestBuilder) ToGetRequestInfor
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemAppConsentRequestsForApprovalCountRequestBuilder) WithUrl(rawUrl string)(*ItemAppConsentRequestsForApprovalCountRequestBuilder) {
+    return NewItemAppConsentRequestsForApprovalCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

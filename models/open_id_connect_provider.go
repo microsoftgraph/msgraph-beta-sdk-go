@@ -19,7 +19,7 @@ func NewOpenIdConnectProvider()(*OpenIdConnectProvider) {
 func CreateOpenIdConnectProviderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOpenIdConnectProvider(), nil
 }
-// GetClaimsMapping gets the claimsMapping property value. After the OIDC provider sends an ID token back to Azure AD, Azure AD needs to be able to map the claims from the received token to the claims that Azure AD recognizes and uses. This complex type captures that mapping. It is a required property.
+// GetClaimsMapping gets the claimsMapping property value. After the OIDC provider sends an ID token back to Azure AD, Azure AD needs to be able to map the claims from the received token to the claims that Azure AD recognizes and uses. This complex type captures that mapping. It's a required property.
 func (m *OpenIdConnectProvider) GetClaimsMapping()(ClaimsMappingable) {
     val, err := m.GetBackingStore().Get("claimsMapping")
     if err != nil {
@@ -106,7 +106,7 @@ func (m *OpenIdConnectProvider) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetMetadataUrl gets the metadataUrl property value. The URL for the metadata document of the OpenID Connect identity provider. Every OpenID Connect identity provider describes a metadata document that contains most of the information required to perform sign-in. This includes information such as the URLs to use and the location of the service's public signing keys. The OpenID Connect metadata document is always located at an endpoint that ends in .well-known/openid-configuration . For the OpenID Connect identity provider you are looking to add, you will need to provide the metadata URL. It is a required property and is read only after creation.
+// GetMetadataUrl gets the metadataUrl property value. The URL for the metadata document of the OpenID Connect identity provider. Every OpenID Connect identity provider describes a metadata document that contains most of the information required to perform sign-in. This includes information such as the URLs to use and the location of the service's public signing keys. The OpenID Connect metadata document is always located at an endpoint that ends in a well-known/openid-configuration. For the OpenID Connect identity provider you're looking to add, you need to provide the metadata URL. It's a required property and is read only after creation.
 func (m *OpenIdConnectProvider) GetMetadataUrl()(*string) {
     val, err := m.GetBackingStore().Get("metadataUrl")
     if err != nil {
@@ -139,7 +139,7 @@ func (m *OpenIdConnectProvider) GetResponseType()(*OpenIdConnectResponseTypes) {
     }
     return nil
 }
-// GetScope gets the scope property value. Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended separated by space. For more details about the scope limitations see RFC6749 Section 3.3. It is a required property.
+// GetScope gets the scope property value. Scope defines the information and permissions you're looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users aren't able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended separated by space. For more information about the scope limitations, see RFC6749 Section 3.3. It's a required property.
 func (m *OpenIdConnectProvider) GetScope()(*string) {
     val, err := m.GetBackingStore().Get("scope")
     if err != nil {
@@ -196,7 +196,7 @@ func (m *OpenIdConnectProvider) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetClaimsMapping sets the claimsMapping property value. After the OIDC provider sends an ID token back to Azure AD, Azure AD needs to be able to map the claims from the received token to the claims that Azure AD recognizes and uses. This complex type captures that mapping. It is a required property.
+// SetClaimsMapping sets the claimsMapping property value. After the OIDC provider sends an ID token back to Azure AD, Azure AD needs to be able to map the claims from the received token to the claims that Azure AD recognizes and uses. This complex type captures that mapping. It's a required property.
 func (m *OpenIdConnectProvider) SetClaimsMapping(value ClaimsMappingable)() {
     err := m.GetBackingStore().Set("claimsMapping", value)
     if err != nil {
@@ -210,7 +210,7 @@ func (m *OpenIdConnectProvider) SetDomainHint(value *string)() {
         panic(err)
     }
 }
-// SetMetadataUrl sets the metadataUrl property value. The URL for the metadata document of the OpenID Connect identity provider. Every OpenID Connect identity provider describes a metadata document that contains most of the information required to perform sign-in. This includes information such as the URLs to use and the location of the service's public signing keys. The OpenID Connect metadata document is always located at an endpoint that ends in .well-known/openid-configuration . For the OpenID Connect identity provider you are looking to add, you will need to provide the metadata URL. It is a required property and is read only after creation.
+// SetMetadataUrl sets the metadataUrl property value. The URL for the metadata document of the OpenID Connect identity provider. Every OpenID Connect identity provider describes a metadata document that contains most of the information required to perform sign-in. This includes information such as the URLs to use and the location of the service's public signing keys. The OpenID Connect metadata document is always located at an endpoint that ends in a well-known/openid-configuration. For the OpenID Connect identity provider you're looking to add, you need to provide the metadata URL. It's a required property and is read only after creation.
 func (m *OpenIdConnectProvider) SetMetadataUrl(value *string)() {
     err := m.GetBackingStore().Set("metadataUrl", value)
     if err != nil {
@@ -231,7 +231,7 @@ func (m *OpenIdConnectProvider) SetResponseType(value *OpenIdConnectResponseType
         panic(err)
     }
 }
-// SetScope sets the scope property value. Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended separated by space. For more details about the scope limitations see RFC6749 Section 3.3. It is a required property.
+// SetScope sets the scope property value. Scope defines the information and permissions you're looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users aren't able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended separated by space. For more information about the scope limitations, see RFC6749 Section 3.3. It's a required property.
 func (m *OpenIdConnectProvider) SetScope(value *string)() {
     err := m.GetBackingStore().Set("scope", value)
     if err != nil {

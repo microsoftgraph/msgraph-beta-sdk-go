@@ -41,3 +41,6 @@ func SerializeAnalyticsActivityType(values []AnalyticsActivityType) []string {
     }
     return result
 }
+func (i AnalyticsActivityType) isMultiValue() bool {
+    return false
+}

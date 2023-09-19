@@ -50,3 +50,6 @@ func SerializeMacOSContentCachingParentSelectionPolicy(values []MacOSContentCach
     }
     return result
 }
+func (i MacOSContentCachingParentSelectionPolicy) isMultiValue() bool {
+    return false
+}

@@ -75,3 +75,7 @@ func (m *ItemAppRoleAssignedResourcesServicePrincipalItemRequestBuilder) ToGetRe
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemAppRoleAssignedResourcesServicePrincipalItemRequestBuilder) WithUrl(rawUrl string)(*ItemAppRoleAssignedResourcesServicePrincipalItemRequestBuilder) {
+    return NewItemAppRoleAssignedResourcesServicePrincipalItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

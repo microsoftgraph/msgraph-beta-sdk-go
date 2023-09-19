@@ -46,8 +46,8 @@ type ManagedTenantsManagedTenantTicketingEndpointsRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByManagedTenantTicketingEndpointIdString provides operations to manage the managedTenantTicketingEndpoints property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsManagedTenantTicketingEndpointsRequestBuilder) ByManagedTenantTicketingEndpointIdString(managedTenantTicketingEndpointId string)(*ManagedTenantsManagedTenantTicketingEndpointsManagedTenantTicketingEndpointItemRequestBuilder) {
+// ByManagedTenantTicketingEndpointId provides operations to manage the managedTenantTicketingEndpoints property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsManagedTenantTicketingEndpointsRequestBuilder) ByManagedTenantTicketingEndpointId(managedTenantTicketingEndpointId string)(*ManagedTenantsManagedTenantTicketingEndpointsManagedTenantTicketingEndpointItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ManagedTenantsManagedTenantTicketingEndpointsRequestBuilder) ToPostRequ
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedTenantsManagedTenantTicketingEndpointsRequestBuilder) WithUrl(rawUrl string)(*ManagedTenantsManagedTenantTicketingEndpointsRequestBuilder) {
+    return NewManagedTenantsManagedTenantTicketingEndpointsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

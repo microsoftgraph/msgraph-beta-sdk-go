@@ -46,3 +46,6 @@ func SerializeConfigurationManagerActionDeliveryStatus(values []ConfigurationMan
     }
     return result
 }
+func (i ConfigurationManagerActionDeliveryStatus) isMultiValue() bool {
+    return false
+}

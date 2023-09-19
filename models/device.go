@@ -44,7 +44,7 @@ func (m *Device) GetAlternativeSecurityIds()([]AlternativeSecurityIdable) {
     }
     return nil
 }
-// GetApproximateLastSignInDateTime gets the approximateLastSignInDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
+// GetApproximateLastSignInDateTime gets the approximateLastSignInDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderby.
 func (m *Device) GetApproximateLastSignInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("approximateLastSignInDateTime")
     if err != nil {
@@ -132,7 +132,7 @@ func (m *Device) GetDeviceVersion()(*int32) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+// GetDisplayName gets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
 func (m *Device) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -521,6 +521,16 @@ func (m *Device) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["onPremisesSecurityIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOnPremisesSecurityIdentifier(val)
+        }
+        return nil
+    }
     res["onPremisesSyncEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -839,6 +849,17 @@ func (m *Device) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad9
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. The onPremisesSecurityIdentifier property
+func (m *Device) GetOnPremisesSecurityIdentifier()(*string) {
+    val, err := m.GetBackingStore().Get("onPremisesSecurityIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -1201,6 +1222,12 @@ func (m *Device) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
         }
     }
     {
+        err = writer.WriteStringValue("onPremisesSecurityIdentifier", m.GetOnPremisesSecurityIdentifier())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("onPremisesSyncEnabled", m.GetOnPremisesSyncEnabled())
         if err != nil {
             return err
@@ -1324,7 +1351,7 @@ func (m *Device) SetAlternativeSecurityIds(value []AlternativeSecurityIdable)() 
         panic(err)
     }
 }
-// SetApproximateLastSignInDateTime sets the approximateLastSignInDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
+// SetApproximateLastSignInDateTime sets the approximateLastSignInDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderby.
 func (m *Device) SetApproximateLastSignInDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("approximateLastSignInDateTime", value)
     if err != nil {
@@ -1380,7 +1407,7 @@ func (m *Device) SetDeviceVersion(value *int32)() {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+// SetDisplayName sets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
 func (m *Device) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -1509,6 +1536,13 @@ func (m *Device) SetName(value *string)() {
 // SetOnPremisesLastSyncDateTime sets the onPremisesLastSyncDateTime property value. The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
 func (m *Device) SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("onPremisesLastSyncDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. The onPremisesSecurityIdentifier property
+func (m *Device) SetOnPremisesSecurityIdentifier(value *string)() {
+    err := m.GetBackingStore().Set("onPremisesSecurityIdentifier", value)
     if err != nil {
         panic(err)
     }
@@ -1644,6 +1678,7 @@ type Deviceable interface {
     GetModel()(*string)
     GetName()(*string)
     GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOnPremisesSecurityIdentifier()(*string)
     GetOnPremisesSyncEnabled()(*bool)
     GetOperatingSystem()(*string)
     GetOperatingSystemVersion()(*string)
@@ -1687,6 +1722,7 @@ type Deviceable interface {
     SetModel(value *string)()
     SetName(value *string)()
     SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOnPremisesSecurityIdentifier(value *string)()
     SetOnPremisesSyncEnabled(value *bool)()
     SetOperatingSystem(value *string)()
     SetOperatingSystemVersion(value *string)()

@@ -86,3 +86,6 @@ func SerializeDeviceComplianceScriptRuleDataType(values []DeviceComplianceScript
     }
     return result
 }
+func (i DeviceComplianceScriptRuleDataType) isMultiValue() bool {
+    return false
+}

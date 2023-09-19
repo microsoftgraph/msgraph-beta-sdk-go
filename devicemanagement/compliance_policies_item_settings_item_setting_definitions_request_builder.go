@@ -39,8 +39,8 @@ type CompliancePoliciesItemSettingsItemSettingDefinitionsRequestBuilderGetReques
     // Request query parameters
     QueryParameters *CompliancePoliciesItemSettingsItemSettingDefinitionsRequestBuilderGetQueryParameters
 }
-// ByDeviceManagementConfigurationSettingDefinitionIdString provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementConfigurationSetting entity.
-func (m *CompliancePoliciesItemSettingsItemSettingDefinitionsRequestBuilder) ByDeviceManagementConfigurationSettingDefinitionIdString(deviceManagementConfigurationSettingDefinitionId string)(*CompliancePoliciesItemSettingsItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
+// ByDeviceManagementConfigurationSettingDefinitionId provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementConfigurationSetting entity.
+func (m *CompliancePoliciesItemSettingsItemSettingDefinitionsRequestBuilder) ByDeviceManagementConfigurationSettingDefinitionId(deviceManagementConfigurationSettingDefinitionId string)(*CompliancePoliciesItemSettingsItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *CompliancePoliciesItemSettingsItemSettingDefinitionsRequestBuilder) ToG
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CompliancePoliciesItemSettingsItemSettingDefinitionsRequestBuilder) WithUrl(rawUrl string)(*CompliancePoliciesItemSettingsItemSettingDefinitionsRequestBuilder) {
+    return NewCompliancePoliciesItemSettingsItemSettingDefinitionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

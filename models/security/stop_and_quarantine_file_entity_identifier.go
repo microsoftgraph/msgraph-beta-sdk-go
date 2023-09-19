@@ -1,6 +1,7 @@
 package security
 import (
     "errors"
+    "strings"
 )
 // 
 type StopAndQuarantineFileEntityIdentifier int
@@ -13,21 +14,30 @@ const (
 )
 
 func (i StopAndQuarantineFileEntityIdentifier) String() string {
-    return []string{"deviceId", "sha1", "initiatingProcessSHA1", "unknownFutureValue"}[i]
+    var values []string
+    for p := StopAndQuarantineFileEntityIdentifier(1); p <= UNKNOWNFUTUREVALUE_STOPANDQUARANTINEFILEENTITYIDENTIFIER; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"deviceId", "sha1", "initiatingProcessSHA1", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseStopAndQuarantineFileEntityIdentifier(v string) (any, error) {
-    result := DEVICEID_STOPANDQUARANTINEFILEENTITYIDENTIFIER
-    switch v {
-        case "deviceId":
-            result = DEVICEID_STOPANDQUARANTINEFILEENTITYIDENTIFIER
-        case "sha1":
-            result = SHA1_STOPANDQUARANTINEFILEENTITYIDENTIFIER
-        case "initiatingProcessSHA1":
-            result = INITIATINGPROCESSSHA1_STOPANDQUARANTINEFILEENTITYIDENTIFIER
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_STOPANDQUARANTINEFILEENTITYIDENTIFIER
-        default:
-            return 0, errors.New("Unknown StopAndQuarantineFileEntityIdentifier value: " + v)
+    var result StopAndQuarantineFileEntityIdentifier
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "deviceId":
+                result |= DEVICEID_STOPANDQUARANTINEFILEENTITYIDENTIFIER
+            case "sha1":
+                result |= SHA1_STOPANDQUARANTINEFILEENTITYIDENTIFIER
+            case "initiatingProcessSHA1":
+                result |= INITIATINGPROCESSSHA1_STOPANDQUARANTINEFILEENTITYIDENTIFIER
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_STOPANDQUARANTINEFILEENTITYIDENTIFIER
+            default:
+                return 0, errors.New("Unknown StopAndQuarantineFileEntityIdentifier value: " + v)
+        }
     }
     return &result, nil
 }
@@ -37,4 +47,7 @@ func SerializeStopAndQuarantineFileEntityIdentifier(values []StopAndQuarantineFi
         result[i] = v.String()
     }
     return result
+}
+func (i StopAndQuarantineFileEntityIdentifier) isMultiValue() bool {
+    return true
 }

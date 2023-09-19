@@ -19,7 +19,7 @@ func NewCertificateAuthorityPath()(*CertificateAuthorityPath) {
 func CreateCertificateAuthorityPathFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCertificateAuthorityPath(), nil
 }
-// GetCertificateBasedApplicationConfigurations gets the certificateBasedApplicationConfigurations property value. The certificateBasedApplicationConfigurations property
+// GetCertificateBasedApplicationConfigurations gets the certificateBasedApplicationConfigurations property value. Defines the trusted certificate authorities for certificates that can be added to apps and service principals in the tenant.
 func (m *CertificateAuthorityPath) GetCertificateBasedApplicationConfigurations()([]CertificateBasedApplicationConfigurationable) {
     val, err := m.GetBackingStore().Get("certificateBasedApplicationConfigurations")
     if err != nil {
@@ -71,7 +71,7 @@ func (m *CertificateAuthorityPath) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetCertificateBasedApplicationConfigurations sets the certificateBasedApplicationConfigurations property value. The certificateBasedApplicationConfigurations property
+// SetCertificateBasedApplicationConfigurations sets the certificateBasedApplicationConfigurations property value. Defines the trusted certificate authorities for certificates that can be added to apps and service principals in the tenant.
 func (m *CertificateAuthorityPath) SetCertificateBasedApplicationConfigurations(value []CertificateBasedApplicationConfigurationable)() {
     err := m.GetBackingStore().Set("certificateBasedApplicationConfigurations", value)
     if err != nil {

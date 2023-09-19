@@ -46,8 +46,8 @@ type ItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilderPostRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySensitivityLabelId1String provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.
-func (m *ItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilder) BySensitivityLabelId1String(sensitivityLabelId1 string)(*ItemInformationProtectionSensitivityLabelsItemSublabelsSensitivityLabelItemRequestBuilder) {
+// BySensitivityLabelId1 provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.
+func (m *ItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilder) BySensitivityLabelId1(sensitivityLabelId1 string)(*ItemInformationProtectionSensitivityLabelsItemSublabelsSensitivityLabelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -148,4 +148,8 @@ func (m *ItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilder) 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilder) WithUrl(rawUrl string)(*ItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilder) {
+    return NewItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

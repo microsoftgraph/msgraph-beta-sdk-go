@@ -42,3 +42,6 @@ func SerializeAndroidForWorkCrossProfileDataSharingType(values []AndroidForWorkC
     }
     return result
 }
+func (i AndroidForWorkCrossProfileDataSharingType) isMultiValue() bool {
+    return false
+}

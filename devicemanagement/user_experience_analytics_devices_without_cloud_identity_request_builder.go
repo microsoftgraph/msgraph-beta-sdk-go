@@ -46,8 +46,8 @@ type UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilderPostRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserExperienceAnalyticsDeviceWithoutCloudIdentityIdString provides operations to manage the userExperienceAnalyticsDevicesWithoutCloudIdentity property of the microsoft.graph.deviceManagement entity.
-func (m *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) ByUserExperienceAnalyticsDeviceWithoutCloudIdentityIdString(userExperienceAnalyticsDeviceWithoutCloudIdentityId string)(*UserExperienceAnalyticsDevicesWithoutCloudIdentityUserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilder) {
+// ByUserExperienceAnalyticsDeviceWithoutCloudIdentityId provides operations to manage the userExperienceAnalyticsDevicesWithoutCloudIdentity property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) ByUserExperienceAnalyticsDeviceWithoutCloudIdentityId(userExperienceAnalyticsDeviceWithoutCloudIdentityId string)(*UserExperienceAnalyticsDevicesWithoutCloudIdentityUserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) ToPos
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) WithUrl(rawUrl string)(*UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) {
+    return NewUserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

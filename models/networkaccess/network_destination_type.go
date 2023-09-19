@@ -47,3 +47,6 @@ func SerializeNetworkDestinationType(values []NetworkDestinationType) []string {
     }
     return result
 }
+func (i NetworkDestinationType) isMultiValue() bool {
+    return false
+}

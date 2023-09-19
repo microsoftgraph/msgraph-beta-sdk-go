@@ -58,6 +58,10 @@ func NewItemCloudPCsCloudPCItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewItemCloudPCsCloudPCItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// CreateSnapshot provides operations to call the createSnapshot method.
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) CreateSnapshot()(*ItemCloudPCsItemCreateSnapshotRequestBuilder) {
+    return NewItemCloudPCsItemCreateSnapshotRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete navigation property cloudPCs for users
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemCloudPCsCloudPCItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -155,6 +159,10 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) Rename()(*ItemCloudPCsItemRename
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) Reprovision()(*ItemCloudPCsItemReprovisionRequestBuilder) {
     return NewItemCloudPCsItemReprovisionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Resize provides operations to call the resize method.
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) Resize()(*ItemCloudPCsItemResizeRequestBuilder) {
+    return NewItemCloudPCsItemResizeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Restore provides operations to call the restore method.
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) Restore()(*ItemCloudPCsItemRestoreRequestBuilder) {
     return NewItemCloudPCsItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -219,4 +227,8 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) ToPatchRequestInformation(ctx co
 // Troubleshoot provides operations to call the troubleshoot method.
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) Troubleshoot()(*ItemCloudPCsItemTroubleshootRequestBuilder) {
     return NewItemCloudPCsItemTroubleshootRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) WithUrl(rawUrl string)(*ItemCloudPCsCloudPCItemRequestBuilder) {
+    return NewItemCloudPCsCloudPCItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

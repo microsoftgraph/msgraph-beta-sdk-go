@@ -92,7 +92,7 @@ func (m *ItemSettingsContactInsightsRequestBuilder) Get(ctx context.Context, req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InsightsSettingsable), nil
 }
-// Patch update the privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy
+// Patch update privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/insightssettings-update?view=graph-rest-1.0
@@ -142,7 +142,7 @@ func (m *ItemSettingsContactInsightsRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy
+// ToPatchRequestInformation update privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy
 func (m *ItemSettingsContactInsightsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InsightsSettingsable, requestConfiguration *ItemSettingsContactInsightsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -158,4 +158,8 @@ func (m *ItemSettingsContactInsightsRequestBuilder) ToPatchRequestInformation(ct
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemSettingsContactInsightsRequestBuilder) WithUrl(rawUrl string)(*ItemSettingsContactInsightsRequestBuilder) {
+    return NewItemSettingsContactInsightsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

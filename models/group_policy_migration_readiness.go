@@ -46,3 +46,6 @@ func SerializeGroupPolicyMigrationReadiness(values []GroupPolicyMigrationReadine
     }
     return result
 }
+func (i GroupPolicyMigrationReadiness) isMultiValue() bool {
+    return false
+}

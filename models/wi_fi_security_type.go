@@ -50,3 +50,6 @@ func SerializeWiFiSecurityType(values []WiFiSecurityType) []string {
     }
     return result
 }
+func (i WiFiSecurityType) isMultiValue() bool {
+    return false
+}

@@ -34,3 +34,6 @@ func SerializeAndroidSafetyNetEvaluationType(values []AndroidSafetyNetEvaluation
     }
     return result
 }
+func (i AndroidSafetyNetEvaluationType) isMultiValue() bool {
+    return false
+}

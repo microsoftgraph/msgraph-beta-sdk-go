@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // 
 type ConditionalAccessConditions int
@@ -27,49 +28,58 @@ const (
 )
 
 func (i ConditionalAccessConditions) String() string {
-    return []string{"none", "application", "users", "devicePlatform", "location", "clientType", "signInRisk", "userRisk", "time", "deviceState", "client", "ipAddressSeenByAzureAD", "ipAddressSeenByResourceProvider", "unknownFutureValue", "servicePrincipals", "servicePrincipalRisk", "authenticationFlows", "insiderRisk"}[i]
+    var values []string
+    for p := ConditionalAccessConditions(1); p <= INSIDERRISK_CONDITIONALACCESSCONDITIONS; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"none", "application", "users", "devicePlatform", "location", "clientType", "signInRisk", "userRisk", "time", "deviceState", "client", "ipAddressSeenByAzureAD", "ipAddressSeenByResourceProvider", "unknownFutureValue", "servicePrincipals", "servicePrincipalRisk", "authenticationFlows", "insiderRisk"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseConditionalAccessConditions(v string) (any, error) {
-    result := NONE_CONDITIONALACCESSCONDITIONS
-    switch v {
-        case "none":
-            result = NONE_CONDITIONALACCESSCONDITIONS
-        case "application":
-            result = APPLICATION_CONDITIONALACCESSCONDITIONS
-        case "users":
-            result = USERS_CONDITIONALACCESSCONDITIONS
-        case "devicePlatform":
-            result = DEVICEPLATFORM_CONDITIONALACCESSCONDITIONS
-        case "location":
-            result = LOCATION_CONDITIONALACCESSCONDITIONS
-        case "clientType":
-            result = CLIENTTYPE_CONDITIONALACCESSCONDITIONS
-        case "signInRisk":
-            result = SIGNINRISK_CONDITIONALACCESSCONDITIONS
-        case "userRisk":
-            result = USERRISK_CONDITIONALACCESSCONDITIONS
-        case "time":
-            result = TIME_CONDITIONALACCESSCONDITIONS
-        case "deviceState":
-            result = DEVICESTATE_CONDITIONALACCESSCONDITIONS
-        case "client":
-            result = CLIENT_CONDITIONALACCESSCONDITIONS
-        case "ipAddressSeenByAzureAD":
-            result = IPADDRESSSEENBYAZUREAD_CONDITIONALACCESSCONDITIONS
-        case "ipAddressSeenByResourceProvider":
-            result = IPADDRESSSEENBYRESOURCEPROVIDER_CONDITIONALACCESSCONDITIONS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CONDITIONALACCESSCONDITIONS
-        case "servicePrincipals":
-            result = SERVICEPRINCIPALS_CONDITIONALACCESSCONDITIONS
-        case "servicePrincipalRisk":
-            result = SERVICEPRINCIPALRISK_CONDITIONALACCESSCONDITIONS
-        case "authenticationFlows":
-            result = AUTHENTICATIONFLOWS_CONDITIONALACCESSCONDITIONS
-        case "insiderRisk":
-            result = INSIDERRISK_CONDITIONALACCESSCONDITIONS
-        default:
-            return 0, errors.New("Unknown ConditionalAccessConditions value: " + v)
+    var result ConditionalAccessConditions
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "none":
+                result |= NONE_CONDITIONALACCESSCONDITIONS
+            case "application":
+                result |= APPLICATION_CONDITIONALACCESSCONDITIONS
+            case "users":
+                result |= USERS_CONDITIONALACCESSCONDITIONS
+            case "devicePlatform":
+                result |= DEVICEPLATFORM_CONDITIONALACCESSCONDITIONS
+            case "location":
+                result |= LOCATION_CONDITIONALACCESSCONDITIONS
+            case "clientType":
+                result |= CLIENTTYPE_CONDITIONALACCESSCONDITIONS
+            case "signInRisk":
+                result |= SIGNINRISK_CONDITIONALACCESSCONDITIONS
+            case "userRisk":
+                result |= USERRISK_CONDITIONALACCESSCONDITIONS
+            case "time":
+                result |= TIME_CONDITIONALACCESSCONDITIONS
+            case "deviceState":
+                result |= DEVICESTATE_CONDITIONALACCESSCONDITIONS
+            case "client":
+                result |= CLIENT_CONDITIONALACCESSCONDITIONS
+            case "ipAddressSeenByAzureAD":
+                result |= IPADDRESSSEENBYAZUREAD_CONDITIONALACCESSCONDITIONS
+            case "ipAddressSeenByResourceProvider":
+                result |= IPADDRESSSEENBYRESOURCEPROVIDER_CONDITIONALACCESSCONDITIONS
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_CONDITIONALACCESSCONDITIONS
+            case "servicePrincipals":
+                result |= SERVICEPRINCIPALS_CONDITIONALACCESSCONDITIONS
+            case "servicePrincipalRisk":
+                result |= SERVICEPRINCIPALRISK_CONDITIONALACCESSCONDITIONS
+            case "authenticationFlows":
+                result |= AUTHENTICATIONFLOWS_CONDITIONALACCESSCONDITIONS
+            case "insiderRisk":
+                result |= INSIDERRISK_CONDITIONALACCESSCONDITIONS
+            default:
+                return 0, errors.New("Unknown ConditionalAccessConditions value: " + v)
+        }
     }
     return &result, nil
 }
@@ -79,4 +89,7 @@ func SerializeConditionalAccessConditions(values []ConditionalAccessConditions) 
         result[i] = v.String()
     }
     return result
+}
+func (i ConditionalAccessConditions) isMultiValue() bool {
+    return true
 }

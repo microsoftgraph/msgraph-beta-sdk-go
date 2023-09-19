@@ -58,3 +58,6 @@ func SerializeDeviceManagementConfigurationControlType(values []DeviceManagement
     }
     return result
 }
+func (i DeviceManagementConfigurationControlType) isMultiValue() bool {
+    return false
+}

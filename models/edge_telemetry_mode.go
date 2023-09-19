@@ -42,3 +42,6 @@ func SerializeEdgeTelemetryMode(values []EdgeTelemetryMode) []string {
     }
     return result
 }
+func (i EdgeTelemetryMode) isMultiValue() bool {
+    return false
+}

@@ -19,7 +19,7 @@ func NewAuthenticationFlowsPolicy()(*AuthenticationFlowsPolicy) {
 func CreateAuthenticationFlowsPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationFlowsPolicy(), nil
 }
-// GetDescription gets the description property value. Inherited property. A description of the policy. This property is not a key. Optional. Read-only.
+// GetDescription gets the description property value. Inherited property. A description of the policy. This property isn't a key. Optional. Read-only.
 func (m *AuthenticationFlowsPolicy) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -30,7 +30,7 @@ func (m *AuthenticationFlowsPolicy) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. Inherited property. The human-readable name of the policy. This property is not a key. Optional. Read-only.
+// GetDisplayName gets the displayName property value. Inherited property. The human-readable name of the policy. This property isn't a key. Optional. Read-only.
 func (m *AuthenticationFlowsPolicy) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -76,7 +76,7 @@ func (m *AuthenticationFlowsPolicy) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetSelfServiceSignUp gets the selfServiceSignUp property value. Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. This property is not a key. Optional. Read-only.
+// GetSelfServiceSignUp gets the selfServiceSignUp property value. Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. This property isn't a key. Optional. Read-only.
 func (m *AuthenticationFlowsPolicy) GetSelfServiceSignUp()(SelfServiceSignUpAuthenticationFlowConfigurationable) {
     val, err := m.GetBackingStore().Get("selfServiceSignUp")
     if err != nil {
@@ -113,21 +113,21 @@ func (m *AuthenticationFlowsPolicy) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetDescription sets the description property value. Inherited property. A description of the policy. This property is not a key. Optional. Read-only.
+// SetDescription sets the description property value. Inherited property. A description of the policy. This property isn't a key. Optional. Read-only.
 func (m *AuthenticationFlowsPolicy) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. Inherited property. The human-readable name of the policy. This property is not a key. Optional. Read-only.
+// SetDisplayName sets the displayName property value. Inherited property. The human-readable name of the policy. This property isn't a key. Optional. Read-only.
 func (m *AuthenticationFlowsPolicy) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSelfServiceSignUp sets the selfServiceSignUp property value. Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. This property is not a key. Optional. Read-only.
+// SetSelfServiceSignUp sets the selfServiceSignUp property value. Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. This property isn't a key. Optional. Read-only.
 func (m *AuthenticationFlowsPolicy) SetSelfServiceSignUp(value SelfServiceSignUpAuthenticationFlowConfigurationable)() {
     err := m.GetBackingStore().Set("selfServiceSignUp", value)
     if err != nil {

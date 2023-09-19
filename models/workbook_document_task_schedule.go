@@ -39,7 +39,7 @@ func (m *WorkbookDocumentTaskSchedule) GetAdditionalData()(map[string]any) {
 func (m *WorkbookDocumentTaskSchedule) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDueDateTime gets the dueDateTime property value. The dueDateTime property
+// GetDueDateTime gets the dueDateTime property value. The due date and time for the task. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *WorkbookDocumentTaskSchedule) GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("dueDateTime")
     if err != nil {
@@ -96,7 +96,7 @@ func (m *WorkbookDocumentTaskSchedule) GetOdataType()(*string) {
     }
     return nil
 }
-// GetStartDateTime gets the startDateTime property value. The startDateTime property
+// GetStartDateTime gets the startDateTime property value. The start date and time for the task. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *WorkbookDocumentTaskSchedule) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -146,7 +146,7 @@ func (m *WorkbookDocumentTaskSchedule) SetAdditionalData(value map[string]any)()
 func (m *WorkbookDocumentTaskSchedule) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDueDateTime sets the dueDateTime property value. The dueDateTime property
+// SetDueDateTime sets the dueDateTime property value. The due date and time for the task. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *WorkbookDocumentTaskSchedule) SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("dueDateTime", value)
     if err != nil {
@@ -160,7 +160,7 @@ func (m *WorkbookDocumentTaskSchedule) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetStartDateTime sets the startDateTime property value. The startDateTime property
+// SetStartDateTime sets the startDateTime property value. The start date and time for the task. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *WorkbookDocumentTaskSchedule) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startDateTime", value)
     if err != nil {

@@ -46,8 +46,8 @@ type ItemProfileEmailsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByItemEmailIdString provides operations to manage the emails property of the microsoft.graph.profile entity.
-func (m *ItemProfileEmailsRequestBuilder) ByItemEmailIdString(itemEmailId string)(*ItemProfileEmailsItemEmailItemRequestBuilder) {
+// ByItemEmailId provides operations to manage the emails property of the microsoft.graph.profile entity.
+func (m *ItemProfileEmailsRequestBuilder) ByItemEmailId(itemEmailId string)(*ItemProfileEmailsItemEmailItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemProfileEmailsRequestBuilder) ToPostRequestInformation(ctx context.C
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemProfileEmailsRequestBuilder) WithUrl(rawUrl string)(*ItemProfileEmailsRequestBuilder) {
+    return NewItemProfileEmailsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

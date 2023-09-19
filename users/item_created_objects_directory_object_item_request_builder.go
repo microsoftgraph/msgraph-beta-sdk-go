@@ -11,7 +11,7 @@ import (
 type ItemCreatedObjectsDirectoryObjectItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCreatedObjectsDirectoryObjectItemRequestBuilderGetQueryParameters directory objects that were created by the user. Read-only. Nullable.
+// ItemCreatedObjectsDirectoryObjectItemRequestBuilderGetQueryParameters directory objects that the user created. Read-only. Nullable.
 type ItemCreatedObjectsDirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewItemCreatedObjectsDirectoryObjectItemRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewItemCreatedObjectsDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get directory objects that were created by the user. Read-only. Nullable.
+// Get directory objects that the user created. Read-only. Nullable.
 func (m *ItemCreatedObjectsDirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCreatedObjectsDirectoryObjectItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -63,7 +63,7 @@ func (m *ItemCreatedObjectsDirectoryObjectItemRequestBuilder) Get(ctx context.Co
 func (m *ItemCreatedObjectsDirectoryObjectItemRequestBuilder) GraphServicePrincipal()(*ItemCreatedObjectsItemGraphServicePrincipalRequestBuilder) {
     return NewItemCreatedObjectsItemGraphServicePrincipalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation directory objects that were created by the user. Read-only. Nullable.
+// ToGetRequestInformation directory objects that the user created. Read-only. Nullable.
 func (m *ItemCreatedObjectsDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCreatedObjectsDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -78,4 +78,8 @@ func (m *ItemCreatedObjectsDirectoryObjectItemRequestBuilder) ToGetRequestInform
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemCreatedObjectsDirectoryObjectItemRequestBuilder) WithUrl(rawUrl string)(*ItemCreatedObjectsDirectoryObjectItemRequestBuilder) {
+    return NewItemCreatedObjectsDirectoryObjectItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

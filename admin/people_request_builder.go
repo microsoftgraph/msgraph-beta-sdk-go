@@ -164,3 +164,7 @@ func (m *PeopleRequestBuilder) ToPatchRequestInformation(ctx context.Context, bo
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *PeopleRequestBuilder) WithUrl(rawUrl string)(*PeopleRequestBuilder) {
+    return NewPeopleRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

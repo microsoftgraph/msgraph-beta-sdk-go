@@ -38,3 +38,6 @@ func SerializeOfficeProductId(values []OfficeProductId) []string {
     }
     return result
 }
+func (i OfficeProductId) isMultiValue() bool {
+    return false
+}

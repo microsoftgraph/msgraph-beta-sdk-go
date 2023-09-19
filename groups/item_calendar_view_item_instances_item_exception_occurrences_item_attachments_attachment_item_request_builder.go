@@ -18,7 +18,7 @@ type ItemCalendarViewItemInstancesItemExceptionOccurrencesItemAttachmentsAttachm
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemCalendarViewItemInstancesItemExceptionOccurrencesItemAttachmentsAttachmentItemRequestBuilderGetQueryParameters read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post.  An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. 
+// ItemCalendarViewItemInstancesItemExceptionOccurrencesItemAttachmentsAttachmentItemRequestBuilderGetQueryParameters read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post. An attachment can be one of the following types: All these types of attachments are derived from the attachment resource.
 type ItemCalendarViewItemInstancesItemExceptionOccurrencesItemAttachmentsAttachmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -66,7 +66,7 @@ func (m *ItemCalendarViewItemInstancesItemExceptionOccurrencesItemAttachmentsAtt
     }
     return nil
 }
-// Get read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post.  An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. 
+// Get read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post. An attachment can be one of the following types: All these types of attachments are derived from the attachment resource.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/attachment-get?view=graph-rest-1.0
@@ -100,7 +100,7 @@ func (m *ItemCalendarViewItemInstancesItemExceptionOccurrencesItemAttachmentsAtt
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post.  An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. 
+// ToGetRequestInformation read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post. An attachment can be one of the following types: All these types of attachments are derived from the attachment resource.
 func (m *ItemCalendarViewItemInstancesItemExceptionOccurrencesItemAttachmentsAttachmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarViewItemInstancesItemExceptionOccurrencesItemAttachmentsAttachmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -115,4 +115,8 @@ func (m *ItemCalendarViewItemInstancesItemExceptionOccurrencesItemAttachmentsAtt
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemCalendarViewItemInstancesItemExceptionOccurrencesItemAttachmentsAttachmentItemRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarViewItemInstancesItemExceptionOccurrencesItemAttachmentsAttachmentItemRequestBuilder) {
+    return NewItemCalendarViewItemInstancesItemExceptionOccurrencesItemAttachmentsAttachmentItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

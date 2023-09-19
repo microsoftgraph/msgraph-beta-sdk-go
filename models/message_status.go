@@ -50,3 +50,6 @@ func SerializeMessageStatus(values []MessageStatus) []string {
     }
     return result
 }
+func (i MessageStatus) isMultiValue() bool {
+    return false
+}

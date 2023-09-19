@@ -156,3 +156,7 @@ func (m *SettingsEnrichedAuditLogsRequestBuilder) ToPatchRequestInformation(ctx 
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SettingsEnrichedAuditLogsRequestBuilder) WithUrl(rawUrl string)(*SettingsEnrichedAuditLogsRequestBuilder) {
+    return NewSettingsEnrichedAuditLogsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -159,3 +159,7 @@ func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) ToPatchRequestInform
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) WithUrl(rawUrl string)(*ItemSettingsContactMergeSuggestionsRequestBuilder) {
+    return NewItemSettingsContactMergeSuggestionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

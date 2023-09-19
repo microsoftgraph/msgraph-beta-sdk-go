@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // Contains properties for Windows architecture.
 type WindowsArchitecture int
@@ -21,25 +22,34 @@ const (
 )
 
 func (i WindowsArchitecture) String() string {
-    return []string{"none", "x86", "x64", "arm", "neutral", "arm64"}[i]
+    var values []string
+    for p := WindowsArchitecture(1); p <= ARM64_WINDOWSARCHITECTURE; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"none", "x86", "x64", "arm", "neutral", "arm64"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseWindowsArchitecture(v string) (any, error) {
-    result := NONE_WINDOWSARCHITECTURE
-    switch v {
-        case "none":
-            result = NONE_WINDOWSARCHITECTURE
-        case "x86":
-            result = X86_WINDOWSARCHITECTURE
-        case "x64":
-            result = X64_WINDOWSARCHITECTURE
-        case "arm":
-            result = ARM_WINDOWSARCHITECTURE
-        case "neutral":
-            result = NEUTRAL_WINDOWSARCHITECTURE
-        case "arm64":
-            result = ARM64_WINDOWSARCHITECTURE
-        default:
-            return 0, errors.New("Unknown WindowsArchitecture value: " + v)
+    var result WindowsArchitecture
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "none":
+                result |= NONE_WINDOWSARCHITECTURE
+            case "x86":
+                result |= X86_WINDOWSARCHITECTURE
+            case "x64":
+                result |= X64_WINDOWSARCHITECTURE
+            case "arm":
+                result |= ARM_WINDOWSARCHITECTURE
+            case "neutral":
+                result |= NEUTRAL_WINDOWSARCHITECTURE
+            case "arm64":
+                result |= ARM64_WINDOWSARCHITECTURE
+            default:
+                return 0, errors.New("Unknown WindowsArchitecture value: " + v)
+        }
     }
     return &result, nil
 }
@@ -49,4 +59,7 @@ func SerializeWindowsArchitecture(values []WindowsArchitecture) []string {
         result[i] = v.String()
     }
     return result
+}
+func (i WindowsArchitecture) isMultiValue() bool {
+    return true
 }

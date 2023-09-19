@@ -74,3 +74,7 @@ func (m *ExchangeTransitiveRoleAssignmentsCountRequestBuilder) ToGetRequestInfor
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ExchangeTransitiveRoleAssignmentsCountRequestBuilder) WithUrl(rawUrl string)(*ExchangeTransitiveRoleAssignmentsCountRequestBuilder) {
+    return NewExchangeTransitiveRoleAssignmentsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

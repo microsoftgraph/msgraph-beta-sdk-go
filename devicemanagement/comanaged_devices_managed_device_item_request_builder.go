@@ -377,3 +377,7 @@ func (m *ComanagedDevicesManagedDeviceItemRequestBuilder) WindowsProtectionState
 func (m *ComanagedDevicesManagedDeviceItemRequestBuilder) Wipe()(*ComanagedDevicesItemWipeRequestBuilder) {
     return NewComanagedDevicesItemWipeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ComanagedDevicesManagedDeviceItemRequestBuilder) WithUrl(rawUrl string)(*ComanagedDevicesManagedDeviceItemRequestBuilder) {
+    return NewComanagedDevicesManagedDeviceItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

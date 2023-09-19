@@ -39,8 +39,8 @@ type ManagedDevicesItemDetectedAppsRequestBuilderGetRequestConfiguration struct 
     // Request query parameters
     QueryParameters *ManagedDevicesItemDetectedAppsRequestBuilderGetQueryParameters
 }
-// ByDetectedAppIdString provides operations to manage the detectedApps property of the microsoft.graph.managedDevice entity.
-func (m *ManagedDevicesItemDetectedAppsRequestBuilder) ByDetectedAppIdString(detectedAppId string)(*ManagedDevicesItemDetectedAppsDetectedAppItemRequestBuilder) {
+// ByDetectedAppId provides operations to manage the detectedApps property of the microsoft.graph.managedDevice entity.
+func (m *ManagedDevicesItemDetectedAppsRequestBuilder) ByDetectedAppId(detectedAppId string)(*ManagedDevicesItemDetectedAppsDetectedAppItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *ManagedDevicesItemDetectedAppsRequestBuilder) ToGetRequestInformation(c
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedDevicesItemDetectedAppsRequestBuilder) WithUrl(rawUrl string)(*ManagedDevicesItemDetectedAppsRequestBuilder) {
+    return NewManagedDevicesItemDetectedAppsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

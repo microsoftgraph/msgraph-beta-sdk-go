@@ -38,3 +38,6 @@ func SerializeActionSource(values []ActionSource) []string {
     }
     return result
 }
+func (i ActionSource) isMultiValue() bool {
+    return false
+}

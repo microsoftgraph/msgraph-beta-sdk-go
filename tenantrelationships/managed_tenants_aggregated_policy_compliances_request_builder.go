@@ -46,8 +46,8 @@ type ManagedTenantsAggregatedPolicyCompliancesRequestBuilderPostRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAggregatedPolicyComplianceIdString provides operations to manage the aggregatedPolicyCompliances property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsAggregatedPolicyCompliancesRequestBuilder) ByAggregatedPolicyComplianceIdString(aggregatedPolicyComplianceId string)(*ManagedTenantsAggregatedPolicyCompliancesAggregatedPolicyComplianceItemRequestBuilder) {
+// ByAggregatedPolicyComplianceId provides operations to manage the aggregatedPolicyCompliances property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsAggregatedPolicyCompliancesRequestBuilder) ByAggregatedPolicyComplianceId(aggregatedPolicyComplianceId string)(*ManagedTenantsAggregatedPolicyCompliancesAggregatedPolicyComplianceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ManagedTenantsAggregatedPolicyCompliancesRequestBuilder) ToPostRequestI
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedTenantsAggregatedPolicyCompliancesRequestBuilder) WithUrl(rawUrl string)(*ManagedTenantsAggregatedPolicyCompliancesRequestBuilder) {
+    return NewManagedTenantsAggregatedPolicyCompliancesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

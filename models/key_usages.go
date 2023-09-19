@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // Key Usage Options.
 type KeyUsages int
@@ -13,17 +14,26 @@ const (
 )
 
 func (i KeyUsages) String() string {
-    return []string{"keyEncipherment", "digitalSignature"}[i]
+    var values []string
+    for p := KeyUsages(1); p <= DIGITALSIGNATURE_KEYUSAGES; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"keyEncipherment", "digitalSignature"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseKeyUsages(v string) (any, error) {
-    result := KEYENCIPHERMENT_KEYUSAGES
-    switch v {
-        case "keyEncipherment":
-            result = KEYENCIPHERMENT_KEYUSAGES
-        case "digitalSignature":
-            result = DIGITALSIGNATURE_KEYUSAGES
-        default:
-            return 0, errors.New("Unknown KeyUsages value: " + v)
+    var result KeyUsages
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "keyEncipherment":
+                result |= KEYENCIPHERMENT_KEYUSAGES
+            case "digitalSignature":
+                result |= DIGITALSIGNATURE_KEYUSAGES
+            default:
+                return 0, errors.New("Unknown KeyUsages value: " + v)
+        }
     }
     return &result, nil
 }
@@ -33,4 +43,7 @@ func SerializeKeyUsages(values []KeyUsages) []string {
         result[i] = v.String()
     }
     return result
+}
+func (i KeyUsages) isMultiValue() bool {
+    return true
 }

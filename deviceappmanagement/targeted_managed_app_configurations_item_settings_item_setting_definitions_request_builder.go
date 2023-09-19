@@ -39,8 +39,8 @@ type TargetedManagedAppConfigurationsItemSettingsItemSettingDefinitionsRequestBu
     // Request query parameters
     QueryParameters *TargetedManagedAppConfigurationsItemSettingsItemSettingDefinitionsRequestBuilderGetQueryParameters
 }
-// ByDeviceManagementConfigurationSettingDefinitionIdString provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementConfigurationSetting entity.
-func (m *TargetedManagedAppConfigurationsItemSettingsItemSettingDefinitionsRequestBuilder) ByDeviceManagementConfigurationSettingDefinitionIdString(deviceManagementConfigurationSettingDefinitionId string)(*TargetedManagedAppConfigurationsItemSettingsItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
+// ByDeviceManagementConfigurationSettingDefinitionId provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementConfigurationSetting entity.
+func (m *TargetedManagedAppConfigurationsItemSettingsItemSettingDefinitionsRequestBuilder) ByDeviceManagementConfigurationSettingDefinitionId(deviceManagementConfigurationSettingDefinitionId string)(*TargetedManagedAppConfigurationsItemSettingsItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *TargetedManagedAppConfigurationsItemSettingsItemSettingDefinitionsReque
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TargetedManagedAppConfigurationsItemSettingsItemSettingDefinitionsRequestBuilder) WithUrl(rawUrl string)(*TargetedManagedAppConfigurationsItemSettingsItemSettingDefinitionsRequestBuilder) {
+    return NewTargetedManagedAppConfigurationsItemSettingsItemSettingDefinitionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

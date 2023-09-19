@@ -162,7 +162,7 @@ func (m *Invitation) GetInvitedUserDisplayName()(*string) {
     }
     return nil
 }
-// GetInvitedUserEmailAddress gets the invitedUserEmailAddress property value. The email address of the user being invited. Required. The following special characters are not permitted in the email address:Tilde (~)Exclamation point (!)At sign (@)Number sign (#)Dollar sign ($)Percent (%)Circumflex (^)Ampersand (&)Asterisk (*)Parentheses (( ))Hyphen (-)Plus sign (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark (/)Pipe (`
+// GetInvitedUserEmailAddress gets the invitedUserEmailAddress property value. The email address of the user being invited. Required. The following special characters aren't permitted in the email address:Tilde (~)Exclamation point (!)At sign (@)Number sign (#)Dollar sign ($)Percent (%)Circumflex (^)Ampersand (&)Asterisk (*)Parentheses (( ))Hyphen (-)Plus sign (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark (/)Pipe (`
 func (m *Invitation) GetInvitedUserEmailAddress()(*string) {
     val, err := m.GetBackingStore().Get("invitedUserEmailAddress")
     if err != nil {
@@ -195,7 +195,7 @@ func (m *Invitation) GetInvitedUserSponsors()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetInvitedUserType gets the invitedUserType property value. The userType of the user being invited. By default, this is Guest. You can invite as Member if you're are company administrator. The default is false.
+// GetInvitedUserType gets the invitedUserType property value. The userType of the user being invited. By default, this is Guest. You can invite as Member if you're a company administrator. The default is false.
 func (m *Invitation) GetInvitedUserType()(*string) {
     val, err := m.GetBackingStore().Get("invitedUserType")
     if err != nil {
@@ -355,7 +355,7 @@ func (m *Invitation) SetInvitedUserDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetInvitedUserEmailAddress sets the invitedUserEmailAddress property value. The email address of the user being invited. Required. The following special characters are not permitted in the email address:Tilde (~)Exclamation point (!)At sign (@)Number sign (#)Dollar sign ($)Percent (%)Circumflex (^)Ampersand (&)Asterisk (*)Parentheses (( ))Hyphen (-)Plus sign (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark (/)Pipe (`
+// SetInvitedUserEmailAddress sets the invitedUserEmailAddress property value. The email address of the user being invited. Required. The following special characters aren't permitted in the email address:Tilde (~)Exclamation point (!)At sign (@)Number sign (#)Dollar sign ($)Percent (%)Circumflex (^)Ampersand (&)Asterisk (*)Parentheses (( ))Hyphen (-)Plus sign (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark (/)Pipe (`
 func (m *Invitation) SetInvitedUserEmailAddress(value *string)() {
     err := m.GetBackingStore().Set("invitedUserEmailAddress", value)
     if err != nil {
@@ -376,7 +376,7 @@ func (m *Invitation) SetInvitedUserSponsors(value []DirectoryObjectable)() {
         panic(err)
     }
 }
-// SetInvitedUserType sets the invitedUserType property value. The userType of the user being invited. By default, this is Guest. You can invite as Member if you're are company administrator. The default is false.
+// SetInvitedUserType sets the invitedUserType property value. The userType of the user being invited. By default, this is Guest. You can invite as Member if you're a company administrator. The default is false.
 func (m *Invitation) SetInvitedUserType(value *string)() {
     err := m.GetBackingStore().Set("invitedUserType", value)
     if err != nil {

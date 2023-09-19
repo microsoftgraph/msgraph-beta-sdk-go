@@ -38,3 +38,6 @@ func SerializeVpnTrafficDirection(values []VpnTrafficDirection) []string {
     }
     return result
 }
+func (i VpnTrafficDirection) isMultiValue() bool {
+    return false
+}

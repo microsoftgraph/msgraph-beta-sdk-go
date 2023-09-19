@@ -38,3 +38,6 @@ func SerializeClassificationMethod(values []ClassificationMethod) []string {
     }
     return result
 }
+func (i ClassificationMethod) isMultiValue() bool {
+    return false
+}

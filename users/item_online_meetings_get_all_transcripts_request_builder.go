@@ -84,3 +84,7 @@ func (m *ItemOnlineMeetingsGetAllTranscriptsRequestBuilder) ToGetRequestInformat
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemOnlineMeetingsGetAllTranscriptsRequestBuilder) WithUrl(rawUrl string)(*ItemOnlineMeetingsGetAllTranscriptsRequestBuilder) {
+    return NewItemOnlineMeetingsGetAllTranscriptsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

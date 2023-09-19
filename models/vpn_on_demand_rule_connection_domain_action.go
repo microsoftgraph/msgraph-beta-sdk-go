@@ -34,3 +34,6 @@ func SerializeVpnOnDemandRuleConnectionDomainAction(values []VpnOnDemandRuleConn
     }
     return result
 }
+func (i VpnOnDemandRuleConnectionDomainAction) isMultiValue() bool {
+    return false
+}

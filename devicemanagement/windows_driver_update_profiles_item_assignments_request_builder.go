@@ -46,8 +46,8 @@ type WindowsDriverUpdateProfilesItemAssignmentsRequestBuilderPostRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWindowsDriverUpdateProfileAssignmentIdString provides operations to manage the assignments property of the microsoft.graph.windowsDriverUpdateProfile entity.
-func (m *WindowsDriverUpdateProfilesItemAssignmentsRequestBuilder) ByWindowsDriverUpdateProfileAssignmentIdString(windowsDriverUpdateProfileAssignmentId string)(*WindowsDriverUpdateProfilesItemAssignmentsWindowsDriverUpdateProfileAssignmentItemRequestBuilder) {
+// ByWindowsDriverUpdateProfileAssignmentId provides operations to manage the assignments property of the microsoft.graph.windowsDriverUpdateProfile entity.
+func (m *WindowsDriverUpdateProfilesItemAssignmentsRequestBuilder) ByWindowsDriverUpdateProfileAssignmentId(windowsDriverUpdateProfileAssignmentId string)(*WindowsDriverUpdateProfilesItemAssignmentsWindowsDriverUpdateProfileAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *WindowsDriverUpdateProfilesItemAssignmentsRequestBuilder) ToPostRequest
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsDriverUpdateProfilesItemAssignmentsRequestBuilder) WithUrl(rawUrl string)(*WindowsDriverUpdateProfilesItemAssignmentsRequestBuilder) {
+    return NewWindowsDriverUpdateProfilesItemAssignmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

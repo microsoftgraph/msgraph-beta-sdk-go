@@ -58,3 +58,7 @@ func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUnassignResour
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUnassignResourceAccountFromDeviceRequestBuilder) WithUrl(rawUrl string)(*WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUnassignResourceAccountFromDeviceRequestBuilder) {
+    return NewWindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUnassignResourceAccountFromDeviceRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

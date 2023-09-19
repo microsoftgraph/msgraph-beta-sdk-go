@@ -38,3 +38,6 @@ func SerializeWindowsFirewallRuleTrafficDirectionType(values []WindowsFirewallRu
     }
     return result
 }
+func (i WindowsFirewallRuleTrafficDirectionType) isMultiValue() bool {
+    return false
+}

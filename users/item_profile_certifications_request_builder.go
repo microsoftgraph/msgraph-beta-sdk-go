@@ -46,8 +46,8 @@ type ItemProfileCertificationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPersonCertificationIdString provides operations to manage the certifications property of the microsoft.graph.profile entity.
-func (m *ItemProfileCertificationsRequestBuilder) ByPersonCertificationIdString(personCertificationId string)(*ItemProfileCertificationsPersonCertificationItemRequestBuilder) {
+// ByPersonCertificationId provides operations to manage the certifications property of the microsoft.graph.profile entity.
+func (m *ItemProfileCertificationsRequestBuilder) ByPersonCertificationId(personCertificationId string)(*ItemProfileCertificationsPersonCertificationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemProfileCertificationsRequestBuilder) ToPostRequestInformation(ctx c
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemProfileCertificationsRequestBuilder) WithUrl(rawUrl string)(*ItemProfileCertificationsRequestBuilder) {
+    return NewItemProfileCertificationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

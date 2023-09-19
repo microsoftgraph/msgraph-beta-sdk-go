@@ -74,3 +74,7 @@ func (m *ManagedTenantsCloudPcConnectionsCountRequestBuilder) ToGetRequestInform
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedTenantsCloudPcConnectionsCountRequestBuilder) WithUrl(rawUrl string)(*ManagedTenantsCloudPcConnectionsCountRequestBuilder) {
+    return NewManagedTenantsCloudPcConnectionsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -35,3 +35,6 @@ func SerializeUserType(values []UserType) []string {
     }
     return result
 }
+func (i UserType) isMultiValue() bool {
+    return false
+}

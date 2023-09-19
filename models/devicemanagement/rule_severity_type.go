@@ -41,3 +41,6 @@ func SerializeRuleSeverityType(values []RuleSeverityType) []string {
     }
     return result
 }
+func (i RuleSeverityType) isMultiValue() bool {
+    return false
+}

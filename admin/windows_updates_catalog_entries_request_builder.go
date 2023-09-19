@@ -46,8 +46,8 @@ type WindowsUpdatesCatalogEntriesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCatalogEntryIdString provides operations to manage the entries property of the microsoft.graph.windowsUpdates.catalog entity.
-func (m *WindowsUpdatesCatalogEntriesRequestBuilder) ByCatalogEntryIdString(catalogEntryId string)(*WindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilder) {
+// ByCatalogEntryId provides operations to manage the entries property of the microsoft.graph.windowsUpdates.catalog entity.
+func (m *WindowsUpdatesCatalogEntriesRequestBuilder) ByCatalogEntryId(catalogEntryId string)(*WindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *WindowsUpdatesCatalogEntriesRequestBuilder) ToPostRequestInformation(ct
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsUpdatesCatalogEntriesRequestBuilder) WithUrl(rawUrl string)(*WindowsUpdatesCatalogEntriesRequestBuilder) {
+    return NewWindowsUpdatesCatalogEntriesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

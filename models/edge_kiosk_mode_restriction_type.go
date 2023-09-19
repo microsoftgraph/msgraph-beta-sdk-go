@@ -46,3 +46,6 @@ func SerializeEdgeKioskModeRestrictionType(values []EdgeKioskModeRestrictionType
     }
     return result
 }
+func (i EdgeKioskModeRestrictionType) isMultiValue() bool {
+    return false
+}

@@ -70,6 +70,10 @@ func (m *MeAssignmentsItemSubmissionsItemSubmittedResourcesEducationSubmissionRe
     }
     return nil
 }
+// DependentResources provides operations to manage the dependentResources property of the microsoft.graph.educationSubmissionResource entity.
+func (m *MeAssignmentsItemSubmissionsItemSubmittedResourcesEducationSubmissionResourceItemRequestBuilder) DependentResources()(*MeAssignmentsItemSubmissionsItemSubmittedResourcesItemDependentResourcesRequestBuilder) {
+    return NewMeAssignmentsItemSubmissionsItemSubmittedResourcesItemDependentResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get submittedResources from education
 func (m *MeAssignmentsItemSubmissionsItemSubmittedResourcesEducationSubmissionResourceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MeAssignmentsItemSubmissionsItemSubmittedResourcesEducationSubmissionResourceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSubmissionResourceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -152,4 +156,8 @@ func (m *MeAssignmentsItemSubmissionsItemSubmittedResourcesEducationSubmissionRe
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MeAssignmentsItemSubmissionsItemSubmittedResourcesEducationSubmissionResourceItemRequestBuilder) WithUrl(rawUrl string)(*MeAssignmentsItemSubmissionsItemSubmittedResourcesEducationSubmissionResourceItemRequestBuilder) {
+    return NewMeAssignmentsItemSubmissionsItemSubmittedResourcesEducationSubmissionResourceItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

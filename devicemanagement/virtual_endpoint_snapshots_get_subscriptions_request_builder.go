@@ -80,3 +80,7 @@ func (m *VirtualEndpointSnapshotsGetSubscriptionsRequestBuilder) ToGetRequestInf
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEndpointSnapshotsGetSubscriptionsRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointSnapshotsGetSubscriptionsRequestBuilder) {
+    return NewVirtualEndpointSnapshotsGetSubscriptionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

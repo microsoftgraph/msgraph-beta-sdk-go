@@ -157,3 +157,7 @@ func (m *UserExperienceAnalyticsDeviceScopeRequestBuilder) ToPatchRequestInforma
 func (m *UserExperienceAnalyticsDeviceScopeRequestBuilder) TriggerDeviceScopeAction()(*UserExperienceAnalyticsDeviceScopeTriggerDeviceScopeActionRequestBuilder) {
     return NewUserExperienceAnalyticsDeviceScopeTriggerDeviceScopeActionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *UserExperienceAnalyticsDeviceScopeRequestBuilder) WithUrl(rawUrl string)(*UserExperienceAnalyticsDeviceScopeRequestBuilder) {
+    return NewUserExperienceAnalyticsDeviceScopeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

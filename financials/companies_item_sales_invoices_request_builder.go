@@ -113,3 +113,7 @@ func (m *CompaniesItemSalesInvoicesRequestBuilder) ToGetRequestInformation(ctx c
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CompaniesItemSalesInvoicesRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemSalesInvoicesRequestBuilder) {
+    return NewCompaniesItemSalesInvoicesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

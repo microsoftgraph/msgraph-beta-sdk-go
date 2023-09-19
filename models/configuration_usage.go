@@ -42,3 +42,6 @@ func SerializeConfigurationUsage(values []ConfigurationUsage) []string {
     }
     return result
 }
+func (i ConfigurationUsage) isMultiValue() bool {
+    return false
+}

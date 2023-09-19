@@ -46,8 +46,8 @@ type DeviceCustomAttributeShellScriptsItemGroupAssignmentsRequestBuilderPostRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementScriptGroupAssignmentIdString provides operations to manage the groupAssignments property of the microsoft.graph.deviceCustomAttributeShellScript entity.
-func (m *DeviceCustomAttributeShellScriptsItemGroupAssignmentsRequestBuilder) ByDeviceManagementScriptGroupAssignmentIdString(deviceManagementScriptGroupAssignmentId string)(*DeviceCustomAttributeShellScriptsItemGroupAssignmentsDeviceManagementScriptGroupAssignmentItemRequestBuilder) {
+// ByDeviceManagementScriptGroupAssignmentId provides operations to manage the groupAssignments property of the microsoft.graph.deviceCustomAttributeShellScript entity.
+func (m *DeviceCustomAttributeShellScriptsItemGroupAssignmentsRequestBuilder) ByDeviceManagementScriptGroupAssignmentId(deviceManagementScriptGroupAssignmentId string)(*DeviceCustomAttributeShellScriptsItemGroupAssignmentsDeviceManagementScriptGroupAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *DeviceCustomAttributeShellScriptsItemGroupAssignmentsRequestBuilder) To
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceCustomAttributeShellScriptsItemGroupAssignmentsRequestBuilder) WithUrl(rawUrl string)(*DeviceCustomAttributeShellScriptsItemGroupAssignmentsRequestBuilder) {
+    return NewDeviceCustomAttributeShellScriptsItemGroupAssignmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

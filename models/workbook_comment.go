@@ -103,7 +103,7 @@ func (m *WorkbookComment) GetReplies()([]WorkbookCommentReplyable) {
     }
     return nil
 }
-// GetTask gets the task property value. The task property
+// GetTask gets the task property value. The task associated with the comment. Read-only. Nullable.
 func (m *WorkbookComment) GetTask()(WorkbookDocumentTaskable) {
     val, err := m.GetBackingStore().Get("task")
     if err != nil {
@@ -173,7 +173,7 @@ func (m *WorkbookComment) SetReplies(value []WorkbookCommentReplyable)() {
         panic(err)
     }
 }
-// SetTask sets the task property value. The task property
+// SetTask sets the task property value. The task associated with the comment. Read-only. Nullable.
 func (m *WorkbookComment) SetTask(value WorkbookDocumentTaskable)() {
     err := m.GetBackingStore().Set("task", value)
     if err != nil {

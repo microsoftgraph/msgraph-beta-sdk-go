@@ -41,3 +41,6 @@ func SerializeImportanceScore(values []ImportanceScore) []string {
     }
     return result
 }
+func (i ImportanceScore) isMultiValue() bool {
+    return false
+}

@@ -46,8 +46,8 @@ type ItemDevicesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceIdString provides operations to manage the devices property of the microsoft.graph.user entity.
-func (m *ItemDevicesRequestBuilder) ByDeviceIdString(deviceId string)(*ItemDevicesDeviceItemRequestBuilder) {
+// ByDeviceId provides operations to manage the devices property of the microsoft.graph.user entity.
+func (m *ItemDevicesRequestBuilder) ByDeviceId(deviceId string)(*ItemDevicesDeviceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -160,4 +160,8 @@ func (m *ItemDevicesRequestBuilder) ToPostRequestInformation(ctx context.Context
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *ItemDevicesRequestBuilder) ValidateProperties()(*ItemDevicesValidatePropertiesRequestBuilder) {
     return NewItemDevicesValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemDevicesRequestBuilder) WithUrl(rawUrl string)(*ItemDevicesRequestBuilder) {
+    return NewItemDevicesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

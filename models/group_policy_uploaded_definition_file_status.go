@@ -54,3 +54,6 @@ func SerializeGroupPolicyUploadedDefinitionFileStatus(values []GroupPolicyUpload
     }
     return result
 }
+func (i GroupPolicyUploadedDefinitionFileStatus) isMultiValue() bool {
+    return false
+}

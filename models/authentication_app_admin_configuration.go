@@ -38,3 +38,6 @@ func SerializeAuthenticationAppAdminConfiguration(values []AuthenticationAppAdmi
     }
     return result
 }
+func (i AuthenticationAppAdminConfiguration) isMultiValue() bool {
+    return false
+}

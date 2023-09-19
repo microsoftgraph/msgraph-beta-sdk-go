@@ -46,8 +46,8 @@ type GovernanceResourcesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByGovernanceResourceIdString provides operations to manage the collection of governanceResource entities.
-func (m *GovernanceResourcesRequestBuilder) ByGovernanceResourceIdString(governanceResourceId string)(*GovernanceResourceItemRequestBuilder) {
+// ByGovernanceResourceId provides operations to manage the collection of governanceResource entities.
+func (m *GovernanceResourcesRequestBuilder) ByGovernanceResourceId(governanceResourceId string)(*GovernanceResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -148,4 +148,8 @@ func (m *GovernanceResourcesRequestBuilder) ToPostRequestInformation(ctx context
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GovernanceResourcesRequestBuilder) WithUrl(rawUrl string)(*GovernanceResourcesRequestBuilder) {
+    return NewGovernanceResourcesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

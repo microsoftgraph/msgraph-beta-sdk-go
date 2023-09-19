@@ -71,6 +71,17 @@ func (m *DelegatedAdminRelationship) GetActivatedDateTime()(*i336074805fc853987a
     }
     return nil
 }
+// GetAutoExtendDuration gets the autoExtendDuration property value. The autoExtendDuration property
+func (m *DelegatedAdminRelationship) GetAutoExtendDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
+    val, err := m.GetBackingStore().Get("autoExtendDuration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    }
+    return nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. The date and time in ISO 8601 format and in UTC time when the relationship was created. Read-only.
 func (m *DelegatedAdminRelationship) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -82,7 +93,7 @@ func (m *DelegatedAdminRelationship) GetCreatedDateTime()(*i336074805fc853987abe
     }
     return nil
 }
-// GetCustomer gets the customer property value. The display name and unique identifier of the customer of the relationship. This is configured either by the partner at the time the relationship is created or by the system after the customer approves the relationship. Cannot be changed by the customer.
+// GetCustomer gets the customer property value. The display name and unique identifier of the customer of the relationship. This is configured either by the partner at the time the relationship is created or by the system after the customer approves the relationship. Can't be changed by the customer.
 func (m *DelegatedAdminRelationship) GetCustomer()(DelegatedAdminRelationshipCustomerParticipantable) {
     val, err := m.GetBackingStore().Get("customer")
     if err != nil {
@@ -93,7 +104,7 @@ func (m *DelegatedAdminRelationship) GetCustomer()(DelegatedAdminRelationshipCus
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner. This is set by the partner only when the relationship is in the created status and cannot be changed by the customer.
+// GetDisplayName gets the displayName property value. The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner. This is set by the partner only when the relationship is in the created status and can't be changed by the customer.
 func (m *DelegatedAdminRelationship) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -104,7 +115,7 @@ func (m *DelegatedAdminRelationship) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetDuration gets the duration property value. The duration of the relationship in ISO 8601 format. Must be a value between P1D and P2Y inclusive. This is set by the partner only when the relationship is in the created status and cannot be changed by the customer.
+// GetDuration gets the duration property value. The duration of the relationship in ISO 8601 format. Must be a value between P1D and P2Y inclusive. This is set by the partner only when the relationship is in the created status and can't be changed by the customer.
 func (m *DelegatedAdminRelationship) GetDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("duration")
     if err != nil {
@@ -162,6 +173,16 @@ func (m *DelegatedAdminRelationship) GetFieldDeserializers()(map[string]func(i87
         }
         if val != nil {
             m.SetActivatedDateTime(val)
+        }
+        return nil
+    }
+    res["autoExtendDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetISODurationValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAutoExtendDuration(val)
         }
         return nil
     }
@@ -302,7 +323,7 @@ func (m *DelegatedAdminRelationship) GetRequests()([]DelegatedAdminRelationshipR
     }
     return nil
 }
-// GetStatus gets the status property value. The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderBy.
+// GetStatus gets the status property value. The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderby.
 func (m *DelegatedAdminRelationship) GetStatus()(*DelegatedAdminRelationshipStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -339,6 +360,12 @@ func (m *DelegatedAdminRelationship) Serialize(writer i878a80d2330e89d26896388a3
     }
     {
         err = writer.WriteTimeValue("activatedDateTime", m.GetActivatedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteISODurationValue("autoExtendDuration", m.GetAutoExtendDuration())
         if err != nil {
             return err
         }
@@ -433,6 +460,13 @@ func (m *DelegatedAdminRelationship) SetActivatedDateTime(value *i336074805fc853
         panic(err)
     }
 }
+// SetAutoExtendDuration sets the autoExtendDuration property value. The autoExtendDuration property
+func (m *DelegatedAdminRelationship) SetAutoExtendDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
+    err := m.GetBackingStore().Set("autoExtendDuration", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCreatedDateTime sets the createdDateTime property value. The date and time in ISO 8601 format and in UTC time when the relationship was created. Read-only.
 func (m *DelegatedAdminRelationship) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
@@ -440,21 +474,21 @@ func (m *DelegatedAdminRelationship) SetCreatedDateTime(value *i336074805fc85398
         panic(err)
     }
 }
-// SetCustomer sets the customer property value. The display name and unique identifier of the customer of the relationship. This is configured either by the partner at the time the relationship is created or by the system after the customer approves the relationship. Cannot be changed by the customer.
+// SetCustomer sets the customer property value. The display name and unique identifier of the customer of the relationship. This is configured either by the partner at the time the relationship is created or by the system after the customer approves the relationship. Can't be changed by the customer.
 func (m *DelegatedAdminRelationship) SetCustomer(value DelegatedAdminRelationshipCustomerParticipantable)() {
     err := m.GetBackingStore().Set("customer", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner. This is set by the partner only when the relationship is in the created status and cannot be changed by the customer.
+// SetDisplayName sets the displayName property value. The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner. This is set by the partner only when the relationship is in the created status and can't be changed by the customer.
 func (m *DelegatedAdminRelationship) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDuration sets the duration property value. The duration of the relationship in ISO 8601 format. Must be a value between P1D and P2Y inclusive. This is set by the partner only when the relationship is in the created status and cannot be changed by the customer.
+// SetDuration sets the duration property value. The duration of the relationship in ISO 8601 format. Must be a value between P1D and P2Y inclusive. This is set by the partner only when the relationship is in the created status and can't be changed by the customer.
 func (m *DelegatedAdminRelationship) SetDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     err := m.GetBackingStore().Set("duration", value)
     if err != nil {
@@ -489,7 +523,7 @@ func (m *DelegatedAdminRelationship) SetRequests(value []DelegatedAdminRelations
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderBy.
+// SetStatus sets the status property value. The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderby.
 func (m *DelegatedAdminRelationship) SetStatus(value *DelegatedAdminRelationshipStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
@@ -503,6 +537,7 @@ type DelegatedAdminRelationshipable interface {
     GetAccessAssignments()([]DelegatedAdminAccessAssignmentable)
     GetAccessDetails()(DelegatedAdminAccessDetailsable)
     GetActivatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetAutoExtendDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCustomer()(DelegatedAdminRelationshipCustomerParticipantable)
     GetDisplayName()(*string)
@@ -515,6 +550,7 @@ type DelegatedAdminRelationshipable interface {
     SetAccessAssignments(value []DelegatedAdminAccessAssignmentable)()
     SetAccessDetails(value DelegatedAdminAccessDetailsable)()
     SetActivatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetAutoExtendDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCustomer(value DelegatedAdminRelationshipCustomerParticipantable)()
     SetDisplayName(value *string)()

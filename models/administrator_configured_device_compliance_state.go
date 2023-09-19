@@ -34,3 +34,6 @@ func SerializeAdministratorConfiguredDeviceComplianceState(values []Administrato
     }
     return result
 }
+func (i AdministratorConfiguredDeviceComplianceState) isMultiValue() bool {
+    return false
+}

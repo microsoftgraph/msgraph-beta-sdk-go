@@ -46,8 +46,8 @@ type ItemProfilePhonesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByItemPhoneIdString provides operations to manage the phones property of the microsoft.graph.profile entity.
-func (m *ItemProfilePhonesRequestBuilder) ByItemPhoneIdString(itemPhoneId string)(*ItemProfilePhonesItemPhoneItemRequestBuilder) {
+// ByItemPhoneId provides operations to manage the phones property of the microsoft.graph.profile entity.
+func (m *ItemProfilePhonesRequestBuilder) ByItemPhoneId(itemPhoneId string)(*ItemProfilePhonesItemPhoneItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemProfilePhonesRequestBuilder) ToPostRequestInformation(ctx context.C
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemProfilePhonesRequestBuilder) WithUrl(rawUrl string)(*ItemProfilePhonesRequestBuilder) {
+    return NewItemProfilePhonesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

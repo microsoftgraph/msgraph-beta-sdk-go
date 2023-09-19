@@ -35,3 +35,6 @@ func SerializeCloudPcOperatingSystem(values []CloudPcOperatingSystem) []string {
     }
     return result
 }
+func (i CloudPcOperatingSystem) isMultiValue() bool {
+    return false
+}

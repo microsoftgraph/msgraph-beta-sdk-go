@@ -34,7 +34,7 @@ func (m *OnPremisesPublishing) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAlternateUrl gets the alternateUrl property value. If you are configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that will point to the traffic manager.
+// GetAlternateUrl gets the alternateUrl property value. If you're configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that points to the traffic manager.
 func (m *OnPremisesPublishing) GetAlternateUrl()(*string) {
     val, err := m.GetBackingStore().Get("alternateUrl")
     if err != nil {
@@ -45,7 +45,7 @@ func (m *OnPremisesPublishing) GetAlternateUrl()(*string) {
     }
     return nil
 }
-// GetApplicationServerTimeout gets the applicationServerTimeout property value. The duration the connector will wait for a response from the backend application before closing the connection. Possible values are default, long. When set to default, the backend application timeout has a length of 85 seconds. When set to long, the backend timeout is increased to 180 seconds. Use long if your server takes more than 85 seconds to respond to requests or if you are unable to access the application and the error status is 'Backend Timeout'. Default value is default.
+// GetApplicationServerTimeout gets the applicationServerTimeout property value. The duration the connector waits for a response from the backend application before closing the connection. Possible values are default, long. When set to default, the backend application timeout has a length of 85 seconds. When set to long, the backend timeout is increased to 180 seconds. Use long if your server takes more than 85 seconds to respond to requests or if you are unable to access the application and the error status is 'Backend Timeout'. Default value is default.
 func (m *OnPremisesPublishing) GetApplicationServerTimeout()(*string) {
     val, err := m.GetBackingStore().Get("applicationServerTimeout")
     if err != nil {
@@ -71,7 +71,7 @@ func (m *OnPremisesPublishing) GetApplicationType()(*string) {
 func (m *OnPremisesPublishing) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetExternalAuthenticationType gets the externalAuthenticationType property value. Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Passthru does not require authentication. Possible values are: passthru, aadPreAuthentication.
+// GetExternalAuthenticationType gets the externalAuthenticationType property value. Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn't require authentication. Possible values are: passthru, aadPreAuthentication.
 func (m *OnPremisesPublishing) GetExternalAuthenticationType()(*ExternalAuthenticationType) {
     val, err := m.GetBackingStore().Get("externalAuthenticationType")
     if err != nil {
@@ -356,7 +356,7 @@ func (m *OnPremisesPublishing) GetIsAccessibleViaZTNAClient()(*bool) {
     }
     return nil
 }
-// GetIsBackendCertificateValidationEnabled gets the isBackendCertificateValidationEnabled property value. Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property will be set to true by default. For all existing apps, the property will be set to false.
+// GetIsBackendCertificateValidationEnabled gets the isBackendCertificateValidationEnabled property value. Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property is set to true by default. For all existing apps, the property is set to false.
 func (m *OnPremisesPublishing) GetIsBackendCertificateValidationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isBackendCertificateValidationEnabled")
     if err != nil {
@@ -378,7 +378,7 @@ func (m *OnPremisesPublishing) GetIsHttpOnlyCookieEnabled()(*bool) {
     }
     return nil
 }
-// GetIsOnPremPublishingEnabled gets the isOnPremPublishingEnabled property value. Indicates if the application is currently being published via Application Proxy or not. This is pre-set by the system. Read-only.
+// GetIsOnPremPublishingEnabled gets the isOnPremPublishingEnabled property value. Indicates if the application is currently being published via Application Proxy or not. This is preset by the system. Read-only.
 func (m *OnPremisesPublishing) GetIsOnPremPublishingEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isOnPremPublishingEnabled")
     if err != nil {
@@ -422,7 +422,7 @@ func (m *OnPremisesPublishing) GetIsStateSessionEnabled()(*bool) {
     }
     return nil
 }
-// GetIsTranslateHostHeaderEnabled gets the isTranslateHostHeaderEnabled property value. Indicates if the application should translate urls in the reponse headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.
+// GetIsTranslateHostHeaderEnabled gets the isTranslateHostHeaderEnabled property value. Indicates if the application should translate urls in the response headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.
 func (m *OnPremisesPublishing) GetIsTranslateHostHeaderEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isTranslateHostHeaderEnabled")
     if err != nil {
@@ -694,14 +694,14 @@ func (m *OnPremisesPublishing) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAlternateUrl sets the alternateUrl property value. If you are configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that will point to the traffic manager.
+// SetAlternateUrl sets the alternateUrl property value. If you're configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that points to the traffic manager.
 func (m *OnPremisesPublishing) SetAlternateUrl(value *string)() {
     err := m.GetBackingStore().Set("alternateUrl", value)
     if err != nil {
         panic(err)
     }
 }
-// SetApplicationServerTimeout sets the applicationServerTimeout property value. The duration the connector will wait for a response from the backend application before closing the connection. Possible values are default, long. When set to default, the backend application timeout has a length of 85 seconds. When set to long, the backend timeout is increased to 180 seconds. Use long if your server takes more than 85 seconds to respond to requests or if you are unable to access the application and the error status is 'Backend Timeout'. Default value is default.
+// SetApplicationServerTimeout sets the applicationServerTimeout property value. The duration the connector waits for a response from the backend application before closing the connection. Possible values are default, long. When set to default, the backend application timeout has a length of 85 seconds. When set to long, the backend timeout is increased to 180 seconds. Use long if your server takes more than 85 seconds to respond to requests or if you are unable to access the application and the error status is 'Backend Timeout'. Default value is default.
 func (m *OnPremisesPublishing) SetApplicationServerTimeout(value *string)() {
     err := m.GetBackingStore().Set("applicationServerTimeout", value)
     if err != nil {
@@ -719,7 +719,7 @@ func (m *OnPremisesPublishing) SetApplicationType(value *string)() {
 func (m *OnPremisesPublishing) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetExternalAuthenticationType sets the externalAuthenticationType property value. Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Passthru does not require authentication. Possible values are: passthru, aadPreAuthentication.
+// SetExternalAuthenticationType sets the externalAuthenticationType property value. Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn't require authentication. Possible values are: passthru, aadPreAuthentication.
 func (m *OnPremisesPublishing) SetExternalAuthenticationType(value *ExternalAuthenticationType)() {
     err := m.GetBackingStore().Set("externalAuthenticationType", value)
     if err != nil {
@@ -747,7 +747,7 @@ func (m *OnPremisesPublishing) SetIsAccessibleViaZTNAClient(value *bool)() {
         panic(err)
     }
 }
-// SetIsBackendCertificateValidationEnabled sets the isBackendCertificateValidationEnabled property value. Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property will be set to true by default. For all existing apps, the property will be set to false.
+// SetIsBackendCertificateValidationEnabled sets the isBackendCertificateValidationEnabled property value. Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property is set to true by default. For all existing apps, the property is set to false.
 func (m *OnPremisesPublishing) SetIsBackendCertificateValidationEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isBackendCertificateValidationEnabled", value)
     if err != nil {
@@ -761,7 +761,7 @@ func (m *OnPremisesPublishing) SetIsHttpOnlyCookieEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetIsOnPremPublishingEnabled sets the isOnPremPublishingEnabled property value. Indicates if the application is currently being published via Application Proxy or not. This is pre-set by the system. Read-only.
+// SetIsOnPremPublishingEnabled sets the isOnPremPublishingEnabled property value. Indicates if the application is currently being published via Application Proxy or not. This is preset by the system. Read-only.
 func (m *OnPremisesPublishing) SetIsOnPremPublishingEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isOnPremPublishingEnabled", value)
     if err != nil {
@@ -789,7 +789,7 @@ func (m *OnPremisesPublishing) SetIsStateSessionEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetIsTranslateHostHeaderEnabled sets the isTranslateHostHeaderEnabled property value. Indicates if the application should translate urls in the reponse headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.
+// SetIsTranslateHostHeaderEnabled sets the isTranslateHostHeaderEnabled property value. Indicates if the application should translate urls in the response headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.
 func (m *OnPremisesPublishing) SetIsTranslateHostHeaderEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isTranslateHostHeaderEnabled", value)
     if err != nil {

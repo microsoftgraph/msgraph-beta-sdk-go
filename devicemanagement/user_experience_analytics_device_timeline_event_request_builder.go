@@ -46,8 +46,8 @@ type UserExperienceAnalyticsDeviceTimelineEventRequestBuilderPostRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserExperienceAnalyticsDeviceTimelineEventIdString provides operations to manage the userExperienceAnalyticsDeviceTimelineEvent property of the microsoft.graph.deviceManagement entity.
-func (m *UserExperienceAnalyticsDeviceTimelineEventRequestBuilder) ByUserExperienceAnalyticsDeviceTimelineEventIdString(userExperienceAnalyticsDeviceTimelineEventId string)(*UserExperienceAnalyticsDeviceTimelineEventUserExperienceAnalyticsDeviceTimelineEventItemRequestBuilder) {
+// ByUserExperienceAnalyticsDeviceTimelineEventId provides operations to manage the userExperienceAnalyticsDeviceTimelineEvent property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsDeviceTimelineEventRequestBuilder) ByUserExperienceAnalyticsDeviceTimelineEventId(userExperienceAnalyticsDeviceTimelineEventId string)(*UserExperienceAnalyticsDeviceTimelineEventUserExperienceAnalyticsDeviceTimelineEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *UserExperienceAnalyticsDeviceTimelineEventRequestBuilder) ToPostRequest
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *UserExperienceAnalyticsDeviceTimelineEventRequestBuilder) WithUrl(rawUrl string)(*UserExperienceAnalyticsDeviceTimelineEventRequestBuilder) {
+    return NewUserExperienceAnalyticsDeviceTimelineEventRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

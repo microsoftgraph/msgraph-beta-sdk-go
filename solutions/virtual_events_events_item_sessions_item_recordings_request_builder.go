@@ -11,7 +11,7 @@ import (
 type VirtualEventsEventsItemSessionsItemRecordingsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEventsEventsItemSessionsItemRecordingsRequestBuilderGetQueryParameters get a callRecording object associated with an onlineMeeting. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of text associated with the recording.
+// VirtualEventsEventsItemSessionsItemRecordingsRequestBuilderGetQueryParameters get a callRecording object associated with a scheduled onlineMeeting. This API does not support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.
 type VirtualEventsEventsItemSessionsItemRecordingsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -46,8 +46,8 @@ type VirtualEventsEventsItemSessionsItemRecordingsRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCallRecordingIdString provides operations to manage the recordings property of the microsoft.graph.onlineMeeting entity.
-func (m *VirtualEventsEventsItemSessionsItemRecordingsRequestBuilder) ByCallRecordingIdString(callRecordingId string)(*VirtualEventsEventsItemSessionsItemRecordingsCallRecordingItemRequestBuilder) {
+// ByCallRecordingId provides operations to manage the recordings property of the microsoft.graph.onlineMeeting entity.
+func (m *VirtualEventsEventsItemSessionsItemRecordingsRequestBuilder) ByCallRecordingId(callRecordingId string)(*VirtualEventsEventsItemSessionsItemRecordingsCallRecordingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -78,7 +78,7 @@ func (m *VirtualEventsEventsItemSessionsItemRecordingsRequestBuilder) Count()(*V
 func (m *VirtualEventsEventsItemSessionsItemRecordingsRequestBuilder) Delta()(*VirtualEventsEventsItemSessionsItemRecordingsDeltaRequestBuilder) {
     return NewVirtualEventsEventsItemSessionsItemRecordingsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a callRecording object associated with an onlineMeeting. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of text associated with the recording.
+// Get get a callRecording object associated with a scheduled onlineMeeting. This API does not support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.
 func (m *VirtualEventsEventsItemSessionsItemRecordingsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsItemRecordingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallRecordingCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +116,7 @@ func (m *VirtualEventsEventsItemSessionsItemRecordingsRequestBuilder) Post(ctx c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallRecordingable), nil
 }
-// ToGetRequestInformation get a callRecording object associated with an onlineMeeting. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of text associated with the recording.
+// ToGetRequestInformation get a callRecording object associated with a scheduled onlineMeeting. This API does not support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.
 func (m *VirtualEventsEventsItemSessionsItemRecordingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsItemRecordingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -148,4 +148,8 @@ func (m *VirtualEventsEventsItemSessionsItemRecordingsRequestBuilder) ToPostRequ
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEventsEventsItemSessionsItemRecordingsRequestBuilder) WithUrl(rawUrl string)(*VirtualEventsEventsItemSessionsItemRecordingsRequestBuilder) {
+    return NewVirtualEventsEventsItemSessionsItemRecordingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

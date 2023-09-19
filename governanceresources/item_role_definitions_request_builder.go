@@ -11,7 +11,7 @@ import (
 type ItemRoleDefinitionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemRoleDefinitionsRequestBuilderGetQueryParameters the collection of role defintions for the resource.
+// ItemRoleDefinitionsRequestBuilderGetQueryParameters the collection of role definitions for the resource.
 type ItemRoleDefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -46,8 +46,8 @@ type ItemRoleDefinitionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByGovernanceRoleDefinitionIdString provides operations to manage the roleDefinitions property of the microsoft.graph.governanceResource entity.
-func (m *ItemRoleDefinitionsRequestBuilder) ByGovernanceRoleDefinitionIdString(governanceRoleDefinitionId string)(*ItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilder) {
+// ByGovernanceRoleDefinitionId provides operations to manage the roleDefinitions property of the microsoft.graph.governanceResource entity.
+func (m *ItemRoleDefinitionsRequestBuilder) ByGovernanceRoleDefinitionId(governanceRoleDefinitionId string)(*ItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -74,7 +74,7 @@ func NewItemRoleDefinitionsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *ItemRoleDefinitionsRequestBuilder) Count()(*ItemRoleDefinitionsCountRequestBuilder) {
     return NewItemRoleDefinitionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the collection of role defintions for the resource.
+// Get the collection of role definitions for the resource.
 func (m *ItemRoleDefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRoleDefinitionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ItemRoleDefinitionsRequestBuilder) Post(ctx context.Context, body ie233
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable), nil
 }
-// ToGetRequestInformation the collection of role defintions for the resource.
+// ToGetRequestInformation the collection of role definitions for the resource.
 func (m *ItemRoleDefinitionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRoleDefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -144,4 +144,8 @@ func (m *ItemRoleDefinitionsRequestBuilder) ToPostRequestInformation(ctx context
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemRoleDefinitionsRequestBuilder) WithUrl(rawUrl string)(*ItemRoleDefinitionsRequestBuilder) {
+    return NewItemRoleDefinitionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

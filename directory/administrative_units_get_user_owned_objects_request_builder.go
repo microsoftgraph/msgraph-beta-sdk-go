@@ -70,3 +70,7 @@ func (m *AdministrativeUnitsGetUserOwnedObjectsRequestBuilder) ToPostRequestInfo
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AdministrativeUnitsGetUserOwnedObjectsRequestBuilder) WithUrl(rawUrl string)(*AdministrativeUnitsGetUserOwnedObjectsRequestBuilder) {
+    return NewAdministrativeUnitsGetUserOwnedObjectsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

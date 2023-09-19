@@ -17,7 +17,7 @@ type ItemChatsGetAllMessagesRequestBuilderGetQueryParameters struct {
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // The payment model for the API
-    Model *string
+    Model *string `uriparametername:"model"`
     // Order items by property values
     Orderby []string `uriparametername:"%24orderby"`
     // Search items by search phrases
@@ -85,4 +85,8 @@ func (m *ItemChatsGetAllMessagesRequestBuilder) ToGetRequestInformation(ctx cont
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemChatsGetAllMessagesRequestBuilder) WithUrl(rawUrl string)(*ItemChatsGetAllMessagesRequestBuilder) {
+    return NewItemChatsGetAllMessagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

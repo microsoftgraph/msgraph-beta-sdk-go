@@ -34,3 +34,6 @@ func SerializeGroupPolicyDefinitionClassType(values []GroupPolicyDefinitionClass
     }
     return result
 }
+func (i GroupPolicyDefinitionClassType) isMultiValue() bool {
+    return false
+}

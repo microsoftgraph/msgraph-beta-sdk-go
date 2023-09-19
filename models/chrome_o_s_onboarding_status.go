@@ -50,3 +50,6 @@ func SerializeChromeOSOnboardingStatus(values []ChromeOSOnboardingStatus) []stri
     }
     return result
 }
+func (i ChromeOSOnboardingStatus) isMultiValue() bool {
+    return false
+}

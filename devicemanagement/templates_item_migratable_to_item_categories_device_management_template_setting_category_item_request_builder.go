@@ -161,3 +161,7 @@ func (m *TemplatesItemMigratableToItemCategoriesDeviceManagementTemplateSettingC
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TemplatesItemMigratableToItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilder) WithUrl(rawUrl string)(*TemplatesItemMigratableToItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilder) {
+    return NewTemplatesItemMigratableToItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

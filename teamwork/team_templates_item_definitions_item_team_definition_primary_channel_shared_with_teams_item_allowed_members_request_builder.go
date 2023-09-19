@@ -39,8 +39,8 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelSharedWithTeams
     // Request query parameters
     QueryParameters *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelSharedWithTeamsItemAllowedMembersRequestBuilderGetQueryParameters
 }
-// ByConversationMemberIdString provides operations to manage the allowedMembers property of the microsoft.graph.sharedWithChannelTeamInfo entity.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelSharedWithTeamsItemAllowedMembersRequestBuilder) ByConversationMemberIdString(conversationMemberId string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelSharedWithTeamsItemAllowedMembersConversationMemberItemRequestBuilder) {
+// ByConversationMemberId provides operations to manage the allowedMembers property of the microsoft.graph.sharedWithChannelTeamInfo entity.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelSharedWithTeamsItemAllowedMembersRequestBuilder) ByConversationMemberId(conversationMemberId string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelSharedWithTeamsItemAllowedMembersConversationMemberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelSharedWithT
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelSharedWithTeamsItemAllowedMembersRequestBuilder) WithUrl(rawUrl string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelSharedWithTeamsItemAllowedMembersRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelSharedWithTeamsItemAllowedMembersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

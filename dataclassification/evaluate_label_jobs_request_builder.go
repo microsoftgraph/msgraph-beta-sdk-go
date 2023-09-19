@@ -46,8 +46,8 @@ type EvaluateLabelJobsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByJobResponseBaseIdString provides operations to manage the evaluateLabelJobs property of the microsoft.graph.dataClassificationService entity.
-func (m *EvaluateLabelJobsRequestBuilder) ByJobResponseBaseIdString(jobResponseBaseId string)(*EvaluateLabelJobsJobResponseBaseItemRequestBuilder) {
+// ByJobResponseBaseId provides operations to manage the evaluateLabelJobs property of the microsoft.graph.dataClassificationService entity.
+func (m *EvaluateLabelJobsRequestBuilder) ByJobResponseBaseId(jobResponseBaseId string)(*EvaluateLabelJobsJobResponseBaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *EvaluateLabelJobsRequestBuilder) ToPostRequestInformation(ctx context.C
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EvaluateLabelJobsRequestBuilder) WithUrl(rawUrl string)(*EvaluateLabelJobsRequestBuilder) {
+    return NewEvaluateLabelJobsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

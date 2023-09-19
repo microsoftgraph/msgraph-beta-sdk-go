@@ -46,9 +46,9 @@ type EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAccessPackageAssignmentRequestIdString provides operations to manage the accessPackageAssignmentRequests property of the microsoft.graph.accessPackageAssignment entity.
+// ByAccessPackageAssignmentRequestId provides operations to manage the accessPackageAssignmentRequests property of the microsoft.graph.accessPackageAssignment entity.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
-func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentRequestsRequestBuilder) ByAccessPackageAssignmentRequestIdString(accessPackageAssignmentRequestId string)(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentRequestsAccessPackageAssignmentRequestItemRequestBuilder) {
+func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentRequestsRequestBuilder) ByAccessPackageAssignmentRequestId(accessPackageAssignmentRequestId string)(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentRequestsAccessPackageAssignmentRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -154,4 +154,9 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmen
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
+func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentRequestsRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentRequestsRequestBuilder) {
+    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentRequestsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

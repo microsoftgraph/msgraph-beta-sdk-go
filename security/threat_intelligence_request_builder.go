@@ -109,6 +109,10 @@ func (m *ThreatIntelligenceRequestBuilder) HostCookies()(*ThreatIntelligenceHost
 func (m *ThreatIntelligenceRequestBuilder) HostPairs()(*ThreatIntelligenceHostPairsRequestBuilder) {
     return NewThreatIntelligenceHostPairsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// HostPorts provides operations to manage the hostPorts property of the microsoft.graph.security.threatIntelligence entity.
+func (m *ThreatIntelligenceRequestBuilder) HostPorts()(*ThreatIntelligenceHostPortsRequestBuilder) {
+    return NewThreatIntelligenceHostPortsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Hosts provides operations to manage the hosts property of the microsoft.graph.security.threatIntelligence entity.
 func (m *ThreatIntelligenceRequestBuilder) Hosts()(*ThreatIntelligenceHostsRequestBuilder) {
     return NewThreatIntelligenceHostsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -216,4 +220,8 @@ func (m *ThreatIntelligenceRequestBuilder) WhoisHistoryRecords()(*ThreatIntellig
 // WhoisRecords provides operations to manage the whoisRecords property of the microsoft.graph.security.threatIntelligence entity.
 func (m *ThreatIntelligenceRequestBuilder) WhoisRecords()(*ThreatIntelligenceWhoisRecordsRequestBuilder) {
     return NewThreatIntelligenceWhoisRecordsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ThreatIntelligenceRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceRequestBuilder) {
+    return NewThreatIntelligenceRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

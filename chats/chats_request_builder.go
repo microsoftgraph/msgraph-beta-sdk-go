@@ -50,8 +50,8 @@ type ChatsRequestBuilderPostRequestConfiguration struct {
 func (m *ChatsRequestBuilder) AllMessages()(*AllMessagesRequestBuilder) {
     return NewAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByChatIdString provides operations to manage the collection of chat entities.
-func (m *ChatsRequestBuilder) ByChatIdString(chatId string)(*ChatItemRequestBuilder) {
+// ByChatId provides operations to manage the collection of chat entities.
+func (m *ChatsRequestBuilder) ByChatId(chatId string)(*ChatItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -158,4 +158,8 @@ func (m *ChatsRequestBuilder) ToPostRequestInformation(ctx context.Context, body
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ChatsRequestBuilder) WithUrl(rawUrl string)(*ChatsRequestBuilder) {
+    return NewChatsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

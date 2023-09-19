@@ -169,3 +169,7 @@ func (m *EnterpriseAppsItemTransitiveRoleAssignmentsUnifiedRoleAssignmentItemReq
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EnterpriseAppsItemTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) WithUrl(rawUrl string)(*EnterpriseAppsItemTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) {
+    return NewEnterpriseAppsItemTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

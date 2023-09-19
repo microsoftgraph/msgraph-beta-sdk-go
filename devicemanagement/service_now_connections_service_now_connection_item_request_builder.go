@@ -153,3 +153,7 @@ func (m *ServiceNowConnectionsServiceNowConnectionItemRequestBuilder) ToPatchReq
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ServiceNowConnectionsServiceNowConnectionItemRequestBuilder) WithUrl(rawUrl string)(*ServiceNowConnectionsServiceNowConnectionItemRequestBuilder) {
+    return NewServiceNowConnectionsServiceNowConnectionItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

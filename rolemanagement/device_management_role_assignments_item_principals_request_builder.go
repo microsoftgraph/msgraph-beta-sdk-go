@@ -11,7 +11,7 @@ import (
 type DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilderGetQueryParameters read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+// DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilderGetQueryParameters read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
 type DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -39,8 +39,8 @@ type DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilderGetRequestConfig
     // Request query parameters
     QueryParameters *DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectIdString provides operations to manage the principals property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.
-func (m *DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*DeviceManagementRoleAssignmentsItemPrincipalsDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectId provides operations to manage the principals property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.
+func (m *DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*DeviceManagementRoleAssignmentsItemPrincipalsDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -67,7 +67,7 @@ func NewDeviceManagementRoleAssignmentsItemPrincipalsRequestBuilder(rawUrl strin
 func (m *DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilder) Count()(*DeviceManagementRoleAssignmentsItemPrincipalsCountRequestBuilder) {
     return NewDeviceManagementRoleAssignmentsItemPrincipalsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+// Get read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
 func (m *DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +86,7 @@ func (m *DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilder) Get(ctx co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
-// ToGetRequestInformation read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+// ToGetRequestInformation read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
 func (m *DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -101,4 +101,8 @@ func (m *DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilder) ToGetReque
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilder) WithUrl(rawUrl string)(*DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilder) {
+    return NewDeviceManagementRoleAssignmentsItemPrincipalsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

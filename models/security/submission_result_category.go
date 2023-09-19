@@ -56,3 +56,6 @@ func SerializeSubmissionResultCategory(values []SubmissionResultCategory) []stri
     }
     return result
 }
+func (i SubmissionResultCategory) isMultiValue() bool {
+    return false
+}

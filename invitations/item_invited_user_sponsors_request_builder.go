@@ -39,8 +39,8 @@ type ItemInvitedUserSponsorsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemInvitedUserSponsorsRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectIdString provides operations to manage the invitedUserSponsors property of the microsoft.graph.invitation entity.
-func (m *ItemInvitedUserSponsorsRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ItemInvitedUserSponsorsDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectId provides operations to manage the invitedUserSponsors property of the microsoft.graph.invitation entity.
+func (m *ItemInvitedUserSponsorsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemInvitedUserSponsorsDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *ItemInvitedUserSponsorsRequestBuilder) ToGetRequestInformation(ctx cont
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemInvitedUserSponsorsRequestBuilder) WithUrl(rawUrl string)(*ItemInvitedUserSponsorsRequestBuilder) {
+    return NewItemInvitedUserSponsorsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

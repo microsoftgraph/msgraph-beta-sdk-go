@@ -20,7 +20,7 @@ func NewAccessReviewHistoryInstance()(*AccessReviewHistoryInstance) {
 func CreateAccessReviewHistoryInstanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewHistoryInstance(), nil
 }
-// GetDownloadUri gets the downloadUri property value. Uri which can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.
+// GetDownloadUri gets the downloadUri property value. Uri that can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.
 func (m *AccessReviewHistoryInstance) GetDownloadUri()(*string) {
     val, err := m.GetBackingStore().Get("downloadUri")
     if err != nil {
@@ -128,7 +128,7 @@ func (m *AccessReviewHistoryInstance) GetFulfilledDateTime()(*i336074805fc853987
     }
     return nil
 }
-// GetReviewHistoryPeriodEndDateTime gets the reviewHistoryPeriodEndDateTime property value. Timestamp, reviews ending on or before this date will be included in the fetched history data.
+// GetReviewHistoryPeriodEndDateTime gets the reviewHistoryPeriodEndDateTime property value. Timestamp, reviews ending on or before this date are in the fetched history data.
 func (m *AccessReviewHistoryInstance) GetReviewHistoryPeriodEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("reviewHistoryPeriodEndDateTime")
     if err != nil {
@@ -139,7 +139,7 @@ func (m *AccessReviewHistoryInstance) GetReviewHistoryPeriodEndDateTime()(*i3360
     }
     return nil
 }
-// GetReviewHistoryPeriodStartDateTime gets the reviewHistoryPeriodStartDateTime property value. Timestamp, reviews starting on or after this date will be included in the fetched history data.
+// GetReviewHistoryPeriodStartDateTime gets the reviewHistoryPeriodStartDateTime property value. Timestamp, reviews starting on or after this date are in the fetched history data.
 func (m *AccessReviewHistoryInstance) GetReviewHistoryPeriodStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("reviewHistoryPeriodStartDateTime")
     if err != nil {
@@ -223,7 +223,7 @@ func (m *AccessReviewHistoryInstance) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetDownloadUri sets the downloadUri property value. Uri which can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.
+// SetDownloadUri sets the downloadUri property value. Uri that can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.
 func (m *AccessReviewHistoryInstance) SetDownloadUri(value *string)() {
     err := m.GetBackingStore().Set("downloadUri", value)
     if err != nil {
@@ -244,14 +244,14 @@ func (m *AccessReviewHistoryInstance) SetFulfilledDateTime(value *i336074805fc85
         panic(err)
     }
 }
-// SetReviewHistoryPeriodEndDateTime sets the reviewHistoryPeriodEndDateTime property value. Timestamp, reviews ending on or before this date will be included in the fetched history data.
+// SetReviewHistoryPeriodEndDateTime sets the reviewHistoryPeriodEndDateTime property value. Timestamp, reviews ending on or before this date are in the fetched history data.
 func (m *AccessReviewHistoryInstance) SetReviewHistoryPeriodEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("reviewHistoryPeriodEndDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReviewHistoryPeriodStartDateTime sets the reviewHistoryPeriodStartDateTime property value. Timestamp, reviews starting on or after this date will be included in the fetched history data.
+// SetReviewHistoryPeriodStartDateTime sets the reviewHistoryPeriodStartDateTime property value. Timestamp, reviews starting on or after this date are in the fetched history data.
 func (m *AccessReviewHistoryInstance) SetReviewHistoryPeriodStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("reviewHistoryPeriodStartDateTime", value)
     if err != nil {

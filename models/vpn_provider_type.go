@@ -38,3 +38,6 @@ func SerializeVpnProviderType(values []VpnProviderType) []string {
     }
     return result
 }
+func (i VpnProviderType) isMultiValue() bool {
+    return false
+}

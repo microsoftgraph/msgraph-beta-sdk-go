@@ -46,8 +46,8 @@ type ItemRoleDefinitionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByGovernanceRoleDefinitionIdString provides operations to manage the roleDefinitions property of the microsoft.graph.privilegedAccess entity.
-func (m *ItemRoleDefinitionsRequestBuilder) ByGovernanceRoleDefinitionIdString(governanceRoleDefinitionId string)(*ItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilder) {
+// ByGovernanceRoleDefinitionId provides operations to manage the roleDefinitions property of the microsoft.graph.privilegedAccess entity.
+func (m *ItemRoleDefinitionsRequestBuilder) ByGovernanceRoleDefinitionId(governanceRoleDefinitionId string)(*ItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ItemRoleDefinitionsRequestBuilder) ToPostRequestInformation(ctx context
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemRoleDefinitionsRequestBuilder) WithUrl(rawUrl string)(*ItemRoleDefinitionsRequestBuilder) {
+    return NewItemRoleDefinitionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

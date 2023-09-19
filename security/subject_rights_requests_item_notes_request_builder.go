@@ -46,8 +46,8 @@ type SubjectRightsRequestsItemNotesRequestBuilderPostRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAuthoredNoteIdString provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.
-func (m *SubjectRightsRequestsItemNotesRequestBuilder) ByAuthoredNoteIdString(authoredNoteId string)(*SubjectRightsRequestsItemNotesAuthoredNoteItemRequestBuilder) {
+// ByAuthoredNoteId provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.
+func (m *SubjectRightsRequestsItemNotesRequestBuilder) ByAuthoredNoteId(authoredNoteId string)(*SubjectRightsRequestsItemNotesAuthoredNoteItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *SubjectRightsRequestsItemNotesRequestBuilder) ToPostRequestInformation(
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SubjectRightsRequestsItemNotesRequestBuilder) WithUrl(rawUrl string)(*SubjectRightsRequestsItemNotesRequestBuilder) {
+    return NewSubjectRightsRequestsItemNotesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

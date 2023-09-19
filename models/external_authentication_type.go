@@ -32,3 +32,6 @@ func SerializeExternalAuthenticationType(values []ExternalAuthenticationType) []
     }
     return result
 }
+func (i ExternalAuthenticationType) isMultiValue() bool {
+    return false
+}

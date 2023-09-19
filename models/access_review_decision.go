@@ -31,7 +31,7 @@ func (m *AccessReviewDecision) GetAccessRecommendation()(*string) {
     }
     return nil
 }
-// GetAccessReviewId gets the accessReviewId property value. The feature-generated id of the access review.
+// GetAccessReviewId gets the accessReviewId property value. The feature-generated ID of the access review.
 func (m *AccessReviewDecision) GetAccessReviewId()(*string) {
     val, err := m.GetBackingStore().Get("accessReviewId")
     if err != nil {
@@ -42,7 +42,7 @@ func (m *AccessReviewDecision) GetAccessReviewId()(*string) {
     }
     return nil
 }
-// GetAppliedBy gets the appliedBy property value. When the review completes, if the results were manually applied, the user identity of the user who applied the decision. If the review was auto-applied, the userPrincipalName is empty.
+// GetAppliedBy gets the appliedBy property value. When the review completes, if the results were manually applied, the user identity of the user who applied the decision. If the review was autoapplied, the userPrincipalName is empty.
 func (m *AccessReviewDecision) GetAppliedBy()(UserIdentityable) {
     val, err := m.GetBackingStore().Get("appliedBy")
     if err != nil {
@@ -283,14 +283,14 @@ func (m *AccessReviewDecision) SetAccessRecommendation(value *string)() {
         panic(err)
     }
 }
-// SetAccessReviewId sets the accessReviewId property value. The feature-generated id of the access review.
+// SetAccessReviewId sets the accessReviewId property value. The feature-generated ID of the access review.
 func (m *AccessReviewDecision) SetAccessReviewId(value *string)() {
     err := m.GetBackingStore().Set("accessReviewId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAppliedBy sets the appliedBy property value. When the review completes, if the results were manually applied, the user identity of the user who applied the decision. If the review was auto-applied, the userPrincipalName is empty.
+// SetAppliedBy sets the appliedBy property value. When the review completes, if the results were manually applied, the user identity of the user who applied the decision. If the review was autoapplied, the userPrincipalName is empty.
 func (m *AccessReviewDecision) SetAppliedBy(value UserIdentityable)() {
     err := m.GetBackingStore().Set("appliedBy", value)
     if err != nil {

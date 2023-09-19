@@ -41,3 +41,6 @@ func SerializeKerberosSignOnMappingAttributeType(values []KerberosSignOnMappingA
     }
     return result
 }
+func (i KerberosSignOnMappingAttributeType) isMultiValue() bool {
+    return false
+}

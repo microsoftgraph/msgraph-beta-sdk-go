@@ -62,3 +62,6 @@ func SerializeVpnEncryptionAlgorithmType(values []VpnEncryptionAlgorithmType) []
     }
     return result
 }
+func (i VpnEncryptionAlgorithmType) isMultiValue() bool {
+    return false
+}

@@ -34,7 +34,7 @@ func (m *TimeClockSettings) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetApprovedLocation gets the approvedLocation property value. The aprroved location of the timeClock.
+// GetApprovedLocation gets the approvedLocation property value. The approved location of the timeClock.
 func (m *TimeClockSettings) GetApprovedLocation()(GeoCoordinatesable) {
     val, err := m.GetBackingStore().Get("approvedLocation")
     if err != nil {
@@ -114,7 +114,7 @@ func (m *TimeClockSettings) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetApprovedLocation sets the approvedLocation property value. The aprroved location of the timeClock.
+// SetApprovedLocation sets the approvedLocation property value. The approved location of the timeClock.
 func (m *TimeClockSettings) SetApprovedLocation(value GeoCoordinatesable)() {
     err := m.GetBackingStore().Set("approvedLocation", value)
     if err != nil {

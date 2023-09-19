@@ -46,8 +46,8 @@ type ManagedTenantsManagedTenantAlertsRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByManagedTenantAlertIdString provides operations to manage the managedTenantAlerts property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsManagedTenantAlertsRequestBuilder) ByManagedTenantAlertIdString(managedTenantAlertId string)(*ManagedTenantsManagedTenantAlertsManagedTenantAlertItemRequestBuilder) {
+// ByManagedTenantAlertId provides operations to manage the managedTenantAlerts property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsManagedTenantAlertsRequestBuilder) ByManagedTenantAlertId(managedTenantAlertId string)(*ManagedTenantsManagedTenantAlertsManagedTenantAlertItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ManagedTenantsManagedTenantAlertsRequestBuilder) ToPostRequestInformati
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedTenantsManagedTenantAlertsRequestBuilder) WithUrl(rawUrl string)(*ManagedTenantsManagedTenantAlertsRequestBuilder) {
+    return NewManagedTenantsManagedTenantAlertsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

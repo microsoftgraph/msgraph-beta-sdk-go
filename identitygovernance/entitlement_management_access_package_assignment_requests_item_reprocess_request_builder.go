@@ -60,3 +60,8 @@ func (m *EntitlementManagementAccessPackageAssignmentRequestsItemReprocessReques
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
+func (m *EntitlementManagementAccessPackageAssignmentRequestsItemReprocessRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackageAssignmentRequestsItemReprocessRequestBuilder) {
+    return NewEntitlementManagementAccessPackageAssignmentRequestsItemReprocessRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -46,8 +46,8 @@ type ReportsCachedReportConfigurationsRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementCachedReportConfigurationIdString provides operations to manage the cachedReportConfigurations property of the microsoft.graph.deviceManagementReports entity.
-func (m *ReportsCachedReportConfigurationsRequestBuilder) ByDeviceManagementCachedReportConfigurationIdString(deviceManagementCachedReportConfigurationId string)(*ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilder) {
+// ByDeviceManagementCachedReportConfigurationId provides operations to manage the cachedReportConfigurations property of the microsoft.graph.deviceManagementReports entity.
+func (m *ReportsCachedReportConfigurationsRequestBuilder) ByDeviceManagementCachedReportConfigurationId(deviceManagementCachedReportConfigurationId string)(*ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ReportsCachedReportConfigurationsRequestBuilder) ToPostRequestInformati
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ReportsCachedReportConfigurationsRequestBuilder) WithUrl(rawUrl string)(*ReportsCachedReportConfigurationsRequestBuilder) {
+    return NewReportsCachedReportConfigurationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

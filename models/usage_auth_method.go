@@ -59,3 +59,6 @@ func SerializeUsageAuthMethod(values []UsageAuthMethod) []string {
     }
     return result
 }
+func (i UsageAuthMethod) isMultiValue() bool {
+    return false
+}

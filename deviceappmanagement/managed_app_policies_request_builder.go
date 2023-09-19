@@ -46,8 +46,8 @@ type ManagedAppPoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByManagedAppPolicyIdString provides operations to manage the managedAppPolicies property of the microsoft.graph.deviceAppManagement entity.
-func (m *ManagedAppPoliciesRequestBuilder) ByManagedAppPolicyIdString(managedAppPolicyId string)(*ManagedAppPoliciesManagedAppPolicyItemRequestBuilder) {
+// ByManagedAppPolicyId provides operations to manage the managedAppPolicies property of the microsoft.graph.deviceAppManagement entity.
+func (m *ManagedAppPoliciesRequestBuilder) ByManagedAppPolicyId(managedAppPolicyId string)(*ManagedAppPoliciesManagedAppPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ManagedAppPoliciesRequestBuilder) ToPostRequestInformation(ctx context.
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedAppPoliciesRequestBuilder) WithUrl(rawUrl string)(*ManagedAppPoliciesRequestBuilder) {
+    return NewManagedAppPoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

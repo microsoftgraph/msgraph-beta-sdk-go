@@ -42,3 +42,6 @@ func SerializeWindowsKioskAppType(values []WindowsKioskAppType) []string {
     }
     return result
 }
+func (i WindowsKioskAppType) isMultiValue() bool {
+    return false
+}

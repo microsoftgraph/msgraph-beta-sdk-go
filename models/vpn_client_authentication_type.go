@@ -34,3 +34,6 @@ func SerializeVpnClientAuthenticationType(values []VpnClientAuthenticationType) 
     }
     return result
 }
+func (i VpnClientAuthenticationType) isMultiValue() bool {
+    return false
+}

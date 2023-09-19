@@ -44,3 +44,6 @@ func SerializeAndroidForWorkSyncStatus(values []AndroidForWorkSyncStatus) []stri
     }
     return result
 }
+func (i AndroidForWorkSyncStatus) isMultiValue() bool {
+    return false
+}

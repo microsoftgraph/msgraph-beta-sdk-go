@@ -42,3 +42,6 @@ func SerializeAndroidForWorkDefaultAppPermissionPolicyType(values []AndroidForWo
     }
     return result
 }
+func (i AndroidForWorkDefaultAppPermissionPolicyType) isMultiValue() bool {
+    return false
+}

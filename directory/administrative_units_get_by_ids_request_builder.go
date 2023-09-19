@@ -69,3 +69,7 @@ func (m *AdministrativeUnitsGetByIdsRequestBuilder) ToPostRequestInformation(ctx
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AdministrativeUnitsGetByIdsRequestBuilder) WithUrl(rawUrl string)(*AdministrativeUnitsGetByIdsRequestBuilder) {
+    return NewAdministrativeUnitsGetByIdsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

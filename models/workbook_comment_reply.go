@@ -76,7 +76,7 @@ func (m *WorkbookCommentReply) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetTask gets the task property value. The task property
+// GetTask gets the task property value. The task associated with the comment thread.
 func (m *WorkbookCommentReply) GetTask()(WorkbookDocumentTaskable) {
     val, err := m.GetBackingStore().Get("task")
     if err != nil {
@@ -127,7 +127,7 @@ func (m *WorkbookCommentReply) SetContentType(value *string)() {
         panic(err)
     }
 }
-// SetTask sets the task property value. The task property
+// SetTask sets the task property value. The task associated with the comment thread.
 func (m *WorkbookCommentReply) SetTask(value WorkbookDocumentTaskable)() {
     err := m.GetBackingStore().Set("task", value)
     if err != nil {

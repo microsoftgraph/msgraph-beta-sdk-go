@@ -11,7 +11,7 @@ import (
 type SchoolsItemAdministrativeUnitRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SchoolsItemAdministrativeUnitRequestBuilderGetQueryParameters retrieve the simple directory administrativeUnit that corresponds to this educationSchool.
+// SchoolsItemAdministrativeUnitRequestBuilderGetQueryParameters retrieve the directory administrativeUnit that corresponds to this educationSchool.
 type SchoolsItemAdministrativeUnitRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,7 +47,7 @@ func NewSchoolsItemAdministrativeUnitRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewSchoolsItemAdministrativeUnitRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieve the simple directory administrativeUnit that corresponds to this educationSchool.
+// Get retrieve the directory administrativeUnit that corresponds to this educationSchool.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-get-administrativeUnit?view=graph-rest-1.0
@@ -88,7 +88,7 @@ func (m *SchoolsItemAdministrativeUnitRequestBuilder) Patch(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable), nil
 }
-// ToGetRequestInformation retrieve the simple directory administrativeUnit that corresponds to this educationSchool.
+// ToGetRequestInformation retrieve the directory administrativeUnit that corresponds to this educationSchool.
 func (m *SchoolsItemAdministrativeUnitRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SchoolsItemAdministrativeUnitRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,4 +120,8 @@ func (m *SchoolsItemAdministrativeUnitRequestBuilder) ToPatchRequestInformation(
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SchoolsItemAdministrativeUnitRequestBuilder) WithUrl(rawUrl string)(*SchoolsItemAdministrativeUnitRequestBuilder) {
+    return NewSchoolsItemAdministrativeUnitRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

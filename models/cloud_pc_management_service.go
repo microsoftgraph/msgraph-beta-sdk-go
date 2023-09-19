@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // 
 type CloudPcManagementService int
@@ -13,21 +14,30 @@ const (
 )
 
 func (i CloudPcManagementService) String() string {
-    return []string{"windows365", "devBox", "unknownFutureValue", "rpaBox"}[i]
+    var values []string
+    for p := CloudPcManagementService(1); p <= RPABOX_CLOUDPCMANAGEMENTSERVICE; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"windows365", "devBox", "unknownFutureValue", "rpaBox"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseCloudPcManagementService(v string) (any, error) {
-    result := WINDOWS365_CLOUDPCMANAGEMENTSERVICE
-    switch v {
-        case "windows365":
-            result = WINDOWS365_CLOUDPCMANAGEMENTSERVICE
-        case "devBox":
-            result = DEVBOX_CLOUDPCMANAGEMENTSERVICE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CLOUDPCMANAGEMENTSERVICE
-        case "rpaBox":
-            result = RPABOX_CLOUDPCMANAGEMENTSERVICE
-        default:
-            return 0, errors.New("Unknown CloudPcManagementService value: " + v)
+    var result CloudPcManagementService
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "windows365":
+                result |= WINDOWS365_CLOUDPCMANAGEMENTSERVICE
+            case "devBox":
+                result |= DEVBOX_CLOUDPCMANAGEMENTSERVICE
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_CLOUDPCMANAGEMENTSERVICE
+            case "rpaBox":
+                result |= RPABOX_CLOUDPCMANAGEMENTSERVICE
+            default:
+                return 0, errors.New("Unknown CloudPcManagementService value: " + v)
+        }
     }
     return &result, nil
 }
@@ -37,4 +47,7 @@ func SerializeCloudPcManagementService(values []CloudPcManagementService) []stri
         result[i] = v.String()
     }
     return result
+}
+func (i CloudPcManagementService) isMultiValue() bool {
+    return true
 }

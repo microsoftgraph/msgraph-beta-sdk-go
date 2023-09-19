@@ -50,3 +50,6 @@ func SerializePlatform(values []Platform) []string {
     }
     return result
 }
+func (i Platform) isMultiValue() bool {
+    return false
+}

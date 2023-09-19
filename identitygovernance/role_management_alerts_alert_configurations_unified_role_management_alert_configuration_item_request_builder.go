@@ -18,7 +18,7 @@ type RoleManagementAlertsAlertConfigurationsUnifiedRoleManagementAlertConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RoleManagementAlertsAlertConfigurationsUnifiedRoleManagementAlertConfigurationItemRequestBuilderGetQueryParameters the various configurations of an alert for Azure AD roles. The configurations are pre-defined and cannot be created or deleted, but some of the configurations can be modified.
+// RoleManagementAlertsAlertConfigurationsUnifiedRoleManagementAlertConfigurationItemRequestBuilderGetQueryParameters the various configurations of an alert for Azure AD roles. The configurations are predefined and can't be created or deleted, but some of the configurations can be modified.
 type RoleManagementAlertsAlertConfigurationsUnifiedRoleManagementAlertConfigurationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *RoleManagementAlertsAlertConfigurationsUnifiedRoleManagementAlertConfig
     }
     return nil
 }
-// Get the various configurations of an alert for Azure AD roles. The configurations are pre-defined and cannot be created or deleted, but some of the configurations can be modified.
+// Get the various configurations of an alert for Azure AD roles. The configurations are predefined and can't be created or deleted, but some of the configurations can be modified.
 func (m *RoleManagementAlertsAlertConfigurationsUnifiedRoleManagementAlertConfigurationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleManagementAlertsAlertConfigurationsUnifiedRoleManagementAlertConfigurationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementAlertConfigurationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +124,7 @@ func (m *RoleManagementAlertsAlertConfigurationsUnifiedRoleManagementAlertConfig
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the various configurations of an alert for Azure AD roles. The configurations are pre-defined and cannot be created or deleted, but some of the configurations can be modified.
+// ToGetRequestInformation the various configurations of an alert for Azure AD roles. The configurations are predefined and can't be created or deleted, but some of the configurations can be modified.
 func (m *RoleManagementAlertsAlertConfigurationsUnifiedRoleManagementAlertConfigurationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleManagementAlertsAlertConfigurationsUnifiedRoleManagementAlertConfigurationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -156,4 +156,8 @@ func (m *RoleManagementAlertsAlertConfigurationsUnifiedRoleManagementAlertConfig
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *RoleManagementAlertsAlertConfigurationsUnifiedRoleManagementAlertConfigurationItemRequestBuilder) WithUrl(rawUrl string)(*RoleManagementAlertsAlertConfigurationsUnifiedRoleManagementAlertConfigurationItemRequestBuilder) {
+    return NewRoleManagementAlertsAlertConfigurationsUnifiedRoleManagementAlertConfigurationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

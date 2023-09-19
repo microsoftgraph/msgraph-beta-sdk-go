@@ -46,8 +46,8 @@ type ItemServicesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByBookingServiceIdString provides operations to manage the services property of the microsoft.graph.bookingBusiness entity.
-func (m *ItemServicesRequestBuilder) ByBookingServiceIdString(bookingServiceId string)(*ItemServicesBookingServiceItemRequestBuilder) {
+// ByBookingServiceId provides operations to manage the services property of the microsoft.graph.bookingBusiness entity.
+func (m *ItemServicesRequestBuilder) ByBookingServiceId(bookingServiceId string)(*ItemServicesBookingServiceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemServicesRequestBuilder) ToPostRequestInformation(ctx context.Contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemServicesRequestBuilder) WithUrl(rawUrl string)(*ItemServicesRequestBuilder) {
+    return NewItemServicesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

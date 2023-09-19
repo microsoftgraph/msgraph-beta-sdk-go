@@ -42,9 +42,9 @@ type ItemOutlookTasksRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByOutlookTaskIdString provides operations to manage the tasks property of the microsoft.graph.outlookUser entity.
+// ByOutlookTaskId provides operations to manage the tasks property of the microsoft.graph.outlookUser entity.
 // Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20
-func (m *ItemOutlookTasksRequestBuilder) ByOutlookTaskIdString(outlookTaskId string)(*ItemOutlookTasksOutlookTaskItemRequestBuilder) {
+func (m *ItemOutlookTasksRequestBuilder) ByOutlookTaskId(outlookTaskId string)(*ItemOutlookTasksOutlookTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -151,4 +151,9 @@ func (m *ItemOutlookTasksRequestBuilder) ToPostRequestInformation(ctx context.Co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20
+func (m *ItemOutlookTasksRequestBuilder) WithUrl(rawUrl string)(*ItemOutlookTasksRequestBuilder) {
+    return NewItemOutlookTasksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

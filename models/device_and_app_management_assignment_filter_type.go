@@ -38,3 +38,6 @@ func SerializeDeviceAndAppManagementAssignmentFilterType(values []DeviceAndAppMa
     }
     return result
 }
+func (i DeviceAndAppManagementAssignmentFilterType) isMultiValue() bool {
+    return false
+}

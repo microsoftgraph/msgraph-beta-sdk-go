@@ -38,3 +38,6 @@ func SerializeTokenProtectionStatus(values []TokenProtectionStatus) []string {
     }
     return result
 }
+func (i TokenProtectionStatus) isMultiValue() bool {
+    return false
+}

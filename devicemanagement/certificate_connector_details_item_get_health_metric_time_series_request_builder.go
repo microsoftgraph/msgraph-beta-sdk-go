@@ -66,3 +66,7 @@ func (m *CertificateConnectorDetailsItemGetHealthMetricTimeSeriesRequestBuilder)
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CertificateConnectorDetailsItemGetHealthMetricTimeSeriesRequestBuilder) WithUrl(rawUrl string)(*CertificateConnectorDetailsItemGetHealthMetricTimeSeriesRequestBuilder) {
+    return NewCertificateConnectorDetailsItemGetHealthMetricTimeSeriesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

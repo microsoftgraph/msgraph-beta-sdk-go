@@ -46,3 +46,6 @@ func SerializePrivilegeManagementEndUserType(values []PrivilegeManagementEndUser
     }
     return result
 }
+func (i PrivilegeManagementEndUserType) isMultiValue() bool {
+    return false
+}

@@ -159,3 +159,7 @@ func (m *DirectoryRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilder
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DirectoryRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilder) WithUrl(rawUrl string)(*DirectoryRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilder) {
+    return NewDirectoryRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

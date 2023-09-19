@@ -42,3 +42,6 @@ func SerializeAndroidManagedStoreAutoUpdateMode(values []AndroidManagedStoreAuto
     }
     return result
 }
+func (i AndroidManagedStoreAutoUpdateMode) isMultiValue() bool {
+    return false
+}

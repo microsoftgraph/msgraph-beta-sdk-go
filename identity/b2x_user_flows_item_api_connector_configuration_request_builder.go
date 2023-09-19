@@ -11,7 +11,7 @@ import (
 type B2xUserFlowsItemApiConnectorConfigurationRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// B2xUserFlowsItemApiConnectorConfigurationRequestBuilderGetQueryParameters configuration for enabling an API connector for use as part of the self-service sign up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
+// B2xUserFlowsItemApiConnectorConfigurationRequestBuilderGetQueryParameters configuration for enabling an API connector for use as part of the self-service sign-up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
 type B2xUserFlowsItemApiConnectorConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewB2xUserFlowsItemApiConnectorConfigurationRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewB2xUserFlowsItemApiConnectorConfigurationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get configuration for enabling an API connector for use as part of the self-service sign up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
+// Get configuration for enabling an API connector for use as part of the self-service sign-up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
 func (m *B2xUserFlowsItemApiConnectorConfigurationRequestBuilder) Get(ctx context.Context, requestConfiguration *B2xUserFlowsItemApiConnectorConfigurationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserFlowApiConnectorConfigurationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -71,7 +71,7 @@ func (m *B2xUserFlowsItemApiConnectorConfigurationRequestBuilder) PostFederation
 func (m *B2xUserFlowsItemApiConnectorConfigurationRequestBuilder) PreTokenIssuance()(*B2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilder) {
     return NewB2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation configuration for enabling an API connector for use as part of the self-service sign up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
+// ToGetRequestInformation configuration for enabling an API connector for use as part of the self-service sign-up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
 func (m *B2xUserFlowsItemApiConnectorConfigurationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2xUserFlowsItemApiConnectorConfigurationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -86,4 +86,8 @@ func (m *B2xUserFlowsItemApiConnectorConfigurationRequestBuilder) ToGetRequestIn
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *B2xUserFlowsItemApiConnectorConfigurationRequestBuilder) WithUrl(rawUrl string)(*B2xUserFlowsItemApiConnectorConfigurationRequestBuilder) {
+    return NewB2xUserFlowsItemApiConnectorConfigurationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

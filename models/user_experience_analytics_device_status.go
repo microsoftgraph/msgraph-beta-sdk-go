@@ -42,3 +42,6 @@ func SerializeUserExperienceAnalyticsDeviceStatus(values []UserExperienceAnalyti
     }
     return result
 }
+func (i UserExperienceAnalyticsDeviceStatus) isMultiValue() bool {
+    return false
+}

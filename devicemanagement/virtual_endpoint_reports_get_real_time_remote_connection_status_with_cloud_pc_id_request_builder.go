@@ -64,3 +64,7 @@ func (m *VirtualEndpointReportsGetRealTimeRemoteConnectionStatusWithCloudPcIdReq
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEndpointReportsGetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointReportsGetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder) {
+    return NewVirtualEndpointReportsGetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

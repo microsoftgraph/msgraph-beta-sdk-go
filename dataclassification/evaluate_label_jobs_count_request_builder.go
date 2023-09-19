@@ -74,3 +74,7 @@ func (m *EvaluateLabelJobsCountRequestBuilder) ToGetRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EvaluateLabelJobsCountRequestBuilder) WithUrl(rawUrl string)(*EvaluateLabelJobsCountRequestBuilder) {
+    return NewEvaluateLabelJobsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

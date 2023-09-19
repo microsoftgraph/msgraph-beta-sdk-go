@@ -62,3 +62,6 @@ func SerializeChassisType(values []ChassisType) []string {
     }
     return result
 }
+func (i ChassisType) isMultiValue() bool {
+    return false
+}

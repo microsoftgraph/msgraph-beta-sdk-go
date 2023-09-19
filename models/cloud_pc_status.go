@@ -68,3 +68,6 @@ func SerializeCloudPcStatus(values []CloudPcStatus) []string {
     }
     return result
 }
+func (i CloudPcStatus) isMultiValue() bool {
+    return false
+}

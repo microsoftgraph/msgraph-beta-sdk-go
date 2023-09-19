@@ -62,3 +62,7 @@ func (m *ComanagedDevicesItemGetFileVaultKeyRequestBuilder) ToGetRequestInformat
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ComanagedDevicesItemGetFileVaultKeyRequestBuilder) WithUrl(rawUrl string)(*ComanagedDevicesItemGetFileVaultKeyRequestBuilder) {
+    return NewComanagedDevicesItemGetFileVaultKeyRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

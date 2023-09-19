@@ -38,3 +38,6 @@ func SerializeOriginalTransferMethods(values []OriginalTransferMethods) []string
     }
     return result
 }
+func (i OriginalTransferMethods) isMultiValue() bool {
+    return false
+}

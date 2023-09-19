@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookWorksheetsItemTasksWorkbookDocumentTaskItemRequestBuil
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookWorksheetsItemTasksWorkbookDocumentTaskItemRequestBuilderGetQueryParameters get tasks from drives
+// ItemItemsItemWorkbookWorksheetsItemTasksWorkbookDocumentTaskItemRequestBuilderGetQueryParameters collection of document tasks on this worksheet. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemTasksWorkbookDocumentTaskItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -78,7 +78,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTasksWorkbookDocumentTaskItemRequest
     }
     return nil
 }
-// Get get tasks from drives
+// Get collection of document tasks on this worksheet. Read-only.
 func (m *ItemItemsItemWorkbookWorksheetsItemTasksWorkbookDocumentTaskItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTasksWorkbookDocumentTaskItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookDocumentTaskable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -128,7 +128,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTasksWorkbookDocumentTaskItemRequest
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get tasks from drives
+// ToGetRequestInformation collection of document tasks on this worksheet. Read-only.
 func (m *ItemItemsItemWorkbookWorksheetsItemTasksWorkbookDocumentTaskItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTasksWorkbookDocumentTaskItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -160,4 +160,8 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTasksWorkbookDocumentTaskItemRequest
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemWorkbookWorksheetsItemTasksWorkbookDocumentTaskItemRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookWorksheetsItemTasksWorkbookDocumentTaskItemRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTasksWorkbookDocumentTaskItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

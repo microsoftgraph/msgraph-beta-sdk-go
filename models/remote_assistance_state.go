@@ -34,3 +34,6 @@ func SerializeRemoteAssistanceState(values []RemoteAssistanceState) []string {
     }
     return result
 }
+func (i RemoteAssistanceState) isMultiValue() bool {
+    return false
+}

@@ -38,3 +38,6 @@ func SerializeCveSeverityLevel(values []CveSeverityLevel) []string {
     }
     return result
 }
+func (i CveSeverityLevel) isMultiValue() bool {
+    return false
+}

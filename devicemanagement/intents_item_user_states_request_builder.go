@@ -46,8 +46,8 @@ type IntentsItemUserStatesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementIntentUserStateIdString provides operations to manage the userStates property of the microsoft.graph.deviceManagementIntent entity.
-func (m *IntentsItemUserStatesRequestBuilder) ByDeviceManagementIntentUserStateIdString(deviceManagementIntentUserStateId string)(*IntentsItemUserStatesDeviceManagementIntentUserStateItemRequestBuilder) {
+// ByDeviceManagementIntentUserStateId provides operations to manage the userStates property of the microsoft.graph.deviceManagementIntent entity.
+func (m *IntentsItemUserStatesRequestBuilder) ByDeviceManagementIntentUserStateId(deviceManagementIntentUserStateId string)(*IntentsItemUserStatesDeviceManagementIntentUserStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *IntentsItemUserStatesRequestBuilder) ToPostRequestInformation(ctx conte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IntentsItemUserStatesRequestBuilder) WithUrl(rawUrl string)(*IntentsItemUserStatesRequestBuilder) {
+    return NewIntentsItemUserStatesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

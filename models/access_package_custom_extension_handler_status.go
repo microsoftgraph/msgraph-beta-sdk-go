@@ -35,3 +35,6 @@ func SerializeAccessPackageCustomExtensionHandlerStatus(values []AccessPackageCu
     }
     return result
 }
+func (i AccessPackageCustomExtensionHandlerStatus) isMultiValue() bool {
+    return false
+}

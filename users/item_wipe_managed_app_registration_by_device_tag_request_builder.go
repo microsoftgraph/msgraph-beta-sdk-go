@@ -62,3 +62,7 @@ func (m *ItemWipeManagedAppRegistrationByDeviceTagRequestBuilder) ToPostRequestI
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemWipeManagedAppRegistrationByDeviceTagRequestBuilder) WithUrl(rawUrl string)(*ItemWipeManagedAppRegistrationByDeviceTagRequestBuilder) {
+    return NewItemWipeManagedAppRegistrationByDeviceTagRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

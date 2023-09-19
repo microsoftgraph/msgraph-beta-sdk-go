@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // 
 type TemplateApplicationLevel int
@@ -13,21 +14,30 @@ const (
 )
 
 func (i TemplateApplicationLevel) String() string {
-    return []string{"none", "newPartners", "existingPartners", "unknownFutureValue"}[i]
+    var values []string
+    for p := TemplateApplicationLevel(1); p <= UNKNOWNFUTUREVALUE_TEMPLATEAPPLICATIONLEVEL; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"none", "newPartners", "existingPartners", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseTemplateApplicationLevel(v string) (any, error) {
-    result := NONE_TEMPLATEAPPLICATIONLEVEL
-    switch v {
-        case "none":
-            result = NONE_TEMPLATEAPPLICATIONLEVEL
-        case "newPartners":
-            result = NEWPARTNERS_TEMPLATEAPPLICATIONLEVEL
-        case "existingPartners":
-            result = EXISTINGPARTNERS_TEMPLATEAPPLICATIONLEVEL
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_TEMPLATEAPPLICATIONLEVEL
-        default:
-            return 0, errors.New("Unknown TemplateApplicationLevel value: " + v)
+    var result TemplateApplicationLevel
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "none":
+                result |= NONE_TEMPLATEAPPLICATIONLEVEL
+            case "newPartners":
+                result |= NEWPARTNERS_TEMPLATEAPPLICATIONLEVEL
+            case "existingPartners":
+                result |= EXISTINGPARTNERS_TEMPLATEAPPLICATIONLEVEL
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_TEMPLATEAPPLICATIONLEVEL
+            default:
+                return 0, errors.New("Unknown TemplateApplicationLevel value: " + v)
+        }
     }
     return &result, nil
 }
@@ -37,4 +47,7 @@ func SerializeTemplateApplicationLevel(values []TemplateApplicationLevel) []stri
         result[i] = v.String()
     }
     return result
+}
+func (i TemplateApplicationLevel) isMultiValue() bool {
+    return true
 }

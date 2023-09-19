@@ -39,8 +39,8 @@ type ItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilderGetRequestConfigurati
     // Request query parameters
     QueryParameters *ItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilderGetQueryParameters
 }
-// ByOnPremisesAgentGroupId1String gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.agentGroups.item.agents.item.agentGroups.item collection
-func (m *ItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilder) ByOnPremisesAgentGroupId1String(onPremisesAgentGroupId1 string)(*ItemAgentGroupsItemAgentsItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) {
+// ByOnPremisesAgentGroupId1 gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.agentGroups.item.agents.item.agentGroups.item collection
+func (m *ItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilder) ByOnPremisesAgentGroupId1(onPremisesAgentGroupId1 string)(*ItemAgentGroupsItemAgentsItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -105,4 +105,8 @@ func (m *ItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilder) ToGetRequestInf
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilder) WithUrl(rawUrl string)(*ItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilder) {
+    return NewItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

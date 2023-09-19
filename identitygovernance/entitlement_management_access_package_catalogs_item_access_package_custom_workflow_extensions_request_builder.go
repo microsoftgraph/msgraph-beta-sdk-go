@@ -46,9 +46,9 @@ type EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowEx
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCustomCalloutExtensionIdString provides operations to manage the accessPackageCustomWorkflowExtensions property of the microsoft.graph.accessPackageCatalog entity.
+// ByCustomCalloutExtensionId provides operations to manage the accessPackageCustomWorkflowExtensions property of the microsoft.graph.accessPackageCatalog entity.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
-func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder) ByCustomCalloutExtensionIdString(customCalloutExtensionId string)(*EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsCustomCalloutExtensionItemRequestBuilder) {
+func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder) ByCustomCalloutExtensionId(customCalloutExtensionId string)(*EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsCustomCalloutExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -152,4 +152,9 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkfl
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
+func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder) {
+    return NewEntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

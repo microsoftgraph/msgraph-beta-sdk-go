@@ -46,8 +46,8 @@ type WindowsUpdatesUpdatableAssetsRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUpdatableAssetIdString provides operations to manage the updatableAssets property of the microsoft.graph.adminWindowsUpdates entity.
-func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) ByUpdatableAssetIdString(updatableAssetId string)(*WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) {
+// ByUpdatableAssetId provides operations to manage the updatableAssets property of the microsoft.graph.adminWindowsUpdates entity.
+func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) ByUpdatableAssetId(updatableAssetId string)(*WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -166,4 +166,8 @@ func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) ToPostRequestInformation(c
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) WithUrl(rawUrl string)(*WindowsUpdatesUpdatableAssetsRequestBuilder) {
+    return NewWindowsUpdatesUpdatableAssetsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

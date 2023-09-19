@@ -46,8 +46,8 @@ type RoleDefinitionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByRoleDefinitionIdString provides operations to manage the roleDefinitions property of the microsoft.graph.deviceManagement entity.
-func (m *RoleDefinitionsRequestBuilder) ByRoleDefinitionIdString(roleDefinitionId string)(*RoleDefinitionsRoleDefinitionItemRequestBuilder) {
+// ByRoleDefinitionId provides operations to manage the roleDefinitions property of the microsoft.graph.deviceManagement entity.
+func (m *RoleDefinitionsRequestBuilder) ByRoleDefinitionId(roleDefinitionId string)(*RoleDefinitionsRoleDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *RoleDefinitionsRequestBuilder) ToPostRequestInformation(ctx context.Con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *RoleDefinitionsRequestBuilder) WithUrl(rawUrl string)(*RoleDefinitionsRequestBuilder) {
+    return NewRoleDefinitionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

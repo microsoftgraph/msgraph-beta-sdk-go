@@ -39,8 +39,8 @@ type B2cUserFlowsItemIdentityProvidersRequestBuilderGetRequestConfiguration stru
     // Request query parameters
     QueryParameters *B2cUserFlowsItemIdentityProvidersRequestBuilderGetQueryParameters
 }
-// ByIdentityProviderIdString gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2cUserFlows.item.identityProviders.item collection
-func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) ByIdentityProviderIdString(identityProviderId string)(*B2cUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilder) {
+// ByIdentityProviderId gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2cUserFlows.item.identityProviders.item collection
+func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) ByIdentityProviderId(identityProviderId string)(*B2cUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -110,4 +110,9 @@ func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) ToGetRequestInformatio
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
+func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) WithUrl(rawUrl string)(*B2cUserFlowsItemIdentityProvidersRequestBuilder) {
+    return NewB2cUserFlowsItemIdentityProvidersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

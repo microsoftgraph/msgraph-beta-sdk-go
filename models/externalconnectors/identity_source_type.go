@@ -35,3 +35,6 @@ func SerializeIdentitySourceType(values []IdentitySourceType) []string {
     }
     return result
 }
+func (i IdentitySourceType) isMultiValue() bool {
+    return false
+}

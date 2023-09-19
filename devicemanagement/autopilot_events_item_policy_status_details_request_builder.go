@@ -46,8 +46,8 @@ type AutopilotEventsItemPolicyStatusDetailsRequestBuilderPostRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementAutopilotPolicyStatusDetailIdString provides operations to manage the policyStatusDetails property of the microsoft.graph.deviceManagementAutopilotEvent entity.
-func (m *AutopilotEventsItemPolicyStatusDetailsRequestBuilder) ByDeviceManagementAutopilotPolicyStatusDetailIdString(deviceManagementAutopilotPolicyStatusDetailId string)(*AutopilotEventsItemPolicyStatusDetailsDeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder) {
+// ByDeviceManagementAutopilotPolicyStatusDetailId provides operations to manage the policyStatusDetails property of the microsoft.graph.deviceManagementAutopilotEvent entity.
+func (m *AutopilotEventsItemPolicyStatusDetailsRequestBuilder) ByDeviceManagementAutopilotPolicyStatusDetailId(deviceManagementAutopilotPolicyStatusDetailId string)(*AutopilotEventsItemPolicyStatusDetailsDeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *AutopilotEventsItemPolicyStatusDetailsRequestBuilder) ToPostRequestInfo
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AutopilotEventsItemPolicyStatusDetailsRequestBuilder) WithUrl(rawUrl string)(*AutopilotEventsItemPolicyStatusDetailsRequestBuilder) {
+    return NewAutopilotEventsItemPolicyStatusDetailsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

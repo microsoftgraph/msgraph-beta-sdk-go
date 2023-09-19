@@ -74,3 +74,7 @@ func (m *IosLobAppProvisioningConfigurationsItemGroupAssignmentsCountRequestBuil
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IosLobAppProvisioningConfigurationsItemGroupAssignmentsCountRequestBuilder) WithUrl(rawUrl string)(*IosLobAppProvisioningConfigurationsItemGroupAssignmentsCountRequestBuilder) {
+    return NewIosLobAppProvisioningConfigurationsItemGroupAssignmentsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

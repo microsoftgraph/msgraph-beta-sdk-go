@@ -70,3 +70,7 @@ func (m *ItemMailFoldersItemMessagesItemMarkAsNotJunkRequestBuilder) ToPostReque
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemMailFoldersItemMessagesItemMarkAsNotJunkRequestBuilder) WithUrl(rawUrl string)(*ItemMailFoldersItemMessagesItemMarkAsNotJunkRequestBuilder) {
+    return NewItemMailFoldersItemMessagesItemMarkAsNotJunkRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

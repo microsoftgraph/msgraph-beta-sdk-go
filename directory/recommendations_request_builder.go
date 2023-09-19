@@ -46,8 +46,8 @@ type RecommendationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByRecommendationIdString provides operations to manage the recommendations property of the microsoft.graph.directory entity.
-func (m *RecommendationsRequestBuilder) ByRecommendationIdString(recommendationId string)(*RecommendationsRecommendationItemRequestBuilder) {
+// ByRecommendationId provides operations to manage the recommendations property of the microsoft.graph.directory entity.
+func (m *RecommendationsRequestBuilder) ByRecommendationId(recommendationId string)(*RecommendationsRecommendationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *RecommendationsRequestBuilder) ToPostRequestInformation(ctx context.Con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *RecommendationsRequestBuilder) WithUrl(rawUrl string)(*RecommendationsRequestBuilder) {
+    return NewRecommendationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -50,8 +50,8 @@ type ItemItemsItemWorkbookTablesItemRowsRequestBuilderPostRequestConfiguration s
 func (m *ItemItemsItemWorkbookTablesItemRowsRequestBuilder) Add()(*ItemItemsItemWorkbookTablesItemRowsAddRequestBuilder) {
     return NewItemItemsItemWorkbookTablesItemRowsAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByWorkbookTableRowIdString provides operations to manage the rows property of the microsoft.graph.workbookTable entity.
-func (m *ItemItemsItemWorkbookTablesItemRowsRequestBuilder) ByWorkbookTableRowIdString(workbookTableRowId string)(*ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilder) {
+// ByWorkbookTableRowId provides operations to manage the rows property of the microsoft.graph.workbookTable entity.
+func (m *ItemItemsItemWorkbookTablesItemRowsRequestBuilder) ByWorkbookTableRowId(workbookTableRowId string)(*ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -158,4 +158,8 @@ func (m *ItemItemsItemWorkbookTablesItemRowsRequestBuilder) ToPostRequestInforma
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemWorkbookTablesItemRowsRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookTablesItemRowsRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemRowsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

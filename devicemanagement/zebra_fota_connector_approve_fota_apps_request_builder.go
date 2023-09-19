@@ -62,3 +62,7 @@ func (m *ZebraFotaConnectorApproveFotaAppsRequestBuilder) ToPostRequestInformati
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ZebraFotaConnectorApproveFotaAppsRequestBuilder) WithUrl(rawUrl string)(*ZebraFotaConnectorApproveFotaAppsRequestBuilder) {
+    return NewZebraFotaConnectorApproveFotaAppsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

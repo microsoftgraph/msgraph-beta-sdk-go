@@ -46,8 +46,8 @@ type VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilderPostReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMeetingAttendanceReportIdString provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeeting entity.
-func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder) ByMeetingAttendanceReportIdString(meetingAttendanceReportId string)(*VirtualEventsEventsItemSessionsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder) {
+// ByMeetingAttendanceReportId provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeeting entity.
+func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder) ByMeetingAttendanceReportId(meetingAttendanceReportId string)(*VirtualEventsEventsItemSessionsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder) ToP
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder) WithUrl(rawUrl string)(*VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder) {
+    return NewVirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -117,10 +117,6 @@ func (m *ReportsRequestBuilder) GetAppsInstallSummaryReport()(*ReportsGetAppsIns
 func (m *ReportsRequestBuilder) GetAppStatusOverviewReport()(*ReportsGetAppStatusOverviewReportRequestBuilder) {
     return NewReportsGetAppStatusOverviewReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// GetAutopilotDeploymentDeviceInformation provides operations to call the getAutopilotDeploymentDeviceInformation method.
-func (m *ReportsRequestBuilder) GetAutopilotDeploymentDeviceInformation()(*ReportsGetAutopilotDeploymentDeviceInformationRequestBuilder) {
-    return NewReportsGetAutopilotDeploymentDeviceInformationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // GetCachedReport provides operations to call the getCachedReport method.
 func (m *ReportsRequestBuilder) GetCachedReport()(*ReportsGetCachedReportRequestBuilder) {
     return NewReportsGetCachedReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -444,4 +440,8 @@ func (m *ReportsRequestBuilder) ToPatchRequestInformation(ctx context.Context, b
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ReportsRequestBuilder) WithUrl(rawUrl string)(*ReportsRequestBuilder) {
+    return NewReportsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

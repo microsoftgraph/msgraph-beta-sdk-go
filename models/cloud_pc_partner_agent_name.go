@@ -35,3 +35,6 @@ func SerializeCloudPcPartnerAgentName(values []CloudPcPartnerAgentName) []string
     }
     return result
 }
+func (i CloudPcPartnerAgentName) isMultiValue() bool {
+    return false
+}

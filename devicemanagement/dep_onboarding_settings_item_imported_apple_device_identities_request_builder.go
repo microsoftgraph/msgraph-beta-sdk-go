@@ -46,8 +46,8 @@ type DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilderPostReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByImportedAppleDeviceIdentityIdString provides operations to manage the importedAppleDeviceIdentities property of the microsoft.graph.depOnboardingSetting entity.
-func (m *DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder) ByImportedAppleDeviceIdentityIdString(importedAppleDeviceIdentityId string)(*DepOnboardingSettingsItemImportedAppleDeviceIdentitiesImportedAppleDeviceIdentityItemRequestBuilder) {
+// ByImportedAppleDeviceIdentityId provides operations to manage the importedAppleDeviceIdentities property of the microsoft.graph.depOnboardingSetting entity.
+func (m *DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder) ByImportedAppleDeviceIdentityId(importedAppleDeviceIdentityId string)(*DepOnboardingSettingsItemImportedAppleDeviceIdentitiesImportedAppleDeviceIdentityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -148,4 +148,8 @@ func (m *DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder) T
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder) WithUrl(rawUrl string)(*DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder) {
+    return NewDepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

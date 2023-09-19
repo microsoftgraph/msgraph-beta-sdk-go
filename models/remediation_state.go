@@ -50,3 +50,6 @@ func SerializeRemediationState(values []RemediationState) []string {
     }
     return result
 }
+func (i RemediationState) isMultiValue() bool {
+    return false
+}

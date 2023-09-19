@@ -49,3 +49,6 @@ func SerializeComanagementEligibleType(values []ComanagementEligibleType) []stri
     }
     return result
 }
+func (i ComanagementEligibleType) isMultiValue() bool {
+    return false
+}

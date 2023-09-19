@@ -73,7 +73,7 @@ func (m *M365ForwardingRule) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetPorts gets the ports property value. The port(s) used by a forwarding rule for M365 traffic are specified to determine the specific network port(s) through which the Microsoft 365 traffic is directed and forwarded.
+// GetPorts gets the ports property value. The port(s) used by a forwarding rule for Microsoft 365 traffic are specified to determine the specific network port(s) through which the Microsoft 365 traffic is directed and forwarded.
 func (m *M365ForwardingRule) GetPorts()([]string) {
     val, err := m.GetBackingStore().Get("ports")
     if err != nil {
@@ -130,7 +130,7 @@ func (m *M365ForwardingRule) SetCategory(value *ForwardingCategory)() {
         panic(err)
     }
 }
-// SetPorts sets the ports property value. The port(s) used by a forwarding rule for M365 traffic are specified to determine the specific network port(s) through which the Microsoft 365 traffic is directed and forwarded.
+// SetPorts sets the ports property value. The port(s) used by a forwarding rule for Microsoft 365 traffic are specified to determine the specific network port(s) through which the Microsoft 365 traffic is directed and forwarded.
 func (m *M365ForwardingRule) SetPorts(value []string)() {
     err := m.GetBackingStore().Set("ports", value)
     if err != nil {

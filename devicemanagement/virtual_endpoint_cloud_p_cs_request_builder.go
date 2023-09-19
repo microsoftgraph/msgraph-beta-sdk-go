@@ -50,8 +50,8 @@ type VirtualEndpointCloudPCsRequestBuilderPostRequestConfiguration struct {
 func (m *VirtualEndpointCloudPCsRequestBuilder) BulkResize()(*VirtualEndpointCloudPCsBulkResizeRequestBuilder) {
     return NewVirtualEndpointCloudPCsBulkResizeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByCloudPCIdString provides operations to manage the cloudPCs property of the microsoft.graph.virtualEndpoint entity.
-func (m *VirtualEndpointCloudPCsRequestBuilder) ByCloudPCIdString(cloudPCId string)(*VirtualEndpointCloudPCsCloudPCItemRequestBuilder) {
+// ByCloudPCId provides operations to manage the cloudPCs property of the microsoft.graph.virtualEndpoint entity.
+func (m *VirtualEndpointCloudPCsRequestBuilder) ByCloudPCId(cloudPCId string)(*VirtualEndpointCloudPCsCloudPCItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -159,4 +159,8 @@ func (m *VirtualEndpointCloudPCsRequestBuilder) ToPostRequestInformation(ctx con
 // ValidateBulkResize provides operations to call the validateBulkResize method.
 func (m *VirtualEndpointCloudPCsRequestBuilder) ValidateBulkResize()(*VirtualEndpointCloudPCsValidateBulkResizeRequestBuilder) {
     return NewVirtualEndpointCloudPCsValidateBulkResizeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEndpointCloudPCsRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointCloudPCsRequestBuilder) {
+    return NewVirtualEndpointCloudPCsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

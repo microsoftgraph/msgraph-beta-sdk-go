@@ -46,8 +46,8 @@ type LabelsDepartmentsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDepartmentTemplateIdString provides operations to manage the departments property of the microsoft.graph.security.labelsRoot entity.
-func (m *LabelsDepartmentsRequestBuilder) ByDepartmentTemplateIdString(departmentTemplateId string)(*LabelsDepartmentsDepartmentTemplateItemRequestBuilder) {
+// ByDepartmentTemplateId provides operations to manage the departments property of the microsoft.graph.security.labelsRoot entity.
+func (m *LabelsDepartmentsRequestBuilder) ByDepartmentTemplateId(departmentTemplateId string)(*LabelsDepartmentsDepartmentTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *LabelsDepartmentsRequestBuilder) ToPostRequestInformation(ctx context.C
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *LabelsDepartmentsRequestBuilder) WithUrl(rawUrl string)(*LabelsDepartmentsRequestBuilder) {
+    return NewLabelsDepartmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

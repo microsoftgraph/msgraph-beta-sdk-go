@@ -41,3 +41,6 @@ func SerializeTrafficType(values []TrafficType) []string {
     }
     return result
 }
+func (i TrafficType) isMultiValue() bool {
+    return false
+}

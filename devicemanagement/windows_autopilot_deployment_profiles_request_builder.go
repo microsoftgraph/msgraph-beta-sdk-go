@@ -46,8 +46,8 @@ type WindowsAutopilotDeploymentProfilesRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWindowsAutopilotDeploymentProfileIdString provides operations to manage the windowsAutopilotDeploymentProfiles property of the microsoft.graph.deviceManagement entity.
-func (m *WindowsAutopilotDeploymentProfilesRequestBuilder) ByWindowsAutopilotDeploymentProfileIdString(windowsAutopilotDeploymentProfileId string)(*WindowsAutopilotDeploymentProfilesWindowsAutopilotDeploymentProfileItemRequestBuilder) {
+// ByWindowsAutopilotDeploymentProfileId provides operations to manage the windowsAutopilotDeploymentProfiles property of the microsoft.graph.deviceManagement entity.
+func (m *WindowsAutopilotDeploymentProfilesRequestBuilder) ByWindowsAutopilotDeploymentProfileId(windowsAutopilotDeploymentProfileId string)(*WindowsAutopilotDeploymentProfilesWindowsAutopilotDeploymentProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -148,4 +148,8 @@ func (m *WindowsAutopilotDeploymentProfilesRequestBuilder) ToPostRequestInformat
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsAutopilotDeploymentProfilesRequestBuilder) WithUrl(rawUrl string)(*WindowsAutopilotDeploymentProfilesRequestBuilder) {
+    return NewWindowsAutopilotDeploymentProfilesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

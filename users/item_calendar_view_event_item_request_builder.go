@@ -14,13 +14,13 @@ type ItemCalendarViewEventItemRequestBuilder struct {
 // ItemCalendarViewEventItemRequestBuilderGetQueryParameters the calendar view for the calendar. Read-only. Nullable.
 type ItemCalendarViewEventItemRequestBuilderGetQueryParameters struct {
     // The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00
-    EndDateTime *string
+    EndDateTime *string `uriparametername:"endDateTime"`
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00
-    StartDateTime *string
+    StartDateTime *string `uriparametername:"startDateTime"`
 }
 // ItemCalendarViewEventItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCalendarViewEventItemRequestBuilderGetRequestConfiguration struct {
@@ -126,4 +126,8 @@ func (m *ItemCalendarViewEventItemRequestBuilder) ToGetRequestInformation(ctx co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemCalendarViewEventItemRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarViewEventItemRequestBuilder) {
+    return NewItemCalendarViewEventItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

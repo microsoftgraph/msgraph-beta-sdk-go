@@ -1,6 +1,7 @@
 package security
 import (
     "errors"
+    "strings"
 )
 // 
 type UserMailboxSetting int
@@ -28,51 +29,60 @@ const (
 )
 
 func (i UserMailboxSetting) String() string {
-    return []string{"none", "junkMailDeletion", "isFromAddressInAddressBook", "isFromAddressInAddressSafeList", "isFromAddressInAddressBlockList", "isFromAddressInAddressImplicitSafeList", "isFromAddressInAddressImplicitJunkList", "isFromDomainInDomainSafeList", "isFromDomainInDomainBlockList", "isRecipientInRecipientSafeList", "customRule", "junkMailRule", "senderPraPresent", "fromFirstTimeSender", "exclusive", "priorSeenPass", "senderAuthenticationSucceeded", "isJunkMailRuleEnabled", "unknownFutureValue"}[i]
+    var values []string
+    for p := UserMailboxSetting(1); p <= UNKNOWNFUTUREVALUE_USERMAILBOXSETTING; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"none", "junkMailDeletion", "isFromAddressInAddressBook", "isFromAddressInAddressSafeList", "isFromAddressInAddressBlockList", "isFromAddressInAddressImplicitSafeList", "isFromAddressInAddressImplicitJunkList", "isFromDomainInDomainSafeList", "isFromDomainInDomainBlockList", "isRecipientInRecipientSafeList", "customRule", "junkMailRule", "senderPraPresent", "fromFirstTimeSender", "exclusive", "priorSeenPass", "senderAuthenticationSucceeded", "isJunkMailRuleEnabled", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseUserMailboxSetting(v string) (any, error) {
-    result := NONE_USERMAILBOXSETTING
-    switch v {
-        case "none":
-            result = NONE_USERMAILBOXSETTING
-        case "junkMailDeletion":
-            result = JUNKMAILDELETION_USERMAILBOXSETTING
-        case "isFromAddressInAddressBook":
-            result = ISFROMADDRESSINADDRESSBOOK_USERMAILBOXSETTING
-        case "isFromAddressInAddressSafeList":
-            result = ISFROMADDRESSINADDRESSSAFELIST_USERMAILBOXSETTING
-        case "isFromAddressInAddressBlockList":
-            result = ISFROMADDRESSINADDRESSBLOCKLIST_USERMAILBOXSETTING
-        case "isFromAddressInAddressImplicitSafeList":
-            result = ISFROMADDRESSINADDRESSIMPLICITSAFELIST_USERMAILBOXSETTING
-        case "isFromAddressInAddressImplicitJunkList":
-            result = ISFROMADDRESSINADDRESSIMPLICITJUNKLIST_USERMAILBOXSETTING
-        case "isFromDomainInDomainSafeList":
-            result = ISFROMDOMAININDOMAINSAFELIST_USERMAILBOXSETTING
-        case "isFromDomainInDomainBlockList":
-            result = ISFROMDOMAININDOMAINBLOCKLIST_USERMAILBOXSETTING
-        case "isRecipientInRecipientSafeList":
-            result = ISRECIPIENTINRECIPIENTSAFELIST_USERMAILBOXSETTING
-        case "customRule":
-            result = CUSTOMRULE_USERMAILBOXSETTING
-        case "junkMailRule":
-            result = JUNKMAILRULE_USERMAILBOXSETTING
-        case "senderPraPresent":
-            result = SENDERPRAPRESENT_USERMAILBOXSETTING
-        case "fromFirstTimeSender":
-            result = FROMFIRSTTIMESENDER_USERMAILBOXSETTING
-        case "exclusive":
-            result = EXCLUSIVE_USERMAILBOXSETTING
-        case "priorSeenPass":
-            result = PRIORSEENPASS_USERMAILBOXSETTING
-        case "senderAuthenticationSucceeded":
-            result = SENDERAUTHENTICATIONSUCCEEDED_USERMAILBOXSETTING
-        case "isJunkMailRuleEnabled":
-            result = ISJUNKMAILRULEENABLED_USERMAILBOXSETTING
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_USERMAILBOXSETTING
-        default:
-            return 0, errors.New("Unknown UserMailboxSetting value: " + v)
+    var result UserMailboxSetting
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "none":
+                result |= NONE_USERMAILBOXSETTING
+            case "junkMailDeletion":
+                result |= JUNKMAILDELETION_USERMAILBOXSETTING
+            case "isFromAddressInAddressBook":
+                result |= ISFROMADDRESSINADDRESSBOOK_USERMAILBOXSETTING
+            case "isFromAddressInAddressSafeList":
+                result |= ISFROMADDRESSINADDRESSSAFELIST_USERMAILBOXSETTING
+            case "isFromAddressInAddressBlockList":
+                result |= ISFROMADDRESSINADDRESSBLOCKLIST_USERMAILBOXSETTING
+            case "isFromAddressInAddressImplicitSafeList":
+                result |= ISFROMADDRESSINADDRESSIMPLICITSAFELIST_USERMAILBOXSETTING
+            case "isFromAddressInAddressImplicitJunkList":
+                result |= ISFROMADDRESSINADDRESSIMPLICITJUNKLIST_USERMAILBOXSETTING
+            case "isFromDomainInDomainSafeList":
+                result |= ISFROMDOMAININDOMAINSAFELIST_USERMAILBOXSETTING
+            case "isFromDomainInDomainBlockList":
+                result |= ISFROMDOMAININDOMAINBLOCKLIST_USERMAILBOXSETTING
+            case "isRecipientInRecipientSafeList":
+                result |= ISRECIPIENTINRECIPIENTSAFELIST_USERMAILBOXSETTING
+            case "customRule":
+                result |= CUSTOMRULE_USERMAILBOXSETTING
+            case "junkMailRule":
+                result |= JUNKMAILRULE_USERMAILBOXSETTING
+            case "senderPraPresent":
+                result |= SENDERPRAPRESENT_USERMAILBOXSETTING
+            case "fromFirstTimeSender":
+                result |= FROMFIRSTTIMESENDER_USERMAILBOXSETTING
+            case "exclusive":
+                result |= EXCLUSIVE_USERMAILBOXSETTING
+            case "priorSeenPass":
+                result |= PRIORSEENPASS_USERMAILBOXSETTING
+            case "senderAuthenticationSucceeded":
+                result |= SENDERAUTHENTICATIONSUCCEEDED_USERMAILBOXSETTING
+            case "isJunkMailRuleEnabled":
+                result |= ISJUNKMAILRULEENABLED_USERMAILBOXSETTING
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_USERMAILBOXSETTING
+            default:
+                return 0, errors.New("Unknown UserMailboxSetting value: " + v)
+        }
     }
     return &result, nil
 }
@@ -82,4 +92,7 @@ func SerializeUserMailboxSetting(values []UserMailboxSetting) []string {
         result[i] = v.String()
     }
     return result
+}
+func (i UserMailboxSetting) isMultiValue() bool {
+    return true
 }

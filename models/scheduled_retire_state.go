@@ -38,3 +38,6 @@ func SerializeScheduledRetireState(values []ScheduledRetireState) []string {
     }
     return result
 }
+func (i ScheduledRetireState) isMultiValue() bool {
+    return false
+}

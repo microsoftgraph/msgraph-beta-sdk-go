@@ -35,3 +35,6 @@ func SerializeFeatureType(values []FeatureType) []string {
     }
     return result
 }
+func (i FeatureType) isMultiValue() bool {
+    return false
+}

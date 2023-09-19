@@ -50,3 +50,6 @@ func SerializeWin32LobAppRegistryDetectionType(values []Win32LobAppRegistryDetec
     }
     return result
 }
+func (i Win32LobAppRegistryDetectionType) isMultiValue() bool {
+    return false
+}

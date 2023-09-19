@@ -84,3 +84,7 @@ func (m *ItemOnlineMeetingsItemRecordingsDeltaRequestBuilder) ToGetRequestInform
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemOnlineMeetingsItemRecordingsDeltaRequestBuilder) WithUrl(rawUrl string)(*ItemOnlineMeetingsItemRecordingsDeltaRequestBuilder) {
+    return NewItemOnlineMeetingsItemRecordingsDeltaRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

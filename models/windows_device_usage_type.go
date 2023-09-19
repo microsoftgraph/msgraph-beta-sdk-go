@@ -34,3 +34,6 @@ func SerializeWindowsDeviceUsageType(values []WindowsDeviceUsageType) []string {
     }
     return result
 }
+func (i WindowsDeviceUsageType) isMultiValue() bool {
+    return false
+}

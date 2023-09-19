@@ -42,3 +42,6 @@ func SerializeIosSoftwareUpdateScheduleType(values []IosSoftwareUpdateScheduleTy
     }
     return result
 }
+func (i IosSoftwareUpdateScheduleType) isMultiValue() bool {
+    return false
+}

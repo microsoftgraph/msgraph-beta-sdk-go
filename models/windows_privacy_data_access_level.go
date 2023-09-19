@@ -42,3 +42,6 @@ func SerializeWindowsPrivacyDataAccessLevel(values []WindowsPrivacyDataAccessLev
     }
     return result
 }
+func (i WindowsPrivacyDataAccessLevel) isMultiValue() bool {
+    return false
+}

@@ -54,8 +54,8 @@ func (m *EntitlementManagementAccessPackageAssignmentsRequestBuilder) Additional
 func (m *EntitlementManagementAccessPackageAssignmentsRequestBuilder) AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId(accessPackageId *string, incompatibleAccessPackageId *string)(*EntitlementManagementAccessPackageAssignmentsAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder) {
     return NewEntitlementManagementAccessPackageAssignmentsAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, accessPackageId, incompatibleAccessPackageId)
 }
-// ByAccessPackageAssignmentIdString provides operations to manage the accessPackageAssignments property of the microsoft.graph.entitlementManagement entity.
-func (m *EntitlementManagementAccessPackageAssignmentsRequestBuilder) ByAccessPackageAssignmentIdString(accessPackageAssignmentId string)(*EntitlementManagementAccessPackageAssignmentsAccessPackageAssignmentItemRequestBuilder) {
+// ByAccessPackageAssignmentId provides operations to manage the accessPackageAssignments property of the microsoft.graph.entitlementManagement entity.
+func (m *EntitlementManagementAccessPackageAssignmentsRequestBuilder) ByAccessPackageAssignmentId(accessPackageAssignmentId string)(*EntitlementManagementAccessPackageAssignmentsAccessPackageAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -159,4 +159,8 @@ func (m *EntitlementManagementAccessPackageAssignmentsRequestBuilder) ToPostRequ
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EntitlementManagementAccessPackageAssignmentsRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackageAssignmentsRequestBuilder) {
+    return NewEntitlementManagementAccessPackageAssignmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

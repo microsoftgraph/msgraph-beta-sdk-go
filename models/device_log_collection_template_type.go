@@ -34,3 +34,6 @@ func SerializeDeviceLogCollectionTemplateType(values []DeviceLogCollectionTempla
     }
     return result
 }
+func (i DeviceLogCollectionTemplateType) isMultiValue() bool {
+    return false
+}

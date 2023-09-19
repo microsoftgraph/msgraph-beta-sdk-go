@@ -11,7 +11,7 @@ import (
 type ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskChangesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskChangesRequestBuilderGetQueryParameters get changes from drives
+// ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskChangesRequestBuilderGetQueryParameters a collection of task change histories.
 type ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskChangesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -46,8 +46,8 @@ type ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskChangesRequestBu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWorkbookDocumentTaskChangeIdString provides operations to manage the changes property of the microsoft.graph.workbookDocumentTask entity.
-func (m *ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskChangesRequestBuilder) ByWorkbookDocumentTaskChangeIdString(workbookDocumentTaskChangeId string)(*ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskChangesWorkbookDocumentTaskChangeItemRequestBuilder) {
+// ByWorkbookDocumentTaskChangeId provides operations to manage the changes property of the microsoft.graph.workbookDocumentTask entity.
+func (m *ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskChangesRequestBuilder) ByWorkbookDocumentTaskChangeId(workbookDocumentTaskChangeId string)(*ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskChangesWorkbookDocumentTaskChangeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -74,7 +74,7 @@ func NewItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskChangesReques
 func (m *ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskChangesRequestBuilder) Count()(*ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskChangesCountRequestBuilder) {
     return NewItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskChangesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get changes from drives
+// Get a collection of task change histories.
 func (m *ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskChangesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskChangesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookDocumentTaskChangeCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +116,7 @@ func (m *ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskChangesReque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookDocumentTaskChangeable), nil
 }
-// ToGetRequestInformation get changes from drives
+// ToGetRequestInformation a collection of task change histories.
 func (m *ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskChangesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskChangesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -148,4 +148,8 @@ func (m *ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskChangesReque
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskChangesRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskChangesRequestBuilder) {
+    return NewItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskChangesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

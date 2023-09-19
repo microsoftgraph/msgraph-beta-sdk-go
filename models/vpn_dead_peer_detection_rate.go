@@ -42,3 +42,6 @@ func SerializeVpnDeadPeerDetectionRate(values []VpnDeadPeerDetectionRate) []stri
     }
     return result
 }
+func (i VpnDeadPeerDetectionRate) isMultiValue() bool {
+    return false
+}

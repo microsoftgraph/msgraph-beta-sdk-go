@@ -46,8 +46,8 @@ type AndroidManagedStoreAppConfigurationSchemasRequestBuilderPostRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAndroidManagedStoreAppConfigurationSchemaIdString provides operations to manage the androidManagedStoreAppConfigurationSchemas property of the microsoft.graph.deviceManagement entity.
-func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) ByAndroidManagedStoreAppConfigurationSchemaIdString(androidManagedStoreAppConfigurationSchemaId string)(*AndroidManagedStoreAppConfigurationSchemasAndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) {
+// ByAndroidManagedStoreAppConfigurationSchemaId provides operations to manage the androidManagedStoreAppConfigurationSchemas property of the microsoft.graph.deviceManagement entity.
+func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) ByAndroidManagedStoreAppConfigurationSchemaId(androidManagedStoreAppConfigurationSchemaId string)(*AndroidManagedStoreAppConfigurationSchemasAndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) ToPostRequest
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) WithUrl(rawUrl string)(*AndroidManagedStoreAppConfigurationSchemasRequestBuilder) {
+    return NewAndroidManagedStoreAppConfigurationSchemasRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

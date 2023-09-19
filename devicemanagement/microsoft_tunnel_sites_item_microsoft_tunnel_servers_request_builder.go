@@ -46,8 +46,8 @@ type MicrosoftTunnelSitesItemMicrosoftTunnelServersRequestBuilderPostRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMicrosoftTunnelServerIdString provides operations to manage the microsoftTunnelServers property of the microsoft.graph.microsoftTunnelSite entity.
-func (m *MicrosoftTunnelSitesItemMicrosoftTunnelServersRequestBuilder) ByMicrosoftTunnelServerIdString(microsoftTunnelServerId string)(*MicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItemRequestBuilder) {
+// ByMicrosoftTunnelServerId provides operations to manage the microsoftTunnelServers property of the microsoft.graph.microsoftTunnelSite entity.
+func (m *MicrosoftTunnelSitesItemMicrosoftTunnelServersRequestBuilder) ByMicrosoftTunnelServerId(microsoftTunnelServerId string)(*MicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *MicrosoftTunnelSitesItemMicrosoftTunnelServersRequestBuilder) ToPostReq
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MicrosoftTunnelSitesItemMicrosoftTunnelServersRequestBuilder) WithUrl(rawUrl string)(*MicrosoftTunnelSitesItemMicrosoftTunnelServersRequestBuilder) {
+    return NewMicrosoftTunnelSitesItemMicrosoftTunnelServersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

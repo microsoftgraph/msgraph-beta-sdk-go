@@ -39,8 +39,8 @@ type ManagedTenantsManagedTenantAlertsItemAlertLogsRequestBuilderGetRequestConfi
     // Request query parameters
     QueryParameters *ManagedTenantsManagedTenantAlertsItemAlertLogsRequestBuilderGetQueryParameters
 }
-// ByManagedTenantAlertLogIdString provides operations to manage the alertLogs property of the microsoft.graph.managedTenants.managedTenantAlert entity.
-func (m *ManagedTenantsManagedTenantAlertsItemAlertLogsRequestBuilder) ByManagedTenantAlertLogIdString(managedTenantAlertLogId string)(*ManagedTenantsManagedTenantAlertsItemAlertLogsManagedTenantAlertLogItemRequestBuilder) {
+// ByManagedTenantAlertLogId provides operations to manage the alertLogs property of the microsoft.graph.managedTenants.managedTenantAlert entity.
+func (m *ManagedTenantsManagedTenantAlertsItemAlertLogsRequestBuilder) ByManagedTenantAlertLogId(managedTenantAlertLogId string)(*ManagedTenantsManagedTenantAlertsItemAlertLogsManagedTenantAlertLogItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *ManagedTenantsManagedTenantAlertsItemAlertLogsRequestBuilder) ToGetRequ
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedTenantsManagedTenantAlertsItemAlertLogsRequestBuilder) WithUrl(rawUrl string)(*ManagedTenantsManagedTenantAlertsItemAlertLogsRequestBuilder) {
+    return NewManagedTenantsManagedTenantAlertsItemAlertLogsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

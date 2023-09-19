@@ -169,3 +169,7 @@ func (m *AndroidForWorkSettingsRequestBuilder) ToPatchRequestInformation(ctx con
 func (m *AndroidForWorkSettingsRequestBuilder) Unbind()(*AndroidForWorkSettingsUnbindRequestBuilder) {
     return NewAndroidForWorkSettingsUnbindRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AndroidForWorkSettingsRequestBuilder) WithUrl(rawUrl string)(*AndroidForWorkSettingsRequestBuilder) {
+    return NewAndroidForWorkSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -63,3 +63,7 @@ func (m *TenantAttachRBACGetStateRequestBuilder) ToGetRequestInformation(ctx con
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TenantAttachRBACGetStateRequestBuilder) WithUrl(rawUrl string)(*TenantAttachRBACGetStateRequestBuilder) {
+    return NewTenantAttachRBACGetStateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

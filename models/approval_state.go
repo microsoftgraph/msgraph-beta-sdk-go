@@ -41,3 +41,6 @@ func SerializeApprovalState(values []ApprovalState) []string {
     }
     return result
 }
+func (i ApprovalState) isMultiValue() bool {
+    return false
+}

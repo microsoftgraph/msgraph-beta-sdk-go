@@ -46,8 +46,8 @@ type B2cUserFlowsItemLanguagesItemOverridesPagesRequestBuilderPostRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserFlowLanguagePageIdString provides operations to manage the overridesPages property of the microsoft.graph.userFlowLanguageConfiguration entity.
-func (m *B2cUserFlowsItemLanguagesItemOverridesPagesRequestBuilder) ByUserFlowLanguagePageIdString(userFlowLanguagePageId string)(*B2cUserFlowsItemLanguagesItemOverridesPagesUserFlowLanguagePageItemRequestBuilder) {
+// ByUserFlowLanguagePageId provides operations to manage the overridesPages property of the microsoft.graph.userFlowLanguageConfiguration entity.
+func (m *B2cUserFlowsItemLanguagesItemOverridesPagesRequestBuilder) ByUserFlowLanguagePageId(userFlowLanguagePageId string)(*B2cUserFlowsItemLanguagesItemOverridesPagesUserFlowLanguagePageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *B2cUserFlowsItemLanguagesItemOverridesPagesRequestBuilder) ToPostReques
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *B2cUserFlowsItemLanguagesItemOverridesPagesRequestBuilder) WithUrl(rawUrl string)(*B2cUserFlowsItemLanguagesItemOverridesPagesRequestBuilder) {
+    return NewB2cUserFlowsItemLanguagesItemOverridesPagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -176,3 +176,7 @@ func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesChatMessageItemRequest
 func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) UnsetReaction()(*ItemTeamDefinitionChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilder) {
     return NewItemTeamDefinitionChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) WithUrl(rawUrl string)(*ItemTeamDefinitionChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) {
+    return NewItemTeamDefinitionChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

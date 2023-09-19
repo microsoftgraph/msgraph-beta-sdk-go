@@ -21,7 +21,7 @@ func NewQualityUpdateCatalogEntry()(*QualityUpdateCatalogEntry) {
 func CreateQualityUpdateCatalogEntryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewQualityUpdateCatalogEntry(), nil
 }
-// GetCatalogName gets the catalogName property value. The catalogName property
+// GetCatalogName gets the catalogName property value. The catalog name of the content. Read-only.
 func (m *QualityUpdateCatalogEntry) GetCatalogName()(*string) {
     val, err := m.GetBackingStore().Get("catalogName")
     if err != nil {
@@ -32,7 +32,7 @@ func (m *QualityUpdateCatalogEntry) GetCatalogName()(*string) {
     }
     return nil
 }
-// GetCveSeverityInformation gets the cveSeverityInformation property value. The cveSeverityInformation property
+// GetCveSeverityInformation gets the cveSeverityInformation property value. Severity information of the Common Vulnerabilities and Exposures associated with the content.
 func (m *QualityUpdateCatalogEntry) GetCveSeverityInformation()(QualityUpdateCveSeverityInformationable) {
     val, err := m.GetBackingStore().Get("cveSeverityInformation")
     if err != nil {
@@ -135,7 +135,7 @@ func (m *QualityUpdateCatalogEntry) GetIsExpeditable()(*bool) {
     }
     return nil
 }
-// GetProductRevisions gets the productRevisions property value. The productRevisions property
+// GetProductRevisions gets the productRevisions property value. The operating system product revisions that are released as part of this quality update.
 func (m *QualityUpdateCatalogEntry) GetProductRevisions()([]ProductRevisionable) {
     val, err := m.GetBackingStore().Get("productRevisions")
     if err != nil {
@@ -146,7 +146,7 @@ func (m *QualityUpdateCatalogEntry) GetProductRevisions()([]ProductRevisionable)
     }
     return nil
 }
-// GetQualityUpdateCadence gets the qualityUpdateCadence property value. The qualityUpdateCadence property
+// GetQualityUpdateCadence gets the qualityUpdateCadence property value. The publishing cadence of the quality update. Possible values are: monthly, outOfBand, unknownFutureValue. Read-only.
 func (m *QualityUpdateCatalogEntry) GetQualityUpdateCadence()(*QualityUpdateCadence) {
     val, err := m.GetBackingStore().Get("qualityUpdateCadence")
     if err != nil {
@@ -168,7 +168,7 @@ func (m *QualityUpdateCatalogEntry) GetQualityUpdateClassification()(*QualityUpd
     }
     return nil
 }
-// GetShortName gets the shortName property value. The shortName property
+// GetShortName gets the shortName property value. The short name of the content. Read-only.
 func (m *QualityUpdateCatalogEntry) GetShortName()(*string) {
     val, err := m.GetBackingStore().Get("shortName")
     if err != nil {
@@ -237,14 +237,14 @@ func (m *QualityUpdateCatalogEntry) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetCatalogName sets the catalogName property value. The catalogName property
+// SetCatalogName sets the catalogName property value. The catalog name of the content. Read-only.
 func (m *QualityUpdateCatalogEntry) SetCatalogName(value *string)() {
     err := m.GetBackingStore().Set("catalogName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCveSeverityInformation sets the cveSeverityInformation property value. The cveSeverityInformation property
+// SetCveSeverityInformation sets the cveSeverityInformation property value. Severity information of the Common Vulnerabilities and Exposures associated with the content.
 func (m *QualityUpdateCatalogEntry) SetCveSeverityInformation(value QualityUpdateCveSeverityInformationable)() {
     err := m.GetBackingStore().Set("cveSeverityInformation", value)
     if err != nil {
@@ -258,14 +258,14 @@ func (m *QualityUpdateCatalogEntry) SetIsExpeditable(value *bool)() {
         panic(err)
     }
 }
-// SetProductRevisions sets the productRevisions property value. The productRevisions property
+// SetProductRevisions sets the productRevisions property value. The operating system product revisions that are released as part of this quality update.
 func (m *QualityUpdateCatalogEntry) SetProductRevisions(value []ProductRevisionable)() {
     err := m.GetBackingStore().Set("productRevisions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetQualityUpdateCadence sets the qualityUpdateCadence property value. The qualityUpdateCadence property
+// SetQualityUpdateCadence sets the qualityUpdateCadence property value. The publishing cadence of the quality update. Possible values are: monthly, outOfBand, unknownFutureValue. Read-only.
 func (m *QualityUpdateCatalogEntry) SetQualityUpdateCadence(value *QualityUpdateCadence)() {
     err := m.GetBackingStore().Set("qualityUpdateCadence", value)
     if err != nil {
@@ -279,7 +279,7 @@ func (m *QualityUpdateCatalogEntry) SetQualityUpdateClassification(value *Qualit
         panic(err)
     }
 }
-// SetShortName sets the shortName property value. The shortName property
+// SetShortName sets the shortName property value. The short name of the content. Read-only.
 func (m *QualityUpdateCatalogEntry) SetShortName(value *string)() {
     err := m.GetBackingStore().Set("shortName", value)
     if err != nil {

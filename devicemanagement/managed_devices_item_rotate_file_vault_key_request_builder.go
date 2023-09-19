@@ -58,3 +58,7 @@ func (m *ManagedDevicesItemRotateFileVaultKeyRequestBuilder) ToPostRequestInform
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedDevicesItemRotateFileVaultKeyRequestBuilder) WithUrl(rawUrl string)(*ManagedDevicesItemRotateFileVaultKeyRequestBuilder) {
+    return NewManagedDevicesItemRotateFileVaultKeyRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

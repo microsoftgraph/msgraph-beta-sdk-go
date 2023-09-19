@@ -74,3 +74,7 @@ func (m *JobsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, r
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *JobsCountRequestBuilder) WithUrl(rawUrl string)(*JobsCountRequestBuilder) {
+    return NewJobsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

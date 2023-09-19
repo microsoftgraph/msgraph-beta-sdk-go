@@ -46,8 +46,8 @@ type ManagedTenantsManagementActionsRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByManagementActionIdString provides operations to manage the managementActions property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsManagementActionsRequestBuilder) ByManagementActionIdString(managementActionId string)(*ManagedTenantsManagementActionsManagementActionItemRequestBuilder) {
+// ByManagementActionId provides operations to manage the managementActions property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsManagementActionsRequestBuilder) ByManagementActionId(managementActionId string)(*ManagedTenantsManagementActionsManagementActionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ManagedTenantsManagementActionsRequestBuilder) ToPostRequestInformation
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedTenantsManagementActionsRequestBuilder) WithUrl(rawUrl string)(*ManagedTenantsManagementActionsRequestBuilder) {
+    return NewManagedTenantsManagementActionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

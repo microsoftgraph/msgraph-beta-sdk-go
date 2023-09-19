@@ -41,3 +41,6 @@ func SerializeActionAfterRetentionPeriod(values []ActionAfterRetentionPeriod) []
     }
     return result
 }
+func (i ActionAfterRetentionPeriod) isMultiValue() bool {
+    return false
+}

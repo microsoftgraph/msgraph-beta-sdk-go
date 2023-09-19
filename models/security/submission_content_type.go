@@ -41,3 +41,6 @@ func SerializeSubmissionContentType(values []SubmissionContentType) []string {
     }
     return result
 }
+func (i SubmissionContentType) isMultiValue() bool {
+    return false
+}

@@ -80,3 +80,7 @@ func (m *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder) ToGetRequestI
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder) {
+    return NewVirtualEndpointDeviceImagesGetSourceImagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

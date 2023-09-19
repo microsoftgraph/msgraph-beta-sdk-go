@@ -35,3 +35,6 @@ func SerializeTenantAllowBlockListAction(values []TenantAllowBlockListAction) []
     }
     return result
 }
+func (i TenantAllowBlockListAction) isMultiValue() bool {
+    return false
+}

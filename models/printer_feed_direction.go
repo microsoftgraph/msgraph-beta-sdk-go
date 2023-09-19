@@ -32,3 +32,6 @@ func SerializePrinterFeedDirection(values []PrinterFeedDirection) []string {
     }
     return result
 }
+func (i PrinterFeedDirection) isMultiValue() bool {
+    return false
+}

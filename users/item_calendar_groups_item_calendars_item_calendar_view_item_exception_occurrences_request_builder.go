@@ -37,8 +37,8 @@ type ItemCalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesRequ
     // Request query parameters
     QueryParameters *ItemCalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesRequestBuilderGetQueryParameters
 }
-// ByEventId1String provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.
-func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesRequestBuilder) ByEventId1String(eventId1 string)(*ItemCalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesEventItemRequestBuilder) {
+// ByEventId1 provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.
+func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesRequestBuilder) ByEventId1(eventId1 string)(*ItemCalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -103,4 +103,8 @@ func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrences
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesRequestBuilder) {
+    return NewItemCalendarGroupsItemCalendarsItemCalendarViewItemExceptionOccurrencesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

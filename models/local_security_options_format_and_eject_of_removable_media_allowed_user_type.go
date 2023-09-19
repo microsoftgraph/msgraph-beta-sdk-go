@@ -42,3 +42,6 @@ func SerializeLocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUserType(
     }
     return result
 }
+func (i LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUserType) isMultiValue() bool {
+    return false
+}

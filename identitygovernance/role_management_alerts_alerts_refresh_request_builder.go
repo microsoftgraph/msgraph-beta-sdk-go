@@ -65,3 +65,7 @@ func (m *RoleManagementAlertsAlertsRefreshRequestBuilder) ToPostRequestInformati
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *RoleManagementAlertsAlertsRefreshRequestBuilder) WithUrl(rawUrl string)(*RoleManagementAlertsAlertsRefreshRequestBuilder) {
+    return NewRoleManagementAlertsAlertsRefreshRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

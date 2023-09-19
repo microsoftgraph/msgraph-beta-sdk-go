@@ -47,3 +47,6 @@ func SerializeCloudPcPartnerAgentInstallStatus(values []CloudPcPartnerAgentInsta
     }
     return result
 }
+func (i CloudPcPartnerAgentInstallStatus) isMultiValue() bool {
+    return false
+}

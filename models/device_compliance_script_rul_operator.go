@@ -126,3 +126,6 @@ func SerializeDeviceComplianceScriptRulOperator(values []DeviceComplianceScriptR
     }
     return result
 }
+func (i DeviceComplianceScriptRulOperator) isMultiValue() bool {
+    return false
+}

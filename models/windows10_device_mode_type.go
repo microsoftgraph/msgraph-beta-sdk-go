@@ -34,3 +34,6 @@ func SerializeWindows10DeviceModeType(values []Windows10DeviceModeType) []string
     }
     return result
 }
+func (i Windows10DeviceModeType) isMultiValue() bool {
+    return false
+}

@@ -34,3 +34,6 @@ func SerializeDeviceManagementApplicabilityRuleType(values []DeviceManagementApp
     }
     return result
 }
+func (i DeviceManagementApplicabilityRuleType) isMultiValue() bool {
+    return false
+}

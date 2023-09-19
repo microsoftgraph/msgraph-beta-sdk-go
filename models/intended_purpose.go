@@ -46,3 +46,6 @@ func SerializeIntendedPurpose(values []IntendedPurpose) []string {
     }
     return result
 }
+func (i IntendedPurpose) isMultiValue() bool {
+    return false
+}

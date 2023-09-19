@@ -35,3 +35,6 @@ func SerializeApplicationKeyOrigin(values []ApplicationKeyOrigin) []string {
     }
     return result
 }
+func (i ApplicationKeyOrigin) isMultiValue() bool {
+    return false
+}

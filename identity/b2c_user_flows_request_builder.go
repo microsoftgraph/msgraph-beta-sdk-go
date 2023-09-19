@@ -46,8 +46,8 @@ type B2cUserFlowsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByB2cIdentityUserFlowIdString provides operations to manage the b2cUserFlows property of the microsoft.graph.identityContainer entity.
-func (m *B2cUserFlowsRequestBuilder) ByB2cIdentityUserFlowIdString(b2cIdentityUserFlowId string)(*B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) {
+// ByB2cIdentityUserFlowId provides operations to manage the b2cUserFlows property of the microsoft.graph.identityContainer entity.
+func (m *B2cUserFlowsRequestBuilder) ByB2cIdentityUserFlowId(b2cIdentityUserFlowId string)(*B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *B2cUserFlowsRequestBuilder) ToPostRequestInformation(ctx context.Contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *B2cUserFlowsRequestBuilder) WithUrl(rawUrl string)(*B2cUserFlowsRequestBuilder) {
+    return NewB2cUserFlowsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

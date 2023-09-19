@@ -74,3 +74,7 @@ func (m *IntentsItemDeviceSettingStateSummariesCountRequestBuilder) ToGetRequest
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IntentsItemDeviceSettingStateSummariesCountRequestBuilder) WithUrl(rawUrl string)(*IntentsItemDeviceSettingStateSummariesCountRequestBuilder) {
+    return NewIntentsItemDeviceSettingStateSummariesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

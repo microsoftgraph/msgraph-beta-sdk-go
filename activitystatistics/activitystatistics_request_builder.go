@@ -46,8 +46,8 @@ type ActivitystatisticsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByActivityStatisticsIdString provides operations to manage the collection of activityStatistics entities.
-func (m *ActivitystatisticsRequestBuilder) ByActivityStatisticsIdString(activityStatisticsId string)(*ActivityStatisticsItemRequestBuilder) {
+// ByActivityStatisticsId provides operations to manage the collection of activityStatistics entities.
+func (m *ActivitystatisticsRequestBuilder) ByActivityStatisticsId(activityStatisticsId string)(*ActivityStatisticsItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ActivitystatisticsRequestBuilder) ToPostRequestInformation(ctx context.
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ActivitystatisticsRequestBuilder) WithUrl(rawUrl string)(*ActivitystatisticsRequestBuilder) {
+    return NewActivitystatisticsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

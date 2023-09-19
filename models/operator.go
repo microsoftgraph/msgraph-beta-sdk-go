@@ -126,3 +126,6 @@ func SerializeOperator(values []Operator) []string {
     }
     return result
 }
+func (i Operator) isMultiValue() bool {
+    return false
+}

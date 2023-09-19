@@ -72,3 +72,8 @@ func (m *ComanagedDevicesBulkRestoreCloudPcRequestBuilder) ToPostRequestInformat
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The bulkRestoreCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkRestoreCloudPc on 2023-05-24 and will be removed 2023-09-24
+func (m *ComanagedDevicesBulkRestoreCloudPcRequestBuilder) WithUrl(rawUrl string)(*ComanagedDevicesBulkRestoreCloudPcRequestBuilder) {
+    return NewComanagedDevicesBulkRestoreCloudPcRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -50,3 +50,6 @@ func SerializeWindowsAutopilotDeviceType(values []WindowsAutopilotDeviceType) []
     }
     return result
 }
+func (i WindowsAutopilotDeviceType) isMultiValue() bool {
+    return false
+}

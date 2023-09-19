@@ -198,3 +198,7 @@ func (m *BookingBusinessItemRequestBuilder) ToPatchRequestInformation(ctx contex
 func (m *BookingBusinessItemRequestBuilder) Unpublish()(*ItemUnpublishRequestBuilder) {
     return NewItemUnpublishRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *BookingBusinessItemRequestBuilder) WithUrl(rawUrl string)(*BookingBusinessItemRequestBuilder) {
+    return NewBookingBusinessItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

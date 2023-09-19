@@ -153,3 +153,7 @@ func (m *CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBui
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder) WithUrl(rawUrl string)(*CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder) {
+    return NewCustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -30,7 +30,7 @@ func NewItemCloudPCsItemPowerOffRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewItemCloudPCsItemPowerOffRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post power off a Windows 365 Frontline Cloud PC. This action supports Microsoft Endpoint Manager (MEM) admin scenarios.  After a Windows 365 Frontline Cloud PC is powered off, it is de-allocated, and licenses are revoked immediately. Only IT admin users can perform this action. 
+// Post power off a Windows 365 Frontline Cloud PC. This action supports Microsoft Endpoint Manager (MEM) admin scenarios.  After a Windows 365 Frontline Cloud PC is powered off, it's deallocated, and licenses are revoked immediately. Only IT admin users can perform this action. 
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-poweroff?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemCloudPCsItemPowerOffRequestBuilder) Post(ctx context.Context, reque
     }
     return nil
 }
-// ToPostRequestInformation power off a Windows 365 Frontline Cloud PC. This action supports Microsoft Endpoint Manager (MEM) admin scenarios.  After a Windows 365 Frontline Cloud PC is powered off, it is de-allocated, and licenses are revoked immediately. Only IT admin users can perform this action. 
+// ToPostRequestInformation power off a Windows 365 Frontline Cloud PC. This action supports Microsoft Endpoint Manager (MEM) admin scenarios.  After a Windows 365 Frontline Cloud PC is powered off, it's deallocated, and licenses are revoked immediately. Only IT admin users can perform this action. 
 func (m *ItemCloudPCsItemPowerOffRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemCloudPCsItemPowerOffRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -60,4 +60,8 @@ func (m *ItemCloudPCsItemPowerOffRequestBuilder) ToPostRequestInformation(ctx co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemCloudPCsItemPowerOffRequestBuilder) WithUrl(rawUrl string)(*ItemCloudPCsItemPowerOffRequestBuilder) {
+    return NewItemCloudPCsItemPowerOffRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

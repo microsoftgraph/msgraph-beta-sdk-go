@@ -39,8 +39,8 @@ type ItemIncludedGroupsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemIncludedGroupsRequestBuilderGetQueryParameters
 }
-// ByGroupIdString gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.mobilityManagementPolicies.item.includedGroups.item collection
-func (m *ItemIncludedGroupsRequestBuilder) ByGroupIdString(groupId string)(*ItemIncludedGroupsGroupItemRequestBuilder) {
+// ByGroupId gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.mobilityManagementPolicies.item.includedGroups.item collection
+func (m *ItemIncludedGroupsRequestBuilder) ByGroupId(groupId string)(*ItemIncludedGroupsGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -108,4 +108,8 @@ func (m *ItemIncludedGroupsRequestBuilder) ToGetRequestInformation(ctx context.C
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemIncludedGroupsRequestBuilder) WithUrl(rawUrl string)(*ItemIncludedGroupsRequestBuilder) {
+    return NewItemIncludedGroupsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

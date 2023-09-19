@@ -38,3 +38,6 @@ func SerializeDefenderSecurityCenterNotificationsFromAppType(values []DefenderSe
     }
     return result
 }
+func (i DefenderSecurityCenterNotificationsFromAppType) isMultiValue() bool {
+    return false
+}

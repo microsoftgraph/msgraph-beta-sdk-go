@@ -157,3 +157,7 @@ func (m *LogsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body
 func (m *LogsRequestBuilder) Traffic()(*LogsTrafficRequestBuilder) {
     return NewLogsTrafficRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *LogsRequestBuilder) WithUrl(rawUrl string)(*LogsRequestBuilder) {
+    return NewLogsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

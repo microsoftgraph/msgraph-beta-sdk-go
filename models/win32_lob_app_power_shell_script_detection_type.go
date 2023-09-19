@@ -54,3 +54,6 @@ func SerializeWin32LobAppPowerShellScriptDetectionType(values []Win32LobAppPower
     }
     return result
 }
+func (i Win32LobAppPowerShellScriptDetectionType) isMultiValue() bool {
+    return false
+}

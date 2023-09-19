@@ -38,3 +38,6 @@ func SerializeDeviceAppManagementTaskPriority(values []DeviceAppManagementTaskPr
     }
     return result
 }
+func (i DeviceAppManagementTaskPriority) isMultiValue() bool {
+    return false
+}

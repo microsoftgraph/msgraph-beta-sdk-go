@@ -38,3 +38,6 @@ func SerializeWindowsSModeConfiguration(values []WindowsSModeConfiguration) []st
     }
     return result
 }
+func (i WindowsSModeConfiguration) isMultiValue() bool {
+    return false
+}

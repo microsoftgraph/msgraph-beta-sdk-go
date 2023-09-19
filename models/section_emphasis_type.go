@@ -41,3 +41,6 @@ func SerializeSectionEmphasisType(values []SectionEmphasisType) []string {
     }
     return result
 }
+func (i SectionEmphasisType) isMultiValue() bool {
+    return false
+}

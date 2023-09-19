@@ -157,3 +157,7 @@ func (m *EnterpriseAppsItemRoleDefinitionsItemInheritsPermissionsFromUnifiedRole
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EnterpriseAppsItemRoleDefinitionsItemInheritsPermissionsFromUnifiedRoleDefinitionItemRequestBuilder) WithUrl(rawUrl string)(*EnterpriseAppsItemRoleDefinitionsItemInheritsPermissionsFromUnifiedRoleDefinitionItemRequestBuilder) {
+    return NewEnterpriseAppsItemRoleDefinitionsItemInheritsPermissionsFromUnifiedRoleDefinitionItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

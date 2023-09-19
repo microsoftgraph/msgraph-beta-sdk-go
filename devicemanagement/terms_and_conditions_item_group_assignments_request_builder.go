@@ -46,8 +46,8 @@ type TermsAndConditionsItemGroupAssignmentsRequestBuilderPostRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTermsAndConditionsGroupAssignmentIdString provides operations to manage the groupAssignments property of the microsoft.graph.termsAndConditions entity.
-func (m *TermsAndConditionsItemGroupAssignmentsRequestBuilder) ByTermsAndConditionsGroupAssignmentIdString(termsAndConditionsGroupAssignmentId string)(*TermsAndConditionsItemGroupAssignmentsTermsAndConditionsGroupAssignmentItemRequestBuilder) {
+// ByTermsAndConditionsGroupAssignmentId provides operations to manage the groupAssignments property of the microsoft.graph.termsAndConditions entity.
+func (m *TermsAndConditionsItemGroupAssignmentsRequestBuilder) ByTermsAndConditionsGroupAssignmentId(termsAndConditionsGroupAssignmentId string)(*TermsAndConditionsItemGroupAssignmentsTermsAndConditionsGroupAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *TermsAndConditionsItemGroupAssignmentsRequestBuilder) ToPostRequestInfo
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TermsAndConditionsItemGroupAssignmentsRequestBuilder) WithUrl(rawUrl string)(*TermsAndConditionsItemGroupAssignmentsRequestBuilder) {
+    return NewTermsAndConditionsItemGroupAssignmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

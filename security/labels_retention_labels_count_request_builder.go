@@ -74,3 +74,7 @@ func (m *LabelsRetentionLabelsCountRequestBuilder) ToGetRequestInformation(ctx c
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *LabelsRetentionLabelsCountRequestBuilder) WithUrl(rawUrl string)(*LabelsRetentionLabelsCountRequestBuilder) {
+    return NewLabelsRetentionLabelsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

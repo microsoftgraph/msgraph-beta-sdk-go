@@ -75,3 +75,7 @@ func (m *ItemPlannerFavoritePlansPlannerPlanItemRequestBuilder) ToGetRequestInfo
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemPlannerFavoritePlansPlannerPlanItemRequestBuilder) WithUrl(rawUrl string)(*ItemPlannerFavoritePlansPlannerPlanItemRequestBuilder) {
+    return NewItemPlannerFavoritePlansPlannerPlanItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

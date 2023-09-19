@@ -46,3 +46,6 @@ func SerializeDerivedCredentialProviderType(values []DerivedCredentialProviderTy
     }
     return result
 }
+func (i DerivedCredentialProviderType) isMultiValue() bool {
+    return false
+}

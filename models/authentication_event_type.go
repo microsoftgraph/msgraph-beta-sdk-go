@@ -35,3 +35,6 @@ func SerializeAuthenticationEventType(values []AuthenticationEventType) []string
     }
     return result
 }
+func (i AuthenticationEventType) isMultiValue() bool {
+    return false
+}

@@ -46,8 +46,8 @@ type LabelsRetentionLabelsItemDispositionReviewStagesRequestBuilderPostRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDispositionReviewStageIdString provides operations to manage the dispositionReviewStages property of the microsoft.graph.security.retentionLabel entity.
-func (m *LabelsRetentionLabelsItemDispositionReviewStagesRequestBuilder) ByDispositionReviewStageIdString(dispositionReviewStageId string)(*LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder) {
+// ByDispositionReviewStageId provides operations to manage the dispositionReviewStages property of the microsoft.graph.security.retentionLabel entity.
+func (m *LabelsRetentionLabelsItemDispositionReviewStagesRequestBuilder) ByDispositionReviewStageId(dispositionReviewStageId string)(*LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *LabelsRetentionLabelsItemDispositionReviewStagesRequestBuilder) ToPostR
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *LabelsRetentionLabelsItemDispositionReviewStagesRequestBuilder) WithUrl(rawUrl string)(*LabelsRetentionLabelsItemDispositionReviewStagesRequestBuilder) {
+    return NewLabelsRetentionLabelsItemDispositionReviewStagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

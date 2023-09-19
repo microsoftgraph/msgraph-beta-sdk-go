@@ -38,3 +38,6 @@ func SerializeBookingStaffMembershipStatus(values []BookingStaffMembershipStatus
     }
     return result
 }
+func (i BookingStaffMembershipStatus) isMultiValue() bool {
+    return false
+}

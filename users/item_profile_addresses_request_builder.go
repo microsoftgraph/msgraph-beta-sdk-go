@@ -46,8 +46,8 @@ type ItemProfileAddressesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByItemAddressIdString provides operations to manage the addresses property of the microsoft.graph.profile entity.
-func (m *ItemProfileAddressesRequestBuilder) ByItemAddressIdString(itemAddressId string)(*ItemProfileAddressesItemAddressItemRequestBuilder) {
+// ByItemAddressId provides operations to manage the addresses property of the microsoft.graph.profile entity.
+func (m *ItemProfileAddressesRequestBuilder) ByItemAddressId(itemAddressId string)(*ItemProfileAddressesItemAddressItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemProfileAddressesRequestBuilder) ToPostRequestInformation(ctx contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemProfileAddressesRequestBuilder) WithUrl(rawUrl string)(*ItemProfileAddressesRequestBuilder) {
+    return NewItemProfileAddressesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

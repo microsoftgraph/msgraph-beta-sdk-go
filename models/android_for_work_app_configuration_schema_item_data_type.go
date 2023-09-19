@@ -50,3 +50,6 @@ func SerializeAndroidForWorkAppConfigurationSchemaItemDataType(values []AndroidF
     }
     return result
 }
+func (i AndroidForWorkAppConfigurationSchemaItemDataType) isMultiValue() bool {
+    return false
+}

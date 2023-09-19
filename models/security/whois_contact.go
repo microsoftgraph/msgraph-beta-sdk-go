@@ -35,7 +35,7 @@ func (m *WhoisContact) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAddress gets the address property value. The address property
+// GetAddress gets the address property value. The physical address of the entity.
 func (m *WhoisContact) GetAddress()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PhysicalAddressable) {
     val, err := m.GetBackingStore().Get("address")
     if err != nil {
@@ -50,7 +50,7 @@ func (m *WhoisContact) GetAddress()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9
 func (m *WhoisContact) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetEmail gets the email property value. The email property
+// GetEmail gets the email property value. The email of this WHOIS contact.
 func (m *WhoisContact) GetEmail()(*string) {
     val, err := m.GetBackingStore().Get("email")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *WhoisContact) GetEmail()(*string) {
     }
     return nil
 }
-// GetFax gets the fax property value. The fax property
+// GetFax gets the fax property value. The fax of this WHOIS contact. No format is guaranteed.
 func (m *WhoisContact) GetFax()(*string) {
     val, err := m.GetBackingStore().Get("fax")
     if err != nil {
@@ -147,7 +147,7 @@ func (m *WhoisContact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The name of this WHOIS contact.
 func (m *WhoisContact) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -169,7 +169,7 @@ func (m *WhoisContact) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOrganization gets the organization property value. The organization property
+// GetOrganization gets the organization property value. The organization of this WHOIS contact.
 func (m *WhoisContact) GetOrganization()(*string) {
     val, err := m.GetBackingStore().Get("organization")
     if err != nil {
@@ -180,7 +180,7 @@ func (m *WhoisContact) GetOrganization()(*string) {
     }
     return nil
 }
-// GetTelephone gets the telephone property value. The telephone property
+// GetTelephone gets the telephone property value. The telephone of this WHOIS contact. No format is guaranteed.
 func (m *WhoisContact) GetTelephone()(*string) {
     val, err := m.GetBackingStore().Get("telephone")
     if err != nil {
@@ -250,7 +250,7 @@ func (m *WhoisContact) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAddress sets the address property value. The address property
+// SetAddress sets the address property value. The physical address of the entity.
 func (m *WhoisContact) SetAddress(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PhysicalAddressable)() {
     err := m.GetBackingStore().Set("address", value)
     if err != nil {
@@ -261,21 +261,21 @@ func (m *WhoisContact) SetAddress(value ie233ee762e29b4ba6970aa2a2efce4b7fde1169
 func (m *WhoisContact) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetEmail sets the email property value. The email property
+// SetEmail sets the email property value. The email of this WHOIS contact.
 func (m *WhoisContact) SetEmail(value *string)() {
     err := m.GetBackingStore().Set("email", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFax sets the fax property value. The fax property
+// SetFax sets the fax property value. The fax of this WHOIS contact. No format is guaranteed.
 func (m *WhoisContact) SetFax(value *string)() {
     err := m.GetBackingStore().Set("fax", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The name of this WHOIS contact.
 func (m *WhoisContact) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
@@ -289,14 +289,14 @@ func (m *WhoisContact) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOrganization sets the organization property value. The organization property
+// SetOrganization sets the organization property value. The organization of this WHOIS contact.
 func (m *WhoisContact) SetOrganization(value *string)() {
     err := m.GetBackingStore().Set("organization", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTelephone sets the telephone property value. The telephone property
+// SetTelephone sets the telephone property value. The telephone of this WHOIS contact. No format is guaranteed.
 func (m *WhoisContact) SetTelephone(value *string)() {
     err := m.GetBackingStore().Set("telephone", value)
     if err != nil {

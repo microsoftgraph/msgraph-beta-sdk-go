@@ -21,7 +21,7 @@ func NewFeatureUpdateCatalogEntry()(*FeatureUpdateCatalogEntry) {
 func CreateFeatureUpdateCatalogEntryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFeatureUpdateCatalogEntry(), nil
 }
-// GetBuildNumber gets the buildNumber property value. The buildNumber property
+// GetBuildNumber gets the buildNumber property value. The build number of the feature update. Read-only.
 func (m *FeatureUpdateCatalogEntry) GetBuildNumber()(*string) {
     val, err := m.GetBackingStore().Get("buildNumber")
     if err != nil {
@@ -88,7 +88,7 @@ func (m *FeatureUpdateCatalogEntry) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetBuildNumber sets the buildNumber property value. The buildNumber property
+// SetBuildNumber sets the buildNumber property value. The build number of the feature update. Read-only.
 func (m *FeatureUpdateCatalogEntry) SetBuildNumber(value *string)() {
     err := m.GetBackingStore().Set("buildNumber", value)
     if err != nil {

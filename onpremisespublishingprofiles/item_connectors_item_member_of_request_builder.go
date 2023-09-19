@@ -39,8 +39,8 @@ type ItemConnectorsItemMemberOfRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemConnectorsItemMemberOfRequestBuilderGetQueryParameters
 }
-// ByConnectorGroupIdString gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.connectors.item.memberOf.item collection
-func (m *ItemConnectorsItemMemberOfRequestBuilder) ByConnectorGroupIdString(connectorGroupId string)(*ItemConnectorsItemMemberOfConnectorGroupItemRequestBuilder) {
+// ByConnectorGroupId gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.connectors.item.memberOf.item collection
+func (m *ItemConnectorsItemMemberOfRequestBuilder) ByConnectorGroupId(connectorGroupId string)(*ItemConnectorsItemMemberOfConnectorGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -105,4 +105,8 @@ func (m *ItemConnectorsItemMemberOfRequestBuilder) ToGetRequestInformation(ctx c
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemConnectorsItemMemberOfRequestBuilder) WithUrl(rawUrl string)(*ItemConnectorsItemMemberOfRequestBuilder) {
+    return NewItemConnectorsItemMemberOfRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

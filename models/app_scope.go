@@ -73,7 +73,7 @@ func (m *AppScope) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetTypeEscaped gets the type property value. Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. This property is read only.
+// GetTypeEscaped gets the type property value. Describes the type of app-specific resource represented by the app scope and is provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. This property is read only.
 func (m *AppScope) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -111,7 +111,7 @@ func (m *AppScope) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. This property is read only.
+// SetTypeEscaped sets the type property value. Describes the type of app-specific resource represented by the app scope and is provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. This property is read only.
 func (m *AppScope) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

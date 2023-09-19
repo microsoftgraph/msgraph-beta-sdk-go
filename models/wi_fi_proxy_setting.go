@@ -38,3 +38,6 @@ func SerializeWiFiProxySetting(values []WiFiProxySetting) []string {
     }
     return result
 }
+func (i WiFiProxySetting) isMultiValue() bool {
+    return false
+}

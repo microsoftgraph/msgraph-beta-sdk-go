@@ -57,7 +57,7 @@ func (m *CommunicationsApplicationIdentity) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetHidden gets the hidden property value. True if the participant would not like to be shown in other participants' rosters.
+// GetHidden gets the hidden property value. True if the participant wouldn't like to be shown in other participants' rosters.
 func (m *CommunicationsApplicationIdentity) GetHidden()(*bool) {
     val, err := m.GetBackingStore().Get("hidden")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *CommunicationsApplicationIdentity) SetApplicationType(value *string)() 
         panic(err)
     }
 }
-// SetHidden sets the hidden property value. True if the participant would not like to be shown in other participants' rosters.
+// SetHidden sets the hidden property value. True if the participant wouldn't like to be shown in other participants' rosters.
 func (m *CommunicationsApplicationIdentity) SetHidden(value *bool)() {
     err := m.GetBackingStore().Set("hidden", value)
     if err != nil {

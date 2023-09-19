@@ -46,8 +46,8 @@ type EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilderPostRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEmbeddedSIMDeviceStateIdString provides operations to manage the deviceStates property of the microsoft.graph.embeddedSIMActivationCodePool entity.
-func (m *EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder) ByEmbeddedSIMDeviceStateIdString(embeddedSIMDeviceStateId string)(*EmbeddedSIMActivationCodePoolsItemDeviceStatesEmbeddedSIMDeviceStateItemRequestBuilder) {
+// ByEmbeddedSIMDeviceStateId provides operations to manage the deviceStates property of the microsoft.graph.embeddedSIMActivationCodePool entity.
+func (m *EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder) ByEmbeddedSIMDeviceStateId(embeddedSIMDeviceStateId string)(*EmbeddedSIMActivationCodePoolsItemDeviceStatesEmbeddedSIMDeviceStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder) ToPostReq
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder) WithUrl(rawUrl string)(*EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder) {
+    return NewEmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

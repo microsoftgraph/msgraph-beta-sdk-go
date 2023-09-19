@@ -46,8 +46,8 @@ type PolicySetsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPolicySetIdString provides operations to manage the policySets property of the microsoft.graph.deviceAppManagement entity.
-func (m *PolicySetsRequestBuilder) ByPolicySetIdString(policySetId string)(*PolicySetsPolicySetItemRequestBuilder) {
+// ByPolicySetId provides operations to manage the policySets property of the microsoft.graph.deviceAppManagement entity.
+func (m *PolicySetsRequestBuilder) ByPolicySetId(policySetId string)(*PolicySetsPolicySetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -148,4 +148,8 @@ func (m *PolicySetsRequestBuilder) ToPostRequestInformation(ctx context.Context,
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *PolicySetsRequestBuilder) WithUrl(rawUrl string)(*PolicySetsRequestBuilder) {
+    return NewPolicySetsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

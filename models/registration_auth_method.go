@@ -56,3 +56,6 @@ func SerializeRegistrationAuthMethod(values []RegistrationAuthMethod) []string {
     }
     return result
 }
+func (i RegistrationAuthMethod) isMultiValue() bool {
+    return false
+}

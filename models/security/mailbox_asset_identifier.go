@@ -56,3 +56,6 @@ func SerializeMailboxAssetIdentifier(values []MailboxAssetIdentifier) []string {
     }
     return result
 }
+func (i MailboxAssetIdentifier) isMultiValue() bool {
+    return false
+}

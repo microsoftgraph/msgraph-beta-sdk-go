@@ -46,3 +46,6 @@ func SerializeManagedAppDeviceThreatLevel(values []ManagedAppDeviceThreatLevel) 
     }
     return result
 }
+func (i ManagedAppDeviceThreatLevel) isMultiValue() bool {
+    return false
+}

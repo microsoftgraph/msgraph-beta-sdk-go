@@ -11,7 +11,7 @@ import (
 type ItemOnenoteOperationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOnenoteOperationsRequestBuilderGetQueryParameters get the status of a long-running OneNote operation. This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information.
+// ItemOnenoteOperationsRequestBuilderGetQueryParameters get the status of a long-running OneNote operation. The status applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information.
 type ItemOnenoteOperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -46,8 +46,8 @@ type ItemOnenoteOperationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByOnenoteOperationIdString provides operations to manage the operations property of the microsoft.graph.onenote entity.
-func (m *ItemOnenoteOperationsRequestBuilder) ByOnenoteOperationIdString(onenoteOperationId string)(*ItemOnenoteOperationsOnenoteOperationItemRequestBuilder) {
+// ByOnenoteOperationId provides operations to manage the operations property of the microsoft.graph.onenote entity.
+func (m *ItemOnenoteOperationsRequestBuilder) ByOnenoteOperationId(onenoteOperationId string)(*ItemOnenoteOperationsOnenoteOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -74,7 +74,7 @@ func NewItemOnenoteOperationsRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *ItemOnenoteOperationsRequestBuilder) Count()(*ItemOnenoteOperationsCountRequestBuilder) {
     return NewItemOnenoteOperationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the status of a long-running OneNote operation. This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information.
+// Get get the status of a long-running OneNote operation. The status applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information.
 func (m *ItemOnenoteOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnenoteOperationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteOperationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ItemOnenoteOperationsRequestBuilder) Post(ctx context.Context, body ie2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteOperationable), nil
 }
-// ToGetRequestInformation get the status of a long-running OneNote operation. This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information.
+// ToGetRequestInformation get the status of a long-running OneNote operation. The status applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information.
 func (m *ItemOnenoteOperationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnenoteOperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -144,4 +144,8 @@ func (m *ItemOnenoteOperationsRequestBuilder) ToPostRequestInformation(ctx conte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemOnenoteOperationsRequestBuilder) WithUrl(rawUrl string)(*ItemOnenoteOperationsRequestBuilder) {
+    return NewItemOnenoteOperationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -46,8 +46,8 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByChatMessageIdString provides operations to manage the messages property of the microsoft.graph.channel entity.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) ByChatMessageIdString(chatMessageId string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesChatMessageItemRequestBuilder) {
+// ByChatMessageId provides operations to manage the messages property of the microsoft.graph.channel entity.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) ByChatMessageId(chatMessageId string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesChatMessageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -154,4 +154,8 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesReq
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) WithUrl(rawUrl string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

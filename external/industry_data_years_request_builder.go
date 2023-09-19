@@ -46,8 +46,8 @@ type IndustryDataYearsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByYearTimePeriodDefinitionIdString provides operations to manage the years property of the microsoft.graph.industryData.industryDataRoot entity.
-func (m *IndustryDataYearsRequestBuilder) ByYearTimePeriodDefinitionIdString(yearTimePeriodDefinitionId string)(*IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilder) {
+// ByYearTimePeriodDefinitionId provides operations to manage the years property of the microsoft.graph.industryData.industryDataRoot entity.
+func (m *IndustryDataYearsRequestBuilder) ByYearTimePeriodDefinitionId(yearTimePeriodDefinitionId string)(*IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *IndustryDataYearsRequestBuilder) ToPostRequestInformation(ctx context.C
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IndustryDataYearsRequestBuilder) WithUrl(rawUrl string)(*IndustryDataYearsRequestBuilder) {
+    return NewIndustryDataYearsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

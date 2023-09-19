@@ -46,8 +46,8 @@ type IntentsItemCategoriesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementIntentSettingCategoryIdString provides operations to manage the categories property of the microsoft.graph.deviceManagementIntent entity.
-func (m *IntentsItemCategoriesRequestBuilder) ByDeviceManagementIntentSettingCategoryIdString(deviceManagementIntentSettingCategoryId string)(*IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilder) {
+// ByDeviceManagementIntentSettingCategoryId provides operations to manage the categories property of the microsoft.graph.deviceManagementIntent entity.
+func (m *IntentsItemCategoriesRequestBuilder) ByDeviceManagementIntentSettingCategoryId(deviceManagementIntentSettingCategoryId string)(*IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *IntentsItemCategoriesRequestBuilder) ToPostRequestInformation(ctx conte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IntentsItemCategoriesRequestBuilder) WithUrl(rawUrl string)(*IntentsItemCategoriesRequestBuilder) {
+    return NewIntentsItemCategoriesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

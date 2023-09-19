@@ -66,3 +66,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebTokenReq
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebTokenRequestBuilder) WithUrl(rawUrl string)(*AndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebTokenRequestBuilder) {
+    return NewAndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebTokenRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

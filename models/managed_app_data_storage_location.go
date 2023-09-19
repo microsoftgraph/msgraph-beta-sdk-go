@@ -46,3 +46,6 @@ func SerializeManagedAppDataStorageLocation(values []ManagedAppDataStorageLocati
     }
     return result
 }
+func (i ManagedAppDataStorageLocation) isMultiValue() bool {
+    return false
+}

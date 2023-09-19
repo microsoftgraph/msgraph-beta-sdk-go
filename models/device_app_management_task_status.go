@@ -46,3 +46,6 @@ func SerializeDeviceAppManagementTaskStatus(values []DeviceAppManagementTaskStat
     }
     return result
 }
+func (i DeviceAppManagementTaskStatus) isMultiValue() bool {
+    return false
+}

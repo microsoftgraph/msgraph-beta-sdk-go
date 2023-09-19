@@ -49,7 +49,7 @@ func (m *SubmissionResult) GetCategory()(*SubmissionResultCategory) {
     }
     return nil
 }
-// GetDetail gets the detail property value. Specifies the additional details provided by Microsoft to substantiate their analysis result.
+// GetDetail gets the detail property value. Specifies the extra details provided by Microsoft to substantiate their analysis result.
 func (m *SubmissionResult) GetDetail()(*SubmissionResultDetail) {
     val, err := m.GetBackingStore().Get("detail")
     if err != nil {
@@ -71,7 +71,7 @@ func (m *SubmissionResult) GetDetectedFiles()([]SubmissionDetectedFileable) {
     }
     return nil
 }
-// GetDetectedUrls gets the detectedUrls property value. Specifes the URLs detected by Microsoft in the submitted email.
+// GetDetectedUrls gets the detectedUrls property value. Specifies the URLs detected by Microsoft in the submitted email.
 func (m *SubmissionResult) GetDetectedUrls()([]string) {
     val, err := m.GetBackingStore().Get("detectedUrls")
     if err != nil {
@@ -254,7 +254,7 @@ func (m *SubmissionResult) SetCategory(value *SubmissionResultCategory)() {
         panic(err)
     }
 }
-// SetDetail sets the detail property value. Specifies the additional details provided by Microsoft to substantiate their analysis result.
+// SetDetail sets the detail property value. Specifies the extra details provided by Microsoft to substantiate their analysis result.
 func (m *SubmissionResult) SetDetail(value *SubmissionResultDetail)() {
     err := m.GetBackingStore().Set("detail", value)
     if err != nil {
@@ -268,7 +268,7 @@ func (m *SubmissionResult) SetDetectedFiles(value []SubmissionDetectedFileable)(
         panic(err)
     }
 }
-// SetDetectedUrls sets the detectedUrls property value. Specifes the URLs detected by Microsoft in the submitted email.
+// SetDetectedUrls sets the detectedUrls property value. Specifies the URLs detected by Microsoft in the submitted email.
 func (m *SubmissionResult) SetDetectedUrls(value []string)() {
     err := m.GetBackingStore().Set("detectedUrls", value)
     if err != nil {

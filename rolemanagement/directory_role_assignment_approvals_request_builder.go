@@ -46,8 +46,8 @@ type DirectoryRoleAssignmentApprovalsRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByApprovalIdString provides operations to manage the roleAssignmentApprovals property of the microsoft.graph.rbacApplication entity.
-func (m *DirectoryRoleAssignmentApprovalsRequestBuilder) ByApprovalIdString(approvalId string)(*DirectoryRoleAssignmentApprovalsApprovalItemRequestBuilder) {
+// ByApprovalId provides operations to manage the roleAssignmentApprovals property of the microsoft.graph.rbacApplication entity.
+func (m *DirectoryRoleAssignmentApprovalsRequestBuilder) ByApprovalId(approvalId string)(*DirectoryRoleAssignmentApprovalsApprovalItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -148,4 +148,8 @@ func (m *DirectoryRoleAssignmentApprovalsRequestBuilder) ToPostRequestInformatio
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DirectoryRoleAssignmentApprovalsRequestBuilder) WithUrl(rawUrl string)(*DirectoryRoleAssignmentApprovalsRequestBuilder) {
+    return NewDirectoryRoleAssignmentApprovalsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

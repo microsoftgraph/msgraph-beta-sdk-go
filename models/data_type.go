@@ -86,3 +86,6 @@ func SerializeDataType(values []DataType) []string {
     }
     return result
 }
+func (i DataType) isMultiValue() bool {
+    return false
+}

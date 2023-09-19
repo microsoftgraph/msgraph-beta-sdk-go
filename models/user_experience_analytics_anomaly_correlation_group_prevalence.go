@@ -42,3 +42,6 @@ func SerializeUserExperienceAnalyticsAnomalyCorrelationGroupPrevalence(values []
     }
     return result
 }
+func (i UserExperienceAnalyticsAnomalyCorrelationGroupPrevalence) isMultiValue() bool {
+    return false
+}

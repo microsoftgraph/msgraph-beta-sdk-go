@@ -74,3 +74,7 @@ func (m *ServiceNowConnectionsCountRequestBuilder) ToGetRequestInformation(ctx c
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ServiceNowConnectionsCountRequestBuilder) WithUrl(rawUrl string)(*ServiceNowConnectionsCountRequestBuilder) {
+    return NewServiceNowConnectionsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

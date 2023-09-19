@@ -39,7 +39,7 @@ func (m *KeyCredentialConfiguration) GetAdditionalData()(map[string]any) {
 func (m *KeyCredentialConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCertificateBasedApplicationConfigurationIds gets the certificateBasedApplicationConfigurationIds property value. The certificateBasedApplicationConfigurationIds property
+// GetCertificateBasedApplicationConfigurationIds gets the certificateBasedApplicationConfigurationIds property value. Collection of GUIDs that point to the certificateBasedApplicationConfiguration that contains the collection of allowed root and intermediate certificate authorities.
 func (m *KeyCredentialConfiguration) GetCertificateBasedApplicationConfigurationIds()([]string) {
     val, err := m.GetBackingStore().Get("certificateBasedApplicationConfigurationIds")
     if err != nil {
@@ -207,7 +207,7 @@ func (m *KeyCredentialConfiguration) SetAdditionalData(value map[string]any)() {
 func (m *KeyCredentialConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCertificateBasedApplicationConfigurationIds sets the certificateBasedApplicationConfigurationIds property value. The certificateBasedApplicationConfigurationIds property
+// SetCertificateBasedApplicationConfigurationIds sets the certificateBasedApplicationConfigurationIds property value. Collection of GUIDs that point to the certificateBasedApplicationConfiguration that contains the collection of allowed root and intermediate certificate authorities.
 func (m *KeyCredentialConfiguration) SetCertificateBasedApplicationConfigurationIds(value []string)() {
     err := m.GetBackingStore().Set("certificateBasedApplicationConfigurationIds", value)
     if err != nil {

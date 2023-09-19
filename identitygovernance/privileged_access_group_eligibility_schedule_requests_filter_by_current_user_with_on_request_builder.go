@@ -87,3 +87,7 @@ func (m *PrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWith
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *PrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilder) WithUrl(rawUrl string)(*PrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilder) {
+    return NewPrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

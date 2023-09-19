@@ -34,3 +34,6 @@ func SerializeAssignmentFilterPayloadType(values []AssignmentFilterPayloadType) 
     }
     return result
 }
+func (i AssignmentFilterPayloadType) isMultiValue() bool {
+    return false
+}

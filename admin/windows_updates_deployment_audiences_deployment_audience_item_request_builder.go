@@ -175,3 +175,7 @@ func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) 
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) WithUrl(rawUrl string)(*WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) {
+    return NewWindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

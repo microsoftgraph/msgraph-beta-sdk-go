@@ -46,8 +46,8 @@ type ServicePrincipalCreationPoliciesRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByServicePrincipalCreationPolicyIdString provides operations to manage the servicePrincipalCreationPolicies property of the microsoft.graph.policyRoot entity.
-func (m *ServicePrincipalCreationPoliciesRequestBuilder) ByServicePrincipalCreationPolicyIdString(servicePrincipalCreationPolicyId string)(*ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemRequestBuilder) {
+// ByServicePrincipalCreationPolicyId provides operations to manage the servicePrincipalCreationPolicies property of the microsoft.graph.policyRoot entity.
+func (m *ServicePrincipalCreationPoliciesRequestBuilder) ByServicePrincipalCreationPolicyId(servicePrincipalCreationPolicyId string)(*ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ServicePrincipalCreationPoliciesRequestBuilder) ToPostRequestInformatio
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ServicePrincipalCreationPoliciesRequestBuilder) WithUrl(rawUrl string)(*ServicePrincipalCreationPoliciesRequestBuilder) {
+    return NewServicePrincipalCreationPoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

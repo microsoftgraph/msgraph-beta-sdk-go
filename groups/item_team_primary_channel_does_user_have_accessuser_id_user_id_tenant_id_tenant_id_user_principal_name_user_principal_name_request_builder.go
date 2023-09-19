@@ -13,11 +13,11 @@ type ItemTeamPrimaryChannelDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPri
 // ItemTeamPrimaryChannelDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderGetQueryParameters invoke function doesUserHaveAccess
 type ItemTeamPrimaryChannelDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderGetQueryParameters struct {
     // Usage: tenantId='@tenantId'
-    TenantId *string
+    TenantId *string `uriparametername:"tenantId"`
     // Usage: userId='@userId'
-    UserId *string
+    UserId *string `uriparametername:"userId"`
     // Usage: userPrincipalName='@userPrincipalName'
-    UserPrincipalName *string
+    UserPrincipalName *string `uriparametername:"userPrincipalName"`
 }
 // ItemTeamPrimaryChannelDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTeamPrimaryChannelDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderGetRequestConfiguration struct {
@@ -75,4 +75,8 @@ func (m *ItemTeamPrimaryChannelDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUse
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTeamPrimaryChannelDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder) WithUrl(rawUrl string)(*ItemTeamPrimaryChannelDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder) {
+    return NewItemTeamPrimaryChannelDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

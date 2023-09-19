@@ -16,7 +16,7 @@ type ItemCalendarViewItemInstancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
     // The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00
-    EndDateTime *string
+    EndDateTime *string `uriparametername:"endDateTime"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
@@ -26,7 +26,7 @@ type ItemCalendarViewItemInstancesRequestBuilderGetQueryParameters struct {
     // Skip the first n items
     Skip *int32 `uriparametername:"%24skip"`
     // The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00
-    StartDateTime *string
+    StartDateTime *string `uriparametername:"startDateTime"`
     // Show only the first n items
     Top *int32 `uriparametername:"%24top"`
 }
@@ -39,8 +39,8 @@ type ItemCalendarViewItemInstancesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemCalendarViewItemInstancesRequestBuilderGetQueryParameters
 }
-// ByEventId1String provides operations to manage the instances property of the microsoft.graph.event entity.
-func (m *ItemCalendarViewItemInstancesRequestBuilder) ByEventId1String(eventId1 string)(*ItemCalendarViewItemInstancesEventItemRequestBuilder) {
+// ByEventId1 provides operations to manage the instances property of the microsoft.graph.event entity.
+func (m *ItemCalendarViewItemInstancesRequestBuilder) ByEventId1(eventId1 string)(*ItemCalendarViewItemInstancesEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -108,4 +108,8 @@ func (m *ItemCalendarViewItemInstancesRequestBuilder) ToGetRequestInformation(ct
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemCalendarViewItemInstancesRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarViewItemInstancesRequestBuilder) {
+    return NewItemCalendarViewItemInstancesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

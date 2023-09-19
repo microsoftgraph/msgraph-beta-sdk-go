@@ -46,8 +46,8 @@ type ClassifyFileJobsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByJobResponseBaseIdString provides operations to manage the classifyFileJobs property of the microsoft.graph.dataClassificationService entity.
-func (m *ClassifyFileJobsRequestBuilder) ByJobResponseBaseIdString(jobResponseBaseId string)(*ClassifyFileJobsJobResponseBaseItemRequestBuilder) {
+// ByJobResponseBaseId provides operations to manage the classifyFileJobs property of the microsoft.graph.dataClassificationService entity.
+func (m *ClassifyFileJobsRequestBuilder) ByJobResponseBaseId(jobResponseBaseId string)(*ClassifyFileJobsJobResponseBaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ClassifyFileJobsRequestBuilder) ToPostRequestInformation(ctx context.Co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ClassifyFileJobsRequestBuilder) WithUrl(rawUrl string)(*ClassifyFileJobsRequestBuilder) {
+    return NewClassifyFileJobsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

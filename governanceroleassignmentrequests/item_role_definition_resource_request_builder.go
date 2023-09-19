@@ -75,3 +75,7 @@ func (m *ItemRoleDefinitionResourceRequestBuilder) ToGetRequestInformation(ctx c
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemRoleDefinitionResourceRequestBuilder) WithUrl(rawUrl string)(*ItemRoleDefinitionResourceRequestBuilder) {
+    return NewItemRoleDefinitionResourceRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

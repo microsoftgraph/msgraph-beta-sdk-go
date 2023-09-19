@@ -34,3 +34,6 @@ func SerializeAppleDeploymentChannel(values []AppleDeploymentChannel) []string {
     }
     return result
 }
+func (i AppleDeploymentChannel) isMultiValue() bool {
+    return false
+}

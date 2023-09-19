@@ -35,3 +35,6 @@ func SerializeCloudPcOnPremisesConnectionType(values []CloudPcOnPremisesConnecti
     }
     return result
 }
+func (i CloudPcOnPremisesConnectionType) isMultiValue() bool {
+    return false
+}

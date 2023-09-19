@@ -65,3 +65,7 @@ func (m *ReportsGetWindowsDriverUpdateAlertSummaryReportRequestBuilder) ToPostRe
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ReportsGetWindowsDriverUpdateAlertSummaryReportRequestBuilder) WithUrl(rawUrl string)(*ReportsGetWindowsDriverUpdateAlertSummaryReportRequestBuilder) {
+    return NewReportsGetWindowsDriverUpdateAlertSummaryReportRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

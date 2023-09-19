@@ -46,8 +46,8 @@ type WdacSupplementalPoliciesItemDeviceStatusesRequestBuilderPostRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusIdString provides operations to manage the deviceStatuses property of the microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy entity.
-func (m *WdacSupplementalPoliciesItemDeviceStatusesRequestBuilder) ByWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusIdString(windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId string)(*WdacSupplementalPoliciesItemDeviceStatusesWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder) {
+// ByWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId provides operations to manage the deviceStatuses property of the microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy entity.
+func (m *WdacSupplementalPoliciesItemDeviceStatusesRequestBuilder) ByWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId(windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId string)(*WdacSupplementalPoliciesItemDeviceStatusesWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *WdacSupplementalPoliciesItemDeviceStatusesRequestBuilder) ToPostRequest
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WdacSupplementalPoliciesItemDeviceStatusesRequestBuilder) WithUrl(rawUrl string)(*WdacSupplementalPoliciesItemDeviceStatusesRequestBuilder) {
+    return NewWdacSupplementalPoliciesItemDeviceStatusesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

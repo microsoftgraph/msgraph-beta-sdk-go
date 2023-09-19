@@ -38,3 +38,6 @@ func SerializeEmailCertificateType(values []EmailCertificateType) []string {
     }
     return result
 }
+func (i EmailCertificateType) isMultiValue() bool {
+    return false
+}

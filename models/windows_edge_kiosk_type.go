@@ -34,3 +34,6 @@ func SerializeWindowsEdgeKioskType(values []WindowsEdgeKioskType) []string {
     }
     return result
 }
+func (i WindowsEdgeKioskType) isMultiValue() bool {
+    return false
+}

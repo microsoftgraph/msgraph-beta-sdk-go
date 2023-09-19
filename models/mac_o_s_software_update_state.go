@@ -86,3 +86,6 @@ func SerializeMacOSSoftwareUpdateState(values []MacOSSoftwareUpdateState) []stri
     }
     return result
 }
+func (i MacOSSoftwareUpdateState) isMultiValue() bool {
+    return false
+}

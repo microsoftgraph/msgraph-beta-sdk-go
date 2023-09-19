@@ -47,3 +47,6 @@ func SerializeOnPremisesPublishingType(values []OnPremisesPublishingType) []stri
     }
     return result
 }
+func (i OnPremisesPublishingType) isMultiValue() bool {
+    return false
+}

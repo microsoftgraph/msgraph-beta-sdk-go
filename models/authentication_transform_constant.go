@@ -50,3 +50,6 @@ func SerializeAuthenticationTransformConstant(values []AuthenticationTransformCo
     }
     return result
 }
+func (i AuthenticationTransformConstant) isMultiValue() bool {
+    return false
+}

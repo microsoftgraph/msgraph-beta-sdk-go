@@ -35,3 +35,6 @@ func SerializeTermGroupScope(values []TermGroupScope) []string {
     }
     return result
 }
+func (i TermGroupScope) isMultiValue() bool {
+    return false
+}

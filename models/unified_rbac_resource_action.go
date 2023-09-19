@@ -169,7 +169,7 @@ func (m *UnifiedRbacResourceAction) GetIsAuthenticationContextSettable()(*bool) 
     }
     return nil
 }
-// GetIsPrivileged gets the isPrivileged property value. The isPrivileged property
+// GetIsPrivileged gets the isPrivileged property value. Flag indicating if the action is a sensitive resource action. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
 func (m *UnifiedRbacResourceAction) GetIsPrivileged()(*bool) {
     val, err := m.GetBackingStore().Get("isPrivileged")
     if err != nil {
@@ -310,7 +310,7 @@ func (m *UnifiedRbacResourceAction) SetIsAuthenticationContextSettable(value *bo
         panic(err)
     }
 }
-// SetIsPrivileged sets the isPrivileged property value. The isPrivileged property
+// SetIsPrivileged sets the isPrivileged property value. Flag indicating if the action is a sensitive resource action. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
 func (m *UnifiedRbacResourceAction) SetIsPrivileged(value *bool)() {
     err := m.GetBackingStore().Set("isPrivileged", value)
     if err != nil {

@@ -46,8 +46,8 @@ type ManagedTenantsTenantGroupsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTenantGroupIdString provides operations to manage the tenantGroups property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsTenantGroupsRequestBuilder) ByTenantGroupIdString(tenantGroupId string)(*ManagedTenantsTenantGroupsTenantGroupItemRequestBuilder) {
+// ByTenantGroupId provides operations to manage the tenantGroups property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsTenantGroupsRequestBuilder) ByTenantGroupId(tenantGroupId string)(*ManagedTenantsTenantGroupsTenantGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -151,4 +151,8 @@ func (m *ManagedTenantsTenantGroupsRequestBuilder) ToPostRequestInformation(ctx 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedTenantsTenantGroupsRequestBuilder) WithUrl(rawUrl string)(*ManagedTenantsTenantGroupsRequestBuilder) {
+    return NewManagedTenantsTenantGroupsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

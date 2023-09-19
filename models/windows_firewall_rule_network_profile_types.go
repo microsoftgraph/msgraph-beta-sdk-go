@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // Flags representing which network profile types apply to a firewall rule.
 type WindowsFirewallRuleNetworkProfileTypes int
@@ -17,21 +18,30 @@ const (
 )
 
 func (i WindowsFirewallRuleNetworkProfileTypes) String() string {
-    return []string{"notConfigured", "domain", "private", "public"}[i]
+    var values []string
+    for p := WindowsFirewallRuleNetworkProfileTypes(1); p <= PUBLIC_WINDOWSFIREWALLRULENETWORKPROFILETYPES; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"notConfigured", "domain", "private", "public"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseWindowsFirewallRuleNetworkProfileTypes(v string) (any, error) {
-    result := NOTCONFIGURED_WINDOWSFIREWALLRULENETWORKPROFILETYPES
-    switch v {
-        case "notConfigured":
-            result = NOTCONFIGURED_WINDOWSFIREWALLRULENETWORKPROFILETYPES
-        case "domain":
-            result = DOMAIN_WINDOWSFIREWALLRULENETWORKPROFILETYPES
-        case "private":
-            result = PRIVATE_WINDOWSFIREWALLRULENETWORKPROFILETYPES
-        case "public":
-            result = PUBLIC_WINDOWSFIREWALLRULENETWORKPROFILETYPES
-        default:
-            return 0, errors.New("Unknown WindowsFirewallRuleNetworkProfileTypes value: " + v)
+    var result WindowsFirewallRuleNetworkProfileTypes
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "notConfigured":
+                result |= NOTCONFIGURED_WINDOWSFIREWALLRULENETWORKPROFILETYPES
+            case "domain":
+                result |= DOMAIN_WINDOWSFIREWALLRULENETWORKPROFILETYPES
+            case "private":
+                result |= PRIVATE_WINDOWSFIREWALLRULENETWORKPROFILETYPES
+            case "public":
+                result |= PUBLIC_WINDOWSFIREWALLRULENETWORKPROFILETYPES
+            default:
+                return 0, errors.New("Unknown WindowsFirewallRuleNetworkProfileTypes value: " + v)
+        }
     }
     return &result, nil
 }
@@ -41,4 +51,7 @@ func SerializeWindowsFirewallRuleNetworkProfileTypes(values []WindowsFirewallRul
         result[i] = v.String()
     }
     return result
+}
+func (i WindowsFirewallRuleNetworkProfileTypes) isMultiValue() bool {
+    return true
 }

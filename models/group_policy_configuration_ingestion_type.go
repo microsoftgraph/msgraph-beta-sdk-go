@@ -46,3 +46,6 @@ func SerializeGroupPolicyConfigurationIngestionType(values []GroupPolicyConfigur
     }
     return result
 }
+func (i GroupPolicyConfigurationIngestionType) isMultiValue() bool {
+    return false
+}

@@ -42,3 +42,6 @@ func SerializeOfficeSuiteDefaultFileFormatType(values []OfficeSuiteDefaultFileFo
     }
     return result
 }
+func (i OfficeSuiteDefaultFileFormatType) isMultiValue() bool {
+    return false
+}

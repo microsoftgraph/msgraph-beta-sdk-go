@@ -554,6 +554,10 @@ func (m *UserItemRequestBuilder) UnblockManagedApps()(*ItemUnblockManagedAppsReq
 func (m *UserItemRequestBuilder) UsageRights()(*ItemUsageRightsRequestBuilder) {
     return NewItemUsageRightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// VirtualEvents provides operations to manage the virtualEvents property of the microsoft.graph.user entity.
+func (m *UserItemRequestBuilder) VirtualEvents()(*ItemVirtualEventsRequestBuilder) {
+    return NewItemVirtualEventsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // WindowsInformationProtectionDeviceRegistrations provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.user entity.
 func (m *UserItemRequestBuilder) WindowsInformationProtectionDeviceRegistrations()(*ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilder) {
     return NewItemWindowsInformationProtectionDeviceRegistrationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -573,4 +577,8 @@ func (m *UserItemRequestBuilder) WipeManagedAppRegistrationsByAzureAdDeviceId()(
 // WipeManagedAppRegistrationsByDeviceTag provides operations to call the wipeManagedAppRegistrationsByDeviceTag method.
 func (m *UserItemRequestBuilder) WipeManagedAppRegistrationsByDeviceTag()(*ItemWipeManagedAppRegistrationsByDeviceTagRequestBuilder) {
     return NewItemWipeManagedAppRegistrationsByDeviceTagRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *UserItemRequestBuilder) WithUrl(rawUrl string)(*UserItemRequestBuilder) {
+    return NewUserItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

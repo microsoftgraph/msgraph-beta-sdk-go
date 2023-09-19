@@ -34,3 +34,6 @@ func SerializeDeviceManagementExchangeAccessRuleType(values []DeviceManagementEx
     }
     return result
 }
+func (i DeviceManagementExchangeAccessRuleType) isMultiValue() bool {
+    return false
+}

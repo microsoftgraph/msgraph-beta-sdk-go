@@ -38,3 +38,6 @@ func SerializeImportedDeviceIdentityType(values []ImportedDeviceIdentityType) []
     }
     return result
 }
+func (i ImportedDeviceIdentityType) isMultiValue() bool {
+    return false
+}

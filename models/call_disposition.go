@@ -35,3 +35,6 @@ func SerializeCallDisposition(values []CallDisposition) []string {
     }
     return result
 }
+func (i CallDisposition) isMultiValue() bool {
+    return false
+}

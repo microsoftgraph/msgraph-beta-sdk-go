@@ -46,3 +46,6 @@ func SerializeVppTokenActionFailureReason(values []VppTokenActionFailureReason) 
     }
     return result
 }
+func (i VppTokenActionFailureReason) isMultiValue() bool {
+    return false
+}

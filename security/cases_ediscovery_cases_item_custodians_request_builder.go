@@ -46,8 +46,8 @@ type CasesEdiscoveryCasesItemCustodiansRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEdiscoveryCustodianIdString provides operations to manage the custodians property of the microsoft.graph.security.ediscoveryCase entity.
-func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) ByEdiscoveryCustodianIdString(ediscoveryCustodianId string)(*CasesEdiscoveryCasesItemCustodiansEdiscoveryCustodianItemRequestBuilder) {
+// ByEdiscoveryCustodianId provides operations to manage the custodians property of the microsoft.graph.security.ediscoveryCase entity.
+func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) ByEdiscoveryCustodianId(ediscoveryCustodianId string)(*CasesEdiscoveryCasesItemCustodiansEdiscoveryCustodianItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,6 +104,10 @@ func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) MicrosoftGraphSecurit
 func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) MicrosoftGraphSecurityRemoveHold()(*CasesEdiscoveryCasesItemCustodiansMicrosoftGraphSecurityRemoveHoldRequestBuilder) {
     return NewCasesEdiscoveryCasesItemCustodiansMicrosoftGraphSecurityRemoveHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// MicrosoftGraphSecurityUpdateIndex provides operations to call the updateIndex method.
+func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) MicrosoftGraphSecurityUpdateIndex()(*CasesEdiscoveryCasesItemCustodiansMicrosoftGraphSecurityUpdateIndexRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemCustodiansMicrosoftGraphSecurityUpdateIndexRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Post create a new ediscoveryCustodian object.After the custodian object is created, you will need to create the custodian's userSource to reference their mailbox and OneDrive for Business site.
 // [Find more info here]
 // 
@@ -158,4 +162,8 @@ func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) ToPostRequestInformat
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) WithUrl(rawUrl string)(*CasesEdiscoveryCasesItemCustodiansRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemCustodiansRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

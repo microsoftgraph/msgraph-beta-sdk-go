@@ -197,3 +197,7 @@ func (m *DeviceConfigurationsDeviceConfigurationItemRequestBuilder) UserStatusOv
 func (m *DeviceConfigurationsDeviceConfigurationItemRequestBuilder) WindowsPrivacyAccessControls()(*DeviceConfigurationsItemWindowsPrivacyAccessControlsRequestBuilder) {
     return NewDeviceConfigurationsItemWindowsPrivacyAccessControlsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceConfigurationsDeviceConfigurationItemRequestBuilder) WithUrl(rawUrl string)(*DeviceConfigurationsDeviceConfigurationItemRequestBuilder) {
+    return NewDeviceConfigurationsDeviceConfigurationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -32,3 +32,6 @@ func SerializeOfficeSuiteInstallProgressDisplayLevel(values []OfficeSuiteInstall
     }
     return result
 }
+func (i OfficeSuiteInstallProgressDisplayLevel) isMultiValue() bool {
+    return false
+}

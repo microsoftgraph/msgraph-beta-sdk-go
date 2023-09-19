@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // Subject Alternative Name Options.
 type SubjectAlternativeNameType int
@@ -21,25 +22,34 @@ const (
 )
 
 func (i SubjectAlternativeNameType) String() string {
-    return []string{"none", "emailAddress", "userPrincipalName", "customAzureADAttribute", "domainNameService", "universalResourceIdentifier"}[i]
+    var values []string
+    for p := SubjectAlternativeNameType(1); p <= UNIVERSALRESOURCEIDENTIFIER_SUBJECTALTERNATIVENAMETYPE; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"none", "emailAddress", "userPrincipalName", "customAzureADAttribute", "domainNameService", "universalResourceIdentifier"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseSubjectAlternativeNameType(v string) (any, error) {
-    result := NONE_SUBJECTALTERNATIVENAMETYPE
-    switch v {
-        case "none":
-            result = NONE_SUBJECTALTERNATIVENAMETYPE
-        case "emailAddress":
-            result = EMAILADDRESS_SUBJECTALTERNATIVENAMETYPE
-        case "userPrincipalName":
-            result = USERPRINCIPALNAME_SUBJECTALTERNATIVENAMETYPE
-        case "customAzureADAttribute":
-            result = CUSTOMAZUREADATTRIBUTE_SUBJECTALTERNATIVENAMETYPE
-        case "domainNameService":
-            result = DOMAINNAMESERVICE_SUBJECTALTERNATIVENAMETYPE
-        case "universalResourceIdentifier":
-            result = UNIVERSALRESOURCEIDENTIFIER_SUBJECTALTERNATIVENAMETYPE
-        default:
-            return 0, errors.New("Unknown SubjectAlternativeNameType value: " + v)
+    var result SubjectAlternativeNameType
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "none":
+                result |= NONE_SUBJECTALTERNATIVENAMETYPE
+            case "emailAddress":
+                result |= EMAILADDRESS_SUBJECTALTERNATIVENAMETYPE
+            case "userPrincipalName":
+                result |= USERPRINCIPALNAME_SUBJECTALTERNATIVENAMETYPE
+            case "customAzureADAttribute":
+                result |= CUSTOMAZUREADATTRIBUTE_SUBJECTALTERNATIVENAMETYPE
+            case "domainNameService":
+                result |= DOMAINNAMESERVICE_SUBJECTALTERNATIVENAMETYPE
+            case "universalResourceIdentifier":
+                result |= UNIVERSALRESOURCEIDENTIFIER_SUBJECTALTERNATIVENAMETYPE
+            default:
+                return 0, errors.New("Unknown SubjectAlternativeNameType value: " + v)
+        }
     }
     return &result, nil
 }
@@ -49,4 +59,7 @@ func SerializeSubjectAlternativeNameType(values []SubjectAlternativeNameType) []
         result[i] = v.String()
     }
     return result
+}
+func (i SubjectAlternativeNameType) isMultiValue() bool {
+    return true
 }

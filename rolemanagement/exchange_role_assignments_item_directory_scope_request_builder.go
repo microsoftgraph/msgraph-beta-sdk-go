@@ -75,3 +75,7 @@ func (m *ExchangeRoleAssignmentsItemDirectoryScopeRequestBuilder) ToGetRequestIn
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ExchangeRoleAssignmentsItemDirectoryScopeRequestBuilder) WithUrl(rawUrl string)(*ExchangeRoleAssignmentsItemDirectoryScopeRequestBuilder) {
+    return NewExchangeRoleAssignmentsItemDirectoryScopeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -138,3 +138,6 @@ func SerializeGroupPolicySettingType(values []GroupPolicySettingType) []string {
     }
     return result
 }
+func (i GroupPolicySettingType) isMultiValue() bool {
+    return false
+}

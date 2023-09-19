@@ -62,3 +62,7 @@ func (m *WindowsQualityUpdateProfilesItemAssignRequestBuilder) ToPostRequestInfo
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsQualityUpdateProfilesItemAssignRequestBuilder) WithUrl(rawUrl string)(*WindowsQualityUpdateProfilesItemAssignRequestBuilder) {
+    return NewWindowsQualityUpdateProfilesItemAssignRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

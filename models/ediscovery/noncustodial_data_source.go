@@ -21,7 +21,7 @@ func NewNoncustodialDataSource()(*NoncustodialDataSource) {
 func CreateNoncustodialDataSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNoncustodialDataSource(), nil
 }
-// GetApplyHoldToSource gets the applyHoldToSource property value. Indicates if hold is applied to non-custodial data source (such as mailbox or site).
+// GetApplyHoldToSource gets the applyHoldToSource property value. Indicates if hold is applied to noncustodial data source (such as mailbox or site).
 func (m *NoncustodialDataSource) GetApplyHoldToSource()(*bool) {
     val, err := m.GetBackingStore().Get("applyHoldToSource")
     if err != nil {
@@ -32,7 +32,7 @@ func (m *NoncustodialDataSource) GetApplyHoldToSource()(*bool) {
     }
     return nil
 }
-// GetDataSource gets the dataSource property value. User source or SharePoint site data source as non-custodial data source.
+// GetDataSource gets the dataSource property value. User source or SharePoint site data source as noncustodial data source.
 func (m *NoncustodialDataSource) GetDataSource()(DataSourceable) {
     val, err := m.GetBackingStore().Get("dataSource")
     if err != nil {
@@ -88,14 +88,14 @@ func (m *NoncustodialDataSource) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetApplyHoldToSource sets the applyHoldToSource property value. Indicates if hold is applied to non-custodial data source (such as mailbox or site).
+// SetApplyHoldToSource sets the applyHoldToSource property value. Indicates if hold is applied to noncustodial data source (such as mailbox or site).
 func (m *NoncustodialDataSource) SetApplyHoldToSource(value *bool)() {
     err := m.GetBackingStore().Set("applyHoldToSource", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDataSource sets the dataSource property value. User source or SharePoint site data source as non-custodial data source.
+// SetDataSource sets the dataSource property value. User source or SharePoint site data source as noncustodial data source.
 func (m *NoncustodialDataSource) SetDataSource(value DataSourceable)() {
     err := m.GetBackingStore().Set("dataSource", value)
     if err != nil {

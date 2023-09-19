@@ -38,3 +38,6 @@ func SerializeGroupAccessType(values []GroupAccessType) []string {
     }
     return result
 }
+func (i GroupAccessType) isMultiValue() bool {
+    return false
+}

@@ -50,8 +50,8 @@ type DeletedTeamsItemChannelsRequestBuilderPostRequestConfiguration struct {
 func (m *DeletedTeamsItemChannelsRequestBuilder) AllMessages()(*DeletedTeamsItemChannelsAllMessagesRequestBuilder) {
     return NewDeletedTeamsItemChannelsAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByChannelIdString provides operations to manage the channels property of the microsoft.graph.deletedTeam entity.
-func (m *DeletedTeamsItemChannelsRequestBuilder) ByChannelIdString(channelId string)(*DeletedTeamsItemChannelsChannelItemRequestBuilder) {
+// ByChannelId provides operations to manage the channels property of the microsoft.graph.deletedTeam entity.
+func (m *DeletedTeamsItemChannelsRequestBuilder) ByChannelId(channelId string)(*DeletedTeamsItemChannelsChannelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -152,4 +152,8 @@ func (m *DeletedTeamsItemChannelsRequestBuilder) ToPostRequestInformation(ctx co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeletedTeamsItemChannelsRequestBuilder) WithUrl(rawUrl string)(*DeletedTeamsItemChannelsRequestBuilder) {
+    return NewDeletedTeamsItemChannelsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

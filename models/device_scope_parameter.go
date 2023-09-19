@@ -38,3 +38,6 @@ func SerializeDeviceScopeParameter(values []DeviceScopeParameter) []string {
     }
     return result
 }
+func (i DeviceScopeParameter) isMultiValue() bool {
+    return false
+}

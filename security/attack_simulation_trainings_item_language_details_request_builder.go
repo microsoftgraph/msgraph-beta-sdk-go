@@ -46,8 +46,8 @@ type AttackSimulationTrainingsItemLanguageDetailsRequestBuilderPostRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTrainingLanguageDetailIdString provides operations to manage the languageDetails property of the microsoft.graph.training entity.
-func (m *AttackSimulationTrainingsItemLanguageDetailsRequestBuilder) ByTrainingLanguageDetailIdString(trainingLanguageDetailId string)(*AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilder) {
+// ByTrainingLanguageDetailId provides operations to manage the languageDetails property of the microsoft.graph.training entity.
+func (m *AttackSimulationTrainingsItemLanguageDetailsRequestBuilder) ByTrainingLanguageDetailId(trainingLanguageDetailId string)(*AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *AttackSimulationTrainingsItemLanguageDetailsRequestBuilder) ToPostReque
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AttackSimulationTrainingsItemLanguageDetailsRequestBuilder) WithUrl(rawUrl string)(*AttackSimulationTrainingsItemLanguageDetailsRequestBuilder) {
+    return NewAttackSimulationTrainingsItemLanguageDetailsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

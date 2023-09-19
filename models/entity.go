@@ -2568,6 +2568,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserSignInInsight(), nil
                     case "#microsoft.graph.userTeamwork":
                         return NewUserTeamwork(), nil
+                    case "#microsoft.graph.userVirtualEventsRoot":
+                        return NewUserVirtualEventsRoot(), nil
                     case "#microsoft.graph.verticalSection":
                         return NewVerticalSection(), nil
                     case "#microsoft.graph.virtualEndpoint":
@@ -2740,6 +2742,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewWindowsMalwareInformation(), nil
                     case "#microsoft.graph.windowsManagedAppProtection":
                         return NewWindowsManagedAppProtection(), nil
+                    case "#microsoft.graph.windowsManagedAppRegistration":
+                        return NewWindowsManagedAppRegistration(), nil
                     case "#microsoft.graph.windowsManagedDevice":
                         return NewWindowsManagedDevice(), nil
                     case "#microsoft.graph.windowsManagementApp":

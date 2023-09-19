@@ -50,3 +50,6 @@ func SerializeSubjectRightsRequestStage(values []SubjectRightsRequestStage) []st
     }
     return result
 }
+func (i SubjectRightsRequestStage) isMultiValue() bool {
+    return false
+}

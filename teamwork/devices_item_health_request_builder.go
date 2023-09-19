@@ -156,3 +156,7 @@ func (m *DevicesItemHealthRequestBuilder) ToPatchRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DevicesItemHealthRequestBuilder) WithUrl(rawUrl string)(*DevicesItemHealthRequestBuilder) {
+    return NewDevicesItemHealthRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

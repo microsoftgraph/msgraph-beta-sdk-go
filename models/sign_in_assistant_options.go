@@ -34,3 +34,6 @@ func SerializeSignInAssistantOptions(values []SignInAssistantOptions) []string {
     }
     return result
 }
+func (i SignInAssistantOptions) isMultiValue() bool {
+    return false
+}

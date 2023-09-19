@@ -46,8 +46,8 @@ type WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilderPostRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUpdatableAssetIdString provides operations to manage the exclusions property of the microsoft.graph.windowsUpdates.deploymentAudience entity.
-func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) ByUpdatableAssetIdString(updatableAssetId string)(*WindowsUpdatesDeploymentsItemAudienceExclusionsUpdatableAssetItemRequestBuilder) {
+// ByUpdatableAssetId provides operations to manage the exclusions property of the microsoft.graph.windowsUpdates.deploymentAudience entity.
+func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) ByUpdatableAssetId(updatableAssetId string)(*WindowsUpdatesDeploymentsItemAudienceExclusionsUpdatableAssetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -163,4 +163,8 @@ func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) ToPostRe
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) WithUrl(rawUrl string)(*WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

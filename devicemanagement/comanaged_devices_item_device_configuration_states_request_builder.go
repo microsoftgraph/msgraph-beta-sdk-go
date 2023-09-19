@@ -46,8 +46,8 @@ type ComanagedDevicesItemDeviceConfigurationStatesRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceConfigurationStateIdString provides operations to manage the deviceConfigurationStates property of the microsoft.graph.managedDevice entity.
-func (m *ComanagedDevicesItemDeviceConfigurationStatesRequestBuilder) ByDeviceConfigurationStateIdString(deviceConfigurationStateId string)(*ComanagedDevicesItemDeviceConfigurationStatesDeviceConfigurationStateItemRequestBuilder) {
+// ByDeviceConfigurationStateId provides operations to manage the deviceConfigurationStates property of the microsoft.graph.managedDevice entity.
+func (m *ComanagedDevicesItemDeviceConfigurationStatesRequestBuilder) ByDeviceConfigurationStateId(deviceConfigurationStateId string)(*ComanagedDevicesItemDeviceConfigurationStatesDeviceConfigurationStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ComanagedDevicesItemDeviceConfigurationStatesRequestBuilder) ToPostRequ
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ComanagedDevicesItemDeviceConfigurationStatesRequestBuilder) WithUrl(rawUrl string)(*ComanagedDevicesItemDeviceConfigurationStatesRequestBuilder) {
+    return NewComanagedDevicesItemDeviceConfigurationStatesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

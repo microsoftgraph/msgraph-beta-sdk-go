@@ -52,10 +52,10 @@ func NewItemThreadsConversationThreadItemRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewItemThreadsConversationThreadItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a thread object.
+// Delete delete conversationThread.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/group-delete-thread?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-1.0
 func (m *ItemThreadsConversationThreadItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemThreadsConversationThreadItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -123,7 +123,7 @@ func (m *ItemThreadsConversationThreadItemRequestBuilder) Posts()(*ItemThreadsIt
 func (m *ItemThreadsConversationThreadItemRequestBuilder) Reply()(*ItemThreadsItemReplyRequestBuilder) {
     return NewItemThreadsItemReplyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a thread object.
+// ToDeleteRequestInformation delete conversationThread.
 func (m *ItemThreadsConversationThreadItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemThreadsConversationThreadItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -167,4 +167,8 @@ func (m *ItemThreadsConversationThreadItemRequestBuilder) ToPatchRequestInformat
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemThreadsConversationThreadItemRequestBuilder) WithUrl(rawUrl string)(*ItemThreadsConversationThreadItemRequestBuilder) {
+    return NewItemThreadsConversationThreadItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -38,7 +38,7 @@ func (m *NetworkInterface) GetAdditionalData()(map[string]any) {
 func (m *NetworkInterface) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDescription gets the description property value. Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection, and so on).
+// GetDescription gets the description property value. Description of the NIC (for example, Ethernet adapter, Wireless LAN adapter Local Area Connection, and so on).
 func (m *NetworkInterface) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -125,7 +125,7 @@ func (m *NetworkInterface) GetIpV4Address()(*string) {
     }
     return nil
 }
-// GetIpV6Address gets the ipV6Address property value. Last Public (aka global) IPv6 address associated with this NIC.
+// GetIpV6Address gets the ipV6Address property value. Last Public (also known as global) IPv6 address associated with this NIC.
 func (m *NetworkInterface) GetIpV6Address()(*string) {
     val, err := m.GetBackingStore().Get("ipV6Address")
     if err != nil {
@@ -226,7 +226,7 @@ func (m *NetworkInterface) SetAdditionalData(value map[string]any)() {
 func (m *NetworkInterface) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDescription sets the description property value. Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection, and so on).
+// SetDescription sets the description property value. Description of the NIC (for example, Ethernet adapter, Wireless LAN adapter Local Area Connection, and so on).
 func (m *NetworkInterface) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
@@ -240,7 +240,7 @@ func (m *NetworkInterface) SetIpV4Address(value *string)() {
         panic(err)
     }
 }
-// SetIpV6Address sets the ipV6Address property value. Last Public (aka global) IPv6 address associated with this NIC.
+// SetIpV6Address sets the ipV6Address property value. Last Public (also known as global) IPv6 address associated with this NIC.
 func (m *NetworkInterface) SetIpV6Address(value *string)() {
     err := m.GetBackingStore().Set("ipV6Address", value)
     if err != nil {

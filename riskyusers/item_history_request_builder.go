@@ -46,8 +46,8 @@ type ItemHistoryRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByRiskyUserHistoryItemIdString provides operations to manage the history property of the microsoft.graph.riskyUser entity.
-func (m *ItemHistoryRequestBuilder) ByRiskyUserHistoryItemIdString(riskyUserHistoryItemId string)(*ItemHistoryRiskyUserHistoryItemItemRequestBuilder) {
+// ByRiskyUserHistoryItemId provides operations to manage the history property of the microsoft.graph.riskyUser entity.
+func (m *ItemHistoryRequestBuilder) ByRiskyUserHistoryItemId(riskyUserHistoryItemId string)(*ItemHistoryRiskyUserHistoryItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ItemHistoryRequestBuilder) ToPostRequestInformation(ctx context.Context
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemHistoryRequestBuilder) WithUrl(rawUrl string)(*ItemHistoryRequestBuilder) {
+    return NewItemHistoryRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

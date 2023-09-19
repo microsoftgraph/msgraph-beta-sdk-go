@@ -44,3 +44,6 @@ func SerializeDhGroup(values []DhGroup) []string {
     }
     return result
 }
+func (i DhGroup) isMultiValue() bool {
+    return false
+}

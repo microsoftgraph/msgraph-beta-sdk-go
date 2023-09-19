@@ -38,3 +38,6 @@ func SerializeCloudPcConnectivityEventResult(values []CloudPcConnectivityEventRe
     }
     return result
 }
+func (i CloudPcConnectivityEventResult) isMultiValue() bool {
+    return false
+}

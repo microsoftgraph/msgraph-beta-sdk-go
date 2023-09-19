@@ -87,7 +87,7 @@ func (m *DriveItem) GetContent()([]byte) {
     }
     return nil
 }
-// GetCTag gets the cTag property value. An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
+// GetCTag gets the cTag property value. An eTag for the content of the item. This eTag isn't changed if only the metadata is changed. Note This property isn't returned if the item is a folder. Read-only.
 func (m *DriveItem) GetCTag()(*string) {
     val, err := m.GetBackingStore().Get("cTag")
     if err != nil {
@@ -642,7 +642,7 @@ func (m *DriveItem) GetPhoto()(Photoable) {
     }
     return nil
 }
-// GetPublication gets the publication property value. Provides information about the published or checked-out state of an item, in locations that support such actions. This property is not returned by default. Read-only.
+// GetPublication gets the publication property value. Provides information about the published or checked-out state of an item, in locations that support such actions. This property isn't returned by default. Read-only.
 func (m *DriveItem) GetPublication()(PublicationFacetable) {
     val, err := m.GetBackingStore().Get("publication")
     if err != nil {
@@ -664,7 +664,7 @@ func (m *DriveItem) GetRemoteItem()(RemoteItemable) {
     }
     return nil
 }
-// GetRetentionLabel gets the retentionLabel property value. The retentionLabel property
+// GetRetentionLabel gets the retentionLabel property value. Information about retention label and settings enforced on the driveItem. Read-write.
 func (m *DriveItem) GetRetentionLabel()(ItemRetentionLabelable) {
     val, err := m.GetBackingStore().Get("retentionLabel")
     if err != nil {
@@ -807,7 +807,7 @@ func (m *DriveItem) GetWebDavUrl()(*string) {
     }
     return nil
 }
-// GetWorkbook gets the workbook property value. For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
+// GetWorkbook gets the workbook property value. For files that are Excel spreadsheets, access to the workbook API to work with the spreadsheet's contents. Nullable.
 func (m *DriveItem) GetWorkbook()(Workbookable) {
     val, err := m.GetBackingStore().Get("workbook")
     if err != nil {
@@ -1120,7 +1120,7 @@ func (m *DriveItem) SetContent(value []byte)() {
         panic(err)
     }
 }
-// SetCTag sets the cTag property value. An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
+// SetCTag sets the cTag property value. An eTag for the content of the item. This eTag isn't changed if only the metadata is changed. Note This property isn't returned if the item is a folder. Read-only.
 func (m *DriveItem) SetCTag(value *string)() {
     err := m.GetBackingStore().Set("cTag", value)
     if err != nil {
@@ -1218,7 +1218,7 @@ func (m *DriveItem) SetPhoto(value Photoable)() {
         panic(err)
     }
 }
-// SetPublication sets the publication property value. Provides information about the published or checked-out state of an item, in locations that support such actions. This property is not returned by default. Read-only.
+// SetPublication sets the publication property value. Provides information about the published or checked-out state of an item, in locations that support such actions. This property isn't returned by default. Read-only.
 func (m *DriveItem) SetPublication(value PublicationFacetable)() {
     err := m.GetBackingStore().Set("publication", value)
     if err != nil {
@@ -1232,7 +1232,7 @@ func (m *DriveItem) SetRemoteItem(value RemoteItemable)() {
         panic(err)
     }
 }
-// SetRetentionLabel sets the retentionLabel property value. The retentionLabel property
+// SetRetentionLabel sets the retentionLabel property value. Information about retention label and settings enforced on the driveItem. Read-write.
 func (m *DriveItem) SetRetentionLabel(value ItemRetentionLabelable)() {
     err := m.GetBackingStore().Set("retentionLabel", value)
     if err != nil {
@@ -1323,7 +1323,7 @@ func (m *DriveItem) SetWebDavUrl(value *string)() {
         panic(err)
     }
 }
-// SetWorkbook sets the workbook property value. For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
+// SetWorkbook sets the workbook property value. For files that are Excel spreadsheets, access to the workbook API to work with the spreadsheet's contents. Nullable.
 func (m *DriveItem) SetWorkbook(value Workbookable)() {
     err := m.GetBackingStore().Set("workbook", value)
     if err != nil {

@@ -41,3 +41,6 @@ func SerializeBandwidthCapacityInMbps(values []BandwidthCapacityInMbps) []string
     }
     return result
 }
+func (i BandwidthCapacityInMbps) isMultiValue() bool {
+    return false
+}

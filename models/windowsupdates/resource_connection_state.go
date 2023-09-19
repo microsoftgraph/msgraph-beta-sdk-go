@@ -38,3 +38,6 @@ func SerializeResourceConnectionState(values []ResourceConnectionState) []string
     }
     return result
 }
+func (i ResourceConnectionState) isMultiValue() bool {
+    return false
+}

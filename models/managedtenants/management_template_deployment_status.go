@@ -44,3 +44,6 @@ func SerializeManagementTemplateDeploymentStatus(values []ManagementTemplateDepl
     }
     return result
 }
+func (i ManagementTemplateDeploymentStatus) isMultiValue() bool {
+    return false
+}

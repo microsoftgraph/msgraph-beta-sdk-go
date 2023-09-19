@@ -46,8 +46,8 @@ type ItemManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilder
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySecurityBaselineSettingStateIdString provides operations to manage the settingStates property of the microsoft.graph.securityBaselineState entity.
-func (m *ItemManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilder) BySecurityBaselineSettingStateIdString(securityBaselineSettingStateId string)(*ItemManagedDevicesItemSecurityBaselineStatesItemSettingStatesSecurityBaselineSettingStateItemRequestBuilder) {
+// BySecurityBaselineSettingStateId provides operations to manage the settingStates property of the microsoft.graph.securityBaselineState entity.
+func (m *ItemManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilder) BySecurityBaselineSettingStateId(securityBaselineSettingStateId string)(*ItemManagedDevicesItemSecurityBaselineStatesItemSettingStatesSecurityBaselineSettingStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ItemManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBui
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilder) WithUrl(rawUrl string)(*ItemManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilder) {
+    return NewItemManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

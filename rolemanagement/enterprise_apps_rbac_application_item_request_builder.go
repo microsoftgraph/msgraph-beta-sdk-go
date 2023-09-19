@@ -205,3 +205,7 @@ func (m *EnterpriseAppsRbacApplicationItemRequestBuilder) ToPatchRequestInformat
 func (m *EnterpriseAppsRbacApplicationItemRequestBuilder) TransitiveRoleAssignments()(*EnterpriseAppsItemTransitiveRoleAssignmentsRequestBuilder) {
     return NewEnterpriseAppsItemTransitiveRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EnterpriseAppsRbacApplicationItemRequestBuilder) WithUrl(rawUrl string)(*EnterpriseAppsRbacApplicationItemRequestBuilder) {
+    return NewEnterpriseAppsRbacApplicationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

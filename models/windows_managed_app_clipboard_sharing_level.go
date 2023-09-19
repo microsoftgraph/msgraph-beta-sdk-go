@@ -34,3 +34,6 @@ func SerializeWindowsManagedAppClipboardSharingLevel(values []WindowsManagedAppC
     }
     return result
 }
+func (i WindowsManagedAppClipboardSharingLevel) isMultiValue() bool {
+    return false
+}

@@ -46,8 +46,8 @@ type ItemTeamScheduleTimeCardsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTimeCardIdString provides operations to manage the timeCards property of the microsoft.graph.schedule entity.
-func (m *ItemTeamScheduleTimeCardsRequestBuilder) ByTimeCardIdString(timeCardId string)(*ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) {
+// ByTimeCardId provides operations to manage the timeCards property of the microsoft.graph.schedule entity.
+func (m *ItemTeamScheduleTimeCardsRequestBuilder) ByTimeCardId(timeCardId string)(*ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -154,4 +154,8 @@ func (m *ItemTeamScheduleTimeCardsRequestBuilder) ToPostRequestInformation(ctx c
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTeamScheduleTimeCardsRequestBuilder) WithUrl(rawUrl string)(*ItemTeamScheduleTimeCardsRequestBuilder) {
+    return NewItemTeamScheduleTimeCardsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

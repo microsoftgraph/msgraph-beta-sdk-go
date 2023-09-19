@@ -74,3 +74,7 @@ func (m *WindowsFeatureUpdateProfilesItemAssignmentsCountRequestBuilder) ToGetRe
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsFeatureUpdateProfilesItemAssignmentsCountRequestBuilder) WithUrl(rawUrl string)(*WindowsFeatureUpdateProfilesItemAssignmentsCountRequestBuilder) {
+    return NewWindowsFeatureUpdateProfilesItemAssignmentsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

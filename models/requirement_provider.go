@@ -89,3 +89,6 @@ func SerializeRequirementProvider(values []RequirementProvider) []string {
     }
     return result
 }
+func (i RequirementProvider) isMultiValue() bool {
+    return false
+}

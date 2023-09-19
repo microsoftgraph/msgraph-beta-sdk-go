@@ -46,8 +46,8 @@ type ItemTeamDefinitionPermissionGrantsRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByResourceSpecificPermissionGrantIdString provides operations to manage the permissionGrants property of the microsoft.graph.team entity.
-func (m *ItemTeamDefinitionPermissionGrantsRequestBuilder) ByResourceSpecificPermissionGrantIdString(resourceSpecificPermissionGrantId string)(*ItemTeamDefinitionPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) {
+// ByResourceSpecificPermissionGrantId provides operations to manage the permissionGrants property of the microsoft.graph.team entity.
+func (m *ItemTeamDefinitionPermissionGrantsRequestBuilder) ByResourceSpecificPermissionGrantId(resourceSpecificPermissionGrantId string)(*ItemTeamDefinitionPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -163,4 +163,8 @@ func (m *ItemTeamDefinitionPermissionGrantsRequestBuilder) ToPostRequestInformat
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *ItemTeamDefinitionPermissionGrantsRequestBuilder) ValidateProperties()(*ItemTeamDefinitionPermissionGrantsValidatePropertiesRequestBuilder) {
     return NewItemTeamDefinitionPermissionGrantsValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTeamDefinitionPermissionGrantsRequestBuilder) WithUrl(rawUrl string)(*ItemTeamDefinitionPermissionGrantsRequestBuilder) {
+    return NewItemTeamDefinitionPermissionGrantsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

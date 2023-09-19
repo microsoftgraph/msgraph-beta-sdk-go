@@ -46,8 +46,8 @@ type AdministrativeUnitsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAdministrativeUnitIdString provides operations to manage the collection of administrativeUnit entities.
-func (m *AdministrativeUnitsRequestBuilder) ByAdministrativeUnitIdString(administrativeUnitId string)(*AdministrativeUnitItemRequestBuilder) {
+// ByAdministrativeUnitId provides operations to manage the collection of administrativeUnit entities.
+func (m *AdministrativeUnitsRequestBuilder) ByAdministrativeUnitId(administrativeUnitId string)(*AdministrativeUnitItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -166,4 +166,8 @@ func (m *AdministrativeUnitsRequestBuilder) ToPostRequestInformation(ctx context
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *AdministrativeUnitsRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
     return NewValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AdministrativeUnitsRequestBuilder) WithUrl(rawUrl string)(*AdministrativeUnitsRequestBuilder) {
+    return NewAdministrativeUnitsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

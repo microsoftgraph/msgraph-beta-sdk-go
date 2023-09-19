@@ -38,3 +38,6 @@ func SerializeReferenceAttachmentProvider(values []ReferenceAttachmentProvider) 
     }
     return result
 }
+func (i ReferenceAttachmentProvider) isMultiValue() bool {
+    return false
+}

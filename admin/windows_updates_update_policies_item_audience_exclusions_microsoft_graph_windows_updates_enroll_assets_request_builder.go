@@ -62,3 +62,7 @@ func (m *WindowsUpdatesUpdatePoliciesItemAudienceExclusionsMicrosoftGraphWindows
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsUpdatesUpdatePoliciesItemAudienceExclusionsMicrosoftGraphWindowsUpdatesEnrollAssetsRequestBuilder) WithUrl(rawUrl string)(*WindowsUpdatesUpdatePoliciesItemAudienceExclusionsMicrosoftGraphWindowsUpdatesEnrollAssetsRequestBuilder) {
+    return NewWindowsUpdatesUpdatePoliciesItemAudienceExclusionsMicrosoftGraphWindowsUpdatesEnrollAssetsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

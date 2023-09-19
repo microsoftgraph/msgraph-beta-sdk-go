@@ -35,3 +35,6 @@ func SerializePriority(values []Priority) []string {
     }
     return result
 }
+func (i Priority) isMultiValue() bool {
+    return false
+}

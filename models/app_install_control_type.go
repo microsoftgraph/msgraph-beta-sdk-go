@@ -46,3 +46,6 @@ func SerializeAppInstallControlType(values []AppInstallControlType) []string {
     }
     return result
 }
+func (i AppInstallControlType) isMultiValue() bool {
+    return false
+}

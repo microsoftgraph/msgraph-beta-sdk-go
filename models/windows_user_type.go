@@ -32,3 +32,6 @@ func SerializeWindowsUserType(values []WindowsUserType) []string {
     }
     return result
 }
+func (i WindowsUserType) isMultiValue() bool {
+    return false
+}

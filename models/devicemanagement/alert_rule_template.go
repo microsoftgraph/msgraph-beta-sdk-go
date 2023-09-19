@@ -44,3 +44,6 @@ func SerializeAlertRuleTemplate(values []AlertRuleTemplate) []string {
     }
     return result
 }
+func (i AlertRuleTemplate) isMultiValue() bool {
+    return false
+}

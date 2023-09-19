@@ -89,3 +89,6 @@ func SerializeCloudPcRegionGroup(values []CloudPcRegionGroup) []string {
     }
     return result
 }
+func (i CloudPcRegionGroup) isMultiValue() bool {
+    return false
+}

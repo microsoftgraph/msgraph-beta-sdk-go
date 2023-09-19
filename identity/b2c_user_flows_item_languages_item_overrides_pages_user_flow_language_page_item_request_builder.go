@@ -18,7 +18,7 @@ type B2cUserFlowsItemLanguagesItemOverridesPagesUserFlowLanguagePageItemRequestB
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// B2cUserFlowsItemLanguagesItemOverridesPagesUserFlowLanguagePageItemRequestBuilderGetQueryParameters collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
+// B2cUserFlowsItemLanguagesItemOverridesPagesUserFlowLanguagePageItemRequestBuilderGetQueryParameters collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification isn't allowed (creation or deletion of pages).
 type B2cUserFlowsItemLanguagesItemOverridesPagesUserFlowLanguagePageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *B2cUserFlowsItemLanguagesItemOverridesPagesUserFlowLanguagePageItemRequ
     }
     return nil
 }
-// Get collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
+// Get collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification isn't allowed (creation or deletion of pages).
 func (m *B2cUserFlowsItemLanguagesItemOverridesPagesUserFlowLanguagePageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *B2cUserFlowsItemLanguagesItemOverridesPagesUserFlowLanguagePageItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserFlowLanguagePageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +124,7 @@ func (m *B2cUserFlowsItemLanguagesItemOverridesPagesUserFlowLanguagePageItemRequ
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
+// ToGetRequestInformation collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification isn't allowed (creation or deletion of pages).
 func (m *B2cUserFlowsItemLanguagesItemOverridesPagesUserFlowLanguagePageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2cUserFlowsItemLanguagesItemOverridesPagesUserFlowLanguagePageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -156,4 +156,8 @@ func (m *B2cUserFlowsItemLanguagesItemOverridesPagesUserFlowLanguagePageItemRequ
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *B2cUserFlowsItemLanguagesItemOverridesPagesUserFlowLanguagePageItemRequestBuilder) WithUrl(rawUrl string)(*B2cUserFlowsItemLanguagesItemOverridesPagesUserFlowLanguagePageItemRequestBuilder) {
+    return NewB2cUserFlowsItemLanguagesItemOverridesPagesUserFlowLanguagePageItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

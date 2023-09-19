@@ -74,3 +74,7 @@ func (m *WindowsManagedAppProtectionsCountRequestBuilder) ToGetRequestInformatio
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsManagedAppProtectionsCountRequestBuilder) WithUrl(rawUrl string)(*WindowsManagedAppProtectionsCountRequestBuilder) {
+    return NewWindowsManagedAppProtectionsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

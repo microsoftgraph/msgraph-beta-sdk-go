@@ -46,8 +46,8 @@ type ResourceAccessProfilesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementResourceAccessProfileBaseIdString provides operations to manage the resourceAccessProfiles property of the microsoft.graph.deviceManagement entity.
-func (m *ResourceAccessProfilesRequestBuilder) ByDeviceManagementResourceAccessProfileBaseIdString(deviceManagementResourceAccessProfileBaseId string)(*ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) {
+// ByDeviceManagementResourceAccessProfileBaseId provides operations to manage the resourceAccessProfiles property of the microsoft.graph.deviceManagement entity.
+func (m *ResourceAccessProfilesRequestBuilder) ByDeviceManagementResourceAccessProfileBaseId(deviceManagementResourceAccessProfileBaseId string)(*ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -148,4 +148,8 @@ func (m *ResourceAccessProfilesRequestBuilder) ToPostRequestInformation(ctx cont
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ResourceAccessProfilesRequestBuilder) WithUrl(rawUrl string)(*ResourceAccessProfilesRequestBuilder) {
+    return NewResourceAccessProfilesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

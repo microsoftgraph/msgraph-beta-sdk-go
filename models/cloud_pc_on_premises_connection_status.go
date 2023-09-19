@@ -47,3 +47,6 @@ func SerializeCloudPcOnPremisesConnectionStatus(values []CloudPcOnPremisesConnec
     }
     return result
 }
+func (i CloudPcOnPremisesConnectionStatus) isMultiValue() bool {
+    return false
+}

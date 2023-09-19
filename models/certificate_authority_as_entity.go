@@ -19,7 +19,7 @@ func NewCertificateAuthorityAsEntity()(*CertificateAuthorityAsEntity) {
 func CreateCertificateAuthorityAsEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCertificateAuthorityAsEntity(), nil
 }
-// GetCertificate gets the certificate property value. The certificate property
+// GetCertificate gets the certificate property value. The trusted certificate.
 func (m *CertificateAuthorityAsEntity) GetCertificate()([]byte) {
     val, err := m.GetBackingStore().Get("certificate")
     if err != nil {
@@ -75,7 +75,7 @@ func (m *CertificateAuthorityAsEntity) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetIsRootAuthority gets the isRootAuthority property value. The isRootAuthority property
+// GetIsRootAuthority gets the isRootAuthority property value. Indicates if the certificate is a root authority. In a certificateBasedApplicationConfiguration object, at least one object in the trustedCertificateAuthorities collection must be a root authority.
 func (m *CertificateAuthorityAsEntity) GetIsRootAuthority()(*bool) {
     val, err := m.GetBackingStore().Get("isRootAuthority")
     if err != nil {
@@ -86,7 +86,7 @@ func (m *CertificateAuthorityAsEntity) GetIsRootAuthority()(*bool) {
     }
     return nil
 }
-// GetIssuer gets the issuer property value. The issuer property
+// GetIssuer gets the issuer property value. The issuer of the trusted certificate.
 func (m *CertificateAuthorityAsEntity) GetIssuer()(*string) {
     val, err := m.GetBackingStore().Get("issuer")
     if err != nil {
@@ -97,7 +97,7 @@ func (m *CertificateAuthorityAsEntity) GetIssuer()(*string) {
     }
     return nil
 }
-// GetIssuerSubjectKeyIdentifier gets the issuerSubjectKeyIdentifier property value. The issuerSubjectKeyIdentifier property
+// GetIssuerSubjectKeyIdentifier gets the issuerSubjectKeyIdentifier property value. The subject key identifier of the trusted certificate.
 func (m *CertificateAuthorityAsEntity) GetIssuerSubjectKeyIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("issuerSubjectKeyIdentifier")
     if err != nil {
@@ -140,28 +140,28 @@ func (m *CertificateAuthorityAsEntity) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetCertificate sets the certificate property value. The certificate property
+// SetCertificate sets the certificate property value. The trusted certificate.
 func (m *CertificateAuthorityAsEntity) SetCertificate(value []byte)() {
     err := m.GetBackingStore().Set("certificate", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsRootAuthority sets the isRootAuthority property value. The isRootAuthority property
+// SetIsRootAuthority sets the isRootAuthority property value. Indicates if the certificate is a root authority. In a certificateBasedApplicationConfiguration object, at least one object in the trustedCertificateAuthorities collection must be a root authority.
 func (m *CertificateAuthorityAsEntity) SetIsRootAuthority(value *bool)() {
     err := m.GetBackingStore().Set("isRootAuthority", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIssuer sets the issuer property value. The issuer property
+// SetIssuer sets the issuer property value. The issuer of the trusted certificate.
 func (m *CertificateAuthorityAsEntity) SetIssuer(value *string)() {
     err := m.GetBackingStore().Set("issuer", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIssuerSubjectKeyIdentifier sets the issuerSubjectKeyIdentifier property value. The issuerSubjectKeyIdentifier property
+// SetIssuerSubjectKeyIdentifier sets the issuerSubjectKeyIdentifier property value. The subject key identifier of the trusted certificate.
 func (m *CertificateAuthorityAsEntity) SetIssuerSubjectKeyIdentifier(value *string)() {
     err := m.GetBackingStore().Set("issuerSubjectKeyIdentifier", value)
     if err != nil {

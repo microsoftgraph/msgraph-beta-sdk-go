@@ -38,7 +38,7 @@ func (m *OnPremisesCurrentExportData) GetAdditionalData()(map[string]any) {
 func (m *OnPremisesCurrentExportData) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetClientMachineName gets the clientMachineName property value. The name of the onPremises client machine which ran the last export.
+// GetClientMachineName gets the clientMachineName property value. The name of the onPremises client machine that ran the last export.
 func (m *OnPremisesCurrentExportData) GetClientMachineName()(*string) {
     val, err := m.GetBackingStore().Get("clientMachineName")
     if err != nil {
@@ -188,7 +188,7 @@ func (m *OnPremisesCurrentExportData) GetPendingObjectsUpdate()(*int32) {
     }
     return nil
 }
-// GetServiceAccount gets the serviceAccount property value. The name of the dirsync service account which is configured to connect to the directory.
+// GetServiceAccount gets the serviceAccount property value. The name of the dirsync service account that is configured to connect to the directory.
 func (m *OnPremisesCurrentExportData) GetServiceAccount()(*string) {
     val, err := m.GetBackingStore().Get("serviceAccount")
     if err != nil {
@@ -210,7 +210,7 @@ func (m *OnPremisesCurrentExportData) GetSuccessfulLinksProvisioningCount()(*int
     }
     return nil
 }
-// GetSuccessfulObjectsProvisioningCount gets the successfulObjectsProvisioningCount property value. The count of objects which were successfully provisioned during the current directory sync export run.
+// GetSuccessfulObjectsProvisioningCount gets the successfulObjectsProvisioningCount property value. The count of objects that were successfully provisioned during the current directory sync export run.
 func (m *OnPremisesCurrentExportData) GetSuccessfulObjectsProvisioningCount()(*int32) {
     val, err := m.GetBackingStore().Get("successfulObjectsProvisioningCount")
     if err != nil {
@@ -307,7 +307,7 @@ func (m *OnPremisesCurrentExportData) SetAdditionalData(value map[string]any)() 
 func (m *OnPremisesCurrentExportData) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetClientMachineName sets the clientMachineName property value. The name of the onPremises client machine which ran the last export.
+// SetClientMachineName sets the clientMachineName property value. The name of the onPremises client machine that ran the last export.
 func (m *OnPremisesCurrentExportData) SetClientMachineName(value *string)() {
     err := m.GetBackingStore().Set("clientMachineName", value)
     if err != nil {
@@ -342,7 +342,7 @@ func (m *OnPremisesCurrentExportData) SetPendingObjectsUpdate(value *int32)() {
         panic(err)
     }
 }
-// SetServiceAccount sets the serviceAccount property value. The name of the dirsync service account which is configured to connect to the directory.
+// SetServiceAccount sets the serviceAccount property value. The name of the dirsync service account that is configured to connect to the directory.
 func (m *OnPremisesCurrentExportData) SetServiceAccount(value *string)() {
     err := m.GetBackingStore().Set("serviceAccount", value)
     if err != nil {
@@ -356,7 +356,7 @@ func (m *OnPremisesCurrentExportData) SetSuccessfulLinksProvisioningCount(value 
         panic(err)
     }
 }
-// SetSuccessfulObjectsProvisioningCount sets the successfulObjectsProvisioningCount property value. The count of objects which were successfully provisioned during the current directory sync export run.
+// SetSuccessfulObjectsProvisioningCount sets the successfulObjectsProvisioningCount property value. The count of objects that were successfully provisioned during the current directory sync export run.
 func (m *OnPremisesCurrentExportData) SetSuccessfulObjectsProvisioningCount(value *int32)() {
     err := m.GetBackingStore().Set("successfulObjectsProvisioningCount", value)
     if err != nil {

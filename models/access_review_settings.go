@@ -85,7 +85,7 @@ func (m *AccessReviewSettings) GetAutoApplyReviewResultsEnabled()(*bool) {
     }
     return nil
 }
-// GetAutoReviewEnabled gets the autoReviewEnabled property value. Indicates whether a decision should be set if the reviewer did not supply one. For use when auto-apply is enabled. If you don't want to have a review decision recorded unless the reviewer makes an explicit choice, set it to false.
+// GetAutoReviewEnabled gets the autoReviewEnabled property value. Indicates whether a decision should be set if the reviewer didn't supply one. For use when, auto-apply is enabled. If you don't want to have a review decision recorded unless the reviewer makes an explicit choice, set it to false.
 func (m *AccessReviewSettings) GetAutoReviewEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("autoReviewEnabled")
     if err != nil {
@@ -96,7 +96,7 @@ func (m *AccessReviewSettings) GetAutoReviewEnabled()(*bool) {
     }
     return nil
 }
-// GetAutoReviewSettings gets the autoReviewSettings property value. Detailed settings for how the feature should set the review decision. For use when auto-apply is enabled.
+// GetAutoReviewSettings gets the autoReviewSettings property value. Detailed settings for how the feature should set the review decision. For use when, auto-apply is enabled.
 func (m *AccessReviewSettings) GetAutoReviewSettings()(AutoReviewSettingsable) {
     val, err := m.GetBackingStore().Get("autoReviewSettings")
     if err != nil {
@@ -369,14 +369,14 @@ func (m *AccessReviewSettings) SetAutoApplyReviewResultsEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetAutoReviewEnabled sets the autoReviewEnabled property value. Indicates whether a decision should be set if the reviewer did not supply one. For use when auto-apply is enabled. If you don't want to have a review decision recorded unless the reviewer makes an explicit choice, set it to false.
+// SetAutoReviewEnabled sets the autoReviewEnabled property value. Indicates whether a decision should be set if the reviewer didn't supply one. For use when, auto-apply is enabled. If you don't want to have a review decision recorded unless the reviewer makes an explicit choice, set it to false.
 func (m *AccessReviewSettings) SetAutoReviewEnabled(value *bool)() {
     err := m.GetBackingStore().Set("autoReviewEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAutoReviewSettings sets the autoReviewSettings property value. Detailed settings for how the feature should set the review decision. For use when auto-apply is enabled.
+// SetAutoReviewSettings sets the autoReviewSettings property value. Detailed settings for how the feature should set the review decision. For use when, auto-apply is enabled.
 func (m *AccessReviewSettings) SetAutoReviewSettings(value AutoReviewSettingsable)() {
     err := m.GetBackingStore().Set("autoReviewSettings", value)
     if err != nil {

@@ -93,3 +93,6 @@ func SerializeDeviceManagementConfigurationStringFormat(values []DeviceManagemen
     }
     return result
 }
+func (i DeviceManagementConfigurationStringFormat) isMultiValue() bool {
+    return false
+}

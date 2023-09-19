@@ -35,3 +35,6 @@ func SerializeApplicationKeyUsage(values []ApplicationKeyUsage) []string {
     }
     return result
 }
+func (i ApplicationKeyUsage) isMultiValue() bool {
+    return false
+}

@@ -11,7 +11,7 @@ import (
 type RiskyUsersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RiskyUsersRequestBuilderGetQueryParameters retrieve the properties and relationships of a collection of riskyUser objects.
+// RiskyUsersRequestBuilderGetQueryParameters retrieve the properties and relationships of a riskyUser object.
 type RiskyUsersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -46,8 +46,8 @@ type RiskyUsersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByRiskyUserIdString provides operations to manage the riskyUsers property of the microsoft.graph.identityProtectionRoot entity.
-func (m *RiskyUsersRequestBuilder) ByRiskyUserIdString(riskyUserId string)(*RiskyUsersRiskyUserItemRequestBuilder) {
+// ByRiskyUserId provides operations to manage the riskyUsers property of the microsoft.graph.identityProtectionRoot entity.
+func (m *RiskyUsersRequestBuilder) ByRiskyUserId(riskyUserId string)(*RiskyUsersRiskyUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -82,10 +82,10 @@ func (m *RiskyUsersRequestBuilder) Count()(*RiskyUsersCountRequestBuilder) {
 func (m *RiskyUsersRequestBuilder) Dismiss()(*RiskyUsersDismissRequestBuilder) {
     return NewRiskyUsersDismissRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of a collection of riskyUser objects.
+// Get retrieve the properties and relationships of a riskyUser object.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/riskyusers-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/riskyusers-get?view=graph-rest-1.0
 func (m *RiskyUsersRequestBuilder) Get(ctx context.Context, requestConfiguration *RiskyUsersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -123,7 +123,7 @@ func (m *RiskyUsersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserable), nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a collection of riskyUser objects.
+// ToGetRequestInformation retrieve the properties and relationships of a riskyUser object.
 func (m *RiskyUsersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RiskyUsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -155,4 +155,8 @@ func (m *RiskyUsersRequestBuilder) ToPostRequestInformation(ctx context.Context,
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *RiskyUsersRequestBuilder) WithUrl(rawUrl string)(*RiskyUsersRequestBuilder) {
+    return NewRiskyUsersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

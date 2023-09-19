@@ -70,3 +70,7 @@ func (m *CallsItemParticipantsMuteAllRequestBuilder) ToPostRequestInformation(ct
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CallsItemParticipantsMuteAllRequestBuilder) WithUrl(rawUrl string)(*CallsItemParticipantsMuteAllRequestBuilder) {
+    return NewCallsItemParticipantsMuteAllRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -86,3 +86,6 @@ func SerializeRegion(values []Region) []string {
     }
     return result
 }
+func (i Region) isMultiValue() bool {
+    return false
+}

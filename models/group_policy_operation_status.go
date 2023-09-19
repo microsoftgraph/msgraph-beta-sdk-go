@@ -42,3 +42,6 @@ func SerializeGroupPolicyOperationStatus(values []GroupPolicyOperationStatus) []
     }
     return result
 }
+func (i GroupPolicyOperationStatus) isMultiValue() bool {
+    return false
+}

@@ -35,3 +35,6 @@ func SerializeOnlineMeetingForwarders(values []OnlineMeetingForwarders) []string
     }
     return result
 }
+func (i OnlineMeetingForwarders) isMultiValue() bool {
+    return false
+}

@@ -46,8 +46,8 @@ type ZebraFotaDeploymentsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByZebraFotaDeploymentIdString provides operations to manage the zebraFotaDeployments property of the microsoft.graph.deviceManagement entity.
-func (m *ZebraFotaDeploymentsRequestBuilder) ByZebraFotaDeploymentIdString(zebraFotaDeploymentId string)(*ZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilder) {
+// ByZebraFotaDeploymentId provides operations to manage the zebraFotaDeployments property of the microsoft.graph.deviceManagement entity.
+func (m *ZebraFotaDeploymentsRequestBuilder) ByZebraFotaDeploymentId(zebraFotaDeploymentId string)(*ZebraFotaDeploymentsZebraFotaDeploymentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ZebraFotaDeploymentsRequestBuilder) ToPostRequestInformation(ctx contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ZebraFotaDeploymentsRequestBuilder) WithUrl(rawUrl string)(*ZebraFotaDeploymentsRequestBuilder) {
+    return NewZebraFotaDeploymentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -42,3 +42,6 @@ func SerializeSecureAssessmentAccountType(values []SecureAssessmentAccountType) 
     }
     return result
 }
+func (i SecureAssessmentAccountType) isMultiValue() bool {
+    return false
+}

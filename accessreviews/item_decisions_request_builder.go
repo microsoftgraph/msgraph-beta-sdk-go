@@ -46,8 +46,8 @@ type ItemDecisionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAccessReviewDecisionIdString provides operations to manage the decisions property of the microsoft.graph.accessReview entity.
-func (m *ItemDecisionsRequestBuilder) ByAccessReviewDecisionIdString(accessReviewDecisionId string)(*ItemDecisionsAccessReviewDecisionItemRequestBuilder) {
+// ByAccessReviewDecisionId provides operations to manage the decisions property of the microsoft.graph.accessReview entity.
+func (m *ItemDecisionsRequestBuilder) ByAccessReviewDecisionId(accessReviewDecisionId string)(*ItemDecisionsAccessReviewDecisionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ItemDecisionsRequestBuilder) ToPostRequestInformation(ctx context.Conte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemDecisionsRequestBuilder) WithUrl(rawUrl string)(*ItemDecisionsRequestBuilder) {
+    return NewItemDecisionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

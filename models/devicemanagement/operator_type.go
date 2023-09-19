@@ -47,3 +47,6 @@ func SerializeOperatorType(values []OperatorType) []string {
     }
     return result
 }
+func (i OperatorType) isMultiValue() bool {
+    return false
+}

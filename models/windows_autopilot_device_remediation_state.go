@@ -46,3 +46,6 @@ func SerializeWindowsAutopilotDeviceRemediationState(values []WindowsAutopilotDe
     }
     return result
 }
+func (i WindowsAutopilotDeviceRemediationState) isMultiValue() bool {
+    return false
+}

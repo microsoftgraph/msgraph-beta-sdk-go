@@ -34,3 +34,6 @@ func SerializeDeviceAppManagementTaskCategory(values []DeviceAppManagementTaskCa
     }
     return result
 }
+func (i DeviceAppManagementTaskCategory) isMultiValue() bool {
+    return false
+}

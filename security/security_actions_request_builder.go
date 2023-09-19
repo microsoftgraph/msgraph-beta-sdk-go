@@ -46,8 +46,8 @@ type SecurityActionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySecurityActionIdString provides operations to manage the securityActions property of the microsoft.graph.security entity.
-func (m *SecurityActionsRequestBuilder) BySecurityActionIdString(securityActionId string)(*SecurityActionsSecurityActionItemRequestBuilder) {
+// BySecurityActionId provides operations to manage the securityActions property of the microsoft.graph.security entity.
+func (m *SecurityActionsRequestBuilder) BySecurityActionId(securityActionId string)(*SecurityActionsSecurityActionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *SecurityActionsRequestBuilder) ToPostRequestInformation(ctx context.Con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SecurityActionsRequestBuilder) WithUrl(rawUrl string)(*SecurityActionsRequestBuilder) {
+    return NewSecurityActionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

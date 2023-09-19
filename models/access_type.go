@@ -32,3 +32,6 @@ func SerializeAccessType(values []AccessType) []string {
     }
     return result
 }
+func (i AccessType) isMultiValue() bool {
+    return false
+}

@@ -46,7 +46,7 @@ func (m *Pkcs12Certificate) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetPassword gets the password property value. This is the password for the pfx file. Required. If no password is used, must still provide a value of ''.
+// GetPassword gets the password property value. Specifies the password for the pfx file. Required. If no password is used, must still provide a value of ''.
 func (m *Pkcs12Certificate) GetPassword()(*string) {
     val, err := m.GetBackingStore().Get("password")
     if err != nil {
@@ -57,7 +57,7 @@ func (m *Pkcs12Certificate) GetPassword()(*string) {
     }
     return nil
 }
-// GetPkcs12Value gets the pkcs12Value property value. This is the field for sending pfx content. The value should be a base-64 encoded version of the actual certificate content. Required.
+// GetPkcs12Value gets the pkcs12Value property value. Specifies the field for sending pfx content. The value should be a base-64 encoded version of the actual certificate content. Required.
 func (m *Pkcs12Certificate) GetPkcs12Value()(*string) {
     val, err := m.GetBackingStore().Get("pkcs12Value")
     if err != nil {
@@ -88,14 +88,14 @@ func (m *Pkcs12Certificate) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetPassword sets the password property value. This is the password for the pfx file. Required. If no password is used, must still provide a value of ''.
+// SetPassword sets the password property value. Specifies the password for the pfx file. Required. If no password is used, must still provide a value of ''.
 func (m *Pkcs12Certificate) SetPassword(value *string)() {
     err := m.GetBackingStore().Set("password", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPkcs12Value sets the pkcs12Value property value. This is the field for sending pfx content. The value should be a base-64 encoded version of the actual certificate content. Required.
+// SetPkcs12Value sets the pkcs12Value property value. Specifies the field for sending pfx content. The value should be a base-64 encoded version of the actual certificate content. Required.
 func (m *Pkcs12Certificate) SetPkcs12Value(value *string)() {
     err := m.GetBackingStore().Set("pkcs12Value", value)
     if err != nil {

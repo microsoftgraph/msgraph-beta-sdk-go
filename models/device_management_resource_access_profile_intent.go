@@ -34,3 +34,6 @@ func SerializeDeviceManagementResourceAccessProfileIntent(values []DeviceManagem
     }
     return result
 }
+func (i DeviceManagementResourceAccessProfileIntent) isMultiValue() bool {
+    return false
+}

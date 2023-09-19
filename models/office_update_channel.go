@@ -44,3 +44,6 @@ func SerializeOfficeUpdateChannel(values []OfficeUpdateChannel) []string {
     }
     return result
 }
+func (i OfficeUpdateChannel) isMultiValue() bool {
+    return false
+}

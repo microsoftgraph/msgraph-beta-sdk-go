@@ -42,3 +42,6 @@ func SerializeRoleAssignmentScopeType(values []RoleAssignmentScopeType) []string
     }
     return result
 }
+func (i RoleAssignmentScopeType) isMultiValue() bool {
+    return false
+}

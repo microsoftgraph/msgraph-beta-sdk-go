@@ -46,8 +46,8 @@ type WindowsUpdatesUpdatePoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUpdatePolicyIdString provides operations to manage the updatePolicies property of the microsoft.graph.adminWindowsUpdates entity.
-func (m *WindowsUpdatesUpdatePoliciesRequestBuilder) ByUpdatePolicyIdString(updatePolicyId string)(*WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) {
+// ByUpdatePolicyId provides operations to manage the updatePolicies property of the microsoft.graph.adminWindowsUpdates entity.
+func (m *WindowsUpdatesUpdatePoliciesRequestBuilder) ByUpdatePolicyId(updatePolicyId string)(*WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *WindowsUpdatesUpdatePoliciesRequestBuilder) ToPostRequestInformation(ct
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsUpdatesUpdatePoliciesRequestBuilder) WithUrl(rawUrl string)(*WindowsUpdatesUpdatePoliciesRequestBuilder) {
+    return NewWindowsUpdatesUpdatePoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

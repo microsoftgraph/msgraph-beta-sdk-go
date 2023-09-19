@@ -39,8 +39,8 @@ type ItemTeamDefinitionPrimaryChannelSharedWithTeamsItemAllowedMembersRequestBui
     // Request query parameters
     QueryParameters *ItemTeamDefinitionPrimaryChannelSharedWithTeamsItemAllowedMembersRequestBuilderGetQueryParameters
 }
-// ByConversationMemberIdString provides operations to manage the allowedMembers property of the microsoft.graph.sharedWithChannelTeamInfo entity.
-func (m *ItemTeamDefinitionPrimaryChannelSharedWithTeamsItemAllowedMembersRequestBuilder) ByConversationMemberIdString(conversationMemberId string)(*ItemTeamDefinitionPrimaryChannelSharedWithTeamsItemAllowedMembersConversationMemberItemRequestBuilder) {
+// ByConversationMemberId provides operations to manage the allowedMembers property of the microsoft.graph.sharedWithChannelTeamInfo entity.
+func (m *ItemTeamDefinitionPrimaryChannelSharedWithTeamsItemAllowedMembersRequestBuilder) ByConversationMemberId(conversationMemberId string)(*ItemTeamDefinitionPrimaryChannelSharedWithTeamsItemAllowedMembersConversationMemberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *ItemTeamDefinitionPrimaryChannelSharedWithTeamsItemAllowedMembersReques
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTeamDefinitionPrimaryChannelSharedWithTeamsItemAllowedMembersRequestBuilder) WithUrl(rawUrl string)(*ItemTeamDefinitionPrimaryChannelSharedWithTeamsItemAllowedMembersRequestBuilder) {
+    return NewItemTeamDefinitionPrimaryChannelSharedWithTeamsItemAllowedMembersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

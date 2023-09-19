@@ -68,3 +68,7 @@ func (m *ItemAgentsItemAgentGroupsItemRefRequestBuilder) ToDeleteRequestInformat
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemAgentsItemAgentGroupsItemRefRequestBuilder) WithUrl(rawUrl string)(*ItemAgentsItemAgentGroupsItemRefRequestBuilder) {
+    return NewItemAgentsItemAgentGroupsItemRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

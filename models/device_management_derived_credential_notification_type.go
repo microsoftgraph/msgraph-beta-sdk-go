@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // Supported values for the notification type to use.
 type DeviceManagementDerivedCredentialNotificationType int
@@ -15,19 +16,28 @@ const (
 )
 
 func (i DeviceManagementDerivedCredentialNotificationType) String() string {
-    return []string{"none", "companyPortal", "email"}[i]
+    var values []string
+    for p := DeviceManagementDerivedCredentialNotificationType(1); p <= EMAIL_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"none", "companyPortal", "email"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseDeviceManagementDerivedCredentialNotificationType(v string) (any, error) {
-    result := NONE_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE
-    switch v {
-        case "none":
-            result = NONE_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE
-        case "companyPortal":
-            result = COMPANYPORTAL_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE
-        case "email":
-            result = EMAIL_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE
-        default:
-            return 0, errors.New("Unknown DeviceManagementDerivedCredentialNotificationType value: " + v)
+    var result DeviceManagementDerivedCredentialNotificationType
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "none":
+                result |= NONE_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE
+            case "companyPortal":
+                result |= COMPANYPORTAL_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE
+            case "email":
+                result |= EMAIL_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE
+            default:
+                return 0, errors.New("Unknown DeviceManagementDerivedCredentialNotificationType value: " + v)
+        }
     }
     return &result, nil
 }
@@ -37,4 +47,7 @@ func SerializeDeviceManagementDerivedCredentialNotificationType(values []DeviceM
         result[i] = v.String()
     }
     return result
+}
+func (i DeviceManagementDerivedCredentialNotificationType) isMultiValue() bool {
+    return true
 }

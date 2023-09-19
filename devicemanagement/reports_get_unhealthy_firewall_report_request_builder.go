@@ -65,3 +65,7 @@ func (m *ReportsGetUnhealthyFirewallReportRequestBuilder) ToPostRequestInformati
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ReportsGetUnhealthyFirewallReportRequestBuilder) WithUrl(rawUrl string)(*ReportsGetUnhealthyFirewallReportRequestBuilder) {
+    return NewReportsGetUnhealthyFirewallReportRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

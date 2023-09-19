@@ -67,3 +67,7 @@ func (m *DataLossPreventionPoliciesEvaluateRequestBuilder) ToPostRequestInformat
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DataLossPreventionPoliciesEvaluateRequestBuilder) WithUrl(rawUrl string)(*DataLossPreventionPoliciesEvaluateRequestBuilder) {
+    return NewDataLossPreventionPoliciesEvaluateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

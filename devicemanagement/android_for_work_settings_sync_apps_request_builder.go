@@ -58,3 +58,7 @@ func (m *AndroidForWorkSettingsSyncAppsRequestBuilder) ToPostRequestInformation(
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AndroidForWorkSettingsSyncAppsRequestBuilder) WithUrl(rawUrl string)(*AndroidForWorkSettingsSyncAppsRequestBuilder) {
+    return NewAndroidForWorkSettingsSyncAppsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

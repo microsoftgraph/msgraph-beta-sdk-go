@@ -74,3 +74,7 @@ func (m *DeviceComplianceScriptsCountRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceComplianceScriptsCountRequestBuilder) WithUrl(rawUrl string)(*DeviceComplianceScriptsCountRequestBuilder) {
+    return NewDeviceComplianceScriptsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

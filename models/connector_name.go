@@ -90,3 +90,6 @@ func SerializeConnectorName(values []ConnectorName) []string {
     }
     return result
 }
+func (i ConnectorName) isMultiValue() bool {
+    return false
+}

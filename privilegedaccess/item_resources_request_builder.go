@@ -46,8 +46,8 @@ type ItemResourcesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByGovernanceResourceIdString provides operations to manage the resources property of the microsoft.graph.privilegedAccess entity.
-func (m *ItemResourcesRequestBuilder) ByGovernanceResourceIdString(governanceResourceId string)(*ItemResourcesGovernanceResourceItemRequestBuilder) {
+// ByGovernanceResourceId provides operations to manage the resources property of the microsoft.graph.privilegedAccess entity.
+func (m *ItemResourcesRequestBuilder) ByGovernanceResourceId(governanceResourceId string)(*ItemResourcesGovernanceResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -151,4 +151,8 @@ func (m *ItemResourcesRequestBuilder) ToPostRequestInformation(ctx context.Conte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemResourcesRequestBuilder) WithUrl(rawUrl string)(*ItemResourcesRequestBuilder) {
+    return NewItemResourcesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

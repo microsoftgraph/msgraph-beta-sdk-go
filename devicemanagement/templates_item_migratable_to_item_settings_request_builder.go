@@ -46,8 +46,8 @@ type TemplatesItemMigratableToItemSettingsRequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementSettingInstanceIdString provides operations to manage the settings property of the microsoft.graph.deviceManagementTemplate entity.
-func (m *TemplatesItemMigratableToItemSettingsRequestBuilder) ByDeviceManagementSettingInstanceIdString(deviceManagementSettingInstanceId string)(*TemplatesItemMigratableToItemSettingsDeviceManagementSettingInstanceItemRequestBuilder) {
+// ByDeviceManagementSettingInstanceId provides operations to manage the settings property of the microsoft.graph.deviceManagementTemplate entity.
+func (m *TemplatesItemMigratableToItemSettingsRequestBuilder) ByDeviceManagementSettingInstanceId(deviceManagementSettingInstanceId string)(*TemplatesItemMigratableToItemSettingsDeviceManagementSettingInstanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *TemplatesItemMigratableToItemSettingsRequestBuilder) ToPostRequestInfor
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TemplatesItemMigratableToItemSettingsRequestBuilder) WithUrl(rawUrl string)(*TemplatesItemMigratableToItemSettingsRequestBuilder) {
+    return NewTemplatesItemMigratableToItemSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

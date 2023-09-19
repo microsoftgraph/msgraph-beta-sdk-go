@@ -42,3 +42,6 @@ func SerializeWindows10VpnAuthenticationMethod(values []Windows10VpnAuthenticati
     }
     return result
 }
+func (i Windows10VpnAuthenticationMethod) isMultiValue() bool {
+    return false
+}

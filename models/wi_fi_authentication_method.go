@@ -38,3 +38,6 @@ func SerializeWiFiAuthenticationMethod(values []WiFiAuthenticationMethod) []stri
     }
     return result
 }
+func (i WiFiAuthenticationMethod) isMultiValue() bool {
+    return false
+}

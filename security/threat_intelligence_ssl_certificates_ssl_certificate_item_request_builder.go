@@ -18,7 +18,7 @@ type ThreatIntelligenceSslCertificatesSslCertificateItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ThreatIntelligenceSslCertificatesSslCertificateItemRequestBuilderGetQueryParameters get sslCertificates from security
+// ThreatIntelligenceSslCertificatesSslCertificateItemRequestBuilderGetQueryParameters get the properties and relationships of an sslCertificate object.
 type ThreatIntelligenceSslCertificatesSslCertificateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *ThreatIntelligenceSslCertificatesSslCertificateItemRequestBuilder) Dele
     }
     return nil
 }
-// Get get sslCertificates from security
+// Get get the properties and relationships of an sslCertificate object.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-sslcertificate-get?view=graph-rest-1.0
 func (m *ThreatIntelligenceSslCertificatesSslCertificateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceSslCertificatesSslCertificateItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SslCertificateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *ThreatIntelligenceSslCertificatesSslCertificateItemRequestBuilder) ToDe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get sslCertificates from security
+// ToGetRequestInformation get the properties and relationships of an sslCertificate object.
 func (m *ThreatIntelligenceSslCertificatesSslCertificateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceSslCertificatesSslCertificateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -156,4 +159,8 @@ func (m *ThreatIntelligenceSslCertificatesSslCertificateItemRequestBuilder) ToPa
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ThreatIntelligenceSslCertificatesSslCertificateItemRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceSslCertificatesSslCertificateItemRequestBuilder) {
+    return NewThreatIntelligenceSslCertificatesSslCertificateItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

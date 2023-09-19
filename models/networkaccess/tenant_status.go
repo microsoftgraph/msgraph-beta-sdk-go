@@ -45,7 +45,7 @@ func (m *TenantStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetOnboardingErrorMessage gets the onboardingErrorMessage property value. Reflects a message to the user in case of an error.
+// GetOnboardingErrorMessage gets the onboardingErrorMessage property value. Reflects a message to the user if there's an error.
 func (m *TenantStatus) GetOnboardingErrorMessage()(*string) {
     val, err := m.GetBackingStore().Get("onboardingErrorMessage")
     if err != nil {
@@ -88,7 +88,7 @@ func (m *TenantStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetOnboardingErrorMessage sets the onboardingErrorMessage property value. Reflects a message to the user in case of an error.
+// SetOnboardingErrorMessage sets the onboardingErrorMessage property value. Reflects a message to the user if there's an error.
 func (m *TenantStatus) SetOnboardingErrorMessage(value *string)() {
     err := m.GetBackingStore().Set("onboardingErrorMessage", value)
     if err != nil {

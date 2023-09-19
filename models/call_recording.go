@@ -75,6 +75,16 @@ func (m *CallRecording) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["meetingOrganizer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMeetingOrganizer(val.(IdentitySetable))
+        }
+        return nil
+    }
     res["meetingOrganizerId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -105,6 +115,17 @@ func (m *CallRecording) GetMeetingId()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetMeetingOrganizer gets the meetingOrganizer property value. The meetingOrganizer property
+func (m *CallRecording) GetMeetingOrganizer()(IdentitySetable) {
+    val, err := m.GetBackingStore().Get("meetingOrganizer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
     }
     return nil
 }
@@ -155,6 +176,12 @@ func (m *CallRecording) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err = writer.WriteObjectValue("meetingOrganizer", m.GetMeetingOrganizer())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("meetingOrganizerId", m.GetMeetingOrganizerId())
         if err != nil {
             return err
@@ -189,6 +216,13 @@ func (m *CallRecording) SetMeetingId(value *string)() {
         panic(err)
     }
 }
+// SetMeetingOrganizer sets the meetingOrganizer property value. The meetingOrganizer property
+func (m *CallRecording) SetMeetingOrganizer(value IdentitySetable)() {
+    err := m.GetBackingStore().Set("meetingOrganizer", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMeetingOrganizerId sets the meetingOrganizerId property value. The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
 func (m *CallRecording) SetMeetingOrganizerId(value *string)() {
     err := m.GetBackingStore().Set("meetingOrganizerId", value)
@@ -210,11 +244,13 @@ type CallRecordingable interface {
     GetContent()([]byte)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMeetingId()(*string)
+    GetMeetingOrganizer()(IdentitySetable)
     GetMeetingOrganizerId()(*string)
     GetRecordingContentUrl()(*string)
     SetContent(value []byte)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMeetingId(value *string)()
+    SetMeetingOrganizer(value IdentitySetable)()
     SetMeetingOrganizerId(value *string)()
     SetRecordingContentUrl(value *string)()
 }

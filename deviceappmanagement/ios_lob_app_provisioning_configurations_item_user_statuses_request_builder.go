@@ -46,8 +46,8 @@ type IosLobAppProvisioningConfigurationsItemUserStatusesRequestBuilderPostReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByManagedDeviceMobileAppConfigurationUserStatusIdString provides operations to manage the userStatuses property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.
-func (m *IosLobAppProvisioningConfigurationsItemUserStatusesRequestBuilder) ByManagedDeviceMobileAppConfigurationUserStatusIdString(managedDeviceMobileAppConfigurationUserStatusId string)(*IosLobAppProvisioningConfigurationsItemUserStatusesManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilder) {
+// ByManagedDeviceMobileAppConfigurationUserStatusId provides operations to manage the userStatuses property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.
+func (m *IosLobAppProvisioningConfigurationsItemUserStatusesRequestBuilder) ByManagedDeviceMobileAppConfigurationUserStatusId(managedDeviceMobileAppConfigurationUserStatusId string)(*IosLobAppProvisioningConfigurationsItemUserStatusesManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *IosLobAppProvisioningConfigurationsItemUserStatusesRequestBuilder) ToPo
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IosLobAppProvisioningConfigurationsItemUserStatusesRequestBuilder) WithUrl(rawUrl string)(*IosLobAppProvisioningConfigurationsItemUserStatusesRequestBuilder) {
+    return NewIosLobAppProvisioningConfigurationsItemUserStatusesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

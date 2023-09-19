@@ -46,8 +46,8 @@ type ExchangeRoleDefinitionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUnifiedRoleDefinitionIdString provides operations to manage the roleDefinitions property of the microsoft.graph.unifiedRbacApplication entity.
-func (m *ExchangeRoleDefinitionsRequestBuilder) ByUnifiedRoleDefinitionIdString(unifiedRoleDefinitionId string)(*ExchangeRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) {
+// ByUnifiedRoleDefinitionId provides operations to manage the roleDefinitions property of the microsoft.graph.unifiedRbacApplication entity.
+func (m *ExchangeRoleDefinitionsRequestBuilder) ByUnifiedRoleDefinitionId(unifiedRoleDefinitionId string)(*ExchangeRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ExchangeRoleDefinitionsRequestBuilder) ToPostRequestInformation(ctx con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ExchangeRoleDefinitionsRequestBuilder) WithUrl(rawUrl string)(*ExchangeRoleDefinitionsRequestBuilder) {
+    return NewExchangeRoleDefinitionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

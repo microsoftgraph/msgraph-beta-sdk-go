@@ -47,3 +47,6 @@ func SerializeReferenceAttachmentPermission(values []ReferenceAttachmentPermissi
     }
     return result
 }
+func (i ReferenceAttachmentPermission) isMultiValue() bool {
+    return false
+}

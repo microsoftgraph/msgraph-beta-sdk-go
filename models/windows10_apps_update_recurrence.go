@@ -42,3 +42,6 @@ func SerializeWindows10AppsUpdateRecurrence(values []Windows10AppsUpdateRecurren
     }
     return result
 }
+func (i Windows10AppsUpdateRecurrence) isMultiValue() bool {
+    return false
+}

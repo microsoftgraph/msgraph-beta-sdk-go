@@ -38,3 +38,6 @@ func SerializeAndroidForWorkEnrollmentTarget(values []AndroidForWorkEnrollmentTa
     }
     return result
 }
+func (i AndroidForWorkEnrollmentTarget) isMultiValue() bool {
+    return false
+}

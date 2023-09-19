@@ -18,7 +18,7 @@ type CertificateAuthoritiesCertificateBasedApplicationConfigurationsItemTrustedC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CertificateAuthoritiesCertificateBasedApplicationConfigurationsItemTrustedCertificateAuthoritiesCertificateAuthorityAsEntityItemRequestBuilderGetQueryParameters get trustedCertificateAuthorities from directory
+// CertificateAuthoritiesCertificateBasedApplicationConfigurationsItemTrustedCertificateAuthoritiesCertificateAuthorityAsEntityItemRequestBuilderGetQueryParameters collection of trusted certificate authorities.
 type CertificateAuthoritiesCertificateBasedApplicationConfigurationsItemTrustedCertificateAuthoritiesCertificateAuthorityAsEntityItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsItemTrus
     }
     return nil
 }
-// Get get trustedCertificateAuthorities from directory
+// Get collection of trusted certificate authorities.
 func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsItemTrustedCertificateAuthoritiesCertificateAuthorityAsEntityItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CertificateAuthoritiesCertificateBasedApplicationConfigurationsItemTrustedCertificateAuthoritiesCertificateAuthorityAsEntityItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateAuthorityAsEntityable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +120,7 @@ func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsItemTrus
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get trustedCertificateAuthorities from directory
+// ToGetRequestInformation collection of trusted certificate authorities.
 func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsItemTrustedCertificateAuthoritiesCertificateAuthorityAsEntityItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CertificateAuthoritiesCertificateBasedApplicationConfigurationsItemTrustedCertificateAuthoritiesCertificateAuthorityAsEntityItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -152,4 +152,8 @@ func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsItemTrus
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsItemTrustedCertificateAuthoritiesCertificateAuthorityAsEntityItemRequestBuilder) WithUrl(rawUrl string)(*CertificateAuthoritiesCertificateBasedApplicationConfigurationsItemTrustedCertificateAuthoritiesCertificateAuthorityAsEntityItemRequestBuilder) {
+    return NewCertificateAuthoritiesCertificateBasedApplicationConfigurationsItemTrustedCertificateAuthoritiesCertificateAuthorityAsEntityItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

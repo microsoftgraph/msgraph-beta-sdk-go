@@ -38,3 +38,6 @@ func SerializeMsiType(values []MsiType) []string {
     }
     return result
 }
+func (i MsiType) isMultiValue() bool {
+    return false
+}

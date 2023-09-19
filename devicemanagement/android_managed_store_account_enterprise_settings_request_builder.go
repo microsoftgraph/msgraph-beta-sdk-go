@@ -185,3 +185,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) ToPatchRequ
 func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) Unbind()(*AndroidManagedStoreAccountEnterpriseSettingsUnbindRequestBuilder) {
     return NewAndroidManagedStoreAccountEnterpriseSettingsUnbindRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) WithUrl(rawUrl string)(*AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) {
+    return NewAndroidManagedStoreAccountEnterpriseSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

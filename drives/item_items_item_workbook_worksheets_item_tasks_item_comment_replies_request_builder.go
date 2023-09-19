@@ -46,8 +46,8 @@ type ItemItemsItemWorkbookWorksheetsItemTasksItemCommentRepliesRequestBuilderPos
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWorkbookCommentReplyIdString provides operations to manage the replies property of the microsoft.graph.workbookComment entity.
-func (m *ItemItemsItemWorkbookWorksheetsItemTasksItemCommentRepliesRequestBuilder) ByWorkbookCommentReplyIdString(workbookCommentReplyId string)(*ItemItemsItemWorkbookWorksheetsItemTasksItemCommentRepliesWorkbookCommentReplyItemRequestBuilder) {
+// ByWorkbookCommentReplyId provides operations to manage the replies property of the microsoft.graph.workbookComment entity.
+func (m *ItemItemsItemWorkbookWorksheetsItemTasksItemCommentRepliesRequestBuilder) ByWorkbookCommentReplyId(workbookCommentReplyId string)(*ItemItemsItemWorkbookWorksheetsItemTasksItemCommentRepliesWorkbookCommentReplyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTasksItemCommentRepliesRequestBuilde
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemWorkbookWorksheetsItemTasksItemCommentRepliesRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookWorksheetsItemTasksItemCommentRepliesRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTasksItemCommentRepliesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -42,3 +42,6 @@ func SerializeWindowsUpdateStatus(values []WindowsUpdateStatus) []string {
     }
     return result
 }
+func (i WindowsUpdateStatus) isMultiValue() bool {
+    return false
+}

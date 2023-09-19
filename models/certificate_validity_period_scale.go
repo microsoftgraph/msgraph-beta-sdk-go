@@ -38,3 +38,6 @@ func SerializeCertificateValidityPeriodScale(values []CertificateValidityPeriodS
     }
     return result
 }
+func (i CertificateValidityPeriodScale) isMultiValue() bool {
+    return false
+}

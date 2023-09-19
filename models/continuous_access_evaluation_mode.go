@@ -38,3 +38,6 @@ func SerializeContinuousAccessEvaluationMode(values []ContinuousAccessEvaluation
     }
     return result
 }
+func (i ContinuousAccessEvaluationMode) isMultiValue() bool {
+    return false
+}

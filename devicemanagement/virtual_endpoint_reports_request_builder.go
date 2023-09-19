@@ -101,9 +101,17 @@ func (m *VirtualEndpointReportsRequestBuilder) GetConnectionQualityReports()(*Vi
 func (m *VirtualEndpointReportsRequestBuilder) GetDailyAggregatedRemoteConnectionReports()(*VirtualEndpointReportsGetDailyAggregatedRemoteConnectionReportsRequestBuilder) {
     return NewVirtualEndpointReportsGetDailyAggregatedRemoteConnectionReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GetFrontlineReport provides operations to call the getFrontlineReport method.
+func (m *VirtualEndpointReportsRequestBuilder) GetFrontlineReport()(*VirtualEndpointReportsGetFrontlineReportRequestBuilder) {
+    return NewVirtualEndpointReportsGetFrontlineReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GetInaccessibleCloudPcReports provides operations to call the getInaccessibleCloudPcReports method.
 func (m *VirtualEndpointReportsRequestBuilder) GetInaccessibleCloudPcReports()(*VirtualEndpointReportsGetInaccessibleCloudPcReportsRequestBuilder) {
     return NewVirtualEndpointReportsGetInaccessibleCloudPcReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GetRawRemoteConnectionReports provides operations to call the getRawRemoteConnectionReports method.
+func (m *VirtualEndpointReportsRequestBuilder) GetRawRemoteConnectionReports()(*VirtualEndpointReportsGetRawRemoteConnectionReportsRequestBuilder) {
+    return NewVirtualEndpointReportsGetRawRemoteConnectionReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetRealTimeRemoteConnectionLatencyWithCloudPcId provides operations to call the getRealTimeRemoteConnectionLatency method.
 func (m *VirtualEndpointReportsRequestBuilder) GetRealTimeRemoteConnectionLatencyWithCloudPcId(cloudPcId *string)(*VirtualEndpointReportsGetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder) {
@@ -188,4 +196,8 @@ func (m *VirtualEndpointReportsRequestBuilder) ToPatchRequestInformation(ctx con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VirtualEndpointReportsRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointReportsRequestBuilder) {
+    return NewVirtualEndpointReportsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

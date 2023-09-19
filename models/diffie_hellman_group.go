@@ -50,3 +50,6 @@ func SerializeDiffieHellmanGroup(values []DiffieHellmanGroup) []string {
     }
     return result
 }
+func (i DiffieHellmanGroup) isMultiValue() bool {
+    return false
+}

@@ -153,3 +153,7 @@ func (m *ExchangeOnPremisesPoliciesItemConditionalAccessSettingsRequestBuilder) 
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ExchangeOnPremisesPoliciesItemConditionalAccessSettingsRequestBuilder) WithUrl(rawUrl string)(*ExchangeOnPremisesPoliciesItemConditionalAccessSettingsRequestBuilder) {
+    return NewExchangeOnPremisesPoliciesItemConditionalAccessSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

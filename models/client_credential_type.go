@@ -47,3 +47,6 @@ func SerializeClientCredentialType(values []ClientCredentialType) []string {
     }
     return result
 }
+func (i ClientCredentialType) isMultiValue() bool {
+    return false
+}

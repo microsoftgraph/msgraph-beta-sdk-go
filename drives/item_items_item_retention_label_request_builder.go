@@ -18,7 +18,7 @@ type ItemItemsItemRetentionLabelRequestBuilderDeleteRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemRetentionLabelRequestBuilderGetQueryParameters get retentionLabel from drives
+// ItemItemsItemRetentionLabelRequestBuilderGetQueryParameters information about retention label and settings enforced on the driveItem. Read-write.
 type ItemItemsItemRetentionLabelRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemItemsItemRetentionLabelRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemRetentionLabelRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property retentionLabel for drives
+// Delete remove a retention label from a driveItem. For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-removeretentionlabel?view=graph-rest-1.0
 func (m *ItemItemsItemRetentionLabelRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemItemsItemRetentionLabelRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,7 @@ func (m *ItemItemsItemRetentionLabelRequestBuilder) Delete(ctx context.Context, 
     }
     return nil
 }
-// Get get retentionLabel from drives
+// Get information about retention label and settings enforced on the driveItem. Read-write.
 func (m *ItemItemsItemRetentionLabelRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemRetentionLabelRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemRetentionLabelable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,10 @@ func (m *ItemItemsItemRetentionLabelRequestBuilder) Get(ctx context.Context, req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemRetentionLabelable), nil
 }
-// Patch update the navigation property retentionLabel in drives
+// Patch apply (set) a retention label on a driveItem (files and folders). Retention labels don't need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. Conflict resolution is based on the following principle: explicit wins over implicit. For example, if a file in the folder has already been explicitly tagged with a label, that file doesn't inherit the label of the parent. For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0
 func (m *ItemItemsItemRetentionLabelRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemRetentionLabelable, requestConfiguration *ItemItemsItemRetentionLabelRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemRetentionLabelable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +114,7 @@ func (m *ItemItemsItemRetentionLabelRequestBuilder) Patch(ctx context.Context, b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemRetentionLabelable), nil
 }
-// ToDeleteRequestInformation delete navigation property retentionLabel for drives
+// ToDeleteRequestInformation remove a retention label from a driveItem. For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
 func (m *ItemItemsItemRetentionLabelRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemRetentionLabelRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +126,7 @@ func (m *ItemItemsItemRetentionLabelRequestBuilder) ToDeleteRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get retentionLabel from drives
+// ToGetRequestInformation information about retention label and settings enforced on the driveItem. Read-write.
 func (m *ItemItemsItemRetentionLabelRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemRetentionLabelRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +142,7 @@ func (m *ItemItemsItemRetentionLabelRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property retentionLabel in drives
+// ToPatchRequestInformation apply (set) a retention label on a driveItem (files and folders). Retention labels don't need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. Conflict resolution is based on the following principle: explicit wins over implicit. For example, if a file in the folder has already been explicitly tagged with a label, that file doesn't inherit the label of the parent. For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
 func (m *ItemItemsItemRetentionLabelRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemRetentionLabelable, requestConfiguration *ItemItemsItemRetentionLabelRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -152,4 +158,8 @@ func (m *ItemItemsItemRetentionLabelRequestBuilder) ToPatchRequestInformation(ct
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemRetentionLabelRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemRetentionLabelRequestBuilder) {
+    return NewItemItemsItemRetentionLabelRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

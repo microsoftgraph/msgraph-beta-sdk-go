@@ -79,3 +79,7 @@ func (m *ItemInformationProtectionBitlockerRequestBuilder) ToGetRequestInformati
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemInformationProtectionBitlockerRequestBuilder) WithUrl(rawUrl string)(*ItemInformationProtectionBitlockerRequestBuilder) {
+    return NewItemInformationProtectionBitlockerRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

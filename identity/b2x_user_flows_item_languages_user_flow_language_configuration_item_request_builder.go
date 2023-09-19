@@ -18,7 +18,7 @@ type B2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilderDel
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// B2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilderGetQueryParameters the languages supported for customization within the user flow. Language customization is enabled by default in self-service sign up user flow. You cannot create custom languages in self-service sign up user flows.
+// B2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilderGetQueryParameters the languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You can't create custom languages in self-service sign-up user flows.
 type B2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *B2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilde
     }
     return nil
 }
-// Get the languages supported for customization within the user flow. Language customization is enabled by default in self-service sign up user flow. You cannot create custom languages in self-service sign up user flows.
+// Get the languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You can't create custom languages in self-service sign-up user flows.
 func (m *B2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *B2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserFlowLanguageConfigurationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -128,7 +128,7 @@ func (m *B2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilde
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the languages supported for customization within the user flow. Language customization is enabled by default in self-service sign up user flow. You cannot create custom languages in self-service sign up user flows.
+// ToGetRequestInformation the languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You can't create custom languages in self-service sign-up user flows.
 func (m *B2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -160,4 +160,8 @@ func (m *B2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilde
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *B2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilder) WithUrl(rawUrl string)(*B2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilder) {
+    return NewB2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

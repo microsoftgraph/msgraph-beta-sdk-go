@@ -95,7 +95,7 @@ func (m *ItemServicesBookingServiceItemRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingServiceable), nil
 }
-// Patch update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:- Price- Typical length of an appointment- Reminders- Any time buffer to set up before or finish up after the service- Scheduling policy parameters such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment.
+// Patch update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:- Price- Typical length of an appointment- Reminders- Any, time buffer to set up before or finish up after the service- Scheduling policy parameters such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingservice-update?view=graph-rest-1.0
@@ -145,7 +145,7 @@ func (m *ItemServicesBookingServiceItemRequestBuilder) ToGetRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:- Price- Typical length of an appointment- Reminders- Any time buffer to set up before or finish up after the service- Scheduling policy parameters such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment.
+// ToPatchRequestInformation update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:- Price- Typical length of an appointment- Reminders- Any, time buffer to set up before or finish up after the service- Scheduling policy parameters such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment.
 func (m *ItemServicesBookingServiceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingServiceable, requestConfiguration *ItemServicesBookingServiceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -161,4 +161,8 @@ func (m *ItemServicesBookingServiceItemRequestBuilder) ToPatchRequestInformation
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemServicesBookingServiceItemRequestBuilder) WithUrl(rawUrl string)(*ItemServicesBookingServiceItemRequestBuilder) {
+    return NewItemServicesBookingServiceItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

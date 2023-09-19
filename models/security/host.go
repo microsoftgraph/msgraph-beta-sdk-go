@@ -210,6 +210,22 @@ func (m *Host) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["ports"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateHostPortFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]HostPortable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(HostPortable)
+                }
+            }
+            m.SetPorts(res)
+        }
+        return nil
+    }
     res["reputation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateHostReputationFromDiscriminatorValue)
         if err != nil {
@@ -346,6 +362,17 @@ func (m *Host) GetPassiveDnsReverse()([]PassiveDnsRecordable) {
     }
     return nil
 }
+// GetPorts gets the ports property value. The ports property
+func (m *Host) GetPorts()([]HostPortable) {
+    val, err := m.GetBackingStore().Get("ports")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]HostPortable)
+    }
+    return nil
+}
 // GetReputation gets the reputation property value. Represents a calculated reputation of this host.
 func (m *Host) GetReputation()(HostReputationable) {
     val, err := m.GetBackingStore().Get("reputation")
@@ -357,7 +384,7 @@ func (m *Host) GetReputation()(HostReputationable) {
     }
     return nil
 }
-// GetSslCertificates gets the sslCertificates property value. The sslCertificates property
+// GetSslCertificates gets the sslCertificates property value. The hostSslCertificates that are associated with this host.
 func (m *Host) GetSslCertificates()([]HostSslCertificateable) {
     val, err := m.GetBackingStore().Get("sslCertificates")
     if err != nil {
@@ -390,7 +417,7 @@ func (m *Host) GetTrackers()([]HostTrackerable) {
     }
     return nil
 }
-// GetWhois gets the whois property value. The whois property
+// GetWhois gets the whois property value. The most recent whoisRecord for this host.
 func (m *Host) GetWhois()(WhoisRecordable) {
     val, err := m.GetBackingStore().Get("whois")
     if err != nil {
@@ -499,6 +526,18 @@ func (m *Host) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             }
         }
         err = writer.WriteCollectionOfObjectValues("passiveDnsReverse", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetPorts() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPorts()))
+        for i, v := range m.GetPorts() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("ports", cast)
         if err != nil {
             return err
         }
@@ -616,6 +655,13 @@ func (m *Host) SetPassiveDnsReverse(value []PassiveDnsRecordable)() {
         panic(err)
     }
 }
+// SetPorts sets the ports property value. The ports property
+func (m *Host) SetPorts(value []HostPortable)() {
+    err := m.GetBackingStore().Set("ports", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetReputation sets the reputation property value. Represents a calculated reputation of this host.
 func (m *Host) SetReputation(value HostReputationable)() {
     err := m.GetBackingStore().Set("reputation", value)
@@ -623,7 +669,7 @@ func (m *Host) SetReputation(value HostReputationable)() {
         panic(err)
     }
 }
-// SetSslCertificates sets the sslCertificates property value. The sslCertificates property
+// SetSslCertificates sets the sslCertificates property value. The hostSslCertificates that are associated with this host.
 func (m *Host) SetSslCertificates(value []HostSslCertificateable)() {
     err := m.GetBackingStore().Set("sslCertificates", value)
     if err != nil {
@@ -644,7 +690,7 @@ func (m *Host) SetTrackers(value []HostTrackerable)() {
         panic(err)
     }
 }
-// SetWhois sets the whois property value. The whois property
+// SetWhois sets the whois property value. The most recent whoisRecord for this host.
 func (m *Host) SetWhois(value WhoisRecordable)() {
     err := m.GetBackingStore().Set("whois", value)
     if err != nil {
@@ -664,6 +710,7 @@ type Hostable interface {
     GetParentHostPairs()([]HostPairable)
     GetPassiveDns()([]PassiveDnsRecordable)
     GetPassiveDnsReverse()([]PassiveDnsRecordable)
+    GetPorts()([]HostPortable)
     GetReputation()(HostReputationable)
     GetSslCertificates()([]HostSslCertificateable)
     GetSubdomains()([]Subdomainable)
@@ -678,6 +725,7 @@ type Hostable interface {
     SetParentHostPairs(value []HostPairable)()
     SetPassiveDns(value []PassiveDnsRecordable)()
     SetPassiveDnsReverse(value []PassiveDnsRecordable)()
+    SetPorts(value []HostPortable)()
     SetReputation(value HostReputationable)()
     SetSslCertificates(value []HostSslCertificateable)()
     SetSubdomains(value []Subdomainable)()

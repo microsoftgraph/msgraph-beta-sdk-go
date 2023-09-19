@@ -40,11 +40,38 @@ func (m *SubjectRightsRequestEnumeratedMailboxLocation) GetFieldDeserializers()(
         }
         return nil
     }
+    res["userPrincipalNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetUserPrincipalNames(res)
+        }
+        return nil
+    }
     return res
 }
 // GetUpns gets the upns property value. Collection of mailboxes that should be included in the search. Includes the UPN (user principal name) of each mailbox, for example, Monica.Thompson@contoso.com.
 func (m *SubjectRightsRequestEnumeratedMailboxLocation) GetUpns()([]string) {
     val, err := m.GetBackingStore().Get("upns")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
+}
+// GetUserPrincipalNames gets the userPrincipalNames property value. The userPrincipalNames property
+func (m *SubjectRightsRequestEnumeratedMailboxLocation) GetUserPrincipalNames()([]string) {
+    val, err := m.GetBackingStore().Get("userPrincipalNames")
     if err != nil {
         panic(err)
     }
@@ -65,6 +92,12 @@ func (m *SubjectRightsRequestEnumeratedMailboxLocation) Serialize(writer i878a80
             return err
         }
     }
+    if m.GetUserPrincipalNames() != nil {
+        err = writer.WriteCollectionOfStringValues("userPrincipalNames", m.GetUserPrincipalNames())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetUpns sets the upns property value. Collection of mailboxes that should be included in the search. Includes the UPN (user principal name) of each mailbox, for example, Monica.Thompson@contoso.com.
@@ -74,10 +107,19 @@ func (m *SubjectRightsRequestEnumeratedMailboxLocation) SetUpns(value []string)(
         panic(err)
     }
 }
+// SetUserPrincipalNames sets the userPrincipalNames property value. The userPrincipalNames property
+func (m *SubjectRightsRequestEnumeratedMailboxLocation) SetUserPrincipalNames(value []string)() {
+    err := m.GetBackingStore().Set("userPrincipalNames", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SubjectRightsRequestEnumeratedMailboxLocationable 
 type SubjectRightsRequestEnumeratedMailboxLocationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     SubjectRightsRequestMailboxLocationable
     GetUpns()([]string)
+    GetUserPrincipalNames()([]string)
     SetUpns(value []string)()
+    SetUserPrincipalNames(value []string)()
 }

@@ -75,7 +75,7 @@ func (m *ItemAcceptedSendersRefRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable), nil
 }
-// Post add a new user or group to the acceptedSender list. Specify the user or group in @odata.id in the request body. Users in the accepted senders list can post to conversations of the group . Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
+// Post add a new user or group to the acceptedSender list. Specify the user or group in @odata.id in the request body. Users in the accepted senders list can post to conversations of the group. Make sure you don't specify the same user or group in the accepted senders and rejected senders lists, otherwise you'll get an error.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/group-post-acceptedsenders?view=graph-rest-1.0
@@ -110,7 +110,7 @@ func (m *ItemAcceptedSendersRefRequestBuilder) ToGetRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation add a new user or group to the acceptedSender list. Specify the user or group in @odata.id in the request body. Users in the accepted senders list can post to conversations of the group . Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
+// ToPostRequestInformation add a new user or group to the acceptedSender list. Specify the user or group in @odata.id in the request body. Users in the accepted senders list can post to conversations of the group. Make sure you don't specify the same user or group in the accepted senders and rejected senders lists, otherwise you'll get an error.
 func (m *ItemAcceptedSendersRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *ItemAcceptedSendersRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -125,4 +125,8 @@ func (m *ItemAcceptedSendersRefRequestBuilder) ToPostRequestInformation(ctx cont
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemAcceptedSendersRefRequestBuilder) WithUrl(rawUrl string)(*ItemAcceptedSendersRefRequestBuilder) {
+    return NewItemAcceptedSendersRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

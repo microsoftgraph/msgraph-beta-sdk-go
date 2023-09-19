@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // Tenant mobile device management subscriptions.
 type DeviceManagementSubscriptions int
@@ -21,25 +22,34 @@ const (
 )
 
 func (i DeviceManagementSubscriptions) String() string {
-    return []string{"none", "intune", "office365", "intunePremium", "intune_EDU", "intune_SMB"}[i]
+    var values []string
+    for p := DeviceManagementSubscriptions(1); p <= INTUNE_SMB_DEVICEMANAGEMENTSUBSCRIPTIONS; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"none", "intune", "office365", "intunePremium", "intune_EDU", "intune_SMB"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseDeviceManagementSubscriptions(v string) (any, error) {
-    result := NONE_DEVICEMANAGEMENTSUBSCRIPTIONS
-    switch v {
-        case "none":
-            result = NONE_DEVICEMANAGEMENTSUBSCRIPTIONS
-        case "intune":
-            result = INTUNE_DEVICEMANAGEMENTSUBSCRIPTIONS
-        case "office365":
-            result = OFFICE365_DEVICEMANAGEMENTSUBSCRIPTIONS
-        case "intunePremium":
-            result = INTUNEPREMIUM_DEVICEMANAGEMENTSUBSCRIPTIONS
-        case "intune_EDU":
-            result = INTUNE_EDU_DEVICEMANAGEMENTSUBSCRIPTIONS
-        case "intune_SMB":
-            result = INTUNE_SMB_DEVICEMANAGEMENTSUBSCRIPTIONS
-        default:
-            return 0, errors.New("Unknown DeviceManagementSubscriptions value: " + v)
+    var result DeviceManagementSubscriptions
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "none":
+                result |= NONE_DEVICEMANAGEMENTSUBSCRIPTIONS
+            case "intune":
+                result |= INTUNE_DEVICEMANAGEMENTSUBSCRIPTIONS
+            case "office365":
+                result |= OFFICE365_DEVICEMANAGEMENTSUBSCRIPTIONS
+            case "intunePremium":
+                result |= INTUNEPREMIUM_DEVICEMANAGEMENTSUBSCRIPTIONS
+            case "intune_EDU":
+                result |= INTUNE_EDU_DEVICEMANAGEMENTSUBSCRIPTIONS
+            case "intune_SMB":
+                result |= INTUNE_SMB_DEVICEMANAGEMENTSUBSCRIPTIONS
+            default:
+                return 0, errors.New("Unknown DeviceManagementSubscriptions value: " + v)
+        }
     }
     return &result, nil
 }
@@ -49,4 +59,7 @@ func SerializeDeviceManagementSubscriptions(values []DeviceManagementSubscriptio
         result[i] = v.String()
     }
     return result
+}
+func (i DeviceManagementSubscriptions) isMultiValue() bool {
+    return true
 }

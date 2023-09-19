@@ -38,3 +38,6 @@ func SerializeNdesConnectorState(values []NdesConnectorState) []string {
     }
     return result
 }
+func (i NdesConnectorState) isMultiValue() bool {
+    return false
+}

@@ -34,3 +34,6 @@ func SerializeBitLockerRecoveryInformationType(values []BitLockerRecoveryInforma
     }
     return result
 }
+func (i BitLockerRecoveryInformationType) isMultiValue() bool {
+    return false
+}

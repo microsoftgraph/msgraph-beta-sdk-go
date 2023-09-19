@@ -18,7 +18,7 @@ type OnlineMeetingsItemRecordingsCallRecordingItemRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// OnlineMeetingsItemRecordingsCallRecordingItemRequestBuilderGetQueryParameters get a callRecording object associated with an onlineMeeting. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of text associated with the recording.
+// OnlineMeetingsItemRecordingsCallRecordingItemRequestBuilderGetQueryParameters get a callRecording object associated with a scheduled onlineMeeting. This API does not support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.
 type OnlineMeetingsItemRecordingsCallRecordingItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *OnlineMeetingsItemRecordingsCallRecordingItemRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get get a callRecording object associated with an onlineMeeting. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of text associated with the recording.
+// Get get a callRecording object associated with a scheduled onlineMeeting. This API does not support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/callrecording-get?view=graph-rest-1.0
@@ -127,7 +127,7 @@ func (m *OnlineMeetingsItemRecordingsCallRecordingItemRequestBuilder) ToDeleteRe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get a callRecording object associated with an onlineMeeting. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of text associated with the recording.
+// ToGetRequestInformation get a callRecording object associated with a scheduled onlineMeeting. This API does not support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.
 func (m *OnlineMeetingsItemRecordingsCallRecordingItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemRecordingsCallRecordingItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -159,4 +159,8 @@ func (m *OnlineMeetingsItemRecordingsCallRecordingItemRequestBuilder) ToPatchReq
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *OnlineMeetingsItemRecordingsCallRecordingItemRequestBuilder) WithUrl(rawUrl string)(*OnlineMeetingsItemRecordingsCallRecordingItemRequestBuilder) {
+    return NewOnlineMeetingsItemRecordingsCallRecordingItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

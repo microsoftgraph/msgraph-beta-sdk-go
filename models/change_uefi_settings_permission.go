@@ -34,3 +34,6 @@ func SerializeChangeUefiSettingsPermission(values []ChangeUefiSettingsPermission
     }
     return result
 }
+func (i ChangeUefiSettingsPermission) isMultiValue() bool {
+    return false
+}

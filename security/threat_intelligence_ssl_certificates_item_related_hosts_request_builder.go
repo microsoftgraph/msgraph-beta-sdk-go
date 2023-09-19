@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilderGetQueryParameters get relatedHosts from security
+// ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilderGetQueryParameters the hosts related with this sslCertificate.
 type ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -39,8 +39,8 @@ type ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilderGetRequestCo
     // Request query parameters
     QueryParameters *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilderGetQueryParameters
 }
-// ByHostIdString provides operations to manage the relatedHosts property of the microsoft.graph.security.sslCertificate entity.
-func (m *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder) ByHostIdString(hostId string)(*ThreatIntelligenceSslCertificatesItemRelatedHostsHostItemRequestBuilder) {
+// ByHostId provides operations to manage the relatedHosts property of the microsoft.graph.security.sslCertificate entity.
+func (m *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder) ByHostId(hostId string)(*ThreatIntelligenceSslCertificatesItemRelatedHostsHostItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -67,7 +67,7 @@ func NewThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder(rawUrl s
 func (m *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder) Count()(*ThreatIntelligenceSslCertificatesItemRelatedHostsCountRequestBuilder) {
     return NewThreatIntelligenceSslCertificatesItemRelatedHostsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get relatedHosts from security
+// Get the hosts related with this sslCertificate.
 func (m *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +86,7 @@ func (m *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder) Get(ct
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostCollectionResponseable), nil
 }
-// ToGetRequestInformation get relatedHosts from security
+// ToGetRequestInformation the hosts related with this sslCertificate.
 func (m *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -101,4 +101,8 @@ func (m *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder) ToGetR
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder) {
+    return NewThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

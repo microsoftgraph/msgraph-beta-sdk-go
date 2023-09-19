@@ -46,8 +46,8 @@ type DeviceManagementResourceNamespacesRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUnifiedRbacResourceNamespaceIdString provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplicationMultiple entity.
-func (m *DeviceManagementResourceNamespacesRequestBuilder) ByUnifiedRbacResourceNamespaceIdString(unifiedRbacResourceNamespaceId string)(*DeviceManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) {
+// ByUnifiedRbacResourceNamespaceId provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplicationMultiple entity.
+func (m *DeviceManagementResourceNamespacesRequestBuilder) ByUnifiedRbacResourceNamespaceId(unifiedRbacResourceNamespaceId string)(*DeviceManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *DeviceManagementResourceNamespacesRequestBuilder) ToPostRequestInformat
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceManagementResourceNamespacesRequestBuilder) WithUrl(rawUrl string)(*DeviceManagementResourceNamespacesRequestBuilder) {
+    return NewDeviceManagementResourceNamespacesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

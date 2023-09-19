@@ -65,3 +65,7 @@ func (m *ItemCalendarsItemCalendarViewItemExceptionOccurrencesItemCancelRequestB
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemCalendarsItemCalendarViewItemExceptionOccurrencesItemCancelRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarsItemCalendarViewItemExceptionOccurrencesItemCancelRequestBuilder) {
+    return NewItemCalendarsItemCalendarViewItemExceptionOccurrencesItemCancelRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

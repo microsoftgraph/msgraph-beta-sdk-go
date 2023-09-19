@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskRequestBuilderDe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskRequestBuilderGetQueryParameters get task from drives
+// ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskRequestBuilderGetQueryParameters the task associated with the comment thread.
 type ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskRequestBuild
     }
     return nil
 }
-// Get get task from drives
+// Get the task associated with the comment thread.
 func (m *ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookDocumentTaskable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +124,7 @@ func (m *ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskRequestBuild
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get task from drives
+// ToGetRequestInformation the task associated with the comment thread.
 func (m *ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -156,4 +156,8 @@ func (m *ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskRequestBuild
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskRequestBuilder) {
+    return NewItemItemsItemWorkbookCommentsItemTaskCommentRepliesItemTaskRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

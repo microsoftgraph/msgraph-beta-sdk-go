@@ -46,3 +46,6 @@ func SerializeDeviceGuardVirtualizationBasedSecurityHardwareRequirementState(val
     }
     return result
 }
+func (i DeviceGuardVirtualizationBasedSecurityHardwareRequirementState) isMultiValue() bool {
+    return false
+}

@@ -20,7 +20,7 @@ func NewSignIn()(*SignIn) {
 func CreateSignInFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSignIn(), nil
 }
-// GetAppDisplayName gets the appDisplayName property value. The application name displayed in the Azure Portal.  Supports $filter (eq, startsWith).
+// GetAppDisplayName gets the appDisplayName property value. The application name displayed in the Azure portal.  Supports $filter (eq, startsWith).
 func (m *SignIn) GetAppDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("appDisplayName")
     if err != nil {
@@ -108,7 +108,7 @@ func (m *SignIn) GetAuthenticationContextClassReferences()([]AuthenticationConte
     }
     return nil
 }
-// GetAuthenticationDetails gets the authenticationDetails property value. The result of the authentication attempt and additional details on the authentication method.
+// GetAuthenticationDetails gets the authenticationDetails property value. The result of the authentication attempt and more details on the authentication method.
 func (m *SignIn) GetAuthenticationDetails()([]AuthenticationDetailable) {
     val, err := m.GetBackingStore().Get("authenticationDetails")
     if err != nil {
@@ -130,7 +130,7 @@ func (m *SignIn) GetAuthenticationMethodsUsed()([]string) {
     }
     return nil
 }
-// GetAuthenticationProcessingDetails gets the authenticationProcessingDetails property value. Additional authentication processing details, such as the agent name in case of PTA/PHS or Server/farm name in case of federated authentication.
+// GetAuthenticationProcessingDetails gets the authenticationProcessingDetails property value. Extra authentication processing details, such as the agent name for PTA/PHS or Server/farm name for federated authentication.
 func (m *SignIn) GetAuthenticationProcessingDetails()([]KeyValueable) {
     val, err := m.GetBackingStore().Get("authenticationProcessingDetails")
     if err != nil {
@@ -251,7 +251,7 @@ func (m *SignIn) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a
     }
     return nil
 }
-// GetCrossTenantAccessType gets the crossTenantAccessType property value. Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue. If the sign in did not cross tenant boundaries, the value is none.
+// GetCrossTenantAccessType gets the crossTenantAccessType property value. Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue. If the sign in didn't cross tenant boundaries, the value is none.
 func (m *SignIn) GetCrossTenantAccessType()(*SignInAccessType) {
     val, err := m.GetBackingStore().Get("crossTenantAccessType")
     if err != nil {
@@ -1031,7 +1031,7 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     }
     return res
 }
-// GetFlaggedForReview gets the flaggedForReview property value. During a failed sign in, a user may click a button in the Azure portal to mark the failed event for tenant admins. If a user clicked the button to flag the failed sign in, this value is true.
+// GetFlaggedForReview gets the flaggedForReview property value. During a failed sign in, a user may select a button in the Azure portal to mark the failed event for tenant admins. If a user clicked the button to flag the failed sign in, this value is true.
 func (m *SignIn) GetFlaggedForReview()(*bool) {
     val, err := m.GetBackingStore().Get("flaggedForReview")
     if err != nil {
@@ -1064,7 +1064,7 @@ func (m *SignIn) GetHomeTenantName()(*string) {
     }
     return nil
 }
-// GetIncomingTokenType gets the incomingTokenType property value. Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Do not infer the lack of a token if it is not one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.
+// GetIncomingTokenType gets the incomingTokenType property value. Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Don't infer the lack of a token if it isn't one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.
 func (m *SignIn) GetIncomingTokenType()(*IncomingTokenType) {
     val, err := m.GetBackingStore().Get("incomingTokenType")
     if err != nil {
@@ -1119,7 +1119,7 @@ func (m *SignIn) GetIsTenantRestricted()(*bool) {
     }
     return nil
 }
-// GetLocation gets the location property value. The city, state, and 2 letter country code from where the sign-in occurred.  Supports $filter (eq, startsWith) on city, state, and countryOrRegion properties.
+// GetLocation gets the location property value. The city, state, and two letter country code from where the sign-in occurred.  Supports $filter (eq, startsWith) on city, state, and countryOrRegion properties.
 func (m *SignIn) GetLocation()(SignInLocationable) {
     val, err := m.GetBackingStore().Get("location")
     if err != nil {
@@ -1284,7 +1284,7 @@ func (m *SignIn) GetRiskLevelAggregated()(*RiskLevel) {
     }
     return nil
 }
-// GetRiskLevelDuringSignIn gets the riskLevelDuringSignIn property value. The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+// GetRiskLevelDuringSignIn gets the riskLevelDuringSignIn property value. The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Azure AD Identity Protection.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
 func (m *SignIn) GetRiskLevelDuringSignIn()(*RiskLevel) {
     val, err := m.GetBackingStore().Get("riskLevelDuringSignIn")
     if err != nil {
@@ -1328,7 +1328,7 @@ func (m *SignIn) GetServicePrincipalCredentialThumbprint()(*string) {
     }
     return nil
 }
-// GetServicePrincipalId gets the servicePrincipalId property value. The application identifier used for sign-in. This field is populated when you are signing in using an application.  Supports $filter (eq, startsWith).
+// GetServicePrincipalId gets the servicePrincipalId property value. The application identifier used for sign-in. This field is populated when you're signing in using an application.  Supports $filter (eq, startsWith).
 func (m *SignIn) GetServicePrincipalId()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalId")
     if err != nil {
@@ -1339,7 +1339,7 @@ func (m *SignIn) GetServicePrincipalId()(*string) {
     }
     return nil
 }
-// GetServicePrincipalName gets the servicePrincipalName property value. The application name used for sign-in. This field is populated when you are signing in using an application.  Supports $filter (eq, startsWith).
+// GetServicePrincipalName gets the servicePrincipalName property value. The application name used for sign-in. This field is populated when you're signing in using an application.  Supports $filter (eq, startsWith).
 func (m *SignIn) GetServicePrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalName")
     if err != nil {
@@ -1405,7 +1405,7 @@ func (m *SignIn) GetSignInTokenProtectionStatus()(*TokenProtectionStatus) {
     }
     return nil
 }
-// GetStatus gets the status property value. The sign-in status. Includes the error code and description of the error (in case of a sign-in failure).  Supports $filter (eq) on errorCode property.
+// GetStatus gets the status property value. The sign-in status. Includes the error code and description of the error (for a sign-in failure).  Supports $filter (eq) on errorCode property.
 func (m *SignIn) GetStatus()(SignInStatusable) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -1427,7 +1427,7 @@ func (m *SignIn) GetTokenIssuerName()(*string) {
     }
     return nil
 }
-// GetTokenIssuerType gets the tokenIssuerType property value. The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth, ADFederationServicesMFAAdapter, NPSExtension. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: AzureADBackupAuth , ADFederationServicesMFAAdapter , NPSExtension.
+// GetTokenIssuerType gets the tokenIssuerType property value. The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth, ADFederationServicesMFAAdapter, NPSExtension. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: AzureADBackupAuth , ADFederationServicesMFAAdapter , NPSExtension.
 func (m *SignIn) GetTokenIssuerType()(*TokenIssuerType) {
     val, err := m.GetBackingStore().Get("tokenIssuerType")
     if err != nil {
@@ -1438,7 +1438,7 @@ func (m *SignIn) GetTokenIssuerType()(*TokenIssuerType) {
     }
     return nil
 }
-// GetUniqueTokenIdentifier gets the uniqueTokenIdentifier property value. A unique base64 encoded request identifier used to track tokens issued by Azure AD as they are redeemed at resource providers.
+// GetUniqueTokenIdentifier gets the uniqueTokenIdentifier property value. A unique base64 encoded request identifier used to track tokens issued by Azure AD as they're redeemed at resource providers.
 func (m *SignIn) GetUniqueTokenIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("uniqueTokenIdentifier")
     if err != nil {
@@ -1983,7 +1983,7 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     }
     return nil
 }
-// SetAppDisplayName sets the appDisplayName property value. The application name displayed in the Azure Portal.  Supports $filter (eq, startsWith).
+// SetAppDisplayName sets the appDisplayName property value. The application name displayed in the Azure portal.  Supports $filter (eq, startsWith).
 func (m *SignIn) SetAppDisplayName(value *string)() {
     err := m.GetBackingStore().Set("appDisplayName", value)
     if err != nil {
@@ -2039,7 +2039,7 @@ func (m *SignIn) SetAuthenticationContextClassReferences(value []AuthenticationC
         panic(err)
     }
 }
-// SetAuthenticationDetails sets the authenticationDetails property value. The result of the authentication attempt and additional details on the authentication method.
+// SetAuthenticationDetails sets the authenticationDetails property value. The result of the authentication attempt and more details on the authentication method.
 func (m *SignIn) SetAuthenticationDetails(value []AuthenticationDetailable)() {
     err := m.GetBackingStore().Set("authenticationDetails", value)
     if err != nil {
@@ -2053,7 +2053,7 @@ func (m *SignIn) SetAuthenticationMethodsUsed(value []string)() {
         panic(err)
     }
 }
-// SetAuthenticationProcessingDetails sets the authenticationProcessingDetails property value. Additional authentication processing details, such as the agent name in case of PTA/PHS or Server/farm name in case of federated authentication.
+// SetAuthenticationProcessingDetails sets the authenticationProcessingDetails property value. Extra authentication processing details, such as the agent name for PTA/PHS or Server/farm name for federated authentication.
 func (m *SignIn) SetAuthenticationProcessingDetails(value []KeyValueable)() {
     err := m.GetBackingStore().Set("authenticationProcessingDetails", value)
     if err != nil {
@@ -2130,7 +2130,7 @@ func (m *SignIn) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3
         panic(err)
     }
 }
-// SetCrossTenantAccessType sets the crossTenantAccessType property value. Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue. If the sign in did not cross tenant boundaries, the value is none.
+// SetCrossTenantAccessType sets the crossTenantAccessType property value. Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue. If the sign in didn't cross tenant boundaries, the value is none.
 func (m *SignIn) SetCrossTenantAccessType(value *SignInAccessType)() {
     err := m.GetBackingStore().Set("crossTenantAccessType", value)
     if err != nil {
@@ -2151,7 +2151,7 @@ func (m *SignIn) SetFederatedCredentialId(value *string)() {
         panic(err)
     }
 }
-// SetFlaggedForReview sets the flaggedForReview property value. During a failed sign in, a user may click a button in the Azure portal to mark the failed event for tenant admins. If a user clicked the button to flag the failed sign in, this value is true.
+// SetFlaggedForReview sets the flaggedForReview property value. During a failed sign in, a user may select a button in the Azure portal to mark the failed event for tenant admins. If a user clicked the button to flag the failed sign in, this value is true.
 func (m *SignIn) SetFlaggedForReview(value *bool)() {
     err := m.GetBackingStore().Set("flaggedForReview", value)
     if err != nil {
@@ -2172,7 +2172,7 @@ func (m *SignIn) SetHomeTenantName(value *string)() {
         panic(err)
     }
 }
-// SetIncomingTokenType sets the incomingTokenType property value. Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Do not infer the lack of a token if it is not one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.
+// SetIncomingTokenType sets the incomingTokenType property value. Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Don't infer the lack of a token if it isn't one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.
 func (m *SignIn) SetIncomingTokenType(value *IncomingTokenType)() {
     err := m.GetBackingStore().Set("incomingTokenType", value)
     if err != nil {
@@ -2207,7 +2207,7 @@ func (m *SignIn) SetIsTenantRestricted(value *bool)() {
         panic(err)
     }
 }
-// SetLocation sets the location property value. The city, state, and 2 letter country code from where the sign-in occurred.  Supports $filter (eq, startsWith) on city, state, and countryOrRegion properties.
+// SetLocation sets the location property value. The city, state, and two letter country code from where the sign-in occurred.  Supports $filter (eq, startsWith) on city, state, and countryOrRegion properties.
 func (m *SignIn) SetLocation(value SignInLocationable)() {
     err := m.GetBackingStore().Set("location", value)
     if err != nil {
@@ -2312,7 +2312,7 @@ func (m *SignIn) SetRiskLevelAggregated(value *RiskLevel)() {
         panic(err)
     }
 }
-// SetRiskLevelDuringSignIn sets the riskLevelDuringSignIn property value. The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+// SetRiskLevelDuringSignIn sets the riskLevelDuringSignIn property value. The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Azure AD Identity Protection.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
 func (m *SignIn) SetRiskLevelDuringSignIn(value *RiskLevel)() {
     err := m.GetBackingStore().Set("riskLevelDuringSignIn", value)
     if err != nil {
@@ -2340,14 +2340,14 @@ func (m *SignIn) SetServicePrincipalCredentialThumbprint(value *string)() {
         panic(err)
     }
 }
-// SetServicePrincipalId sets the servicePrincipalId property value. The application identifier used for sign-in. This field is populated when you are signing in using an application.  Supports $filter (eq, startsWith).
+// SetServicePrincipalId sets the servicePrincipalId property value. The application identifier used for sign-in. This field is populated when you're signing in using an application.  Supports $filter (eq, startsWith).
 func (m *SignIn) SetServicePrincipalId(value *string)() {
     err := m.GetBackingStore().Set("servicePrincipalId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetServicePrincipalName sets the servicePrincipalName property value. The application name used for sign-in. This field is populated when you are signing in using an application.  Supports $filter (eq, startsWith).
+// SetServicePrincipalName sets the servicePrincipalName property value. The application name used for sign-in. This field is populated when you're signing in using an application.  Supports $filter (eq, startsWith).
 func (m *SignIn) SetServicePrincipalName(value *string)() {
     err := m.GetBackingStore().Set("servicePrincipalName", value)
     if err != nil {
@@ -2389,7 +2389,7 @@ func (m *SignIn) SetSignInTokenProtectionStatus(value *TokenProtectionStatus)() 
         panic(err)
     }
 }
-// SetStatus sets the status property value. The sign-in status. Includes the error code and description of the error (in case of a sign-in failure).  Supports $filter (eq) on errorCode property.
+// SetStatus sets the status property value. The sign-in status. Includes the error code and description of the error (for a sign-in failure).  Supports $filter (eq) on errorCode property.
 func (m *SignIn) SetStatus(value SignInStatusable)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
@@ -2403,14 +2403,14 @@ func (m *SignIn) SetTokenIssuerName(value *string)() {
         panic(err)
     }
 }
-// SetTokenIssuerType sets the tokenIssuerType property value. The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth, ADFederationServicesMFAAdapter, NPSExtension. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: AzureADBackupAuth , ADFederationServicesMFAAdapter , NPSExtension.
+// SetTokenIssuerType sets the tokenIssuerType property value. The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth, ADFederationServicesMFAAdapter, NPSExtension. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: AzureADBackupAuth , ADFederationServicesMFAAdapter , NPSExtension.
 func (m *SignIn) SetTokenIssuerType(value *TokenIssuerType)() {
     err := m.GetBackingStore().Set("tokenIssuerType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUniqueTokenIdentifier sets the uniqueTokenIdentifier property value. A unique base64 encoded request identifier used to track tokens issued by Azure AD as they are redeemed at resource providers.
+// SetUniqueTokenIdentifier sets the uniqueTokenIdentifier property value. A unique base64 encoded request identifier used to track tokens issued by Azure AD as they're redeemed at resource providers.
 func (m *SignIn) SetUniqueTokenIdentifier(value *string)() {
     err := m.GetBackingStore().Set("uniqueTokenIdentifier", value)
     if err != nil {

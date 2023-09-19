@@ -74,3 +74,7 @@ func (m *DeviceCustomAttributeShellScriptsItemDeviceRunStatesCountRequestBuilder
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceCustomAttributeShellScriptsItemDeviceRunStatesCountRequestBuilder) WithUrl(rawUrl string)(*DeviceCustomAttributeShellScriptsItemDeviceRunStatesCountRequestBuilder) {
+    return NewDeviceCustomAttributeShellScriptsItemDeviceRunStatesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

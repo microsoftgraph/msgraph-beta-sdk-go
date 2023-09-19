@@ -46,8 +46,8 @@ type ForwardingPoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByForwardingPolicyIdString provides operations to manage the forwardingPolicies property of the microsoft.graph.networkaccess.networkAccessRoot entity.
-func (m *ForwardingPoliciesRequestBuilder) ByForwardingPolicyIdString(forwardingPolicyId string)(*ForwardingPoliciesForwardingPolicyItemRequestBuilder) {
+// ByForwardingPolicyId provides operations to manage the forwardingPolicies property of the microsoft.graph.networkaccess.networkAccessRoot entity.
+func (m *ForwardingPoliciesRequestBuilder) ByForwardingPolicyId(forwardingPolicyId string)(*ForwardingPoliciesForwardingPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ForwardingPoliciesRequestBuilder) ToPostRequestInformation(ctx context.
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ForwardingPoliciesRequestBuilder) WithUrl(rawUrl string)(*ForwardingPoliciesRequestBuilder) {
+    return NewForwardingPoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -50,3 +50,6 @@ func SerializeAssignmentFilterEvaluationResult(values []AssignmentFilterEvaluati
     }
     return result
 }
+func (i AssignmentFilterEvaluationResult) isMultiValue() bool {
+    return false
+}

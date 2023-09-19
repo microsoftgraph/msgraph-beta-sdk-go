@@ -50,3 +50,6 @@ func SerializeAndroidDeviceOwnerKioskModeIconSize(values []AndroidDeviceOwnerKio
     }
     return result
 }
+func (i AndroidDeviceOwnerKioskModeIconSize) isMultiValue() bool {
+    return false
+}

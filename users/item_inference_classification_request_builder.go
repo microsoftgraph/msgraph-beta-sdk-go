@@ -11,7 +11,7 @@ import (
 type ItemInferenceClassificationRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemInferenceClassificationRequestBuilderGetQueryParameters relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
+// ItemInferenceClassificationRequestBuilderGetQueryParameters relevance classification of the user's messages based on explicit designations that override inferred relevance or importance.
 type ItemInferenceClassificationRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -45,7 +45,7 @@ func NewItemInferenceClassificationRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewItemInferenceClassificationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
+// Get relevance classification of the user's messages based on explicit designations that override inferred relevance or importance.
 func (m *ItemInferenceClassificationRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemInferenceClassificationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InferenceClassificationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -87,7 +87,7 @@ func (m *ItemInferenceClassificationRequestBuilder) Patch(ctx context.Context, b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InferenceClassificationable), nil
 }
-// ToGetRequestInformation relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
+// ToGetRequestInformation relevance classification of the user's messages based on explicit designations that override inferred relevance or importance.
 func (m *ItemInferenceClassificationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemInferenceClassificationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -119,4 +119,8 @@ func (m *ItemInferenceClassificationRequestBuilder) ToPatchRequestInformation(ct
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemInferenceClassificationRequestBuilder) WithUrl(rawUrl string)(*ItemInferenceClassificationRequestBuilder) {
+    return NewItemInferenceClassificationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

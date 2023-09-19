@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilderGetQueryParameters get history from security
+// ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilderGetQueryParameters get a list of whoisHistoryRecord objects for a whoisRecord, including the properties and relationships of each whoisHistoryRecord object.
 type ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -39,8 +39,8 @@ type ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilderGetRequestConfigurat
     // Request query parameters
     QueryParameters *ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilderGetQueryParameters
 }
-// ByWhoisHistoryRecordIdString provides operations to manage the history property of the microsoft.graph.security.whoisRecord entity.
-func (m *ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilder) ByWhoisHistoryRecordIdString(whoisHistoryRecordId string)(*ThreatIntelligenceWhoisRecordsItemHistoryWhoisHistoryRecordItemRequestBuilder) {
+// ByWhoisHistoryRecordId provides operations to manage the history property of the microsoft.graph.security.whoisRecord entity.
+func (m *ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilder) ByWhoisHistoryRecordId(whoisHistoryRecordId string)(*ThreatIntelligenceWhoisRecordsItemHistoryWhoisHistoryRecordItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -67,7 +67,10 @@ func NewThreatIntelligenceWhoisRecordsItemHistoryRequestBuilder(rawUrl string, r
 func (m *ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilder) Count()(*ThreatIntelligenceWhoisRecordsItemHistoryCountRequestBuilder) {
     return NewThreatIntelligenceWhoisRecordsItemHistoryCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get history from security
+// Get get a list of whoisHistoryRecord objects for a whoisRecord, including the properties and relationships of each whoisHistoryRecord object.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-whoisrecord-list-history?view=graph-rest-1.0
 func (m *ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.WhoisHistoryRecordCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +89,7 @@ func (m *ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilder) Get(ctx contex
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.WhoisHistoryRecordCollectionResponseable), nil
 }
-// ToGetRequestInformation get history from security
+// ToGetRequestInformation get a list of whoisHistoryRecord objects for a whoisRecord, including the properties and relationships of each whoisHistoryRecord object.
 func (m *ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -101,4 +104,8 @@ func (m *ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilder) ToGetRequestIn
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilder) {
+    return NewThreatIntelligenceWhoisRecordsItemHistoryRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

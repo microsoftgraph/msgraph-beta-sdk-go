@@ -65,3 +65,7 @@ func (m *ReportsGetAppStatusOverviewReportRequestBuilder) ToPostRequestInformati
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ReportsGetAppStatusOverviewReportRequestBuilder) WithUrl(rawUrl string)(*ReportsGetAppStatusOverviewReportRequestBuilder) {
+    return NewReportsGetAppStatusOverviewReportRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

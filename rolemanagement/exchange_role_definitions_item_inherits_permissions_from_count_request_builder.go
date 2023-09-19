@@ -74,3 +74,7 @@ func (m *ExchangeRoleDefinitionsItemInheritsPermissionsFromCountRequestBuilder) 
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ExchangeRoleDefinitionsItemInheritsPermissionsFromCountRequestBuilder) WithUrl(rawUrl string)(*ExchangeRoleDefinitionsItemInheritsPermissionsFromCountRequestBuilder) {
+    return NewExchangeRoleDefinitionsItemInheritsPermissionsFromCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}
