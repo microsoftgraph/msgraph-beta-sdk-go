@@ -46,7 +46,7 @@ func (m *CommunicationsApplicationInstanceIdentity) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetHidden gets the hidden property value. True if the participant would not like to be shown in other participants' rosters.
+// GetHidden gets the hidden property value. True if the participant wouldn't like to be shown in other participants' rosters.
 func (m *CommunicationsApplicationInstanceIdentity) GetHidden()(*bool) {
     val, err := m.GetBackingStore().Get("hidden")
     if err != nil {
@@ -88,7 +88,7 @@ func (m *CommunicationsApplicationInstanceIdentity) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetHidden sets the hidden property value. True if the participant would not like to be shown in other participants' rosters.
+// SetHidden sets the hidden property value. True if the participant wouldn't like to be shown in other participants' rosters.
 func (m *CommunicationsApplicationInstanceIdentity) SetHidden(value *bool)() {
     err := m.GetBackingStore().Set("hidden", value)
     if err != nil {

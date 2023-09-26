@@ -25,3 +25,7 @@ func NewPrinterSharesItemAllowedGroupsGroupItemRequestBuilder(rawUrl string, req
 func (m *PrinterSharesItemAllowedGroupsGroupItemRequestBuilder) Ref()(*PrinterSharesItemAllowedGroupsItemRefRequestBuilder) {
     return NewPrinterSharesItemAllowedGroupsItemRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ServiceProvisioningErrors the serviceProvisioningErrors property
+func (m *PrinterSharesItemAllowedGroupsGroupItemRequestBuilder) ServiceProvisioningErrors()(*PrinterSharesItemAllowedGroupsItemServiceProvisioningErrorsRequestBuilder) {
+    return NewPrinterSharesItemAllowedGroupsItemServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}

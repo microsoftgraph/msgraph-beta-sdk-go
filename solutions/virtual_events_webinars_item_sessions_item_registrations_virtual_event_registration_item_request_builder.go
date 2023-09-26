@@ -11,7 +11,7 @@ import (
 type VirtualEventsWebinarsItemSessionsItemRegistrationsVirtualEventRegistrationItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEventsWebinarsItemSessionsItemRegistrationsVirtualEventRegistrationItemRequestBuilderGetQueryParameters get registrations from solutions
+// VirtualEventsWebinarsItemSessionsItemRegistrationsVirtualEventRegistrationItemRequestBuilderGetQueryParameters registration records of this virtual event session.
 type VirtualEventsWebinarsItemSessionsItemRegistrationsVirtualEventRegistrationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewVirtualEventsWebinarsItemSessionsItemRegistrationsVirtualEventRegistrati
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEventsWebinarsItemSessionsItemRegistrationsVirtualEventRegistrationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get registrations from solutions
+// Get registration records of this virtual event session.
 func (m *VirtualEventsWebinarsItemSessionsItemRegistrationsVirtualEventRegistrationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemSessionsItemRegistrationsVirtualEventRegistrationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventRegistrationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *VirtualEventsWebinarsItemSessionsItemRegistrationsVirtualEventRegistrat
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventRegistrationable), nil
 }
-// ToGetRequestInformation get registrations from solutions
+// ToGetRequestInformation registration records of this virtual event session.
 func (m *VirtualEventsWebinarsItemSessionsItemRegistrationsVirtualEventRegistrationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemSessionsItemRegistrationsVirtualEventRegistrationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

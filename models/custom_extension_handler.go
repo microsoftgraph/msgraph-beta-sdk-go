@@ -19,7 +19,7 @@ func NewCustomExtensionHandler()(*CustomExtensionHandler) {
 func CreateCustomExtensionHandlerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomExtensionHandler(), nil
 }
-// GetCustomExtension gets the customExtension property value. Indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.
+// GetCustomExtension gets the customExtension property value. Indicates which custom workflow extension is executed at this stage. Nullable. Supports $expand.
 func (m *CustomExtensionHandler) GetCustomExtension()(CustomAccessPackageWorkflowExtensionable) {
     val, err := m.GetBackingStore().Get("customExtension")
     if err != nil {
@@ -87,7 +87,7 @@ func (m *CustomExtensionHandler) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetCustomExtension sets the customExtension property value. Indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.
+// SetCustomExtension sets the customExtension property value. Indicates which custom workflow extension is executed at this stage. Nullable. Supports $expand.
 func (m *CustomExtensionHandler) SetCustomExtension(value CustomAccessPackageWorkflowExtensionable)() {
     err := m.GetBackingStore().Set("customExtension", value)
     if err != nil {

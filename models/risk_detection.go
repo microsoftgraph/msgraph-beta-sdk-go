@@ -179,6 +179,16 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["mitreTechniqueId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMitreTechniqueId(val)
+        }
+        return nil
+    }
     res["requestId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -321,6 +331,17 @@ func (m *RiskDetection) GetLocation()(SignInLocationable) {
     }
     if val != nil {
         return val.(SignInLocationable)
+    }
+    return nil
+}
+// GetMitreTechniqueId gets the mitreTechniqueId property value. The mitreTechniqueId property
+func (m *RiskDetection) GetMitreTechniqueId()(*string) {
+    val, err := m.GetBackingStore().Get("mitreTechniqueId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -508,6 +529,12 @@ func (m *RiskDetection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err = writer.WriteStringValue("mitreTechniqueId", m.GetMitreTechniqueId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("requestId", m.GetRequestId())
         if err != nil {
             return err
@@ -643,6 +670,13 @@ func (m *RiskDetection) SetLocation(value SignInLocationable)() {
         panic(err)
     }
 }
+// SetMitreTechniqueId sets the mitreTechniqueId property value. The mitreTechniqueId property
+func (m *RiskDetection) SetMitreTechniqueId(value *string)() {
+    err := m.GetBackingStore().Set("mitreTechniqueId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRequestId sets the requestId property value. Request ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
 func (m *RiskDetection) SetRequestId(value *string)() {
     err := m.GetBackingStore().Set("requestId", value)
@@ -733,6 +767,7 @@ type RiskDetectionable interface {
     GetIpAddress()(*string)
     GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLocation()(SignInLocationable)
+    GetMitreTechniqueId()(*string)
     GetRequestId()(*string)
     GetRiskDetail()(*RiskDetail)
     GetRiskEventType()(*string)
@@ -753,6 +788,7 @@ type RiskDetectionable interface {
     SetIpAddress(value *string)()
     SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLocation(value SignInLocationable)()
+    SetMitreTechniqueId(value *string)()
     SetRequestId(value *string)()
     SetRiskDetail(value *RiskDetail)()
     SetRiskEventType(value *string)()

@@ -59,6 +59,10 @@ func (m *PrivilegedAccessGroupEligibilityScheduleRequestsItemGroupRequestBuilder
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable), nil
 }
+// ServiceProvisioningErrors the serviceProvisioningErrors property
+func (m *PrivilegedAccessGroupEligibilityScheduleRequestsItemGroupRequestBuilder) ServiceProvisioningErrors()(*PrivilegedAccessGroupEligibilityScheduleRequestsItemGroupServiceProvisioningErrorsRequestBuilder) {
+    return NewPrivilegedAccessGroupEligibilityScheduleRequestsItemGroupServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation references the group that is the scope of the membership or ownership eligibility request through PIM for groups. Supports $expand.
 func (m *PrivilegedAccessGroupEligibilityScheduleRequestsItemGroupRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilityScheduleRequestsItemGroupRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

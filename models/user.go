@@ -3319,7 +3319,7 @@ func (m *User) GetRefreshTokensValidFromDateTime()(*i336074805fc853987abe6f7fe3a
     }
     return nil
 }
-// GetRegisteredDevices gets the registeredDevices property value. Devices that are registered for the user. Read-only. Nullable. Supports $expand.
+// GetRegisteredDevices gets the registeredDevices property value. Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
 func (m *User) GetRegisteredDevices()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("registeredDevices")
     if err != nil {
@@ -5726,7 +5726,7 @@ func (m *User) SetRefreshTokensValidFromDateTime(value *i336074805fc853987abe6f7
         panic(err)
     }
 }
-// SetRegisteredDevices sets the registeredDevices property value. Devices that are registered for the user. Read-only. Nullable. Supports $expand.
+// SetRegisteredDevices sets the registeredDevices property value. Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
 func (m *User) SetRegisteredDevices(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("registeredDevices", value)
     if err != nil {

@@ -29,3 +29,7 @@ func (m *PrinterSharesItemAllowedUsersUserItemRequestBuilder) MailboxSettings()(
 func (m *PrinterSharesItemAllowedUsersUserItemRequestBuilder) Ref()(*PrinterSharesItemAllowedUsersItemRefRequestBuilder) {
     return NewPrinterSharesItemAllowedUsersItemRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ServiceProvisioningErrors the serviceProvisioningErrors property
+func (m *PrinterSharesItemAllowedUsersUserItemRequestBuilder) ServiceProvisioningErrors()(*PrinterSharesItemAllowedUsersItemServiceProvisioningErrorsRequestBuilder) {
+    return NewPrinterSharesItemAllowedUsersItemServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}

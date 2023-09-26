@@ -93,7 +93,7 @@ func (m *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) Get(ctx c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookCategoryable), nil
 }
-// Patch update the writable property, color, of the specified outlookCategory object. You cannot modify the displayName propertyonce you have created the category.
+// Patch update the writable property, color, of the specified outlookCategory object. You can't modify the displayName propertyonce you have created the category.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/outlookcategory-update?view=graph-rest-1.0
@@ -143,7 +143,7 @@ func (m *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) ToGetRequ
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the writable property, color, of the specified outlookCategory object. You cannot modify the displayName propertyonce you have created the category.
+// ToPatchRequestInformation update the writable property, color, of the specified outlookCategory object. You can't modify the displayName propertyonce you have created the category.
 func (m *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookCategoryable, requestConfiguration *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

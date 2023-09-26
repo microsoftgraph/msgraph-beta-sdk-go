@@ -363,13 +363,13 @@ func (m *SubjectRightsRequest) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
-    res["mailboxlocations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mailboxLocations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSubjectRightsRequestMailboxLocationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMailboxlocations(val.(SubjectRightsRequestMailboxLocationable))
+            m.SetMailboxLocations(val.(SubjectRightsRequestMailboxLocationable))
         }
         return nil
     }
@@ -415,13 +415,13 @@ func (m *SubjectRightsRequest) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
-    res["sitelocations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["siteLocations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSubjectRightsRequestSiteLocationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSitelocations(val.(SubjectRightsRequestSiteLocationable))
+            m.SetSiteLocations(val.(SubjectRightsRequestSiteLocationable))
         }
         return nil
     }
@@ -484,7 +484,7 @@ func (m *SubjectRightsRequest) GetHistory()([]SubjectRightsRequestHistoryable) {
     }
     return nil
 }
-// GetIncludeAllVersions gets the includeAllVersions property value. Include all versions of the documents. By default, the current copies of the documents will be returned. If SharePoint sites have versioning enabled, including all versions will include the historical copies of the documents. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
+// GetIncludeAllVersions gets the includeAllVersions property value. Include all versions of the documents. By default, the current copies of the documents will be returned. If SharePoint sites have versioning enabled, including all versions include the historical copies of the documents. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) GetIncludeAllVersions()(*bool) {
     val, err := m.GetBackingStore().Get("includeAllVersions")
     if err != nil {
@@ -550,9 +550,9 @@ func (m *SubjectRightsRequest) GetLastModifiedDateTime()(*i336074805fc853987abe6
     }
     return nil
 }
-// GetMailboxlocations gets the mailboxlocations property value. The mailboxlocations property
-func (m *SubjectRightsRequest) GetMailboxlocations()(SubjectRightsRequestMailboxLocationable) {
-    val, err := m.GetBackingStore().Get("mailboxlocations")
+// GetMailboxLocations gets the mailboxLocations property value. The mailbox locations that should be searched. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
+func (m *SubjectRightsRequest) GetMailboxLocations()(SubjectRightsRequestMailboxLocationable) {
+    val, err := m.GetBackingStore().Get("mailboxLocations")
     if err != nil {
         panic(err)
     }
@@ -572,7 +572,7 @@ func (m *SubjectRightsRequest) GetNotes()([]AuthoredNoteable) {
     }
     return nil
 }
-// GetPauseAfterEstimate gets the pauseAfterEstimate property value. Pause the request after estimate has finished. By default, the data estimate will run and then pause, allowing you to preview results and then select the option to retrieve data in the UI. You can set this property to false if you want it to perform the estimate and then automatically begin with the retrieval of the content. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
+// GetPauseAfterEstimate gets the pauseAfterEstimate property value. Pause the request after estimate has finished. By default, the data estimate runs and then pauses, allowing you to preview results and then select the option to retrieve data in the UI. You can set this property to false if you want it to perform the estimate and then automatically begin with the retrieval of the content. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) GetPauseAfterEstimate()(*bool) {
     val, err := m.GetBackingStore().Get("pauseAfterEstimate")
     if err != nil {
@@ -583,7 +583,7 @@ func (m *SubjectRightsRequest) GetPauseAfterEstimate()(*bool) {
     }
     return nil
 }
-// GetRegulations gets the regulations property value. List of regulations that this request will fulfill.
+// GetRegulations gets the regulations property value. List of regulations that this request fulfills.
 func (m *SubjectRightsRequest) GetRegulations()([]string) {
     val, err := m.GetBackingStore().Get("regulations")
     if err != nil {
@@ -594,9 +594,9 @@ func (m *SubjectRightsRequest) GetRegulations()([]string) {
     }
     return nil
 }
-// GetSitelocations gets the sitelocations property value. The sitelocations property
-func (m *SubjectRightsRequest) GetSitelocations()(SubjectRightsRequestSiteLocationable) {
-    val, err := m.GetBackingStore().Get("sitelocations")
+// GetSiteLocations gets the siteLocations property value. The SharePoint and OneDrive site locations that should be searched. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
+func (m *SubjectRightsRequest) GetSiteLocations()(SubjectRightsRequestSiteLocationable) {
+    val, err := m.GetBackingStore().Get("siteLocations")
     if err != nil {
         panic(err)
     }
@@ -789,7 +789,7 @@ func (m *SubjectRightsRequest) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
-        err = writer.WriteObjectValue("mailboxlocations", m.GetMailboxlocations())
+        err = writer.WriteObjectValue("mailboxLocations", m.GetMailboxLocations())
         if err != nil {
             return err
         }
@@ -819,7 +819,7 @@ func (m *SubjectRightsRequest) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
-        err = writer.WriteObjectValue("sitelocations", m.GetSitelocations())
+        err = writer.WriteObjectValue("siteLocations", m.GetSiteLocations())
         if err != nil {
             return err
         }
@@ -949,7 +949,7 @@ func (m *SubjectRightsRequest) SetHistory(value []SubjectRightsRequestHistoryabl
         panic(err)
     }
 }
-// SetIncludeAllVersions sets the includeAllVersions property value. Include all versions of the documents. By default, the current copies of the documents will be returned. If SharePoint sites have versioning enabled, including all versions will include the historical copies of the documents. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
+// SetIncludeAllVersions sets the includeAllVersions property value. Include all versions of the documents. By default, the current copies of the documents will be returned. If SharePoint sites have versioning enabled, including all versions include the historical copies of the documents. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) SetIncludeAllVersions(value *bool)() {
     err := m.GetBackingStore().Set("includeAllVersions", value)
     if err != nil {
@@ -991,9 +991,9 @@ func (m *SubjectRightsRequest) SetLastModifiedDateTime(value *i336074805fc853987
         panic(err)
     }
 }
-// SetMailboxlocations sets the mailboxlocations property value. The mailboxlocations property
-func (m *SubjectRightsRequest) SetMailboxlocations(value SubjectRightsRequestMailboxLocationable)() {
-    err := m.GetBackingStore().Set("mailboxlocations", value)
+// SetMailboxLocations sets the mailboxLocations property value. The mailbox locations that should be searched. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
+func (m *SubjectRightsRequest) SetMailboxLocations(value SubjectRightsRequestMailboxLocationable)() {
+    err := m.GetBackingStore().Set("mailboxLocations", value)
     if err != nil {
         panic(err)
     }
@@ -1005,23 +1005,23 @@ func (m *SubjectRightsRequest) SetNotes(value []AuthoredNoteable)() {
         panic(err)
     }
 }
-// SetPauseAfterEstimate sets the pauseAfterEstimate property value. Pause the request after estimate has finished. By default, the data estimate will run and then pause, allowing you to preview results and then select the option to retrieve data in the UI. You can set this property to false if you want it to perform the estimate and then automatically begin with the retrieval of the content. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
+// SetPauseAfterEstimate sets the pauseAfterEstimate property value. Pause the request after estimate has finished. By default, the data estimate runs and then pauses, allowing you to preview results and then select the option to retrieve data in the UI. You can set this property to false if you want it to perform the estimate and then automatically begin with the retrieval of the content. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) SetPauseAfterEstimate(value *bool)() {
     err := m.GetBackingStore().Set("pauseAfterEstimate", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRegulations sets the regulations property value. List of regulations that this request will fulfill.
+// SetRegulations sets the regulations property value. List of regulations that this request fulfills.
 func (m *SubjectRightsRequest) SetRegulations(value []string)() {
     err := m.GetBackingStore().Set("regulations", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSitelocations sets the sitelocations property value. The sitelocations property
-func (m *SubjectRightsRequest) SetSitelocations(value SubjectRightsRequestSiteLocationable)() {
-    err := m.GetBackingStore().Set("sitelocations", value)
+// SetSiteLocations sets the siteLocations property value. The SharePoint and OneDrive site locations that should be searched. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
+func (m *SubjectRightsRequest) SetSiteLocations(value SubjectRightsRequestSiteLocationable)() {
+    err := m.GetBackingStore().Set("siteLocations", value)
     if err != nil {
         panic(err)
     }
@@ -1077,11 +1077,11 @@ type SubjectRightsRequestable interface {
     GetInternalDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastModifiedBy()(IdentitySetable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetMailboxlocations()(SubjectRightsRequestMailboxLocationable)
+    GetMailboxLocations()(SubjectRightsRequestMailboxLocationable)
     GetNotes()([]AuthoredNoteable)
     GetPauseAfterEstimate()(*bool)
     GetRegulations()([]string)
-    GetSitelocations()(SubjectRightsRequestSiteLocationable)
+    GetSiteLocations()(SubjectRightsRequestSiteLocationable)
     GetStages()([]SubjectRightsRequestStageDetailable)
     GetStatus()(*SubjectRightsRequestStatus)
     GetTeam()(Teamable)
@@ -1105,11 +1105,11 @@ type SubjectRightsRequestable interface {
     SetInternalDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastModifiedBy(value IdentitySetable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetMailboxlocations(value SubjectRightsRequestMailboxLocationable)()
+    SetMailboxLocations(value SubjectRightsRequestMailboxLocationable)()
     SetNotes(value []AuthoredNoteable)()
     SetPauseAfterEstimate(value *bool)()
     SetRegulations(value []string)()
-    SetSitelocations(value SubjectRightsRequestSiteLocationable)()
+    SetSiteLocations(value SubjectRightsRequestSiteLocationable)()
     SetStages(value []SubjectRightsRequestStageDetailable)()
     SetStatus(value *SubjectRightsRequestStatus)()
     SetTeam(value Teamable)()

@@ -59,6 +59,10 @@ func (m *ItemGraphRoomListRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RoomListable), nil
 }
+// Rooms provides operations to manage the rooms property of the microsoft.graph.roomList entity.
+func (m *ItemGraphRoomListRequestBuilder) Rooms()(*ItemGraphRoomListRoomsRequestBuilder) {
+    return NewItemGraphRoomListRoomsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation get the item of type microsoft.graph.place as microsoft.graph.roomList
 func (m *ItemGraphRoomListRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGraphRoomListRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -78,4 +82,8 @@ func (m *ItemGraphRoomListRequestBuilder) ToGetRequestInformation(ctx context.Co
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 func (m *ItemGraphRoomListRequestBuilder) WithUrl(rawUrl string)(*ItemGraphRoomListRequestBuilder) {
     return NewItemGraphRoomListRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}
+// Workspaces provides operations to manage the workspaces property of the microsoft.graph.roomList entity.
+func (m *ItemGraphRoomListRequestBuilder) Workspaces()(*ItemGraphRoomListWorkspacesRequestBuilder) {
+    return NewItemGraphRoomListWorkspacesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

@@ -25,3 +25,7 @@ func NewMobileAppManagementPoliciesItemIncludedGroupsGroupItemRequestBuilder(raw
 func (m *MobileAppManagementPoliciesItemIncludedGroupsGroupItemRequestBuilder) Ref()(*MobileAppManagementPoliciesItemIncludedGroupsItemRefRequestBuilder) {
     return NewMobileAppManagementPoliciesItemIncludedGroupsItemRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ServiceProvisioningErrors the serviceProvisioningErrors property
+func (m *MobileAppManagementPoliciesItemIncludedGroupsGroupItemRequestBuilder) ServiceProvisioningErrors()(*MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsRequestBuilder) {
+    return NewMobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}

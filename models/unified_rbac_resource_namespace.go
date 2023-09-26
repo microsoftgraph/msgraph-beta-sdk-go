@@ -61,7 +61,7 @@ func (m *UnifiedRbacResourceNamespace) GetName()(*string) {
     }
     return nil
 }
-// GetResourceActions gets the resourceActions property value. Operations that an authorized principal are allowed to perform.
+// GetResourceActions gets the resourceActions property value. Operations that an authorized principal is allowed to perform.
 func (m *UnifiedRbacResourceNamespace) GetResourceActions()([]UnifiedRbacResourceActionable) {
     val, err := m.GetBackingStore().Get("resourceActions")
     if err != nil {
@@ -105,7 +105,7 @@ func (m *UnifiedRbacResourceNamespace) SetName(value *string)() {
         panic(err)
     }
 }
-// SetResourceActions sets the resourceActions property value. Operations that an authorized principal are allowed to perform.
+// SetResourceActions sets the resourceActions property value. Operations that an authorized principal is allowed to perform.
 func (m *UnifiedRbacResourceNamespace) SetResourceActions(value []UnifiedRbacResourceActionable)() {
     err := m.GetBackingStore().Set("resourceActions", value)
     if err != nil {
