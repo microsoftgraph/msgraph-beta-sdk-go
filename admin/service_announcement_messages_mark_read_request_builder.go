@@ -30,7 +30,8 @@ func NewServiceAnnouncementMessagesMarkReadRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewServiceAnnouncementMessagesMarkReadRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post mark a list of serviceUpdateMessages as read for the signed in user.
+// Post mark a list of serviceUpdateMessages as read for the signed in user. This API is supported in the following national cloud deployments.
+// Deprecated: This method is obsolete. Use PostAsMarkReadPostResponse instead.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-markread?view=graph-rest-1.0
@@ -52,7 +53,29 @@ func (m *ServiceAnnouncementMessagesMarkReadRequestBuilder) Post(ctx context.Con
     }
     return res.(ServiceAnnouncementMessagesMarkReadResponseable), nil
 }
-// ToPostRequestInformation mark a list of serviceUpdateMessages as read for the signed in user.
+// PostAsMarkReadPostResponse mark a list of serviceUpdateMessages as read for the signed in user. This API is supported in the following national cloud deployments.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-markread?view=graph-rest-1.0
+func (m *ServiceAnnouncementMessagesMarkReadRequestBuilder) PostAsMarkReadPostResponse(ctx context.Context, body ServiceAnnouncementMessagesMarkReadPostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesMarkReadRequestBuilderPostRequestConfiguration)(ServiceAnnouncementMessagesMarkReadPostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateServiceAnnouncementMessagesMarkReadPostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ServiceAnnouncementMessagesMarkReadPostResponseable), nil
+}
+// ToPostRequestInformation mark a list of serviceUpdateMessages as read for the signed in user. This API is supported in the following national cloud deployments.
 func (m *ServiceAnnouncementMessagesMarkReadRequestBuilder) ToPostRequestInformation(ctx context.Context, body ServiceAnnouncementMessagesMarkReadPostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesMarkReadRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

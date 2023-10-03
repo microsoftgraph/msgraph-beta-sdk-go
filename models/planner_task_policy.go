@@ -80,7 +80,7 @@ func (m *PlannerTaskPolicy) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRules gets the rules property value. The rules that should be enforced on the tasks when they are being changed outside of the scenario, based on the role of the caller.
+// GetRules gets the rules property value. The rules that should be enforced on the tasks when they're being changed outside of the scenario, based on the role of the caller.
 func (m *PlannerTaskPolicy) GetRules()([]PlannerTaskRoleBasedRuleable) {
     val, err := m.GetBackingStore().Get("rules")
     if err != nil {
@@ -137,7 +137,7 @@ func (m *PlannerTaskPolicy) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRules sets the rules property value. The rules that should be enforced on the tasks when they are being changed outside of the scenario, based on the role of the caller.
+// SetRules sets the rules property value. The rules that should be enforced on the tasks when they're being changed outside of the scenario, based on the role of the caller.
 func (m *PlannerTaskPolicy) SetRules(value []PlannerTaskRoleBasedRuleable)() {
     err := m.GetBackingStore().Set("rules", value)
     if err != nil {

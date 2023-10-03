@@ -101,7 +101,7 @@ func (m *ContentApplicabilitySettings) GetOfferWhileRecommendedBy()([]string) {
     }
     return nil
 }
-// GetSafeguard gets the safeguard property value. Settings for governing safeguard holds on offering content.
+// GetSafeguard gets the safeguard property value. Settings for governing safeguard-holds on offering content.
 func (m *ContentApplicabilitySettings) GetSafeguard()(SafeguardSettingsable) {
     val, err := m.GetBackingStore().Get("safeguard")
     if err != nil {
@@ -165,7 +165,7 @@ func (m *ContentApplicabilitySettings) SetOfferWhileRecommendedBy(value []string
         panic(err)
     }
 }
-// SetSafeguard sets the safeguard property value. Settings for governing safeguard holds on offering content.
+// SetSafeguard sets the safeguard property value. Settings for governing safeguard-holds on offering content.
 func (m *ContentApplicabilitySettings) SetSafeguard(value SafeguardSettingsable)() {
     err := m.GetBackingStore().Set("safeguard", value)
     if err != nil {

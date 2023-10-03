@@ -11,7 +11,7 @@ import (
 type PrivilegedAccessGroupAssignmentScheduleRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrivilegedAccessGroupAssignmentScheduleRequestsRequestBuilderGetQueryParameters get a list of the privilegedAccessGroupAssignmentScheduleRequest objects and their properties.
+// PrivilegedAccessGroupAssignmentScheduleRequestsRequestBuilderGetQueryParameters get a list of the privilegedAccessGroupAssignmentScheduleRequest objects and their properties. This API is supported in the following national cloud deployments.
 type PrivilegedAccessGroupAssignmentScheduleRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequestsRequestBuilder) Count()(
 func (m *PrivilegedAccessGroupAssignmentScheduleRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*PrivilegedAccessGroupAssignmentScheduleRequestsFilterByCurrentUserWithOnRequestBuilder) {
     return NewPrivilegedAccessGroupAssignmentScheduleRequestsFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
-// Get get a list of the privilegedAccessGroupAssignmentScheduleRequest objects and their properties.
+// Get get a list of the privilegedAccessGroupAssignmentScheduleRequest objects and their properties. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-assignmentschedulerequests?view=graph-rest-1.0
@@ -100,7 +100,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequestsRequestBuilder) Get(ctx 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupAssignmentScheduleRequestCollectionResponseable), nil
 }
-// Post create a new privilegedAccessGroupAssignmentScheduleRequest object.
+// Post create a new privilegedAccessGroupAssignmentScheduleRequest object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/privilegedaccessgroup-post-assignmentschedulerequests?view=graph-rest-1.0
@@ -122,7 +122,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequestsRequestBuilder) Post(ctx
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupAssignmentScheduleRequestable), nil
 }
-// ToGetRequestInformation get a list of the privilegedAccessGroupAssignmentScheduleRequest objects and their properties.
+// ToGetRequestInformation get a list of the privilegedAccessGroupAssignmentScheduleRequest objects and their properties. This API is supported in the following national cloud deployments.
 func (m *PrivilegedAccessGroupAssignmentScheduleRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentScheduleRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -138,7 +138,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequestsRequestBuilder) ToGetReq
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new privilegedAccessGroupAssignmentScheduleRequest object.
+// ToPostRequestInformation create a new privilegedAccessGroupAssignmentScheduleRequest object. This API is supported in the following national cloud deployments.
 func (m *PrivilegedAccessGroupAssignmentScheduleRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupAssignmentScheduleRequestable, requestConfiguration *PrivilegedAccessGroupAssignmentScheduleRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

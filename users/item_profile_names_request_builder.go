@@ -11,7 +11,7 @@ import (
 type ItemProfileNamesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemProfileNamesRequestBuilderGetQueryParameters retrieve a list of personName objects from a user's profile.
+// ItemProfileNamesRequestBuilderGetQueryParameters retrieve a list of personName objects from a user's profile. This API is supported in the following national cloud deployments.
 type ItemProfileNamesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemProfileNamesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *ItemProfileNamesRequestBuilder) Count()(*ItemProfileNamesCountRequestBuilder) {
     return NewItemProfileNamesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of personName objects from a user's profile.
+// Get retrieve a list of personName objects from a user's profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/profile-list-names?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemProfileNamesRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonNameCollectionResponseable), nil
 }
-// Post use this API to create a new personName object in a user's profile.
+// Post use this API to create a new personName object in a user's profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/profile-post-names?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemProfileNamesRequestBuilder) Post(ctx context.Context, body ie233ee7
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonNameable), nil
 }
-// ToGetRequestInformation retrieve a list of personName objects from a user's profile.
+// ToGetRequestInformation retrieve a list of personName objects from a user's profile. This API is supported in the following national cloud deployments.
 func (m *ItemProfileNamesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileNamesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemProfileNamesRequestBuilder) ToGetRequestInformation(ctx context.Con
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation use this API to create a new personName object in a user's profile.
+// ToPostRequestInformation use this API to create a new personName object in a user's profile. This API is supported in the following national cloud deployments.
 func (m *ItemProfileNamesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonNameable, requestConfiguration *ItemProfileNamesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

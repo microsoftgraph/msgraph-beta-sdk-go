@@ -30,7 +30,7 @@ func NewSynchronizationProfilesItemResumeRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewSynchronizationProfilesItemResumeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post resume the sync of a specific school data synchronization profile in the tenant.
+// Post resume the sync of a specific school data synchronization profile in the tenant. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationsynchronizationprofile-resume?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *SynchronizationProfilesItemResumeRequestBuilder) Post(ctx context.Conte
     }
     return nil
 }
-// ToPostRequestInformation resume the sync of a specific school data synchronization profile in the tenant.
+// ToPostRequestInformation resume the sync of a specific school data synchronization profile in the tenant. This API is supported in the following national cloud deployments.
 func (m *SynchronizationProfilesItemResumeRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *SynchronizationProfilesItemResumeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

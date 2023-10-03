@@ -158,7 +158,7 @@ func (m *PrivilegedAccess) GetRoleAssignments()([]GovernanceRoleAssignmentable) 
     }
     return nil
 }
-// GetRoleDefinitions gets the roleDefinitions property value. A collection of role defintions for the provider.
+// GetRoleDefinitions gets the roleDefinitions property value. A collection of role definitions for the provider.
 func (m *PrivilegedAccess) GetRoleDefinitions()([]GovernanceRoleDefinitionable) {
     val, err := m.GetBackingStore().Get("roleDefinitions")
     if err != nil {
@@ -282,7 +282,7 @@ func (m *PrivilegedAccess) SetRoleAssignments(value []GovernanceRoleAssignmentab
         panic(err)
     }
 }
-// SetRoleDefinitions sets the roleDefinitions property value. A collection of role defintions for the provider.
+// SetRoleDefinitions sets the roleDefinitions property value. A collection of role definitions for the provider.
 func (m *PrivilegedAccess) SetRoleDefinitions(value []GovernanceRoleDefinitionable)() {
     err := m.GetBackingStore().Set("roleDefinitions", value)
     if err != nil {

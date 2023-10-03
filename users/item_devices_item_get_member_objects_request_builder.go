@@ -31,6 +31,7 @@ func NewItemDevicesItemGetMemberObjectsRequestBuilder(rawUrl string, requestAdap
     return NewItemDevicesItemGetMemberObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action getMemberObjects
+// Deprecated: This method is obsolete. Use PostAsGetMemberObjectsPostResponse instead.
 func (m *ItemDevicesItemGetMemberObjectsRequestBuilder) Post(ctx context.Context, body ItemDevicesItemGetMemberObjectsPostRequestBodyable, requestConfiguration *ItemDevicesItemGetMemberObjectsRequestBuilderPostRequestConfiguration)(ItemDevicesItemGetMemberObjectsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -48,6 +49,25 @@ func (m *ItemDevicesItemGetMemberObjectsRequestBuilder) Post(ctx context.Context
         return nil, nil
     }
     return res.(ItemDevicesItemGetMemberObjectsResponseable), nil
+}
+// PostAsGetMemberObjectsPostResponse invoke action getMemberObjects
+func (m *ItemDevicesItemGetMemberObjectsRequestBuilder) PostAsGetMemberObjectsPostResponse(ctx context.Context, body ItemDevicesItemGetMemberObjectsPostRequestBodyable, requestConfiguration *ItemDevicesItemGetMemberObjectsRequestBuilderPostRequestConfiguration)(ItemDevicesItemGetMemberObjectsPostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemDevicesItemGetMemberObjectsPostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemDevicesItemGetMemberObjectsPostResponseable), nil
 }
 // ToPostRequestInformation invoke action getMemberObjects
 func (m *ItemDevicesItemGetMemberObjectsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemDevicesItemGetMemberObjectsPostRequestBodyable, requestConfiguration *ItemDevicesItemGetMemberObjectsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

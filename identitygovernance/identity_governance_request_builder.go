@@ -101,6 +101,10 @@ func (m *IdentityGovernanceRequestBuilder) Patch(ctx context.Context, body ie233
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityGovernanceable), nil
 }
+// PermissionsManagement provides operations to manage the permissionsManagement property of the microsoft.graph.identityGovernance entity.
+func (m *IdentityGovernanceRequestBuilder) PermissionsManagement()(*PermissionsManagementRequestBuilder) {
+    return NewPermissionsManagementRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // PrivilegedAccess provides operations to manage the privilegedAccess property of the microsoft.graph.identityGovernance entity.
 func (m *IdentityGovernanceRequestBuilder) PrivilegedAccess()(*PrivilegedAccessRequestBuilder) {
     return NewPrivilegedAccessRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

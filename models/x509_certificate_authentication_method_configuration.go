@@ -88,6 +88,16 @@ func (m *X509CertificateAuthenticationMethodConfiguration) GetFieldDeserializers
         }
         return nil
     }
+    res["issuerHintsConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateX509CertificateIssuerHintsConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIssuerHintsConfiguration(val.(X509CertificateIssuerHintsConfigurationable))
+        }
+        return nil
+    }
     return res
 }
 // GetIncludeTargets gets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
@@ -98,6 +108,17 @@ func (m *X509CertificateAuthenticationMethodConfiguration) GetIncludeTargets()([
     }
     if val != nil {
         return val.([]AuthenticationMethodTargetable)
+    }
+    return nil
+}
+// GetIssuerHintsConfiguration gets the issuerHintsConfiguration property value. The issuerHintsConfiguration property
+func (m *X509CertificateAuthenticationMethodConfiguration) GetIssuerHintsConfiguration()(X509CertificateIssuerHintsConfigurationable) {
+    val, err := m.GetBackingStore().Get("issuerHintsConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(X509CertificateIssuerHintsConfigurationable)
     }
     return nil
 }
@@ -137,6 +158,12 @@ func (m *X509CertificateAuthenticationMethodConfiguration) Serialize(writer i878
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("issuerHintsConfiguration", m.GetIssuerHintsConfiguration())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAuthenticationModeConfiguration sets the authenticationModeConfiguration property value. Defines strong authentication configurations. This configuration includes the default authentication mode and the different rules for strong authentication bindings.
@@ -160,6 +187,13 @@ func (m *X509CertificateAuthenticationMethodConfiguration) SetIncludeTargets(val
         panic(err)
     }
 }
+// SetIssuerHintsConfiguration sets the issuerHintsConfiguration property value. The issuerHintsConfiguration property
+func (m *X509CertificateAuthenticationMethodConfiguration) SetIssuerHintsConfiguration(value X509CertificateIssuerHintsConfigurationable)() {
+    err := m.GetBackingStore().Set("issuerHintsConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // X509CertificateAuthenticationMethodConfigurationable 
 type X509CertificateAuthenticationMethodConfigurationable interface {
     AuthenticationMethodConfigurationable
@@ -167,7 +201,9 @@ type X509CertificateAuthenticationMethodConfigurationable interface {
     GetAuthenticationModeConfiguration()(X509CertificateAuthenticationModeConfigurationable)
     GetCertificateUserBindings()([]X509CertificateUserBindingable)
     GetIncludeTargets()([]AuthenticationMethodTargetable)
+    GetIssuerHintsConfiguration()(X509CertificateIssuerHintsConfigurationable)
     SetAuthenticationModeConfiguration(value X509CertificateAuthenticationModeConfigurationable)()
     SetCertificateUserBindings(value []X509CertificateUserBindingable)()
     SetIncludeTargets(value []AuthenticationMethodTargetable)()
+    SetIssuerHintsConfiguration(value X509CertificateIssuerHintsConfigurationable)()
 }

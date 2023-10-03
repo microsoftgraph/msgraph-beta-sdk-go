@@ -11,7 +11,7 @@ import (
 type LabelsFilePlanReferencesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LabelsFilePlanReferencesRequestBuilderGetQueryParameters get a list of the filePlanReferenceTemplate objects and their properties.
+// LabelsFilePlanReferencesRequestBuilderGetQueryParameters get a list of the filePlanReferenceTemplate objects and their properties. This API is supported in the following national cloud deployments.
 type LabelsFilePlanReferencesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewLabelsFilePlanReferencesRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *LabelsFilePlanReferencesRequestBuilder) Count()(*LabelsFilePlanReferencesCountRequestBuilder) {
     return NewLabelsFilePlanReferencesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the filePlanReferenceTemplate objects and their properties.
+// Get get a list of the filePlanReferenceTemplate objects and their properties. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-list-fileplanreferences?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *LabelsFilePlanReferencesRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.FilePlanReferenceTemplateCollectionResponseable), nil
 }
-// Post create a new filePlanReferenceTemplate object.
+// Post create a new filePlanReferenceTemplate object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-post-fileplanreferences?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *LabelsFilePlanReferencesRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.FilePlanReferenceTemplateable), nil
 }
-// ToGetRequestInformation get a list of the filePlanReferenceTemplate objects and their properties.
+// ToGetRequestInformation get a list of the filePlanReferenceTemplate objects and their properties. This API is supported in the following national cloud deployments.
 func (m *LabelsFilePlanReferencesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsFilePlanReferencesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *LabelsFilePlanReferencesRequestBuilder) ToGetRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new filePlanReferenceTemplate object.
+// ToPostRequestInformation create a new filePlanReferenceTemplate object. This API is supported in the following national cloud deployments.
 func (m *LabelsFilePlanReferencesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.FilePlanReferenceTemplateable, requestConfiguration *LabelsFilePlanReferencesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMem
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderGetQueryParameters get the properties and relationships of a member of a standard tag in a team. 
+// TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderGetQueryParameters get the properties and relationships of a member of a standard tag in a team.  This API is supported in the following national cloud deployments.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTag
     urlParams["request-raw-url"] = rawUrl
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a member from a standard tag in a team.
+// Delete delete a member from a standard tag in a team. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/teamworktagmember-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTa
     }
     return nil
 }
-// Get get the properties and relationships of a member of a standard tag in a team. 
+// Get get the properties and relationships of a member of a standard tag in a team.  This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/teamworktagmember-get?view=graph-rest-1.0
@@ -114,7 +114,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTa
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagMemberable), nil
 }
-// ToDeleteRequestInformation delete a member from a standard tag in a team.
+// ToDeleteRequestInformation delete a member from a standard tag in a team. This API is supported in the following national cloud deployments.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -126,7 +126,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTa
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of a member of a standard tag in a team. 
+// ToGetRequestInformation get the properties and relationships of a member of a standard tag in a team.  This API is supported in the following national cloud deployments.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

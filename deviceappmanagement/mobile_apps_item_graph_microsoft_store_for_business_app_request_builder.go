@@ -27,6 +27,14 @@ type MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilderGetRequestConf
     // Request query parameters
     QueryParameters *MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilderGetQueryParameters
 }
+// Assignments provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilder) Assignments()(*MobileAppsItemGraphMicrosoftStoreForBusinessAppAssignmentsRequestBuilder) {
+    return NewMobileAppsItemGraphMicrosoftStoreForBusinessAppAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Categories provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilder) Categories()(*MobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilder) {
+    return NewMobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilderInternal instantiates a new GraphMicrosoftStoreForBusinessAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilder) {
     m := &MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilder{
@@ -39,6 +47,10 @@ func NewMobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilder(rawUrl str
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilderInternal(urlParams, requestAdapter)
+}
+// ContainedApps provides operations to manage the containedApps property of the microsoft.graph.microsoftStoreForBusinessApp entity.
+func (m *MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilder) ContainedApps()(*MobileAppsItemGraphMicrosoftStoreForBusinessAppContainedAppsRequestBuilder) {
+    return NewMobileAppsItemGraphMicrosoftStoreForBusinessAppContainedAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the item of type microsoft.graph.mobileApp as microsoft.graph.microsoftStoreForBusinessApp
 func (m *MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftStoreForBusinessAppable, error) {
@@ -58,6 +70,10 @@ func (m *MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilder) Get(ctx 
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftStoreForBusinessAppable), nil
+}
+// Relationships provides operations to manage the relationships property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilder) Relationships()(*MobileAppsItemGraphMicrosoftStoreForBusinessAppRelationshipsRequestBuilder) {
+    return NewMobileAppsItemGraphMicrosoftStoreForBusinessAppRelationshipsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get the item of type microsoft.graph.mobileApp as microsoft.graph.microsoftStoreForBusinessApp
 func (m *MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

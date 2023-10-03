@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceSslCertificatesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceSslCertificatesRequestBuilderGetQueryParameters get a list of sslCertificate objects and their properties.
+// ThreatIntelligenceSslCertificatesRequestBuilderGetQueryParameters get a list of sslCertificate objects and their properties. This API is supported in the following national cloud deployments.
 type ThreatIntelligenceSslCertificatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewThreatIntelligenceSslCertificatesRequestBuilder(rawUrl string, requestAd
 func (m *ThreatIntelligenceSslCertificatesRequestBuilder) Count()(*ThreatIntelligenceSslCertificatesCountRequestBuilder) {
     return NewThreatIntelligenceSslCertificatesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of sslCertificate objects and their properties.
+// Get get a list of sslCertificate objects and their properties. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-sslcertificate-list?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *ThreatIntelligenceSslCertificatesRequestBuilder) Post(ctx context.Conte
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SslCertificateable), nil
 }
-// ToGetRequestInformation get a list of sslCertificate objects and their properties.
+// ToGetRequestInformation get a list of sslCertificate objects and their properties. This API is supported in the following national cloud deployments.
 func (m *ThreatIntelligenceSslCertificatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceSslCertificatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

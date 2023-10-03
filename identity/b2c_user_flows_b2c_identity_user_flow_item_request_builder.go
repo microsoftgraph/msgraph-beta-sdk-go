@@ -18,7 +18,7 @@ type B2cUserFlowsB2cIdentityUserFlowItemRequestBuilderDeleteRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// B2cUserFlowsB2cIdentityUserFlowItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a b2cUserFlow object.
+// B2cUserFlowsB2cIdentityUserFlowItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a b2cUserFlow object. This API is supported in the following national cloud deployments.
 type B2cUserFlowsB2cIdentityUserFlowItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewB2cUserFlowsB2cIdentityUserFlowItemRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewB2cUserFlowsB2cIdentityUserFlowItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a b2cIdentityUserFlow object.
+// Delete delete a b2cIdentityUserFlow object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/b2cidentityuserflow-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// Get retrieve the properties and relationships of a b2cUserFlow object.
+// Get retrieve the properties and relationships of a b2cUserFlow object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/b2cidentityuserflow-get?view=graph-rest-1.0
@@ -103,7 +103,7 @@ func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) IdentityProviders()(
 func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) Languages()(*B2cUserFlowsItemLanguagesRequestBuilder) {
     return NewB2cUserFlowsItemLanguagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of a b2cIdentityUserFlow object.
+// Patch update the properties of a b2cIdentityUserFlow object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/b2cidentityuserflow-update?view=graph-rest-1.0
@@ -125,7 +125,7 @@ func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) Patch(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cIdentityUserFlowable), nil
 }
-// ToDeleteRequestInformation delete a b2cIdentityUserFlow object.
+// ToDeleteRequestInformation delete a b2cIdentityUserFlow object. This API is supported in the following national cloud deployments.
 func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -137,7 +137,7 @@ func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) ToDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a b2cUserFlow object.
+// ToGetRequestInformation retrieve the properties and relationships of a b2cUserFlow object. This API is supported in the following national cloud deployments.
 func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -153,7 +153,7 @@ func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) ToGetRequestInformat
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a b2cIdentityUserFlow object.
+// ToPatchRequestInformation update the properties of a b2cIdentityUserFlow object. This API is supported in the following national cloud deployments.
 func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cIdentityUserFlowable, requestConfiguration *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type ClassesItemAssignmentSettingsRequestBuilderDeleteRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ClassesItemAssignmentSettingsRequestBuilderGetQueryParameters read the properties and relationships of an educationAssignmentSettings object. Only teachers can perform this operation.
+// ClassesItemAssignmentSettingsRequestBuilderGetQueryParameters read the properties and relationships of an educationAssignmentSettings object. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
 type ClassesItemAssignmentSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ClassesItemAssignmentSettingsRequestBuilder) Delete(ctx context.Context
     }
     return nil
 }
-// Get read the properties and relationships of an educationAssignmentSettings object. Only teachers can perform this operation.
+// Get read the properties and relationships of an educationAssignmentSettings object. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationassignmentsettings-get?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ClassesItemAssignmentSettingsRequestBuilder) Get(ctx context.Context, r
 func (m *ClassesItemAssignmentSettingsRequestBuilder) GradingCategories()(*ClassesItemAssignmentSettingsGradingCategoriesRequestBuilder) {
     return NewClassesItemAssignmentSettingsGradingCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of an educationAssignmentSettings object. Only teachers can update these settings.
+// Patch update the properties of an educationAssignmentSettings object. Only teachers can update these settings. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationassignmentsettings-update?view=graph-rest-1.0
@@ -130,7 +130,7 @@ func (m *ClassesItemAssignmentSettingsRequestBuilder) ToDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an educationAssignmentSettings object. Only teachers can perform this operation.
+// ToGetRequestInformation read the properties and relationships of an educationAssignmentSettings object. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
 func (m *ClassesItemAssignmentSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -146,7 +146,7 @@ func (m *ClassesItemAssignmentSettingsRequestBuilder) ToGetRequestInformation(ct
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an educationAssignmentSettings object. Only teachers can update these settings.
+// ToPatchRequestInformation update the properties of an educationAssignmentSettings object. Only teachers can update these settings. This API is supported in the following national cloud deployments.
 func (m *ClassesItemAssignmentSettingsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentSettingsable, requestConfiguration *ClassesItemAssignmentSettingsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

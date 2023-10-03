@@ -27,6 +27,14 @@ type MobileAppsItemGraphManagedIOSLobAppRequestBuilderGetRequestConfiguration st
     // Request query parameters
     QueryParameters *MobileAppsItemGraphManagedIOSLobAppRequestBuilderGetQueryParameters
 }
+// Assignments provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphManagedIOSLobAppRequestBuilder) Assignments()(*MobileAppsItemGraphManagedIOSLobAppAssignmentsRequestBuilder) {
+    return NewMobileAppsItemGraphManagedIOSLobAppAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Categories provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphManagedIOSLobAppRequestBuilder) Categories()(*MobileAppsItemGraphManagedIOSLobAppCategoriesRequestBuilder) {
+    return NewMobileAppsItemGraphManagedIOSLobAppCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMobileAppsItemGraphManagedIOSLobAppRequestBuilderInternal instantiates a new GraphManagedIOSLobAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphManagedIOSLobAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphManagedIOSLobAppRequestBuilder) {
     m := &MobileAppsItemGraphManagedIOSLobAppRequestBuilder{
@@ -39,6 +47,10 @@ func NewMobileAppsItemGraphManagedIOSLobAppRequestBuilder(rawUrl string, request
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemGraphManagedIOSLobAppRequestBuilderInternal(urlParams, requestAdapter)
+}
+// ContentVersions provides operations to manage the contentVersions property of the microsoft.graph.managedMobileLobApp entity.
+func (m *MobileAppsItemGraphManagedIOSLobAppRequestBuilder) ContentVersions()(*MobileAppsItemGraphManagedIOSLobAppContentVersionsRequestBuilder) {
+    return NewMobileAppsItemGraphManagedIOSLobAppContentVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the item of type microsoft.graph.mobileApp as microsoft.graph.managedIOSLobApp
 func (m *MobileAppsItemGraphManagedIOSLobAppRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphManagedIOSLobAppRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedIOSLobAppable, error) {
@@ -58,6 +70,10 @@ func (m *MobileAppsItemGraphManagedIOSLobAppRequestBuilder) Get(ctx context.Cont
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedIOSLobAppable), nil
+}
+// Relationships provides operations to manage the relationships property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphManagedIOSLobAppRequestBuilder) Relationships()(*MobileAppsItemGraphManagedIOSLobAppRelationshipsRequestBuilder) {
+    return NewMobileAppsItemGraphManagedIOSLobAppRelationshipsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get the item of type microsoft.graph.mobileApp as microsoft.graph.managedIOSLobApp
 func (m *MobileAppsItemGraphManagedIOSLobAppRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphManagedIOSLobAppRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -11,7 +11,7 @@ import (
 type ItemProgramControlsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemProgramControlsRequestBuilderGetQueryParameters in the Azure AD access reviews feature, list all the programControl objects, linked to a particular program.
+// ItemProgramControlsRequestBuilderGetQueryParameters in the Azure AD access reviews feature, list all the programControl objects, linked to a particular program. This API is supported in the following national cloud deployments.
 type ItemProgramControlsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemProgramControlsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *ItemProgramControlsRequestBuilder) Count()(*ItemProgramControlsCountRequestBuilder) {
     return NewItemProgramControlsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get in the Azure AD access reviews feature, list all the programControl objects, linked to a particular program.
+// Get in the Azure AD access reviews feature, list all the programControl objects, linked to a particular program. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/program-listcontrols?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *ItemProgramControlsRequestBuilder) Post(ctx context.Context, body ie233
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProgramControlable), nil
 }
-// ToGetRequestInformation in the Azure AD access reviews feature, list all the programControl objects, linked to a particular program.
+// ToGetRequestInformation in the Azure AD access reviews feature, list all the programControl objects, linked to a particular program. This API is supported in the following national cloud deployments.
 func (m *ItemProgramControlsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProgramControlsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

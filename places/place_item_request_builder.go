@@ -62,7 +62,7 @@ func (m *PlaceItemRequestBuilder) GraphRoom()(*ItemGraphRoomRequestBuilder) {
 func (m *PlaceItemRequestBuilder) GraphRoomList()(*ItemGraphRoomListRequestBuilder) {
     return NewItemGraphRoomListRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of place object, which can be a room, workspace, or roomList. You can identify the room, workspace, or roomList by specifying the id or emailAddress property.
+// Patch update the properties of place object, which can be a room, workspace, or roomList. You can identify the room, workspace, or roomList by specifying the id or emailAddress property. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/place-update?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *PlaceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of place object, which can be a room, workspace, or roomList. You can identify the room, workspace, or roomList by specifying the id or emailAddress property.
+// ToPatchRequestInformation update the properties of place object, which can be a room, workspace, or roomList. You can identify the room, workspace, or roomList by specifying the id or emailAddress property. This API is supported in the following national cloud deployments.
 func (m *PlaceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Placeable, requestConfiguration *PlaceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

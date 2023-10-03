@@ -88,6 +88,16 @@ func (m *CrossTenantAccessPolicy) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["templates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePolicyTemplateFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTemplates(val.(PolicyTemplateable))
+        }
+        return nil
+    }
     return res
 }
 // GetPartners gets the partners property value. Defines partner-specific configurations for external Azure Active Directory organizations.
@@ -98,6 +108,17 @@ func (m *CrossTenantAccessPolicy) GetPartners()([]CrossTenantAccessPolicyConfigu
     }
     if val != nil {
         return val.([]CrossTenantAccessPolicyConfigurationPartnerable)
+    }
+    return nil
+}
+// GetTemplates gets the templates property value. Represents the base policy in the directory for multi-tenant organization settings.
+func (m *CrossTenantAccessPolicy) GetTemplates()(PolicyTemplateable) {
+    val, err := m.GetBackingStore().Get("templates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PolicyTemplateable)
     }
     return nil
 }
@@ -131,6 +152,12 @@ func (m *CrossTenantAccessPolicy) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("templates", m.GetTemplates())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAllowedCloudEndpoints sets the allowedCloudEndpoints property value. Used to specify which Microsoft clouds an organization would like to collaborate with. By default, this value is empty. Supported values for this field are: microsoftonline.com, microsoftonline.us, and partner.microsoftonline.cn.
@@ -154,6 +181,13 @@ func (m *CrossTenantAccessPolicy) SetPartners(value []CrossTenantAccessPolicyCon
         panic(err)
     }
 }
+// SetTemplates sets the templates property value. Represents the base policy in the directory for multi-tenant organization settings.
+func (m *CrossTenantAccessPolicy) SetTemplates(value PolicyTemplateable)() {
+    err := m.GetBackingStore().Set("templates", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // CrossTenantAccessPolicyable 
 type CrossTenantAccessPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -161,7 +195,9 @@ type CrossTenantAccessPolicyable interface {
     GetAllowedCloudEndpoints()([]string)
     GetDefaultEscaped()(CrossTenantAccessPolicyConfigurationDefaultable)
     GetPartners()([]CrossTenantAccessPolicyConfigurationPartnerable)
+    GetTemplates()(PolicyTemplateable)
     SetAllowedCloudEndpoints(value []string)()
     SetDefaultEscaped(value CrossTenantAccessPolicyConfigurationDefaultable)()
     SetPartners(value []CrossTenantAccessPolicyConfigurationPartnerable)()
+    SetTemplates(value PolicyTemplateable)()
 }

@@ -23,7 +23,7 @@ func NewTenantAllowOrBlockListAction()(*TenantAllowOrBlockListAction) {
 func CreateTenantAllowOrBlockListActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTenantAllowOrBlockListAction(), nil
 }
-// GetAction gets the action property value. Specifies whether the tenant allow block list is an allow or block. The possible values are: allow, block, and unkownFutureValue.
+// GetAction gets the action property value. Specifies whether the tenant allow-or-block list is an allow or block. The possible values are: allow, block, and unkownFutureValue.
 func (m *TenantAllowOrBlockListAction) GetAction()(*TenantAllowBlockListAction) {
     val, err := m.GetBackingStore().Get("action")
     if err != nil {
@@ -122,7 +122,7 @@ func (m *TenantAllowOrBlockListAction) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetNote gets the note property value. Specifies the note added to the tenant allow block list entry in the format of string.
+// GetNote gets the note property value. Specifies the note added to the tenant allow-or-block list entry in the format of string.
 func (m *TenantAllowOrBlockListAction) GetNote()(*string) {
     val, err := m.GetBackingStore().Get("note")
     if err != nil {
@@ -202,7 +202,7 @@ func (m *TenantAllowOrBlockListAction) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetAction sets the action property value. Specifies whether the tenant allow block list is an allow or block. The possible values are: allow, block, and unkownFutureValue.
+// SetAction sets the action property value. Specifies whether the tenant allow-or-block list is an allow or block. The possible values are: allow, block, and unkownFutureValue.
 func (m *TenantAllowOrBlockListAction) SetAction(value *TenantAllowBlockListAction)() {
     err := m.GetBackingStore().Set("action", value)
     if err != nil {
@@ -227,7 +227,7 @@ func (m *TenantAllowOrBlockListAction) SetExpirationDateTime(value *i336074805fc
         panic(err)
     }
 }
-// SetNote sets the note property value. Specifies the note added to the tenant allow block list entry in the format of string.
+// SetNote sets the note property value. Specifies the note added to the tenant allow-or-block list entry in the format of string.
 func (m *TenantAllowOrBlockListAction) SetNote(value *string)() {
     err := m.GetBackingStore().Set("note", value)
     if err != nil {

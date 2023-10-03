@@ -11,7 +11,7 @@ import (
 type ItemTeamDefinitionAllChannelsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamDefinitionAllChannelsRequestBuilderGetQueryParameters get the list of channels either in this team or shared with this team (incoming channels).
+// ItemTeamDefinitionAllChannelsRequestBuilderGetQueryParameters get the list of channels either in this team or shared with this team (incoming channels). This API is supported in the following national cloud deployments.
 type ItemTeamDefinitionAllChannelsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewItemTeamDefinitionAllChannelsRequestBuilder(rawUrl string, requestAdapte
 func (m *ItemTeamDefinitionAllChannelsRequestBuilder) Count()(*ItemTeamDefinitionAllChannelsCountRequestBuilder) {
     return NewItemTeamDefinitionAllChannelsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of channels either in this team or shared with this team (incoming channels).
+// Get get the list of channels either in this team or shared with this team (incoming channels). This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/team-list-allchannels?view=graph-rest-1.0
@@ -89,7 +89,7 @@ func (m *ItemTeamDefinitionAllChannelsRequestBuilder) Get(ctx context.Context, r
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChannelCollectionResponseable), nil
 }
-// ToGetRequestInformation get the list of channels either in this team or shared with this team (incoming channels).
+// ToGetRequestInformation get the list of channels either in this team or shared with this team (incoming channels). This API is supported in the following national cloud deployments.
 func (m *ItemTeamDefinitionAllChannelsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionAllChannelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

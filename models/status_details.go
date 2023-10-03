@@ -21,7 +21,7 @@ func NewStatusDetails()(*StatusDetails) {
 func CreateStatusDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewStatusDetails(), nil
 }
-// GetAdditionalDetails gets the additionalDetails property value. Additional details in case of error.
+// GetAdditionalDetails gets the additionalDetails property value. Additional details if there is an error.
 func (m *StatusDetails) GetAdditionalDetails()(*string) {
     val, err := m.GetBackingStore().Get("additionalDetails")
     if err != nil {
@@ -170,7 +170,7 @@ func (m *StatusDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetAdditionalDetails sets the additionalDetails property value. Additional details in case of error.
+// SetAdditionalDetails sets the additionalDetails property value. Additional details if there is an error.
 func (m *StatusDetails) SetAdditionalDetails(value *string)() {
     err := m.GetBackingStore().Set("additionalDetails", value)
     if err != nil {

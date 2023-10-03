@@ -18,7 +18,7 @@ type ItemApprovalsItemStepsApprovalStepItemRequestBuilderDeleteRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemApprovalsItemStepsApprovalStepItemRequestBuilderGetQueryParameters retrieve the properties of an approvalStep object.
+// ItemApprovalsItemStepsApprovalStepItemRequestBuilderGetQueryParameters retrieve the properties of an approvalStep object. This API is supported in the following national cloud deployments.
 type ItemApprovalsItemStepsApprovalStepItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemApprovalsItemStepsApprovalStepItemRequestBuilder) Delete(ctx contex
     }
     return nil
 }
-// Get retrieve the properties of an approvalStep object.
+// Get retrieve the properties of an approvalStep object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/approvalstep-get?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *ItemApprovalsItemStepsApprovalStepItemRequestBuilder) Get(ctx context.C
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable), nil
 }
-// Patch apply approve or deny decision on an approvalStep object.
+// Patch apply approve or deny decision on an approvalStep object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/approvalstep-update?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *ItemApprovalsItemStepsApprovalStepItemRequestBuilder) ToDeleteRequestIn
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties of an approvalStep object.
+// ToGetRequestInformation retrieve the properties of an approvalStep object. This API is supported in the following national cloud deployments.
 func (m *ItemApprovalsItemStepsApprovalStepItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemApprovalsItemStepsApprovalStepItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *ItemApprovalsItemStepsApprovalStepItemRequestBuilder) ToGetRequestInfor
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation apply approve or deny decision on an approvalStep object.
+// ToPatchRequestInformation apply approve or deny decision on an approvalStep object. This API is supported in the following national cloud deployments.
 func (m *ItemApprovalsItemStepsApprovalStepItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable, requestConfiguration *ItemApprovalsItemStepsApprovalStepItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

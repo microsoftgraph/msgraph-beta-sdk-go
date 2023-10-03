@@ -42,7 +42,7 @@ func (m *TiIndicator) GetActivityGroupNames()([]string) {
     }
     return nil
 }
-// GetAdditionalInformation gets the additionalInformation property value. A catchall area into which extra data from the indicator not covered by the other tiIndicator properties may be placed. Data placed into additionalInformation will typically not be utilized by the targetProduct security tool.
+// GetAdditionalInformation gets the additionalInformation property value. A catchall area for extra data from the indicator that is not specifically covered by other tiIndicator properties. The security tool specified by targetProduct typically does not utilize this data.
 func (m *TiIndicator) GetAdditionalInformation()(*string) {
     val, err := m.GetBackingStore().Get("additionalInformation")
     if err != nil {
@@ -1641,7 +1641,7 @@ func (m *TiIndicator) SetActivityGroupNames(value []string)() {
         panic(err)
     }
 }
-// SetAdditionalInformation sets the additionalInformation property value. A catchall area into which extra data from the indicator not covered by the other tiIndicator properties may be placed. Data placed into additionalInformation will typically not be utilized by the targetProduct security tool.
+// SetAdditionalInformation sets the additionalInformation property value. A catchall area for extra data from the indicator that is not specifically covered by other tiIndicator properties. The security tool specified by targetProduct typically does not utilize this data.
 func (m *TiIndicator) SetAdditionalInformation(value *string)() {
     err := m.GetBackingStore().Set("additionalInformation", value)
     if err != nil {

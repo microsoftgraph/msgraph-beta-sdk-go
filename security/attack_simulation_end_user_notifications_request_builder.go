@@ -11,7 +11,7 @@ import (
 type AttackSimulationEndUserNotificationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AttackSimulationEndUserNotificationsRequestBuilderGetQueryParameters get endUserNotifications from security
+// AttackSimulationEndUserNotificationsRequestBuilderGetQueryParameters get a list of endUserNotification objects and their properties. This API is supported in the following national cloud deployments.
 type AttackSimulationEndUserNotificationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewAttackSimulationEndUserNotificationsRequestBuilder(rawUrl string, reques
 func (m *AttackSimulationEndUserNotificationsRequestBuilder) Count()(*AttackSimulationEndUserNotificationsCountRequestBuilder) {
     return NewAttackSimulationEndUserNotificationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get endUserNotifications from security
+// Get get a list of endUserNotification objects and their properties. This API is supported in the following national cloud deployments.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/attacksimulationroot-list-endusernotifications?view=graph-rest-1.0
 func (m *AttackSimulationEndUserNotificationsRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationEndUserNotificationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EndUserNotificationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *AttackSimulationEndUserNotificationsRequestBuilder) Post(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EndUserNotificationable), nil
 }
-// ToGetRequestInformation get endUserNotifications from security
+// ToGetRequestInformation get a list of endUserNotification objects and their properties. This API is supported in the following national cloud deployments.
 func (m *AttackSimulationEndUserNotificationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationEndUserNotificationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ItemJoinedTeamsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemJoinedTeamsRequestBuilderGetQueryParameters get the teams in Microsoft Teams that the user is a direct member of.
+// ItemJoinedTeamsRequestBuilderGetQueryParameters get the teams in Microsoft Teams that the user is a direct member of. This API is supported in the following national cloud deployments.
 type ItemJoinedTeamsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewItemJoinedTeamsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *ItemJoinedTeamsRequestBuilder) Count()(*ItemJoinedTeamsCountRequestBuilder) {
     return NewItemJoinedTeamsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the teams in Microsoft Teams that the user is a direct member of.
+// Get get the teams in Microsoft Teams that the user is a direct member of. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/user-list-joinedteams?view=graph-rest-1.0
@@ -89,7 +89,7 @@ func (m *ItemJoinedTeamsRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamCollectionResponseable), nil
 }
-// ToGetRequestInformation get the teams in Microsoft Teams that the user is a direct member of.
+// ToGetRequestInformation get the teams in Microsoft Teams that the user is a direct member of. This API is supported in the following national cloud deployments.
 func (m *ItemJoinedTeamsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

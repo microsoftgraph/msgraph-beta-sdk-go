@@ -30,7 +30,7 @@ func NewVirtualEndpointProvisioningPoliciesItemAssignRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointProvisioningPoliciesItemAssignRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post assign cloudPcProvisioningPolicy to user groups.
+// Post assign cloudPcProvisioningPolicy to user groups. This API is supported in the following national cloud deployments.
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId on 2023-03-16 and will be removed 2023-07-30
 // [Find more info here]
 // 
@@ -50,7 +50,7 @@ func (m *VirtualEndpointProvisioningPoliciesItemAssignRequestBuilder) Post(ctx c
     }
     return nil
 }
-// ToPostRequestInformation assign cloudPcProvisioningPolicy to user groups.
+// ToPostRequestInformation assign cloudPcProvisioningPolicy to user groups. This API is supported in the following national cloud deployments.
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId on 2023-03-16 and will be removed 2023-07-30
 func (m *VirtualEndpointProvisioningPoliciesItemAssignRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointProvisioningPoliciesItemAssignPostRequestBodyable, requestConfiguration *VirtualEndpointProvisioningPoliciesItemAssignRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

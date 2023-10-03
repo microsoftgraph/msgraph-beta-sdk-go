@@ -31,7 +31,7 @@ func NewPrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder(
     urlParams["request-raw-url"] = rawUrl
     return NewPrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries. Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. 
+// Post create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries. Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  This API is supported in the following national cloud deployments.
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // [Find more info here]
 // 
@@ -54,7 +54,7 @@ func (m *PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UploadSessionable), nil
 }
-// ToPostRequestInformation create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries. Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. 
+// ToPostRequestInformation create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries. Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  This API is supported in the following national cloud deployments.
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 func (m *PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder) ToPostRequestInformation(ctx context.Context, body PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionPostRequestBodyable, requestConfiguration *PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

@@ -18,7 +18,7 @@ type IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderGetQueryParameters read the properties and relationships of an azureDataLakeConnector object.
+// IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderGetQueryParameters read the properties and relationships of an azureDataLakeConnector object. This API is supported in the following national cloud deployments.
 type IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewIndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewIndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an industryDataConnector object.
+// Delete delete an industryDataConnector object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) Dele
     }
     return nil
 }
-// Get read the properties and relationships of an azureDataLakeConnector object.
+// Get read the properties and relationships of an azureDataLakeConnector object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-get?view=graph-rest-1.0
@@ -99,7 +99,7 @@ func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) Get(
 func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) MicrosoftGraphIndustryDataValidate()(*IndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilder) {
     return NewIndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of an azureDataLakeConnector object.
+// Patch update the properties of an azureDataLakeConnector object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-update?view=graph-rest-1.0
@@ -125,7 +125,7 @@ func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) Patc
 func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) SourceSystem()(*IndustryDataDataConnectorsItemSourceSystemRequestBuilder) {
     return NewIndustryDataDataConnectorsItemSourceSystemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete an industryDataConnector object.
+// ToDeleteRequestInformation delete an industryDataConnector object. This API is supported in the following national cloud deployments.
 func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -137,7 +137,7 @@ func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) ToDe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an azureDataLakeConnector object.
+// ToGetRequestInformation read the properties and relationships of an azureDataLakeConnector object. This API is supported in the following national cloud deployments.
 func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -153,7 +153,7 @@ func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) ToGe
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an azureDataLakeConnector object.
+// ToPatchRequestInformation update the properties of an azureDataLakeConnector object. This API is supported in the following national cloud deployments.
 func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable, requestConfiguration *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

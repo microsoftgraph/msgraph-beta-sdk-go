@@ -18,7 +18,7 @@ type IdentitySecurityDefaultsEnforcementPolicyRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetQueryParameters retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
+// IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetQueryParameters retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object. This API is supported in the following national cloud deployments.
 type IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// Get retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
+// Get retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identitysecuritydefaultsenforcementpolicy-get?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) Get(ctx contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySecurityDefaultsEnforcementPolicyable), nil
 }
-// Patch update the properties of an identitySecurityDefaultsEnforcementPolicy object.
+// Patch update the properties of an identitySecurityDefaultsEnforcementPolicy object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identitysecuritydefaultsenforcementpolicy-update?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) ToDeleteReques
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
+// ToGetRequestInformation retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object. This API is supported in the following national cloud deployments.
 func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) ToGetRequestIn
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an identitySecurityDefaultsEnforcementPolicy object.
+// ToPatchRequestInformation update the properties of an identitySecurityDefaultsEnforcementPolicy object. This API is supported in the following national cloud deployments.
 func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySecurityDefaultsEnforcementPolicyable, requestConfiguration *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -175,7 +175,7 @@ func (m *AuthenticationMethodsPolicy) GetLastModifiedDateTime()(*i336074805fc853
     }
     return nil
 }
-// GetPolicyMigrationState gets the policyMigrationState property value. The state of migration of the authentication methods policy from the legacy multifactor authentication and self-service password reset (SSPR) policies. The possible values are: premigration - means the authentication methods policy is used for authentication only, legacy policies are respected. migrationInProgress - means the authentication methods policy is used for both authenication and SSPR, legacy policies are respected. migrationComplete - means the authentication methods policy is used for authentication and SSPR, legacy policies are ignored. unknownFutureValue - Evolvable enumeration sentinel value. Do not use.
+// GetPolicyMigrationState gets the policyMigrationState property value. The state of migration of the authentication methods policy from the legacy multifactor authentication and self-service password reset (SSPR) policies. The possible values are: premigration - means the authentication methods policy is used for authentication only, legacy policies are respected. migrationInProgress - means the authentication methods policy is used for both authentication and SSPR, legacy policies are respected. migrationComplete - means the authentication methods policy is used for authentication and SSPR, legacy policies are ignored. unknownFutureValue - Evolvable enumeration sentinel value. Don't use.
 func (m *AuthenticationMethodsPolicy) GetPolicyMigrationState()(*AuthenticationMethodsPolicyMigrationState) {
     val, err := m.GetBackingStore().Get("policyMigrationState")
     if err != nil {
@@ -344,7 +344,7 @@ func (m *AuthenticationMethodsPolicy) SetLastModifiedDateTime(value *i336074805f
         panic(err)
     }
 }
-// SetPolicyMigrationState sets the policyMigrationState property value. The state of migration of the authentication methods policy from the legacy multifactor authentication and self-service password reset (SSPR) policies. The possible values are: premigration - means the authentication methods policy is used for authentication only, legacy policies are respected. migrationInProgress - means the authentication methods policy is used for both authenication and SSPR, legacy policies are respected. migrationComplete - means the authentication methods policy is used for authentication and SSPR, legacy policies are ignored. unknownFutureValue - Evolvable enumeration sentinel value. Do not use.
+// SetPolicyMigrationState sets the policyMigrationState property value. The state of migration of the authentication methods policy from the legacy multifactor authentication and self-service password reset (SSPR) policies. The possible values are: premigration - means the authentication methods policy is used for authentication only, legacy policies are respected. migrationInProgress - means the authentication methods policy is used for both authentication and SSPR, legacy policies are respected. migrationComplete - means the authentication methods policy is used for authentication and SSPR, legacy policies are ignored. unknownFutureValue - Evolvable enumeration sentinel value. Don't use.
 func (m *AuthenticationMethodsPolicy) SetPolicyMigrationState(value *AuthenticationMethodsPolicyMigrationState)() {
     err := m.GetBackingStore().Set("policyMigrationState", value)
     if err != nil {

@@ -18,7 +18,7 @@ type EnterpriseAppsItemRoleEligibilityScheduleRequestsUnifiedRoleEligibilitySche
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EnterpriseAppsItemRoleEligibilityScheduleRequestsUnifiedRoleEligibilityScheduleRequestItemRequestBuilderGetQueryParameters read the properties and relationships of an unifiedRoleEligibilityScheduleRequest object.
+// EnterpriseAppsItemRoleEligibilityScheduleRequestsUnifiedRoleEligibilityScheduleRequestItemRequestBuilderGetQueryParameters read the properties and relationships of an unifiedRoleEligibilityScheduleRequest object. This API is supported in the following national cloud deployments.
 type EnterpriseAppsItemRoleEligibilityScheduleRequestsUnifiedRoleEligibilityScheduleRequestItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -82,7 +82,7 @@ func (m *EnterpriseAppsItemRoleEligibilityScheduleRequestsUnifiedRoleEligibility
 func (m *EnterpriseAppsItemRoleEligibilityScheduleRequestsUnifiedRoleEligibilityScheduleRequestItemRequestBuilder) DirectoryScope()(*EnterpriseAppsItemRoleEligibilityScheduleRequestsItemDirectoryScopeRequestBuilder) {
     return NewEnterpriseAppsItemRoleEligibilityScheduleRequestsItemDirectoryScopeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of an unifiedRoleEligibilityScheduleRequest object.
+// Get read the properties and relationships of an unifiedRoleEligibilityScheduleRequest object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-get?view=graph-rest-1.0
@@ -147,7 +147,7 @@ func (m *EnterpriseAppsItemRoleEligibilityScheduleRequestsUnifiedRoleEligibility
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an unifiedRoleEligibilityScheduleRequest object.
+// ToGetRequestInformation read the properties and relationships of an unifiedRoleEligibilityScheduleRequest object. This API is supported in the following national cloud deployments.
 func (m *EnterpriseAppsItemRoleEligibilityScheduleRequestsUnifiedRoleEligibilityScheduleRequestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EnterpriseAppsItemRoleEligibilityScheduleRequestsUnifiedRoleEligibilityScheduleRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

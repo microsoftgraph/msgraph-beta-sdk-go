@@ -30,7 +30,8 @@ func NewServiceAnnouncementMessagesArchiveRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewServiceAnnouncementMessagesArchiveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post archive a list of serviceUpdateMessages for the signed in user.
+// Post archive a list of serviceUpdateMessages for the signed in user. This API is supported in the following national cloud deployments.
+// Deprecated: This method is obsolete. Use PostAsArchivePostResponse instead.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-1.0
@@ -52,7 +53,29 @@ func (m *ServiceAnnouncementMessagesArchiveRequestBuilder) Post(ctx context.Cont
     }
     return res.(ServiceAnnouncementMessagesArchiveResponseable), nil
 }
-// ToPostRequestInformation archive a list of serviceUpdateMessages for the signed in user.
+// PostAsArchivePostResponse archive a list of serviceUpdateMessages for the signed in user. This API is supported in the following national cloud deployments.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-1.0
+func (m *ServiceAnnouncementMessagesArchiveRequestBuilder) PostAsArchivePostResponse(ctx context.Context, body ServiceAnnouncementMessagesArchivePostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesArchiveRequestBuilderPostRequestConfiguration)(ServiceAnnouncementMessagesArchivePostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateServiceAnnouncementMessagesArchivePostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ServiceAnnouncementMessagesArchivePostResponseable), nil
+}
+// ToPostRequestInformation archive a list of serviceUpdateMessages for the signed in user. This API is supported in the following national cloud deployments.
 func (m *ServiceAnnouncementMessagesArchiveRequestBuilder) ToPostRequestInformation(ctx context.Context, body ServiceAnnouncementMessagesArchivePostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesArchiveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

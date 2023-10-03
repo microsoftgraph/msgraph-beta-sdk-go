@@ -50,6 +50,7 @@ func NewItemSitesDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewItemSitesDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function delta
+// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 func (m *ItemSitesDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesDeltaRequestBuilderGetRequestConfiguration)(ItemSitesDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -67,6 +68,25 @@ func (m *ItemSitesDeltaRequestBuilder) Get(ctx context.Context, requestConfigura
         return nil, nil
     }
     return res.(ItemSitesDeltaResponseable), nil
+}
+// GetAsDeltaGetResponse invoke function delta
+func (m *ItemSitesDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ItemSitesDeltaRequestBuilderGetRequestConfiguration)(ItemSitesDeltaGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSitesDeltaGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemSitesDeltaGetResponseable), nil
 }
 // ToGetRequestInformation invoke function delta
 func (m *ItemSitesDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -11,7 +11,7 @@ import (
 type RiskyUsersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RiskyUsersRequestBuilderGetQueryParameters retrieve the properties and relationships of a collection of riskyUser objects.
+// RiskyUsersRequestBuilderGetQueryParameters retrieve the properties and relationships of a collection of riskyUser objects. This API is supported in the following national cloud deployments.
 type RiskyUsersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -82,7 +82,7 @@ func (m *RiskyUsersRequestBuilder) Count()(*CountRequestBuilder) {
 func (m *RiskyUsersRequestBuilder) Dismiss()(*DismissRequestBuilder) {
     return NewDismissRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of a collection of riskyUser objects.
+// Get retrieve the properties and relationships of a collection of riskyUser objects. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/riskyusers-list?view=graph-rest-1.0
@@ -123,7 +123,7 @@ func (m *RiskyUsersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserable), nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a collection of riskyUser objects.
+// ToGetRequestInformation retrieve the properties and relationships of a collection of riskyUser objects. This API is supported in the following national cloud deployments.
 func (m *RiskyUsersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RiskyUsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

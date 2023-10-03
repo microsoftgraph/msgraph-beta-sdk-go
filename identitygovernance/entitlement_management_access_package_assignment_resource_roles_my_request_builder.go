@@ -50,6 +50,7 @@ func NewEntitlementManagementAccessPackageAssignmentResourceRolesMyRequestBuilde
     return NewEntitlementManagementAccessPackageAssignmentResourceRolesMyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function My
+// Deprecated: This method is obsolete. Use GetAsMyGetResponse instead.
 func (m *EntitlementManagementAccessPackageAssignmentResourceRolesMyRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentResourceRolesMyRequestBuilderGetRequestConfiguration)(EntitlementManagementAccessPackageAssignmentResourceRolesMyResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -67,6 +68,25 @@ func (m *EntitlementManagementAccessPackageAssignmentResourceRolesMyRequestBuild
         return nil, nil
     }
     return res.(EntitlementManagementAccessPackageAssignmentResourceRolesMyResponseable), nil
+}
+// GetAsMyGetResponse invoke function My
+func (m *EntitlementManagementAccessPackageAssignmentResourceRolesMyRequestBuilder) GetAsMyGetResponse(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentResourceRolesMyRequestBuilderGetRequestConfiguration)(EntitlementManagementAccessPackageAssignmentResourceRolesMyGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateEntitlementManagementAccessPackageAssignmentResourceRolesMyGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(EntitlementManagementAccessPackageAssignmentResourceRolesMyGetResponseable), nil
 }
 // ToGetRequestInformation invoke function My
 func (m *EntitlementManagementAccessPackageAssignmentResourceRolesMyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentResourceRolesMyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

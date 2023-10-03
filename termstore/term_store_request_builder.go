@@ -11,7 +11,7 @@ import (
 type TermStoreRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TermStoreRequestBuilderGetQueryParameters read the properties and relationships of a store object.
+// TermStoreRequestBuilderGetQueryParameters read the properties and relationships of a store object. This API is supported in the following national cloud deployments.
 type TermStoreRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,7 +47,7 @@ func NewTermStoreRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewTermStoreRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get read the properties and relationships of a store object.
+// Get read the properties and relationships of a store object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/termstore-store-get?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *TermStoreRequestBuilder) Get(ctx context.Context, requestConfiguration 
 func (m *TermStoreRequestBuilder) Groups()(*GroupsRequestBuilder) {
     return NewGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of a store object.
+// Patch update the properties of a store object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/termstore-store-update?view=graph-rest-1.0
@@ -99,7 +99,7 @@ func (m *TermStoreRequestBuilder) Patch(ctx context.Context, body i45fc41673b991
 func (m *TermStoreRequestBuilder) Sets()(*SetsRequestBuilder) {
     return NewSetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation read the properties and relationships of a store object.
+// ToGetRequestInformation read the properties and relationships of a store object. This API is supported in the following national cloud deployments.
 func (m *TermStoreRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TermStoreRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -115,7 +115,7 @@ func (m *TermStoreRequestBuilder) ToGetRequestInformation(ctx context.Context, r
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a store object.
+// ToPatchRequestInformation update the properties of a store object. This API is supported in the following national cloud deployments.
 func (m *TermStoreRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Storeable, requestConfiguration *TermStoreRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

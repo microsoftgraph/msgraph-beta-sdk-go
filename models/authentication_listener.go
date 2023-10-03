@@ -73,7 +73,7 @@ func (m *AuthenticationListener) GetPriority()(*int32) {
     }
     return nil
 }
-// GetSourceFilter gets the sourceFilter property value. Filter based on the source of the authentication that is used to determine whether the listener is evaluated. This is currently limited to evaluations based on application the user is authenticating to.
+// GetSourceFilter gets the sourceFilter property value. Filter based on the source of the authentication that is used to determine whether the listener is evaluated, and is currently limited to evaluations based on application the user is authenticating to.
 func (m *AuthenticationListener) GetSourceFilter()(AuthenticationSourceFilterable) {
     val, err := m.GetBackingStore().Get("sourceFilter")
     if err != nil {
@@ -111,7 +111,7 @@ func (m *AuthenticationListener) SetPriority(value *int32)() {
         panic(err)
     }
 }
-// SetSourceFilter sets the sourceFilter property value. Filter based on the source of the authentication that is used to determine whether the listener is evaluated. This is currently limited to evaluations based on application the user is authenticating to.
+// SetSourceFilter sets the sourceFilter property value. Filter based on the source of the authentication that is used to determine whether the listener is evaluated, and is currently limited to evaluations based on application the user is authenticating to.
 func (m *AuthenticationListener) SetSourceFilter(value AuthenticationSourceFilterable)() {
     err := m.GetBackingStore().Set("sourceFilter", value)
     if err != nil {

@@ -128,7 +128,7 @@ func (m *CallTranscript) GetMeetingId()(*string) {
     }
     return nil
 }
-// GetMeetingOrganizer gets the meetingOrganizer property value. The meetingOrganizer property
+// GetMeetingOrganizer gets the meetingOrganizer property value. The identity information of the organizer of the onlineMeeting related to this transcript. Read-only.
 func (m *CallTranscript) GetMeetingOrganizer()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("meetingOrganizer")
     if err != nil {
@@ -243,7 +243,7 @@ func (m *CallTranscript) SetMeetingId(value *string)() {
         panic(err)
     }
 }
-// SetMeetingOrganizer sets the meetingOrganizer property value. The meetingOrganizer property
+// SetMeetingOrganizer sets the meetingOrganizer property value. The identity information of the organizer of the onlineMeeting related to this transcript. Read-only.
 func (m *CallTranscript) SetMeetingOrganizer(value IdentitySetable)() {
     err := m.GetBackingStore().Set("meetingOrganizer", value)
     if err != nil {

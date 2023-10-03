@@ -18,7 +18,7 @@ type ItemProfileInterestsPersonInterestItemRequestBuilderDeleteRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfileInterestsPersonInterestItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a personInterest object in a user's profile.
+// ItemProfileInterestsPersonInterestItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a personInterest object in a user's profile. This API is supported in the following national cloud deployments.
 type ItemProfileInterestsPersonInterestItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemProfileInterestsPersonInterestItemRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileInterestsPersonInterestItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a personInterest object from a user's profile.
+// Delete deletes a personInterest object from a user's profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/personinterest-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) Delete(ctx contex
     }
     return nil
 }
-// Get retrieve the properties and relationships of a personInterest object in a user's profile.
+// Get retrieve the properties and relationships of a personInterest object in a user's profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/personinterest-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) Get(ctx context.C
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonInterestable), nil
 }
-// Patch update the properties of a personInterest object in a user's profile.
+// Patch update the properties of a personInterest object in a user's profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/personinterest-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) Patch(ctx context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonInterestable), nil
 }
-// ToDeleteRequestInformation deletes a personInterest object from a user's profile.
+// ToDeleteRequestInformation deletes a personInterest object from a user's profile. This API is supported in the following national cloud deployments.
 func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileInterestsPersonInterestItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) ToDeleteRequestIn
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a personInterest object in a user's profile.
+// ToGetRequestInformation retrieve the properties and relationships of a personInterest object in a user's profile. This API is supported in the following national cloud deployments.
 func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileInterestsPersonInterestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) ToGetRequestInfor
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a personInterest object in a user's profile.
+// ToPatchRequestInformation update the properties of a personInterest object in a user's profile. This API is supported in the following national cloud deployments.
 func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonInterestable, requestConfiguration *ItemProfileInterestsPersonInterestItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

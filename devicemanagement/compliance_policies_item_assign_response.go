@@ -2,17 +2,17 @@ package devicemanagement
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 // CompliancePoliciesItemAssignResponse 
+// Deprecated: This class is obsolete. Use assignPostResponse instead.
 type CompliancePoliciesItemAssignResponse struct {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
+    CompliancePoliciesItemAssignPostResponse
 }
 // NewCompliancePoliciesItemAssignResponse instantiates a new CompliancePoliciesItemAssignResponse and sets the default values.
 func NewCompliancePoliciesItemAssignResponse()(*CompliancePoliciesItemAssignResponse) {
     m := &CompliancePoliciesItemAssignResponse{
-        BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),
+        CompliancePoliciesItemAssignPostResponse: *NewCompliancePoliciesItemAssignPostResponse(),
     }
     return m
 }
@@ -20,69 +20,9 @@ func NewCompliancePoliciesItemAssignResponse()(*CompliancePoliciesItemAssignResp
 func CreateCompliancePoliciesItemAssignResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCompliancePoliciesItemAssignResponse(), nil
 }
-// GetFieldDeserializers the deserialization information for the current model
-func (m *CompliancePoliciesItemAssignResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
-    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceManagementConfigurationPolicyAssignmentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyAssignmentable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyAssignmentable)
-                }
-            }
-            m.SetValue(res)
-        }
-        return nil
-    }
-    return res
-}
-// GetValue gets the value property value. The value property
-func (m *CompliancePoliciesItemAssignResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyAssignmentable) {
-    val, err := m.GetBackingStore().Get("value")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyAssignmentable)
-    }
-    return nil
-}
-// Serialize serializes information the current object
-func (m *CompliancePoliciesItemAssignResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.BaseCollectionPaginationCountResponse.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetValue() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetValue()))
-        for i, v := range m.GetValue() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("value", cast)
-        if err != nil {
-            return err
-        }
-    }
-    return nil
-}
-// SetValue sets the value property value. The value property
-func (m *CompliancePoliciesItemAssignResponse) SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyAssignmentable)() {
-    err := m.GetBackingStore().Set("value", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // CompliancePoliciesItemAssignResponseable 
+// Deprecated: This class is obsolete. Use assignPostResponse instead.
 type CompliancePoliciesItemAssignResponseable interface {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    CompliancePoliciesItemAssignPostResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyAssignmentable)
-    SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyAssignmentable)()
 }

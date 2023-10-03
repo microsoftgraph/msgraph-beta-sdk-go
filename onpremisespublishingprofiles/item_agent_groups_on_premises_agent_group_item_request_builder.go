@@ -18,7 +18,7 @@ type ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an onPremisesAgentGroup object.
+// ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an onPremisesAgentGroup object. This API is supported in the following national cloud deployments.
 type ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,7 @@ func NewItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an onPremisesAgentGroup object.
+// Delete delete an onPremisesAgentGroup object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/onpremisesagentgroup-delete?view=graph-rest-1.0
@@ -77,7 +77,7 @@ func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) Delete(ctx conte
     }
     return nil
 }
-// Get retrieve the properties and relationships of an onPremisesAgentGroup object.
+// Get retrieve the properties and relationships of an onPremisesAgentGroup object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/onpremisesagentgroup-get?view=graph-rest-1.0
@@ -99,7 +99,7 @@ func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) Get(ctx context.
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable), nil
 }
-// Patch update the properties of an onPremisesAgentGroup object.
+// Patch update the properties of an onPremisesAgentGroup object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/onpremisesagentgroup-update?view=graph-rest-1.0
@@ -125,7 +125,7 @@ func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) Patch(ctx contex
 func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) PublishedResources()(*ItemAgentGroupsItemPublishedResourcesRequestBuilder) {
     return NewItemAgentGroupsItemPublishedResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete an onPremisesAgentGroup object.
+// ToDeleteRequestInformation delete an onPremisesAgentGroup object. This API is supported in the following national cloud deployments.
 func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -137,7 +137,7 @@ func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) ToDeleteRequestI
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of an onPremisesAgentGroup object.
+// ToGetRequestInformation retrieve the properties and relationships of an onPremisesAgentGroup object. This API is supported in the following national cloud deployments.
 func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -153,7 +153,7 @@ func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) ToGetRequestInfo
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an onPremisesAgentGroup object.
+// ToPatchRequestInformation update the properties of an onPremisesAgentGroup object. This API is supported in the following national cloud deployments.
 func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable, requestConfiguration *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

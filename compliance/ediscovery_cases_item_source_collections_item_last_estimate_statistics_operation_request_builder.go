@@ -11,7 +11,7 @@ import (
 type EdiscoveryCasesItemSourceCollectionsItemLastEstimateStatisticsOperationRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesItemSourceCollectionsItemLastEstimateStatisticsOperationRequestBuilderGetQueryParameters get the last estimateStatisticsOperation object associated with a source collection. 
+// EdiscoveryCasesItemSourceCollectionsItemLastEstimateStatisticsOperationRequestBuilderGetQueryParameters get the last estimateStatisticsOperation object associated with a source collection.  This API is supported in the following national cloud deployments.
 type EdiscoveryCasesItemSourceCollectionsItemLastEstimateStatisticsOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewEdiscoveryCasesItemSourceCollectionsItemLastEstimateStatisticsOperationR
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryCasesItemSourceCollectionsItemLastEstimateStatisticsOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get the last estimateStatisticsOperation object associated with a source collection. 
+// Get get the last estimateStatisticsOperation object associated with a source collection.  This API is supported in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
@@ -63,7 +63,7 @@ func (m *EdiscoveryCasesItemSourceCollectionsItemLastEstimateStatisticsOperation
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.EstimateStatisticsOperationable), nil
 }
-// ToGetRequestInformation get the last estimateStatisticsOperation object associated with a source collection. 
+// ToGetRequestInformation get the last estimateStatisticsOperation object associated with a source collection.  This API is supported in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemSourceCollectionsItemLastEstimateStatisticsOperationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemSourceCollectionsItemLastEstimateStatisticsOperationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

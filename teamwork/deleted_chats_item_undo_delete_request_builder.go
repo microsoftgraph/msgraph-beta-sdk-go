@@ -30,7 +30,7 @@ func NewDeletedChatsItemUndoDeleteRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedChatsItemUndoDeleteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post restore a  deletedChat to an active chat.
+// Post restore a  deletedChat to an active chat. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/deletedchat-undodelete?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *DeletedChatsItemUndoDeleteRequestBuilder) Post(ctx context.Context, req
     }
     return nil
 }
-// ToPostRequestInformation restore a  deletedChat to an active chat.
+// ToPostRequestInformation restore a  deletedChat to an active chat. This API is supported in the following national cloud deployments.
 func (m *DeletedChatsItemUndoDeleteRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *DeletedChatsItemUndoDeleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

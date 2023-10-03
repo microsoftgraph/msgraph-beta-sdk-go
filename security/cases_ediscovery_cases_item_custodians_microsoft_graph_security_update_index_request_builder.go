@@ -30,7 +30,7 @@ func NewCasesEdiscoveryCasesItemCustodiansMicrosoftGraphSecurityUpdateIndexReque
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemCustodiansMicrosoftGraphSecurityUpdateIndexRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post trigger an indexOperation
+// Post trigger an indexOperation This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-updateindex?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *CasesEdiscoveryCasesItemCustodiansMicrosoftGraphSecurityUpdateIndexRequ
     }
     return nil
 }
-// ToPostRequestInformation trigger an indexOperation
+// ToPostRequestInformation trigger an indexOperation This API is supported in the following national cloud deployments.
 func (m *CasesEdiscoveryCasesItemCustodiansMicrosoftGraphSecurityUpdateIndexRequestBuilder) ToPostRequestInformation(ctx context.Context, body CasesEdiscoveryCasesItemCustodiansMicrosoftGraphSecurityUpdateIndexUpdateIndexPostRequestBodyable, requestConfiguration *CasesEdiscoveryCasesItemCustodiansMicrosoftGraphSecurityUpdateIndexRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

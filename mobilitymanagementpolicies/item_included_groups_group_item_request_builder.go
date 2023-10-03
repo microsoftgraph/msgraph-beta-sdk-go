@@ -25,3 +25,7 @@ func NewItemIncludedGroupsGroupItemRequestBuilder(rawUrl string, requestAdapter 
 func (m *ItemIncludedGroupsGroupItemRequestBuilder) Ref()(*ItemIncludedGroupsItemRefRequestBuilder) {
     return NewItemIncludedGroupsItemRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ServiceProvisioningErrors the serviceProvisioningErrors property
+func (m *ItemIncludedGroupsGroupItemRequestBuilder) ServiceProvisioningErrors()(*ItemIncludedGroupsItemServiceProvisioningErrorsRequestBuilder) {
+    return NewItemIncludedGroupsItemServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}

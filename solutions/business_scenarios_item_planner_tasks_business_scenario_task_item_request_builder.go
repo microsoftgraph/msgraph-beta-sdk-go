@@ -18,7 +18,7 @@ type BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderDele
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderGetQueryParameters read the properties and relationships of a businessScenarioTask object.
+// BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderGetQueryParameters read the properties and relationships of a businessScenarioTask object. This API is supported in the following national cloud deployments.
 type BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -62,7 +62,7 @@ func NewBusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder(
     urlParams["request-raw-url"] = rawUrl
     return NewBusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a businessScenarioTask object.
+// Delete delete a businessScenarioTask object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/businessscenarioplanner-delete-tasks?view=graph-rest-1.0
@@ -85,7 +85,7 @@ func (m *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder
 func (m *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) Details()(*BusinessScenariosItemPlannerTasksItemDetailsRequestBuilder) {
     return NewBusinessScenariosItemPlannerTasksItemDetailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a businessScenarioTask object.
+// Get read the properties and relationships of a businessScenarioTask object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/businessscenariotask-get?view=graph-rest-1.0
@@ -107,7 +107,7 @@ func (m *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable), nil
 }
-// Patch update the properties of a businessScenarioTask object.
+// Patch update the properties of a businessScenarioTask object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/businessscenariotask-update?view=graph-rest-1.0
@@ -133,7 +133,7 @@ func (m *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder
 func (m *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) ProgressTaskBoardFormat()(*BusinessScenariosItemPlannerTasksItemProgressTaskBoardFormatRequestBuilder) {
     return NewBusinessScenariosItemPlannerTasksItemProgressTaskBoardFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a businessScenarioTask object.
+// ToDeleteRequestInformation delete a businessScenarioTask object. This API is supported in the following national cloud deployments.
 func (m *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a businessScenarioTask object.
+// ToGetRequestInformation read the properties and relationships of a businessScenarioTask object. This API is supported in the following national cloud deployments.
 func (m *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -161,7 +161,7 @@ func (m *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a businessScenarioTask object.
+// ToPatchRequestInformation update the properties of a businessScenarioTask object. This API is supported in the following national cloud deployments.
 func (m *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable, requestConfiguration *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

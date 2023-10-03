@@ -36,7 +36,7 @@ func (m *OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp) GetFieldDeser
     }
     return res
 }
-// GetIsSignUpAllowed gets the isSignUpAllowed property value. Optional. Specifes whether the authentication flow includes an option to sign up (create account) as well as sign in. Default value is false meaning only sign in is enabled.
+// GetIsSignUpAllowed gets the isSignUpAllowed property value. Optional. Specifies whether the authentication flow includes an option to sign up (create account) and sign in. Default value is false meaning only sign in is enabled.
 func (m *OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp) GetIsSignUpAllowed()(*bool) {
     val, err := m.GetBackingStore().Get("isSignUpAllowed")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp) Serialize(wri
     }
     return nil
 }
-// SetIsSignUpAllowed sets the isSignUpAllowed property value. Optional. Specifes whether the authentication flow includes an option to sign up (create account) as well as sign in. Default value is false meaning only sign in is enabled.
+// SetIsSignUpAllowed sets the isSignUpAllowed property value. Optional. Specifies whether the authentication flow includes an option to sign up (create account) and sign in. Default value is false meaning only sign in is enabled.
 func (m *OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp) SetIsSignUpAllowed(value *bool)() {
     err := m.GetBackingStore().Set("isSignUpAllowed", value)
     if err != nil {

@@ -49,6 +49,7 @@ func NewAssignmentFiltersGetPlatformSupportedPropertiesWithPlatformRequestBuilde
     return NewAssignmentFiltersGetPlatformSupportedPropertiesWithPlatformRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getPlatformSupportedProperties
+// Deprecated: This method is obsolete. Use GetAsGetPlatformSupportedPropertiesWithPlatformGetResponse instead.
 func (m *AssignmentFiltersGetPlatformSupportedPropertiesWithPlatformRequestBuilder) Get(ctx context.Context, requestConfiguration *AssignmentFiltersGetPlatformSupportedPropertiesWithPlatformRequestBuilderGetRequestConfiguration)(AssignmentFiltersGetPlatformSupportedPropertiesWithPlatformResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -66,6 +67,25 @@ func (m *AssignmentFiltersGetPlatformSupportedPropertiesWithPlatformRequestBuild
         return nil, nil
     }
     return res.(AssignmentFiltersGetPlatformSupportedPropertiesWithPlatformResponseable), nil
+}
+// GetAsGetPlatformSupportedPropertiesWithPlatformGetResponse invoke function getPlatformSupportedProperties
+func (m *AssignmentFiltersGetPlatformSupportedPropertiesWithPlatformRequestBuilder) GetAsGetPlatformSupportedPropertiesWithPlatformGetResponse(ctx context.Context, requestConfiguration *AssignmentFiltersGetPlatformSupportedPropertiesWithPlatformRequestBuilderGetRequestConfiguration)(AssignmentFiltersGetPlatformSupportedPropertiesWithPlatformGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateAssignmentFiltersGetPlatformSupportedPropertiesWithPlatformGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(AssignmentFiltersGetPlatformSupportedPropertiesWithPlatformGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getPlatformSupportedProperties
 func (m *AssignmentFiltersGetPlatformSupportedPropertiesWithPlatformRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AssignmentFiltersGetPlatformSupportedPropertiesWithPlatformRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

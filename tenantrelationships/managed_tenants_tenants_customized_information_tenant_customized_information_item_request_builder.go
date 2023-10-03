@@ -18,7 +18,7 @@ type ManagedTenantsTenantsCustomizedInformationTenantCustomizedInformationItemRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ManagedTenantsTenantsCustomizedInformationTenantCustomizedInformationItemRequestBuilderGetQueryParameters read the properties and relationships of a tenantCustomizedInformation object.
+// ManagedTenantsTenantsCustomizedInformationTenantCustomizedInformationItemRequestBuilderGetQueryParameters read the properties and relationships of a tenantCustomizedInformation object. This API is supported in the following national cloud deployments.
 type ManagedTenantsTenantsCustomizedInformationTenantCustomizedInformationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ManagedTenantsTenantsCustomizedInformationTenantCustomizedInformationIt
     }
     return nil
 }
-// Get read the properties and relationships of a tenantCustomizedInformation object.
+// Get read the properties and relationships of a tenantCustomizedInformation object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-tenantcustomizedinformation-get?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *ManagedTenantsTenantsCustomizedInformationTenantCustomizedInformationIt
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantCustomizedInformationable), nil
 }
-// Patch update the properties of a tenantCustomizedInformation object.
+// Patch update the properties of a tenantCustomizedInformation object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-tenantcustomizedinformation-update?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *ManagedTenantsTenantsCustomizedInformationTenantCustomizedInformationIt
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a tenantCustomizedInformation object.
+// ToGetRequestInformation read the properties and relationships of a tenantCustomizedInformation object. This API is supported in the following national cloud deployments.
 func (m *ManagedTenantsTenantsCustomizedInformationTenantCustomizedInformationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsTenantsCustomizedInformationTenantCustomizedInformationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *ManagedTenantsTenantsCustomizedInformationTenantCustomizedInformationIt
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a tenantCustomizedInformation object.
+// ToPatchRequestInformation update the properties of a tenantCustomizedInformation object. This API is supported in the following national cloud deployments.
 func (m *ManagedTenantsTenantsCustomizedInformationTenantCustomizedInformationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantCustomizedInformationable, requestConfiguration *ManagedTenantsTenantsCustomizedInformationTenantCustomizedInformationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

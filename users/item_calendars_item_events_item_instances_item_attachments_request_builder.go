@@ -11,7 +11,7 @@ import (
 type ItemCalendarsItemEventsItemInstancesItemAttachmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCalendarsItemEventsItemInstancesItemAttachmentsRequestBuilderGetQueryParameters retrieve a list of attachment objects attached to an event.
+// ItemCalendarsItemEventsItemInstancesItemAttachmentsRequestBuilderGetQueryParameters retrieve a list of attachment objects attached to an event. This API is supported in the following national cloud deployments.
 type ItemCalendarsItemEventsItemInstancesItemAttachmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func (m *ItemCalendarsItemEventsItemInstancesItemAttachmentsRequestBuilder) Coun
 func (m *ItemCalendarsItemEventsItemInstancesItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemCalendarsItemEventsItemInstancesItemAttachmentsCreateUploadSessionRequestBuilder) {
     return NewItemCalendarsItemEventsItemInstancesItemAttachmentsCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of attachment objects attached to an event.
+// Get retrieve a list of attachment objects attached to an event. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -98,7 +98,7 @@ func (m *ItemCalendarsItemEventsItemInstancesItemAttachmentsRequestBuilder) Get(
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentCollectionResponseable), nil
 }
-// Post use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource.
+// Post use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
@@ -120,7 +120,7 @@ func (m *ItemCalendarsItemEventsItemInstancesItemAttachmentsRequestBuilder) Post
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable), nil
 }
-// ToGetRequestInformation retrieve a list of attachment objects attached to an event.
+// ToGetRequestInformation retrieve a list of attachment objects attached to an event. This API is supported in the following national cloud deployments.
 func (m *ItemCalendarsItemEventsItemInstancesItemAttachmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarsItemEventsItemInstancesItemAttachmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +136,7 @@ func (m *ItemCalendarsItemEventsItemInstancesItemAttachmentsRequestBuilder) ToGe
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource.
+// ToPostRequestInformation use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. This API is supported in the following national cloud deployments.
 func (m *ItemCalendarsItemEventsItemInstancesItemAttachmentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable, requestConfiguration *ItemCalendarsItemEventsItemInstancesItemAttachmentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

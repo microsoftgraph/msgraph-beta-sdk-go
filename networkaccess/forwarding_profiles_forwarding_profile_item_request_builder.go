@@ -18,7 +18,7 @@ type ForwardingProfilesForwardingProfileItemRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ForwardingProfilesForwardingProfileItemRequestBuilderGetQueryParameters retrieve information about a specific forwarding profile.
+// ForwardingProfilesForwardingProfileItemRequestBuilderGetQueryParameters retrieve information about a specific forwarding profile. This API is supported in the following national cloud deployments.
 type ForwardingProfilesForwardingProfileItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ForwardingProfilesForwardingProfileItemRequestBuilder) Delete(ctx conte
     }
     return nil
 }
-// Get retrieve information about a specific forwarding profile.
+// Get retrieve information about a specific forwarding profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-forwardingprofile-get?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *ForwardingProfilesForwardingProfileItemRequestBuilder) Get(ctx context.
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingProfileable), nil
 }
-// Patch update an existing forwarding profile.
+// Patch update an existing forwarding profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-forwardingprofile-update?view=graph-rest-1.0
@@ -130,7 +130,7 @@ func (m *ForwardingProfilesForwardingProfileItemRequestBuilder) ToDeleteRequestI
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve information about a specific forwarding profile.
+// ToGetRequestInformation retrieve information about a specific forwarding profile. This API is supported in the following national cloud deployments.
 func (m *ForwardingProfilesForwardingProfileItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ForwardingProfilesForwardingProfileItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -146,7 +146,7 @@ func (m *ForwardingProfilesForwardingProfileItemRequestBuilder) ToGetRequestInfo
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update an existing forwarding profile.
+// ToPatchRequestInformation update an existing forwarding profile. This API is supported in the following national cloud deployments.
 func (m *ForwardingProfilesForwardingProfileItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingProfileable, requestConfiguration *ForwardingProfilesForwardingProfileItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -31,6 +31,7 @@ func NewItemManagedDevicesItemGetFileVaultKeyRequestBuilder(rawUrl string, reque
     return NewItemManagedDevicesItemGetFileVaultKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getFileVaultKey
+// Deprecated: This method is obsolete. Use GetAsGetFileVaultKeyGetResponse instead.
 func (m *ItemManagedDevicesItemGetFileVaultKeyRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemManagedDevicesItemGetFileVaultKeyRequestBuilderGetRequestConfiguration)(ItemManagedDevicesItemGetFileVaultKeyResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -48,6 +49,25 @@ func (m *ItemManagedDevicesItemGetFileVaultKeyRequestBuilder) Get(ctx context.Co
         return nil, nil
     }
     return res.(ItemManagedDevicesItemGetFileVaultKeyResponseable), nil
+}
+// GetAsGetFileVaultKeyGetResponse invoke function getFileVaultKey
+func (m *ItemManagedDevicesItemGetFileVaultKeyRequestBuilder) GetAsGetFileVaultKeyGetResponse(ctx context.Context, requestConfiguration *ItemManagedDevicesItemGetFileVaultKeyRequestBuilderGetRequestConfiguration)(ItemManagedDevicesItemGetFileVaultKeyGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemManagedDevicesItemGetFileVaultKeyGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemManagedDevicesItemGetFileVaultKeyGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getFileVaultKey
 func (m *ItemManagedDevicesItemGetFileVaultKeyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemManagedDevicesItemGetFileVaultKeyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -11,7 +11,7 @@ import (
 type LifecycleWorkflowsWorkflowTemplatesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LifecycleWorkflowsWorkflowTemplatesRequestBuilderGetQueryParameters get a list of the workflowTemplate objects and their properties.
+// LifecycleWorkflowsWorkflowTemplatesRequestBuilderGetQueryParameters get a list of the workflowTemplate objects and their properties. This API is supported in the following national cloud deployments.
 type LifecycleWorkflowsWorkflowTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewLifecycleWorkflowsWorkflowTemplatesRequestBuilder(rawUrl string, request
 func (m *LifecycleWorkflowsWorkflowTemplatesRequestBuilder) Count()(*LifecycleWorkflowsWorkflowTemplatesCountRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowTemplatesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the workflowTemplate objects and their properties.
+// Get get a list of the workflowTemplate objects and their properties. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-workflowtemplates?view=graph-rest-1.0
@@ -89,7 +89,7 @@ func (m *LifecycleWorkflowsWorkflowTemplatesRequestBuilder) Get(ctx context.Cont
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.WorkflowTemplateCollectionResponseable), nil
 }
-// ToGetRequestInformation get a list of the workflowTemplate objects and their properties.
+// ToGetRequestInformation get a list of the workflowTemplate objects and their properties. This API is supported in the following national cloud deployments.
 func (m *LifecycleWorkflowsWorkflowTemplatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

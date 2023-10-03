@@ -77,7 +77,7 @@ func (m *BaseItemVersion) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user which last modified the version. Read-only.
+// GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user that last modified the version. Read-only.
 func (m *BaseItemVersion) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -136,7 +136,7 @@ func (m *BaseItemVersion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user which last modified the version. Read-only.
+// SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user that last modified the version. Read-only.
 func (m *BaseItemVersion) SetLastModifiedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {

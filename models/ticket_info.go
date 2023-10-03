@@ -51,6 +51,16 @@ func (m *TicketInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["ticketApproverIdentityId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTicketApproverIdentityId(val)
+        }
+        return nil
+    }
     res["ticketNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -58,6 +68,16 @@ func (m *TicketInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         if val != nil {
             m.SetTicketNumber(val)
+        }
+        return nil
+    }
+    res["ticketSubmitterIdentityId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTicketSubmitterIdentityId(val)
         }
         return nil
     }
@@ -84,9 +104,31 @@ func (m *TicketInfo) GetOdataType()(*string) {
     }
     return nil
 }
+// GetTicketApproverIdentityId gets the ticketApproverIdentityId property value. The ticketApproverIdentityId property
+func (m *TicketInfo) GetTicketApproverIdentityId()(*string) {
+    val, err := m.GetBackingStore().Get("ticketApproverIdentityId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetTicketNumber gets the ticketNumber property value. The ticket number.
 func (m *TicketInfo) GetTicketNumber()(*string) {
     val, err := m.GetBackingStore().Get("ticketNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetTicketSubmitterIdentityId gets the ticketSubmitterIdentityId property value. The ticketSubmitterIdentityId property
+func (m *TicketInfo) GetTicketSubmitterIdentityId()(*string) {
+    val, err := m.GetBackingStore().Get("ticketSubmitterIdentityId")
     if err != nil {
         panic(err)
     }
@@ -115,7 +157,19 @@ func (m *TicketInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
+        err := writer.WriteStringValue("ticketApproverIdentityId", m.GetTicketApproverIdentityId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("ticketNumber", m.GetTicketNumber())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("ticketSubmitterIdentityId", m.GetTicketSubmitterIdentityId())
         if err != nil {
             return err
         }
@@ -152,9 +206,23 @@ func (m *TicketInfo) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetTicketApproverIdentityId sets the ticketApproverIdentityId property value. The ticketApproverIdentityId property
+func (m *TicketInfo) SetTicketApproverIdentityId(value *string)() {
+    err := m.GetBackingStore().Set("ticketApproverIdentityId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTicketNumber sets the ticketNumber property value. The ticket number.
 func (m *TicketInfo) SetTicketNumber(value *string)() {
     err := m.GetBackingStore().Set("ticketNumber", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetTicketSubmitterIdentityId sets the ticketSubmitterIdentityId property value. The ticketSubmitterIdentityId property
+func (m *TicketInfo) SetTicketSubmitterIdentityId(value *string)() {
+    err := m.GetBackingStore().Set("ticketSubmitterIdentityId", value)
     if err != nil {
         panic(err)
     }
@@ -173,10 +241,14 @@ type TicketInfoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
+    GetTicketApproverIdentityId()(*string)
     GetTicketNumber()(*string)
+    GetTicketSubmitterIdentityId()(*string)
     GetTicketSystem()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
+    SetTicketApproverIdentityId(value *string)()
     SetTicketNumber(value *string)()
+    SetTicketSubmitterIdentityId(value *string)()
     SetTicketSystem(value *string)()
 }

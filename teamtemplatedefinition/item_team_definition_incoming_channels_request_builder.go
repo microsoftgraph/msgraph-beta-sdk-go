@@ -11,7 +11,7 @@ import (
 type ItemTeamDefinitionIncomingChannelsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamDefinitionIncomingChannelsRequestBuilderGetQueryParameters get the list of incoming channels (channels shared with a team).
+// ItemTeamDefinitionIncomingChannelsRequestBuilderGetQueryParameters get the list of incoming channels (channels shared with a team). This API is supported in the following national cloud deployments.
 type ItemTeamDefinitionIncomingChannelsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewItemTeamDefinitionIncomingChannelsRequestBuilder(rawUrl string, requestA
 func (m *ItemTeamDefinitionIncomingChannelsRequestBuilder) Count()(*ItemTeamDefinitionIncomingChannelsCountRequestBuilder) {
     return NewItemTeamDefinitionIncomingChannelsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of incoming channels (channels shared with a team).
+// Get get the list of incoming channels (channels shared with a team). This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/team-list-incomingchannels?view=graph-rest-1.0
@@ -89,7 +89,7 @@ func (m *ItemTeamDefinitionIncomingChannelsRequestBuilder) Get(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChannelCollectionResponseable), nil
 }
-// ToGetRequestInformation get the list of incoming channels (channels shared with a team).
+// ToGetRequestInformation get the list of incoming channels (channels shared with a team). This API is supported in the following national cloud deployments.
 func (m *ItemTeamDefinitionIncomingChannelsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionIncomingChannelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

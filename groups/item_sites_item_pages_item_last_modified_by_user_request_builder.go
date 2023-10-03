@@ -63,6 +63,10 @@ func (m *ItemSitesItemPagesItemLastModifiedByUserRequestBuilder) Get(ctx context
 func (m *ItemSitesItemPagesItemLastModifiedByUserRequestBuilder) MailboxSettings()(*ItemSitesItemPagesItemLastModifiedByUserMailboxSettingsRequestBuilder) {
     return NewItemSitesItemPagesItemLastModifiedByUserMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ServiceProvisioningErrors the serviceProvisioningErrors property
+func (m *ItemSitesItemPagesItemLastModifiedByUserRequestBuilder) ServiceProvisioningErrors()(*ItemSitesItemPagesItemLastModifiedByUserServiceProvisioningErrorsRequestBuilder) {
+    return NewItemSitesItemPagesItemLastModifiedByUserServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation get lastModifiedByUser from groups
 func (m *ItemSitesItemPagesItemLastModifiedByUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemPagesItemLastModifiedByUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

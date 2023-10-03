@@ -126,7 +126,7 @@ func (m *AccessReviewRecurrenceSettings) GetRecurrenceCount()(*int32) {
     }
     return nil
 }
-// GetRecurrenceEndType gets the recurrenceEndType property value. How the recurrence ends. Possible values: never, endBy, occurrences, or recurrenceCount. If it is never, then there is no explicit end of the recurrence series. If it is endBy, then the recurrence ends at a certain date. If it is occurrences, then the series ends after recurrenceCount instances of the review have completed.
+// GetRecurrenceEndType gets the recurrenceEndType property value. How the recurrence ends. Possible values: never, endBy, occurrences, or recurrenceCount. If it's never, then there's no explicit end of the recurrence series. If it's endBy, then the recurrence ends at a certain date. If it's occurrences, then the series ends after recurrenceCount instances of the review have completed.
 func (m *AccessReviewRecurrenceSettings) GetRecurrenceEndType()(*string) {
     val, err := m.GetBackingStore().Get("recurrenceEndType")
     if err != nil {
@@ -137,7 +137,7 @@ func (m *AccessReviewRecurrenceSettings) GetRecurrenceEndType()(*string) {
     }
     return nil
 }
-// GetRecurrenceType gets the recurrenceType property value. The recurrence interval. Possible vaules: onetime, weekly, monthly, quarterly, halfyearly or annual.
+// GetRecurrenceType gets the recurrenceType property value. The recurrence interval. Possible values: onetime, weekly, monthly, quarterly, halfyearly or annual.
 func (m *AccessReviewRecurrenceSettings) GetRecurrenceType()(*string) {
     val, err := m.GetBackingStore().Get("recurrenceType")
     if err != nil {
@@ -220,14 +220,14 @@ func (m *AccessReviewRecurrenceSettings) SetRecurrenceCount(value *int32)() {
         panic(err)
     }
 }
-// SetRecurrenceEndType sets the recurrenceEndType property value. How the recurrence ends. Possible values: never, endBy, occurrences, or recurrenceCount. If it is never, then there is no explicit end of the recurrence series. If it is endBy, then the recurrence ends at a certain date. If it is occurrences, then the series ends after recurrenceCount instances of the review have completed.
+// SetRecurrenceEndType sets the recurrenceEndType property value. How the recurrence ends. Possible values: never, endBy, occurrences, or recurrenceCount. If it's never, then there's no explicit end of the recurrence series. If it's endBy, then the recurrence ends at a certain date. If it's occurrences, then the series ends after recurrenceCount instances of the review have completed.
 func (m *AccessReviewRecurrenceSettings) SetRecurrenceEndType(value *string)() {
     err := m.GetBackingStore().Set("recurrenceEndType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRecurrenceType sets the recurrenceType property value. The recurrence interval. Possible vaules: onetime, weekly, monthly, quarterly, halfyearly or annual.
+// SetRecurrenceType sets the recurrenceType property value. The recurrence interval. Possible values: onetime, weekly, monthly, quarterly, halfyearly or annual.
 func (m *AccessReviewRecurrenceSettings) SetRecurrenceType(value *string)() {
     err := m.GetBackingStore().Set("recurrenceType", value)
     if err != nil {

@@ -11,7 +11,7 @@ import (
 type ManagedTenantsDeviceCompliancePolicySettingStateSummariesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedTenantsDeviceCompliancePolicySettingStateSummariesRequestBuilderGetQueryParameters get a list of the deviceCompliancePolicySettingStateSummary objects and their properties.
+// ManagedTenantsDeviceCompliancePolicySettingStateSummariesRequestBuilderGetQueryParameters get a list of the deviceCompliancePolicySettingStateSummary objects and their properties. This API is supported in the following national cloud deployments.
 type ManagedTenantsDeviceCompliancePolicySettingStateSummariesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewManagedTenantsDeviceCompliancePolicySettingStateSummariesRequestBuilder(
 func (m *ManagedTenantsDeviceCompliancePolicySettingStateSummariesRequestBuilder) Count()(*ManagedTenantsDeviceCompliancePolicySettingStateSummariesCountRequestBuilder) {
     return NewManagedTenantsDeviceCompliancePolicySettingStateSummariesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the deviceCompliancePolicySettingStateSummary objects and their properties.
+// Get get a list of the deviceCompliancePolicySettingStateSummary objects and their properties. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-devicecompliancepolicysettingstatesummary?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *ManagedTenantsDeviceCompliancePolicySettingStateSummariesRequestBuilder
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.DeviceCompliancePolicySettingStateSummaryable), nil
 }
-// ToGetRequestInformation get a list of the deviceCompliancePolicySettingStateSummary objects and their properties.
+// ToGetRequestInformation get a list of the deviceCompliancePolicySettingStateSummary objects and their properties. This API is supported in the following national cloud deployments.
 func (m *ManagedTenantsDeviceCompliancePolicySettingStateSummariesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsDeviceCompliancePolicySettingStateSummariesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

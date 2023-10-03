@@ -31,7 +31,7 @@ func NewManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequest
     urlParams["request-raw-url"] = rawUrl
     return NewManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post assign the tenant tag to the specified managed tenants.
+// Post assign the tenant tag to the specified managed tenants. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-tenanttag-assigntag?view=graph-rest-1.0
@@ -53,7 +53,7 @@ func (m *ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagReques
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable), nil
 }
-// ToPostRequestInformation assign the tenant tag to the specified managed tenants.
+// ToPostRequestInformation assign the tenant tag to the specified managed tenants. This API is supported in the following national cloud deployments.
 func (m *ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBuilder) ToPostRequestInformation(ctx context.Context, body ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagAssignTagPostRequestBodyable, requestConfiguration *ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

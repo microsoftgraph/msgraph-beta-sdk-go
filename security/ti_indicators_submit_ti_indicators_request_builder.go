@@ -30,7 +30,8 @@ func NewTiIndicatorsSubmitTiIndicatorsRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewTiIndicatorsSubmitTiIndicatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post upload multiple threat intelligence (TI) indicators in one request instead of multiple requests.
+// Post upload multiple threat intelligence (TI) indicators in one request instead of multiple requests. This API is supported in the following national cloud deployments.
+// Deprecated: This method is obsolete. Use PostAsSubmitTiIndicatorsPostResponse instead.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-submittiindicators?view=graph-rest-1.0
@@ -52,7 +53,29 @@ func (m *TiIndicatorsSubmitTiIndicatorsRequestBuilder) Post(ctx context.Context,
     }
     return res.(TiIndicatorsSubmitTiIndicatorsResponseable), nil
 }
-// ToPostRequestInformation upload multiple threat intelligence (TI) indicators in one request instead of multiple requests.
+// PostAsSubmitTiIndicatorsPostResponse upload multiple threat intelligence (TI) indicators in one request instead of multiple requests. This API is supported in the following national cloud deployments.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-submittiindicators?view=graph-rest-1.0
+func (m *TiIndicatorsSubmitTiIndicatorsRequestBuilder) PostAsSubmitTiIndicatorsPostResponse(ctx context.Context, body TiIndicatorsSubmitTiIndicatorsPostRequestBodyable, requestConfiguration *TiIndicatorsSubmitTiIndicatorsRequestBuilderPostRequestConfiguration)(TiIndicatorsSubmitTiIndicatorsPostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateTiIndicatorsSubmitTiIndicatorsPostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(TiIndicatorsSubmitTiIndicatorsPostResponseable), nil
+}
+// ToPostRequestInformation upload multiple threat intelligence (TI) indicators in one request instead of multiple requests. This API is supported in the following national cloud deployments.
 func (m *TiIndicatorsSubmitTiIndicatorsRequestBuilder) ToPostRequestInformation(ctx context.Context, body TiIndicatorsSubmitTiIndicatorsPostRequestBodyable, requestConfiguration *TiIndicatorsSubmitTiIndicatorsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

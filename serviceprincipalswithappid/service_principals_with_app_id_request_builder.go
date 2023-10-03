@@ -18,7 +18,7 @@ type ServicePrincipalsWithAppIdRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ServicePrincipalsWithAppIdRequestBuilderGetQueryParameters retrieve the properties and relationships of a servicePrincipal object.
+// ServicePrincipalsWithAppIdRequestBuilderGetQueryParameters retrieve the properties and relationships of a servicePrincipal object. This API is supported in the following national cloud deployments.
 type ServicePrincipalsWithAppIdRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,7 +57,7 @@ func NewServicePrincipalsWithAppIdRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewServicePrincipalsWithAppIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Delete delete a servicePrincipal object.
+// Delete delete a servicePrincipal object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-1.0
@@ -76,7 +76,7 @@ func (m *ServicePrincipalsWithAppIdRequestBuilder) Delete(ctx context.Context, r
     }
     return nil
 }
-// Get retrieve the properties and relationships of a servicePrincipal object.
+// Get retrieve the properties and relationships of a servicePrincipal object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-1.0
@@ -98,7 +98,7 @@ func (m *ServicePrincipalsWithAppIdRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable), nil
 }
-// Patch update the properties of servicePrincipal object.
+// Patch update the properties of servicePrincipal object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-update?view=graph-rest-1.0
@@ -120,7 +120,7 @@ func (m *ServicePrincipalsWithAppIdRequestBuilder) Patch(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable), nil
 }
-// ToDeleteRequestInformation delete a servicePrincipal object.
+// ToDeleteRequestInformation delete a servicePrincipal object. This API is supported in the following national cloud deployments.
 func (m *ServicePrincipalsWithAppIdRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ServicePrincipalsWithAppIdRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -132,7 +132,7 @@ func (m *ServicePrincipalsWithAppIdRequestBuilder) ToDeleteRequestInformation(ct
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a servicePrincipal object.
+// ToGetRequestInformation retrieve the properties and relationships of a servicePrincipal object. This API is supported in the following national cloud deployments.
 func (m *ServicePrincipalsWithAppIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ServicePrincipalsWithAppIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -148,7 +148,7 @@ func (m *ServicePrincipalsWithAppIdRequestBuilder) ToGetRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of servicePrincipal object.
+// ToPatchRequestInformation update the properties of servicePrincipal object. This API is supported in the following national cloud deployments.
 func (m *ServicePrincipalsWithAppIdRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable, requestConfiguration *ServicePrincipalsWithAppIdRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

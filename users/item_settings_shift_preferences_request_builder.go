@@ -18,7 +18,7 @@ type ItemSettingsShiftPreferencesRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSettingsShiftPreferencesRequestBuilderGetQueryParameters retrieve the properties and relationships of a shiftPreferences object by ID.
+// ItemSettingsShiftPreferencesRequestBuilderGetQueryParameters retrieve the properties and relationships of a shiftPreferences object by ID. This API is supported in the following national cloud deployments.
 type ItemSettingsShiftPreferencesRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemSettingsShiftPreferencesRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Get retrieve the properties and relationships of a shiftPreferences object by ID.
+// Get retrieve the properties and relationships of a shiftPreferences object by ID. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/shiftpreferences-get?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *ItemSettingsShiftPreferencesRequestBuilder) ToDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a shiftPreferences object by ID.
+// ToGetRequestInformation retrieve the properties and relationships of a shiftPreferences object by ID. This API is supported in the following national cloud deployments.
 func (m *ItemSettingsShiftPreferencesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsShiftPreferencesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

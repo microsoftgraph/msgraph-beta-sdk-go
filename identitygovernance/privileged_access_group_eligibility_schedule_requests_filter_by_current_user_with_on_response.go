@@ -2,17 +2,17 @@ package identitygovernance
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 // PrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnResponse 
+// Deprecated: This class is obsolete. Use filterByCurrentUserWithOnGetResponse instead.
 type PrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnResponse struct {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
+    PrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnGetResponse
 }
 // NewPrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnResponse instantiates a new PrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnResponse and sets the default values.
 func NewPrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnResponse()(*PrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnResponse) {
     m := &PrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnResponse{
-        BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),
+        PrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnGetResponse: *NewPrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnGetResponse(),
     }
     return m
 }
@@ -20,69 +20,9 @@ func NewPrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithO
 func CreatePrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnResponse(), nil
 }
-// GetFieldDeserializers the deserialization information for the current model
-func (m *PrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
-    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePrivilegedAccessGroupEligibilityScheduleRequestFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupEligibilityScheduleRequestable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupEligibilityScheduleRequestable)
-                }
-            }
-            m.SetValue(res)
-        }
-        return nil
-    }
-    return res
-}
-// GetValue gets the value property value. The value property
-func (m *PrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupEligibilityScheduleRequestable) {
-    val, err := m.GetBackingStore().Get("value")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupEligibilityScheduleRequestable)
-    }
-    return nil
-}
-// Serialize serializes information the current object
-func (m *PrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.BaseCollectionPaginationCountResponse.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetValue() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetValue()))
-        for i, v := range m.GetValue() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("value", cast)
-        if err != nil {
-            return err
-        }
-    }
-    return nil
-}
-// SetValue sets the value property value. The value property
-func (m *PrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnResponse) SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupEligibilityScheduleRequestable)() {
-    err := m.GetBackingStore().Set("value", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // PrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnResponseable 
+// Deprecated: This class is obsolete. Use filterByCurrentUserWithOnGetResponse instead.
 type PrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnResponseable interface {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupEligibilityScheduleRequestable)
-    SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupEligibilityScheduleRequestable)()
+    PrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnGetResponseable
 }

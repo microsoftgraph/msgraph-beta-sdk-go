@@ -30,7 +30,7 @@ func NewVirtualEndpointCloudPCsItemRenameRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointCloudPCsItemRenameRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post rename a specific Cloud PC. Use this API to update the displayName for the Cloud PC entity.
+// Post rename a specific Cloud PC. Use this API to update the displayName for the Cloud PC entity. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-rename?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *VirtualEndpointCloudPCsItemRenameRequestBuilder) Post(ctx context.Conte
     }
     return nil
 }
-// ToPostRequestInformation rename a specific Cloud PC. Use this API to update the displayName for the Cloud PC entity.
+// ToPostRequestInformation rename a specific Cloud PC. Use this API to update the displayName for the Cloud PC entity. This API is supported in the following national cloud deployments.
 func (m *VirtualEndpointCloudPCsItemRenameRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointCloudPCsItemRenamePostRequestBodyable, requestConfiguration *VirtualEndpointCloudPCsItemRenameRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

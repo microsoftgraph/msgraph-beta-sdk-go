@@ -30,7 +30,7 @@ func NewB2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewB2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post set the order of identityUserFlowAttributeAssignments being collected within a user flow.
+// Post set the order of identityUserFlowAttributeAssignments being collected within a user flow. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identityuserflowattributeassignment-setorder?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *B2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder) Post(ct
     }
     return nil
 }
-// ToPostRequestInformation set the order of identityUserFlowAttributeAssignments being collected within a user flow.
+// ToPostRequestInformation set the order of identityUserFlowAttributeAssignments being collected within a user flow. This API is supported in the following national cloud deployments.
 func (m *B2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder) ToPostRequestInformation(ctx context.Context, body B2cUserFlowsItemUserAttributeAssignmentsSetOrderPostRequestBodyable, requestConfiguration *B2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

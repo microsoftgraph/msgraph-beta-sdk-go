@@ -11,7 +11,7 @@ import (
 type AuthenticationStrengthPoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AuthenticationStrengthPoliciesRequestBuilderGetQueryParameters get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies.
+// AuthenticationStrengthPoliciesRequestBuilderGetQueryParameters get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies. This API is supported in the following national cloud deployments.
 type AuthenticationStrengthPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,7 +79,7 @@ func (m *AuthenticationStrengthPoliciesRequestBuilder) Count()(*AuthenticationSt
 func (m *AuthenticationStrengthPoliciesRequestBuilder) FindByMethodModeWithAuthenticationMethodModes(authenticationMethodModes *string)(*AuthenticationStrengthPoliciesFindByMethodModeWithAuthenticationMethodModesRequestBuilder) {
     return NewAuthenticationStrengthPoliciesFindByMethodModeWithAuthenticationMethodModesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, authenticationMethodModes)
 }
-// Get get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies.
+// Get get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/authenticationstrengthroot-list-policies?view=graph-rest-1.0
@@ -101,7 +101,7 @@ func (m *AuthenticationStrengthPoliciesRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationStrengthPolicyCollectionResponseable), nil
 }
-// Post create a new custom authenticationStrengthPolicy object.
+// Post create a new custom authenticationStrengthPolicy object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/authenticationstrengthroot-post-policies?view=graph-rest-1.0
@@ -123,7 +123,7 @@ func (m *AuthenticationStrengthPoliciesRequestBuilder) Post(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationStrengthPolicyable), nil
 }
-// ToGetRequestInformation get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies.
+// ToGetRequestInformation get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies. This API is supported in the following national cloud deployments.
 func (m *AuthenticationStrengthPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationStrengthPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -139,7 +139,7 @@ func (m *AuthenticationStrengthPoliciesRequestBuilder) ToGetRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new custom authenticationStrengthPolicy object.
+// ToPostRequestInformation create a new custom authenticationStrengthPolicy object. This API is supported in the following national cloud deployments.
 func (m *AuthenticationStrengthPoliciesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationStrengthPolicyable, requestConfiguration *AuthenticationStrengthPoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

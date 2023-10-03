@@ -11,7 +11,7 @@ import (
 type ItemTermStoreSetsItemParentGroupSetsItemTermsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTermStoreSetsItemParentGroupSetsItemTermsRequestBuilderGetQueryParameters read the properties and relationships of a term object.
+// ItemTermStoreSetsItemParentGroupSetsItemTermsRequestBuilderGetQueryParameters read the properties and relationships of a term object. This API is supported in the following national cloud deployments.
 type ItemTermStoreSetsItemParentGroupSetsItemTermsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemTermStoreSetsItemParentGroupSetsItemTermsRequestBuilder(rawUrl strin
 func (m *ItemTermStoreSetsItemParentGroupSetsItemTermsRequestBuilder) Count()(*ItemTermStoreSetsItemParentGroupSetsItemTermsCountRequestBuilder) {
     return NewItemTermStoreSetsItemParentGroupSetsItemTermsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a term object.
+// Get read the properties and relationships of a term object. This API is supported in the following national cloud deployments.
 func (m *ItemTermStoreSetsItemParentGroupSetsItemTermsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTermStoreSetsItemParentGroupSetsItemTermsRequestBuilderGetRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.TermCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ItemTermStoreSetsItemParentGroupSetsItemTermsRequestBuilder) Post(ctx c
     }
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Termable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a term object.
+// ToGetRequestInformation read the properties and relationships of a term object. This API is supported in the following national cloud deployments.
 func (m *ItemTermStoreSetsItemParentGroupSetsItemTermsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTermStoreSetsItemParentGroupSetsItemTermsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

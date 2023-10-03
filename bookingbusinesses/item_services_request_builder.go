@@ -11,7 +11,7 @@ import (
 type ItemServicesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemServicesRequestBuilderGetQueryParameters get a list of bookingService objects in the specified bookingBusiness.
+// ItemServicesRequestBuilderGetQueryParameters get a list of bookingService objects in the specified bookingBusiness. This API is supported in the following national cloud deployments.
 type ItemServicesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemServicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *ItemServicesRequestBuilder) Count()(*ItemServicesCountRequestBuilder) {
     return NewItemServicesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of bookingService objects in the specified bookingBusiness.
+// Get get a list of bookingService objects in the specified bookingBusiness. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-list-services?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemServicesRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingServiceCollectionResponseable), nil
 }
-// Post create a new bookingService for the specified bookingBusiness.
+// Post create a new bookingService for the specified bookingBusiness. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-post-services?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemServicesRequestBuilder) Post(ctx context.Context, body ie233ee762e2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingServiceable), nil
 }
-// ToGetRequestInformation get a list of bookingService objects in the specified bookingBusiness.
+// ToGetRequestInformation get a list of bookingService objects in the specified bookingBusiness. This API is supported in the following national cloud deployments.
 func (m *ItemServicesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemServicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemServicesRequestBuilder) ToGetRequestInformation(ctx context.Context
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new bookingService for the specified bookingBusiness.
+// ToPostRequestInformation create a new bookingService for the specified bookingBusiness. This API is supported in the following national cloud deployments.
 func (m *ItemServicesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingServiceable, requestConfiguration *ItemServicesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

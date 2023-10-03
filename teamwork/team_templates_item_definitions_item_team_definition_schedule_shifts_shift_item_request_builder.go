@@ -18,7 +18,7 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a shift object by ID.
+// TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a shift object by ID. This API is supported in the following national cloud deployments.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -52,7 +52,7 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemReq
     urlParams["request-raw-url"] = rawUrl
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a shift from the schedule.
+// Delete delete a shift from the schedule. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/shift-delete?view=graph-rest-1.0
@@ -71,7 +71,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRe
     }
     return nil
 }
-// Get retrieve the properties and relationships of a shift object by ID.
+// Get retrieve the properties and relationships of a shift object by ID. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/shift-get?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRe
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Shiftable), nil
 }
-// ToDeleteRequestInformation delete a shift from the schedule.
+// ToDeleteRequestInformation delete a shift from the schedule. This API is supported in the following national cloud deployments.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -127,7 +127,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a shift object by ID.
+// ToGetRequestInformation retrieve the properties and relationships of a shift object by ID. This API is supported in the following national cloud deployments.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

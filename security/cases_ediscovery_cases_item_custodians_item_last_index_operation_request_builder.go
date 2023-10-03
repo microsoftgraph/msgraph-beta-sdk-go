@@ -11,7 +11,7 @@ import (
 type CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderGetQueryParameters get a list of the ediscoveryIndexOperation associated with an ediscoveryCustodian.
+// CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderGetQueryParameters get a list of the ediscoveryIndexOperation associated with an ediscoveryCustodian. This API is supported in the following national cloud deployments.
 type CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewCasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder(r
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get a list of the ediscoveryIndexOperation associated with an ediscoveryCustodian.
+// Get get a list of the ediscoveryIndexOperation associated with an ediscoveryCustodian. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-list-lastindexoperation?view=graph-rest-1.0
@@ -62,7 +62,7 @@ func (m *CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder)
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryIndexOperationable), nil
 }
-// ToGetRequestInformation get a list of the ediscoveryIndexOperation associated with an ediscoveryCustodian.
+// ToGetRequestInformation get a list of the ediscoveryIndexOperation associated with an ediscoveryCustodian. This API is supported in the following national cloud deployments.
 func (m *CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

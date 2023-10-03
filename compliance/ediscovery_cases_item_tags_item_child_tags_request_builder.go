@@ -11,7 +11,7 @@ import (
 type EdiscoveryCasesItemTagsItemChildTagsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesItemTagsItemChildTagsRequestBuilderGetQueryParameters get a list of child tag objects associated with a tag.
+// EdiscoveryCasesItemTagsItemChildTagsRequestBuilderGetQueryParameters get a list of child tag objects associated with a tag. This API is supported in the following national cloud deployments.
 type EdiscoveryCasesItemTagsItemChildTagsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -68,7 +68,7 @@ func NewEdiscoveryCasesItemTagsItemChildTagsRequestBuilder(rawUrl string, reques
 func (m *EdiscoveryCasesItemTagsItemChildTagsRequestBuilder) Count()(*EdiscoveryCasesItemTagsItemChildTagsCountRequestBuilder) {
     return NewEdiscoveryCasesItemTagsItemChildTagsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of child tag objects associated with a tag.
+// Get get a list of child tag objects associated with a tag. This API is supported in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
@@ -91,7 +91,7 @@ func (m *EdiscoveryCasesItemTagsItemChildTagsRequestBuilder) Get(ctx context.Con
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.TagCollectionResponseable), nil
 }
-// ToGetRequestInformation get a list of child tag objects associated with a tag.
+// ToGetRequestInformation get a list of child tag objects associated with a tag. This API is supported in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemTagsItemChildTagsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemTagsItemChildTagsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

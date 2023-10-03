@@ -11,7 +11,7 @@ import (
 type TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsRequestBuilderGetQueryParameters retrieve the list of apps installed in the specified team.
+// TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsRequestBuilderGetQueryParameters retrieve the list of apps installed in the specified team. This API is supported in the following national cloud deployments.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsRequestBuilde
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsRequestBuilder) Count()(*TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsCountRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the list of apps installed in the specified team.
+// Get retrieve the list of apps installed in the specified team. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/team-list-installedapps?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsRequestBuild
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppInstallationCollectionResponseable), nil
 }
-// Post install an app to the specified team.
+// Post install an app to the specified team. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/team-post-installedapps?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsRequestBuild
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppInstallationable), nil
 }
-// ToGetRequestInformation retrieve the list of apps installed in the specified team.
+// ToGetRequestInformation retrieve the list of apps installed in the specified team. This API is supported in the following national cloud deployments.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsRequestBuild
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation install an app to the specified team.
+// ToPostRequestInformation install an app to the specified team. This API is supported in the following national cloud deployments.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppInstallationable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

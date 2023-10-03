@@ -2,17 +2,17 @@ package sites
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 // ItemInformationProtectionPolicyLabelsEvaluateRemovalResponse 
+// Deprecated: This class is obsolete. Use evaluateRemovalPostResponse instead.
 type ItemInformationProtectionPolicyLabelsEvaluateRemovalResponse struct {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
+    ItemInformationProtectionPolicyLabelsEvaluateRemovalPostResponse
 }
 // NewItemInformationProtectionPolicyLabelsEvaluateRemovalResponse instantiates a new ItemInformationProtectionPolicyLabelsEvaluateRemovalResponse and sets the default values.
 func NewItemInformationProtectionPolicyLabelsEvaluateRemovalResponse()(*ItemInformationProtectionPolicyLabelsEvaluateRemovalResponse) {
     m := &ItemInformationProtectionPolicyLabelsEvaluateRemovalResponse{
-        BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),
+        ItemInformationProtectionPolicyLabelsEvaluateRemovalPostResponse: *NewItemInformationProtectionPolicyLabelsEvaluateRemovalPostResponse(),
     }
     return m
 }
@@ -20,69 +20,9 @@ func NewItemInformationProtectionPolicyLabelsEvaluateRemovalResponse()(*ItemInfo
 func CreateItemInformationProtectionPolicyLabelsEvaluateRemovalResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemInformationProtectionPolicyLabelsEvaluateRemovalResponse(), nil
 }
-// GetFieldDeserializers the deserialization information for the current model
-func (m *ItemInformationProtectionPolicyLabelsEvaluateRemovalResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
-    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateInformationProtectionActionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionActionable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionActionable)
-                }
-            }
-            m.SetValue(res)
-        }
-        return nil
-    }
-    return res
-}
-// GetValue gets the value property value. The value property
-func (m *ItemInformationProtectionPolicyLabelsEvaluateRemovalResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionActionable) {
-    val, err := m.GetBackingStore().Get("value")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionActionable)
-    }
-    return nil
-}
-// Serialize serializes information the current object
-func (m *ItemInformationProtectionPolicyLabelsEvaluateRemovalResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.BaseCollectionPaginationCountResponse.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetValue() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetValue()))
-        for i, v := range m.GetValue() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("value", cast)
-        if err != nil {
-            return err
-        }
-    }
-    return nil
-}
-// SetValue sets the value property value. The value property
-func (m *ItemInformationProtectionPolicyLabelsEvaluateRemovalResponse) SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionActionable)() {
-    err := m.GetBackingStore().Set("value", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // ItemInformationProtectionPolicyLabelsEvaluateRemovalResponseable 
+// Deprecated: This class is obsolete. Use evaluateRemovalPostResponse instead.
 type ItemInformationProtectionPolicyLabelsEvaluateRemovalResponseable interface {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    ItemInformationProtectionPolicyLabelsEvaluateRemovalPostResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionActionable)
-    SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionActionable)()
 }

@@ -38,7 +38,7 @@ func (m *PrintJobConfiguration) GetAdditionalData()(map[string]any) {
 func (m *PrintJobConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCollate gets the collate property value. Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
+// GetCollate gets the collate property value. Whether the printer should collate pages when printing multiple copies of a multi-page document.
 func (m *PrintJobConfiguration) GetCollate()(*bool) {
     val, err := m.GetBackingStore().Get("collate")
     if err != nil {
@@ -629,7 +629,7 @@ func (m *PrintJobConfiguration) SetAdditionalData(value map[string]any)() {
 func (m *PrintJobConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCollate sets the collate property value. Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
+// SetCollate sets the collate property value. Whether the printer should collate pages when printing multiple copies of a multi-page document.
 func (m *PrintJobConfiguration) SetCollate(value *bool)() {
     err := m.GetBackingStore().Set("collate", value)
     if err != nil {

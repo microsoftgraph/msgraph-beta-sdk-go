@@ -11,7 +11,7 @@ import (
 type CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuilderGetQueryParameters get a list of certificateBasedApplicationConfiguration objects.
+// CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuilderGetQueryParameters get certificateBasedApplicationConfigurations from directory
 type CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewCertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBu
 func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuilder) Count()(*CertificateAuthoritiesCertificateBasedApplicationConfigurationsCountRequestBuilder) {
     return NewCertificateAuthoritiesCertificateBasedApplicationConfigurationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of certificateBasedApplicationConfiguration objects.
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/certificateauthoritypath-list-certificatebasedapplicationconfigurations?view=graph-rest-1.0
+// Get get certificateBasedApplicationConfigurations from directory
 func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuilder) Get(ctx context.Context, requestConfiguration *CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedApplicationConfigurationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestB
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedApplicationConfigurationable), nil
 }
-// ToGetRequestInformation get a list of certificateBasedApplicationConfiguration objects.
+// ToGetRequestInformation get certificateBasedApplicationConfigurations from directory
 func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CertificateAuthoritiesCertificateBasedApplicationConfigurationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

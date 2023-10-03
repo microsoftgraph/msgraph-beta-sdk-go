@@ -21,7 +21,7 @@ func NewIpEvidence()(*IpEvidence) {
 func CreateIpEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIpEvidence(), nil
 }
-// GetCountryLetterCode gets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc..).
+// GetCountryLetterCode gets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, or CA.).
 func (m *IpEvidence) GetCountryLetterCode()(*string) {
     val, err := m.GetBackingStore().Get("countryLetterCode")
     if err != nil {
@@ -57,7 +57,7 @@ func (m *IpEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetIpAddress gets the ipAddress property value. The value of the IP Address, can be either in V4 address or V6 address format.
+// GetIpAddress gets the ipAddress property value. The value of the IP Address can be either in V4 address or V6 address format.
 func (m *IpEvidence) GetIpAddress()(*string) {
     val, err := m.GetBackingStore().Get("ipAddress")
     if err != nil {
@@ -88,14 +88,14 @@ func (m *IpEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetCountryLetterCode sets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc..).
+// SetCountryLetterCode sets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, or CA.).
 func (m *IpEvidence) SetCountryLetterCode(value *string)() {
     err := m.GetBackingStore().Set("countryLetterCode", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIpAddress sets the ipAddress property value. The value of the IP Address, can be either in V4 address or V6 address format.
+// SetIpAddress sets the ipAddress property value. The value of the IP Address can be either in V4 address or V6 address format.
 func (m *IpEvidence) SetIpAddress(value *string)() {
     err := m.GetBackingStore().Set("ipAddress", value)
     if err != nil {

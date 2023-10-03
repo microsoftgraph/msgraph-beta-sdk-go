@@ -27,6 +27,14 @@ type MobileAppsItemGraphWindowsAppXRequestBuilderGetRequestConfiguration struct 
     // Request query parameters
     QueryParameters *MobileAppsItemGraphWindowsAppXRequestBuilderGetQueryParameters
 }
+// Assignments provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphWindowsAppXRequestBuilder) Assignments()(*MobileAppsItemGraphWindowsAppXAssignmentsRequestBuilder) {
+    return NewMobileAppsItemGraphWindowsAppXAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Categories provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphWindowsAppXRequestBuilder) Categories()(*MobileAppsItemGraphWindowsAppXCategoriesRequestBuilder) {
+    return NewMobileAppsItemGraphWindowsAppXCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMobileAppsItemGraphWindowsAppXRequestBuilderInternal instantiates a new GraphWindowsAppXRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphWindowsAppXRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphWindowsAppXRequestBuilder) {
     m := &MobileAppsItemGraphWindowsAppXRequestBuilder{
@@ -39,6 +47,10 @@ func NewMobileAppsItemGraphWindowsAppXRequestBuilder(rawUrl string, requestAdapt
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemGraphWindowsAppXRequestBuilderInternal(urlParams, requestAdapter)
+}
+// ContentVersions provides operations to manage the contentVersions property of the microsoft.graph.mobileLobApp entity.
+func (m *MobileAppsItemGraphWindowsAppXRequestBuilder) ContentVersions()(*MobileAppsItemGraphWindowsAppXContentVersionsRequestBuilder) {
+    return NewMobileAppsItemGraphWindowsAppXContentVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsAppX
 func (m *MobileAppsItemGraphWindowsAppXRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphWindowsAppXRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAppXable, error) {
@@ -58,6 +70,10 @@ func (m *MobileAppsItemGraphWindowsAppXRequestBuilder) Get(ctx context.Context, 
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAppXable), nil
+}
+// Relationships provides operations to manage the relationships property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphWindowsAppXRequestBuilder) Relationships()(*MobileAppsItemGraphWindowsAppXRelationshipsRequestBuilder) {
+    return NewMobileAppsItemGraphWindowsAppXRelationshipsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsAppX
 func (m *MobileAppsItemGraphWindowsAppXRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphWindowsAppXRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

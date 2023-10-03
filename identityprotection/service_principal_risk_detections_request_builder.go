@@ -11,7 +11,7 @@ import (
 type ServicePrincipalRiskDetectionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ServicePrincipalRiskDetectionsRequestBuilderGetQueryParameters retrieve the properties of a collection of servicePrincipalRiskDetection objects.
+// ServicePrincipalRiskDetectionsRequestBuilderGetQueryParameters retrieve the properties of a collection of servicePrincipalRiskDetection objects. This API is supported in the following national cloud deployments.
 type ServicePrincipalRiskDetectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewServicePrincipalRiskDetectionsRequestBuilder(rawUrl string, requestAdapt
 func (m *ServicePrincipalRiskDetectionsRequestBuilder) Count()(*ServicePrincipalRiskDetectionsCountRequestBuilder) {
     return NewServicePrincipalRiskDetectionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties of a collection of servicePrincipalRiskDetection objects.
+// Get retrieve the properties of a collection of servicePrincipalRiskDetection objects. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identityprotectionroot-list-serviceprincipalriskdetections?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *ServicePrincipalRiskDetectionsRequestBuilder) Post(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalRiskDetectionable), nil
 }
-// ToGetRequestInformation retrieve the properties of a collection of servicePrincipalRiskDetection objects.
+// ToGetRequestInformation retrieve the properties of a collection of servicePrincipalRiskDetection objects. This API is supported in the following national cloud deployments.
 func (m *ServicePrincipalRiskDetectionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ServicePrincipalRiskDetectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -30,7 +30,7 @@ func NewItemManagedDevicesItemSetCloudPcReviewStatusRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewItemManagedDevicesItemSetCloudPcReviewStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post set the review status of a specific Cloud PC device. Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious. After the review is completed, use this API again to set the Cloud PC back to a normal state.
+// Post set the review status of a specific Cloud PC device. Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious. After the review is completed, use this API again to set the Cloud PC back to a normal state. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/manageddevice-setcloudpcreviewstatus?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemManagedDevicesItemSetCloudPcReviewStatusRequestBuilder) Post(ctx co
     }
     return nil
 }
-// ToPostRequestInformation set the review status of a specific Cloud PC device. Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious. After the review is completed, use this API again to set the Cloud PC back to a normal state.
+// ToPostRequestInformation set the review status of a specific Cloud PC device. Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious. After the review is completed, use this API again to set the Cloud PC back to a normal state. This API is supported in the following national cloud deployments.
 func (m *ItemManagedDevicesItemSetCloudPcReviewStatusRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemManagedDevicesItemSetCloudPcReviewStatusPostRequestBodyable, requestConfiguration *ItemManagedDevicesItemSetCloudPcReviewStatusRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

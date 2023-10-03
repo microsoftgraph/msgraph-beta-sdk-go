@@ -18,7 +18,7 @@ type ReportSettingsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ReportSettingsRequestBuilderGetQueryParameters get the tenant-level settings for Microsoft 365 reports.
+// ReportSettingsRequestBuilderGetQueryParameters get the tenant-level settings for Microsoft 365 reports. This API is supported in the following national cloud deployments.
 type ReportSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ReportSettingsRequestBuilder) Delete(ctx context.Context, requestConfig
     }
     return nil
 }
-// Get get the tenant-level settings for Microsoft 365 reports.
+// Get get the tenant-level settings for Microsoft 365 reports. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/adminreportsettings-get?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *ReportSettingsRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminReportSettingsable), nil
 }
-// Patch update tenant-level settings for Microsoft 365 reports.
+// Patch update tenant-level settings for Microsoft 365 reports. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/adminreportsettings-update?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *ReportSettingsRequestBuilder) ToDeleteRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the tenant-level settings for Microsoft 365 reports.
+// ToGetRequestInformation get the tenant-level settings for Microsoft 365 reports. This API is supported in the following national cloud deployments.
 func (m *ReportSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *ReportSettingsRequestBuilder) ToGetRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update tenant-level settings for Microsoft 365 reports.
+// ToPatchRequestInformation update tenant-level settings for Microsoft 365 reports. This API is supported in the following national cloud deployments.
 func (m *ReportSettingsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminReportSettingsable, requestConfiguration *ReportSettingsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

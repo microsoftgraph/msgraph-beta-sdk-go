@@ -19,7 +19,7 @@ func NewOffice365GroupsActivityGroupCounts()(*Office365GroupsActivityGroupCounts
 func CreateOffice365GroupsActivityGroupCountsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOffice365GroupsActivityGroupCounts(), nil
 }
-// GetActive gets the active property value. The number of active groups. A group is considered active if any of the following occurred: group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
+// GetActive gets the active property value. The number of active groups. A group is considered active if any of the following occurred: group mailbox received email, or  a user viewed, edited, shared, or synced files in SharePoint document library, or a user viewed SharePoint pages, or a user posted, read, or liked messages in Yammer groups.
 func (m *Office365GroupsActivityGroupCounts) GetActive()(*int64) {
     val, err := m.GetBackingStore().Get("active")
     if err != nil {
@@ -85,7 +85,7 @@ func (m *Office365GroupsActivityGroupCounts) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetReportDate gets the reportDate property value. The date on which a number of groups were active.
+// GetReportDate gets the reportDate property value. The date on which groups were active.
 func (m *Office365GroupsActivityGroupCounts) GetReportDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("reportDate")
     if err != nil {
@@ -167,14 +167,14 @@ func (m *Office365GroupsActivityGroupCounts) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetActive sets the active property value. The number of active groups. A group is considered active if any of the following occurred: group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
+// SetActive sets the active property value. The number of active groups. A group is considered active if any of the following occurred: group mailbox received email, or  a user viewed, edited, shared, or synced files in SharePoint document library, or a user viewed SharePoint pages, or a user posted, read, or liked messages in Yammer groups.
 func (m *Office365GroupsActivityGroupCounts) SetActive(value *int64)() {
     err := m.GetBackingStore().Set("active", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReportDate sets the reportDate property value. The date on which a number of groups were active.
+// SetReportDate sets the reportDate property value. The date on which groups were active.
 func (m *Office365GroupsActivityGroupCounts) SetReportDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     err := m.GetBackingStore().Set("reportDate", value)
     if err != nil {

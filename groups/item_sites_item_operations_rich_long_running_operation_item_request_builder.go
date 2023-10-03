@@ -18,7 +18,7 @@ type ItemSitesItemOperationsRichLongRunningOperationItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSitesItemOperationsRichLongRunningOperationItemRequestBuilderGetQueryParameters read the properties of a richLongRunningOperation object.
+// ItemSitesItemOperationsRichLongRunningOperationItemRequestBuilderGetQueryParameters read the properties of a richLongRunningOperation object. This API is supported in the following national cloud deployments.
 type ItemSitesItemOperationsRichLongRunningOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemSitesItemOperationsRichLongRunningOperationItemRequestBuilder) Dele
     }
     return nil
 }
-// Get read the properties of a richLongRunningOperation object.
+// Get read the properties of a richLongRunningOperation object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/richlongrunningoperation-get?view=graph-rest-1.0
@@ -123,7 +123,7 @@ func (m *ItemSitesItemOperationsRichLongRunningOperationItemRequestBuilder) ToDe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties of a richLongRunningOperation object.
+// ToGetRequestInformation read the properties of a richLongRunningOperation object. This API is supported in the following national cloud deployments.
 func (m *ItemSitesItemOperationsRichLongRunningOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemOperationsRichLongRunningOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

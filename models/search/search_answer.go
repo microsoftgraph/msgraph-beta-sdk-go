@@ -142,7 +142,7 @@ func (m *SearchAnswer) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad9
     }
     return nil
 }
-// GetWebUrl gets the webUrl property value. Search answer URL link. When users click this search answer in search results, they will go to this URL.
+// GetWebUrl gets the webUrl property value. Search answer URL link. When users click this search answer in search results, they'll go to this URL.
 func (m *SearchAnswer) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -219,7 +219,7 @@ func (m *SearchAnswer) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe
         panic(err)
     }
 }
-// SetWebUrl sets the webUrl property value. Search answer URL link. When users click this search answer in search results, they will go to this URL.
+// SetWebUrl sets the webUrl property value. Search answer URL link. When users click this search answer in search results, they'll go to this URL.
 func (m *SearchAnswer) SetWebUrl(value *string)() {
     err := m.GetBackingStore().Set("webUrl", value)
     if err != nil {

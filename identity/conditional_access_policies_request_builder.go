@@ -11,7 +11,7 @@ import (
 type ConditionalAccessPoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConditionalAccessPoliciesRequestBuilderGetQueryParameters retrieve a list of conditionalAccessPolicy objects.
+// ConditionalAccessPoliciesRequestBuilderGetQueryParameters retrieve a list of conditionalAccessPolicy objects. This API is supported in the following national cloud deployments.
 type ConditionalAccessPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewConditionalAccessPoliciesRequestBuilder(rawUrl string, requestAdapter i2
 func (m *ConditionalAccessPoliciesRequestBuilder) Count()(*ConditionalAccessPoliciesCountRequestBuilder) {
     return NewConditionalAccessPoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of conditionalAccessPolicy objects.
+// Get retrieve a list of conditionalAccessPolicy objects. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/conditionalaccessroot-list-policies?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ConditionalAccessPoliciesRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessPolicyCollectionResponseable), nil
 }
-// Post create a new conditionalAccessPolicy.
+// Post create a new conditionalAccessPolicy. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/conditionalaccessroot-post-policies?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ConditionalAccessPoliciesRequestBuilder) Post(ctx context.Context, body
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessPolicyable), nil
 }
-// ToGetRequestInformation retrieve a list of conditionalAccessPolicy objects.
+// ToGetRequestInformation retrieve a list of conditionalAccessPolicy objects. This API is supported in the following national cloud deployments.
 func (m *ConditionalAccessPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ConditionalAccessPoliciesRequestBuilder) ToGetRequestInformation(ctx co
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new conditionalAccessPolicy.
+// ToPostRequestInformation create a new conditionalAccessPolicy. This API is supported in the following national cloud deployments.
 func (m *ConditionalAccessPoliciesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessPolicyable, requestConfiguration *ConditionalAccessPoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

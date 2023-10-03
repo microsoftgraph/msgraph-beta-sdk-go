@@ -326,6 +326,16 @@ func (m *Site) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["recycleBin"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateRecycleBinFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRecycleBin(val.(RecycleBinable))
+        }
+        return nil
+    }
     res["root"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRootFromDiscriminatorValue)
         if err != nil {
@@ -469,6 +479,17 @@ func (m *Site) GetPermissions()([]Permissionable) {
     }
     if val != nil {
         return val.([]Permissionable)
+    }
+    return nil
+}
+// GetRecycleBin gets the recycleBin property value. The recycleBin property
+func (m *Site) GetRecycleBin()(RecycleBinable) {
+    val, err := m.GetBackingStore().Get("recycleBin")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RecycleBinable)
     }
     return nil
 }
@@ -684,6 +705,12 @@ func (m *Site) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteObjectValue("recycleBin", m.GetRecycleBin())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("root", m.GetRoot())
         if err != nil {
             return err
@@ -833,6 +860,13 @@ func (m *Site) SetPermissions(value []Permissionable)() {
         panic(err)
     }
 }
+// SetRecycleBin sets the recycleBin property value. The recycleBin property
+func (m *Site) SetRecycleBin(value RecycleBinable)() {
+    err := m.GetBackingStore().Set("recycleBin", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRoot sets the root property value. If present, indicates that this is the root site in the site collection. Read-only.
 func (m *Site) SetRoot(value Rootable)() {
     err := m.GetBackingStore().Set("root", value)
@@ -888,6 +922,7 @@ type Siteable interface {
     GetOperations()([]RichLongRunningOperationable)
     GetPages()([]BaseSitePageable)
     GetPermissions()([]Permissionable)
+    GetRecycleBin()(RecycleBinable)
     GetRoot()(Rootable)
     GetSettings()(SiteSettingsable)
     GetSharepointIds()(SharepointIdsable)
@@ -909,6 +944,7 @@ type Siteable interface {
     SetOperations(value []RichLongRunningOperationable)()
     SetPages(value []BaseSitePageable)()
     SetPermissions(value []Permissionable)()
+    SetRecycleBin(value RecycleBinable)()
     SetRoot(value Rootable)()
     SetSettings(value SiteSettingsable)()
     SetSharepointIds(value SharepointIdsable)()

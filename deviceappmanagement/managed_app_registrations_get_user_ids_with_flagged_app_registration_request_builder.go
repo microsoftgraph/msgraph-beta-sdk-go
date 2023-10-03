@@ -46,6 +46,7 @@ func NewManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilde
     return NewManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getUserIdsWithFlaggedAppRegistration
+// Deprecated: This method is obsolete. Use GetAsGetUserIdsWithFlaggedAppRegistrationGetResponse instead.
 func (m *ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilderGetRequestConfiguration)(ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -63,6 +64,25 @@ func (m *ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuild
         return nil, nil
     }
     return res.(ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationResponseable), nil
+}
+// GetAsGetUserIdsWithFlaggedAppRegistrationGetResponse invoke function getUserIdsWithFlaggedAppRegistration
+func (m *ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilder) GetAsGetUserIdsWithFlaggedAppRegistrationGetResponse(ctx context.Context, requestConfiguration *ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilderGetRequestConfiguration)(ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getUserIdsWithFlaggedAppRegistration
 func (m *ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

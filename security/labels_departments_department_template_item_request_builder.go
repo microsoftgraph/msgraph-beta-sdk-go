@@ -18,7 +18,7 @@ type LabelsDepartmentsDepartmentTemplateItemRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LabelsDepartmentsDepartmentTemplateItemRequestBuilderGetQueryParameters read the properties and relationships of a departmentTemplate object.
+// LabelsDepartmentsDepartmentTemplateItemRequestBuilderGetQueryParameters read the properties and relationships of a departmentTemplate object. This API is supported in the following national cloud deployments.
 type LabelsDepartmentsDepartmentTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewLabelsDepartmentsDepartmentTemplateItemRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewLabelsDepartmentsDepartmentTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a departmentTemplate object.
+// Delete delete a departmentTemplate object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-delete-departments?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *LabelsDepartmentsDepartmentTemplateItemRequestBuilder) Delete(ctx conte
     }
     return nil
 }
-// Get read the properties and relationships of a departmentTemplate object.
+// Get read the properties and relationships of a departmentTemplate object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-departmenttemplate-get?view=graph-rest-1.0
@@ -114,7 +114,7 @@ func (m *LabelsDepartmentsDepartmentTemplateItemRequestBuilder) Patch(ctx contex
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DepartmentTemplateable), nil
 }
-// ToDeleteRequestInformation delete a departmentTemplate object.
+// ToDeleteRequestInformation delete a departmentTemplate object. This API is supported in the following national cloud deployments.
 func (m *LabelsDepartmentsDepartmentTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LabelsDepartmentsDepartmentTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -126,7 +126,7 @@ func (m *LabelsDepartmentsDepartmentTemplateItemRequestBuilder) ToDeleteRequestI
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a departmentTemplate object.
+// ToGetRequestInformation read the properties and relationships of a departmentTemplate object. This API is supported in the following national cloud deployments.
 func (m *LabelsDepartmentsDepartmentTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsDepartmentsDepartmentTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

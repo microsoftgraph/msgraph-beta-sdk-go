@@ -31,6 +31,7 @@ func NewItemAddGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewItemAddGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action addGroup
+// Deprecated: This method is obsolete. Use PostAsAddGroupPostResponse instead.
 func (m *ItemAddGroupRequestBuilder) Post(ctx context.Context, body ItemAddGroupPostRequestBodyable, requestConfiguration *ItemAddGroupRequestBuilderPostRequestConfiguration)(ItemAddGroupResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -48,6 +49,25 @@ func (m *ItemAddGroupRequestBuilder) Post(ctx context.Context, body ItemAddGroup
         return nil, nil
     }
     return res.(ItemAddGroupResponseable), nil
+}
+// PostAsAddGroupPostResponse invoke action addGroup
+func (m *ItemAddGroupRequestBuilder) PostAsAddGroupPostResponse(ctx context.Context, body ItemAddGroupPostRequestBodyable, requestConfiguration *ItemAddGroupRequestBuilderPostRequestConfiguration)(ItemAddGroupPostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemAddGroupPostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemAddGroupPostResponseable), nil
 }
 // ToPostRequestInformation invoke action addGroup
 func (m *ItemAddGroupRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemAddGroupPostRequestBodyable, requestConfiguration *ItemAddGroupRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

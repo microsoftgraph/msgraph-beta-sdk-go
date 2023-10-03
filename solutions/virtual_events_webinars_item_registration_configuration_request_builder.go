@@ -11,7 +11,7 @@ import (
 type VirtualEventsWebinarsItemRegistrationConfigurationRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEventsWebinarsItemRegistrationConfigurationRequestBuilderGetQueryParameters get registrationConfiguration from solutions
+// VirtualEventsWebinarsItemRegistrationConfigurationRequestBuilderGetQueryParameters registration configuration of the webinar.
 type VirtualEventsWebinarsItemRegistrationConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewVirtualEventsWebinarsItemRegistrationConfigurationRequestBuilder(rawUrl 
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEventsWebinarsItemRegistrationConfigurationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get registrationConfiguration from solutions
+// Get registration configuration of the webinar.
 func (m *VirtualEventsWebinarsItemRegistrationConfigurationRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationConfigurationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventRegistrationConfigurationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *VirtualEventsWebinarsItemRegistrationConfigurationRequestBuilder) Get(c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventRegistrationConfigurationable), nil
 }
-// ToGetRequestInformation get registrationConfiguration from solutions
+// ToGetRequestInformation registration configuration of the webinar.
 func (m *VirtualEventsWebinarsItemRegistrationConfigurationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationConfigurationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

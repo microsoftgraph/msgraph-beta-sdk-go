@@ -53,6 +53,7 @@ func NewGetRelyingPartyDetailedSummaryWithPeriodRequestBuilder(rawUrl string, re
     return NewGetRelyingPartyDetailedSummaryWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getRelyingPartyDetailedSummary
+// Deprecated: This method is obsolete. Use GetAsGetRelyingPartyDetailedSummaryWithPeriodGetResponse instead.
 func (m *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration)(GetRelyingPartyDetailedSummaryWithPeriodResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,6 +71,25 @@ func (m *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder) Get(ctx context
         return nil, nil
     }
     return res.(GetRelyingPartyDetailedSummaryWithPeriodResponseable), nil
+}
+// GetAsGetRelyingPartyDetailedSummaryWithPeriodGetResponse invoke function getRelyingPartyDetailedSummary
+func (m *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder) GetAsGetRelyingPartyDetailedSummaryWithPeriodGetResponse(ctx context.Context, requestConfiguration *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration)(GetRelyingPartyDetailedSummaryWithPeriodGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetRelyingPartyDetailedSummaryWithPeriodGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(GetRelyingPartyDetailedSummaryWithPeriodGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getRelyingPartyDetailedSummary
 func (m *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

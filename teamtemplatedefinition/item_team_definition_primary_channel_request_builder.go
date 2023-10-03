@@ -18,7 +18,7 @@ type ItemTeamDefinitionPrimaryChannelRequestBuilderDeleteRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamDefinitionPrimaryChannelRequestBuilderGetQueryParameters get the default channel, General, of a team.
+// ItemTeamDefinitionPrimaryChannelRequestBuilderGetQueryParameters get the default channel, General, of a team. This API is supported in the following national cloud deployments.
 type ItemTeamDefinitionPrimaryChannelRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -82,7 +82,7 @@ func (m *ItemTeamDefinitionPrimaryChannelRequestBuilder) DoesUserHaveAccessuserI
 func (m *ItemTeamDefinitionPrimaryChannelRequestBuilder) FilesFolder()(*ItemTeamDefinitionPrimaryChannelFilesFolderRequestBuilder) {
     return NewItemTeamDefinitionPrimaryChannelFilesFolderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the default channel, General, of a team.
+// Get get the default channel, General, of a team. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/team-get-primarychannel?view=graph-rest-1.0
@@ -159,7 +159,7 @@ func (m *ItemTeamDefinitionPrimaryChannelRequestBuilder) ToDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the default channel, General, of a team.
+// ToGetRequestInformation get the default channel, General, of a team. This API is supported in the following national cloud deployments.
 func (m *ItemTeamDefinitionPrimaryChannelRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionPrimaryChannelRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

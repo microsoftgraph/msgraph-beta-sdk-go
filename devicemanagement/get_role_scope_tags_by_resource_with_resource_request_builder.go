@@ -53,6 +53,7 @@ func NewGetRoleScopeTagsByResourceWithResourceRequestBuilder(rawUrl string, requ
     return NewGetRoleScopeTagsByResourceWithResourceRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getRoleScopeTagsByResource
+// Deprecated: This method is obsolete. Use GetAsGetRoleScopeTagsByResourceWithResourceGetResponse instead.
 func (m *GetRoleScopeTagsByResourceWithResourceRequestBuilder) Get(ctx context.Context, requestConfiguration *GetRoleScopeTagsByResourceWithResourceRequestBuilderGetRequestConfiguration)(GetRoleScopeTagsByResourceWithResourceResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,6 +71,25 @@ func (m *GetRoleScopeTagsByResourceWithResourceRequestBuilder) Get(ctx context.C
         return nil, nil
     }
     return res.(GetRoleScopeTagsByResourceWithResourceResponseable), nil
+}
+// GetAsGetRoleScopeTagsByResourceWithResourceGetResponse invoke function getRoleScopeTagsByResource
+func (m *GetRoleScopeTagsByResourceWithResourceRequestBuilder) GetAsGetRoleScopeTagsByResourceWithResourceGetResponse(ctx context.Context, requestConfiguration *GetRoleScopeTagsByResourceWithResourceRequestBuilderGetRequestConfiguration)(GetRoleScopeTagsByResourceWithResourceGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetRoleScopeTagsByResourceWithResourceGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(GetRoleScopeTagsByResourceWithResourceGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getRoleScopeTagsByResource
 func (m *GetRoleScopeTagsByResourceWithResourceRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetRoleScopeTagsByResourceWithResourceRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -31,6 +31,7 @@ func NewOnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilder(rawUrl s
     return NewOnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getVirtualAppointmentJoinWebUrl
+// Deprecated: This method is obsolete. Use GetAsGetVirtualAppointmentJoinWebUrlGetResponse instead.
 func (m *OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilderGetRequestConfiguration)(OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -48,6 +49,25 @@ func (m *OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilder) Get(ct
         return nil, nil
     }
     return res.(OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlResponseable), nil
+}
+// GetAsGetVirtualAppointmentJoinWebUrlGetResponse invoke function getVirtualAppointmentJoinWebUrl
+func (m *OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilder) GetAsGetVirtualAppointmentJoinWebUrlGetResponse(ctx context.Context, requestConfiguration *OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilderGetRequestConfiguration)(OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateOnlineMeetingsItemGetVirtualAppointmentJoinWebUrlGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getVirtualAppointmentJoinWebUrl
 func (m *OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

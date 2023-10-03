@@ -118,7 +118,7 @@ func (m *Call) GetContentSharingSessions()([]ContentSharingSessionable) {
     }
     return nil
 }
-// GetDirection gets the direction property value. The direction of the call. The possible value are incoming or outgoing. Read-only.
+// GetDirection gets the direction property value. The direction of the call. The possible values are incoming or outgoing. Read-only.
 func (m *Call) GetDirection()(*CallDirection) {
     val, err := m.GetBackingStore().Get("direction")
     if err != nil {
@@ -997,7 +997,7 @@ func (m *Call) SetContentSharingSessions(value []ContentSharingSessionable)() {
         panic(err)
     }
 }
-// SetDirection sets the direction property value. The direction of the call. The possible value are incoming or outgoing. Read-only.
+// SetDirection sets the direction property value. The direction of the call. The possible values are incoming or outgoing. Read-only.
 func (m *Call) SetDirection(value *CallDirection)() {
     err := m.GetBackingStore().Set("direction", value)
     if err != nil {

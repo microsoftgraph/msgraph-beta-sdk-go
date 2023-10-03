@@ -76,7 +76,7 @@ func (m *PlannerPlanDetails) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetSharedWith gets the sharedWith property value. The set of user IDs that this plan is shared with. If you are using Microsoft 365 groups, use the groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection, although it is not required in order for them to access the plan owned by the group.
+// GetSharedWith gets the sharedWith property value. The set of user IDs that this plan is shared with. If you're using Microsoft 365 groups, use the groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection, although it isn't required in order for them to access the plan owned by the group.
 func (m *PlannerPlanDetails) GetSharedWith()(PlannerUserIdsable) {
     val, err := m.GetBackingStore().Get("sharedWith")
     if err != nil {
@@ -127,7 +127,7 @@ func (m *PlannerPlanDetails) SetContextDetails(value PlannerPlanContextDetailsCo
         panic(err)
     }
 }
-// SetSharedWith sets the sharedWith property value. The set of user IDs that this plan is shared with. If you are using Microsoft 365 groups, use the groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection, although it is not required in order for them to access the plan owned by the group.
+// SetSharedWith sets the sharedWith property value. The set of user IDs that this plan is shared with. If you're using Microsoft 365 groups, use the groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection, although it isn't required in order for them to access the plan owned by the group.
 func (m *PlannerPlanDetails) SetSharedWith(value PlannerUserIdsable)() {
     err := m.GetBackingStore().Set("sharedWith", value)
     if err != nil {

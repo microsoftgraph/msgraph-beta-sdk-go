@@ -93,7 +93,7 @@ func (m *ItemRoleAssignmentRequestsRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentRequestCollectionResponseable), nil
 }
-// Post create a role assignment request to represent the operation you want on a role assignment. The following table lists the operations.
+// Post create a role assignment request to represent the operation you want on a role assignment. The following table lists the operations. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/governanceroleassignmentrequest-post?view=graph-rest-1.0
@@ -131,7 +131,7 @@ func (m *ItemRoleAssignmentRequestsRequestBuilder) ToGetRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a role assignment request to represent the operation you want on a role assignment. The following table lists the operations.
+// ToPostRequestInformation create a role assignment request to represent the operation you want on a role assignment. The following table lists the operations. This API is supported in the following national cloud deployments.
 func (m *ItemRoleAssignmentRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentRequestable, requestConfiguration *ItemRoleAssignmentRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

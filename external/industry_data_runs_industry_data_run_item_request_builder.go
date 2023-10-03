@@ -11,7 +11,7 @@ import (
 type IndustryDataRunsIndustryDataRunItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IndustryDataRunsIndustryDataRunItemRequestBuilderGetQueryParameters read the properties and relationships of an industryDataRun object.
+// IndustryDataRunsIndustryDataRunItemRequestBuilderGetQueryParameters read the properties and relationships of an industryDataRun object. This API is supported in the following national cloud deployments.
 type IndustryDataRunsIndustryDataRunItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -44,7 +44,7 @@ func NewIndustryDataRunsIndustryDataRunItemRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewIndustryDataRunsIndustryDataRunItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get read the properties and relationships of an industryDataRun object.
+// Get read the properties and relationships of an industryDataRun object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-industrydatarun-get?view=graph-rest-1.0
@@ -70,7 +70,7 @@ func (m *IndustryDataRunsIndustryDataRunItemRequestBuilder) Get(ctx context.Cont
 func (m *IndustryDataRunsIndustryDataRunItemRequestBuilder) MicrosoftGraphIndustryDataGetStatistics()(*IndustryDataRunsItemMicrosoftGraphIndustryDataGetStatisticsRequestBuilder) {
     return NewIndustryDataRunsItemMicrosoftGraphIndustryDataGetStatisticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation read the properties and relationships of an industryDataRun object.
+// ToGetRequestInformation read the properties and relationships of an industryDataRun object. This API is supported in the following national cloud deployments.
 func (m *IndustryDataRunsIndustryDataRunItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataRunsIndustryDataRunItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

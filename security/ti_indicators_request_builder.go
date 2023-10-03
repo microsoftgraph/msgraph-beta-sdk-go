@@ -11,7 +11,7 @@ import (
 type TiIndicatorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TiIndicatorsRequestBuilderGetQueryParameters retrieve a list of tiIndicator objects.
+// TiIndicatorsRequestBuilderGetQueryParameters retrieve a list of tiIndicator objects. This API is supported in the following national cloud deployments.
 type TiIndicatorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -82,7 +82,7 @@ func (m *TiIndicatorsRequestBuilder) DeleteTiIndicators()(*TiIndicatorsDeleteTiI
 func (m *TiIndicatorsRequestBuilder) DeleteTiIndicatorsByExternalId()(*TiIndicatorsDeleteTiIndicatorsByExternalIdRequestBuilder) {
     return NewTiIndicatorsDeleteTiIndicatorsByExternalIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of tiIndicator objects.
+// Get retrieve a list of tiIndicator objects. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tiindicators-list?view=graph-rest-1.0
@@ -104,7 +104,7 @@ func (m *TiIndicatorsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TiIndicatorCollectionResponseable), nil
 }
-// Post create a new tiIndicator object.
+// Post create a new tiIndicator object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tiindicators-post?view=graph-rest-1.0
@@ -130,7 +130,7 @@ func (m *TiIndicatorsRequestBuilder) Post(ctx context.Context, body ie233ee762e2
 func (m *TiIndicatorsRequestBuilder) SubmitTiIndicators()(*TiIndicatorsSubmitTiIndicatorsRequestBuilder) {
     return NewTiIndicatorsSubmitTiIndicatorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation retrieve a list of tiIndicator objects.
+// ToGetRequestInformation retrieve a list of tiIndicator objects. This API is supported in the following national cloud deployments.
 func (m *TiIndicatorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TiIndicatorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -146,7 +146,7 @@ func (m *TiIndicatorsRequestBuilder) ToGetRequestInformation(ctx context.Context
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new tiIndicator object.
+// ToPostRequestInformation create a new tiIndicator object. This API is supported in the following national cloud deployments.
 func (m *TiIndicatorsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TiIndicatorable, requestConfiguration *TiIndicatorsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

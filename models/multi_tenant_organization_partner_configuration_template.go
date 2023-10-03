@@ -19,7 +19,7 @@ func NewMultiTenantOrganizationPartnerConfigurationTemplate()(*MultiTenantOrgani
 func CreateMultiTenantOrganizationPartnerConfigurationTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMultiTenantOrganizationPartnerConfigurationTemplate(), nil
 }
-// GetAutomaticUserConsentSettings gets the automaticUserConsentSettings property value. Determines the partner-specific configuration for automatic user consent settings. Unless specifically configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
+// GetAutomaticUserConsentSettings gets the automaticUserConsentSettings property value. Determines the partner-specific configuration for automatic user consent settings. Unless configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
 func (m *MultiTenantOrganizationPartnerConfigurationTemplate) GetAutomaticUserConsentSettings()(InboundOutboundPolicyConfigurationable) {
     val, err := m.GetBackingStore().Get("automaticUserConsentSettings")
     if err != nil {
@@ -222,7 +222,7 @@ func (m *MultiTenantOrganizationPartnerConfigurationTemplate) Serialize(writer i
     }
     return nil
 }
-// SetAutomaticUserConsentSettings sets the automaticUserConsentSettings property value. Determines the partner-specific configuration for automatic user consent settings. Unless specifically configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
+// SetAutomaticUserConsentSettings sets the automaticUserConsentSettings property value. Determines the partner-specific configuration for automatic user consent settings. Unless configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
 func (m *MultiTenantOrganizationPartnerConfigurationTemplate) SetAutomaticUserConsentSettings(value InboundOutboundPolicyConfigurationable)() {
     err := m.GetBackingStore().Set("automaticUserConsentSettings", value)
     if err != nil {

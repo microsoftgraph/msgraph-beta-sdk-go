@@ -30,7 +30,7 @@ func NewSynchronizationProfilesItemPauseRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewSynchronizationProfilesItemPauseRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post pause the sync of a specific school data synchronization profile in the tenant.
+// Post pause the sync of a specific school data synchronization profile in the tenant. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationsynchronizationprofile-pause?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *SynchronizationProfilesItemPauseRequestBuilder) Post(ctx context.Contex
     }
     return nil
 }
-// ToPostRequestInformation pause the sync of a specific school data synchronization profile in the tenant.
+// ToPostRequestInformation pause the sync of a specific school data synchronization profile in the tenant. This API is supported in the following national cloud deployments.
 func (m *SynchronizationProfilesItemPauseRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *SynchronizationProfilesItemPauseRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type SchoolsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SchoolsRequestBuilderGetQueryParameters retrieve a list of all school objects.
+// SchoolsRequestBuilderGetQueryParameters retrieve a list of all school objects. This API is supported in the following national cloud deployments.
 type SchoolsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func (m *SchoolsRequestBuilder) Count()(*SchoolsCountRequestBuilder) {
 func (m *SchoolsRequestBuilder) Delta()(*SchoolsDeltaRequestBuilder) {
     return NewSchoolsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of all school objects.
+// Get retrieve a list of all school objects. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationroot-list-schools?view=graph-rest-1.0
@@ -100,7 +100,7 @@ func (m *SchoolsRequestBuilder) Get(ctx context.Context, requestConfiguration *S
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSchoolCollectionResponseable), nil
 }
-// Post create a school.
+// Post create a school. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationroot-post-schools?view=graph-rest-1.0
@@ -122,7 +122,7 @@ func (m *SchoolsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSchoolable), nil
 }
-// ToGetRequestInformation retrieve a list of all school objects.
+// ToGetRequestInformation retrieve a list of all school objects. This API is supported in the following national cloud deployments.
 func (m *SchoolsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SchoolsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -138,7 +138,7 @@ func (m *SchoolsRequestBuilder) ToGetRequestInformation(ctx context.Context, req
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a school.
+// ToPostRequestInformation create a school. This API is supported in the following national cloud deployments.
 func (m *SchoolsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSchoolable, requestConfiguration *SchoolsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -51,7 +51,7 @@ func CreateThreatSubmissionFromDiscriminatorValue(parseNode i878a80d2330e89d2689
     }
     return NewThreatSubmission(), nil
 }
-// GetAdminReview gets the adminReview property value. Specifies the admin review property which constitutes of who reviewed the user submission, when and what was it identified as.
+// GetAdminReview gets the adminReview property value. Specifies the admin review property that constitutes of who reviewed the user submission, when and what was it identified as.
 func (m *ThreatSubmission) GetAdminReview()(SubmissionAdminReviewable) {
     val, err := m.GetBackingStore().Get("adminReview")
     if err != nil {
@@ -255,7 +255,7 @@ func (m *ThreatSubmission) GetStatus()(*LongRunningOperationStatus) {
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. Indicates the tenant id of the submitter. Not required when created using a POST operation. It is extracted from the token of the post API call.
+// GetTenantId gets the tenantId property value. Indicates the tenant id of the submitter. Not required when created using a POST operation. It's extracted from the token of the post API call.
 func (m *ThreatSubmission) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -339,7 +339,7 @@ func (m *ThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetAdminReview sets the adminReview property value. Specifies the admin review property which constitutes of who reviewed the user submission, when and what was it identified as.
+// SetAdminReview sets the adminReview property value. Specifies the admin review property that constitutes of who reviewed the user submission, when and what was it identified as.
 func (m *ThreatSubmission) SetAdminReview(value SubmissionAdminReviewable)() {
     err := m.GetBackingStore().Set("adminReview", value)
     if err != nil {
@@ -402,7 +402,7 @@ func (m *ThreatSubmission) SetStatus(value *LongRunningOperationStatus)() {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. Indicates the tenant id of the submitter. Not required when created using a POST operation. It is extracted from the token of the post API call.
+// SetTenantId sets the tenantId property value. Indicates the tenant id of the submitter. Not required when created using a POST operation. It's extracted from the token of the post API call.
 func (m *ThreatSubmission) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

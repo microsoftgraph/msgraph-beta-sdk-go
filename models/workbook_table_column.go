@@ -97,7 +97,7 @@ func (m *WorkbookTableColumn) GetName()(*string) {
     }
     return nil
 }
-// GetValues gets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
+// GetValues gets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contains an error returns the error string.
 func (m *WorkbookTableColumn) GetValues()(Jsonable) {
     val, err := m.GetBackingStore().Get("values")
     if err != nil {
@@ -161,7 +161,7 @@ func (m *WorkbookTableColumn) SetName(value *string)() {
         panic(err)
     }
 }
-// SetValues sets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
+// SetValues sets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contains an error returns the error string.
 func (m *WorkbookTableColumn) SetValues(value Jsonable)() {
     err := m.GetBackingStore().Set("values", value)
     if err != nil {

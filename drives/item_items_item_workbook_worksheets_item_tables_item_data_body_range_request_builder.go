@@ -31,7 +31,7 @@ func NewItemItemsItemWorkbookWorksheetsItemTablesItemDataBodyRangeRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemTablesItemDataBodyRangeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get gets the range object associated with the data body of the table.
+// Get gets the range object associated with the data body of the table. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/table-databodyrange?view=graph-rest-1.0
@@ -53,7 +53,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemDataBodyRangeRequestBuilde
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookRangeable), nil
 }
-// ToGetRequestInformation gets the range object associated with the data body of the table.
+// ToGetRequestInformation gets the range object associated with the data body of the table. This API is supported in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemDataBodyRangeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemDataBodyRangeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

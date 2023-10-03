@@ -221,7 +221,7 @@ func (m *ParticipantInfo) GetPlatformId()(*string) {
     }
     return nil
 }
-// GetRegion gets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
+// GetRegion gets the region property value. The home region of the participant, and can be a country, a continent, or a larger geographic region. The region doesn't change based on the participant's current physical location, unlike countryCode. Read-only.
 func (m *ParticipantInfo) GetRegion()(*string) {
     val, err := m.GetBackingStore().Get("region")
     if err != nil {
@@ -364,7 +364,7 @@ func (m *ParticipantInfo) SetPlatformId(value *string)() {
         panic(err)
     }
 }
-// SetRegion sets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
+// SetRegion sets the region property value. The home region of the participant, and can be a country, a continent, or a larger geographic region. The region doesn't change based on the participant's current physical location, unlike countryCode. Read-only.
 func (m *ParticipantInfo) SetRegion(value *string)() {
     err := m.GetBackingStore().Set("region", value)
     if err != nil {

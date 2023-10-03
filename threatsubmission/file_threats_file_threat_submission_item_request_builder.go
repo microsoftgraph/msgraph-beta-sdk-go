@@ -18,7 +18,7 @@ type FileThreatsFileThreatSubmissionItemRequestBuilderDeleteRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// FileThreatsFileThreatSubmissionItemRequestBuilderGetQueryParameters read the properties and relationships of a fileThreatSubmission object.
+// FileThreatsFileThreatSubmissionItemRequestBuilderGetQueryParameters read the properties and relationships of a fileThreatSubmission object. This API is supported in the following national cloud deployments.
 type FileThreatsFileThreatSubmissionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *FileThreatsFileThreatSubmissionItemRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// Get read the properties and relationships of a fileThreatSubmission object.
+// Get read the properties and relationships of a fileThreatSubmission object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-filethreatsubmission-get?view=graph-rest-1.0
@@ -123,7 +123,7 @@ func (m *FileThreatsFileThreatSubmissionItemRequestBuilder) ToDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a fileThreatSubmission object.
+// ToGetRequestInformation read the properties and relationships of a fileThreatSubmission object. This API is supported in the following national cloud deployments.
 func (m *FileThreatsFileThreatSubmissionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FileThreatsFileThreatSubmissionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -10,7 +10,7 @@ import (
 type MobileDeviceManagementPoliciesItemIncludedGroupsItemRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MobileDeviceManagementPoliciesItemIncludedGroupsItemRefRequestBuilderDeleteQueryParameters delete a group from the list of groups included in a mobile app management policy.
+// MobileDeviceManagementPoliciesItemIncludedGroupsItemRefRequestBuilderDeleteQueryParameters delete a group from the list of groups included in a mobile app management policy. This API is supported in the following national cloud deployments.
 type MobileDeviceManagementPoliciesItemIncludedGroupsItemRefRequestBuilderDeleteQueryParameters struct {
     // Delete Uri
     Id *string `uriparametername:"%40id"`
@@ -37,7 +37,7 @@ func NewMobileDeviceManagementPoliciesItemIncludedGroupsItemRefRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewMobileDeviceManagementPoliciesItemIncludedGroupsItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a group from the list of groups included in a mobile app management policy.
+// Delete delete a group from the list of groups included in a mobile app management policy. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-delete-includedgroups?view=graph-rest-1.0
@@ -56,7 +56,7 @@ func (m *MobileDeviceManagementPoliciesItemIncludedGroupsItemRefRequestBuilder) 
     }
     return nil
 }
-// ToDeleteRequestInformation delete a group from the list of groups included in a mobile app management policy.
+// ToDeleteRequestInformation delete a group from the list of groups included in a mobile app management policy. This API is supported in the following national cloud deployments.
 func (m *MobileDeviceManagementPoliciesItemIncludedGroupsItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MobileDeviceManagementPoliciesItemIncludedGroupsItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a password authentication method object. 
+// ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a password authentication method object.  This API is supported in the following national cloud deployments.
 type ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequest
     urlParams["request-raw-url"] = rawUrl
     return NewItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieve the properties and relationships of a password authentication method object. 
+// Get retrieve the properties and relationships of a password authentication method object.  This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/passwordauthenticationmethod-get?view=graph-rest-1.0
@@ -62,7 +62,7 @@ func (m *ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemReques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordAuthenticationMethodable), nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a password authentication method object. 
+// ToGetRequestInformation retrieve the properties and relationships of a password authentication method object.  This API is supported in the following national cloud deployments.
 func (m *ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

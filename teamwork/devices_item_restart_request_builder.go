@@ -30,7 +30,7 @@ func NewDevicesItemRestartRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewDevicesItemRestartRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post restart the specified Microsoft Teams-enabled device asynchronously.  A device is restarted after the async operation completes successfully, which might occur subsequent to a response from this API.
+// Post restart the specified Microsoft Teams-enabled device asynchronously.  A device is restarted after the async operation completes successfully, which might occur subsequent to a response from this API. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/teamworkdevice-restart?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *DevicesItemRestartRequestBuilder) Post(ctx context.Context, requestConf
     }
     return nil
 }
-// ToPostRequestInformation restart the specified Microsoft Teams-enabled device asynchronously.  A device is restarted after the async operation completes successfully, which might occur subsequent to a response from this API.
+// ToPostRequestInformation restart the specified Microsoft Teams-enabled device asynchronously.  A device is restarted after the async operation completes successfully, which might occur subsequent to a response from this API. This API is supported in the following national cloud deployments.
 func (m *DevicesItemRestartRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *DevicesItemRestartRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

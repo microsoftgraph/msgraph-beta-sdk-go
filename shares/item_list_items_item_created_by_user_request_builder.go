@@ -63,6 +63,10 @@ func (m *ItemListItemsItemCreatedByUserRequestBuilder) Get(ctx context.Context, 
 func (m *ItemListItemsItemCreatedByUserRequestBuilder) MailboxSettings()(*ItemListItemsItemCreatedByUserMailboxSettingsRequestBuilder) {
     return NewItemListItemsItemCreatedByUserMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ServiceProvisioningErrors the serviceProvisioningErrors property
+func (m *ItemListItemsItemCreatedByUserRequestBuilder) ServiceProvisioningErrors()(*ItemListItemsItemCreatedByUserServiceProvisioningErrorsRequestBuilder) {
+    return NewItemListItemsItemCreatedByUserServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation get createdByUser from shares
 func (m *ItemListItemsItemCreatedByUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListItemsItemCreatedByUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

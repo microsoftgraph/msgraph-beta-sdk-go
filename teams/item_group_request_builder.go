@@ -59,6 +59,10 @@ func (m *ItemGroupRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable), nil
 }
+// ServiceProvisioningErrors the serviceProvisioningErrors property
+func (m *ItemGroupRequestBuilder) ServiceProvisioningErrors()(*ItemGroupServiceProvisioningErrorsRequestBuilder) {
+    return NewItemGroupServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation get group from teams
 func (m *ItemGroupRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGroupRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

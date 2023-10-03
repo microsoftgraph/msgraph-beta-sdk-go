@@ -11,7 +11,7 @@ import (
 type IndustryDataReferenceDefinitionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IndustryDataReferenceDefinitionsRequestBuilderGetQueryParameters get a list of the referenceDefinition objects and their properties.
+// IndustryDataReferenceDefinitionsRequestBuilderGetQueryParameters get a list of the referenceDefinition objects and their properties. This API is supported in the following national cloud deployments.
 type IndustryDataReferenceDefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewIndustryDataReferenceDefinitionsRequestBuilder(rawUrl string, requestAda
 func (m *IndustryDataReferenceDefinitionsRequestBuilder) Count()(*IndustryDataReferenceDefinitionsCountRequestBuilder) {
     return NewIndustryDataReferenceDefinitionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the referenceDefinition objects and their properties.
+// Get get a list of the referenceDefinition objects and their properties. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-referencedefinition-list?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *IndustryDataReferenceDefinitionsRequestBuilder) Post(ctx context.Contex
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.ReferenceDefinitionable), nil
 }
-// ToGetRequestInformation get a list of the referenceDefinition objects and their properties.
+// ToGetRequestInformation get a list of the referenceDefinition objects and their properties. This API is supported in the following national cloud deployments.
 func (m *IndustryDataReferenceDefinitionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataReferenceDefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

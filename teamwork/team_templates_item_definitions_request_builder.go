@@ -11,7 +11,7 @@ import (
 type TeamTemplatesItemDefinitionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TeamTemplatesItemDefinitionsRequestBuilderGetQueryParameters read the properties and relationships of a teamTemplateDefinition object.
+// TeamTemplatesItemDefinitionsRequestBuilderGetQueryParameters read the properties and relationships of a teamTemplateDefinition object. This API is supported in the following national cloud deployments.
 type TeamTemplatesItemDefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewTeamTemplatesItemDefinitionsRequestBuilder(rawUrl string, requestAdapter
 func (m *TeamTemplatesItemDefinitionsRequestBuilder) Count()(*TeamTemplatesItemDefinitionsCountRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a teamTemplateDefinition object.
+// Get read the properties and relationships of a teamTemplateDefinition object. This API is supported in the following national cloud deployments.
 func (m *TeamTemplatesItemDefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateDefinitionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *TeamTemplatesItemDefinitionsRequestBuilder) Post(ctx context.Context, b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateDefinitionable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a teamTemplateDefinition object.
+// ToGetRequestInformation read the properties and relationships of a teamTemplateDefinition object. This API is supported in the following national cloud deployments.
 func (m *TeamTemplatesItemDefinitionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

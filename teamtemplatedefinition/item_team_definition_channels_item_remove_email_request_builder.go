@@ -30,7 +30,7 @@ func NewItemTeamDefinitionChannelsItemRemoveEmailRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionChannelsItemRemoveEmailRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post remove the email address of a channel. You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
+// Post remove the email address of a channel. You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemTeamDefinitionChannelsItemRemoveEmailRequestBuilder) Post(ctx conte
     }
     return nil
 }
-// ToPostRequestInformation remove the email address of a channel. You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
+// ToPostRequestInformation remove the email address of a channel. You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client. This API is supported in the following national cloud deployments.
 func (m *ItemTeamDefinitionChannelsItemRemoveEmailRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsItemRemoveEmailRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

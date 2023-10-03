@@ -137,7 +137,7 @@ func (m *ServiceProvisioningError) GetOdataType()(*string) {
     }
     return nil
 }
-// GetServiceInstance gets the serviceInstance property value. Qualified service instance (e.g., 'SharePoint/Dublin') that published the service error information.
+// GetServiceInstance gets the serviceInstance property value. Qualified service instance (for example, 'SharePoint/Dublin') that published the service error information.
 func (m *ServiceProvisioningError) GetServiceInstance()(*string) {
     val, err := m.GetBackingStore().Get("serviceInstance")
     if err != nil {
@@ -214,7 +214,7 @@ func (m *ServiceProvisioningError) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetServiceInstance sets the serviceInstance property value. Qualified service instance (e.g., 'SharePoint/Dublin') that published the service error information.
+// SetServiceInstance sets the serviceInstance property value. Qualified service instance (for example, 'SharePoint/Dublin') that published the service error information.
 func (m *ServiceProvisioningError) SetServiceInstance(value *string)() {
     err := m.GetBackingStore().Set("serviceInstance", value)
     if err != nil {

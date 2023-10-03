@@ -11,7 +11,7 @@ import (
 type EmailThreatsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EmailThreatsRequestBuilderGetQueryParameters get a list of the emailThreatSubmission objects and their properties.
+// EmailThreatsRequestBuilderGetQueryParameters get a list of the emailThreatSubmission objects and their properties. This API is supported in the following national cloud deployments.
 type EmailThreatsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewEmailThreatsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *EmailThreatsRequestBuilder) Count()(*EmailThreatsCountRequestBuilder) {
     return NewEmailThreatsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the emailThreatSubmission objects and their properties.
+// Get get a list of the emailThreatSubmission objects and their properties. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-emailthreatsubmission-list?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *EmailThreatsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EmailThreatSubmissionCollectionResponseable), nil
 }
-// Post create a new emailThreatSubmission object.
+// Post create a new emailThreatSubmission object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-emailthreatsubmission-post-emailthreats?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *EmailThreatsRequestBuilder) Post(ctx context.Context, body i084fa7ab3bb
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EmailThreatSubmissionable), nil
 }
-// ToGetRequestInformation get a list of the emailThreatSubmission objects and their properties.
+// ToGetRequestInformation get a list of the emailThreatSubmission objects and their properties. This API is supported in the following national cloud deployments.
 func (m *EmailThreatsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EmailThreatsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *EmailThreatsRequestBuilder) ToGetRequestInformation(ctx context.Context
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new emailThreatSubmission object.
+// ToPostRequestInformation create a new emailThreatSubmission object. This API is supported in the following national cloud deployments.
 func (m *EmailThreatsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EmailThreatSubmissionable, requestConfiguration *EmailThreatsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -214,7 +214,7 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) GetInputType()(*Au
     }
     return nil
 }
-// GetLabel gets the label property value. The label of the attribute field that will be displayed to end user, unless overridden.
+// GetLabel gets the label property value. The label of the attribute field that is displayed to end user, unless overridden.
 func (m *AuthenticationAttributeCollectionInputConfiguration) GetLabel()(*string) {
     val, err := m.GetBackingStore().Get("label")
     if err != nil {
@@ -269,7 +269,7 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) GetValidationRegEx
     }
     return nil
 }
-// GetWriteToDirectory gets the writeToDirectory property value. Whether the value collected will be stored.
+// GetWriteToDirectory gets the writeToDirectory property value. Whether the value collected is stored.
 func (m *AuthenticationAttributeCollectionInputConfiguration) GetWriteToDirectory()(*bool) {
     val, err := m.GetBackingStore().Get("writeToDirectory")
     if err != nil {
@@ -409,7 +409,7 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) SetInputType(value
         panic(err)
     }
 }
-// SetLabel sets the label property value. The label of the attribute field that will be displayed to end user, unless overridden.
+// SetLabel sets the label property value. The label of the attribute field that is displayed to end user, unless overridden.
 func (m *AuthenticationAttributeCollectionInputConfiguration) SetLabel(value *string)() {
     err := m.GetBackingStore().Set("label", value)
     if err != nil {
@@ -444,7 +444,7 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) SetValidationRegEx
         panic(err)
     }
 }
-// SetWriteToDirectory sets the writeToDirectory property value. Whether the value collected will be stored.
+// SetWriteToDirectory sets the writeToDirectory property value. Whether the value collected is stored.
 func (m *AuthenticationAttributeCollectionInputConfiguration) SetWriteToDirectory(value *bool)() {
     err := m.GetBackingStore().Set("writeToDirectory", value)
     if err != nil {

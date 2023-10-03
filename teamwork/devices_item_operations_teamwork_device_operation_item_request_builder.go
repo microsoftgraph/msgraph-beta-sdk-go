@@ -18,7 +18,7 @@ type DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderDeleteRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderGetQueryParameters get the details of an async, long-running operation on a Microsoft Teams-enabled device.
+// DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderGetQueryParameters get the details of an async, long-running operation on a Microsoft Teams-enabled device. This API is supported in the following national cloud deployments.
 type DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilder) Delete(
     }
     return nil
 }
-// Get get the details of an async, long-running operation on a Microsoft Teams-enabled device.
+// Get get the details of an async, long-running operation on a Microsoft Teams-enabled device. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/teamworkdeviceoperation-get?view=graph-rest-1.0
@@ -123,7 +123,7 @@ func (m *DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilder) ToDelet
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the details of an async, long-running operation on a Microsoft Teams-enabled device.
+// ToGetRequestInformation get the details of an async, long-running operation on a Microsoft Teams-enabled device. This API is supported in the following national cloud deployments.
 func (m *DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

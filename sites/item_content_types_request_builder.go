@@ -11,7 +11,7 @@ import (
 type ItemContentTypesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemContentTypesRequestBuilderGetQueryParameters get the collection of [contentType][contentType] resources in a [site][].
+// ItemContentTypesRequestBuilderGetQueryParameters get the collection of contentType][contentType] resources in a [site][]. This API is supported in the following [national cloud deployments.
 type ItemContentTypesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -82,7 +82,7 @@ func NewItemContentTypesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *ItemContentTypesRequestBuilder) Count()(*ItemContentTypesCountRequestBuilder) {
     return NewItemContentTypesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the collection of [contentType][contentType] resources in a [site][].
+// Get get the collection of contentType][contentType] resources in a [site][]. This API is supported in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/site-list-contenttypes?view=graph-rest-1.0
@@ -108,7 +108,7 @@ func (m *ItemContentTypesRequestBuilder) Get(ctx context.Context, requestConfigu
 func (m *ItemContentTypesRequestBuilder) GetCompatibleHubContentTypes()(*ItemContentTypesGetCompatibleHubContentTypesRequestBuilder) {
     return NewItemContentTypesGetCompatibleHubContentTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Post create a new [contentType][] for a [site][].
+// Post create a new contentType][] for a [site][]. This API is supported in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/site-post-contenttypes?view=graph-rest-1.0
@@ -130,7 +130,7 @@ func (m *ItemContentTypesRequestBuilder) Post(ctx context.Context, body ie233ee7
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeable), nil
 }
-// ToGetRequestInformation get the collection of [contentType][contentType] resources in a [site][].
+// ToGetRequestInformation get the collection of contentType][contentType] resources in a [site][]. This API is supported in the following [national cloud deployments.
 func (m *ItemContentTypesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContentTypesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -146,7 +146,7 @@ func (m *ItemContentTypesRequestBuilder) ToGetRequestInformation(ctx context.Con
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new [contentType][] for a [site][].
+// ToPostRequestInformation create a new contentType][] for a [site][]. This API is supported in the following [national cloud deployments.
 func (m *ItemContentTypesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeable, requestConfiguration *ItemContentTypesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

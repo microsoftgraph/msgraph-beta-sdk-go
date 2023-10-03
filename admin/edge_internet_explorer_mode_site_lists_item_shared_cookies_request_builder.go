@@ -11,7 +11,7 @@ import (
 type EdgeInternetExplorerModeSiteListsItemSharedCookiesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdgeInternetExplorerModeSiteListsItemSharedCookiesRequestBuilderGetQueryParameters get a list of the browserSharedCookie objects and their properties.
+// EdgeInternetExplorerModeSiteListsItemSharedCookiesRequestBuilderGetQueryParameters get a list of the browserSharedCookie objects and their properties. This API is supported in the following national cloud deployments.
 type EdgeInternetExplorerModeSiteListsItemSharedCookiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewEdgeInternetExplorerModeSiteListsItemSharedCookiesRequestBuilder(rawUrl 
 func (m *EdgeInternetExplorerModeSiteListsItemSharedCookiesRequestBuilder) Count()(*EdgeInternetExplorerModeSiteListsItemSharedCookiesCountRequestBuilder) {
     return NewEdgeInternetExplorerModeSiteListsItemSharedCookiesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the browserSharedCookie objects and their properties.
+// Get get a list of the browserSharedCookie objects and their properties. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/browsersitelist-list-sharedcookies?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSharedCookiesRequestBuilder) Get(c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowserSharedCookieCollectionResponseable), nil
 }
-// Post create a new browserSharedCookie object in a browserSiteList.
+// Post create a new browserSharedCookie object in a browserSiteList. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/browsersitelist-post-sharedcookies?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSharedCookiesRequestBuilder) Post(
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowserSharedCookieable), nil
 }
-// ToGetRequestInformation get a list of the browserSharedCookie objects and their properties.
+// ToGetRequestInformation get a list of the browserSharedCookie objects and their properties. This API is supported in the following national cloud deployments.
 func (m *EdgeInternetExplorerModeSiteListsItemSharedCookiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSharedCookiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSharedCookiesRequestBuilder) ToGet
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new browserSharedCookie object in a browserSiteList.
+// ToPostRequestInformation create a new browserSharedCookie object in a browserSiteList. This API is supported in the following national cloud deployments.
 func (m *EdgeInternetExplorerModeSiteListsItemSharedCookiesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowserSharedCookieable, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSharedCookiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

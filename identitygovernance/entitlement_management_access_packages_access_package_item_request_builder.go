@@ -18,7 +18,7 @@ type EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderDeleteReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an accessPackage object.
+// EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an accessPackage object. This API is supported in the following national cloud deployments.
 type EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func NewEntitlementManagementAccessPackagesAccessPackageItemRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAccessPackagesAccessPackageItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an accessPackage object. You cannot delete an access package if it has any accessPackageAssignment. To delete the access package, first query if there are any assignments with a filter to indicate the specific access package, such as: $filter=accessPackage/id eq 'a914b616-e04e-476b-aa37-91038f0b165b'. For more information on how to remove assignments that are still in the delivered state, see Remove an assignment.
+// Delete delete an accessPackage object. You cannot delete an access package if it has any accessPackageAssignment. To delete the access package, first query if there are any assignments with a filter to indicate the specific access package, such as: $filter=accessPackage/id eq 'a914b616-e04e-476b-aa37-91038f0b165b'. For more information on how to remove assignments that are still in the delivered state, see Remove an assignment. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-delete?view=graph-rest-1.0
@@ -89,7 +89,7 @@ func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) Del
     }
     return nil
 }
-// Get retrieve the properties and relationships of an accessPackage object.
+// Get retrieve the properties and relationships of an accessPackage object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-get?view=graph-rest-1.0
@@ -127,7 +127,7 @@ func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) Inc
 func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) MoveToCatalog()(*EntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilder) {
     return NewEntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update an existing accessPackage object to change one or more of its properties, such as the display name or description.
+// Patch update an existing accessPackage object to change one or more of its properties, such as the display name or description. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-update?view=graph-rest-1.0
@@ -149,7 +149,7 @@ func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) Pat
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageable), nil
 }
-// ToDeleteRequestInformation delete an accessPackage object. You cannot delete an access package if it has any accessPackageAssignment. To delete the access package, first query if there are any assignments with a filter to indicate the specific access package, such as: $filter=accessPackage/id eq 'a914b616-e04e-476b-aa37-91038f0b165b'. For more information on how to remove assignments that are still in the delivered state, see Remove an assignment.
+// ToDeleteRequestInformation delete an accessPackage object. You cannot delete an access package if it has any accessPackageAssignment. To delete the access package, first query if there are any assignments with a filter to indicate the specific access package, such as: $filter=accessPackage/id eq 'a914b616-e04e-476b-aa37-91038f0b165b'. For more information on how to remove assignments that are still in the delivered state, see Remove an assignment. This API is supported in the following national cloud deployments.
 func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -161,7 +161,7 @@ func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) ToD
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of an accessPackage object.
+// ToGetRequestInformation retrieve the properties and relationships of an accessPackage object. This API is supported in the following national cloud deployments.
 func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -177,7 +177,7 @@ func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) ToG
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update an existing accessPackage object to change one or more of its properties, such as the display name or description.
+// ToPatchRequestInformation update an existing accessPackage object to change one or more of its properties, such as the display name or description. This API is supported in the following national cloud deployments.
 func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageable, requestConfiguration *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -343,7 +343,7 @@ func (m *BookingService) GetIsAnonymousJoinEnabled()(*bool) {
     }
     return nil
 }
-// GetIsHiddenFromCustomers gets the isHiddenFromCustomers property value. True means this service is not available to customers for booking.
+// GetIsHiddenFromCustomers gets the isHiddenFromCustomers property value. True means this service isn't available to customers for booking.
 func (m *BookingService) GetIsHiddenFromCustomers()(*bool) {
     val, err := m.GetBackingStore().Get("isHiddenFromCustomers")
     if err != nil {
@@ -662,7 +662,7 @@ func (m *BookingService) SetIsAnonymousJoinEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetIsHiddenFromCustomers sets the isHiddenFromCustomers property value. True means this service is not available to customers for booking.
+// SetIsHiddenFromCustomers sets the isHiddenFromCustomers property value. True means this service isn't available to customers for booking.
 func (m *BookingService) SetIsHiddenFromCustomers(value *bool)() {
     err := m.GetBackingStore().Set("isHiddenFromCustomers", value)
     if err != nil {

@@ -30,7 +30,7 @@ func NewItemSendReminderRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewItemSendReminderRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post in the Azure AD access reviews feature, send a reminder to the reviewers of a currently active accessReview.  The target object can be either a one-time access review, or an instance of a recurring access review. 
+// Post in the Azure AD access reviews feature, send a reminder to the reviewers of a currently active accessReview.  The target object can be either a one-time access review, or an instance of a recurring access review.  This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accessreview-sendreminder?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemSendReminderRequestBuilder) Post(ctx context.Context, requestConfig
     }
     return nil
 }
-// ToPostRequestInformation in the Azure AD access reviews feature, send a reminder to the reviewers of a currently active accessReview.  The target object can be either a one-time access review, or an instance of a recurring access review. 
+// ToPostRequestInformation in the Azure AD access reviews feature, send a reminder to the reviewers of a currently active accessReview.  The target object can be either a one-time access review, or an instance of a recurring access review.  This API is supported in the following national cloud deployments.
 func (m *ItemSendReminderRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemSendReminderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

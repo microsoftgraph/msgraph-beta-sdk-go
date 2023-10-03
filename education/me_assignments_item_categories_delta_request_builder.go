@@ -50,6 +50,7 @@ func NewMeAssignmentsItemCategoriesDeltaRequestBuilder(rawUrl string, requestAda
     return NewMeAssignmentsItemCategoriesDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function delta
+// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 func (m *MeAssignmentsItemCategoriesDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *MeAssignmentsItemCategoriesDeltaRequestBuilderGetRequestConfiguration)(MeAssignmentsItemCategoriesDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -67,6 +68,25 @@ func (m *MeAssignmentsItemCategoriesDeltaRequestBuilder) Get(ctx context.Context
         return nil, nil
     }
     return res.(MeAssignmentsItemCategoriesDeltaResponseable), nil
+}
+// GetAsDeltaGetResponse invoke function delta
+func (m *MeAssignmentsItemCategoriesDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *MeAssignmentsItemCategoriesDeltaRequestBuilderGetRequestConfiguration)(MeAssignmentsItemCategoriesDeltaGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateMeAssignmentsItemCategoriesDeltaGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(MeAssignmentsItemCategoriesDeltaGetResponseable), nil
 }
 // ToGetRequestInformation invoke function delta
 func (m *MeAssignmentsItemCategoriesDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MeAssignmentsItemCategoriesDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

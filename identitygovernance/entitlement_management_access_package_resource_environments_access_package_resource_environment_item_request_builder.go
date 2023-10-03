@@ -18,7 +18,7 @@ type EntitlementManagementAccessPackageResourceEnvironmentsAccessPackageResource
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementAccessPackageResourceEnvironmentsAccessPackageResourceEnvironmentItemRequestBuilderGetQueryParameters read the properties and relationships of an accessPackageResourceEnvironment object.
+// EntitlementManagementAccessPackageResourceEnvironmentsAccessPackageResourceEnvironmentItemRequestBuilderGetQueryParameters read the properties and relationships of an accessPackageResourceEnvironment object. This API is supported in the following national cloud deployments.
 type EntitlementManagementAccessPackageResourceEnvironmentsAccessPackageResourceEnvironmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *EntitlementManagementAccessPackageResourceEnvironmentsAccessPackageReso
     }
     return nil
 }
-// Get read the properties and relationships of an accessPackageResourceEnvironment object.
+// Get read the properties and relationships of an accessPackageResourceEnvironment object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accesspackageresourceenvironment-get?view=graph-rest-1.0
@@ -127,7 +127,7 @@ func (m *EntitlementManagementAccessPackageResourceEnvironmentsAccessPackageReso
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an accessPackageResourceEnvironment object.
+// ToGetRequestInformation read the properties and relationships of an accessPackageResourceEnvironment object. This API is supported in the following national cloud deployments.
 func (m *EntitlementManagementAccessPackageResourceEnvironmentsAccessPackageResourceEnvironmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageResourceEnvironmentsAccessPackageResourceEnvironmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

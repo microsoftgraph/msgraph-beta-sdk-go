@@ -11,7 +11,7 @@ import (
 type EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilderGetQueryParameters get the list of userSource objects associated with a legal hold.
+// EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilderGetQueryParameters get the list of userSource objects associated with a legal hold. This API is supported in the following national cloud deployments.
 type EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,7 +75,7 @@ func NewEdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder(rawUrl string
 func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) Count()(*EdiscoveryCasesItemLegalHoldsItemUserSourcesCountRequestBuilder) {
     return NewEdiscoveryCasesItemLegalHoldsItemUserSourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of userSource objects associated with a legal hold.
+// Get get the list of userSource objects associated with a legal hold. This API is supported in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
@@ -98,7 +98,7 @@ func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) Get(ctx con
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceCollectionResponseable), nil
 }
-// Post adds a userSource to a legalHold object.
+// Post adds a userSource to a legalHold object. This API is supported in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
@@ -121,7 +121,7 @@ func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) Post(ctx co
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceable), nil
 }
-// ToGetRequestInformation get the list of userSource objects associated with a legal hold.
+// ToGetRequestInformation get the list of userSource objects associated with a legal hold. This API is supported in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -138,7 +138,7 @@ func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) ToGetReques
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation adds a userSource to a legalHold object.
+// ToPostRequestInformation adds a userSource to a legalHold object. This API is supported in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceable, requestConfiguration *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

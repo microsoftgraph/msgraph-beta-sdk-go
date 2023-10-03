@@ -30,7 +30,7 @@ func NewPrinterSharesItemJobsItemAbortRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewPrinterSharesItemJobsItemAbortRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post abort a print job. Only applications using application permissions can abort a print job. Aborting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created. For details about how to register a task trigger, see Extending Universal Print to support pull printing.
+// Post abort a print job. Only applications using application permissions can abort a print job. Aborting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created. For details about how to register a task trigger, see Extending Universal Print to support pull printing. This API is supported in the following national cloud deployments.
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // [Find more info here]
 // 
@@ -50,7 +50,7 @@ func (m *PrinterSharesItemJobsItemAbortRequestBuilder) Post(ctx context.Context,
     }
     return nil
 }
-// ToPostRequestInformation abort a print job. Only applications using application permissions can abort a print job. Aborting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created. For details about how to register a task trigger, see Extending Universal Print to support pull printing.
+// ToPostRequestInformation abort a print job. Only applications using application permissions can abort a print job. Aborting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created. For details about how to register a task trigger, see Extending Universal Print to support pull printing. This API is supported in the following national cloud deployments.
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 func (m *PrinterSharesItemJobsItemAbortRequestBuilder) ToPostRequestInformation(ctx context.Context, body PrinterSharesItemJobsItemAbortPostRequestBodyable, requestConfiguration *PrinterSharesItemJobsItemAbortRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

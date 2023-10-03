@@ -18,7 +18,7 @@ type EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssignment
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderGetQueryParameters in Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object.
+// EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderGetQueryParameters in Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object. This API is supported in the following national cloud deployments.
 type EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssign
 func (m *EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) CustomExtensionStageSettings()(*EntitlementManagementAccessPackageAssignmentPoliciesItemCustomExtensionStageSettingsRequestBuilder) {
     return NewEntitlementManagementAccessPackageAssignmentPoliciesItemCustomExtensionStageSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete in Azure AD entitlement management, delete an accessPackageAssignmentPolicy.
+// Delete in Azure AD entitlement management, delete an accessPackageAssignmentPolicy. This API is supported in the following national cloud deployments.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // [Find more info here]
 // 
@@ -90,7 +90,7 @@ func (m *EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssign
     }
     return nil
 }
-// Get in Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object.
+// Get in Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object. This API is supported in the following national cloud deployments.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // [Find more info here]
 // 
@@ -133,7 +133,7 @@ func (m *EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssign
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentPolicyable), nil
 }
-// ToDeleteRequestInformation in Azure AD entitlement management, delete an accessPackageAssignmentPolicy.
+// ToDeleteRequestInformation in Azure AD entitlement management, delete an accessPackageAssignmentPolicy. This API is supported in the following national cloud deployments.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 func (m *EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -146,7 +146,7 @@ func (m *EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssign
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation in Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object.
+// ToGetRequestInformation in Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object. This API is supported in the following national cloud deployments.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 func (m *EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

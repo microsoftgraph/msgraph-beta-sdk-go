@@ -11,7 +11,7 @@ import (
 type ItemCustomQuestionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCustomQuestionsRequestBuilderGetQueryParameters get the bookingCustomQuestion resources associated with a bookingBusiness.
+// ItemCustomQuestionsRequestBuilderGetQueryParameters get the bookingCustomQuestion resources associated with a bookingBusiness. This API is supported in the following national cloud deployments.
 type ItemCustomQuestionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemCustomQuestionsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *ItemCustomQuestionsRequestBuilder) Count()(*ItemCustomQuestionsCountRequestBuilder) {
     return NewItemCustomQuestionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the bookingCustomQuestion resources associated with a bookingBusiness.
+// Get get the bookingCustomQuestion resources associated with a bookingBusiness. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-list-customquestions?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemCustomQuestionsRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomQuestionCollectionResponseable), nil
 }
-// Post create a new bookingCustomQuestion object.
+// Post create a new bookingCustomQuestion object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-post-customquestions?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemCustomQuestionsRequestBuilder) Post(ctx context.Context, body ie233
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomQuestionable), nil
 }
-// ToGetRequestInformation get the bookingCustomQuestion resources associated with a bookingBusiness.
+// ToGetRequestInformation get the bookingCustomQuestion resources associated with a bookingBusiness. This API is supported in the following national cloud deployments.
 func (m *ItemCustomQuestionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCustomQuestionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemCustomQuestionsRequestBuilder) ToGetRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new bookingCustomQuestion object.
+// ToPostRequestInformation create a new bookingCustomQuestion object. This API is supported in the following national cloud deployments.
 func (m *ItemCustomQuestionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomQuestionable, requestConfiguration *ItemCustomQuestionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

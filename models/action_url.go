@@ -95,7 +95,7 @@ func (m *ActionUrl) GetOdataType()(*string) {
     }
     return nil
 }
-// GetUrl gets the url property value. The URL to the documentation or Azure portal page.
+// GetUrl gets the url property value. The URL to the documentation or Microsoft Entra admin center page.
 func (m *ActionUrl) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
     if err != nil {
@@ -159,7 +159,7 @@ func (m *ActionUrl) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetUrl sets the url property value. The URL to the documentation or Azure portal page.
+// SetUrl sets the url property value. The URL to the documentation or Microsoft Entra admin center page.
 func (m *ActionUrl) SetUrl(value *string)() {
     err := m.GetBackingStore().Set("url", value)
     if err != nil {

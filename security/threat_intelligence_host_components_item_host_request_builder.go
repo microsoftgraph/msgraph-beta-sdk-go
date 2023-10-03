@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceHostComponentsItemHostRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceHostComponentsItemHostRequestBuilderGetQueryParameters the host related to this component. This is a reverse navigation property. When navigating to components from a host, this should be assumed to be a return reference.
+// ThreatIntelligenceHostComponentsItemHostRequestBuilderGetQueryParameters the host related to this component. This is a reverse navigation property. When you navigate to components from a host, this should be assumed to be a return reference.
 type ThreatIntelligenceHostComponentsItemHostRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewThreatIntelligenceHostComponentsItemHostRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewThreatIntelligenceHostComponentsItemHostRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the host related to this component. This is a reverse navigation property. When navigating to components from a host, this should be assumed to be a return reference.
+// Get the host related to this component. This is a reverse navigation property. When you navigate to components from a host, this should be assumed to be a return reference.
 func (m *ThreatIntelligenceHostComponentsItemHostRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostComponentsItemHostRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Hostable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ThreatIntelligenceHostComponentsItemHostRequestBuilder) Get(ctx context
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Hostable), nil
 }
-// ToGetRequestInformation the host related to this component. This is a reverse navigation property. When navigating to components from a host, this should be assumed to be a return reference.
+// ToGetRequestInformation the host related to this component. This is a reverse navigation property. When you navigate to components from a host, this should be assumed to be a return reference.
 func (m *ThreatIntelligenceHostComponentsItemHostRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostComponentsItemHostRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

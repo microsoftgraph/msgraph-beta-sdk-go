@@ -166,7 +166,7 @@ func (m *AccessPackageAssignmentResourceRole) GetOriginSystem()(*string) {
     }
     return nil
 }
-// GetStatus gets the status property value. The value is PendingFulfillment when the access package assignment has not yet been delivered to the origin system, and Fulfilled when the access package assignment has been delivered to the origin system.
+// GetStatus gets the status property value. The value is PendingFulfillment when the access package assignment hasn't yet been delivered to the origin system, and Fulfilled when the access package assignment has been delivered to the origin system.
 func (m *AccessPackageAssignmentResourceRole) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -275,7 +275,7 @@ func (m *AccessPackageAssignmentResourceRole) SetOriginSystem(value *string)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The value is PendingFulfillment when the access package assignment has not yet been delivered to the origin system, and Fulfilled when the access package assignment has been delivered to the origin system.
+// SetStatus sets the status property value. The value is PendingFulfillment when the access package assignment hasn't yet been delivered to the origin system, and Fulfilled when the access package assignment has been delivered to the origin system.
 func (m *AccessPackageAssignmentResourceRole) SetStatus(value *string)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

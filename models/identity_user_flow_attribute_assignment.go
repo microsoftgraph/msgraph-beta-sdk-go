@@ -101,7 +101,7 @@ func (m *IdentityUserFlowAttributeAssignment) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetIsOptional gets the isOptional property value. Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user cannot complete sign-up without providing a value.
+// GetIsOptional gets the isOptional property value. Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user can't complete sign-up without providing a value.
 func (m *IdentityUserFlowAttributeAssignment) GetIsOptional()(*bool) {
     val, err := m.GetBackingStore().Get("isOptional")
     if err != nil {
@@ -214,7 +214,7 @@ func (m *IdentityUserFlowAttributeAssignment) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetIsOptional sets the isOptional property value. Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user cannot complete sign-up without providing a value.
+// SetIsOptional sets the isOptional property value. Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user can't complete sign-up without providing a value.
 func (m *IdentityUserFlowAttributeAssignment) SetIsOptional(value *bool)() {
     err := m.GetBackingStore().Set("isOptional", value)
     if err != nil {

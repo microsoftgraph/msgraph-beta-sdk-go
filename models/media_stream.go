@@ -147,7 +147,7 @@ func (m *MediaStream) GetOdataType()(*string) {
     }
     return nil
 }
-// GetServerMuted gets the serverMuted property value. Indicates whether the media is muted by the server.
+// GetServerMuted gets the serverMuted property value. Indicates whether the server has muted the media.
 func (m *MediaStream) GetServerMuted()(*bool) {
     val, err := m.GetBackingStore().Get("serverMuted")
     if err != nil {
@@ -256,7 +256,7 @@ func (m *MediaStream) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetServerMuted sets the serverMuted property value. Indicates whether the media is muted by the server.
+// SetServerMuted sets the serverMuted property value. Indicates whether the server has muted the media.
 func (m *MediaStream) SetServerMuted(value *bool)() {
     err := m.GetBackingStore().Set("serverMuted", value)
     if err != nil {

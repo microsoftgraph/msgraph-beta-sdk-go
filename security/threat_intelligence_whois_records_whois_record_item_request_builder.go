@@ -18,7 +18,7 @@ type ThreatIntelligenceWhoisRecordsWhoisRecordItemRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ThreatIntelligenceWhoisRecordsWhoisRecordItemRequestBuilderGetQueryParameters read the properties and relationships of a whoisRecord object.
+// ThreatIntelligenceWhoisRecordsWhoisRecordItemRequestBuilderGetQueryParameters read the properties and relationships of a whoisRecord object. This API is supported in the following national cloud deployments.
 type ThreatIntelligenceWhoisRecordsWhoisRecordItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ThreatIntelligenceWhoisRecordsWhoisRecordItemRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get read the properties and relationships of a whoisRecord object.
+// Get read the properties and relationships of a whoisRecord object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-whoisrecord-get?view=graph-rest-1.0
@@ -131,7 +131,7 @@ func (m *ThreatIntelligenceWhoisRecordsWhoisRecordItemRequestBuilder) ToDeleteRe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a whoisRecord object.
+// ToGetRequestInformation read the properties and relationships of a whoisRecord object. This API is supported in the following national cloud deployments.
 func (m *ThreatIntelligenceWhoisRecordsWhoisRecordItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceWhoisRecordsWhoisRecordItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

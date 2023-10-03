@@ -18,7 +18,7 @@ type CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilderDel
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilderGetQueryParameters get the user synchronization policy of a partner-specific configuration.
+// CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilderGetQueryParameters get the user synchronization policy of a partner-specific configuration. This API is supported in the following national cloud deployments.
 type CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,7 @@ func NewCrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewCrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete the user synchronization policy for a partner-specific configuration.
-// Deprecated:  as of 2022-04/PrivatePreview:CrossTenantSyncPolicy on 2022-03-24 and will be removed 2023-06-06
+// Delete delete the user synchronization policy for a partner-specific configuration. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-delete?view=graph-rest-1.0
@@ -74,8 +73,7 @@ func (m *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilde
     }
     return nil
 }
-// Get get the user synchronization policy of a partner-specific configuration.
-// Deprecated:  as of 2022-04/PrivatePreview:CrossTenantSyncPolicy on 2022-03-24 and will be removed 2023-06-06
+// Get get the user synchronization policy of a partner-specific configuration. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-get?view=graph-rest-1.0
@@ -98,7 +96,6 @@ func (m *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilde
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantIdentitySyncPolicyPartnerable), nil
 }
 // Put update the navigation property identitySynchronization in policies
-// Deprecated:  as of 2022-04/PrivatePreview:CrossTenantSyncPolicy on 2022-03-24 and will be removed 2023-06-06
 func (m *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilder) Put(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantIdentitySyncPolicyPartnerable, requestConfiguration *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilderPutRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantIdentitySyncPolicyPartnerable, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -117,8 +114,7 @@ func (m *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilde
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantIdentitySyncPolicyPartnerable), nil
 }
-// ToDeleteRequestInformation delete the user synchronization policy for a partner-specific configuration.
-// Deprecated:  as of 2022-04/PrivatePreview:CrossTenantSyncPolicy on 2022-03-24 and will be removed 2023-06-06
+// ToDeleteRequestInformation delete the user synchronization policy for a partner-specific configuration. This API is supported in the following national cloud deployments.
 func (m *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -130,8 +126,7 @@ func (m *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilde
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the user synchronization policy of a partner-specific configuration.
-// Deprecated:  as of 2022-04/PrivatePreview:CrossTenantSyncPolicy on 2022-03-24 and will be removed 2023-06-06
+// ToGetRequestInformation get the user synchronization policy of a partner-specific configuration. This API is supported in the following national cloud deployments.
 func (m *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -148,7 +143,6 @@ func (m *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilde
     return requestInfo, nil
 }
 // ToPutRequestInformation update the navigation property identitySynchronization in policies
-// Deprecated:  as of 2022-04/PrivatePreview:CrossTenantSyncPolicy on 2022-03-24 and will be removed 2023-06-06
 func (m *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilder) ToPutRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantIdentitySyncPolicyPartnerable, requestConfiguration *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -166,7 +160,6 @@ func (m *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilde
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2022-04/PrivatePreview:CrossTenantSyncPolicy on 2022-03-24 and will be removed 2023-06-06
 func (m *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilder) WithUrl(rawUrl string)(*CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilder) {
     return NewCrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

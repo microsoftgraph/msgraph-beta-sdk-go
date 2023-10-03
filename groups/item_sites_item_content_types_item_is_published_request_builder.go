@@ -31,6 +31,7 @@ func NewItemSitesItemContentTypesItemIsPublishedRequestBuilder(rawUrl string, re
     return NewItemSitesItemContentTypesItemIsPublishedRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function isPublished
+// Deprecated: This method is obsolete. Use GetAsIsPublishedGetResponse instead.
 func (m *ItemSitesItemContentTypesItemIsPublishedRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesItemIsPublishedRequestBuilderGetRequestConfiguration)(ItemSitesItemContentTypesItemIsPublishedResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -48,6 +49,25 @@ func (m *ItemSitesItemContentTypesItemIsPublishedRequestBuilder) Get(ctx context
         return nil, nil
     }
     return res.(ItemSitesItemContentTypesItemIsPublishedResponseable), nil
+}
+// GetAsIsPublishedGetResponse invoke function isPublished
+func (m *ItemSitesItemContentTypesItemIsPublishedRequestBuilder) GetAsIsPublishedGetResponse(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesItemIsPublishedRequestBuilderGetRequestConfiguration)(ItemSitesItemContentTypesItemIsPublishedGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSitesItemContentTypesItemIsPublishedGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemSitesItemContentTypesItemIsPublishedGetResponseable), nil
 }
 // ToGetRequestInformation invoke function isPublished
 func (m *ItemSitesItemContentTypesItemIsPublishedRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesItemIsPublishedRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

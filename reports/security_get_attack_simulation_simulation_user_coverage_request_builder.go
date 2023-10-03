@@ -46,6 +46,7 @@ func NewSecurityGetAttackSimulationSimulationUserCoverageRequestBuilder(rawUrl s
     return NewSecurityGetAttackSimulationSimulationUserCoverageRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getAttackSimulationSimulationUserCoverage
+// Deprecated: This method is obsolete. Use GetAsGetAttackSimulationSimulationUserCoverageGetResponse instead.
 func (m *SecurityGetAttackSimulationSimulationUserCoverageRequestBuilder) Get(ctx context.Context, requestConfiguration *SecurityGetAttackSimulationSimulationUserCoverageRequestBuilderGetRequestConfiguration)(SecurityGetAttackSimulationSimulationUserCoverageResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -63,6 +64,25 @@ func (m *SecurityGetAttackSimulationSimulationUserCoverageRequestBuilder) Get(ct
         return nil, nil
     }
     return res.(SecurityGetAttackSimulationSimulationUserCoverageResponseable), nil
+}
+// GetAsGetAttackSimulationSimulationUserCoverageGetResponse invoke function getAttackSimulationSimulationUserCoverage
+func (m *SecurityGetAttackSimulationSimulationUserCoverageRequestBuilder) GetAsGetAttackSimulationSimulationUserCoverageGetResponse(ctx context.Context, requestConfiguration *SecurityGetAttackSimulationSimulationUserCoverageRequestBuilderGetRequestConfiguration)(SecurityGetAttackSimulationSimulationUserCoverageGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateSecurityGetAttackSimulationSimulationUserCoverageGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(SecurityGetAttackSimulationSimulationUserCoverageGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getAttackSimulationSimulationUserCoverage
 func (m *SecurityGetAttackSimulationSimulationUserCoverageRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SecurityGetAttackSimulationSimulationUserCoverageRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

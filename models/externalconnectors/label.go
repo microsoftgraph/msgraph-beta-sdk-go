@@ -16,13 +16,13 @@ const (
     FILENAME_LABEL
     FILEEXTENSION_LABEL
     UNKNOWNFUTUREVALUE_LABEL
-    ICONURL_LABEL
     CONTAINERNAME_LABEL
     CONTAINERURL_LABEL
+    ICONURL_LABEL
 )
 
 func (i Label) String() string {
-    return []string{"title", "url", "createdBy", "lastModifiedBy", "authors", "createdDateTime", "lastModifiedDateTime", "fileName", "fileExtension", "unknownFutureValue", "iconUrl", "containerName", "containerUrl"}[i]
+    return []string{"title", "url", "createdBy", "lastModifiedBy", "authors", "createdDateTime", "lastModifiedDateTime", "fileName", "fileExtension", "unknownFutureValue", "containerName", "containerUrl", "iconUrl"}[i]
 }
 func ParseLabel(v string) (any, error) {
     result := TITLE_LABEL
@@ -47,12 +47,12 @@ func ParseLabel(v string) (any, error) {
             result = FILEEXTENSION_LABEL
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_LABEL
-        case "iconUrl":
-            result = ICONURL_LABEL
         case "containerName":
             result = CONTAINERNAME_LABEL
         case "containerUrl":
             result = CONTAINERURL_LABEL
+        case "iconUrl":
+            result = ICONURL_LABEL
         default:
             return 0, errors.New("Unknown Label value: " + v)
     }

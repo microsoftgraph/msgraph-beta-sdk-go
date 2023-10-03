@@ -18,7 +18,7 @@ type EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesUnifiedGroupSourceItemR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesUnifiedGroupSourceItemRequestBuilderGetQueryParameters read the properties and relationships of a unifiedGroupSource object.
+// EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesUnifiedGroupSourceItemRequestBuilderGetQueryParameters read the properties and relationships of a unifiedGroupSource object. This API is supported in the following national cloud deployments.
 type EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesUnifiedGroupSourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesUnifiedGroupSourceIt
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesUnifiedGroupSourceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a unifiedGroupSource object.
+// Delete delete a unifiedGroupSource object. This API is supported in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
@@ -74,7 +74,7 @@ func (m *EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesUnifiedGroupSourceI
     }
     return nil
 }
-// Get read the properties and relationships of a unifiedGroupSource object.
+// Get read the properties and relationships of a unifiedGroupSource object. This API is supported in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
@@ -121,7 +121,7 @@ func (m *EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesUnifiedGroupSourceI
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UnifiedGroupSourceable), nil
 }
-// ToDeleteRequestInformation delete a unifiedGroupSource object.
+// ToDeleteRequestInformation delete a unifiedGroupSource object. This API is supported in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesUnifiedGroupSourceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesUnifiedGroupSourceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -134,7 +134,7 @@ func (m *EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesUnifiedGroupSourceI
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a unifiedGroupSource object.
+// ToGetRequestInformation read the properties and relationships of a unifiedGroupSource object. This API is supported in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesUnifiedGroupSourceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesUnifiedGroupSourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

@@ -30,7 +30,7 @@ func (m *Office365ActiveUserDetail) GetAssignedProducts()([]string) {
     }
     return nil
 }
-// GetDeletedDate gets the deletedDate property value. The date when the delete operation happened. Default value is 'null' when the user has not been deleted.
+// GetDeletedDate gets the deletedDate property value. The date when the delete operation happened. Default value is 'null' when the user hasn't been deleted.
 func (m *Office365ActiveUserDetail) GetDeletedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("deletedDate")
     if err != nil {
@@ -41,7 +41,7 @@ func (m *Office365ActiveUserDetail) GetDeletedDate()(*i878a80d2330e89d26896388a3
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates.
+// GetDisplayName gets the displayName property value. The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it can't be cleared during updates.
 func (m *Office365ActiveUserDetail) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -693,14 +693,14 @@ func (m *Office365ActiveUserDetail) SetAssignedProducts(value []string)() {
         panic(err)
     }
 }
-// SetDeletedDate sets the deletedDate property value. The date when the delete operation happened. Default value is 'null' when the user has not been deleted.
+// SetDeletedDate sets the deletedDate property value. The date when the delete operation happened. Default value is 'null' when the user hasn't been deleted.
 func (m *Office365ActiveUserDetail) SetDeletedDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     err := m.GetBackingStore().Set("deletedDate", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates.
+// SetDisplayName sets the displayName property value. The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it can't be cleared during updates.
 func (m *Office365ActiveUserDetail) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

@@ -31,7 +31,7 @@ func NewItemSynchronizationTemplatesItemSchemaParseExpressionRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewItemSynchronizationTemplatesItemSchemaParseExpressionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.
+// Post parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
@@ -53,7 +53,7 @@ func (m *ItemSynchronizationTemplatesItemSchemaParseExpressionRequestBuilder) Po
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseExpressionResponseable), nil
 }
-// ToPostRequestInformation parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.
+// ToPostRequestInformation parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory. This API is supported in the following national cloud deployments.
 func (m *ItemSynchronizationTemplatesItemSchemaParseExpressionRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSynchronizationTemplatesItemSchemaParseExpressionPostRequestBodyable, requestConfiguration *ItemSynchronizationTemplatesItemSchemaParseExpressionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

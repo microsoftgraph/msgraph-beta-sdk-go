@@ -53,6 +53,7 @@ func NewUserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevice
     return NewUserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function summarizeDevicePerformanceDevices
+// Deprecated: This method is obsolete. Use GetAsSummarizeDevicePerformanceDevicesWithSummarizeByGetResponse instead.
 func (m *UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder) Get(ctx context.Context, requestConfiguration *UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderGetRequestConfiguration)(UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,6 +71,25 @@ func (m *UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevic
         return nil, nil
     }
     return res.(UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByResponseable), nil
+}
+// GetAsSummarizeDevicePerformanceDevicesWithSummarizeByGetResponse invoke function summarizeDevicePerformanceDevices
+func (m *UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder) GetAsSummarizeDevicePerformanceDevicesWithSummarizeByGetResponse(ctx context.Context, requestConfiguration *UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderGetRequestConfiguration)(UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateUserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByGetResponseable), nil
 }
 // ToGetRequestInformation invoke function summarizeDevicePerformanceDevices
 func (m *UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

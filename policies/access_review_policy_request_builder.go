@@ -18,7 +18,7 @@ type AccessReviewPolicyRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AccessReviewPolicyRequestBuilderGetQueryParameters read the properties and relationships of an accessReviewPolicy object.
+// AccessReviewPolicyRequestBuilderGetQueryParameters read the properties and relationships of an accessReviewPolicy object. This API is supported in the following national cloud deployments.
 type AccessReviewPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *AccessReviewPolicyRequestBuilder) Delete(ctx context.Context, requestCo
     }
     return nil
 }
-// Get read the properties and relationships of an accessReviewPolicy object.
+// Get read the properties and relationships of an accessReviewPolicy object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewpolicy-get?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *AccessReviewPolicyRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewPolicyable), nil
 }
-// Patch update the properties of an accessReviewPolicy object.
+// Patch update the properties of an accessReviewPolicy object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewpolicy-update?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *AccessReviewPolicyRequestBuilder) ToDeleteRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an accessReviewPolicy object.
+// ToGetRequestInformation read the properties and relationships of an accessReviewPolicy object. This API is supported in the following national cloud deployments.
 func (m *AccessReviewPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *AccessReviewPolicyRequestBuilder) ToGetRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an accessReviewPolicy object.
+// ToPatchRequestInformation update the properties of an accessReviewPolicy object. This API is supported in the following national cloud deployments.
 func (m *AccessReviewPolicyRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewPolicyable, requestConfiguration *AccessReviewPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

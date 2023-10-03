@@ -31,7 +31,7 @@ func (m *AccessPackageSubject) GetAltSecId()(*string) {
     }
     return nil
 }
-// GetCleanupScheduledDateTime gets the cleanupScheduledDateTime property value. The cleanupScheduledDateTime property
+// GetCleanupScheduledDateTime gets the cleanupScheduledDateTime property value. The date and time the subject is marked to be blocked from sign in or deleted. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
 func (m *AccessPackageSubject) GetCleanupScheduledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("cleanupScheduledDateTime")
     if err != nil {
@@ -201,7 +201,7 @@ func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetObjectId gets the objectId property value. The object identifier of the subject. null if the subject is not yet a user in the tenant. Alternate key.
+// GetObjectId gets the objectId property value. The object identifier of the subject. null if the subject isn't yet a user in the tenant. Alternate key.
 func (m *AccessPackageSubject) GetObjectId()(*string) {
     val, err := m.GetBackingStore().Get("objectId")
     if err != nil {
@@ -338,7 +338,7 @@ func (m *AccessPackageSubject) SetAltSecId(value *string)() {
         panic(err)
     }
 }
-// SetCleanupScheduledDateTime sets the cleanupScheduledDateTime property value. The cleanupScheduledDateTime property
+// SetCleanupScheduledDateTime sets the cleanupScheduledDateTime property value. The date and time the subject is marked to be blocked from sign in or deleted. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
 func (m *AccessPackageSubject) SetCleanupScheduledDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("cleanupScheduledDateTime", value)
     if err != nil {
@@ -373,7 +373,7 @@ func (m *AccessPackageSubject) SetEmail(value *string)() {
         panic(err)
     }
 }
-// SetObjectId sets the objectId property value. The object identifier of the subject. null if the subject is not yet a user in the tenant. Alternate key.
+// SetObjectId sets the objectId property value. The object identifier of the subject. null if the subject isn't yet a user in the tenant. Alternate key.
 func (m *AccessPackageSubject) SetObjectId(value *string)() {
     err := m.GetBackingStore().Set("objectId", value)
     if err != nil {

@@ -18,7 +18,7 @@ type ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilde
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilderGetQueryParameters get the properties and relationships of a messageRule object.
+// ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilderGetQueryParameters get the properties and relationships of a messageRule object. This API is supported in the following national cloud deployments.
 type ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -52,7 +52,7 @@ func NewItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBui
     urlParams["request-raw-url"] = rawUrl
     return NewItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete the specified messageRule object.
+// Delete delete the specified messageRule object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/messagerule-delete?view=graph-rest-1.0
@@ -71,7 +71,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBu
     }
     return nil
 }
-// Get get the properties and relationships of a messageRule object.
+// Get get the properties and relationships of a messageRule object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/messagerule-get?view=graph-rest-1.0
@@ -93,7 +93,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageRuleable), nil
 }
-// Patch change writable properties on a messageRule object and save the changes.
+// Patch change writable properties on a messageRule object and save the changes. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/messagerule-update?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageRuleable), nil
 }
-// ToDeleteRequestInformation delete the specified messageRule object.
+// ToDeleteRequestInformation delete the specified messageRule object. This API is supported in the following national cloud deployments.
 func (m *ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -127,7 +127,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBu
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of a messageRule object.
+// ToGetRequestInformation get the properties and relationships of a messageRule object. This API is supported in the following national cloud deployments.
 func (m *ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -143,7 +143,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBu
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation change writable properties on a messageRule object and save the changes.
+// ToPatchRequestInformation change writable properties on a messageRule object and save the changes. This API is supported in the following national cloud deployments.
 func (m *ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageRuleable, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
