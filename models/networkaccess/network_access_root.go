@@ -118,7 +118,7 @@ func (m *NetworkAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetForwardingPolicies gets the forwardingPolicies property value. A forwarding policy defines the specific traffic that is routed through the Gloval Secure Access Service. It is then added to a forwarding profile.
+// GetForwardingPolicies gets the forwardingPolicies property value. A forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It's then added to a forwarding profile.
 func (m *NetworkAccessRoot) GetForwardingPolicies()([]ForwardingPolicyable) {
     val, err := m.GetBackingStore().Get("forwardingPolicies")
     if err != nil {
@@ -140,7 +140,7 @@ func (m *NetworkAccessRoot) GetForwardingProfiles()([]ForwardingProfileable) {
     }
     return nil
 }
-// GetLogs gets the logs property value. Represnts network connections that are routed through Global Secure Access.
+// GetLogs gets the logs property value. Represents network connections that are routed through Global Secure Access.
 func (m *NetworkAccessRoot) GetLogs()(Logsable) {
     val, err := m.GetBackingStore().Get("logs")
     if err != nil {
@@ -253,7 +253,7 @@ func (m *NetworkAccessRoot) SetConnectivity(value Connectivityable)() {
         panic(err)
     }
 }
-// SetForwardingPolicies sets the forwardingPolicies property value. A forwarding policy defines the specific traffic that is routed through the Gloval Secure Access Service. It is then added to a forwarding profile.
+// SetForwardingPolicies sets the forwardingPolicies property value. A forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It's then added to a forwarding profile.
 func (m *NetworkAccessRoot) SetForwardingPolicies(value []ForwardingPolicyable)() {
     err := m.GetBackingStore().Set("forwardingPolicies", value)
     if err != nil {
@@ -267,7 +267,7 @@ func (m *NetworkAccessRoot) SetForwardingProfiles(value []ForwardingProfileable)
         panic(err)
     }
 }
-// SetLogs sets the logs property value. Represnts network connections that are routed through Global Secure Access.
+// SetLogs sets the logs property value. Represents network connections that are routed through Global Secure Access.
 func (m *NetworkAccessRoot) SetLogs(value Logsable)() {
     err := m.GetBackingStore().Set("logs", value)
     if err != nil {

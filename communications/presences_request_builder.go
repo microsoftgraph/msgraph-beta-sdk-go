@@ -11,7 +11,7 @@ import (
 type PresencesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PresencesRequestBuilderGetQueryParameters get a user's presence information.
+// PresencesRequestBuilderGetQueryParameters get a user's presence information. This API is supported in the following national cloud deployments.
 type PresencesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewPresencesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *PresencesRequestBuilder) Count()(*PresencesCountRequestBuilder) {
     return NewPresencesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a user's presence information.
+// Get get a user's presence information. This API is supported in the following national cloud deployments.
 func (m *PresencesRequestBuilder) Get(ctx context.Context, requestConfiguration *PresencesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PresenceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *PresencesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Presenceable), nil
 }
-// ToGetRequestInformation get a user's presence information.
+// ToGetRequestInformation get a user's presence information. This API is supported in the following national cloud deployments.
 func (m *PresencesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PresencesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

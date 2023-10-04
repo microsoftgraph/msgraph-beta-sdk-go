@@ -31,6 +31,7 @@ func NewItemRemoveGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewItemRemoveGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action removeGroup
+// Deprecated: This method is obsolete. Use PostAsRemoveGroupPostResponse instead.
 func (m *ItemRemoveGroupRequestBuilder) Post(ctx context.Context, body ItemRemoveGroupPostRequestBodyable, requestConfiguration *ItemRemoveGroupRequestBuilderPostRequestConfiguration)(ItemRemoveGroupResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -48,6 +49,25 @@ func (m *ItemRemoveGroupRequestBuilder) Post(ctx context.Context, body ItemRemov
         return nil, nil
     }
     return res.(ItemRemoveGroupResponseable), nil
+}
+// PostAsRemoveGroupPostResponse invoke action removeGroup
+func (m *ItemRemoveGroupRequestBuilder) PostAsRemoveGroupPostResponse(ctx context.Context, body ItemRemoveGroupPostRequestBodyable, requestConfiguration *ItemRemoveGroupRequestBuilderPostRequestConfiguration)(ItemRemoveGroupPostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemRemoveGroupPostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemRemoveGroupPostResponseable), nil
 }
 // ToPostRequestInformation invoke action removeGroup
 func (m *ItemRemoveGroupRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemRemoveGroupPostRequestBodyable, requestConfiguration *ItemRemoveGroupRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

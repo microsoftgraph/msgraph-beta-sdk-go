@@ -31,6 +31,7 @@ func NewApplePushNotificationCertificateDownloadApplePushNotificationCertificate
     return NewApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get download Apple push notification certificate signing request
+// Deprecated: This method is obsolete. Use GetAsDownloadApplePushNotificationCertificateSigningRequestGetResponse instead.
 func (m *ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestRequestBuilder) Get(ctx context.Context, requestConfiguration *ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestRequestBuilderGetRequestConfiguration)(ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -48,6 +49,25 @@ func (m *ApplePushNotificationCertificateDownloadApplePushNotificationCertificat
         return nil, nil
     }
     return res.(ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestResponseable), nil
+}
+// GetAsDownloadApplePushNotificationCertificateSigningRequestGetResponse download Apple push notification certificate signing request
+func (m *ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestRequestBuilder) GetAsDownloadApplePushNotificationCertificateSigningRequestGetResponse(ctx context.Context, requestConfiguration *ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestRequestBuilderGetRequestConfiguration)(ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestGetResponseable), nil
 }
 // ToGetRequestInformation download Apple push notification certificate signing request
 func (m *ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

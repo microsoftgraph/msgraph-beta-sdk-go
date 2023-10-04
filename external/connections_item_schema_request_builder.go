@@ -11,14 +11,7 @@ import (
 type ConnectionsItemSchemaRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConnectionsItemSchemaRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ConnectionsItemSchemaRequestBuilderDeleteRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
-// ConnectionsItemSchemaRequestBuilderGetQueryParameters retrieve the properties of a schema for an externalConnection.
+// ConnectionsItemSchemaRequestBuilderGetQueryParameters retrieve the properties of a schema for an externalConnection. This API is supported in the following national cloud deployments.
 type ConnectionsItemSchemaRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,23 +47,7 @@ func NewConnectionsItemSchemaRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewConnectionsItemSchemaRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property schema for external
-func (m *ConnectionsItemSchemaRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConnectionsItemSchemaRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
-}
-// Get retrieve the properties of a schema for an externalConnection.
+// Get retrieve the properties of a schema for an externalConnection. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0
@@ -92,7 +69,7 @@ func (m *ConnectionsItemSchemaRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Schemaable), nil
 }
-// Patch update the properties of a schema for an externalConnection.
+// Patch update the properties of a schema for an externalConnection. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-1.0
@@ -114,19 +91,7 @@ func (m *ConnectionsItemSchemaRequestBuilder) Patch(ctx context.Context, body ie
     }
     return res.(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Schemaable), nil
 }
-// ToDeleteRequestInformation delete navigation property schema for external
-func (m *ConnectionsItemSchemaRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConnectionsItemSchemaRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
-// ToGetRequestInformation retrieve the properties of a schema for an externalConnection.
+// ToGetRequestInformation retrieve the properties of a schema for an externalConnection. This API is supported in the following national cloud deployments.
 func (m *ConnectionsItemSchemaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectionsItemSchemaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +107,7 @@ func (m *ConnectionsItemSchemaRequestBuilder) ToGetRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a schema for an externalConnection.
+// ToPatchRequestInformation update the properties of a schema for an externalConnection. This API is supported in the following national cloud deployments.
 func (m *ConnectionsItemSchemaRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Schemaable, requestConfiguration *ConnectionsItemSchemaRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

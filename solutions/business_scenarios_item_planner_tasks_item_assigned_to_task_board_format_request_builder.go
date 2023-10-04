@@ -18,7 +18,7 @@ type BusinessScenariosItemPlannerTasksItemAssignedToTaskBoardFormatRequestBuilde
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BusinessScenariosItemPlannerTasksItemAssignedToTaskBoardFormatRequestBuilderGetQueryParameters retrieve the properties and relationships of plannerAssignedToTaskBoardTaskFormat object.
+// BusinessScenariosItemPlannerTasksItemAssignedToTaskBoardFormatRequestBuilderGetQueryParameters retrieve the properties and relationships of plannerAssignedToTaskBoardTaskFormat object. This API is supported in the following national cloud deployments.
 type BusinessScenariosItemPlannerTasksItemAssignedToTaskBoardFormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *BusinessScenariosItemPlannerTasksItemAssignedToTaskBoardFormatRequestBu
     }
     return nil
 }
-// Get retrieve the properties and relationships of plannerAssignedToTaskBoardTaskFormat object.
+// Get retrieve the properties and relationships of plannerAssignedToTaskBoardTaskFormat object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *BusinessScenariosItemPlannerTasksItemAssignedToTaskBoardFormatRequestBu
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of plannerAssignedToTaskBoardTaskFormat object.
+// ToGetRequestInformation retrieve the properties and relationships of plannerAssignedToTaskBoardTaskFormat object. This API is supported in the following national cloud deployments.
 func (m *BusinessScenariosItemPlannerTasksItemAssignedToTaskBoardFormatRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTasksItemAssignedToTaskBoardFormatRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

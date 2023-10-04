@@ -18,7 +18,7 @@ type VirtualEndpointSnapshotsCloudPcSnapshotItemRequestBuilderDeleteRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEndpointSnapshotsCloudPcSnapshotItemRequestBuilderGetQueryParameters read the properties and relationships of a cloudPcSnapshot object.
+// VirtualEndpointSnapshotsCloudPcSnapshotItemRequestBuilderGetQueryParameters read the properties and relationships of a cloudPcSnapshot object. This API is supported in the following national cloud deployments.
 type VirtualEndpointSnapshotsCloudPcSnapshotItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *VirtualEndpointSnapshotsCloudPcSnapshotItemRequestBuilder) Delete(ctx c
     }
     return nil
 }
-// Get read the properties and relationships of a cloudPcSnapshot object.
+// Get read the properties and relationships of a cloudPcSnapshot object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcsnapshot-get?view=graph-rest-1.0
@@ -123,7 +123,7 @@ func (m *VirtualEndpointSnapshotsCloudPcSnapshotItemRequestBuilder) ToDeleteRequ
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a cloudPcSnapshot object.
+// ToGetRequestInformation read the properties and relationships of a cloudPcSnapshot object. This API is supported in the following national cloud deployments.
 func (m *VirtualEndpointSnapshotsCloudPcSnapshotItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointSnapshotsCloudPcSnapshotItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

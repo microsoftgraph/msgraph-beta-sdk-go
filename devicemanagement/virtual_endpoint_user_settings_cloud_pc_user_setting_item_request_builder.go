@@ -18,7 +18,7 @@ type VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilderDeleteReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilderGetQueryParameters read the properties and relationships of a cloudPcUserSetting object.
+// VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilderGetQueryParameters read the properties and relationships of a cloudPcUserSetting object. This API is supported in the following national cloud deployments.
 type VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -62,7 +62,7 @@ func NewVirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a cloudPcUserSetting object.
+// Delete delete a cloudPcUserSetting object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcusersetting-delete?view=graph-rest-1.0
@@ -81,7 +81,7 @@ func (m *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) Delete
     }
     return nil
 }
-// Get read the properties and relationships of a cloudPcUserSetting object.
+// Get read the properties and relationships of a cloudPcUserSetting object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcusersetting-get?view=graph-rest-1.0
@@ -103,7 +103,7 @@ func (m *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) Get(ct
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcUserSettingable), nil
 }
-// Patch update the properties of a cloudPcUserSetting object.
+// Patch update the properties of a cloudPcUserSetting object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcusersetting-update?view=graph-rest-1.0
@@ -125,7 +125,7 @@ func (m *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) Patch(
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcUserSettingable), nil
 }
-// ToDeleteRequestInformation delete a cloudPcUserSetting object.
+// ToDeleteRequestInformation delete a cloudPcUserSetting object. This API is supported in the following national cloud deployments.
 func (m *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -137,7 +137,7 @@ func (m *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) ToDele
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a cloudPcUserSetting object.
+// ToGetRequestInformation read the properties and relationships of a cloudPcUserSetting object. This API is supported in the following national cloud deployments.
 func (m *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -153,7 +153,7 @@ func (m *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) ToGetR
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a cloudPcUserSetting object.
+// ToPatchRequestInformation update the properties of a cloudPcUserSetting object. This API is supported in the following national cloud deployments.
 func (m *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcUserSettingable, requestConfiguration *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

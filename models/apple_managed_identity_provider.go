@@ -21,7 +21,7 @@ func NewAppleManagedIdentityProvider()(*AppleManagedIdentityProvider) {
 func CreateAppleManagedIdentityProviderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAppleManagedIdentityProvider(), nil
 }
-// GetCertificateData gets the certificateData property value. The certificate data which is a long string of text from the certificate, can be null.
+// GetCertificateData gets the certificateData property value. The certificate data that is a long string of text from the certificate, can be null.
 func (m *AppleManagedIdentityProvider) GetCertificateData()(*string) {
     val, err := m.GetBackingStore().Get("certificateData")
     if err != nil {
@@ -142,7 +142,7 @@ func (m *AppleManagedIdentityProvider) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetCertificateData sets the certificateData property value. The certificate data which is a long string of text from the certificate, can be null.
+// SetCertificateData sets the certificateData property value. The certificate data that is a long string of text from the certificate, can be null.
 func (m *AppleManagedIdentityProvider) SetCertificateData(value *string)() {
     err := m.GetBackingStore().Set("certificateData", value)
     if err != nil {

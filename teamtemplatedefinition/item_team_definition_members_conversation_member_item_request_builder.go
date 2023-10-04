@@ -18,7 +18,7 @@ type ItemTeamDefinitionMembersConversationMemberItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamDefinitionMembersConversationMemberItemRequestBuilderGetQueryParameters get a conversationMember from a team.
+// ItemTeamDefinitionMembersConversationMemberItemRequestBuilderGetQueryParameters get a conversationMember from a team. This API is supported in the following national cloud deployments.
 type ItemTeamDefinitionMembersConversationMemberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemTeamDefinitionMembersConversationMemberItemRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionMembersConversationMemberItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove a conversationMember from a team.
+// Delete remove a conversationMember from a team. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/team-delete-members?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemTeamDefinitionMembersConversationMemberItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get get a conversationMember from a team.
+// Get get a conversationMember from a team. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/team-get-members?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ItemTeamDefinitionMembersConversationMemberItemRequestBuilder) Get(ctx 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable), nil
 }
-// Patch update the role of a conversationMember in a team.
+// Patch update the role of a conversationMember in a team. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/team-update-members?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *ItemTeamDefinitionMembersConversationMemberItemRequestBuilder) Patch(ct
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable), nil
 }
-// ToDeleteRequestInformation remove a conversationMember from a team.
+// ToDeleteRequestInformation remove a conversationMember from a team. This API is supported in the following national cloud deployments.
 func (m *ItemTeamDefinitionMembersConversationMemberItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionMembersConversationMemberItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *ItemTeamDefinitionMembersConversationMemberItemRequestBuilder) ToDelete
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get a conversationMember from a team.
+// ToGetRequestInformation get a conversationMember from a team. This API is supported in the following national cloud deployments.
 func (m *ItemTeamDefinitionMembersConversationMemberItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionMembersConversationMemberItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *ItemTeamDefinitionMembersConversationMemberItemRequestBuilder) ToGetReq
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the role of a conversationMember in a team.
+// ToPatchRequestInformation update the role of a conversationMember in a team. This API is supported in the following national cloud deployments.
 func (m *ItemTeamDefinitionMembersConversationMemberItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable, requestConfiguration *ItemTeamDefinitionMembersConversationMemberItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

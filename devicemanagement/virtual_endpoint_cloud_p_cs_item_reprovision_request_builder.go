@@ -30,7 +30,7 @@ func NewVirtualEndpointCloudPCsItemReprovisionRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointCloudPCsItemReprovisionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post reprovision a specific Cloud PC.
+// Post reprovision a specific Cloud PC. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-reprovision?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *VirtualEndpointCloudPCsItemReprovisionRequestBuilder) Post(ctx context.
     }
     return nil
 }
-// ToPostRequestInformation reprovision a specific Cloud PC.
+// ToPostRequestInformation reprovision a specific Cloud PC. This API is supported in the following national cloud deployments.
 func (m *VirtualEndpointCloudPCsItemReprovisionRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointCloudPCsItemReprovisionPostRequestBodyable, requestConfiguration *VirtualEndpointCloudPCsItemReprovisionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -27,6 +27,14 @@ type MobileAppsItemGraphWindowsWebAppRequestBuilderGetRequestConfiguration struc
     // Request query parameters
     QueryParameters *MobileAppsItemGraphWindowsWebAppRequestBuilderGetQueryParameters
 }
+// Assignments provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphWindowsWebAppRequestBuilder) Assignments()(*MobileAppsItemGraphWindowsWebAppAssignmentsRequestBuilder) {
+    return NewMobileAppsItemGraphWindowsWebAppAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Categories provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphWindowsWebAppRequestBuilder) Categories()(*MobileAppsItemGraphWindowsWebAppCategoriesRequestBuilder) {
+    return NewMobileAppsItemGraphWindowsWebAppCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMobileAppsItemGraphWindowsWebAppRequestBuilderInternal instantiates a new GraphWindowsWebAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphWindowsWebAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphWindowsWebAppRequestBuilder) {
     m := &MobileAppsItemGraphWindowsWebAppRequestBuilder{
@@ -58,6 +66,10 @@ func (m *MobileAppsItemGraphWindowsWebAppRequestBuilder) Get(ctx context.Context
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsWebAppable), nil
+}
+// Relationships provides operations to manage the relationships property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphWindowsWebAppRequestBuilder) Relationships()(*MobileAppsItemGraphWindowsWebAppRelationshipsRequestBuilder) {
+    return NewMobileAppsItemGraphWindowsWebAppRelationshipsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsWebApp
 func (m *MobileAppsItemGraphWindowsWebAppRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphWindowsWebAppRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

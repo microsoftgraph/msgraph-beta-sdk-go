@@ -41,7 +41,7 @@ func (m *Office365GroupsActivityDetail) GetExchangeMailboxTotalItemCount()(*int6
     }
     return nil
 }
-// GetExchangeReceivedEmailCount gets the exchangeReceivedEmailCount property value. The number of email that the group mailbox received.
+// GetExchangeReceivedEmailCount gets the exchangeReceivedEmailCount property value. The number of emails that the group mailbox received.
 func (m *Office365GroupsActivityDetail) GetExchangeReceivedEmailCount()(*int64) {
     val, err := m.GetBackingStore().Get("exchangeReceivedEmailCount")
     if err != nil {
@@ -613,7 +613,7 @@ func (m *Office365GroupsActivityDetail) SetExchangeMailboxTotalItemCount(value *
         panic(err)
     }
 }
-// SetExchangeReceivedEmailCount sets the exchangeReceivedEmailCount property value. The number of email that the group mailbox received.
+// SetExchangeReceivedEmailCount sets the exchangeReceivedEmailCount property value. The number of emails that the group mailbox received.
 func (m *Office365GroupsActivityDetail) SetExchangeReceivedEmailCount(value *int64)() {
     err := m.GetBackingStore().Set("exchangeReceivedEmailCount", value)
     if err != nil {

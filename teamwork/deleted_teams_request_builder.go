@@ -11,7 +11,7 @@ import (
 type DeletedTeamsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DeletedTeamsRequestBuilderGetQueryParameters get a list of the deletedTeam objects and their properties.
+// DeletedTeamsRequestBuilderGetQueryParameters get a list of the deletedTeam objects and their properties. This API is supported in the following national cloud deployments.
 type DeletedTeamsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewDeletedTeamsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *DeletedTeamsRequestBuilder) Count()(*DeletedTeamsCountRequestBuilder) {
     return NewDeletedTeamsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the deletedTeam objects and their properties.
+// Get get a list of the deletedTeam objects and their properties. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/teamwork-list-deletedteams?view=graph-rest-1.0
@@ -119,7 +119,7 @@ func (m *DeletedTeamsRequestBuilder) Post(ctx context.Context, body ie233ee762e2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedTeamable), nil
 }
-// ToGetRequestInformation get a list of the deletedTeam objects and their properties.
+// ToGetRequestInformation get a list of the deletedTeam objects and their properties. This API is supported in the following national cloud deployments.
 func (m *DeletedTeamsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeletedTeamsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

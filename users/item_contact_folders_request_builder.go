@@ -11,7 +11,7 @@ import (
 type ItemContactFoldersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemContactFoldersRequestBuilderGetQueryParameters get all the contact folders in the signed-in user's mailbox.
+// ItemContactFoldersRequestBuilderGetQueryParameters get all the contact folders in the signed-in user's mailbox. This API is supported in the following national cloud deployments.
 type ItemContactFoldersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func (m *ItemContactFoldersRequestBuilder) Count()(*ItemContactFoldersCountReque
 func (m *ItemContactFoldersRequestBuilder) Delta()(*ItemContactFoldersDeltaRequestBuilder) {
     return NewItemContactFoldersDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get all the contact folders in the signed-in user's mailbox.
+// Get get all the contact folders in the signed-in user's mailbox. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/user-list-contactfolders?view=graph-rest-1.0
@@ -98,7 +98,7 @@ func (m *ItemContactFoldersRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderCollectionResponseable), nil
 }
-// Post create a new contactFolder under the user's default contacts folder. You can also create a new contactfolder as a child of any specified contact folder.
+// Post create a new contactFolder under the user's default contacts folder. You can also create a new contactfolder as a child of any specified contact folder. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/user-post-contactfolders?view=graph-rest-1.0
@@ -120,7 +120,7 @@ func (m *ItemContactFoldersRequestBuilder) Post(ctx context.Context, body ie233e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderable), nil
 }
-// ToGetRequestInformation get all the contact folders in the signed-in user's mailbox.
+// ToGetRequestInformation get all the contact folders in the signed-in user's mailbox. This API is supported in the following national cloud deployments.
 func (m *ItemContactFoldersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContactFoldersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +136,7 @@ func (m *ItemContactFoldersRequestBuilder) ToGetRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new contactFolder under the user's default contacts folder. You can also create a new contactfolder as a child of any specified contact folder.
+// ToPostRequestInformation create a new contactFolder under the user's default contacts folder. You can also create a new contactfolder as a child of any specified contact folder. This API is supported in the following national cloud deployments.
 func (m *ItemContactFoldersRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderable, requestConfiguration *ItemContactFoldersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

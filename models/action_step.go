@@ -22,7 +22,7 @@ func NewActionStep()(*ActionStep) {
 func CreateActionStepFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewActionStep(), nil
 }
-// GetActionUrl gets the actionUrl property value. A link to the documentation or Azure portal page that is associated with the action step.
+// GetActionUrl gets the actionUrl property value. A link to the documentation or Microsoft Entra admin center page that is associated with the action step.
 func (m *ActionStep) GetActionUrl()(ActionUrlable) {
     val, err := m.GetBackingStore().Get("actionUrl")
     if err != nil {
@@ -161,7 +161,7 @@ func (m *ActionStep) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetActionUrl sets the actionUrl property value. A link to the documentation or Azure portal page that is associated with the action step.
+// SetActionUrl sets the actionUrl property value. A link to the documentation or Microsoft Entra admin center page that is associated with the action step.
 func (m *ActionStep) SetActionUrl(value ActionUrlable)() {
     err := m.GetBackingStore().Set("actionUrl", value)
     if err != nil {

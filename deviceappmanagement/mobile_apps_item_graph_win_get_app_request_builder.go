@@ -27,6 +27,14 @@ type MobileAppsItemGraphWinGetAppRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *MobileAppsItemGraphWinGetAppRequestBuilderGetQueryParameters
 }
+// Assignments provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphWinGetAppRequestBuilder) Assignments()(*MobileAppsItemGraphWinGetAppAssignmentsRequestBuilder) {
+    return NewMobileAppsItemGraphWinGetAppAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Categories provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphWinGetAppRequestBuilder) Categories()(*MobileAppsItemGraphWinGetAppCategoriesRequestBuilder) {
+    return NewMobileAppsItemGraphWinGetAppCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMobileAppsItemGraphWinGetAppRequestBuilderInternal instantiates a new GraphWinGetAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphWinGetAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphWinGetAppRequestBuilder) {
     m := &MobileAppsItemGraphWinGetAppRequestBuilder{
@@ -58,6 +66,10 @@ func (m *MobileAppsItemGraphWinGetAppRequestBuilder) Get(ctx context.Context, re
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WinGetAppable), nil
+}
+// Relationships provides operations to manage the relationships property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphWinGetAppRequestBuilder) Relationships()(*MobileAppsItemGraphWinGetAppRelationshipsRequestBuilder) {
+    return NewMobileAppsItemGraphWinGetAppRelationshipsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get the item of type microsoft.graph.mobileApp as microsoft.graph.winGetApp
 func (m *MobileAppsItemGraphWinGetAppRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphWinGetAppRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

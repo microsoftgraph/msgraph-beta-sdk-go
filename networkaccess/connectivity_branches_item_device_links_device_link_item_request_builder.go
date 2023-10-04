@@ -18,7 +18,7 @@ type ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilderDeleteReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilderGetQueryParameters retrieve the device link associated with a specific branch.
+// ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilderGetQueryParameters retrieve the device link associated with a specific branch. This API is supported in the following national cloud deployments.
 type ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete removes the link between the branch and the CPE device, effectively removing the connection and associated configuration between them.
+// Delete removes the link between the branch and the CPE device, effectively removing the connection and associated configuration between them. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-branchsite-delete-devicelinks?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) Delete
     }
     return nil
 }
-// Get retrieve the device link associated with a specific branch.
+// Get retrieve the device link associated with a specific branch. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-devicelink-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) Get(ct
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable), nil
 }
-// Patch update the device link associated with a specific branch.
+// Patch update the device link associated with a specific branch. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-devicelink-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) Patch(
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable), nil
 }
-// ToDeleteRequestInformation removes the link between the branch and the CPE device, effectively removing the connection and associated configuration between them.
+// ToDeleteRequestInformation removes the link between the branch and the CPE device, effectively removing the connection and associated configuration between them. This API is supported in the following national cloud deployments.
 func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) ToDele
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the device link associated with a specific branch.
+// ToGetRequestInformation retrieve the device link associated with a specific branch. This API is supported in the following national cloud deployments.
 func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) ToGetR
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the device link associated with a specific branch.
+// ToPatchRequestInformation update the device link associated with a specific branch. This API is supported in the following national cloud deployments.
 func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable, requestConfiguration *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

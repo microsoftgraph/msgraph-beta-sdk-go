@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceVulnerabilitiesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceVulnerabilitiesRequestBuilderGetQueryParameters read the properties and relationships of a vulnerability object.
+// ThreatIntelligenceVulnerabilitiesRequestBuilderGetQueryParameters read the properties and relationships of a vulnerability object. This API is supported in the following national cloud deployments.
 type ThreatIntelligenceVulnerabilitiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewThreatIntelligenceVulnerabilitiesRequestBuilder(rawUrl string, requestAd
 func (m *ThreatIntelligenceVulnerabilitiesRequestBuilder) Count()(*ThreatIntelligenceVulnerabilitiesCountRequestBuilder) {
     return NewThreatIntelligenceVulnerabilitiesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a vulnerability object.
+// Get read the properties and relationships of a vulnerability object. This API is supported in the following national cloud deployments.
 func (m *ThreatIntelligenceVulnerabilitiesRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceVulnerabilitiesRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.VulnerabilityCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ThreatIntelligenceVulnerabilitiesRequestBuilder) Post(ctx context.Conte
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Vulnerabilityable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a vulnerability object.
+// ToGetRequestInformation read the properties and relationships of a vulnerability object. This API is supported in the following national cloud deployments.
 func (m *ThreatIntelligenceVulnerabilitiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceVulnerabilitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

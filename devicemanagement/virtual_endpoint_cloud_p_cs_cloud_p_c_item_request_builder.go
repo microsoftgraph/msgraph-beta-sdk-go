@@ -18,7 +18,7 @@ type VirtualEndpointCloudPCsCloudPCItemRequestBuilderDeleteRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEndpointCloudPCsCloudPCItemRequestBuilderGetQueryParameters read the properties and relationships of a specific cloudPC object.
+// VirtualEndpointCloudPCsCloudPCItemRequestBuilderGetQueryParameters read the properties and relationships of a specific cloudPC object. This API is supported in the following national cloud deployments.
 type VirtualEndpointCloudPCsCloudPCItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -82,7 +82,7 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Delete(ctx context.Co
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) EndGracePeriod()(*VirtualEndpointCloudPCsItemEndGracePeriodRequestBuilder) {
     return NewVirtualEndpointCloudPCsItemEndGracePeriodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a specific cloudPC object.
+// Get read the properties and relationships of a specific cloudPC object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-get?view=graph-rest-1.0
@@ -191,7 +191,7 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) ToDeleteRequestInform
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a specific cloudPC object.
+// ToGetRequestInformation read the properties and relationships of a specific cloudPC object. This API is supported in the following national cloud deployments.
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsCloudPCItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

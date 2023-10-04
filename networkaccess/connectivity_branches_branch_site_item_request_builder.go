@@ -18,7 +18,7 @@ type ConnectivityBranchesBranchSiteItemRequestBuilderDeleteRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectivityBranchesBranchSiteItemRequestBuilderGetQueryParameters retrieve information about a specific branch.
+// ConnectivityBranchesBranchSiteItemRequestBuilderGetQueryParameters retrieve information about a specific branch. This API is supported in the following national cloud deployments.
 type ConnectivityBranchesBranchSiteItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,7 @@ func NewConnectivityBranchesBranchSiteItemRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewConnectivityBranchesBranchSiteItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a specific branch.
+// Delete delete a specific branch. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-branchsite-delete?view=graph-rest-1.0
@@ -85,7 +85,7 @@ func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) DeviceLinks()(*Connec
 func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) ForwardingProfiles()(*ConnectivityBranchesItemForwardingProfilesRequestBuilder) {
     return NewConnectivityBranchesItemForwardingProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve information about a specific branch.
+// Get retrieve information about a specific branch. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-branchsite-get?view=graph-rest-1.0
@@ -107,7 +107,7 @@ func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) Get(ctx context.Conte
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable), nil
 }
-// Patch update the configuration or properties of a specific branch.
+// Patch update the configuration or properties of a specific branch. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-branchsite-update?view=graph-rest-1.0
@@ -129,7 +129,7 @@ func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) Patch(ctx context.Con
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable), nil
 }
-// ToDeleteRequestInformation delete a specific branch.
+// ToDeleteRequestInformation delete a specific branch. This API is supported in the following national cloud deployments.
 func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesBranchSiteItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -141,7 +141,7 @@ func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) ToDeleteRequestInform
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve information about a specific branch.
+// ToGetRequestInformation retrieve information about a specific branch. This API is supported in the following national cloud deployments.
 func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesBranchSiteItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -157,7 +157,7 @@ func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) ToGetRequestInformati
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the configuration or properties of a specific branch.
+// ToPatchRequestInformation update the configuration or properties of a specific branch. This API is supported in the following national cloud deployments.
 func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable, requestConfiguration *ConnectivityBranchesBranchSiteItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

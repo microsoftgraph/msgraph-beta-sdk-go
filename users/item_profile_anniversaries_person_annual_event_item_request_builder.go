@@ -18,7 +18,7 @@ type ItemProfileAnniversariesPersonAnnualEventItemRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfileAnniversariesPersonAnnualEventItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a personAnniversary object in a user's profile.
+// ItemProfileAnniversariesPersonAnnualEventItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a personAnniversary object in a user's profile. This API is supported in the following national cloud deployments.
 type ItemProfileAnniversariesPersonAnnualEventItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemProfileAnniversariesPersonAnnualEventItemRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileAnniversariesPersonAnnualEventItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a personAnniversary object from the user's profile.
+// Delete delete a personAnniversary object from the user's profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/personanniversary-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get retrieve the properties and relationships of a personAnniversary object in a user's profile.
+// Get retrieve the properties and relationships of a personAnniversary object in a user's profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/personanniversary-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilder) Get(ctx co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnualEventable), nil
 }
-// Patch update the properties of a personAnniversary object in a user's profile.
+// Patch update the properties of a personAnniversary object in a user's profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/personanniversary-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilder) Patch(ctx 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnualEventable), nil
 }
-// ToDeleteRequestInformation delete a personAnniversary object from the user's profile.
+// ToDeleteRequestInformation delete a personAnniversary object from the user's profile. This API is supported in the following national cloud deployments.
 func (m *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilder) ToDeleteRe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a personAnniversary object in a user's profile.
+// ToGetRequestInformation retrieve the properties and relationships of a personAnniversary object in a user's profile. This API is supported in the following national cloud deployments.
 func (m *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilder) ToGetReque
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a personAnniversary object in a user's profile.
+// ToPatchRequestInformation update the properties of a personAnniversary object in a user's profile. This API is supported in the following national cloud deployments.
 func (m *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnualEventable, requestConfiguration *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

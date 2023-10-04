@@ -53,6 +53,7 @@ func NewReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeW
     return NewReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
 // Get invoke function transactionSummaries
+// Deprecated: This method is obsolete. Use GetAsTransactionSummariesWithStartDateTimeWithEndDateTimeGetResponse instead.
 func (m *ReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(ReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeTransactionSummariesWithStartDateTimeWithEndDateTimeResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,6 +71,25 @@ func (m *ReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTime
         return nil, nil
     }
     return res.(ReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeTransactionSummariesWithStartDateTimeWithEndDateTimeResponseable), nil
+}
+// GetAsTransactionSummariesWithStartDateTimeWithEndDateTimeGetResponse invoke function transactionSummaries
+func (m *ReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder) GetAsTransactionSummariesWithStartDateTimeWithEndDateTimeGetResponse(ctx context.Context, requestConfiguration *ReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(ReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeTransactionSummariesWithStartDateTimeWithEndDateTimeGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeTransactionSummariesWithStartDateTimeWithEndDateTimeGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeTransactionSummariesWithStartDateTimeWithEndDateTimeGetResponseable), nil
 }
 // ToGetRequestInformation invoke function transactionSummaries
 func (m *ReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

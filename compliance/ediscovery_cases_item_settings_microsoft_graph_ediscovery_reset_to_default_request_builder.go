@@ -30,7 +30,7 @@ func NewEdiscoveryCasesItemSettingsMicrosoftGraphEdiscoveryResetToDefaultRequest
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryCasesItemSettingsMicrosoftGraphEdiscoveryResetToDefaultRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post reset a caseSettings object to the default values.
+// Post reset a caseSettings object to the default values. This API is supported in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
@@ -50,7 +50,7 @@ func (m *EdiscoveryCasesItemSettingsMicrosoftGraphEdiscoveryResetToDefaultReques
     }
     return nil
 }
-// ToPostRequestInformation reset a caseSettings object to the default values.
+// ToPostRequestInformation reset a caseSettings object to the default values. This API is supported in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemSettingsMicrosoftGraphEdiscoveryResetToDefaultRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemSettingsMicrosoftGraphEdiscoveryResetToDefaultRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

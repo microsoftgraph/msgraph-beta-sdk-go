@@ -30,7 +30,7 @@ func NewVirtualEndpointCloudPCsItemStopRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointCloudPCsItemStopRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post stop a specific Cloud PC for a user. Currently, only Windows 365 Frontline Cloud PCs are supported.
+// Post stop a specific Cloud PC for a user. Currently, only Windows 365 Frontline Cloud PCs are supported. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-stop?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *VirtualEndpointCloudPCsItemStopRequestBuilder) Post(ctx context.Context
     }
     return nil
 }
-// ToPostRequestInformation stop a specific Cloud PC for a user. Currently, only Windows 365 Frontline Cloud PCs are supported.
+// ToPostRequestInformation stop a specific Cloud PC for a user. Currently, only Windows 365 Frontline Cloud PCs are supported. This API is supported in the following national cloud deployments.
 func (m *VirtualEndpointCloudPCsItemStopRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemStopRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

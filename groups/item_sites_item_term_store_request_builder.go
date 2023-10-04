@@ -18,7 +18,7 @@ type ItemSitesItemTermStoreRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSitesItemTermStoreRequestBuilderGetQueryParameters read the properties and relationships of a store object.
+// ItemSitesItemTermStoreRequestBuilderGetQueryParameters read the properties and relationships of a store object. This API is supported in the following national cloud deployments.
 type ItemSitesItemTermStoreRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemSitesItemTermStoreRequestBuilder) Delete(ctx context.Context, reque
     }
     return nil
 }
-// Get read the properties and relationships of a store object.
+// Get read the properties and relationships of a store object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/termstore-store-get?view=graph-rest-1.0
@@ -131,7 +131,7 @@ func (m *ItemSitesItemTermStoreRequestBuilder) ToDeleteRequestInformation(ctx co
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a store object.
+// ToGetRequestInformation read the properties and relationships of a store object. This API is supported in the following national cloud deployments.
 func (m *ItemSitesItemTermStoreRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

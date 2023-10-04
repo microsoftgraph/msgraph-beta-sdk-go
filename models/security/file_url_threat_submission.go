@@ -36,7 +36,7 @@ func (m *FileUrlThreatSubmission) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetFileUrl gets the fileUrl property value. It specifies the URL of the file which needs to be submitted.
+// GetFileUrl gets the fileUrl property value. It specifies the URL of the file that needs to be submitted.
 func (m *FileUrlThreatSubmission) GetFileUrl()(*string) {
     val, err := m.GetBackingStore().Get("fileUrl")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *FileUrlThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetFileUrl sets the fileUrl property value. It specifies the URL of the file which needs to be submitted.
+// SetFileUrl sets the fileUrl property value. It specifies the URL of the file that needs to be submitted.
 func (m *FileUrlThreatSubmission) SetFileUrl(value *string)() {
     err := m.GetBackingStore().Set("fileUrl", value)
     if err != nil {

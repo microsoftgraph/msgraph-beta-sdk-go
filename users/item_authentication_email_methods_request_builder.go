@@ -11,7 +11,7 @@ import (
 type ItemAuthenticationEmailMethodsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemAuthenticationEmailMethodsRequestBuilderGetQueryParameters retrieve a list of a user's email Authentication Method objects and their properties. This call will only return a single object as only one email method can be set on users.
+// ItemAuthenticationEmailMethodsRequestBuilderGetQueryParameters retrieve a list of a user's email Authentication Method objects and their properties. This call will only return a single object as only one email method can be set on users. This API is supported in the following national cloud deployments.
 type ItemAuthenticationEmailMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemAuthenticationEmailMethodsRequestBuilder(rawUrl string, requestAdapt
 func (m *ItemAuthenticationEmailMethodsRequestBuilder) Count()(*ItemAuthenticationEmailMethodsCountRequestBuilder) {
     return NewItemAuthenticationEmailMethodsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of a user's email Authentication Method objects and their properties. This call will only return a single object as only one email method can be set on users.
+// Get retrieve a list of a user's email Authentication Method objects and their properties. This call will only return a single object as only one email method can be set on users. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/authentication-list-emailmethods?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemAuthenticationEmailMethodsRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailAuthenticationMethodCollectionResponseable), nil
 }
-// Post set a user's emailAuthenticationMethod object. Email authentication is a self-service password reset method. A user may only have one email authentication method.
+// Post set a user's emailAuthenticationMethod object. Email authentication is a self-service password reset method. A user may only have one email authentication method. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/authentication-post-emailmethods?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemAuthenticationEmailMethodsRequestBuilder) Post(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailAuthenticationMethodable), nil
 }
-// ToGetRequestInformation retrieve a list of a user's email Authentication Method objects and their properties. This call will only return a single object as only one email method can be set on users.
+// ToGetRequestInformation retrieve a list of a user's email Authentication Method objects and their properties. This call will only return a single object as only one email method can be set on users. This API is supported in the following national cloud deployments.
 func (m *ItemAuthenticationEmailMethodsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationEmailMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemAuthenticationEmailMethodsRequestBuilder) ToGetRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation set a user's emailAuthenticationMethod object. Email authentication is a self-service password reset method. A user may only have one email authentication method.
+// ToPostRequestInformation set a user's emailAuthenticationMethod object. Email authentication is a self-service password reset method. A user may only have one email authentication method. This API is supported in the following national cloud deployments.
 func (m *ItemAuthenticationEmailMethodsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailAuthenticationMethodable, requestConfiguration *ItemAuthenticationEmailMethodsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -27,6 +27,14 @@ type MobileAppsItemGraphMacOSPkgAppRequestBuilderGetRequestConfiguration struct 
     // Request query parameters
     QueryParameters *MobileAppsItemGraphMacOSPkgAppRequestBuilderGetQueryParameters
 }
+// Assignments provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphMacOSPkgAppRequestBuilder) Assignments()(*MobileAppsItemGraphMacOSPkgAppAssignmentsRequestBuilder) {
+    return NewMobileAppsItemGraphMacOSPkgAppAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Categories provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphMacOSPkgAppRequestBuilder) Categories()(*MobileAppsItemGraphMacOSPkgAppCategoriesRequestBuilder) {
+    return NewMobileAppsItemGraphMacOSPkgAppCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMobileAppsItemGraphMacOSPkgAppRequestBuilderInternal instantiates a new GraphMacOSPkgAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphMacOSPkgAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphMacOSPkgAppRequestBuilder) {
     m := &MobileAppsItemGraphMacOSPkgAppRequestBuilder{
@@ -39,6 +47,10 @@ func NewMobileAppsItemGraphMacOSPkgAppRequestBuilder(rawUrl string, requestAdapt
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemGraphMacOSPkgAppRequestBuilderInternal(urlParams, requestAdapter)
+}
+// ContentVersions provides operations to manage the contentVersions property of the microsoft.graph.mobileLobApp entity.
+func (m *MobileAppsItemGraphMacOSPkgAppRequestBuilder) ContentVersions()(*MobileAppsItemGraphMacOSPkgAppContentVersionsRequestBuilder) {
+    return NewMobileAppsItemGraphMacOSPkgAppContentVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the item of type microsoft.graph.mobileApp as microsoft.graph.macOSPkgApp
 func (m *MobileAppsItemGraphMacOSPkgAppRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphMacOSPkgAppRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MacOSPkgAppable, error) {
@@ -58,6 +70,10 @@ func (m *MobileAppsItemGraphMacOSPkgAppRequestBuilder) Get(ctx context.Context, 
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MacOSPkgAppable), nil
+}
+// Relationships provides operations to manage the relationships property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphMacOSPkgAppRequestBuilder) Relationships()(*MobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilder) {
+    return NewMobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get the item of type microsoft.graph.mobileApp as microsoft.graph.macOSPkgApp
 func (m *MobileAppsItemGraphMacOSPkgAppRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphMacOSPkgAppRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

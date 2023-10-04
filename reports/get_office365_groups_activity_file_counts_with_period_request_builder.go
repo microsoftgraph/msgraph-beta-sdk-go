@@ -53,6 +53,7 @@ func NewGetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder(rawUrl stri
     return NewGetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getOffice365GroupsActivityFileCounts
+// Deprecated: This method is obsolete. Use GetAsGetOffice365GroupsActivityFileCountsWithPeriodGetResponse instead.
 func (m *GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetRequestConfiguration)(GetOffice365GroupsActivityFileCountsWithPeriodResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,6 +71,25 @@ func (m *GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder) Get(ctx c
         return nil, nil
     }
     return res.(GetOffice365GroupsActivityFileCountsWithPeriodResponseable), nil
+}
+// GetAsGetOffice365GroupsActivityFileCountsWithPeriodGetResponse invoke function getOffice365GroupsActivityFileCounts
+func (m *GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder) GetAsGetOffice365GroupsActivityFileCountsWithPeriodGetResponse(ctx context.Context, requestConfiguration *GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetRequestConfiguration)(GetOffice365GroupsActivityFileCountsWithPeriodGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetOffice365GroupsActivityFileCountsWithPeriodGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(GetOffice365GroupsActivityFileCountsWithPeriodGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getOffice365GroupsActivityFileCounts
 func (m *GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

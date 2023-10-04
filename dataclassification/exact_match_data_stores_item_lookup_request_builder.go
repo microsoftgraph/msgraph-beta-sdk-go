@@ -31,6 +31,7 @@ func NewExactMatchDataStoresItemLookupRequestBuilder(rawUrl string, requestAdapt
     return NewExactMatchDataStoresItemLookupRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action lookup
+// Deprecated: This method is obsolete. Use PostAsLookupPostResponse instead.
 func (m *ExactMatchDataStoresItemLookupRequestBuilder) Post(ctx context.Context, body ExactMatchDataStoresItemLookupPostRequestBodyable, requestConfiguration *ExactMatchDataStoresItemLookupRequestBuilderPostRequestConfiguration)(ExactMatchDataStoresItemLookupResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -48,6 +49,25 @@ func (m *ExactMatchDataStoresItemLookupRequestBuilder) Post(ctx context.Context,
         return nil, nil
     }
     return res.(ExactMatchDataStoresItemLookupResponseable), nil
+}
+// PostAsLookupPostResponse invoke action lookup
+func (m *ExactMatchDataStoresItemLookupRequestBuilder) PostAsLookupPostResponse(ctx context.Context, body ExactMatchDataStoresItemLookupPostRequestBodyable, requestConfiguration *ExactMatchDataStoresItemLookupRequestBuilderPostRequestConfiguration)(ExactMatchDataStoresItemLookupPostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateExactMatchDataStoresItemLookupPostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ExactMatchDataStoresItemLookupPostResponseable), nil
 }
 // ToPostRequestInformation invoke action lookup
 func (m *ExactMatchDataStoresItemLookupRequestBuilder) ToPostRequestInformation(ctx context.Context, body ExactMatchDataStoresItemLookupPostRequestBodyable, requestConfiguration *ExactMatchDataStoresItemLookupRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

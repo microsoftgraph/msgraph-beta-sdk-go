@@ -30,7 +30,8 @@ func NewEntitlementManagementConnectedOrganizationsItemExternalSponsorsGetByIdsR
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementConnectedOrganizationsItemExternalSponsorsGetByIdsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post return the directory objects specified in a list of IDs. Some common uses for this function are to:
+// Post return the directory objects specified in a list of IDs. Some common uses for this function are to: This API is supported in the following national cloud deployments.
+// Deprecated: This method is obsolete. Use PostAsGetByIdsPostResponse instead.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
@@ -52,7 +53,29 @@ func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsGetByIds
     }
     return res.(EntitlementManagementConnectedOrganizationsItemExternalSponsorsGetByIdsResponseable), nil
 }
-// ToPostRequestInformation return the directory objects specified in a list of IDs. Some common uses for this function are to:
+// PostAsGetByIdsPostResponse return the directory objects specified in a list of IDs. Some common uses for this function are to: This API is supported in the following national cloud deployments.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
+func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsGetByIdsRequestBuilder) PostAsGetByIdsPostResponse(ctx context.Context, body EntitlementManagementConnectedOrganizationsItemExternalSponsorsGetByIdsPostRequestBodyable, requestConfiguration *EntitlementManagementConnectedOrganizationsItemExternalSponsorsGetByIdsRequestBuilderPostRequestConfiguration)(EntitlementManagementConnectedOrganizationsItemExternalSponsorsGetByIdsPostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateEntitlementManagementConnectedOrganizationsItemExternalSponsorsGetByIdsPostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(EntitlementManagementConnectedOrganizationsItemExternalSponsorsGetByIdsPostResponseable), nil
+}
+// ToPostRequestInformation return the directory objects specified in a list of IDs. Some common uses for this function are to: This API is supported in the following national cloud deployments.
 func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsGetByIdsRequestBuilder) ToPostRequestInformation(ctx context.Context, body EntitlementManagementConnectedOrganizationsItemExternalSponsorsGetByIdsPostRequestBodyable, requestConfiguration *EntitlementManagementConnectedOrganizationsItemExternalSponsorsGetByIdsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

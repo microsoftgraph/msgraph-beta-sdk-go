@@ -11,7 +11,7 @@ import (
 type ManagedTenantsCloudPcConnectionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedTenantsCloudPcConnectionsRequestBuilderGetQueryParameters get a list of the cloudPcConnection objects and their properties.
+// ManagedTenantsCloudPcConnectionsRequestBuilderGetQueryParameters get a list of the cloudPcConnection objects and their properties. This API is supported in the following national cloud deployments.
 type ManagedTenantsCloudPcConnectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewManagedTenantsCloudPcConnectionsRequestBuilder(rawUrl string, requestAda
 func (m *ManagedTenantsCloudPcConnectionsRequestBuilder) Count()(*ManagedTenantsCloudPcConnectionsCountRequestBuilder) {
     return NewManagedTenantsCloudPcConnectionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the cloudPcConnection objects and their properties.
+// Get get a list of the cloudPcConnection objects and their properties. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcconnections?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *ManagedTenantsCloudPcConnectionsRequestBuilder) Post(ctx context.Contex
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CloudPcConnectionable), nil
 }
-// ToGetRequestInformation get a list of the cloudPcConnection objects and their properties.
+// ToGetRequestInformation get a list of the cloudPcConnection objects and their properties. This API is supported in the following national cloud deployments.
 func (m *ManagedTenantsCloudPcConnectionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsCloudPcConnectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

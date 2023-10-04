@@ -156,7 +156,7 @@ func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetMetadata gets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+// GetMetadata gets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values shouldn't be changed.
 func (m *SynchronizationTemplate) GetMetadata()([]SynchronizationMetadataEntryable) {
     val, err := m.GetBackingStore().Get("metadata")
     if err != nil {
@@ -269,7 +269,7 @@ func (m *SynchronizationTemplate) SetFactoryTag(value *string)() {
         panic(err)
     }
 }
-// SetMetadata sets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+// SetMetadata sets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values shouldn't be changed.
 func (m *SynchronizationTemplate) SetMetadata(value []SynchronizationMetadataEntryable)() {
     err := m.GetBackingStore().Set("metadata", value)
     if err != nil {

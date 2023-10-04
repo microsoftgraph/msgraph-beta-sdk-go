@@ -11,7 +11,7 @@ import (
 type ServicesItemEndpointsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ServicesItemEndpointsRequestBuilderGetQueryParameters retrieve a list of endpoints exposed by a print service.
+// ServicesItemEndpointsRequestBuilderGetQueryParameters retrieve a list of endpoints exposed by a print service. This API is supported in the following national cloud deployments.
 type ServicesItemEndpointsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewServicesItemEndpointsRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *ServicesItemEndpointsRequestBuilder) Count()(*ServicesItemEndpointsCountRequestBuilder) {
     return NewServicesItemEndpointsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of endpoints exposed by a print service.
+// Get retrieve a list of endpoints exposed by a print service. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/printservice-list-endpoints?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *ServicesItemEndpointsRequestBuilder) Post(ctx context.Context, body ie2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintServiceEndpointable), nil
 }
-// ToGetRequestInformation retrieve a list of endpoints exposed by a print service.
+// ToGetRequestInformation retrieve a list of endpoints exposed by a print service. This API is supported in the following national cloud deployments.
 func (m *ServicesItemEndpointsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ServicesItemEndpointsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

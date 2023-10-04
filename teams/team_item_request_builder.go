@@ -18,7 +18,7 @@ type TeamItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamItemRequestBuilderGetQueryParameters retrieve the properties and relationships of the specified team.
+// TeamItemRequestBuilderGetQueryParameters retrieve the properties and relationships of the specified team. This API is supported in the following national cloud deployments.
 type TeamItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -90,7 +90,7 @@ func (m *TeamItemRequestBuilder) Delete(ctx context.Context, requestConfiguratio
     }
     return nil
 }
-// Get retrieve the properties and relationships of the specified team.
+// Get retrieve the properties and relationships of the specified team. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/team-get?view=graph-rest-1.0
@@ -136,7 +136,7 @@ func (m *TeamItemRequestBuilder) Operations()(*ItemOperationsRequestBuilder) {
 func (m *TeamItemRequestBuilder) Owners()(*ItemOwnersRequestBuilder) {
     return NewItemOwnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of the specified team.
+// Patch update the properties of the specified team. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/team-update?view=graph-rest-1.0
@@ -202,7 +202,7 @@ func (m *TeamItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context,
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of the specified team.
+// ToGetRequestInformation retrieve the properties and relationships of the specified team. This API is supported in the following national cloud deployments.
 func (m *TeamItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -218,7 +218,7 @@ func (m *TeamItemRequestBuilder) ToGetRequestInformation(ctx context.Context, re
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of the specified team.
+// ToPatchRequestInformation update the properties of the specified team. This API is supported in the following national cloud deployments.
 func (m *TeamItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable, requestConfiguration *TeamItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

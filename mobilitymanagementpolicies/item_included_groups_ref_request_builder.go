@@ -11,7 +11,7 @@ import (
 type ItemIncludedGroupsRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemIncludedGroupsRefRequestBuilderGetQueryParameters get the list of groups that are included in a mobile app management policy.
+// ItemIncludedGroupsRefRequestBuilderGetQueryParameters get the list of groups that are included in a mobile app management policy. This API is supported in the following national cloud deployments.
 type ItemIncludedGroupsRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,7 +55,7 @@ func NewItemIncludedGroupsRefRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewItemIncludedGroupsRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get the list of groups that are included in a mobile app management policy.
+// Get get the list of groups that are included in a mobile app management policy. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-list-includedgroups?view=graph-rest-1.0
@@ -77,7 +77,7 @@ func (m *ItemIncludedGroupsRefRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable), nil
 }
-// Post add groups to be included in a mobile app management policy.
+// Post add groups to be included in a mobile app management policy. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-post-includedgroups?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemIncludedGroupsRefRequestBuilder) Post(ctx context.Context, body ie2
     }
     return nil
 }
-// ToGetRequestInformation get the list of groups that are included in a mobile app management policy.
+// ToGetRequestInformation get the list of groups that are included in a mobile app management policy. This API is supported in the following national cloud deployments.
 func (m *ItemIncludedGroupsRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemIncludedGroupsRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -112,7 +112,7 @@ func (m *ItemIncludedGroupsRefRequestBuilder) ToGetRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation add groups to be included in a mobile app management policy.
+// ToPostRequestInformation add groups to be included in a mobile app management policy. This API is supported in the following national cloud deployments.
 func (m *ItemIncludedGroupsRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *ItemIncludedGroupsRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

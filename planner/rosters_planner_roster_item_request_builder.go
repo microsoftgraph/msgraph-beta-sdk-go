@@ -18,7 +18,7 @@ type RostersPlannerRosterItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RostersPlannerRosterItemRequestBuilderGetQueryParameters read the properties and relationships of a plannerRoster object.
+// RostersPlannerRosterItemRequestBuilderGetQueryParameters read the properties and relationships of a plannerRoster object. This API is supported in the following national cloud deployments.
 type RostersPlannerRosterItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewRostersPlannerRosterItemRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewRostersPlannerRosterItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a plannerRoster object.
+// Delete delete a plannerRoster object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannerroster-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *RostersPlannerRosterItemRequestBuilder) Delete(ctx context.Context, req
     }
     return nil
 }
-// Get read the properties and relationships of a plannerRoster object.
+// Get read the properties and relationships of a plannerRoster object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannerroster-get?view=graph-rest-1.0
@@ -122,7 +122,7 @@ func (m *RostersPlannerRosterItemRequestBuilder) Patch(ctx context.Context, body
 func (m *RostersPlannerRosterItemRequestBuilder) Plans()(*RostersItemPlansRequestBuilder) {
     return NewRostersItemPlansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a plannerRoster object.
+// ToDeleteRequestInformation delete a plannerRoster object. This API is supported in the following national cloud deployments.
 func (m *RostersPlannerRosterItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *RostersPlannerRosterItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *RostersPlannerRosterItemRequestBuilder) ToDeleteRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a plannerRoster object.
+// ToGetRequestInformation read the properties and relationships of a plannerRoster object. This API is supported in the following national cloud deployments.
 func (m *RostersPlannerRosterItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RostersPlannerRosterItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

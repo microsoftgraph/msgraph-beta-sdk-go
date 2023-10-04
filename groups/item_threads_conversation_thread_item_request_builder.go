@@ -18,7 +18,7 @@ type ItemThreadsConversationThreadItemRequestBuilderDeleteRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemThreadsConversationThreadItemRequestBuilderGetQueryParameters get a thread object.
+// ItemThreadsConversationThreadItemRequestBuilderGetQueryParameters get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation.  This API is supported in the following national cloud deployments.
 type ItemThreadsConversationThreadItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -52,10 +52,10 @@ func NewItemThreadsConversationThreadItemRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewItemThreadsConversationThreadItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete conversationThread.
+// Delete delete a thread object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-delete-thread?view=graph-rest-1.0
 func (m *ItemThreadsConversationThreadItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemThreadsConversationThreadItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -71,10 +71,10 @@ func (m *ItemThreadsConversationThreadItemRequestBuilder) Delete(ctx context.Con
     }
     return nil
 }
-// Get get a thread object.
+// Get get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation.  This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/group-get-thread?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversationthread-get?view=graph-rest-1.0
 func (m *ItemThreadsConversationThreadItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemThreadsConversationThreadItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +93,7 @@ func (m *ItemThreadsConversationThreadItemRequestBuilder) Get(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadable), nil
 }
-// Patch update a thread object.
+// Patch update a thread object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/group-update-thread?view=graph-rest-1.0
@@ -123,7 +123,7 @@ func (m *ItemThreadsConversationThreadItemRequestBuilder) Posts()(*ItemThreadsIt
 func (m *ItemThreadsConversationThreadItemRequestBuilder) Reply()(*ItemThreadsItemReplyRequestBuilder) {
     return NewItemThreadsItemReplyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete conversationThread.
+// ToDeleteRequestInformation delete a thread object. This API is supported in the following national cloud deployments.
 func (m *ItemThreadsConversationThreadItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemThreadsConversationThreadItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -135,7 +135,7 @@ func (m *ItemThreadsConversationThreadItemRequestBuilder) ToDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get a thread object.
+// ToGetRequestInformation get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation.  This API is supported in the following national cloud deployments.
 func (m *ItemThreadsConversationThreadItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemThreadsConversationThreadItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -151,7 +151,7 @@ func (m *ItemThreadsConversationThreadItemRequestBuilder) ToGetRequestInformatio
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update a thread object.
+// ToPatchRequestInformation update a thread object. This API is supported in the following national cloud deployments.
 func (m *ItemThreadsConversationThreadItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadable, requestConfiguration *ItemThreadsConversationThreadItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

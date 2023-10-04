@@ -18,7 +18,7 @@ type ConnectionsExternalConnectionItemRequestBuilderDeleteRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectionsExternalConnectionItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an externalConnection.
+// ConnectionsExternalConnectionItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an externalConnection. This API is supported in the following national cloud deployments.
 type ConnectionsExternalConnectionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewConnectionsExternalConnectionItemRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewConnectionsExternalConnectionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an externalConnection.
+// Delete delete an externalConnection. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ConnectionsExternalConnectionItemRequestBuilder) Delete(ctx context.Con
     }
     return nil
 }
-// Get retrieve the properties and relationships of an externalConnection.
+// Get retrieve the properties and relationships of an externalConnection. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-get?view=graph-rest-1.0
@@ -107,7 +107,7 @@ func (m *ConnectionsExternalConnectionItemRequestBuilder) Items()(*ConnectionsIt
 func (m *ConnectionsExternalConnectionItemRequestBuilder) Operations()(*ConnectionsItemOperationsRequestBuilder) {
     return NewConnectionsItemOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of an externalConnection.
+// Patch update the properties of an externalConnection. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-update?view=graph-rest-1.0
@@ -137,7 +137,7 @@ func (m *ConnectionsExternalConnectionItemRequestBuilder) Quota()(*ConnectionsIt
 func (m *ConnectionsExternalConnectionItemRequestBuilder) Schema()(*ConnectionsItemSchemaRequestBuilder) {
     return NewConnectionsItemSchemaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete an externalConnection.
+// ToDeleteRequestInformation delete an externalConnection. This API is supported in the following national cloud deployments.
 func (m *ConnectionsExternalConnectionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConnectionsExternalConnectionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -149,7 +149,7 @@ func (m *ConnectionsExternalConnectionItemRequestBuilder) ToDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of an externalConnection.
+// ToGetRequestInformation retrieve the properties and relationships of an externalConnection. This API is supported in the following national cloud deployments.
 func (m *ConnectionsExternalConnectionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectionsExternalConnectionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -165,7 +165,7 @@ func (m *ConnectionsExternalConnectionItemRequestBuilder) ToGetRequestInformatio
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an externalConnection.
+// ToPatchRequestInformation update the properties of an externalConnection. This API is supported in the following national cloud deployments.
 func (m *ConnectionsExternalConnectionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalConnectionable, requestConfiguration *ConnectionsExternalConnectionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

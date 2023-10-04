@@ -11,7 +11,7 @@ import (
 type ClassesItemAssignmentsItemCategoriesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ClassesItemAssignmentsItemCategoriesRequestBuilderGetQueryParameters list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+// ClassesItemAssignmentsItemCategoriesRequestBuilderGetQueryParameters list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
 type ClassesItemAssignmentsItemCategoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) Count()(*ClassesIte
 func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) Delta()(*ClassesItemAssignmentsItemCategoriesDeltaRequestBuilder) {
     return NewClassesItemAssignmentsItemCategoriesDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+// Get list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
@@ -123,7 +123,7 @@ func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) Post(ctx context.Co
 func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) Ref()(*ClassesItemAssignmentsItemCategoriesRefRequestBuilder) {
     return NewClassesItemAssignmentsItemCategoriesRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+// ToGetRequestInformation list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
 func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentsItemCategoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

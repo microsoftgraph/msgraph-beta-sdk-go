@@ -43,7 +43,7 @@ func (m *Drive) GetBundles()([]DriveItemable) {
     }
     return nil
 }
-// GetDriveType gets the driveType property value. Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
+// GetDriveType gets the driveType property value. Describes the type of drive represented by this resource. OneDrive personal drives return personal. OneDrive for Business returns business. SharePoint document libraries return documentLibrary. Read-only.
 func (m *Drive) GetDriveType()(*string) {
     val, err := m.GetBackingStore().Get("driveType")
     if err != nil {
@@ -432,7 +432,7 @@ func (m *Drive) SetBundles(value []DriveItemable)() {
         panic(err)
     }
 }
-// SetDriveType sets the driveType property value. Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
+// SetDriveType sets the driveType property value. Describes the type of drive represented by this resource. OneDrive personal drives return personal. OneDrive for Business returns business. SharePoint document libraries return documentLibrary. Read-only.
 func (m *Drive) SetDriveType(value *string)() {
     err := m.GetBackingStore().Set("driveType", value)
     if err != nil {

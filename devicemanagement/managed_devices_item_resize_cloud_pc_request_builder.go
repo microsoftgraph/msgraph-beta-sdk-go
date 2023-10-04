@@ -30,7 +30,7 @@ func NewManagedDevicesItemResizeCloudPcRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDevicesItemResizeCloudPcRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
+// Post upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size. This API is supported in the following national cloud deployments.
 // Deprecated: The resizeCloudPc API is deprecated and will stop returning on Oct 30, 2023. Please use resize instead as of 2023-05/resizeCloudPc on 2023-07-24 and will be removed 2023-10-30
 // [Find more info here]
 // 
@@ -50,7 +50,7 @@ func (m *ManagedDevicesItemResizeCloudPcRequestBuilder) Post(ctx context.Context
     }
     return nil
 }
-// ToPostRequestInformation upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
+// ToPostRequestInformation upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size. This API is supported in the following national cloud deployments.
 // Deprecated: The resizeCloudPc API is deprecated and will stop returning on Oct 30, 2023. Please use resize instead as of 2023-05/resizeCloudPc on 2023-07-24 and will be removed 2023-10-30
 func (m *ManagedDevicesItemResizeCloudPcRequestBuilder) ToPostRequestInformation(ctx context.Context, body ManagedDevicesItemResizeCloudPcPostRequestBodyable, requestConfiguration *ManagedDevicesItemResizeCloudPcRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

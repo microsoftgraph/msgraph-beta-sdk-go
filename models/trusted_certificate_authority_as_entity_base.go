@@ -60,7 +60,7 @@ func (m *TrustedCertificateAuthorityAsEntityBase) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetTrustedCertificateAuthorities gets the trustedCertificateAuthorities property value. Collection of trusted certificate authorities.
+// GetTrustedCertificateAuthorities gets the trustedCertificateAuthorities property value. The trustedCertificateAuthorities property
 func (m *TrustedCertificateAuthorityAsEntityBase) GetTrustedCertificateAuthorities()([]CertificateAuthorityAsEntityable) {
     val, err := m.GetBackingStore().Get("trustedCertificateAuthorities")
     if err != nil {
@@ -91,7 +91,7 @@ func (m *TrustedCertificateAuthorityAsEntityBase) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetTrustedCertificateAuthorities sets the trustedCertificateAuthorities property value. Collection of trusted certificate authorities.
+// SetTrustedCertificateAuthorities sets the trustedCertificateAuthorities property value. The trustedCertificateAuthorities property
 func (m *TrustedCertificateAuthorityAsEntityBase) SetTrustedCertificateAuthorities(value []CertificateAuthorityAsEntityable)() {
     err := m.GetBackingStore().Set("trustedCertificateAuthorities", value)
     if err != nil {

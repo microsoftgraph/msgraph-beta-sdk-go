@@ -18,7 +18,7 @@ type ItemProfilePhonesItemPhoneItemRequestBuilderDeleteRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfilePhonesItemPhoneItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an itemPhone object in a user's profile.
+// ItemProfilePhonesItemPhoneItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an itemPhone object in a user's profile. This API is supported in the following national cloud deployments.
 type ItemProfilePhonesItemPhoneItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemProfilePhonesItemPhoneItemRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfilePhonesItemPhoneItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an itemPhone object from the user's profile.
+// Delete delete an itemPhone object from the user's profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/itemphone-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemProfilePhonesItemPhoneItemRequestBuilder) Delete(ctx context.Contex
     }
     return nil
 }
-// Get retrieve the properties and relationships of an itemPhone object in a user's profile.
+// Get retrieve the properties and relationships of an itemPhone object in a user's profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/itemphone-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ItemProfilePhonesItemPhoneItemRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPhoneable), nil
 }
-// Patch update the properties of an itemPhone object in a user's profile.
+// Patch update the properties of an itemPhone object in a user's profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/itemphone-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *ItemProfilePhonesItemPhoneItemRequestBuilder) Patch(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPhoneable), nil
 }
-// ToDeleteRequestInformation delete an itemPhone object from the user's profile.
+// ToDeleteRequestInformation delete an itemPhone object from the user's profile. This API is supported in the following national cloud deployments.
 func (m *ItemProfilePhonesItemPhoneItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePhonesItemPhoneItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *ItemProfilePhonesItemPhoneItemRequestBuilder) ToDeleteRequestInformatio
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of an itemPhone object in a user's profile.
+// ToGetRequestInformation retrieve the properties and relationships of an itemPhone object in a user's profile. This API is supported in the following national cloud deployments.
 func (m *ItemProfilePhonesItemPhoneItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePhonesItemPhoneItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *ItemProfilePhonesItemPhoneItemRequestBuilder) ToGetRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an itemPhone object in a user's profile.
+// ToPatchRequestInformation update the properties of an itemPhone object in a user's profile. This API is supported in the following national cloud deployments.
 func (m *ItemProfilePhonesItemPhoneItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPhoneable, requestConfiguration *ItemProfilePhonesItemPhoneItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

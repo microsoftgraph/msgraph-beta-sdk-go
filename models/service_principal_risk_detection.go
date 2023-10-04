@@ -216,6 +216,16 @@ func (m *ServicePrincipalRiskDetection) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["mitreTechniqueId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMitreTechniqueId(val)
+        }
+        return nil
+    }
     res["requestId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -349,6 +359,17 @@ func (m *ServicePrincipalRiskDetection) GetLocation()(SignInLocationable) {
     }
     if val != nil {
         return val.(SignInLocationable)
+    }
+    return nil
+}
+// GetMitreTechniqueId gets the mitreTechniqueId property value. The mitreTechniqueId property
+func (m *ServicePrincipalRiskDetection) GetMitreTechniqueId()(*string) {
+    val, err := m.GetBackingStore().Get("mitreTechniqueId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -526,6 +547,12 @@ func (m *ServicePrincipalRiskDetection) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
+        err = writer.WriteStringValue("mitreTechniqueId", m.GetMitreTechniqueId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("requestId", m.GetRequestId())
         if err != nil {
             return err
@@ -662,6 +689,13 @@ func (m *ServicePrincipalRiskDetection) SetLocation(value SignInLocationable)() 
         panic(err)
     }
 }
+// SetMitreTechniqueId sets the mitreTechniqueId property value. The mitreTechniqueId property
+func (m *ServicePrincipalRiskDetection) SetMitreTechniqueId(value *string)() {
+    err := m.GetBackingStore().Set("mitreTechniqueId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRequestId sets the requestId property value. Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity. Supports $filter (eq).
 func (m *ServicePrincipalRiskDetection) SetRequestId(value *string)() {
     err := m.GetBackingStore().Set("requestId", value)
@@ -740,6 +774,7 @@ type ServicePrincipalRiskDetectionable interface {
     GetKeyIds()([]string)
     GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLocation()(SignInLocationable)
+    GetMitreTechniqueId()(*string)
     GetRequestId()(*string)
     GetRiskDetail()(*RiskDetail)
     GetRiskEventType()(*string)
@@ -760,6 +795,7 @@ type ServicePrincipalRiskDetectionable interface {
     SetKeyIds(value []string)()
     SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLocation(value SignInLocationable)()
+    SetMitreTechniqueId(value *string)()
     SetRequestId(value *string)()
     SetRiskDetail(value *RiskDetail)()
     SetRiskEventType(value *string)()

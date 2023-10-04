@@ -18,7 +18,7 @@ type ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilderGetQueryParameters read the properties and relationships of a tenantDetailedInformation object.
+// ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilderGetQueryParameters read the properties and relationships of a tenantDetailedInformation object. This API is supported in the following national cloud deployments.
 type ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRe
     }
     return nil
 }
-// Get read the properties and relationships of a tenantDetailedInformation object.
+// Get read the properties and relationships of a tenantDetailedInformation object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-tenantdetailedinformation-get?view=graph-rest-1.0
@@ -123,7 +123,7 @@ func (m *ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a tenantDetailedInformation object.
+// ToGetRequestInformation read the properties and relationships of a tenantDetailedInformation object. This API is supported in the following national cloud deployments.
 func (m *ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

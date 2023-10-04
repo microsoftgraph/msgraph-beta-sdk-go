@@ -34,7 +34,7 @@ func (m *RegistrationEnforcement) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAuthenticationMethodsRegistrationCampaign gets the authenticationMethodsRegistrationCampaign property value. Run campaigns to remind users to setup targeted authentication methods.
+// GetAuthenticationMethodsRegistrationCampaign gets the authenticationMethodsRegistrationCampaign property value. Run campaigns to remind users to set up targeted authentication methods.
 func (m *RegistrationEnforcement) GetAuthenticationMethodsRegistrationCampaign()(AuthenticationMethodsRegistrationCampaignable) {
     val, err := m.GetBackingStore().Get("authenticationMethodsRegistrationCampaign")
     if err != nil {
@@ -114,7 +114,7 @@ func (m *RegistrationEnforcement) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAuthenticationMethodsRegistrationCampaign sets the authenticationMethodsRegistrationCampaign property value. Run campaigns to remind users to setup targeted authentication methods.
+// SetAuthenticationMethodsRegistrationCampaign sets the authenticationMethodsRegistrationCampaign property value. Run campaigns to remind users to set up targeted authentication methods.
 func (m *RegistrationEnforcement) SetAuthenticationMethodsRegistrationCampaign(value AuthenticationMethodsRegistrationCampaignable)() {
     err := m.GetBackingStore().Set("authenticationMethodsRegistrationCampaign", value)
     if err != nil {

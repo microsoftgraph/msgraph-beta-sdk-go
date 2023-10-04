@@ -50,6 +50,7 @@ func NewUsersItemAssignmentsItemCategoriesDeltaRequestBuilder(rawUrl string, req
     return NewUsersItemAssignmentsItemCategoriesDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function delta
+// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 func (m *UsersItemAssignmentsItemCategoriesDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemCategoriesDeltaRequestBuilderGetRequestConfiguration)(UsersItemAssignmentsItemCategoriesDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -67,6 +68,25 @@ func (m *UsersItemAssignmentsItemCategoriesDeltaRequestBuilder) Get(ctx context.
         return nil, nil
     }
     return res.(UsersItemAssignmentsItemCategoriesDeltaResponseable), nil
+}
+// GetAsDeltaGetResponse invoke function delta
+func (m *UsersItemAssignmentsItemCategoriesDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemCategoriesDeltaRequestBuilderGetRequestConfiguration)(UsersItemAssignmentsItemCategoriesDeltaGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateUsersItemAssignmentsItemCategoriesDeltaGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(UsersItemAssignmentsItemCategoriesDeltaGetResponseable), nil
 }
 // ToGetRequestInformation invoke function delta
 func (m *UsersItemAssignmentsItemCategoriesDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemCategoriesDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

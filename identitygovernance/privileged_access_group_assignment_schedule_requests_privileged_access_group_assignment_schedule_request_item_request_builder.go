@@ -18,7 +18,7 @@ type PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignm
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilderGetQueryParameters read the properties and relationships of a privilegedAccessGroupAssignmentScheduleRequest object.
+// PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilderGetQueryParameters read the properties and relationships of a privilegedAccessGroupAssignmentScheduleRequest object. This API is supported in the following national cloud deployments.
 type PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -78,7 +78,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAss
     }
     return nil
 }
-// Get read the properties and relationships of a privilegedAccessGroupAssignmentScheduleRequest object.
+// Get read the properties and relationships of a privilegedAccessGroupAssignmentScheduleRequest object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentschedulerequest-get?view=graph-rest-1.0
@@ -143,7 +143,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAss
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a privilegedAccessGroupAssignmentScheduleRequest object.
+// ToGetRequestInformation read the properties and relationships of a privilegedAccessGroupAssignmentScheduleRequest object. This API is supported in the following national cloud deployments.
 func (m *PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentScheduleRequestsPrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -54,6 +54,7 @@ func NewGetOffice365GroupsActivityDetailWithDateRequestBuilder(rawUrl string, re
     return NewGetOffice365GroupsActivityDetailWithDateRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getOffice365GroupsActivityDetail
+// Deprecated: This method is obsolete. Use GetAsGetOffice365GroupsActivityDetailWithDateGetResponse instead.
 func (m *GetOffice365GroupsActivityDetailWithDateRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOffice365GroupsActivityDetailWithDateRequestBuilderGetRequestConfiguration)(GetOffice365GroupsActivityDetailWithDateResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -71,6 +72,25 @@ func (m *GetOffice365GroupsActivityDetailWithDateRequestBuilder) Get(ctx context
         return nil, nil
     }
     return res.(GetOffice365GroupsActivityDetailWithDateResponseable), nil
+}
+// GetAsGetOffice365GroupsActivityDetailWithDateGetResponse invoke function getOffice365GroupsActivityDetail
+func (m *GetOffice365GroupsActivityDetailWithDateRequestBuilder) GetAsGetOffice365GroupsActivityDetailWithDateGetResponse(ctx context.Context, requestConfiguration *GetOffice365GroupsActivityDetailWithDateRequestBuilderGetRequestConfiguration)(GetOffice365GroupsActivityDetailWithDateGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetOffice365GroupsActivityDetailWithDateGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(GetOffice365GroupsActivityDetailWithDateGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getOffice365GroupsActivityDetail
 func (m *GetOffice365GroupsActivityDetailWithDateRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetOffice365GroupsActivityDetailWithDateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

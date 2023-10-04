@@ -18,7 +18,7 @@ type ApplicationsWithUniqueNameRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ApplicationsWithUniqueNameRequestBuilderGetQueryParameters get the properties and relationships of an application object.
+// ApplicationsWithUniqueNameRequestBuilderGetQueryParameters get the properties and relationships of an application object. This API is supported in the following national cloud deployments.
 type ApplicationsWithUniqueNameRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,7 +57,7 @@ func NewApplicationsWithUniqueNameRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewApplicationsWithUniqueNameRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Delete deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.
+// Delete deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/application-delete?view=graph-rest-1.0
@@ -76,7 +76,7 @@ func (m *ApplicationsWithUniqueNameRequestBuilder) Delete(ctx context.Context, r
     }
     return nil
 }
-// Get get the properties and relationships of an application object.
+// Get get the properties and relationships of an application object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/application-get?view=graph-rest-1.0
@@ -98,7 +98,7 @@ func (m *ApplicationsWithUniqueNameRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable), nil
 }
-// Patch update the properties of an application object.
+// Patch update the properties of an application object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/application-update?view=graph-rest-1.0
@@ -120,7 +120,7 @@ func (m *ApplicationsWithUniqueNameRequestBuilder) Patch(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable), nil
 }
-// ToDeleteRequestInformation deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.
+// ToDeleteRequestInformation deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API is supported in the following national cloud deployments.
 func (m *ApplicationsWithUniqueNameRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ApplicationsWithUniqueNameRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -132,7 +132,7 @@ func (m *ApplicationsWithUniqueNameRequestBuilder) ToDeleteRequestInformation(ct
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of an application object.
+// ToGetRequestInformation get the properties and relationships of an application object. This API is supported in the following national cloud deployments.
 func (m *ApplicationsWithUniqueNameRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ApplicationsWithUniqueNameRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -148,7 +148,7 @@ func (m *ApplicationsWithUniqueNameRequestBuilder) ToGetRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an application object.
+// ToPatchRequestInformation update the properties of an application object. This API is supported in the following national cloud deployments.
 func (m *ApplicationsWithUniqueNameRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable, requestConfiguration *ApplicationsWithUniqueNameRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

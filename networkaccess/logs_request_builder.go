@@ -18,7 +18,7 @@ type LogsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LogsRequestBuilderGetQueryParameters represnts network connections that are routed through Global Secure Access.
+// LogsRequestBuilderGetQueryParameters represents network connections that are routed through Global Secure Access.
 type LogsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *LogsRequestBuilder) Delete(ctx context.Context, requestConfiguration *L
     }
     return nil
 }
-// Get represnts network connections that are routed through Global Secure Access.
+// Get represents network connections that are routed through Global Secure Access.
 func (m *LogsRequestBuilder) Get(ctx context.Context, requestConfiguration *LogsRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.Logsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +120,7 @@ func (m *LogsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, req
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation represnts network connections that are routed through Global Secure Access.
+// ToGetRequestInformation represents network connections that are routed through Global Secure Access.
 func (m *LogsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LogsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

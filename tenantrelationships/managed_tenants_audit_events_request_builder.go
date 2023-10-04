@@ -11,7 +11,7 @@ import (
 type ManagedTenantsAuditEventsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedTenantsAuditEventsRequestBuilderGetQueryParameters read the properties and relationships of an auditEvent object.
+// ManagedTenantsAuditEventsRequestBuilderGetQueryParameters get a list of the auditEvent objects and their properties. This API is supported in the following national cloud deployments.
 type ManagedTenantsAuditEventsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewManagedTenantsAuditEventsRequestBuilder(rawUrl string, requestAdapter i2
 func (m *ManagedTenantsAuditEventsRequestBuilder) Count()(*ManagedTenantsAuditEventsCountRequestBuilder) {
     return NewManagedTenantsAuditEventsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of an auditEvent object.
+// Get get a list of the auditEvent objects and their properties. This API is supported in the following national cloud deployments.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-auditevents?view=graph-rest-1.0
 func (m *ManagedTenantsAuditEventsRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsAuditEventsRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AuditEventCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *ManagedTenantsAuditEventsRequestBuilder) Post(ctx context.Context, body
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AuditEventable), nil
 }
-// ToGetRequestInformation read the properties and relationships of an auditEvent object.
+// ToGetRequestInformation get a list of the auditEvent objects and their properties. This API is supported in the following national cloud deployments.
 func (m *ManagedTenantsAuditEventsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsAuditEventsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

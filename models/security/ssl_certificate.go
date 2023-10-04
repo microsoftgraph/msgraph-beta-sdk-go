@@ -22,7 +22,7 @@ func NewSslCertificate()(*SslCertificate) {
 func CreateSslCertificateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSslCertificate(), nil
 }
-// GetExpirationDateTime gets the expirationDateTime property value. The date and time when a certificate expires. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetExpirationDateTime gets the expirationDateTime property value. The date and time when a certificate expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SslCertificate) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -155,7 +155,7 @@ func (m *SslCertificate) GetFingerprint()(*string) {
     }
     return nil
 }
-// GetFirstSeenDateTime gets the firstSeenDateTime property value. The first date and time that this sslCertificate was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetFirstSeenDateTime gets the firstSeenDateTime property value. The first date and time when this sslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SslCertificate) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstSeenDateTime")
     if err != nil {
@@ -166,7 +166,7 @@ func (m *SslCertificate) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97
     }
     return nil
 }
-// GetIssueDateTime gets the issueDateTime property value. The date and time when a certificate was issued. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetIssueDateTime gets the issueDateTime property value. The date and time when a certificate was issued. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SslCertificate) GetIssueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("issueDateTime")
     if err != nil {
@@ -177,7 +177,7 @@ func (m *SslCertificate) GetIssueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     }
     return nil
 }
-// GetIssuer gets the issuer property value. The entity granting this certificate.
+// GetIssuer gets the issuer property value. The entity that grants this certificate.
 func (m *SslCertificate) GetIssuer()(SslCertificateEntityable) {
     val, err := m.GetBackingStore().Get("issuer")
     if err != nil {
@@ -188,7 +188,7 @@ func (m *SslCertificate) GetIssuer()(SslCertificateEntityable) {
     }
     return nil
 }
-// GetLastSeenDateTime gets the lastSeenDateTime property value. The most recent date and time that this sslCertificate was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetLastSeenDateTime gets the lastSeenDateTime property value. The most recent date and time when this sslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SslCertificate) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSeenDateTime")
     if err != nil {
@@ -317,7 +317,7 @@ func (m *SslCertificate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetExpirationDateTime sets the expirationDateTime property value. The date and time when a certificate expires. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// SetExpirationDateTime sets the expirationDateTime property value. The date and time when a certificate expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SslCertificate) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expirationDateTime", value)
     if err != nil {
@@ -331,28 +331,28 @@ func (m *SslCertificate) SetFingerprint(value *string)() {
         panic(err)
     }
 }
-// SetFirstSeenDateTime sets the firstSeenDateTime property value. The first date and time that this sslCertificate was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// SetFirstSeenDateTime sets the firstSeenDateTime property value. The first date and time when this sslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SslCertificate) SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("firstSeenDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIssueDateTime sets the issueDateTime property value. The date and time when a certificate was issued. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// SetIssueDateTime sets the issueDateTime property value. The date and time when a certificate was issued. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SslCertificate) SetIssueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("issueDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIssuer sets the issuer property value. The entity granting this certificate.
+// SetIssuer sets the issuer property value. The entity that grants this certificate.
 func (m *SslCertificate) SetIssuer(value SslCertificateEntityable)() {
     err := m.GetBackingStore().Set("issuer", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastSeenDateTime sets the lastSeenDateTime property value. The most recent date and time that this sslCertificate was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// SetLastSeenDateTime sets the lastSeenDateTime property value. The most recent date and time when this sslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SslCertificate) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastSeenDateTime", value)
     if err != nil {

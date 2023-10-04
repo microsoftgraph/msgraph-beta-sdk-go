@@ -30,7 +30,7 @@ func (m *UnifiedRoleManagementAlertDefinition) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The friendly display name that renders in Privileged Identity Management (PIM) alerts in the Azure portal.
+// GetDisplayName gets the displayName property value. The friendly display name that renders in Privileged Identity Management (PIM) alerts in the Microsoft Entra admin center.
 func (m *UnifiedRoleManagementAlertDefinition) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -157,7 +157,7 @@ func (m *UnifiedRoleManagementAlertDefinition) GetHowToPrevent()(*string) {
     }
     return nil
 }
-// GetIsConfigurable gets the isConfigurable property value. true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization does not have Azure AD Premium P2' cannot be configured, because the criteria is restricted.
+// GetIsConfigurable gets the isConfigurable property value. true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization doesn't have Azure AD Premium P2' can't be configured, because the criteria are restricted.
 func (m *UnifiedRoleManagementAlertDefinition) GetIsConfigurable()(*bool) {
     val, err := m.GetBackingStore().Get("isConfigurable")
     if err != nil {
@@ -310,7 +310,7 @@ func (m *UnifiedRoleManagementAlertDefinition) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The friendly display name that renders in Privileged Identity Management (PIM) alerts in the Azure portal.
+// SetDisplayName sets the displayName property value. The friendly display name that renders in Privileged Identity Management (PIM) alerts in the Microsoft Entra admin center.
 func (m *UnifiedRoleManagementAlertDefinition) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -324,7 +324,7 @@ func (m *UnifiedRoleManagementAlertDefinition) SetHowToPrevent(value *string)() 
         panic(err)
     }
 }
-// SetIsConfigurable sets the isConfigurable property value. true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization does not have Azure AD Premium P2' cannot be configured, because the criteria is restricted.
+// SetIsConfigurable sets the isConfigurable property value. true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization doesn't have Azure AD Premium P2' can't be configured, because the criteria are restricted.
 func (m *UnifiedRoleManagementAlertDefinition) SetIsConfigurable(value *bool)() {
     err := m.GetBackingStore().Set("isConfigurable", value)
     if err != nil {

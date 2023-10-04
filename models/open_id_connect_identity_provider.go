@@ -183,7 +183,7 @@ func (m *OpenIdConnectIdentityProvider) GetResponseType()(*OpenIdConnectResponse
     }
     return nil
 }
-// GetScope gets the scope property value. Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended, separated by a space. For more details about the scope limitations see RFC6749 Section 3.3. Required.
+// GetScope gets the scope property value. Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended, separated by a space. For more details about the scope limitations, see RFC6749 Section 3.3. Required.
 func (m *OpenIdConnectIdentityProvider) GetScope()(*string) {
     val, err := m.GetBackingStore().Get("scope")
     if err != nil {
@@ -301,7 +301,7 @@ func (m *OpenIdConnectIdentityProvider) SetResponseType(value *OpenIdConnectResp
         panic(err)
     }
 }
-// SetScope sets the scope property value. Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended, separated by a space. For more details about the scope limitations see RFC6749 Section 3.3. Required.
+// SetScope sets the scope property value. Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended, separated by a space. For more details about the scope limitations, see RFC6749 Section 3.3. Required.
 func (m *OpenIdConnectIdentityProvider) SetScope(value *string)() {
     err := m.GetBackingStore().Set("scope", value)
     if err != nil {

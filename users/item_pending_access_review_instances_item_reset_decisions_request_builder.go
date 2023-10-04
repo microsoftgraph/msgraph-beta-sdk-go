@@ -30,7 +30,7 @@ func NewItemPendingAccessReviewInstancesItemResetDecisionsRequestBuilder(rawUrl 
     urlParams["request-raw-url"] = rawUrl
     return NewItemPendingAccessReviewInstancesItemResetDecisionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed.
+// Post resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewinstance-resetdecisions?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemPendingAccessReviewInstancesItemResetDecisionsRequestBuilder) Post(
     }
     return nil
 }
-// ToPostRequestInformation resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed.
+// ToPostRequestInformation resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed. This API is supported in the following national cloud deployments.
 func (m *ItemPendingAccessReviewInstancesItemResetDecisionsRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemPendingAccessReviewInstancesItemResetDecisionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

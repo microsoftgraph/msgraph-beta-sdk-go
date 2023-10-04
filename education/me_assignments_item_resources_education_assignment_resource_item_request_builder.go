@@ -18,7 +18,7 @@ type MeAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilderDele
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MeAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilderGetQueryParameters get the properties of an education assignment resource associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+// MeAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilderGetQueryParameters get the properties of an education assignment resource associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
 type MeAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewMeAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilder(
     urlParams["request-raw-url"] = rawUrl
     return NewMeAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a specific educationAssignmentResource attached to an assignment. Only teachers in the class can remove a resource. After an assignment has been published to students, teachers cannot remove resources that are marked as 'distributeToStudents'.
+// Delete delete a specific educationAssignmentResource attached to an assignment. Only teachers in the class can remove a resource. After an assignment has been published to students, teachers cannot remove resources that are marked as 'distributeToStudents'. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationassignmentresource-delete?view=graph-rest-1.0
@@ -77,7 +77,7 @@ func (m *MeAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilder
 func (m *MeAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilder) DependentResources()(*MeAssignmentsItemResourcesItemDependentResourcesRequestBuilder) {
     return NewMeAssignmentsItemResourcesItemDependentResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the properties of an education assignment resource associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+// Get get the properties of an education assignment resource associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationassignmentresource-get?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *MeAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilder
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentResourceable), nil
 }
-// ToDeleteRequestInformation delete a specific educationAssignmentResource attached to an assignment. Only teachers in the class can remove a resource. After an assignment has been published to students, teachers cannot remove resources that are marked as 'distributeToStudents'.
+// ToDeleteRequestInformation delete a specific educationAssignmentResource attached to an assignment. Only teachers in the class can remove a resource. After an assignment has been published to students, teachers cannot remove resources that are marked as 'distributeToStudents'. This API is supported in the following national cloud deployments.
 func (m *MeAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MeAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -130,7 +130,7 @@ func (m *MeAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilder
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties of an education assignment resource associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+// ToGetRequestInformation get the properties of an education assignment resource associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
 func (m *MeAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MeAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

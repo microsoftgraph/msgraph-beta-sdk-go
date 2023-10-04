@@ -50,7 +50,7 @@ func NewEntitlementManagementAccessPackageCatalogsSearchRequestBuilder(rawUrl st
     return NewEntitlementManagementAccessPackageCatalogsSearchRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function Search
-// Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
+// Deprecated: This method is obsolete. Use GetAsSearchGetResponse instead.
 func (m *EntitlementManagementAccessPackageCatalogsSearchRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsSearchRequestBuilderGetRequestConfiguration)(EntitlementManagementAccessPackageCatalogsSearchResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -68,6 +68,26 @@ func (m *EntitlementManagementAccessPackageCatalogsSearchRequestBuilder) Get(ctx
         return nil, nil
     }
     return res.(EntitlementManagementAccessPackageCatalogsSearchResponseable), nil
+}
+// GetAsSearchGetResponse invoke function Search
+// Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
+func (m *EntitlementManagementAccessPackageCatalogsSearchRequestBuilder) GetAsSearchGetResponse(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsSearchRequestBuilderGetRequestConfiguration)(EntitlementManagementAccessPackageCatalogsSearchGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateEntitlementManagementAccessPackageCatalogsSearchGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(EntitlementManagementAccessPackageCatalogsSearchGetResponseable), nil
 }
 // ToGetRequestInformation invoke function Search
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31

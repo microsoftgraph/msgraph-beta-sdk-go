@@ -18,7 +18,7 @@ type BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilderGetQueryParameters read the properties and relationships of a plannerPlanConfigurationLocalization object.
+// BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilderGetQueryParameters read the properties and relationships of a plannerPlanConfigurationLocalization object. This API is supported in the following national cloud deployments.
 type BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanCon
     urlParams["request-raw-url"] = rawUrl
     return NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a plannerPlanConfigurationLocalization object.
+// Delete delete a plannerPlanConfigurationLocalization object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannerplanconfiguration-delete-localizations?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanCo
     }
     return nil
 }
-// Get read the properties and relationships of a plannerPlanConfigurationLocalization object.
+// Get read the properties and relationships of a plannerPlanConfigurationLocalization object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannerplanconfigurationlocalization-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationLocalizationable), nil
 }
-// Patch update the properties of a plannerPlanConfigurationLocalization object.
+// Patch update the properties of a plannerPlanConfigurationLocalization object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannerplanconfigurationlocalization-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationLocalizationable), nil
 }
-// ToDeleteRequestInformation delete a plannerPlanConfigurationLocalization object.
+// ToDeleteRequestInformation delete a plannerPlanConfigurationLocalization object. This API is supported in the following national cloud deployments.
 func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanCo
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a plannerPlanConfigurationLocalization object.
+// ToGetRequestInformation read the properties and relationships of a plannerPlanConfigurationLocalization object. This API is supported in the following national cloud deployments.
 func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanCo
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a plannerPlanConfigurationLocalization object.
+// ToPatchRequestInformation update the properties of a plannerPlanConfigurationLocalization object. This API is supported in the following national cloud deployments.
 func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationLocalizationable, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -31,6 +31,7 @@ func NewTargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder(rawUrl str
     return NewTargetedManagedAppConfigurationsHasPayloadLinksRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action hasPayloadLinks
+// Deprecated: This method is obsolete. Use PostAsHasPayloadLinksPostResponse instead.
 func (m *TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder) Post(ctx context.Context, body TargetedManagedAppConfigurationsHasPayloadLinksPostRequestBodyable, requestConfiguration *TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilderPostRequestConfiguration)(TargetedManagedAppConfigurationsHasPayloadLinksResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -48,6 +49,25 @@ func (m *TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder) Post(ctx
         return nil, nil
     }
     return res.(TargetedManagedAppConfigurationsHasPayloadLinksResponseable), nil
+}
+// PostAsHasPayloadLinksPostResponse invoke action hasPayloadLinks
+func (m *TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder) PostAsHasPayloadLinksPostResponse(ctx context.Context, body TargetedManagedAppConfigurationsHasPayloadLinksPostRequestBodyable, requestConfiguration *TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilderPostRequestConfiguration)(TargetedManagedAppConfigurationsHasPayloadLinksPostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateTargetedManagedAppConfigurationsHasPayloadLinksPostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(TargetedManagedAppConfigurationsHasPayloadLinksPostResponseable), nil
 }
 // ToPostRequestInformation invoke action hasPayloadLinks
 func (m *TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder) ToPostRequestInformation(ctx context.Context, body TargetedManagedAppConfigurationsHasPayloadLinksPostRequestBodyable, requestConfiguration *TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

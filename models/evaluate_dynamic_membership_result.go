@@ -83,7 +83,7 @@ func (m *EvaluateDynamicMembershipResult) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetMembershipRule gets the membershipRule property value. If a group ID is provided, the value is the membership rule for the group. If a group ID is not provided, the value is the membership rule that was provided as a parameter. For more information, see Dynamic membership rules for groups in Azure Active Directory.
+// GetMembershipRule gets the membershipRule property value. If a group ID is provided, the value is the membership rule for the group. If a group ID isn't provided, the value is the membership rule that was provided as a parameter. For more information, see Dynamic membership rules for groups in Azure Active Directory.
 func (m *EvaluateDynamicMembershipResult) GetMembershipRule()(*string) {
     val, err := m.GetBackingStore().Get("membershipRule")
     if err != nil {
@@ -94,7 +94,7 @@ func (m *EvaluateDynamicMembershipResult) GetMembershipRule()(*string) {
     }
     return nil
 }
-// GetMembershipRuleEvaluationDetails gets the membershipRuleEvaluationDetails property value. Provides a detailed anaylsis of the membership evaluation result.
+// GetMembershipRuleEvaluationDetails gets the membershipRuleEvaluationDetails property value. Provides a detailed analysis of the membership evaluation result.
 func (m *EvaluateDynamicMembershipResult) GetMembershipRuleEvaluationDetails()(ExpressionEvaluationDetailsable) {
     val, err := m.GetBackingStore().Get("membershipRuleEvaluationDetails")
     if err != nil {
@@ -172,14 +172,14 @@ func (m *EvaluateDynamicMembershipResult) SetAdditionalData(value map[string]any
 func (m *EvaluateDynamicMembershipResult) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetMembershipRule sets the membershipRule property value. If a group ID is provided, the value is the membership rule for the group. If a group ID is not provided, the value is the membership rule that was provided as a parameter. For more information, see Dynamic membership rules for groups in Azure Active Directory.
+// SetMembershipRule sets the membershipRule property value. If a group ID is provided, the value is the membership rule for the group. If a group ID isn't provided, the value is the membership rule that was provided as a parameter. For more information, see Dynamic membership rules for groups in Azure Active Directory.
 func (m *EvaluateDynamicMembershipResult) SetMembershipRule(value *string)() {
     err := m.GetBackingStore().Set("membershipRule", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMembershipRuleEvaluationDetails sets the membershipRuleEvaluationDetails property value. Provides a detailed anaylsis of the membership evaluation result.
+// SetMembershipRuleEvaluationDetails sets the membershipRuleEvaluationDetails property value. Provides a detailed analysis of the membership evaluation result.
 func (m *EvaluateDynamicMembershipResult) SetMembershipRuleEvaluationDetails(value ExpressionEvaluationDetailsable)() {
     err := m.GetBackingStore().Set("membershipRuleEvaluationDetails", value)
     if err != nil {

@@ -56,6 +56,7 @@ func NewVirtualEndpointCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanI
     return NewVirtualEndpointCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
 // Get invoke function getProvisionedCloudPCs
+// Deprecated: This method is obsolete. Use GetAsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse instead.
 func (m *VirtualEndpointCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetRequestConfiguration)(VirtualEndpointCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,6 +74,25 @@ func (m *VirtualEndpointCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlan
         return nil, nil
     }
     return res.(VirtualEndpointCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponseable), nil
+}
+// GetAsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse invoke function getProvisionedCloudPCs
+func (m *VirtualEndpointCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder) GetAsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetRequestConfiguration)(VirtualEndpointCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateVirtualEndpointCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(VirtualEndpointCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getProvisionedCloudPCs
 func (m *VirtualEndpointCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -18,7 +18,7 @@ type UsersEducationUserItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// UsersEducationUserItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a user.
+// UsersEducationUserItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a user. This API is supported in the following national cloud deployments.
 type UsersEducationUserItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -62,7 +62,7 @@ func NewUsersEducationUserItemRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewUsersEducationUserItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a user.
+// Delete delete a user. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationuser-delete?view=graph-rest-1.0
@@ -81,7 +81,7 @@ func (m *UsersEducationUserItemRequestBuilder) Delete(ctx context.Context, reque
     }
     return nil
 }
-// Get retrieve the properties and relationships of a user.
+// Get retrieve the properties and relationships of a user. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationuser-get?view=graph-rest-1.0
@@ -103,7 +103,7 @@ func (m *UsersEducationUserItemRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationUserable), nil
 }
-// Patch update the relatedContact collection of an educationUser object.
+// Patch update the relatedContact collection of an educationUser object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/relatedcontact-update?view=graph-rest-1.0
@@ -137,7 +137,7 @@ func (m *UsersEducationUserItemRequestBuilder) Schools()(*UsersItemSchoolsReques
 func (m *UsersEducationUserItemRequestBuilder) TaughtClasses()(*UsersItemTaughtClassesRequestBuilder) {
     return NewUsersItemTaughtClassesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a user.
+// ToDeleteRequestInformation delete a user. This API is supported in the following national cloud deployments.
 func (m *UsersEducationUserItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *UsersEducationUserItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -149,7 +149,7 @@ func (m *UsersEducationUserItemRequestBuilder) ToDeleteRequestInformation(ctx co
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a user.
+// ToGetRequestInformation retrieve the properties and relationships of a user. This API is supported in the following national cloud deployments.
 func (m *UsersEducationUserItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UsersEducationUserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -165,7 +165,7 @@ func (m *UsersEducationUserItemRequestBuilder) ToGetRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the relatedContact collection of an educationUser object.
+// ToPatchRequestInformation update the relatedContact collection of an educationUser object. This API is supported in the following national cloud deployments.
 func (m *UsersEducationUserItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationUserable, requestConfiguration *UsersEducationUserItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOfferShiftRequestsOff
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an offerShiftRequest object.
+// TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an offerShiftRequest object. This API is supported in the following national cloud deployments.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOfferShiftRequest
     }
     return nil
 }
-// Get retrieve the properties and relationships of an offerShiftRequest object.
+// Get retrieve the properties and relationships of an offerShiftRequest object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/offershiftrequest-get?view=graph-rest-1.0
@@ -123,7 +123,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOfferShiftRequest
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of an offerShiftRequest object.
+// ToGetRequestInformation retrieve the properties and relationships of an offerShiftRequest object. This API is supported in the following national cloud deployments.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

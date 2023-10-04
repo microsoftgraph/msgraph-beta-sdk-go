@@ -46,7 +46,7 @@ func NewAvailableProviderTypesRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewAvailableProviderTypesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function availableProviderTypes
-// Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
+// Deprecated: This method is obsolete. Use GetAsAvailableProviderTypesGetResponse instead.
 func (m *AvailableProviderTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *AvailableProviderTypesRequestBuilderGetRequestConfiguration)(AvailableProviderTypesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -64,6 +64,26 @@ func (m *AvailableProviderTypesRequestBuilder) Get(ctx context.Context, requestC
         return nil, nil
     }
     return res.(AvailableProviderTypesResponseable), nil
+}
+// GetAsAvailableProviderTypesGetResponse invoke function availableProviderTypes
+// Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
+func (m *AvailableProviderTypesRequestBuilder) GetAsAvailableProviderTypesGetResponse(ctx context.Context, requestConfiguration *AvailableProviderTypesRequestBuilderGetRequestConfiguration)(AvailableProviderTypesGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateAvailableProviderTypesGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(AvailableProviderTypesGetResponseable), nil
 }
 // ToGetRequestInformation invoke function availableProviderTypes
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15

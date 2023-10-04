@@ -11,7 +11,7 @@ import (
 type ItemProfileEducationalActivitiesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemProfileEducationalActivitiesRequestBuilderGetQueryParameters retrieve a list of educationalActivity objects from a user's profile.
+// ItemProfileEducationalActivitiesRequestBuilderGetQueryParameters retrieve a list of educationalActivity objects from a user's profile. This API is supported in the following national cloud deployments.
 type ItemProfileEducationalActivitiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemProfileEducationalActivitiesRequestBuilder(rawUrl string, requestAda
 func (m *ItemProfileEducationalActivitiesRequestBuilder) Count()(*ItemProfileEducationalActivitiesCountRequestBuilder) {
     return NewItemProfileEducationalActivitiesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of educationalActivity objects from a user's profile.
+// Get retrieve a list of educationalActivity objects from a user's profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/profile-list-educationalactivities?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemProfileEducationalActivitiesRequestBuilder) Get(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityCollectionResponseable), nil
 }
-// Post create a new educationalActivity in a user's profile.
+// Post create a new educationalActivity in a user's profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/profile-post-educationalactivities?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemProfileEducationalActivitiesRequestBuilder) Post(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityable), nil
 }
-// ToGetRequestInformation retrieve a list of educationalActivity objects from a user's profile.
+// ToGetRequestInformation retrieve a list of educationalActivity objects from a user's profile. This API is supported in the following national cloud deployments.
 func (m *ItemProfileEducationalActivitiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileEducationalActivitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemProfileEducationalActivitiesRequestBuilder) ToGetRequestInformation
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new educationalActivity in a user's profile.
+// ToPostRequestInformation create a new educationalActivity in a user's profile. This API is supported in the following national cloud deployments.
 func (m *ItemProfileEducationalActivitiesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityable, requestConfiguration *ItemProfileEducationalActivitiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

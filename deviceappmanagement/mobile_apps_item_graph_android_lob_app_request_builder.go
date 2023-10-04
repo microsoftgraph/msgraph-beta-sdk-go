@@ -27,6 +27,14 @@ type MobileAppsItemGraphAndroidLobAppRequestBuilderGetRequestConfiguration struc
     // Request query parameters
     QueryParameters *MobileAppsItemGraphAndroidLobAppRequestBuilderGetQueryParameters
 }
+// Assignments provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphAndroidLobAppRequestBuilder) Assignments()(*MobileAppsItemGraphAndroidLobAppAssignmentsRequestBuilder) {
+    return NewMobileAppsItemGraphAndroidLobAppAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Categories provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphAndroidLobAppRequestBuilder) Categories()(*MobileAppsItemGraphAndroidLobAppCategoriesRequestBuilder) {
+    return NewMobileAppsItemGraphAndroidLobAppCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMobileAppsItemGraphAndroidLobAppRequestBuilderInternal instantiates a new GraphAndroidLobAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphAndroidLobAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphAndroidLobAppRequestBuilder) {
     m := &MobileAppsItemGraphAndroidLobAppRequestBuilder{
@@ -39,6 +47,10 @@ func NewMobileAppsItemGraphAndroidLobAppRequestBuilder(rawUrl string, requestAda
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemGraphAndroidLobAppRequestBuilderInternal(urlParams, requestAdapter)
+}
+// ContentVersions provides operations to manage the contentVersions property of the microsoft.graph.mobileLobApp entity.
+func (m *MobileAppsItemGraphAndroidLobAppRequestBuilder) ContentVersions()(*MobileAppsItemGraphAndroidLobAppContentVersionsRequestBuilder) {
+    return NewMobileAppsItemGraphAndroidLobAppContentVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the item of type microsoft.graph.mobileApp as microsoft.graph.androidLobApp
 func (m *MobileAppsItemGraphAndroidLobAppRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphAndroidLobAppRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidLobAppable, error) {
@@ -58,6 +70,10 @@ func (m *MobileAppsItemGraphAndroidLobAppRequestBuilder) Get(ctx context.Context
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidLobAppable), nil
+}
+// Relationships provides operations to manage the relationships property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphAndroidLobAppRequestBuilder) Relationships()(*MobileAppsItemGraphAndroidLobAppRelationshipsRequestBuilder) {
+    return NewMobileAppsItemGraphAndroidLobAppRelationshipsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get the item of type microsoft.graph.mobileApp as microsoft.graph.androidLobApp
 func (m *MobileAppsItemGraphAndroidLobAppRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphAndroidLobAppRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

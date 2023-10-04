@@ -31,6 +31,7 @@ func NewManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuild
     return NewManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action createDownloadUrl
+// Deprecated: This method is obsolete. Use PostAsCreateDownloadUrlPostResponse instead.
 func (m *ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilder) Post(ctx context.Context, requestConfiguration *ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilderPostRequestConfiguration)(ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -48,6 +49,25 @@ func (m *ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuil
         return nil, nil
     }
     return res.(ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlResponseable), nil
+}
+// PostAsCreateDownloadUrlPostResponse invoke action createDownloadUrl
+func (m *ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilder) PostAsCreateDownloadUrlPostResponse(ctx context.Context, requestConfiguration *ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilderPostRequestConfiguration)(ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlPostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlPostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlPostResponseable), nil
 }
 // ToPostRequestInformation invoke action createDownloadUrl
 func (m *ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ManagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

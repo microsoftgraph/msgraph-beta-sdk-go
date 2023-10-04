@@ -404,12 +404,52 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAuthoredNote(), nil
                     case "#microsoft.graph.authorizationPolicy":
                         return NewAuthorizationPolicy(), nil
+                    case "#microsoft.graph.authorizationSystem":
+                        return NewAuthorizationSystem(), nil
+                    case "#microsoft.graph.authorizationSystemIdentity":
+                        return NewAuthorizationSystemIdentity(), nil
+                    case "#microsoft.graph.authorizationSystemResource":
+                        return NewAuthorizationSystemResource(), nil
+                    case "#microsoft.graph.authorizationSystemTypeAction":
+                        return NewAuthorizationSystemTypeAction(), nil
+                    case "#microsoft.graph.authorizationSystemTypeService":
+                        return NewAuthorizationSystemTypeService(), nil
+                    case "#microsoft.graph.awsAuthorizationSystem":
+                        return NewAwsAuthorizationSystem(), nil
+                    case "#microsoft.graph.awsAuthorizationSystemResource":
+                        return NewAwsAuthorizationSystemResource(), nil
+                    case "#microsoft.graph.awsAuthorizationSystemTypeAction":
+                        return NewAwsAuthorizationSystemTypeAction(), nil
+                    case "#microsoft.graph.awsIdentity":
+                        return NewAwsIdentity(), nil
+                    case "#microsoft.graph.awsPolicy":
+                        return NewAwsPolicy(), nil
+                    case "#microsoft.graph.awsRole":
+                        return NewAwsRole(), nil
+                    case "#microsoft.graph.awsUser":
+                        return NewAwsUser(), nil
                     case "#microsoft.graph.azureADAuthentication":
                         return NewAzureADAuthentication(), nil
                     case "#microsoft.graph.azureADWindowsAutopilotDeploymentProfile":
                         return NewAzureADWindowsAutopilotDeploymentProfile(), nil
+                    case "#microsoft.graph.azureAuthorizationSystem":
+                        return NewAzureAuthorizationSystem(), nil
+                    case "#microsoft.graph.azureAuthorizationSystemResource":
+                        return NewAzureAuthorizationSystemResource(), nil
+                    case "#microsoft.graph.azureAuthorizationSystemTypeAction":
+                        return NewAzureAuthorizationSystemTypeAction(), nil
                     case "#microsoft.graph.azureCommunicationServicesUserConversationMember":
                         return NewAzureCommunicationServicesUserConversationMember(), nil
+                    case "#microsoft.graph.azureIdentity":
+                        return NewAzureIdentity(), nil
+                    case "#microsoft.graph.azureManagedIdentity":
+                        return NewAzureManagedIdentity(), nil
+                    case "#microsoft.graph.azureRoleDefinition":
+                        return NewAzureRoleDefinition(), nil
+                    case "#microsoft.graph.azureServicePrincipal":
+                        return NewAzureServicePrincipal(), nil
+                    case "#microsoft.graph.azureUser":
+                        return NewAzureUser(), nil
                     case "#microsoft.graph.b2cAuthenticationMethodsPolicy":
                         return NewB2cAuthenticationMethodsPolicy(), nil
                     case "#microsoft.graph.b2cIdentityUserFlow":
@@ -660,6 +700,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCustomSecurityAttributeDefinition(), nil
                     case "#microsoft.graph.dataClassificationService":
                         return NewDataClassificationService(), nil
+                    case "#microsoft.graph.dataCollectionInfo":
+                        return NewDataCollectionInfo(), nil
                     case "#microsoft.graph.dataLossPreventionPolicy":
                         return NewDataLossPreventionPolicy(), nil
                     case "#microsoft.graph.dataPolicyOperation":
@@ -1156,6 +1198,20 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewFilterOperatorSchema(), nil
                     case "#microsoft.graph.focusActivityStatistics":
                         return NewFocusActivityStatistics(), nil
+                    case "#microsoft.graph.gcpAuthorizationSystem":
+                        return NewGcpAuthorizationSystem(), nil
+                    case "#microsoft.graph.gcpAuthorizationSystemResource":
+                        return NewGcpAuthorizationSystemResource(), nil
+                    case "#microsoft.graph.gcpAuthorizationSystemTypeAction":
+                        return NewGcpAuthorizationSystemTypeAction(), nil
+                    case "#microsoft.graph.gcpIdentity":
+                        return NewGcpIdentity(), nil
+                    case "#microsoft.graph.gcpRole":
+                        return NewGcpRole(), nil
+                    case "#microsoft.graph.gcpServiceAccount":
+                        return NewGcpServiceAccount(), nil
+                    case "#microsoft.graph.gcpUser":
+                        return NewGcpUser(), nil
                     case "#microsoft.graph.governanceInsight":
                         return NewGovernanceInsight(), nil
                     case "#microsoft.graph.governancePolicyTemplate":
@@ -1824,6 +1880,16 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewPermissionGrantConditionSet(), nil
                     case "#microsoft.graph.permissionGrantPolicy":
                         return NewPermissionGrantPolicy(), nil
+                    case "#microsoft.graph.permissionsDefinitionAwsPolicy":
+                        return NewPermissionsDefinitionAwsPolicy(), nil
+                    case "#microsoft.graph.permissionsDefinitionAzureRole":
+                        return NewPermissionsDefinitionAzureRole(), nil
+                    case "#microsoft.graph.permissionsDefinitionGcpRole":
+                        return NewPermissionsDefinitionGcpRole(), nil
+                    case "#microsoft.graph.permissionsManagement":
+                        return NewPermissionsManagement(), nil
+                    case "#microsoft.graph.permissionsRequestChange":
+                        return NewPermissionsRequestChange(), nil
                     case "#microsoft.graph.person":
                         return NewPerson(), nil
                     case "#microsoft.graph.personAnnotation":
@@ -2010,6 +2076,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewRecommendationBase(), nil
                     case "#microsoft.graph.recordOperation":
                         return NewRecordOperation(), nil
+                    case "#microsoft.graph.recycleBin":
+                        return NewRecycleBin(), nil
+                    case "#microsoft.graph.recycleBinItem":
+                        return NewRecycleBinItem(), nil
                     case "#microsoft.graph.redundantAssignmentAlertConfiguration":
                         return NewRedundantAssignmentAlertConfiguration(), nil
                     case "#microsoft.graph.redundantAssignmentAlertIncident":
@@ -2084,6 +2154,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSchedule(), nil
                     case "#microsoft.graph.scheduleChangeRequest":
                         return NewScheduleChangeRequest(), nil
+                    case "#microsoft.graph.scheduledPermissionsRequest":
+                        return NewScheduledPermissionsRequest(), nil
                     case "#microsoft.graph.schedulingGroup":
                         return NewSchedulingGroup(), nil
                     case "#microsoft.graph.schema":

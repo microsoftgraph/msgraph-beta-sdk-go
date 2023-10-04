@@ -206,7 +206,7 @@ func (m *Participant) GetMetadata()(*string) {
     }
     return nil
 }
-// GetPreferredDisplayName gets the preferredDisplayName property value. The preferredDisplayName property
+// GetPreferredDisplayName gets the preferredDisplayName property value. The participant's preferred display name that overrides the original display name.
 func (m *Participant) GetPreferredDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("preferredDisplayName")
     if err != nil {
@@ -383,7 +383,7 @@ func (m *Participant) SetMetadata(value *string)() {
         panic(err)
     }
 }
-// SetPreferredDisplayName sets the preferredDisplayName property value. The preferredDisplayName property
+// SetPreferredDisplayName sets the preferredDisplayName property value. The participant's preferred display name that overrides the original display name.
 func (m *Participant) SetPreferredDisplayName(value *string)() {
     err := m.GetBackingStore().Set("preferredDisplayName", value)
     if err != nil {

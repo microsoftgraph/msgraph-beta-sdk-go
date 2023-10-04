@@ -18,7 +18,7 @@ type SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilderDel
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilderGetQueryParameters retrieve a school data synchronization profile in the tenant based on the identifier.
+// SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilderGetQueryParameters retrieve a school data synchronization profile in the tenant based on the identifier. This API is supported in the following national cloud deployments.
 type SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewSynchronizationProfilesEducationSynchronizationProfileItemRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewSynchronizationProfilesEducationSynchronizationProfileItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a school data synchronization profile in the tenant based on the identifier.
+// Delete delete a school data synchronization profile in the tenant based on the identifier. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationsynchronizationprofile-delete?view=graph-rest-1.0
@@ -77,7 +77,7 @@ func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilde
 func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilder) Errors()(*SynchronizationProfilesItemErrorsRequestBuilder) {
     return NewSynchronizationProfilesItemErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a school data synchronization profile in the tenant based on the identifier.
+// Get retrieve a school data synchronization profile in the tenant based on the identifier. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationsynchronizationprofile-get?view=graph-rest-1.0
@@ -138,7 +138,7 @@ func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilde
 func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilder) Start()(*SynchronizationProfilesItemStartRequestBuilder) {
     return NewSynchronizationProfilesItemStartRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a school data synchronization profile in the tenant based on the identifier.
+// ToDeleteRequestInformation delete a school data synchronization profile in the tenant based on the identifier. This API is supported in the following national cloud deployments.
 func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -150,7 +150,7 @@ func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilde
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve a school data synchronization profile in the tenant based on the identifier.
+// ToGetRequestInformation retrieve a school data synchronization profile in the tenant based on the identifier. This API is supported in the following national cloud deployments.
 func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

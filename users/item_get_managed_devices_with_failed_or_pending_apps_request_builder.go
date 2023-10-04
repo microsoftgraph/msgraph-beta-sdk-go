@@ -46,6 +46,7 @@ func NewItemGetManagedDevicesWithFailedOrPendingAppsRequestBuilder(rawUrl string
     return NewItemGetManagedDevicesWithFailedOrPendingAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get retrieves the list of devices with failed or pending apps
+// Deprecated: This method is obsolete. Use GetAsGetManagedDevicesWithFailedOrPendingAppsGetResponse instead.
 func (m *ItemGetManagedDevicesWithFailedOrPendingAppsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetRequestConfiguration)(ItemGetManagedDevicesWithFailedOrPendingAppsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -63,6 +64,25 @@ func (m *ItemGetManagedDevicesWithFailedOrPendingAppsRequestBuilder) Get(ctx con
         return nil, nil
     }
     return res.(ItemGetManagedDevicesWithFailedOrPendingAppsResponseable), nil
+}
+// GetAsGetManagedDevicesWithFailedOrPendingAppsGetResponse retrieves the list of devices with failed or pending apps
+func (m *ItemGetManagedDevicesWithFailedOrPendingAppsRequestBuilder) GetAsGetManagedDevicesWithFailedOrPendingAppsGetResponse(ctx context.Context, requestConfiguration *ItemGetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetRequestConfiguration)(ItemGetManagedDevicesWithFailedOrPendingAppsGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemGetManagedDevicesWithFailedOrPendingAppsGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemGetManagedDevicesWithFailedOrPendingAppsGetResponseable), nil
 }
 // ToGetRequestInformation retrieves the list of devices with failed or pending apps
 func (m *ItemGetManagedDevicesWithFailedOrPendingAppsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

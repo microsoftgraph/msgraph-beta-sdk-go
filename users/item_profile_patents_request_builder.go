@@ -11,7 +11,7 @@ import (
 type ItemProfilePatentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemProfilePatentsRequestBuilderGetQueryParameters retrieve a list of itemPatent objects from a user's profile.
+// ItemProfilePatentsRequestBuilderGetQueryParameters retrieve a list of itemPatent objects from a user's profile. This API is supported in the following national cloud deployments.
 type ItemProfilePatentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemProfilePatentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *ItemProfilePatentsRequestBuilder) Count()(*ItemProfilePatentsCountRequestBuilder) {
     return NewItemProfilePatentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of itemPatent objects from a user's profile.
+// Get retrieve a list of itemPatent objects from a user's profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/profile-list-patents?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemProfilePatentsRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentCollectionResponseable), nil
 }
-// Post create a new itemPatent object within a user's profile.
+// Post create a new itemPatent object within a user's profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/profile-post-patents?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemProfilePatentsRequestBuilder) Post(ctx context.Context, body ie233e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentable), nil
 }
-// ToGetRequestInformation retrieve a list of itemPatent objects from a user's profile.
+// ToGetRequestInformation retrieve a list of itemPatent objects from a user's profile. This API is supported in the following national cloud deployments.
 func (m *ItemProfilePatentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePatentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemProfilePatentsRequestBuilder) ToGetRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new itemPatent object within a user's profile.
+// ToPostRequestInformation create a new itemPatent object within a user's profile. This API is supported in the following national cloud deployments.
 func (m *ItemProfilePatentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentable, requestConfiguration *ItemProfilePatentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

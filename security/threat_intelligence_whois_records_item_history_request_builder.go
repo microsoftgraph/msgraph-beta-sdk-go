@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilderGetQueryParameters get a list of whoisHistoryRecord objects for a whoisRecord, including the properties and relationships of each whoisHistoryRecord object.
+// ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilderGetQueryParameters get the history for a whoisRecord, as represented by a collection of whoisHistoryRecord resources.
 type ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewThreatIntelligenceWhoisRecordsItemHistoryRequestBuilder(rawUrl string, r
 func (m *ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilder) Count()(*ThreatIntelligenceWhoisRecordsItemHistoryCountRequestBuilder) {
     return NewThreatIntelligenceWhoisRecordsItemHistoryCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of whoisHistoryRecord objects for a whoisRecord, including the properties and relationships of each whoisHistoryRecord object.
+// Get get the history for a whoisRecord, as represented by a collection of whoisHistoryRecord resources.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-whoisrecord-list-history?view=graph-rest-1.0
@@ -89,7 +89,7 @@ func (m *ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilder) Get(ctx contex
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.WhoisHistoryRecordCollectionResponseable), nil
 }
-// ToGetRequestInformation get a list of whoisHistoryRecord objects for a whoisRecord, including the properties and relationships of each whoisHistoryRecord object.
+// ToGetRequestInformation get the history for a whoisRecord, as represented by a collection of whoisHistoryRecord resources.
 func (m *ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

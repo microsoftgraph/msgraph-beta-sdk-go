@@ -109,7 +109,7 @@ func (m *HostPair) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
     }
     return nil
 }
-// GetLinkKind gets the linkKind property value. The reason the two hosts are identified as hostPairs.
+// GetLinkKind gets the linkKind property value. The reason that two hosts are identified as hostPair.
 func (m *HostPair) GetLinkKind()(*string) {
     val, err := m.GetBackingStore().Get("linkKind")
     if err != nil {
@@ -190,7 +190,7 @@ func (m *HostPair) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a
         panic(err)
     }
 }
-// SetLinkKind sets the linkKind property value. The reason the two hosts are identified as hostPairs.
+// SetLinkKind sets the linkKind property value. The reason that two hosts are identified as hostPair.
 func (m *HostPair) SetLinkKind(value *string)() {
     err := m.GetBackingStore().Set("linkKind", value)
     if err != nil {

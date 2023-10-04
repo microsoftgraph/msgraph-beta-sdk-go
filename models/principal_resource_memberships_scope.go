@@ -58,7 +58,7 @@ func (m *PrincipalResourceMembershipsScope) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetPrincipalScopes gets the principalScopes property value. Defines the scopes of the principals whose access to resources are reviewed in the access review.
+// GetPrincipalScopes gets the principalScopes property value. Defines the scopes of the principals for which access to resources are reviewed in the access review.
 func (m *PrincipalResourceMembershipsScope) GetPrincipalScopes()([]AccessReviewScopeable) {
     val, err := m.GetBackingStore().Get("principalScopes")
     if err != nil {
@@ -112,7 +112,7 @@ func (m *PrincipalResourceMembershipsScope) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetPrincipalScopes sets the principalScopes property value. Defines the scopes of the principals whose access to resources are reviewed in the access review.
+// SetPrincipalScopes sets the principalScopes property value. Defines the scopes of the principals for which access to resources are reviewed in the access review.
 func (m *PrincipalResourceMembershipsScope) SetPrincipalScopes(value []AccessReviewScopeable)() {
     err := m.GetBackingStore().Set("principalScopes", value)
     if err != nil {

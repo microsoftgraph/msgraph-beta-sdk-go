@@ -18,7 +18,7 @@ type ItemProfilePositionsWorkPositionItemRequestBuilderDeleteRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfilePositionsWorkPositionItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a workPosition object in a user's profile.
+// ItemProfilePositionsWorkPositionItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a workPosition object in a user's profile. This API is supported in the following national cloud deployments.
 type ItemProfilePositionsWorkPositionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemProfilePositionsWorkPositionItemRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfilePositionsWorkPositionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a specific workPosition object from a user's profile.
+// Delete delete a specific workPosition object from a user's profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/workposition-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemProfilePositionsWorkPositionItemRequestBuilder) Delete(ctx context.
     }
     return nil
 }
-// Get retrieve the properties and relationships of a workPosition object in a user's profile.
+// Get retrieve the properties and relationships of a workPosition object in a user's profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/workposition-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ItemProfilePositionsWorkPositionItemRequestBuilder) Get(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkPositionable), nil
 }
-// Patch update the properties of a workPosition object in a user's profile.
+// Patch update the properties of a workPosition object in a user's profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/workposition-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *ItemProfilePositionsWorkPositionItemRequestBuilder) Patch(ctx context.C
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkPositionable), nil
 }
-// ToDeleteRequestInformation delete a specific workPosition object from a user's profile.
+// ToDeleteRequestInformation delete a specific workPosition object from a user's profile. This API is supported in the following national cloud deployments.
 func (m *ItemProfilePositionsWorkPositionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePositionsWorkPositionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *ItemProfilePositionsWorkPositionItemRequestBuilder) ToDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a workPosition object in a user's profile.
+// ToGetRequestInformation retrieve the properties and relationships of a workPosition object in a user's profile. This API is supported in the following national cloud deployments.
 func (m *ItemProfilePositionsWorkPositionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePositionsWorkPositionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *ItemProfilePositionsWorkPositionItemRequestBuilder) ToGetRequestInforma
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a workPosition object in a user's profile.
+// ToPatchRequestInformation update the properties of a workPosition object in a user's profile. This API is supported in the following national cloud deployments.
 func (m *ItemProfilePositionsWorkPositionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkPositionable, requestConfiguration *ItemProfilePositionsWorkPositionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

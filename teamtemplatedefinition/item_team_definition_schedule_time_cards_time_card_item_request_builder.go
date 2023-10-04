@@ -18,7 +18,7 @@ type ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilderGetQueryParameters get the properties and relationships of a timeCard object by ID.
+// ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilderGetQueryParameters get the properties and relationships of a timeCard object by ID. This API is supported in the following national cloud deployments.
 type ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -62,7 +62,7 @@ func NewItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a timeCard instance in a schedule.
+// Delete delete a timeCard instance in a schedule. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/timecard-delete?view=graph-rest-1.0
@@ -85,7 +85,7 @@ func (m *ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) Delete(c
 func (m *ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) EndBreak()(*ItemTeamDefinitionScheduleTimeCardsItemEndBreakRequestBuilder) {
     return NewItemTeamDefinitionScheduleTimeCardsItemEndBreakRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the properties and relationships of a timeCard object by ID.
+// Get get the properties and relationships of a timeCard object by ID. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/timecard-get?view=graph-rest-1.0
@@ -133,7 +133,7 @@ func (m *ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) Patch(ct
 func (m *ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) StartBreak()(*ItemTeamDefinitionScheduleTimeCardsItemStartBreakRequestBuilder) {
     return NewItemTeamDefinitionScheduleTimeCardsItemStartBreakRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a timeCard instance in a schedule.
+// ToDeleteRequestInformation delete a timeCard instance in a schedule. This API is supported in the following national cloud deployments.
 func (m *ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) ToDelete
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of a timeCard object by ID.
+// ToGetRequestInformation get the properties and relationships of a timeCard object by ID. This API is supported in the following national cloud deployments.
 func (m *ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

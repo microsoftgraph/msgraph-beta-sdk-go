@@ -11,7 +11,7 @@ import (
 type AuthorizationPolicyRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AuthorizationPolicyRequestBuilderGetQueryParameters the policy that controls Azure AD authorization settings.
+// AuthorizationPolicyRequestBuilderGetQueryParameters retrieve the properties of an authorizationPolicy object. This API is supported in the following national cloud deployments.
 type AuthorizationPolicyRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewAuthorizationPolicyRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *AuthorizationPolicyRequestBuilder) Count()(*AuthorizationPolicyCountRequestBuilder) {
     return NewAuthorizationPolicyCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the policy that controls Azure AD authorization settings.
+// Get retrieve the properties of an authorizationPolicy object. This API is supported in the following national cloud deployments.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/authorizationpolicy-get?view=graph-rest-1.0
 func (m *AuthorizationPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthorizationPolicyRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthorizationPolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *AuthorizationPolicyRequestBuilder) Post(ctx context.Context, body ie233
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthorizationPolicyable), nil
 }
-// ToGetRequestInformation the policy that controls Azure AD authorization settings.
+// ToGetRequestInformation retrieve the properties of an authorizationPolicy object. This API is supported in the following national cloud deployments.
 func (m *AuthorizationPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthorizationPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

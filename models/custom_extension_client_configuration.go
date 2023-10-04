@@ -73,7 +73,7 @@ func (m *CustomExtensionClientConfiguration) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetMaximumRetries gets the maximumRetries property value. The max number of retries that Azure AD will make to the external API. Values of 0 or 1 are supported. If null, the default for the service will apply.
+// GetMaximumRetries gets the maximumRetries property value. The max number of retries that Azure AD makes to the external API. Values of 0 or 1 are supported. If null, the default for the service applies.
 func (m *CustomExtensionClientConfiguration) GetMaximumRetries()(*int32) {
     val, err := m.GetBackingStore().Get("maximumRetries")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *CustomExtensionClientConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTimeoutInMilliseconds gets the timeoutInMilliseconds property value. The max duration in milliseconds that Azure AD will wait for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. If null, the default for the service will apply.
+// GetTimeoutInMilliseconds gets the timeoutInMilliseconds property value. The max duration in milliseconds that Azure AD waits for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. If null, the default for the service applies.
 func (m *CustomExtensionClientConfiguration) GetTimeoutInMilliseconds()(*int32) {
     val, err := m.GetBackingStore().Get("timeoutInMilliseconds")
     if err != nil {
@@ -145,7 +145,7 @@ func (m *CustomExtensionClientConfiguration) SetAdditionalData(value map[string]
 func (m *CustomExtensionClientConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetMaximumRetries sets the maximumRetries property value. The max number of retries that Azure AD will make to the external API. Values of 0 or 1 are supported. If null, the default for the service will apply.
+// SetMaximumRetries sets the maximumRetries property value. The max number of retries that Azure AD makes to the external API. Values of 0 or 1 are supported. If null, the default for the service applies.
 func (m *CustomExtensionClientConfiguration) SetMaximumRetries(value *int32)() {
     err := m.GetBackingStore().Set("maximumRetries", value)
     if err != nil {
@@ -159,7 +159,7 @@ func (m *CustomExtensionClientConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTimeoutInMilliseconds sets the timeoutInMilliseconds property value. The max duration in milliseconds that Azure AD will wait for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. If null, the default for the service will apply.
+// SetTimeoutInMilliseconds sets the timeoutInMilliseconds property value. The max duration in milliseconds that Azure AD waits for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. If null, the default for the service applies.
 func (m *CustomExtensionClientConfiguration) SetTimeoutInMilliseconds(value *int32)() {
     err := m.GetBackingStore().Set("timeoutInMilliseconds", value)
     if err != nil {

@@ -42,7 +42,7 @@ func (m *AccessReviewInstance) GetDecisions()([]AccessReviewInstanceDecisionItem
     }
     return nil
 }
-// GetDefinition gets the definition property value. There is exactly one accessReviewScheduleDefinition associated with each instance. It is the parent schedule for the instance, where instances are created for each recurrence of a review definition and each group selected to review by the definition.
+// GetDefinition gets the definition property value. There's exactly one accessReviewScheduleDefinition associated with each instance. It's the parent schedule for the instance, where instances are created for each recurrence of a review definition and each group selected to review by the definition.
 func (m *AccessReviewInstance) GetDefinition()(AccessReviewScheduleDefinitionable) {
     val, err := m.GetBackingStore().Get("definition")
     if err != nil {
@@ -53,7 +53,7 @@ func (m *AccessReviewInstance) GetDefinition()(AccessReviewScheduleDefinitionabl
     }
     return nil
 }
-// GetEndDateTime gets the endDateTime property value. DateTime when review instance is scheduled to end.The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
+// GetEndDateTime gets the endDateTime property value. DateTime when review instance is scheduled to end. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
 func (m *AccessReviewInstance) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -75,7 +75,7 @@ func (m *AccessReviewInstance) GetErrors()([]AccessReviewErrorable) {
     }
     return nil
 }
-// GetFallbackReviewers gets the fallbackReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. Supports $select.
+// GetFallbackReviewers gets the fallbackReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers are notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner doesn't exist, or manager is specified as reviewer but a user's manager doesn't exist. Supports $select.
 func (m *AccessReviewInstance) GetFallbackReviewers()([]AccessReviewReviewerScopeable) {
     val, err := m.GetBackingStore().Get("fallbackReviewers")
     if err != nil {
@@ -416,14 +416,14 @@ func (m *AccessReviewInstance) SetDecisions(value []AccessReviewInstanceDecision
         panic(err)
     }
 }
-// SetDefinition sets the definition property value. There is exactly one accessReviewScheduleDefinition associated with each instance. It is the parent schedule for the instance, where instances are created for each recurrence of a review definition and each group selected to review by the definition.
+// SetDefinition sets the definition property value. There's exactly one accessReviewScheduleDefinition associated with each instance. It's the parent schedule for the instance, where instances are created for each recurrence of a review definition and each group selected to review by the definition.
 func (m *AccessReviewInstance) SetDefinition(value AccessReviewScheduleDefinitionable)() {
     err := m.GetBackingStore().Set("definition", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEndDateTime sets the endDateTime property value. DateTime when review instance is scheduled to end.The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
+// SetEndDateTime sets the endDateTime property value. DateTime when review instance is scheduled to end. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
 func (m *AccessReviewInstance) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("endDateTime", value)
     if err != nil {
@@ -437,7 +437,7 @@ func (m *AccessReviewInstance) SetErrors(value []AccessReviewErrorable)() {
         panic(err)
     }
 }
-// SetFallbackReviewers sets the fallbackReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. Supports $select.
+// SetFallbackReviewers sets the fallbackReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers are notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner doesn't exist, or manager is specified as reviewer but a user's manager doesn't exist. Supports $select.
 func (m *AccessReviewInstance) SetFallbackReviewers(value []AccessReviewReviewerScopeable)() {
     err := m.GetBackingStore().Set("fallbackReviewers", value)
     if err != nil {

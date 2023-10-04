@@ -18,7 +18,7 @@ type SetsSetItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SetsSetItemRequestBuilderGetQueryParameters read the properties and relationships of a set object.
+// SetsSetItemRequestBuilderGetQueryParameters read the properties and relationships of a set object. This API is supported in the following national cloud deployments.
 type SetsSetItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,7 @@ func NewSetsSetItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewSetsSetItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a set object.
+// Delete delete a set object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/termstore-set-delete?view=graph-rest-1.0
@@ -77,7 +77,7 @@ func (m *SetsSetItemRequestBuilder) Delete(ctx context.Context, requestConfigura
     }
     return nil
 }
-// Get read the properties and relationships of a set object.
+// Get read the properties and relationships of a set object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/termstore-set-get?view=graph-rest-1.0
@@ -103,7 +103,7 @@ func (m *SetsSetItemRequestBuilder) Get(ctx context.Context, requestConfiguratio
 func (m *SetsSetItemRequestBuilder) ParentGroup()(*SetsItemParentGroupRequestBuilder) {
     return NewSetsItemParentGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of a set object.
+// Patch update the properties of a set object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/termstore-set-update?view=graph-rest-1.0
@@ -133,7 +133,7 @@ func (m *SetsSetItemRequestBuilder) Relations()(*SetsItemRelationsRequestBuilder
 func (m *SetsSetItemRequestBuilder) Terms()(*SetsItemTermsRequestBuilder) {
     return NewSetsItemTermsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a set object.
+// ToDeleteRequestInformation delete a set object. This API is supported in the following national cloud deployments.
 func (m *SetsSetItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SetsSetItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *SetsSetItemRequestBuilder) ToDeleteRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a set object.
+// ToGetRequestInformation read the properties and relationships of a set object. This API is supported in the following national cloud deployments.
 func (m *SetsSetItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SetsSetItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -161,7 +161,7 @@ func (m *SetsSetItemRequestBuilder) ToGetRequestInformation(ctx context.Context,
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a set object.
+// ToPatchRequestInformation update the properties of a set object. This API is supported in the following national cloud deployments.
 func (m *SetsSetItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Setable, requestConfiguration *SetsSetItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

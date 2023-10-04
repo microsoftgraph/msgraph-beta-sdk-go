@@ -18,7 +18,7 @@ type BookingBusinessItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BookingBusinessItemRequestBuilderGetQueryParameters get the properties and relationships of a bookingBusiness object.
+// BookingBusinessItemRequestBuilderGetQueryParameters get the properties and relationships of a bookingBusiness object. This API is supported in the following national cloud deployments.
 type BookingBusinessItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *BookingBusinessItemRequestBuilder) Customers()(*ItemCustomersRequestBui
 func (m *BookingBusinessItemRequestBuilder) CustomQuestions()(*ItemCustomQuestionsRequestBuilder) {
     return NewItemCustomQuestionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete delete a bookingBusiness object.
+// Delete delete a bookingBusiness object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-delete?view=graph-rest-1.0
@@ -89,7 +89,7 @@ func (m *BookingBusinessItemRequestBuilder) Delete(ctx context.Context, requestC
     }
     return nil
 }
-// Get get the properties and relationships of a bookingBusiness object.
+// Get get the properties and relationships of a bookingBusiness object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-get?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *BookingBusinessItemRequestBuilder) Get(ctx context.Context, requestConf
 func (m *BookingBusinessItemRequestBuilder) GetStaffAvailability()(*ItemGetStaffAvailabilityRequestBuilder) {
     return NewItemGetStaffAvailabilityRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of a bookingBusiness object.
+// Patch update the properties of a bookingBusiness object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-update?view=graph-rest-1.0
@@ -149,7 +149,7 @@ func (m *BookingBusinessItemRequestBuilder) Services()(*ItemServicesRequestBuild
 func (m *BookingBusinessItemRequestBuilder) StaffMembers()(*ItemStaffMembersRequestBuilder) {
     return NewItemStaffMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a bookingBusiness object.
+// ToDeleteRequestInformation delete a bookingBusiness object. This API is supported in the following national cloud deployments.
 func (m *BookingBusinessItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -161,7 +161,7 @@ func (m *BookingBusinessItemRequestBuilder) ToDeleteRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of a bookingBusiness object.
+// ToGetRequestInformation get the properties and relationships of a bookingBusiness object. This API is supported in the following national cloud deployments.
 func (m *BookingBusinessItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -177,7 +177,7 @@ func (m *BookingBusinessItemRequestBuilder) ToGetRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a bookingBusiness object.
+// ToPatchRequestInformation update the properties of a bookingBusiness object. This API is supported in the following national cloud deployments.
 func (m *BookingBusinessItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingBusinessable, requestConfiguration *BookingBusinessItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type IndustryDataYearsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IndustryDataYearsRequestBuilderGetQueryParameters get a list of the yearTimePeriodDefinition objects and their properties.
+// IndustryDataYearsRequestBuilderGetQueryParameters get a list of the yearTimePeriodDefinition objects and their properties. This API is supported in the following national cloud deployments.
 type IndustryDataYearsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewIndustryDataYearsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *IndustryDataYearsRequestBuilder) Count()(*IndustryDataYearsCountRequestBuilder) {
     return NewIndustryDataYearsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the yearTimePeriodDefinition objects and their properties.
+// Get get a list of the yearTimePeriodDefinition objects and their properties. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-list?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *IndustryDataYearsRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.YearTimePeriodDefinitionCollectionResponseable), nil
 }
-// Post create a new yearTimePeriodDefinition object.
+// Post create a new yearTimePeriodDefinition object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-post?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *IndustryDataYearsRequestBuilder) Post(ctx context.Context, body id2b46a
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.YearTimePeriodDefinitionable), nil
 }
-// ToGetRequestInformation get a list of the yearTimePeriodDefinition objects and their properties.
+// ToGetRequestInformation get a list of the yearTimePeriodDefinition objects and their properties. This API is supported in the following national cloud deployments.
 func (m *IndustryDataYearsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataYearsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *IndustryDataYearsRequestBuilder) ToGetRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new yearTimePeriodDefinition object.
+// ToPostRequestInformation create a new yearTimePeriodDefinition object. This API is supported in the following national cloud deployments.
 func (m *IndustryDataYearsRequestBuilder) ToPostRequestInformation(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.YearTimePeriodDefinitionable, requestConfiguration *IndustryDataYearsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

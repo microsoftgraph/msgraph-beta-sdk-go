@@ -11,7 +11,7 @@ import (
 type ItemSitesItemTermStoreSetsItemParentGroupSetsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemTermStoreSetsItemParentGroupSetsRequestBuilderGetQueryParameters get a list of the set objects and their properties.
+// ItemSitesItemTermStoreSetsItemParentGroupSetsRequestBuilderGetQueryParameters get a list of the set objects and their properties. This API is supported in the following national cloud deployments.
 type ItemSitesItemTermStoreSetsItemParentGroupSetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemSitesItemTermStoreSetsItemParentGroupSetsRequestBuilder(rawUrl strin
 func (m *ItemSitesItemTermStoreSetsItemParentGroupSetsRequestBuilder) Count()(*ItemSitesItemTermStoreSetsItemParentGroupSetsCountRequestBuilder) {
     return NewItemSitesItemTermStoreSetsItemParentGroupSetsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the set objects and their properties.
+// Get get a list of the set objects and their properties. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/termstore-group-list-sets?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *ItemSitesItemTermStoreSetsItemParentGroupSetsRequestBuilder) Post(ctx c
     }
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Setable), nil
 }
-// ToGetRequestInformation get a list of the set objects and their properties.
+// ToGetRequestInformation get a list of the set objects and their properties. This API is supported in the following national cloud deployments.
 func (m *ItemSitesItemTermStoreSetsItemParentGroupSetsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreSetsItemParentGroupSetsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

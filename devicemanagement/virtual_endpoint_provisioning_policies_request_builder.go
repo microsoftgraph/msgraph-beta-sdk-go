@@ -11,7 +11,7 @@ import (
 type VirtualEndpointProvisioningPoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointProvisioningPoliciesRequestBuilderGetQueryParameters list properties and relationships of the cloudPcProvisioningPolicy objects.
+// VirtualEndpointProvisioningPoliciesRequestBuilderGetQueryParameters list properties and relationships of the cloudPcProvisioningPolicy objects. This API is supported in the following national cloud deployments.
 type VirtualEndpointProvisioningPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,7 +79,7 @@ func NewVirtualEndpointProvisioningPoliciesRequestBuilder(rawUrl string, request
 func (m *VirtualEndpointProvisioningPoliciesRequestBuilder) Count()(*VirtualEndpointProvisioningPoliciesCountRequestBuilder) {
     return NewVirtualEndpointProvisioningPoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list properties and relationships of the cloudPcProvisioningPolicy objects.
+// Get list properties and relationships of the cloudPcProvisioningPolicy objects. This API is supported in the following national cloud deployments.
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId on 2023-03-16 and will be removed 2023-07-30
 // [Find more info here]
 // 
@@ -102,7 +102,7 @@ func (m *VirtualEndpointProvisioningPoliciesRequestBuilder) Get(ctx context.Cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcProvisioningPolicyCollectionResponseable), nil
 }
-// Post create a new cloudPcProvisioningPolicy object.
+// Post create a new cloudPcProvisioningPolicy object. This API is supported in the following national cloud deployments.
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId on 2023-03-16 and will be removed 2023-07-30
 // [Find more info here]
 // 
@@ -125,7 +125,7 @@ func (m *VirtualEndpointProvisioningPoliciesRequestBuilder) Post(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcProvisioningPolicyable), nil
 }
-// ToGetRequestInformation list properties and relationships of the cloudPcProvisioningPolicy objects.
+// ToGetRequestInformation list properties and relationships of the cloudPcProvisioningPolicy objects. This API is supported in the following national cloud deployments.
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId on 2023-03-16 and will be removed 2023-07-30
 func (m *VirtualEndpointProvisioningPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointProvisioningPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -142,7 +142,7 @@ func (m *VirtualEndpointProvisioningPoliciesRequestBuilder) ToGetRequestInformat
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new cloudPcProvisioningPolicy object.
+// ToPostRequestInformation create a new cloudPcProvisioningPolicy object. This API is supported in the following national cloud deployments.
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId on 2023-03-16 and will be removed 2023-07-30
 func (m *VirtualEndpointProvisioningPoliciesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcProvisioningPolicyable, requestConfiguration *VirtualEndpointProvisioningPoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

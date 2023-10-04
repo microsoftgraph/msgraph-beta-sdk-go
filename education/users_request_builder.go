@@ -11,7 +11,7 @@ import (
 type UsersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// UsersRequestBuilderGetQueryParameters retrieve a list of user objects. These user objects will include education-specific properties.
+// UsersRequestBuilderGetQueryParameters retrieve a list of user objects. These user objects will include education-specific properties. This API is supported in the following national cloud deployments.
 type UsersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func (m *UsersRequestBuilder) Count()(*UsersCountRequestBuilder) {
 func (m *UsersRequestBuilder) Delta()(*UsersDeltaRequestBuilder) {
     return NewUsersDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of user objects. These user objects will include education-specific properties.
+// Get retrieve a list of user objects. These user objects will include education-specific properties. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationroot-list-users?view=graph-rest-1.0
@@ -100,7 +100,7 @@ func (m *UsersRequestBuilder) Get(ctx context.Context, requestConfiguration *Use
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationUserCollectionResponseable), nil
 }
-// Post create a new user.
+// Post create a new user. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationroot-post-users?view=graph-rest-1.0
@@ -122,7 +122,7 @@ func (m *UsersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba69
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationUserable), nil
 }
-// ToGetRequestInformation retrieve a list of user objects. These user objects will include education-specific properties.
+// ToGetRequestInformation retrieve a list of user objects. These user objects will include education-specific properties. This API is supported in the following national cloud deployments.
 func (m *UsersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -138,7 +138,7 @@ func (m *UsersRequestBuilder) ToGetRequestInformation(ctx context.Context, reque
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new user.
+// ToPostRequestInformation create a new user. This API is supported in the following national cloud deployments.
 func (m *UsersRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationUserable, requestConfiguration *UsersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

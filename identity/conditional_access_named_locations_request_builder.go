@@ -11,7 +11,7 @@ import (
 type ConditionalAccessNamedLocationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConditionalAccessNamedLocationsRequestBuilderGetQueryParameters get a list of namedLocation objects.
+// ConditionalAccessNamedLocationsRequestBuilderGetQueryParameters get a list of namedLocation objects. This API is supported in the following national cloud deployments.
 type ConditionalAccessNamedLocationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewConditionalAccessNamedLocationsRequestBuilder(rawUrl string, requestAdap
 func (m *ConditionalAccessNamedLocationsRequestBuilder) Count()(*ConditionalAccessNamedLocationsCountRequestBuilder) {
     return NewConditionalAccessNamedLocationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of namedLocation objects.
+// Get get a list of namedLocation objects. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/conditionalaccessroot-list-namedlocations?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ConditionalAccessNamedLocationsRequestBuilder) Get(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationCollectionResponseable), nil
 }
-// Post create a new namedLocation object. Named locations can be either ipNamedLocation or countryNamedLocation objects.
+// Post create a new namedLocation object. Named locations can be either ipNamedLocation or countryNamedLocation objects. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/conditionalaccessroot-post-namedlocations?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ConditionalAccessNamedLocationsRequestBuilder) Post(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable), nil
 }
-// ToGetRequestInformation get a list of namedLocation objects.
+// ToGetRequestInformation get a list of namedLocation objects. This API is supported in the following national cloud deployments.
 func (m *ConditionalAccessNamedLocationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessNamedLocationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ConditionalAccessNamedLocationsRequestBuilder) ToGetRequestInformation(
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new namedLocation object. Named locations can be either ipNamedLocation or countryNamedLocation objects.
+// ToPostRequestInformation create a new namedLocation object. Named locations can be either ipNamedLocation or countryNamedLocation objects. This API is supported in the following national cloud deployments.
 func (m *ConditionalAccessNamedLocationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable, requestConfiguration *ConditionalAccessNamedLocationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

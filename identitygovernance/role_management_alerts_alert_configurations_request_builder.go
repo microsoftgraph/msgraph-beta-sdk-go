@@ -11,7 +11,7 @@ import (
 type RoleManagementAlertsAlertConfigurationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RoleManagementAlertsAlertConfigurationsRequestBuilderGetQueryParameters get a list of the alert configurations. The alert configurations are a collection of following types that are derived from the unifiedRoleManagementAlertConfiguration object:
+// RoleManagementAlertsAlertConfigurationsRequestBuilderGetQueryParameters get a list of the alert configurations. The alert configurations are a collection of following types that are derived from the unifiedRoleManagementAlertConfiguration object: This API is supported in the following national cloud deployments.
 type RoleManagementAlertsAlertConfigurationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewRoleManagementAlertsAlertConfigurationsRequestBuilder(rawUrl string, req
 func (m *RoleManagementAlertsAlertConfigurationsRequestBuilder) Count()(*RoleManagementAlertsAlertConfigurationsCountRequestBuilder) {
     return NewRoleManagementAlertsAlertConfigurationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the alert configurations. The alert configurations are a collection of following types that are derived from the unifiedRoleManagementAlertConfiguration object:
+// Get get a list of the alert configurations. The alert configurations are a collection of following types that are derived from the unifiedRoleManagementAlertConfiguration object: This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/rolemanagementalert-list-alertconfigurations?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *RoleManagementAlertsAlertConfigurationsRequestBuilder) Post(ctx context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementAlertConfigurationable), nil
 }
-// ToGetRequestInformation get a list of the alert configurations. The alert configurations are a collection of following types that are derived from the unifiedRoleManagementAlertConfiguration object:
+// ToGetRequestInformation get a list of the alert configurations. The alert configurations are a collection of following types that are derived from the unifiedRoleManagementAlertConfiguration object: This API is supported in the following national cloud deployments.
 func (m *RoleManagementAlertsAlertConfigurationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleManagementAlertsAlertConfigurationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

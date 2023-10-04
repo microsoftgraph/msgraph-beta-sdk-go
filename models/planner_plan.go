@@ -31,7 +31,7 @@ func (m *PlannerPlan) GetBuckets()([]PlannerBucketable) {
     }
     return nil
 }
-// GetContainer gets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.
+// GetContainer gets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it's set, this property can’t be updated. Required.
 func (m *PlannerPlan) GetContainer()(PlannerPlanContainerable) {
     val, err := m.GetBackingStore().Get("container")
     if err != nil {
@@ -373,7 +373,7 @@ func (m *PlannerPlan) SetBuckets(value []PlannerBucketable)() {
         panic(err)
     }
 }
-// SetContainer sets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.
+// SetContainer sets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it's set, this property can’t be updated. Required.
 func (m *PlannerPlan) SetContainer(value PlannerPlanContainerable)() {
     err := m.GetBackingStore().Set("container", value)
     if err != nil {

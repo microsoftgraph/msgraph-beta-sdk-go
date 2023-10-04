@@ -18,7 +18,7 @@ type CrossTenantAccessPolicyRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CrossTenantAccessPolicyRequestBuilderGetQueryParameters read the properties and relationships of a crossTenantAccessPolicy object.
+// CrossTenantAccessPolicyRequestBuilderGetQueryParameters read the properties and relationships of a crossTenantAccessPolicy object. This API is supported in the following national cloud deployments.
 type CrossTenantAccessPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *CrossTenantAccessPolicyRequestBuilder) Delete(ctx context.Context, requ
     }
     return nil
 }
-// Get read the properties and relationships of a crossTenantAccessPolicy object.
+// Get read the properties and relationships of a crossTenantAccessPolicy object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/crosstenantaccesspolicy-get?view=graph-rest-1.0
@@ -100,7 +100,7 @@ func (m *CrossTenantAccessPolicyRequestBuilder) Get(ctx context.Context, request
 func (m *CrossTenantAccessPolicyRequestBuilder) Partners()(*CrossTenantAccessPolicyPartnersRequestBuilder) {
     return NewCrossTenantAccessPolicyPartnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of a cross-tenant access policy.
+// Patch update the properties of a cross-tenant access policy. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/crosstenantaccesspolicy-update?view=graph-rest-1.0
@@ -122,6 +122,10 @@ func (m *CrossTenantAccessPolicyRequestBuilder) Patch(ctx context.Context, body 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantAccessPolicyable), nil
 }
+// Templates provides operations to manage the templates property of the microsoft.graph.crossTenantAccessPolicy entity.
+func (m *CrossTenantAccessPolicyRequestBuilder) Templates()(*CrossTenantAccessPolicyTemplatesRequestBuilder) {
+    return NewCrossTenantAccessPolicyTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property crossTenantAccessPolicy for policies
 func (m *CrossTenantAccessPolicyRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CrossTenantAccessPolicyRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -134,7 +138,7 @@ func (m *CrossTenantAccessPolicyRequestBuilder) ToDeleteRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a crossTenantAccessPolicy object.
+// ToGetRequestInformation read the properties and relationships of a crossTenantAccessPolicy object. This API is supported in the following national cloud deployments.
 func (m *CrossTenantAccessPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CrossTenantAccessPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -150,7 +154,7 @@ func (m *CrossTenantAccessPolicyRequestBuilder) ToGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a cross-tenant access policy.
+// ToPatchRequestInformation update the properties of a cross-tenant access policy. This API is supported in the following national cloud deployments.
 func (m *CrossTenantAccessPolicyRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantAccessPolicyable, requestConfiguration *CrossTenantAccessPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

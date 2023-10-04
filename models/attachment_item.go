@@ -157,7 +157,7 @@ func (m *AttachmentItem) GetIsInline()(*bool) {
     }
     return nil
 }
-// GetName gets the name property value. The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
+// GetName gets the name property value. The display name of the attachment. This can be a descriptive string and doesn't have to be the actual file name. Required.
 func (m *AttachmentItem) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -282,7 +282,7 @@ func (m *AttachmentItem) SetIsInline(value *bool)() {
         panic(err)
     }
 }
-// SetName sets the name property value. The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
+// SetName sets the name property value. The display name of the attachment. This can be a descriptive string and doesn't have to be the actual file name. Required.
 func (m *AttachmentItem) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {

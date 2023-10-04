@@ -31,6 +31,7 @@ func NewItemSetMobileDeviceManagementAuthorityRequestBuilder(rawUrl string, requ
     return NewItemSetMobileDeviceManagementAuthorityRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post set mobile device management authority
+// Deprecated: This method is obsolete. Use PostAsSetMobileDeviceManagementAuthorityPostResponse instead.
 func (m *ItemSetMobileDeviceManagementAuthorityRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemSetMobileDeviceManagementAuthorityRequestBuilderPostRequestConfiguration)(ItemSetMobileDeviceManagementAuthorityResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -48,6 +49,25 @@ func (m *ItemSetMobileDeviceManagementAuthorityRequestBuilder) Post(ctx context.
         return nil, nil
     }
     return res.(ItemSetMobileDeviceManagementAuthorityResponseable), nil
+}
+// PostAsSetMobileDeviceManagementAuthorityPostResponse set mobile device management authority
+func (m *ItemSetMobileDeviceManagementAuthorityRequestBuilder) PostAsSetMobileDeviceManagementAuthorityPostResponse(ctx context.Context, requestConfiguration *ItemSetMobileDeviceManagementAuthorityRequestBuilderPostRequestConfiguration)(ItemSetMobileDeviceManagementAuthorityPostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSetMobileDeviceManagementAuthorityPostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemSetMobileDeviceManagementAuthorityPostResponseable), nil
 }
 // ToPostRequestInformation set mobile device management authority
 func (m *ItemSetMobileDeviceManagementAuthorityRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemSetMobileDeviceManagementAuthorityRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

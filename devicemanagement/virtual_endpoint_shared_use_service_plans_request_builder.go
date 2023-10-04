@@ -11,7 +11,7 @@ import (
 type VirtualEndpointSharedUseServicePlansRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointSharedUseServicePlansRequestBuilderGetQueryParameters get a list of the cloudPcSharedUseServicePlan objects and their properties.
+// VirtualEndpointSharedUseServicePlansRequestBuilderGetQueryParameters get a list of the cloudPcSharedUseServicePlan objects and their properties. This API is supported in the following national cloud deployments.
 type VirtualEndpointSharedUseServicePlansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,7 +75,7 @@ func NewVirtualEndpointSharedUseServicePlansRequestBuilder(rawUrl string, reques
 func (m *VirtualEndpointSharedUseServicePlansRequestBuilder) Count()(*VirtualEndpointSharedUseServicePlansCountRequestBuilder) {
     return NewVirtualEndpointSharedUseServicePlansCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the cloudPcSharedUseServicePlan objects and their properties.
+// Get get a list of the cloudPcSharedUseServicePlan objects and their properties. This API is supported in the following national cloud deployments.
 // Deprecated: The sharedUseServicePlans property is deprecated and will not be supported starting Oct 8, 2023. This property will not be included as part of the API response. as of 2023-03/sharedUseServicePlans on 2023-06-08 and will be removed 2023-10-08
 // [Find more info here]
 // 
@@ -118,7 +118,7 @@ func (m *VirtualEndpointSharedUseServicePlansRequestBuilder) Post(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSharedUseServicePlanable), nil
 }
-// ToGetRequestInformation get a list of the cloudPcSharedUseServicePlan objects and their properties.
+// ToGetRequestInformation get a list of the cloudPcSharedUseServicePlan objects and their properties. This API is supported in the following national cloud deployments.
 // Deprecated: The sharedUseServicePlans property is deprecated and will not be supported starting Oct 8, 2023. This property will not be included as part of the API response. as of 2023-03/sharedUseServicePlans on 2023-06-08 and will be removed 2023-10-08
 func (m *VirtualEndpointSharedUseServicePlansRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointSharedUseServicePlansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

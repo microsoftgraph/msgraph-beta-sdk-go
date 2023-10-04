@@ -18,7 +18,7 @@ type VirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemRequestB
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemRequestBuilderGetQueryParameters read the properties and relationships of a cloudPcSharedUseServicePlan object.
+// VirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemRequestBuilderGetQueryParameters read the properties and relationships of a cloudPcSharedUseServicePlan object. This API is supported in the following national cloud deployments.
 type VirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -71,7 +71,7 @@ func (m *VirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemRequ
     }
     return nil
 }
-// Get read the properties and relationships of a cloudPcSharedUseServicePlan object.
+// Get read the properties and relationships of a cloudPcSharedUseServicePlan object. This API is supported in the following national cloud deployments.
 // Deprecated: The sharedUseServicePlans property is deprecated and will not be supported starting Oct 8, 2023. This property will not be included as part of the API response. as of 2023-03/sharedUseServicePlans on 2023-06-08 and will be removed 2023-10-08
 // [Find more info here]
 // 
@@ -127,7 +127,7 @@ func (m *VirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemRequ
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a cloudPcSharedUseServicePlan object.
+// ToGetRequestInformation read the properties and relationships of a cloudPcSharedUseServicePlan object. This API is supported in the following national cloud deployments.
 // Deprecated: The sharedUseServicePlans property is deprecated and will not be supported starting Oct 8, 2023. This property will not be included as part of the API response. as of 2023-03/sharedUseServicePlans on 2023-06-08 and will be removed 2023-10-08
 func (m *VirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointSharedUseServicePlansCloudPcSharedUseServicePlanItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

@@ -31,6 +31,7 @@ func NewTemplatesImportOffice365DeviceConfigurationPoliciesRequestBuilder(rawUrl
     return NewTemplatesImportOffice365DeviceConfigurationPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action importOffice365DeviceConfigurationPolicies
+// Deprecated: This method is obsolete. Use PostAsImportOffice365DeviceConfigurationPoliciesPostResponse instead.
 func (m *TemplatesImportOffice365DeviceConfigurationPoliciesRequestBuilder) Post(ctx context.Context, requestConfiguration *TemplatesImportOffice365DeviceConfigurationPoliciesRequestBuilderPostRequestConfiguration)(TemplatesImportOffice365DeviceConfigurationPoliciesResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -48,6 +49,25 @@ func (m *TemplatesImportOffice365DeviceConfigurationPoliciesRequestBuilder) Post
         return nil, nil
     }
     return res.(TemplatesImportOffice365DeviceConfigurationPoliciesResponseable), nil
+}
+// PostAsImportOffice365DeviceConfigurationPoliciesPostResponse invoke action importOffice365DeviceConfigurationPolicies
+func (m *TemplatesImportOffice365DeviceConfigurationPoliciesRequestBuilder) PostAsImportOffice365DeviceConfigurationPoliciesPostResponse(ctx context.Context, requestConfiguration *TemplatesImportOffice365DeviceConfigurationPoliciesRequestBuilderPostRequestConfiguration)(TemplatesImportOffice365DeviceConfigurationPoliciesPostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateTemplatesImportOffice365DeviceConfigurationPoliciesPostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(TemplatesImportOffice365DeviceConfigurationPoliciesPostResponseable), nil
 }
 // ToPostRequestInformation invoke action importOffice365DeviceConfigurationPolicies
 func (m *TemplatesImportOffice365DeviceConfigurationPoliciesRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *TemplatesImportOffice365DeviceConfigurationPoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

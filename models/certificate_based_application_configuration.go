@@ -21,7 +21,7 @@ func NewCertificateBasedApplicationConfiguration()(*CertificateBasedApplicationC
 func CreateCertificateBasedApplicationConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCertificateBasedApplicationConfiguration(), nil
 }
-// GetDescription gets the description property value. The description of the trusted certificate authorities.
+// GetDescription gets the description property value. The description property
 func (m *CertificateBasedApplicationConfiguration) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -32,7 +32,7 @@ func (m *CertificateBasedApplicationConfiguration) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The display name of the trusted certificate authorities.
+// GetDisplayName gets the displayName property value. The displayName property
 func (m *CertificateBasedApplicationConfiguration) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -88,14 +88,14 @@ func (m *CertificateBasedApplicationConfiguration) Serialize(writer i878a80d2330
     }
     return nil
 }
-// SetDescription sets the description property value. The description of the trusted certificate authorities.
+// SetDescription sets the description property value. The description property
 func (m *CertificateBasedApplicationConfiguration) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The display name of the trusted certificate authorities.
+// SetDisplayName sets the displayName property value. The displayName property
 func (m *CertificateBasedApplicationConfiguration) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

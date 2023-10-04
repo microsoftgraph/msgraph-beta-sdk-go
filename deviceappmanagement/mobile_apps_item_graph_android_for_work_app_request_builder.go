@@ -27,6 +27,14 @@ type MobileAppsItemGraphAndroidForWorkAppRequestBuilderGetRequestConfiguration s
     // Request query parameters
     QueryParameters *MobileAppsItemGraphAndroidForWorkAppRequestBuilderGetQueryParameters
 }
+// Assignments provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphAndroidForWorkAppRequestBuilder) Assignments()(*MobileAppsItemGraphAndroidForWorkAppAssignmentsRequestBuilder) {
+    return NewMobileAppsItemGraphAndroidForWorkAppAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Categories provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphAndroidForWorkAppRequestBuilder) Categories()(*MobileAppsItemGraphAndroidForWorkAppCategoriesRequestBuilder) {
+    return NewMobileAppsItemGraphAndroidForWorkAppCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMobileAppsItemGraphAndroidForWorkAppRequestBuilderInternal instantiates a new GraphAndroidForWorkAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphAndroidForWorkAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphAndroidForWorkAppRequestBuilder) {
     m := &MobileAppsItemGraphAndroidForWorkAppRequestBuilder{
@@ -58,6 +66,10 @@ func (m *MobileAppsItemGraphAndroidForWorkAppRequestBuilder) Get(ctx context.Con
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppable), nil
+}
+// Relationships provides operations to manage the relationships property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphAndroidForWorkAppRequestBuilder) Relationships()(*MobileAppsItemGraphAndroidForWorkAppRelationshipsRequestBuilder) {
+    return NewMobileAppsItemGraphAndroidForWorkAppRelationshipsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get the item of type microsoft.graph.mobileApp as microsoft.graph.androidForWorkApp
 func (m *MobileAppsItemGraphAndroidForWorkAppRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphAndroidForWorkAppRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

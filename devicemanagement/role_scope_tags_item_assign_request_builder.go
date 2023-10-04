@@ -31,6 +31,7 @@ func NewRoleScopeTagsItemAssignRequestBuilder(rawUrl string, requestAdapter i2ae
     return NewRoleScopeTagsItemAssignRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action assign
+// Deprecated: This method is obsolete. Use PostAsAssignPostResponse instead.
 func (m *RoleScopeTagsItemAssignRequestBuilder) Post(ctx context.Context, body RoleScopeTagsItemAssignPostRequestBodyable, requestConfiguration *RoleScopeTagsItemAssignRequestBuilderPostRequestConfiguration)(RoleScopeTagsItemAssignResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -48,6 +49,25 @@ func (m *RoleScopeTagsItemAssignRequestBuilder) Post(ctx context.Context, body R
         return nil, nil
     }
     return res.(RoleScopeTagsItemAssignResponseable), nil
+}
+// PostAsAssignPostResponse invoke action assign
+func (m *RoleScopeTagsItemAssignRequestBuilder) PostAsAssignPostResponse(ctx context.Context, body RoleScopeTagsItemAssignPostRequestBodyable, requestConfiguration *RoleScopeTagsItemAssignRequestBuilderPostRequestConfiguration)(RoleScopeTagsItemAssignPostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateRoleScopeTagsItemAssignPostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(RoleScopeTagsItemAssignPostResponseable), nil
 }
 // ToPostRequestInformation invoke action assign
 func (m *RoleScopeTagsItemAssignRequestBuilder) ToPostRequestInformation(ctx context.Context, body RoleScopeTagsItemAssignPostRequestBodyable, requestConfiguration *RoleScopeTagsItemAssignRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -11,7 +11,7 @@ import (
 type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsRequestBuilderGetQueryParameters list openshift objects in a team.
+// TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsRequestBuilderGetQueryParameters list openshift objects in a team. This API is supported in the following national cloud deployments.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsRequestB
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsRequestBuilder) Count()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsCountRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list openshift objects in a team.
+// Get list openshift objects in a team. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/openshift-list?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsRequest
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftCollectionResponseable), nil
 }
-// Post create an instance of an openshift object.
+// Post create an instance of an openshift object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/openshift-post?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsRequest
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftable), nil
 }
-// ToGetRequestInformation list openshift objects in a team.
+// ToGetRequestInformation list openshift objects in a team. This API is supported in the following national cloud deployments.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsRequest
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create an instance of an openshift object.
+// ToPostRequestInformation create an instance of an openshift object. This API is supported in the following national cloud deployments.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -31,6 +31,7 @@ func NewEmbeddedSIMActivationCodePoolsItemAssignRequestBuilder(rawUrl string, re
     return NewEmbeddedSIMActivationCodePoolsItemAssignRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action assign
+// Deprecated: This method is obsolete. Use PostAsAssignPostResponse instead.
 func (m *EmbeddedSIMActivationCodePoolsItemAssignRequestBuilder) Post(ctx context.Context, body EmbeddedSIMActivationCodePoolsItemAssignPostRequestBodyable, requestConfiguration *EmbeddedSIMActivationCodePoolsItemAssignRequestBuilderPostRequestConfiguration)(EmbeddedSIMActivationCodePoolsItemAssignResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -48,6 +49,25 @@ func (m *EmbeddedSIMActivationCodePoolsItemAssignRequestBuilder) Post(ctx contex
         return nil, nil
     }
     return res.(EmbeddedSIMActivationCodePoolsItemAssignResponseable), nil
+}
+// PostAsAssignPostResponse invoke action assign
+func (m *EmbeddedSIMActivationCodePoolsItemAssignRequestBuilder) PostAsAssignPostResponse(ctx context.Context, body EmbeddedSIMActivationCodePoolsItemAssignPostRequestBodyable, requestConfiguration *EmbeddedSIMActivationCodePoolsItemAssignRequestBuilderPostRequestConfiguration)(EmbeddedSIMActivationCodePoolsItemAssignPostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateEmbeddedSIMActivationCodePoolsItemAssignPostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(EmbeddedSIMActivationCodePoolsItemAssignPostResponseable), nil
 }
 // ToPostRequestInformation invoke action assign
 func (m *EmbeddedSIMActivationCodePoolsItemAssignRequestBuilder) ToPostRequestInformation(ctx context.Context, body EmbeddedSIMActivationCodePoolsItemAssignPostRequestBodyable, requestConfiguration *EmbeddedSIMActivationCodePoolsItemAssignRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

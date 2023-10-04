@@ -18,7 +18,7 @@ type ItemSettingsRegionalAndLanguageSettingsRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSettingsRegionalAndLanguageSettingsRequestBuilderGetQueryParameters retrieve the properties of a user's regionalAndLanguageSettings.
+// ItemSettingsRegionalAndLanguageSettingsRequestBuilderGetQueryParameters retrieve the properties of a user's regionalAndLanguageSettings. This API is supported in the following national cloud deployments.
 type ItemSettingsRegionalAndLanguageSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemSettingsRegionalAndLanguageSettingsRequestBuilder) Delete(ctx conte
     }
     return nil
 }
-// Get retrieve the properties of a user's regionalAndLanguageSettings.
+// Get retrieve the properties of a user's regionalAndLanguageSettings. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/regionalandlanguagesettings-get?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *ItemSettingsRegionalAndLanguageSettingsRequestBuilder) Get(ctx context.
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RegionalAndLanguageSettingsable), nil
 }
-// Patch update some or all of the properties of a regionalAndLanguageSettings object.
+// Patch update some or all of the properties of a regionalAndLanguageSettings object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/regionalandlanguagesettings-update?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *ItemSettingsRegionalAndLanguageSettingsRequestBuilder) ToDeleteRequestI
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties of a user's regionalAndLanguageSettings.
+// ToGetRequestInformation retrieve the properties of a user's regionalAndLanguageSettings. This API is supported in the following national cloud deployments.
 func (m *ItemSettingsRegionalAndLanguageSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsRegionalAndLanguageSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *ItemSettingsRegionalAndLanguageSettingsRequestBuilder) ToGetRequestInfo
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update some or all of the properties of a regionalAndLanguageSettings object.
+// ToPatchRequestInformation update some or all of the properties of a regionalAndLanguageSettings object. This API is supported in the following national cloud deployments.
 func (m *ItemSettingsRegionalAndLanguageSettingsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RegionalAndLanguageSettingsable, requestConfiguration *ItemSettingsRegionalAndLanguageSettingsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

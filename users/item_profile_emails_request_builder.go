@@ -11,7 +11,7 @@ import (
 type ItemProfileEmailsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemProfileEmailsRequestBuilderGetQueryParameters retrieve the properties and relationships of an itemEmail object in a user's profile.
+// ItemProfileEmailsRequestBuilderGetQueryParameters retrieve the properties and relationships of an itemEmail object in a user's profile. This API is supported in the following national cloud deployments.
 type ItemProfileEmailsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemProfileEmailsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *ItemProfileEmailsRequestBuilder) Count()(*ItemProfileEmailsCountRequestBuilder) {
     return NewItemProfileEmailsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of an itemEmail object in a user's profile.
+// Get retrieve the properties and relationships of an itemEmail object in a user's profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/profile-list-emails?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemProfileEmailsRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemEmailCollectionResponseable), nil
 }
-// Post create a new itemEmail object in a user's profile.
+// Post create a new itemEmail object in a user's profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/profile-post-emails?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemProfileEmailsRequestBuilder) Post(ctx context.Context, body ie233ee
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemEmailable), nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of an itemEmail object in a user's profile.
+// ToGetRequestInformation retrieve the properties and relationships of an itemEmail object in a user's profile. This API is supported in the following national cloud deployments.
 func (m *ItemProfileEmailsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileEmailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemProfileEmailsRequestBuilder) ToGetRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new itemEmail object in a user's profile.
+// ToPostRequestInformation create a new itemEmail object in a user's profile. This API is supported in the following national cloud deployments.
 func (m *ItemProfileEmailsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemEmailable, requestConfiguration *ItemProfileEmailsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

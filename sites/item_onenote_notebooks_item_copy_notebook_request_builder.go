@@ -31,7 +31,7 @@ func NewItemOnenoteNotebooksItemCopyNotebookRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewItemOnenoteNotebooksItemCopyNotebookRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post copies a notebook to the Notebooks folder in the destination Documents library. The folder is created if it doesn't exist. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+// Post copies a notebook to the Notebooks folder in the destination Documents library. The folder is created if it doesn't exist. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/notebook-copynotebook?view=graph-rest-1.0
@@ -53,7 +53,7 @@ func (m *ItemOnenoteNotebooksItemCopyNotebookRequestBuilder) Post(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteOperationable), nil
 }
-// ToPostRequestInformation copies a notebook to the Notebooks folder in the destination Documents library. The folder is created if it doesn't exist. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+// ToPostRequestInformation copies a notebook to the Notebooks folder in the destination Documents library. The folder is created if it doesn't exist. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result. This API is supported in the following national cloud deployments.
 func (m *ItemOnenoteNotebooksItemCopyNotebookRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemOnenoteNotebooksItemCopyNotebookPostRequestBodyable, requestConfiguration *ItemOnenoteNotebooksItemCopyNotebookRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

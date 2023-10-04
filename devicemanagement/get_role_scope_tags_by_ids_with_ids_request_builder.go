@@ -53,6 +53,7 @@ func NewGetRoleScopeTagsByIdsWithIdsRequestBuilder(rawUrl string, requestAdapter
     return NewGetRoleScopeTagsByIdsWithIdsRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getRoleScopeTagsByIds
+// Deprecated: This method is obsolete. Use GetAsGetRoleScopeTagsByIdsWithIdsGetResponse instead.
 func (m *GetRoleScopeTagsByIdsWithIdsRequestBuilder) Get(ctx context.Context, requestConfiguration *GetRoleScopeTagsByIdsWithIdsRequestBuilderGetRequestConfiguration)(GetRoleScopeTagsByIdsWithIdsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,6 +71,25 @@ func (m *GetRoleScopeTagsByIdsWithIdsRequestBuilder) Get(ctx context.Context, re
         return nil, nil
     }
     return res.(GetRoleScopeTagsByIdsWithIdsResponseable), nil
+}
+// GetAsGetRoleScopeTagsByIdsWithIdsGetResponse invoke function getRoleScopeTagsByIds
+func (m *GetRoleScopeTagsByIdsWithIdsRequestBuilder) GetAsGetRoleScopeTagsByIdsWithIdsGetResponse(ctx context.Context, requestConfiguration *GetRoleScopeTagsByIdsWithIdsRequestBuilderGetRequestConfiguration)(GetRoleScopeTagsByIdsWithIdsGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetRoleScopeTagsByIdsWithIdsGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(GetRoleScopeTagsByIdsWithIdsGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getRoleScopeTagsByIds
 func (m *GetRoleScopeTagsByIdsWithIdsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetRoleScopeTagsByIdsWithIdsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

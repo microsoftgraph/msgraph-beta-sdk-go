@@ -18,7 +18,7 @@ type LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilderDeleteRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilderGetQueryParameters read the properties and relationships of a filePlanReferenceTemplate object.
+// LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilderGetQueryParameters read the properties and relationships of a filePlanReferenceTemplate object. This API is supported in the following national cloud deployments.
 type LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewLabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewLabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a filePlanReferenceTemplate object.
+// Delete delete a filePlanReferenceTemplate object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-delete-fileplanreferences?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilder) De
     }
     return nil
 }
-// Get read the properties and relationships of a filePlanReferenceTemplate object.
+// Get read the properties and relationships of a filePlanReferenceTemplate object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-fileplanreferencetemplate-get?view=graph-rest-1.0
@@ -114,7 +114,7 @@ func (m *LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilder) Pa
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.FilePlanReferenceTemplateable), nil
 }
-// ToDeleteRequestInformation delete a filePlanReferenceTemplate object.
+// ToDeleteRequestInformation delete a filePlanReferenceTemplate object. This API is supported in the following national cloud deployments.
 func (m *LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -126,7 +126,7 @@ func (m *LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilder) To
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a filePlanReferenceTemplate object.
+// ToGetRequestInformation read the properties and relationships of a filePlanReferenceTemplate object. This API is supported in the following national cloud deployments.
 func (m *LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ItemPeopleRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemPeopleRequestBuilderGetQueryParameters retrieve a list of person objects ordered by their relevance to the user, which is determined by the user's communication and collaboration patterns, and business relationships.
+// ItemPeopleRequestBuilderGetQueryParameters retrieve a list of person objects ordered by their relevance to the user, which is determined by the user's communication and collaboration patterns, and business relationships. This API is supported in the following national cloud deployments.
 type ItemPeopleRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -65,7 +65,7 @@ func NewItemPeopleRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *ItemPeopleRequestBuilder) Count()(*ItemPeopleCountRequestBuilder) {
     return NewItemPeopleCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of person objects ordered by their relevance to the user, which is determined by the user's communication and collaboration patterns, and business relationships.
+// Get retrieve a list of person objects ordered by their relevance to the user, which is determined by the user's communication and collaboration patterns, and business relationships. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/user-list-people?view=graph-rest-1.0
@@ -87,7 +87,7 @@ func (m *ItemPeopleRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonCollectionResponseable), nil
 }
-// ToGetRequestInformation retrieve a list of person objects ordered by their relevance to the user, which is determined by the user's communication and collaboration patterns, and business relationships.
+// ToGetRequestInformation retrieve a list of person objects ordered by their relevance to the user, which is determined by the user's communication and collaboration patterns, and business relationships. This API is supported in the following national cloud deployments.
 func (m *ItemPeopleRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPeopleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

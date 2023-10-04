@@ -18,7 +18,7 @@ type FormsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// FormsRequestBuilderGetQueryParameters read the properties and relationships of a adminForms object.
+// FormsRequestBuilderGetQueryParameters read the properties and relationships of a adminForms object. This API is supported in the following national cloud deployments.
 type FormsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *FormsRequestBuilder) Delete(ctx context.Context, requestConfiguration *
     }
     return nil
 }
-// Get read the properties and relationships of a adminForms object.
+// Get read the properties and relationships of a adminForms object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/adminforms-get?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *FormsRequestBuilder) Get(ctx context.Context, requestConfiguration *For
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminFormsable), nil
 }
-// Patch update the properties of a adminForms object.
+// Patch update the properties of a adminForms object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/adminforms-update?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *FormsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, re
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a adminForms object.
+// ToGetRequestInformation read the properties and relationships of a adminForms object. This API is supported in the following national cloud deployments.
 func (m *FormsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FormsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *FormsRequestBuilder) ToGetRequestInformation(ctx context.Context, reque
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a adminForms object.
+// ToPatchRequestInformation update the properties of a adminForms object. This API is supported in the following national cloud deployments.
 func (m *FormsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminFormsable, requestConfiguration *FormsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

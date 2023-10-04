@@ -18,7 +18,7 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsSh
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters get a team that has been shared with a specified channel. This operation is allowed only for channels with a membershipType value of shared.
+// TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters get a team that has been shared with a specified channel. This operation is allowed only for channels with a membershipType value of shared. This API is supported in the following national cloud deployments.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,7 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeam
     urlParams["request-raw-url"] = rawUrl
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete unshare a channel with a team by deleting the corresponding sharedWithChannelTeamInfo resource. This operation is allowed only for channels with a membershipType value of shared.
+// Delete unshare a channel with a team by deleting the corresponding sharedWithChannelTeamInfo resource. This operation is allowed only for channels with a membershipType value of shared. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/sharedwithchannelteaminfo-delete?view=graph-rest-1.0
@@ -77,7 +77,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTea
     }
     return nil
 }
-// Get get a team that has been shared with a specified channel. This operation is allowed only for channels with a membershipType value of shared.
+// Get get a team that has been shared with a specified channel. This operation is allowed only for channels with a membershipType value of shared. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/sharedwithchannelteaminfo-get?view=graph-rest-1.0
@@ -122,7 +122,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTea
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilder) Team()(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsItemTeamRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsItemTeamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation unshare a channel with a team by deleting the corresponding sharedWithChannelTeamInfo resource. This operation is allowed only for channels with a membershipType value of shared.
+// ToDeleteRequestInformation unshare a channel with a team by deleting the corresponding sharedWithChannelTeamInfo resource. This operation is allowed only for channels with a membershipType value of shared. This API is supported in the following national cloud deployments.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTea
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get a team that has been shared with a specified channel. This operation is allowed only for channels with a membershipType value of shared.
+// ToGetRequestInformation get a team that has been shared with a specified channel. This operation is allowed only for channels with a membershipType value of shared. This API is supported in the following national cloud deployments.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

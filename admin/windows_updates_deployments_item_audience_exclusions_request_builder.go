@@ -11,7 +11,7 @@ import (
 type WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilderGetQueryParameters list the updatableAsset resources that are excluded from a deploymentAudience.
+// WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilderGetQueryParameters list the updatableAsset resources that are excluded from a deploymentAudience. This API is supported in the following national cloud deployments.
 type WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewWindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder(rawUrl str
 func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) Count()(*WindowsUpdatesDeploymentsItemAudienceExclusionsCountRequestBuilder) {
     return NewWindowsUpdatesDeploymentsItemAudienceExclusionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list the updatableAsset resources that are excluded from a deploymentAudience.
+// Get list the updatableAsset resources that are excluded from a deploymentAudience. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-list-exclusions?view=graph-rest-1.0
@@ -131,7 +131,7 @@ func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) Post(ctx
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable), nil
 }
-// ToGetRequestInformation list the updatableAsset resources that are excluded from a deploymentAudience.
+// ToGetRequestInformation list the updatableAsset resources that are excluded from a deploymentAudience. This API is supported in the following national cloud deployments.
 func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

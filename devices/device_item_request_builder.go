@@ -18,7 +18,7 @@ type DeviceItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DeviceItemRequestBuilderGetQueryParameters get the properties and relationships of a device object. Since the device resource supports extensions, you can also use the GET operation to get custom properties and extension data in a device instance.
+// DeviceItemRequestBuilderGetQueryParameters get the properties and relationships of a device object. Since the device resource supports extensions, you can also use the GET operation to get custom properties and extension data in a device instance. This API is supported in the following national cloud deployments.
 type DeviceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -66,7 +66,7 @@ func NewDeviceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a registered device.
+// Delete delete a registered device. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/device-delete?view=graph-rest-1.0
@@ -89,7 +89,7 @@ func (m *DeviceItemRequestBuilder) Delete(ctx context.Context, requestConfigurat
 func (m *DeviceItemRequestBuilder) Extensions()(*ItemExtensionsRequestBuilder) {
     return NewItemExtensionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the properties and relationships of a device object. Since the device resource supports extensions, you can also use the GET operation to get custom properties and extension data in a device instance.
+// Get get the properties and relationships of a device object. Since the device resource supports extensions, you can also use the GET operation to get custom properties and extension data in a device instance. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/device-get?view=graph-rest-1.0
@@ -123,7 +123,7 @@ func (m *DeviceItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsReque
 func (m *DeviceItemRequestBuilder) MemberOf()(*ItemMemberOfRequestBuilder) {
     return NewItemMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of a device. Only certain properties of a device can be updated through approved Mobile Device Management (MDM) apps.
+// Patch update the properties of a device. Only certain properties of a device can be updated through approved Mobile Device Management (MDM) apps. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/device-update?view=graph-rest-1.0
@@ -157,7 +157,7 @@ func (m *DeviceItemRequestBuilder) RegisteredUsers()(*ItemRegisteredUsersRequest
 func (m *DeviceItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) {
     return NewItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a registered device.
+// ToDeleteRequestInformation delete a registered device. This API is supported in the following national cloud deployments.
 func (m *DeviceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeviceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -169,7 +169,7 @@ func (m *DeviceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Contex
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of a device object. Since the device resource supports extensions, you can also use the GET operation to get custom properties and extension data in a device instance.
+// ToGetRequestInformation get the properties and relationships of a device object. Since the device resource supports extensions, you can also use the GET operation to get custom properties and extension data in a device instance. This API is supported in the following national cloud deployments.
 func (m *DeviceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -185,7 +185,7 @@ func (m *DeviceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, 
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a device. Only certain properties of a device can be updated through approved Mobile Device Management (MDM) apps.
+// ToPatchRequestInformation update the properties of a device. Only certain properties of a device can be updated through approved Mobile Device Management (MDM) apps. This API is supported in the following national cloud deployments.
 func (m *DeviceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, requestConfiguration *DeviceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

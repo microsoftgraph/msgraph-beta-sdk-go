@@ -31,6 +31,7 @@ func NewItemTeamPermissionGrantsItemGetMemberObjectsRequestBuilder(rawUrl string
     return NewItemTeamPermissionGrantsItemGetMemberObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action getMemberObjects
+// Deprecated: This method is obsolete. Use PostAsGetMemberObjectsPostResponse instead.
 func (m *ItemTeamPermissionGrantsItemGetMemberObjectsRequestBuilder) Post(ctx context.Context, body ItemTeamPermissionGrantsItemGetMemberObjectsPostRequestBodyable, requestConfiguration *ItemTeamPermissionGrantsItemGetMemberObjectsRequestBuilderPostRequestConfiguration)(ItemTeamPermissionGrantsItemGetMemberObjectsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -48,6 +49,25 @@ func (m *ItemTeamPermissionGrantsItemGetMemberObjectsRequestBuilder) Post(ctx co
         return nil, nil
     }
     return res.(ItemTeamPermissionGrantsItemGetMemberObjectsResponseable), nil
+}
+// PostAsGetMemberObjectsPostResponse invoke action getMemberObjects
+func (m *ItemTeamPermissionGrantsItemGetMemberObjectsRequestBuilder) PostAsGetMemberObjectsPostResponse(ctx context.Context, body ItemTeamPermissionGrantsItemGetMemberObjectsPostRequestBodyable, requestConfiguration *ItemTeamPermissionGrantsItemGetMemberObjectsRequestBuilderPostRequestConfiguration)(ItemTeamPermissionGrantsItemGetMemberObjectsPostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemTeamPermissionGrantsItemGetMemberObjectsPostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemTeamPermissionGrantsItemGetMemberObjectsPostResponseable), nil
 }
 // ToPostRequestInformation invoke action getMemberObjects
 func (m *ItemTeamPermissionGrantsItemGetMemberObjectsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemTeamPermissionGrantsItemGetMemberObjectsPostRequestBodyable, requestConfiguration *ItemTeamPermissionGrantsItemGetMemberObjectsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

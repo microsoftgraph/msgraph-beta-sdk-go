@@ -20,7 +20,7 @@ func NewDirectoryAudit()(*DirectoryAudit) {
 func CreateDirectoryAuditFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDirectoryAudit(), nil
 }
-// GetActivityDateTime gets the activityDateTime property value. Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.Supports $filter (eq, ge, le) and $orderby.
+// GetActivityDateTime gets the activityDateTime property value. Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and $orderby.
 func (m *DirectoryAudit) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("activityDateTime")
     if err != nil {
@@ -31,7 +31,7 @@ func (m *DirectoryAudit) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a
     }
     return nil
 }
-// GetActivityDisplayName gets the activityDisplayName property value. Indicates the activity name or the operation name (E.g. 'Create User', 'Add member to group'). For a list of activities logged, refer to Azure AD audit log categories and activities. Supports $filter (eq, startswith).
+// GetActivityDisplayName gets the activityDisplayName property value. Indicates the activity name or the operation name (for example 'Create User', 'Add member to group'). For a list of activities logged, refer to Azure AD audit log categories and activities. Supports $filter (eq, startswith).
 func (m *DirectoryAudit) GetActivityDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("activityDisplayName")
     if err != nil {
@@ -42,7 +42,7 @@ func (m *DirectoryAudit) GetActivityDisplayName()(*string) {
     }
     return nil
 }
-// GetAdditionalDetails gets the additionalDetails property value. Indicates additional details on the activity.
+// GetAdditionalDetails gets the additionalDetails property value. Indicates more details on the activity.
 func (m *DirectoryAudit) GetAdditionalDetails()([]KeyValueable) {
     val, err := m.GetBackingStore().Get("additionalDetails")
     if err != nil {
@@ -234,7 +234,7 @@ func (m *DirectoryAudit) GetLoggedByService()(*string) {
     }
     return nil
 }
-// GetOperationType gets the operationType property value. Indicates the type of operation that was performed. The possible values include but are not limited to the following: Add, Assign, Update, Unassign, and Delete.
+// GetOperationType gets the operationType property value. Indicates the type of operation that was performed. The possible values include but aren't limited to the following: Add, Assign, Update, Unassign, and Delete.
 func (m *DirectoryAudit) GetOperationType()(*string) {
     val, err := m.GetBackingStore().Get("operationType")
     if err != nil {
@@ -382,21 +382,21 @@ func (m *DirectoryAudit) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetActivityDateTime sets the activityDateTime property value. Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.Supports $filter (eq, ge, le) and $orderby.
+// SetActivityDateTime sets the activityDateTime property value. Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and $orderby.
 func (m *DirectoryAudit) SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("activityDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetActivityDisplayName sets the activityDisplayName property value. Indicates the activity name or the operation name (E.g. 'Create User', 'Add member to group'). For a list of activities logged, refer to Azure AD audit log categories and activities. Supports $filter (eq, startswith).
+// SetActivityDisplayName sets the activityDisplayName property value. Indicates the activity name or the operation name (for example 'Create User', 'Add member to group'). For a list of activities logged, refer to Azure AD audit log categories and activities. Supports $filter (eq, startswith).
 func (m *DirectoryAudit) SetActivityDisplayName(value *string)() {
     err := m.GetBackingStore().Set("activityDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAdditionalDetails sets the additionalDetails property value. Indicates additional details on the activity.
+// SetAdditionalDetails sets the additionalDetails property value. Indicates more details on the activity.
 func (m *DirectoryAudit) SetAdditionalDetails(value []KeyValueable)() {
     err := m.GetBackingStore().Set("additionalDetails", value)
     if err != nil {
@@ -431,7 +431,7 @@ func (m *DirectoryAudit) SetLoggedByService(value *string)() {
         panic(err)
     }
 }
-// SetOperationType sets the operationType property value. Indicates the type of operation that was performed. The possible values include but are not limited to the following: Add, Assign, Update, Unassign, and Delete.
+// SetOperationType sets the operationType property value. Indicates the type of operation that was performed. The possible values include but aren't limited to the following: Add, Assign, Update, Unassign, and Delete.
 func (m *DirectoryAudit) SetOperationType(value *string)() {
     err := m.GetBackingStore().Set("operationType", value)
     if err != nil {

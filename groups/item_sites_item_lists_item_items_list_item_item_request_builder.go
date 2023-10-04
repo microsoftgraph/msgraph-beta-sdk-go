@@ -18,7 +18,7 @@ type ItemSitesItemListsItemItemsListItemItemRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSitesItemListsItemItemsListItemItemRequestBuilderGetQueryParameters returns the metadata for an [item][] in a [list][].
+// ItemSitesItemListsItemItemsListItemItemRequestBuilderGetQueryParameters returns the metadata for an item][] in a [list][]. This API is supported in the following [national cloud deployments.
 type ItemSitesItemListsItemItemsListItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) CreatedByUser()(
 func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) CreateLink()(*ItemSitesItemListsItemItemsItemCreateLinkRequestBuilder) {
     return NewItemSitesItemListsItemItemsItemCreateLinkRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete removes an item from a [list][].
+// Delete removes an item from a list][]. This API is supported in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/listitem-delete?view=graph-rest-1.0
@@ -101,7 +101,7 @@ func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) DriveItem()(*Ite
 func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) Fields()(*ItemSitesItemListsItemItemsItemFieldsRequestBuilder) {
     return NewItemSitesItemListsItemItemsItemFieldsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get returns the metadata for an [item][] in a [list][].
+// Get returns the metadata for an item][] in a [list][]. This API is supported in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/listitem-get?view=graph-rest-1.0
@@ -150,7 +150,7 @@ func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) Patch(ctx contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ListItemable), nil
 }
-// ToDeleteRequestInformation removes an item from a [list][].
+// ToDeleteRequestInformation removes an item from a list][]. This API is supported in the following [national cloud deployments.
 func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsListItemItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -162,7 +162,7 @@ func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) ToDeleteRequestI
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation returns the metadata for an [item][] in a [list][].
+// ToGetRequestInformation returns the metadata for an item][] in a [list][]. This API is supported in the following [national cloud deployments.
 func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsListItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

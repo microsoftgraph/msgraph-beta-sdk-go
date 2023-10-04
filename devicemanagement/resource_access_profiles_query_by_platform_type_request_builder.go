@@ -31,6 +31,7 @@ func NewResourceAccessProfilesQueryByPlatformTypeRequestBuilder(rawUrl string, r
     return NewResourceAccessProfilesQueryByPlatformTypeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action queryByPlatformType
+// Deprecated: This method is obsolete. Use PostAsQueryByPlatformTypePostResponse instead.
 func (m *ResourceAccessProfilesQueryByPlatformTypeRequestBuilder) Post(ctx context.Context, body ResourceAccessProfilesQueryByPlatformTypePostRequestBodyable, requestConfiguration *ResourceAccessProfilesQueryByPlatformTypeRequestBuilderPostRequestConfiguration)(ResourceAccessProfilesQueryByPlatformTypeResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -48,6 +49,25 @@ func (m *ResourceAccessProfilesQueryByPlatformTypeRequestBuilder) Post(ctx conte
         return nil, nil
     }
     return res.(ResourceAccessProfilesQueryByPlatformTypeResponseable), nil
+}
+// PostAsQueryByPlatformTypePostResponse invoke action queryByPlatformType
+func (m *ResourceAccessProfilesQueryByPlatformTypeRequestBuilder) PostAsQueryByPlatformTypePostResponse(ctx context.Context, body ResourceAccessProfilesQueryByPlatformTypePostRequestBodyable, requestConfiguration *ResourceAccessProfilesQueryByPlatformTypeRequestBuilderPostRequestConfiguration)(ResourceAccessProfilesQueryByPlatformTypePostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateResourceAccessProfilesQueryByPlatformTypePostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ResourceAccessProfilesQueryByPlatformTypePostResponseable), nil
 }
 // ToPostRequestInformation invoke action queryByPlatformType
 func (m *ResourceAccessProfilesQueryByPlatformTypeRequestBuilder) ToPostRequestInformation(ctx context.Context, body ResourceAccessProfilesQueryByPlatformTypePostRequestBodyable, requestConfiguration *ResourceAccessProfilesQueryByPlatformTypeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -18,7 +18,7 @@ type ItemProfileAccountUserAccountInformationItemRequestBuilderDeleteRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfileAccountUserAccountInformationItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an userAccountInformation object in a user's profile.
+// ItemProfileAccountUserAccountInformationItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an userAccountInformation object in a user's profile. This API is supported in the following national cloud deployments.
 type ItemProfileAccountUserAccountInformationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemProfileAccountUserAccountInformationItemRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileAccountUserAccountInformationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an userAccountInformation object from a user's profile.
+// Delete delete an userAccountInformation object from a user's profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/useraccountinformation-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) Delete(ctx 
     }
     return nil
 }
-// Get retrieve the properties and relationships of an userAccountInformation object in a user's profile.
+// Get retrieve the properties and relationships of an userAccountInformation object in a user's profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/useraccountinformation-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) Get(ctx con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAccountInformationable), nil
 }
-// Patch update the properties of an userAccountInformation object in a user's profile.
+// Patch update the properties of an userAccountInformation object in a user's profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/useraccountinformation-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) Patch(ctx c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAccountInformationable), nil
 }
-// ToDeleteRequestInformation delete an userAccountInformation object from a user's profile.
+// ToDeleteRequestInformation delete an userAccountInformation object from a user's profile. This API is supported in the following national cloud deployments.
 func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileAccountUserAccountInformationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) ToDeleteReq
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of an userAccountInformation object in a user's profile.
+// ToGetRequestInformation retrieve the properties and relationships of an userAccountInformation object in a user's profile. This API is supported in the following national cloud deployments.
 func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileAccountUserAccountInformationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) ToGetReques
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an userAccountInformation object in a user's profile.
+// ToPatchRequestInformation update the properties of an userAccountInformation object in a user's profile. This API is supported in the following national cloud deployments.
 func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAccountInformationable, requestConfiguration *ItemProfileAccountUserAccountInformationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

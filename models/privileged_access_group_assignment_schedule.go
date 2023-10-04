@@ -32,7 +32,7 @@ func (m *PrivilegedAccessGroupAssignmentSchedule) GetAccessId()(*PrivilegedAcces
     }
     return nil
 }
-// GetActivatedUsing gets the activatedUsing property value. When the request activates an ownership or membership assignment in PIM for groups, this object represents the eligibility relationship. Otherwise, it is null. Supports $expand.
+// GetActivatedUsing gets the activatedUsing property value. When the request activates an ownership or membership assignment in PIM for groups, this object represents the eligibility relationship. Otherwise, it's null. Supports $expand.
 func (m *PrivilegedAccessGroupAssignmentSchedule) GetActivatedUsing()(PrivilegedAccessGroupEligibilityScheduleable) {
     val, err := m.GetBackingStore().Get("activatedUsing")
     if err != nil {
@@ -260,7 +260,7 @@ func (m *PrivilegedAccessGroupAssignmentSchedule) SetAccessId(value *PrivilegedA
         panic(err)
     }
 }
-// SetActivatedUsing sets the activatedUsing property value. When the request activates an ownership or membership assignment in PIM for groups, this object represents the eligibility relationship. Otherwise, it is null. Supports $expand.
+// SetActivatedUsing sets the activatedUsing property value. When the request activates an ownership or membership assignment in PIM for groups, this object represents the eligibility relationship. Otherwise, it's null. Supports $expand.
 func (m *PrivilegedAccessGroupAssignmentSchedule) SetActivatedUsing(value PrivilegedAccessGroupEligibilityScheduleable)() {
     err := m.GetBackingStore().Set("activatedUsing", value)
     if err != nil {

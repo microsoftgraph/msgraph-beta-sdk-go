@@ -34,6 +34,10 @@ type ExternalRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AuthorizationSystems provides operations to manage the authorizationSystems property of the microsoft.graph.externalConnectors.external entity.
+func (m *ExternalRequestBuilder) AuthorizationSystems()(*AuthorizationSystemsRequestBuilder) {
+    return NewAuthorizationSystemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Connections provides operations to manage the connections property of the microsoft.graph.externalConnectors.external entity.
 func (m *ExternalRequestBuilder) Connections()(*ConnectionsRequestBuilder) {
     return NewConnectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

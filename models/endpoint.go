@@ -21,7 +21,7 @@ func NewEndpoint()(*Endpoint) {
 func CreateEndpointFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEndpoint(), nil
 }
-// GetCapability gets the capability property value. Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.) Not nullable. Read-only.
+// GetCapability gets the capability property value. Describes the capability that is associated with this resource. (for example, Messages, Conversations, etc.) Not nullable. Read-only.
 func (m *Endpoint) GetCapability()(*string) {
     val, err := m.GetBackingStore().Get("capability")
     if err != nil {
@@ -109,7 +109,7 @@ func (m *Endpoint) GetProviderName()(*string) {
     }
     return nil
 }
-// GetProviderResourceId gets the providerResourceId property value. For Microsoft 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.
+// GetProviderResourceId gets the providerResourceId property value. For Microsoft 365 groups, this is set to a well-known name for the resource (for example, Yammer.FeedURL etc.). Not nullable. Read-only.
 func (m *Endpoint) GetProviderResourceId()(*string) {
     val, err := m.GetBackingStore().Get("providerResourceId")
     if err != nil {
@@ -169,7 +169,7 @@ func (m *Endpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetCapability sets the capability property value. Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.) Not nullable. Read-only.
+// SetCapability sets the capability property value. Describes the capability that is associated with this resource. (for example, Messages, Conversations, etc.) Not nullable. Read-only.
 func (m *Endpoint) SetCapability(value *string)() {
     err := m.GetBackingStore().Set("capability", value)
     if err != nil {
@@ -190,7 +190,7 @@ func (m *Endpoint) SetProviderName(value *string)() {
         panic(err)
     }
 }
-// SetProviderResourceId sets the providerResourceId property value. For Microsoft 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.
+// SetProviderResourceId sets the providerResourceId property value. For Microsoft 365 groups, this is set to a well-known name for the resource (for example, Yammer.FeedURL etc.). Not nullable. Read-only.
 func (m *Endpoint) SetProviderResourceId(value *string)() {
     err := m.GetBackingStore().Set("providerResourceId", value)
     if err != nil {

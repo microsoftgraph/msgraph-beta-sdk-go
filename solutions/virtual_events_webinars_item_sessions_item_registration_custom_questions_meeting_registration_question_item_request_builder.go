@@ -18,7 +18,7 @@ type VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsMeetingRegi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilderGetQueryParameters get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+// VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilderGetQueryParameters get a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is supported in the following national cloud deployments.
 type VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewVirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsMeetingR
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a custom registration question from a meetingRegistration object on behalf of the organizer.
+// Delete delete a custom registration question from a meetingRegistration object on behalf of the organizer. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/meetingregistrationquestion-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsMeeting
     }
     return nil
 }
-// Get get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+// Get get a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/meetingregistrationquestion-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsMeeting
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionable), nil
 }
-// Patch update a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+// Patch update a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/meetingregistrationquestion-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsMeeting
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionable), nil
 }
-// ToDeleteRequestInformation delete a custom registration question from a meetingRegistration object on behalf of the organizer.
+// ToDeleteRequestInformation delete a custom registration question from a meetingRegistration object on behalf of the organizer. This API is supported in the following national cloud deployments.
 func (m *VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsMeeting
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+// ToGetRequestInformation get a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is supported in the following national cloud deployments.
 func (m *VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsMeeting
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+// ToPatchRequestInformation update a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is supported in the following national cloud deployments.
 func (m *VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionable, requestConfiguration *VirtualEventsWebinarsItemSessionsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

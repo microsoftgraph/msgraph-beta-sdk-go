@@ -11,7 +11,7 @@ import (
 type ItemScheduleSchedulingGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemScheduleSchedulingGroupsRequestBuilderGetQueryParameters get the list of schedulingGroups in this schedule.
+// ItemScheduleSchedulingGroupsRequestBuilderGetQueryParameters get the list of schedulingGroups in this schedule. This API is supported in the following national cloud deployments.
 type ItemScheduleSchedulingGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,7 +72,7 @@ func NewItemScheduleSchedulingGroupsRequestBuilder(rawUrl string, requestAdapter
 func (m *ItemScheduleSchedulingGroupsRequestBuilder) Count()(*ItemScheduleSchedulingGroupsCountRequestBuilder) {
     return NewItemScheduleSchedulingGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of schedulingGroups in this schedule.
+// Get get the list of schedulingGroups in this schedule. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/schedule-list-schedulinggroups?view=graph-rest-1.0
@@ -94,7 +94,7 @@ func (m *ItemScheduleSchedulingGroupsRequestBuilder) Get(ctx context.Context, re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SchedulingGroupCollectionResponseable), nil
 }
-// Post create a new schedulingGroup.
+// Post create a new schedulingGroup. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/schedule-post-schedulinggroups?view=graph-rest-1.0
@@ -116,7 +116,7 @@ func (m *ItemScheduleSchedulingGroupsRequestBuilder) Post(ctx context.Context, b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SchedulingGroupable), nil
 }
-// ToGetRequestInformation get the list of schedulingGroups in this schedule.
+// ToGetRequestInformation get the list of schedulingGroups in this schedule. This API is supported in the following national cloud deployments.
 func (m *ItemScheduleSchedulingGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemScheduleSchedulingGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -132,7 +132,7 @@ func (m *ItemScheduleSchedulingGroupsRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new schedulingGroup.
+// ToPostRequestInformation create a new schedulingGroup. This API is supported in the following national cloud deployments.
 func (m *ItemScheduleSchedulingGroupsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SchedulingGroupable, requestConfiguration *ItemScheduleSchedulingGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

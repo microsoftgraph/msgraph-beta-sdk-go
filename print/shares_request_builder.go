@@ -11,7 +11,7 @@ import (
 type SharesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SharesRequestBuilderGetQueryParameters retrieve a list of printerShares.
+// SharesRequestBuilderGetQueryParameters retrieve a list of printerShares. This API is supported in the following national cloud deployments.
 type SharesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewSharesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *SharesRequestBuilder) Count()(*SharesCountRequestBuilder) {
     return NewSharesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of printerShares.
+// Get retrieve a list of printerShares. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/print-list-shares?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *SharesRequestBuilder) Get(ctx context.Context, requestConfiguration *Sh
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterShareCollectionResponseable), nil
 }
-// Post create a new printerShare for the specified printer.
+// Post create a new printerShare for the specified printer. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/print-post-shares?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *SharesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterShareable), nil
 }
-// ToGetRequestInformation retrieve a list of printerShares.
+// ToGetRequestInformation retrieve a list of printerShares. This API is supported in the following national cloud deployments.
 func (m *SharesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SharesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *SharesRequestBuilder) ToGetRequestInformation(ctx context.Context, requ
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new printerShare for the specified printer.
+// ToPostRequestInformation create a new printerShare for the specified printer. This API is supported in the following national cloud deployments.
 func (m *SharesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterShareable, requestConfiguration *SharesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

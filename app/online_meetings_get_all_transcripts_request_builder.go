@@ -50,6 +50,7 @@ func NewOnlineMeetingsGetAllTranscriptsRequestBuilder(rawUrl string, requestAdap
     return NewOnlineMeetingsGetAllTranscriptsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getAllTranscripts
+// Deprecated: This method is obsolete. Use GetAsGetAllTranscriptsGetResponse instead.
 func (m *OnlineMeetingsGetAllTranscriptsRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsGetAllTranscriptsRequestBuilderGetRequestConfiguration)(OnlineMeetingsGetAllTranscriptsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -67,6 +68,25 @@ func (m *OnlineMeetingsGetAllTranscriptsRequestBuilder) Get(ctx context.Context,
         return nil, nil
     }
     return res.(OnlineMeetingsGetAllTranscriptsResponseable), nil
+}
+// GetAsGetAllTranscriptsGetResponse invoke function getAllTranscripts
+func (m *OnlineMeetingsGetAllTranscriptsRequestBuilder) GetAsGetAllTranscriptsGetResponse(ctx context.Context, requestConfiguration *OnlineMeetingsGetAllTranscriptsRequestBuilderGetRequestConfiguration)(OnlineMeetingsGetAllTranscriptsGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateOnlineMeetingsGetAllTranscriptsGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(OnlineMeetingsGetAllTranscriptsGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getAllTranscripts
 func (m *OnlineMeetingsGetAllTranscriptsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsGetAllTranscriptsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

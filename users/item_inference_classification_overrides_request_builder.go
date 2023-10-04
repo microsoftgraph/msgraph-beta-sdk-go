@@ -11,7 +11,7 @@ import (
 type ItemInferenceClassificationOverridesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemInferenceClassificationOverridesRequestBuilderGetQueryParameters get the Focused Inbox overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user does not have any overrides.
+// ItemInferenceClassificationOverridesRequestBuilderGetQueryParameters get the Focused Inbox overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user does not have any overrides. This API is supported in the following national cloud deployments.
 type ItemInferenceClassificationOverridesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -70,7 +70,7 @@ func NewItemInferenceClassificationOverridesRequestBuilder(rawUrl string, reques
 func (m *ItemInferenceClassificationOverridesRequestBuilder) Count()(*ItemInferenceClassificationOverridesCountRequestBuilder) {
     return NewItemInferenceClassificationOverridesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the Focused Inbox overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user does not have any overrides.
+// Get get the Focused Inbox overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user does not have any overrides. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/inferenceclassification-list-overrides?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *ItemInferenceClassificationOverridesRequestBuilder) Get(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InferenceClassificationOverrideCollectionResponseable), nil
 }
-// Post create a focused Inbox override for a sender identified by an SMTP address. Future messages from that SMTP address will be consistently classifiedas specified in the override.
+// Post create a focused Inbox override for a sender identified by an SMTP address. Future messages from that SMTP address will be consistently classifiedas specified in the override. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/inferenceclassification-post-overrides?view=graph-rest-1.0
@@ -114,7 +114,7 @@ func (m *ItemInferenceClassificationOverridesRequestBuilder) Post(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InferenceClassificationOverrideable), nil
 }
-// ToGetRequestInformation get the Focused Inbox overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user does not have any overrides.
+// ToGetRequestInformation get the Focused Inbox overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user does not have any overrides. This API is supported in the following national cloud deployments.
 func (m *ItemInferenceClassificationOverridesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemInferenceClassificationOverridesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -130,7 +130,7 @@ func (m *ItemInferenceClassificationOverridesRequestBuilder) ToGetRequestInforma
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a focused Inbox override for a sender identified by an SMTP address. Future messages from that SMTP address will be consistently classifiedas specified in the override.
+// ToPostRequestInformation create a focused Inbox override for a sender identified by an SMTP address. Future messages from that SMTP address will be consistently classifiedas specified in the override. This API is supported in the following national cloud deployments.
 func (m *ItemInferenceClassificationOverridesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InferenceClassificationOverrideable, requestConfiguration *ItemInferenceClassificationOverridesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

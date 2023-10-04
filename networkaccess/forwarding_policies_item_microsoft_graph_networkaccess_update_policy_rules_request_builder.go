@@ -30,7 +30,7 @@ func NewForwardingPoliciesItemMicrosoftGraphNetworkaccessUpdatePolicyRulesReques
     urlParams["request-raw-url"] = rawUrl
     return NewForwardingPoliciesItemMicrosoftGraphNetworkaccessUpdatePolicyRulesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post update the rules within a forwarding policy.
+// Post update the rules within a forwarding policy. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-forwardingpolicy-updatepolicyrules?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ForwardingPoliciesItemMicrosoftGraphNetworkaccessUpdatePolicyRulesReque
     }
     return nil
 }
-// ToPostRequestInformation update the rules within a forwarding policy.
+// ToPostRequestInformation update the rules within a forwarding policy. This API is supported in the following national cloud deployments.
 func (m *ForwardingPoliciesItemMicrosoftGraphNetworkaccessUpdatePolicyRulesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ForwardingPoliciesItemMicrosoftGraphNetworkaccessUpdatePolicyRulesUpdatePolicyRulesPostRequestBodyable, requestConfiguration *ForwardingPoliciesItemMicrosoftGraphNetworkaccessUpdatePolicyRulesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

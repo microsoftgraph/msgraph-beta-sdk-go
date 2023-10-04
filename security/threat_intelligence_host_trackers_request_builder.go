@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceHostTrackersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceHostTrackersRequestBuilderGetQueryParameters read the properties and relationships of a hostTracker object.
+// ThreatIntelligenceHostTrackersRequestBuilderGetQueryParameters read the properties and relationships of a hostTracker object. This API is supported in the following national cloud deployments.
 type ThreatIntelligenceHostTrackersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewThreatIntelligenceHostTrackersRequestBuilder(rawUrl string, requestAdapt
 func (m *ThreatIntelligenceHostTrackersRequestBuilder) Count()(*ThreatIntelligenceHostTrackersCountRequestBuilder) {
     return NewThreatIntelligenceHostTrackersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a hostTracker object.
+// Get read the properties and relationships of a hostTracker object. This API is supported in the following national cloud deployments.
 func (m *ThreatIntelligenceHostTrackersRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostTrackersRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostTrackerCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ThreatIntelligenceHostTrackersRequestBuilder) Post(ctx context.Context,
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostTrackerable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a hostTracker object.
+// ToGetRequestInformation read the properties and relationships of a hostTracker object. This API is supported in the following national cloud deployments.
 func (m *ThreatIntelligenceHostTrackersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostTrackersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

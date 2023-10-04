@@ -20,7 +20,7 @@ func NewGovernanceRoleAssignment()(*GovernanceRoleAssignment) {
 func CreateGovernanceRoleAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGovernanceRoleAssignment(), nil
 }
-// GetAssignmentState gets the assignmentState property value. The state of the assignment. The value can be Eligible for eligible assignment or Active if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.
+// GetAssignmentState gets the assignmentState property value. The state of the assignment. The value can be Eligible for eligible assignment or Active if it's directly assigned Active by administrators, or activated on an eligible assignment by the users.
 func (m *GovernanceRoleAssignment) GetAssignmentState()(*string) {
     val, err := m.GetBackingStore().Get("assignmentState")
     if err != nil {
@@ -31,7 +31,7 @@ func (m *GovernanceRoleAssignment) GetAssignmentState()(*string) {
     }
     return nil
 }
-// GetEndDateTime gets the endDateTime property value. For a non-permanent role assignment, this is the time when the role assignment will be expired. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetEndDateTime gets the endDateTime property value. For a non-permanent role assignment, this is the time when the role assignment is expired. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *GovernanceRoleAssignment) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -220,7 +220,7 @@ func (m *GovernanceRoleAssignment) GetLinkedEligibleRoleAssignmentId()(*string) 
     }
     return nil
 }
-// GetMemberType gets the memberType property value. The type of member. The value can be: Inherited (if the role assignment is inherited from a parent resource scope), Group (if the role assignment is not inherited, but comes from the membership of a group assignment), or User (if the role assignment is neither inherited nor from a group assignment).
+// GetMemberType gets the memberType property value. The type of member. The value can be: Inherited (if the role assignment is inherited from a parent resource scope), Group (if the role assignment isn't inherited, but comes from the membership of a group assignment), or User (if the role assignment isn't inherited or from a group assignment).
 func (m *GovernanceRoleAssignment) GetMemberType()(*string) {
     val, err := m.GetBackingStore().Get("memberType")
     if err != nil {
@@ -242,7 +242,7 @@ func (m *GovernanceRoleAssignment) GetResource()(GovernanceResourceable) {
     }
     return nil
 }
-// GetResourceId gets the resourceId property value. Required. The ID of the resource which the role assignment is associated with.
+// GetResourceId gets the resourceId property value. Required. The ID of the resource that the role assignment is associated with.
 func (m *GovernanceRoleAssignment) GetResourceId()(*string) {
     val, err := m.GetBackingStore().Get("resourceId")
     if err != nil {
@@ -264,7 +264,7 @@ func (m *GovernanceRoleAssignment) GetRoleDefinition()(GovernanceRoleDefinitiona
     }
     return nil
 }
-// GetRoleDefinitionId gets the roleDefinitionId property value. Required. The ID of the role definition which the role assignment is associated with.
+// GetRoleDefinitionId gets the roleDefinitionId property value. Required. The ID of the role definition that the role assignment is associated with.
 func (m *GovernanceRoleAssignment) GetRoleDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("roleDefinitionId")
     if err != nil {
@@ -308,7 +308,7 @@ func (m *GovernanceRoleAssignment) GetSubject()(GovernanceSubjectable) {
     }
     return nil
 }
-// GetSubjectId gets the subjectId property value. Required. The ID of the subject which the role assignment is associated with.
+// GetSubjectId gets the subjectId property value. Required. The ID of the subject that the role assignment is associated with.
 func (m *GovernanceRoleAssignment) GetSubjectId()(*string) {
     val, err := m.GetBackingStore().Get("subjectId")
     if err != nil {
@@ -411,14 +411,14 @@ func (m *GovernanceRoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetAssignmentState sets the assignmentState property value. The state of the assignment. The value can be Eligible for eligible assignment or Active if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.
+// SetAssignmentState sets the assignmentState property value. The state of the assignment. The value can be Eligible for eligible assignment or Active if it's directly assigned Active by administrators, or activated on an eligible assignment by the users.
 func (m *GovernanceRoleAssignment) SetAssignmentState(value *string)() {
     err := m.GetBackingStore().Set("assignmentState", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEndDateTime sets the endDateTime property value. For a non-permanent role assignment, this is the time when the role assignment will be expired. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// SetEndDateTime sets the endDateTime property value. For a non-permanent role assignment, this is the time when the role assignment is expired. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *GovernanceRoleAssignment) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("endDateTime", value)
     if err != nil {
@@ -446,7 +446,7 @@ func (m *GovernanceRoleAssignment) SetLinkedEligibleRoleAssignmentId(value *stri
         panic(err)
     }
 }
-// SetMemberType sets the memberType property value. The type of member. The value can be: Inherited (if the role assignment is inherited from a parent resource scope), Group (if the role assignment is not inherited, but comes from the membership of a group assignment), or User (if the role assignment is neither inherited nor from a group assignment).
+// SetMemberType sets the memberType property value. The type of member. The value can be: Inherited (if the role assignment is inherited from a parent resource scope), Group (if the role assignment isn't inherited, but comes from the membership of a group assignment), or User (if the role assignment isn't inherited or from a group assignment).
 func (m *GovernanceRoleAssignment) SetMemberType(value *string)() {
     err := m.GetBackingStore().Set("memberType", value)
     if err != nil {
@@ -460,7 +460,7 @@ func (m *GovernanceRoleAssignment) SetResource(value GovernanceResourceable)() {
         panic(err)
     }
 }
-// SetResourceId sets the resourceId property value. Required. The ID of the resource which the role assignment is associated with.
+// SetResourceId sets the resourceId property value. Required. The ID of the resource that the role assignment is associated with.
 func (m *GovernanceRoleAssignment) SetResourceId(value *string)() {
     err := m.GetBackingStore().Set("resourceId", value)
     if err != nil {
@@ -474,7 +474,7 @@ func (m *GovernanceRoleAssignment) SetRoleDefinition(value GovernanceRoleDefinit
         panic(err)
     }
 }
-// SetRoleDefinitionId sets the roleDefinitionId property value. Required. The ID of the role definition which the role assignment is associated with.
+// SetRoleDefinitionId sets the roleDefinitionId property value. Required. The ID of the role definition that the role assignment is associated with.
 func (m *GovernanceRoleAssignment) SetRoleDefinitionId(value *string)() {
     err := m.GetBackingStore().Set("roleDefinitionId", value)
     if err != nil {
@@ -502,7 +502,7 @@ func (m *GovernanceRoleAssignment) SetSubject(value GovernanceSubjectable)() {
         panic(err)
     }
 }
-// SetSubjectId sets the subjectId property value. Required. The ID of the subject which the role assignment is associated with.
+// SetSubjectId sets the subjectId property value. Required. The ID of the subject that the role assignment is associated with.
 func (m *GovernanceRoleAssignment) SetSubjectId(value *string)() {
     err := m.GetBackingStore().Set("subjectId", value)
     if err != nil {

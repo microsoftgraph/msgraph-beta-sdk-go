@@ -271,7 +271,7 @@ func (m *CloudPcOnPremisesConnection) GetHealthCheckStatusDetails()(CloudPcOnPre
     }
     return nil
 }
-// GetInUse gets the inUse property value. When true, the Azure network connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+// GetInUse gets the inUse property value. When true, the Azure network connection is in use. When false, the connection isn't in use. You can't delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
 func (m *CloudPcOnPremisesConnection) GetInUse()(*bool) {
     val, err := m.GetBackingStore().Get("inUse")
     if err != nil {
@@ -348,7 +348,7 @@ func (m *CloudPcOnPremisesConnection) GetSubscriptionName()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
+// GetTypeEscaped gets the type property value. Specifies how the provisioned Cloud PC is joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
 func (m *CloudPcOnPremisesConnection) GetTypeEscaped()(*CloudPcOnPremisesConnectionType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -543,7 +543,7 @@ func (m *CloudPcOnPremisesConnection) SetHealthCheckStatusDetails(value CloudPcO
         panic(err)
     }
 }
-// SetInUse sets the inUse property value. When true, the Azure network connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+// SetInUse sets the inUse property value. When true, the Azure network connection is in use. When false, the connection isn't in use. You can't delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
 func (m *CloudPcOnPremisesConnection) SetInUse(value *bool)() {
     err := m.GetBackingStore().Set("inUse", value)
     if err != nil {
@@ -592,7 +592,7 @@ func (m *CloudPcOnPremisesConnection) SetSubscriptionName(value *string)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
+// SetTypeEscaped sets the type property value. Specifies how the provisioned Cloud PC is joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
 func (m *CloudPcOnPremisesConnection) SetTypeEscaped(value *CloudPcOnPremisesConnectionType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

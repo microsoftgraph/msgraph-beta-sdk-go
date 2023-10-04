@@ -11,7 +11,7 @@ import (
 type PrintersItemTaskTriggersItemDefinitionRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrintersItemTaskTriggersItemDefinitionRequestBuilderGetQueryParameters an abstract definition that will be used to create a printTask when triggered by a print event. Read-only.
+// PrintersItemTaskTriggersItemDefinitionRequestBuilderGetQueryParameters an abstract definition that is used to create a printTask when triggered by a print event. Read-only.
 type PrintersItemTaskTriggersItemDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewPrintersItemTaskTriggersItemDefinitionRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewPrintersItemTaskTriggersItemDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get an abstract definition that will be used to create a printTask when triggered by a print event. Read-only.
+// Get an abstract definition that is used to create a printTask when triggered by a print event. Read-only.
 func (m *PrintersItemTaskTriggersItemDefinitionRequestBuilder) Get(ctx context.Context, requestConfiguration *PrintersItemTaskTriggersItemDefinitionRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskDefinitionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *PrintersItemTaskTriggersItemDefinitionRequestBuilder) Get(ctx context.C
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskDefinitionable), nil
 }
-// ToGetRequestInformation an abstract definition that will be used to create a printTask when triggered by a print event. Read-only.
+// ToGetRequestInformation an abstract definition that is used to create a printTask when triggered by a print event. Read-only.
 func (m *PrintersItemTaskTriggersItemDefinitionRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrintersItemTaskTriggersItemDefinitionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

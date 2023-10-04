@@ -30,7 +30,7 @@ func NewVirtualEndpointDeviceImagesItemReuploadRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointDeviceImagesItemReuploadRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post reupload a cloudPcDeviceImage object that failed to upload.
+// Post reupload a cloudPcDeviceImage object that failed to upload. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-reupload?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *VirtualEndpointDeviceImagesItemReuploadRequestBuilder) Post(ctx context
     }
     return nil
 }
-// ToPostRequestInformation reupload a cloudPcDeviceImage object that failed to upload.
+// ToPostRequestInformation reupload a cloudPcDeviceImage object that failed to upload. This API is supported in the following national cloud deployments.
 func (m *VirtualEndpointDeviceImagesItemReuploadRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesItemReuploadRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

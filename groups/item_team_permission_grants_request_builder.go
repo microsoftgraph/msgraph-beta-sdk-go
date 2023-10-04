@@ -11,7 +11,7 @@ import (
 type ItemTeamPermissionGrantsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamPermissionGrantsRequestBuilderGetQueryParameters list all resource-specific permission grants on the team. This list specifies the Azure AD apps that have access to the team, along with the corresponding kind of resource-specific access that each app has.
+// ItemTeamPermissionGrantsRequestBuilderGetQueryParameters list all resource-specific permission grants on the team. This list specifies the Azure AD apps that have access to the team, along with the corresponding kind of resource-specific access that each app has. This API is supported in the following national cloud deployments.
 type ItemTeamPermissionGrantsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func (m *ItemTeamPermissionGrantsRequestBuilder) Count()(*ItemTeamPermissionGran
 func (m *ItemTeamPermissionGrantsRequestBuilder) Delta()(*ItemTeamPermissionGrantsDeltaRequestBuilder) {
     return NewItemTeamPermissionGrantsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list all resource-specific permission grants on the team. This list specifies the Azure AD apps that have access to the team, along with the corresponding kind of resource-specific access that each app has.
+// Get list all resource-specific permission grants on the team. This list specifies the Azure AD apps that have access to the team, along with the corresponding kind of resource-specific access that each app has. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/team-list-permissiongrants?view=graph-rest-1.0
@@ -127,7 +127,7 @@ func (m *ItemTeamPermissionGrantsRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable), nil
 }
-// ToGetRequestInformation list all resource-specific permission grants on the team. This list specifies the Azure AD apps that have access to the team, along with the corresponding kind of resource-specific access that each app has.
+// ToGetRequestInformation list all resource-specific permission grants on the team. This list specifies the Azure AD apps that have access to the team, along with the corresponding kind of resource-specific access that each app has. This API is supported in the following national cloud deployments.
 func (m *ItemTeamPermissionGrantsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamPermissionGrantsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

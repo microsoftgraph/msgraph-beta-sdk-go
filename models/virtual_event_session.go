@@ -40,7 +40,7 @@ func (m *VirtualEventSession) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetRegistrations gets the registrations property value. The registrations property
+// GetRegistrations gets the registrations property value. Registration records of this virtual event session.
 func (m *VirtualEventSession) GetRegistrations()([]VirtualEventRegistrationable) {
     val, err := m.GetBackingStore().Get("registrations")
     if err != nil {
@@ -71,7 +71,7 @@ func (m *VirtualEventSession) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetRegistrations sets the registrations property value. The registrations property
+// SetRegistrations sets the registrations property value. Registration records of this virtual event session.
 func (m *VirtualEventSession) SetRegistrations(value []VirtualEventRegistrationable)() {
     err := m.GetBackingStore().Set("registrations", value)
     if err != nil {

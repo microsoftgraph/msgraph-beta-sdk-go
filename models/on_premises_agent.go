@@ -108,7 +108,7 @@ func (m *OnPremisesAgent) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetMachineName gets the machineName property value. The name of the machine that the aggent is running on. Read-only
+// GetMachineName gets the machineName property value. The name of the machine that the agent is running on. Read-only
 func (m *OnPremisesAgent) GetMachineName()(*string) {
     val, err := m.GetBackingStore().Get("machineName")
     if err != nil {
@@ -200,7 +200,7 @@ func (m *OnPremisesAgent) SetExternalIp(value *string)() {
         panic(err)
     }
 }
-// SetMachineName sets the machineName property value. The name of the machine that the aggent is running on. Read-only
+// SetMachineName sets the machineName property value. The name of the machine that the agent is running on. Read-only
 func (m *OnPremisesAgent) SetMachineName(value *string)() {
     err := m.GetBackingStore().Set("machineName", value)
     if err != nil {

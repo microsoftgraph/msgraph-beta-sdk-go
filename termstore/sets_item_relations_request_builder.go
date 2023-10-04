@@ -11,7 +11,7 @@ import (
 type SetsItemRelationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SetsItemRelationsRequestBuilderGetQueryParameters get the different relation of a [term] or [set] from the relations navigation property.
+// SetsItemRelationsRequestBuilderGetQueryParameters get the different relation of a term] or [set] from the relations navigation property. This API is supported in the following [national cloud deployments.
 type SetsItemRelationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewSetsItemRelationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *SetsItemRelationsRequestBuilder) Count()(*SetsItemRelationsCountRequestBuilder) {
     return NewSetsItemRelationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the different relation of a [term] or [set] from the relations navigation property.
+// Get get the different relation of a term] or [set] from the relations navigation property. This API is supported in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/termstore-term-list-relations?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *SetsItemRelationsRequestBuilder) Post(ctx context.Context, body i45fc41
     }
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Relationable), nil
 }
-// ToGetRequestInformation get the different relation of a [term] or [set] from the relations navigation property.
+// ToGetRequestInformation get the different relation of a term] or [set] from the relations navigation property. This API is supported in the following [national cloud deployments.
 func (m *SetsItemRelationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SetsItemRelationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

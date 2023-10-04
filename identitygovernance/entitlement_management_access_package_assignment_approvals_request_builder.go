@@ -11,7 +11,7 @@ import (
 type EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilderGetQueryParameters retrieve the properties of an approval object. This API request is made by an approver in the following scenarios:
+// EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilderGetQueryParameters retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: This API is supported in the following national cloud deployments.
 type EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder) Co
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilder) {
     return NewEntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
-// Get retrieve the properties of an approval object. This API request is made by an approver in the following scenarios:
+// Get retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: This API is supported in the following national cloud deployments.
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +116,7 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder) Po
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Approvalable), nil
 }
-// ToGetRequestInformation retrieve the properties of an approval object. This API request is made by an approver in the following scenarios:
+// ToGetRequestInformation retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: This API is supported in the following national cloud deployments.
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -32,7 +32,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleInstance) GetAccessId()(*Privile
     }
     return nil
 }
-// GetActivatedUsing gets the activatedUsing property value. When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it is null.
+// GetActivatedUsing gets the activatedUsing property value. When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it's null.
 func (m *PrivilegedAccessGroupAssignmentScheduleInstance) GetActivatedUsing()(PrivilegedAccessGroupEligibilityScheduleInstanceable) {
     val, err := m.GetBackingStore().Get("activatedUsing")
     if err != nil {
@@ -287,7 +287,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleInstance) SetAccessId(value *Pri
         panic(err)
     }
 }
-// SetActivatedUsing sets the activatedUsing property value. When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it is null.
+// SetActivatedUsing sets the activatedUsing property value. When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it's null.
 func (m *PrivilegedAccessGroupAssignmentScheduleInstance) SetActivatedUsing(value PrivilegedAccessGroupEligibilityScheduleInstanceable)() {
     err := m.GetBackingStore().Set("activatedUsing", value)
     if err != nil {

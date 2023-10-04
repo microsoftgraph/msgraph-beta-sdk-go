@@ -157,6 +157,10 @@ func (m *ItemSitesSiteItemRequestBuilder) Patch(ctx context.Context, body ie233e
 func (m *ItemSitesSiteItemRequestBuilder) Permissions()(*ItemSitesItemPermissionsRequestBuilder) {
     return NewItemSitesItemPermissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RecycleBin provides operations to manage the recycleBin property of the microsoft.graph.site entity.
+func (m *ItemSitesSiteItemRequestBuilder) RecycleBin()(*ItemSitesItemRecycleBinRequestBuilder) {
+    return NewItemSitesItemRecycleBinRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Sites provides operations to manage the sites property of the microsoft.graph.site entity.
 func (m *ItemSitesSiteItemRequestBuilder) Sites()(*ItemSitesItemSitesRequestBuilder) {
     return NewItemSitesItemSitesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

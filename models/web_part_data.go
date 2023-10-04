@@ -34,7 +34,7 @@ func (m *WebPartData) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAudiences gets the audiences property value. Audience information of the web part. By using this property, specific content will be prioritized to specific audiences.
+// GetAudiences gets the audiences property value. Audience information of the web part. By using this property, specific content is prioritized to specific audiences.
 func (m *WebPartData) GetAudiences()([]string) {
     val, err := m.GetBackingStore().Get("audiences")
     if err != nil {
@@ -255,7 +255,7 @@ func (m *WebPartData) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAudiences sets the audiences property value. Audience information of the web part. By using this property, specific content will be prioritized to specific audiences.
+// SetAudiences sets the audiences property value. Audience information of the web part. By using this property, specific content is prioritized to specific audiences.
 func (m *WebPartData) SetAudiences(value []string)() {
     err := m.GetBackingStore().Set("audiences", value)
     if err != nil {

@@ -20,7 +20,7 @@ func NewNotification()(*Notification) {
 func CreateNotificationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNotification(), nil
 }
-// GetDisplayTimeToLive gets the displayTimeToLive property value. Sets how long (in seconds) this notification content will stay in each platform's notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification will stay in the user's Windows Action Center.
+// GetDisplayTimeToLive gets the displayTimeToLive property value. Sets how long (in seconds) this notification content stays in each platform's notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification stays in the user's Windows Action Center.
 func (m *Notification) GetDisplayTimeToLive()(*int32) {
     val, err := m.GetBackingStore().Get("displayTimeToLive")
     if err != nil {
@@ -117,7 +117,7 @@ func (m *Notification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetGroupName gets the groupName property value. The name of the group that this notification belongs to. It is set by the developer for the purpose of grouping notifications together.
+// GetGroupName gets the groupName property value. The name of the group that this notification belongs to. It is set by the developer for grouping notifications together.
 func (m *Notification) GetGroupName()(*string) {
     val, err := m.GetBackingStore().Get("groupName")
     if err != nil {
@@ -223,7 +223,7 @@ func (m *Notification) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetDisplayTimeToLive sets the displayTimeToLive property value. Sets how long (in seconds) this notification content will stay in each platform's notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification will stay in the user's Windows Action Center.
+// SetDisplayTimeToLive sets the displayTimeToLive property value. Sets how long (in seconds) this notification content stays in each platform's notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification stays in the user's Windows Action Center.
 func (m *Notification) SetDisplayTimeToLive(value *int32)() {
     err := m.GetBackingStore().Set("displayTimeToLive", value)
     if err != nil {
@@ -237,7 +237,7 @@ func (m *Notification) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3a
         panic(err)
     }
 }
-// SetGroupName sets the groupName property value. The name of the group that this notification belongs to. It is set by the developer for the purpose of grouping notifications together.
+// SetGroupName sets the groupName property value. The name of the group that this notification belongs to. It is set by the developer for grouping notifications together.
 func (m *Notification) SetGroupName(value *string)() {
     err := m.GetBackingStore().Set("groupName", value)
     if err != nil {

@@ -11,7 +11,7 @@ import (
 type ItemProfileSkillsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemProfileSkillsRequestBuilderGetQueryParameters retrieve a list of skillProficiency objects in a user's profile.
+// ItemProfileSkillsRequestBuilderGetQueryParameters retrieve a list of skillProficiency objects in a user's profile. This API is supported in the following national cloud deployments.
 type ItemProfileSkillsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemProfileSkillsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *ItemProfileSkillsRequestBuilder) Count()(*ItemProfileSkillsCountRequestBuilder) {
     return NewItemProfileSkillsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of skillProficiency objects in a user's profile.
+// Get retrieve a list of skillProficiency objects in a user's profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/profile-list-skills?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemProfileSkillsRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyCollectionResponseable), nil
 }
-// Post use this API to create a new skillProficiency object in a user's profile.
+// Post use this API to create a new skillProficiency object in a user's profile. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/profile-post-skills?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemProfileSkillsRequestBuilder) Post(ctx context.Context, body ie233ee
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable), nil
 }
-// ToGetRequestInformation retrieve a list of skillProficiency objects in a user's profile.
+// ToGetRequestInformation retrieve a list of skillProficiency objects in a user's profile. This API is supported in the following national cloud deployments.
 func (m *ItemProfileSkillsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileSkillsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemProfileSkillsRequestBuilder) ToGetRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation use this API to create a new skillProficiency object in a user's profile.
+// ToPostRequestInformation use this API to create a new skillProficiency object in a user's profile. This API is supported in the following national cloud deployments.
 func (m *ItemProfileSkillsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable, requestConfiguration *ItemProfileSkillsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

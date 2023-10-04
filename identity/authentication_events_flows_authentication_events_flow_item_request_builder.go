@@ -18,7 +18,7 @@ type AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilderDeleteRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a specific authenticationEventsFlow object by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available.
+// AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a specific authenticationEventsFlow object by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available. This API is supported in the following national cloud deployments.
 type AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewAuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewAuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a specific authenticationEventsFlow resource by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available.
+// Delete delete a specific authenticationEventsFlow resource by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/authenticationeventsflow-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder) De
     }
     return nil
 }
-// Get retrieve the properties and relationships of a specific authenticationEventsFlow object by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available.
+// Get retrieve the properties and relationships of a specific authenticationEventsFlow object by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/authenticationeventsflow-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder) Ge
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventsFlowable), nil
 }
-// Patch update the properties of an authenticationEventsFlow object. Only the externalUsersSelfServiceSignupEventsFlow object type is supported.
+// Patch update the properties of an authenticationEventsFlow object. Only the externalUsersSelfServiceSignupEventsFlow object type is supported. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/authenticationeventsflow-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder) Pa
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventsFlowable), nil
 }
-// ToDeleteRequestInformation delete a specific authenticationEventsFlow resource by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available.
+// ToDeleteRequestInformation delete a specific authenticationEventsFlow resource by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available. This API is supported in the following national cloud deployments.
 func (m *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder) To
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a specific authenticationEventsFlow object by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available.
+// ToGetRequestInformation retrieve the properties and relationships of a specific authenticationEventsFlow object by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available. This API is supported in the following national cloud deployments.
 func (m *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder) To
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an authenticationEventsFlow object. Only the externalUsersSelfServiceSignupEventsFlow object type is supported.
+// ToPatchRequestInformation update the properties of an authenticationEventsFlow object. Only the externalUsersSelfServiceSignupEventsFlow object type is supported. This API is supported in the following national cloud deployments.
 func (m *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventsFlowable, requestConfiguration *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

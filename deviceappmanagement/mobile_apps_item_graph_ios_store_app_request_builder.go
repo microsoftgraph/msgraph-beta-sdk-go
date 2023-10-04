@@ -27,6 +27,14 @@ type MobileAppsItemGraphIosStoreAppRequestBuilderGetRequestConfiguration struct 
     // Request query parameters
     QueryParameters *MobileAppsItemGraphIosStoreAppRequestBuilderGetQueryParameters
 }
+// Assignments provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphIosStoreAppRequestBuilder) Assignments()(*MobileAppsItemGraphIosStoreAppAssignmentsRequestBuilder) {
+    return NewMobileAppsItemGraphIosStoreAppAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Categories provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphIosStoreAppRequestBuilder) Categories()(*MobileAppsItemGraphIosStoreAppCategoriesRequestBuilder) {
+    return NewMobileAppsItemGraphIosStoreAppCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMobileAppsItemGraphIosStoreAppRequestBuilderInternal instantiates a new GraphIosStoreAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphIosStoreAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphIosStoreAppRequestBuilder) {
     m := &MobileAppsItemGraphIosStoreAppRequestBuilder{
@@ -58,6 +66,10 @@ func (m *MobileAppsItemGraphIosStoreAppRequestBuilder) Get(ctx context.Context, 
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosStoreAppable), nil
+}
+// Relationships provides operations to manage the relationships property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphIosStoreAppRequestBuilder) Relationships()(*MobileAppsItemGraphIosStoreAppRelationshipsRequestBuilder) {
+    return NewMobileAppsItemGraphIosStoreAppRelationshipsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get the item of type microsoft.graph.mobileApp as microsoft.graph.iosStoreApp
 func (m *MobileAppsItemGraphIosStoreAppRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphIosStoreAppRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

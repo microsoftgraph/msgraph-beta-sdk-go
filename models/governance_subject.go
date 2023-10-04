@@ -30,7 +30,7 @@ func (m *GovernanceSubject) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetEmail gets the email property value. The email address of the user subject. If the subject is in other types, it is empty.
+// GetEmail gets the email property value. The email address of the user subject. If the subject is in other types, it's empty.
 func (m *GovernanceSubject) GetEmail()(*string) {
     val, err := m.GetBackingStore().Get("email")
     if err != nil {
@@ -86,7 +86,7 @@ func (m *GovernanceSubject) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetPrincipalName gets the principalName property value. The principal name of the user subject. If the subject is in other types, it is empty.
+// GetPrincipalName gets the principalName property value. The principal name of the user subject. If the subject is in other types, it's empty.
 func (m *GovernanceSubject) GetPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("principalName")
     if err != nil {
@@ -147,14 +147,14 @@ func (m *GovernanceSubject) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetEmail sets the email property value. The email address of the user subject. If the subject is in other types, it is empty.
+// SetEmail sets the email property value. The email address of the user subject. If the subject is in other types, it's empty.
 func (m *GovernanceSubject) SetEmail(value *string)() {
     err := m.GetBackingStore().Set("email", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPrincipalName sets the principalName property value. The principal name of the user subject. If the subject is in other types, it is empty.
+// SetPrincipalName sets the principalName property value. The principal name of the user subject. If the subject is in other types, it's empty.
 func (m *GovernanceSubject) SetPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("principalName", value)
     if err != nil {

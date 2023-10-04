@@ -11,7 +11,7 @@ import (
 type TokenLifetimePoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TokenLifetimePoliciesRequestBuilderGetQueryParameters get a list of tokenLifetimePolicy objects.
+// TokenLifetimePoliciesRequestBuilderGetQueryParameters get a list of tokenLifetimePolicy objects. This API is supported in the following national cloud deployments.
 type TokenLifetimePoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewTokenLifetimePoliciesRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *TokenLifetimePoliciesRequestBuilder) Count()(*TokenLifetimePoliciesCountRequestBuilder) {
     return NewTokenLifetimePoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of tokenLifetimePolicy objects.
+// Get get a list of tokenLifetimePolicy objects. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tokenlifetimepolicy-list?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *TokenLifetimePoliciesRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TokenLifetimePolicyCollectionResponseable), nil
 }
-// Post create a new tokenLifetimePolicy object.
+// Post create a new tokenLifetimePolicy object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tokenlifetimepolicy-post-tokenlifetimepolicies?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *TokenLifetimePoliciesRequestBuilder) Post(ctx context.Context, body ie2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TokenLifetimePolicyable), nil
 }
-// ToGetRequestInformation get a list of tokenLifetimePolicy objects.
+// ToGetRequestInformation get a list of tokenLifetimePolicy objects. This API is supported in the following national cloud deployments.
 func (m *TokenLifetimePoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TokenLifetimePoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *TokenLifetimePoliciesRequestBuilder) ToGetRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new tokenLifetimePolicy object.
+// ToPostRequestInformation create a new tokenLifetimePolicy object. This API is supported in the following national cloud deployments.
 func (m *TokenLifetimePoliciesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TokenLifetimePolicyable, requestConfiguration *TokenLifetimePoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

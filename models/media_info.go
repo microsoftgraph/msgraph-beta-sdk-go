@@ -84,7 +84,7 @@ func (m *MediaInfo) GetOdataType()(*string) {
     }
     return nil
 }
-// GetResourceId gets the resourceId property value. Optional, used to uniquely identity the resource. If passed the prompt uri will be cached against this resourceId as key.
+// GetResourceId gets the resourceId property value. Optional, used to uniquely identity the resource. If passed, the prompt uri is cached against this resourceId as key.
 func (m *MediaInfo) GetResourceId()(*string) {
     val, err := m.GetBackingStore().Get("resourceId")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *MediaInfo) GetResourceId()(*string) {
     }
     return nil
 }
-// GetUri gets the uri property value. Path to the prompt to be played. Currently only Wave file (.wav) format, single-channel, 16-bit samples with a 16,000 (16KHz) sampling rate is only supported.
+// GetUri gets the uri property value. Path to the prompt to be played. Currently only Wave file (.wav) format, single-channel, 16-bit samples with a 16,000 (16 KHz) sampling rate is only supported.
 func (m *MediaInfo) GetUri()(*string) {
     val, err := m.GetBackingStore().Get("uri")
     if err != nil {
@@ -152,14 +152,14 @@ func (m *MediaInfo) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetResourceId sets the resourceId property value. Optional, used to uniquely identity the resource. If passed the prompt uri will be cached against this resourceId as key.
+// SetResourceId sets the resourceId property value. Optional, used to uniquely identity the resource. If passed, the prompt uri is cached against this resourceId as key.
 func (m *MediaInfo) SetResourceId(value *string)() {
     err := m.GetBackingStore().Set("resourceId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUri sets the uri property value. Path to the prompt to be played. Currently only Wave file (.wav) format, single-channel, 16-bit samples with a 16,000 (16KHz) sampling rate is only supported.
+// SetUri sets the uri property value. Path to the prompt to be played. Currently only Wave file (.wav) format, single-channel, 16-bit samples with a 16,000 (16 KHz) sampling rate is only supported.
 func (m *MediaInfo) SetUri(value *string)() {
     err := m.GetBackingStore().Set("uri", value)
     if err != nil {

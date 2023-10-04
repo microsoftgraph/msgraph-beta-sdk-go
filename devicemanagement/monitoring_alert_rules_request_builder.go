@@ -11,7 +11,7 @@ import (
 type MonitoringAlertRulesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MonitoringAlertRulesRequestBuilderGetQueryParameters get a list of the alertRule objects and their properties.
+// MonitoringAlertRulesRequestBuilderGetQueryParameters get a list of the alertRule objects and their properties. This API is supported in the following national cloud deployments.
 type MonitoringAlertRulesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewMonitoringAlertRulesRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *MonitoringAlertRulesRequestBuilder) Count()(*MonitoringAlertRulesCountRequestBuilder) {
     return NewMonitoringAlertRulesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the alertRule objects and their properties.
+// Get get a list of the alertRule objects and their properties. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/devicemanagement-alertrule-list?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *MonitoringAlertRulesRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRuleCollectionResponseable), nil
 }
-// Post create an alertRule object.
+// Post create an alertRule object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/devicemanagement-alertrule-post?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *MonitoringAlertRulesRequestBuilder) Post(ctx context.Context, body i2ed
     }
     return res.(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRuleable), nil
 }
-// ToGetRequestInformation get a list of the alertRule objects and their properties.
+// ToGetRequestInformation get a list of the alertRule objects and their properties. This API is supported in the following national cloud deployments.
 func (m *MonitoringAlertRulesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MonitoringAlertRulesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *MonitoringAlertRulesRequestBuilder) ToGetRequestInformation(ctx context
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create an alertRule object.
+// ToPostRequestInformation create an alertRule object. This API is supported in the following national cloud deployments.
 func (m *MonitoringAlertRulesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRuleable, requestConfiguration *MonitoringAlertRulesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

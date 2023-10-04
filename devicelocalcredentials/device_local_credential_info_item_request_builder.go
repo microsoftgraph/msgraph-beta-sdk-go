@@ -18,7 +18,7 @@ type DeviceLocalCredentialInfoItemRequestBuilderDeleteRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DeviceLocalCredentialInfoItemRequestBuilderGetQueryParameters retrieve the properties of a deviceLocalCredentialInfo for a specified device object. 
+// DeviceLocalCredentialInfoItemRequestBuilderGetQueryParameters retrieve the properties of a deviceLocalCredentialInfo for a specified device object.  This API is supported in the following national cloud deployments.
 type DeviceLocalCredentialInfoItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -68,7 +68,7 @@ func (m *DeviceLocalCredentialInfoItemRequestBuilder) Delete(ctx context.Context
     }
     return nil
 }
-// Get retrieve the properties of a deviceLocalCredentialInfo for a specified device object. 
+// Get retrieve the properties of a deviceLocalCredentialInfo for a specified device object.  This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/devicelocalcredentialinfo-get?view=graph-rest-1.0
@@ -121,7 +121,7 @@ func (m *DeviceLocalCredentialInfoItemRequestBuilder) ToDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties of a deviceLocalCredentialInfo for a specified device object. 
+// ToGetRequestInformation retrieve the properties of a deviceLocalCredentialInfo for a specified device object.  This API is supported in the following national cloud deployments.
 func (m *DeviceLocalCredentialInfoItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceLocalCredentialInfoItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -2,17 +2,17 @@ package devicemanagement
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 // GroupPolicyConfigurationsItemAssignResponse 
+// Deprecated: This class is obsolete. Use assignPostResponse instead.
 type GroupPolicyConfigurationsItemAssignResponse struct {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
+    GroupPolicyConfigurationsItemAssignPostResponse
 }
 // NewGroupPolicyConfigurationsItemAssignResponse instantiates a new GroupPolicyConfigurationsItemAssignResponse and sets the default values.
 func NewGroupPolicyConfigurationsItemAssignResponse()(*GroupPolicyConfigurationsItemAssignResponse) {
     m := &GroupPolicyConfigurationsItemAssignResponse{
-        BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),
+        GroupPolicyConfigurationsItemAssignPostResponse: *NewGroupPolicyConfigurationsItemAssignPostResponse(),
     }
     return m
 }
@@ -20,69 +20,9 @@ func NewGroupPolicyConfigurationsItemAssignResponse()(*GroupPolicyConfigurations
 func CreateGroupPolicyConfigurationsItemAssignResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupPolicyConfigurationsItemAssignResponse(), nil
 }
-// GetFieldDeserializers the deserialization information for the current model
-func (m *GroupPolicyConfigurationsItemAssignResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
-    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateGroupPolicyConfigurationAssignmentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyConfigurationAssignmentable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyConfigurationAssignmentable)
-                }
-            }
-            m.SetValue(res)
-        }
-        return nil
-    }
-    return res
-}
-// GetValue gets the value property value. The value property
-func (m *GroupPolicyConfigurationsItemAssignResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyConfigurationAssignmentable) {
-    val, err := m.GetBackingStore().Get("value")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyConfigurationAssignmentable)
-    }
-    return nil
-}
-// Serialize serializes information the current object
-func (m *GroupPolicyConfigurationsItemAssignResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.BaseCollectionPaginationCountResponse.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetValue() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetValue()))
-        for i, v := range m.GetValue() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("value", cast)
-        if err != nil {
-            return err
-        }
-    }
-    return nil
-}
-// SetValue sets the value property value. The value property
-func (m *GroupPolicyConfigurationsItemAssignResponse) SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyConfigurationAssignmentable)() {
-    err := m.GetBackingStore().Set("value", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // GroupPolicyConfigurationsItemAssignResponseable 
+// Deprecated: This class is obsolete. Use assignPostResponse instead.
 type GroupPolicyConfigurationsItemAssignResponseable interface {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    GroupPolicyConfigurationsItemAssignPostResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyConfigurationAssignmentable)
-    SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyConfigurationAssignmentable)()
 }

@@ -18,7 +18,7 @@ type PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilderDeleteReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilderGetQueryParameters retrieve the properties of a profileCardProperty entity. The profileCardProperty is identified by its directoryPropertyName property.
+// PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilderGetQueryParameters retrieve the properties of a profileCardProperty entity. The profileCardProperty is identified by its directoryPropertyName property. This API is supported in the following national cloud deployments.
 type PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewPeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilder(rawUrl 
     urlParams["request-raw-url"] = rawUrl
     return NewPeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete the profileCardProperty object specified by its directoryPropertyName from the organization's profile card, and remove any localized customizations for that property.
+// Delete delete the profileCardProperty object specified by its directoryPropertyName from the organization's profile card, and remove any localized customizations for that property. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/profilecardproperty-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilder) Delet
     }
     return nil
 }
-// Get retrieve the properties of a profileCardProperty entity. The profileCardProperty is identified by its directoryPropertyName property.
+// Get retrieve the properties of a profileCardProperty entity. The profileCardProperty is identified by its directoryPropertyName property. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/profilecardproperty-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilder) Get(c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfileCardPropertyable), nil
 }
-// Patch update the properties of a profileCardProperty object, identified by its directoryPropertyName property.
+// Patch update the properties of a profileCardProperty object, identified by its directoryPropertyName property. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/profilecardproperty-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilder) Patch
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfileCardPropertyable), nil
 }
-// ToDeleteRequestInformation delete the profileCardProperty object specified by its directoryPropertyName from the organization's profile card, and remove any localized customizations for that property.
+// ToDeleteRequestInformation delete the profileCardProperty object specified by its directoryPropertyName from the organization's profile card, and remove any localized customizations for that property. This API is supported in the following national cloud deployments.
 func (m *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilder) ToDel
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties of a profileCardProperty entity. The profileCardProperty is identified by its directoryPropertyName property.
+// ToGetRequestInformation retrieve the properties of a profileCardProperty entity. The profileCardProperty is identified by its directoryPropertyName property. This API is supported in the following national cloud deployments.
 func (m *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilder) ToGet
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a profileCardProperty object, identified by its directoryPropertyName property.
+// ToPatchRequestInformation update the properties of a profileCardProperty object, identified by its directoryPropertyName property. This API is supported in the following national cloud deployments.
 func (m *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfileCardPropertyable, requestConfiguration *PeopleProfileCardPropertiesProfileCardPropertyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

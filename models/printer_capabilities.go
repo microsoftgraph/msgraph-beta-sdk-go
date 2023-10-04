@@ -49,7 +49,7 @@ func (m *PrinterCapabilities) GetBottomMargins()([]int32) {
     }
     return nil
 }
-// GetCollation gets the collation property value. True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
+// GetCollation gets the collation property value. True if the printer supports collating when printing multiple copies of a multi-page document; false otherwise.
 func (m *PrinterCapabilities) GetCollation()(*bool) {
     val, err := m.GetBackingStore().Get("collation")
     if err != nil {
@@ -71,7 +71,7 @@ func (m *PrinterCapabilities) GetColorModes()([]PrintColorMode) {
     }
     return nil
 }
-// GetContentTypes gets the contentTypes property value. A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
+// GetContentTypes gets the contentTypes property value. A list of supported content (MIME) types that the printer supports. It isn't guaranteed that the Universal Print service supports printing all of these MIME types.
 func (m *PrinterCapabilities) GetContentTypes()([]string) {
     val, err := m.GetBackingStore().Get("contentTypes")
     if err != nil {
@@ -789,7 +789,7 @@ func (m *PrinterCapabilities) GetLeftMargins()([]int32) {
     }
     return nil
 }
-// GetMediaColors gets the mediaColors property value. The media (i.e., paper) colors supported by the printer.
+// GetMediaColors gets the mediaColors property value. The media (that is, paper) colors supported by the printer.
 func (m *PrinterCapabilities) GetMediaColors()([]string) {
     val, err := m.GetBackingStore().Get("mediaColors")
     if err != nil {
@@ -1343,7 +1343,7 @@ func (m *PrinterCapabilities) SetBottomMargins(value []int32)() {
         panic(err)
     }
 }
-// SetCollation sets the collation property value. True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
+// SetCollation sets the collation property value. True if the printer supports collating when printing multiple copies of a multi-page document; false otherwise.
 func (m *PrinterCapabilities) SetCollation(value *bool)() {
     err := m.GetBackingStore().Set("collation", value)
     if err != nil {
@@ -1357,7 +1357,7 @@ func (m *PrinterCapabilities) SetColorModes(value []PrintColorMode)() {
         panic(err)
     }
 }
-// SetContentTypes sets the contentTypes property value. A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
+// SetContentTypes sets the contentTypes property value. A list of supported content (MIME) types that the printer supports. It isn't guaranteed that the Universal Print service supports printing all of these MIME types.
 func (m *PrinterCapabilities) SetContentTypes(value []string)() {
     err := m.GetBackingStore().Set("contentTypes", value)
     if err != nil {
@@ -1434,7 +1434,7 @@ func (m *PrinterCapabilities) SetLeftMargins(value []int32)() {
         panic(err)
     }
 }
-// SetMediaColors sets the mediaColors property value. The media (i.e., paper) colors supported by the printer.
+// SetMediaColors sets the mediaColors property value. The media (that is, paper) colors supported by the printer.
 func (m *PrinterCapabilities) SetMediaColors(value []string)() {
     err := m.GetBackingStore().Set("mediaColors", value)
     if err != nil {

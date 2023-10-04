@@ -20,7 +20,7 @@ func NewSimulation()(*Simulation) {
 func CreateSimulationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSimulation(), nil
 }
-// GetAttackTechnique gets the attackTechnique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue. For more information on the types of social engineering attack techniques, see simulations.
+// GetAttackTechnique gets the attackTechnique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.
 func (m *Simulation) GetAttackTechnique()(*SimulationAttackTechnique) {
     val, err := m.GetBackingStore().Get("attackTechnique")
     if err != nil {
@@ -119,7 +119,7 @@ func (m *Simulation) GetDurationInDays()(*int32) {
     }
     return nil
 }
-// GetEndUserNotificationSetting gets the endUserNotificationSetting property value. The endUserNotificationSetting property
+// GetEndUserNotificationSetting gets the endUserNotificationSetting property value. Details about the end user notification setting.
 func (m *Simulation) GetEndUserNotificationSetting()(EndUserNotificationSettingable) {
     val, err := m.GetBackingStore().Get("endUserNotificationSetting")
     if err != nil {
@@ -408,7 +408,7 @@ func (m *Simulation) GetIsAutomated()(*bool) {
     }
     return nil
 }
-// GetLandingPage gets the landingPage property value. The landingPage property
+// GetLandingPage gets the landingPage property value. The landing page associated with a simulation during its creation.
 func (m *Simulation) GetLandingPage()(LandingPageable) {
     val, err := m.GetBackingStore().Get("landingPage")
     if err != nil {
@@ -452,7 +452,7 @@ func (m *Simulation) GetLaunchDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
     }
     return nil
 }
-// GetLoginPage gets the loginPage property value. The loginPage property
+// GetLoginPage gets the loginPage property value. The login page associated with a simulation during its creation.
 func (m *Simulation) GetLoginPage()(LoginPageable) {
     val, err := m.GetBackingStore().Get("loginPage")
     if err != nil {
@@ -463,7 +463,7 @@ func (m *Simulation) GetLoginPage()(LoginPageable) {
     }
     return nil
 }
-// GetOAuthConsentAppDetail gets the oAuthConsentAppDetail property value. The oAuthConsentAppDetail property
+// GetOAuthConsentAppDetail gets the oAuthConsentAppDetail property value. OAuth app details for the OAuth technique.
 func (m *Simulation) GetOAuthConsentAppDetail()(OAuthConsentAppDetailable) {
     val, err := m.GetBackingStore().Get("oAuthConsentAppDetail")
     if err != nil {
@@ -518,7 +518,7 @@ func (m *Simulation) GetStatus()(*SimulationStatus) {
     }
     return nil
 }
-// GetTrainingSetting gets the trainingSetting property value. The trainingSetting property
+// GetTrainingSetting gets the trainingSetting property value. Details about the training settings for a simulation.
 func (m *Simulation) GetTrainingSetting()(TrainingSettingable) {
     val, err := m.GetBackingStore().Get("trainingSetting")
     if err != nil {
@@ -685,7 +685,7 @@ func (m *Simulation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetAttackTechnique sets the attackTechnique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue. For more information on the types of social engineering attack techniques, see simulations.
+// SetAttackTechnique sets the attackTechnique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.
 func (m *Simulation) SetAttackTechnique(value *SimulationAttackTechnique)() {
     err := m.GetBackingStore().Set("attackTechnique", value)
     if err != nil {
@@ -748,7 +748,7 @@ func (m *Simulation) SetDurationInDays(value *int32)() {
         panic(err)
     }
 }
-// SetEndUserNotificationSetting sets the endUserNotificationSetting property value. The endUserNotificationSetting property
+// SetEndUserNotificationSetting sets the endUserNotificationSetting property value. Details about the end user notification setting.
 func (m *Simulation) SetEndUserNotificationSetting(value EndUserNotificationSettingable)() {
     err := m.GetBackingStore().Set("endUserNotificationSetting", value)
     if err != nil {
@@ -776,7 +776,7 @@ func (m *Simulation) SetIsAutomated(value *bool)() {
         panic(err)
     }
 }
-// SetLandingPage sets the landingPage property value. The landingPage property
+// SetLandingPage sets the landingPage property value. The landing page associated with a simulation during its creation.
 func (m *Simulation) SetLandingPage(value LandingPageable)() {
     err := m.GetBackingStore().Set("landingPage", value)
     if err != nil {
@@ -804,14 +804,14 @@ func (m *Simulation) SetLaunchDateTime(value *i336074805fc853987abe6f7fe3ad97a6a
         panic(err)
     }
 }
-// SetLoginPage sets the loginPage property value. The loginPage property
+// SetLoginPage sets the loginPage property value. The login page associated with a simulation during its creation.
 func (m *Simulation) SetLoginPage(value LoginPageable)() {
     err := m.GetBackingStore().Set("loginPage", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOAuthConsentAppDetail sets the oAuthConsentAppDetail property value. The oAuthConsentAppDetail property
+// SetOAuthConsentAppDetail sets the oAuthConsentAppDetail property value. OAuth app details for the OAuth technique.
 func (m *Simulation) SetOAuthConsentAppDetail(value OAuthConsentAppDetailable)() {
     err := m.GetBackingStore().Set("oAuthConsentAppDetail", value)
     if err != nil {
@@ -846,7 +846,7 @@ func (m *Simulation) SetStatus(value *SimulationStatus)() {
         panic(err)
     }
 }
-// SetTrainingSetting sets the trainingSetting property value. The trainingSetting property
+// SetTrainingSetting sets the trainingSetting property value. Details about the training settings for a simulation.
 func (m *Simulation) SetTrainingSetting(value TrainingSettingable)() {
     err := m.GetBackingStore().Set("trainingSetting", value)
     if err != nil {

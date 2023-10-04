@@ -52,7 +52,7 @@ func (m *CaseExportOperation) GetDescription()(*string) {
     }
     return nil
 }
-// GetExportOptions gets the exportOptions property value. The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
+// GetExportOptions gets the exportOptions property value. The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
 func (m *CaseExportOperation) GetExportOptions()(*ExportOptions) {
     val, err := m.GetBackingStore().Get("exportOptions")
     if err != nil {
@@ -63,7 +63,7 @@ func (m *CaseExportOperation) GetExportOptions()(*ExportOptions) {
     }
     return nil
 }
-// GetExportStructure gets the exportStructure property value. The options provided that specify the structure of the export. For more details, see reviewSet: export. Possible values are: none, directory, pst.
+// GetExportStructure gets the exportStructure property value. The options provided specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.
 func (m *CaseExportOperation) GetExportStructure()(*ExportFileStructure) {
     val, err := m.GetBackingStore().Get("exportStructure")
     if err != nil {
@@ -271,14 +271,14 @@ func (m *CaseExportOperation) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetExportOptions sets the exportOptions property value. The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
+// SetExportOptions sets the exportOptions property value. The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
 func (m *CaseExportOperation) SetExportOptions(value *ExportOptions)() {
     err := m.GetBackingStore().Set("exportOptions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExportStructure sets the exportStructure property value. The options provided that specify the structure of the export. For more details, see reviewSet: export. Possible values are: none, directory, pst.
+// SetExportStructure sets the exportStructure property value. The options provided specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.
 func (m *CaseExportOperation) SetExportStructure(value *ExportFileStructure)() {
     err := m.GetBackingStore().Set("exportStructure", value)
     if err != nil {

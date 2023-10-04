@@ -18,7 +18,7 @@ type WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderGetQueryParameters read the properties and relationships of a resourceConnection object.
+// WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderGetQueryParameters read the properties and relationships of an operationalInsightsConnection object. This API is supported in the following national cloud deployments.
 type WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,10 +54,10 @@ func NewWindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an operationalInsightsConnection object.
+// Delete delete a resourceConnection object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-resourceconnection-delete?view=graph-rest-1.0
 func (m *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,10 +73,10 @@ func (m *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) 
     }
     return nil
 }
-// Get read the properties and relationships of a resourceConnection object.
+// Get read the properties and relationships of an operationalInsightsConnection object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-resourceconnection-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-get?view=graph-rest-1.0
 func (m *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ResourceConnectionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -114,7 +114,7 @@ func (m *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) 
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ResourceConnectionable), nil
 }
-// ToDeleteRequestInformation delete an operationalInsightsConnection object.
+// ToDeleteRequestInformation delete a resourceConnection object. This API is supported in the following national cloud deployments.
 func (m *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -126,7 +126,7 @@ func (m *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a resourceConnection object.
+// ToGetRequestInformation read the properties and relationships of an operationalInsightsConnection object. This API is supported in the following national cloud deployments.
 func (m *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

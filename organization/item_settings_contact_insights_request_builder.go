@@ -18,7 +18,7 @@ type ItemSettingsContactInsightsRequestBuilderDeleteRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSettingsContactInsightsRequestBuilderGetQueryParameters get the properties of an insightsSettings object for displaying or returning contact insights in an organization.
+// ItemSettingsContactInsightsRequestBuilderGetQueryParameters get the properties of an insightsSettings object for displaying or returning contact insights in an organization. This API is supported in the following national cloud deployments.
 type ItemSettingsContactInsightsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemSettingsContactInsightsRequestBuilder) Delete(ctx context.Context, 
     }
     return nil
 }
-// Get get the properties of an insightsSettings object for displaying or returning contact insights in an organization.
+// Get get the properties of an insightsSettings object for displaying or returning contact insights in an organization. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/organizationsettings-list-contactinsights?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *ItemSettingsContactInsightsRequestBuilder) Get(ctx context.Context, req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InsightsSettingsable), nil
 }
-// Patch update privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy
+// Patch update privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/insightssettings-update?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *ItemSettingsContactInsightsRequestBuilder) ToDeleteRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties of an insightsSettings object for displaying or returning contact insights in an organization.
+// ToGetRequestInformation get the properties of an insightsSettings object for displaying or returning contact insights in an organization. This API is supported in the following national cloud deployments.
 func (m *ItemSettingsContactInsightsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsContactInsightsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *ItemSettingsContactInsightsRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy
+// ToPatchRequestInformation update privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy This API is supported in the following national cloud deployments.
 func (m *ItemSettingsContactInsightsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InsightsSettingsable, requestConfiguration *ItemSettingsContactInsightsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -98,7 +98,7 @@ func (m *VirtualEventWebinar) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetRegistrationConfiguration gets the registrationConfiguration property value. The registrationConfiguration property
+// GetRegistrationConfiguration gets the registrationConfiguration property value. Registration configuration of the webinar.
 func (m *VirtualEventWebinar) GetRegistrationConfiguration()(VirtualEventRegistrationConfigurationable) {
     val, err := m.GetBackingStore().Get("registrationConfiguration")
     if err != nil {
@@ -109,7 +109,7 @@ func (m *VirtualEventWebinar) GetRegistrationConfiguration()(VirtualEventRegistr
     }
     return nil
 }
-// GetRegistrations gets the registrations property value. The registrations property
+// GetRegistrations gets the registrations property value. Registration records of the webinar.
 func (m *VirtualEventWebinar) GetRegistrations()([]VirtualEventRegistrationable) {
     val, err := m.GetBackingStore().Get("registrations")
     if err != nil {
@@ -179,14 +179,14 @@ func (m *VirtualEventWebinar) SetCoOrganizers(value []CommunicationsUserIdentity
         panic(err)
     }
 }
-// SetRegistrationConfiguration sets the registrationConfiguration property value. The registrationConfiguration property
+// SetRegistrationConfiguration sets the registrationConfiguration property value. Registration configuration of the webinar.
 func (m *VirtualEventWebinar) SetRegistrationConfiguration(value VirtualEventRegistrationConfigurationable)() {
     err := m.GetBackingStore().Set("registrationConfiguration", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRegistrations sets the registrations property value. The registrations property
+// SetRegistrations sets the registrations property value. Registration records of the webinar.
 func (m *VirtualEventWebinar) SetRegistrations(value []VirtualEventRegistrationable)() {
     err := m.GetBackingStore().Set("registrations", value)
     if err != nil {

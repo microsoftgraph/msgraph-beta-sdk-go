@@ -18,7 +18,7 @@ type ItemAgentsOnPremisesAgentItemRequestBuilderDeleteRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemAgentsOnPremisesAgentItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an onPremisesAgent object.
+// ItemAgentsOnPremisesAgentItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an onPremisesAgent object. This API is supported in the following national cloud deployments.
 type ItemAgentsOnPremisesAgentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *ItemAgentsOnPremisesAgentItemRequestBuilder) Delete(ctx context.Context
     }
     return nil
 }
-// Get retrieve the properties and relationships of an onPremisesAgent object.
+// Get retrieve the properties and relationships of an onPremisesAgent object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/onpremisesagent-get?view=graph-rest-1.0
@@ -127,7 +127,7 @@ func (m *ItemAgentsOnPremisesAgentItemRequestBuilder) ToDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of an onPremisesAgent object.
+// ToGetRequestInformation retrieve the properties and relationships of an onPremisesAgent object. This API is supported in the following national cloud deployments.
 func (m *ItemAgentsOnPremisesAgentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAgentsOnPremisesAgentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

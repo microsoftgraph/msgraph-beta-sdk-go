@@ -38,7 +38,7 @@ func (m *InboundSharedUserProfile) GetAdditionalData()(map[string]any) {
 func (m *InboundSharedUserProfile) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDisplayName gets the displayName property value. The name displayed in the address book for teh user at the time when the sharing record was created. Read-only.
+// GetDisplayName gets the displayName property value. The name displayed in the address book for the user at the time when the sharing record was created. Read-only.
 func (m *InboundSharedUserProfile) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -199,7 +199,7 @@ func (m *InboundSharedUserProfile) SetAdditionalData(value map[string]any)() {
 func (m *InboundSharedUserProfile) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDisplayName sets the displayName property value. The name displayed in the address book for teh user at the time when the sharing record was created. Read-only.
+// SetDisplayName sets the displayName property value. The name displayed in the address book for the user at the time when the sharing record was created. Read-only.
 func (m *InboundSharedUserProfile) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

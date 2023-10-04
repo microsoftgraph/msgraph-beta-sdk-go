@@ -11,7 +11,7 @@ import (
 type IndustryDataRoleGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IndustryDataRoleGroupsRequestBuilderGetQueryParameters get a list of the roleGroup objects and their properties.
+// IndustryDataRoleGroupsRequestBuilderGetQueryParameters get a list of the roleGroup objects and their properties. This API is supported in the following national cloud deployments.
 type IndustryDataRoleGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewIndustryDataRoleGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *IndustryDataRoleGroupsRequestBuilder) Count()(*IndustryDataRoleGroupsCountRequestBuilder) {
     return NewIndustryDataRoleGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the roleGroup objects and their properties.
+// Get get a list of the roleGroup objects and their properties. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-rolegroup-list?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *IndustryDataRoleGroupsRequestBuilder) Post(ctx context.Context, body id
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.RoleGroupable), nil
 }
-// ToGetRequestInformation get a list of the roleGroup objects and their properties.
+// ToGetRequestInformation get a list of the roleGroup objects and their properties. This API is supported in the following national cloud deployments.
 func (m *IndustryDataRoleGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataRoleGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

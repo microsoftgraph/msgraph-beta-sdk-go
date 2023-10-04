@@ -75,7 +75,7 @@ func (m *EducationResource) GetAdditionalData()(map[string]any) {
 func (m *EducationResource) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCreatedBy gets the createdBy property value. Who created the resource.
+// GetCreatedBy gets the createdBy property value. Who created the resource?
 func (m *EducationResource) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -173,7 +173,7 @@ func (m *EducationResource) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. Who was the last user to modify the resource.
+// GetLastModifiedBy gets the lastModifiedBy property value. Who was the last user to modify the resource?
 func (m *EducationResource) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -239,7 +239,7 @@ func (m *EducationResource) SetAdditionalData(value map[string]any)() {
 func (m *EducationResource) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCreatedBy sets the createdBy property value. Who created the resource.
+// SetCreatedBy sets the createdBy property value. Who created the resource?
 func (m *EducationResource) SetCreatedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("createdBy", value)
     if err != nil {
@@ -260,7 +260,7 @@ func (m *EducationResource) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. Who was the last user to modify the resource.
+// SetLastModifiedBy sets the lastModifiedBy property value. Who was the last user to modify the resource?
 func (m *EducationResource) SetLastModifiedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {

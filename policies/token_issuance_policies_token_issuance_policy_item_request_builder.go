@@ -18,7 +18,7 @@ type TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilderDeleteRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a tokenIssuancePolicy object.
+// TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a tokenIssuancePolicy object. This API is supported in the following national cloud deployments.
 type TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,7 @@ func NewTokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewTokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a tokenIssuancePolicy object.
+// Delete delete a tokenIssuancePolicy object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tokenissuancepolicy-delete?view=graph-rest-1.0
@@ -77,7 +77,7 @@ func (m *TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) Delete(ctx 
     }
     return nil
 }
-// Get retrieve the properties and relationships of a tokenIssuancePolicy object.
+// Get retrieve the properties and relationships of a tokenIssuancePolicy object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tokenissuancepolicy-get?view=graph-rest-1.0
@@ -99,7 +99,7 @@ func (m *TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) Get(ctx con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TokenIssuancePolicyable), nil
 }
-// Patch update the properties of a tokenIssuancePolicy object.
+// Patch update the properties of a tokenIssuancePolicy object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tokenissuancepolicy-update?view=graph-rest-1.0
@@ -121,7 +121,7 @@ func (m *TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) Patch(ctx c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TokenIssuancePolicyable), nil
 }
-// ToDeleteRequestInformation delete a tokenIssuancePolicy object.
+// ToDeleteRequestInformation delete a tokenIssuancePolicy object. This API is supported in the following national cloud deployments.
 func (m *TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -133,7 +133,7 @@ func (m *TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) ToDeleteReq
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a tokenIssuancePolicy object.
+// ToGetRequestInformation retrieve the properties and relationships of a tokenIssuancePolicy object. This API is supported in the following national cloud deployments.
 func (m *TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -149,7 +149,7 @@ func (m *TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) ToGetReques
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a tokenIssuancePolicy object.
+// ToPatchRequestInformation update the properties of a tokenIssuancePolicy object. This API is supported in the following national cloud deployments.
 func (m *TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TokenIssuancePolicyable, requestConfiguration *TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

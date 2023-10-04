@@ -18,7 +18,7 @@ type ItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDecision
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderGetQueryParameters read the properties and relationships of an accessReviewInstanceDecisionItem object.
+// ItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderGetQueryParameters read the properties and relationships of an accessReviewInstanceDecisionItem object. This API is supported in the following national cloud deployments.
 type ItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDeci
     }
     return nil
 }
-// Get read the properties and relationships of an accessReviewInstanceDecisionItem object.
+// Get read the properties and relationships of an accessReviewInstanceDecisionItem object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-get?view=graph-rest-1.0
@@ -127,7 +127,7 @@ func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDeci
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an accessReviewInstanceDecisionItem object.
+// ToGetRequestInformation read the properties and relationships of an accessReviewInstanceDecisionItem object. This API is supported in the following national cloud deployments.
 func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

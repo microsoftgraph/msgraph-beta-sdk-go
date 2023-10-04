@@ -30,7 +30,8 @@ func NewItemPromoteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewItemPromoteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post promote a verified subdomain to the root domain. A verified domain has its isVerified property set to true.
+// Post promote a verified subdomain to the root domain. A verified domain has its isVerified property set to true. This API is supported in the following national cloud deployments.
+// Deprecated: This method is obsolete. Use PostAsPromotePostResponse instead.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/domain-promote?view=graph-rest-1.0
@@ -52,7 +53,29 @@ func (m *ItemPromoteRequestBuilder) Post(ctx context.Context, requestConfigurati
     }
     return res.(ItemPromoteResponseable), nil
 }
-// ToPostRequestInformation promote a verified subdomain to the root domain. A verified domain has its isVerified property set to true.
+// PostAsPromotePostResponse promote a verified subdomain to the root domain. A verified domain has its isVerified property set to true. This API is supported in the following national cloud deployments.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/domain-promote?view=graph-rest-1.0
+func (m *ItemPromoteRequestBuilder) PostAsPromotePostResponse(ctx context.Context, requestConfiguration *ItemPromoteRequestBuilderPostRequestConfiguration)(ItemPromotePostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemPromotePostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemPromotePostResponseable), nil
+}
+// ToPostRequestInformation promote a verified subdomain to the root domain. A verified domain has its isVerified property set to true. This API is supported in the following national cloud deployments.
 func (m *ItemPromoteRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemPromoteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

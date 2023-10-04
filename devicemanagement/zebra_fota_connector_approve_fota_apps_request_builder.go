@@ -31,6 +31,7 @@ func NewZebraFotaConnectorApproveFotaAppsRequestBuilder(rawUrl string, requestAd
     return NewZebraFotaConnectorApproveFotaAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action approveFotaApps
+// Deprecated: This method is obsolete. Use PostAsApproveFotaAppsPostResponse instead.
 func (m *ZebraFotaConnectorApproveFotaAppsRequestBuilder) Post(ctx context.Context, requestConfiguration *ZebraFotaConnectorApproveFotaAppsRequestBuilderPostRequestConfiguration)(ZebraFotaConnectorApproveFotaAppsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -48,6 +49,25 @@ func (m *ZebraFotaConnectorApproveFotaAppsRequestBuilder) Post(ctx context.Conte
         return nil, nil
     }
     return res.(ZebraFotaConnectorApproveFotaAppsResponseable), nil
+}
+// PostAsApproveFotaAppsPostResponse invoke action approveFotaApps
+func (m *ZebraFotaConnectorApproveFotaAppsRequestBuilder) PostAsApproveFotaAppsPostResponse(ctx context.Context, requestConfiguration *ZebraFotaConnectorApproveFotaAppsRequestBuilderPostRequestConfiguration)(ZebraFotaConnectorApproveFotaAppsPostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateZebraFotaConnectorApproveFotaAppsPostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ZebraFotaConnectorApproveFotaAppsPostResponseable), nil
 }
 // ToPostRequestInformation invoke action approveFotaApps
 func (m *ZebraFotaConnectorApproveFotaAppsRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ZebraFotaConnectorApproveFotaAppsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

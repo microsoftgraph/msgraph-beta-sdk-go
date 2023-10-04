@@ -30,7 +30,8 @@ func NewItemGetMailTipsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewItemGetMailTipsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post get the MailTips of one or more recipients as available to the signed-in user. Note that by making a POST call to the getMailTips action, you can request specific types of MailTips tobe returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection.
+// Post get the MailTips of one or more recipients as available to the signed-in user. Note that by making a POST call to the getMailTips action, you can request specific types of MailTips tobe returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection. This API is supported in the following national cloud deployments.
+// Deprecated: This method is obsolete. Use PostAsGetMailTipsPostResponse instead.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/user-getmailtips?view=graph-rest-1.0
@@ -52,7 +53,29 @@ func (m *ItemGetMailTipsRequestBuilder) Post(ctx context.Context, body ItemGetMa
     }
     return res.(ItemGetMailTipsResponseable), nil
 }
-// ToPostRequestInformation get the MailTips of one or more recipients as available to the signed-in user. Note that by making a POST call to the getMailTips action, you can request specific types of MailTips tobe returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection.
+// PostAsGetMailTipsPostResponse get the MailTips of one or more recipients as available to the signed-in user. Note that by making a POST call to the getMailTips action, you can request specific types of MailTips tobe returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection. This API is supported in the following national cloud deployments.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-getmailtips?view=graph-rest-1.0
+func (m *ItemGetMailTipsRequestBuilder) PostAsGetMailTipsPostResponse(ctx context.Context, body ItemGetMailTipsPostRequestBodyable, requestConfiguration *ItemGetMailTipsRequestBuilderPostRequestConfiguration)(ItemGetMailTipsPostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemGetMailTipsPostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemGetMailTipsPostResponseable), nil
+}
+// ToPostRequestInformation get the MailTips of one or more recipients as available to the signed-in user. Note that by making a POST call to the getMailTips action, you can request specific types of MailTips tobe returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection. This API is supported in the following national cloud deployments.
 func (m *ItemGetMailTipsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemGetMailTipsPostRequestBodyable, requestConfiguration *ItemGetMailTipsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

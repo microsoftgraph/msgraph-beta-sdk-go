@@ -18,7 +18,7 @@ type VirtualEventsEventsItemSessionsItemRegistrationRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEventsEventsItemSessionsItemRegistrationRequestBuilderGetQueryParameters get the externalMeetingRegistration details associated with an onlineMeeting.
+// VirtualEventsEventsItemSessionsItemRegistrationRequestBuilderGetQueryParameters get the externalMeetingRegistration details associated with an onlineMeeting. This API is supported in the following national cloud deployments.
 type VirtualEventsEventsItemSessionsItemRegistrationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,7 @@ func NewVirtualEventsEventsItemSessionsItemRegistrationRequestBuilder(rawUrl str
 func (m *VirtualEventsEventsItemSessionsItemRegistrationRequestBuilder) CustomQuestions()(*VirtualEventsEventsItemSessionsItemRegistrationCustomQuestionsRequestBuilder) {
     return NewVirtualEventsEventsItemSessionsItemRegistrationCustomQuestionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+// Delete disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
@@ -77,7 +77,7 @@ func (m *VirtualEventsEventsItemSessionsItemRegistrationRequestBuilder) Delete(c
     }
     return nil
 }
-// Get get the externalMeetingRegistration details associated with an onlineMeeting.
+// Get get the externalMeetingRegistration details associated with an onlineMeeting. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
@@ -99,7 +99,7 @@ func (m *VirtualEventsEventsItemSessionsItemRegistrationRequestBuilder) Get(ctx 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationable), nil
 }
-// Patch update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
+// Patch update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/meetingregistration-update?view=graph-rest-1.0
@@ -125,7 +125,7 @@ func (m *VirtualEventsEventsItemSessionsItemRegistrationRequestBuilder) Patch(ct
 func (m *VirtualEventsEventsItemSessionsItemRegistrationRequestBuilder) Registrants()(*VirtualEventsEventsItemSessionsItemRegistrationRegistrantsRequestBuilder) {
     return NewVirtualEventsEventsItemSessionsItemRegistrationRegistrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+// ToDeleteRequestInformation disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer. This API is supported in the following national cloud deployments.
 func (m *VirtualEventsEventsItemSessionsItemRegistrationRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsItemRegistrationRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -137,7 +137,7 @@ func (m *VirtualEventsEventsItemSessionsItemRegistrationRequestBuilder) ToDelete
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the externalMeetingRegistration details associated with an onlineMeeting.
+// ToGetRequestInformation get the externalMeetingRegistration details associated with an onlineMeeting. This API is supported in the following national cloud deployments.
 func (m *VirtualEventsEventsItemSessionsItemRegistrationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsItemRegistrationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -153,7 +153,7 @@ func (m *VirtualEventsEventsItemSessionsItemRegistrationRequestBuilder) ToGetReq
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
+// ToPatchRequestInformation update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer. This API is supported in the following national cloud deployments.
 func (m *VirtualEventsEventsItemSessionsItemRegistrationRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationable, requestConfiguration *VirtualEventsEventsItemSessionsItemRegistrationRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

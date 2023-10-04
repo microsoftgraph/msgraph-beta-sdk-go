@@ -70,7 +70,7 @@ func NewItemOnlineMeetingsOnlineMeetingItemRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewItemOnlineMeetingsOnlineMeetingItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an onlineMeeting object.
+// Delete delete an onlineMeeting object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/onlinemeeting-delete?view=graph-rest-1.0
@@ -116,7 +116,7 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) GetVirtualAppointmen
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) MeetingAttendanceReport()(*ItemOnlineMeetingsItemMeetingAttendanceReportRequestBuilder) {
     return NewItemOnlineMeetingsItemMeetingAttendanceReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating.
+// Patch update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/onlinemeeting-update?view=graph-rest-1.0
@@ -150,7 +150,7 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) Recordings()(*ItemOn
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) Registration()(*ItemOnlineMeetingsItemRegistrationRequestBuilder) {
     return NewItemOnlineMeetingsItemRegistrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete an onlineMeeting object.
+// ToDeleteRequestInformation delete an onlineMeeting object. This API is supported in the following national cloud deployments.
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsOnlineMeetingItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -178,7 +178,7 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) ToGetRequestInformat
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating.
+// ToPatchRequestInformation update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating. This API is supported in the following national cloud deployments.
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable, requestConfiguration *ItemOnlineMeetingsOnlineMeetingItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

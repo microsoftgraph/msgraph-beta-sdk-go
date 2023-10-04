@@ -34,7 +34,7 @@ func (m *ApprovalStage) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetApprovalStageTimeOutInDays gets the approvalStageTimeOutInDays property value. The number of days that a request can be pending a response before it is automatically denied.
+// GetApprovalStageTimeOutInDays gets the approvalStageTimeOutInDays property value. The number of days that a request can be pending a response before it's automatically denied.
 func (m *ApprovalStage) GetApprovalStageTimeOutInDays()(*int32) {
     val, err := m.GetBackingStore().Get("approvalStageTimeOutInDays")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *ApprovalStage) GetApprovalStageTimeOutInDays()(*int32) {
 func (m *ApprovalStage) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetEscalationApprovers gets the escalationApprovers property value. If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests. This can be a collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.  When creating or updating a policy, if there are no escalation approvers, or escalation approvers are not required for the stage, the value of this property should be an empty collection.
+// GetEscalationApprovers gets the escalationApprovers property value. If escalation is enabled and the primary approvers don't respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests. This can be a collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.  When creating or updating a policy, if there are no escalation approvers, or escalation approvers aren't required for the stage, the value of this property should be an empty collection.
 func (m *ApprovalStage) GetEscalationApprovers()([]UserSetable) {
     val, err := m.GetBackingStore().Get("escalationApprovers")
     if err != nil {
@@ -191,7 +191,7 @@ func (m *ApprovalStage) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPrimaryApprovers gets the primaryApprovers property value. The users who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors, externalSponsors and targetUserSponsors. When creating or updating a policy, include at least one userSet in this collection.
+// GetPrimaryApprovers gets the primaryApprovers property value. The users who are asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors, externalSponsors and targetUserSponsors. When creating or updating a policy, include at least one userSet in this collection.
 func (m *ApprovalStage) GetPrimaryApprovers()([]UserSetable) {
     val, err := m.GetBackingStore().Get("primaryApprovers")
     if err != nil {
@@ -273,7 +273,7 @@ func (m *ApprovalStage) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetApprovalStageTimeOutInDays sets the approvalStageTimeOutInDays property value. The number of days that a request can be pending a response before it is automatically denied.
+// SetApprovalStageTimeOutInDays sets the approvalStageTimeOutInDays property value. The number of days that a request can be pending a response before it's automatically denied.
 func (m *ApprovalStage) SetApprovalStageTimeOutInDays(value *int32)() {
     err := m.GetBackingStore().Set("approvalStageTimeOutInDays", value)
     if err != nil {
@@ -284,7 +284,7 @@ func (m *ApprovalStage) SetApprovalStageTimeOutInDays(value *int32)() {
 func (m *ApprovalStage) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetEscalationApprovers sets the escalationApprovers property value. If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests. This can be a collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.  When creating or updating a policy, if there are no escalation approvers, or escalation approvers are not required for the stage, the value of this property should be an empty collection.
+// SetEscalationApprovers sets the escalationApprovers property value. If escalation is enabled and the primary approvers don't respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests. This can be a collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.  When creating or updating a policy, if there are no escalation approvers, or escalation approvers aren't required for the stage, the value of this property should be an empty collection.
 func (m *ApprovalStage) SetEscalationApprovers(value []UserSetable)() {
     err := m.GetBackingStore().Set("escalationApprovers", value)
     if err != nil {
@@ -319,7 +319,7 @@ func (m *ApprovalStage) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPrimaryApprovers sets the primaryApprovers property value. The users who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors, externalSponsors and targetUserSponsors. When creating or updating a policy, include at least one userSet in this collection.
+// SetPrimaryApprovers sets the primaryApprovers property value. The users who are asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors, externalSponsors and targetUserSponsors. When creating or updating a policy, include at least one userSet in this collection.
 func (m *ApprovalStage) SetPrimaryApprovers(value []UserSetable)() {
     err := m.GetBackingStore().Set("primaryApprovers", value)
     if err != nil {

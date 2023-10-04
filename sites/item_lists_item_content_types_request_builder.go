@@ -11,7 +11,7 @@ import (
 type ItemListsItemContentTypesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemListsItemContentTypesRequestBuilderGetQueryParameters get the collection of [contentType][contentType] resources in a [list][].
+// ItemListsItemContentTypesRequestBuilderGetQueryParameters get the collection of contentType][contentType] resources in a [list][]. This API is supported in the following [national cloud deployments.
 type ItemListsItemContentTypesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -82,7 +82,7 @@ func NewItemListsItemContentTypesRequestBuilder(rawUrl string, requestAdapter i2
 func (m *ItemListsItemContentTypesRequestBuilder) Count()(*ItemListsItemContentTypesCountRequestBuilder) {
     return NewItemListsItemContentTypesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the collection of [contentType][contentType] resources in a [list][].
+// Get get the collection of contentType][contentType] resources in a [list][]. This API is supported in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/list-list-contenttypes?view=graph-rest-1.0
@@ -127,7 +127,7 @@ func (m *ItemListsItemContentTypesRequestBuilder) Post(ctx context.Context, body
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeable), nil
 }
-// ToGetRequestInformation get the collection of [contentType][contentType] resources in a [list][].
+// ToGetRequestInformation get the collection of contentType][contentType] resources in a [list][]. This API is supported in the following [national cloud deployments.
 func (m *ItemListsItemContentTypesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListsItemContentTypesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

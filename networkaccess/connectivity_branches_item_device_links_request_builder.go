@@ -11,7 +11,7 @@ import (
 type ConnectivityBranchesItemDeviceLinksRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConnectivityBranchesItemDeviceLinksRequestBuilderGetQueryParameters retrieve a list of device links associated with a specific branch.
+// ConnectivityBranchesItemDeviceLinksRequestBuilderGetQueryParameters retrieve a list of device links associated with a specific branch. This API is supported in the following national cloud deployments.
 type ConnectivityBranchesItemDeviceLinksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewConnectivityBranchesItemDeviceLinksRequestBuilder(rawUrl string, request
 func (m *ConnectivityBranchesItemDeviceLinksRequestBuilder) Count()(*ConnectivityBranchesItemDeviceLinksCountRequestBuilder) {
     return NewConnectivityBranchesItemDeviceLinksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of device links associated with a specific branch.
+// Get retrieve a list of device links associated with a specific branch. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-branchsite-list-devicelinks?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ConnectivityBranchesItemDeviceLinksRequestBuilder) Get(ctx context.Cont
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkCollectionResponseable), nil
 }
-// Post create a branch site with associated device links.
+// Post create a branch site with associated device links. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-branchsite-post-devicelinks?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ConnectivityBranchesItemDeviceLinksRequestBuilder) Post(ctx context.Con
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable), nil
 }
-// ToGetRequestInformation retrieve a list of device links associated with a specific branch.
+// ToGetRequestInformation retrieve a list of device links associated with a specific branch. This API is supported in the following national cloud deployments.
 func (m *ConnectivityBranchesItemDeviceLinksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesItemDeviceLinksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ConnectivityBranchesItemDeviceLinksRequestBuilder) ToGetRequestInformat
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a branch site with associated device links.
+// ToPostRequestInformation create a branch site with associated device links. This API is supported in the following national cloud deployments.
 func (m *ConnectivityBranchesItemDeviceLinksRequestBuilder) ToPostRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable, requestConfiguration *ConnectivityBranchesItemDeviceLinksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

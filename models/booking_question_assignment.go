@@ -73,7 +73,7 @@ func (m *BookingQuestionAssignment) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetIsRequired gets the isRequired property value. Indicates whether it is mandatory to answer the custom question.
+// GetIsRequired gets the isRequired property value. Indicates whether it's mandatory to answer the custom question.
 func (m *BookingQuestionAssignment) GetIsRequired()(*bool) {
     val, err := m.GetBackingStore().Get("isRequired")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *BookingQuestionAssignment) GetOdataType()(*string) {
     }
     return nil
 }
-// GetQuestionId gets the questionId property value. If it is mandatory to answer the custom question.
+// GetQuestionId gets the questionId property value. If it's mandatory to answer the custom question.
 func (m *BookingQuestionAssignment) GetQuestionId()(*string) {
     val, err := m.GetBackingStore().Get("questionId")
     if err != nil {
@@ -145,7 +145,7 @@ func (m *BookingQuestionAssignment) SetAdditionalData(value map[string]any)() {
 func (m *BookingQuestionAssignment) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsRequired sets the isRequired property value. Indicates whether it is mandatory to answer the custom question.
+// SetIsRequired sets the isRequired property value. Indicates whether it's mandatory to answer the custom question.
 func (m *BookingQuestionAssignment) SetIsRequired(value *bool)() {
     err := m.GetBackingStore().Set("isRequired", value)
     if err != nil {
@@ -159,7 +159,7 @@ func (m *BookingQuestionAssignment) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetQuestionId sets the questionId property value. If it is mandatory to answer the custom question.
+// SetQuestionId sets the questionId property value. If it's mandatory to answer the custom question.
 func (m *BookingQuestionAssignment) SetQuestionId(value *string)() {
     err := m.GetBackingStore().Set("questionId", value)
     if err != nil {

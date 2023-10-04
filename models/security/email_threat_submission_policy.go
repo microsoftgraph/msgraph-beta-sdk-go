@@ -31,7 +31,7 @@ func (m *EmailThreatSubmissionPolicy) GetCustomizedNotificationSenderEmailAddres
     }
     return nil
 }
-// GetCustomizedReportRecipientEmailAddress gets the customizedReportRecipientEmailAddress property value. Specifies the destination where the reported messages from end users will land whenever they report something as phish, junk or not junk. The default value is null. Optional for creation.
+// GetCustomizedReportRecipientEmailAddress gets the customizedReportRecipientEmailAddress property value. Specifies the destination where the reported messages from end users land whenever they report something as phish, junk or not junk. The default value is null. Optional for creation.
 func (m *EmailThreatSubmissionPolicy) GetCustomizedReportRecipientEmailAddress()(*string) {
     val, err := m.GetBackingStore().Get("customizedReportRecipientEmailAddress")
     if err != nil {
@@ -199,7 +199,7 @@ func (m *EmailThreatSubmissionPolicy) GetIsAskMeEnabledForUsers()(*bool) {
     }
     return nil
 }
-// GetIsCustomizedMessageEnabled gets the isCustomizedMessageEnabled property value. Indicates whether the email notifications sent to end users to inform them if an email is phish, spam or junk is customized or not. The default value is false. Optional for creation.
+// GetIsCustomizedMessageEnabled gets the isCustomizedMessageEnabled property value. Indicates whether the email notifications sent to end users to inform them if an email is a phish mail, spam or junk is customized or not. The default value is false. Optional for creation.
 func (m *EmailThreatSubmissionPolicy) GetIsCustomizedMessageEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isCustomizedMessageEnabled")
     if err != nil {
@@ -232,7 +232,7 @@ func (m *EmailThreatSubmissionPolicy) GetIsCustomizedNotificationSenderEnabled()
     }
     return nil
 }
-// GetIsNeverReportEnabledForUsers gets the isNeverReportEnabledForUsers property value. Indicates whether end users can simply move the message from one folder to another based on the action of spam, phish or not junk without actually reporting it. The default value is true. Optional for creation.
+// GetIsNeverReportEnabledForUsers gets the isNeverReportEnabledForUsers property value. Indicates whether end users can move the message from one folder to another based on the action of spam, phish or not junk without actually reporting it. The default value is true. Optional for creation.
 func (m *EmailThreatSubmissionPolicy) GetIsNeverReportEnabledForUsers()(*bool) {
     val, err := m.GetBackingStore().Get("isNeverReportEnabledForUsers")
     if err != nil {
@@ -265,7 +265,7 @@ func (m *EmailThreatSubmissionPolicy) GetIsReportFromQuarantineEnabled()(*bool) 
     }
     return nil
 }
-// GetIsReportToCustomizedEmailAddressEnabled gets the isReportToCustomizedEmailAddressEnabled property value. Indicates whether emails reported by end users should be send to the custom mailbox configured using customizedReportRecipientEmailAddress.  The default value is false. Optional for creation.
+// GetIsReportToCustomizedEmailAddressEnabled gets the isReportToCustomizedEmailAddressEnabled property value. Indicates whether emails reported by end users should be sent to the custom mailbox configured using customizedReportRecipientEmailAddress.  The default value is false. Optional for creation.
 func (m *EmailThreatSubmissionPolicy) GetIsReportToCustomizedEmailAddressEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isReportToCustomizedEmailAddressEnabled")
     if err != nil {
@@ -276,7 +276,7 @@ func (m *EmailThreatSubmissionPolicy) GetIsReportToCustomizedEmailAddressEnabled
     }
     return nil
 }
-// GetIsReportToMicrosoftEnabled gets the isReportToMicrosoftEnabled property value. If enabled, the email will be sent to Microsoft for analysis. The default value is false. Required for creation.
+// GetIsReportToMicrosoftEnabled gets the isReportToMicrosoftEnabled property value. If enabled, the email is sent to Microsoft for analysis. The default value is false. Required for creation.
 func (m *EmailThreatSubmissionPolicy) GetIsReportToMicrosoftEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isReportToMicrosoftEnabled")
     if err != nil {
@@ -391,7 +391,7 @@ func (m *EmailThreatSubmissionPolicy) SetCustomizedNotificationSenderEmailAddres
         panic(err)
     }
 }
-// SetCustomizedReportRecipientEmailAddress sets the customizedReportRecipientEmailAddress property value. Specifies the destination where the reported messages from end users will land whenever they report something as phish, junk or not junk. The default value is null. Optional for creation.
+// SetCustomizedReportRecipientEmailAddress sets the customizedReportRecipientEmailAddress property value. Specifies the destination where the reported messages from end users land whenever they report something as phish, junk or not junk. The default value is null. Optional for creation.
 func (m *EmailThreatSubmissionPolicy) SetCustomizedReportRecipientEmailAddress(value *string)() {
     err := m.GetBackingStore().Set("customizedReportRecipientEmailAddress", value)
     if err != nil {
@@ -412,7 +412,7 @@ func (m *EmailThreatSubmissionPolicy) SetIsAskMeEnabledForUsers(value *bool)() {
         panic(err)
     }
 }
-// SetIsCustomizedMessageEnabled sets the isCustomizedMessageEnabled property value. Indicates whether the email notifications sent to end users to inform them if an email is phish, spam or junk is customized or not. The default value is false. Optional for creation.
+// SetIsCustomizedMessageEnabled sets the isCustomizedMessageEnabled property value. Indicates whether the email notifications sent to end users to inform them if an email is a phish mail, spam or junk is customized or not. The default value is false. Optional for creation.
 func (m *EmailThreatSubmissionPolicy) SetIsCustomizedMessageEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isCustomizedMessageEnabled", value)
     if err != nil {
@@ -433,7 +433,7 @@ func (m *EmailThreatSubmissionPolicy) SetIsCustomizedNotificationSenderEnabled(v
         panic(err)
     }
 }
-// SetIsNeverReportEnabledForUsers sets the isNeverReportEnabledForUsers property value. Indicates whether end users can simply move the message from one folder to another based on the action of spam, phish or not junk without actually reporting it. The default value is true. Optional for creation.
+// SetIsNeverReportEnabledForUsers sets the isNeverReportEnabledForUsers property value. Indicates whether end users can move the message from one folder to another based on the action of spam, phish or not junk without actually reporting it. The default value is true. Optional for creation.
 func (m *EmailThreatSubmissionPolicy) SetIsNeverReportEnabledForUsers(value *bool)() {
     err := m.GetBackingStore().Set("isNeverReportEnabledForUsers", value)
     if err != nil {
@@ -454,14 +454,14 @@ func (m *EmailThreatSubmissionPolicy) SetIsReportFromQuarantineEnabled(value *bo
         panic(err)
     }
 }
-// SetIsReportToCustomizedEmailAddressEnabled sets the isReportToCustomizedEmailAddressEnabled property value. Indicates whether emails reported by end users should be send to the custom mailbox configured using customizedReportRecipientEmailAddress.  The default value is false. Optional for creation.
+// SetIsReportToCustomizedEmailAddressEnabled sets the isReportToCustomizedEmailAddressEnabled property value. Indicates whether emails reported by end users should be sent to the custom mailbox configured using customizedReportRecipientEmailAddress.  The default value is false. Optional for creation.
 func (m *EmailThreatSubmissionPolicy) SetIsReportToCustomizedEmailAddressEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isReportToCustomizedEmailAddressEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsReportToMicrosoftEnabled sets the isReportToMicrosoftEnabled property value. If enabled, the email will be sent to Microsoft for analysis. The default value is false. Required for creation.
+// SetIsReportToMicrosoftEnabled sets the isReportToMicrosoftEnabled property value. If enabled, the email is sent to Microsoft for analysis. The default value is false. Required for creation.
 func (m *EmailThreatSubmissionPolicy) SetIsReportToMicrosoftEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isReportToMicrosoftEnabled", value)
     if err != nil {

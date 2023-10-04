@@ -31,6 +31,7 @@ func NewPolicySetsGetPolicySetsRequestBuilder(rawUrl string, requestAdapter i2ae
     return NewPolicySetsGetPolicySetsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action getPolicySets
+// Deprecated: This method is obsolete. Use PostAsGetPolicySetsPostResponse instead.
 func (m *PolicySetsGetPolicySetsRequestBuilder) Post(ctx context.Context, body PolicySetsGetPolicySetsPostRequestBodyable, requestConfiguration *PolicySetsGetPolicySetsRequestBuilderPostRequestConfiguration)(PolicySetsGetPolicySetsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -48,6 +49,25 @@ func (m *PolicySetsGetPolicySetsRequestBuilder) Post(ctx context.Context, body P
         return nil, nil
     }
     return res.(PolicySetsGetPolicySetsResponseable), nil
+}
+// PostAsGetPolicySetsPostResponse invoke action getPolicySets
+func (m *PolicySetsGetPolicySetsRequestBuilder) PostAsGetPolicySetsPostResponse(ctx context.Context, body PolicySetsGetPolicySetsPostRequestBodyable, requestConfiguration *PolicySetsGetPolicySetsRequestBuilderPostRequestConfiguration)(PolicySetsGetPolicySetsPostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreatePolicySetsGetPolicySetsPostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(PolicySetsGetPolicySetsPostResponseable), nil
 }
 // ToPostRequestInformation invoke action getPolicySets
 func (m *PolicySetsGetPolicySetsRequestBuilder) ToPostRequestInformation(ctx context.Context, body PolicySetsGetPolicySetsPostRequestBodyable, requestConfiguration *PolicySetsGetPolicySetsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

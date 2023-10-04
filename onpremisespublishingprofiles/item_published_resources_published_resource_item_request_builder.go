@@ -18,7 +18,7 @@ type ItemPublishedResourcesPublishedResourceItemRequestBuilderDeleteRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemPublishedResourcesPublishedResourceItemRequestBuilderGetQueryParameters retrieve the properties and relationships of publishedResource object.
+// ItemPublishedResourcesPublishedResourceItemRequestBuilderGetQueryParameters retrieve the properties and relationships of publishedResource object. This API is supported in the following national cloud deployments.
 type ItemPublishedResourcesPublishedResourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *ItemPublishedResourcesPublishedResourceItemRequestBuilder) Delete(ctx c
     }
     return nil
 }
-// Get retrieve the properties and relationships of publishedResource object.
+// Get retrieve the properties and relationships of publishedResource object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/publishedresource-get?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemPublishedResourcesPublishedResourceItemRequestBuilder) Get(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublishedResourceable), nil
 }
-// Patch update the properties of publishedresource  publishedResource object.
+// Patch update the properties of published resource  publishedResource object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/publishedresource-update?view=graph-rest-1.0
@@ -130,7 +130,7 @@ func (m *ItemPublishedResourcesPublishedResourceItemRequestBuilder) ToDeleteRequ
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of publishedResource object.
+// ToGetRequestInformation retrieve the properties and relationships of publishedResource object. This API is supported in the following national cloud deployments.
 func (m *ItemPublishedResourcesPublishedResourceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPublishedResourcesPublishedResourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -146,7 +146,7 @@ func (m *ItemPublishedResourcesPublishedResourceItemRequestBuilder) ToGetRequest
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of publishedresource  publishedResource object.
+// ToPatchRequestInformation update the properties of published resource  publishedResource object. This API is supported in the following national cloud deployments.
 func (m *ItemPublishedResourcesPublishedResourceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublishedResourceable, requestConfiguration *ItemPublishedResourcesPublishedResourceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
