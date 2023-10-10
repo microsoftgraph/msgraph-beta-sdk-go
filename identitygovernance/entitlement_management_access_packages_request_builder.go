@@ -11,7 +11,7 @@ import (
 type EntitlementManagementAccessPackagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAccessPackagesRequestBuilderGetQueryParameters retrieve a list of accessPackage objects.  The resulting list includes all the access packages that the caller has access to read, across all catalogs. This API is supported in the following national cloud deployments.
+// EntitlementManagementAccessPackagesRequestBuilderGetQueryParameters retrieve a list of accessPackage objects.  The resulting list includes all the access packages that the caller has access to read, across all catalogs. This API is available in the following national cloud deployments.
 type EntitlementManagementAccessPackagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func (m *EntitlementManagementAccessPackagesRequestBuilder) Count()(*Entitlement
 func (m *EntitlementManagementAccessPackagesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*EntitlementManagementAccessPackagesFilterByCurrentUserWithOnRequestBuilder) {
     return NewEntitlementManagementAccessPackagesFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
-// Get retrieve a list of accessPackage objects.  The resulting list includes all the access packages that the caller has access to read, across all catalogs. This API is supported in the following national cloud deployments.
+// Get retrieve a list of accessPackage objects.  The resulting list includes all the access packages that the caller has access to read, across all catalogs. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/entitlementmanagement-list-accesspackages?view=graph-rest-1.0
@@ -100,7 +100,7 @@ func (m *EntitlementManagementAccessPackagesRequestBuilder) Get(ctx context.Cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCollectionResponseable), nil
 }
-// Post create a new accessPackage object. The access package will be added to an existing accessPackageCatalog. After the access package is created, you can then create accessPackageAssignmentPolicies which specify how users are assigned to the access package. This API is supported in the following national cloud deployments.
+// Post create a new accessPackage object. The access package will be added to an existing accessPackageCatalog. After the access package is created, you can then create accessPackageAssignmentPolicies which specify how users are assigned to the access package. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/entitlementmanagement-post-accesspackages?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *EntitlementManagementAccessPackagesRequestBuilder) Post(ctx context.Con
 func (m *EntitlementManagementAccessPackagesRequestBuilder) Search()(*EntitlementManagementAccessPackagesSearchRequestBuilder) {
     return NewEntitlementManagementAccessPackagesSearchRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation retrieve a list of accessPackage objects.  The resulting list includes all the access packages that the caller has access to read, across all catalogs. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of accessPackage objects.  The resulting list includes all the access packages that the caller has access to read, across all catalogs. This API is available in the following national cloud deployments.
 func (m *EntitlementManagementAccessPackagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *EntitlementManagementAccessPackagesRequestBuilder) ToGetRequestInformat
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new accessPackage object. The access package will be added to an existing accessPackageCatalog. After the access package is created, you can then create accessPackageAssignmentPolicies which specify how users are assigned to the access package. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new accessPackage object. The access package will be added to an existing accessPackageCatalog. After the access package is created, you can then create accessPackageAssignmentPolicies which specify how users are assigned to the access package. This API is available in the following national cloud deployments.
 func (m *EntitlementManagementAccessPackagesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageable, requestConfiguration *EntitlementManagementAccessPackagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

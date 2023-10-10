@@ -22,7 +22,7 @@ func NewItemMailFoldersItemMessagesItemMarkAsJunkPostRequestBody()(*ItemMailFold
 func CreateItemMailFoldersItemMessagesItemMarkAsJunkPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemMailFoldersItemMessagesItemMarkAsJunkPostRequestBody(), nil
 }
-// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemMailFoldersItemMessagesItemMarkAsJunkPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -34,14 +34,14 @@ func (m *ItemMailFoldersItemMessagesItemMarkAsJunkPostRequestBody) GetAdditional
     }
     return val.(map[string]any)
 }
-// GetBackingStore gets the backingStore property value. Stores model information.
+// GetBackingStore gets the BackingStore property value. Stores model information.
 func (m *ItemMailFoldersItemMessagesItemMarkAsJunkPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemMailFoldersItemMessagesItemMarkAsJunkPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["moveToJunk"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["MoveToJunk"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *ItemMailFoldersItemMessagesItemMarkAsJunkPostRequestBody) GetFieldDeser
     }
     return res
 }
-// GetMoveToJunk gets the moveToJunk property value. The MoveToJunk property
+// GetMoveToJunk gets the MoveToJunk property value. The MoveToJunk property
 func (m *ItemMailFoldersItemMessagesItemMarkAsJunkPostRequestBody) GetMoveToJunk()(*bool) {
     val, err := m.GetBackingStore().Get("moveToJunk")
     if err != nil {
@@ -67,7 +67,7 @@ func (m *ItemMailFoldersItemMessagesItemMarkAsJunkPostRequestBody) GetMoveToJunk
 // Serialize serializes information the current object
 func (m *ItemMailFoldersItemMessagesItemMarkAsJunkPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteBoolValue("moveToJunk", m.GetMoveToJunk())
+        err := writer.WriteBoolValue("MoveToJunk", m.GetMoveToJunk())
         if err != nil {
             return err
         }
@@ -80,18 +80,18 @@ func (m *ItemMailFoldersItemMessagesItemMarkAsJunkPostRequestBody) Serialize(wri
     }
     return nil
 }
-// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemMailFoldersItemMessagesItemMarkAsJunkPostRequestBody) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBackingStore sets the backingStore property value. Stores model information.
+// SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *ItemMailFoldersItemMessagesItemMarkAsJunkPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetMoveToJunk sets the moveToJunk property value. The MoveToJunk property
+// SetMoveToJunk sets the MoveToJunk property value. The MoveToJunk property
 func (m *ItemMailFoldersItemMessagesItemMarkAsJunkPostRequestBody) SetMoveToJunk(value *bool)() {
     err := m.GetBackingStore().Set("moveToJunk", value)
     if err != nil {

@@ -11,7 +11,7 @@ import (
 type EdiscoveryCasesItemReviewSetsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesItemReviewSetsRequestBuilderGetQueryParameters retrieve the properties and relationships of a reviewSet object. This API is supported in the following national cloud deployments.
+// EdiscoveryCasesItemReviewSetsRequestBuilderGetQueryParameters retrieve the properties and relationships of a reviewSet object. This API is available in the following national cloud deployments.
 type EdiscoveryCasesItemReviewSetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,7 +75,7 @@ func NewEdiscoveryCasesItemReviewSetsRequestBuilder(rawUrl string, requestAdapte
 func (m *EdiscoveryCasesItemReviewSetsRequestBuilder) Count()(*EdiscoveryCasesItemReviewSetsCountRequestBuilder) {
     return NewEdiscoveryCasesItemReviewSetsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of a reviewSet object. This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of a reviewSet object. This API is available in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemReviewSetsRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemReviewSetsRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -95,7 +95,7 @@ func (m *EdiscoveryCasesItemReviewSetsRequestBuilder) Get(ctx context.Context, r
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetCollectionResponseable), nil
 }
-// Post create a new reviewSet object. The request body contains the display name of the review set, which is the only writable property. This API is supported in the following national cloud deployments.
+// Post create a new reviewSet object. The request body contains the display name of the review set, which is the only writable property. This API is available in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
@@ -118,7 +118,7 @@ func (m *EdiscoveryCasesItemReviewSetsRequestBuilder) Post(ctx context.Context, 
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetable), nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a reviewSet object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of a reviewSet object. This API is available in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemReviewSetsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemReviewSetsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -135,7 +135,7 @@ func (m *EdiscoveryCasesItemReviewSetsRequestBuilder) ToGetRequestInformation(ct
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new reviewSet object. The request body contains the display name of the review set, which is the only writable property. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new reviewSet object. The request body contains the display name of the review set, which is the only writable property. This API is available in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemReviewSetsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetable, requestConfiguration *EdiscoveryCasesItemReviewSetsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

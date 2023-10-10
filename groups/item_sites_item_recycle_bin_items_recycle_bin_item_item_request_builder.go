@@ -18,7 +18,7 @@ type ItemSitesItemRecycleBinItemsRecycleBinItemItemRequestBuilderDeleteRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSitesItemRecycleBinItemsRecycleBinItemItemRequestBuilderGetQueryParameters get items from groups
+// ItemSitesItemRecycleBinItemsRecycleBinItemItemRequestBuilderGetQueryParameters list of the recycleBinItems deleted by a user.
 type ItemSitesItemRecycleBinItemsRecycleBinItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *ItemSitesItemRecycleBinItemsRecycleBinItemItemRequestBuilder) Delete(ct
     }
     return nil
 }
-// Get get items from groups
+// Get list of the recycleBinItems deleted by a user.
 func (m *ItemSitesItemRecycleBinItemsRecycleBinItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemRecycleBinItemsRecycleBinItemItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RecycleBinItemable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -128,7 +128,7 @@ func (m *ItemSitesItemRecycleBinItemsRecycleBinItemItemRequestBuilder) ToDeleteR
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get items from groups
+// ToGetRequestInformation list of the recycleBinItems deleted by a user.
 func (m *ItemSitesItemRecycleBinItemsRecycleBinItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemRecycleBinItemsRecycleBinItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ServicePrincipalsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ServicePrincipalsRequestBuilderGetQueryParameters retrieve a list of servicePrincipal objects. This API is supported in the following national cloud deployments.
+// ServicePrincipalsRequestBuilderGetQueryParameters retrieve a list of servicePrincipal objects. This API is available in the following national cloud deployments.
 type ServicePrincipalsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func (m *ServicePrincipalsRequestBuilder) Count()(*CountRequestBuilder) {
 func (m *ServicePrincipalsRequestBuilder) Delta()(*DeltaRequestBuilder) {
     return NewDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of servicePrincipal objects. This API is supported in the following national cloud deployments.
+// Get retrieve a list of servicePrincipal objects. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-list?view=graph-rest-1.0
@@ -108,7 +108,7 @@ func (m *ServicePrincipalsRequestBuilder) GetByIds()(*GetByIdsRequestBuilder) {
 func (m *ServicePrincipalsRequestBuilder) GetUserOwnedObjects()(*GetUserOwnedObjectsRequestBuilder) {
     return NewGetUserOwnedObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Post create a new servicePrincipal object. This API is supported in the following national cloud deployments.
+// Post create a new servicePrincipal object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-1.0
@@ -130,7 +130,7 @@ func (m *ServicePrincipalsRequestBuilder) Post(ctx context.Context, body ie233ee
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable), nil
 }
-// ToGetRequestInformation retrieve a list of servicePrincipal objects. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of servicePrincipal objects. This API is available in the following national cloud deployments.
 func (m *ServicePrincipalsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ServicePrincipalsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -146,7 +146,7 @@ func (m *ServicePrincipalsRequestBuilder) ToGetRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new servicePrincipal object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new servicePrincipal object. This API is available in the following national cloud deployments.
 func (m *ServicePrincipalsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable, requestConfiguration *ServicePrincipalsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

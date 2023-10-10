@@ -18,7 +18,7 @@ type EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderDel
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderGetQueryParameters read the properties and relationships of a siteSource object. This API is supported in the following national cloud deployments.
+// EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderGetQueryParameters read the properties and relationships of a siteSource object. This API is available in the following national cloud deployments.
 type EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewEdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a siteSource object. This API is supported in the following national cloud deployments.
+// Delete delete a siteSource object. This API is available in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
@@ -74,7 +74,7 @@ func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilde
     }
     return nil
 }
-// Get read the properties and relationships of a siteSource object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a siteSource object. This API is available in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
@@ -121,7 +121,7 @@ func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilde
 func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder) Site()(*EdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilder) {
     return NewEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a siteSource object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a siteSource object. This API is available in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -134,7 +134,7 @@ func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilde
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a siteSource object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a siteSource object. This API is available in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

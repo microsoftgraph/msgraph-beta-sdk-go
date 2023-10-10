@@ -11,7 +11,7 @@ import (
 type ItemPublishedResourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemPublishedResourcesRequestBuilderGetQueryParameters retrieve a list of publishedResource objects. This API is supported in the following national cloud deployments.
+// ItemPublishedResourcesRequestBuilderGetQueryParameters retrieve a list of publishedResource objects. This API is available in the following national cloud deployments.
 type ItemPublishedResourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemPublishedResourcesRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ItemPublishedResourcesRequestBuilder) Count()(*ItemPublishedResourcesCountRequestBuilder) {
     return NewItemPublishedResourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of publishedResource objects. This API is supported in the following national cloud deployments.
+// Get retrieve a list of publishedResource objects. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/publishedresource-list?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemPublishedResourcesRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublishedResourceCollectionResponseable), nil
 }
-// Post create a new publishedResource object. This API is supported in the following national cloud deployments.
+// Post create a new publishedResource object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/publishedresource-post?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemPublishedResourcesRequestBuilder) Post(ctx context.Context, body ie
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublishedResourceable), nil
 }
-// ToGetRequestInformation retrieve a list of publishedResource objects. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of publishedResource objects. This API is available in the following national cloud deployments.
 func (m *ItemPublishedResourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPublishedResourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemPublishedResourcesRequestBuilder) ToGetRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new publishedResource object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new publishedResource object. This API is available in the following national cloud deployments.
 func (m *ItemPublishedResourcesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublishedResourceable, requestConfiguration *ItemPublishedResourcesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

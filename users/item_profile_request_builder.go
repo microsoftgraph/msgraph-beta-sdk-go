@@ -18,7 +18,7 @@ type ItemProfileRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfileRequestBuilderGetQueryParameters retrieve the properties and relationships of a profile object for a given user. The profile resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by profile. This API is supported in the following national cloud deployments.
+// ItemProfileRequestBuilderGetQueryParameters retrieve the properties and relationships of a profile object for a given user. The profile resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by profile. This API is available in the following national cloud deployments.
 type ItemProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func NewItemProfileRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a profile object from a user's account. This API is supported in the following national cloud deployments.
+// Delete deletes a profile object from a user's account. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/profile-delete?view=graph-rest-1.0
@@ -101,7 +101,7 @@ func (m *ItemProfileRequestBuilder) EducationalActivities()(*ItemProfileEducatio
 func (m *ItemProfileRequestBuilder) Emails()(*ItemProfileEmailsRequestBuilder) {
     return NewItemProfileEmailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of a profile object for a given user. The profile resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by profile. This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of a profile object for a given user. The profile resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by profile. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/profile-get?view=graph-rest-1.0
@@ -182,7 +182,7 @@ func (m *ItemProfileRequestBuilder) Publications()(*ItemProfilePublicationsReque
 func (m *ItemProfileRequestBuilder) Skills()(*ItemProfileSkillsRequestBuilder) {
     return NewItemProfileSkillsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation deletes a profile object from a user's account. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation deletes a profile object from a user's account. This API is available in the following national cloud deployments.
 func (m *ItemProfileRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -194,7 +194,7 @@ func (m *ItemProfileRequestBuilder) ToDeleteRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a profile object for a given user. The profile resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by profile. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of a profile object for a given user. The profile resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by profile. This API is available in the following national cloud deployments.
 func (m *ItemProfileRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

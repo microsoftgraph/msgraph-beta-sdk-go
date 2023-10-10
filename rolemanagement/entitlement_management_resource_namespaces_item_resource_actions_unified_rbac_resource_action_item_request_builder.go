@@ -18,7 +18,7 @@ type EntitlementManagementResourceNamespacesItemResourceActionsUnifiedRbacResour
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderGetQueryParameters read the properties and relationships of an unifiedRbacResourceAction object. This API is supported in the following national cloud deployments.
+// EntitlementManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderGetQueryParameters read the properties and relationships of an unifiedRbacResourceAction object. This API is available in the following national cloud deployments.
 type EntitlementManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *EntitlementManagementResourceNamespacesItemResourceActionsUnifiedRbacRe
     }
     return nil
 }
-// Get read the properties and relationships of an unifiedRbacResourceAction object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of an unifiedRbacResourceAction object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/unifiedrbacresourceaction-get?view=graph-rest-1.0
@@ -131,7 +131,7 @@ func (m *EntitlementManagementResourceNamespacesItemResourceActionsUnifiedRbacRe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an unifiedRbacResourceAction object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of an unifiedRbacResourceAction object. This API is available in the following national cloud deployments.
 func (m *EntitlementManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

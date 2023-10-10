@@ -30,7 +30,7 @@ func NewItemGetStaffAvailabilityRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewItemGetStaffAvailabilityRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post get the availability information of staff members of a Microsoft Bookings calendar. This API is supported in the following national cloud deployments.
+// Post get the availability information of staff members of a Microsoft Bookings calendar. This API is available in the following national cloud deployments.
 // Deprecated: This method is obsolete. Use PostAsGetStaffAvailabilityPostResponse instead.
 // [Find more info here]
 // 
@@ -53,7 +53,7 @@ func (m *ItemGetStaffAvailabilityRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(ItemGetStaffAvailabilityResponseable), nil
 }
-// PostAsGetStaffAvailabilityPostResponse get the availability information of staff members of a Microsoft Bookings calendar. This API is supported in the following national cloud deployments.
+// PostAsGetStaffAvailabilityPostResponse get the availability information of staff members of a Microsoft Bookings calendar. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-1.0
@@ -75,7 +75,7 @@ func (m *ItemGetStaffAvailabilityRequestBuilder) PostAsGetStaffAvailabilityPostR
     }
     return res.(ItemGetStaffAvailabilityPostResponseable), nil
 }
-// ToPostRequestInformation get the availability information of staff members of a Microsoft Bookings calendar. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation get the availability information of staff members of a Microsoft Bookings calendar. This API is available in the following national cloud deployments.
 func (m *ItemGetStaffAvailabilityRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemGetStaffAvailabilityPostRequestBodyable, requestConfiguration *ItemGetStaffAvailabilityRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

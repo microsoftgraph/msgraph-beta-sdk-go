@@ -11,7 +11,7 @@ import (
 type AuthenticationEventListenersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AuthenticationEventListenersRequestBuilderGetQueryParameters get a list of the authenticationEventListener objects and their properties. The following derived types are supported: This API is supported in the following national cloud deployments.
+// AuthenticationEventListenersRequestBuilderGetQueryParameters get a list of the authenticationEventListener objects and their properties. The following derived types are supported: This API is available in the following national cloud deployments.
 type AuthenticationEventListenersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewAuthenticationEventListenersRequestBuilder(rawUrl string, requestAdapter
 func (m *AuthenticationEventListenersRequestBuilder) Count()(*AuthenticationEventListenersCountRequestBuilder) {
     return NewAuthenticationEventListenersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the authenticationEventListener objects and their properties. The following derived types are supported: This API is supported in the following national cloud deployments.
+// Get get a list of the authenticationEventListener objects and their properties. The following derived types are supported: This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identitycontainer-list-authenticationeventlisteners?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *AuthenticationEventListenersRequestBuilder) Get(ctx context.Context, re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventListenerCollectionResponseable), nil
 }
-// Post create a new authenticationEventListener object. You can create one of the following subtypes that are derived from authenticationEventListener. This API is supported in the following national cloud deployments.
+// Post create a new authenticationEventListener object. You can create one of the following subtypes that are derived from authenticationEventListener. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identitycontainer-post-authenticationeventlisteners?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *AuthenticationEventListenersRequestBuilder) Post(ctx context.Context, b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventListenerable), nil
 }
-// ToGetRequestInformation get a list of the authenticationEventListener objects and their properties. The following derived types are supported: This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of the authenticationEventListener objects and their properties. The following derived types are supported: This API is available in the following national cloud deployments.
 func (m *AuthenticationEventListenersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationEventListenersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *AuthenticationEventListenersRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new authenticationEventListener object. You can create one of the following subtypes that are derived from authenticationEventListener. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new authenticationEventListener object. You can create one of the following subtypes that are derived from authenticationEventListener. This API is available in the following national cloud deployments.
 func (m *AuthenticationEventListenersRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventListenerable, requestConfiguration *AuthenticationEventListenersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

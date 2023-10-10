@@ -11,7 +11,7 @@ import (
 type ItemOwnedObjectsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOwnedObjectsRequestBuilderGetQueryParameters retrieve a list of objects owned by the servicePrincipal.  This could include applications or groups. This API is supported in the following national cloud deployments.
+// ItemOwnedObjectsRequestBuilderGetQueryParameters retrieve a list of objects owned by the servicePrincipal.  This could include applications or groups. This API is available in the following national cloud deployments.
 type ItemOwnedObjectsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewItemOwnedObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *ItemOwnedObjectsRequestBuilder) Count()(*ItemOwnedObjectsCountRequestBuilder) {
     return NewItemOwnedObjectsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of objects owned by the servicePrincipal.  This could include applications or groups. This API is supported in the following national cloud deployments.
+// Get retrieve a list of objects owned by the servicePrincipal.  This could include applications or groups. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-list-ownedobjects?view=graph-rest-1.0
@@ -105,7 +105,7 @@ func (m *ItemOwnedObjectsRequestBuilder) GraphGroup()(*ItemOwnedObjectsGraphGrou
 func (m *ItemOwnedObjectsRequestBuilder) GraphServicePrincipal()(*ItemOwnedObjectsGraphServicePrincipalRequestBuilder) {
     return NewItemOwnedObjectsGraphServicePrincipalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation retrieve a list of objects owned by the servicePrincipal.  This could include applications or groups. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of objects owned by the servicePrincipal.  This could include applications or groups. This API is available in the following national cloud deployments.
 func (m *ItemOwnedObjectsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOwnedObjectsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

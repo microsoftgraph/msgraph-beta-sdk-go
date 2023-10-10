@@ -11,7 +11,7 @@ import (
 type DelegatedAdminRelationshipsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DelegatedAdminRelationshipsRequestBuilderGetQueryParameters get a list of the delegatedAdminRelationship objects and their properties. This API is supported in the following national cloud deployments.
+// DelegatedAdminRelationshipsRequestBuilderGetQueryParameters get a list of the delegatedAdminRelationship objects and their properties. This API is available in the following national cloud deployments.
 type DelegatedAdminRelationshipsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewDelegatedAdminRelationshipsRequestBuilder(rawUrl string, requestAdapter 
 func (m *DelegatedAdminRelationshipsRequestBuilder) Count()(*DelegatedAdminRelationshipsCountRequestBuilder) {
     return NewDelegatedAdminRelationshipsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the delegatedAdminRelationship objects and their properties. This API is supported in the following national cloud deployments.
+// Get get a list of the delegatedAdminRelationship objects and their properties. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tenantrelationship-list-delegatedadminrelationships?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *DelegatedAdminRelationshipsRequestBuilder) Get(ctx context.Context, req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminRelationshipCollectionResponseable), nil
 }
-// Post create a new delegatedAdminRelationship object. This API is supported in the following national cloud deployments.
+// Post create a new delegatedAdminRelationship object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tenantrelationship-post-delegatedadminrelationships?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *DelegatedAdminRelationshipsRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminRelationshipable), nil
 }
-// ToGetRequestInformation get a list of the delegatedAdminRelationship objects and their properties. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of the delegatedAdminRelationship objects and their properties. This API is available in the following national cloud deployments.
 func (m *DelegatedAdminRelationshipsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DelegatedAdminRelationshipsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *DelegatedAdminRelationshipsRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new delegatedAdminRelationship object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new delegatedAdminRelationship object. This API is available in the following national cloud deployments.
 func (m *DelegatedAdminRelationshipsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminRelationshipable, requestConfiguration *DelegatedAdminRelationshipsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

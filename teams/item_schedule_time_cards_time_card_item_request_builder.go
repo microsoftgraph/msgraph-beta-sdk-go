@@ -18,7 +18,7 @@ type ItemScheduleTimeCardsTimeCardItemRequestBuilderDeleteRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemScheduleTimeCardsTimeCardItemRequestBuilderGetQueryParameters get the properties and relationships of a timeCard object by ID. This API is supported in the following national cloud deployments.
+// ItemScheduleTimeCardsTimeCardItemRequestBuilderGetQueryParameters get the properties and relationships of a timeCard object by ID. This API is available in the following national cloud deployments.
 type ItemScheduleTimeCardsTimeCardItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -62,7 +62,7 @@ func NewItemScheduleTimeCardsTimeCardItemRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewItemScheduleTimeCardsTimeCardItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a timeCard instance in a schedule. This API is supported in the following national cloud deployments.
+// Delete delete a timeCard instance in a schedule. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/timecard-delete?view=graph-rest-1.0
@@ -85,7 +85,7 @@ func (m *ItemScheduleTimeCardsTimeCardItemRequestBuilder) Delete(ctx context.Con
 func (m *ItemScheduleTimeCardsTimeCardItemRequestBuilder) EndBreak()(*ItemScheduleTimeCardsItemEndBreakRequestBuilder) {
     return NewItemScheduleTimeCardsItemEndBreakRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the properties and relationships of a timeCard object by ID. This API is supported in the following national cloud deployments.
+// Get get the properties and relationships of a timeCard object by ID. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/timecard-get?view=graph-rest-1.0
@@ -133,7 +133,7 @@ func (m *ItemScheduleTimeCardsTimeCardItemRequestBuilder) Patch(ctx context.Cont
 func (m *ItemScheduleTimeCardsTimeCardItemRequestBuilder) StartBreak()(*ItemScheduleTimeCardsItemStartBreakRequestBuilder) {
     return NewItemScheduleTimeCardsItemStartBreakRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a timeCard instance in a schedule. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a timeCard instance in a schedule. This API is available in the following national cloud deployments.
 func (m *ItemScheduleTimeCardsTimeCardItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemScheduleTimeCardsTimeCardItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *ItemScheduleTimeCardsTimeCardItemRequestBuilder) ToDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of a timeCard object by ID. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the properties and relationships of a timeCard object by ID. This API is available in the following national cloud deployments.
 func (m *ItemScheduleTimeCardsTimeCardItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemScheduleTimeCardsTimeCardItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

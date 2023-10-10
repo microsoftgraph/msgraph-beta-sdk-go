@@ -111,7 +111,7 @@ func (m *X509CertificateAuthenticationMethodConfiguration) GetIncludeTargets()([
     }
     return nil
 }
-// GetIssuerHintsConfiguration gets the issuerHintsConfiguration property value. The issuerHintsConfiguration property
+// GetIssuerHintsConfiguration gets the issuerHintsConfiguration property value. Determines whether issuer(CA) hints are sent back to the client side to filter the certificates shown in certificate picker.
 func (m *X509CertificateAuthenticationMethodConfiguration) GetIssuerHintsConfiguration()(X509CertificateIssuerHintsConfigurationable) {
     val, err := m.GetBackingStore().Get("issuerHintsConfiguration")
     if err != nil {
@@ -187,7 +187,7 @@ func (m *X509CertificateAuthenticationMethodConfiguration) SetIncludeTargets(val
         panic(err)
     }
 }
-// SetIssuerHintsConfiguration sets the issuerHintsConfiguration property value. The issuerHintsConfiguration property
+// SetIssuerHintsConfiguration sets the issuerHintsConfiguration property value. Determines whether issuer(CA) hints are sent back to the client side to filter the certificates shown in certificate picker.
 func (m *X509CertificateAuthenticationMethodConfiguration) SetIssuerHintsConfiguration(value X509CertificateIssuerHintsConfigurationable)() {
     err := m.GetBackingStore().Set("issuerHintsConfiguration", value)
     if err != nil {

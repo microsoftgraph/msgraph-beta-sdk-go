@@ -11,7 +11,7 @@ import (
 type SubscriptionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SubscriptionsRequestBuilderGetQueryParameters get the list of commercial subscriptions that an organization has acquired. This API is supported in the following national cloud deployments.
+// SubscriptionsRequestBuilderGetQueryParameters get the list of commercial subscriptions that an organization has acquired. This API is available in the following national cloud deployments.
 type SubscriptionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewSubscriptionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *SubscriptionsRequestBuilder) Count()(*SubscriptionsCountRequestBuilder) {
     return NewSubscriptionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of commercial subscriptions that an organization has acquired. This API is supported in the following national cloud deployments.
+// Get get the list of commercial subscriptions that an organization has acquired. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/directory-list-subscriptions?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *SubscriptionsRequestBuilder) Post(ctx context.Context, body ie233ee762e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CompanySubscriptionable), nil
 }
-// ToGetRequestInformation get the list of commercial subscriptions that an organization has acquired. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the list of commercial subscriptions that an organization has acquired. This API is available in the following national cloud deployments.
 func (m *SubscriptionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubscriptionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

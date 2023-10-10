@@ -30,7 +30,7 @@ func NewTiIndicatorsUpdateTiIndicatorsRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewTiIndicatorsUpdateTiIndicatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post update multiple threat intelligence (TI) indicators in one request instead of multiple requests. This API is supported in the following national cloud deployments.
+// Post update multiple threat intelligence (TI) indicators in one request instead of multiple requests. This API is available in the following national cloud deployments.
 // Deprecated: This method is obsolete. Use PostAsUpdateTiIndicatorsPostResponse instead.
 // [Find more info here]
 // 
@@ -53,7 +53,7 @@ func (m *TiIndicatorsUpdateTiIndicatorsRequestBuilder) Post(ctx context.Context,
     }
     return res.(TiIndicatorsUpdateTiIndicatorsResponseable), nil
 }
-// PostAsUpdateTiIndicatorsPostResponse update multiple threat intelligence (TI) indicators in one request instead of multiple requests. This API is supported in the following national cloud deployments.
+// PostAsUpdateTiIndicatorsPostResponse update multiple threat intelligence (TI) indicators in one request instead of multiple requests. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-updatetiindicators?view=graph-rest-1.0
@@ -75,7 +75,7 @@ func (m *TiIndicatorsUpdateTiIndicatorsRequestBuilder) PostAsUpdateTiIndicatorsP
     }
     return res.(TiIndicatorsUpdateTiIndicatorsPostResponseable), nil
 }
-// ToPostRequestInformation update multiple threat intelligence (TI) indicators in one request instead of multiple requests. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation update multiple threat intelligence (TI) indicators in one request instead of multiple requests. This API is available in the following national cloud deployments.
 func (m *TiIndicatorsUpdateTiIndicatorsRequestBuilder) ToPostRequestInformation(ctx context.Context, body TiIndicatorsUpdateTiIndicatorsPostRequestBodyable, requestConfiguration *TiIndicatorsUpdateTiIndicatorsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

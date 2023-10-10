@@ -18,7 +18,7 @@ type ItemTeamDefinitionInstalledAppsTeamsAppInstallationItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamDefinitionInstalledAppsTeamsAppInstallationItemRequestBuilderGetQueryParameters retrieve the app installed in the specified team. This API is supported in the following national cloud deployments.
+// ItemTeamDefinitionInstalledAppsTeamsAppInstallationItemRequestBuilderGetQueryParameters retrieve the app installed in the specified team. This API is available in the following national cloud deployments.
 type ItemTeamDefinitionInstalledAppsTeamsAppInstallationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemTeamDefinitionInstalledAppsTeamsAppInstallationItemRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionInstalledAppsTeamsAppInstallationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete uninstalls an app from the specified team. This API is supported in the following national cloud deployments.
+// Delete uninstalls an app from the specified team. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/team-delete-installedapps?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemTeamDefinitionInstalledAppsTeamsAppInstallationItemRequestBuilder) 
     }
     return nil
 }
-// Get retrieve the app installed in the specified team. This API is supported in the following national cloud deployments.
+// Get retrieve the app installed in the specified team. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/team-get-installedapps?view=graph-rest-1.0
@@ -122,7 +122,7 @@ func (m *ItemTeamDefinitionInstalledAppsTeamsAppInstallationItemRequestBuilder) 
 func (m *ItemTeamDefinitionInstalledAppsTeamsAppInstallationItemRequestBuilder) TeamsAppDefinition()(*ItemTeamDefinitionInstalledAppsItemTeamsAppDefinitionRequestBuilder) {
     return NewItemTeamDefinitionInstalledAppsItemTeamsAppDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation uninstalls an app from the specified team. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation uninstalls an app from the specified team. This API is available in the following national cloud deployments.
 func (m *ItemTeamDefinitionInstalledAppsTeamsAppInstallationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionInstalledAppsTeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemTeamDefinitionInstalledAppsTeamsAppInstallationItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the app installed in the specified team. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the app installed in the specified team. This API is available in the following national cloud deployments.
 func (m *ItemTeamDefinitionInstalledAppsTeamsAppInstallationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionInstalledAppsTeamsAppInstallationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

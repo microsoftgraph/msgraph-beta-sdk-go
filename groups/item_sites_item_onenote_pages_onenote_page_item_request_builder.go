@@ -62,7 +62,7 @@ func (m *ItemSitesItemOnenotePagesOnenotePageItemRequestBuilder) Content()(*Item
 func (m *ItemSitesItemOnenotePagesOnenotePageItemRequestBuilder) CopyToSection()(*ItemSitesItemOnenotePagesItemCopyToSectionRequestBuilder) {
     return NewItemSitesItemOnenotePagesItemCopyToSectionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete delete a OneNote page. This API is supported in the following national cloud deployments.
+// Delete delete a OneNote page. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/page-delete?view=graph-rest-1.0
@@ -135,7 +135,7 @@ func (m *ItemSitesItemOnenotePagesOnenotePageItemRequestBuilder) Patch(ctx conte
 func (m *ItemSitesItemOnenotePagesOnenotePageItemRequestBuilder) Preview()(*ItemSitesItemOnenotePagesItemPreviewRequestBuilder) {
     return NewItemSitesItemOnenotePagesItemPreviewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a OneNote page. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a OneNote page. This API is available in the following national cloud deployments.
 func (m *ItemSitesItemOnenotePagesOnenotePageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemOnenotePagesOnenotePageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

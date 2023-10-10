@@ -11,7 +11,7 @@ import (
 type EmailThreatSubmissionPoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EmailThreatSubmissionPoliciesRequestBuilderGetQueryParameters get a list of the emailThreatSubmissionPolicy objects and their properties. This API is supported in the following national cloud deployments.
+// EmailThreatSubmissionPoliciesRequestBuilderGetQueryParameters get a list of the emailThreatSubmissionPolicy objects and their properties. This API is available in the following national cloud deployments.
 type EmailThreatSubmissionPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewEmailThreatSubmissionPoliciesRequestBuilder(rawUrl string, requestAdapte
 func (m *EmailThreatSubmissionPoliciesRequestBuilder) Count()(*EmailThreatSubmissionPoliciesCountRequestBuilder) {
     return NewEmailThreatSubmissionPoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the emailThreatSubmissionPolicy objects and their properties. This API is supported in the following national cloud deployments.
+// Get get a list of the emailThreatSubmissionPolicy objects and their properties. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-emailthreatsubmissionpolicy-list?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *EmailThreatSubmissionPoliciesRequestBuilder) Post(ctx context.Context, 
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EmailThreatSubmissionPolicyable), nil
 }
-// ToGetRequestInformation get a list of the emailThreatSubmissionPolicy objects and their properties. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of the emailThreatSubmissionPolicy objects and their properties. This API is available in the following national cloud deployments.
 func (m *EmailThreatSubmissionPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EmailThreatSubmissionPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

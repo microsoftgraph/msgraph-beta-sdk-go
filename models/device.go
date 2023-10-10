@@ -786,7 +786,7 @@ func (m *Device) GetManagementType()(*string) {
     }
     return nil
 }
-// GetManufacturer gets the manufacturer property value. Manufacturer of the device. Read-only.
+// GetManufacturer gets the manufacturer property value. Manufacturer of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
 func (m *Device) GetManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("manufacturer")
     if err != nil {
@@ -819,7 +819,7 @@ func (m *Device) GetMemberOf()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetModel gets the model property value. Model of the device. Read-only.
+// GetModel gets the model property value. Model of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
 func (m *Device) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
     if err != nil {
@@ -1498,7 +1498,7 @@ func (m *Device) SetManagementType(value *string)() {
         panic(err)
     }
 }
-// SetManufacturer sets the manufacturer property value. Manufacturer of the device. Read-only.
+// SetManufacturer sets the manufacturer property value. Manufacturer of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
 func (m *Device) SetManufacturer(value *string)() {
     err := m.GetBackingStore().Set("manufacturer", value)
     if err != nil {
@@ -1519,7 +1519,7 @@ func (m *Device) SetMemberOf(value []DirectoryObjectable)() {
         panic(err)
     }
 }
-// SetModel sets the model property value. Model of the device. Read-only.
+// SetModel sets the model property value. Model of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
 func (m *Device) SetModel(value *string)() {
     err := m.GetBackingStore().Set("model", value)
     if err != nil {

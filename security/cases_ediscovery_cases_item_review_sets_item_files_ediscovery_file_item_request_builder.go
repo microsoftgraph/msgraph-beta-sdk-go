@@ -18,7 +18,7 @@ type CasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBuilder
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBuilderGetQueryParameters read the properties and relationships of an ediscoveryFile object. This API is supported in the following national cloud deployments.
+// CasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBuilderGetQueryParameters read the properties and relationships of an ediscoveryFile object. This API is available in the following national cloud deployments.
 type CasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -82,7 +82,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBui
 func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBuilder) ExtractedTextContent()(*CasesEdiscoveryCasesItemReviewSetsItemFilesItemExtractedTextContentRequestBuilder) {
     return NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemExtractedTextContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of an ediscoveryFile object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of an ediscoveryFile object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoveryfile-get?view=graph-rest-1.0
@@ -139,7 +139,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBui
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an ediscoveryFile object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of an ediscoveryFile object. This API is available in the following national cloud deployments.
 func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemFilesEdiscoveryFileItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -30,7 +30,7 @@ func NewRenewGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewRenewGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post renew a group's expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy. This API is supported in the following national cloud deployments.
+// Post renew a group's expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy. This API is available in the following national cloud deployments.
 // Deprecated: This method is obsolete. Use PostAsRenewGroupPostResponse instead.
 // [Find more info here]
 // 
@@ -53,7 +53,7 @@ func (m *RenewGroupRequestBuilder) Post(ctx context.Context, body RenewGroupPost
     }
     return res.(RenewGroupResponseable), nil
 }
-// PostAsRenewGroupPostResponse renew a group's expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy. This API is supported in the following national cloud deployments.
+// PostAsRenewGroupPostResponse renew a group's expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-renewgroup?view=graph-rest-1.0
@@ -75,7 +75,7 @@ func (m *RenewGroupRequestBuilder) PostAsRenewGroupPostResponse(ctx context.Cont
     }
     return res.(RenewGroupPostResponseable), nil
 }
-// ToPostRequestInformation renew a group's expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation renew a group's expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy. This API is available in the following national cloud deployments.
 func (m *RenewGroupRequestBuilder) ToPostRequestInformation(ctx context.Context, body RenewGroupPostRequestBodyable, requestConfiguration *RenewGroupRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ItemCalendarCalendarPermissionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCalendarCalendarPermissionsRequestBuilderGetQueryParameters get the specified permissions object of a user or group calendar that has been shared. This API is supported in the following national cloud deployments.
+// ItemCalendarCalendarPermissionsRequestBuilderGetQueryParameters get the specified permissions object of a user or group calendar that has been shared. This API is available in the following national cloud deployments.
 type ItemCalendarCalendarPermissionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -70,7 +70,7 @@ func NewItemCalendarCalendarPermissionsRequestBuilder(rawUrl string, requestAdap
 func (m *ItemCalendarCalendarPermissionsRequestBuilder) Count()(*ItemCalendarCalendarPermissionsCountRequestBuilder) {
     return NewItemCalendarCalendarPermissionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the specified permissions object of a user or group calendar that has been shared. This API is supported in the following national cloud deployments.
+// Get get the specified permissions object of a user or group calendar that has been shared. This API is available in the following national cloud deployments.
 func (m *ItemCalendarCalendarPermissionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarCalendarPermissionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarPermissionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +89,7 @@ func (m *ItemCalendarCalendarPermissionsRequestBuilder) Get(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarPermissionCollectionResponseable), nil
 }
-// Post create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated. This API is supported in the following national cloud deployments.
+// Post create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/calendar-post-calendarpermissions?view=graph-rest-1.0
@@ -111,7 +111,7 @@ func (m *ItemCalendarCalendarPermissionsRequestBuilder) Post(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarPermissionable), nil
 }
-// ToGetRequestInformation get the specified permissions object of a user or group calendar that has been shared. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the specified permissions object of a user or group calendar that has been shared. This API is available in the following national cloud deployments.
 func (m *ItemCalendarCalendarPermissionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarCalendarPermissionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -127,7 +127,7 @@ func (m *ItemCalendarCalendarPermissionsRequestBuilder) ToGetRequestInformation(
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated. This API is available in the following national cloud deployments.
 func (m *ItemCalendarCalendarPermissionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarPermissionable, requestConfiguration *ItemCalendarCalendarPermissionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

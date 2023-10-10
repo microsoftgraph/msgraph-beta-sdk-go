@@ -31,7 +31,7 @@ func NewItemMailFoldersItemChildFoldersItemCopyRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewItemMailFoldersItemChildFoldersItemCopyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post copy a mail folder and its contents to another mail folder. This API is supported in the following national cloud deployments.
+// Post copy a mail folder and its contents to another mail folder. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/mailfolder-copy?view=graph-rest-1.0
@@ -53,7 +53,7 @@ func (m *ItemMailFoldersItemChildFoldersItemCopyRequestBuilder) Post(ctx context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailFolderable), nil
 }
-// ToPostRequestInformation copy a mail folder and its contents to another mail folder. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation copy a mail folder and its contents to another mail folder. This API is available in the following national cloud deployments.
 func (m *ItemMailFoldersItemChildFoldersItemCopyRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemMailFoldersItemChildFoldersItemCopyPostRequestBodyable, requestConfiguration *ItemMailFoldersItemChildFoldersItemCopyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

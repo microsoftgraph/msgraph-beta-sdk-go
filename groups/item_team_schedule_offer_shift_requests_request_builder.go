@@ -11,7 +11,7 @@ import (
 type ItemTeamScheduleOfferShiftRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamScheduleOfferShiftRequestsRequestBuilderGetQueryParameters retrieve the properties and relationships of all offerShiftRequest objects in a team. This API is supported in the following national cloud deployments.
+// ItemTeamScheduleOfferShiftRequestsRequestBuilderGetQueryParameters retrieve the properties and relationships of all offerShiftRequest objects in a team. This API is available in the following national cloud deployments.
 type ItemTeamScheduleOfferShiftRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemTeamScheduleOfferShiftRequestsRequestBuilder(rawUrl string, requestA
 func (m *ItemTeamScheduleOfferShiftRequestsRequestBuilder) Count()(*ItemTeamScheduleOfferShiftRequestsCountRequestBuilder) {
     return NewItemTeamScheduleOfferShiftRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of all offerShiftRequest objects in a team. This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of all offerShiftRequest objects in a team. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/offershiftrequest-list?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemTeamScheduleOfferShiftRequestsRequestBuilder) Get(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OfferShiftRequestCollectionResponseable), nil
 }
-// Post create an instance of an offerShiftRequest. This API is supported in the following national cloud deployments.
+// Post create an instance of an offerShiftRequest. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/offershiftrequest-post?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemTeamScheduleOfferShiftRequestsRequestBuilder) Post(ctx context.Cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OfferShiftRequestable), nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of all offerShiftRequest objects in a team. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of all offerShiftRequest objects in a team. This API is available in the following national cloud deployments.
 func (m *ItemTeamScheduleOfferShiftRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamScheduleOfferShiftRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemTeamScheduleOfferShiftRequestsRequestBuilder) ToGetRequestInformati
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create an instance of an offerShiftRequest. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create an instance of an offerShiftRequest. This API is available in the following national cloud deployments.
 func (m *ItemTeamScheduleOfferShiftRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OfferShiftRequestable, requestConfiguration *ItemTeamScheduleOfferShiftRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

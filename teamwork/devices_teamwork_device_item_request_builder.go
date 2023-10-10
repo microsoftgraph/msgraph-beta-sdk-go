@@ -18,7 +18,7 @@ type DevicesTeamworkDeviceItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DevicesTeamworkDeviceItemRequestBuilderGetQueryParameters get the properties of a Microsoft Teams-enabled device. For example, you can use this method to get the device type, hardware detail, activity state, and health status information for a device that's enabled for Teams. This API is supported in the following national cloud deployments.
+// DevicesTeamworkDeviceItemRequestBuilderGetQueryParameters get the properties of a Microsoft Teams-enabled device. For example, you can use this method to get the device type, hardware detail, activity state, and health status information for a device that's enabled for Teams. This API is available in the following national cloud deployments.
 type DevicesTeamworkDeviceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -78,7 +78,7 @@ func (m *DevicesTeamworkDeviceItemRequestBuilder) Delete(ctx context.Context, re
     }
     return nil
 }
-// Get get the properties of a Microsoft Teams-enabled device. For example, you can use this method to get the device type, hardware detail, activity state, and health status information for a device that's enabled for Teams. This API is supported in the following national cloud deployments.
+// Get get the properties of a Microsoft Teams-enabled device. For example, you can use this method to get the device type, hardware detail, activity state, and health status information for a device that's enabled for Teams. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/teamworkdevice-get?view=graph-rest-1.0
@@ -147,7 +147,7 @@ func (m *DevicesTeamworkDeviceItemRequestBuilder) ToDeleteRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties of a Microsoft Teams-enabled device. For example, you can use this method to get the device type, hardware detail, activity state, and health status information for a device that's enabled for Teams. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the properties of a Microsoft Teams-enabled device. For example, you can use this method to get the device type, hardware detail, activity state, and health status information for a device that's enabled for Teams. This API is available in the following national cloud deployments.
 func (m *DevicesTeamworkDeviceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DevicesTeamworkDeviceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

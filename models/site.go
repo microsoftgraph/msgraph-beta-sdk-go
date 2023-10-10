@@ -482,7 +482,7 @@ func (m *Site) GetPermissions()([]Permissionable) {
     }
     return nil
 }
-// GetRecycleBin gets the recycleBin property value. The recycleBin property
+// GetRecycleBin gets the recycleBin property value. The collection of recycleBinItems under this site.
 func (m *Site) GetRecycleBin()(RecycleBinable) {
     val, err := m.GetBackingStore().Get("recycleBin")
     if err != nil {
@@ -860,7 +860,7 @@ func (m *Site) SetPermissions(value []Permissionable)() {
         panic(err)
     }
 }
-// SetRecycleBin sets the recycleBin property value. The recycleBin property
+// SetRecycleBin sets the recycleBin property value. The collection of recycleBinItems under this site.
 func (m *Site) SetRecycleBin(value RecycleBinable)() {
     err := m.GetBackingStore().Set("recycleBin", value)
     if err != nil {

@@ -18,7 +18,7 @@ type TiIndicatorsTiIndicatorItemRequestBuilderDeleteRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TiIndicatorsTiIndicatorItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a tiIndicator object. This API is supported in the following national cloud deployments.
+// TiIndicatorsTiIndicatorItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a tiIndicator object. This API is available in the following national cloud deployments.
 type TiIndicatorsTiIndicatorItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewTiIndicatorsTiIndicatorItemRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewTiIndicatorsTiIndicatorItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a tiIndicator object. This API is supported in the following national cloud deployments.
+// Delete delete a tiIndicator object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *TiIndicatorsTiIndicatorItemRequestBuilder) Delete(ctx context.Context, 
     }
     return nil
 }
-// Get retrieve the properties and relationships of a tiIndicator object. This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of a tiIndicator object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *TiIndicatorsTiIndicatorItemRequestBuilder) Get(ctx context.Context, req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TiIndicatorable), nil
 }
-// Patch update the properties of a tiIndicator object. This API is supported in the following national cloud deployments.
+// Patch update the properties of a tiIndicator object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *TiIndicatorsTiIndicatorItemRequestBuilder) Patch(ctx context.Context, b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TiIndicatorable), nil
 }
-// ToDeleteRequestInformation delete a tiIndicator object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a tiIndicator object. This API is available in the following national cloud deployments.
 func (m *TiIndicatorsTiIndicatorItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TiIndicatorsTiIndicatorItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *TiIndicatorsTiIndicatorItemRequestBuilder) ToDeleteRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a tiIndicator object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of a tiIndicator object. This API is available in the following national cloud deployments.
 func (m *TiIndicatorsTiIndicatorItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TiIndicatorsTiIndicatorItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *TiIndicatorsTiIndicatorItemRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a tiIndicator object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of a tiIndicator object. This API is available in the following national cloud deployments.
 func (m *TiIndicatorsTiIndicatorItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TiIndicatorable, requestConfiguration *TiIndicatorsTiIndicatorItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

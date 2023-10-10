@@ -18,7 +18,7 @@ type ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilderDel
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilderGetQueryParameters get the properties of a resource associated with a module. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
+// ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilderGetQueryParameters get the properties of a resource associated with a module. Only teachers, students, and applications with application permissions can perform this operation. This API is available in the following national cloud deployments.
 type ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a specific educationModuleResource attached to a module. Only teachers in the class can remove a resource. This API is supported in the following national cloud deployments.
+// Delete delete a specific educationModuleResource attached to a module. Only teachers in the class can remove a resource. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationmoduleresource-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilde
     }
     return nil
 }
-// Get get the properties of a resource associated with a module. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
+// Get get the properties of a resource associated with a module. Only teachers, students, and applications with application permissions can perform this operation. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationmoduleresource-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilde
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationModuleResourceable), nil
 }
-// Patch update a resource in a module. Only teachers can perform this operation. The only one property that can be updated is displayName, for all resource types. This API is supported in the following national cloud deployments.
+// Patch update a resource in a module. Only teachers can perform this operation. The only one property that can be updated is displayName, for all resource types. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationmoduleresource-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilde
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationModuleResourceable), nil
 }
-// ToDeleteRequestInformation delete a specific educationModuleResource attached to a module. Only teachers in the class can remove a resource. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a specific educationModuleResource attached to a module. Only teachers in the class can remove a resource. This API is available in the following national cloud deployments.
 func (m *ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilde
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties of a resource associated with a module. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the properties of a resource associated with a module. Only teachers, students, and applications with application permissions can perform this operation. This API is available in the following national cloud deployments.
 func (m *ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilde
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update a resource in a module. Only teachers can perform this operation. The only one property that can be updated is displayName, for all resource types. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update a resource in a module. Only teachers can perform this operation. The only one property that can be updated is displayName, for all resource types. This API is available in the following national cloud deployments.
 func (m *ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationModuleResourceable, requestConfiguration *ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

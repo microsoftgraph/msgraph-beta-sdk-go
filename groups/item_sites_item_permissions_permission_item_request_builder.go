@@ -18,7 +18,7 @@ type ItemSitesItemPermissionsPermissionItemRequestBuilderDeleteRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSitesItemPermissionsPermissionItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a permission object on a site. This API is supported in the following national cloud deployments.
+// ItemSitesItemPermissionsPermissionItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a permission object on a site. This API is available in the following national cloud deployments.
 type ItemSitesItemPermissionsPermissionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) Delete(ctx contex
     }
     return nil
 }
-// Get retrieve the properties and relationships of a permission object on a site. This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of a permission object on a site. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/site-get-permission?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) Get(ctx context.C
 func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) Grant()(*ItemSitesItemPermissionsItemGrantRequestBuilder) {
     return NewItemSitesItemPermissionsItemGrantRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the permission object on a site. This API is supported in the following national cloud deployments.
+// Patch update the permission object on a site. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/site-update-permission?view=graph-rest-1.0
@@ -134,7 +134,7 @@ func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) ToDeleteRequestIn
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a permission object on a site. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of a permission object on a site. This API is available in the following national cloud deployments.
 func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemPermissionsPermissionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -150,7 +150,7 @@ func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) ToGetRequestInfor
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the permission object on a site. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the permission object on a site. This API is available in the following national cloud deployments.
 func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, requestConfiguration *ItemSitesItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

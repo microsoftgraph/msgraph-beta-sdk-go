@@ -18,7 +18,7 @@ type ItemProfilePatentsItemPatentItemRequestBuilderDeleteRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfilePatentsItemPatentItemRequestBuilderGetQueryParameters read the properties and relationships of an itemPatent object. This API is supported in the following national cloud deployments.
+// ItemProfilePatentsItemPatentItemRequestBuilderGetQueryParameters read the properties and relationships of an itemPatent object. This API is available in the following national cloud deployments.
 type ItemProfilePatentsItemPatentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemProfilePatentsItemPatentItemRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfilePatentsItemPatentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes an itemPatent object. This API is supported in the following national cloud deployments.
+// Delete deletes an itemPatent object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/itempatent-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemProfilePatentsItemPatentItemRequestBuilder) Delete(ctx context.Cont
     }
     return nil
 }
-// Get read the properties and relationships of an itemPatent object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of an itemPatent object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/itempatent-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ItemProfilePatentsItemPatentItemRequestBuilder) Get(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentable), nil
 }
-// Patch update the properties of an itemPatent object. This API is supported in the following national cloud deployments.
+// Patch update the properties of an itemPatent object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/itempatent-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *ItemProfilePatentsItemPatentItemRequestBuilder) Patch(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentable), nil
 }
-// ToDeleteRequestInformation deletes an itemPatent object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation deletes an itemPatent object. This API is available in the following national cloud deployments.
 func (m *ItemProfilePatentsItemPatentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePatentsItemPatentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *ItemProfilePatentsItemPatentItemRequestBuilder) ToDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an itemPatent object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of an itemPatent object. This API is available in the following national cloud deployments.
 func (m *ItemProfilePatentsItemPatentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePatentsItemPatentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *ItemProfilePatentsItemPatentItemRequestBuilder) ToGetRequestInformation
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an itemPatent object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of an itemPatent object. This API is available in the following national cloud deployments.
 func (m *ItemProfilePatentsItemPatentItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentable, requestConfiguration *ItemProfilePatentsItemPatentItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

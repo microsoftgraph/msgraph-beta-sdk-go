@@ -18,7 +18,7 @@ type ItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderDeleteR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderGetQueryParameters get the properties and relationships of a member of a standard tag in a team.  This API is supported in the following national cloud deployments.
+// ItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderGetQueryParameters get the properties and relationships of a member of a standard tag in a team.  This API is available in the following national cloud deployments.
 type ItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilder(raw
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a member from a standard tag in a team. This API is supported in the following national cloud deployments.
+// Delete delete a member from a standard tag in a team. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/teamworktagmember-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilder) D
     }
     return nil
 }
-// Get get the properties and relationships of a member of a standard tag in a team.  This API is supported in the following national cloud deployments.
+// Get get the properties and relationships of a member of a standard tag in a team.  This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/teamworktagmember-get?view=graph-rest-1.0
@@ -114,7 +114,7 @@ func (m *ItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilder) P
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagMemberable), nil
 }
-// ToDeleteRequestInformation delete a member from a standard tag in a team. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a member from a standard tag in a team. This API is available in the following national cloud deployments.
 func (m *ItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -126,7 +126,7 @@ func (m *ItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilder) T
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of a member of a standard tag in a team.  This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the properties and relationships of a member of a standard tag in a team.  This API is available in the following national cloud deployments.
 func (m *ItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

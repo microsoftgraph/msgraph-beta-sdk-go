@@ -30,7 +30,7 @@ func NewItemCloudPCsValidateBulkResizeRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewItemCloudPCsValidateBulkResizeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post validate that a set of cloudPC devices meet the requirements to be bulk resized. This API is supported in the following national cloud deployments.
+// Post validate that a set of cloudPC devices meet the requirements to be bulk resized. This API is available in the following national cloud deployments.
 // Deprecated: This method is obsolete. Use PostAsValidateBulkResizePostResponse instead.
 // [Find more info here]
 // 
@@ -53,7 +53,7 @@ func (m *ItemCloudPCsValidateBulkResizeRequestBuilder) Post(ctx context.Context,
     }
     return res.(ItemCloudPCsValidateBulkResizeResponseable), nil
 }
-// PostAsValidateBulkResizePostResponse validate that a set of cloudPC devices meet the requirements to be bulk resized. This API is supported in the following national cloud deployments.
+// PostAsValidateBulkResizePostResponse validate that a set of cloudPC devices meet the requirements to be bulk resized. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-validatebulkresize?view=graph-rest-1.0
@@ -75,7 +75,7 @@ func (m *ItemCloudPCsValidateBulkResizeRequestBuilder) PostAsValidateBulkResizeP
     }
     return res.(ItemCloudPCsValidateBulkResizePostResponseable), nil
 }
-// ToPostRequestInformation validate that a set of cloudPC devices meet the requirements to be bulk resized. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation validate that a set of cloudPC devices meet the requirements to be bulk resized. This API is available in the following national cloud deployments.
 func (m *ItemCloudPCsValidateBulkResizeRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCloudPCsValidateBulkResizePostRequestBodyable, requestConfiguration *ItemCloudPCsValidateBulkResizeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

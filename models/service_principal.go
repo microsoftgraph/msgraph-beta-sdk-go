@@ -835,6 +835,16 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["remoteDesktopSecurityConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateRemoteDesktopSecurityConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRemoteDesktopSecurityConfiguration(val.(RemoteDesktopSecurityConfigurationable))
+        }
+        return nil
+    }
     res["replyUrls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -1220,6 +1230,17 @@ func (m *ServicePrincipal) GetPublisherName()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetRemoteDesktopSecurityConfiguration gets the remoteDesktopSecurityConfiguration property value. The remoteDesktopSecurityConfiguration property
+func (m *ServicePrincipal) GetRemoteDesktopSecurityConfiguration()(RemoteDesktopSecurityConfigurationable) {
+    val, err := m.GetBackingStore().Get("remoteDesktopSecurityConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RemoteDesktopSecurityConfigurationable)
     }
     return nil
 }
@@ -1744,6 +1765,12 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("remoteDesktopSecurityConfiguration", m.GetRemoteDesktopSecurityConfiguration())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetReplyUrls() != nil {
         err = writer.WriteCollectionOfStringValues("replyUrls", m.GetReplyUrls())
         if err != nil {
@@ -2143,6 +2170,13 @@ func (m *ServicePrincipal) SetPublisherName(value *string)() {
         panic(err)
     }
 }
+// SetRemoteDesktopSecurityConfiguration sets the remoteDesktopSecurityConfiguration property value. The remoteDesktopSecurityConfiguration property
+func (m *ServicePrincipal) SetRemoteDesktopSecurityConfiguration(value RemoteDesktopSecurityConfigurationable)() {
+    err := m.GetBackingStore().Set("remoteDesktopSecurityConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetReplyUrls sets the replyUrls property value. The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.
 func (m *ServicePrincipal) SetReplyUrls(value []string)() {
     err := m.GetBackingStore().Set("replyUrls", value)
@@ -2281,6 +2315,7 @@ type ServicePrincipalable interface {
     GetPreferredTokenSigningKeyThumbprint()(*string)
     GetPublishedPermissionScopes()([]PermissionScopeable)
     GetPublisherName()(*string)
+    GetRemoteDesktopSecurityConfiguration()(RemoteDesktopSecurityConfigurationable)
     GetReplyUrls()([]string)
     GetSamlMetadataUrl()(*string)
     GetSamlSingleSignOnSettings()(SamlSingleSignOnSettingsable)
@@ -2337,6 +2372,7 @@ type ServicePrincipalable interface {
     SetPreferredTokenSigningKeyThumbprint(value *string)()
     SetPublishedPermissionScopes(value []PermissionScopeable)()
     SetPublisherName(value *string)()
+    SetRemoteDesktopSecurityConfiguration(value RemoteDesktopSecurityConfigurationable)()
     SetReplyUrls(value []string)()
     SetSamlMetadataUrl(value *string)()
     SetSamlSingleSignOnSettings(value SamlSingleSignOnSettingsable)()

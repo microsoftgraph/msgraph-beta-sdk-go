@@ -126,7 +126,7 @@ func (m *OnlineMeeting) GetAllowTranscription()(*bool) {
     }
     return nil
 }
-// GetAlternativeRecording gets the alternativeRecording property value. The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+// GetAlternativeRecording gets the alternativeRecording property value. The alternativeRecording property
 func (m *OnlineMeeting) GetAlternativeRecording()([]byte) {
     val, err := m.GetBackingStore().Get("alternativeRecording")
     if err != nil {
@@ -159,7 +159,7 @@ func (m *OnlineMeeting) GetAttendanceReports()([]MeetingAttendanceReportable) {
     }
     return nil
 }
-// GetAttendeeReport gets the attendeeReport property value. The content stream of the attendee report of a Teams live event. Read-only.
+// GetAttendeeReport gets the attendeeReport property value. The attendeeReport property
 func (m *OnlineMeeting) GetAttendeeReport()([]byte) {
     val, err := m.GetBackingStore().Get("attendeeReport")
     if err != nil {
@@ -192,7 +192,7 @@ func (m *OnlineMeeting) GetBroadcastRecording()([]byte) {
     }
     return nil
 }
-// GetBroadcastSettings gets the broadcastSettings property value. Settings related to a live event.
+// GetBroadcastSettings gets the broadcastSettings property value. The broadcastSettings property
 func (m *OnlineMeeting) GetBroadcastSettings()(BroadcastMeetingSettingsable) {
     val, err := m.GetBackingStore().Get("broadcastSettings")
     if err != nil {
@@ -510,6 +510,16 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["isEndToEndEncryptionEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsEndToEndEncryptionEnabled(val)
+        }
+        return nil
+    }
     res["isEntryExitAnnounced"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -704,9 +714,20 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetIsBroadcast gets the isBroadcast property value. Indicates whether this is a Teams live event.
+// GetIsBroadcast gets the isBroadcast property value. The isBroadcast property
 func (m *OnlineMeeting) GetIsBroadcast()(*bool) {
     val, err := m.GetBackingStore().Get("isBroadcast")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetIsEndToEndEncryptionEnabled gets the isEndToEndEncryptionEnabled property value. The isEndToEndEncryptionEnabled property
+func (m *OnlineMeeting) GetIsEndToEndEncryptionEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isEndToEndEncryptionEnabled")
     if err != nil {
         panic(err)
     }
@@ -814,7 +835,7 @@ func (m *OnlineMeeting) GetRecordAutomatically()(*bool) {
     }
     return nil
 }
-// GetRecording gets the recording property value. The content stream of the recording of a Teams live event. Read-only.
+// GetRecording gets the recording property value. The recording property
 func (m *OnlineMeeting) GetRecording()([]byte) {
     val, err := m.GetBackingStore().Get("recording")
     if err != nil {
@@ -1060,6 +1081,12 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err = writer.WriteBoolValue("isEndToEndEncryptionEnabled", m.GetIsEndToEndEncryptionEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isEntryExitAnnounced", m.GetIsEntryExitAnnounced())
         if err != nil {
             return err
@@ -1238,7 +1265,7 @@ func (m *OnlineMeeting) SetAllowTranscription(value *bool)() {
         panic(err)
     }
 }
-// SetAlternativeRecording sets the alternativeRecording property value. The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+// SetAlternativeRecording sets the alternativeRecording property value. The alternativeRecording property
 func (m *OnlineMeeting) SetAlternativeRecording(value []byte)() {
     err := m.GetBackingStore().Set("alternativeRecording", value)
     if err != nil {
@@ -1259,7 +1286,7 @@ func (m *OnlineMeeting) SetAttendanceReports(value []MeetingAttendanceReportable
         panic(err)
     }
 }
-// SetAttendeeReport sets the attendeeReport property value. The content stream of the attendee report of a Teams live event. Read-only.
+// SetAttendeeReport sets the attendeeReport property value. The attendeeReport property
 func (m *OnlineMeeting) SetAttendeeReport(value []byte)() {
     err := m.GetBackingStore().Set("attendeeReport", value)
     if err != nil {
@@ -1280,7 +1307,7 @@ func (m *OnlineMeeting) SetBroadcastRecording(value []byte)() {
         panic(err)
     }
 }
-// SetBroadcastSettings sets the broadcastSettings property value. Settings related to a live event.
+// SetBroadcastSettings sets the broadcastSettings property value. The broadcastSettings property
 func (m *OnlineMeeting) SetBroadcastSettings(value BroadcastMeetingSettingsable)() {
     err := m.GetBackingStore().Set("broadcastSettings", value)
     if err != nil {
@@ -1329,9 +1356,16 @@ func (m *OnlineMeeting) SetExternalId(value *string)() {
         panic(err)
     }
 }
-// SetIsBroadcast sets the isBroadcast property value. Indicates whether this is a Teams live event.
+// SetIsBroadcast sets the isBroadcast property value. The isBroadcast property
 func (m *OnlineMeeting) SetIsBroadcast(value *bool)() {
     err := m.GetBackingStore().Set("isBroadcast", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsEndToEndEncryptionEnabled sets the isEndToEndEncryptionEnabled property value. The isEndToEndEncryptionEnabled property
+func (m *OnlineMeeting) SetIsEndToEndEncryptionEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isEndToEndEncryptionEnabled", value)
     if err != nil {
         panic(err)
     }
@@ -1399,7 +1433,7 @@ func (m *OnlineMeeting) SetRecordAutomatically(value *bool)() {
         panic(err)
     }
 }
-// SetRecording sets the recording property value. The content stream of the recording of a Teams live event. Read-only.
+// SetRecording sets the recording property value. The recording property
 func (m *OnlineMeeting) SetRecording(value []byte)() {
     err := m.GetBackingStore().Set("recording", value)
     if err != nil {
@@ -1488,6 +1522,7 @@ type OnlineMeetingable interface {
     GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetExternalId()(*string)
     GetIsBroadcast()(*bool)
+    GetIsEndToEndEncryptionEnabled()(*bool)
     GetIsEntryExitAnnounced()(*bool)
     GetJoinInformation()(ItemBodyable)
     GetJoinMeetingIdSettings()(JoinMeetingIdSettingsable)
@@ -1528,6 +1563,7 @@ type OnlineMeetingable interface {
     SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetExternalId(value *string)()
     SetIsBroadcast(value *bool)()
+    SetIsEndToEndEncryptionEnabled(value *bool)()
     SetIsEntryExitAnnounced(value *bool)()
     SetJoinInformation(value ItemBodyable)()
     SetJoinMeetingIdSettings(value JoinMeetingIdSettingsable)()

@@ -18,7 +18,7 @@ type EdiscoveryCasesCaseItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EdiscoveryCasesCaseItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a case object. This API is supported in the following national cloud deployments.
+// EdiscoveryCasesCaseItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a case object. This API is available in the following national cloud deployments.
 type EdiscoveryCasesCaseItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,7 @@ func NewEdiscoveryCasesCaseItemRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *EdiscoveryCasesCaseItemRequestBuilder) Custodians()(*EdiscoveryCasesItemCustodiansRequestBuilder) {
     return NewEdiscoveryCasesItemCustodiansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete delete a case object. This API is supported in the following national cloud deployments.
+// Delete delete a case object. This API is available in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
@@ -78,7 +78,7 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) Delete(ctx context.Context, requ
     }
     return nil
 }
-// Get retrieve the properties and relationships of a case object. This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of a case object. This API is available in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
@@ -121,7 +121,7 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) NoncustodialDataSources()(*Edisc
 func (m *EdiscoveryCasesCaseItemRequestBuilder) Operations()(*EdiscoveryCasesItemOperationsRequestBuilder) {
     return NewEdiscoveryCasesItemOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of a case object. This API is supported in the following national cloud deployments.
+// Patch update the properties of a case object. This API is available in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
@@ -160,7 +160,7 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) SourceCollections()(*EdiscoveryC
 func (m *EdiscoveryCasesCaseItemRequestBuilder) Tags()(*EdiscoveryCasesItemTagsRequestBuilder) {
     return NewEdiscoveryCasesItemTagsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a case object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a case object. This API is available in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesCaseItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesCaseItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -173,7 +173,7 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) ToDeleteRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a case object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of a case object. This API is available in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesCaseItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesCaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -190,7 +190,7 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) ToGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a case object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of a case object. This API is available in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesCaseItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseEscapedable, requestConfiguration *EdiscoveryCasesCaseItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

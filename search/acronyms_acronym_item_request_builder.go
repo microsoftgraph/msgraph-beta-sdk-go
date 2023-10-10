@@ -18,7 +18,7 @@ type AcronymsAcronymItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AcronymsAcronymItemRequestBuilderGetQueryParameters read the properties and relationships of an acronym object. This API is supported in the following national cloud deployments.
+// AcronymsAcronymItemRequestBuilderGetQueryParameters read the properties and relationships of an acronym object. This API is available in the following national cloud deployments.
 type AcronymsAcronymItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewAcronymsAcronymItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewAcronymsAcronymItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes an acronym object. This API is supported in the following national cloud deployments.
+// Delete deletes an acronym object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/search-acronym-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *AcronymsAcronymItemRequestBuilder) Delete(ctx context.Context, requestC
     }
     return nil
 }
-// Get read the properties and relationships of an acronym object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of an acronym object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/search-acronym-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *AcronymsAcronymItemRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Acronymable), nil
 }
-// Patch update the properties of an acronym object. This API is supported in the following national cloud deployments.
+// Patch update the properties of an acronym object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/search-acronym-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *AcronymsAcronymItemRequestBuilder) Patch(ctx context.Context, body iea4
     }
     return res.(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Acronymable), nil
 }
-// ToDeleteRequestInformation deletes an acronym object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation deletes an acronym object. This API is available in the following national cloud deployments.
 func (m *AcronymsAcronymItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AcronymsAcronymItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *AcronymsAcronymItemRequestBuilder) ToDeleteRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an acronym object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of an acronym object. This API is available in the following national cloud deployments.
 func (m *AcronymsAcronymItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AcronymsAcronymItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *AcronymsAcronymItemRequestBuilder) ToGetRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an acronym object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of an acronym object. This API is available in the following national cloud deployments.
 func (m *AcronymsAcronymItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Acronymable, requestConfiguration *AcronymsAcronymItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

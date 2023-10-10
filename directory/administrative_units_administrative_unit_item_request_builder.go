@@ -41,14 +41,6 @@ type AdministrativeUnitsAdministrativeUnitItemRequestBuilderPatchRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CheckMemberGroups provides operations to call the checkMemberGroups method.
-func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) CheckMemberGroups()(*AdministrativeUnitsItemCheckMemberGroupsRequestBuilder) {
-    return NewAdministrativeUnitsItemCheckMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// CheckMemberObjects provides operations to call the checkMemberObjects method.
-func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) CheckMemberObjects()(*AdministrativeUnitsItemCheckMemberObjectsRequestBuilder) {
-    return NewAdministrativeUnitsItemCheckMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewAdministrativeUnitsAdministrativeUnitItemRequestBuilderInternal instantiates a new AdministrativeUnitItemRequestBuilder and sets the default values.
 func NewAdministrativeUnitsAdministrativeUnitItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AdministrativeUnitsAdministrativeUnitItemRequestBuilder) {
     m := &AdministrativeUnitsAdministrativeUnitItemRequestBuilder{
@@ -101,14 +93,6 @@ func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) Get(ctx contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable), nil
 }
-// GetMemberGroups provides operations to call the getMemberGroups method.
-func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) GetMemberGroups()(*AdministrativeUnitsItemGetMemberGroupsRequestBuilder) {
-    return NewAdministrativeUnitsItemGetMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// GetMemberObjects provides operations to call the getMemberObjects method.
-func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) GetMemberObjects()(*AdministrativeUnitsItemGetMemberObjectsRequestBuilder) {
-    return NewAdministrativeUnitsItemGetMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Members provides operations to manage the members property of the microsoft.graph.administrativeUnit entity.
 func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) Members()(*AdministrativeUnitsItemMembersRequestBuilder) {
     return NewAdministrativeUnitsItemMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -131,10 +115,6 @@ func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) Patch(ctx cont
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable), nil
-}
-// Restore provides operations to call the restore method.
-func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) Restore()(*AdministrativeUnitsItemRestoreRequestBuilder) {
-    return NewAdministrativeUnitsItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ScopedRoleMembers provides operations to manage the scopedRoleMembers property of the microsoft.graph.administrativeUnit entity.
 func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) ScopedRoleMembers()(*AdministrativeUnitsItemScopedRoleMembersRequestBuilder) {

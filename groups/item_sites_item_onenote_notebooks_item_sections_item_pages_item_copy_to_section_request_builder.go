@@ -31,7 +31,7 @@ func NewItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionReque
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result. This API is supported in the following national cloud deployments.
+// Post copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
@@ -53,7 +53,7 @@ func (m *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteOperationable), nil
 }
-// ToPostRequestInformation copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result. This API is available in the following national cloud deployments.
 func (m *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionPostRequestBodyable, requestConfiguration *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

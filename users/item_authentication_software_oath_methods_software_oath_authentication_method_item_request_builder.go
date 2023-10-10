@@ -18,7 +18,7 @@ type ItemAuthenticationSoftwareOathMethodsSoftwareOathAuthenticationMethodItemRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemAuthenticationSoftwareOathMethodsSoftwareOathAuthenticationMethodItemRequestBuilderGetQueryParameters retrieve a user's single Software OATH token authentication method object and its properties. This API is supported in the following national cloud deployments.
+// ItemAuthenticationSoftwareOathMethodsSoftwareOathAuthenticationMethodItemRequestBuilderGetQueryParameters retrieve a user's single Software OATH token authentication method object and its properties. This API is available in the following national cloud deployments.
 type ItemAuthenticationSoftwareOathMethodsSoftwareOathAuthenticationMethodItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,7 +47,7 @@ func NewItemAuthenticationSoftwareOathMethodsSoftwareOathAuthenticationMethodIte
     urlParams["request-raw-url"] = rawUrl
     return NewItemAuthenticationSoftwareOathMethodsSoftwareOathAuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a user's Software OATH token authentication method object. This API is supported in the following national cloud deployments.
+// Delete delete a user's Software OATH token authentication method object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/softwareoathauthenticationmethod-delete?view=graph-rest-1.0
@@ -66,7 +66,7 @@ func (m *ItemAuthenticationSoftwareOathMethodsSoftwareOathAuthenticationMethodIt
     }
     return nil
 }
-// Get retrieve a user's single Software OATH token authentication method object and its properties. This API is supported in the following national cloud deployments.
+// Get retrieve a user's single Software OATH token authentication method object and its properties. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/softwareoathauthenticationmethod-get?view=graph-rest-1.0
@@ -88,7 +88,7 @@ func (m *ItemAuthenticationSoftwareOathMethodsSoftwareOathAuthenticationMethodIt
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SoftwareOathAuthenticationMethodable), nil
 }
-// ToDeleteRequestInformation delete a user's Software OATH token authentication method object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a user's Software OATH token authentication method object. This API is available in the following national cloud deployments.
 func (m *ItemAuthenticationSoftwareOathMethodsSoftwareOathAuthenticationMethodItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationSoftwareOathMethodsSoftwareOathAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -100,7 +100,7 @@ func (m *ItemAuthenticationSoftwareOathMethodsSoftwareOathAuthenticationMethodIt
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve a user's single Software OATH token authentication method object and its properties. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a user's single Software OATH token authentication method object and its properties. This API is available in the following national cloud deployments.
 func (m *ItemAuthenticationSoftwareOathMethodsSoftwareOathAuthenticationMethodItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationSoftwareOathMethodsSoftwareOathAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

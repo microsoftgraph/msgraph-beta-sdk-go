@@ -11,7 +11,7 @@ import (
 type ItemSitesItemTermStoreGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemTermStoreGroupsRequestBuilderGetQueryParameters read the properties and relationships of a term store group object. This API is supported in the following national cloud deployments.
+// ItemSitesItemTermStoreGroupsRequestBuilderGetQueryParameters read the properties and relationships of a term store group object. This API is available in the following national cloud deployments.
 type ItemSitesItemTermStoreGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemSitesItemTermStoreGroupsRequestBuilder(rawUrl string, requestAdapter
 func (m *ItemSitesItemTermStoreGroupsRequestBuilder) Count()(*ItemSitesItemTermStoreGroupsCountRequestBuilder) {
     return NewItemSitesItemTermStoreGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a term store group object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a term store group object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/termstore-list-groups?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemSitesItemTermStoreGroupsRequestBuilder) Get(ctx context.Context, re
     }
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.GroupCollectionResponseable), nil
 }
-// Post create a new group object. This API is supported in the following national cloud deployments.
+// Post create a new group object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/termstore-group-post?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemSitesItemTermStoreGroupsRequestBuilder) Post(ctx context.Context, b
     }
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Groupable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a term store group object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a term store group object. This API is available in the following national cloud deployments.
 func (m *ItemSitesItemTermStoreGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemSitesItemTermStoreGroupsRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new group object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new group object. This API is available in the following national cloud deployments.
 func (m *ItemSitesItemTermStoreGroupsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Groupable, requestConfiguration *ItemSitesItemTermStoreGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

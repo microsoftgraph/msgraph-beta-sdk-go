@@ -11,7 +11,7 @@ import (
 type IndustryDataRunsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IndustryDataRunsRequestBuilderGetQueryParameters get a list of the industryDataRun objects and their properties. This API is supported in the following national cloud deployments.
+// IndustryDataRunsRequestBuilderGetQueryParameters get a list of the industryDataRun objects and their properties. This API is available in the following national cloud deployments.
 type IndustryDataRunsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewIndustryDataRunsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *IndustryDataRunsRequestBuilder) Count()(*IndustryDataRunsCountRequestBuilder) {
     return NewIndustryDataRunsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the industryDataRun objects and their properties. This API is supported in the following national cloud deployments.
+// Get get a list of the industryDataRun objects and their properties. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-industrydatarun-list?view=graph-rest-1.0
@@ -93,7 +93,7 @@ func (m *IndustryDataRunsRequestBuilder) Get(ctx context.Context, requestConfigu
 func (m *IndustryDataRunsRequestBuilder) MicrosoftGraphIndustryDataGetStatistics()(*IndustryDataRunsMicrosoftGraphIndustryDataGetStatisticsRequestBuilder) {
     return NewIndustryDataRunsMicrosoftGraphIndustryDataGetStatisticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation get a list of the industryDataRun objects and their properties. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of the industryDataRun objects and their properties. This API is available in the following national cloud deployments.
 func (m *IndustryDataRunsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataRunsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

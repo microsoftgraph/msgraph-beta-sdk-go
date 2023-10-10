@@ -11,7 +11,7 @@ import (
 type MultiTenantOrganizationTenantsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MultiTenantOrganizationTenantsRequestBuilderGetQueryParameters list the tenants and their properties in the multi-tenant organization. This API is supported in the following national cloud deployments.
+// MultiTenantOrganizationTenantsRequestBuilderGetQueryParameters list the tenants and their properties in the multi-tenant organization. This API is available in the following national cloud deployments.
 type MultiTenantOrganizationTenantsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewMultiTenantOrganizationTenantsRequestBuilder(rawUrl string, requestAdapt
 func (m *MultiTenantOrganizationTenantsRequestBuilder) Count()(*MultiTenantOrganizationTenantsCountRequestBuilder) {
     return NewMultiTenantOrganizationTenantsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list the tenants and their properties in the multi-tenant organization. This API is supported in the following national cloud deployments.
+// Get list the tenants and their properties in the multi-tenant organization. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/multitenantorganization-list-tenants?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *MultiTenantOrganizationTenantsRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiTenantOrganizationMemberCollectionResponseable), nil
 }
-// Post add a tenant to a multi-tenant organization. The administrator of an owner tenant has the permissions to add tenants to the multi-tenant organization. The added tenant is in the pending state until the administrator of the added tenant joins the multi-tenant organization by submitting a join request. Note that a tenant can be part of only one multi-tenant organization. This API is supported in the following national cloud deployments.
+// Post add a tenant to a multitenant organization. The administrator of an owner tenant has the permissions to add tenants to the multitenant organization. The added tenant is in the pending state until the administrator of the added tenant joins the multitenant organization by submitting a join request. A tenant can be part of only one multitenant organization. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/multitenantorganization-post-tenants?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *MultiTenantOrganizationTenantsRequestBuilder) Post(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiTenantOrganizationMemberable), nil
 }
-// ToGetRequestInformation list the tenants and their properties in the multi-tenant organization. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation list the tenants and their properties in the multi-tenant organization. This API is available in the following national cloud deployments.
 func (m *MultiTenantOrganizationTenantsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MultiTenantOrganizationTenantsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *MultiTenantOrganizationTenantsRequestBuilder) ToGetRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation add a tenant to a multi-tenant organization. The administrator of an owner tenant has the permissions to add tenants to the multi-tenant organization. The added tenant is in the pending state until the administrator of the added tenant joins the multi-tenant organization by submitting a join request. Note that a tenant can be part of only one multi-tenant organization. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation add a tenant to a multitenant organization. The administrator of an owner tenant has the permissions to add tenants to the multitenant organization. The added tenant is in the pending state until the administrator of the added tenant joins the multitenant organization by submitting a join request. A tenant can be part of only one multitenant organization. This API is available in the following national cloud deployments.
 func (m *MultiTenantOrganizationTenantsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiTenantOrganizationMemberable, requestConfiguration *MultiTenantOrganizationTenantsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -58,7 +58,7 @@ func NewPoliciesTrustFrameworkPolicyItemRequestBuilder(rawUrl string, requestAda
 func (m *PoliciesTrustFrameworkPolicyItemRequestBuilder) Content()(*PoliciesItemValueContentRequestBuilder) {
     return NewPoliciesItemValueContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete delete an existing trustFrameworkPolicy. This API is supported in the following national cloud deployments.
+// Delete delete an existing trustFrameworkPolicy. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/trustframeworkpolicy-delete?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *PoliciesTrustFrameworkPolicyItemRequestBuilder) Patch(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkPolicyable), nil
 }
-// ToDeleteRequestInformation delete an existing trustFrameworkPolicy. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete an existing trustFrameworkPolicy. This API is available in the following national cloud deployments.
 func (m *PoliciesTrustFrameworkPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PoliciesTrustFrameworkPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

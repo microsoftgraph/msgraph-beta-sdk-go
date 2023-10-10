@@ -11,7 +11,7 @@ import (
 type AppCredentialSignInActivitiesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AppCredentialSignInActivitiesRequestBuilderGetQueryParameters get a list of appCredentialSignInActivity objects that contains recent activity of application credentials. This API is supported in the following national cloud deployments.
+// AppCredentialSignInActivitiesRequestBuilderGetQueryParameters get a list of appCredentialSignInActivity objects that contains recent activity of application credentials. This API is available in the following national cloud deployments.
 type AppCredentialSignInActivitiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewAppCredentialSignInActivitiesRequestBuilder(rawUrl string, requestAdapte
 func (m *AppCredentialSignInActivitiesRequestBuilder) Count()(*AppCredentialSignInActivitiesCountRequestBuilder) {
     return NewAppCredentialSignInActivitiesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of appCredentialSignInActivity objects that contains recent activity of application credentials. This API is supported in the following national cloud deployments.
+// Get get a list of appCredentialSignInActivity objects that contains recent activity of application credentials. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-list-appcredentialsigninactivities?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *AppCredentialSignInActivitiesRequestBuilder) Post(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppCredentialSignInActivityable), nil
 }
-// ToGetRequestInformation get a list of appCredentialSignInActivity objects that contains recent activity of application credentials. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of appCredentialSignInActivity objects that contains recent activity of application credentials. This API is available in the following national cloud deployments.
 func (m *AppCredentialSignInActivitiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppCredentialSignInActivitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

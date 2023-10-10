@@ -22,7 +22,7 @@ func NewCrossTenantAccessPolicyConfigurationPartner()(*CrossTenantAccessPolicyCo
 func CreateCrossTenantAccessPolicyConfigurationPartnerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCrossTenantAccessPolicyConfigurationPartner(), nil
 }
-// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -34,7 +34,7 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetAdditionalData()(map[st
     }
     return val.(map[string]any)
 }
-// GetAutomaticUserConsentSettings gets the automaticUserConsentSettings property value. Determines the partner-specific configuration for automatic user consent settings. Unless specifically configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
+// GetAutomaticUserConsentSettings gets the automaticUserConsentSettings property value. Determines the partner-specific configuration for automatic user consent settings. Unless configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetAutomaticUserConsentSettings()(InboundOutboundPolicyConfigurationable) {
     val, err := m.GetBackingStore().Get("automaticUserConsentSettings")
     if err != nil {
@@ -89,7 +89,7 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetB2bDirectConnectOutboun
     }
     return nil
 }
-// GetBackingStore gets the backingStore property value. Stores model information.
+// GetBackingStore gets the BackingStore property value. Stores model information.
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
@@ -218,7 +218,7 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetFieldDeserializers()(ma
     }
     return res
 }
-// GetIdentitySynchronization gets the identitySynchronization property value. Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multi-tenant organization by automating the creation, update, and deletion of users from one tenant to another.
+// GetIdentitySynchronization gets the identitySynchronization property value. Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multitenant organization by automating the creation, update, and deletion of users from one tenant to another.
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetIdentitySynchronization()(CrossTenantIdentitySyncPolicyPartnerable) {
     val, err := m.GetBackingStore().Get("identitySynchronization")
     if err != nil {
@@ -240,7 +240,7 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetInboundTrust()(CrossTen
     }
     return nil
 }
-// GetIsInMultiTenantOrganization gets the isInMultiTenantOrganization property value. Identifies whether a tenant is a member of a multi-tenant organization.
+// GetIsInMultiTenantOrganization gets the isInMultiTenantOrganization property value. Identifies whether a tenant is a member of a multitenant organization.
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetIsInMultiTenantOrganization()(*bool) {
     val, err := m.GetBackingStore().Get("isInMultiTenantOrganization")
     if err != nil {
@@ -284,7 +284,7 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetTenantId()(*string) {
     }
     return nil
 }
-// GetTenantRestrictions gets the tenantRestrictions property value. Defines the partner-specific tenant restrictions configuration for your organization users accessing a partner organization using partner supplied idenities on your network or devices.
+// GetTenantRestrictions gets the tenantRestrictions property value. Defines the partner-specific tenant restrictions configuration for your organization users accessing a partner organization using partner supplied identities on your network or devices.
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetTenantRestrictions()(CrossTenantAccessPolicyTenantRestrictionsable) {
     val, err := m.GetBackingStore().Get("tenantRestrictions")
     if err != nil {
@@ -377,14 +377,14 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) Serialize(writer i878a80d2
     }
     return nil
 }
-// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAutomaticUserConsentSettings sets the automaticUserConsentSettings property value. Determines the partner-specific configuration for automatic user consent settings. Unless specifically configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
+// SetAutomaticUserConsentSettings sets the automaticUserConsentSettings property value. Determines the partner-specific configuration for automatic user consent settings. Unless configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetAutomaticUserConsentSettings(value InboundOutboundPolicyConfigurationable)() {
     err := m.GetBackingStore().Set("automaticUserConsentSettings", value)
     if err != nil {
@@ -419,11 +419,11 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) SetB2bDirectConnectOutboun
         panic(err)
     }
 }
-// SetBackingStore sets the backingStore property value. Stores model information.
+// SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIdentitySynchronization sets the identitySynchronization property value. Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multi-tenant organization by automating the creation, update, and deletion of users from one tenant to another.
+// SetIdentitySynchronization sets the identitySynchronization property value. Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multitenant organization by automating the creation, update, and deletion of users from one tenant to another.
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetIdentitySynchronization(value CrossTenantIdentitySyncPolicyPartnerable)() {
     err := m.GetBackingStore().Set("identitySynchronization", value)
     if err != nil {
@@ -437,7 +437,7 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) SetInboundTrust(value Cros
         panic(err)
     }
 }
-// SetIsInMultiTenantOrganization sets the isInMultiTenantOrganization property value. Identifies whether a tenant is a member of a multi-tenant organization.
+// SetIsInMultiTenantOrganization sets the isInMultiTenantOrganization property value. Identifies whether a tenant is a member of a multitenant organization.
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetIsInMultiTenantOrganization(value *bool)() {
     err := m.GetBackingStore().Set("isInMultiTenantOrganization", value)
     if err != nil {
@@ -465,7 +465,7 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) SetTenantId(value *string)
         panic(err)
     }
 }
-// SetTenantRestrictions sets the tenantRestrictions property value. Defines the partner-specific tenant restrictions configuration for your organization users accessing a partner organization using partner supplied idenities on your network or devices.
+// SetTenantRestrictions sets the tenantRestrictions property value. Defines the partner-specific tenant restrictions configuration for your organization users accessing a partner organization using partner supplied identities on your network or devices.
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetTenantRestrictions(value CrossTenantAccessPolicyTenantRestrictionsable)() {
     err := m.GetBackingStore().Set("tenantRestrictions", value)
     if err != nil {

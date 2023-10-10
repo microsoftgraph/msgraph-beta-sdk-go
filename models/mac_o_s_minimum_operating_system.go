@@ -22,7 +22,7 @@ func NewMacOSMinimumOperatingSystem()(*MacOSMinimumOperatingSystem) {
 func CreateMacOSMinimumOperatingSystemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSMinimumOperatingSystem(), nil
 }
-// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MacOSMinimumOperatingSystem) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -34,7 +34,7 @@ func (m *MacOSMinimumOperatingSystem) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetBackingStore gets the backingStore property value. Stores model information.
+// GetBackingStore gets the BackingStore property value. Stores model information.
 func (m *MacOSMinimumOperatingSystem) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
@@ -168,6 +168,16 @@ func (m *MacOSMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i8
         }
         if val != nil {
             m.SetV130(val)
+        }
+        return nil
+    }
+    res["v14_0"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetV140(val)
         }
         return nil
     }
@@ -316,6 +326,17 @@ func (m *MacOSMinimumOperatingSystem) GetV130()(*bool) {
     }
     return nil
 }
+// GetV140 gets the v14_0 property value. When TRUE, indicates macOS 14.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+func (m *MacOSMinimumOperatingSystem) GetV140()(*bool) {
+    val, err := m.GetBackingStore().Get("v14_0")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *MacOSMinimumOperatingSystem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -397,6 +418,12 @@ func (m *MacOSMinimumOperatingSystem) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err := writer.WriteBoolValue("v14_0", m.GetV140())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
@@ -404,14 +431,14 @@ func (m *MacOSMinimumOperatingSystem) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MacOSMinimumOperatingSystem) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBackingStore sets the backingStore property value. Stores model information.
+// SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *MacOSMinimumOperatingSystem) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
@@ -506,6 +533,13 @@ func (m *MacOSMinimumOperatingSystem) SetV130(value *bool)() {
         panic(err)
     }
 }
+// SetV140 sets the v14_0 property value. When TRUE, indicates macOS 14.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+func (m *MacOSMinimumOperatingSystem) SetV140(value *bool)() {
+    err := m.GetBackingStore().Set("v14_0", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // MacOSMinimumOperatingSystemable 
 type MacOSMinimumOperatingSystemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
@@ -525,6 +559,7 @@ type MacOSMinimumOperatingSystemable interface {
     GetV110()(*bool)
     GetV120()(*bool)
     GetV130()(*bool)
+    GetV140()(*bool)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetV1010(value *bool)()
@@ -539,4 +574,5 @@ type MacOSMinimumOperatingSystemable interface {
     SetV110(value *bool)()
     SetV120(value *bool)()
     SetV130(value *bool)()
+    SetV140(value *bool)()
 }

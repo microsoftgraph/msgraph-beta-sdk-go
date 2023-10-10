@@ -11,7 +11,7 @@ import (
 type ItemSitesItemTermStoreGroupsItemSetsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemTermStoreGroupsItemSetsRequestBuilderGetQueryParameters get a list of the set objects and their properties. This API is supported in the following national cloud deployments.
+// ItemSitesItemTermStoreGroupsItemSetsRequestBuilderGetQueryParameters get a list of the set objects and their properties. This API is available in the following national cloud deployments.
 type ItemSitesItemTermStoreGroupsItemSetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemSitesItemTermStoreGroupsItemSetsRequestBuilder(rawUrl string, reques
 func (m *ItemSitesItemTermStoreGroupsItemSetsRequestBuilder) Count()(*ItemSitesItemTermStoreGroupsItemSetsCountRequestBuilder) {
     return NewItemSitesItemTermStoreGroupsItemSetsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the set objects and their properties. This API is supported in the following national cloud deployments.
+// Get get a list of the set objects and their properties. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/termstore-group-list-sets?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *ItemSitesItemTermStoreGroupsItemSetsRequestBuilder) Post(ctx context.Co
     }
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Setable), nil
 }
-// ToGetRequestInformation get a list of the set objects and their properties. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of the set objects and their properties. This API is available in the following national cloud deployments.
 func (m *ItemSitesItemTermStoreGroupsItemSetsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreGroupsItemSetsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelRequestBuilderD
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelRequestBuilderGetQueryParameters get the default channel, General, of a team. This API is supported in the following national cloud deployments.
+// TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelRequestBuilderGetQueryParameters get the default channel, General, of a team. This API is available in the following national cloud deployments.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -82,7 +82,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelRequestBuil
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelRequestBuilder) FilesFolder()(*TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelFilesFolderRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelFilesFolderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the default channel, General, of a team. This API is supported in the following national cloud deployments.
+// Get get the default channel, General, of a team. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/team-get-primarychannel?view=graph-rest-1.0
@@ -159,7 +159,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelRequestBuil
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the default channel, General, of a team. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the default channel, General, of a team. This API is available in the following national cloud deployments.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

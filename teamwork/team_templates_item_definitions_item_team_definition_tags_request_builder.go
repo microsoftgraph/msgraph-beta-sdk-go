@@ -11,7 +11,7 @@ import (
 type TeamTemplatesItemDefinitionsItemTeamDefinitionTagsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TeamTemplatesItemDefinitionsItemTeamDefinitionTagsRequestBuilderGetQueryParameters get a list of the tag objects and their properties. This API is supported in the following national cloud deployments.
+// TeamTemplatesItemDefinitionsItemTeamDefinitionTagsRequestBuilderGetQueryParameters get a list of the tag objects and their properties. This API is available in the following national cloud deployments.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionTagsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionTagsRequestBuilder(rawUrl 
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsRequestBuilder) Count()(*TeamTemplatesItemDefinitionsItemTeamDefinitionTagsCountRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionTagsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the tag objects and their properties. This API is supported in the following national cloud deployments.
+// Get get a list of the tag objects and their properties. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/teamworktag-list?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsRequestBuilder) Get(c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagCollectionResponseable), nil
 }
-// Post create a standard tag for members in the team.  This API is supported in the following national cloud deployments.
+// Post create a standard tag for members in the team.  This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/teamworktag-post?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsRequestBuilder) Post(
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagable), nil
 }
-// ToGetRequestInformation get a list of the tag objects and their properties. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of the tag objects and their properties. This API is available in the following national cloud deployments.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsRequestBuilder) ToGet
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a standard tag for members in the team.  This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a standard tag for members in the team.  This API is available in the following national cloud deployments.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

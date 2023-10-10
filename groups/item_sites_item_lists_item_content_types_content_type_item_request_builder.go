@@ -18,7 +18,7 @@ type ItemSitesItemListsItemContentTypesContentTypeItemRequestBuilderDeleteReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSitesItemListsItemContentTypesContentTypeItemRequestBuilderGetQueryParameters get contentTypes from groups
+// ItemSitesItemListsItemContentTypesContentTypeItemRequestBuilderGetQueryParameters the collection of content types present in this list.
 type ItemSitesItemListsItemContentTypesContentTypeItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -98,7 +98,7 @@ func (m *ItemSitesItemListsItemContentTypesContentTypeItemRequestBuilder) Delete
     }
     return nil
 }
-// Get get contentTypes from groups
+// Get the collection of content types present in this list.
 func (m *ItemSitesItemListsItemContentTypesContentTypeItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemListsItemContentTypesContentTypeItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -156,7 +156,7 @@ func (m *ItemSitesItemListsItemContentTypesContentTypeItemRequestBuilder) ToDele
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get contentTypes from groups
+// ToGetRequestInformation the collection of content types present in this list.
 func (m *ItemSitesItemListsItemContentTypesContentTypeItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsItemContentTypesContentTypeItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

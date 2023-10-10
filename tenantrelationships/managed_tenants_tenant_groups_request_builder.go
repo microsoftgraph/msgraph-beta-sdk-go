@@ -11,7 +11,7 @@ import (
 type ManagedTenantsTenantGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedTenantsTenantGroupsRequestBuilderGetQueryParameters get a list of the tenantGroup objects and their properties. This API is supported in the following national cloud deployments.
+// ManagedTenantsTenantGroupsRequestBuilderGetQueryParameters get a list of the tenantGroup objects and their properties. This API is available in the following national cloud deployments.
 type ManagedTenantsTenantGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewManagedTenantsTenantGroupsRequestBuilder(rawUrl string, requestAdapter i
 func (m *ManagedTenantsTenantGroupsRequestBuilder) Count()(*ManagedTenantsTenantGroupsCountRequestBuilder) {
     return NewManagedTenantsTenantGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the tenantGroup objects and their properties. This API is supported in the following national cloud deployments.
+// Get get a list of the tenantGroup objects and their properties. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-tenantgroups?view=graph-rest-1.0
@@ -119,7 +119,7 @@ func (m *ManagedTenantsTenantGroupsRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable), nil
 }
-// ToGetRequestInformation get a list of the tenantGroup objects and their properties. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of the tenantGroup objects and their properties. This API is available in the following national cloud deployments.
 func (m *ManagedTenantsTenantGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsTenantGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

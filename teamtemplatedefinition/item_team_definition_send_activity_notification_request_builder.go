@@ -30,7 +30,7 @@ func NewItemTeamDefinitionSendActivityNotificationRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionSendActivityNotificationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post send an activity feed notification in the scope of a team. For more details about sending notifications and the requirements for doing so, seesending Teams activity notifications. This API is supported in the following national cloud deployments.
+// Post send an activity feed notification in the scope of a team. For more details about sending notifications and the requirements for doing so, seesending Teams activity notifications. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/team-sendactivitynotification?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemTeamDefinitionSendActivityNotificationRequestBuilder) Post(ctx cont
     }
     return nil
 }
-// ToPostRequestInformation send an activity feed notification in the scope of a team. For more details about sending notifications and the requirements for doing so, seesending Teams activity notifications. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation send an activity feed notification in the scope of a team. For more details about sending notifications and the requirements for doing so, seesending Teams activity notifications. This API is available in the following national cloud deployments.
 func (m *ItemTeamDefinitionSendActivityNotificationRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemTeamDefinitionSendActivityNotificationPostRequestBodyable, requestConfiguration *ItemTeamDefinitionSendActivityNotificationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

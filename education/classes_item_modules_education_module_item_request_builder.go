@@ -18,7 +18,7 @@ type ClassesItemModulesEducationModuleItemRequestBuilderDeleteRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ClassesItemModulesEducationModuleItemRequestBuilderGetQueryParameters get the properties and relationships of a module. Only teachers, students, and applications with application permissions can perform this operation. Students can only see published modules; teachers and applications with application permissions can see all modules in a class. This API is supported in the following national cloud deployments.
+// ClassesItemModulesEducationModuleItemRequestBuilderGetQueryParameters get the properties and relationships of a module. Only teachers, students, and applications with application permissions can perform this operation. Students can only see published modules; teachers and applications with application permissions can see all modules in a class. This API is available in the following national cloud deployments.
 type ClassesItemModulesEducationModuleItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewClassesItemModulesEducationModuleItemRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemModulesEducationModuleItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an existing module in a class. Only teachers within a class can delete modules. This API is supported in the following national cloud deployments.
+// Delete delete an existing module in a class. Only teachers within a class can delete modules. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationmodule-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ClassesItemModulesEducationModuleItemRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// Get get the properties and relationships of a module. Only teachers, students, and applications with application permissions can perform this operation. Students can only see published modules; teachers and applications with application permissions can see all modules in a class. This API is supported in the following national cloud deployments.
+// Get get the properties and relationships of a module. Only teachers, students, and applications with application permissions can perform this operation. Students can only see published modules; teachers and applications with application permissions can see all modules in a class. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationmodule-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ClassesItemModulesEducationModuleItemRequestBuilder) Get(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationModuleable), nil
 }
-// Patch update an educationModule object in a class. Only teachers in the class can perform this operation. Note that you can't use a PATCH request to change the status of a module. Use the publish action to change the module status. This API is supported in the following national cloud deployments.
+// Patch update an educationModule object in a class. Only teachers in the class can perform this operation. Note that you can't use a PATCH request to change the status of a module. Use the publish action to change the module status. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationmodule-update?view=graph-rest-1.0
@@ -133,7 +133,7 @@ func (m *ClassesItemModulesEducationModuleItemRequestBuilder) Resources()(*Class
 func (m *ClassesItemModulesEducationModuleItemRequestBuilder) SetUpResourcesFolder()(*ClassesItemModulesItemSetUpResourcesFolderRequestBuilder) {
     return NewClassesItemModulesItemSetUpResourcesFolderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete an existing module in a class. Only teachers within a class can delete modules. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete an existing module in a class. Only teachers within a class can delete modules. This API is available in the following national cloud deployments.
 func (m *ClassesItemModulesEducationModuleItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ClassesItemModulesEducationModuleItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *ClassesItemModulesEducationModuleItemRequestBuilder) ToDeleteRequestInf
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of a module. Only teachers, students, and applications with application permissions can perform this operation. Students can only see published modules; teachers and applications with application permissions can see all modules in a class. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the properties and relationships of a module. Only teachers, students, and applications with application permissions can perform this operation. Students can only see published modules; teachers and applications with application permissions can see all modules in a class. This API is available in the following national cloud deployments.
 func (m *ClassesItemModulesEducationModuleItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemModulesEducationModuleItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -161,7 +161,7 @@ func (m *ClassesItemModulesEducationModuleItemRequestBuilder) ToGetRequestInform
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update an educationModule object in a class. Only teachers in the class can perform this operation. Note that you can't use a PATCH request to change the status of a module. Use the publish action to change the module status. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update an educationModule object in a class. Only teachers in the class can perform this operation. Note that you can't use a PATCH request to change the status of a module. Use the publish action to change the module status. This API is available in the following national cloud deployments.
 func (m *ClassesItemModulesEducationModuleItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationModuleable, requestConfiguration *ClassesItemModulesEducationModuleItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

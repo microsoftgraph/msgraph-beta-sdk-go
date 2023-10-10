@@ -11,7 +11,7 @@ import (
 type ContactsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ContactsRequestBuilderGetQueryParameters get the list of organizational contacts for this organization. This API is supported in the following national cloud deployments.
+// ContactsRequestBuilderGetQueryParameters get the list of organizational contacts for this organization. This API is available in the following national cloud deployments.
 type ContactsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func (m *ContactsRequestBuilder) Count()(*CountRequestBuilder) {
 func (m *ContactsRequestBuilder) Delta()(*DeltaRequestBuilder) {
     return NewDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of organizational contacts for this organization. This API is supported in the following national cloud deployments.
+// Get get the list of organizational contacts for this organization. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/orgcontact-list?view=graph-rest-1.0
@@ -127,7 +127,7 @@ func (m *ContactsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactable), nil
 }
-// ToGetRequestInformation get the list of organizational contacts for this organization. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the list of organizational contacts for this organization. This API is available in the following national cloud deployments.
 func (m *ContactsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ContactsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

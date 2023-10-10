@@ -18,7 +18,7 @@ type DevicesItemActivityRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DevicesItemActivityRequestBuilderGetQueryParameters get the activity status of a Microsoft Teams-enabled device.  This API is supported in the following national cloud deployments.
+// DevicesItemActivityRequestBuilderGetQueryParameters get the activity status of a Microsoft Teams-enabled device.  This API is available in the following national cloud deployments.
 type DevicesItemActivityRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *DevicesItemActivityRequestBuilder) Delete(ctx context.Context, requestC
     }
     return nil
 }
-// Get get the activity status of a Microsoft Teams-enabled device.  This API is supported in the following national cloud deployments.
+// Get get the activity status of a Microsoft Teams-enabled device.  This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/teamworkdeviceactivity-get?view=graph-rest-1.0
@@ -123,7 +123,7 @@ func (m *DevicesItemActivityRequestBuilder) ToDeleteRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the activity status of a Microsoft Teams-enabled device.  This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the activity status of a Microsoft Teams-enabled device.  This API is available in the following national cloud deployments.
 func (m *DevicesItemActivityRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DevicesItemActivityRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

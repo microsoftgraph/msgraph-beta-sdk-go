@@ -54,7 +54,7 @@ func NewItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes an appRoleAssignment that a group has been granted. This API is supported in the following national cloud deployments.
+// Delete deletes an appRoleAssignment that a group has been granted. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/group-delete-approleassignments?view=graph-rest-1.0
@@ -111,7 +111,7 @@ func (m *ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilder) Patch(ctx co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppRoleAssignmentable), nil
 }
-// ToDeleteRequestInformation deletes an appRoleAssignment that a group has been granted. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation deletes an appRoleAssignment that a group has been granted. This API is available in the following national cloud deployments.
 func (m *ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type VirtualEventsEventsItemSessionsItemRegistrationCustomQuestionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEventsEventsItemSessionsItemRegistrationCustomQuestionsRequestBuilderGetQueryParameters get a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is supported in the following national cloud deployments.
+// VirtualEventsEventsItemSessionsItemRegistrationCustomQuestionsRequestBuilderGetQueryParameters get a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is available in the following national cloud deployments.
 type VirtualEventsEventsItemSessionsItemRegistrationCustomQuestionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewVirtualEventsEventsItemSessionsItemRegistrationCustomQuestionsRequestBui
 func (m *VirtualEventsEventsItemSessionsItemRegistrationCustomQuestionsRequestBuilder) Count()(*VirtualEventsEventsItemSessionsItemRegistrationCustomQuestionsCountRequestBuilder) {
     return NewVirtualEventsEventsItemSessionsItemRegistrationCustomQuestionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is supported in the following national cloud deployments.
+// Get get a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *VirtualEventsEventsItemSessionsItemRegistrationCustomQuestionsRequestBu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionCollectionResponseable), nil
 }
-// Post create a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is supported in the following national cloud deployments.
+// Post create a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *VirtualEventsEventsItemSessionsItemRegistrationCustomQuestionsRequestBu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionable), nil
 }
-// ToGetRequestInformation get a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is available in the following national cloud deployments.
 func (m *VirtualEventsEventsItemSessionsItemRegistrationCustomQuestionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsItemRegistrationCustomQuestionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *VirtualEventsEventsItemSessionsItemRegistrationCustomQuestionsRequestBu
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is available in the following national cloud deployments.
 func (m *VirtualEventsEventsItemSessionsItemRegistrationCustomQuestionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionable, requestConfiguration *VirtualEventsEventsItemSessionsItemRegistrationCustomQuestionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

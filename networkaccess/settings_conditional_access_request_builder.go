@@ -18,7 +18,7 @@ type SettingsConditionalAccessRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SettingsConditionalAccessRequestBuilderGetQueryParameters retrieve the conditional access settings, which include the preservation of the original source IP address in network traffic for accurate identification and tracking, and the establishment of scalable network connectivity through the Global Secure Access services. This API is supported in the following national cloud deployments.
+// SettingsConditionalAccessRequestBuilderGetQueryParameters retrieve the conditional access settings, which include the preservation of the original source IP address in network traffic for accurate identification and tracking, and the establishment of scalable network connectivity through the Global Secure Access services. This API is available in the following national cloud deployments.
 type SettingsConditionalAccessRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *SettingsConditionalAccessRequestBuilder) Delete(ctx context.Context, re
     }
     return nil
 }
-// Get retrieve the conditional access settings, which include the preservation of the original source IP address in network traffic for accurate identification and tracking, and the establishment of scalable network connectivity through the Global Secure Access services. This API is supported in the following national cloud deployments.
+// Get retrieve the conditional access settings, which include the preservation of the original source IP address in network traffic for accurate identification and tracking, and the establishment of scalable network connectivity through the Global Secure Access services. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-conditionalaccesssettings-get?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *SettingsConditionalAccessRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ConditionalAccessSettingsable), nil
 }
-// Patch update the conditional access settings to include the preservation of the original source IP address in network traffic for accurate identification and tracking, as well as the establishment of scalable network connectivity through the Global Secure Access services. This API is supported in the following national cloud deployments.
+// Patch update the conditional access settings to include the preservation of the original source IP address in network traffic for accurate identification and tracking, as well as the establishment of scalable network connectivity through the Global Secure Access services. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-conditionalaccesssettings-update?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *SettingsConditionalAccessRequestBuilder) ToDeleteRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the conditional access settings, which include the preservation of the original source IP address in network traffic for accurate identification and tracking, and the establishment of scalable network connectivity through the Global Secure Access services. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the conditional access settings, which include the preservation of the original source IP address in network traffic for accurate identification and tracking, and the establishment of scalable network connectivity through the Global Secure Access services. This API is available in the following national cloud deployments.
 func (m *SettingsConditionalAccessRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SettingsConditionalAccessRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *SettingsConditionalAccessRequestBuilder) ToGetRequestInformation(ctx co
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the conditional access settings to include the preservation of the original source IP address in network traffic for accurate identification and tracking, as well as the establishment of scalable network connectivity through the Global Secure Access services. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the conditional access settings to include the preservation of the original source IP address in network traffic for accurate identification and tracking, as well as the establishment of scalable network connectivity through the Global Secure Access services. This API is available in the following national cloud deployments.
 func (m *SettingsConditionalAccessRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ConditionalAccessSettingsable, requestConfiguration *SettingsConditionalAccessRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

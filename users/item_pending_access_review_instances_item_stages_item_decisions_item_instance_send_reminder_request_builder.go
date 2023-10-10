@@ -30,7 +30,7 @@ func NewItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceSendR
     urlParams["request-raw-url"] = rawUrl
     return NewItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceSendReminderRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post send a reminder to the reviewers of a currently active accessReviewInstance. This API is supported in the following national cloud deployments.
+// Post send a reminder to the reviewers of a currently active accessReviewInstance. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewinstance-sendreminder?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceSend
     }
     return nil
 }
-// ToPostRequestInformation send a reminder to the reviewers of a currently active accessReviewInstance. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation send a reminder to the reviewers of a currently active accessReviewInstance. This API is available in the following national cloud deployments.
 func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceSendReminderRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceSendReminderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

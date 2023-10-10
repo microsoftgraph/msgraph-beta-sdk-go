@@ -18,7 +18,7 @@ type ItemProfilePublicationsItemPublicationItemRequestBuilderDeleteRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfilePublicationsItemPublicationItemRequestBuilderGetQueryParameters read the properties and relationships of an itemPublication object in a user's profile. This API is supported in the following national cloud deployments.
+// ItemProfilePublicationsItemPublicationItemRequestBuilderGetQueryParameters read the properties and relationships of an itemPublication object in a user's profile. This API is available in the following national cloud deployments.
 type ItemProfilePublicationsItemPublicationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemProfilePublicationsItemPublicationItemRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfilePublicationsItemPublicationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes an itemPublication object. This API is supported in the following national cloud deployments.
+// Delete deletes an itemPublication object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/itempublication-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) Delete(ctx co
     }
     return nil
 }
-// Get read the properties and relationships of an itemPublication object in a user's profile. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of an itemPublication object in a user's profile. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/itempublication-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) Get(ctx conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPublicationable), nil
 }
-// Patch update the properties of an itemPublication object in a user's profile. This API is supported in the following national cloud deployments.
+// Patch update the properties of an itemPublication object in a user's profile. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/itempublication-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) Patch(ctx con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPublicationable), nil
 }
-// ToDeleteRequestInformation deletes an itemPublication object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation deletes an itemPublication object. This API is available in the following national cloud deployments.
 func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePublicationsItemPublicationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) ToDeleteReque
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an itemPublication object in a user's profile. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of an itemPublication object in a user's profile. This API is available in the following national cloud deployments.
 func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePublicationsItemPublicationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) ToGetRequestI
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an itemPublication object in a user's profile. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of an itemPublication object in a user's profile. This API is available in the following national cloud deployments.
 func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPublicationable, requestConfiguration *ItemProfilePublicationsItemPublicationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

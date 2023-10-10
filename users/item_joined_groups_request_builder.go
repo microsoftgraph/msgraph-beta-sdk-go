@@ -75,14 +75,6 @@ func (m *ItemJoinedGroupsRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable), nil
 }
-// GetByIds provides operations to call the getByIds method.
-func (m *ItemJoinedGroupsRequestBuilder) GetByIds()(*ItemJoinedGroupsGetByIdsRequestBuilder) {
-    return NewItemJoinedGroupsGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
-func (m *ItemJoinedGroupsRequestBuilder) GetUserOwnedObjects()(*ItemJoinedGroupsGetUserOwnedObjectsRequestBuilder) {
-    return NewItemJoinedGroupsGetUserOwnedObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToGetRequestInformation get joinedGroups from users
 func (m *ItemJoinedGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -98,10 +90,6 @@ func (m *ItemJoinedGroupsRequestBuilder) ToGetRequestInformation(ctx context.Con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// ValidateProperties provides operations to call the validateProperties method.
-func (m *ItemJoinedGroupsRequestBuilder) ValidateProperties()(*ItemJoinedGroupsValidatePropertiesRequestBuilder) {
-    return NewItemJoinedGroupsValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 func (m *ItemJoinedGroupsRequestBuilder) WithUrl(rawUrl string)(*ItemJoinedGroupsRequestBuilder) {

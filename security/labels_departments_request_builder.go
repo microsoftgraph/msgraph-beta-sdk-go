@@ -11,7 +11,7 @@ import (
 type LabelsDepartmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LabelsDepartmentsRequestBuilderGetQueryParameters get a list of the departmentTemplate objects and their properties. This API is supported in the following national cloud deployments.
+// LabelsDepartmentsRequestBuilderGetQueryParameters get a list of the departmentTemplate objects and their properties. This API is available in the following national cloud deployments.
 type LabelsDepartmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewLabelsDepartmentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *LabelsDepartmentsRequestBuilder) Count()(*LabelsDepartmentsCountRequestBuilder) {
     return NewLabelsDepartmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the departmentTemplate objects and their properties. This API is supported in the following national cloud deployments.
+// Get get a list of the departmentTemplate objects and their properties. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-list-departments?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *LabelsDepartmentsRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DepartmentTemplateCollectionResponseable), nil
 }
-// Post create a new departmentTemplate object. This API is supported in the following national cloud deployments.
+// Post create a new departmentTemplate object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-post-departments?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *LabelsDepartmentsRequestBuilder) Post(ctx context.Context, body i084fa7
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DepartmentTemplateable), nil
 }
-// ToGetRequestInformation get a list of the departmentTemplate objects and their properties. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of the departmentTemplate objects and their properties. This API is available in the following national cloud deployments.
 func (m *LabelsDepartmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsDepartmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *LabelsDepartmentsRequestBuilder) ToGetRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new departmentTemplate object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new departmentTemplate object. This API is available in the following national cloud deployments.
 func (m *LabelsDepartmentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DepartmentTemplateable, requestConfiguration *LabelsDepartmentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ItemCalendarGroupsItemCalendarsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCalendarGroupsItemCalendarsRequestBuilderGetQueryParameters retrieve a list of calendars belonging to a calendar group. This API is supported in the following national cloud deployments.
+// ItemCalendarGroupsItemCalendarsRequestBuilderGetQueryParameters retrieve a list of calendars belonging to a calendar group. This API is available in the following national cloud deployments.
 type ItemCalendarGroupsItemCalendarsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -70,7 +70,7 @@ func NewItemCalendarGroupsItemCalendarsRequestBuilder(rawUrl string, requestAdap
 func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) Count()(*ItemCalendarGroupsItemCalendarsCountRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of calendars belonging to a calendar group. This API is supported in the following national cloud deployments.
+// Get retrieve a list of calendars belonging to a calendar group. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/calendargroup-list-calendars?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) Get(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarCollectionResponseable), nil
 }
-// Post use this API to create a new calendar in a calendar group for a user. This API is supported in the following national cloud deployments.
+// Post use this API to create a new calendar in a calendar group for a user. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/calendargroup-post-calendars?view=graph-rest-1.0
@@ -114,7 +114,7 @@ func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) Post(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Calendarable), nil
 }
-// ToGetRequestInformation retrieve a list of calendars belonging to a calendar group. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of calendars belonging to a calendar group. This API is available in the following national cloud deployments.
 func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -130,7 +130,7 @@ func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) ToGetRequestInformation(
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation use this API to create a new calendar in a calendar group for a user. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation use this API to create a new calendar in a calendar group for a user. This API is available in the following national cloud deployments.
 func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Calendarable, requestConfiguration *ItemCalendarGroupsItemCalendarsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

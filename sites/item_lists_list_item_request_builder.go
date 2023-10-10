@@ -18,7 +18,7 @@ type ItemListsListItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemListsListItemRequestBuilderGetQueryParameters get the list of richLongRunningOperations associated with a list. This API is supported in the following national cloud deployments.
+// ItemListsListItemRequestBuilderGetQueryParameters get the list of richLongRunningOperations associated with a list. This API is available in the following national cloud deployments.
 type ItemListsListItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -90,7 +90,7 @@ func (m *ItemListsListItemRequestBuilder) Delete(ctx context.Context, requestCon
 func (m *ItemListsListItemRequestBuilder) Drive()(*ItemListsItemDriveRequestBuilder) {
     return NewItemListsItemDriveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of richLongRunningOperations associated with a list. This API is supported in the following national cloud deployments.
+// Get get the list of richLongRunningOperations associated with a list. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/list-list-operations?view=graph-rest-1.0
@@ -159,7 +159,7 @@ func (m *ItemListsListItemRequestBuilder) ToDeleteRequestInformation(ctx context
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the list of richLongRunningOperations associated with a list. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the list of richLongRunningOperations associated with a list. This API is available in the following national cloud deployments.
 func (m *ItemListsListItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListsListItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -36,7 +36,7 @@ func (m *OnAttributeCollectionListener) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetHandler gets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.
+// GetHandler gets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener.
 func (m *OnAttributeCollectionListener) GetHandler()(OnAttributeCollectionHandlerable) {
     val, err := m.GetBackingStore().Get("handler")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *OnAttributeCollectionListener) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetHandler sets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.
+// SetHandler sets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener.
 func (m *OnAttributeCollectionListener) SetHandler(value OnAttributeCollectionHandlerable)() {
     err := m.GetBackingStore().Set("handler", value)
     if err != nil {

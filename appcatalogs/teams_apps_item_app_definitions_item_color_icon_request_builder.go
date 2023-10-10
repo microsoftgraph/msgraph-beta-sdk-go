@@ -18,7 +18,7 @@ type TeamsAppsItemAppDefinitionsItemColorIconRequestBuilderDeleteRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamsAppsItemAppDefinitionsItemColorIconRequestBuilderGetQueryParameters retrieve a Teams app icon associated with a specific definition of an app. This API is supported in the following national cloud deployments.
+// TeamsAppsItemAppDefinitionsItemColorIconRequestBuilderGetQueryParameters retrieve a Teams app icon associated with a specific definition of an app. This API is available in the following national cloud deployments.
 type TeamsAppsItemAppDefinitionsItemColorIconRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *TeamsAppsItemAppDefinitionsItemColorIconRequestBuilder) Delete(ctx cont
     }
     return nil
 }
-// Get retrieve a Teams app icon associated with a specific definition of an app. This API is supported in the following national cloud deployments.
+// Get retrieve a Teams app icon associated with a specific definition of an app. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/teamsappicon-get?view=graph-rest-1.0
@@ -127,7 +127,7 @@ func (m *TeamsAppsItemAppDefinitionsItemColorIconRequestBuilder) ToDeleteRequest
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve a Teams app icon associated with a specific definition of an app. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a Teams app icon associated with a specific definition of an app. This API is available in the following national cloud deployments.
 func (m *TeamsAppsItemAppDefinitionsItemColorIconRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamsAppsItemAppDefinitionsItemColorIconRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

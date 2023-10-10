@@ -11,7 +11,7 @@ import (
 type VirtualEndpointDeviceImagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointDeviceImagesRequestBuilderGetQueryParameters list the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC. This API is supported in the following national cloud deployments.
+// VirtualEndpointDeviceImagesRequestBuilderGetQueryParameters list the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC. This API is available in the following national cloud deployments.
 type VirtualEndpointDeviceImagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewVirtualEndpointDeviceImagesRequestBuilder(rawUrl string, requestAdapter 
 func (m *VirtualEndpointDeviceImagesRequestBuilder) Count()(*VirtualEndpointDeviceImagesCountRequestBuilder) {
     return NewVirtualEndpointDeviceImagesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC. This API is supported in the following national cloud deployments.
+// Get list the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-list-deviceimages?view=graph-rest-1.0
@@ -100,7 +100,7 @@ func (m *VirtualEndpointDeviceImagesRequestBuilder) Get(ctx context.Context, req
 func (m *VirtualEndpointDeviceImagesRequestBuilder) GetSourceImages()(*VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder) {
     return NewVirtualEndpointDeviceImagesGetSourceImagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Post create a new cloudPcDeviceImage object. Upload a custom OS image that you can later provision on Cloud PCs. This API is supported in the following national cloud deployments.
+// Post create a new cloudPcDeviceImage object. Upload a custom OS image that you can later provision on Cloud PCs. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-post-deviceimages?view=graph-rest-1.0
@@ -122,7 +122,7 @@ func (m *VirtualEndpointDeviceImagesRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable), nil
 }
-// ToGetRequestInformation list the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation list the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC. This API is available in the following national cloud deployments.
 func (m *VirtualEndpointDeviceImagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -138,7 +138,7 @@ func (m *VirtualEndpointDeviceImagesRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new cloudPcDeviceImage object. Upload a custom OS image that you can later provision on Cloud PCs. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new cloudPcDeviceImage object. Upload a custom OS image that you can later provision on Cloud PCs. This API is available in the following national cloud deployments.
 func (m *VirtualEndpointDeviceImagesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable, requestConfiguration *VirtualEndpointDeviceImagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

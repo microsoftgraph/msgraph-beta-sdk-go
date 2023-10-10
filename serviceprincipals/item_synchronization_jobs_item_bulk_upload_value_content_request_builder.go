@@ -38,7 +38,6 @@ func NewItemSynchronizationJobsItemBulkUploadValueContentRequestBuilder(rawUrl s
     return NewItemSynchronizationJobsItemBulkUploadValueContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get media content for the navigation property bulkUpload from servicePrincipals
-// Deprecated:  as of 2022-10/PrivatePreview:HRInboundPushApi on 2022-10-04 and will be removed 2023-06-14
 func (m *ItemSynchronizationJobsItemBulkUploadValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemBulkUploadValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -58,7 +57,6 @@ func (m *ItemSynchronizationJobsItemBulkUploadValueContentRequestBuilder) Get(ct
     return res.([]byte), nil
 }
 // Put update media content for the navigation property bulkUpload in servicePrincipals
-// Deprecated:  as of 2022-10/PrivatePreview:HRInboundPushApi on 2022-10-04 and will be removed 2023-06-14
 func (m *ItemSynchronizationJobsItemBulkUploadValueContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemSynchronizationJobsItemBulkUploadValueContentRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -78,7 +76,6 @@ func (m *ItemSynchronizationJobsItemBulkUploadValueContentRequestBuilder) Put(ct
     return res.([]byte), nil
 }
 // ToGetRequestInformation get media content for the navigation property bulkUpload from servicePrincipals
-// Deprecated:  as of 2022-10/PrivatePreview:HRInboundPushApi on 2022-10-04 and will be removed 2023-06-14
 func (m *ItemSynchronizationJobsItemBulkUploadValueContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemBulkUploadValueContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -91,7 +88,6 @@ func (m *ItemSynchronizationJobsItemBulkUploadValueContentRequestBuilder) ToGetR
     return requestInfo, nil
 }
 // ToPutRequestInformation update media content for the navigation property bulkUpload in servicePrincipals
-// Deprecated:  as of 2022-10/PrivatePreview:HRInboundPushApi on 2022-10-04 and will be removed 2023-06-14
 func (m *ItemSynchronizationJobsItemBulkUploadValueContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemSynchronizationJobsItemBulkUploadValueContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -105,7 +101,6 @@ func (m *ItemSynchronizationJobsItemBulkUploadValueContentRequestBuilder) ToPutR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2022-10/PrivatePreview:HRInboundPushApi on 2022-10-04 and will be removed 2023-06-14
 func (m *ItemSynchronizationJobsItemBulkUploadValueContentRequestBuilder) WithUrl(rawUrl string)(*ItemSynchronizationJobsItemBulkUploadValueContentRequestBuilder) {
     return NewItemSynchronizationJobsItemBulkUploadValueContentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

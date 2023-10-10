@@ -11,7 +11,7 @@ import (
 type WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilderGetQueryParameters get a list of the complianceChange objects and their properties. This API is supported in the following national cloud deployments.
+// WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilderGetQueryParameters get a list of the complianceChange objects and their properties. This API is available in the following national cloud deployments.
 type WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewWindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder(rawUrl s
 func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) Count()(*WindowsUpdatesUpdatePoliciesItemComplianceChangesCountRequestBuilder) {
     return NewWindowsUpdatesUpdatePoliciesItemComplianceChangesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the complianceChange objects and their properties. This API is supported in the following national cloud deployments.
+// Get get a list of the complianceChange objects and their properties. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-updatepolicy-list-compliancechanges?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) Get(ct
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ComplianceChangeCollectionResponseable), nil
 }
-// Post create a new contentApproval object. This API is supported in the following national cloud deployments.
+// Post create a new contentApproval object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-updatepolicy-post-compliancechanges-contentapproval?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) Post(c
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ComplianceChangeable), nil
 }
-// ToGetRequestInformation get a list of the complianceChange objects and their properties. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of the complianceChange objects and their properties. This API is available in the following national cloud deployments.
 func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) ToGetR
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new contentApproval object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new contentApproval object. This API is available in the following national cloud deployments.
 func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ComplianceChangeable, requestConfiguration *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

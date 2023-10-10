@@ -27,6 +27,14 @@ type DeletedItemsDirectoryObjectItemRequestBuilderGetRequestConfiguration struct
     // Request query parameters
     QueryParameters *DeletedItemsDirectoryObjectItemRequestBuilderGetQueryParameters
 }
+// CheckMemberGroups provides operations to call the checkMemberGroups method.
+func (m *DeletedItemsDirectoryObjectItemRequestBuilder) CheckMemberGroups()(*DeletedItemsItemCheckMemberGroupsRequestBuilder) {
+    return NewDeletedItemsItemCheckMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CheckMemberObjects provides operations to call the checkMemberObjects method.
+func (m *DeletedItemsDirectoryObjectItemRequestBuilder) CheckMemberObjects()(*DeletedItemsItemCheckMemberObjectsRequestBuilder) {
+    return NewDeletedItemsItemCheckMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDeletedItemsDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
 func NewDeletedItemsDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedItemsDirectoryObjectItemRequestBuilder) {
     m := &DeletedItemsDirectoryObjectItemRequestBuilder{
@@ -59,6 +67,14 @@ func (m *DeletedItemsDirectoryObjectItemRequestBuilder) Get(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
+// GetMemberGroups provides operations to call the getMemberGroups method.
+func (m *DeletedItemsDirectoryObjectItemRequestBuilder) GetMemberGroups()(*DeletedItemsItemGetMemberGroupsRequestBuilder) {
+    return NewDeletedItemsItemGetMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GetMemberObjects provides operations to call the getMemberObjects method.
+func (m *DeletedItemsDirectoryObjectItemRequestBuilder) GetMemberObjects()(*DeletedItemsItemGetMemberObjectsRequestBuilder) {
+    return NewDeletedItemsItemGetMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GraphAdministrativeUnit casts the previous resource to administrativeUnit.
 func (m *DeletedItemsDirectoryObjectItemRequestBuilder) GraphAdministrativeUnit()(*DeletedItemsItemGraphAdministrativeUnitRequestBuilder) {
     return NewDeletedItemsItemGraphAdministrativeUnitRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -82,6 +98,10 @@ func (m *DeletedItemsDirectoryObjectItemRequestBuilder) GraphServicePrincipal()(
 // GraphUser casts the previous resource to user.
 func (m *DeletedItemsDirectoryObjectItemRequestBuilder) GraphUser()(*DeletedItemsItemGraphUserRequestBuilder) {
     return NewDeletedItemsItemGraphUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Restore provides operations to call the restore method.
+func (m *DeletedItemsDirectoryObjectItemRequestBuilder) Restore()(*DeletedItemsItemRestoreRequestBuilder) {
+    return NewDeletedItemsItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get deletedItems from directory
 func (m *DeletedItemsDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeletedItemsDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

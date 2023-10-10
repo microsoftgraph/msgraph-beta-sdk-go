@@ -22,7 +22,7 @@ func NewRecycleBinItem()(*RecycleBinItem) {
 func CreateRecycleBinItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRecycleBinItem(), nil
 }
-// GetDeletedDateTime gets the deletedDateTime property value. The deletedDateTime property
+// GetDeletedDateTime gets the deletedDateTime property value. Date and time when the item was deleted. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *RecycleBinItem) GetDeletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("deletedDateTime")
     if err != nil {
@@ -33,7 +33,7 @@ func (m *RecycleBinItem) GetDeletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     }
     return nil
 }
-// GetDeletedFromLocation gets the deletedFromLocation property value. The deletedFromLocation property
+// GetDeletedFromLocation gets the deletedFromLocation property value. Relative URL of the list or folder that originally contained the item.
 func (m *RecycleBinItem) GetDeletedFromLocation()(*string) {
     val, err := m.GetBackingStore().Get("deletedFromLocation")
     if err != nil {
@@ -79,7 +79,7 @@ func (m *RecycleBinItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetSize gets the size property value. The size property
+// GetSize gets the size property value. Size of the item in bytes.
 func (m *RecycleBinItem) GetSize()(*int64) {
     val, err := m.GetBackingStore().Get("size")
     if err != nil {
@@ -116,21 +116,21 @@ func (m *RecycleBinItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetDeletedDateTime sets the deletedDateTime property value. The deletedDateTime property
+// SetDeletedDateTime sets the deletedDateTime property value. Date and time when the item was deleted. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *RecycleBinItem) SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("deletedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeletedFromLocation sets the deletedFromLocation property value. The deletedFromLocation property
+// SetDeletedFromLocation sets the deletedFromLocation property value. Relative URL of the list or folder that originally contained the item.
 func (m *RecycleBinItem) SetDeletedFromLocation(value *string)() {
     err := m.GetBackingStore().Set("deletedFromLocation", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSize sets the size property value. The size property
+// SetSize sets the size property value. Size of the item in bytes.
 func (m *RecycleBinItem) SetSize(value *int64)() {
     err := m.GetBackingStore().Set("size", value)
     if err != nil {

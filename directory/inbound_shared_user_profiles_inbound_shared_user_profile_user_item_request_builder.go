@@ -18,7 +18,7 @@ type InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilderDele
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilderGetQueryParameters read the properties of an inboundSharedUserProfile. This API is supported in the following national cloud deployments.
+// InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilderGetQueryParameters read the properties of an inboundSharedUserProfile. This API is available in the following national cloud deployments.
 type InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilder
 func (m *InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilder) ExportPersonalData()(*InboundSharedUserProfilesItemExportPersonalDataRequestBuilder) {
     return NewInboundSharedUserProfilesItemExportPersonalDataRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties of an inboundSharedUserProfile. This API is supported in the following national cloud deployments.
+// Get read the properties of an inboundSharedUserProfile. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/inboundshareduserprofile-get?view=graph-rest-1.0
@@ -131,7 +131,7 @@ func (m *InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilder
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties of an inboundSharedUserProfile. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties of an inboundSharedUserProfile. This API is available in the following national cloud deployments.
 func (m *InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

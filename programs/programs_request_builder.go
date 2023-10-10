@@ -11,7 +11,7 @@ import (
 type ProgramsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ProgramsRequestBuilderGetQueryParameters in the Azure AD access reviews feature, list all the program objects. This API is supported in the following national cloud deployments.
+// ProgramsRequestBuilderGetQueryParameters in the Azure AD access reviews feature, list all the program objects. This API is available in the following national cloud deployments.
 type ProgramsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewProgramsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *ProgramsRequestBuilder) Count()(*CountRequestBuilder) {
     return NewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get in the Azure AD access reviews feature, list all the program objects. This API is supported in the following national cloud deployments.
+// Get in the Azure AD access reviews feature, list all the program objects. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/program-list?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ProgramsRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProgramCollectionResponseable), nil
 }
-// Post in the Azure AD access reviews feature, create a new program object. This API is supported in the following national cloud deployments.
+// Post in the Azure AD access reviews feature, create a new program object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/program-create?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ProgramsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Programable), nil
 }
-// ToGetRequestInformation in the Azure AD access reviews feature, list all the program objects. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation in the Azure AD access reviews feature, list all the program objects. This API is available in the following national cloud deployments.
 func (m *ProgramsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ProgramsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ProgramsRequestBuilder) ToGetRequestInformation(ctx context.Context, re
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation in the Azure AD access reviews feature, create a new program object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation in the Azure AD access reviews feature, create a new program object. This API is available in the following national cloud deployments.
 func (m *ProgramsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Programable, requestConfiguration *ProgramsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

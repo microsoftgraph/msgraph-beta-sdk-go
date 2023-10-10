@@ -18,7 +18,7 @@ type MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilderGetQueryParameters read the properties and relationships of a mobilityManagementPolicy object. This API is supported in the following national cloud deployments.
+// MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilderGetQueryParameters read the properties and relationships of a mobilityManagementPolicy object. This API is available in the following national cloud deployments.
 type MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewMobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a mobilityManagementPolicy object. This API is supported in the following national cloud deployments.
+// Delete delete a mobilityManagementPolicy object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder) 
     }
     return nil
 }
-// Get read the properties and relationships of a mobilityManagementPolicy object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a mobilityManagementPolicy object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-get?view=graph-rest-1.0
@@ -99,7 +99,7 @@ func (m *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder) 
 func (m *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder) IncludedGroups()(*MobileAppManagementPoliciesItemIncludedGroupsRequestBuilder) {
     return NewMobileAppManagementPoliciesItemIncludedGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of a mobilityManagementPolicy object. This API is supported in the following national cloud deployments.
+// Patch update the properties of a mobilityManagementPolicy object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-update?view=graph-rest-1.0
@@ -121,7 +121,7 @@ func (m *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder) 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable), nil
 }
-// ToDeleteRequestInformation delete a mobilityManagementPolicy object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a mobilityManagementPolicy object. This API is available in the following national cloud deployments.
 func (m *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -133,7 +133,7 @@ func (m *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a mobilityManagementPolicy object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a mobilityManagementPolicy object. This API is available in the following national cloud deployments.
 func (m *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -149,7 +149,7 @@ func (m *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a mobilityManagementPolicy object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of a mobilityManagementPolicy object. This API is available in the following national cloud deployments.
 func (m *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, requestConfiguration *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

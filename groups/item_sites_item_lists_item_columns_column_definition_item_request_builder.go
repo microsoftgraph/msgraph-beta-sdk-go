@@ -18,7 +18,7 @@ type ItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilderDeleteReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilderGetQueryParameters get columns from groups
+// ItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilderGetQueryParameters the collection of field definitions for this list.
 type ItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilder) Delete
     }
     return nil
 }
-// Get get columns from groups
+// Get the collection of field definitions for this list.
 func (m *ItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +124,7 @@ func (m *ItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilder) ToDele
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get columns from groups
+// ToGetRequestInformation the collection of field definitions for this list.
 func (m *ItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

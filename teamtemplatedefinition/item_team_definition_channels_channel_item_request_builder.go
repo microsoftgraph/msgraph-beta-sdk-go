@@ -18,7 +18,7 @@ type ItemTeamDefinitionChannelsChannelItemRequestBuilderDeleteRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamDefinitionChannelsChannelItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information. This API is supported in the following national cloud deployments.
+// ItemTeamDefinitionChannelsChannelItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information. This API is available in the following national cloud deployments.
 type ItemTeamDefinitionChannelsChannelItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,7 @@ func NewItemTeamDefinitionChannelsChannelItemRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionChannelsChannelItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete the channel. This API is supported in the following national cloud deployments.
+// Delete delete the channel. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-delete?view=graph-rest-1.0
@@ -85,7 +85,7 @@ func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) DoesUserHaveAccess
 func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) FilesFolder()(*ItemTeamDefinitionChannelsItemFilesFolderRequestBuilder) {
     return NewItemTeamDefinitionChannelsItemFilesFolderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information. This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-get?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) Members()(*ItemTea
 func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) Messages()(*ItemTeamDefinitionChannelsItemMessagesRequestBuilder) {
     return NewItemTeamDefinitionChannelsItemMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of the specified channel. This API is supported in the following national cloud deployments.
+// Patch update the properties of the specified channel. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-patch?view=graph-rest-1.0
@@ -153,7 +153,7 @@ func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) SharedWithTeams()(
 func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) Tabs()(*ItemTeamDefinitionChannelsItemTabsRequestBuilder) {
     return NewItemTeamDefinitionChannelsItemTabsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete the channel. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete the channel. This API is available in the following national cloud deployments.
 func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsChannelItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -165,7 +165,7 @@ func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) ToDeleteRequestInf
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information. This API is available in the following national cloud deployments.
 func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsChannelItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -181,7 +181,7 @@ func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) ToGetRequestInform
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of the specified channel. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of the specified channel. This API is available in the following national cloud deployments.
 func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, requestConfiguration *ItemTeamDefinitionChannelsChannelItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

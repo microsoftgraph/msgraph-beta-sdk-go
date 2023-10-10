@@ -52,7 +52,7 @@ func NewItemInferenceClassificationOverridesInferenceClassificationOverrideItemR
     urlParams["request-raw-url"] = rawUrl
     return NewItemInferenceClassificationOverridesInferenceClassificationOverrideItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a focused Inbox override specified by its ID. This API is supported in the following national cloud deployments.
+// Delete delete a focused Inbox override specified by its ID. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/inferenceclassificationoverride-delete?view=graph-rest-1.0
@@ -90,7 +90,7 @@ func (m *ItemInferenceClassificationOverridesInferenceClassificationOverrideItem
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InferenceClassificationOverrideable), nil
 }
-// Patch change the classifyAs field of a focused Inbox override as specified. You cannot use PATCH to change any other fields in an inferenceClassificationOverride instance. If an override exists for a sender and the sender changes his/her display name, you can use POST to force an update to the name field in the existing override. If an override exists for a sender and the sender changes his/her SMTP address, deleting the existing override and creating a new one withthe new SMTP address is the only way to 'update' the override for this sender. This API is supported in the following national cloud deployments.
+// Patch change the classifyAs field of a focused Inbox override as specified. You cannot use PATCH to change any other fields in an inferenceClassificationOverride instance. If an override exists for a sender and the sender changes his/her display name, you can use POST to force an update to the name field in the existing override. If an override exists for a sender and the sender changes his/her SMTP address, deleting the existing override and creating a new one withthe new SMTP address is the only way to 'update' the override for this sender. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/inferenceclassificationoverride-update?view=graph-rest-1.0
@@ -112,7 +112,7 @@ func (m *ItemInferenceClassificationOverridesInferenceClassificationOverrideItem
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InferenceClassificationOverrideable), nil
 }
-// ToDeleteRequestInformation delete a focused Inbox override specified by its ID. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a focused Inbox override specified by its ID. This API is available in the following national cloud deployments.
 func (m *ItemInferenceClassificationOverridesInferenceClassificationOverrideItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemInferenceClassificationOverridesInferenceClassificationOverrideItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +140,7 @@ func (m *ItemInferenceClassificationOverridesInferenceClassificationOverrideItem
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation change the classifyAs field of a focused Inbox override as specified. You cannot use PATCH to change any other fields in an inferenceClassificationOverride instance. If an override exists for a sender and the sender changes his/her display name, you can use POST to force an update to the name field in the existing override. If an override exists for a sender and the sender changes his/her SMTP address, deleting the existing override and creating a new one withthe new SMTP address is the only way to 'update' the override for this sender. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation change the classifyAs field of a focused Inbox override as specified. You cannot use PATCH to change any other fields in an inferenceClassificationOverride instance. If an override exists for a sender and the sender changes his/her display name, you can use POST to force an update to the name field in the existing override. If an override exists for a sender and the sender changes his/her SMTP address, deleting the existing override and creating a new one withthe new SMTP address is the only way to 'update' the override for this sender. This API is available in the following national cloud deployments.
 func (m *ItemInferenceClassificationOverridesInferenceClassificationOverrideItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InferenceClassificationOverrideable, requestConfiguration *ItemInferenceClassificationOverridesInferenceClassificationOverrideItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

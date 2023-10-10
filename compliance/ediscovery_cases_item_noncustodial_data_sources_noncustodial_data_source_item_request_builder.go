@@ -18,7 +18,7 @@ type EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilderGetQueryParameters read the properties and relationships of a noncustodialDataSource object. This API is supported in the following national cloud deployments.
+// EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilderGetQueryParameters read the properties and relationships of a noncustodialDataSource object. This API is available in the following national cloud deployments.
 type EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,7 +75,7 @@ func (m *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemReq
     }
     return nil
 }
-// Get read the properties and relationships of a noncustodialDataSource object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a noncustodialDataSource object. This API is available in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
@@ -151,7 +151,7 @@ func (m *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemReq
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a noncustodialDataSource object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a noncustodialDataSource object. This API is available in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

@@ -11,7 +11,7 @@ import (
 type ItemProfileInterestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemProfileInterestsRequestBuilderGetQueryParameters retrieve a list of personInterest objects from a user's profile. This API is supported in the following national cloud deployments.
+// ItemProfileInterestsRequestBuilderGetQueryParameters retrieve a list of personInterest objects from a user's profile. This API is available in the following national cloud deployments.
 type ItemProfileInterestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemProfileInterestsRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *ItemProfileInterestsRequestBuilder) Count()(*ItemProfileInterestsCountRequestBuilder) {
     return NewItemProfileInterestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of personInterest objects from a user's profile. This API is supported in the following national cloud deployments.
+// Get retrieve a list of personInterest objects from a user's profile. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/profile-list-interests?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemProfileInterestsRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonInterestCollectionResponseable), nil
 }
-// Post create a new personInterest. This API is supported in the following national cloud deployments.
+// Post create a new personInterest. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/profile-post-interests?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemProfileInterestsRequestBuilder) Post(ctx context.Context, body ie23
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonInterestable), nil
 }
-// ToGetRequestInformation retrieve a list of personInterest objects from a user's profile. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of personInterest objects from a user's profile. This API is available in the following national cloud deployments.
 func (m *ItemProfileInterestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileInterestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemProfileInterestsRequestBuilder) ToGetRequestInformation(ctx context
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new personInterest. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new personInterest. This API is available in the following national cloud deployments.
 func (m *ItemProfileInterestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonInterestable, requestConfiguration *ItemProfileInterestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

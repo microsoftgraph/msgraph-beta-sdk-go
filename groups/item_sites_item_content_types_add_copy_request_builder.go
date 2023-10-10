@@ -31,7 +31,7 @@ func NewItemSitesItemContentTypesAddCopyRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemContentTypesAddCopyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post add a copy of a content type][contentType] from a [site][site] to a [list][list]. This API is supported in the following [national cloud deployments.
+// Post add a copy of a content type][contentType] from a [site][site] to a [list][list]. This API is available in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0
@@ -53,7 +53,7 @@ func (m *ItemSitesItemContentTypesAddCopyRequestBuilder) Post(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeable), nil
 }
-// ToPostRequestInformation add a copy of a content type][contentType] from a [site][site] to a [list][list]. This API is supported in the following [national cloud deployments.
+// ToPostRequestInformation add a copy of a content type][contentType] from a [site][site] to a [list][list]. This API is available in the following [national cloud deployments.
 func (m *ItemSitesItemContentTypesAddCopyRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSitesItemContentTypesAddCopyPostRequestBodyable, requestConfiguration *ItemSitesItemContentTypesAddCopyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

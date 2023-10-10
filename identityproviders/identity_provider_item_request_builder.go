@@ -18,7 +18,7 @@ type IdentityProviderItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IdentityProviderItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an identityProvider. This API is supported in the following national cloud deployments.
+// IdentityProviderItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an identityProvider. This API is available in the following national cloud deployments.
 type IdentityProviderItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewIdentityProviderItemRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewIdentityProviderItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an identityProvider. This API is supported in the following national cloud deployments.
+// Delete delete an identityProvider. This API is available in the following national cloud deployments.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 // [Find more info here]
 // 
@@ -74,7 +74,7 @@ func (m *IdentityProviderItemRequestBuilder) Delete(ctx context.Context, request
     }
     return nil
 }
-// Get retrieve the properties and relationships of an identityProvider. This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of an identityProvider. This API is available in the following national cloud deployments.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 // [Find more info here]
 // 
@@ -97,7 +97,7 @@ func (m *IdentityProviderItemRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderable), nil
 }
-// Patch update the properties of an identityProvider object. This API is supported in the following national cloud deployments.
+// Patch update the properties of an identityProvider object. This API is available in the following national cloud deployments.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 // [Find more info here]
 // 
@@ -120,7 +120,7 @@ func (m *IdentityProviderItemRequestBuilder) Patch(ctx context.Context, body ie2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderable), nil
 }
-// ToDeleteRequestInformation delete an identityProvider. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete an identityProvider. This API is available in the following national cloud deployments.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 func (m *IdentityProviderItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *IdentityProviderItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -133,7 +133,7 @@ func (m *IdentityProviderItemRequestBuilder) ToDeleteRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of an identityProvider. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of an identityProvider. This API is available in the following national cloud deployments.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 func (m *IdentityProviderItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentityProviderItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -150,7 +150,7 @@ func (m *IdentityProviderItemRequestBuilder) ToGetRequestInformation(ctx context
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an identityProvider object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of an identityProvider object. This API is available in the following national cloud deployments.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 func (m *IdentityProviderItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderable, requestConfiguration *IdentityProviderItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

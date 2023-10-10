@@ -11,7 +11,7 @@ import (
 type ItemTeamPrimaryChannelMessagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamPrimaryChannelMessagesRequestBuilderGetQueryParameters retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API. This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the tenantId property on the channel). This API is supported in the following national cloud deployments.
+// ItemTeamPrimaryChannelMessagesRequestBuilderGetQueryParameters retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API. This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the tenantId property on the channel). This API is available in the following national cloud deployments.
 type ItemTeamPrimaryChannelMessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func (m *ItemTeamPrimaryChannelMessagesRequestBuilder) Count()(*ItemTeamPrimaryC
 func (m *ItemTeamPrimaryChannelMessagesRequestBuilder) Delta()(*ItemTeamPrimaryChannelMessagesDeltaRequestBuilder) {
     return NewItemTeamPrimaryChannelMessagesDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API. This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the tenantId property on the channel). This API is supported in the following national cloud deployments.
+// Get retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API. This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the tenantId property on the channel). This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
@@ -100,10 +100,10 @@ func (m *ItemTeamPrimaryChannelMessagesRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageCollectionResponseable), nil
 }
-// Post send a new chatMessage in the specified channel. This API is supported in the following national cloud deployments.
+// Post send a new chatMessage in the specified channel or a chat. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
 func (m *ItemTeamPrimaryChannelMessagesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, requestConfiguration *ItemTeamPrimaryChannelMessagesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +122,7 @@ func (m *ItemTeamPrimaryChannelMessagesRequestBuilder) Post(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable), nil
 }
-// ToGetRequestInformation retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API. This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the tenantId property on the channel). This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API. This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the tenantId property on the channel). This API is available in the following national cloud deployments.
 func (m *ItemTeamPrimaryChannelMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamPrimaryChannelMessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -138,7 +138,7 @@ func (m *ItemTeamPrimaryChannelMessagesRequestBuilder) ToGetRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation send a new chatMessage in the specified channel. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation send a new chatMessage in the specified channel or a chat. This API is available in the following national cloud deployments.
 func (m *ItemTeamPrimaryChannelMessagesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, requestConfiguration *ItemTeamPrimaryChannelMessagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

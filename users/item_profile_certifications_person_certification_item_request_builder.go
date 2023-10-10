@@ -18,7 +18,7 @@ type ItemProfileCertificationsPersonCertificationItemRequestBuilderDeleteRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfileCertificationsPersonCertificationItemRequestBuilderGetQueryParameters read the properties and relationships of a personCertification object in a user's profile. This API is supported in the following national cloud deployments.
+// ItemProfileCertificationsPersonCertificationItemRequestBuilderGetQueryParameters read the properties and relationships of a personCertification object in a user's profile. This API is available in the following national cloud deployments.
 type ItemProfileCertificationsPersonCertificationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemProfileCertificationsPersonCertificationItemRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileCertificationsPersonCertificationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a personCertification object from a user's profile. This API is supported in the following national cloud deployments.
+// Delete deletes a personCertification object from a user's profile. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/personcertification-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) Delete(
     }
     return nil
 }
-// Get read the properties and relationships of a personCertification object in a user's profile. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a personCertification object in a user's profile. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/personcertification-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) Get(ctx
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonCertificationable), nil
 }
-// Patch update the properties of a personCertification object from a user's profile. This API is supported in the following national cloud deployments.
+// Patch update the properties of a personCertification object from a user's profile. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/personcertification-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) Patch(c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonCertificationable), nil
 }
-// ToDeleteRequestInformation deletes a personCertification object from a user's profile. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation deletes a personCertification object from a user's profile. This API is available in the following national cloud deployments.
 func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileCertificationsPersonCertificationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) ToDelet
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a personCertification object in a user's profile. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a personCertification object in a user's profile. This API is available in the following national cloud deployments.
 func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileCertificationsPersonCertificationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) ToGetRe
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a personCertification object from a user's profile. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of a personCertification object from a user's profile. This API is available in the following national cloud deployments.
 func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonCertificationable, requestConfiguration *ItemProfileCertificationsPersonCertificationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

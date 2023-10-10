@@ -42,7 +42,7 @@ func (m *RecycleBin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetItems gets the items property value. The items property
+// GetItems gets the items property value. List of the recycleBinItems deleted by a user.
 func (m *RecycleBin) GetItems()([]RecycleBinItemable) {
     val, err := m.GetBackingStore().Get("items")
     if err != nil {
@@ -73,7 +73,7 @@ func (m *RecycleBin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetItems sets the items property value. The items property
+// SetItems sets the items property value. List of the recycleBinItems deleted by a user.
 func (m *RecycleBin) SetItems(value []RecycleBinItemable)() {
     err := m.GetBackingStore().Set("items", value)
     if err != nil {

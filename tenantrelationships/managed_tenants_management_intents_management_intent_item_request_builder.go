@@ -18,7 +18,7 @@ type ManagedTenantsManagementIntentsManagementIntentItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ManagedTenantsManagementIntentsManagementIntentItemRequestBuilderGetQueryParameters read the properties and relationships of a managementIntent object. This API is supported in the following national cloud deployments.
+// ManagedTenantsManagementIntentsManagementIntentItemRequestBuilderGetQueryParameters read the properties and relationships of a managementIntent object. This API is available in the following national cloud deployments.
 type ManagedTenantsManagementIntentsManagementIntentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ManagedTenantsManagementIntentsManagementIntentItemRequestBuilder) Dele
     }
     return nil
 }
-// Get read the properties and relationships of a managementIntent object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a managementIntent object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-managementintent-get?view=graph-rest-1.0
@@ -123,7 +123,7 @@ func (m *ManagedTenantsManagementIntentsManagementIntentItemRequestBuilder) ToDe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a managementIntent object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a managementIntent object. This API is available in the following national cloud deployments.
 func (m *ManagedTenantsManagementIntentsManagementIntentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsManagementIntentsManagementIntentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

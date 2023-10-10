@@ -18,7 +18,7 @@ type SynchronizationProfilesItemProfileStatusRequestBuilderDeleteRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SynchronizationProfilesItemProfileStatusRequestBuilderGetQueryParameters get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync. This API is supported in the following national cloud deployments.
+// SynchronizationProfilesItemProfileStatusRequestBuilderGetQueryParameters get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync. This API is available in the following national cloud deployments.
 type SynchronizationProfilesItemProfileStatusRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *SynchronizationProfilesItemProfileStatusRequestBuilder) Delete(ctx cont
     }
     return nil
 }
-// Get get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync. This API is supported in the following national cloud deployments.
+// Get get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationsynchronizationprofilestatus-get?view=graph-rest-1.0
@@ -123,7 +123,7 @@ func (m *SynchronizationProfilesItemProfileStatusRequestBuilder) ToDeleteRequest
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync. This API is available in the following national cloud deployments.
 func (m *SynchronizationProfilesItemProfileStatusRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SynchronizationProfilesItemProfileStatusRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

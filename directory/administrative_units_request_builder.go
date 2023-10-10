@@ -97,14 +97,6 @@ func (m *AdministrativeUnitsRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitCollectionResponseable), nil
 }
-// GetByIds provides operations to call the getByIds method.
-func (m *AdministrativeUnitsRequestBuilder) GetByIds()(*AdministrativeUnitsGetByIdsRequestBuilder) {
-    return NewAdministrativeUnitsGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
-func (m *AdministrativeUnitsRequestBuilder) GetUserOwnedObjects()(*AdministrativeUnitsGetUserOwnedObjectsRequestBuilder) {
-    return NewAdministrativeUnitsGetUserOwnedObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Post create new navigation property to administrativeUnits for directory
 func (m *AdministrativeUnitsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, requestConfiguration *AdministrativeUnitsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
@@ -156,10 +148,6 @@ func (m *AdministrativeUnitsRequestBuilder) ToPostRequestInformation(ctx context
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// ValidateProperties provides operations to call the validateProperties method.
-func (m *AdministrativeUnitsRequestBuilder) ValidateProperties()(*AdministrativeUnitsValidatePropertiesRequestBuilder) {
-    return NewAdministrativeUnitsValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 func (m *AdministrativeUnitsRequestBuilder) WithUrl(rawUrl string)(*AdministrativeUnitsRequestBuilder) {

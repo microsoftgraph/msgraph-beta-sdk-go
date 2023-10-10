@@ -11,7 +11,7 @@ import (
 type QnasRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// QnasRequestBuilderGetQueryParameters get a list of the qna objects and their properties. This API is supported in the following national cloud deployments.
+// QnasRequestBuilderGetQueryParameters get a list of the qna objects and their properties. This API is available in the following national cloud deployments.
 type QnasRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewQnasRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
 func (m *QnasRequestBuilder) Count()(*QnasCountRequestBuilder) {
     return NewQnasCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the qna objects and their properties. This API is supported in the following national cloud deployments.
+// Get get a list of the qna objects and their properties. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/search-searchentity-list-qnas?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *QnasRequestBuilder) Get(ctx context.Context, requestConfiguration *Qnas
     }
     return res.(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.QnaCollectionResponseable), nil
 }
-// Post create a new qna object. This API is supported in the following national cloud deployments.
+// Post create a new qna object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/search-searchentity-post-qnas?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *QnasRequestBuilder) Post(ctx context.Context, body iea48ada8ff44901e797
     }
     return res.(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Qnaable), nil
 }
-// ToGetRequestInformation get a list of the qna objects and their properties. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of the qna objects and their properties. This API is available in the following national cloud deployments.
 func (m *QnasRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *QnasRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *QnasRequestBuilder) ToGetRequestInformation(ctx context.Context, reques
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new qna object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new qna object. This API is available in the following national cloud deployments.
 func (m *QnasRequestBuilder) ToPostRequestInformation(ctx context.Context, body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Qnaable, requestConfiguration *QnasRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

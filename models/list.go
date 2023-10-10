@@ -32,7 +32,7 @@ func (m *List) GetActivities()([]ItemActivityOLDable) {
     }
     return nil
 }
-// GetColumns gets the columns property value. The columns property
+// GetColumns gets the columns property value. The collection of field definitions for this list.
 func (m *List) GetColumns()([]ColumnDefinitionable) {
     val, err := m.GetBackingStore().Get("columns")
     if err != nil {
@@ -43,7 +43,7 @@ func (m *List) GetColumns()([]ColumnDefinitionable) {
     }
     return nil
 }
-// GetContentTypes gets the contentTypes property value. The contentTypes property
+// GetContentTypes gets the contentTypes property value. The collection of content types present in this list.
 func (m *List) GetContentTypes()([]ContentTypeable) {
     val, err := m.GetBackingStore().Get("contentTypes")
     if err != nil {
@@ -65,7 +65,7 @@ func (m *List) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetDrive gets the drive property value. Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
+// GetDrive gets the drive property value. Allows access to the list as a drive resource with driveItems. Only present on document libraries.
 func (m *List) GetDrive()(Driveable) {
     val, err := m.GetBackingStore().Get("drive")
     if err != nil {
@@ -238,7 +238,7 @@ func (m *List) GetItems()([]ListItemable) {
     }
     return nil
 }
-// GetList gets the list property value. Provides additional details about the list.
+// GetList gets the list property value. Contains more details about the list.
 func (m *List) GetList()(ListInfoable) {
     val, err := m.GetBackingStore().Get("list")
     if err != nil {
@@ -249,7 +249,7 @@ func (m *List) GetList()(ListInfoable) {
     }
     return nil
 }
-// GetOperations gets the operations property value. The collection of long running operations for the list.
+// GetOperations gets the operations property value. The collection of long-running operations on the list.
 func (m *List) GetOperations()([]RichLongRunningOperationable) {
     val, err := m.GetBackingStore().Get("operations")
     if err != nil {
@@ -260,7 +260,7 @@ func (m *List) GetOperations()([]RichLongRunningOperationable) {
     }
     return nil
 }
-// GetSharepointIds gets the sharepointIds property value. The sharepointIds property
+// GetSharepointIds gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
 func (m *List) GetSharepointIds()(SharepointIdsable) {
     val, err := m.GetBackingStore().Get("sharepointIds")
     if err != nil {
@@ -282,7 +282,7 @@ func (m *List) GetSubscriptions()([]Subscriptionable) {
     }
     return nil
 }
-// GetSystem gets the system property value. If present, indicates that this is a system-managed list. Read-only.
+// GetSystem gets the system property value. If present, indicates that the list is system-managed. Read-only.
 func (m *List) GetSystem()(SystemFacetable) {
     val, err := m.GetBackingStore().Get("system")
     if err != nil {
@@ -410,14 +410,14 @@ func (m *List) SetActivities(value []ItemActivityOLDable)() {
         panic(err)
     }
 }
-// SetColumns sets the columns property value. The columns property
+// SetColumns sets the columns property value. The collection of field definitions for this list.
 func (m *List) SetColumns(value []ColumnDefinitionable)() {
     err := m.GetBackingStore().Set("columns", value)
     if err != nil {
         panic(err)
     }
 }
-// SetContentTypes sets the contentTypes property value. The contentTypes property
+// SetContentTypes sets the contentTypes property value. The collection of content types present in this list.
 func (m *List) SetContentTypes(value []ContentTypeable)() {
     err := m.GetBackingStore().Set("contentTypes", value)
     if err != nil {
@@ -431,7 +431,7 @@ func (m *List) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetDrive sets the drive property value. Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
+// SetDrive sets the drive property value. Allows access to the list as a drive resource with driveItems. Only present on document libraries.
 func (m *List) SetDrive(value Driveable)() {
     err := m.GetBackingStore().Set("drive", value)
     if err != nil {
@@ -445,21 +445,21 @@ func (m *List) SetItems(value []ListItemable)() {
         panic(err)
     }
 }
-// SetList sets the list property value. Provides additional details about the list.
+// SetList sets the list property value. Contains more details about the list.
 func (m *List) SetList(value ListInfoable)() {
     err := m.GetBackingStore().Set("list", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOperations sets the operations property value. The collection of long running operations for the list.
+// SetOperations sets the operations property value. The collection of long-running operations on the list.
 func (m *List) SetOperations(value []RichLongRunningOperationable)() {
     err := m.GetBackingStore().Set("operations", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSharepointIds sets the sharepointIds property value. The sharepointIds property
+// SetSharepointIds sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
 func (m *List) SetSharepointIds(value SharepointIdsable)() {
     err := m.GetBackingStore().Set("sharepointIds", value)
     if err != nil {
@@ -473,7 +473,7 @@ func (m *List) SetSubscriptions(value []Subscriptionable)() {
         panic(err)
     }
 }
-// SetSystem sets the system property value. If present, indicates that this is a system-managed list. Read-only.
+// SetSystem sets the system property value. If present, indicates that the list is system-managed. Read-only.
 func (m *List) SetSystem(value SystemFacetable)() {
     err := m.GetBackingStore().Set("system", value)
     if err != nil {

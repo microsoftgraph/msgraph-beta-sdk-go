@@ -11,7 +11,7 @@ import (
 type DeletedTeamsItemChannelsItemFilesFolderRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DeletedTeamsItemChannelsItemFilesFolderRequestBuilderGetQueryParameters get the metadata for the location where the files of a channel are stored. This API is supported in the following national cloud deployments.
+// DeletedTeamsItemChannelsItemFilesFolderRequestBuilderGetQueryParameters get the metadata for the location where the files of a channel are stored. This API is available in the following national cloud deployments.
 type DeletedTeamsItemChannelsItemFilesFolderRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -44,7 +44,7 @@ func NewDeletedTeamsItemChannelsItemFilesFolderRequestBuilder(rawUrl string, req
 func (m *DeletedTeamsItemChannelsItemFilesFolderRequestBuilder) Content()(*DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilder) {
     return NewDeletedTeamsItemChannelsItemFilesFolderContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the metadata for the location where the files of a channel are stored. This API is supported in the following national cloud deployments.
+// Get get the metadata for the location where the files of a channel are stored. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
@@ -66,7 +66,7 @@ func (m *DeletedTeamsItemChannelsItemFilesFolderRequestBuilder) Get(ctx context.
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable), nil
 }
-// ToGetRequestInformation get the metadata for the location where the files of a channel are stored. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the metadata for the location where the files of a channel are stored. This API is available in the following national cloud deployments.
 func (m *DeletedTeamsItemChannelsItemFilesFolderRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemFilesFolderRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

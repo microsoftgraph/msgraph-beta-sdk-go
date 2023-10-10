@@ -30,7 +30,7 @@ func NewVirtualEndpointReportsGetFrontlineReportRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointReportsGetFrontlineReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post get the Windows 365 Frontline reports, such as real-time or historical data reports.
+// Post get the Windows 365 Frontline reports, such as real-time or historical data reports. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcreports-getfrontlinereport?view=graph-rest-1.0
@@ -52,7 +52,7 @@ func (m *VirtualEndpointReportsGetFrontlineReportRequestBuilder) Post(ctx contex
     }
     return res.([]byte), nil
 }
-// ToPostRequestInformation get the Windows 365 Frontline reports, such as real-time or historical data reports.
+// ToPostRequestInformation get the Windows 365 Frontline reports, such as real-time or historical data reports. This API is available in the following national cloud deployments.
 func (m *VirtualEndpointReportsGetFrontlineReportRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointReportsGetFrontlineReportPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetFrontlineReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderGetQueryParameters read the properties and relationships of a sourceSystemDefinition object. This API is supported in the following national cloud deployments.
+// IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderGetQueryParameters read the properties and relationships of a sourceSystemDefinition object. This API is available in the following national cloud deployments.
 type IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewIndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewIndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a sourceSystemDefinition object. This API is supported in the following national cloud deployments.
+// Delete delete a sourceSystemDefinition object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) Dele
     }
     return nil
 }
-// Get read the properties and relationships of a sourceSystemDefinition object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a sourceSystemDefinition object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) Get(
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.SourceSystemDefinitionable), nil
 }
-// Patch update the properties of a sourceSystemDefinition object. This API is supported in the following national cloud deployments.
+// Patch update the properties of a sourceSystemDefinition object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) Patc
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.SourceSystemDefinitionable), nil
 }
-// ToDeleteRequestInformation delete a sourceSystemDefinition object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a sourceSystemDefinition object. This API is available in the following national cloud deployments.
 func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) ToDe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a sourceSystemDefinition object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a sourceSystemDefinition object. This API is available in the following national cloud deployments.
 func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) ToGe
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a sourceSystemDefinition object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of a sourceSystemDefinition object. This API is available in the following national cloud deployments.
 func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.SourceSystemDefinitionable, requestConfiguration *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

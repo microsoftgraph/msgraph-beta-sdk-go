@@ -97,14 +97,6 @@ func (m *ItemDevicesRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCollectionResponseable), nil
 }
-// GetByIds provides operations to call the getByIds method.
-func (m *ItemDevicesRequestBuilder) GetByIds()(*ItemDevicesGetByIdsRequestBuilder) {
-    return NewItemDevicesGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
-func (m *ItemDevicesRequestBuilder) GetUserOwnedObjects()(*ItemDevicesGetUserOwnedObjectsRequestBuilder) {
-    return NewItemDevicesGetUserOwnedObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Post create new navigation property to devices for users
 func (m *ItemDevicesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, requestConfiguration *ItemDevicesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
@@ -156,10 +148,6 @@ func (m *ItemDevicesRequestBuilder) ToPostRequestInformation(ctx context.Context
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// ValidateProperties provides operations to call the validateProperties method.
-func (m *ItemDevicesRequestBuilder) ValidateProperties()(*ItemDevicesValidatePropertiesRequestBuilder) {
-    return NewItemDevicesValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 func (m *ItemDevicesRequestBuilder) WithUrl(rawUrl string)(*ItemDevicesRequestBuilder) {

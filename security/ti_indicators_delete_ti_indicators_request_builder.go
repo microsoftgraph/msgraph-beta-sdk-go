@@ -30,7 +30,7 @@ func NewTiIndicatorsDeleteTiIndicatorsRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewTiIndicatorsDeleteTiIndicatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post delete multiple threat intelligence (TI) indicators in one request instead of multiple requests. This API is supported in the following national cloud deployments.
+// Post delete multiple threat intelligence (TI) indicators in one request instead of multiple requests. This API is available in the following national cloud deployments.
 // Deprecated: This method is obsolete. Use PostAsDeleteTiIndicatorsPostResponse instead.
 // [Find more info here]
 // 
@@ -53,7 +53,7 @@ func (m *TiIndicatorsDeleteTiIndicatorsRequestBuilder) Post(ctx context.Context,
     }
     return res.(TiIndicatorsDeleteTiIndicatorsResponseable), nil
 }
-// PostAsDeleteTiIndicatorsPostResponse delete multiple threat intelligence (TI) indicators in one request instead of multiple requests. This API is supported in the following national cloud deployments.
+// PostAsDeleteTiIndicatorsPostResponse delete multiple threat intelligence (TI) indicators in one request instead of multiple requests. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-deletetiindicators?view=graph-rest-1.0
@@ -75,7 +75,7 @@ func (m *TiIndicatorsDeleteTiIndicatorsRequestBuilder) PostAsDeleteTiIndicatorsP
     }
     return res.(TiIndicatorsDeleteTiIndicatorsPostResponseable), nil
 }
-// ToPostRequestInformation delete multiple threat intelligence (TI) indicators in one request instead of multiple requests. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation delete multiple threat intelligence (TI) indicators in one request instead of multiple requests. This API is available in the following national cloud deployments.
 func (m *TiIndicatorsDeleteTiIndicatorsRequestBuilder) ToPostRequestInformation(ctx context.Context, body TiIndicatorsDeleteTiIndicatorsPostRequestBodyable, requestConfiguration *TiIndicatorsDeleteTiIndicatorsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

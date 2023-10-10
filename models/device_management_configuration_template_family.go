@@ -36,10 +36,12 @@ const (
     DEVICECONFIGURATIONSCRIPTS_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
     // Template Family for device configuration policies
     DEVICECONFIGURATIONPOLICIES_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+    // Template Family for Company Portal settings
+    COMPANYPORTAL_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
 )
 
 func (i DeviceManagementConfigurationTemplateFamily) String() string {
-    return []string{"none", "endpointSecurityAntivirus", "endpointSecurityDiskEncryption", "endpointSecurityFirewall", "endpointSecurityEndpointDetectionAndResponse", "endpointSecurityAttackSurfaceReduction", "endpointSecurityAccountProtection", "endpointSecurityApplicationControl", "endpointSecurityEndpointPrivilegeManagement", "enrollmentConfiguration", "appQuietTime", "baseline", "unknownFutureValue", "deviceConfigurationScripts", "deviceConfigurationPolicies"}[i]
+    return []string{"none", "endpointSecurityAntivirus", "endpointSecurityDiskEncryption", "endpointSecurityFirewall", "endpointSecurityEndpointDetectionAndResponse", "endpointSecurityAttackSurfaceReduction", "endpointSecurityAccountProtection", "endpointSecurityApplicationControl", "endpointSecurityEndpointPrivilegeManagement", "enrollmentConfiguration", "appQuietTime", "baseline", "unknownFutureValue", "deviceConfigurationScripts", "deviceConfigurationPolicies", "companyPortal"}[i]
 }
 func ParseDeviceManagementConfigurationTemplateFamily(v string) (any, error) {
     result := NONE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
@@ -74,6 +76,8 @@ func ParseDeviceManagementConfigurationTemplateFamily(v string) (any, error) {
             result = DEVICECONFIGURATIONSCRIPTS_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
         case "deviceConfigurationPolicies":
             result = DEVICECONFIGURATIONPOLICIES_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+        case "companyPortal":
+            result = COMPANYPORTAL_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
         default:
             return 0, errors.New("Unknown DeviceManagementConfigurationTemplateFamily value: " + v)
     }

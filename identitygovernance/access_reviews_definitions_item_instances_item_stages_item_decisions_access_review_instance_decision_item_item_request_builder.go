@@ -18,7 +18,7 @@ type AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsAccessReviewIns
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderGetQueryParameters read the properties and relationships of an accessReviewInstanceDecisionItem object. This API is supported in the following national cloud deployments.
+// AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderGetQueryParameters read the properties and relationships of an accessReviewInstanceDecisionItem object. This API is available in the following national cloud deployments.
 type AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsAccessRevie
     }
     return nil
 }
-// Get read the properties and relationships of an accessReviewInstanceDecisionItem object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of an accessReviewInstanceDecisionItem object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-get?view=graph-rest-1.0
@@ -100,7 +100,7 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsAccessRevie
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) Instance()(*AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsItemInstanceRequestBuilder) {
     return NewAccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsItemInstanceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer. This API is supported in the following national cloud deployments.
+// Patch update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-update?view=graph-rest-1.0
@@ -134,7 +134,7 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsAccessRevie
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an accessReviewInstanceDecisionItem object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of an accessReviewInstanceDecisionItem object. This API is available in the following national cloud deployments.
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -150,7 +150,7 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsAccessRevie
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer. This API is available in the following national cloud deployments.
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

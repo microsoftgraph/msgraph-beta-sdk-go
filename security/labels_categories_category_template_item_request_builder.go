@@ -18,7 +18,7 @@ type LabelsCategoriesCategoryTemplateItemRequestBuilderDeleteRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LabelsCategoriesCategoryTemplateItemRequestBuilderGetQueryParameters read the properties and relationships of a categoryTemplate object. This API is supported in the following national cloud deployments.
+// LabelsCategoriesCategoryTemplateItemRequestBuilderGetQueryParameters read the properties and relationships of a categoryTemplate object. This API is available in the following national cloud deployments.
 type LabelsCategoriesCategoryTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewLabelsCategoriesCategoryTemplateItemRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewLabelsCategoriesCategoryTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a categoryTemplate object. This API is supported in the following national cloud deployments.
+// Delete delete a categoryTemplate object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-delete-categories?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *LabelsCategoriesCategoryTemplateItemRequestBuilder) Delete(ctx context.
     }
     return nil
 }
-// Get read the properties and relationships of a categoryTemplate object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a categoryTemplate object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-categorytemplate-get?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *LabelsCategoriesCategoryTemplateItemRequestBuilder) Patch(ctx context.C
 func (m *LabelsCategoriesCategoryTemplateItemRequestBuilder) SubCategories()(*LabelsCategoriesItemSubCategoriesRequestBuilder) {
     return NewLabelsCategoriesItemSubCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a categoryTemplate object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a categoryTemplate object. This API is available in the following national cloud deployments.
 func (m *LabelsCategoriesCategoryTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LabelsCategoriesCategoryTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -130,7 +130,7 @@ func (m *LabelsCategoriesCategoryTemplateItemRequestBuilder) ToDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a categoryTemplate object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a categoryTemplate object. This API is available in the following national cloud deployments.
 func (m *LabelsCategoriesCategoryTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsCategoriesCategoryTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

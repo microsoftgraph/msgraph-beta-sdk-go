@@ -11,7 +11,7 @@ import (
 type ItemContactFoldersItemContactsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemContactFoldersItemContactsRequestBuilderGetQueryParameters get all the contacts in the signed-in user's mailbox (.../me/contacts), or from the specified contact folder. This API is supported in the following national cloud deployments.
+// ItemContactFoldersItemContactsRequestBuilderGetQueryParameters get all the contacts in the signed-in user's mailbox (.../me/contacts), or from the specified contact folder. This API is available in the following national cloud deployments.
 type ItemContactFoldersItemContactsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func (m *ItemContactFoldersItemContactsRequestBuilder) Count()(*ItemContactFolde
 func (m *ItemContactFoldersItemContactsRequestBuilder) Delta()(*ItemContactFoldersItemContactsDeltaRequestBuilder) {
     return NewItemContactFoldersItemContactsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get all the contacts in the signed-in user's mailbox (.../me/contacts), or from the specified contact folder. This API is supported in the following national cloud deployments.
+// Get get all the contacts in the signed-in user's mailbox (.../me/contacts), or from the specified contact folder. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
@@ -98,7 +98,7 @@ func (m *ItemContactFoldersItemContactsRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactCollectionResponseable), nil
 }
-// Post add a contact to the root Contacts folder or to the contacts endpoint of another contact folder. This API is supported in the following national cloud deployments.
+// Post add a contact to the root Contacts folder or to the contacts endpoint of another contact folder. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
@@ -120,7 +120,7 @@ func (m *ItemContactFoldersItemContactsRequestBuilder) Post(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contactable), nil
 }
-// ToGetRequestInformation get all the contacts in the signed-in user's mailbox (.../me/contacts), or from the specified contact folder. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get all the contacts in the signed-in user's mailbox (.../me/contacts), or from the specified contact folder. This API is available in the following national cloud deployments.
 func (m *ItemContactFoldersItemContactsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContactFoldersItemContactsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +136,7 @@ func (m *ItemContactFoldersItemContactsRequestBuilder) ToGetRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation add a contact to the root Contacts folder or to the contacts endpoint of another contact folder. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation add a contact to the root Contacts folder or to the contacts endpoint of another contact folder. This API is available in the following national cloud deployments.
 func (m *ItemContactFoldersItemContactsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contactable, requestConfiguration *ItemContactFoldersItemContactsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

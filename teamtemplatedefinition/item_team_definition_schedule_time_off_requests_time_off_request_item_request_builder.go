@@ -18,7 +18,7 @@ type ItemTeamDefinitionScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderDe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamDefinitionScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a timeoffrequest object. This API is supported in the following national cloud deployments.
+// ItemTeamDefinitionScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a timeoffrequest object. This API is available in the following national cloud deployments.
 type ItemTeamDefinitionScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -52,7 +52,7 @@ func NewItemTeamDefinitionScheduleTimeOffRequestsTimeOffRequestItemRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a timeOffRequest object. This API is supported in the following national cloud deployments.
+// Delete delete a timeOffRequest object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/timeoffrequest-delete?view=graph-rest-1.0
@@ -71,7 +71,7 @@ func (m *ItemTeamDefinitionScheduleTimeOffRequestsTimeOffRequestItemRequestBuild
     }
     return nil
 }
-// Get retrieve the properties and relationships of a timeoffrequest object. This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of a timeoffrequest object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/timeoffrequest-get?view=graph-rest-1.0
@@ -112,7 +112,7 @@ func (m *ItemTeamDefinitionScheduleTimeOffRequestsTimeOffRequestItemRequestBuild
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffRequestable), nil
 }
-// ToDeleteRequestInformation delete a timeOffRequest object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a timeOffRequest object. This API is available in the following national cloud deployments.
 func (m *ItemTeamDefinitionScheduleTimeOffRequestsTimeOffRequestItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -124,7 +124,7 @@ func (m *ItemTeamDefinitionScheduleTimeOffRequestsTimeOffRequestItemRequestBuild
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a timeoffrequest object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of a timeoffrequest object. This API is available in the following national cloud deployments.
 func (m *ItemTeamDefinitionScheduleTimeOffRequestsTimeOffRequestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

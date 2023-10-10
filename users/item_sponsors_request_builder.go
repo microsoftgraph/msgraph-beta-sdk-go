@@ -11,7 +11,7 @@ import (
 type ItemSponsorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSponsorsRequestBuilderGetQueryParameters get a user's sponsors. Sponsors are users and groups that are responsible for this guest user's privileges in the tenant and for keeping the guest user's information and access up to date. This API is supported in the following national cloud deployments.
+// ItemSponsorsRequestBuilderGetQueryParameters get a user's sponsors. Sponsors are users and groups that are responsible for this guest's privileges in the tenant and for keeping the guest's information and access up to date. This API is available in the following national cloud deployments.
 type ItemSponsorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewItemSponsorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *ItemSponsorsRequestBuilder) Count()(*ItemSponsorsCountRequestBuilder) {
     return NewItemSponsorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a user's sponsors. Sponsors are users and groups that are responsible for this guest user's privileges in the tenant and for keeping the guest user's information and access up to date. This API is supported in the following national cloud deployments.
+// Get get a user's sponsors. Sponsors are users and groups that are responsible for this guest's privileges in the tenant and for keeping the guest's information and access up to date. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/user-list-sponsors?view=graph-rest-1.0
@@ -89,7 +89,7 @@ func (m *ItemSponsorsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
-// ToGetRequestInformation get a user's sponsors. Sponsors are users and groups that are responsible for this guest user's privileges in the tenant and for keeping the guest user's information and access up to date. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a user's sponsors. Sponsors are users and groups that are responsible for this guest's privileges in the tenant and for keeping the guest's information and access up to date. This API is available in the following national cloud deployments.
 func (m *ItemSponsorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSponsorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
