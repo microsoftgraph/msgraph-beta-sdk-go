@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilderDeleteReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilderGetQueryParameters retrieve the properties and relationships of worksheet object. This API is supported in the following national cloud deployments.
+// ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilderGetQueryParameters retrieve the properties and relationships of worksheet object. This API is available in the following national cloud deployments.
 type ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -62,7 +62,7 @@ func NewItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes the worksheet from the workbook. This API is supported in the following national cloud deployments.
+// Delete deletes the worksheet from the workbook. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/worksheet-delete?view=graph-rest-1.0
@@ -81,7 +81,7 @@ func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Del
     }
     return nil
 }
-// Get retrieve the properties and relationships of worksheet object. This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of worksheet object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/worksheet-get?view=graph-rest-1.0
@@ -107,7 +107,7 @@ func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Get
 func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Names()(*ItemItemsItemWorkbookWorksheetsItemNamesRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemNamesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of worksheet object. This API is supported in the following national cloud deployments.
+// Patch update the properties of worksheet object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/worksheet-update?view=graph-rest-1.0
@@ -153,7 +153,7 @@ func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Tab
 func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Tasks()(*ItemItemsItemWorkbookWorksheetsItemTasksRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation deletes the worksheet from the workbook. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation deletes the worksheet from the workbook. This API is available in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -165,7 +165,7 @@ func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) ToD
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of worksheet object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of worksheet object. This API is available in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -181,7 +181,7 @@ func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) ToG
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of worksheet object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of worksheet object. This API is available in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookWorksheetable, requestConfiguration *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

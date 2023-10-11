@@ -11,7 +11,7 @@ import (
 type LifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilderGetQueryParameters read the details of a built-in workflow task. This API is supported in the following national cloud deployments.
+// LifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilderGetQueryParameters read the details of a built-in workflow task. This API is available in the following national cloud deployments.
 type LifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewLifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewLifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get read the details of a built-in workflow task. This API is supported in the following national cloud deployments.
+// Get read the details of a built-in workflow task. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-taskdefinition-get?view=graph-rest-1.0
@@ -62,7 +62,7 @@ func (m *LifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilder) Get(
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.TaskDefinitionable), nil
 }
-// ToGetRequestInformation read the details of a built-in workflow task. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the details of a built-in workflow task. This API is available in the following national cloud deployments.
 func (m *LifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

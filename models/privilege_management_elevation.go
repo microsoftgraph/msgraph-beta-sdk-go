@@ -209,6 +209,46 @@ func (m *PrivilegeManagementElevation) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["parentProcessName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetParentProcessName(val)
+        }
+        return nil
+    }
+    res["policyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPolicyId(val)
+        }
+        return nil
+    }
+    res["policyName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPolicyName(val)
+        }
+        return nil
+    }
+    res["processType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParsePrivilegeManagementProcessType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProcessType(val.(*PrivilegeManagementProcessType))
+        }
+        return nil
+    }
     res["productName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -226,6 +266,16 @@ func (m *PrivilegeManagementElevation) GetFieldDeserializers()(map[string]func(i
         }
         if val != nil {
             m.SetResult(val)
+        }
+        return nil
+    }
+    res["ruleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRuleId(val)
         }
         return nil
     }
@@ -317,6 +367,50 @@ func (m *PrivilegeManagementElevation) GetJustification()(*string) {
     }
     return nil
 }
+// GetParentProcessName gets the parentProcessName property value. The name of parent process associated with the elevated process. This is always populated for both parent and child process types
+func (m *PrivilegeManagementElevation) GetParentProcessName()(*string) {
+    val, err := m.GetBackingStore().Get("parentProcessName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetPolicyId gets the policyId property value. Unique Identifier of the policy configured to run the application with elevated access
+func (m *PrivilegeManagementElevation) GetPolicyId()(*string) {
+    val, err := m.GetBackingStore().Get("policyId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetPolicyName gets the policyName property value. The name of the policy configured to run the application in elevated access
+func (m *PrivilegeManagementElevation) GetPolicyName()(*string) {
+    val, err := m.GetBackingStore().Get("policyName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetProcessType gets the processType property value. Indicates the type of elevated process
+func (m *PrivilegeManagementElevation) GetProcessType()(*PrivilegeManagementProcessType) {
+    val, err := m.GetBackingStore().Get("processType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PrivilegeManagementProcessType)
+    }
+    return nil
+}
 // GetProductName gets the productName property value. The product name of the application. This value is set by the creator of the application. Example: `Visual Studio`
 func (m *PrivilegeManagementElevation) GetProductName()(*string) {
     val, err := m.GetBackingStore().Get("productName")
@@ -336,6 +430,17 @@ func (m *PrivilegeManagementElevation) GetResult()(*int32) {
     }
     if val != nil {
         return val.(*int32)
+    }
+    return nil
+}
+// GetRuleId gets the ruleId property value. Unique identifier of the rule configured to run the application with elevated access
+func (m *PrivilegeManagementElevation) GetRuleId()(*string) {
+    val, err := m.GetBackingStore().Get("ruleId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -441,6 +546,31 @@ func (m *PrivilegeManagementElevation) Serialize(writer i878a80d2330e89d26896388
         }
     }
     {
+        err = writer.WriteStringValue("parentProcessName", m.GetParentProcessName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("policyId", m.GetPolicyId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("policyName", m.GetPolicyName())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetProcessType() != nil {
+        cast := (*m.GetProcessType()).String()
+        err = writer.WriteStringValue("processType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("productName", m.GetProductName())
         if err != nil {
             return err
@@ -448,6 +578,12 @@ func (m *PrivilegeManagementElevation) Serialize(writer i878a80d2330e89d26896388
     }
     {
         err = writer.WriteInt32Value("result", m.GetResult())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("ruleId", m.GetRuleId())
         if err != nil {
             return err
         }
@@ -551,6 +687,34 @@ func (m *PrivilegeManagementElevation) SetJustification(value *string)() {
         panic(err)
     }
 }
+// SetParentProcessName sets the parentProcessName property value. The name of parent process associated with the elevated process. This is always populated for both parent and child process types
+func (m *PrivilegeManagementElevation) SetParentProcessName(value *string)() {
+    err := m.GetBackingStore().Set("parentProcessName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetPolicyId sets the policyId property value. Unique Identifier of the policy configured to run the application with elevated access
+func (m *PrivilegeManagementElevation) SetPolicyId(value *string)() {
+    err := m.GetBackingStore().Set("policyId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetPolicyName sets the policyName property value. The name of the policy configured to run the application in elevated access
+func (m *PrivilegeManagementElevation) SetPolicyName(value *string)() {
+    err := m.GetBackingStore().Set("policyName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetProcessType sets the processType property value. Indicates the type of elevated process
+func (m *PrivilegeManagementElevation) SetProcessType(value *PrivilegeManagementProcessType)() {
+    err := m.GetBackingStore().Set("processType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProductName sets the productName property value. The product name of the application. This value is set by the creator of the application. Example: `Visual Studio`
 func (m *PrivilegeManagementElevation) SetProductName(value *string)() {
     err := m.GetBackingStore().Set("productName", value)
@@ -561,6 +725,13 @@ func (m *PrivilegeManagementElevation) SetProductName(value *string)() {
 // SetResult sets the result property value. The result of the elevation action with 0 being success, and everything else being exit code if the elevation was unsuccessful. The value will always be 0 on all unmanaged elevation. Example: `0`. Valid values 0 to 2147483647
 func (m *PrivilegeManagementElevation) SetResult(value *int32)() {
     err := m.GetBackingStore().Set("result", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetRuleId sets the ruleId property value. Unique identifier of the rule configured to run the application with elevated access
+func (m *PrivilegeManagementElevation) SetRuleId(value *string)() {
+    err := m.GetBackingStore().Set("ruleId", value)
     if err != nil {
         panic(err)
     }
@@ -595,8 +766,13 @@ type PrivilegeManagementElevationable interface {
     GetHash()(*string)
     GetInternalName()(*string)
     GetJustification()(*string)
+    GetParentProcessName()(*string)
+    GetPolicyId()(*string)
+    GetPolicyName()(*string)
+    GetProcessType()(*PrivilegeManagementProcessType)
     GetProductName()(*string)
     GetResult()(*int32)
+    GetRuleId()(*string)
     GetUpn()(*string)
     GetUserType()(*PrivilegeManagementEndUserType)
     SetCertificatePayload(value *string)()
@@ -611,8 +787,13 @@ type PrivilegeManagementElevationable interface {
     SetHash(value *string)()
     SetInternalName(value *string)()
     SetJustification(value *string)()
+    SetParentProcessName(value *string)()
+    SetPolicyId(value *string)()
+    SetPolicyName(value *string)()
+    SetProcessType(value *PrivilegeManagementProcessType)()
     SetProductName(value *string)()
     SetResult(value *int32)()
+    SetRuleId(value *string)()
     SetUpn(value *string)()
     SetUserType(value *PrivilegeManagementEndUserType)()
 }

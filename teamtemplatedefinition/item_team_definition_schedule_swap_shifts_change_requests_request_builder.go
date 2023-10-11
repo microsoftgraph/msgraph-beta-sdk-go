@@ -11,7 +11,7 @@ import (
 type ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilderGetQueryParameters retrieve a list of swapShiftsChangeRequest objects in a team. This API is supported in the following national cloud deployments.
+// ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilderGetQueryParameters retrieve a list of swapShiftsChangeRequest objects in a team. This API is available in the following national cloud deployments.
 type ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder(rawUrl 
 func (m *ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder) Count()(*ItemTeamDefinitionScheduleSwapShiftsChangeRequestsCountRequestBuilder) {
     return NewItemTeamDefinitionScheduleSwapShiftsChangeRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of swapShiftsChangeRequest objects in a team. This API is supported in the following national cloud deployments.
+// Get retrieve a list of swapShiftsChangeRequest objects in a team. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/swapshiftschangerequest-list?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder) Get(c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestCollectionResponseable), nil
 }
-// Post create an instance of a swapShiftsChangeRequest object. This API is supported in the following national cloud deployments.
+// Post create an instance of a swapShiftsChangeRequest object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/swapshiftschangerequest-post?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder) Post(
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestable), nil
 }
-// ToGetRequestInformation retrieve a list of swapShiftsChangeRequest objects in a team. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of swapShiftsChangeRequest objects in a team. This API is available in the following national cloud deployments.
 func (m *ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder) ToGet
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create an instance of a swapShiftsChangeRequest object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create an instance of a swapShiftsChangeRequest object. This API is available in the following national cloud deployments.
 func (m *ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestable, requestConfiguration *ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

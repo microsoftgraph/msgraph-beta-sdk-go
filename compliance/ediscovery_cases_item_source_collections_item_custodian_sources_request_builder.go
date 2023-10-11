@@ -11,7 +11,7 @@ import (
 type EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilderGetQueryParameters get the list of dataSource objects associated with a source collection. This API is supported in the following national cloud deployments.
+// EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilderGetQueryParameters get the list of dataSource objects associated with a source collection. This API is available in the following national cloud deployments.
 type EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -68,7 +68,7 @@ func NewEdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilder(r
 func (m *EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilder) Count()(*EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesCountRequestBuilder) {
     return NewEdiscoveryCasesItemSourceCollectionsItemCustodianSourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of dataSource objects associated with a source collection. This API is supported in the following national cloud deployments.
+// Get get the list of dataSource objects associated with a source collection. This API is available in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
@@ -91,7 +91,7 @@ func (m *EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilder)
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.DataSourceCollectionResponseable), nil
 }
-// ToGetRequestInformation get the list of dataSource objects associated with a source collection. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the list of dataSource objects associated with a source collection. This API is available in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

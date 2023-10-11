@@ -11,7 +11,7 @@ import (
 type IdentityProvidersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IdentityProvidersRequestBuilderGetQueryParameters retrieve a list of identityProviders objects. This API is supported in the following national cloud deployments.
+// IdentityProvidersRequestBuilderGetQueryParameters retrieve a list of identityProviders objects. This API is available in the following national cloud deployments.
 type IdentityProvidersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,7 +79,7 @@ func NewIdentityProvidersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *IdentityProvidersRequestBuilder) Count()(*CountRequestBuilder) {
     return NewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of identityProviders objects. This API is supported in the following national cloud deployments.
+// Get retrieve a list of identityProviders objects. This API is available in the following national cloud deployments.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 // [Find more info here]
 // 
@@ -102,7 +102,7 @@ func (m *IdentityProvidersRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderCollectionResponseable), nil
 }
-// Post create a new identityProvider object. This API is supported in the following national cloud deployments.
+// Post create a new identityProvider object. This API is available in the following national cloud deployments.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 // [Find more info here]
 // 
@@ -125,7 +125,7 @@ func (m *IdentityProvidersRequestBuilder) Post(ctx context.Context, body ie233ee
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderable), nil
 }
-// ToGetRequestInformation retrieve a list of identityProviders objects. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of identityProviders objects. This API is available in the following national cloud deployments.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 func (m *IdentityProvidersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentityProvidersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -142,7 +142,7 @@ func (m *IdentityProvidersRequestBuilder) ToGetRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new identityProvider object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new identityProvider object. This API is available in the following national cloud deployments.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 func (m *IdentityProvidersRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderable, requestConfiguration *IdentityProvidersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

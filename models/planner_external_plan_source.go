@@ -32,7 +32,7 @@ func (m *PlannerExternalPlanSource) GetContextScenarioId()(*string) {
     }
     return nil
 }
-// GetExternalContextId gets the externalContextId property value. Nullable. The id of the external entity's containing entity or context.
+// GetExternalContextId gets the externalContextId property value. Nullable. The ID of the external entity's containing entity or context.
 func (m *PlannerExternalPlanSource) GetExternalContextId()(*string) {
     val, err := m.GetBackingStore().Get("externalContextId")
     if err != nil {
@@ -43,7 +43,7 @@ func (m *PlannerExternalPlanSource) GetExternalContextId()(*string) {
     }
     return nil
 }
-// GetExternalObjectId gets the externalObjectId property value. Nullable. The id of the entity that an external service associates with a plan.
+// GetExternalObjectId gets the externalObjectId property value. Nullable. The ID of the entity that an external service associates with a plan.
 func (m *PlannerExternalPlanSource) GetExternalObjectId()(*string) {
     val, err := m.GetBackingStore().Get("externalObjectId")
     if err != nil {
@@ -122,14 +122,14 @@ func (m *PlannerExternalPlanSource) SetContextScenarioId(value *string)() {
         panic(err)
     }
 }
-// SetExternalContextId sets the externalContextId property value. Nullable. The id of the external entity's containing entity or context.
+// SetExternalContextId sets the externalContextId property value. Nullable. The ID of the external entity's containing entity or context.
 func (m *PlannerExternalPlanSource) SetExternalContextId(value *string)() {
     err := m.GetBackingStore().Set("externalContextId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExternalObjectId sets the externalObjectId property value. Nullable. The id of the entity that an external service associates with a plan.
+// SetExternalObjectId sets the externalObjectId property value. Nullable. The ID of the entity that an external service associates with a plan.
 func (m *PlannerExternalPlanSource) SetExternalObjectId(value *string)() {
     err := m.GetBackingStore().Set("externalObjectId", value)
     if err != nil {

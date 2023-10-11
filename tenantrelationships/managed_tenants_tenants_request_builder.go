@@ -11,7 +11,7 @@ import (
 type ManagedTenantsTenantsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedTenantsTenantsRequestBuilderGetQueryParameters get a list of the tenant objects and their properties. This API is supported in the following national cloud deployments.
+// ManagedTenantsTenantsRequestBuilderGetQueryParameters get a list of the tenant objects and their properties. This API is available in the following national cloud deployments.
 type ManagedTenantsTenantsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewManagedTenantsTenantsRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *ManagedTenantsTenantsRequestBuilder) Count()(*ManagedTenantsTenantsCountRequestBuilder) {
     return NewManagedTenantsTenantsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the tenant objects and their properties. This API is supported in the following national cloud deployments.
+// Get get a list of the tenant objects and their properties. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-tenants?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *ManagedTenantsTenantsRequestBuilder) Post(ctx context.Context, body i72
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.Tenantable), nil
 }
-// ToGetRequestInformation get a list of the tenant objects and their properties. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of the tenant objects and their properties. This API is available in the following national cloud deployments.
 func (m *ManagedTenantsTenantsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsTenantsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

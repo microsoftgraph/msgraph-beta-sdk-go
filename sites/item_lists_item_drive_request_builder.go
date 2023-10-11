@@ -11,7 +11,7 @@ import (
 type ItemListsItemDriveRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemListsItemDriveRequestBuilderGetQueryParameters only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
+// ItemListsItemDriveRequestBuilderGetQueryParameters allows access to the list as a drive resource with driveItems. Only present on document libraries.
 type ItemListsItemDriveRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewItemListsItemDriveRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewItemListsItemDriveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
+// Get allows access to the list as a drive resource with driveItems. Only present on document libraries.
 func (m *ItemListsItemDriveRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListsItemDriveRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Driveable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ItemListsItemDriveRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Driveable), nil
 }
-// ToGetRequestInformation only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
+// ToGetRequestInformation allows access to the list as a drive resource with driveItems. Only present on document libraries.
 func (m *ItemListsItemDriveRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListsItemDriveRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

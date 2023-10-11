@@ -11,7 +11,7 @@ import (
 type CustomAuthenticationExtensionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CustomAuthenticationExtensionsRequestBuilderGetQueryParameters get a list of the customAuthenticationExtension objects and their properties. Currently, only onTokenIssuanceStartCustomExtension objects are returned. This API is supported in the following national cloud deployments.
+// CustomAuthenticationExtensionsRequestBuilderGetQueryParameters get a list of the customAuthenticationExtension objects and their properties. Currently, only onTokenIssuanceStartCustomExtension objects are returned. This API is available in the following national cloud deployments.
 type CustomAuthenticationExtensionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewCustomAuthenticationExtensionsRequestBuilder(rawUrl string, requestAdapt
 func (m *CustomAuthenticationExtensionsRequestBuilder) Count()(*CustomAuthenticationExtensionsCountRequestBuilder) {
     return NewCustomAuthenticationExtensionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the customAuthenticationExtension objects and their properties. Currently, only onTokenIssuanceStartCustomExtension objects are returned. This API is supported in the following national cloud deployments.
+// Get get a list of the customAuthenticationExtension objects and their properties. Currently, only onTokenIssuanceStartCustomExtension objects are returned. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identitycontainer-list-customauthenticationextensions?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *CustomAuthenticationExtensionsRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAuthenticationExtensionCollectionResponseable), nil
 }
-// Post create a new customAuthenticationExtension object. Only the onTokenIssuanceStartCustomExtension object type is supported. This API is supported in the following national cloud deployments.
+// Post create a new customAuthenticationExtension object. Only the onTokenIssuanceStartCustomExtension object type is supported. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identitycontainer-post-customauthenticationextensions?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *CustomAuthenticationExtensionsRequestBuilder) Post(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAuthenticationExtensionable), nil
 }
-// ToGetRequestInformation get a list of the customAuthenticationExtension objects and their properties. Currently, only onTokenIssuanceStartCustomExtension objects are returned. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of the customAuthenticationExtension objects and their properties. Currently, only onTokenIssuanceStartCustomExtension objects are returned. This API is available in the following national cloud deployments.
 func (m *CustomAuthenticationExtensionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CustomAuthenticationExtensionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *CustomAuthenticationExtensionsRequestBuilder) ToGetRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new customAuthenticationExtension object. Only the onTokenIssuanceStartCustomExtension object type is supported. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new customAuthenticationExtension object. Only the onTokenIssuanceStartCustomExtension object type is supported. This API is available in the following national cloud deployments.
 func (m *CustomAuthenticationExtensionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAuthenticationExtensionable, requestConfiguration *CustomAuthenticationExtensionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

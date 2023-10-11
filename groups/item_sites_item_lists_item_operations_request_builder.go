@@ -11,7 +11,7 @@ import (
 type ItemSitesItemListsItemOperationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemListsItemOperationsRequestBuilderGetQueryParameters the collection of long running operations for the list.
+// ItemSitesItemListsItemOperationsRequestBuilderGetQueryParameters the collection of long-running operations on the list.
 type ItemSitesItemListsItemOperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemSitesItemListsItemOperationsRequestBuilder(rawUrl string, requestAda
 func (m *ItemSitesItemListsItemOperationsRequestBuilder) Count()(*ItemSitesItemListsItemOperationsCountRequestBuilder) {
     return NewItemSitesItemListsItemOperationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the collection of long running operations for the list.
+// Get the collection of long-running operations on the list.
 func (m *ItemSitesItemListsItemOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemListsItemOperationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RichLongRunningOperationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ItemSitesItemListsItemOperationsRequestBuilder) Post(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RichLongRunningOperationable), nil
 }
-// ToGetRequestInformation the collection of long running operations for the list.
+// ToGetRequestInformation the collection of long-running operations on the list.
 func (m *ItemSitesItemListsItemOperationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsItemOperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

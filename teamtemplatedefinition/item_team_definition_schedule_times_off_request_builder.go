@@ -11,7 +11,7 @@ import (
 type ItemTeamDefinitionScheduleTimesOffRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamDefinitionScheduleTimesOffRequestBuilderGetQueryParameters get the list of timeOff instances in a schedule. This API is supported in the following national cloud deployments.
+// ItemTeamDefinitionScheduleTimesOffRequestBuilderGetQueryParameters get the list of timeOff instances in a schedule. This API is available in the following national cloud deployments.
 type ItemTeamDefinitionScheduleTimesOffRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,7 +72,7 @@ func NewItemTeamDefinitionScheduleTimesOffRequestBuilder(rawUrl string, requestA
 func (m *ItemTeamDefinitionScheduleTimesOffRequestBuilder) Count()(*ItemTeamDefinitionScheduleTimesOffCountRequestBuilder) {
     return NewItemTeamDefinitionScheduleTimesOffCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of timeOff instances in a schedule. This API is supported in the following national cloud deployments.
+// Get get the list of timeOff instances in a schedule. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/schedule-list-timesoff?view=graph-rest-1.0
@@ -94,7 +94,7 @@ func (m *ItemTeamDefinitionScheduleTimesOffRequestBuilder) Get(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffCollectionResponseable), nil
 }
-// Post create a new timeOff instance in a schedule. This API is supported in the following national cloud deployments.
+// Post create a new timeOff instance in a schedule. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/schedule-post-timesoff?view=graph-rest-1.0
@@ -116,7 +116,7 @@ func (m *ItemTeamDefinitionScheduleTimesOffRequestBuilder) Post(ctx context.Cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffable), nil
 }
-// ToGetRequestInformation get the list of timeOff instances in a schedule. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the list of timeOff instances in a schedule. This API is available in the following national cloud deployments.
 func (m *ItemTeamDefinitionScheduleTimesOffRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleTimesOffRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -132,7 +132,7 @@ func (m *ItemTeamDefinitionScheduleTimesOffRequestBuilder) ToGetRequestInformati
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new timeOff instance in a schedule. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new timeOff instance in a schedule. This API is available in the following national cloud deployments.
 func (m *ItemTeamDefinitionScheduleTimesOffRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffable, requestConfiguration *ItemTeamDefinitionScheduleTimesOffRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

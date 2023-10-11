@@ -30,7 +30,7 @@ func NewSynchronizationProfilesItemStartRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewSynchronizationProfilesItemStartRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post verify the files uploaded to a specific school data synchronization profile in the tenant. If the verification is successful, synchronization starts on the profile. Otherwise, the response contains errors and warnings. If the response contains errors, the synchronization won't start. If the response contains only warnings, synchronization starts. This API is supported in the following national cloud deployments.
+// Post verify the files uploaded to a specific school data synchronization profile in the tenant. If the verification is successful, synchronization starts on the profile. Otherwise, the response contains errors and warnings. If the response contains errors, the synchronization won't start. If the response contains only warnings, synchronization starts. This API is available in the following national cloud deployments.
 // Deprecated: This method is obsolete. Use PostAsStartPostResponse instead.
 // [Find more info here]
 // 
@@ -53,7 +53,7 @@ func (m *SynchronizationProfilesItemStartRequestBuilder) Post(ctx context.Contex
     }
     return res.(SynchronizationProfilesItemStartResponseable), nil
 }
-// PostAsStartPostResponse verify the files uploaded to a specific school data synchronization profile in the tenant. If the verification is successful, synchronization starts on the profile. Otherwise, the response contains errors and warnings. If the response contains errors, the synchronization won't start. If the response contains only warnings, synchronization starts. This API is supported in the following national cloud deployments.
+// PostAsStartPostResponse verify the files uploaded to a specific school data synchronization profile in the tenant. If the verification is successful, synchronization starts on the profile. Otherwise, the response contains errors and warnings. If the response contains errors, the synchronization won't start. If the response contains only warnings, synchronization starts. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationsynchronizationprofile-start?view=graph-rest-1.0
@@ -75,7 +75,7 @@ func (m *SynchronizationProfilesItemStartRequestBuilder) PostAsStartPostResponse
     }
     return res.(SynchronizationProfilesItemStartPostResponseable), nil
 }
-// ToPostRequestInformation verify the files uploaded to a specific school data synchronization profile in the tenant. If the verification is successful, synchronization starts on the profile. Otherwise, the response contains errors and warnings. If the response contains errors, the synchronization won't start. If the response contains only warnings, synchronization starts. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation verify the files uploaded to a specific school data synchronization profile in the tenant. If the verification is successful, synchronization starts on the profile. Otherwise, the response contains errors and warnings. If the response contains errors, the synchronization won't start. If the response contains only warnings, synchronization starts. This API is available in the following national cloud deployments.
 func (m *SynchronizationProfilesItemStartRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *SynchronizationProfilesItemStartRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

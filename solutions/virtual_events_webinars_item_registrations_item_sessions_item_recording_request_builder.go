@@ -37,7 +37,7 @@ func NewVirtualEventsWebinarsItemRegistrationsItemSessionsItemRecordingRequestBu
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEventsWebinarsItemRegistrationsItemSessionsItemRecordingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the content stream of the recording of a Teams live event. Read-only.
+// Get get recording for the navigation property sessions from solutions
 func (m *VirtualEventsWebinarsItemRegistrationsItemSessionsItemRecordingRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationsItemSessionsItemRecordingRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -56,7 +56,7 @@ func (m *VirtualEventsWebinarsItemRegistrationsItemSessionsItemRecordingRequestB
     }
     return res.([]byte), nil
 }
-// Put the content stream of the recording of a Teams live event. Read-only.
+// Put update recording for the navigation property sessions in solutions
 func (m *VirtualEventsWebinarsItemRegistrationsItemSessionsItemRecordingRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *VirtualEventsWebinarsItemRegistrationsItemSessionsItemRecordingRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -75,7 +75,7 @@ func (m *VirtualEventsWebinarsItemRegistrationsItemSessionsItemRecordingRequestB
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation the content stream of the recording of a Teams live event. Read-only.
+// ToGetRequestInformation get recording for the navigation property sessions from solutions
 func (m *VirtualEventsWebinarsItemRegistrationsItemSessionsItemRecordingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationsItemSessionsItemRecordingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -87,7 +87,7 @@ func (m *VirtualEventsWebinarsItemRegistrationsItemSessionsItemRecordingRequestB
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation the content stream of the recording of a Teams live event. Read-only.
+// ToPutRequestInformation update recording for the navigation property sessions in solutions
 func (m *VirtualEventsWebinarsItemRegistrationsItemSessionsItemRecordingRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *VirtualEventsWebinarsItemRegistrationsItemSessionsItemRecordingRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

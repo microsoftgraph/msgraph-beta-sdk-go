@@ -18,7 +18,7 @@ type UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a identityUserFlowAttribute object. This API is supported in the following national cloud deployments.
+// UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a identityUserFlowAttribute object. This API is available in the following national cloud deployments.
 type UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewUserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewUserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a custom identityUserFlowAttribute. This API is supported in the following national cloud deployments.
+// Delete delete a custom identityUserFlowAttribute. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identityuserflowattribute-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get retrieve the properties and relationships of a identityUserFlowAttribute object. This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of a identityUserFlowAttribute object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identityuserflowattribute-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) Get(ctx 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityUserFlowAttributeable), nil
 }
-// Patch update the properties of a custom identityUserFlowAttribute object. This API is supported in the following national cloud deployments.
+// Patch update the properties of a custom identityUserFlowAttribute object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identityuserflowattribute-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) Patch(ct
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityUserFlowAttributeable), nil
 }
-// ToDeleteRequestInformation delete a custom identityUserFlowAttribute. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a custom identityUserFlowAttribute. This API is available in the following national cloud deployments.
 func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) ToDelete
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a identityUserFlowAttribute object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of a identityUserFlowAttribute object. This API is available in the following national cloud deployments.
 func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) ToGetReq
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a custom identityUserFlowAttribute object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of a custom identityUserFlowAttribute object. This API is available in the following national cloud deployments.
 func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityUserFlowAttributeable, requestConfiguration *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

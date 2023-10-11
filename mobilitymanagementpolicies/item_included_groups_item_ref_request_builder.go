@@ -10,7 +10,7 @@ import (
 type ItemIncludedGroupsItemRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemIncludedGroupsItemRefRequestBuilderDeleteQueryParameters delete a group from the list of groups included in a mobile app management policy. This API is supported in the following national cloud deployments.
+// ItemIncludedGroupsItemRefRequestBuilderDeleteQueryParameters delete a group from the list of groups included in a mobile app management policy. This API is available in the following national cloud deployments.
 type ItemIncludedGroupsItemRefRequestBuilderDeleteQueryParameters struct {
     // Delete Uri
     Id *string `uriparametername:"%40id"`
@@ -37,7 +37,7 @@ func NewItemIncludedGroupsItemRefRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewItemIncludedGroupsItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a group from the list of groups included in a mobile app management policy. This API is supported in the following national cloud deployments.
+// Delete delete a group from the list of groups included in a mobile app management policy. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-delete-includedgroups?view=graph-rest-1.0
@@ -56,7 +56,7 @@ func (m *ItemIncludedGroupsItemRefRequestBuilder) Delete(ctx context.Context, re
     }
     return nil
 }
-// ToDeleteRequestInformation delete a group from the list of groups included in a mobile app management policy. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a group from the list of groups included in a mobile app management policy. This API is available in the following national cloud deployments.
 func (m *ItemIncludedGroupsItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemIncludedGroupsItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

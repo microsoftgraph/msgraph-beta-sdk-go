@@ -11,7 +11,7 @@ import (
 type WindowsUpdatesDeploymentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// WindowsUpdatesDeploymentsRequestBuilderGetQueryParameters get a list of deployment objects and their properties. This API is supported in the following national cloud deployments.
+// WindowsUpdatesDeploymentsRequestBuilderGetQueryParameters get a list of deployment objects and their properties. This API is available in the following national cloud deployments.
 type WindowsUpdatesDeploymentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewWindowsUpdatesDeploymentsRequestBuilder(rawUrl string, requestAdapter i2
 func (m *WindowsUpdatesDeploymentsRequestBuilder) Count()(*WindowsUpdatesDeploymentsCountRequestBuilder) {
     return NewWindowsUpdatesDeploymentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of deployment objects and their properties. This API is supported in the following national cloud deployments.
+// Get get a list of deployment objects and their properties. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/adminwindowsupdates-list-deployments?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *WindowsUpdatesDeploymentsRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentCollectionResponseable), nil
 }
-// Post create a new deployment object. This API is supported in the following national cloud deployments.
+// Post create a new deployment object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/adminwindowsupdates-post-deployments?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *WindowsUpdatesDeploymentsRequestBuilder) Post(ctx context.Context, body
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable), nil
 }
-// ToGetRequestInformation get a list of deployment objects and their properties. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of deployment objects and their properties. This API is available in the following national cloud deployments.
 func (m *WindowsUpdatesDeploymentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *WindowsUpdatesDeploymentsRequestBuilder) ToGetRequestInformation(ctx co
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new deployment object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new deployment object. This API is available in the following national cloud deployments.
 func (m *WindowsUpdatesDeploymentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable, requestConfiguration *WindowsUpdatesDeploymentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

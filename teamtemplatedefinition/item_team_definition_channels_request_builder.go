@@ -11,7 +11,7 @@ import (
 type ItemTeamDefinitionChannelsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamDefinitionChannelsRequestBuilderGetQueryParameters retrieve the list of channels in this team. This API is supported in the following national cloud deployments.
+// ItemTeamDefinitionChannelsRequestBuilderGetQueryParameters retrieve the list of channels in this team. This API is available in the following national cloud deployments.
 type ItemTeamDefinitionChannelsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func NewItemTeamDefinitionChannelsRequestBuilder(rawUrl string, requestAdapter i
 func (m *ItemTeamDefinitionChannelsRequestBuilder) Count()(*ItemTeamDefinitionChannelsCountRequestBuilder) {
     return NewItemTeamDefinitionChannelsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the list of channels in this team. This API is supported in the following national cloud deployments.
+// Get retrieve the list of channels in this team. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-list?view=graph-rest-1.0
@@ -104,7 +104,7 @@ func (m *ItemTeamDefinitionChannelsRequestBuilder) Get(ctx context.Context, requ
 func (m *ItemTeamDefinitionChannelsRequestBuilder) GetAllMessages()(*ItemTeamDefinitionChannelsGetAllMessagesRequestBuilder) {
     return NewItemTeamDefinitionChannelsGetAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Post create a new channel in a team, as specified in the request body. When you create a channel, the maximum length of the channel's displayName is 50 characters. This is the name that appears to the user in Microsoft Teams. You can add a maximum of 200 members when you create a private channel. This API is supported in the following national cloud deployments.
+// Post create a new channel in a team, as specified in the request body. When you create a channel, the maximum length of the channel's displayName is 50 characters. This is the name that appears to the user in Microsoft Teams. You can add a maximum of 200 members when you create a private channel. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-post?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *ItemTeamDefinitionChannelsRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable), nil
 }
-// ToGetRequestInformation retrieve the list of channels in this team. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the list of channels in this team. This API is available in the following national cloud deployments.
 func (m *ItemTeamDefinitionChannelsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *ItemTeamDefinitionChannelsRequestBuilder) ToGetRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new channel in a team, as specified in the request body. When you create a channel, the maximum length of the channel's displayName is 50 characters. This is the name that appears to the user in Microsoft Teams. You can add a maximum of 200 members when you create a private channel. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new channel in a team, as specified in the request body. When you create a channel, the maximum length of the channel's displayName is 50 characters. This is the name that appears to the user in Microsoft Teams. You can add a maximum of 200 members when you create a private channel. This API is available in the following national cloud deployments.
 func (m *ItemTeamDefinitionChannelsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, requestConfiguration *ItemTeamDefinitionChannelsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

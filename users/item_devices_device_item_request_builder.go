@@ -41,14 +41,6 @@ type ItemDevicesDeviceItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CheckMemberGroups provides operations to call the checkMemberGroups method.
-func (m *ItemDevicesDeviceItemRequestBuilder) CheckMemberGroups()(*ItemDevicesItemCheckMemberGroupsRequestBuilder) {
-    return NewItemDevicesItemCheckMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// CheckMemberObjects provides operations to call the checkMemberObjects method.
-func (m *ItemDevicesDeviceItemRequestBuilder) CheckMemberObjects()(*ItemDevicesItemCheckMemberObjectsRequestBuilder) {
-    return NewItemDevicesItemCheckMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Commands provides operations to manage the commands property of the microsoft.graph.device entity.
 func (m *ItemDevicesDeviceItemRequestBuilder) Commands()(*ItemDevicesItemCommandsRequestBuilder) {
     return NewItemDevicesItemCommandsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -105,14 +97,6 @@ func (m *ItemDevicesDeviceItemRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable), nil
 }
-// GetMemberGroups provides operations to call the getMemberGroups method.
-func (m *ItemDevicesDeviceItemRequestBuilder) GetMemberGroups()(*ItemDevicesItemGetMemberGroupsRequestBuilder) {
-    return NewItemDevicesItemGetMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// GetMemberObjects provides operations to call the getMemberObjects method.
-func (m *ItemDevicesDeviceItemRequestBuilder) GetMemberObjects()(*ItemDevicesItemGetMemberObjectsRequestBuilder) {
-    return NewItemDevicesItemGetMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // MemberOf provides operations to manage the memberOf property of the microsoft.graph.device entity.
 func (m *ItemDevicesDeviceItemRequestBuilder) MemberOf()(*ItemDevicesItemMemberOfRequestBuilder) {
     return NewItemDevicesItemMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -143,10 +127,6 @@ func (m *ItemDevicesDeviceItemRequestBuilder) RegisteredOwners()(*ItemDevicesIte
 // RegisteredUsers provides operations to manage the registeredUsers property of the microsoft.graph.device entity.
 func (m *ItemDevicesDeviceItemRequestBuilder) RegisteredUsers()(*ItemDevicesItemRegisteredUsersRequestBuilder) {
     return NewItemDevicesItemRegisteredUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// Restore provides operations to call the restore method.
-func (m *ItemDevicesDeviceItemRequestBuilder) Restore()(*ItemDevicesItemRestoreRequestBuilder) {
-    return NewItemDevicesItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property devices for users
 func (m *ItemDevicesDeviceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemDevicesDeviceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

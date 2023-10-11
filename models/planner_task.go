@@ -499,7 +499,7 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetHasDescription gets the hasDescription property value. Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
+// GetHasDescription gets the hasDescription property value. Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
 func (m *PlannerTask) GetHasDescription()(*bool) {
     val, err := m.GetBackingStore().Get("hasDescription")
     if err != nil {
@@ -921,7 +921,7 @@ func (m *PlannerTask) SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f
         panic(err)
     }
 }
-// SetHasDescription sets the hasDescription property value. Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
+// SetHasDescription sets the hasDescription property value. Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
 func (m *PlannerTask) SetHasDescription(value *bool)() {
     err := m.GetBackingStore().Set("hasDescription", value)
     if err != nil {

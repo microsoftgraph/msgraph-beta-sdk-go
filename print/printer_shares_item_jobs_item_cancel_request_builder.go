@@ -30,7 +30,7 @@ func NewPrinterSharesItemJobsItemCancelRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewPrinterSharesItemJobsItemCancelRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions. This API is supported in the following national cloud deployments.
+// Post cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions. This API is available in the following national cloud deployments.
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // [Find more info here]
 // 
@@ -50,7 +50,7 @@ func (m *PrinterSharesItemJobsItemCancelRequestBuilder) Post(ctx context.Context
     }
     return nil
 }
-// ToPostRequestInformation cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions. This API is available in the following national cloud deployments.
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 func (m *PrinterSharesItemJobsItemCancelRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *PrinterSharesItemJobsItemCancelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

@@ -11,7 +11,7 @@ import (
 type ThreatSubmissionEmailThreatsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatSubmissionEmailThreatsRequestBuilderGetQueryParameters get a list of the emailThreatSubmission objects and their properties. This API is supported in the following national cloud deployments.
+// ThreatSubmissionEmailThreatsRequestBuilderGetQueryParameters get a list of the emailThreatSubmission objects and their properties. This API is available in the following national cloud deployments.
 type ThreatSubmissionEmailThreatsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewThreatSubmissionEmailThreatsRequestBuilder(rawUrl string, requestAdapter
 func (m *ThreatSubmissionEmailThreatsRequestBuilder) Count()(*ThreatSubmissionEmailThreatsCountRequestBuilder) {
     return NewThreatSubmissionEmailThreatsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the emailThreatSubmission objects and their properties. This API is supported in the following national cloud deployments.
+// Get get a list of the emailThreatSubmission objects and their properties. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-emailthreatsubmission-list?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ThreatSubmissionEmailThreatsRequestBuilder) Get(ctx context.Context, re
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EmailThreatSubmissionCollectionResponseable), nil
 }
-// Post create a new emailThreatSubmission object. This API is supported in the following national cloud deployments.
+// Post create a new emailThreatSubmission object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-emailthreatsubmission-post-emailthreats?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ThreatSubmissionEmailThreatsRequestBuilder) Post(ctx context.Context, b
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EmailThreatSubmissionable), nil
 }
-// ToGetRequestInformation get a list of the emailThreatSubmission objects and their properties. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of the emailThreatSubmission objects and their properties. This API is available in the following national cloud deployments.
 func (m *ThreatSubmissionEmailThreatsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatSubmissionEmailThreatsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ThreatSubmissionEmailThreatsRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new emailThreatSubmission object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new emailThreatSubmission object. This API is available in the following national cloud deployments.
 func (m *ThreatSubmissionEmailThreatsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EmailThreatSubmissionable, requestConfiguration *ThreatSubmissionEmailThreatsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

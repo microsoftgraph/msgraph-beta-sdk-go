@@ -30,7 +30,7 @@ func NewWindowsUpdatesDeploymentAudiencesItemExclusionsItemMicrosoftGraphWindows
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsUpdatesDeploymentAudiencesItemExclusionsItemMicrosoftGraphWindowsUpdatesAddMembersByIdRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members. This API is supported in the following national cloud deployments.
+// Post add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *WindowsUpdatesDeploymentAudiencesItemExclusionsItemMicrosoftGraphWindow
     }
     return nil
 }
-// ToPostRequestInformation add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members. This API is available in the following national cloud deployments.
 func (m *WindowsUpdatesDeploymentAudiencesItemExclusionsItemMicrosoftGraphWindowsUpdatesAddMembersByIdRequestBuilder) ToPostRequestInformation(ctx context.Context, body WindowsUpdatesDeploymentAudiencesItemExclusionsItemMicrosoftGraphWindowsUpdatesAddMembersByIdAddMembersByIdPostRequestBodyable, requestConfiguration *WindowsUpdatesDeploymentAudiencesItemExclusionsItemMicrosoftGraphWindowsUpdatesAddMembersByIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

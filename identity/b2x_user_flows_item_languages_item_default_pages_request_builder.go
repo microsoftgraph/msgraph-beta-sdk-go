@@ -11,7 +11,7 @@ import (
 type B2xUserFlowsItemLanguagesItemDefaultPagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// B2xUserFlowsItemLanguagesItemDefaultPagesRequestBuilderGetQueryParameters get the userFlowLanguagePage resources from the defaultPages navigation property. These contain the values shown to the user in a default user journey of a user flow. This API is supported in the following national cloud deployments.
+// B2xUserFlowsItemLanguagesItemDefaultPagesRequestBuilderGetQueryParameters get the userFlowLanguagePage resources from the defaultPages navigation property. These contain the values shown to the user in a default user journey of a user flow. This API is available in the following national cloud deployments.
 type B2xUserFlowsItemLanguagesItemDefaultPagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewB2xUserFlowsItemLanguagesItemDefaultPagesRequestBuilder(rawUrl string, r
 func (m *B2xUserFlowsItemLanguagesItemDefaultPagesRequestBuilder) Count()(*B2xUserFlowsItemLanguagesItemDefaultPagesCountRequestBuilder) {
     return NewB2xUserFlowsItemLanguagesItemDefaultPagesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the userFlowLanguagePage resources from the defaultPages navigation property. These contain the values shown to the user in a default user journey of a user flow. This API is supported in the following national cloud deployments.
+// Get get the userFlowLanguagePage resources from the defaultPages navigation property. These contain the values shown to the user in a default user journey of a user flow. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/userflowlanguageconfiguration-list-defaultpages?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *B2xUserFlowsItemLanguagesItemDefaultPagesRequestBuilder) Post(ctx conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserFlowLanguagePageable), nil
 }
-// ToGetRequestInformation get the userFlowLanguagePage resources from the defaultPages navigation property. These contain the values shown to the user in a default user journey of a user flow. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the userFlowLanguagePage resources from the defaultPages navigation property. These contain the values shown to the user in a default user journey of a user flow. This API is available in the following national cloud deployments.
 func (m *B2xUserFlowsItemLanguagesItemDefaultPagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2xUserFlowsItemLanguagesItemDefaultPagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

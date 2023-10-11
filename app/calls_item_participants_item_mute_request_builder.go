@@ -31,7 +31,7 @@ func NewCallsItemParticipantsItemMuteRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewCallsItemParticipantsItemMuteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post mute a specific participant in the call. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more information about how to handle mute operations, see muteParticipantOperation. This API is supported in the following national cloud deployments.
+// Post mute a specific participant in the call. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more information about how to handle mute operations, see muteParticipantOperation. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/participant-mute?view=graph-rest-1.0
@@ -53,7 +53,7 @@ func (m *CallsItemParticipantsItemMuteRequestBuilder) Post(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MuteParticipantOperationable), nil
 }
-// ToPostRequestInformation mute a specific participant in the call. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more information about how to handle mute operations, see muteParticipantOperation. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation mute a specific participant in the call. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more information about how to handle mute operations, see muteParticipantOperation. This API is available in the following national cloud deployments.
 func (m *CallsItemParticipantsItemMuteRequestBuilder) ToPostRequestInformation(ctx context.Context, body CallsItemParticipantsItemMutePostRequestBodyable, requestConfiguration *CallsItemParticipantsItemMuteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

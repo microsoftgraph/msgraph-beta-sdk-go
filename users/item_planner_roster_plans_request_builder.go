@@ -11,7 +11,7 @@ import (
 type ItemPlannerRosterPlansRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemPlannerRosterPlansRequestBuilderGetQueryParameters get the list of plannerPlans that are contained by the plannerRosters of which the user is a member. This API is supported in the following national cloud deployments.
+// ItemPlannerRosterPlansRequestBuilderGetQueryParameters get the list of plannerPlans that are contained by the plannerRosters of which the user is a member. This API is available in the following national cloud deployments.
 type ItemPlannerRosterPlansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewItemPlannerRosterPlansRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ItemPlannerRosterPlansRequestBuilder) Count()(*ItemPlannerRosterPlansCountRequestBuilder) {
     return NewItemPlannerRosterPlansCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of plannerPlans that are contained by the plannerRosters of which the user is a member. This API is supported in the following national cloud deployments.
+// Get get the list of plannerPlans that are contained by the plannerRosters of which the user is a member. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/planneruser-list-rosterplans?view=graph-rest-1.0
@@ -89,7 +89,7 @@ func (m *ItemPlannerRosterPlansRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanCollectionResponseable), nil
 }
-// ToGetRequestInformation get the list of plannerPlans that are contained by the plannerRosters of which the user is a member. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the list of plannerPlans that are contained by the plannerRosters of which the user is a member. This API is available in the following national cloud deployments.
 func (m *ItemPlannerRosterPlansRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerRosterPlansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

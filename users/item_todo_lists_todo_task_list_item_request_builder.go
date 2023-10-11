@@ -18,7 +18,7 @@ type ItemTodoListsTodoTaskListItemRequestBuilderDeleteRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTodoListsTodoTaskListItemRequestBuilderGetQueryParameters read the properties and relationships of a todoTaskList object. This API is supported in the following national cloud deployments.
+// ItemTodoListsTodoTaskListItemRequestBuilderGetQueryParameters read the properties and relationships of a todoTaskList object. This API is available in the following national cloud deployments.
 type ItemTodoListsTodoTaskListItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemTodoListsTodoTaskListItemRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewItemTodoListsTodoTaskListItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a todoTaskList object. This API is supported in the following national cloud deployments.
+// Delete deletes a todoTaskList object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/todotasklist-delete?view=graph-rest-1.0
@@ -77,7 +77,7 @@ func (m *ItemTodoListsTodoTaskListItemRequestBuilder) Delete(ctx context.Context
 func (m *ItemTodoListsTodoTaskListItemRequestBuilder) Extensions()(*ItemTodoListsItemExtensionsRequestBuilder) {
     return NewItemTodoListsItemExtensionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a todoTaskList object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a todoTaskList object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/todotasklist-get?view=graph-rest-1.0
@@ -99,7 +99,7 @@ func (m *ItemTodoListsTodoTaskListItemRequestBuilder) Get(ctx context.Context, r
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TodoTaskListable), nil
 }
-// Patch update the properties of a todoTaskList object. This API is supported in the following national cloud deployments.
+// Patch update the properties of a todoTaskList object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/todotasklist-update?view=graph-rest-1.0
@@ -125,7 +125,7 @@ func (m *ItemTodoListsTodoTaskListItemRequestBuilder) Patch(ctx context.Context,
 func (m *ItemTodoListsTodoTaskListItemRequestBuilder) Tasks()(*ItemTodoListsItemTasksRequestBuilder) {
     return NewItemTodoListsItemTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation deletes a todoTaskList object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation deletes a todoTaskList object. This API is available in the following national cloud deployments.
 func (m *ItemTodoListsTodoTaskListItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsTodoTaskListItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -137,7 +137,7 @@ func (m *ItemTodoListsTodoTaskListItemRequestBuilder) ToDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a todoTaskList object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a todoTaskList object. This API is available in the following national cloud deployments.
 func (m *ItemTodoListsTodoTaskListItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsTodoTaskListItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -153,7 +153,7 @@ func (m *ItemTodoListsTodoTaskListItemRequestBuilder) ToGetRequestInformation(ct
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a todoTaskList object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of a todoTaskList object. This API is available in the following national cloud deployments.
 func (m *ItemTodoListsTodoTaskListItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TodoTaskListable, requestConfiguration *ItemTodoListsTodoTaskListItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

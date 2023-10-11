@@ -18,7 +18,7 @@ type CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilderDeleteRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilderGetQueryParameters read the properties and relationships of an ediscoveryCase object. This API is supported in the following national cloud deployments.
+// CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilderGetQueryParameters read the properties and relationships of an ediscoveryCase object. This API is available in the following national cloud deployments.
 type CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,7 @@ func NewCasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder(rawUrl string, requ
 func (m *CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder) Custodians()(*CasesEdiscoveryCasesItemCustodiansRequestBuilder) {
     return NewCasesEdiscoveryCasesItemCustodiansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete delete an ediscoveryCase object. This API is supported in the following national cloud deployments.
+// Delete delete an ediscoveryCase object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-casesroot-delete-ediscoverycases?view=graph-rest-1.0
@@ -77,7 +77,7 @@ func (m *CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder) Delete(ctx contex
     }
     return nil
 }
-// Get read the properties and relationships of an ediscoveryCase object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of an ediscoveryCase object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycase-get?view=graph-rest-1.0
@@ -119,7 +119,7 @@ func (m *CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder) NoncustodialDataS
 func (m *CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder) Operations()(*CasesEdiscoveryCasesItemOperationsRequestBuilder) {
     return NewCasesEdiscoveryCasesItemOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of an ediscoveryCase object. This API is supported in the following national cloud deployments.
+// Patch update the properties of an ediscoveryCase object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycase-update?view=graph-rest-1.0
@@ -157,7 +157,7 @@ func (m *CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder) Settings()(*Cases
 func (m *CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder) Tags()(*CasesEdiscoveryCasesItemTagsRequestBuilder) {
     return NewCasesEdiscoveryCasesItemTagsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete an ediscoveryCase object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete an ediscoveryCase object. This API is available in the following national cloud deployments.
 func (m *CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -169,7 +169,7 @@ func (m *CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder) ToDeleteRequestIn
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an ediscoveryCase object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of an ediscoveryCase object. This API is available in the following national cloud deployments.
 func (m *CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -185,7 +185,7 @@ func (m *CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder) ToGetRequestInfor
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an ediscoveryCase object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of an ediscoveryCase object. This API is available in the following national cloud deployments.
 func (m *CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryCaseable, requestConfiguration *CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

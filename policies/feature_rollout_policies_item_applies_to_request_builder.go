@@ -74,10 +74,6 @@ func NewFeatureRolloutPoliciesItemAppliesToRequestBuilder(rawUrl string, request
 func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) Count()(*FeatureRolloutPoliciesItemAppliesToCountRequestBuilder) {
     return NewFeatureRolloutPoliciesItemAppliesToCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delta provides operations to call the delta method.
-func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) Delta()(*FeatureRolloutPoliciesItemAppliesToDeltaRequestBuilder) {
-    return NewFeatureRolloutPoliciesItemAppliesToDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get nullable. Specifies a list of directoryObjects that feature is enabled for.
 func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) Get(ctx context.Context, requestConfiguration *FeatureRolloutPoliciesItemAppliesToRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -97,15 +93,7 @@ func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) Get(ctx context.Cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
-// GetByIds provides operations to call the getByIds method.
-func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) GetByIds()(*FeatureRolloutPoliciesItemAppliesToGetByIdsRequestBuilder) {
-    return NewFeatureRolloutPoliciesItemAppliesToGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
-func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) GetUserOwnedObjects()(*FeatureRolloutPoliciesItemAppliesToGetUserOwnedObjectsRequestBuilder) {
-    return NewFeatureRolloutPoliciesItemAppliesToGetUserOwnedObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// Post add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied. This API is supported in the following national cloud deployments.
+// Post add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/featurerolloutpolicy-post-appliesto?view=graph-rest-1.0
@@ -147,7 +135,7 @@ func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) ToGetRequestInformat
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied. This API is available in the following national cloud deployments.
 func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, requestConfiguration *FeatureRolloutPoliciesItemAppliesToRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -163,10 +151,6 @@ func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) ToPostRequestInforma
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// ValidateProperties provides operations to call the validateProperties method.
-func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) ValidateProperties()(*FeatureRolloutPoliciesItemAppliesToValidatePropertiesRequestBuilder) {
-    return NewFeatureRolloutPoliciesItemAppliesToValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) WithUrl(rawUrl string)(*FeatureRolloutPoliciesItemAppliesToRequestBuilder) {

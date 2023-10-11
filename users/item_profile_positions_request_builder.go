@@ -11,7 +11,7 @@ import (
 type ItemProfilePositionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemProfilePositionsRequestBuilderGetQueryParameters retrieve a list of workPosition objects from a user's profile. This API is supported in the following national cloud deployments.
+// ItemProfilePositionsRequestBuilderGetQueryParameters retrieve a list of workPosition objects from a user's profile. This API is available in the following national cloud deployments.
 type ItemProfilePositionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemProfilePositionsRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *ItemProfilePositionsRequestBuilder) Count()(*ItemProfilePositionsCountRequestBuilder) {
     return NewItemProfilePositionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of workPosition objects from a user's profile. This API is supported in the following national cloud deployments.
+// Get retrieve a list of workPosition objects from a user's profile. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/profile-list-positions?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemProfilePositionsRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkPositionCollectionResponseable), nil
 }
-// Post use this API to create a new workPosition in a user's profile. This API is supported in the following national cloud deployments.
+// Post use this API to create a new workPosition in a user's profile. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/profile-post-positions?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemProfilePositionsRequestBuilder) Post(ctx context.Context, body ie23
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkPositionable), nil
 }
-// ToGetRequestInformation retrieve a list of workPosition objects from a user's profile. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of workPosition objects from a user's profile. This API is available in the following national cloud deployments.
 func (m *ItemProfilePositionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePositionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemProfilePositionsRequestBuilder) ToGetRequestInformation(ctx context
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation use this API to create a new workPosition in a user's profile. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation use this API to create a new workPosition in a user's profile. This API is available in the following national cloud deployments.
 func (m *ItemProfilePositionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkPositionable, requestConfiguration *ItemProfilePositionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

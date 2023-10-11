@@ -18,7 +18,7 @@ type RoleManagementPoliciesItemRulesUnifiedRoleManagementPolicyRuleItemRequestBu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RoleManagementPoliciesItemRulesUnifiedRoleManagementPolicyRuleItemRequestBuilderGetQueryParameters retrieve a rule defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: This API is supported in the following national cloud deployments.
+// RoleManagementPoliciesItemRulesUnifiedRoleManagementPolicyRuleItemRequestBuilderGetQueryParameters retrieve a rule defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: This API is available in the following national cloud deployments.
 type RoleManagementPoliciesItemRulesUnifiedRoleManagementPolicyRuleItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *RoleManagementPoliciesItemRulesUnifiedRoleManagementPolicyRuleItemReque
     }
     return nil
 }
-// Get retrieve a rule defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: This API is supported in the following national cloud deployments.
+// Get retrieve a rule defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/unifiedrolemanagementpolicyrule-get?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *RoleManagementPoliciesItemRulesUnifiedRoleManagementPolicyRuleItemReque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementPolicyRuleable), nil
 }
-// Patch update a rule defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Azure AD roles and examples of updating rules, see the following articles:+ Overview of rules for Azure AD roles in PIM APIs in Microsoft Graph+ Use PIM APIs in Microsoft Graph to update Azure AD rules This API is supported in the following national cloud deployments.
+// Patch update a rule defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Azure AD roles and examples of updating rules, see the following articles:+ Overview of rules for Azure AD roles in PIM APIs in Microsoft Graph+ Use PIM APIs in Microsoft Graph to update Azure AD rules This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/unifiedrolemanagementpolicyrule-update?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *RoleManagementPoliciesItemRulesUnifiedRoleManagementPolicyRuleItemReque
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve a rule defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a rule defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: This API is available in the following national cloud deployments.
 func (m *RoleManagementPoliciesItemRulesUnifiedRoleManagementPolicyRuleItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleManagementPoliciesItemRulesUnifiedRoleManagementPolicyRuleItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *RoleManagementPoliciesItemRulesUnifiedRoleManagementPolicyRuleItemReque
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update a rule defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Azure AD roles and examples of updating rules, see the following articles:+ Overview of rules for Azure AD roles in PIM APIs in Microsoft Graph+ Use PIM APIs in Microsoft Graph to update Azure AD rules This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update a rule defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Azure AD roles and examples of updating rules, see the following articles:+ Overview of rules for Azure AD roles in PIM APIs in Microsoft Graph+ Use PIM APIs in Microsoft Graph to update Azure AD rules This API is available in the following national cloud deployments.
 func (m *RoleManagementPoliciesItemRulesUnifiedRoleManagementPolicyRuleItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementPolicyRuleable, requestConfiguration *RoleManagementPoliciesItemRulesUnifiedRoleManagementPolicyRuleItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

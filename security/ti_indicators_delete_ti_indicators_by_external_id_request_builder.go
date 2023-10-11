@@ -30,7 +30,7 @@ func NewTiIndicatorsDeleteTiIndicatorsByExternalIdRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewTiIndicatorsDeleteTiIndicatorsByExternalIdRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post delete multiple threat intelligence (TI) indicators in one request instead of multiple requests, when the request contains external IDs instead of IDs. This API is supported in the following national cloud deployments.
+// Post delete multiple threat intelligence (TI) indicators in one request instead of multiple requests, when the request contains external IDs instead of IDs. This API is available in the following national cloud deployments.
 // Deprecated: This method is obsolete. Use PostAsDeleteTiIndicatorsByExternalIdPostResponse instead.
 // [Find more info here]
 // 
@@ -53,7 +53,7 @@ func (m *TiIndicatorsDeleteTiIndicatorsByExternalIdRequestBuilder) Post(ctx cont
     }
     return res.(TiIndicatorsDeleteTiIndicatorsByExternalIdResponseable), nil
 }
-// PostAsDeleteTiIndicatorsByExternalIdPostResponse delete multiple threat intelligence (TI) indicators in one request instead of multiple requests, when the request contains external IDs instead of IDs. This API is supported in the following national cloud deployments.
+// PostAsDeleteTiIndicatorsByExternalIdPostResponse delete multiple threat intelligence (TI) indicators in one request instead of multiple requests, when the request contains external IDs instead of IDs. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-deletetiindicatorsbyexternalid?view=graph-rest-1.0
@@ -75,7 +75,7 @@ func (m *TiIndicatorsDeleteTiIndicatorsByExternalIdRequestBuilder) PostAsDeleteT
     }
     return res.(TiIndicatorsDeleteTiIndicatorsByExternalIdPostResponseable), nil
 }
-// ToPostRequestInformation delete multiple threat intelligence (TI) indicators in one request instead of multiple requests, when the request contains external IDs instead of IDs. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation delete multiple threat intelligence (TI) indicators in one request instead of multiple requests, when the request contains external IDs instead of IDs. This API is available in the following national cloud deployments.
 func (m *TiIndicatorsDeleteTiIndicatorsByExternalIdRequestBuilder) ToPostRequestInformation(ctx context.Context, body TiIndicatorsDeleteTiIndicatorsByExternalIdPostRequestBodyable, requestConfiguration *TiIndicatorsDeleteTiIndicatorsByExternalIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

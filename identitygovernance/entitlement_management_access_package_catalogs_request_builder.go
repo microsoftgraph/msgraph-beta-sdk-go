@@ -11,7 +11,7 @@ import (
 type EntitlementManagementAccessPackageCatalogsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAccessPackageCatalogsRequestBuilderGetQueryParameters retrieve a list of accessPackageCatalog objects. This API is supported in the following national cloud deployments.
+// EntitlementManagementAccessPackageCatalogsRequestBuilderGetQueryParameters retrieve a list of accessPackageCatalog objects. This API is available in the following national cloud deployments.
 type EntitlementManagementAccessPackageCatalogsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,7 +75,7 @@ func NewEntitlementManagementAccessPackageCatalogsRequestBuilder(rawUrl string, 
 func (m *EntitlementManagementAccessPackageCatalogsRequestBuilder) Count()(*EntitlementManagementAccessPackageCatalogsCountRequestBuilder) {
     return NewEntitlementManagementAccessPackageCatalogsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of accessPackageCatalog objects. This API is supported in the following national cloud deployments.
+// Get retrieve a list of accessPackageCatalog objects. This API is available in the following national cloud deployments.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // [Find more info here]
 // 
@@ -98,7 +98,7 @@ func (m *EntitlementManagementAccessPackageCatalogsRequestBuilder) Get(ctx conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCatalogCollectionResponseable), nil
 }
-// Post create a new accessPackageCatalog object. This API is supported in the following national cloud deployments.
+// Post create a new accessPackageCatalog object. This API is available in the following national cloud deployments.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // [Find more info here]
 // 
@@ -125,7 +125,7 @@ func (m *EntitlementManagementAccessPackageCatalogsRequestBuilder) Post(ctx cont
 func (m *EntitlementManagementAccessPackageCatalogsRequestBuilder) Search()(*EntitlementManagementAccessPackageCatalogsSearchRequestBuilder) {
     return NewEntitlementManagementAccessPackageCatalogsSearchRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation retrieve a list of accessPackageCatalog objects. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of accessPackageCatalog objects. This API is available in the following national cloud deployments.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 func (m *EntitlementManagementAccessPackageCatalogsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -142,7 +142,7 @@ func (m *EntitlementManagementAccessPackageCatalogsRequestBuilder) ToGetRequestI
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new accessPackageCatalog object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new accessPackageCatalog object. This API is available in the following national cloud deployments.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 func (m *EntitlementManagementAccessPackageCatalogsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCatalogable, requestConfiguration *EntitlementManagementAccessPackageCatalogsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

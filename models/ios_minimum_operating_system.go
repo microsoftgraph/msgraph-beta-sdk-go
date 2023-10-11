@@ -22,7 +22,7 @@ func NewIosMinimumOperatingSystem()(*IosMinimumOperatingSystem) {
 func CreateIosMinimumOperatingSystemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosMinimumOperatingSystem(), nil
 }
-// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IosMinimumOperatingSystem) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -34,7 +34,7 @@ func (m *IosMinimumOperatingSystem) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetBackingStore gets the backingStore property value. Stores model information.
+// GetBackingStore gets the BackingStore property value. Stores model information.
 func (m *IosMinimumOperatingSystem) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
@@ -118,6 +118,16 @@ func (m *IosMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetV160(val)
+        }
+        return nil
+    }
+    res["v17_0"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetV170(val)
         }
         return nil
     }
@@ -231,6 +241,17 @@ func (m *IosMinimumOperatingSystem) GetV160()(*bool) {
     }
     return nil
 }
+// GetV170 gets the v17_0 property value. When TRUE, only Version 17.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *IosMinimumOperatingSystem) GetV170()(*bool) {
+    val, err := m.GetBackingStore().Get("v17_0")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetV80 gets the v8_0 property value. When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *IosMinimumOperatingSystem) GetV80()(*bool) {
     val, err := m.GetBackingStore().Get("v8_0")
@@ -304,6 +325,12 @@ func (m *IosMinimumOperatingSystem) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err := writer.WriteBoolValue("v17_0", m.GetV170())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteBoolValue("v8_0", m.GetV80())
         if err != nil {
             return err
@@ -323,14 +350,14 @@ func (m *IosMinimumOperatingSystem) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IosMinimumOperatingSystem) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBackingStore sets the backingStore property value. Stores model information.
+// SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *IosMinimumOperatingSystem) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
@@ -390,6 +417,13 @@ func (m *IosMinimumOperatingSystem) SetV160(value *bool)() {
         panic(err)
     }
 }
+// SetV170 sets the v17_0 property value. When TRUE, only Version 17.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *IosMinimumOperatingSystem) SetV170(value *bool)() {
+    err := m.GetBackingStore().Set("v17_0", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetV80 sets the v8_0 property value. When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *IosMinimumOperatingSystem) SetV80(value *bool)() {
     err := m.GetBackingStore().Set("v8_0", value)
@@ -418,6 +452,7 @@ type IosMinimumOperatingSystemable interface {
     GetV140()(*bool)
     GetV150()(*bool)
     GetV160()(*bool)
+    GetV170()(*bool)
     GetV80()(*bool)
     GetV90()(*bool)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
@@ -429,6 +464,7 @@ type IosMinimumOperatingSystemable interface {
     SetV140(value *bool)()
     SetV150(value *bool)()
     SetV160(value *bool)()
+    SetV170(value *bool)()
     SetV80(value *bool)()
     SetV90(value *bool)()
 }

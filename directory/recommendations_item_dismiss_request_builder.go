@@ -31,7 +31,7 @@ func NewRecommendationsItemDismissRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewRecommendationsItemDismissRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post dismiss a recommendation object that you consider to be inapplicable to your tenant and update its status to dismissed . This API is supported in the following national cloud deployments.
+// Post dismiss a recommendation object that you consider to be inapplicable to your tenant and update its status to dismissed . This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/recommendation-dismiss?view=graph-rest-1.0
@@ -53,7 +53,7 @@ func (m *RecommendationsItemDismissRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Recommendationable), nil
 }
-// ToPostRequestInformation dismiss a recommendation object that you consider to be inapplicable to your tenant and update its status to dismissed . This API is supported in the following national cloud deployments.
+// ToPostRequestInformation dismiss a recommendation object that you consider to be inapplicable to your tenant and update its status to dismissed . This API is available in the following national cloud deployments.
 func (m *RecommendationsItemDismissRequestBuilder) ToPostRequestInformation(ctx context.Context, body RecommendationsItemDismissPostRequestBodyable, requestConfiguration *RecommendationsItemDismissRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

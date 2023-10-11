@@ -98,7 +98,7 @@ func (m *Shift) GetIsStagedForDeletion()(*bool) {
     }
     return nil
 }
-// GetSchedulingGroupId gets the schedulingGroupId property value. The schedulingGroupId property
+// GetSchedulingGroupId gets the schedulingGroupId property value. ID of the scheduling group the shift is part of. Required.
 func (m *Shift) GetSchedulingGroupId()(*string) {
     val, err := m.GetBackingStore().Get("schedulingGroupId")
     if err != nil {
@@ -109,7 +109,7 @@ func (m *Shift) GetSchedulingGroupId()(*string) {
     }
     return nil
 }
-// GetSharedShift gets the sharedShift property value. The sharedShift property
+// GetSharedShift gets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Required.
 func (m *Shift) GetSharedShift()(ShiftItemable) {
     val, err := m.GetBackingStore().Get("sharedShift")
     if err != nil {
@@ -120,7 +120,7 @@ func (m *Shift) GetSharedShift()(ShiftItemable) {
     }
     return nil
 }
-// GetUserId gets the userId property value. The userId property
+// GetUserId gets the userId property value. ID of the user assigned to the shift. Required.
 func (m *Shift) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -183,21 +183,21 @@ func (m *Shift) SetIsStagedForDeletion(value *bool)() {
         panic(err)
     }
 }
-// SetSchedulingGroupId sets the schedulingGroupId property value. The schedulingGroupId property
+// SetSchedulingGroupId sets the schedulingGroupId property value. ID of the scheduling group the shift is part of. Required.
 func (m *Shift) SetSchedulingGroupId(value *string)() {
     err := m.GetBackingStore().Set("schedulingGroupId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSharedShift sets the sharedShift property value. The sharedShift property
+// SetSharedShift sets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Required.
 func (m *Shift) SetSharedShift(value ShiftItemable)() {
     err := m.GetBackingStore().Set("sharedShift", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. The userId property
+// SetUserId sets the userId property value. ID of the user assigned to the shift. Required.
 func (m *Shift) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {

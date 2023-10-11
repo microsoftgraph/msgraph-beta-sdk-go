@@ -37,7 +37,7 @@ func NewOnlineMeetingsItemRecordingRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewOnlineMeetingsItemRecordingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the content stream of the recording of a Teams live event. Read-only.
+// Get get recording for the navigation property onlineMeetings from app
 func (m *OnlineMeetingsItemRecordingRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemRecordingRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -56,7 +56,7 @@ func (m *OnlineMeetingsItemRecordingRequestBuilder) Get(ctx context.Context, req
     }
     return res.([]byte), nil
 }
-// Put the content stream of the recording of a Teams live event. Read-only.
+// Put update recording for the navigation property onlineMeetings in app
 func (m *OnlineMeetingsItemRecordingRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *OnlineMeetingsItemRecordingRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -75,7 +75,7 @@ func (m *OnlineMeetingsItemRecordingRequestBuilder) Put(ctx context.Context, bod
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation the content stream of the recording of a Teams live event. Read-only.
+// ToGetRequestInformation get recording for the navigation property onlineMeetings from app
 func (m *OnlineMeetingsItemRecordingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemRecordingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -87,7 +87,7 @@ func (m *OnlineMeetingsItemRecordingRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation the content stream of the recording of a Teams live event. Read-only.
+// ToPutRequestInformation update recording for the navigation property onlineMeetings in app
 func (m *OnlineMeetingsItemRecordingRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *OnlineMeetingsItemRecordingRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

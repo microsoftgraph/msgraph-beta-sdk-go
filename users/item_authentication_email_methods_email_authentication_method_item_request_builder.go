@@ -18,7 +18,7 @@ type ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderDe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderGetQueryParameters retrieve a user's single email Authentication Method object. This API is supported in the following national cloud deployments.
+// ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderGetQueryParameters retrieve a user's single email Authentication Method object. This API is available in the following national cloud deployments.
 type ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a user's email Authentication Method object. This API is supported in the following national cloud deployments.
+// Delete deletes a user's email Authentication Method object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/emailauthenticationmethod-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuild
     }
     return nil
 }
-// Get retrieve a user's single email Authentication Method object. This API is supported in the following national cloud deployments.
+// Get retrieve a user's single email Authentication Method object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/emailauthenticationmethod-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuild
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailAuthenticationMethodable), nil
 }
-// Patch update a user's email address associated with an email Authentication Method object. This API is supported in the following national cloud deployments.
+// Patch update a user's email address associated with an email Authentication Method object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/emailauthenticationmethod-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuild
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailAuthenticationMethodable), nil
 }
-// ToDeleteRequestInformation deletes a user's email Authentication Method object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation deletes a user's email Authentication Method object. This API is available in the following national cloud deployments.
 func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuild
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve a user's single email Authentication Method object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a user's single email Authentication Method object. This API is available in the following national cloud deployments.
 func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuild
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update a user's email address associated with an email Authentication Method object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update a user's email address associated with an email Authentication Method object. This API is available in the following national cloud deployments.
 func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailAuthenticationMethodable, requestConfiguration *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

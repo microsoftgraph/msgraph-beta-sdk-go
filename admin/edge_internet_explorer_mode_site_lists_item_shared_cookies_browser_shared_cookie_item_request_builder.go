@@ -18,7 +18,7 @@ type EdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieItemRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieItemRequestBuilderGetQueryParameters get a session cookie that can be shared between a Microsoft Edge process and an Internet Explorer process, while using Internet Explorer mode. This API is supported in the following national cloud deployments.
+// EdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieItemRequestBuilderGetQueryParameters get a session cookie that can be shared between a Microsoft Edge process and an Internet Explorer process, while using Internet Explorer mode. This API is available in the following national cloud deployments.
 type EdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewEdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieIte
     urlParams["request-raw-url"] = rawUrl
     return NewEdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a browserSharedCookie from a browserSiteList. This API is supported in the following national cloud deployments.
+// Delete delete a browserSharedCookie from a browserSiteList. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/browsersitelist-delete-sharedcookies?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieIt
     }
     return nil
 }
-// Get get a session cookie that can be shared between a Microsoft Edge process and an Internet Explorer process, while using Internet Explorer mode. This API is supported in the following national cloud deployments.
+// Get get a session cookie that can be shared between a Microsoft Edge process and an Internet Explorer process, while using Internet Explorer mode. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/browsersharedcookie-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieIt
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowserSharedCookieable), nil
 }
-// Patch update the properties of a browserSharedCookie object. This API is supported in the following national cloud deployments.
+// Patch update the properties of a browserSharedCookie object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/browsersharedcookie-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieIt
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowserSharedCookieable), nil
 }
-// ToDeleteRequestInformation delete a browserSharedCookie from a browserSiteList. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a browserSharedCookie from a browserSiteList. This API is available in the following national cloud deployments.
 func (m *EdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieIt
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get a session cookie that can be shared between a Microsoft Edge process and an Internet Explorer process, while using Internet Explorer mode. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a session cookie that can be shared between a Microsoft Edge process and an Internet Explorer process, while using Internet Explorer mode. This API is available in the following national cloud deployments.
 func (m *EdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieIt
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a browserSharedCookie object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of a browserSharedCookie object. This API is available in the following national cloud deployments.
 func (m *EdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowserSharedCookieable, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type EntitlementManagementAccessPackageAssignmentApprovalsItemStepsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAccessPackageAssignmentApprovalsItemStepsRequestBuilderGetQueryParameters list the approvalStep objects associated with an approval. This API request is made by an approver in the following scenarios: This API is supported in the following national cloud deployments.
+// EntitlementManagementAccessPackageAssignmentApprovalsItemStepsRequestBuilderGetQueryParameters list the approvalStep objects associated with an approval. This API request is made by an approver in the following scenarios: This API is available in the following national cloud deployments.
 type EntitlementManagementAccessPackageAssignmentApprovalsItemStepsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewEntitlementManagementAccessPackageAssignmentApprovalsItemStepsRequestBui
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsItemStepsRequestBuilder) Count()(*EntitlementManagementAccessPackageAssignmentApprovalsItemStepsCountRequestBuilder) {
     return NewEntitlementManagementAccessPackageAssignmentApprovalsItemStepsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list the approvalStep objects associated with an approval. This API request is made by an approver in the following scenarios: This API is supported in the following national cloud deployments.
+// Get list the approvalStep objects associated with an approval. This API request is made by an approver in the following scenarios: This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/approval-list-steps?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsItemStepsRequestBu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable), nil
 }
-// ToGetRequestInformation list the approvalStep objects associated with an approval. This API request is made by an approver in the following scenarios: This API is supported in the following national cloud deployments.
+// ToGetRequestInformation list the approvalStep objects associated with an approval. This API request is made by an approver in the following scenarios: This API is available in the following national cloud deployments.
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsItemStepsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentApprovalsItemStepsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

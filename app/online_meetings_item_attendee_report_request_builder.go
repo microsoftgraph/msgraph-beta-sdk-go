@@ -37,7 +37,7 @@ func NewOnlineMeetingsItemAttendeeReportRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewOnlineMeetingsItemAttendeeReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the content stream of the attendee report of a Teams live event. Read-only.
+// Get get attendeeReport for the navigation property onlineMeetings from app
 func (m *OnlineMeetingsItemAttendeeReportRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemAttendeeReportRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -56,7 +56,7 @@ func (m *OnlineMeetingsItemAttendeeReportRequestBuilder) Get(ctx context.Context
     }
     return res.([]byte), nil
 }
-// Put the content stream of the attendee report of a Teams live event. Read-only.
+// Put update attendeeReport for the navigation property onlineMeetings in app
 func (m *OnlineMeetingsItemAttendeeReportRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *OnlineMeetingsItemAttendeeReportRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -75,7 +75,7 @@ func (m *OnlineMeetingsItemAttendeeReportRequestBuilder) Put(ctx context.Context
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation the content stream of the attendee report of a Teams live event. Read-only.
+// ToGetRequestInformation get attendeeReport for the navigation property onlineMeetings from app
 func (m *OnlineMeetingsItemAttendeeReportRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemAttendeeReportRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -87,7 +87,7 @@ func (m *OnlineMeetingsItemAttendeeReportRequestBuilder) ToGetRequestInformation
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation the content stream of the attendee report of a Teams live event. Read-only.
+// ToPutRequestInformation update attendeeReport for the navigation property onlineMeetings in app
 func (m *OnlineMeetingsItemAttendeeReportRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *OnlineMeetingsItemAttendeeReportRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

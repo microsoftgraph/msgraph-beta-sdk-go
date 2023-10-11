@@ -18,7 +18,7 @@ type LabelsCitationsCitationTemplateItemRequestBuilderDeleteRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LabelsCitationsCitationTemplateItemRequestBuilderGetQueryParameters read the properties and relationships of a citationTemplate object. This API is supported in the following national cloud deployments.
+// LabelsCitationsCitationTemplateItemRequestBuilderGetQueryParameters read the properties and relationships of a citationTemplate object. This API is available in the following national cloud deployments.
 type LabelsCitationsCitationTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewLabelsCitationsCitationTemplateItemRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewLabelsCitationsCitationTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a citationTemplate object. This API is supported in the following national cloud deployments.
+// Delete delete a citationTemplate object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-delete-citations?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *LabelsCitationsCitationTemplateItemRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// Get read the properties and relationships of a citationTemplate object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a citationTemplate object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-citationtemplate-get?view=graph-rest-1.0
@@ -114,7 +114,7 @@ func (m *LabelsCitationsCitationTemplateItemRequestBuilder) Patch(ctx context.Co
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CitationTemplateable), nil
 }
-// ToDeleteRequestInformation delete a citationTemplate object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a citationTemplate object. This API is available in the following national cloud deployments.
 func (m *LabelsCitationsCitationTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LabelsCitationsCitationTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -126,7 +126,7 @@ func (m *LabelsCitationsCitationTemplateItemRequestBuilder) ToDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a citationTemplate object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a citationTemplate object. This API is available in the following national cloud deployments.
 func (m *LabelsCitationsCitationTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsCitationsCitationTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

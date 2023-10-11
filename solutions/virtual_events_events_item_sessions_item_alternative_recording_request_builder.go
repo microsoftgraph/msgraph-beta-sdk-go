@@ -37,7 +37,7 @@ func NewVirtualEventsEventsItemSessionsItemAlternativeRecordingRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEventsEventsItemSessionsItemAlternativeRecordingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+// Get get alternativeRecording for the navigation property sessions from solutions
 func (m *VirtualEventsEventsItemSessionsItemAlternativeRecordingRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsItemAlternativeRecordingRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -56,7 +56,7 @@ func (m *VirtualEventsEventsItemSessionsItemAlternativeRecordingRequestBuilder) 
     }
     return res.([]byte), nil
 }
-// Put the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+// Put update alternativeRecording for the navigation property sessions in solutions
 func (m *VirtualEventsEventsItemSessionsItemAlternativeRecordingRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *VirtualEventsEventsItemSessionsItemAlternativeRecordingRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -75,7 +75,7 @@ func (m *VirtualEventsEventsItemSessionsItemAlternativeRecordingRequestBuilder) 
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+// ToGetRequestInformation get alternativeRecording for the navigation property sessions from solutions
 func (m *VirtualEventsEventsItemSessionsItemAlternativeRecordingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsItemAlternativeRecordingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -87,7 +87,7 @@ func (m *VirtualEventsEventsItemSessionsItemAlternativeRecordingRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+// ToPutRequestInformation update alternativeRecording for the navigation property sessions in solutions
 func (m *VirtualEventsEventsItemSessionsItemAlternativeRecordingRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *VirtualEventsEventsItemSessionsItemAlternativeRecordingRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

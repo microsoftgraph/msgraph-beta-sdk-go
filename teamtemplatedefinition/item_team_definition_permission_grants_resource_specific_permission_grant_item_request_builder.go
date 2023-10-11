@@ -41,14 +41,6 @@ type ItemTeamDefinitionPermissionGrantsResourceSpecificPermissionGrantItemReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CheckMemberGroups provides operations to call the checkMemberGroups method.
-func (m *ItemTeamDefinitionPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) CheckMemberGroups()(*ItemTeamDefinitionPermissionGrantsItemCheckMemberGroupsRequestBuilder) {
-    return NewItemTeamDefinitionPermissionGrantsItemCheckMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// CheckMemberObjects provides operations to call the checkMemberObjects method.
-func (m *ItemTeamDefinitionPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) CheckMemberObjects()(*ItemTeamDefinitionPermissionGrantsItemCheckMemberObjectsRequestBuilder) {
-    return NewItemTeamDefinitionPermissionGrantsItemCheckMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewItemTeamDefinitionPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilderInternal instantiates a new ResourceSpecificPermissionGrantItemRequestBuilder and sets the default values.
 func NewItemTeamDefinitionPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) {
     m := &ItemTeamDefinitionPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder{
@@ -97,14 +89,6 @@ func (m *ItemTeamDefinitionPermissionGrantsResourceSpecificPermissionGrantItemRe
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable), nil
 }
-// GetMemberGroups provides operations to call the getMemberGroups method.
-func (m *ItemTeamDefinitionPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) GetMemberGroups()(*ItemTeamDefinitionPermissionGrantsItemGetMemberGroupsRequestBuilder) {
-    return NewItemTeamDefinitionPermissionGrantsItemGetMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// GetMemberObjects provides operations to call the getMemberObjects method.
-func (m *ItemTeamDefinitionPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) GetMemberObjects()(*ItemTeamDefinitionPermissionGrantsItemGetMemberObjectsRequestBuilder) {
-    return NewItemTeamDefinitionPermissionGrantsItemGetMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property permissionGrants in teamTemplateDefinition
 func (m *ItemTeamDefinitionPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable, requestConfiguration *ItemTeamDefinitionPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -123,10 +107,6 @@ func (m *ItemTeamDefinitionPermissionGrantsResourceSpecificPermissionGrantItemRe
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable), nil
-}
-// Restore provides operations to call the restore method.
-func (m *ItemTeamDefinitionPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) Restore()(*ItemTeamDefinitionPermissionGrantsItemRestoreRequestBuilder) {
-    return NewItemTeamDefinitionPermissionGrantsItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property permissionGrants for teamTemplateDefinition
 func (m *ItemTeamDefinitionPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

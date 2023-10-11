@@ -18,7 +18,7 @@ type CasesEdiscoveryCasesItemReviewSetsItemQueriesEdiscoveryReviewSetQueryItemRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CasesEdiscoveryCasesItemReviewSetsItemQueriesEdiscoveryReviewSetQueryItemRequestBuilderGetQueryParameters read the properties and relationships of an ediscoveryReviewSetQuery object. This API is supported in the following national cloud deployments.
+// CasesEdiscoveryCasesItemReviewSetsItemQueriesEdiscoveryReviewSetQueryItemRequestBuilderGetQueryParameters read the properties and relationships of an ediscoveryReviewSetQuery object. This API is available in the following national cloud deployments.
 type CasesEdiscoveryCasesItemReviewSetsItemQueriesEdiscoveryReviewSetQueryItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewCasesEdiscoveryCasesItemReviewSetsItemQueriesEdiscoveryReviewSetQueryIte
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemReviewSetsItemQueriesEdiscoveryReviewSetQueryItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an ediscoveryReviewSetQuery object. This API is supported in the following national cloud deployments.
+// Delete delete an ediscoveryReviewSetQuery object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoveryreviewset-delete-queries?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesEdiscoveryReviewSetQueryIt
     }
     return nil
 }
-// Get read the properties and relationships of an ediscoveryReviewSetQuery object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of an ediscoveryReviewSetQuery object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoveryreviewsetquery-get?view=graph-rest-1.0
@@ -107,7 +107,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesEdiscoveryReviewSetQueryIt
 func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesEdiscoveryReviewSetQueryItemRequestBuilder) MicrosoftGraphSecurityRun()(*CasesEdiscoveryCasesItemReviewSetsItemQueriesItemMicrosoftGraphSecurityRunRequestBuilder) {
     return NewCasesEdiscoveryCasesItemReviewSetsItemQueriesItemMicrosoftGraphSecurityRunRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of an ediscoveryReviewSetQuery object. This API is supported in the following national cloud deployments.
+// Patch update the properties of an ediscoveryReviewSetQuery object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoveryreviewsetquery-update?view=graph-rest-1.0
@@ -129,7 +129,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesEdiscoveryReviewSetQueryIt
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewSetQueryable), nil
 }
-// ToDeleteRequestInformation delete an ediscoveryReviewSetQuery object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete an ediscoveryReviewSetQuery object. This API is available in the following national cloud deployments.
 func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesEdiscoveryReviewSetQueryItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemQueriesEdiscoveryReviewSetQueryItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -141,7 +141,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesEdiscoveryReviewSetQueryIt
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an ediscoveryReviewSetQuery object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of an ediscoveryReviewSetQuery object. This API is available in the following national cloud deployments.
 func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesEdiscoveryReviewSetQueryItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemQueriesEdiscoveryReviewSetQueryItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -157,7 +157,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesEdiscoveryReviewSetQueryIt
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an ediscoveryReviewSetQuery object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of an ediscoveryReviewSetQuery object. This API is available in the following national cloud deployments.
 func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesEdiscoveryReviewSetQueryItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewSetQueryable, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemQueriesEdiscoveryReviewSetQueryItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

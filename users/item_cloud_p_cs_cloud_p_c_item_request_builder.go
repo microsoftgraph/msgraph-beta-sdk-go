@@ -18,7 +18,7 @@ type ItemCloudPCsCloudPCItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemCloudPCsCloudPCItemRequestBuilderGetQueryParameters read the properties and relationships of a specific cloudPC object. This API is supported in the following national cloud deployments.
+// ItemCloudPCsCloudPCItemRequestBuilderGetQueryParameters read the properties and relationships of a specific cloudPC object. This API is available in the following national cloud deployments.
 type ItemCloudPCsCloudPCItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -82,7 +82,7 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) Delete(ctx context.Context, requ
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) EndGracePeriod()(*ItemCloudPCsItemEndGracePeriodRequestBuilder) {
     return NewItemCloudPCsItemEndGracePeriodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a specific cloudPC object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a specific cloudPC object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-get?view=graph-rest-1.0
@@ -111,6 +111,10 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) GetCloudPcConnectivityHistory()(
 // GetCloudPcLaunchInfo provides operations to call the getCloudPcLaunchInfo method.
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) GetCloudPcLaunchInfo()(*ItemCloudPCsItemGetCloudPcLaunchInfoRequestBuilder) {
     return NewItemCloudPCsItemGetCloudPcLaunchInfoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GetFrontlineCloudPcAccessState provides operations to call the getFrontlineCloudPcAccessState method.
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) GetFrontlineCloudPcAccessState()(*ItemCloudPCsItemGetFrontlineCloudPcAccessStateRequestBuilder) {
+    return NewItemCloudPCsItemGetFrontlineCloudPcAccessStateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetShiftWorkCloudPcAccessState provides operations to call the getShiftWorkCloudPcAccessState method.
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) GetShiftWorkCloudPcAccessState()(*ItemCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilder) {
@@ -191,7 +195,7 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) ToDeleteRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a specific cloudPC object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a specific cloudPC object. This API is available in the following national cloud deployments.
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCloudPCsCloudPCItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

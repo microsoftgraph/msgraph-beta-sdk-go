@@ -18,7 +18,7 @@ type DirectorySettingItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DirectorySettingItemRequestBuilderGetQueryParameters retrieve the properties of a specific directory setting object. This API is supported in the following national cloud deployments.
+// DirectorySettingItemRequestBuilderGetQueryParameters retrieve the properties of a specific directory setting object. This API is available in the following national cloud deployments.
 type DirectorySettingItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewDirectorySettingItemRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewDirectorySettingItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a directory setting. This API is supported in the following national cloud deployments.
+// Delete delete a directory setting. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/directorysetting-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *DirectorySettingItemRequestBuilder) Delete(ctx context.Context, request
     }
     return nil
 }
-// Get retrieve the properties of a specific directory setting object. This API is supported in the following national cloud deployments.
+// Get retrieve the properties of a specific directory setting object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/directorysetting-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *DirectorySettingItemRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingable), nil
 }
-// Patch update the properties of a specific directory setting object. This API is supported in the following national cloud deployments.
+// Patch update the properties of a specific directory setting object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/directorysetting-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *DirectorySettingItemRequestBuilder) Patch(ctx context.Context, body ie2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingable), nil
 }
-// ToDeleteRequestInformation delete a directory setting. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a directory setting. This API is available in the following national cloud deployments.
 func (m *DirectorySettingItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DirectorySettingItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *DirectorySettingItemRequestBuilder) ToDeleteRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties of a specific directory setting object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties of a specific directory setting object. This API is available in the following national cloud deployments.
 func (m *DirectorySettingItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DirectorySettingItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *DirectorySettingItemRequestBuilder) ToGetRequestInformation(ctx context
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a specific directory setting object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of a specific directory setting object. This API is available in the following national cloud deployments.
 func (m *DirectorySettingItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingable, requestConfiguration *DirectorySettingItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

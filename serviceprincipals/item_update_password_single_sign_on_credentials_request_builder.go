@@ -30,7 +30,7 @@ func NewItemUpdatePasswordSingleSignOnCredentialsRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewItemUpdatePasswordSingleSignOnCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post update single sign-on credentials using a password for a user or group. This API is supported in the following national cloud deployments.
+// Post update single sign-on credentials using a password for a user or group. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-updatepasswordsinglesignoncredentials?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemUpdatePasswordSingleSignOnCredentialsRequestBuilder) Post(ctx conte
     }
     return nil
 }
-// ToPostRequestInformation update single sign-on credentials using a password for a user or group. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation update single sign-on credentials using a password for a user or group. This API is available in the following national cloud deployments.
 func (m *ItemUpdatePasswordSingleSignOnCredentialsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemUpdatePasswordSingleSignOnCredentialsPostRequestBodyable, requestConfiguration *ItemUpdatePasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

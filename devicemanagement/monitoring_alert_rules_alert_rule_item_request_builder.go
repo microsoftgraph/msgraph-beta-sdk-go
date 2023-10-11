@@ -18,7 +18,7 @@ type MonitoringAlertRulesAlertRuleItemRequestBuilderDeleteRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MonitoringAlertRulesAlertRuleItemRequestBuilderGetQueryParameters read the properties and relationships of an alertRule object. This API is supported in the following national cloud deployments.
+// MonitoringAlertRulesAlertRuleItemRequestBuilderGetQueryParameters read the properties and relationships of an alertRule object. This API is available in the following national cloud deployments.
 type MonitoringAlertRulesAlertRuleItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *MonitoringAlertRulesAlertRuleItemRequestBuilder) Delete(ctx context.Con
     }
     return nil
 }
-// Get read the properties and relationships of an alertRule object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of an alertRule object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/devicemanagement-alertrule-get?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *MonitoringAlertRulesAlertRuleItemRequestBuilder) Get(ctx context.Contex
     }
     return res.(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRuleable), nil
 }
-// Patch update the properties of an alertRule object. This API is supported in the following national cloud deployments.
+// Patch update the properties of an alertRule object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/devicemanagement-alertrule-update?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *MonitoringAlertRulesAlertRuleItemRequestBuilder) ToDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an alertRule object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of an alertRule object. This API is available in the following national cloud deployments.
 func (m *MonitoringAlertRulesAlertRuleItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MonitoringAlertRulesAlertRuleItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *MonitoringAlertRulesAlertRuleItemRequestBuilder) ToGetRequestInformatio
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an alertRule object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of an alertRule object. This API is available in the following national cloud deployments.
 func (m *MonitoringAlertRulesAlertRuleItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRuleable, requestConfiguration *MonitoringAlertRulesAlertRuleItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

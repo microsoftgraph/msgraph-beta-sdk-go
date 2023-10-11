@@ -33,7 +33,7 @@ func (m *PolicyRoot) GetAccessReviewPolicy()(AccessReviewPolicyable) {
     }
     return nil
 }
-// GetActivityBasedTimeoutPolicies gets the activityBasedTimeoutPolicies property value. The policy that controls the idle time out for web sessions for applications.
+// GetActivityBasedTimeoutPolicies gets the activityBasedTimeoutPolicies property value. The policy that controls the idle time-out for web sessions for applications.
 func (m *PolicyRoot) GetActivityBasedTimeoutPolicies()([]ActivityBasedTimeoutPolicyable) {
     val, err := m.GetBackingStore().Get("activityBasedTimeoutPolicies")
     if err != nil {
@@ -44,7 +44,7 @@ func (m *PolicyRoot) GetActivityBasedTimeoutPolicies()([]ActivityBasedTimeoutPol
     }
     return nil
 }
-// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PolicyRoot) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -78,7 +78,7 @@ func (m *PolicyRoot) GetAppManagementPolicies()([]AppManagementPolicyable) {
     }
     return nil
 }
-// GetAuthenticationFlowsPolicy gets the authenticationFlowsPolicy property value. The policy configuration of the self-service sign-up experience of external users.
+// GetAuthenticationFlowsPolicy gets the authenticationFlowsPolicy property value. The policy configuration of the self-service sign-up experience of guests.
 func (m *PolicyRoot) GetAuthenticationFlowsPolicy()(AuthenticationFlowsPolicyable) {
     val, err := m.GetBackingStore().Get("authenticationFlowsPolicy")
     if err != nil {
@@ -89,7 +89,7 @@ func (m *PolicyRoot) GetAuthenticationFlowsPolicy()(AuthenticationFlowsPolicyabl
     }
     return nil
 }
-// GetAuthenticationMethodsPolicy gets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
+// GetAuthenticationMethodsPolicy gets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Azure Active Directory (Azure AD).
 func (m *PolicyRoot) GetAuthenticationMethodsPolicy()(AuthenticationMethodsPolicyable) {
     val, err := m.GetBackingStore().Get("authenticationMethodsPolicy")
     if err != nil {
@@ -133,7 +133,7 @@ func (m *PolicyRoot) GetB2cAuthenticationMethodsPolicy()(B2cAuthenticationMethod
     }
     return nil
 }
-// GetBackingStore gets the backingStore property value. Stores model information.
+// GetBackingStore gets the BackingStore property value. Stores model information.
 func (m *PolicyRoot) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
@@ -203,7 +203,7 @@ func (m *PolicyRoot) GetDirectoryRoleAccessReviewPolicy()(DirectoryRoleAccessRev
     }
     return nil
 }
-// GetExternalIdentitiesPolicy gets the externalIdentitiesPolicy property value. Represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
+// GetExternalIdentitiesPolicy gets the externalIdentitiesPolicy property value. Represents the tenant-wide policy that controls whether guests can leave an Azure AD tenant via self-service controls.
 func (m *PolicyRoot) GetExternalIdentitiesPolicy()(ExternalIdentitiesPolicyable) {
     val, err := m.GetBackingStore().Get("externalIdentitiesPolicy")
     if err != nil {
@@ -649,7 +649,7 @@ func (m *PolicyRoot) GetIdentitySecurityDefaultsEnforcementPolicy()(IdentitySecu
     }
     return nil
 }
-// GetMobileAppManagementPolicies gets the mobileAppManagementPolicies property value. The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
+// GetMobileAppManagementPolicies gets the mobileAppManagementPolicies property value. The policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.
 func (m *PolicyRoot) GetMobileAppManagementPolicies()([]MobilityManagementPolicyable) {
     val, err := m.GetBackingStore().Get("mobileAppManagementPolicies")
     if err != nil {
@@ -1035,14 +1035,14 @@ func (m *PolicyRoot) SetAccessReviewPolicy(value AccessReviewPolicyable)() {
         panic(err)
     }
 }
-// SetActivityBasedTimeoutPolicies sets the activityBasedTimeoutPolicies property value. The policy that controls the idle time out for web sessions for applications.
+// SetActivityBasedTimeoutPolicies sets the activityBasedTimeoutPolicies property value. The policy that controls the idle time-out for web sessions for applications.
 func (m *PolicyRoot) SetActivityBasedTimeoutPolicies(value []ActivityBasedTimeoutPolicyable)() {
     err := m.GetBackingStore().Set("activityBasedTimeoutPolicies", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PolicyRoot) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
     if err != nil {
@@ -1063,14 +1063,14 @@ func (m *PolicyRoot) SetAppManagementPolicies(value []AppManagementPolicyable)()
         panic(err)
     }
 }
-// SetAuthenticationFlowsPolicy sets the authenticationFlowsPolicy property value. The policy configuration of the self-service sign-up experience of external users.
+// SetAuthenticationFlowsPolicy sets the authenticationFlowsPolicy property value. The policy configuration of the self-service sign-up experience of guests.
 func (m *PolicyRoot) SetAuthenticationFlowsPolicy(value AuthenticationFlowsPolicyable)() {
     err := m.GetBackingStore().Set("authenticationFlowsPolicy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAuthenticationMethodsPolicy sets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
+// SetAuthenticationMethodsPolicy sets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Azure Active Directory (Azure AD).
 func (m *PolicyRoot) SetAuthenticationMethodsPolicy(value AuthenticationMethodsPolicyable)() {
     err := m.GetBackingStore().Set("authenticationMethodsPolicy", value)
     if err != nil {
@@ -1098,7 +1098,7 @@ func (m *PolicyRoot) SetB2cAuthenticationMethodsPolicy(value B2cAuthenticationMe
         panic(err)
     }
 }
-// SetBackingStore sets the backingStore property value. Stores model information.
+// SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *PolicyRoot) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
@@ -1144,7 +1144,7 @@ func (m *PolicyRoot) SetDirectoryRoleAccessReviewPolicy(value DirectoryRoleAcces
         panic(err)
     }
 }
-// SetExternalIdentitiesPolicy sets the externalIdentitiesPolicy property value. Represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
+// SetExternalIdentitiesPolicy sets the externalIdentitiesPolicy property value. Represents the tenant-wide policy that controls whether guests can leave an Azure AD tenant via self-service controls.
 func (m *PolicyRoot) SetExternalIdentitiesPolicy(value ExternalIdentitiesPolicyable)() {
     err := m.GetBackingStore().Set("externalIdentitiesPolicy", value)
     if err != nil {
@@ -1179,7 +1179,7 @@ func (m *PolicyRoot) SetIdentitySecurityDefaultsEnforcementPolicy(value Identity
         panic(err)
     }
 }
-// SetMobileAppManagementPolicies sets the mobileAppManagementPolicies property value. The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
+// SetMobileAppManagementPolicies sets the mobileAppManagementPolicies property value. The policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.
 func (m *PolicyRoot) SetMobileAppManagementPolicies(value []MobilityManagementPolicyable)() {
     err := m.GetBackingStore().Set("mobileAppManagementPolicies", value)
     if err != nil {

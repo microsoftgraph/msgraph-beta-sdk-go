@@ -11,7 +11,7 @@ import (
 type EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleAccessPackagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleAccessPackagesRequestBuilderGetQueryParameters retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.   This API is supported in the following national cloud deployments.
+// EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleAccessPackagesRequestBuilderGetQueryParameters retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.   This API is available in the following national cloud deployments.
 type EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleAccessPackagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatib
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleAccessPackagesRequestBuilder) Count()(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleAccessPackagesCountRequestBuilder) {
     return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleAccessPackagesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.   This API is supported in the following national cloud deployments.
+// Get retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.   This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-list-incompatibleaccesspackages?view=graph-rest-1.0
@@ -93,7 +93,7 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompati
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleAccessPackagesRequestBuilder) Ref()(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleAccessPackagesRefRequestBuilder) {
     return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleAccessPackagesRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.   This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.   This API is available in the following national cloud deployments.
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleAccessPackagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleAccessPackagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

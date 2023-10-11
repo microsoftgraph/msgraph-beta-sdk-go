@@ -18,7 +18,7 @@ type ItemPlannerRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemPlannerRequestBuilderGetQueryParameters retrieve the properties and relationships of a plannerUser object. The returned properties include the user's favorite plans and recently viewed plans.  This API is supported in the following national cloud deployments.
+// ItemPlannerRequestBuilderGetQueryParameters retrieve the properties and relationships of a plannerUser object. The returned properties include the user's favorite plans and recently viewed plans.  This API is available in the following national cloud deployments.
 type ItemPlannerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -78,7 +78,7 @@ func (m *ItemPlannerRequestBuilder) Delete(ctx context.Context, requestConfigura
 func (m *ItemPlannerRequestBuilder) FavoritePlans()(*ItemPlannerFavoritePlansRequestBuilder) {
     return NewItemPlannerFavoritePlansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of a plannerUser object. The returned properties include the user's favorite plans and recently viewed plans.  This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of a plannerUser object. The returned properties include the user's favorite plans and recently viewed plans.  This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/planneruser-get?view=graph-rest-1.0
@@ -150,7 +150,7 @@ func (m *ItemPlannerRequestBuilder) ToDeleteRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a plannerUser object. The returned properties include the user's favorite plans and recently viewed plans.  This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of a plannerUser object. The returned properties include the user's favorite plans and recently viewed plans.  This API is available in the following national cloud deployments.
 func (m *ItemPlannerRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

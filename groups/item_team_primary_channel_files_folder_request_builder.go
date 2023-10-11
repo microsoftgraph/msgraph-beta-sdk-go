@@ -11,7 +11,7 @@ import (
 type ItemTeamPrimaryChannelFilesFolderRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamPrimaryChannelFilesFolderRequestBuilderGetQueryParameters get the metadata for the location where the files of a channel are stored. This API is supported in the following national cloud deployments.
+// ItemTeamPrimaryChannelFilesFolderRequestBuilderGetQueryParameters get the metadata for the location where the files of a channel are stored. This API is available in the following national cloud deployments.
 type ItemTeamPrimaryChannelFilesFolderRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -44,7 +44,7 @@ func NewItemTeamPrimaryChannelFilesFolderRequestBuilder(rawUrl string, requestAd
 func (m *ItemTeamPrimaryChannelFilesFolderRequestBuilder) Content()(*ItemTeamPrimaryChannelFilesFolderContentRequestBuilder) {
     return NewItemTeamPrimaryChannelFilesFolderContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the metadata for the location where the files of a channel are stored. This API is supported in the following national cloud deployments.
+// Get get the metadata for the location where the files of a channel are stored. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
@@ -66,7 +66,7 @@ func (m *ItemTeamPrimaryChannelFilesFolderRequestBuilder) Get(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable), nil
 }
-// ToGetRequestInformation get the metadata for the location where the files of a channel are stored. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the metadata for the location where the files of a channel are stored. This API is available in the following national cloud deployments.
 func (m *ItemTeamPrimaryChannelFilesFolderRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamPrimaryChannelFilesFolderRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

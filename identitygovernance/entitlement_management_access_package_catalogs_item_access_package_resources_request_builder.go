@@ -11,7 +11,7 @@ import (
 type EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesRequestBuilderGetQueryParameters retrieve a list of accessPackageResource objects in an accessPackageCatalog.  To request to add or remove an accessPackageResource, use create accessPackageResourceRequest. This API is supported in the following national cloud deployments.
+// EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesRequestBuilderGetQueryParameters retrieve a list of accessPackageResource objects in an accessPackageCatalog.  To request to add or remove an accessPackageResource, use create accessPackageResourceRequest. This API is available in the following national cloud deployments.
 type EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,7 +75,7 @@ func NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesRequ
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesRequestBuilder) Count()(*EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesCountRequestBuilder) {
     return NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of accessPackageResource objects in an accessPackageCatalog.  To request to add or remove an accessPackageResource, use create accessPackageResourceRequest. This API is supported in the following national cloud deployments.
+// Get retrieve a list of accessPackageResource objects in an accessPackageCatalog.  To request to add or remove an accessPackageResource, use create accessPackageResourceRequest. This API is available in the following national cloud deployments.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // [Find more info here]
 // 
@@ -118,7 +118,7 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesReq
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceable), nil
 }
-// ToGetRequestInformation retrieve a list of accessPackageResource objects in an accessPackageCatalog.  To request to add or remove an accessPackageResource, use create accessPackageResourceRequest. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of accessPackageResource objects in an accessPackageCatalog.  To request to add or remove an accessPackageResource, use create accessPackageResourceRequest. This API is available in the following national cloud deployments.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

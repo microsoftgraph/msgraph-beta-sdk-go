@@ -11,7 +11,7 @@ import (
 type ItemSitesItemRecycleBinItemsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemRecycleBinItemsRequestBuilderGetQueryParameters get items from groups
+// ItemSitesItemRecycleBinItemsRequestBuilderGetQueryParameters get a list of recycleBinItems under the specified site.
 type ItemSitesItemRecycleBinItemsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewItemSitesItemRecycleBinItemsRequestBuilder(rawUrl string, requestAdapter
 func (m *ItemSitesItemRecycleBinItemsRequestBuilder) Count()(*ItemSitesItemRecycleBinItemsCountRequestBuilder) {
     return NewItemSitesItemRecycleBinItemsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get items from groups
+// Get get a list of recycleBinItems under the specified site.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/recyclebin-list-items?view=graph-rest-1.0
 func (m *ItemSitesItemRecycleBinItemsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemRecycleBinItemsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RecycleBinItemCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *ItemSitesItemRecycleBinItemsRequestBuilder) Post(ctx context.Context, b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RecycleBinItemable), nil
 }
-// ToGetRequestInformation get items from groups
+// ToGetRequestInformation get a list of recycleBinItems under the specified site.
 func (m *ItemSitesItemRecycleBinItemsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemRecycleBinItemsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

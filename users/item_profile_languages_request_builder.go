@@ -11,7 +11,7 @@ import (
 type ItemProfileLanguagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemProfileLanguagesRequestBuilderGetQueryParameters retrieve a list of languageProficiency objects from a user's profile. This API is supported in the following national cloud deployments.
+// ItemProfileLanguagesRequestBuilderGetQueryParameters retrieve a list of languageProficiency objects from a user's profile. This API is available in the following national cloud deployments.
 type ItemProfileLanguagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemProfileLanguagesRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *ItemProfileLanguagesRequestBuilder) Count()(*ItemProfileLanguagesCountRequestBuilder) {
     return NewItemProfileLanguagesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of languageProficiency objects from a user's profile. This API is supported in the following national cloud deployments.
+// Get retrieve a list of languageProficiency objects from a user's profile. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/profile-list-languages?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemProfileLanguagesRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LanguageProficiencyCollectionResponseable), nil
 }
-// Post use this API to create a new languageProficiency object in a user's profile. This API is supported in the following national cloud deployments.
+// Post use this API to create a new languageProficiency object in a user's profile. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/profile-post-languages?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemProfileLanguagesRequestBuilder) Post(ctx context.Context, body ie23
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LanguageProficiencyable), nil
 }
-// ToGetRequestInformation retrieve a list of languageProficiency objects from a user's profile. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of languageProficiency objects from a user's profile. This API is available in the following national cloud deployments.
 func (m *ItemProfileLanguagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileLanguagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemProfileLanguagesRequestBuilder) ToGetRequestInformation(ctx context
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation use this API to create a new languageProficiency object in a user's profile. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation use this API to create a new languageProficiency object in a user's profile. This API is available in the following national cloud deployments.
 func (m *ItemProfileLanguagesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LanguageProficiencyable, requestConfiguration *ItemProfileLanguagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

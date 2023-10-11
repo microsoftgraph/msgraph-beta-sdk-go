@@ -10,7 +10,7 @@ import (
 type ItemFindRoomListsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemFindRoomListsRequestBuilderGetQueryParameters get the room lists defined in a tenant, as represented by their emailAddress objects. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list. This API is supported in the following national cloud deployments.
+// ItemFindRoomListsRequestBuilderGetQueryParameters get the room lists defined in a tenant, as represented by their emailAddress objects. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list. This API is available in the following national cloud deployments.
 type ItemFindRoomListsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -45,7 +45,7 @@ func NewItemFindRoomListsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewItemFindRoomListsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get the room lists defined in a tenant, as represented by their emailAddress objects. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list. This API is supported in the following national cloud deployments.
+// Get get the room lists defined in a tenant, as represented by their emailAddress objects. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list. This API is available in the following national cloud deployments.
 // Deprecated: This method is obsolete. Use GetAsFindRoomListsGetResponse instead.
 // [Find more info here]
 // 
@@ -68,7 +68,7 @@ func (m *ItemFindRoomListsRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(ItemFindRoomListsResponseable), nil
 }
-// GetAsFindRoomListsGetResponse get the room lists defined in a tenant, as represented by their emailAddress objects. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list. This API is supported in the following national cloud deployments.
+// GetAsFindRoomListsGetResponse get the room lists defined in a tenant, as represented by their emailAddress objects. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/user-findroomlists?view=graph-rest-1.0
@@ -90,7 +90,7 @@ func (m *ItemFindRoomListsRequestBuilder) GetAsFindRoomListsGetResponse(ctx cont
     }
     return res.(ItemFindRoomListsGetResponseable), nil
 }
-// ToGetRequestInformation get the room lists defined in a tenant, as represented by their emailAddress objects. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the room lists defined in a tenant, as represented by their emailAddress objects. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list. This API is available in the following national cloud deployments.
 func (m *ItemFindRoomListsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemFindRoomListsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

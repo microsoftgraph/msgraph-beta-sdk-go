@@ -11,7 +11,7 @@ import (
 type AppManagementPoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AppManagementPoliciesRequestBuilderGetQueryParameters retrieve a list of appManagementPolicy objects. This API is supported in the following national cloud deployments.
+// AppManagementPoliciesRequestBuilderGetQueryParameters retrieve a list of appManagementPolicy objects. This API is available in the following national cloud deployments.
 type AppManagementPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewAppManagementPoliciesRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *AppManagementPoliciesRequestBuilder) Count()(*AppManagementPoliciesCountRequestBuilder) {
     return NewAppManagementPoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of appManagementPolicy objects. This API is supported in the following national cloud deployments.
+// Get retrieve a list of appManagementPolicy objects. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/appmanagementpolicy-list?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *AppManagementPoliciesRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyCollectionResponseable), nil
 }
-// Post create an appManagementPolicy object. This API is supported in the following national cloud deployments.
+// Post create an appManagementPolicy object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/appmanagementpolicy-post?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *AppManagementPoliciesRequestBuilder) Post(ctx context.Context, body ie2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable), nil
 }
-// ToGetRequestInformation retrieve a list of appManagementPolicy objects. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of appManagementPolicy objects. This API is available in the following national cloud deployments.
 func (m *AppManagementPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppManagementPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *AppManagementPoliciesRequestBuilder) ToGetRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create an appManagementPolicy object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create an appManagementPolicy object. This API is available in the following national cloud deployments.
 func (m *AppManagementPoliciesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable, requestConfiguration *AppManagementPoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

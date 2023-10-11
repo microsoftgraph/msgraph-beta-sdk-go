@@ -11,7 +11,7 @@ import (
 type RoleManagementAlertsAlertsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RoleManagementAlertsAlertsRequestBuilderGetQueryParameters get a list of the unifiedRoleManagementAlert objects and their properties. This API is supported in the following national cloud deployments.
+// RoleManagementAlertsAlertsRequestBuilderGetQueryParameters get a list of the unifiedRoleManagementAlert objects and their properties. This API is available in the following national cloud deployments.
 type RoleManagementAlertsAlertsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewRoleManagementAlertsAlertsRequestBuilder(rawUrl string, requestAdapter i
 func (m *RoleManagementAlertsAlertsRequestBuilder) Count()(*RoleManagementAlertsAlertsCountRequestBuilder) {
     return NewRoleManagementAlertsAlertsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the unifiedRoleManagementAlert objects and their properties. This API is supported in the following national cloud deployments.
+// Get get a list of the unifiedRoleManagementAlert objects and their properties. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/rolemanagementalert-list-alerts?view=graph-rest-1.0
@@ -119,7 +119,7 @@ func (m *RoleManagementAlertsAlertsRequestBuilder) Post(ctx context.Context, bod
 func (m *RoleManagementAlertsAlertsRequestBuilder) Refresh()(*RoleManagementAlertsAlertsRefreshRequestBuilder) {
     return NewRoleManagementAlertsAlertsRefreshRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation get a list of the unifiedRoleManagementAlert objects and their properties. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of the unifiedRoleManagementAlert objects and their properties. This API is available in the following national cloud deployments.
 func (m *RoleManagementAlertsAlertsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleManagementAlertsAlertsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type ItemSettingsContactMergeSuggestionsRequestBuilderDeleteRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSettingsContactMergeSuggestionsRequestBuilderGetQueryParameters read the properties and relationships of a contactMergeSuggestions object. This API is supported in the following national cloud deployments.
+// ItemSettingsContactMergeSuggestionsRequestBuilderGetQueryParameters read the properties and relationships of a contactMergeSuggestions object. This API is available in the following national cloud deployments.
 type ItemSettingsContactMergeSuggestionsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// Get read the properties and relationships of a contactMergeSuggestions object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a contactMergeSuggestions object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contactmergesuggestions-get?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) Get(ctx context.Cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactMergeSuggestionsable), nil
 }
-// Patch update the properties of a contactMergeSuggestions object. This API is supported in the following national cloud deployments.
+// Patch update the properties of a contactMergeSuggestions object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contactmergesuggestions-update?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) ToDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a contactMergeSuggestions object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a contactMergeSuggestions object. This API is available in the following national cloud deployments.
 func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsContactMergeSuggestionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) ToGetRequestInformat
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a contactMergeSuggestions object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of a contactMergeSuggestions object. This API is available in the following national cloud deployments.
 func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactMergeSuggestionsable, requestConfiguration *ItemSettingsContactMergeSuggestionsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

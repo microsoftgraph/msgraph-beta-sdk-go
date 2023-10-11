@@ -10,7 +10,7 @@ import (
 type GetCredentialUserRegistrationCountRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities. This API is supported in the following national cloud deployments.
+// GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters report the current state of how many users in your organization are registered for self-service password reset and multifactor authentication (MFA) capabilities. This API is available in the following national cloud deployments.
 type GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -49,7 +49,7 @@ func NewGetCredentialUserRegistrationCountRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewGetCredentialUserRegistrationCountRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities. This API is supported in the following national cloud deployments.
+// Get report the current state of how many users in your organization are registered for self-service password reset and multifactor authentication (MFA) capabilities. This API is available in the following national cloud deployments.
 // Deprecated: This method is obsolete. Use GetAsGetCredentialUserRegistrationCountGetResponse instead.
 // [Find more info here]
 // 
@@ -72,7 +72,7 @@ func (m *GetCredentialUserRegistrationCountRequestBuilder) Get(ctx context.Conte
     }
     return res.(GetCredentialUserRegistrationCountResponseable), nil
 }
-// GetAsGetCredentialUserRegistrationCountGetResponse report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities. This API is supported in the following national cloud deployments.
+// GetAsGetCredentialUserRegistrationCountGetResponse report the current state of how many users in your organization are registered for self-service password reset and multifactor authentication (MFA) capabilities. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getcredentialuserregistrationcount?view=graph-rest-1.0
@@ -94,7 +94,7 @@ func (m *GetCredentialUserRegistrationCountRequestBuilder) GetAsGetCredentialUse
     }
     return res.(GetCredentialUserRegistrationCountGetResponseable), nil
 }
-// ToGetRequestInformation report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation report the current state of how many users in your organization are registered for self-service password reset and multifactor authentication (MFA) capabilities. This API is available in the following national cloud deployments.
 func (m *GetCredentialUserRegistrationCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetCredentialUserRegistrationCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

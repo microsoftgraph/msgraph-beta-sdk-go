@@ -60,6 +60,26 @@ func (m *MacOSPkgApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["postInstallScript"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateMacOSAppScriptFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPostInstallScript(val.(MacOSAppScriptable))
+        }
+        return nil
+    }
+    res["preInstallScript"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateMacOSAppScriptFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPreInstallScript(val.(MacOSAppScriptable))
+        }
+        return nil
+    }
     res["primaryBundleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -112,6 +132,28 @@ func (m *MacOSPkgApp) GetMinimumSupportedOperatingSystem()(MacOSMinimumOperating
     }
     if val != nil {
         return val.(MacOSMinimumOperatingSystemable)
+    }
+    return nil
+}
+// GetPostInstallScript gets the postInstallScript property value. ComplexType macOSAppScript the contains the post-install script for the app. This will execute on the macOS device after the app is installed.
+func (m *MacOSPkgApp) GetPostInstallScript()(MacOSAppScriptable) {
+    val, err := m.GetBackingStore().Get("postInstallScript")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MacOSAppScriptable)
+    }
+    return nil
+}
+// GetPreInstallScript gets the preInstallScript property value. ComplexType macOSAppScript the contains the post-install script for the app. This will execute on the macOS device after the app is installed.
+func (m *MacOSPkgApp) GetPreInstallScript()(MacOSAppScriptable) {
+    val, err := m.GetBackingStore().Get("preInstallScript")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MacOSAppScriptable)
     }
     return nil
 }
@@ -168,6 +210,18 @@ func (m *MacOSPkgApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteObjectValue("postInstallScript", m.GetPostInstallScript())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("preInstallScript", m.GetPreInstallScript())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("primaryBundleId", m.GetPrimaryBundleId())
         if err != nil {
             return err
@@ -202,6 +256,20 @@ func (m *MacOSPkgApp) SetMinimumSupportedOperatingSystem(value MacOSMinimumOpera
         panic(err)
     }
 }
+// SetPostInstallScript sets the postInstallScript property value. ComplexType macOSAppScript the contains the post-install script for the app. This will execute on the macOS device after the app is installed.
+func (m *MacOSPkgApp) SetPostInstallScript(value MacOSAppScriptable)() {
+    err := m.GetBackingStore().Set("postInstallScript", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetPreInstallScript sets the preInstallScript property value. ComplexType macOSAppScript the contains the post-install script for the app. This will execute on the macOS device after the app is installed.
+func (m *MacOSPkgApp) SetPreInstallScript(value MacOSAppScriptable)() {
+    err := m.GetBackingStore().Set("preInstallScript", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPrimaryBundleId sets the primaryBundleId property value. The primary CFBundleIdentifier of the .pkg.
 func (m *MacOSPkgApp) SetPrimaryBundleId(value *string)() {
     err := m.GetBackingStore().Set("primaryBundleId", value)
@@ -223,11 +291,15 @@ type MacOSPkgAppable interface {
     GetIgnoreVersionDetection()(*bool)
     GetIncludedApps()([]MacOSIncludedAppable)
     GetMinimumSupportedOperatingSystem()(MacOSMinimumOperatingSystemable)
+    GetPostInstallScript()(MacOSAppScriptable)
+    GetPreInstallScript()(MacOSAppScriptable)
     GetPrimaryBundleId()(*string)
     GetPrimaryBundleVersion()(*string)
     SetIgnoreVersionDetection(value *bool)()
     SetIncludedApps(value []MacOSIncludedAppable)()
     SetMinimumSupportedOperatingSystem(value MacOSMinimumOperatingSystemable)()
+    SetPostInstallScript(value MacOSAppScriptable)()
+    SetPreInstallScript(value MacOSAppScriptable)()
     SetPrimaryBundleId(value *string)()
     SetPrimaryBundleVersion(value *string)()
 }

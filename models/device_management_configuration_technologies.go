@@ -21,6 +21,8 @@ const (
     MICROSOFTSENSE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
     // Setting can be deployed through the Exchange Online agent channel.
     EXCHANGEONLINE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+    // Setting can be deployed through the Mobile Application Management (MAM) channel
+    MOBILEAPPLICATIONMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
     // Setting can be deployed through the Linux Mdm channel.
     LINUXMDM_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
     // Setting can be deployed through device enrollment.
@@ -35,7 +37,7 @@ func (i DeviceManagementConfigurationTechnologies) String() string {
     var values []string
     for p := DeviceManagementConfigurationTechnologies(1); p <= UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES; p <<= 1 {
         if i&p == p {
-            values = append(values, []string{"none", "mdm", "windows10XManagement", "configManager", "appleRemoteManagement", "microsoftSense", "exchangeOnline", "linuxMdm", "enrollment", "endpointPrivilegeManagement", "unknownFutureValue"}[p])
+            values = append(values, []string{"none", "mdm", "windows10XManagement", "configManager", "appleRemoteManagement", "microsoftSense", "exchangeOnline", "mobileApplicationManagement", "linuxMdm", "enrollment", "endpointPrivilegeManagement", "unknownFutureValue"}[p])
         }
     }
     return strings.Join(values, ",")
@@ -59,6 +61,8 @@ func ParseDeviceManagementConfigurationTechnologies(v string) (any, error) {
                 result |= MICROSOFTSENSE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
             case "exchangeOnline":
                 result |= EXCHANGEONLINE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+            case "mobileApplicationManagement":
+                result |= MOBILEAPPLICATIONMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
             case "linuxMdm":
                 result |= LINUXMDM_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
             case "enrollment":

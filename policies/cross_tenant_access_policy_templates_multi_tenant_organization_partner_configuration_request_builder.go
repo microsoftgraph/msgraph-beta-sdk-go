@@ -18,7 +18,7 @@ type CrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfigurationRequestBuilderGetQueryParameters get the cross-tenant access policy template with inbound and outbound partner configuration settings for a multi-tenant organization.
+// CrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfigurationRequestBuilderGetQueryParameters get the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization. This API is available in the following national cloud deployments.
 type CrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *CrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfigura
     }
     return nil
 }
-// Get get the cross-tenant access policy template with inbound and outbound partner configuration settings for a multi-tenant organization.
+// Get get the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/multitenantorganizationpartnerconfigurationtemplate-get?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *CrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfigura
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiTenantOrganizationPartnerConfigurationTemplateable), nil
 }
-// Patch update the cross-tenant access policy template with inbound and outbound partner configuration settings for a multi-tenant organization.
+// Patch update the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/multitenantorganizationpartnerconfigurationtemplate-update?view=graph-rest-1.0
@@ -130,7 +130,7 @@ func (m *CrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfigura
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the cross-tenant access policy template with inbound and outbound partner configuration settings for a multi-tenant organization.
+// ToGetRequestInformation get the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization. This API is available in the following national cloud deployments.
 func (m *CrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfigurationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfigurationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -146,7 +146,7 @@ func (m *CrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfigura
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the cross-tenant access policy template with inbound and outbound partner configuration settings for a multi-tenant organization.
+// ToPatchRequestInformation update the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization. This API is available in the following national cloud deployments.
 func (m *CrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfigurationRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiTenantOrganizationPartnerConfigurationTemplateable, requestConfiguration *CrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfigurationRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

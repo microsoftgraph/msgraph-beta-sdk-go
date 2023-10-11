@@ -31,7 +31,7 @@ func NewRecommendationsItemReactivateRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewRecommendationsItemReactivateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post reactivate a completed, dismissed, or postponed recommendation object. This action updates the status of the recommendation to active. This method only works when the status of the recommendation is completedByUser, dismissed, or postponed. This API is supported in the following national cloud deployments.
+// Post reactivate a completed, dismissed, or postponed recommendation object. This action updates the status of the recommendation to active. This method only works when the status of the recommendation is completedByUser, dismissed, or postponed. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/recommendation-reactivate?view=graph-rest-1.0
@@ -53,7 +53,7 @@ func (m *RecommendationsItemReactivateRequestBuilder) Post(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Recommendationable), nil
 }
-// ToPostRequestInformation reactivate a completed, dismissed, or postponed recommendation object. This action updates the status of the recommendation to active. This method only works when the status of the recommendation is completedByUser, dismissed, or postponed. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation reactivate a completed, dismissed, or postponed recommendation object. This action updates the status of the recommendation to active. This method only works when the status of the recommendation is completedByUser, dismissed, or postponed. This API is available in the following national cloud deployments.
 func (m *RecommendationsItemReactivateRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *RecommendationsItemReactivateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

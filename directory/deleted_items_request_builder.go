@@ -86,6 +86,10 @@ func (m *DeletedItemsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
+// GetByIds provides operations to call the getByIds method.
+func (m *DeletedItemsRequestBuilder) GetByIds()(*DeletedItemsGetByIdsRequestBuilder) {
+    return NewDeletedItemsGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GraphAdministrativeUnit casts the previous resource to administrativeUnit.
 func (m *DeletedItemsRequestBuilder) GraphAdministrativeUnit()(*DeletedItemsGraphAdministrativeUnitRequestBuilder) {
     return NewDeletedItemsGraphAdministrativeUnitRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -125,6 +129,10 @@ func (m *DeletedItemsRequestBuilder) ToGetRequestInformation(ctx context.Context
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// ValidateProperties provides operations to call the validateProperties method.
+func (m *DeletedItemsRequestBuilder) ValidateProperties()(*DeletedItemsValidatePropertiesRequestBuilder) {
+    return NewDeletedItemsValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 func (m *DeletedItemsRequestBuilder) WithUrl(rawUrl string)(*DeletedItemsRequestBuilder) {

@@ -105,7 +105,7 @@ func (m *CasesEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) Microsof
 func (m *CasesEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) MicrosoftGraphSecurityUpdateIndex()(*CasesEdiscoveryCasesItemNoncustodialDataSourcesMicrosoftGraphSecurityUpdateIndexRequestBuilder) {
     return NewCasesEdiscoveryCasesItemNoncustodialDataSourcesMicrosoftGraphSecurityUpdateIndexRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Post create a new ediscoveryNoncustodialDataSource object. This API is supported in the following national cloud deployments.
+// Post create a new ediscoveryNoncustodialDataSource object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycase-post-noncustodialdatasources?view=graph-rest-1.0
@@ -143,7 +143,7 @@ func (m *CasesEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) ToGetReq
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new ediscoveryNoncustodialDataSource object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new ediscoveryNoncustodialDataSource object. This API is available in the following national cloud deployments.
 func (m *CasesEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryNoncustodialDataSourceable, requestConfiguration *CasesEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

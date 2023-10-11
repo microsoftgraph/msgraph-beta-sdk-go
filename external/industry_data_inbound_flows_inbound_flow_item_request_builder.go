@@ -18,7 +18,7 @@ type IndustryDataInboundFlowsInboundFlowItemRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IndustryDataInboundFlowsInboundFlowItemRequestBuilderGetQueryParameters read the properties and relationships of an inboundFlow object. This API is supported in the following national cloud deployments.
+// IndustryDataInboundFlowsInboundFlowItemRequestBuilderGetQueryParameters read the properties and relationships of an inboundFlow object. This API is available in the following national cloud deployments.
 type IndustryDataInboundFlowsInboundFlowItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,7 @@ func NewIndustryDataInboundFlowsInboundFlowItemRequestBuilder(rawUrl string, req
 func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) DataConnector()(*IndustryDataInboundFlowsItemDataConnectorRequestBuilder) {
     return NewIndustryDataInboundFlowsItemDataConnectorRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete delete an inboundFileFlow object. This API is supported in the following national cloud deployments.
+// Delete delete an inboundFileFlow object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-delete?view=graph-rest-1.0
@@ -77,7 +77,7 @@ func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) Delete(ctx conte
     }
     return nil
 }
-// Get read the properties and relationships of an inboundFlow object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of an inboundFlow object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundflow-get?view=graph-rest-1.0
@@ -99,7 +99,7 @@ func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) Get(ctx context.
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable), nil
 }
-// Patch update the properties of an inboundFlow object. This API is supported in the following national cloud deployments.
+// Patch update the properties of an inboundFlow object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundflow-update?view=graph-rest-1.0
@@ -121,7 +121,7 @@ func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) Patch(ctx contex
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable), nil
 }
-// ToDeleteRequestInformation delete an inboundFileFlow object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete an inboundFileFlow object. This API is available in the following national cloud deployments.
 func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *IndustryDataInboundFlowsInboundFlowItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -133,7 +133,7 @@ func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) ToDeleteRequestI
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an inboundFlow object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of an inboundFlow object. This API is available in the following national cloud deployments.
 func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataInboundFlowsInboundFlowItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -149,7 +149,7 @@ func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) ToGetRequestInfo
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an inboundFlow object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of an inboundFlow object. This API is available in the following national cloud deployments.
 func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable, requestConfiguration *IndustryDataInboundFlowsInboundFlowItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

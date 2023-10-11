@@ -18,7 +18,7 @@ type VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderDeleteReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderGetQueryParameters read the properties and relationships of a specific cloudPcDeviceImage object. This API is supported in the following national cloud deployments.
+// VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderGetQueryParameters read the properties and relationships of a specific cloudPcDeviceImage object. This API is available in the following national cloud deployments.
 type VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewVirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a cloudPcDeviceImage object. This API is supported in the following national cloud deployments.
+// Delete delete a cloudPcDeviceImage object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) Delete
     }
     return nil
 }
-// Get read the properties and relationships of a specific cloudPcDeviceImage object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a specific cloudPcDeviceImage object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-get?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) Patch(
 func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) Reupload()(*VirtualEndpointDeviceImagesItemReuploadRequestBuilder) {
     return NewVirtualEndpointDeviceImagesItemReuploadRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a cloudPcDeviceImage object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a cloudPcDeviceImage object. This API is available in the following national cloud deployments.
 func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -130,7 +130,7 @@ func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) ToDele
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a specific cloudPcDeviceImage object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a specific cloudPcDeviceImage object. This API is available in the following national cloud deployments.
 func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

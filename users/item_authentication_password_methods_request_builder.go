@@ -11,7 +11,7 @@ import (
 type ItemAuthenticationPasswordMethodsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemAuthenticationPasswordMethodsRequestBuilderGetQueryParameters retrieve a list of password authentication method objects. This will return exactly one object, as a user can have exactly one password. This API is supported in the following national cloud deployments.
+// ItemAuthenticationPasswordMethodsRequestBuilderGetQueryParameters retrieve a list of password authentication method objects. This will return exactly one object, as a user can have exactly one password. This API is available in the following national cloud deployments.
 type ItemAuthenticationPasswordMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemAuthenticationPasswordMethodsRequestBuilder(rawUrl string, requestAd
 func (m *ItemAuthenticationPasswordMethodsRequestBuilder) Count()(*ItemAuthenticationPasswordMethodsCountRequestBuilder) {
     return NewItemAuthenticationPasswordMethodsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of password authentication method objects. This will return exactly one object, as a user can have exactly one password. This API is supported in the following national cloud deployments.
+// Get retrieve a list of password authentication method objects. This will return exactly one object, as a user can have exactly one password. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/authentication-list-passwordmethods?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *ItemAuthenticationPasswordMethodsRequestBuilder) Post(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordAuthenticationMethodable), nil
 }
-// ToGetRequestInformation retrieve a list of password authentication method objects. This will return exactly one object, as a user can have exactly one password. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of password authentication method objects. This will return exactly one object, as a user can have exactly one password. This API is available in the following national cloud deployments.
 func (m *ItemAuthenticationPasswordMethodsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationPasswordMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

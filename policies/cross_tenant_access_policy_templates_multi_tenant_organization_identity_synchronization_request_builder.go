@@ -18,7 +18,7 @@ type CrossTenantAccessPolicyTemplatesMultiTenantOrganizationIdentitySynchronizat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CrossTenantAccessPolicyTemplatesMultiTenantOrganizationIdentitySynchronizationRequestBuilderGetQueryParameters get the cross-tenant access policy template with user synchronization settings for a multi-tenant organization.
+// CrossTenantAccessPolicyTemplatesMultiTenantOrganizationIdentitySynchronizationRequestBuilderGetQueryParameters get the cross-tenant access policy template with user synchronization settings for a multitenant organization. This API is available in the following national cloud deployments.
 type CrossTenantAccessPolicyTemplatesMultiTenantOrganizationIdentitySynchronizationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *CrossTenantAccessPolicyTemplatesMultiTenantOrganizationIdentitySynchron
     }
     return nil
 }
-// Get get the cross-tenant access policy template with user synchronization settings for a multi-tenant organization.
+// Get get the cross-tenant access policy template with user synchronization settings for a multitenant organization. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/multitenantorganizationidentitysyncpolicytemplate-get?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *CrossTenantAccessPolicyTemplatesMultiTenantOrganizationIdentitySynchron
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiTenantOrganizationIdentitySyncPolicyTemplateable), nil
 }
-// Patch update the cross-tenant access policy template with user synchronization settings for a multi-tenant organization.
+// Patch update the cross-tenant access policy template with user synchronization settings for a multi-tenant organization. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/multitenantorganizationidentitysyncpolicytemplate-update?view=graph-rest-1.0
@@ -130,7 +130,7 @@ func (m *CrossTenantAccessPolicyTemplatesMultiTenantOrganizationIdentitySynchron
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the cross-tenant access policy template with user synchronization settings for a multi-tenant organization.
+// ToGetRequestInformation get the cross-tenant access policy template with user synchronization settings for a multitenant organization. This API is available in the following national cloud deployments.
 func (m *CrossTenantAccessPolicyTemplatesMultiTenantOrganizationIdentitySynchronizationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CrossTenantAccessPolicyTemplatesMultiTenantOrganizationIdentitySynchronizationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -146,7 +146,7 @@ func (m *CrossTenantAccessPolicyTemplatesMultiTenantOrganizationIdentitySynchron
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the cross-tenant access policy template with user synchronization settings for a multi-tenant organization.
+// ToPatchRequestInformation update the cross-tenant access policy template with user synchronization settings for a multi-tenant organization. This API is available in the following national cloud deployments.
 func (m *CrossTenantAccessPolicyTemplatesMultiTenantOrganizationIdentitySynchronizationRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiTenantOrganizationIdentitySyncPolicyTemplateable, requestConfiguration *CrossTenantAccessPolicyTemplatesMultiTenantOrganizationIdentitySynchronizationRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -20,7 +20,7 @@ func NewUserRegistrationDetails()(*UserRegistrationDetails) {
 func CreateUserRegistrationDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserRegistrationDetails(), nil
 }
-// GetDefaultMfaMethod gets the defaultMfaMethod property value. The method the user or admin selected as default for performing multi-factor authentication for the user. The possible values are: none, mobilePhone, alternateMobilePhone, officePhone, microsoftAuthenticatorPush, softwareOneTimePasscode, unknownFutureValue.
+// GetDefaultMfaMethod gets the defaultMfaMethod property value. The method the user or admin selected as default for performing multifactor authentication for the user. The possible values are: none, mobilePhone, alternateMobilePhone, officePhone, microsoftAuthenticatorPush, softwareOneTimePasscode, unknownFutureValue.
 func (m *UserRegistrationDetails) GetDefaultMfaMethod()(*DefaultMfaMethodType) {
     val, err := m.GetBackingStore().Get("defaultMfaMethod")
     if err != nil {
@@ -219,7 +219,7 @@ func (m *UserRegistrationDetails) GetIsAdmin()(*bool) {
     }
     return nil
 }
-// GetIsMfaCapable gets the isMfaCapable property value. Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
+// GetIsMfaCapable gets the isMfaCapable property value. Indicates whether the user has registered a strong authentication method for multifactor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
 func (m *UserRegistrationDetails) GetIsMfaCapable()(*bool) {
     val, err := m.GetBackingStore().Get("isMfaCapable")
     if err != nil {
@@ -230,7 +230,7 @@ func (m *UserRegistrationDetails) GetIsMfaCapable()(*bool) {
     }
     return nil
 }
-// GetIsMfaRegistered gets the isMfaRegistered property value. Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).
+// GetIsMfaRegistered gets the isMfaRegistered property value. Indicates whether the user has registered a strong authentication method for multifactor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).
 func (m *UserRegistrationDetails) GetIsMfaRegistered()(*bool) {
     val, err := m.GetBackingStore().Get("isMfaRegistered")
     if err != nil {
@@ -340,7 +340,7 @@ func (m *UserRegistrationDetails) GetUserDisplayName()(*string) {
     }
     return nil
 }
-// GetUserPreferredMethodForSecondaryAuthentication gets the userPreferredMethodForSecondaryAuthentication property value. The method the user selected as the default second-factor for performing multi-factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
+// GetUserPreferredMethodForSecondaryAuthentication gets the userPreferredMethodForSecondaryAuthentication property value. The method the user selected as the default second-factor for performing multifactor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
 func (m *UserRegistrationDetails) GetUserPreferredMethodForSecondaryAuthentication()(*UserDefaultAuthenticationMethod) {
     val, err := m.GetBackingStore().Get("userPreferredMethodForSecondaryAuthentication")
     if err != nil {
@@ -480,7 +480,7 @@ func (m *UserRegistrationDetails) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetDefaultMfaMethod sets the defaultMfaMethod property value. The method the user or admin selected as default for performing multi-factor authentication for the user. The possible values are: none, mobilePhone, alternateMobilePhone, officePhone, microsoftAuthenticatorPush, softwareOneTimePasscode, unknownFutureValue.
+// SetDefaultMfaMethod sets the defaultMfaMethod property value. The method the user or admin selected as default for performing multifactor authentication for the user. The possible values are: none, mobilePhone, alternateMobilePhone, officePhone, microsoftAuthenticatorPush, softwareOneTimePasscode, unknownFutureValue.
 func (m *UserRegistrationDetails) SetDefaultMfaMethod(value *DefaultMfaMethodType)() {
     err := m.GetBackingStore().Set("defaultMfaMethod", value)
     if err != nil {
@@ -494,14 +494,14 @@ func (m *UserRegistrationDetails) SetIsAdmin(value *bool)() {
         panic(err)
     }
 }
-// SetIsMfaCapable sets the isMfaCapable property value. Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
+// SetIsMfaCapable sets the isMfaCapable property value. Indicates whether the user has registered a strong authentication method for multifactor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
 func (m *UserRegistrationDetails) SetIsMfaCapable(value *bool)() {
     err := m.GetBackingStore().Set("isMfaCapable", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsMfaRegistered sets the isMfaRegistered property value. Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).
+// SetIsMfaRegistered sets the isMfaRegistered property value. Indicates whether the user has registered a strong authentication method for multifactor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).
 func (m *UserRegistrationDetails) SetIsMfaRegistered(value *bool)() {
     err := m.GetBackingStore().Set("isMfaRegistered", value)
     if err != nil {
@@ -571,7 +571,7 @@ func (m *UserRegistrationDetails) SetUserDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetUserPreferredMethodForSecondaryAuthentication sets the userPreferredMethodForSecondaryAuthentication property value. The method the user selected as the default second-factor for performing multi-factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
+// SetUserPreferredMethodForSecondaryAuthentication sets the userPreferredMethodForSecondaryAuthentication property value. The method the user selected as the default second-factor for performing multifactor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
 func (m *UserRegistrationDetails) SetUserPreferredMethodForSecondaryAuthentication(value *UserDefaultAuthenticationMethod)() {
     err := m.GetBackingStore().Set("userPreferredMethodForSecondaryAuthentication", value)
     if err != nil {

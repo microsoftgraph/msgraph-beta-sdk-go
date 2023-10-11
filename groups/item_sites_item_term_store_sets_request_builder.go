@@ -11,7 +11,7 @@ import (
 type ItemSitesItemTermStoreSetsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemTermStoreSetsRequestBuilderGetQueryParameters read the properties and relationships of a set object. This API is supported in the following national cloud deployments.
+// ItemSitesItemTermStoreSetsRequestBuilderGetQueryParameters read the properties and relationships of a set object. This API is available in the following national cloud deployments.
 type ItemSitesItemTermStoreSetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemSitesItemTermStoreSetsRequestBuilder(rawUrl string, requestAdapter i
 func (m *ItemSitesItemTermStoreSetsRequestBuilder) Count()(*ItemSitesItemTermStoreSetsCountRequestBuilder) {
     return NewItemSitesItemTermStoreSetsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a set object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a set object. This API is available in the following national cloud deployments.
 func (m *ItemSitesItemTermStoreSetsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreSetsRequestBuilderGetRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.SetCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ItemSitesItemTermStoreSetsRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Setable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a set object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a set object. This API is available in the following national cloud deployments.
 func (m *ItemSitesItemTermStoreSetsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreSetsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

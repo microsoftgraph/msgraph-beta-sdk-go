@@ -11,7 +11,7 @@ import (
 type AccessReviewsDefinitionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AccessReviewsDefinitionsRequestBuilderGetQueryParameters retrieve the accessReviewScheduleDefinition objects. A list of zero or more accessReviewScheduleDefinition objects are returned, including all of their nested properties, for each access review series created. This does not include the associated accessReviewInstance objects. This API is supported in the following national cloud deployments.
+// AccessReviewsDefinitionsRequestBuilderGetQueryParameters retrieve the accessReviewScheduleDefinition objects. A list of zero or more accessReviewScheduleDefinition objects are returned, including all of their nested properties, for each access review series created. This does not include the associated accessReviewInstance objects. This API is available in the following national cloud deployments.
 type AccessReviewsDefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func (m *AccessReviewsDefinitionsRequestBuilder) Count()(*AccessReviewsDefinitio
 func (m *AccessReviewsDefinitionsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*AccessReviewsDefinitionsFilterByCurrentUserWithOnRequestBuilder) {
     return NewAccessReviewsDefinitionsFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
-// Get retrieve the accessReviewScheduleDefinition objects. A list of zero or more accessReviewScheduleDefinition objects are returned, including all of their nested properties, for each access review series created. This does not include the associated accessReviewInstance objects. This API is supported in the following national cloud deployments.
+// Get retrieve the accessReviewScheduleDefinition objects. A list of zero or more accessReviewScheduleDefinition objects are returned, including all of their nested properties, for each access review series created. This does not include the associated accessReviewInstance objects. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewset-list-definitions?view=graph-rest-1.0
@@ -100,7 +100,7 @@ func (m *AccessReviewsDefinitionsRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewScheduleDefinitionCollectionResponseable), nil
 }
-// Post create a new accessReviewScheduleDefinition object. This API is supported in the following national cloud deployments.
+// Post create a new accessReviewScheduleDefinition object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewset-post-definitions?view=graph-rest-1.0
@@ -122,7 +122,7 @@ func (m *AccessReviewsDefinitionsRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewScheduleDefinitionable), nil
 }
-// ToGetRequestInformation retrieve the accessReviewScheduleDefinition objects. A list of zero or more accessReviewScheduleDefinition objects are returned, including all of their nested properties, for each access review series created. This does not include the associated accessReviewInstance objects. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the accessReviewScheduleDefinition objects. A list of zero or more accessReviewScheduleDefinition objects are returned, including all of their nested properties, for each access review series created. This does not include the associated accessReviewInstance objects. This API is available in the following national cloud deployments.
 func (m *AccessReviewsDefinitionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -138,7 +138,7 @@ func (m *AccessReviewsDefinitionsRequestBuilder) ToGetRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new accessReviewScheduleDefinition object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new accessReviewScheduleDefinition object. This API is available in the following national cloud deployments.
 func (m *AccessReviewsDefinitionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewScheduleDefinitionable, requestConfiguration *AccessReviewsDefinitionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

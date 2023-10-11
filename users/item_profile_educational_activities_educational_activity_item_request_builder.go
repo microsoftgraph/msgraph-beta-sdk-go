@@ -18,7 +18,7 @@ type ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an educationalActivity object from a users profile. This API is supported in the following national cloud deployments.
+// ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an educationalActivity object from a users profile. This API is available in the following national cloud deployments.
 type ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an educationalActivity object from a user's profile. This API is supported in the following national cloud deployments.
+// Delete delete an educationalActivity object from a user's profile. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationalactivity-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) 
     }
     return nil
 }
-// Get retrieve the properties and relationships of an educationalActivity object from a users profile. This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of an educationalActivity object from a users profile. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationalactivity-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityable), nil
 }
-// Patch update the properties of an educationalActivity object within a user's profile. This API is supported in the following national cloud deployments.
+// Patch update the properties of an educationalActivity object within a user's profile. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationalactivity-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityable), nil
 }
-// ToDeleteRequestInformation delete an educationalActivity object from a user's profile. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete an educationalActivity object from a user's profile. This API is available in the following national cloud deployments.
 func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of an educationalActivity object from a users profile. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of an educationalActivity object from a users profile. This API is available in the following national cloud deployments.
 func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an educationalActivity object within a user's profile. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of an educationalActivity object within a user's profile. This API is available in the following national cloud deployments.
 func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityable, requestConfiguration *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

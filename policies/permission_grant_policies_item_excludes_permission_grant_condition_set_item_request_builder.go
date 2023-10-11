@@ -18,7 +18,7 @@ type PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilderGetQueryParameters condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
+// PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilderGetQueryParameters condition sets that are excluded in this permission grant policy. Automatically expanded on GET.
 type PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewPermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemReques
     urlParams["request-raw-url"] = rawUrl
     return NewPermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a permissionGrantConditionSet from the excludes collection of a permissionGrantPolicy. This API is supported in the following national cloud deployments.
+// Delete deletes a permissionGrantConditionSet from the excludes collection of a permissionGrantPolicy. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/permissiongrantpolicy-delete-excludes?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemReque
     }
     return nil
 }
-// Get condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
+// Get condition sets that are excluded in this permission grant policy. Automatically expanded on GET.
 func (m *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionGrantConditionSetable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -111,7 +111,7 @@ func (m *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemReque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionGrantConditionSetable), nil
 }
-// ToDeleteRequestInformation deletes a permissionGrantConditionSet from the excludes collection of a permissionGrantPolicy. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation deletes a permissionGrantConditionSet from the excludes collection of a permissionGrantPolicy. This API is available in the following national cloud deployments.
 func (m *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -123,7 +123,7 @@ func (m *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemReque
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
+// ToGetRequestInformation condition sets that are excluded in this permission grant policy. Automatically expanded on GET.
 func (m *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

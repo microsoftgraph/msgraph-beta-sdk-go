@@ -11,7 +11,7 @@ import (
 type ItemUsageRightsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemUsageRightsRequestBuilderGetQueryParameters retrieve a list of usageRight objects for a given device. This API is supported in the following national cloud deployments.
+// ItemUsageRightsRequestBuilderGetQueryParameters retrieve a list of usageRight objects for a given device. This API is available in the following national cloud deployments.
 type ItemUsageRightsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemUsageRightsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *ItemUsageRightsRequestBuilder) Count()(*ItemUsageRightsCountRequestBuilder) {
     return NewItemUsageRightsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of usageRight objects for a given device. This API is supported in the following national cloud deployments.
+// Get retrieve a list of usageRight objects for a given device. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/device-list-usagerights?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *ItemUsageRightsRequestBuilder) Post(ctx context.Context, body ie233ee76
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UsageRightable), nil
 }
-// ToGetRequestInformation retrieve a list of usageRight objects for a given device. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of usageRight objects for a given device. This API is available in the following national cloud deployments.
 func (m *ItemUsageRightsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemUsageRightsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

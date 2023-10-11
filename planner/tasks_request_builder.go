@@ -11,7 +11,7 @@ import (
 type TasksRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TasksRequestBuilderGetQueryParameters retrieve a list of plannertask objects. This API is supported in the following national cloud deployments.
+// TasksRequestBuilderGetQueryParameters retrieve a list of plannertask objects. This API is available in the following national cloud deployments.
 type TasksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func (m *TasksRequestBuilder) Count()(*TasksCountRequestBuilder) {
 func (m *TasksRequestBuilder) Delta()(*TasksDeltaRequestBuilder) {
     return NewTasksDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of plannertask objects. This API is supported in the following national cloud deployments.
+// Get retrieve a list of plannertask objects. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/planner-list-tasks?view=graph-rest-1.0
@@ -100,7 +100,7 @@ func (m *TasksRequestBuilder) Get(ctx context.Context, requestConfiguration *Tas
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskCollectionResponseable), nil
 }
-// Post create a new plannerTask. This API is supported in the following national cloud deployments.
+// Post create a new plannerTask. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/planner-post-tasks?view=graph-rest-1.0
@@ -122,7 +122,7 @@ func (m *TasksRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba69
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskable), nil
 }
-// ToGetRequestInformation retrieve a list of plannertask objects. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of plannertask objects. This API is available in the following national cloud deployments.
 func (m *TasksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TasksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -138,7 +138,7 @@ func (m *TasksRequestBuilder) ToGetRequestInformation(ctx context.Context, reque
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new plannerTask. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new plannerTask. This API is available in the following national cloud deployments.
 func (m *TasksRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskable, requestConfiguration *TasksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

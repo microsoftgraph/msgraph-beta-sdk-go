@@ -18,7 +18,7 @@ type LabelsAuthoritiesAuthorityTemplateItemRequestBuilderDeleteRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LabelsAuthoritiesAuthorityTemplateItemRequestBuilderGetQueryParameters read the properties and relationships of a authorityTemplate object. This API is supported in the following national cloud deployments.
+// LabelsAuthoritiesAuthorityTemplateItemRequestBuilderGetQueryParameters read the properties and relationships of a authorityTemplate object. This API is available in the following national cloud deployments.
 type LabelsAuthoritiesAuthorityTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewLabelsAuthoritiesAuthorityTemplateItemRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewLabelsAuthoritiesAuthorityTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a authorityTemplate object. This API is supported in the following national cloud deployments.
+// Delete delete a authorityTemplate object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-delete-authorities?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) Delete(ctx contex
     }
     return nil
 }
-// Get read the properties and relationships of a authorityTemplate object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a authorityTemplate object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-authoritytemplate-get?view=graph-rest-1.0
@@ -114,7 +114,7 @@ func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) Patch(ctx context
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AuthorityTemplateable), nil
 }
-// ToDeleteRequestInformation delete a authorityTemplate object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a authorityTemplate object. This API is available in the following national cloud deployments.
 func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LabelsAuthoritiesAuthorityTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -126,7 +126,7 @@ func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) ToDeleteRequestIn
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a authorityTemplate object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a authorityTemplate object. This API is available in the following national cloud deployments.
 func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsAuthoritiesAuthorityTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

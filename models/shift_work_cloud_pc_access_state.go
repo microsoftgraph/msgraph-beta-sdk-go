@@ -11,13 +11,12 @@ const (
     ACTIVATIONFAILED_SHIFTWORKCLOUDPCACCESSSTATE
     ACTIVE_SHIFTWORKCLOUDPCACCESSSTATE
     ACTIVATING_SHIFTWORKCLOUDPCACCESSSTATE
-    WAITLISTED_SHIFTWORKCLOUDPCACCESSSTATE
     UNKNOWNFUTUREVALUE_SHIFTWORKCLOUDPCACCESSSTATE
     STANDBYMODE_SHIFTWORKCLOUDPCACCESSSTATE
 )
 
 func (i ShiftWorkCloudPcAccessState) String() string {
-    return []string{"unassigned", "noLicensesAvailable", "activationFailed", "active", "activating", "waitlisted", "unknownFutureValue", "standbyMode"}[i]
+    return []string{"unassigned", "noLicensesAvailable", "activationFailed", "active", "activating", "unknownFutureValue", "standbyMode"}[i]
 }
 func ParseShiftWorkCloudPcAccessState(v string) (any, error) {
     result := UNASSIGNED_SHIFTWORKCLOUDPCACCESSSTATE
@@ -32,8 +31,6 @@ func ParseShiftWorkCloudPcAccessState(v string) (any, error) {
             result = ACTIVE_SHIFTWORKCLOUDPCACCESSSTATE
         case "activating":
             result = ACTIVATING_SHIFTWORKCLOUDPCACCESSSTATE
-        case "waitlisted":
-            result = WAITLISTED_SHIFTWORKCLOUDPCACCESSSTATE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SHIFTWORKCLOUDPCACCESSSTATE
         case "standbyMode":

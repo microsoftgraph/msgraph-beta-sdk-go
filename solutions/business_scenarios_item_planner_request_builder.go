@@ -18,7 +18,7 @@ type BusinessScenariosItemPlannerRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BusinessScenariosItemPlannerRequestBuilderGetQueryParameters read the properties and relationships of a businessScenarioPlanner object. This API is supported in the following national cloud deployments.
+// BusinessScenariosItemPlannerRequestBuilderGetQueryParameters read the properties and relationships of a businessScenarioPlanner object. This API is available in the following national cloud deployments.
 type BusinessScenariosItemPlannerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *BusinessScenariosItemPlannerRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Get read the properties and relationships of a businessScenarioPlanner object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a businessScenarioPlanner object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/businessscenarioplanner-get?view=graph-rest-1.0
@@ -139,7 +139,7 @@ func (m *BusinessScenariosItemPlannerRequestBuilder) ToDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a businessScenarioPlanner object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a businessScenarioPlanner object. This API is available in the following national cloud deployments.
 func (m *BusinessScenariosItemPlannerRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ItemPendingAccessReviewInstancesItemStagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemPendingAccessReviewInstancesItemStagesRequestBuilderGetQueryParameters retrieve the stages in a multi-stage access review instance. This API is supported in the following national cloud deployments.
+// ItemPendingAccessReviewInstancesItemStagesRequestBuilderGetQueryParameters retrieve the stages in a multi-stage access review instance. This API is available in the following national cloud deployments.
 type ItemPendingAccessReviewInstancesItemStagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func (m *ItemPendingAccessReviewInstancesItemStagesRequestBuilder) Count()(*Item
 func (m *ItemPendingAccessReviewInstancesItemStagesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*ItemPendingAccessReviewInstancesItemStagesFilterByCurrentUserWithOnRequestBuilder) {
     return NewItemPendingAccessReviewInstancesItemStagesFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
-// Get retrieve the stages in a multi-stage access review instance. This API is supported in the following national cloud deployments.
+// Get retrieve the stages in a multi-stage access review instance. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewinstance-list-stages?view=graph-rest-1.0
@@ -119,7 +119,7 @@ func (m *ItemPendingAccessReviewInstancesItemStagesRequestBuilder) Post(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewStageable), nil
 }
-// ToGetRequestInformation retrieve the stages in a multi-stage access review instance. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the stages in a multi-stage access review instance. This API is available in the following national cloud deployments.
 func (m *ItemPendingAccessReviewInstancesItemStagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPendingAccessReviewInstancesItemStagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

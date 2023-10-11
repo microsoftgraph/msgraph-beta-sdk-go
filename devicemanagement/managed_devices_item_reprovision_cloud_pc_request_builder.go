@@ -30,7 +30,7 @@ func NewManagedDevicesItemReprovisionCloudPcRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDevicesItemReprovisionCloudPcRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post reprovision a Cloud PC with an Intune managed device ID. This API is supported in the following national cloud deployments.
+// Post reprovision a Cloud PC with an Intune managed device ID. This API is available in the following national cloud deployments.
 // Deprecated: The reprovisionCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use reprovision instead as of 2023-07/reprovisionCloudPc on 2023-07-17 and will be removed 2023-09-30
 // [Find more info here]
 // 
@@ -50,7 +50,7 @@ func (m *ManagedDevicesItemReprovisionCloudPcRequestBuilder) Post(ctx context.Co
     }
     return nil
 }
-// ToPostRequestInformation reprovision a Cloud PC with an Intune managed device ID. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation reprovision a Cloud PC with an Intune managed device ID. This API is available in the following national cloud deployments.
 // Deprecated: The reprovisionCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use reprovision instead as of 2023-07/reprovisionCloudPc on 2023-07-17 and will be removed 2023-09-30
 func (m *ManagedDevicesItemReprovisionCloudPcRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ManagedDevicesItemReprovisionCloudPcRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

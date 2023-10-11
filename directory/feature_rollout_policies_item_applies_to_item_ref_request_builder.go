@@ -10,7 +10,7 @@ import (
 type FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilderDeleteQueryParameters remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout. This API is supported in the following national cloud deployments.
+// FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilderDeleteQueryParameters remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout. This API is available in the following national cloud deployments.
 type FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilderDeleteQueryParameters struct {
     // Delete Uri
     Id *string `uriparametername:"%40id"`
@@ -37,7 +37,7 @@ func NewFeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewFeatureRolloutPoliciesItemAppliesToItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout. This API is supported in the following national cloud deployments.
+// Delete remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout. This API is available in the following national cloud deployments.
 // Deprecated: Feature Rollout Policies have been grouped with other policies under /policies. The existing /directory/featureRolloutPolicies is deprecated and will stop returning data on 06/30/2021. Please use /policies/featureRolloutPolicies. as of 2021-01/DirectoryFeatureRolloutPolicies on 2021-03-05 and will be removed 2021-06-30
 // [Find more info here]
 // 
@@ -57,7 +57,7 @@ func (m *FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder) Delete(ctx co
     }
     return nil
 }
-// ToDeleteRequestInformation remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout. This API is available in the following national cloud deployments.
 // Deprecated: Feature Rollout Policies have been grouped with other policies under /policies. The existing /directory/featureRolloutPolicies is deprecated and will stop returning data on 06/30/2021. Please use /policies/featureRolloutPolicies. as of 2021-01/DirectoryFeatureRolloutPolicies on 2021-03-05 and will be removed 2021-06-30
 func (m *FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

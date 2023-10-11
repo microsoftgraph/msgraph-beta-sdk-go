@@ -30,7 +30,7 @@ func NewCrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfigurat
     urlParams["request-raw-url"] = rawUrl
     return NewCrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfigurationResetToDefaultSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post reset the cross-tenant access policy template with inbound and outbound partner configuration settings for a multi-tenant organization to the default values. In its reset state, the template has no impact on partner configuration settings, other than that an unconfigured partner configuration is created if needed, for every multi-tenant organization tenant.
+// Post reset the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization to the default values. In its reset state, the template has no impact on partner configuration settings, other than that an unconfigured partner configuration is created if needed, for every multitenant organization tenant. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/multitenantorganizationpartnerconfigurationtemplate-resettodefaultsettings?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *CrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfigura
     }
     return nil
 }
-// ToPostRequestInformation reset the cross-tenant access policy template with inbound and outbound partner configuration settings for a multi-tenant organization to the default values. In its reset state, the template has no impact on partner configuration settings, other than that an unconfigured partner configuration is created if needed, for every multi-tenant organization tenant.
+// ToPostRequestInformation reset the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization to the default values. In its reset state, the template has no impact on partner configuration settings, other than that an unconfigured partner configuration is created if needed, for every multitenant organization tenant. This API is available in the following national cloud deployments.
 func (m *CrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfigurationResetToDefaultSettingsRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *CrossTenantAccessPolicyTemplatesMultiTenantOrganizationPartnerConfigurationResetToDefaultSettingsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

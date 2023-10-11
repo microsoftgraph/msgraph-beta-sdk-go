@@ -11,7 +11,7 @@ import (
 type ItemResourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemResourcesRequestBuilderGetQueryParameters retrieve a collection of governanceResource that the requestor has access to. This API is supported in the following national cloud deployments.
+// ItemResourcesRequestBuilderGetQueryParameters retrieve a collection of governanceResource that the requestor has access to. This API is available in the following national cloud deployments.
 type ItemResourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemResourcesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *ItemResourcesRequestBuilder) Count()(*ItemResourcesCountRequestBuilder) {
     return NewItemResourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a collection of governanceResource that the requestor has access to. This API is supported in the following national cloud deployments.
+// Get retrieve a collection of governanceResource that the requestor has access to. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/governanceresource-list?view=graph-rest-1.0
@@ -119,7 +119,7 @@ func (m *ItemResourcesRequestBuilder) Post(ctx context.Context, body ie233ee762e
 func (m *ItemResourcesRequestBuilder) Register()(*ItemResourcesRegisterRequestBuilder) {
     return NewItemResourcesRegisterRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation retrieve a collection of governanceResource that the requestor has access to. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a collection of governanceResource that the requestor has access to. This API is available in the following national cloud deployments.
 func (m *ItemResourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemResourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ItemTeamDefinitionScheduleTimeCardsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamDefinitionScheduleTimeCardsRequestBuilderGetQueryParameters retrieve a list of timeCard entries in a schedule. This API is supported in the following national cloud deployments.
+// ItemTeamDefinitionScheduleTimeCardsRequestBuilderGetQueryParameters retrieve a list of timeCard entries in a schedule. This API is available in the following national cloud deployments.
 type ItemTeamDefinitionScheduleTimeCardsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func NewItemTeamDefinitionScheduleTimeCardsRequestBuilder(rawUrl string, request
 func (m *ItemTeamDefinitionScheduleTimeCardsRequestBuilder) Count()(*ItemTeamDefinitionScheduleTimeCardsCountRequestBuilder) {
     return NewItemTeamDefinitionScheduleTimeCardsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of timeCard entries in a schedule. This API is supported in the following national cloud deployments.
+// Get retrieve a list of timeCard entries in a schedule. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/timecard-list?view=graph-rest-1.0
@@ -100,7 +100,7 @@ func (m *ItemTeamDefinitionScheduleTimeCardsRequestBuilder) Get(ctx context.Cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardCollectionResponseable), nil
 }
-// Post create a timeCard instance in a schedule. This API is supported in the following national cloud deployments.
+// Post create a timeCard instance in a schedule. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/timecard-post?view=graph-rest-1.0
@@ -122,7 +122,7 @@ func (m *ItemTeamDefinitionScheduleTimeCardsRequestBuilder) Post(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable), nil
 }
-// ToGetRequestInformation retrieve a list of timeCard entries in a schedule. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of timeCard entries in a schedule. This API is available in the following national cloud deployments.
 func (m *ItemTeamDefinitionScheduleTimeCardsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleTimeCardsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -138,7 +138,7 @@ func (m *ItemTeamDefinitionScheduleTimeCardsRequestBuilder) ToGetRequestInformat
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a timeCard instance in a schedule. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a timeCard instance in a schedule. This API is available in the following national cloud deployments.
 func (m *ItemTeamDefinitionScheduleTimeCardsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, requestConfiguration *ItemTeamDefinitionScheduleTimeCardsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

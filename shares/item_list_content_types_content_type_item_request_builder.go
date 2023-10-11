@@ -18,7 +18,7 @@ type ItemListContentTypesContentTypeItemRequestBuilderDeleteRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemListContentTypesContentTypeItemRequestBuilderGetQueryParameters get contentTypes from shares
+// ItemListContentTypesContentTypeItemRequestBuilderGetQueryParameters the collection of content types present in this list.
 type ItemListContentTypesContentTypeItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -98,7 +98,7 @@ func (m *ItemListContentTypesContentTypeItemRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// Get get contentTypes from shares
+// Get the collection of content types present in this list.
 func (m *ItemListContentTypesContentTypeItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListContentTypesContentTypeItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -156,7 +156,7 @@ func (m *ItemListContentTypesContentTypeItemRequestBuilder) ToDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get contentTypes from shares
+// ToGetRequestInformation the collection of content types present in this list.
 func (m *ItemListContentTypesContentTypeItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListContentTypesContentTypeItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

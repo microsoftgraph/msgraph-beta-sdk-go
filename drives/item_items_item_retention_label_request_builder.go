@@ -54,7 +54,7 @@ func NewItemItemsItemRetentionLabelRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemRetentionLabelRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove a retention label from a driveItem. For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. This API is supported in the following national cloud deployments.
+// Delete remove a retention label from a driveItem. For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-removeretentionlabel?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *ItemItemsItemRetentionLabelRequestBuilder) Get(ctx context.Context, req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemRetentionLabelable), nil
 }
-// Patch apply (set) a retention label on a driveItem (files and folders). Retention labels don't need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. Conflict resolution is based on the following principle: explicit wins over implicit. For example, if a file in the folder has already been explicitly tagged with a label, that file doesn't inherit the label of the parent. For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. This API is supported in the following national cloud deployments.
+// Patch apply (set) a retention label on a driveItem (files and folders). Retention labels don't need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. Conflict resolution is based on the following principle: explicit wins over implicit. For example, if a file in the folder has already been explicitly tagged with a label, that file doesn't inherit the label of the parent. For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0
@@ -114,7 +114,7 @@ func (m *ItemItemsItemRetentionLabelRequestBuilder) Patch(ctx context.Context, b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemRetentionLabelable), nil
 }
-// ToDeleteRequestInformation remove a retention label from a driveItem. For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation remove a retention label from a driveItem. For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. This API is available in the following national cloud deployments.
 func (m *ItemItemsItemRetentionLabelRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemRetentionLabelRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *ItemItemsItemRetentionLabelRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation apply (set) a retention label on a driveItem (files and folders). Retention labels don't need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. Conflict resolution is based on the following principle: explicit wins over implicit. For example, if a file in the folder has already been explicitly tagged with a label, that file doesn't inherit the label of the parent. For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation apply (set) a retention label on a driveItem (files and folders). Retention labels don't need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. Conflict resolution is based on the following principle: explicit wins over implicit. For example, if a file in the folder has already been explicitly tagged with a label, that file doesn't inherit the label of the parent. For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. This API is available in the following national cloud deployments.
 func (m *ItemItemsItemRetentionLabelRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemRetentionLabelable, requestConfiguration *ItemItemsItemRetentionLabelRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type BookmarksBookmarkItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BookmarksBookmarkItemRequestBuilderGetQueryParameters read the properties and relationships of a bookmark object. This API is supported in the following national cloud deployments.
+// BookmarksBookmarkItemRequestBuilderGetQueryParameters read the properties and relationships of a bookmark object. This API is available in the following national cloud deployments.
 type BookmarksBookmarkItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewBookmarksBookmarkItemRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewBookmarksBookmarkItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a bookmark object. This API is supported in the following national cloud deployments.
+// Delete delete a bookmark object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/search-bookmark-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *BookmarksBookmarkItemRequestBuilder) Delete(ctx context.Context, reques
     }
     return nil
 }
-// Get read the properties and relationships of a bookmark object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a bookmark object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/search-bookmark-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *BookmarksBookmarkItemRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Bookmarkable), nil
 }
-// Patch update the properties of a bookmark object. This API is supported in the following national cloud deployments.
+// Patch update the properties of a bookmark object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/search-bookmark-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *BookmarksBookmarkItemRequestBuilder) Patch(ctx context.Context, body ie
     }
     return res.(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Bookmarkable), nil
 }
-// ToDeleteRequestInformation delete a bookmark object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a bookmark object. This API is available in the following national cloud deployments.
 func (m *BookmarksBookmarkItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BookmarksBookmarkItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *BookmarksBookmarkItemRequestBuilder) ToDeleteRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a bookmark object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a bookmark object. This API is available in the following national cloud deployments.
 func (m *BookmarksBookmarkItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BookmarksBookmarkItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *BookmarksBookmarkItemRequestBuilder) ToGetRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a bookmark object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of a bookmark object. This API is available in the following national cloud deployments.
 func (m *BookmarksBookmarkItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Bookmarkable, requestConfiguration *BookmarksBookmarkItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

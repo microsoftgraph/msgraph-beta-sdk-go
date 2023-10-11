@@ -18,7 +18,7 @@ type BusinessScenariosItemPlannerPlanConfigurationRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BusinessScenariosItemPlannerPlanConfigurationRequestBuilderGetQueryParameters read the properties and relationships of a plannerPlanConfiguration object. This API is supported in the following national cloud deployments.
+// BusinessScenariosItemPlannerPlanConfigurationRequestBuilderGetQueryParameters read the properties and relationships of a plannerPlanConfiguration object. This API is available in the following national cloud deployments.
 type BusinessScenariosItemPlannerPlanConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get read the properties and relationships of a plannerPlanConfiguration object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a plannerPlanConfiguration object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannerplanconfiguration-get?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) Get(ctx co
 func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) Localizations()(*BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder) {
     return NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of a plannerPlanConfiguration object for a businessScenario. This API is supported in the following national cloud deployments.
+// Patch update the properties of a plannerPlanConfiguration object for a businessScenario. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannerplanconfiguration-update?view=graph-rest-1.0
@@ -130,7 +130,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) ToDeleteRe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a plannerPlanConfiguration object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a plannerPlanConfiguration object. This API is available in the following national cloud deployments.
 func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -146,7 +146,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) ToGetReque
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a plannerPlanConfiguration object for a businessScenario. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of a plannerPlanConfiguration object for a businessScenario. This API is available in the following national cloud deployments.
 func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationable, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

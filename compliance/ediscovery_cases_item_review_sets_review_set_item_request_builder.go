@@ -18,7 +18,7 @@ type EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilderDeleteRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a reviewSet object. This API is supported in the following national cloud deployments.
+// EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a reviewSet object. This API is available in the following national cloud deployments.
 type EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -71,7 +71,7 @@ func (m *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) Delete(ctx co
     }
     return nil
 }
-// Get retrieve the properties and relationships of a reviewSet object. This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of a reviewSet object. This API is available in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
@@ -139,7 +139,7 @@ func (m *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) ToDeleteReque
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a reviewSet object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of a reviewSet object. This API is available in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

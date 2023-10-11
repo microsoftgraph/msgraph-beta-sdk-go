@@ -18,7 +18,7 @@ type ConnectionsItemItemsExternalItemItemRequestBuilderDeleteRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectionsItemItemsExternalItemItemRequestBuilderGetQueryParameters get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It isn't intended to be used for any other purpose. Repeated requests to this API might result in 429 HTTP errors. This API is supported in the following national cloud deployments.
+// ConnectionsItemItemsExternalItemItemRequestBuilderGetQueryParameters get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It isn't intended to be used for any other purpose. Repeated requests to this API might result in 429 HTTP errors. This API is available in the following national cloud deployments.
 type ConnectionsItemItemsExternalItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,7 @@ func NewConnectionsItemItemsExternalItemItemRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewConnectionsItemItemsExternalItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an externalitem. This API is supported in the following national cloud deployments.
+// Delete delete an externalitem. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-delete?view=graph-rest-1.0
@@ -77,7 +77,7 @@ func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) Delete(ctx context.
     }
     return nil
 }
-// Get get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It isn't intended to be used for any other purpose. Repeated requests to this API might result in 429 HTTP errors. This API is supported in the following national cloud deployments.
+// Get get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It isn't intended to be used for any other purpose. Repeated requests to this API might result in 429 HTTP errors. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-get?view=graph-rest-1.0
@@ -122,7 +122,7 @@ func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) Put(ctx context.Con
     }
     return res.(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalItemable), nil
 }
-// ToDeleteRequestInformation delete an externalitem. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete an externalitem. This API is available in the following national cloud deployments.
 func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConnectionsItemItemsExternalItemItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) ToDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It isn't intended to be used for any other purpose. Repeated requests to this API might result in 429 HTTP errors. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It isn't intended to be used for any other purpose. Repeated requests to this API might result in 429 HTTP errors. This API is available in the following national cloud deployments.
 func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectionsItemItemsExternalItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

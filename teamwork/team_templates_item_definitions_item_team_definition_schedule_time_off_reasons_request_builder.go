@@ -11,7 +11,7 @@ import (
 type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsRequestBuilderGetQueryParameters get the list of timeOffReasons in a schedule. This API is supported in the following national cloud deployments.
+// TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsRequestBuilderGetQueryParameters get the list of timeOffReasons in a schedule. This API is available in the following national cloud deployments.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,7 +72,7 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsRequ
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder) Count()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsCountRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of timeOffReasons in a schedule. This API is supported in the following national cloud deployments.
+// Get get the list of timeOffReasons in a schedule. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/schedule-list-timeoffreasons?view=graph-rest-1.0
@@ -94,7 +94,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsReq
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffReasonCollectionResponseable), nil
 }
-// Post create a new timeOffReason. This API is supported in the following national cloud deployments.
+// Post create a new timeOffReason. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/schedule-post-timeoffreasons?view=graph-rest-1.0
@@ -116,7 +116,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsReq
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffReasonable), nil
 }
-// ToGetRequestInformation get the list of timeOffReasons in a schedule. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the list of timeOffReasons in a schedule. This API is available in the following national cloud deployments.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -132,7 +132,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsReq
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new timeOffReason. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new timeOffReason. This API is available in the following national cloud deployments.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffReasonable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

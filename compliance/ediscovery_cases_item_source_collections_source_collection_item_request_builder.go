@@ -66,7 +66,7 @@ func NewEdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder(r
 func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) CustodianSources()(*EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilder) {
     return NewEdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete delete a sourceCollection object. This API is supported in the following national cloud deployments.
+// Delete delete a sourceCollection object. This API is available in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
@@ -122,7 +122,7 @@ func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder)
 func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) NoncustodialSources()(*EdiscoveryCasesItemSourceCollectionsItemNoncustodialSourcesRequestBuilder) {
     return NewEdiscoveryCasesItemSourceCollectionsItemNoncustodialSourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of a sourceCollection object. This API is supported in the following national cloud deployments.
+// Patch update the properties of a sourceCollection object. This API is available in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
@@ -145,7 +145,7 @@ func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder)
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SourceCollectionable), nil
 }
-// ToDeleteRequestInformation delete a sourceCollection object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a sourceCollection object. This API is available in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -175,7 +175,7 @@ func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder)
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a sourceCollection object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of a sourceCollection object. This API is available in the following national cloud deployments.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SourceCollectionable, requestConfiguration *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

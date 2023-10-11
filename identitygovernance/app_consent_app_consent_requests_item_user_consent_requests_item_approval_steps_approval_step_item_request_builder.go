@@ -18,7 +18,7 @@ type AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApprova
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilderGetQueryParameters retrieve the properties of an approvalStep object. This API is supported in the following national cloud deployments.
+// AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilderGetQueryParameters retrieve the properties of an approvalStep object. This API is available in the following national cloud deployments.
 type AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApp
     }
     return nil
 }
-// Get retrieve the properties of an approvalStep object. This API is supported in the following national cloud deployments.
+// Get retrieve the properties of an approvalStep object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/approvalstep-get?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApp
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable), nil
 }
-// Patch apply approve or deny decision on an approvalStep object. This API is supported in the following national cloud deployments.
+// Patch apply approve or deny decision on an approvalStep object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/approvalstep-update?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApp
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties of an approvalStep object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties of an approvalStep object. This API is available in the following national cloud deployments.
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApp
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation apply approve or deny decision on an approvalStep object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation apply approve or deny decision on an approvalStep object. This API is available in the following national cloud deployments.
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable, requestConfiguration *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

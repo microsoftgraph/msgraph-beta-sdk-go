@@ -11,7 +11,7 @@ import (
 type DeviceLocalCredentialsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DeviceLocalCredentialsRequestBuilderGetQueryParameters get a list of the deviceLocalCredentialInfo objects and their properties excluding the credentials.  This API is supported in the following national cloud deployments.
+// DeviceLocalCredentialsRequestBuilderGetQueryParameters get a list of the deviceLocalCredentialInfo objects and their properties excluding the credentials.  This API is available in the following national cloud deployments.
 type DeviceLocalCredentialsRequestBuilderGetQueryParameters struct {
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
@@ -62,7 +62,7 @@ func NewDeviceLocalCredentialsRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceLocalCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get a list of the deviceLocalCredentialInfo objects and their properties excluding the credentials.  This API is supported in the following national cloud deployments.
+// Get get a list of the deviceLocalCredentialInfo objects and their properties excluding the credentials.  This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/devicelocalcredentialinfo-list?view=graph-rest-1.0
@@ -103,7 +103,7 @@ func (m *DeviceLocalCredentialsRequestBuilder) Post(ctx context.Context, body ie
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceLocalCredentialInfoable), nil
 }
-// ToGetRequestInformation get a list of the deviceLocalCredentialInfo objects and their properties excluding the credentials.  This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of the deviceLocalCredentialInfo objects and their properties excluding the credentials.  This API is available in the following national cloud deployments.
 func (m *DeviceLocalCredentialsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceLocalCredentialsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

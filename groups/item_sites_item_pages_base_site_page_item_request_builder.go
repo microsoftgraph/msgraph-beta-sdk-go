@@ -18,7 +18,7 @@ type ItemSitesItemPagesBaseSitePageItemRequestBuilderDeleteRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSitesItemPagesBaseSitePageItemRequestBuilderGetQueryParameters get the metadata for a baseSitePage][] in the site pages [list][] in a [site][]. This API is supported in the following [national cloud deployments.
+// ItemSitesItemPagesBaseSitePageItemRequestBuilderGetQueryParameters get the metadata for a baseSitePage][] in the site pages [list][] in a [site][]. This API is available in the following [national cloud deployments.
 type ItemSitesItemPagesBaseSitePageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *ItemSitesItemPagesBaseSitePageItemRequestBuilder) Delete(ctx context.Co
     }
     return nil
 }
-// Get get the metadata for a baseSitePage][] in the site pages [list][] in a [site][]. This API is supported in the following [national cloud deployments.
+// Get get the metadata for a baseSitePage][] in the site pages [list][] in a [site][]. This API is available in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/basesitepage-get?view=graph-rest-1.0
@@ -131,7 +131,7 @@ func (m *ItemSitesItemPagesBaseSitePageItemRequestBuilder) ToDeleteRequestInform
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the metadata for a baseSitePage][] in the site pages [list][] in a [site][]. This API is supported in the following [national cloud deployments.
+// ToGetRequestInformation get the metadata for a baseSitePage][] in the site pages [list][] in a [site][]. This API is available in the following [national cloud deployments.
 func (m *ItemSitesItemPagesBaseSitePageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemPagesBaseSitePageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

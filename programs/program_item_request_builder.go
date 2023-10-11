@@ -58,7 +58,7 @@ func NewProgramItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *ProgramItemRequestBuilder) Controls()(*ItemControlsRequestBuilder) {
     return NewItemControlsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete in the Azure AD access reviews feature, delete a program object. Do not delete a program which still has programControl linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.  Also, please note that the built-in default program cannot be deleted. This API is supported in the following national cloud deployments.
+// Delete in the Azure AD access reviews feature, delete a program object. Do not delete a program which still has programControl linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.  Also, please note that the built-in default program cannot be deleted. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/program-delete?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ProgramItemRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Programable), nil
 }
-// Patch in the Azure AD access reviews feature, update an existing program object. This API is supported in the following national cloud deployments.
+// Patch in the Azure AD access reviews feature, update an existing program object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/program-update?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ProgramItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Programable), nil
 }
-// ToDeleteRequestInformation in the Azure AD access reviews feature, delete a program object. Do not delete a program which still has programControl linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.  Also, please note that the built-in default program cannot be deleted. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation in the Azure AD access reviews feature, delete a program object. Do not delete a program which still has programControl linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.  Also, please note that the built-in default program cannot be deleted. This API is available in the following national cloud deployments.
 func (m *ProgramItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ProgramItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -146,7 +146,7 @@ func (m *ProgramItemRequestBuilder) ToGetRequestInformation(ctx context.Context,
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation in the Azure AD access reviews feature, update an existing program object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation in the Azure AD access reviews feature, update an existing program object. This API is available in the following national cloud deployments.
 func (m *ProgramItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Programable, requestConfiguration *ProgramItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

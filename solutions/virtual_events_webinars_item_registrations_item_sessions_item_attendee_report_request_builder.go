@@ -37,7 +37,7 @@ func NewVirtualEventsWebinarsItemRegistrationsItemSessionsItemAttendeeReportRequ
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEventsWebinarsItemRegistrationsItemSessionsItemAttendeeReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the content stream of the attendee report of a Teams live event. Read-only.
+// Get get attendeeReport for the navigation property sessions from solutions
 func (m *VirtualEventsWebinarsItemRegistrationsItemSessionsItemAttendeeReportRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationsItemSessionsItemAttendeeReportRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -56,7 +56,7 @@ func (m *VirtualEventsWebinarsItemRegistrationsItemSessionsItemAttendeeReportReq
     }
     return res.([]byte), nil
 }
-// Put the content stream of the attendee report of a Teams live event. Read-only.
+// Put update attendeeReport for the navigation property sessions in solutions
 func (m *VirtualEventsWebinarsItemRegistrationsItemSessionsItemAttendeeReportRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *VirtualEventsWebinarsItemRegistrationsItemSessionsItemAttendeeReportRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -75,7 +75,7 @@ func (m *VirtualEventsWebinarsItemRegistrationsItemSessionsItemAttendeeReportReq
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation the content stream of the attendee report of a Teams live event. Read-only.
+// ToGetRequestInformation get attendeeReport for the navigation property sessions from solutions
 func (m *VirtualEventsWebinarsItemRegistrationsItemSessionsItemAttendeeReportRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationsItemSessionsItemAttendeeReportRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -87,7 +87,7 @@ func (m *VirtualEventsWebinarsItemRegistrationsItemSessionsItemAttendeeReportReq
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation the content stream of the attendee report of a Teams live event. Read-only.
+// ToPutRequestInformation update attendeeReport for the navigation property sessions in solutions
 func (m *VirtualEventsWebinarsItemRegistrationsItemSessionsItemAttendeeReportRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *VirtualEventsWebinarsItemRegistrationsItemSessionsItemAttendeeReportRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

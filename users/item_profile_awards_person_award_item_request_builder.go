@@ -18,7 +18,7 @@ type ItemProfileAwardsPersonAwardItemRequestBuilderDeleteRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfileAwardsPersonAwardItemRequestBuilderGetQueryParameters read the properties and relationships of a personAward object from a user's profile. This API is supported in the following national cloud deployments.
+// ItemProfileAwardsPersonAwardItemRequestBuilderGetQueryParameters read the properties and relationships of a personAward object from a user's profile. This API is available in the following national cloud deployments.
 type ItemProfileAwardsPersonAwardItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemProfileAwardsPersonAwardItemRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileAwardsPersonAwardItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a personAward object from a user's profile. This API is supported in the following national cloud deployments.
+// Delete deletes a personAward object from a user's profile. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/personaward-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) Delete(ctx context.Cont
     }
     return nil
 }
-// Get read the properties and relationships of a personAward object from a user's profile. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a personAward object from a user's profile. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/personaward-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) Get(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardable), nil
 }
-// Patch update the properties of a personAward object from a user's profile. This API is supported in the following national cloud deployments.
+// Patch update the properties of a personAward object from a user's profile. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/personaward-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) Patch(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardable), nil
 }
-// ToDeleteRequestInformation deletes a personAward object from a user's profile. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation deletes a personAward object from a user's profile. This API is available in the following national cloud deployments.
 func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileAwardsPersonAwardItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) ToDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a personAward object from a user's profile. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a personAward object from a user's profile. This API is available in the following national cloud deployments.
 func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileAwardsPersonAwardItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) ToGetRequestInformation
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a personAward object from a user's profile. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of a personAward object from a user's profile. This API is available in the following national cloud deployments.
 func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardable, requestConfiguration *ItemProfileAwardsPersonAwardItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

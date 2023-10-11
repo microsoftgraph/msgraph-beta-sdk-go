@@ -11,7 +11,7 @@ import (
 type EnterpriseAppsItemRoleAssignmentSchedulesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EnterpriseAppsItemRoleAssignmentSchedulesRequestBuilderGetQueryParameters get the schedules for active role assignment operations. This API is supported in the following national cloud deployments.
+// EnterpriseAppsItemRoleAssignmentSchedulesRequestBuilderGetQueryParameters get the schedules for active role assignment operations. This API is available in the following national cloud deployments.
 type EnterpriseAppsItemRoleAssignmentSchedulesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func (m *EnterpriseAppsItemRoleAssignmentSchedulesRequestBuilder) Count()(*Enter
 func (m *EnterpriseAppsItemRoleAssignmentSchedulesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*EnterpriseAppsItemRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilder) {
     return NewEnterpriseAppsItemRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
-// Get get the schedules for active role assignment operations. This API is supported in the following national cloud deployments.
+// Get get the schedules for active role assignment operations. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedules?view=graph-rest-1.0
@@ -119,7 +119,7 @@ func (m *EnterpriseAppsItemRoleAssignmentSchedulesRequestBuilder) Post(ctx conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentScheduleable), nil
 }
-// ToGetRequestInformation get the schedules for active role assignment operations. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the schedules for active role assignment operations. This API is available in the following national cloud deployments.
 func (m *EnterpriseAppsItemRoleAssignmentSchedulesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EnterpriseAppsItemRoleAssignmentSchedulesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

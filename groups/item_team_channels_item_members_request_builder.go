@@ -11,7 +11,7 @@ import (
 type ItemTeamChannelsItemMembersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamChannelsItemMembersRequestBuilderGetQueryParameters retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list. This API is supported in the following national cloud deployments.
+// ItemTeamChannelsItemMembersRequestBuilderGetQueryParameters retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list. This API is available in the following national cloud deployments.
 type ItemTeamChannelsItemMembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func NewItemTeamChannelsItemMembersRequestBuilder(rawUrl string, requestAdapter 
 func (m *ItemTeamChannelsItemMembersRequestBuilder) Count()(*ItemTeamChannelsItemMembersCountRequestBuilder) {
     return NewItemTeamChannelsItemMembersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list. This API is supported in the following national cloud deployments.
+// Get retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
@@ -100,7 +100,7 @@ func (m *ItemTeamChannelsItemMembersRequestBuilder) Get(ctx context.Context, req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberCollectionResponseable), nil
 }
-// Post add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is supported in the following national cloud deployments.
+// Post add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
@@ -122,7 +122,7 @@ func (m *ItemTeamChannelsItemMembersRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable), nil
 }
-// ToGetRequestInformation retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list. This API is available in the following national cloud deployments.
 func (m *ItemTeamChannelsItemMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamChannelsItemMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -138,7 +138,7 @@ func (m *ItemTeamChannelsItemMembersRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
 func (m *ItemTeamChannelsItemMembersRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable, requestConfiguration *ItemTeamChannelsItemMembersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

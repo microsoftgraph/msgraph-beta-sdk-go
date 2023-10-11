@@ -31,7 +31,7 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsItemClock
     urlParams["request-raw-url"] = rawUrl
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsItemClockOutRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post clock out to end an open timeCard. This API is supported in the following national cloud deployments.
+// Post clock out to end an open timeCard. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/timecard-clockout?view=graph-rest-1.0
@@ -53,7 +53,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsItemCloc
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable), nil
 }
-// ToPostRequestInformation clock out to end an open timeCard. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation clock out to end an open timeCard. This API is available in the following national cloud deployments.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsItemClockOutRequestBuilder) ToPostRequestInformation(ctx context.Context, body TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsItemClockOutPostRequestBodyable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsItemClockOutRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

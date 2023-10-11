@@ -18,7 +18,7 @@ type ItemChatsItemOperationsTeamsAsyncOperationItemRequestBuilderDeleteRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemChatsItemOperationsTeamsAsyncOperationItemRequestBuilderGetQueryParameters get the specified Teams async operation that ran or is running on a specific resource. This API is supported in the following national cloud deployments.
+// ItemChatsItemOperationsTeamsAsyncOperationItemRequestBuilderGetQueryParameters get the specified Teams async operation that ran or is running on a specific resource. This API is available in the following national cloud deployments.
 type ItemChatsItemOperationsTeamsAsyncOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemChatsItemOperationsTeamsAsyncOperationItemRequestBuilder) Delete(ct
     }
     return nil
 }
-// Get get the specified Teams async operation that ran or is running on a specific resource. This API is supported in the following national cloud deployments.
+// Get get the specified Teams async operation that ran or is running on a specific resource. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/teamsasyncoperation-get?view=graph-rest-1.0
@@ -123,7 +123,7 @@ func (m *ItemChatsItemOperationsTeamsAsyncOperationItemRequestBuilder) ToDeleteR
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the specified Teams async operation that ran or is running on a specific resource. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the specified Teams async operation that ran or is running on a specific resource. This API is available in the following national cloud deployments.
 func (m *ItemChatsItemOperationsTeamsAsyncOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChatsItemOperationsTeamsAsyncOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
