@@ -18,7 +18,7 @@ type VirtualEndpointFrontLineServicePlansCloudPcFrontLineServicePlanItemRequestB
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEndpointFrontLineServicePlansCloudPcFrontLineServicePlanItemRequestBuilderGetQueryParameters get frontLineServicePlans from deviceManagement
+// VirtualEndpointFrontLineServicePlansCloudPcFrontLineServicePlanItemRequestBuilderGetQueryParameters get the properties and relationships of a cloudPcFrontLineServicePlan object.
 type VirtualEndpointFrontLineServicePlansCloudPcFrontLineServicePlanItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *VirtualEndpointFrontLineServicePlansCloudPcFrontLineServicePlanItemRequ
     }
     return nil
 }
-// Get get frontLineServicePlans from deviceManagement
+// Get get the properties and relationships of a cloudPcFrontLineServicePlan object.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcfrontlineserviceplan-get?view=graph-rest-1.0
 func (m *VirtualEndpointFrontLineServicePlansCloudPcFrontLineServicePlanItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointFrontLineServicePlansCloudPcFrontLineServicePlanItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcFrontLineServicePlanable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *VirtualEndpointFrontLineServicePlansCloudPcFrontLineServicePlanItemRequ
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get frontLineServicePlans from deviceManagement
+// ToGetRequestInformation get the properties and relationships of a cloudPcFrontLineServicePlan object.
 func (m *VirtualEndpointFrontLineServicePlansCloudPcFrontLineServicePlanItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointFrontLineServicePlansCloudPcFrontLineServicePlanItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

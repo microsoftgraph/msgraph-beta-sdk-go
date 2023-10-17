@@ -30,7 +30,10 @@ func NewVirtualEndpointReportsGetRawRemoteConnectionReportsRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointReportsGetRawRemoteConnectionReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action getRawRemoteConnectionReports
+// Post get the raw real-time remote connection report for a Cloud PC without any calculation, such as roundTripTime or available bandwidth, which are aggregated hourly from the raw event data.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcreports-getrawremoteconnectionreports?view=graph-rest-1.0
 func (m *VirtualEndpointReportsGetRawRemoteConnectionReportsRequestBuilder) Post(ctx context.Context, body VirtualEndpointReportsGetRawRemoteConnectionReportsPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetRawRemoteConnectionReportsRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *VirtualEndpointReportsGetRawRemoteConnectionReportsRequestBuilder) Post
     }
     return res.([]byte), nil
 }
-// ToPostRequestInformation invoke action getRawRemoteConnectionReports
+// ToPostRequestInformation get the raw real-time remote connection report for a Cloud PC without any calculation, such as roundTripTime or available bandwidth, which are aggregated hourly from the raw event data.
 func (m *VirtualEndpointReportsGetRawRemoteConnectionReportsRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointReportsGetRawRemoteConnectionReportsPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetRawRemoteConnectionReportsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

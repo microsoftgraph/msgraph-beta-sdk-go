@@ -58,7 +58,7 @@ func (m *SubjectRightsRequestEnumeratedMailboxLocation) GetFieldDeserializers()(
     }
     return res
 }
-// GetUpns gets the upns property value. Collection of mailboxes that should be included in the search. Includes the UPN (user principal name) of each mailbox, for example, Monica.Thompson@contoso.com.
+// GetUpns gets the upns property value. The upns property
 func (m *SubjectRightsRequestEnumeratedMailboxLocation) GetUpns()([]string) {
     val, err := m.GetBackingStore().Get("upns")
     if err != nil {
@@ -69,7 +69,7 @@ func (m *SubjectRightsRequestEnumeratedMailboxLocation) GetUpns()([]string) {
     }
     return nil
 }
-// GetUserPrincipalNames gets the userPrincipalNames property value. The userPrincipalNames property
+// GetUserPrincipalNames gets the userPrincipalNames property value. Collection of mailboxes that should be included in the search. Includes the user principal name (UPN) of each mailbox, for example, Monica.Thompson@contoso.com.
 func (m *SubjectRightsRequestEnumeratedMailboxLocation) GetUserPrincipalNames()([]string) {
     val, err := m.GetBackingStore().Get("userPrincipalNames")
     if err != nil {
@@ -100,14 +100,14 @@ func (m *SubjectRightsRequestEnumeratedMailboxLocation) Serialize(writer i878a80
     }
     return nil
 }
-// SetUpns sets the upns property value. Collection of mailboxes that should be included in the search. Includes the UPN (user principal name) of each mailbox, for example, Monica.Thompson@contoso.com.
+// SetUpns sets the upns property value. The upns property
 func (m *SubjectRightsRequestEnumeratedMailboxLocation) SetUpns(value []string)() {
     err := m.GetBackingStore().Set("upns", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserPrincipalNames sets the userPrincipalNames property value. The userPrincipalNames property
+// SetUserPrincipalNames sets the userPrincipalNames property value. Collection of mailboxes that should be included in the search. Includes the user principal name (UPN) of each mailbox, for example, Monica.Thompson@contoso.com.
 func (m *SubjectRightsRequestEnumeratedMailboxLocation) SetUserPrincipalNames(value []string)() {
     err := m.GetBackingStore().Set("userPrincipalNames", value)
     if err != nil {
