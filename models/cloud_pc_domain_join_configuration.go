@@ -104,7 +104,7 @@ func (m *CloudPcDomainJoinConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOnPremisesConnectionId gets the onPremisesConnectionId property value. The Azure network connection ID that matches the virtual network IT admins want the provisioning policy to use when they create Cloud PCs. You can use this property in both domain join types: Azure AD joined or Hybrid Azure AD joined. If you enter an onPremisesConnectionId, leave regionName as empty.
+// GetOnPremisesConnectionId gets the onPremisesConnectionId property value. The Azure network connection ID that matches the virtual network IT admins want the provisioning policy to use when they create Cloud PCs. You can use this property in both domain join types: Azure AD joined or Hybrid Microsoft Entra joined. If you enter an onPremisesConnectionId, leave regionName as empty.
 func (m *CloudPcDomainJoinConfiguration) GetOnPremisesConnectionId()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesConnectionId")
     if err != nil {
@@ -126,7 +126,7 @@ func (m *CloudPcDomainJoinConfiguration) GetRegionGroup()(*CloudPcRegionGroup) {
     }
     return nil
 }
-// GetRegionName gets the regionName property value. The supported Azure region where the IT admin wants the provisioning policy to create Cloud PCs. The underlying virtual network will be created and managed by the Windows 365 service. This can only be entered if the IT admin chooses Azure AD joined as the domain join type. If you enter a regionName, leave onPremisesConnectionId as empty.
+// GetRegionName gets the regionName property value. The supported Azure region where the IT admin wants the provisioning policy to create Cloud PCs. The underlying virtual network will be created and managed by the Windows 365 service. This can only be entered if the IT admin chooses Microsoft Entra joined as the domain join type. If you enter a regionName, leave onPremisesConnectionId as empty.
 func (m *CloudPcDomainJoinConfiguration) GetRegionName()(*string) {
     val, err := m.GetBackingStore().Get("regionName")
     if err != nil {
@@ -137,7 +137,7 @@ func (m *CloudPcDomainJoinConfiguration) GetRegionName()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure AD. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave regionName as empty. If you choose the azureADJoin type, provide a value for either onPremisesConnectionId or regionName. The possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
+// GetTypeEscaped gets the type property value. Specifies how the provisioned Cloud PC will be joined to Microsoft Entra ID. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave regionName as empty. If you choose the azureADJoin type, provide a value for either onPremisesConnectionId or regionName. The possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
 func (m *CloudPcDomainJoinConfiguration) GetTypeEscaped()(*CloudPcDomainJoinType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -208,7 +208,7 @@ func (m *CloudPcDomainJoinConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOnPremisesConnectionId sets the onPremisesConnectionId property value. The Azure network connection ID that matches the virtual network IT admins want the provisioning policy to use when they create Cloud PCs. You can use this property in both domain join types: Azure AD joined or Hybrid Azure AD joined. If you enter an onPremisesConnectionId, leave regionName as empty.
+// SetOnPremisesConnectionId sets the onPremisesConnectionId property value. The Azure network connection ID that matches the virtual network IT admins want the provisioning policy to use when they create Cloud PCs. You can use this property in both domain join types: Azure AD joined or Hybrid Microsoft Entra joined. If you enter an onPremisesConnectionId, leave regionName as empty.
 func (m *CloudPcDomainJoinConfiguration) SetOnPremisesConnectionId(value *string)() {
     err := m.GetBackingStore().Set("onPremisesConnectionId", value)
     if err != nil {
@@ -222,14 +222,14 @@ func (m *CloudPcDomainJoinConfiguration) SetRegionGroup(value *CloudPcRegionGrou
         panic(err)
     }
 }
-// SetRegionName sets the regionName property value. The supported Azure region where the IT admin wants the provisioning policy to create Cloud PCs. The underlying virtual network will be created and managed by the Windows 365 service. This can only be entered if the IT admin chooses Azure AD joined as the domain join type. If you enter a regionName, leave onPremisesConnectionId as empty.
+// SetRegionName sets the regionName property value. The supported Azure region where the IT admin wants the provisioning policy to create Cloud PCs. The underlying virtual network will be created and managed by the Windows 365 service. This can only be entered if the IT admin chooses Microsoft Entra joined as the domain join type. If you enter a regionName, leave onPremisesConnectionId as empty.
 func (m *CloudPcDomainJoinConfiguration) SetRegionName(value *string)() {
     err := m.GetBackingStore().Set("regionName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure AD. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave regionName as empty. If you choose the azureADJoin type, provide a value for either onPremisesConnectionId or regionName. The possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
+// SetTypeEscaped sets the type property value. Specifies how the provisioned Cloud PC will be joined to Microsoft Entra ID. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave regionName as empty. If you choose the azureADJoin type, provide a value for either onPremisesConnectionId or regionName. The possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
 func (m *CloudPcDomainJoinConfiguration) SetTypeEscaped(value *CloudPcDomainJoinType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

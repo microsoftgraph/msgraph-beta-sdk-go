@@ -11,7 +11,7 @@ import (
 type ManagedTenantsConditionalAccessPolicyCoveragesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedTenantsConditionalAccessPolicyCoveragesRequestBuilderGetQueryParameters get a list of the conditionalAccessPolicyCoverage objects and their properties. Use this operation to list Azure Active Directory conditional access policy coverage for all tenants that are being managed by the multi-tenant management platform. This API is available in the following national cloud deployments.
+// ManagedTenantsConditionalAccessPolicyCoveragesRequestBuilderGetQueryParameters get a list of the conditionalAccessPolicyCoverage objects and their properties. Use this operation to list Microsoft Entra Conditional Access policy coverage for all tenants that are being managed by the multi-tenant management platform. This API is available in the following national cloud deployments.
 type ManagedTenantsConditionalAccessPolicyCoveragesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewManagedTenantsConditionalAccessPolicyCoveragesRequestBuilder(rawUrl stri
 func (m *ManagedTenantsConditionalAccessPolicyCoveragesRequestBuilder) Count()(*ManagedTenantsConditionalAccessPolicyCoveragesCountRequestBuilder) {
     return NewManagedTenantsConditionalAccessPolicyCoveragesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the conditionalAccessPolicyCoverage objects and their properties. Use this operation to list Azure Active Directory conditional access policy coverage for all tenants that are being managed by the multi-tenant management platform. This API is available in the following national cloud deployments.
+// Get get a list of the conditionalAccessPolicyCoverage objects and their properties. Use this operation to list Microsoft Entra Conditional Access policy coverage for all tenants that are being managed by the multi-tenant management platform. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-conditionalaccesspolicycoverages?view=graph-rest-1.0
@@ -115,13 +115,9 @@ func (m *ManagedTenantsConditionalAccessPolicyCoveragesRequestBuilder) Post(ctx 
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ConditionalAccessPolicyCoverageable), nil
 }
-// ToGetRequestInformation get a list of the conditionalAccessPolicyCoverage objects and their properties. Use this operation to list Azure Active Directory conditional access policy coverage for all tenants that are being managed by the multi-tenant management platform. This API is available in the following national cloud deployments.
+// ToGetRequestInformation get a list of the conditionalAccessPolicyCoverage objects and their properties. Use this operation to list Microsoft Entra Conditional Access policy coverage for all tenants that are being managed by the multi-tenant management platform. This API is available in the following national cloud deployments.
 func (m *ManagedTenantsConditionalAccessPolicyCoveragesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsConditionalAccessPolicyCoveragesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -129,22 +125,26 @@ func (m *ManagedTenantsConditionalAccessPolicyCoveragesRequestBuilder) ToGetRequ
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to conditionalAccessPolicyCoverages for tenantRelationships
 func (m *ManagedTenantsConditionalAccessPolicyCoveragesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ConditionalAccessPolicyCoverageable, requestConfiguration *ManagedTenantsConditionalAccessPolicyCoveragesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
-    if err != nil {
-        return nil, err
-    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
     }
     return requestInfo, nil
 }

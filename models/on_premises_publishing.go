@@ -389,7 +389,7 @@ func (m *OnPremisesPublishing) GetIsOnPremPublishingEnabled()(*bool) {
     }
     return nil
 }
-// GetIsPersistentCookieEnabled gets the isPersistentCookieEnabled property value. Indicates if the Persistent cookie flag should be set in the HTTP response headers. Keep this value set to false. Only use this setting for applications that can't share cookies between processes. For more information about cookie settings, see Cookie settings for accessing on-premises applications in Azure Active Directory. Default value is false.
+// GetIsPersistentCookieEnabled gets the isPersistentCookieEnabled property value. Indicates if the Persistent cookie flag should be set in the HTTP response headers. Keep this value set to false. Only use this setting for applications that can't share cookies between processes. For more information about cookie settings, see Cookie settings for accessing on-premises applications in Microsoft Entra ID. Default value is false.
 func (m *OnPremisesPublishing) GetIsPersistentCookieEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isPersistentCookieEnabled")
     if err != nil {
@@ -466,7 +466,7 @@ func (m *OnPremisesPublishing) GetOnPremisesApplicationSegments()([]OnPremisesAp
     }
     return nil
 }
-// GetSegmentsConfiguration gets the segmentsConfiguration property value. Represents the collection of application segments for an on-premises wildcard application that's published through Azure AD Application Proxy.
+// GetSegmentsConfiguration gets the segmentsConfiguration property value. Represents the collection of application segments for an on-premises wildcard application that's published through Microsoft Entra application proxy.
 func (m *OnPremisesPublishing) GetSegmentsConfiguration()(SegmentConfigurationable) {
     val, err := m.GetBackingStore().Get("segmentsConfiguration")
     if err != nil {
@@ -768,7 +768,7 @@ func (m *OnPremisesPublishing) SetIsOnPremPublishingEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetIsPersistentCookieEnabled sets the isPersistentCookieEnabled property value. Indicates if the Persistent cookie flag should be set in the HTTP response headers. Keep this value set to false. Only use this setting for applications that can't share cookies between processes. For more information about cookie settings, see Cookie settings for accessing on-premises applications in Azure Active Directory. Default value is false.
+// SetIsPersistentCookieEnabled sets the isPersistentCookieEnabled property value. Indicates if the Persistent cookie flag should be set in the HTTP response headers. Keep this value set to false. Only use this setting for applications that can't share cookies between processes. For more information about cookie settings, see Cookie settings for accessing on-premises applications in Microsoft Entra ID. Default value is false.
 func (m *OnPremisesPublishing) SetIsPersistentCookieEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isPersistentCookieEnabled", value)
     if err != nil {
@@ -817,7 +817,7 @@ func (m *OnPremisesPublishing) SetOnPremisesApplicationSegments(value []OnPremis
         panic(err)
     }
 }
-// SetSegmentsConfiguration sets the segmentsConfiguration property value. Represents the collection of application segments for an on-premises wildcard application that's published through Azure AD Application Proxy.
+// SetSegmentsConfiguration sets the segmentsConfiguration property value. Represents the collection of application segments for an on-premises wildcard application that's published through Microsoft Entra application proxy.
 func (m *OnPremisesPublishing) SetSegmentsConfiguration(value SegmentConfigurationable)() {
     err := m.GetBackingStore().Set("segmentsConfiguration", value)
     if err != nil {

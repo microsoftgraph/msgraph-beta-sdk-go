@@ -174,7 +174,7 @@ func (m *MultiTenantOrganizationMember) GetState()(*MultiTenantOrganizationMembe
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. Tenant ID of the Azure Active Directory tenant added to the multitenant organization. Set at the time tenant is added.Supports $filter. Key.
+// GetTenantId gets the tenantId property value. Tenant ID of the Microsoft Entra tenant added to the multitenant organization. Set at the time tenant is added.Supports $filter. Key.
 func (m *MultiTenantOrganizationMember) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -296,7 +296,7 @@ func (m *MultiTenantOrganizationMember) SetState(value *MultiTenantOrganizationM
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. Tenant ID of the Azure Active Directory tenant added to the multitenant organization. Set at the time tenant is added.Supports $filter. Key.
+// SetTenantId sets the tenantId property value. Tenant ID of the Microsoft Entra tenant added to the multitenant organization. Set at the time tenant is added.Supports $filter. Key.
 func (m *MultiTenantOrganizationMember) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

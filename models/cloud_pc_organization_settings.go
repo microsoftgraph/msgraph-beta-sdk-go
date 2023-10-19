@@ -30,7 +30,7 @@ func (m *CloudPcOrganizationSettings) GetEnableMEMAutoEnroll()(*bool) {
     }
     return nil
 }
-// GetEnableSingleSignOn gets the enableSingleSignOn property value. True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn't support this feature. Default value is false. Windows 365 users can use single sign-on to authenticate to Azure Active Directory (Azure AD) with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.
+// GetEnableSingleSignOn gets the enableSingleSignOn property value. True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn't support this feature. Default value is false. Windows 365 users can use single sign-on to authenticate to Microsoft Entra ID with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.
 func (m *CloudPcOrganizationSettings) GetEnableSingleSignOn()(*bool) {
     val, err := m.GetBackingStore().Get("enableSingleSignOn")
     if err != nil {
@@ -176,7 +176,7 @@ func (m *CloudPcOrganizationSettings) SetEnableMEMAutoEnroll(value *bool)() {
         panic(err)
     }
 }
-// SetEnableSingleSignOn sets the enableSingleSignOn property value. True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn't support this feature. Default value is false. Windows 365 users can use single sign-on to authenticate to Azure Active Directory (Azure AD) with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.
+// SetEnableSingleSignOn sets the enableSingleSignOn property value. True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn't support this feature. Default value is false. Windows 365 users can use single sign-on to authenticate to Microsoft Entra ID with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.
 func (m *CloudPcOrganizationSettings) SetEnableSingleSignOn(value *bool)() {
     err := m.GetBackingStore().Set("enableSingleSignOn", value)
     if err != nil {

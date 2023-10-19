@@ -200,7 +200,7 @@ func (m *OnPremisesPublishingProfile) GetIsDefaultAccessEnabled()(*bool) {
     }
     return nil
 }
-// GetIsEnabled gets the isEnabled property value. Represents if Azure AD Application Proxy is enabled for the tenant.
+// GetIsEnabled gets the isEnabled property value. Represents if Microsoft Entra application proxy is enabled for the tenant.
 func (m *OnPremisesPublishingProfile) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -350,7 +350,7 @@ func (m *OnPremisesPublishingProfile) SetIsDefaultAccessEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetIsEnabled sets the isEnabled property value. Represents if Azure AD Application Proxy is enabled for the tenant.
+// SetIsEnabled sets the isEnabled property value. Represents if Microsoft Entra application proxy is enabled for the tenant.
 func (m *OnPremisesPublishingProfile) SetIsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEnabled", value)
     if err != nil {

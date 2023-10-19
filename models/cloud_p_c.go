@@ -20,7 +20,7 @@ func NewCloudPC()(*CloudPC) {
 func CreateCloudPCFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPC(), nil
 }
-// GetAadDeviceId gets the aadDeviceId property value. The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+// GetAadDeviceId gets the aadDeviceId property value. The Microsoft Entra device ID of the Cloud PC.
 func (m *CloudPC) GetAadDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("aadDeviceId")
     if err != nil {
@@ -754,7 +754,7 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     return nil
 }
-// SetAadDeviceId sets the aadDeviceId property value. The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+// SetAadDeviceId sets the aadDeviceId property value. The Microsoft Entra device ID of the Cloud PC.
 func (m *CloudPC) SetAadDeviceId(value *string)() {
     err := m.GetBackingStore().Set("aadDeviceId", value)
     if err != nil {

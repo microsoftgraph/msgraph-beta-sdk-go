@@ -13,6 +13,8 @@ func NewGcpUser()(*GcpUser) {
     m := &GcpUser{
         GcpIdentity: *NewGcpIdentity(),
     }
+    odataTypeValue := "#microsoft.graph.gcpUser"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateGcpUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

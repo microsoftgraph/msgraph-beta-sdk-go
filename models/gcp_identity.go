@@ -13,6 +13,8 @@ func NewGcpIdentity()(*GcpIdentity) {
     m := &GcpIdentity{
         AuthorizationSystemIdentity: *NewAuthorizationSystemIdentity(),
     }
+    odataTypeValue := "#microsoft.graph.gcpIdentity"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateGcpIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,6 +31,10 @@ func CreateGcpIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.gcpCloudFunction":
+                        return NewGcpCloudFunction(), nil
+                    case "#microsoft.graph.gcpGroup":
+                        return NewGcpGroup(), nil
                     case "#microsoft.graph.gcpServiceAccount":
                         return NewGcpServiceAccount(), nil
                     case "#microsoft.graph.gcpUser":

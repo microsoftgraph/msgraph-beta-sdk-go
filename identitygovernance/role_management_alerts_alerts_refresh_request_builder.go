@@ -30,7 +30,7 @@ func NewRoleManagementAlertsAlertsRefreshRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewRoleManagementAlertsAlertsRefreshRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post refresh incidents on all security alerts or on a single security alert in Privileged Identity Management (PIM) for Azure AD roles. This task is a long-running operation and the unifiedRoleManagementAlert object will be updated only when the operation completes. This API is available in the following national cloud deployments.
+// Post refresh incidents on all security alerts or on a single security alert in Privileged Identity Management (PIM) for Microsoft Entra roles. This task is a long-running operation and the unifiedRoleManagementAlert object will be updated only when the operation completes. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/unifiedrolemanagementalert-refresh?view=graph-rest-1.0
@@ -49,19 +49,19 @@ func (m *RoleManagementAlertsAlertsRefreshRequestBuilder) Post(ctx context.Conte
     }
     return nil
 }
-// ToPostRequestInformation refresh incidents on all security alerts or on a single security alert in Privileged Identity Management (PIM) for Azure AD roles. This task is a long-running operation and the unifiedRoleManagementAlert object will be updated only when the operation completes. This API is available in the following national cloud deployments.
+// ToPostRequestInformation refresh incidents on all security alerts or on a single security alert in Privileged Identity Management (PIM) for Microsoft Entra roles. This task is a long-running operation and the unifiedRoleManagementAlert object will be updated only when the operation completes. This API is available in the following national cloud deployments.
 func (m *RoleManagementAlertsAlertsRefreshRequestBuilder) ToPostRequestInformation(ctx context.Context, body RoleManagementAlertsAlertsRefreshPostRequestBodyable, requestConfiguration *RoleManagementAlertsAlertsRefreshRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
-    }
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }

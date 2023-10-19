@@ -165,7 +165,7 @@ func (m *MobilityManagementPolicy) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetIncludedGroups gets the includedGroups property value. Azure AD groups under the scope of the mobility management application if appliesTo is selected
+// GetIncludedGroups gets the includedGroups property value. Microsoft Entra groups under the scope of the mobility management application if appliesTo is selected
 func (m *MobilityManagementPolicy) GetIncludedGroups()([]Groupable) {
     val, err := m.GetBackingStore().Get("includedGroups")
     if err != nil {
@@ -296,7 +296,7 @@ func (m *MobilityManagementPolicy) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetIncludedGroups sets the includedGroups property value. Azure AD groups under the scope of the mobility management application if appliesTo is selected
+// SetIncludedGroups sets the includedGroups property value. Microsoft Entra groups under the scope of the mobility management application if appliesTo is selected
 func (m *MobilityManagementPolicy) SetIncludedGroups(value []Groupable)() {
     err := m.GetBackingStore().Set("includedGroups", value)
     if err != nil {

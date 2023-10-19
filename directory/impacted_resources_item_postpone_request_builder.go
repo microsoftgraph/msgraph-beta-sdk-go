@@ -31,7 +31,7 @@ func NewImpactedResourcesItemPostponeRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewImpactedResourcesItemPostponeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post postpone action on an impactedResource object to a specified future date and time by marking its status as postponed. On the specified date and time, Azure AD will automatically mark the status of the impactedResource object to active. This API is available in the following national cloud deployments.
+// Post postpone action on an impactedResource object to a specified future date and time by marking its status as postponed. On the specified date and time, Microsoft Entra ID will automatically mark the status of the impactedResource object to active. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/impactedresource-postpone?view=graph-rest-1.0
@@ -53,20 +53,20 @@ func (m *ImpactedResourcesItemPostponeRequestBuilder) Post(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImpactedResourceable), nil
 }
-// ToPostRequestInformation postpone action on an impactedResource object to a specified future date and time by marking its status as postponed. On the specified date and time, Azure AD will automatically mark the status of the impactedResource object to active. This API is available in the following national cloud deployments.
+// ToPostRequestInformation postpone action on an impactedResource object to a specified future date and time by marking its status as postponed. On the specified date and time, Microsoft Entra ID will automatically mark the status of the impactedResource object to active. This API is available in the following national cloud deployments.
 func (m *ImpactedResourcesItemPostponeRequestBuilder) ToPostRequestInformation(ctx context.Context, body ImpactedResourcesItemPostponePostRequestBodyable, requestConfiguration *ImpactedResourcesItemPostponeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
-    if err != nil {
-        return nil, err
-    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
     }
     return requestInfo, nil
 }

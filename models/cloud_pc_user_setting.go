@@ -20,7 +20,7 @@ func NewCloudPcUserSetting()(*CloudPcUserSetting) {
 func CreateCloudPcUserSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcUserSetting(), nil
 }
-// GetAssignments gets the assignments property value. Represents the set of Microsoft 365 groups and security groups in Azure Active Directory that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
+// GetAssignments gets the assignments property value. Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
 func (m *CloudPcUserSetting) GetAssignments()([]CloudPcUserSettingAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -261,7 +261,7 @@ func (m *CloudPcUserSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetAssignments sets the assignments property value. Represents the set of Microsoft 365 groups and security groups in Azure Active Directory that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
+// SetAssignments sets the assignments property value. Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
 func (m *CloudPcUserSetting) SetAssignments(value []CloudPcUserSettingAssignmentable)() {
     err := m.GetBackingStore().Set("assignments", value)
     if err != nil {

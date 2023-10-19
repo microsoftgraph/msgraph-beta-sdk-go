@@ -93,7 +93,7 @@ func (m *UserMatchingSetting) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetMatchTarget gets the matchTarget property value. The RefUserMatchTarget for matching a user from the source with an Azure Active Directory user object.
+// GetMatchTarget gets the matchTarget property value. The RefUserMatchTarget for matching a user from the source with a Microsoft Entra user object.
 func (m *UserMatchingSetting) GetMatchTarget()(UserMatchTargetReferenceValueable) {
     val, err := m.GetBackingStore().Get("matchTarget")
     if err != nil {
@@ -199,7 +199,7 @@ func (m *UserMatchingSetting) SetAdditionalData(value map[string]any)() {
 func (m *UserMatchingSetting) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetMatchTarget sets the matchTarget property value. The RefUserMatchTarget for matching a user from the source with an Azure Active Directory user object.
+// SetMatchTarget sets the matchTarget property value. The RefUserMatchTarget for matching a user from the source with a Microsoft Entra user object.
 func (m *UserMatchingSetting) SetMatchTarget(value UserMatchTargetReferenceValueable)() {
     err := m.GetBackingStore().Set("matchTarget", value)
     if err != nil {

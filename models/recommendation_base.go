@@ -469,7 +469,7 @@ func (m *RecommendationBase) GetRecommendationType()(*RecommendationType) {
     }
     return nil
 }
-// GetReleaseType gets the releaseType property value. The current release type of the recommendation. The possible values are: preview or generallyAvailable.
+// GetReleaseType gets the releaseType property value. The current release type of the recommendation. The possible values are: preview, generallyAvailable, unknownFutureValue.
 func (m *RecommendationBase) GetReleaseType()(*string) {
     val, err := m.GetBackingStore().Get("releaseType")
     if err != nil {
@@ -778,7 +778,7 @@ func (m *RecommendationBase) SetRecommendationType(value *RecommendationType)() 
         panic(err)
     }
 }
-// SetReleaseType sets the releaseType property value. The current release type of the recommendation. The possible values are: preview or generallyAvailable.
+// SetReleaseType sets the releaseType property value. The current release type of the recommendation. The possible values are: preview, generallyAvailable, unknownFutureValue.
 func (m *RecommendationBase) SetReleaseType(value *string)() {
     err := m.GetBackingStore().Set("releaseType", value)
     if err != nil {

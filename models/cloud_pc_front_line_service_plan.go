@@ -19,7 +19,7 @@ func NewCloudPcFrontLineServicePlan()(*CloudPcFrontLineServicePlan) {
 func CreateCloudPcFrontLineServicePlanFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcFrontLineServicePlan(), nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the front-line service plan. For example, 2vCPU/8GB/128GB Front-line or 4vCPU/16GB/256GB Front-line.
 func (m *CloudPcFrontLineServicePlan) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -65,7 +65,7 @@ func (m *CloudPcFrontLineServicePlan) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetTotalCount gets the totalCount property value. The totalCount property
+// GetTotalCount gets the totalCount property value. The total number of front-line service plans purchased by the customer.
 func (m *CloudPcFrontLineServicePlan) GetTotalCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalCount")
     if err != nil {
@@ -76,7 +76,7 @@ func (m *CloudPcFrontLineServicePlan) GetTotalCount()(*int32) {
     }
     return nil
 }
-// GetUsedCount gets the usedCount property value. The usedCount property
+// GetUsedCount gets the usedCount property value. The number of service plans that have been used for the account.
 func (m *CloudPcFrontLineServicePlan) GetUsedCount()(*int32) {
     val, err := m.GetBackingStore().Get("usedCount")
     if err != nil {
@@ -113,21 +113,21 @@ func (m *CloudPcFrontLineServicePlan) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the front-line service plan. For example, 2vCPU/8GB/128GB Front-line or 4vCPU/16GB/256GB Front-line.
 func (m *CloudPcFrontLineServicePlan) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalCount sets the totalCount property value. The totalCount property
+// SetTotalCount sets the totalCount property value. The total number of front-line service plans purchased by the customer.
 func (m *CloudPcFrontLineServicePlan) SetTotalCount(value *int32)() {
     err := m.GetBackingStore().Set("totalCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUsedCount sets the usedCount property value. The usedCount property
+// SetUsedCount sets the usedCount property value. The number of service plans that have been used for the account.
 func (m *CloudPcFrontLineServicePlan) SetUsedCount(value *int32)() {
     err := m.GetBackingStore().Set("usedCount", value)
     if err != nil {

@@ -103,6 +103,16 @@ func (m *CrossTenantSummary) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["rarelyUsedTenantCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRarelyUsedTenantCount(val)
+        }
+        return nil
+    }
     res["tenantCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -144,6 +154,17 @@ func (m *CrossTenantSummary) GetOdataType()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetRarelyUsedTenantCount gets the rarelyUsedTenantCount property value. The rarelyUsedTenantCount property
+func (m *CrossTenantSummary) GetRarelyUsedTenantCount()(*int32) {
+    val, err := m.GetBackingStore().Get("rarelyUsedTenantCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
     }
     return nil
 }
@@ -191,6 +212,12 @@ func (m *CrossTenantSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteInt32Value("rarelyUsedTenantCount", m.GetRarelyUsedTenantCount())
         if err != nil {
             return err
         }
@@ -254,6 +281,13 @@ func (m *CrossTenantSummary) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetRarelyUsedTenantCount sets the rarelyUsedTenantCount property value. The rarelyUsedTenantCount property
+func (m *CrossTenantSummary) SetRarelyUsedTenantCount(value *int32)() {
+    err := m.GetBackingStore().Set("rarelyUsedTenantCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTenantCount sets the tenantCount property value. Count of unique tenants that were accessed, that are different from the device's home tenant, in the time frame between startDateTime and endDateTime.
 func (m *CrossTenantSummary) SetTenantCount(value *int32)() {
     err := m.GetBackingStore().Set("tenantCount", value)
@@ -278,6 +312,7 @@ type CrossTenantSummaryable interface {
     GetDeviceCount()(*int32)
     GetNewTenantCount()(*int32)
     GetOdataType()(*string)
+    GetRarelyUsedTenantCount()(*int32)
     GetTenantCount()(*int32)
     GetUserCount()(*int32)
     SetAuthTransactionCount(value *int32)()
@@ -285,6 +320,7 @@ type CrossTenantSummaryable interface {
     SetDeviceCount(value *int32)()
     SetNewTenantCount(value *int32)()
     SetOdataType(value *string)()
+    SetRarelyUsedTenantCount(value *int32)()
     SetTenantCount(value *int32)()
     SetUserCount(value *int32)()
 }

@@ -126,7 +126,7 @@ func (m *EntitiesSummary) GetTrafficType()(*TrafficType) {
     }
     return nil
 }
-// GetUserCount gets the userCount property value. Count of unique Azure Active Directory users that were seen.
+// GetUserCount gets the userCount property value. Count of unique Microsoft Entra users that were seen.
 func (m *EntitiesSummary) GetUserCount()(*int64) {
     val, err := m.GetBackingStore().Get("userCount")
     if err != nil {
@@ -221,7 +221,7 @@ func (m *EntitiesSummary) SetTrafficType(value *TrafficType)() {
         panic(err)
     }
 }
-// SetUserCount sets the userCount property value. Count of unique Azure Active Directory users that were seen.
+// SetUserCount sets the userCount property value. Count of unique Microsoft Entra users that were seen.
 func (m *EntitiesSummary) SetUserCount(value *int64)() {
     err := m.GetBackingStore().Set("userCount", value)
     if err != nil {

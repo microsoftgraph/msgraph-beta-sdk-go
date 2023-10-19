@@ -36,7 +36,7 @@ func (m *AadUserConversationMemberResult) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetUserId gets the userId property value. The user object ID of the Azure AD user that was being added as part of the bulk operation.
+// GetUserId gets the userId property value. The user object ID of the Microsoft Entra user that was being added as part of the bulk operation.
 func (m *AadUserConversationMemberResult) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *AadUserConversationMemberResult) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetUserId sets the userId property value. The user object ID of the Azure AD user that was being added as part of the bulk operation.
+// SetUserId sets the userId property value. The user object ID of the Microsoft Entra user that was being added as part of the bulk operation.
 func (m *AadUserConversationMemberResult) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {
