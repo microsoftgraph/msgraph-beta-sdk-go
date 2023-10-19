@@ -252,6 +252,26 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["filteringProfileId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFilteringProfileId(val)
+        }
+        return nil
+    }
+    res["filteringProfileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFilteringProfileName(val)
+        }
+        return nil
+    }
     res["headers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateHeadersFromDiscriminatorValue)
         if err != nil {
@@ -259,6 +279,16 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetHeaders(val.(Headersable))
+        }
+        return nil
+    }
+    res["initiatingProcessName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInitiatingProcessName(val)
         }
         return nil
     }
@@ -292,6 +322,16 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["policyName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPolicyName(val)
+        }
+        return nil
+    }
     res["policyRuleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -302,6 +342,16 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["policyRuleName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPolicyRuleName(val)
+        }
+        return nil
+    }
     res["receivedBytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -309,6 +359,16 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetReceivedBytes(val)
+        }
+        return nil
+    }
+    res["resourceTenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetResourceTenantId(val)
         }
         return nil
     }
@@ -414,6 +474,28 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
+// GetFilteringProfileId gets the filteringProfileId property value. The filteringProfileId property
+func (m *NetworkAccessTraffic) GetFilteringProfileId()(*string) {
+    val, err := m.GetBackingStore().Get("filteringProfileId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetFilteringProfileName gets the filteringProfileName property value. The filteringProfileName property
+func (m *NetworkAccessTraffic) GetFilteringProfileName()(*string) {
+    val, err := m.GetBackingStore().Get("filteringProfileName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetHeaders gets the headers property value. Represents the headers included in a network request or response. Supports $filter (eq) and $orderby.
 func (m *NetworkAccessTraffic) GetHeaders()(Headersable) {
     val, err := m.GetBackingStore().Get("headers")
@@ -422,6 +504,17 @@ func (m *NetworkAccessTraffic) GetHeaders()(Headersable) {
     }
     if val != nil {
         return val.(Headersable)
+    }
+    return nil
+}
+// GetInitiatingProcessName gets the initiatingProcessName property value. The initiatingProcessName property
+func (m *NetworkAccessTraffic) GetInitiatingProcessName()(*string) {
+    val, err := m.GetBackingStore().Get("initiatingProcessName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -458,9 +551,31 @@ func (m *NetworkAccessTraffic) GetPolicyId()(*string) {
     }
     return nil
 }
+// GetPolicyName gets the policyName property value. The policyName property
+func (m *NetworkAccessTraffic) GetPolicyName()(*string) {
+    val, err := m.GetBackingStore().Get("policyName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetPolicyRuleId gets the policyRuleId property value. Represents a unique identifier assigned to a policy rule. Supports $filter (eq) and $orderby.
 func (m *NetworkAccessTraffic) GetPolicyRuleId()(*string) {
     val, err := m.GetBackingStore().Get("policyRuleId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetPolicyRuleName gets the policyRuleName property value. The policyRuleName property
+func (m *NetworkAccessTraffic) GetPolicyRuleName()(*string) {
+    val, err := m.GetBackingStore().Get("policyRuleName")
     if err != nil {
         panic(err)
     }
@@ -477,6 +592,17 @@ func (m *NetworkAccessTraffic) GetReceivedBytes()(*int64) {
     }
     if val != nil {
         return val.(*int64)
+    }
+    return nil
+}
+// GetResourceTenantId gets the resourceTenantId property value. The resourceTenantId property
+func (m *NetworkAccessTraffic) GetResourceTenantId()(*string) {
+    val, err := m.GetBackingStore().Get("resourceTenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -654,7 +780,25 @@ func (m *NetworkAccessTraffic) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err := writer.WriteStringValue("filteringProfileId", m.GetFilteringProfileId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("filteringProfileName", m.GetFilteringProfileName())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("headers", m.GetHeaders())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("initiatingProcessName", m.GetInitiatingProcessName())
         if err != nil {
             return err
         }
@@ -679,13 +823,31 @@ func (m *NetworkAccessTraffic) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err := writer.WriteStringValue("policyName", m.GetPolicyName())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("policyRuleId", m.GetPolicyRuleId())
         if err != nil {
             return err
         }
     }
     {
+        err := writer.WriteStringValue("policyRuleName", m.GetPolicyRuleName())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteInt64Value("receivedBytes", m.GetReceivedBytes())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("resourceTenantId", m.GetResourceTenantId())
         if err != nil {
             return err
         }
@@ -841,9 +1003,30 @@ func (m *NetworkAccessTraffic) SetDeviceOperatingSystemVersion(value *string)() 
         panic(err)
     }
 }
+// SetFilteringProfileId sets the filteringProfileId property value. The filteringProfileId property
+func (m *NetworkAccessTraffic) SetFilteringProfileId(value *string)() {
+    err := m.GetBackingStore().Set("filteringProfileId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetFilteringProfileName sets the filteringProfileName property value. The filteringProfileName property
+func (m *NetworkAccessTraffic) SetFilteringProfileName(value *string)() {
+    err := m.GetBackingStore().Set("filteringProfileName", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetHeaders sets the headers property value. Represents the headers included in a network request or response. Supports $filter (eq) and $orderby.
 func (m *NetworkAccessTraffic) SetHeaders(value Headersable)() {
     err := m.GetBackingStore().Set("headers", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetInitiatingProcessName sets the initiatingProcessName property value. The initiatingProcessName property
+func (m *NetworkAccessTraffic) SetInitiatingProcessName(value *string)() {
+    err := m.GetBackingStore().Set("initiatingProcessName", value)
     if err != nil {
         panic(err)
     }
@@ -869,6 +1052,13 @@ func (m *NetworkAccessTraffic) SetPolicyId(value *string)() {
         panic(err)
     }
 }
+// SetPolicyName sets the policyName property value. The policyName property
+func (m *NetworkAccessTraffic) SetPolicyName(value *string)() {
+    err := m.GetBackingStore().Set("policyName", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPolicyRuleId sets the policyRuleId property value. Represents a unique identifier assigned to a policy rule. Supports $filter (eq) and $orderby.
 func (m *NetworkAccessTraffic) SetPolicyRuleId(value *string)() {
     err := m.GetBackingStore().Set("policyRuleId", value)
@@ -876,9 +1066,23 @@ func (m *NetworkAccessTraffic) SetPolicyRuleId(value *string)() {
         panic(err)
     }
 }
+// SetPolicyRuleName sets the policyRuleName property value. The policyRuleName property
+func (m *NetworkAccessTraffic) SetPolicyRuleName(value *string)() {
+    err := m.GetBackingStore().Set("policyRuleName", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetReceivedBytes sets the receivedBytes property value. Represents the total number of bytes received in a network communication or data transfer. Supports $filter (eq) and $orderby.
 func (m *NetworkAccessTraffic) SetReceivedBytes(value *int64)() {
     err := m.GetBackingStore().Set("receivedBytes", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetResourceTenantId sets the resourceTenantId property value. The resourceTenantId property
+func (m *NetworkAccessTraffic) SetResourceTenantId(value *string)() {
+    err := m.GetBackingStore().Set("resourceTenantId", value)
     if err != nil {
         panic(err)
     }
@@ -969,12 +1173,18 @@ type NetworkAccessTrafficable interface {
     GetDeviceId()(*string)
     GetDeviceOperatingSystem()(*string)
     GetDeviceOperatingSystemVersion()(*string)
+    GetFilteringProfileId()(*string)
+    GetFilteringProfileName()(*string)
     GetHeaders()(Headersable)
+    GetInitiatingProcessName()(*string)
     GetNetworkProtocol()(*NetworkingProtocol)
     GetOdataType()(*string)
     GetPolicyId()(*string)
+    GetPolicyName()(*string)
     GetPolicyRuleId()(*string)
+    GetPolicyRuleName()(*string)
     GetReceivedBytes()(*int64)
+    GetResourceTenantId()(*string)
     GetSentBytes()(*int64)
     GetSessionId()(*string)
     GetSourceIp()(*string)
@@ -996,12 +1206,18 @@ type NetworkAccessTrafficable interface {
     SetDeviceId(value *string)()
     SetDeviceOperatingSystem(value *string)()
     SetDeviceOperatingSystemVersion(value *string)()
+    SetFilteringProfileId(value *string)()
+    SetFilteringProfileName(value *string)()
     SetHeaders(value Headersable)()
+    SetInitiatingProcessName(value *string)()
     SetNetworkProtocol(value *NetworkingProtocol)()
     SetOdataType(value *string)()
     SetPolicyId(value *string)()
+    SetPolicyName(value *string)()
     SetPolicyRuleId(value *string)()
+    SetPolicyRuleName(value *string)()
     SetReceivedBytes(value *int64)()
+    SetResourceTenantId(value *string)()
     SetSentBytes(value *int64)()
     SetSessionId(value *string)()
     SetSourceIp(value *string)()

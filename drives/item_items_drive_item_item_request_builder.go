@@ -168,10 +168,10 @@ func (m *ItemItemsDriveItemItemRequestBuilder) LastModifiedByUser()(*ItemItemsIt
 func (m *ItemItemsDriveItemItemRequestBuilder) ListItem()(*ItemItemsItemListItemRequestBuilder) {
     return NewItemItemsItemListItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the metadata for a DriveItem by ID or path. You can also use update to move an item to another parent by updating the item's parentReference property. This API is available in the following national cloud deployments.
+// Patch to move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move. This is a special case of the Update method.Your app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-move?view=graph-rest-1.0
 func (m *ItemItemsDriveItemItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, requestConfiguration *ItemItemsDriveItemItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -250,7 +250,7 @@ func (m *ItemItemsDriveItemItemRequestBuilder) ToGetRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the metadata for a DriveItem by ID or path. You can also use update to move an item to another parent by updating the item's parentReference property. This API is available in the following national cloud deployments.
+// ToPatchRequestInformation to move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move. This is a special case of the Update method.Your app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request. This API is available in the following national cloud deployments.
 func (m *ItemItemsDriveItemItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, requestConfiguration *ItemItemsDriveItemItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -138,7 +138,7 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSnoozeDurationInDays gets the snoozeDurationInDays property value. Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is '0' – The user is prompted during every MFA attempt.
+// GetSnoozeDurationInDays gets the snoozeDurationInDays property value. Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is 0 – The user is prompted during every MFA attempt.
 func (m *AuthenticationMethodsRegistrationCampaign) GetSnoozeDurationInDays()(*int32) {
     val, err := m.GetBackingStore().Get("snoozeDurationInDays")
     if err != nil {
@@ -245,7 +245,7 @@ func (m *AuthenticationMethodsRegistrationCampaign) SetOdataType(value *string)(
         panic(err)
     }
 }
-// SetSnoozeDurationInDays sets the snoozeDurationInDays property value. Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is '0' – The user is prompted during every MFA attempt.
+// SetSnoozeDurationInDays sets the snoozeDurationInDays property value. Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is 0 – The user is prompted during every MFA attempt.
 func (m *AuthenticationMethodsRegistrationCampaign) SetSnoozeDurationInDays(value *int32)() {
     err := m.GetBackingStore().Set("snoozeDurationInDays", value)
     if err != nil {

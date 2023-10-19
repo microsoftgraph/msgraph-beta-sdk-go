@@ -11,7 +11,7 @@ import (
 type ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilderGetQueryParameters retrieve a list of attachment objects attached to a message. This API is available in the following national cloud deployments.
+// ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilderGetQueryParameters retrieve a list of attachment objects. This API is available in the following national cloud deployments.
 type ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,10 +72,10 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilde
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsCreateUploadSessionRequestBuilder) {
     return NewItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of attachment objects attached to a message. This API is available in the following national cloud deployments.
+// Get retrieve a list of attachment objects. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +116,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilde
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable), nil
 }
-// ToGetRequestInformation retrieve a list of attachment objects attached to a message. This API is available in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of attachment objects. This API is available in the following national cloud deployments.
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

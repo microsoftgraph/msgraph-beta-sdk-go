@@ -698,6 +698,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCustomSecurityAttributeAudit(), nil
                     case "#microsoft.graph.customSecurityAttributeDefinition":
                         return NewCustomSecurityAttributeDefinition(), nil
+                    case "#microsoft.graph.dailyInactiveUsersByApplicationMetric":
+                        return NewDailyInactiveUsersByApplicationMetric(), nil
+                    case "#microsoft.graph.dailyInactiveUsersMetric":
+                        return NewDailyInactiveUsersMetric(), nil
                     case "#microsoft.graph.dataClassificationService":
                         return NewDataClassificationService(), nil
                     case "#microsoft.graph.dataCollectionInfo":
@@ -1332,6 +1336,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewImportedWindowsAutopilotDeviceIdentity(), nil
                     case "#microsoft.graph.importedWindowsAutopilotDeviceIdentityUpload":
                         return NewImportedWindowsAutopilotDeviceIdentityUpload(), nil
+                    case "#microsoft.graph.inactiveUsersByApplicationMetricBase":
+                        return NewInactiveUsersByApplicationMetricBase(), nil
+                    case "#microsoft.graph.inactiveUsersMetricBase":
+                        return NewInactiveUsersMetricBase(), nil
                     case "#microsoft.graph.inferenceClassification":
                         return NewInferenceClassification(), nil
                     case "#microsoft.graph.inferenceClassificationOverride":
@@ -1724,6 +1732,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMobileThreatDefenseConnector(), nil
                     case "#microsoft.graph.mobilityManagementPolicy":
                         return NewMobilityManagementPolicy(), nil
+                    case "#microsoft.graph.monthlyInactiveUsersByApplicationMetric":
+                        return NewMonthlyInactiveUsersByApplicationMetric(), nil
+                    case "#microsoft.graph.monthlyInactiveUsersMetric":
+                        return NewMonthlyInactiveUsersMetric(), nil
                     case "#microsoft.graph.multiTenantOrganization":
                         return NewMultiTenantOrganization(), nil
                     case "#microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate":

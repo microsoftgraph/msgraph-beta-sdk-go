@@ -709,7 +709,7 @@ func (m *Device) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     }
     return res
 }
-// GetHostnames gets the hostnames property value. List of hostNames for the device.
+// GetHostnames gets the hostnames property value. List of host names for the device.
 func (m *Device) GetHostnames()([]string) {
     val, err := m.GetBackingStore().Get("hostnames")
     if err != nil {
@@ -742,7 +742,7 @@ func (m *Device) GetIsManaged()(*bool) {
     }
     return nil
 }
-// GetIsManagementRestricted gets the isManagementRestricted property value. true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a device that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+// GetIsManagementRestricted gets the isManagementRestricted property value. Indicates whether the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. The default value is false. Read-only.  To manage a device that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
 func (m *Device) GetIsManagementRestricted()(*bool) {
     val, err := m.GetBackingStore().Get("isManagementRestricted")
     if err != nil {
@@ -764,7 +764,7 @@ func (m *Device) GetIsRooted()(*bool) {
     }
     return nil
 }
-// GetKind gets the kind property value. Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+// GetKind gets the kind property value. Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
 func (m *Device) GetKind()(*string) {
     val, err := m.GetBackingStore().Get("kind")
     if err != nil {
@@ -786,7 +786,7 @@ func (m *Device) GetManagementType()(*string) {
     }
     return nil
 }
-// GetManufacturer gets the manufacturer property value. Manufacturer of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+// GetManufacturer gets the manufacturer property value. Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
 func (m *Device) GetManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("manufacturer")
     if err != nil {
@@ -819,7 +819,7 @@ func (m *Device) GetMemberOf()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetModel gets the model property value. Model of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+// GetModel gets the model property value. Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
 func (m *Device) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
     if err != nil {
@@ -830,7 +830,7 @@ func (m *Device) GetModel()(*string) {
     }
     return nil
 }
-// GetName gets the name property value. Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+// GetName gets the name property value. Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
 func (m *Device) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -852,7 +852,7 @@ func (m *Device) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad9
     }
     return nil
 }
-// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. The onPremisesSecurityIdentifier property
+// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
 func (m *Device) GetOnPremisesSecurityIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesSecurityIdentifier")
     if err != nil {
@@ -907,7 +907,7 @@ func (m *Device) GetPhysicalIds()([]string) {
     }
     return nil
 }
-// GetPlatform gets the platform property value. Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
+// GetPlatform gets the platform property value. Platform of device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
 func (m *Device) GetPlatform()(*string) {
     val, err := m.GetBackingStore().Get("platform")
     if err != nil {
@@ -995,7 +995,7 @@ func (m *Device) GetTransitiveMemberOf()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetTrustType gets the trustType property value. Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
+// GetTrustType gets the trustType property value. Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory.
 func (m *Device) GetTrustType()(*string) {
     val, err := m.GetBackingStore().Get("trustType")
     if err != nil {
@@ -1449,7 +1449,7 @@ func (m *Device) SetExtensions(value []Extensionable)() {
         panic(err)
     }
 }
-// SetHostnames sets the hostnames property value. List of hostNames for the device.
+// SetHostnames sets the hostnames property value. List of host names for the device.
 func (m *Device) SetHostnames(value []string)() {
     err := m.GetBackingStore().Set("hostnames", value)
     if err != nil {
@@ -1470,7 +1470,7 @@ func (m *Device) SetIsManaged(value *bool)() {
         panic(err)
     }
 }
-// SetIsManagementRestricted sets the isManagementRestricted property value. true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a device that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+// SetIsManagementRestricted sets the isManagementRestricted property value. Indicates whether the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. The default value is false. Read-only.  To manage a device that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
 func (m *Device) SetIsManagementRestricted(value *bool)() {
     err := m.GetBackingStore().Set("isManagementRestricted", value)
     if err != nil {
@@ -1484,7 +1484,7 @@ func (m *Device) SetIsRooted(value *bool)() {
         panic(err)
     }
 }
-// SetKind sets the kind property value. Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+// SetKind sets the kind property value. Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
 func (m *Device) SetKind(value *string)() {
     err := m.GetBackingStore().Set("kind", value)
     if err != nil {
@@ -1498,7 +1498,7 @@ func (m *Device) SetManagementType(value *string)() {
         panic(err)
     }
 }
-// SetManufacturer sets the manufacturer property value. Manufacturer of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+// SetManufacturer sets the manufacturer property value. Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
 func (m *Device) SetManufacturer(value *string)() {
     err := m.GetBackingStore().Set("manufacturer", value)
     if err != nil {
@@ -1519,14 +1519,14 @@ func (m *Device) SetMemberOf(value []DirectoryObjectable)() {
         panic(err)
     }
 }
-// SetModel sets the model property value. Model of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+// SetModel sets the model property value. Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
 func (m *Device) SetModel(value *string)() {
     err := m.GetBackingStore().Set("model", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+// SetName sets the name property value. Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
 func (m *Device) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
@@ -1540,7 +1540,7 @@ func (m *Device) SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe
         panic(err)
     }
 }
-// SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. The onPremisesSecurityIdentifier property
+// SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
 func (m *Device) SetOnPremisesSecurityIdentifier(value *string)() {
     err := m.GetBackingStore().Set("onPremisesSecurityIdentifier", value)
     if err != nil {
@@ -1575,7 +1575,7 @@ func (m *Device) SetPhysicalIds(value []string)() {
         panic(err)
     }
 }
-// SetPlatform sets the platform property value. Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
+// SetPlatform sets the platform property value. Platform of device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
 func (m *Device) SetPlatform(value *string)() {
     err := m.GetBackingStore().Set("platform", value)
     if err != nil {
@@ -1631,7 +1631,7 @@ func (m *Device) SetTransitiveMemberOf(value []DirectoryObjectable)() {
         panic(err)
     }
 }
-// SetTrustType sets the trustType property value. Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
+// SetTrustType sets the trustType property value. Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory.
 func (m *Device) SetTrustType(value *string)() {
     err := m.GetBackingStore().Set("trustType", value)
     if err != nil {

@@ -344,7 +344,7 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetFrontLineServicePlans gets the frontLineServicePlans property value. The frontLineServicePlans property
+// GetFrontLineServicePlans gets the frontLineServicePlans property value. Front-line service plans for a Cloud PC.
 func (m *VirtualEndpoint) GetFrontLineServicePlans()([]CloudPcFrontLineServicePlanable) {
     val, err := m.GetBackingStore().Get("frontLineServicePlans")
     if err != nil {
@@ -421,7 +421,7 @@ func (m *VirtualEndpoint) GetServicePlans()([]CloudPcServicePlanable) {
     }
     return nil
 }
-// GetSharedUseServicePlans gets the sharedUseServicePlans property value. Cloud PC shared-use service plans.
+// GetSharedUseServicePlans gets the sharedUseServicePlans property value. The sharedUseServicePlans property
 func (m *VirtualEndpoint) GetSharedUseServicePlans()([]CloudPcSharedUseServicePlanable) {
     val, err := m.GetBackingStore().Get("sharedUseServicePlans")
     if err != nil {
@@ -701,7 +701,7 @@ func (m *VirtualEndpoint) SetExternalPartnerSettings(value []CloudPcExternalPart
         panic(err)
     }
 }
-// SetFrontLineServicePlans sets the frontLineServicePlans property value. The frontLineServicePlans property
+// SetFrontLineServicePlans sets the frontLineServicePlans property value. Front-line service plans for a Cloud PC.
 func (m *VirtualEndpoint) SetFrontLineServicePlans(value []CloudPcFrontLineServicePlanable)() {
     err := m.GetBackingStore().Set("frontLineServicePlans", value)
     if err != nil {
@@ -750,7 +750,7 @@ func (m *VirtualEndpoint) SetServicePlans(value []CloudPcServicePlanable)() {
         panic(err)
     }
 }
-// SetSharedUseServicePlans sets the sharedUseServicePlans property value. Cloud PC shared-use service plans.
+// SetSharedUseServicePlans sets the sharedUseServicePlans property value. The sharedUseServicePlans property
 func (m *VirtualEndpoint) SetSharedUseServicePlans(value []CloudPcSharedUseServicePlanable)() {
     err := m.GetBackingStore().Set("sharedUseServicePlans", value)
     if err != nil {
