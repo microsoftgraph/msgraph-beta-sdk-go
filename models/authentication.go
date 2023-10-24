@@ -172,6 +172,22 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["platformCredentialMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePlatformCredentialAuthenticationMethodFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PlatformCredentialAuthenticationMethodable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(PlatformCredentialAuthenticationMethodable)
+                }
+            }
+            m.SetPlatformCredentialMethods(res)
+        }
+        return nil
+    }
     res["signInPreferences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSignInPreferencesFromDiscriminatorValue)
         if err != nil {
@@ -295,6 +311,17 @@ func (m *Authentication) GetPhoneMethods()([]PhoneAuthenticationMethodable) {
     }
     if val != nil {
         return val.([]PhoneAuthenticationMethodable)
+    }
+    return nil
+}
+// GetPlatformCredentialMethods gets the platformCredentialMethods property value. The platformCredentialMethods property
+func (m *Authentication) GetPlatformCredentialMethods()([]PlatformCredentialAuthenticationMethodable) {
+    val, err := m.GetBackingStore().Get("platformCredentialMethods")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlatformCredentialAuthenticationMethodable)
     }
     return nil
 }
@@ -444,6 +471,18 @@ func (m *Authentication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    if m.GetPlatformCredentialMethods() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPlatformCredentialMethods()))
+        for i, v := range m.GetPlatformCredentialMethods() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("platformCredentialMethods", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("signInPreferences", m.GetSignInPreferences())
         if err != nil {
@@ -544,6 +583,13 @@ func (m *Authentication) SetPhoneMethods(value []PhoneAuthenticationMethodable)(
         panic(err)
     }
 }
+// SetPlatformCredentialMethods sets the platformCredentialMethods property value. The platformCredentialMethods property
+func (m *Authentication) SetPlatformCredentialMethods(value []PlatformCredentialAuthenticationMethodable)() {
+    err := m.GetBackingStore().Set("platformCredentialMethods", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSignInPreferences sets the signInPreferences property value. The settings and preferences for to the sign-in experience of a user.
 func (m *Authentication) SetSignInPreferences(value SignInPreferencesable)() {
     err := m.GetBackingStore().Set("signInPreferences", value)
@@ -584,6 +630,7 @@ type Authenticationable interface {
     GetPasswordlessMicrosoftAuthenticatorMethods()([]PasswordlessMicrosoftAuthenticatorAuthenticationMethodable)
     GetPasswordMethods()([]PasswordAuthenticationMethodable)
     GetPhoneMethods()([]PhoneAuthenticationMethodable)
+    GetPlatformCredentialMethods()([]PlatformCredentialAuthenticationMethodable)
     GetSignInPreferences()(SignInPreferencesable)
     GetSoftwareOathMethods()([]SoftwareOathAuthenticationMethodable)
     GetTemporaryAccessPassMethods()([]TemporaryAccessPassAuthenticationMethodable)
@@ -596,6 +643,7 @@ type Authenticationable interface {
     SetPasswordlessMicrosoftAuthenticatorMethods(value []PasswordlessMicrosoftAuthenticatorAuthenticationMethodable)()
     SetPasswordMethods(value []PasswordAuthenticationMethodable)()
     SetPhoneMethods(value []PhoneAuthenticationMethodable)()
+    SetPlatformCredentialMethods(value []PlatformCredentialAuthenticationMethodable)()
     SetSignInPreferences(value SignInPreferencesable)()
     SetSoftwareOathMethods(value []SoftwareOathAuthenticationMethodable)()
     SetTemporaryAccessPassMethods(value []TemporaryAccessPassAuthenticationMethodable)()

@@ -13,6 +13,8 @@ func NewAzureUser()(*AzureUser) {
     m := &AzureUser{
         AzureIdentity: *NewAzureIdentity(),
     }
+    odataTypeValue := "#microsoft.graph.azureUser"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAzureUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

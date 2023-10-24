@@ -19,7 +19,7 @@ func NewMultiTenantOrganizationJoinRequestRecord()(*MultiTenantOrganizationJoinR
 func CreateMultiTenantOrganizationJoinRequestRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMultiTenantOrganizationJoinRequestRecord(), nil
 }
-// GetAddedByTenantId gets the addedByTenantId property value. Tenant ID of the Azure Active Directory tenant that added a tenant to the multi-tenant organization. To reset a failed join request, set addedByTenantId to 00000000-0000-0000-0000-000000000000. Required.
+// GetAddedByTenantId gets the addedByTenantId property value. Tenant ID of the Microsoft Entra tenant that added a tenant to the multi-tenant organization. To reset a failed join request, set addedByTenantId to 00000000-0000-0000-0000-000000000000. Required.
 func (m *MultiTenantOrganizationJoinRequestRecord) GetAddedByTenantId()(*string) {
     val, err := m.GetBackingStore().Get("addedByTenantId")
     if err != nil {
@@ -142,7 +142,7 @@ func (m *MultiTenantOrganizationJoinRequestRecord) Serialize(writer i878a80d2330
     }
     return nil
 }
-// SetAddedByTenantId sets the addedByTenantId property value. Tenant ID of the Azure Active Directory tenant that added a tenant to the multi-tenant organization. To reset a failed join request, set addedByTenantId to 00000000-0000-0000-0000-000000000000. Required.
+// SetAddedByTenantId sets the addedByTenantId property value. Tenant ID of the Microsoft Entra tenant that added a tenant to the multi-tenant organization. To reset a failed join request, set addedByTenantId to 00000000-0000-0000-0000-000000000000. Required.
 func (m *MultiTenantOrganizationJoinRequestRecord) SetAddedByTenantId(value *string)() {
     err := m.GetBackingStore().Set("addedByTenantId", value)
     if err != nil {

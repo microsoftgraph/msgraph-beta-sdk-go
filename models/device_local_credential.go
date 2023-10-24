@@ -42,7 +42,7 @@ func (m *DeviceLocalCredential) GetAccountSid()(*string) {
     }
     return nil
 }
-// GetBackupDateTime gets the backupDateTime property value. When the local adminstrator account credential for the device object was backed up to Azure Active Directory.
+// GetBackupDateTime gets the backupDateTime property value. When the local adminstrator account credential for the device object was backed up to Microsoft Entra ID.
 func (m *DeviceLocalCredential) GetBackupDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("backupDateTime")
     if err != nil {
@@ -98,7 +98,7 @@ func (m *DeviceLocalCredential) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetPasswordBase64 gets the passwordBase64 property value. The password for the local administrator account that is backed up to Azure Active Directory and returned as a base 64 encoded value.
+// GetPasswordBase64 gets the passwordBase64 property value. The password for the local administrator account that is backed up to Microsoft Entra ID and returned as a base 64 encoded value.
 func (m *DeviceLocalCredential) GetPasswordBase64()(*string) {
     val, err := m.GetBackingStore().Get("passwordBase64")
     if err != nil {
@@ -155,14 +155,14 @@ func (m *DeviceLocalCredential) SetAccountSid(value *string)() {
         panic(err)
     }
 }
-// SetBackupDateTime sets the backupDateTime property value. When the local adminstrator account credential for the device object was backed up to Azure Active Directory.
+// SetBackupDateTime sets the backupDateTime property value. When the local adminstrator account credential for the device object was backed up to Microsoft Entra ID.
 func (m *DeviceLocalCredential) SetBackupDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("backupDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPasswordBase64 sets the passwordBase64 property value. The password for the local administrator account that is backed up to Azure Active Directory and returned as a base 64 encoded value.
+// SetPasswordBase64 sets the passwordBase64 property value. The password for the local administrator account that is backed up to Microsoft Entra ID and returned as a base 64 encoded value.
 func (m *DeviceLocalCredential) SetPasswordBase64(value *string)() {
     err := m.GetBackingStore().Set("passwordBase64", value)
     if err != nil {

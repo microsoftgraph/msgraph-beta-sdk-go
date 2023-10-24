@@ -185,7 +185,7 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetInheritsPermissionsFrom gets the inheritsPermissionsFrom property value. Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+// GetInheritsPermissionsFrom gets the inheritsPermissionsFrom property value. Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles support this attribute.
 func (m *UnifiedRoleDefinition) GetInheritsPermissionsFrom()([]UnifiedRoleDefinitionable) {
     val, err := m.GetBackingStore().Get("inheritsPermissionsFrom")
     if err != nil {
@@ -218,7 +218,7 @@ func (m *UnifiedRoleDefinition) GetIsEnabled()(*bool) {
     }
     return nil
 }
-// GetIsPrivileged gets the isPrivileged property value. Flag indicating if the role is privileged. Azure AD defines a role as privileged if it contains at least one sensitive resource action in the rolePermissions and allowedResourceActions objects. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
+// GetIsPrivileged gets the isPrivileged property value. Flag indicating if the role is privileged. Microsoft Entra ID defines a role as privileged if it contains at least one sensitive resource action in the rolePermissions and allowedResourceActions objects. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
 func (m *UnifiedRoleDefinition) GetIsPrivileged()(*bool) {
     val, err := m.GetBackingStore().Get("isPrivileged")
     if err != nil {
@@ -381,7 +381,7 @@ func (m *UnifiedRoleDefinition) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetInheritsPermissionsFrom sets the inheritsPermissionsFrom property value. Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+// SetInheritsPermissionsFrom sets the inheritsPermissionsFrom property value. Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles support this attribute.
 func (m *UnifiedRoleDefinition) SetInheritsPermissionsFrom(value []UnifiedRoleDefinitionable)() {
     err := m.GetBackingStore().Set("inheritsPermissionsFrom", value)
     if err != nil {
@@ -402,7 +402,7 @@ func (m *UnifiedRoleDefinition) SetIsEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetIsPrivileged sets the isPrivileged property value. Flag indicating if the role is privileged. Azure AD defines a role as privileged if it contains at least one sensitive resource action in the rolePermissions and allowedResourceActions objects. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
+// SetIsPrivileged sets the isPrivileged property value. Flag indicating if the role is privileged. Microsoft Entra ID defines a role as privileged if it contains at least one sensitive resource action in the rolePermissions and allowedResourceActions objects. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
 func (m *UnifiedRoleDefinition) SetIsPrivileged(value *bool)() {
     err := m.GetBackingStore().Set("isPrivileged", value)
     if err != nil {

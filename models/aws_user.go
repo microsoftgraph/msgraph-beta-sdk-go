@@ -13,6 +13,8 @@ func NewAwsUser()(*AwsUser) {
     m := &AwsUser{
         AwsIdentity: *NewAwsIdentity(),
     }
+    odataTypeValue := "#microsoft.graph.awsUser"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAwsUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

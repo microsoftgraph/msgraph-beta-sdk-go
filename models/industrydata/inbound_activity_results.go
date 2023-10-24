@@ -140,7 +140,7 @@ func (m *InboundActivityResults) GetGroups()(IndustryDataRunEntityCountMetricabl
     }
     return nil
 }
-// GetMatchedPeopleByRole gets the matchedPeopleByRole property value. Number of people matched to an Azure Active Directory user, by role.
+// GetMatchedPeopleByRole gets the matchedPeopleByRole property value. Number of people matched to a Microsoft Entra user, by role.
 func (m *InboundActivityResults) GetMatchedPeopleByRole()([]IndustryDataRunRoleCountMetricable) {
     val, err := m.GetBackingStore().Get("matchedPeopleByRole")
     if err != nil {
@@ -184,7 +184,7 @@ func (m *InboundActivityResults) GetPeople()(IndustryDataRunEntityCountMetricabl
     }
     return nil
 }
-// GetUnmatchedPeopleByRole gets the unmatchedPeopleByRole property value. Number of people not matched to an Azure Active Directory user, by role.
+// GetUnmatchedPeopleByRole gets the unmatchedPeopleByRole property value. Number of people not matched to a Microsoft Entra user, by role.
 func (m *InboundActivityResults) GetUnmatchedPeopleByRole()([]IndustryDataRunRoleCountMetricable) {
     val, err := m.GetBackingStore().Get("unmatchedPeopleByRole")
     if err != nil {
@@ -228,7 +228,7 @@ func (m *InboundActivityResults) SetGroups(value IndustryDataRunEntityCountMetri
         panic(err)
     }
 }
-// SetMatchedPeopleByRole sets the matchedPeopleByRole property value. Number of people matched to an Azure Active Directory user, by role.
+// SetMatchedPeopleByRole sets the matchedPeopleByRole property value. Number of people matched to a Microsoft Entra user, by role.
 func (m *InboundActivityResults) SetMatchedPeopleByRole(value []IndustryDataRunRoleCountMetricable)() {
     err := m.GetBackingStore().Set("matchedPeopleByRole", value)
     if err != nil {
@@ -256,7 +256,7 @@ func (m *InboundActivityResults) SetPeople(value IndustryDataRunEntityCountMetri
         panic(err)
     }
 }
-// SetUnmatchedPeopleByRole sets the unmatchedPeopleByRole property value. Number of people not matched to an Azure Active Directory user, by role.
+// SetUnmatchedPeopleByRole sets the unmatchedPeopleByRole property value. Number of people not matched to a Microsoft Entra user, by role.
 func (m *InboundActivityResults) SetUnmatchedPeopleByRole(value []IndustryDataRunRoleCountMetricable)() {
     err := m.GetBackingStore().Set("unmatchedPeopleByRole", value)
     if err != nil {

@@ -167,7 +167,7 @@ func (m *AggregatedInboundStatistics) GetGroups()(*int32) {
     }
     return nil
 }
-// GetMatchedPeopleByRole gets the matchedPeopleByRole property value. The aggregate count of active people matched to an Azure Active Directory user, by role.
+// GetMatchedPeopleByRole gets the matchedPeopleByRole property value. The aggregate count of active people matched to a Microsoft Entra user, by role.
 func (m *AggregatedInboundStatistics) GetMatchedPeopleByRole()([]IndustryDataRunRoleCountMetricable) {
     val, err := m.GetBackingStore().Get("matchedPeopleByRole")
     if err != nil {
@@ -222,7 +222,7 @@ func (m *AggregatedInboundStatistics) GetPeople()(*int32) {
     }
     return nil
 }
-// GetUnmatchedPeopleByRole gets the unmatchedPeopleByRole property value. The aggregate count of active people not matched to an Azure Active Directory user, by role.
+// GetUnmatchedPeopleByRole gets the unmatchedPeopleByRole property value. The aggregate count of active people not matched to a Microsoft Entra user, by role.
 func (m *AggregatedInboundStatistics) GetUnmatchedPeopleByRole()([]IndustryDataRunRoleCountMetricable) {
     val, err := m.GetBackingStore().Get("unmatchedPeopleByRole")
     if err != nil {
@@ -285,7 +285,7 @@ func (m *AggregatedInboundStatistics) SetGroups(value *int32)() {
         panic(err)
     }
 }
-// SetMatchedPeopleByRole sets the matchedPeopleByRole property value. The aggregate count of active people matched to an Azure Active Directory user, by role.
+// SetMatchedPeopleByRole sets the matchedPeopleByRole property value. The aggregate count of active people matched to a Microsoft Entra user, by role.
 func (m *AggregatedInboundStatistics) SetMatchedPeopleByRole(value []IndustryDataRunRoleCountMetricable)() {
     err := m.GetBackingStore().Set("matchedPeopleByRole", value)
     if err != nil {
@@ -320,7 +320,7 @@ func (m *AggregatedInboundStatistics) SetPeople(value *int32)() {
         panic(err)
     }
 }
-// SetUnmatchedPeopleByRole sets the unmatchedPeopleByRole property value. The aggregate count of active people not matched to an Azure Active Directory user, by role.
+// SetUnmatchedPeopleByRole sets the unmatchedPeopleByRole property value. The aggregate count of active people not matched to a Microsoft Entra user, by role.
 func (m *AggregatedInboundStatistics) SetUnmatchedPeopleByRole(value []IndustryDataRunRoleCountMetricable)() {
     err := m.GetBackingStore().Set("unmatchedPeopleByRole", value)
     if err != nil {

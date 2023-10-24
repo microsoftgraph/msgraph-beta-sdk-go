@@ -111,7 +111,7 @@ func (m *ServicePrincipal) GetAppManagementPolicies()([]AppManagementPolicyable)
     }
     return nil
 }
-// GetAppOwnerOrganizationId gets the appOwnerOrganizationId property value. Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).
+// GetAppOwnerOrganizationId gets the appOwnerOrganizationId property value. Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
 func (m *ServicePrincipal) GetAppOwnerOrganizationId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("appOwnerOrganizationId")
     if err != nil {
@@ -155,7 +155,7 @@ func (m *ServicePrincipal) GetAppRoleAssignments()([]AppRoleAssignmentable) {
     }
     return nil
 }
-// GetAppRoles gets the appRoles property value. The roles exposed by the application which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
+// GetAppRoles gets the appRoles property value. The roles exposed by the application, which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
 func (m *ServicePrincipal) GetAppRoles()([]AppRoleable) {
     val, err := m.GetBackingStore().Get("appRoles")
     if err != nil {
@@ -1035,7 +1035,7 @@ func (m *ServicePrincipal) GetHomeRealmDiscoveryPolicies()([]HomeRealmDiscoveryP
     }
     return nil
 }
-// GetInfo gets the info property value. Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
+// GetInfo gets the info property value. Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Microsoft Entra apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
 func (m *ServicePrincipal) GetInfo()(InformationalUrlable) {
     val, err := m.GetBackingStore().Get("info")
     if err != nil {
@@ -1068,7 +1068,7 @@ func (m *ServicePrincipal) GetLicenseDetails()([]LicenseDetailsable) {
     }
     return nil
 }
-// GetLoginUrl gets the loginUrl property value. Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Microsoft 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Azure AD My Apps, or the Azure AD SSO URL.
+// GetLoginUrl gets the loginUrl property value. Specifies the URL where the service provider redirects the user to Microsoft Entra ID to authenticate. Microsoft Entra ID uses the URL to launch the application from Microsoft 365 or the Microsoft Entra My Apps. When blank, Microsoft Entra ID performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Microsoft Entra My Apps, or the Microsoft Entra SSO URL.
 func (m *ServicePrincipal) GetLoginUrl()(*string) {
     val, err := m.GetBackingStore().Get("loginUrl")
     if err != nil {
@@ -1112,7 +1112,7 @@ func (m *ServicePrincipal) GetNotes()(*string) {
     }
     return nil
 }
-// GetNotificationEmailAddresses gets the notificationEmailAddresses property value. Specifies the list of email addresses where Azure AD sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Azure AD Gallery applications.
+// GetNotificationEmailAddresses gets the notificationEmailAddresses property value. Specifies the list of email addresses where Microsoft Entra ID sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Microsoft Entra Gallery applications.
 func (m *ServicePrincipal) GetNotificationEmailAddresses()([]string) {
     val, err := m.GetBackingStore().Get("notificationEmailAddresses")
     if err != nil {
@@ -1134,7 +1134,7 @@ func (m *ServicePrincipal) GetOauth2PermissionGrants()([]OAuth2PermissionGrantab
     }
     return nil
 }
-// GetOwnedObjects gets the ownedObjects property value. Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+// GetOwnedObjects gets the ownedObjects property value. Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *ServicePrincipal) GetOwnedObjects()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("ownedObjects")
     if err != nil {
@@ -1145,7 +1145,7 @@ func (m *ServicePrincipal) GetOwnedObjects()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetOwners gets the owners property value. Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
+// GetOwners gets the owners property value. Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *ServicePrincipal) GetOwners()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("owners")
     if err != nil {
@@ -1178,7 +1178,7 @@ func (m *ServicePrincipal) GetPasswordSingleSignOnSettings()(PasswordSingleSignO
     }
     return nil
 }
-// GetPreferredSingleSignOnMode gets the preferredSingleSignOnMode property value. Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.
+// GetPreferredSingleSignOnMode gets the preferredSingleSignOnMode property value. Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Microsoft Entra My Apps. The supported values are password, saml, notSupported, and oidc.
 func (m *ServicePrincipal) GetPreferredSingleSignOnMode()(*string) {
     val, err := m.GetBackingStore().Get("preferredSingleSignOnMode")
     if err != nil {
@@ -1222,7 +1222,7 @@ func (m *ServicePrincipal) GetPublishedPermissionScopes()([]PermissionScopeable)
     }
     return nil
 }
-// GetPublisherName gets the publisherName property value. The name of the Azure AD tenant that published the application.
+// GetPublisherName gets the publisherName property value. The name of the Microsoft Entra tenant that published the application.
 func (m *ServicePrincipal) GetPublisherName()(*string) {
     val, err := m.GetBackingStore().Get("publisherName")
     if err != nil {
@@ -1233,7 +1233,7 @@ func (m *ServicePrincipal) GetPublisherName()(*string) {
     }
     return nil
 }
-// GetRemoteDesktopSecurityConfiguration gets the remoteDesktopSecurityConfiguration property value. The remoteDesktopSecurityConfiguration property
+// GetRemoteDesktopSecurityConfiguration gets the remoteDesktopSecurityConfiguration property value. The remoteDesktopSecurityConfiguration object applied to this service principal. Supports $filter (eq) for isRemoteDesktopProtocolEnabled property.
 func (m *ServicePrincipal) GetRemoteDesktopSecurityConfiguration()(RemoteDesktopSecurityConfigurationable) {
     val, err := m.GetBackingStore().Get("remoteDesktopSecurityConfiguration")
     if err != nil {
@@ -1277,7 +1277,7 @@ func (m *ServicePrincipal) GetSamlSingleSignOnSettings()(SamlSingleSignOnSetting
     }
     return nil
 }
-// GetServicePrincipalNames gets the servicePrincipalNames property value. Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
+// GetServicePrincipalNames gets the servicePrincipalNames property value. Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
 func (m *ServicePrincipal) GetServicePrincipalNames()([]string) {
     val, err := m.GetBackingStore().Get("servicePrincipalNames")
     if err != nil {
@@ -1288,7 +1288,7 @@ func (m *ServicePrincipal) GetServicePrincipalNames()([]string) {
     }
     return nil
 }
-// GetServicePrincipalType gets the servicePrincipalType property value. Identifies if the service principal represents an application or a managed identity. This is set by Azure AD internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
+// GetServicePrincipalType gets the servicePrincipalType property value. Identifies if the service principal represents an application or a managed identity. This is set by Microsoft Entra ID internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
 func (m *ServicePrincipal) GetServicePrincipalType()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalType")
     if err != nil {
@@ -1299,7 +1299,7 @@ func (m *ServicePrincipal) GetServicePrincipalType()(*string) {
     }
     return nil
 }
-// GetSignInAudience gets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+// GetSignInAudience gets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
 func (m *ServicePrincipal) GetSignInAudience()(*string) {
     val, err := m.GetBackingStore().Get("signInAudience")
     if err != nil {
@@ -1310,7 +1310,7 @@ func (m *ServicePrincipal) GetSignInAudience()(*string) {
     }
     return nil
 }
-// GetSynchronization gets the synchronization property value. Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
+// GetSynchronization gets the synchronization property value. Represents the capability for Microsoft Entra identity synchronization through the Microsoft Graph API.
 func (m *ServicePrincipal) GetSynchronization()(Synchronizationable) {
     val, err := m.GetBackingStore().Get("synchronization")
     if err != nil {
@@ -1332,7 +1332,7 @@ func (m *ServicePrincipal) GetTags()([]string) {
     }
     return nil
 }
-// GetTokenEncryptionKeyId gets the tokenEncryptionKeyId property value. Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
+// GetTokenEncryptionKeyId gets the tokenEncryptionKeyId property value. Specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
 func (m *ServicePrincipal) GetTokenEncryptionKeyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("tokenEncryptionKeyId")
     if err != nil {
@@ -1925,7 +1925,7 @@ func (m *ServicePrincipal) SetAppManagementPolicies(value []AppManagementPolicya
         panic(err)
     }
 }
-// SetAppOwnerOrganizationId sets the appOwnerOrganizationId property value. Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).
+// SetAppOwnerOrganizationId sets the appOwnerOrganizationId property value. Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
 func (m *ServicePrincipal) SetAppOwnerOrganizationId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     err := m.GetBackingStore().Set("appOwnerOrganizationId", value)
     if err != nil {
@@ -1953,7 +1953,7 @@ func (m *ServicePrincipal) SetAppRoleAssignments(value []AppRoleAssignmentable)(
         panic(err)
     }
 }
-// SetAppRoles sets the appRoles property value. The roles exposed by the application which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
+// SetAppRoles sets the appRoles property value. The roles exposed by the application, which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
 func (m *ServicePrincipal) SetAppRoles(value []AppRoleable)() {
     err := m.GetBackingStore().Set("appRoles", value)
     if err != nil {
@@ -2044,7 +2044,7 @@ func (m *ServicePrincipal) SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscov
         panic(err)
     }
 }
-// SetInfo sets the info property value. Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
+// SetInfo sets the info property value. Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Microsoft Entra apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
 func (m *ServicePrincipal) SetInfo(value InformationalUrlable)() {
     err := m.GetBackingStore().Set("info", value)
     if err != nil {
@@ -2065,7 +2065,7 @@ func (m *ServicePrincipal) SetLicenseDetails(value []LicenseDetailsable)() {
         panic(err)
     }
 }
-// SetLoginUrl sets the loginUrl property value. Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Microsoft 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Azure AD My Apps, or the Azure AD SSO URL.
+// SetLoginUrl sets the loginUrl property value. Specifies the URL where the service provider redirects the user to Microsoft Entra ID to authenticate. Microsoft Entra ID uses the URL to launch the application from Microsoft 365 or the Microsoft Entra My Apps. When blank, Microsoft Entra ID performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Microsoft Entra My Apps, or the Microsoft Entra SSO URL.
 func (m *ServicePrincipal) SetLoginUrl(value *string)() {
     err := m.GetBackingStore().Set("loginUrl", value)
     if err != nil {
@@ -2093,7 +2093,7 @@ func (m *ServicePrincipal) SetNotes(value *string)() {
         panic(err)
     }
 }
-// SetNotificationEmailAddresses sets the notificationEmailAddresses property value. Specifies the list of email addresses where Azure AD sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Azure AD Gallery applications.
+// SetNotificationEmailAddresses sets the notificationEmailAddresses property value. Specifies the list of email addresses where Microsoft Entra ID sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Microsoft Entra Gallery applications.
 func (m *ServicePrincipal) SetNotificationEmailAddresses(value []string)() {
     err := m.GetBackingStore().Set("notificationEmailAddresses", value)
     if err != nil {
@@ -2107,14 +2107,14 @@ func (m *ServicePrincipal) SetOauth2PermissionGrants(value []OAuth2PermissionGra
         panic(err)
     }
 }
-// SetOwnedObjects sets the ownedObjects property value. Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+// SetOwnedObjects sets the ownedObjects property value. Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *ServicePrincipal) SetOwnedObjects(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("ownedObjects", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOwners sets the owners property value. Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
+// SetOwners sets the owners property value. Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *ServicePrincipal) SetOwners(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("owners", value)
     if err != nil {
@@ -2135,7 +2135,7 @@ func (m *ServicePrincipal) SetPasswordSingleSignOnSettings(value PasswordSingleS
         panic(err)
     }
 }
-// SetPreferredSingleSignOnMode sets the preferredSingleSignOnMode property value. Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.
+// SetPreferredSingleSignOnMode sets the preferredSingleSignOnMode property value. Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Microsoft Entra My Apps. The supported values are password, saml, notSupported, and oidc.
 func (m *ServicePrincipal) SetPreferredSingleSignOnMode(value *string)() {
     err := m.GetBackingStore().Set("preferredSingleSignOnMode", value)
     if err != nil {
@@ -2163,14 +2163,14 @@ func (m *ServicePrincipal) SetPublishedPermissionScopes(value []PermissionScopea
         panic(err)
     }
 }
-// SetPublisherName sets the publisherName property value. The name of the Azure AD tenant that published the application.
+// SetPublisherName sets the publisherName property value. The name of the Microsoft Entra tenant that published the application.
 func (m *ServicePrincipal) SetPublisherName(value *string)() {
     err := m.GetBackingStore().Set("publisherName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRemoteDesktopSecurityConfiguration sets the remoteDesktopSecurityConfiguration property value. The remoteDesktopSecurityConfiguration property
+// SetRemoteDesktopSecurityConfiguration sets the remoteDesktopSecurityConfiguration property value. The remoteDesktopSecurityConfiguration object applied to this service principal. Supports $filter (eq) for isRemoteDesktopProtocolEnabled property.
 func (m *ServicePrincipal) SetRemoteDesktopSecurityConfiguration(value RemoteDesktopSecurityConfigurationable)() {
     err := m.GetBackingStore().Set("remoteDesktopSecurityConfiguration", value)
     if err != nil {
@@ -2198,28 +2198,28 @@ func (m *ServicePrincipal) SetSamlSingleSignOnSettings(value SamlSingleSignOnSet
         panic(err)
     }
 }
-// SetServicePrincipalNames sets the servicePrincipalNames property value. Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
+// SetServicePrincipalNames sets the servicePrincipalNames property value. Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
 func (m *ServicePrincipal) SetServicePrincipalNames(value []string)() {
     err := m.GetBackingStore().Set("servicePrincipalNames", value)
     if err != nil {
         panic(err)
     }
 }
-// SetServicePrincipalType sets the servicePrincipalType property value. Identifies if the service principal represents an application or a managed identity. This is set by Azure AD internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
+// SetServicePrincipalType sets the servicePrincipalType property value. Identifies if the service principal represents an application or a managed identity. This is set by Microsoft Entra ID internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
 func (m *ServicePrincipal) SetServicePrincipalType(value *string)() {
     err := m.GetBackingStore().Set("servicePrincipalType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSignInAudience sets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+// SetSignInAudience sets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
 func (m *ServicePrincipal) SetSignInAudience(value *string)() {
     err := m.GetBackingStore().Set("signInAudience", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSynchronization sets the synchronization property value. Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
+// SetSynchronization sets the synchronization property value. Represents the capability for Microsoft Entra identity synchronization through the Microsoft Graph API.
 func (m *ServicePrincipal) SetSynchronization(value Synchronizationable)() {
     err := m.GetBackingStore().Set("synchronization", value)
     if err != nil {
@@ -2233,7 +2233,7 @@ func (m *ServicePrincipal) SetTags(value []string)() {
         panic(err)
     }
 }
-// SetTokenEncryptionKeyId sets the tokenEncryptionKeyId property value. Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
+// SetTokenEncryptionKeyId sets the tokenEncryptionKeyId property value. Specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
 func (m *ServicePrincipal) SetTokenEncryptionKeyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     err := m.GetBackingStore().Set("tokenEncryptionKeyId", value)
     if err != nil {

@@ -53,7 +53,7 @@ func (m *AccessPackageAssignmentPolicy) GetAccessPackageId()(*string) {
     }
     return nil
 }
-// GetAccessReviewSettings gets the accessReviewSettings property value. Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews are not required.
+// GetAccessReviewSettings gets the accessReviewSettings property value. Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews aren't required.
 func (m *AccessPackageAssignmentPolicy) GetAccessReviewSettings()(AssignmentReviewSettingsable) {
     val, err := m.GetBackingStore().Get("accessReviewSettings")
     if err != nil {
@@ -141,7 +141,7 @@ func (m *AccessPackageAssignmentPolicy) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetDurationInDays gets the durationInDays property value. The number of days in which assignments from this policy last until they are expired.
+// GetDurationInDays gets the durationInDays property value. The number of days in which assignments from this policy last until they're expired.
 func (m *AccessPackageAssignmentPolicy) GetDurationInDays()(*int32) {
     val, err := m.GetBackingStore().Get("durationInDays")
     if err != nil {
@@ -431,7 +431,7 @@ func (m *AccessPackageAssignmentPolicy) GetRequestorSettings()(RequestorSettings
     }
     return nil
 }
-// GetVerifiableCredentialSettings gets the verifiableCredentialSettings property value. Settings for verifiable credentials set up through the Azure AD Verified ID service. These settings represent the verifiable credentials that a requestor of an access package in this policy can present to be assigned the access package.
+// GetVerifiableCredentialSettings gets the verifiableCredentialSettings property value. Settings for verifiable credentials set up through the Microsoft Entra Verified I D service. These settings represent the verifiable credentials that a requestor of an access package in this policy can present to be assigned the access package.
 func (m *AccessPackageAssignmentPolicy) GetVerifiableCredentialSettings()(VerifiableCredentialSettingsable) {
     val, err := m.GetBackingStore().Get("verifiableCredentialSettings")
     if err != nil {
@@ -603,7 +603,7 @@ func (m *AccessPackageAssignmentPolicy) SetAccessPackageId(value *string)() {
         panic(err)
     }
 }
-// SetAccessReviewSettings sets the accessReviewSettings property value. Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews are not required.
+// SetAccessReviewSettings sets the accessReviewSettings property value. Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews aren't required.
 func (m *AccessPackageAssignmentPolicy) SetAccessReviewSettings(value AssignmentReviewSettingsable)() {
     err := m.GetBackingStore().Set("accessReviewSettings", value)
     if err != nil {
@@ -659,7 +659,7 @@ func (m *AccessPackageAssignmentPolicy) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetDurationInDays sets the durationInDays property value. The number of days in which assignments from this policy last until they are expired.
+// SetDurationInDays sets the durationInDays property value. The number of days in which assignments from this policy last until they're expired.
 func (m *AccessPackageAssignmentPolicy) SetDurationInDays(value *int32)() {
     err := m.GetBackingStore().Set("durationInDays", value)
     if err != nil {
@@ -708,7 +708,7 @@ func (m *AccessPackageAssignmentPolicy) SetRequestorSettings(value RequestorSett
         panic(err)
     }
 }
-// SetVerifiableCredentialSettings sets the verifiableCredentialSettings property value. Settings for verifiable credentials set up through the Azure AD Verified ID service. These settings represent the verifiable credentials that a requestor of an access package in this policy can present to be assigned the access package.
+// SetVerifiableCredentialSettings sets the verifiableCredentialSettings property value. Settings for verifiable credentials set up through the Microsoft Entra Verified I D service. These settings represent the verifiable credentials that a requestor of an access package in this policy can present to be assigned the access package.
 func (m *AccessPackageAssignmentPolicy) SetVerifiableCredentialSettings(value VerifiableCredentialSettingsable)() {
     err := m.GetBackingStore().Set("verifiableCredentialSettings", value)
     if err != nil {

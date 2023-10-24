@@ -19,7 +19,7 @@ func NewInsightsSettings()(*InsightsSettings) {
 func CreateInsightsSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInsightsSettings(), nil
 }
-// GetDisabledForGroup gets the disabledForGroup property value. The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
+// GetDisabledForGroup gets the disabledForGroup property value. The ID of a Microsoft Entra group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
 func (m *InsightsSettings) GetDisabledForGroup()(*string) {
     val, err := m.GetBackingStore().Get("disabledForGroup")
     if err != nil {
@@ -86,7 +86,7 @@ func (m *InsightsSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetDisabledForGroup sets the disabledForGroup property value. The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
+// SetDisabledForGroup sets the disabledForGroup property value. The ID of a Microsoft Entra group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
 func (m *InsightsSettings) SetDisabledForGroup(value *string)() {
     err := m.GetBackingStore().Set("disabledForGroup", value)
     if err != nil {

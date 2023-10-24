@@ -348,7 +348,7 @@ func (m *CloudPcOnPremisesConnection) GetSubscriptionName()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. Specifies how the provisioned Cloud PC is joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
+// GetTypeEscaped gets the type property value. Specifies how the provisioned Cloud PC is joined to Microsoft Entra ID. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
 func (m *CloudPcOnPremisesConnection) GetTypeEscaped()(*CloudPcOnPremisesConnectionType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -592,7 +592,7 @@ func (m *CloudPcOnPremisesConnection) SetSubscriptionName(value *string)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. Specifies how the provisioned Cloud PC is joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
+// SetTypeEscaped sets the type property value. Specifies how the provisioned Cloud PC is joined to Microsoft Entra ID. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
 func (m *CloudPcOnPremisesConnection) SetTypeEscaped(value *CloudPcOnPremisesConnectionType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

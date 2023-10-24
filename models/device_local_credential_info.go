@@ -93,7 +93,7 @@ func (m *DeviceLocalCredentialInfo) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetLastBackupDateTime gets the lastBackupDateTime property value. When the local administrator account credential was backed up to Azure Active Directory.
+// GetLastBackupDateTime gets the lastBackupDateTime property value. When the local administrator account credential was backed up to Microsoft Entra ID.
 func (m *DeviceLocalCredentialInfo) GetLastBackupDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastBackupDateTime")
     if err != nil {
@@ -104,7 +104,7 @@ func (m *DeviceLocalCredentialInfo) GetLastBackupDateTime()(*i336074805fc853987a
     }
     return nil
 }
-// GetRefreshDateTime gets the refreshDateTime property value. When the local administrator account credential will be refreshed and backed up to Azure Active Directory.
+// GetRefreshDateTime gets the refreshDateTime property value. When the local administrator account credential will be refreshed and backed up to Microsoft Entra ID.
 func (m *DeviceLocalCredentialInfo) GetRefreshDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("refreshDateTime")
     if err != nil {
@@ -167,14 +167,14 @@ func (m *DeviceLocalCredentialInfo) SetDeviceName(value *string)() {
         panic(err)
     }
 }
-// SetLastBackupDateTime sets the lastBackupDateTime property value. When the local administrator account credential was backed up to Azure Active Directory.
+// SetLastBackupDateTime sets the lastBackupDateTime property value. When the local administrator account credential was backed up to Microsoft Entra ID.
 func (m *DeviceLocalCredentialInfo) SetLastBackupDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastBackupDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRefreshDateTime sets the refreshDateTime property value. When the local administrator account credential will be refreshed and backed up to Azure Active Directory.
+// SetRefreshDateTime sets the refreshDateTime property value. When the local administrator account credential will be refreshed and backed up to Microsoft Entra ID.
 func (m *DeviceLocalCredentialInfo) SetRefreshDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("refreshDateTime", value)
     if err != nil {

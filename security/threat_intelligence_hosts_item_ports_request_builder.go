@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceHostsItemPortsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceHostsItemPortsRequestBuilderGetQueryParameters get ports from security
+// ThreatIntelligenceHostsItemPortsRequestBuilderGetQueryParameters get the list of hostPort resources associated with a host.
 type ThreatIntelligenceHostsItemPortsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,10 @@ func NewThreatIntelligenceHostsItemPortsRequestBuilder(rawUrl string, requestAda
 func (m *ThreatIntelligenceHostsItemPortsRequestBuilder) Count()(*ThreatIntelligenceHostsItemPortsCountRequestBuilder) {
     return NewThreatIntelligenceHostsItemPortsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get ports from security
+// Get get the list of hostPort resources associated with a host.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-host-list-ports?view=graph-rest-1.0
 func (m *ThreatIntelligenceHostsItemPortsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemPortsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostPortCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,13 +89,9 @@ func (m *ThreatIntelligenceHostsItemPortsRequestBuilder) Get(ctx context.Context
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostPortCollectionResponseable), nil
 }
-// ToGetRequestInformation get ports from security
+// ToGetRequestInformation get the list of hostPort resources associated with a host.
 func (m *ThreatIntelligenceHostsItemPortsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemPortsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -100,6 +99,10 @@ func (m *ThreatIntelligenceHostsItemPortsRequestBuilder) ToGetRequestInformation
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

@@ -57,7 +57,7 @@ func (m *AuditUserIdentity) GetHomeTenantId()(*string) {
     }
     return nil
 }
-// GetHomeTenantName gets the homeTenantName property value. For user sign ins, the name of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.
+// GetHomeTenantName gets the homeTenantName property value. For user sign ins, the name of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Microsoft Entra ID to show the tenant content.
 func (m *AuditUserIdentity) GetHomeTenantName()(*string) {
     val, err := m.GetBackingStore().Get("homeTenantName")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *AuditUserIdentity) SetHomeTenantId(value *string)() {
         panic(err)
     }
 }
-// SetHomeTenantName sets the homeTenantName property value. For user sign ins, the name of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.
+// SetHomeTenantName sets the homeTenantName property value. For user sign ins, the name of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Microsoft Entra ID to show the tenant content.
 func (m *AuditUserIdentity) SetHomeTenantName(value *string)() {
     err := m.GetBackingStore().Set("homeTenantName", value)
     if err != nil {

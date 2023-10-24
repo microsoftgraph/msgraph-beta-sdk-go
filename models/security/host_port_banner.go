@@ -39,7 +39,7 @@ func (m *HostPortBanner) GetAdditionalData()(map[string]any) {
 func (m *HostPortBanner) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBanner gets the banner property value. The banner property
+// GetBanner gets the banner property value. The text response received from a web component when scanning a hostPort.
 func (m *HostPortBanner) GetBanner()(*string) {
     val, err := m.GetBackingStore().Get("banner")
     if err != nil {
@@ -115,7 +115,7 @@ func (m *HostPortBanner) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetFirstSeenDateTime gets the firstSeenDateTime property value. The firstSeenDateTime property
+// GetFirstSeenDateTime gets the firstSeenDateTime property value. The first date and time when Microsoft Defender Threat Intelligence observed the hostPortBanner. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
 func (m *HostPortBanner) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstSeenDateTime")
     if err != nil {
@@ -126,7 +126,7 @@ func (m *HostPortBanner) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97
     }
     return nil
 }
-// GetLastSeenDateTime gets the lastSeenDateTime property value. The lastSeenDateTime property
+// GetLastSeenDateTime gets the lastSeenDateTime property value. The last date and time when Microsoft Defender Threat Intelligence observed the hostPortBanner. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
 func (m *HostPortBanner) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSeenDateTime")
     if err != nil {
@@ -148,7 +148,7 @@ func (m *HostPortBanner) GetOdataType()(*string) {
     }
     return nil
 }
-// GetScanProtocol gets the scanProtocol property value. The scanProtocol property
+// GetScanProtocol gets the scanProtocol property value. The specific protocol used to scan the hostPort.
 func (m *HostPortBanner) GetScanProtocol()(*string) {
     val, err := m.GetBackingStore().Get("scanProtocol")
     if err != nil {
@@ -159,7 +159,7 @@ func (m *HostPortBanner) GetScanProtocol()(*string) {
     }
     return nil
 }
-// GetTimesObserved gets the timesObserved property value. The timesObserved property
+// GetTimesObserved gets the timesObserved property value. The total amount of times that Microsoft Defender Threat Intelligence has observed the hostPortBanner in all its scans.
 func (m *HostPortBanner) GetTimesObserved()(*int32) {
     val, err := m.GetBackingStore().Get("timesObserved")
     if err != nil {
@@ -227,21 +227,21 @@ func (m *HostPortBanner) SetAdditionalData(value map[string]any)() {
 func (m *HostPortBanner) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBanner sets the banner property value. The banner property
+// SetBanner sets the banner property value. The text response received from a web component when scanning a hostPort.
 func (m *HostPortBanner) SetBanner(value *string)() {
     err := m.GetBackingStore().Set("banner", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFirstSeenDateTime sets the firstSeenDateTime property value. The firstSeenDateTime property
+// SetFirstSeenDateTime sets the firstSeenDateTime property value. The first date and time when Microsoft Defender Threat Intelligence observed the hostPortBanner. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
 func (m *HostPortBanner) SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("firstSeenDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastSeenDateTime sets the lastSeenDateTime property value. The lastSeenDateTime property
+// SetLastSeenDateTime sets the lastSeenDateTime property value. The last date and time when Microsoft Defender Threat Intelligence observed the hostPortBanner. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
 func (m *HostPortBanner) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastSeenDateTime", value)
     if err != nil {
@@ -255,14 +255,14 @@ func (m *HostPortBanner) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetScanProtocol sets the scanProtocol property value. The scanProtocol property
+// SetScanProtocol sets the scanProtocol property value. The specific protocol used to scan the hostPort.
 func (m *HostPortBanner) SetScanProtocol(value *string)() {
     err := m.GetBackingStore().Set("scanProtocol", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTimesObserved sets the timesObserved property value. The timesObserved property
+// SetTimesObserved sets the timesObserved property value. The total amount of times that Microsoft Defender Threat Intelligence has observed the hostPortBanner in all its scans.
 func (m *HostPortBanner) SetTimesObserved(value *int32)() {
     err := m.GetBackingStore().Set("timesObserved", value)
     if err != nil {

@@ -13,6 +13,8 @@ func NewAzureServicePrincipal()(*AzureServicePrincipal) {
     m := &AzureServicePrincipal{
         AzureIdentity: *NewAzureIdentity(),
     }
+    odataTypeValue := "#microsoft.graph.azureServicePrincipal"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAzureServicePrincipalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
