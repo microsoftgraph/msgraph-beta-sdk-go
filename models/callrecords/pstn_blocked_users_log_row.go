@@ -200,7 +200,7 @@ func (m *PstnBlockedUsersLogRow) GetUserDisplayName()(*string) {
     }
     return nil
 }
-// GetUserId gets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory.
+// GetUserId gets the userId property value. The unique identifier (GUID) of the user in Microsoft Entra ID.
 func (m *PstnBlockedUsersLogRow) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -211,7 +211,7 @@ func (m *PstnBlockedUsersLogRow) GetUserId()(*string) {
     }
     return nil
 }
-// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
+// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
 func (m *PstnBlockedUsersLogRow) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -351,14 +351,14 @@ func (m *PstnBlockedUsersLogRow) SetUserDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory.
+// SetUserId sets the userId property value. The unique identifier (GUID) of the user in Microsoft Entra ID.
 func (m *PstnBlockedUsersLogRow) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserPrincipalName sets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
+// SetUserPrincipalName sets the userPrincipalName property value. The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
 func (m *PstnBlockedUsersLogRow) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
     if err != nil {

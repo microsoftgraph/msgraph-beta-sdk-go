@@ -540,7 +540,7 @@ func (m *WindowsProtectionState) GetTenantDisplayName()(*string) {
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+// GetTenantId gets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
 func (m *WindowsProtectionState) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -877,7 +877,7 @@ func (m *WindowsProtectionState) SetTenantDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+// SetTenantId sets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
 func (m *WindowsProtectionState) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

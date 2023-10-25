@@ -46,7 +46,7 @@ func (m *ExternalMeetingRegistrant) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetTenantId gets the tenantId property value. The tenant ID of this registrant if in Azure Active Directory.
+// GetTenantId gets the tenantId property value. The tenant ID of this registrant if in Microsoft Entra ID.
 func (m *ExternalMeetingRegistrant) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -57,7 +57,7 @@ func (m *ExternalMeetingRegistrant) GetTenantId()(*string) {
     }
     return nil
 }
-// GetUserId gets the userId property value. The user ID of this registrant if in Azure Active Directory.
+// GetUserId gets the userId property value. The user ID of this registrant if in Microsoft Entra ID.
 func (m *ExternalMeetingRegistrant) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -88,14 +88,14 @@ func (m *ExternalMeetingRegistrant) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetTenantId sets the tenantId property value. The tenant ID of this registrant if in Azure Active Directory.
+// SetTenantId sets the tenantId property value. The tenant ID of this registrant if in Microsoft Entra ID.
 func (m *ExternalMeetingRegistrant) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. The user ID of this registrant if in Azure Active Directory.
+// SetUserId sets the userId property value. The user ID of this registrant if in Microsoft Entra ID.
 func (m *ExternalMeetingRegistrant) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {

@@ -49,7 +49,7 @@ func (m *RecommendationBase) GetActionSteps()([]ActionStepable) {
     }
     return nil
 }
-// GetBenefits gets the benefits property value. An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Azure AD portal.
+// GetBenefits gets the benefits property value. An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Microsoft Entra admin center.
 func (m *RecommendationBase) GetBenefits()(*string) {
     val, err := m.GetBackingStore().Get("benefits")
     if err != nil {
@@ -381,7 +381,7 @@ func (m *RecommendationBase) GetImpactType()(*string) {
     }
     return nil
 }
-// GetInsights gets the insights property value. Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Azure AD portal.
+// GetInsights gets the insights property value. Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Microsoft Entra admin center.
 func (m *RecommendationBase) GetInsights()(*string) {
     val, err := m.GetBackingStore().Get("insights")
     if err != nil {
@@ -659,7 +659,7 @@ func (m *RecommendationBase) SetActionSteps(value []ActionStepable)() {
         panic(err)
     }
 }
-// SetBenefits sets the benefits property value. An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Azure AD portal.
+// SetBenefits sets the benefits property value. An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Microsoft Entra admin center.
 func (m *RecommendationBase) SetBenefits(value *string)() {
     err := m.GetBackingStore().Set("benefits", value)
     if err != nil {
@@ -722,7 +722,7 @@ func (m *RecommendationBase) SetImpactType(value *string)() {
         panic(err)
     }
 }
-// SetInsights sets the insights property value. Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Azure AD portal.
+// SetInsights sets the insights property value. Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Microsoft Entra admin center.
 func (m *RecommendationBase) SetInsights(value *string)() {
     err := m.GetBackingStore().Set("insights", value)
     if err != nil {

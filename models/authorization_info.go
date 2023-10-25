@@ -38,7 +38,7 @@ func (m *AuthorizationInfo) GetAdditionalData()(map[string]any) {
 func (m *AuthorizationInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCertificateUserIds gets the certificateUserIds property value. The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+// GetCertificateUserIds gets the certificateUserIds property value. The collection of unique identifiers that can be associated with a user and can be used to bind the Microsoft Entra user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
 func (m *AuthorizationInfo) GetCertificateUserIds()([]string) {
     val, err := m.GetBackingStore().Get("certificateUserIds")
     if err != nil {
@@ -124,7 +124,7 @@ func (m *AuthorizationInfo) SetAdditionalData(value map[string]any)() {
 func (m *AuthorizationInfo) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCertificateUserIds sets the certificateUserIds property value. The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+// SetCertificateUserIds sets the certificateUserIds property value. The collection of unique identifiers that can be associated with a user and can be used to bind the Microsoft Entra user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
 func (m *AuthorizationInfo) SetCertificateUserIds(value []string)() {
     err := m.GetBackingStore().Set("certificateUserIds", value)
     if err != nil {

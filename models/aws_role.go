@@ -13,6 +13,8 @@ func NewAwsRole()(*AwsRole) {
     m := &AwsRole{
         AwsIdentity: *NewAwsIdentity(),
     }
+    odataTypeValue := "#microsoft.graph.awsRole"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAwsRoleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

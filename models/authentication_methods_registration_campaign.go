@@ -38,6 +38,17 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetAdditionalData()(map[stri
 func (m *AuthenticationMethodsRegistrationCampaign) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
+// GetEnforceRegistrationAfterAllowedSnoozes gets the enforceRegistrationAfterAllowedSnoozes property value. Specifies whether a user is required to perform registration after snoozing 3 times. If true, the user is required to register after 3 snoozes. If false, the user can snooze indefinitely. The default value is true.
+func (m *AuthenticationMethodsRegistrationCampaign) GetEnforceRegistrationAfterAllowedSnoozes()(*bool) {
+    val, err := m.GetBackingStore().Get("enforceRegistrationAfterAllowedSnoozes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetExcludeTargets gets the excludeTargets property value. Users and groups of users that are excluded from being prompted to set up the authentication method.
 func (m *AuthenticationMethodsRegistrationCampaign) GetExcludeTargets()([]ExcludeTargetable) {
     val, err := m.GetBackingStore().Get("excludeTargets")
@@ -52,6 +63,16 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetExcludeTargets()([]Exclud
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthenticationMethodsRegistrationCampaign) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["enforceRegistrationAfterAllowedSnoozes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnforceRegistrationAfterAllowedSnoozes(val)
+        }
+        return nil
+    }
     res["excludeTargets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateExcludeTargetFromDiscriminatorValue)
         if err != nil {
@@ -162,6 +183,12 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetState()(*AdvancedConfigSt
 }
 // Serialize serializes information the current object
 func (m *AuthenticationMethodsRegistrationCampaign) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteBoolValue("enforceRegistrationAfterAllowedSnoozes", m.GetEnforceRegistrationAfterAllowedSnoozes())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetExcludeTargets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExcludeTargets()))
         for i, v := range m.GetExcludeTargets() {
@@ -224,6 +251,13 @@ func (m *AuthenticationMethodsRegistrationCampaign) SetAdditionalData(value map[
 func (m *AuthenticationMethodsRegistrationCampaign) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetEnforceRegistrationAfterAllowedSnoozes sets the enforceRegistrationAfterAllowedSnoozes property value. Specifies whether a user is required to perform registration after snoozing 3 times. If true, the user is required to register after 3 snoozes. If false, the user can snooze indefinitely. The default value is true.
+func (m *AuthenticationMethodsRegistrationCampaign) SetEnforceRegistrationAfterAllowedSnoozes(value *bool)() {
+    err := m.GetBackingStore().Set("enforceRegistrationAfterAllowedSnoozes", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetExcludeTargets sets the excludeTargets property value. Users and groups of users that are excluded from being prompted to set up the authentication method.
 func (m *AuthenticationMethodsRegistrationCampaign) SetExcludeTargets(value []ExcludeTargetable)() {
     err := m.GetBackingStore().Set("excludeTargets", value)
@@ -265,12 +299,14 @@ type AuthenticationMethodsRegistrationCampaignable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetEnforceRegistrationAfterAllowedSnoozes()(*bool)
     GetExcludeTargets()([]ExcludeTargetable)
     GetIncludeTargets()([]AuthenticationMethodsRegistrationCampaignIncludeTargetable)
     GetOdataType()(*string)
     GetSnoozeDurationInDays()(*int32)
     GetState()(*AdvancedConfigState)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetEnforceRegistrationAfterAllowedSnoozes(value *bool)()
     SetExcludeTargets(value []ExcludeTargetable)()
     SetIncludeTargets(value []AuthenticationMethodsRegistrationCampaignIncludeTargetable)()
     SetOdataType(value *string)()

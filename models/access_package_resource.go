@@ -272,7 +272,7 @@ func (m *AccessPackageResource) GetIsPendingOnboarding()(*bool) {
     }
     return nil
 }
-// GetOriginId gets the originId property value. The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
+// GetOriginId gets the originId property value. The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, this is the identifier of the group.
 func (m *AccessPackageResource) GetOriginId()(*string) {
     val, err := m.GetBackingStore().Get("originId")
     if err != nil {
@@ -294,7 +294,7 @@ func (m *AccessPackageResource) GetOriginSystem()(*string) {
     }
     return nil
 }
-// GetResourceType gets the resourceType property value. The type of the resource, such as Application if it is an Azure AD connected application, or SharePoint Online Site for a SharePoint Online site.
+// GetResourceType gets the resourceType property value. The type of the resource, such as Application if it is a Microsoft Entra connected application, or SharePoint Online Site for a SharePoint Online site.
 func (m *AccessPackageResource) GetResourceType()(*string) {
     val, err := m.GetBackingStore().Get("resourceType")
     if err != nil {
@@ -483,7 +483,7 @@ func (m *AccessPackageResource) SetIsPendingOnboarding(value *bool)() {
         panic(err)
     }
 }
-// SetOriginId sets the originId property value. The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
+// SetOriginId sets the originId property value. The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, this is the identifier of the group.
 func (m *AccessPackageResource) SetOriginId(value *string)() {
     err := m.GetBackingStore().Set("originId", value)
     if err != nil {
@@ -497,7 +497,7 @@ func (m *AccessPackageResource) SetOriginSystem(value *string)() {
         panic(err)
     }
 }
-// SetResourceType sets the resourceType property value. The type of the resource, such as Application if it is an Azure AD connected application, or SharePoint Online Site for a SharePoint Online site.
+// SetResourceType sets the resourceType property value. The type of the resource, such as Application if it is a Microsoft Entra connected application, or SharePoint Online Site for a SharePoint Online site.
 func (m *AccessPackageResource) SetResourceType(value *string)() {
     err := m.GetBackingStore().Set("resourceType", value)
     if err != nil {

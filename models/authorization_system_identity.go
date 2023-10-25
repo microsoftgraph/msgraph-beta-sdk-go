@@ -29,20 +29,36 @@ func CreateAuthorizationSystemIdentityFromDiscriminatorValue(parseNode i878a80d2
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.awsAccessKey":
+                        return NewAwsAccessKey(), nil
+                    case "#microsoft.graph.awsEc2Instance":
+                        return NewAwsEc2Instance(), nil
+                    case "#microsoft.graph.awsGroup":
+                        return NewAwsGroup(), nil
                     case "#microsoft.graph.awsIdentity":
                         return NewAwsIdentity(), nil
+                    case "#microsoft.graph.awsLambda":
+                        return NewAwsLambda(), nil
                     case "#microsoft.graph.awsRole":
                         return NewAwsRole(), nil
                     case "#microsoft.graph.awsUser":
                         return NewAwsUser(), nil
+                    case "#microsoft.graph.azureGroup":
+                        return NewAzureGroup(), nil
                     case "#microsoft.graph.azureIdentity":
                         return NewAzureIdentity(), nil
                     case "#microsoft.graph.azureManagedIdentity":
                         return NewAzureManagedIdentity(), nil
+                    case "#microsoft.graph.azureServerlessFunction":
+                        return NewAzureServerlessFunction(), nil
                     case "#microsoft.graph.azureServicePrincipal":
                         return NewAzureServicePrincipal(), nil
                     case "#microsoft.graph.azureUser":
                         return NewAzureUser(), nil
+                    case "#microsoft.graph.gcpCloudFunction":
+                        return NewGcpCloudFunction(), nil
+                    case "#microsoft.graph.gcpGroup":
+                        return NewGcpGroup(), nil
                     case "#microsoft.graph.gcpIdentity":
                         return NewGcpIdentity(), nil
                     case "#microsoft.graph.gcpServiceAccount":

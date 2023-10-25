@@ -74,6 +74,17 @@ func (m *Directory) GetDeletedItems()([]DirectoryObjectable) {
     }
     return nil
 }
+// GetDeviceLocalCredentials gets the deviceLocalCredentials property value. The credentials of the device's local administrator account backed up to Microsoft Entra ID.
+func (m *Directory) GetDeviceLocalCredentials()([]DeviceLocalCredentialInfoable) {
+    val, err := m.GetBackingStore().Get("deviceLocalCredentials")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceLocalCredentialInfoable)
+    }
+    return nil
+}
 // GetFeatureRolloutPolicies gets the featureRolloutPolicies property value. The featureRolloutPolicies property
 func (m *Directory) GetFeatureRolloutPolicies()([]FeatureRolloutPolicyable) {
     val, err := m.GetBackingStore().Get("featureRolloutPolicies")
@@ -170,6 +181,22 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
                 }
             }
             m.SetDeletedItems(res)
+        }
+        return nil
+    }
+    res["deviceLocalCredentials"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceLocalCredentialInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DeviceLocalCredentialInfoable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(DeviceLocalCredentialInfoable)
+                }
+            }
+            m.SetDeviceLocalCredentials(res)
         }
         return nil
     }
@@ -456,6 +483,18 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    if m.GetDeviceLocalCredentials() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceLocalCredentials()))
+        for i, v := range m.GetDeviceLocalCredentials() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("deviceLocalCredentials", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetFeatureRolloutPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFeatureRolloutPolicies()))
         for i, v := range m.GetFeatureRolloutPolicies() {
@@ -601,6 +640,13 @@ func (m *Directory) SetDeletedItems(value []DirectoryObjectable)() {
         panic(err)
     }
 }
+// SetDeviceLocalCredentials sets the deviceLocalCredentials property value. The credentials of the device's local administrator account backed up to Microsoft Entra ID.
+func (m *Directory) SetDeviceLocalCredentials(value []DeviceLocalCredentialInfoable)() {
+    err := m.GetBackingStore().Set("deviceLocalCredentials", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetFeatureRolloutPolicies sets the featureRolloutPolicies property value. The featureRolloutPolicies property
 func (m *Directory) SetFeatureRolloutPolicies(value []FeatureRolloutPolicyable)() {
     err := m.GetBackingStore().Set("featureRolloutPolicies", value)
@@ -673,6 +719,7 @@ type Directoryable interface {
     GetCertificateAuthorities()(CertificateAuthorityPathable)
     GetCustomSecurityAttributeDefinitions()([]CustomSecurityAttributeDefinitionable)
     GetDeletedItems()([]DirectoryObjectable)
+    GetDeviceLocalCredentials()([]DeviceLocalCredentialInfoable)
     GetFeatureRolloutPolicies()([]FeatureRolloutPolicyable)
     GetFederationConfigurations()([]IdentityProviderBaseable)
     GetImpactedResources()([]ImpactedResourceable)
@@ -687,6 +734,7 @@ type Directoryable interface {
     SetCertificateAuthorities(value CertificateAuthorityPathable)()
     SetCustomSecurityAttributeDefinitions(value []CustomSecurityAttributeDefinitionable)()
     SetDeletedItems(value []DirectoryObjectable)()
+    SetDeviceLocalCredentials(value []DeviceLocalCredentialInfoable)()
     SetFeatureRolloutPolicies(value []FeatureRolloutPolicyable)()
     SetFederationConfigurations(value []IdentityProviderBaseable)()
     SetImpactedResources(value []ImpactedResourceable)()

@@ -13,6 +13,8 @@ func NewAzureIdentity()(*AzureIdentity) {
     m := &AzureIdentity{
         AuthorizationSystemIdentity: *NewAuthorizationSystemIdentity(),
     }
+    odataTypeValue := "#microsoft.graph.azureIdentity"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAzureIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,8 +31,12 @@ func CreateAzureIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.azureGroup":
+                        return NewAzureGroup(), nil
                     case "#microsoft.graph.azureManagedIdentity":
                         return NewAzureManagedIdentity(), nil
+                    case "#microsoft.graph.azureServerlessFunction":
+                        return NewAzureServerlessFunction(), nil
                     case "#microsoft.graph.azureServicePrincipal":
                         return NewAzureServicePrincipal(), nil
                     case "#microsoft.graph.azureUser":

@@ -148,7 +148,7 @@ func (m *UnifiedRoleManagementAlertConfiguration) GetScopeId()(*string) {
     }
     return nil
 }
-// GetScopeType gets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD roles.
+// GetScopeType gets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Microsoft Entra roles.
 func (m *UnifiedRoleManagementAlertConfiguration) GetScopeType()(*string) {
     val, err := m.GetBackingStore().Get("scopeType")
     if err != nil {
@@ -225,7 +225,7 @@ func (m *UnifiedRoleManagementAlertConfiguration) SetScopeId(value *string)() {
         panic(err)
     }
 }
-// SetScopeType sets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD roles.
+// SetScopeType sets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Microsoft Entra roles.
 func (m *UnifiedRoleManagementAlertConfiguration) SetScopeType(value *string)() {
     err := m.GetBackingStore().Set("scopeType", value)
     if err != nil {

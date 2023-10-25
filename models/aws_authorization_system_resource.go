@@ -13,6 +13,8 @@ func NewAwsAuthorizationSystemResource()(*AwsAuthorizationSystemResource) {
     m := &AwsAuthorizationSystemResource{
         AuthorizationSystemResource: *NewAuthorizationSystemResource(),
     }
+    odataTypeValue := "#microsoft.graph.awsAuthorizationSystemResource"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAwsAuthorizationSystemResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

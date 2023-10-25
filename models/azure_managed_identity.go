@@ -13,6 +13,8 @@ func NewAzureManagedIdentity()(*AzureManagedIdentity) {
     m := &AzureManagedIdentity{
         AzureIdentity: *NewAzureIdentity(),
     }
+    odataTypeValue := "#microsoft.graph.azureManagedIdentity"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAzureManagedIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

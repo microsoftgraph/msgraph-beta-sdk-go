@@ -30,7 +30,7 @@ func (m *CloudPcProvisioningPolicy) GetAlternateResourceUrl()(*string) {
     }
     return nil
 }
-// GetAssignments gets the assignments property value. A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.
+// GetAssignments gets the assignments property value. A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have provisioning policy assigned. Returned only on $expand. For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.
 func (m *CloudPcProvisioningPolicy) GetAssignments()([]CloudPcProvisioningPolicyAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -85,7 +85,7 @@ func (m *CloudPcProvisioningPolicy) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetDomainJoinConfiguration gets the domainJoinConfiguration property value. Specifies how Cloud PCs will join Azure Active Directory.
+// GetDomainJoinConfiguration gets the domainJoinConfiguration property value. Specifies how Cloud PCs will join Microsoft Entra ID.
 func (m *CloudPcProvisioningPolicy) GetDomainJoinConfiguration()(CloudPcDomainJoinConfigurationable) {
     val, err := m.GetBackingStore().Get("domainJoinConfiguration")
     if err != nil {
@@ -107,7 +107,7 @@ func (m *CloudPcProvisioningPolicy) GetDomainJoinConfigurations()([]CloudPcDomai
     }
     return nil
 }
-// GetEnableSingleSignOn gets the enableSingleSignOn property value. True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn't support this feature. Default value is false. Windows 365 users can use single sign-on to authenticate to Azure Active Directory (Azure AD) with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.
+// GetEnableSingleSignOn gets the enableSingleSignOn property value. True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn't support this feature. Default value is false. Windows 365 users can use single sign-on to authenticate to Microsoft Entra ID with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.
 func (m *CloudPcProvisioningPolicy) GetEnableSingleSignOn()(*bool) {
     val, err := m.GetBackingStore().Get("enableSingleSignOn")
     if err != nil {
@@ -579,7 +579,7 @@ func (m *CloudPcProvisioningPolicy) SetAlternateResourceUrl(value *string)() {
         panic(err)
     }
 }
-// SetAssignments sets the assignments property value. A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.
+// SetAssignments sets the assignments property value. A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have provisioning policy assigned. Returned only on $expand. For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.
 func (m *CloudPcProvisioningPolicy) SetAssignments(value []CloudPcProvisioningPolicyAssignmentable)() {
     err := m.GetBackingStore().Set("assignments", value)
     if err != nil {
@@ -614,7 +614,7 @@ func (m *CloudPcProvisioningPolicy) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetDomainJoinConfiguration sets the domainJoinConfiguration property value. Specifies how Cloud PCs will join Azure Active Directory.
+// SetDomainJoinConfiguration sets the domainJoinConfiguration property value. Specifies how Cloud PCs will join Microsoft Entra ID.
 func (m *CloudPcProvisioningPolicy) SetDomainJoinConfiguration(value CloudPcDomainJoinConfigurationable)() {
     err := m.GetBackingStore().Set("domainJoinConfiguration", value)
     if err != nil {
@@ -628,7 +628,7 @@ func (m *CloudPcProvisioningPolicy) SetDomainJoinConfigurations(value []CloudPcD
         panic(err)
     }
 }
-// SetEnableSingleSignOn sets the enableSingleSignOn property value. True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn't support this feature. Default value is false. Windows 365 users can use single sign-on to authenticate to Azure Active Directory (Azure AD) with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.
+// SetEnableSingleSignOn sets the enableSingleSignOn property value. True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn't support this feature. Default value is false. Windows 365 users can use single sign-on to authenticate to Microsoft Entra ID with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.
 func (m *CloudPcProvisioningPolicy) SetEnableSingleSignOn(value *bool)() {
     err := m.GetBackingStore().Set("enableSingleSignOn", value)
     if err != nil {

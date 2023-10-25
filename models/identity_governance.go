@@ -114,6 +114,16 @@ func (m *IdentityGovernance) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["permissionsAnalytics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePermissionsAnalyticsAggregationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPermissionsAnalytics(val.(PermissionsAnalyticsAggregationable))
+        }
+        return nil
+    }
     res["permissionsManagement"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePermissionsManagementFromDiscriminatorValue)
         if err != nil {
@@ -164,6 +174,17 @@ func (m *IdentityGovernance) GetOdataType()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetPermissionsAnalytics gets the permissionsAnalytics property value. The permissionsAnalytics property
+func (m *IdentityGovernance) GetPermissionsAnalytics()(PermissionsAnalyticsAggregationable) {
+    val, err := m.GetBackingStore().Get("permissionsAnalytics")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PermissionsAnalyticsAggregationable)
     }
     return nil
 }
@@ -233,6 +254,12 @@ func (m *IdentityGovernance) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("permissionsAnalytics", m.GetPermissionsAnalytics())
         if err != nil {
             return err
         }
@@ -308,6 +335,13 @@ func (m *IdentityGovernance) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetPermissionsAnalytics sets the permissionsAnalytics property value. The permissionsAnalytics property
+func (m *IdentityGovernance) SetPermissionsAnalytics(value PermissionsAnalyticsAggregationable)() {
+    err := m.GetBackingStore().Set("permissionsAnalytics", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPermissionsManagement sets the permissionsManagement property value. The permissionsManagement property
 func (m *IdentityGovernance) SetPermissionsManagement(value PermissionsManagementable)() {
     err := m.GetBackingStore().Set("permissionsManagement", value)
@@ -346,6 +380,7 @@ type IdentityGovernanceable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetEntitlementManagement()(EntitlementManagementable)
     GetOdataType()(*string)
+    GetPermissionsAnalytics()(PermissionsAnalyticsAggregationable)
     GetPermissionsManagement()(PermissionsManagementable)
     GetPrivilegedAccess()(PrivilegedAccessRootable)
     GetRoleManagementAlerts()(RoleManagementAlertable)
@@ -355,6 +390,7 @@ type IdentityGovernanceable interface {
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetEntitlementManagement(value EntitlementManagementable)()
     SetOdataType(value *string)()
+    SetPermissionsAnalytics(value PermissionsAnalyticsAggregationable)()
     SetPermissionsManagement(value PermissionsManagementable)()
     SetPrivilegedAccess(value PrivilegedAccessRootable)()
     SetRoleManagementAlerts(value RoleManagementAlertable)()

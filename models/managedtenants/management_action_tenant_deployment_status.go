@@ -83,7 +83,7 @@ func (m *ManagementActionTenantDeploymentStatus) GetTenantGroupId()(*string) {
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+// GetTenantId gets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
 func (m *ManagementActionTenantDeploymentStatus) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -140,7 +140,7 @@ func (m *ManagementActionTenantDeploymentStatus) SetTenantGroupId(value *string)
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+// SetTenantId sets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
 func (m *ManagementActionTenantDeploymentStatus) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

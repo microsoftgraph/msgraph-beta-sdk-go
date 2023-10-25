@@ -13,6 +13,8 @@ func NewGcpServiceAccount()(*GcpServiceAccount) {
     m := &GcpServiceAccount{
         GcpIdentity: *NewGcpIdentity(),
     }
+    odataTypeValue := "#microsoft.graph.gcpServiceAccount"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateGcpServiceAccountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

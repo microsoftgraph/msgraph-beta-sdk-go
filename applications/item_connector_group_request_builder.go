@@ -11,7 +11,7 @@ import (
 type ItemConnectorGroupRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemConnectorGroupRequestBuilderGetQueryParameters the connectorGroup the application is using with Azure AD Application Proxy. Nullable.
+// ItemConnectorGroupRequestBuilderGetQueryParameters the connectorGroup the application is using with Microsoft Entra application proxy. Nullable.
 type ItemConnectorGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewItemConnectorGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewItemConnectorGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the connectorGroup the application is using with Azure AD Application Proxy. Nullable.
+// Get the connectorGroup the application is using with Microsoft Entra application proxy. Nullable.
 func (m *ItemConnectorGroupRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemConnectorGroupRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectorGroupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -63,13 +63,9 @@ func (m *ItemConnectorGroupRequestBuilder) Get(ctx context.Context, requestConfi
 func (m *ItemConnectorGroupRequestBuilder) Ref()(*ItemConnectorGroupRefRequestBuilder) {
     return NewItemConnectorGroupRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation the connectorGroup the application is using with Azure AD Application Proxy. Nullable.
+// ToGetRequestInformation the connectorGroup the application is using with Microsoft Entra application proxy. Nullable.
 func (m *ItemConnectorGroupRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemConnectorGroupRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -77,6 +73,10 @@ func (m *ItemConnectorGroupRequestBuilder) ToGetRequestInformation(ctx context.C
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

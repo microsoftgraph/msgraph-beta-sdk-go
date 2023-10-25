@@ -45,7 +45,7 @@ func (m *CloudPcAuditActor) GetApplicationDisplayName()(*string) {
     }
     return nil
 }
-// GetApplicationId gets the applicationId property value. Azure AD application ID.
+// GetApplicationId gets the applicationId property value. Microsoft Entra application ID.
 func (m *CloudPcAuditActor) GetApplicationId()(*string) {
     val, err := m.GetBackingStore().Get("applicationId")
     if err != nil {
@@ -263,7 +263,7 @@ func (m *CloudPcAuditActor) GetTypeEscaped()(*CloudPcAuditActorType) {
     }
     return nil
 }
-// GetUserId gets the userId property value. Azure AD user ID.
+// GetUserId gets the userId property value. Microsoft Entra user ID.
 func (m *CloudPcAuditActor) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -410,7 +410,7 @@ func (m *CloudPcAuditActor) SetApplicationDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetApplicationId sets the applicationId property value. Azure AD application ID.
+// SetApplicationId sets the applicationId property value. Microsoft Entra application ID.
 func (m *CloudPcAuditActor) SetApplicationId(value *string)() {
     err := m.GetBackingStore().Set("applicationId", value)
     if err != nil {
@@ -463,7 +463,7 @@ func (m *CloudPcAuditActor) SetTypeEscaped(value *CloudPcAuditActorType)() {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. Azure AD user ID.
+// SetUserId sets the userId property value. Microsoft Entra user ID.
 func (m *CloudPcAuditActor) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {

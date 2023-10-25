@@ -13,6 +13,8 @@ func NewAwsIdentity()(*AwsIdentity) {
     m := &AwsIdentity{
         AuthorizationSystemIdentity: *NewAuthorizationSystemIdentity(),
     }
+    odataTypeValue := "#microsoft.graph.awsIdentity"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAwsIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,6 +31,14 @@ func CreateAwsIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.awsAccessKey":
+                        return NewAwsAccessKey(), nil
+                    case "#microsoft.graph.awsEc2Instance":
+                        return NewAwsEc2Instance(), nil
+                    case "#microsoft.graph.awsGroup":
+                        return NewAwsGroup(), nil
+                    case "#microsoft.graph.awsLambda":
+                        return NewAwsLambda(), nil
                     case "#microsoft.graph.awsRole":
                         return NewAwsRole(), nil
                     case "#microsoft.graph.awsUser":

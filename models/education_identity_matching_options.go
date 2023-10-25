@@ -137,7 +137,7 @@ func (m *EducationIdentityMatchingOptions) GetTargetDomain()(*string) {
     }
     return nil
 }
-// GetTargetPropertyName gets the targetPropertyName property value. The name of the target property, which should be a valid property in Azure AD. This property is case-sensitive.
+// GetTargetPropertyName gets the targetPropertyName property value. The name of the target property, which should be a valid property in Microsoft Entra ID. This property is case-sensitive.
 func (m *EducationIdentityMatchingOptions) GetTargetPropertyName()(*string) {
     val, err := m.GetBackingStore().Get("targetPropertyName")
     if err != nil {
@@ -228,7 +228,7 @@ func (m *EducationIdentityMatchingOptions) SetTargetDomain(value *string)() {
         panic(err)
     }
 }
-// SetTargetPropertyName sets the targetPropertyName property value. The name of the target property, which should be a valid property in Azure AD. This property is case-sensitive.
+// SetTargetPropertyName sets the targetPropertyName property value. The name of the target property, which should be a valid property in Microsoft Entra ID. This property is case-sensitive.
 func (m *EducationIdentityMatchingOptions) SetTargetPropertyName(value *string)() {
     err := m.GetBackingStore().Set("targetPropertyName", value)
     if err != nil {

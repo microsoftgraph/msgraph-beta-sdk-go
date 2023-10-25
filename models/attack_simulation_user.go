@@ -137,7 +137,7 @@ func (m *AttackSimulationUser) GetOutOfOfficeDays()(*int32) {
     }
     return nil
 }
-// GetUserId gets the userId property value. The id property value of the user resource that represents the user in the Azure Active Directory tenant.
+// GetUserId gets the userId property value. The id property value of the user resource that represents the user in the Microsoft Entra tenant.
 func (m *AttackSimulationUser) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -227,7 +227,7 @@ func (m *AttackSimulationUser) SetOutOfOfficeDays(value *int32)() {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. The id property value of the user resource that represents the user in the Azure Active Directory tenant.
+// SetUserId sets the userId property value. The id property value of the user resource that represents the user in the Microsoft Entra tenant.
 func (m *AttackSimulationUser) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {

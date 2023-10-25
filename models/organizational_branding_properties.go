@@ -105,7 +105,7 @@ func (m *OrganizationalBrandingProperties) GetCdnList()([]string) {
     }
     return nil
 }
-// GetContentCustomization gets the contentCustomization property value. Represents the various content options to be customized throughout the authentication flow for a tenant. NOTE: Supported by Azure Active Directory for customers tenants only.
+// GetContentCustomization gets the contentCustomization property value. Represents the various content options to be customized throughout the authentication flow for a tenant. NOTE: Supported by Microsoft Entra ID for customers tenants only.
 func (m *OrganizationalBrandingProperties) GetContentCustomization()(ContentCustomizationable) {
     val, err := m.GetBackingStore().Get("contentCustomization")
     if err != nil {
@@ -237,7 +237,7 @@ func (m *OrganizationalBrandingProperties) GetCustomTermsOfUseUrl()(*string) {
     }
     return nil
 }
-// GetFavicon gets the favicon property value. A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+// GetFavicon gets the favicon property value. A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
 func (m *OrganizationalBrandingProperties) GetFavicon()([]byte) {
     val, err := m.GetBackingStore().Get("favicon")
     if err != nil {
@@ -937,7 +937,7 @@ func (m *OrganizationalBrandingProperties) SetCdnList(value []string)() {
         panic(err)
     }
 }
-// SetContentCustomization sets the contentCustomization property value. Represents the various content options to be customized throughout the authentication flow for a tenant. NOTE: Supported by Azure Active Directory for customers tenants only.
+// SetContentCustomization sets the contentCustomization property value. Represents the various content options to be customized throughout the authentication flow for a tenant. NOTE: Supported by Microsoft Entra ID for customers tenants only.
 func (m *OrganizationalBrandingProperties) SetContentCustomization(value ContentCustomizationable)() {
     err := m.GetBackingStore().Set("contentCustomization", value)
     if err != nil {
@@ -1021,7 +1021,7 @@ func (m *OrganizationalBrandingProperties) SetCustomTermsOfUseUrl(value *string)
         panic(err)
     }
 }
-// SetFavicon sets the favicon property value. A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+// SetFavicon sets the favicon property value. A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
 func (m *OrganizationalBrandingProperties) SetFavicon(value []byte)() {
     err := m.GetBackingStore().Set("favicon", value)
     if err != nil {
