@@ -31,7 +31,7 @@ func (m *SignIn) GetAppDisplayName()(*string) {
     }
     return nil
 }
-// GetAppId gets the appId property value. The application identifier in Azure Active Directory.  Supports $filter (eq).
+// GetAppId gets the appId property value. The application identifier in Microsoft Entra ID.  Supports $filter (eq).
 func (m *SignIn) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -75,7 +75,7 @@ func (m *SignIn) GetAppTokenProtectionStatus()(*TokenProtectionStatus) {
     }
     return nil
 }
-// GetAuthenticationAppDeviceDetails gets the authenticationAppDeviceDetails property value. Provides details about the app and device used during an Azure AD authentication step.
+// GetAuthenticationAppDeviceDetails gets the authenticationAppDeviceDetails property value. Provides details about the app and device used during a Microsoft Entra authentication step.
 func (m *SignIn) GetAuthenticationAppDeviceDetails()(AuthenticationAppDeviceDetailsable) {
     val, err := m.GetBackingStore().Get("authenticationAppDeviceDetails")
     if err != nil {
@@ -86,7 +86,7 @@ func (m *SignIn) GetAuthenticationAppDeviceDetails()(AuthenticationAppDeviceDeta
     }
     return nil
 }
-// GetAuthenticationAppPolicyEvaluationDetails gets the authenticationAppPolicyEvaluationDetails property value. Provides details of the Azure AD policies applied to a user and client authentication app during an authentication step.
+// GetAuthenticationAppPolicyEvaluationDetails gets the authenticationAppPolicyEvaluationDetails property value. Provides details of the Microsoft Entra policies applied to a user and client authentication app during an authentication step.
 func (m *SignIn) GetAuthenticationAppPolicyEvaluationDetails()([]AuthenticationAppPolicyDetailsable) {
     val, err := m.GetBackingStore().Get("authenticationAppPolicyEvaluationDetails")
     if err != nil {
@@ -130,7 +130,7 @@ func (m *SignIn) GetAuthenticationMethodsUsed()([]string) {
     }
     return nil
 }
-// GetAuthenticationProcessingDetails gets the authenticationProcessingDetails property value. Extra authentication processing details, such as the agent name for PTA/PHS or Server/farm name for federated authentication.
+// GetAuthenticationProcessingDetails gets the authenticationProcessingDetails property value. More authentication processing details, such as the agent name for  PTA and PHS, or a server or farm name for federated authentication.
 func (m *SignIn) GetAuthenticationProcessingDetails()([]KeyValueable) {
     val, err := m.GetBackingStore().Get("authenticationProcessingDetails")
     if err != nil {
@@ -141,7 +141,7 @@ func (m *SignIn) GetAuthenticationProcessingDetails()([]KeyValueable) {
     }
     return nil
 }
-// GetAuthenticationProtocol gets the authenticationProtocol property value. Lists the protocol type or grant type used in the authentication. The possible values are: none, oAuth2, ropc, wsFederation, saml20, deviceCode, unknownFutureValue. For authentications that use protocols other than the possible values listed, the protocol type is listed as none.
+// GetAuthenticationProtocol gets the authenticationProtocol property value. Lists the protocol type or grant type used in the authentication. The possible values are: oAuth2, ropc, wsFederation, saml20, deviceCode, unknownFutureValue, authenticationTransfer, and none. Use none for all authentications that do not have a specific value in that list.
 func (m *SignIn) GetAuthenticationProtocol()(*ProtocolType) {
     val, err := m.GetBackingStore().Get("authenticationProtocol")
     if err != nil {
@@ -207,7 +207,7 @@ func (m *SignIn) GetClientAppUsed()(*string) {
     }
     return nil
 }
-// GetClientCredentialType gets the clientCredentialType property value. Describes the credential type that a user client or service principal provided to Azure AD to authenticate itself. You may wish to review clientCredentialType to track and eliminate less secure credential types or to watch for clients and service principals using anomalous credential types. The possible values are: none, clientSecret, clientAssertion, federatedIdentityCredential, managedIdentity, certificate, unknownFutureValue.
+// GetClientCredentialType gets the clientCredentialType property value. Describes the credential type that a user client or service principal provided to Microsoft Entra ID to authenticate itself. You may wish to review clientCredentialType to track and eliminate less secure credential types or to watch for clients and service principals using anomalous credential types. The possible values are: none, clientSecret, clientAssertion, federatedIdentityCredential, managedIdentity, certificate, unknownFutureValue.
 func (m *SignIn) GetClientCredentialType()(*ClientCredentialType) {
     val, err := m.GetBackingStore().Get("clientCredentialType")
     if err != nil {
@@ -1053,7 +1053,7 @@ func (m *SignIn) GetHomeTenantId()(*string) {
     }
     return nil
 }
-// GetHomeTenantName gets the homeTenantName property value. For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.
+// GetHomeTenantName gets the homeTenantName property value. For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Microsoft Entra ID to show the tenant content.
 func (m *SignIn) GetHomeTenantName()(*string) {
     val, err := m.GetBackingStore().Get("homeTenantName")
     if err != nil {
@@ -1064,7 +1064,7 @@ func (m *SignIn) GetHomeTenantName()(*string) {
     }
     return nil
 }
-// GetIncomingTokenType gets the incomingTokenType property value. Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Don't infer the lack of a token if it isn't one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.
+// GetIncomingTokenType gets the incomingTokenType property value. Indicates the token types that were presented to Microsoft Entra ID to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Microsoft Entra ID may have also used token types not listed in this Enum type to authenticate the actor. Don't infer the lack of a token if it isn't one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.
 func (m *SignIn) GetIncomingTokenType()(*IncomingTokenType) {
     val, err := m.GetBackingStore().Get("incomingTokenType")
     if err != nil {
@@ -1097,7 +1097,7 @@ func (m *SignIn) GetIpAddressFromResourceProvider()(*string) {
     }
     return nil
 }
-// GetIsInteractive gets the isInteractive property value. Indicates whether a user sign in is interactive. In interactive sign in, the user provides an authentication factor to Azure AD. These factors include passwords, responses to MFA challenges, biometric factors, or QR codes that a user provides to Azure AD or an associated app. In non-interactive sign in, the user doesn't provide an authentication factor. Instead, the client app uses a token or code to authenticate or access a resource on behalf of a user. Non-interactive sign ins are commonly used for a client to sign in on a user's behalf in a process transparent to the user.
+// GetIsInteractive gets the isInteractive property value. Indicates whether a user sign in is interactive. In interactive sign in, the user provides an authentication factor to Microsoft Entra ID. These factors include passwords, responses to MFA challenges, biometric factors, or QR codes that a user provides to Microsoft Entra ID or an associated app. In non-interactive sign in, the user doesn't provide an authentication factor. Instead, the client app uses a token or code to authenticate or access a resource on behalf of a user. Non-interactive sign ins are commonly used for a client to sign in on a user's behalf in a process transparent to the user.
 func (m *SignIn) GetIsInteractive()(*bool) {
     val, err := m.GetBackingStore().Get("isInteractive")
     if err != nil {
@@ -1108,7 +1108,7 @@ func (m *SignIn) GetIsInteractive()(*bool) {
     }
     return nil
 }
-// GetIsTenantRestricted gets the isTenantRestricted property value. Shows whether the sign in event was subject to an Azure AD tenant restriction policy.
+// GetIsTenantRestricted gets the isTenantRestricted property value. Shows whether the sign in event was subject to a Microsoft Entra tenant restriction policy.
 func (m *SignIn) GetIsTenantRestricted()(*bool) {
     val, err := m.GetBackingStore().Get("isTenantRestricted")
     if err != nil {
@@ -1185,7 +1185,7 @@ func (m *SignIn) GetOriginalTransferMethod()(*OriginalTransferMethods) {
     }
     return nil
 }
-// GetPrivateLinkDetails gets the privateLinkDetails property value. Contains information about the Azure AD Private Link policy that is associated with the sign in event.
+// GetPrivateLinkDetails gets the privateLinkDetails property value. Contains information about the Microsoft Entra Private Link policy that is associated with the sign in event.
 func (m *SignIn) GetPrivateLinkDetails()(PrivateLinkDetailsable) {
     val, err := m.GetBackingStore().Get("privateLinkDetails")
     if err != nil {
@@ -1251,7 +1251,7 @@ func (m *SignIn) GetResourceTenantId()(*string) {
     }
     return nil
 }
-// GetRiskDetail gets the riskDetail property value. The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+// GetRiskDetail gets the riskDetail property value. The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
 func (m *SignIn) GetRiskDetail()(*RiskDetail) {
     val, err := m.GetBackingStore().Get("riskDetail")
     if err != nil {
@@ -1273,7 +1273,7 @@ func (m *SignIn) GetRiskEventTypesV2()([]string) {
     }
     return nil
 }
-// GetRiskLevelAggregated gets the riskLevelAggregated property value. The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+// GetRiskLevelAggregated gets the riskLevelAggregated property value. The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Microsoft Entra ID Protection.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
 func (m *SignIn) GetRiskLevelAggregated()(*RiskLevel) {
     val, err := m.GetBackingStore().Get("riskLevelAggregated")
     if err != nil {
@@ -1284,7 +1284,7 @@ func (m *SignIn) GetRiskLevelAggregated()(*RiskLevel) {
     }
     return nil
 }
-// GetRiskLevelDuringSignIn gets the riskLevelDuringSignIn property value. The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Azure AD Identity Protection.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+// GetRiskLevelDuringSignIn gets the riskLevelDuringSignIn property value. The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Microsoft Entra ID Protection.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
 func (m *SignIn) GetRiskLevelDuringSignIn()(*RiskLevel) {
     val, err := m.GetBackingStore().Get("riskLevelDuringSignIn")
     if err != nil {
@@ -1438,7 +1438,7 @@ func (m *SignIn) GetTokenIssuerType()(*TokenIssuerType) {
     }
     return nil
 }
-// GetUniqueTokenIdentifier gets the uniqueTokenIdentifier property value. A unique base64 encoded request identifier used to track tokens issued by Azure AD as they're redeemed at resource providers.
+// GetUniqueTokenIdentifier gets the uniqueTokenIdentifier property value. A unique base64 encoded request identifier used to track tokens issued by Microsoft Entra ID as they're redeemed at resource providers.
 func (m *SignIn) GetUniqueTokenIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("uniqueTokenIdentifier")
     if err != nil {
@@ -1990,7 +1990,7 @@ func (m *SignIn) SetAppDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetAppId sets the appId property value. The application identifier in Azure Active Directory.  Supports $filter (eq).
+// SetAppId sets the appId property value. The application identifier in Microsoft Entra ID.  Supports $filter (eq).
 func (m *SignIn) SetAppId(value *string)() {
     err := m.GetBackingStore().Set("appId", value)
     if err != nil {
@@ -2018,14 +2018,14 @@ func (m *SignIn) SetAppTokenProtectionStatus(value *TokenProtectionStatus)() {
         panic(err)
     }
 }
-// SetAuthenticationAppDeviceDetails sets the authenticationAppDeviceDetails property value. Provides details about the app and device used during an Azure AD authentication step.
+// SetAuthenticationAppDeviceDetails sets the authenticationAppDeviceDetails property value. Provides details about the app and device used during a Microsoft Entra authentication step.
 func (m *SignIn) SetAuthenticationAppDeviceDetails(value AuthenticationAppDeviceDetailsable)() {
     err := m.GetBackingStore().Set("authenticationAppDeviceDetails", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAuthenticationAppPolicyEvaluationDetails sets the authenticationAppPolicyEvaluationDetails property value. Provides details of the Azure AD policies applied to a user and client authentication app during an authentication step.
+// SetAuthenticationAppPolicyEvaluationDetails sets the authenticationAppPolicyEvaluationDetails property value. Provides details of the Microsoft Entra policies applied to a user and client authentication app during an authentication step.
 func (m *SignIn) SetAuthenticationAppPolicyEvaluationDetails(value []AuthenticationAppPolicyDetailsable)() {
     err := m.GetBackingStore().Set("authenticationAppPolicyEvaluationDetails", value)
     if err != nil {
@@ -2053,14 +2053,14 @@ func (m *SignIn) SetAuthenticationMethodsUsed(value []string)() {
         panic(err)
     }
 }
-// SetAuthenticationProcessingDetails sets the authenticationProcessingDetails property value. Extra authentication processing details, such as the agent name for PTA/PHS or Server/farm name for federated authentication.
+// SetAuthenticationProcessingDetails sets the authenticationProcessingDetails property value. More authentication processing details, such as the agent name for  PTA and PHS, or a server or farm name for federated authentication.
 func (m *SignIn) SetAuthenticationProcessingDetails(value []KeyValueable)() {
     err := m.GetBackingStore().Set("authenticationProcessingDetails", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAuthenticationProtocol sets the authenticationProtocol property value. Lists the protocol type or grant type used in the authentication. The possible values are: none, oAuth2, ropc, wsFederation, saml20, deviceCode, unknownFutureValue. For authentications that use protocols other than the possible values listed, the protocol type is listed as none.
+// SetAuthenticationProtocol sets the authenticationProtocol property value. Lists the protocol type or grant type used in the authentication. The possible values are: oAuth2, ropc, wsFederation, saml20, deviceCode, unknownFutureValue, authenticationTransfer, and none. Use none for all authentications that do not have a specific value in that list.
 func (m *SignIn) SetAuthenticationProtocol(value *ProtocolType)() {
     err := m.GetBackingStore().Set("authenticationProtocol", value)
     if err != nil {
@@ -2102,7 +2102,7 @@ func (m *SignIn) SetClientAppUsed(value *string)() {
         panic(err)
     }
 }
-// SetClientCredentialType sets the clientCredentialType property value. Describes the credential type that a user client or service principal provided to Azure AD to authenticate itself. You may wish to review clientCredentialType to track and eliminate less secure credential types or to watch for clients and service principals using anomalous credential types. The possible values are: none, clientSecret, clientAssertion, federatedIdentityCredential, managedIdentity, certificate, unknownFutureValue.
+// SetClientCredentialType sets the clientCredentialType property value. Describes the credential type that a user client or service principal provided to Microsoft Entra ID to authenticate itself. You may wish to review clientCredentialType to track and eliminate less secure credential types or to watch for clients and service principals using anomalous credential types. The possible values are: none, clientSecret, clientAssertion, federatedIdentityCredential, managedIdentity, certificate, unknownFutureValue.
 func (m *SignIn) SetClientCredentialType(value *ClientCredentialType)() {
     err := m.GetBackingStore().Set("clientCredentialType", value)
     if err != nil {
@@ -2165,14 +2165,14 @@ func (m *SignIn) SetHomeTenantId(value *string)() {
         panic(err)
     }
 }
-// SetHomeTenantName sets the homeTenantName property value. For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.
+// SetHomeTenantName sets the homeTenantName property value. For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Microsoft Entra ID to show the tenant content.
 func (m *SignIn) SetHomeTenantName(value *string)() {
     err := m.GetBackingStore().Set("homeTenantName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIncomingTokenType sets the incomingTokenType property value. Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Don't infer the lack of a token if it isn't one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.
+// SetIncomingTokenType sets the incomingTokenType property value. Indicates the token types that were presented to Microsoft Entra ID to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Microsoft Entra ID may have also used token types not listed in this Enum type to authenticate the actor. Don't infer the lack of a token if it isn't one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.
 func (m *SignIn) SetIncomingTokenType(value *IncomingTokenType)() {
     err := m.GetBackingStore().Set("incomingTokenType", value)
     if err != nil {
@@ -2193,14 +2193,14 @@ func (m *SignIn) SetIpAddressFromResourceProvider(value *string)() {
         panic(err)
     }
 }
-// SetIsInteractive sets the isInteractive property value. Indicates whether a user sign in is interactive. In interactive sign in, the user provides an authentication factor to Azure AD. These factors include passwords, responses to MFA challenges, biometric factors, or QR codes that a user provides to Azure AD or an associated app. In non-interactive sign in, the user doesn't provide an authentication factor. Instead, the client app uses a token or code to authenticate or access a resource on behalf of a user. Non-interactive sign ins are commonly used for a client to sign in on a user's behalf in a process transparent to the user.
+// SetIsInteractive sets the isInteractive property value. Indicates whether a user sign in is interactive. In interactive sign in, the user provides an authentication factor to Microsoft Entra ID. These factors include passwords, responses to MFA challenges, biometric factors, or QR codes that a user provides to Microsoft Entra ID or an associated app. In non-interactive sign in, the user doesn't provide an authentication factor. Instead, the client app uses a token or code to authenticate or access a resource on behalf of a user. Non-interactive sign ins are commonly used for a client to sign in on a user's behalf in a process transparent to the user.
 func (m *SignIn) SetIsInteractive(value *bool)() {
     err := m.GetBackingStore().Set("isInteractive", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsTenantRestricted sets the isTenantRestricted property value. Shows whether the sign in event was subject to an Azure AD tenant restriction policy.
+// SetIsTenantRestricted sets the isTenantRestricted property value. Shows whether the sign in event was subject to a Microsoft Entra tenant restriction policy.
 func (m *SignIn) SetIsTenantRestricted(value *bool)() {
     err := m.GetBackingStore().Set("isTenantRestricted", value)
     if err != nil {
@@ -2249,7 +2249,7 @@ func (m *SignIn) SetOriginalTransferMethod(value *OriginalTransferMethods)() {
         panic(err)
     }
 }
-// SetPrivateLinkDetails sets the privateLinkDetails property value. Contains information about the Azure AD Private Link policy that is associated with the sign in event.
+// SetPrivateLinkDetails sets the privateLinkDetails property value. Contains information about the Microsoft Entra Private Link policy that is associated with the sign in event.
 func (m *SignIn) SetPrivateLinkDetails(value PrivateLinkDetailsable)() {
     err := m.GetBackingStore().Set("privateLinkDetails", value)
     if err != nil {
@@ -2291,7 +2291,7 @@ func (m *SignIn) SetResourceTenantId(value *string)() {
         panic(err)
     }
 }
-// SetRiskDetail sets the riskDetail property value. The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+// SetRiskDetail sets the riskDetail property value. The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
 func (m *SignIn) SetRiskDetail(value *RiskDetail)() {
     err := m.GetBackingStore().Set("riskDetail", value)
     if err != nil {
@@ -2305,14 +2305,14 @@ func (m *SignIn) SetRiskEventTypesV2(value []string)() {
         panic(err)
     }
 }
-// SetRiskLevelAggregated sets the riskLevelAggregated property value. The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+// SetRiskLevelAggregated sets the riskLevelAggregated property value. The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Microsoft Entra ID Protection.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
 func (m *SignIn) SetRiskLevelAggregated(value *RiskLevel)() {
     err := m.GetBackingStore().Set("riskLevelAggregated", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRiskLevelDuringSignIn sets the riskLevelDuringSignIn property value. The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Azure AD Identity Protection.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+// SetRiskLevelDuringSignIn sets the riskLevelDuringSignIn property value. The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Microsoft Entra ID Protection.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
 func (m *SignIn) SetRiskLevelDuringSignIn(value *RiskLevel)() {
     err := m.GetBackingStore().Set("riskLevelDuringSignIn", value)
     if err != nil {
@@ -2410,7 +2410,7 @@ func (m *SignIn) SetTokenIssuerType(value *TokenIssuerType)() {
         panic(err)
     }
 }
-// SetUniqueTokenIdentifier sets the uniqueTokenIdentifier property value. A unique base64 encoded request identifier used to track tokens issued by Azure AD as they're redeemed at resource providers.
+// SetUniqueTokenIdentifier sets the uniqueTokenIdentifier property value. A unique base64 encoded request identifier used to track tokens issued by Microsoft Entra ID as they're redeemed at resource providers.
 func (m *SignIn) SetUniqueTokenIdentifier(value *string)() {
     err := m.GetBackingStore().Set("uniqueTokenIdentifier", value)
     if err != nil {

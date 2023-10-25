@@ -105,7 +105,7 @@ func (m *ServiceLevelAgreementAttainment) GetOdataType()(*string) {
     }
     return nil
 }
-// GetScore gets the score property value. The level of SLA attainment achieved by the tenant for the calendar month identified, as described in Azure Active Directory SLA performance. Values are truncated, not rounded, so the actual value is always equal to or higher than the displayed value. Values are expressed as a percentage of availability for the tenant.
+// GetScore gets the score property value. The level of SLA attainment achieved by the tenant for the calendar month identified, as described in Microsoft Entra SLA performance. Values are truncated, not rounded, so the actual value is always equal to or higher than the displayed value. Values are expressed as a percentage of availability for the tenant.
 func (m *ServiceLevelAgreementAttainment) GetScore()(*float64) {
     val, err := m.GetBackingStore().Get("score")
     if err != nil {
@@ -186,7 +186,7 @@ func (m *ServiceLevelAgreementAttainment) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetScore sets the score property value. The level of SLA attainment achieved by the tenant for the calendar month identified, as described in Azure Active Directory SLA performance. Values are truncated, not rounded, so the actual value is always equal to or higher than the displayed value. Values are expressed as a percentage of availability for the tenant.
+// SetScore sets the score property value. The level of SLA attainment achieved by the tenant for the calendar month identified, as described in Microsoft Entra SLA performance. Values are truncated, not rounded, so the actual value is always equal to or higher than the displayed value. Values are expressed as a percentage of availability for the tenant.
 func (m *ServiceLevelAgreementAttainment) SetScore(value *float64)() {
     err := m.GetBackingStore().Set("score", value)
     if err != nil {

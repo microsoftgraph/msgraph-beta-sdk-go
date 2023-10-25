@@ -93,7 +93,7 @@ func (m *TenantCustomizedInformation) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+// GetTenantId gets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
 func (m *TenantCustomizedInformation) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -167,7 +167,7 @@ func (m *TenantCustomizedInformation) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+// SetTenantId sets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
 func (m *TenantCustomizedInformation) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

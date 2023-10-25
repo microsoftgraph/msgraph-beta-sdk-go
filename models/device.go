@@ -143,7 +143,7 @@ func (m *Device) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetDomainName gets the domainName property value. The on-premises domain name of Hybrid Azure AD joined devices. This property is set by Intune.
+// GetDomainName gets the domainName property value. The on-premises domain name of Microsoft Entra hybrid joined devices. This property is set by Intune.
 func (m *Device) GetDomainName()(*string) {
     val, err := m.GetBackingStore().Get("domainName")
     if err != nil {
@@ -176,7 +176,7 @@ func (m *Device) GetEnrollmentType()(*string) {
     }
     return nil
 }
-// GetExtensionAttributes gets the extensionAttributes property value. Contains extension attributes 1-15 for the device. The individual extension attributes are not selectable. These properties are mastered in cloud and can be set during creation or update of a device object in Azure AD. Supports $filter (eq, not, startsWith, and eq on null values).
+// GetExtensionAttributes gets the extensionAttributes property value. Contains extension attributes 1-15 for the device. The individual extension attributes are not selectable. These properties are mastered in cloud and can be set during creation or update of a device object in Microsoft Entra ID. Supports $filter (eq, not, startsWith, and eq on null values).
 func (m *Device) GetExtensionAttributes()(OnPremisesExtensionAttributesable) {
     val, err := m.GetBackingStore().Get("extensionAttributes")
     if err != nil {
@@ -995,7 +995,7 @@ func (m *Device) GetTransitiveMemberOf()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetTrustType gets the trustType property value. Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory.
+// GetTrustType gets the trustType property value. Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.
 func (m *Device) GetTrustType()(*string) {
     val, err := m.GetBackingStore().Get("trustType")
     if err != nil {
@@ -1414,7 +1414,7 @@ func (m *Device) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetDomainName sets the domainName property value. The on-premises domain name of Hybrid Azure AD joined devices. This property is set by Intune.
+// SetDomainName sets the domainName property value. The on-premises domain name of Microsoft Entra hybrid joined devices. This property is set by Intune.
 func (m *Device) SetDomainName(value *string)() {
     err := m.GetBackingStore().Set("domainName", value)
     if err != nil {
@@ -1435,7 +1435,7 @@ func (m *Device) SetEnrollmentType(value *string)() {
         panic(err)
     }
 }
-// SetExtensionAttributes sets the extensionAttributes property value. Contains extension attributes 1-15 for the device. The individual extension attributes are not selectable. These properties are mastered in cloud and can be set during creation or update of a device object in Azure AD. Supports $filter (eq, not, startsWith, and eq on null values).
+// SetExtensionAttributes sets the extensionAttributes property value. Contains extension attributes 1-15 for the device. The individual extension attributes are not selectable. These properties are mastered in cloud and can be set during creation or update of a device object in Microsoft Entra ID. Supports $filter (eq, not, startsWith, and eq on null values).
 func (m *Device) SetExtensionAttributes(value OnPremisesExtensionAttributesable)() {
     err := m.GetBackingStore().Set("extensionAttributes", value)
     if err != nil {
@@ -1631,7 +1631,7 @@ func (m *Device) SetTransitiveMemberOf(value []DirectoryObjectable)() {
         panic(err)
     }
 }
-// SetTrustType sets the trustType property value. Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory.
+// SetTrustType sets the trustType property value. Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.
 func (m *Device) SetTrustType(value *string)() {
     err := m.GetBackingStore().Set("trustType", value)
     if err != nil {

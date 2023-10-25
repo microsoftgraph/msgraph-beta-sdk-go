@@ -130,7 +130,7 @@ func (m *Tenant) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+// GetTenantId gets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
 func (m *Tenant) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -224,7 +224,7 @@ func (m *Tenant) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+// SetTenantId sets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
 func (m *Tenant) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

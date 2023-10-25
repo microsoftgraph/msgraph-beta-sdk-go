@@ -352,7 +352,7 @@ func (m *ThreatIntelligence) GetHostPairs()([]HostPairable) {
     }
     return nil
 }
-// GetHostPorts gets the hostPorts property value. The hostPorts property
+// GetHostPorts gets the hostPorts property value. Retrieve details about hostPort objects.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) GetHostPorts()([]HostPortable) {
     val, err := m.GetBackingStore().Get("hostPorts")
     if err != nil {
@@ -731,7 +731,7 @@ func (m *ThreatIntelligence) SetHostPairs(value []HostPairable)() {
         panic(err)
     }
 }
-// SetHostPorts sets the hostPorts property value. The hostPorts property
+// SetHostPorts sets the hostPorts property value. Retrieve details about hostPort objects.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) SetHostPorts(value []HostPortable)() {
     err := m.GetBackingStore().Set("hostPorts", value)
     if err != nil {

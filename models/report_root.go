@@ -41,7 +41,7 @@ func (m *ReportRoot) GetApplicationSignInDetailedSummary()([]ApplicationSignInDe
     }
     return nil
 }
-// GetAuthenticationMethods gets the authenticationMethods property value. Container for navigation properties for Azure AD authentication methods resources.
+// GetAuthenticationMethods gets the authenticationMethods property value. Container for navigation properties for Microsoft Entra authentication methods resources.
 func (m *ReportRoot) GetAuthenticationMethods()(AuthenticationMethodsRootable) {
     val, err := m.GetBackingStore().Get("authenticationMethods")
     if err != nil {
@@ -375,6 +375,16 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["userInsights"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateUserInsightsRootFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserInsights(val.(UserInsightsRootable))
+        }
+        return nil
+    }
     return res
 }
 // GetMonthlyPrintUsageByPrinter gets the monthlyPrintUsageByPrinter property value. Retrieve a list of monthly print usage summaries, grouped by printer.
@@ -421,7 +431,7 @@ func (m *ReportRoot) GetMonthlyPrintUsageSummariesByUser()([]PrintUsageByUserabl
     }
     return nil
 }
-// GetSecurity gets the security property value. Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
+// GetSecurity gets the security property value. Provides the ability to launch a realistically simulated phishing attack that organizations can learn from.
 func (m *ReportRoot) GetSecurity()(SecurityReportsRootable) {
     val, err := m.GetBackingStore().Get("security")
     if err != nil {
@@ -462,6 +472,17 @@ func (m *ReportRoot) GetUserCredentialUsageDetails()([]UserCredentialUsageDetail
     }
     if val != nil {
         return val.([]UserCredentialUsageDetailsable)
+    }
+    return nil
+}
+// GetUserInsights gets the userInsights property value. The userInsights property
+func (m *ReportRoot) GetUserInsights()(UserInsightsRootable) {
+    val, err := m.GetBackingStore().Get("userInsights")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UserInsightsRootable)
     }
     return nil
 }
@@ -657,6 +678,12 @@ func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("userInsights", m.GetUserInsights())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAppCredentialSignInActivities sets the appCredentialSignInActivities property value. Represents a collection of sign-in activities of application credentials.
@@ -673,7 +700,7 @@ func (m *ReportRoot) SetApplicationSignInDetailedSummary(value []ApplicationSign
         panic(err)
     }
 }
-// SetAuthenticationMethods sets the authenticationMethods property value. Container for navigation properties for Azure AD authentication methods resources.
+// SetAuthenticationMethods sets the authenticationMethods property value. Container for navigation properties for Microsoft Entra authentication methods resources.
 func (m *ReportRoot) SetAuthenticationMethods(value AuthenticationMethodsRootable)() {
     err := m.GetBackingStore().Set("authenticationMethods", value)
     if err != nil {
@@ -750,7 +777,7 @@ func (m *ReportRoot) SetMonthlyPrintUsageSummariesByUser(value []PrintUsageByUse
         panic(err)
     }
 }
-// SetSecurity sets the security property value. Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
+// SetSecurity sets the security property value. Provides the ability to launch a realistically simulated phishing attack that organizations can learn from.
 func (m *ReportRoot) SetSecurity(value SecurityReportsRootable)() {
     err := m.GetBackingStore().Set("security", value)
     if err != nil {
@@ -778,6 +805,13 @@ func (m *ReportRoot) SetUserCredentialUsageDetails(value []UserCredentialUsageDe
         panic(err)
     }
 }
+// SetUserInsights sets the userInsights property value. The userInsights property
+func (m *ReportRoot) SetUserInsights(value UserInsightsRootable)() {
+    err := m.GetBackingStore().Set("userInsights", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // ReportRootable 
 type ReportRootable interface {
     Entityable
@@ -799,6 +833,7 @@ type ReportRootable interface {
     GetServicePrincipalSignInActivities()([]ServicePrincipalSignInActivityable)
     GetSla()(ServiceLevelAgreementRootable)
     GetUserCredentialUsageDetails()([]UserCredentialUsageDetailsable)
+    GetUserInsights()(UserInsightsRootable)
     SetAppCredentialSignInActivities(value []AppCredentialSignInActivityable)()
     SetApplicationSignInDetailedSummary(value []ApplicationSignInDetailedSummaryable)()
     SetAuthenticationMethods(value AuthenticationMethodsRootable)()
@@ -816,4 +851,5 @@ type ReportRootable interface {
     SetServicePrincipalSignInActivities(value []ServicePrincipalSignInActivityable)()
     SetSla(value ServiceLevelAgreementRootable)()
     SetUserCredentialUsageDetails(value []UserCredentialUsageDetailsable)()
+    SetUserInsights(value UserInsightsRootable)()
 }

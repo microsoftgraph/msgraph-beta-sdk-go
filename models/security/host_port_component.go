@@ -105,7 +105,7 @@ func (m *HostPortComponent) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetFirstSeenDateTime gets the firstSeenDateTime property value. The firstSeenDateTime property
+// GetFirstSeenDateTime gets the firstSeenDateTime property value. The first date and time when Microsoft Defender Threat Intelligence observed the hostPortComponent. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
 func (m *HostPortComponent) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstSeenDateTime")
     if err != nil {
@@ -116,7 +116,7 @@ func (m *HostPortComponent) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3a
     }
     return nil
 }
-// GetIsRecent gets the isRecent property value. The isRecent property
+// GetIsRecent gets the isRecent property value. Indicates whether this hostPortComponent is recent, which is determined by whether the hostPortComponent was observed either at the same time or after the latest hostPortBanner in the scan history, or within two days of the latest scan of the hostPort when there are no hostPortBanners in the scan history.
 func (m *HostPortComponent) GetIsRecent()(*bool) {
     val, err := m.GetBackingStore().Get("isRecent")
     if err != nil {
@@ -127,7 +127,7 @@ func (m *HostPortComponent) GetIsRecent()(*bool) {
     }
     return nil
 }
-// GetLastSeenDateTime gets the lastSeenDateTime property value. The lastSeenDateTime property
+// GetLastSeenDateTime gets the lastSeenDateTime property value. The last date and time when Microsoft Defender Threat Intelligence observed the hostPortComponent. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
 func (m *HostPortComponent) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSeenDateTime")
     if err != nil {
@@ -207,21 +207,21 @@ func (m *HostPortComponent) SetComponent(value HostComponentable)() {
         panic(err)
     }
 }
-// SetFirstSeenDateTime sets the firstSeenDateTime property value. The firstSeenDateTime property
+// SetFirstSeenDateTime sets the firstSeenDateTime property value. The first date and time when Microsoft Defender Threat Intelligence observed the hostPortComponent. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
 func (m *HostPortComponent) SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("firstSeenDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsRecent sets the isRecent property value. The isRecent property
+// SetIsRecent sets the isRecent property value. Indicates whether this hostPortComponent is recent, which is determined by whether the hostPortComponent was observed either at the same time or after the latest hostPortBanner in the scan history, or within two days of the latest scan of the hostPort when there are no hostPortBanners in the scan history.
 func (m *HostPortComponent) SetIsRecent(value *bool)() {
     err := m.GetBackingStore().Set("isRecent", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastSeenDateTime sets the lastSeenDateTime property value. The lastSeenDateTime property
+// SetLastSeenDateTime sets the lastSeenDateTime property value. The last date and time when Microsoft Defender Threat Intelligence observed the hostPortComponent. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
 func (m *HostPortComponent) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastSeenDateTime", value)
     if err != nil {

@@ -13,6 +13,8 @@ func NewGcpAuthorizationSystemResource()(*GcpAuthorizationSystemResource) {
     m := &GcpAuthorizationSystemResource{
         AuthorizationSystemResource: *NewAuthorizationSystemResource(),
     }
+    odataTypeValue := "#microsoft.graph.gcpAuthorizationSystemResource"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateGcpAuthorizationSystemResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

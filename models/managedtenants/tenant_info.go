@@ -74,7 +74,7 @@ func (m *TenantInfo) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional.
+// GetTenantId gets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Optional.
 func (m *TenantInfo) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -125,7 +125,7 @@ func (m *TenantInfo) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional.
+// SetTenantId sets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Optional.
 func (m *TenantInfo) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

@@ -631,7 +631,7 @@ func (m *PstnCallLogRow) GetUserDisplayName()(*string) {
     }
     return nil
 }
-// GetUserId gets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory. This and other user info will be null/empty for bot call types (ucapin, ucapout).
+// GetUserId gets the userId property value. The unique identifier (GUID) of the user in Microsoft Entra ID. This and other user info will be null/empty for bot call types (ucapin, ucapout).
 func (m *PstnCallLogRow) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -642,7 +642,7 @@ func (m *PstnCallLogRow) GetUserId()(*string) {
     }
     return nil
 }
-// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
+// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
 func (m *PstnCallLogRow) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -1038,14 +1038,14 @@ func (m *PstnCallLogRow) SetUserDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory. This and other user info will be null/empty for bot call types (ucapin, ucapout).
+// SetUserId sets the userId property value. The unique identifier (GUID) of the user in Microsoft Entra ID. This and other user info will be null/empty for bot call types (ucapin, ucapout).
 func (m *PstnCallLogRow) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserPrincipalName sets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
+// SetUserPrincipalName sets the userPrincipalName property value. The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
 func (m *PstnCallLogRow) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
     if err != nil {

@@ -160,7 +160,7 @@ func (m *Agreement) GetFiles()([]AgreementFileLocalizationable) {
     }
     return nil
 }
-// GetIsPerDeviceAcceptanceRequired gets the isPerDeviceAcceptanceRequired property value. This setting enables you to require end users to accept this agreement on every device that they are accessing it from. The end user will be required to register their device in Azure AD, if they haven't already done so. Supports $filter (eq).
+// GetIsPerDeviceAcceptanceRequired gets the isPerDeviceAcceptanceRequired property value. This setting enables you to require end users to accept this agreement on every device that they are accessing it from. The end user will be required to register their device in Microsoft Entra ID, if they haven't already done so. Supports $filter (eq).
 func (m *Agreement) GetIsPerDeviceAcceptanceRequired()(*bool) {
     val, err := m.GetBackingStore().Get("isPerDeviceAcceptanceRequired")
     if err != nil {
@@ -300,7 +300,7 @@ func (m *Agreement) SetFiles(value []AgreementFileLocalizationable)() {
         panic(err)
     }
 }
-// SetIsPerDeviceAcceptanceRequired sets the isPerDeviceAcceptanceRequired property value. This setting enables you to require end users to accept this agreement on every device that they are accessing it from. The end user will be required to register their device in Azure AD, if they haven't already done so. Supports $filter (eq).
+// SetIsPerDeviceAcceptanceRequired sets the isPerDeviceAcceptanceRequired property value. This setting enables you to require end users to accept this agreement on every device that they are accessing it from. The end user will be required to register their device in Microsoft Entra ID, if they haven't already done so. Supports $filter (eq).
 func (m *Agreement) SetIsPerDeviceAcceptanceRequired(value *bool)() {
     err := m.GetBackingStore().Set("isPerDeviceAcceptanceRequired", value)
     if err != nil {

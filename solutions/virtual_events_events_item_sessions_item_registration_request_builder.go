@@ -58,10 +58,10 @@ func NewVirtualEventsEventsItemSessionsItemRegistrationRequestBuilder(rawUrl str
 func (m *VirtualEventsEventsItemSessionsItemRegistrationRequestBuilder) CustomQuestions()(*VirtualEventsEventsItemSessionsItemRegistrationCustomQuestionsRequestBuilder) {
     return NewVirtualEventsEventsItemSessionsItemRegistrationCustomQuestionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer. This API is available in the following national cloud deployments.
+// Delete disable and delete the externalMeetingRegistration of an onlineMeeting. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
 func (m *VirtualEventsEventsItemSessionsItemRegistrationRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsItemRegistrationRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -125,25 +125,22 @@ func (m *VirtualEventsEventsItemSessionsItemRegistrationRequestBuilder) Patch(ct
 func (m *VirtualEventsEventsItemSessionsItemRegistrationRequestBuilder) Registrants()(*VirtualEventsEventsItemSessionsItemRegistrationRegistrantsRequestBuilder) {
     return NewVirtualEventsEventsItemSessionsItemRegistrationRegistrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer. This API is available in the following national cloud deployments.
+// ToDeleteRequestInformation disable and delete the externalMeetingRegistration of an onlineMeeting. This API is available in the following national cloud deployments.
 func (m *VirtualEventsEventsItemSessionsItemRegistrationRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsItemRegistrationRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
+    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get the externalMeetingRegistration details associated with an onlineMeeting. This API is available in the following national cloud deployments.
 func (m *VirtualEventsEventsItemSessionsItemRegistrationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsItemRegistrationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -151,22 +148,26 @@ func (m *VirtualEventsEventsItemSessionsItemRegistrationRequestBuilder) ToGetReq
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer. This API is available in the following national cloud deployments.
 func (m *VirtualEventsEventsItemSessionsItemRegistrationRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationable, requestConfiguration *VirtualEventsEventsItemSessionsItemRegistrationRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
-    if err != nil {
-        return nil, err
-    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
     }
     return requestInfo, nil
 }

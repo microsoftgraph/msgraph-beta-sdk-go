@@ -53,7 +53,7 @@ func (m *TiIndicator) GetAdditionalInformation()(*string) {
     }
     return nil
 }
-// GetAzureTenantId gets the azureTenantId property value. Stamped by the system when the indicator is ingested. The Azure Active Directory tenant id of submitting client. Required.
+// GetAzureTenantId gets the azureTenantId property value. Stamped by the system when the indicator is ingested. The Microsoft Entra tenant id of submitting client. Required.
 func (m *TiIndicator) GetAzureTenantId()(*string) {
     val, err := m.GetBackingStore().Get("azureTenantId")
     if err != nil {
@@ -1648,7 +1648,7 @@ func (m *TiIndicator) SetAdditionalInformation(value *string)() {
         panic(err)
     }
 }
-// SetAzureTenantId sets the azureTenantId property value. Stamped by the system when the indicator is ingested. The Azure Active Directory tenant id of submitting client. Required.
+// SetAzureTenantId sets the azureTenantId property value. Stamped by the system when the indicator is ingested. The Microsoft Entra tenant id of submitting client. Required.
 func (m *TiIndicator) SetAzureTenantId(value *string)() {
     err := m.GetBackingStore().Set("azureTenantId", value)
     if err != nil {

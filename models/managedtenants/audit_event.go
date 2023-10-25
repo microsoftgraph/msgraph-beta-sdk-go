@@ -277,7 +277,7 @@ func (m *AuditEvent) GetRequestUrl()(*string) {
     }
     return nil
 }
-// GetTenantIds gets the tenantIds property value. The collection of Azure Active Directory tenant identifiers for the managed tenants that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.
+// GetTenantIds gets the tenantIds property value. The collection of Microsoft Entra tenant identifiers for the managed tenants that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.
 func (m *AuditEvent) GetTenantIds()(*string) {
     val, err := m.GetBackingStore().Get("tenantIds")
     if err != nil {
@@ -462,7 +462,7 @@ func (m *AuditEvent) SetRequestUrl(value *string)() {
         panic(err)
     }
 }
-// SetTenantIds sets the tenantIds property value. The collection of Azure Active Directory tenant identifiers for the managed tenants that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.
+// SetTenantIds sets the tenantIds property value. The collection of Microsoft Entra tenant identifiers for the managed tenants that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.
 func (m *AuditEvent) SetTenantIds(value *string)() {
     err := m.GetBackingStore().Set("tenantIds", value)
     if err != nil {

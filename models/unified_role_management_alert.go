@@ -20,7 +20,7 @@ func NewUnifiedRoleManagementAlert()(*UnifiedRoleManagementAlert) {
 func CreateUnifiedRoleManagementAlertFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleManagementAlert(), nil
 }
-// GetAlertConfiguration gets the alertConfiguration property value. The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $filter for the isEnabled property and $expand.
+// GetAlertConfiguration gets the alertConfiguration property value. The configuration of the alert in PIM for Microsoft Entra roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $filter for the isEnabled property and $expand.
 func (m *UnifiedRoleManagementAlert) GetAlertConfiguration()(UnifiedRoleManagementAlertConfigurationable) {
     val, err := m.GetBackingStore().Get("alertConfiguration")
     if err != nil {
@@ -53,7 +53,7 @@ func (m *UnifiedRoleManagementAlert) GetAlertDefinitionId()(*string) {
     }
     return nil
 }
-// GetAlertIncidents gets the alertIncidents property value. Represents the incidents of this type of alert that have been triggered in Privileged Identity Management (PIM) for Azure AD roles in the tenant. Supports $expand.
+// GetAlertIncidents gets the alertIncidents property value. Represents the incidents of this type of alert that have been triggered in Privileged Identity Management (PIM) for Microsoft Entra roles in the tenant. Supports $expand.
 func (m *UnifiedRoleManagementAlert) GetAlertIncidents()([]UnifiedRoleManagementAlertIncidentable) {
     val, err := m.GetBackingStore().Get("alertIncidents")
     if err != nil {
@@ -230,7 +230,7 @@ func (m *UnifiedRoleManagementAlert) GetScopeId()(*string) {
     }
     return nil
 }
-// GetScopeType gets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD roles.
+// GetScopeType gets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Microsoft Entra roles.
 func (m *UnifiedRoleManagementAlert) GetScopeType()(*string) {
     val, err := m.GetBackingStore().Get("scopeType")
     if err != nil {
@@ -315,7 +315,7 @@ func (m *UnifiedRoleManagementAlert) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetAlertConfiguration sets the alertConfiguration property value. The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $filter for the isEnabled property and $expand.
+// SetAlertConfiguration sets the alertConfiguration property value. The configuration of the alert in PIM for Microsoft Entra roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $filter for the isEnabled property and $expand.
 func (m *UnifiedRoleManagementAlert) SetAlertConfiguration(value UnifiedRoleManagementAlertConfigurationable)() {
     err := m.GetBackingStore().Set("alertConfiguration", value)
     if err != nil {
@@ -336,7 +336,7 @@ func (m *UnifiedRoleManagementAlert) SetAlertDefinitionId(value *string)() {
         panic(err)
     }
 }
-// SetAlertIncidents sets the alertIncidents property value. Represents the incidents of this type of alert that have been triggered in Privileged Identity Management (PIM) for Azure AD roles in the tenant. Supports $expand.
+// SetAlertIncidents sets the alertIncidents property value. Represents the incidents of this type of alert that have been triggered in Privileged Identity Management (PIM) for Microsoft Entra roles in the tenant. Supports $expand.
 func (m *UnifiedRoleManagementAlert) SetAlertIncidents(value []UnifiedRoleManagementAlertIncidentable)() {
     err := m.GetBackingStore().Set("alertIncidents", value)
     if err != nil {
@@ -378,7 +378,7 @@ func (m *UnifiedRoleManagementAlert) SetScopeId(value *string)() {
         panic(err)
     }
 }
-// SetScopeType sets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD roles.
+// SetScopeType sets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Microsoft Entra roles.
 func (m *UnifiedRoleManagementAlert) SetScopeType(value *string)() {
     err := m.GetBackingStore().Set("scopeType", value)
     if err != nil {

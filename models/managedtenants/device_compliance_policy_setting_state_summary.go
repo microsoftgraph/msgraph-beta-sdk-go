@@ -288,7 +288,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetTenantDisplayName()(*stri
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+// GetTenantId gets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -469,7 +469,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) SetTenantDisplayName(value *
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+// SetTenantId sets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

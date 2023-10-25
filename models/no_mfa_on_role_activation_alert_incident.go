@@ -46,7 +46,7 @@ func (m *NoMfaOnRoleActivationAlertIncident) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetRoleDisplayName gets the roleDisplayName property value. The name of the Azure AD directory role.
+// GetRoleDisplayName gets the roleDisplayName property value. The name of the Microsoft Entra ID directory role.
 func (m *NoMfaOnRoleActivationAlertIncident) GetRoleDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("roleDisplayName")
     if err != nil {
@@ -88,7 +88,7 @@ func (m *NoMfaOnRoleActivationAlertIncident) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetRoleDisplayName sets the roleDisplayName property value. The name of the Azure AD directory role.
+// SetRoleDisplayName sets the roleDisplayName property value. The name of the Microsoft Entra ID directory role.
 func (m *NoMfaOnRoleActivationAlertIncident) SetRoleDisplayName(value *string)() {
     err := m.GetBackingStore().Set("roleDisplayName", value)
     if err != nil {

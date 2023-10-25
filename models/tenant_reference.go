@@ -74,7 +74,7 @@ func (m *TenantReference) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. The identifier of the Azure AD tenant. Read-only. Key.
+// GetTenantId gets the tenantId property value. The identifier of the Microsoft Entra tenant. Read-only. Key.
 func (m *TenantReference) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -125,7 +125,7 @@ func (m *TenantReference) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. The identifier of the Azure AD tenant. Read-only. Key.
+// SetTenantId sets the tenantId property value. The identifier of the Microsoft Entra tenant. Read-only. Key.
 func (m *TenantReference) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

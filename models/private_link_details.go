@@ -115,7 +115,7 @@ func (m *PrivateLinkDetails) GetPolicyId()(*string) {
     }
     return nil
 }
-// GetPolicyName gets the policyName property value. The name of the Private Link policy in Azure AD.
+// GetPolicyName gets the policyName property value. The name of the Private Link policy in Microsoft Entra ID.
 func (m *PrivateLinkDetails) GetPolicyName()(*string) {
     val, err := m.GetBackingStore().Get("policyName")
     if err != nil {
@@ -126,7 +126,7 @@ func (m *PrivateLinkDetails) GetPolicyName()(*string) {
     }
     return nil
 }
-// GetPolicyTenantId gets the policyTenantId property value. The tenant identifier of the Azure AD tenant the Private Link policy belongs to.
+// GetPolicyTenantId gets the policyTenantId property value. The tenant identifier of the Microsoft Entra tenant the Private Link policy belongs to.
 func (m *PrivateLinkDetails) GetPolicyTenantId()(*string) {
     val, err := m.GetBackingStore().Get("policyTenantId")
     if err != nil {
@@ -213,14 +213,14 @@ func (m *PrivateLinkDetails) SetPolicyId(value *string)() {
         panic(err)
     }
 }
-// SetPolicyName sets the policyName property value. The name of the Private Link policy in Azure AD.
+// SetPolicyName sets the policyName property value. The name of the Private Link policy in Microsoft Entra ID.
 func (m *PrivateLinkDetails) SetPolicyName(value *string)() {
     err := m.GetBackingStore().Set("policyName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPolicyTenantId sets the policyTenantId property value. The tenant identifier of the Azure AD tenant the Private Link policy belongs to.
+// SetPolicyTenantId sets the policyTenantId property value. The tenant identifier of the Microsoft Entra tenant the Private Link policy belongs to.
 func (m *PrivateLinkDetails) SetPolicyTenantId(value *string)() {
     err := m.GetBackingStore().Set("policyTenantId", value)
     if err != nil {

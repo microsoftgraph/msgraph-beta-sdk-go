@@ -117,7 +117,7 @@ func (m *TenantRelationship) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetMultiTenantOrganization gets the multiTenantOrganization property value. Defines an organization with more than one instance of Azure Active Directory (Azure AD).
+// GetMultiTenantOrganization gets the multiTenantOrganization property value. Defines an organization with more than one instance of Microsoft Entra ID.
 func (m *TenantRelationship) GetMultiTenantOrganization()(MultiTenantOrganizationable) {
     val, err := m.GetBackingStore().Get("multiTenantOrganization")
     if err != nil {
@@ -210,7 +210,7 @@ func (m *TenantRelationship) SetDelegatedAdminRelationships(value []DelegatedAdm
         panic(err)
     }
 }
-// SetMultiTenantOrganization sets the multiTenantOrganization property value. Defines an organization with more than one instance of Azure Active Directory (Azure AD).
+// SetMultiTenantOrganization sets the multiTenantOrganization property value. Defines an organization with more than one instance of Microsoft Entra ID.
 func (m *TenantRelationship) SetMultiTenantOrganization(value MultiTenantOrganizationable)() {
     err := m.GetBackingStore().Set("multiTenantOrganization", value)
     if err != nil {

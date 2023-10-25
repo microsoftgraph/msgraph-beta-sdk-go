@@ -215,7 +215,7 @@ func (m *VirtualEventRegistration) GetStatus()(*VirtualEventAttendeeRegistration
     }
     return nil
 }
-// GetUserId gets the userId property value. The registrant's ID in Azure Active Directory (Azure AD). Only appears when the registrant is registered in Azure AD.
+// GetUserId gets the userId property value. The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
 func (m *VirtualEventRegistration) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -357,7 +357,7 @@ func (m *VirtualEventRegistration) SetStatus(value *VirtualEventAttendeeRegistra
         panic(err)
     }
 }
-// SetUserId sets the userId property value. The registrant's ID in Azure Active Directory (Azure AD). Only appears when the registrant is registered in Azure AD.
+// SetUserId sets the userId property value. The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
 func (m *VirtualEventRegistration) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {

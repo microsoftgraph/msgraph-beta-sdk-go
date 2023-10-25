@@ -362,7 +362,7 @@ func (m *Host) GetPassiveDnsReverse()([]PassiveDnsRecordable) {
     }
     return nil
 }
-// GetPorts gets the ports property value. The ports property
+// GetPorts gets the ports property value. The hostPorts associated with a host.
 func (m *Host) GetPorts()([]HostPortable) {
     val, err := m.GetBackingStore().Get("ports")
     if err != nil {
@@ -655,7 +655,7 @@ func (m *Host) SetPassiveDnsReverse(value []PassiveDnsRecordable)() {
         panic(err)
     }
 }
-// SetPorts sets the ports property value. The ports property
+// SetPorts sets the ports property value. The hostPorts associated with a host.
 func (m *Host) SetPorts(value []HostPortable)() {
     err := m.GetBackingStore().Set("ports", value)
     if err != nil {

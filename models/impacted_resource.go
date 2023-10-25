@@ -42,7 +42,7 @@ func (m *ImpactedResource) GetAdditionalDetails()([]KeyValueable) {
     }
     return nil
 }
-// GetApiUrl gets the apiUrl property value. The URL link to the corresponding Azure AD resource.
+// GetApiUrl gets the apiUrl property value. The URL link to the corresponding Microsoft Entra resource.
 func (m *ImpactedResource) GetApiUrl()(*string) {
     val, err := m.GetBackingStore().Get("apiUrl")
     if err != nil {
@@ -53,7 +53,7 @@ func (m *ImpactedResource) GetApiUrl()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. Friendly name of the Azure AD resource.
+// GetDisplayName gets the displayName property value. Friendly name of the Microsoft Entra resource.
 func (m *ImpactedResource) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -248,7 +248,7 @@ func (m *ImpactedResource) GetOwner()(*string) {
     }
     return nil
 }
-// GetPortalUrl gets the portalUrl property value. The URL link to the corresponding Azure AD portal page of the resource.
+// GetPortalUrl gets the portalUrl property value. The URL link to the corresponding Microsoft Entra admin center page of the resource.
 func (m *ImpactedResource) GetPortalUrl()(*string) {
     val, err := m.GetBackingStore().Get("portalUrl")
     if err != nil {
@@ -292,7 +292,7 @@ func (m *ImpactedResource) GetRecommendationId()(*string) {
     }
     return nil
 }
-// GetResourceType gets the resourceType property value. Indicates the type of Azure AD resource. Examples include user, application.
+// GetResourceType gets the resourceType property value. Indicates the type of Microsoft Entra resource. Examples include user, application.
 func (m *ImpactedResource) GetResourceType()(*string) {
     val, err := m.GetBackingStore().Get("resourceType")
     if err != nil {
@@ -438,14 +438,14 @@ func (m *ImpactedResource) SetAdditionalDetails(value []KeyValueable)() {
         panic(err)
     }
 }
-// SetApiUrl sets the apiUrl property value. The URL link to the corresponding Azure AD resource.
+// SetApiUrl sets the apiUrl property value. The URL link to the corresponding Microsoft Entra resource.
 func (m *ImpactedResource) SetApiUrl(value *string)() {
     err := m.GetBackingStore().Set("apiUrl", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. Friendly name of the Azure AD resource.
+// SetDisplayName sets the displayName property value. Friendly name of the Microsoft Entra resource.
 func (m *ImpactedResource) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -473,7 +473,7 @@ func (m *ImpactedResource) SetOwner(value *string)() {
         panic(err)
     }
 }
-// SetPortalUrl sets the portalUrl property value. The URL link to the corresponding Azure AD portal page of the resource.
+// SetPortalUrl sets the portalUrl property value. The URL link to the corresponding Microsoft Entra admin center page of the resource.
 func (m *ImpactedResource) SetPortalUrl(value *string)() {
     err := m.GetBackingStore().Set("portalUrl", value)
     if err != nil {
@@ -501,7 +501,7 @@ func (m *ImpactedResource) SetRecommendationId(value *string)() {
         panic(err)
     }
 }
-// SetResourceType sets the resourceType property value. Indicates the type of Azure AD resource. Examples include user, application.
+// SetResourceType sets the resourceType property value. Indicates the type of Microsoft Entra resource. Examples include user, application.
 func (m *ImpactedResource) SetResourceType(value *string)() {
     err := m.GetBackingStore().Set("resourceType", value)
     if err != nil {

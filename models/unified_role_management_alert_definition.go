@@ -157,7 +157,7 @@ func (m *UnifiedRoleManagementAlertDefinition) GetHowToPrevent()(*string) {
     }
     return nil
 }
-// GetIsConfigurable gets the isConfigurable property value. true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization doesn't have Azure AD Premium P2' can't be configured, because the criteria are restricted.
+// GetIsConfigurable gets the isConfigurable property value. true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization doesn't have Microsoft Entra ID P2' can't be configured, because the criteria are restricted.
 func (m *UnifiedRoleManagementAlertDefinition) GetIsConfigurable()(*bool) {
     val, err := m.GetBackingStore().Get("isConfigurable")
     if err != nil {
@@ -201,7 +201,7 @@ func (m *UnifiedRoleManagementAlertDefinition) GetScopeId()(*string) {
     }
     return nil
 }
-// GetScopeType gets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD Roles.
+// GetScopeType gets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Microsoft Entra roles.
 func (m *UnifiedRoleManagementAlertDefinition) GetScopeType()(*string) {
     val, err := m.GetBackingStore().Get("scopeType")
     if err != nil {
@@ -324,7 +324,7 @@ func (m *UnifiedRoleManagementAlertDefinition) SetHowToPrevent(value *string)() 
         panic(err)
     }
 }
-// SetIsConfigurable sets the isConfigurable property value. true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization doesn't have Azure AD Premium P2' can't be configured, because the criteria are restricted.
+// SetIsConfigurable sets the isConfigurable property value. true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization doesn't have Microsoft Entra ID P2' can't be configured, because the criteria are restricted.
 func (m *UnifiedRoleManagementAlertDefinition) SetIsConfigurable(value *bool)() {
     err := m.GetBackingStore().Set("isConfigurable", value)
     if err != nil {
@@ -352,7 +352,7 @@ func (m *UnifiedRoleManagementAlertDefinition) SetScopeId(value *string)() {
         panic(err)
     }
 }
-// SetScopeType sets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD Roles.
+// SetScopeType sets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Microsoft Entra roles.
 func (m *UnifiedRoleManagementAlertDefinition) SetScopeType(value *string)() {
     err := m.GetBackingStore().Set("scopeType", value)
     if err != nil {

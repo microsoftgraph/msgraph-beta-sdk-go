@@ -1326,7 +1326,7 @@ func (m *Group) GetIsArchived()(*bool) {
     }
     return nil
 }
-// GetIsAssignableToRole gets the isAssignableToRole property value. Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsUsing this feature requires a Azure AD Premium P1 license. Returned by default. Supports $filter (eq, ne, not).
+// GetIsAssignableToRole gets the isAssignableToRole property value. Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).
 func (m *Group) GetIsAssignableToRole()(*bool) {
     val, err := m.GetBackingStore().Get("isAssignableToRole")
     if err != nil {
@@ -1491,7 +1491,7 @@ func (m *Group) GetOnenote()(Onenoteable) {
     }
     return nil
 }
-// GetOnPremisesDomainName gets the onPremisesDomainName property value. Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
+// GetOnPremisesDomainName gets the onPremisesDomainName property value. Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.
 func (m *Group) GetOnPremisesDomainName()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesDomainName")
     if err != nil {
@@ -1513,7 +1513,7 @@ func (m *Group) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97
     }
     return nil
 }
-// GetOnPremisesNetBiosName gets the onPremisesNetBiosName property value. Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
+// GetOnPremisesNetBiosName gets the onPremisesNetBiosName property value. Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.
 func (m *Group) GetOnPremisesNetBiosName()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesNetBiosName")
     if err != nil {
@@ -1535,7 +1535,7 @@ func (m *Group) GetOnPremisesProvisioningErrors()([]OnPremisesProvisioningErrora
     }
     return nil
 }
-// GetOnPremisesSamAccountName gets the onPremisesSamAccountName property value. Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.
+// GetOnPremisesSamAccountName gets the onPremisesSamAccountName property value. Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.
 func (m *Group) GetOnPremisesSamAccountName()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesSamAccountName")
     if err != nil {
@@ -1634,7 +1634,7 @@ func (m *Group) GetPlanner()(PlannerGroupable) {
     }
     return nil
 }
-// GetPreferredDataLocation gets the preferredDataLocation property value. The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.
+// GetPreferredDataLocation gets the preferredDataLocation property value. The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling user must be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.
 func (m *Group) GetPreferredDataLocation()(*string) {
     val, err := m.GetBackingStore().Get("preferredDataLocation")
     if err != nil {
@@ -1876,7 +1876,7 @@ func (m *Group) GetVisibility()(*string) {
     }
     return nil
 }
-// GetWritebackConfiguration gets the writebackConfiguration property value. Specifies whether or not a group is configured to write back group object properties to on-premise Active Directory. These properties are used when group writeback is configured in the Azure AD Connect sync client.
+// GetWritebackConfiguration gets the writebackConfiguration property value. Specifies whether or not a group is configured to write back group object properties to on-premise Active Directory. These properties are used when group writeback is configured in the Microsoft Entra Connect sync client.
 func (m *Group) GetWritebackConfiguration()(GroupWritebackConfigurationable) {
     val, err := m.GetBackingStore().Get("writebackConfiguration")
     if err != nil {
@@ -2729,7 +2729,7 @@ func (m *Group) SetIsArchived(value *bool)() {
         panic(err)
     }
 }
-// SetIsAssignableToRole sets the isAssignableToRole property value. Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsUsing this feature requires a Azure AD Premium P1 license. Returned by default. Supports $filter (eq, ne, not).
+// SetIsAssignableToRole sets the isAssignableToRole property value. Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).
 func (m *Group) SetIsAssignableToRole(value *bool)() {
     err := m.GetBackingStore().Set("isAssignableToRole", value)
     if err != nil {
@@ -2834,7 +2834,7 @@ func (m *Group) SetOnenote(value Onenoteable)() {
         panic(err)
     }
 }
-// SetOnPremisesDomainName sets the onPremisesDomainName property value. Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
+// SetOnPremisesDomainName sets the onPremisesDomainName property value. Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.
 func (m *Group) SetOnPremisesDomainName(value *string)() {
     err := m.GetBackingStore().Set("onPremisesDomainName", value)
     if err != nil {
@@ -2848,7 +2848,7 @@ func (m *Group) SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe3
         panic(err)
     }
 }
-// SetOnPremisesNetBiosName sets the onPremisesNetBiosName property value. Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
+// SetOnPremisesNetBiosName sets the onPremisesNetBiosName property value. Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.
 func (m *Group) SetOnPremisesNetBiosName(value *string)() {
     err := m.GetBackingStore().Set("onPremisesNetBiosName", value)
     if err != nil {
@@ -2862,7 +2862,7 @@ func (m *Group) SetOnPremisesProvisioningErrors(value []OnPremisesProvisioningEr
         panic(err)
     }
 }
-// SetOnPremisesSamAccountName sets the onPremisesSamAccountName property value. Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.
+// SetOnPremisesSamAccountName sets the onPremisesSamAccountName property value. Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.
 func (m *Group) SetOnPremisesSamAccountName(value *string)() {
     err := m.GetBackingStore().Set("onPremisesSamAccountName", value)
     if err != nil {
@@ -2925,7 +2925,7 @@ func (m *Group) SetPlanner(value PlannerGroupable)() {
         panic(err)
     }
 }
-// SetPreferredDataLocation sets the preferredDataLocation property value. The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.
+// SetPreferredDataLocation sets the preferredDataLocation property value. The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling user must be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.
 func (m *Group) SetPreferredDataLocation(value *string)() {
     err := m.GetBackingStore().Set("preferredDataLocation", value)
     if err != nil {
@@ -3079,7 +3079,7 @@ func (m *Group) SetVisibility(value *string)() {
         panic(err)
     }
 }
-// SetWritebackConfiguration sets the writebackConfiguration property value. Specifies whether or not a group is configured to write back group object properties to on-premise Active Directory. These properties are used when group writeback is configured in the Azure AD Connect sync client.
+// SetWritebackConfiguration sets the writebackConfiguration property value. Specifies whether or not a group is configured to write back group object properties to on-premise Active Directory. These properties are used when group writeback is configured in the Microsoft Entra Connect sync client.
 func (m *Group) SetWritebackConfiguration(value GroupWritebackConfigurationable)() {
     err := m.GetBackingStore().Set("writebackConfiguration", value)
     if err != nil {

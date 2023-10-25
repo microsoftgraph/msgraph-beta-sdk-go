@@ -374,7 +374,7 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetSettings gets the settings property value. Represents the settings that control the behavior of Azure AD entitlement management.
+// GetSettings gets the settings property value. Represents the settings that control the behavior of Microsoft Entra entitlement management.
 func (m *EntitlementManagement) GetSettings()(EntitlementManagementSettingsable) {
     val, err := m.GetBackingStore().Get("settings")
     if err != nil {
@@ -650,7 +650,7 @@ func (m *EntitlementManagement) SetConnectedOrganizations(value []ConnectedOrgan
         panic(err)
     }
 }
-// SetSettings sets the settings property value. Represents the settings that control the behavior of Azure AD entitlement management.
+// SetSettings sets the settings property value. Represents the settings that control the behavior of Microsoft Entra entitlement management.
 func (m *EntitlementManagement) SetSettings(value EntitlementManagementSettingsable)() {
     err := m.GetBackingStore().Set("settings", value)
     if err != nil {

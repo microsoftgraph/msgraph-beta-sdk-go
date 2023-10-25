@@ -19,7 +19,7 @@ func NewAccessReviewSet()(*AccessReviewSet) {
 func CreateAccessReviewSetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewSet(), nil
 }
-// GetDecisions gets the decisions property value. Represents an Azure AD access review decision on an instance of a review.
+// GetDecisions gets the decisions property value. Represents a Microsoft Entra access review decision on an instance of a review.
 func (m *AccessReviewSet) GetDecisions()([]AccessReviewInstanceDecisionItemable) {
     val, err := m.GetBackingStore().Get("decisions")
     if err != nil {
@@ -176,7 +176,7 @@ func (m *AccessReviewSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetDecisions sets the decisions property value. Represents an Azure AD access review decision on an instance of a review.
+// SetDecisions sets the decisions property value. Represents a Microsoft Entra access review decision on an instance of a review.
 func (m *AccessReviewSet) SetDecisions(value []AccessReviewInstanceDecisionItemable)() {
     err := m.GetBackingStore().Set("decisions", value)
     if err != nil {

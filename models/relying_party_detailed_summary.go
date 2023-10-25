@@ -168,7 +168,7 @@ func (m *RelyingPartyDetailedSummary) GetMigrationStatus()(*MigrationStatus) {
     }
     return nil
 }
-// GetMigrationValidationDetails gets the migrationValidationDetails property value. Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.
+// GetMigrationValidationDetails gets the migrationValidationDetails property value. Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Microsoft Entra ID.
 func (m *RelyingPartyDetailedSummary) GetMigrationValidationDetails()([]KeyValuePairable) {
     val, err := m.GetBackingStore().Get("migrationValidationDetails")
     if err != nil {
@@ -362,7 +362,7 @@ func (m *RelyingPartyDetailedSummary) SetMigrationStatus(value *MigrationStatus)
         panic(err)
     }
 }
-// SetMigrationValidationDetails sets the migrationValidationDetails property value. Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.
+// SetMigrationValidationDetails sets the migrationValidationDetails property value. Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Microsoft Entra ID.
 func (m *RelyingPartyDetailedSummary) SetMigrationValidationDetails(value []KeyValuePairable)() {
     err := m.GetBackingStore().Set("migrationValidationDetails", value)
     if err != nil {

@@ -19,7 +19,7 @@ func NewDeviceRegistrationPolicy()(*DeviceRegistrationPolicy) {
 func CreateDeviceRegistrationPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceRegistrationPolicy(), nil
 }
-// GetAzureADJoin gets the azureADJoin property value. Specifies the authorization policy for controlling registration of new devices using Azure AD Join within your organization. Required. For more information, see What is a device identity?.
+// GetAzureADJoin gets the azureADJoin property value. Specifies the authorization policy for controlling registration of new devices using Microsoft Entra join within your organization. Required. For more information, see What is a device identity?.
 func (m *DeviceRegistrationPolicy) GetAzureADJoin()(AzureAdJoinPolicyable) {
     val, err := m.GetBackingStore().Get("azureADJoin")
     if err != nil {
@@ -30,7 +30,7 @@ func (m *DeviceRegistrationPolicy) GetAzureADJoin()(AzureAdJoinPolicyable) {
     }
     return nil
 }
-// GetAzureADRegistration gets the azureADRegistration property value. Specifies the authorization policy for controlling registration of new devices using Azure AD registered within your organization. Required. For more information, see What is a device identity?.
+// GetAzureADRegistration gets the azureADRegistration property value. Specifies the authorization policy for controlling registration of new devices using Microsoft Entra registered within your organization. Required. For more information, see What is a device identity?.
 func (m *DeviceRegistrationPolicy) GetAzureADRegistration()(AzureADRegistrationPolicyable) {
     val, err := m.GetBackingStore().Get("azureADRegistration")
     if err != nil {
@@ -222,14 +222,14 @@ func (m *DeviceRegistrationPolicy) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetAzureADJoin sets the azureADJoin property value. Specifies the authorization policy for controlling registration of new devices using Azure AD Join within your organization. Required. For more information, see What is a device identity?.
+// SetAzureADJoin sets the azureADJoin property value. Specifies the authorization policy for controlling registration of new devices using Microsoft Entra join within your organization. Required. For more information, see What is a device identity?.
 func (m *DeviceRegistrationPolicy) SetAzureADJoin(value AzureAdJoinPolicyable)() {
     err := m.GetBackingStore().Set("azureADJoin", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAzureADRegistration sets the azureADRegistration property value. Specifies the authorization policy for controlling registration of new devices using Azure AD registered within your organization. Required. For more information, see What is a device identity?.
+// SetAzureADRegistration sets the azureADRegistration property value. Specifies the authorization policy for controlling registration of new devices using Microsoft Entra registered within your organization. Required. For more information, see What is a device identity?.
 func (m *DeviceRegistrationPolicy) SetAzureADRegistration(value AzureADRegistrationPolicyable)() {
     err := m.GetBackingStore().Set("azureADRegistration", value)
     if err != nil {

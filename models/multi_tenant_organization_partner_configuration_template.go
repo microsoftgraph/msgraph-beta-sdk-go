@@ -30,7 +30,7 @@ func (m *MultiTenantOrganizationPartnerConfigurationTemplate) GetAutomaticUserCo
     }
     return nil
 }
-// GetB2bCollaborationInbound gets the b2bCollaborationInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
+// GetB2bCollaborationInbound gets the b2bCollaborationInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Microsoft Entra B2B collaboration.
 func (m *MultiTenantOrganizationPartnerConfigurationTemplate) GetB2bCollaborationInbound()(CrossTenantAccessPolicyB2BSettingable) {
     val, err := m.GetBackingStore().Get("b2bCollaborationInbound")
     if err != nil {
@@ -41,7 +41,7 @@ func (m *MultiTenantOrganizationPartnerConfigurationTemplate) GetB2bCollaboratio
     }
     return nil
 }
-// GetB2bCollaborationOutbound gets the b2bCollaborationOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.
+// GetB2bCollaborationOutbound gets the b2bCollaborationOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B collaboration.
 func (m *MultiTenantOrganizationPartnerConfigurationTemplate) GetB2bCollaborationOutbound()(CrossTenantAccessPolicyB2BSettingable) {
     val, err := m.GetBackingStore().Get("b2bCollaborationOutbound")
     if err != nil {
@@ -63,7 +63,7 @@ func (m *MultiTenantOrganizationPartnerConfigurationTemplate) GetB2bDirectConnec
     }
     return nil
 }
-// GetB2bDirectConnectOutbound gets the b2bDirectConnectOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.
+// GetB2bDirectConnectOutbound gets the b2bDirectConnectOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B direct connect.
 func (m *MultiTenantOrganizationPartnerConfigurationTemplate) GetB2bDirectConnectOutbound()(CrossTenantAccessPolicyB2BSettingable) {
     val, err := m.GetBackingStore().Get("b2bDirectConnectOutbound")
     if err != nil {
@@ -149,7 +149,7 @@ func (m *MultiTenantOrganizationPartnerConfigurationTemplate) GetFieldDeserializ
     }
     return res
 }
-// GetInboundTrust gets the inboundTrust property value. Determines the partner-specific configuration for trusting other Conditional Access claims from external Azure AD organizations.
+// GetInboundTrust gets the inboundTrust property value. Determines the partner-specific configuration for trusting other Conditional Access claims from external Microsoft Entra organizations.
 func (m *MultiTenantOrganizationPartnerConfigurationTemplate) GetInboundTrust()(CrossTenantAccessPolicyInboundTrustable) {
     val, err := m.GetBackingStore().Get("inboundTrust")
     if err != nil {
@@ -229,14 +229,14 @@ func (m *MultiTenantOrganizationPartnerConfigurationTemplate) SetAutomaticUserCo
         panic(err)
     }
 }
-// SetB2bCollaborationInbound sets the b2bCollaborationInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
+// SetB2bCollaborationInbound sets the b2bCollaborationInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Microsoft Entra B2B collaboration.
 func (m *MultiTenantOrganizationPartnerConfigurationTemplate) SetB2bCollaborationInbound(value CrossTenantAccessPolicyB2BSettingable)() {
     err := m.GetBackingStore().Set("b2bCollaborationInbound", value)
     if err != nil {
         panic(err)
     }
 }
-// SetB2bCollaborationOutbound sets the b2bCollaborationOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.
+// SetB2bCollaborationOutbound sets the b2bCollaborationOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B collaboration.
 func (m *MultiTenantOrganizationPartnerConfigurationTemplate) SetB2bCollaborationOutbound(value CrossTenantAccessPolicyB2BSettingable)() {
     err := m.GetBackingStore().Set("b2bCollaborationOutbound", value)
     if err != nil {
@@ -250,14 +250,14 @@ func (m *MultiTenantOrganizationPartnerConfigurationTemplate) SetB2bDirectConnec
         panic(err)
     }
 }
-// SetB2bDirectConnectOutbound sets the b2bDirectConnectOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.
+// SetB2bDirectConnectOutbound sets the b2bDirectConnectOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B direct connect.
 func (m *MultiTenantOrganizationPartnerConfigurationTemplate) SetB2bDirectConnectOutbound(value CrossTenantAccessPolicyB2BSettingable)() {
     err := m.GetBackingStore().Set("b2bDirectConnectOutbound", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInboundTrust sets the inboundTrust property value. Determines the partner-specific configuration for trusting other Conditional Access claims from external Azure AD organizations.
+// SetInboundTrust sets the inboundTrust property value. Determines the partner-specific configuration for trusting other Conditional Access claims from external Microsoft Entra organizations.
 func (m *MultiTenantOrganizationPartnerConfigurationTemplate) SetInboundTrust(value CrossTenantAccessPolicyInboundTrustable)() {
     err := m.GetBackingStore().Set("inboundTrust", value)
     if err != nil {

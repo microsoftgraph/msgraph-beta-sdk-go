@@ -21,7 +21,7 @@ func NewOpenIdConnectIdentityProvider()(*OpenIdConnectIdentityProvider) {
 func CreateOpenIdConnectIdentityProviderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOpenIdConnectIdentityProvider(), nil
 }
-// GetClaimsMapping gets the claimsMapping property value. After the OIDC provider sends an ID token back to Azure AD, Azure AD needs to be able to map the claims from the received token to the claims that Azure AD recognizes and uses. This complex type captures that mapping. Required.
+// GetClaimsMapping gets the claimsMapping property value. After the OIDC provider sends an ID token back to Microsoft Entra ID, Microsoft Entra ID needs to be able to map the claims from the received token to the claims that Microsoft Entra ID recognizes and uses. This complex type captures that mapping. Required.
 func (m *OpenIdConnectIdentityProvider) GetClaimsMapping()(ClaimsMappingable) {
     val, err := m.GetBackingStore().Get("claimsMapping")
     if err != nil {
@@ -252,7 +252,7 @@ func (m *OpenIdConnectIdentityProvider) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetClaimsMapping sets the claimsMapping property value. After the OIDC provider sends an ID token back to Azure AD, Azure AD needs to be able to map the claims from the received token to the claims that Azure AD recognizes and uses. This complex type captures that mapping. Required.
+// SetClaimsMapping sets the claimsMapping property value. After the OIDC provider sends an ID token back to Microsoft Entra ID, Microsoft Entra ID needs to be able to map the claims from the received token to the claims that Microsoft Entra ID recognizes and uses. This complex type captures that mapping. Required.
 func (m *OpenIdConnectIdentityProvider) SetClaimsMapping(value ClaimsMappingable)() {
     err := m.GetBackingStore().Set("claimsMapping", value)
     if err != nil {
