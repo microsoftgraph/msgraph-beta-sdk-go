@@ -88,6 +88,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAccessReviewStage(), nil
                     case "#microsoft.graph.activeDirectoryWindowsAutopilotDeploymentProfile":
                         return NewActiveDirectoryWindowsAutopilotDeploymentProfile(), nil
+                    case "#microsoft.graph.activeUsersBreakdownMetric":
+                        return NewActiveUsersBreakdownMetric(), nil
+                    case "#microsoft.graph.activeUsersMetric":
+                        return NewActiveUsersMetric(), nil
                     case "#microsoft.graph.activityBasedTimeoutPolicy":
                         return NewActivityBasedTimeoutPolicy(), nil
                     case "#microsoft.graph.activityHistoryItem":
@@ -398,6 +402,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAuthenticationMethodsRoot(), nil
                     case "#microsoft.graph.authenticationMethodTarget":
                         return NewAuthenticationMethodTarget(), nil
+                    case "#microsoft.graph.authenticationsMetric":
+                        return NewAuthenticationsMetric(), nil
                     case "#microsoft.graph.authenticationStrengthPolicy":
                         return NewAuthenticationStrengthPolicy(), nil
                     case "#microsoft.graph.authenticationStrengthRoot":
@@ -544,6 +550,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCall(), nil
                     case "#microsoft.graph.callActivityStatistics":
                         return NewCallActivityStatistics(), nil
+                    case "#microsoft.graph.callEvent":
+                        return NewCallEvent(), nil
                     case "#microsoft.graph.callRecording":
                         return NewCallRecording(), nil
                     case "#microsoft.graph.callTranscript":
@@ -728,6 +736,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDailyInactiveUsersByApplicationMetric(), nil
                     case "#microsoft.graph.dailyInactiveUsersMetric":
                         return NewDailyInactiveUsersMetric(), nil
+                    case "#microsoft.graph.dailyUserInsightMetricsRoot":
+                        return NewDailyUserInsightMetricsRoot(), nil
                     case "#microsoft.graph.dataClassificationService":
                         return NewDataClassificationService(), nil
                     case "#microsoft.graph.dataCollectionInfo":
@@ -1412,6 +1422,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewInformationProtectionPolicy(), nil
                     case "#microsoft.graph.insightsSettings":
                         return NewInsightsSettings(), nil
+                    case "#microsoft.graph.insightSummary":
+                        return NewInsightSummary(), nil
                     case "#microsoft.graph.internalDomainFederation":
                         return NewInternalDomainFederation(), nil
                     case "#microsoft.graph.internetExplorerMode":
@@ -1732,6 +1744,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMessageRule(), nil
                     case "#microsoft.graph.messageTrace":
                         return NewMessageTrace(), nil
+                    case "#microsoft.graph.mfaCompletionMetric":
+                        return NewMfaCompletionMetric(), nil
                     case "#microsoft.graph.microsoftAccountUserConversationMember":
                         return NewMicrosoftAccountUserConversationMember(), nil
                     case "#microsoft.graph.microsoftApplicationDataAccessSettings":
@@ -1796,6 +1810,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMonthlyInactiveUsersByApplicationMetric(), nil
                     case "#microsoft.graph.monthlyInactiveUsersMetric":
                         return NewMonthlyInactiveUsersMetric(), nil
+                    case "#microsoft.graph.monthlyUserInsightMetricsRoot":
+                        return NewMonthlyUserInsightMetricsRoot(), nil
                     case "#microsoft.graph.multiTenantOrganization":
                         return NewMultiTenantOrganization(), nil
                     case "#microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate":
@@ -2672,6 +2688,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserConfiguration(), nil
                     case "#microsoft.graph.userConsentRequest":
                         return NewUserConsentRequest(), nil
+                    case "#microsoft.graph.userCountMetric":
+                        return NewUserCountMetric(), nil
                     case "#microsoft.graph.userCredentialUsageDetails":
                         return NewUserCredentialUsageDetails(), nil
                     case "#microsoft.graph.userExperienceAnalyticsAnomaly":
@@ -2764,6 +2782,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserFlowLanguageConfiguration(), nil
                     case "#microsoft.graph.userFlowLanguagePage":
                         return NewUserFlowLanguagePage(), nil
+                    case "#microsoft.graph.userInsightsRoot":
+                        return NewUserInsightsRoot(), nil
                     case "#microsoft.graph.userInsightsSettings":
                         return NewUserInsightsSettings(), nil
                     case "#microsoft.graph.userInstallStateSummary":
@@ -2772,6 +2792,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserPFXCertificate(), nil
                     case "#microsoft.graph.userRegistrationDetails":
                         return NewUserRegistrationDetails(), nil
+                    case "#microsoft.graph.userRequestsMetric":
+                        return NewUserRequestsMetric(), nil
                     case "#microsoft.graph.userScopeTeamsAppInstallation":
                         return NewUserScopeTeamsAppInstallation(), nil
                     case "#microsoft.graph.userSecurityProfile":
@@ -2780,6 +2802,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserSettings(), nil
                     case "#microsoft.graph.userSignInInsight":
                         return NewUserSignInInsight(), nil
+                    case "#microsoft.graph.userSignUpMetric":
+                        return NewUserSignUpMetric(), nil
                     case "#microsoft.graph.userTeamwork":
                         return NewUserTeamwork(), nil
                     case "#microsoft.graph.userVirtualEventsRoot":

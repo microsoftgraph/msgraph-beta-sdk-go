@@ -39,9 +39,30 @@ func (m *Destination) GetAdditionalData()(map[string]any) {
 func (m *Destination) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
+// GetDeviceCount gets the deviceCount property value. The deviceCount property
+func (m *Destination) GetDeviceCount()(*int32) {
+    val, err := m.GetBackingStore().Get("deviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Destination) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["deviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceCount(val)
+        }
+        return nil
+    }
     res["fqdn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -109,6 +130,26 @@ func (m *Destination) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         if val != nil {
             m.SetTrafficType(val.(*TrafficType))
+        }
+        return nil
+    }
+    res["transactionCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTransactionCount(val)
+        }
+        return nil
+    }
+    res["userCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserCount(val)
         }
         return nil
     }
@@ -191,8 +232,36 @@ func (m *Destination) GetTrafficType()(*TrafficType) {
     }
     return nil
 }
+// GetTransactionCount gets the transactionCount property value. The transactionCount property
+func (m *Destination) GetTransactionCount()(*int32) {
+    val, err := m.GetBackingStore().Get("transactionCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetUserCount gets the userCount property value. The userCount property
+func (m *Destination) GetUserCount()(*int32) {
+    val, err := m.GetBackingStore().Get("userCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *Destination) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteInt32Value("deviceCount", m.GetDeviceCount())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("fqdn", m.GetFqdn())
         if err != nil {
@@ -238,6 +307,18 @@ func (m *Destination) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err := writer.WriteInt32Value("transactionCount", m.GetTransactionCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteInt32Value("userCount", m.GetUserCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
@@ -255,6 +336,13 @@ func (m *Destination) SetAdditionalData(value map[string]any)() {
 // SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *Destination) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
+}
+// SetDeviceCount sets the deviceCount property value. The deviceCount property
+func (m *Destination) SetDeviceCount(value *int32)() {
+    err := m.GetBackingStore().Set("deviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFqdn sets the fqdn property value. The fqdn property
 func (m *Destination) SetFqdn(value *string)() {
@@ -305,12 +393,27 @@ func (m *Destination) SetTrafficType(value *TrafficType)() {
         panic(err)
     }
 }
+// SetTransactionCount sets the transactionCount property value. The transactionCount property
+func (m *Destination) SetTransactionCount(value *int32)() {
+    err := m.GetBackingStore().Set("transactionCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetUserCount sets the userCount property value. The userCount property
+func (m *Destination) SetUserCount(value *int32)() {
+    err := m.GetBackingStore().Set("userCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // Destinationable 
 type Destinationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDeviceCount()(*int32)
     GetFqdn()(*string)
     GetIp()(*string)
     GetLastAccessDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -318,7 +421,10 @@ type Destinationable interface {
     GetOdataType()(*string)
     GetPort()(*int32)
     GetTrafficType()(*TrafficType)
+    GetTransactionCount()(*int32)
+    GetUserCount()(*int32)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDeviceCount(value *int32)()
     SetFqdn(value *string)()
     SetIp(value *string)()
     SetLastAccessDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -326,4 +432,6 @@ type Destinationable interface {
     SetOdataType(value *string)()
     SetPort(value *int32)()
     SetTrafficType(value *TrafficType)()
+    SetTransactionCount(value *int32)()
+    SetUserCount(value *int32)()
 }

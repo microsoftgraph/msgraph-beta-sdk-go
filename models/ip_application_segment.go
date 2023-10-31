@@ -32,6 +32,17 @@ func (m *IpApplicationSegment) GetDestinationHost()(*string) {
     }
     return nil
 }
+// GetDestinationType gets the destinationType property value. The destinationType property
+func (m *IpApplicationSegment) GetDestinationType()(*PrivateNetworkDestinationType) {
+    val, err := m.GetBackingStore().Get("destinationType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PrivateNetworkDestinationType)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IpApplicationSegment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ApplicationSegment.GetFieldDeserializers()
@@ -42,6 +53,16 @@ func (m *IpApplicationSegment) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetDestinationHost(val)
+        }
+        return nil
+    }
+    res["destinationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParsePrivateNetworkDestinationType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDestinationType(val.(*PrivateNetworkDestinationType))
         }
         return nil
     }
@@ -71,6 +92,16 @@ func (m *IpApplicationSegment) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["protocol"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParsePrivateNetworkProtocol)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProtocol(val.(*PrivateNetworkProtocol))
+        }
+        return nil
+    }
     return res
 }
 // GetPort gets the port property value. The port property
@@ -95,6 +126,17 @@ func (m *IpApplicationSegment) GetPorts()([]string) {
     }
     return nil
 }
+// GetProtocol gets the protocol property value. The protocol property
+func (m *IpApplicationSegment) GetProtocol()(*PrivateNetworkProtocol) {
+    val, err := m.GetBackingStore().Get("protocol")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PrivateNetworkProtocol)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *IpApplicationSegment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.ApplicationSegment.Serialize(writer)
@@ -103,6 +145,13 @@ func (m *IpApplicationSegment) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err = writer.WriteStringValue("destinationHost", m.GetDestinationHost())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetDestinationType() != nil {
+        cast := (*m.GetDestinationType()).String()
+        err = writer.WriteStringValue("destinationType", &cast)
         if err != nil {
             return err
         }
@@ -119,11 +168,25 @@ func (m *IpApplicationSegment) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    if m.GetProtocol() != nil {
+        cast := (*m.GetProtocol()).String()
+        err = writer.WriteStringValue("protocol", &cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDestinationHost sets the destinationHost property value. The destinationHost property
 func (m *IpApplicationSegment) SetDestinationHost(value *string)() {
     err := m.GetBackingStore().Set("destinationHost", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDestinationType sets the destinationType property value. The destinationType property
+func (m *IpApplicationSegment) SetDestinationType(value *PrivateNetworkDestinationType)() {
+    err := m.GetBackingStore().Set("destinationType", value)
     if err != nil {
         panic(err)
     }
@@ -142,14 +205,25 @@ func (m *IpApplicationSegment) SetPorts(value []string)() {
         panic(err)
     }
 }
+// SetProtocol sets the protocol property value. The protocol property
+func (m *IpApplicationSegment) SetProtocol(value *PrivateNetworkProtocol)() {
+    err := m.GetBackingStore().Set("protocol", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // IpApplicationSegmentable 
 type IpApplicationSegmentable interface {
     ApplicationSegmentable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDestinationHost()(*string)
+    GetDestinationType()(*PrivateNetworkDestinationType)
     GetPort()(*int32)
     GetPorts()([]string)
+    GetProtocol()(*PrivateNetworkProtocol)
     SetDestinationHost(value *string)()
+    SetDestinationType(value *PrivateNetworkDestinationType)()
     SetPort(value *int32)()
     SetPorts(value []string)()
+    SetProtocol(value *PrivateNetworkProtocol)()
 }

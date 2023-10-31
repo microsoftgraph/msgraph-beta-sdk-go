@@ -114,6 +114,26 @@ func (m *PositionDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["layer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLayer(val)
+        }
+        return nil
+    }
+    res["level"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLevel(val)
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -159,6 +179,28 @@ func (m *PositionDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 // GetJobTitle gets the jobTitle property value. The title held when in that position.
 func (m *PositionDetail) GetJobTitle()(*string) {
     val, err := m.GetBackingStore().Get("jobTitle")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetLayer gets the layer property value. The layer property
+func (m *PositionDetail) GetLayer()(*int32) {
+    val, err := m.GetBackingStore().Get("layer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetLevel gets the level property value. The level property
+func (m *PositionDetail) GetLevel()(*string) {
+    val, err := m.GetBackingStore().Get("level")
     if err != nil {
         panic(err)
     }
@@ -238,6 +280,18 @@ func (m *PositionDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
+        err := writer.WriteInt32Value("layer", m.GetLayer())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("level", m.GetLevel())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
@@ -308,6 +362,20 @@ func (m *PositionDetail) SetJobTitle(value *string)() {
         panic(err)
     }
 }
+// SetLayer sets the layer property value. The layer property
+func (m *PositionDetail) SetLayer(value *int32)() {
+    err := m.GetBackingStore().Set("layer", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLevel sets the level property value. The level property
+func (m *PositionDetail) SetLevel(value *string)() {
+    err := m.GetBackingStore().Set("level", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PositionDetail) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -346,6 +414,8 @@ type PositionDetailable interface {
     GetDescription()(*string)
     GetEndMonthYear()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetJobTitle()(*string)
+    GetLayer()(*int32)
+    GetLevel()(*string)
     GetOdataType()(*string)
     GetRole()(*string)
     GetStartMonthYear()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
@@ -355,6 +425,8 @@ type PositionDetailable interface {
     SetDescription(value *string)()
     SetEndMonthYear(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetJobTitle(value *string)()
+    SetLayer(value *int32)()
+    SetLevel(value *string)()
     SetOdataType(value *string)()
     SetRole(value *string)()
     SetStartMonthYear(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()

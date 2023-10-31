@@ -53,7 +53,7 @@ func (m *LandingPage) GetDescription()(*string) {
     }
     return nil
 }
-// GetDetails gets the details property value. The details property
+// GetDetails gets the details property value. The detail information for a landing page associated with a simulation during its creation.
 func (m *LandingPage) GetDetails()([]LandingPageDetailable) {
     val, err := m.GetBackingStore().Get("details")
     if err != nil {
@@ -371,7 +371,7 @@ func (m *LandingPage) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetDetails sets the details property value. The details property
+// SetDetails sets the details property value. The detail information for a landing page associated with a simulation during its creation.
 func (m *LandingPage) SetDetails(value []LandingPageDetailable)() {
     err := m.GetBackingStore().Set("details", value)
     if err != nil {
