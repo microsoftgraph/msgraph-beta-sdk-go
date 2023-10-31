@@ -176,6 +176,16 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["isDnsResolutionEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsDnsResolutionEnabled(val)
+        }
+        return nil
+    }
     res["isHttpOnlyCookieEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -359,6 +369,17 @@ func (m *OnPremisesPublishing) GetIsAccessibleViaZTNAClient()(*bool) {
 // GetIsBackendCertificateValidationEnabled gets the isBackendCertificateValidationEnabled property value. Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property is set to true by default. For all existing apps, the property is set to false.
 func (m *OnPremisesPublishing) GetIsBackendCertificateValidationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isBackendCertificateValidationEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetIsDnsResolutionEnabled gets the isDnsResolutionEnabled property value. The isDnsResolutionEnabled property
+func (m *OnPremisesPublishing) GetIsDnsResolutionEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isDnsResolutionEnabled")
     if err != nil {
         panic(err)
     }
@@ -584,6 +605,12 @@ func (m *OnPremisesPublishing) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err := writer.WriteBoolValue("isDnsResolutionEnabled", m.GetIsDnsResolutionEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteBoolValue("isHttpOnlyCookieEnabled", m.GetIsHttpOnlyCookieEnabled())
         if err != nil {
             return err
@@ -754,6 +781,13 @@ func (m *OnPremisesPublishing) SetIsBackendCertificateValidationEnabled(value *b
         panic(err)
     }
 }
+// SetIsDnsResolutionEnabled sets the isDnsResolutionEnabled property value. The isDnsResolutionEnabled property
+func (m *OnPremisesPublishing) SetIsDnsResolutionEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isDnsResolutionEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsHttpOnlyCookieEnabled sets the isHttpOnlyCookieEnabled property value. Indicates if the HTTPOnly cookie flag should be set in the HTTP response headers. Set this value to true to have Application Proxy cookies include the HTTPOnly flag in the HTTP response headers. If using Remote Desktop Services, set this value to False. Default value is false.
 func (m *OnPremisesPublishing) SetIsHttpOnlyCookieEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isHttpOnlyCookieEnabled", value)
@@ -873,6 +907,7 @@ type OnPremisesPublishingable interface {
     GetInternalUrl()(*string)
     GetIsAccessibleViaZTNAClient()(*bool)
     GetIsBackendCertificateValidationEnabled()(*bool)
+    GetIsDnsResolutionEnabled()(*bool)
     GetIsHttpOnlyCookieEnabled()(*bool)
     GetIsOnPremPublishingEnabled()(*bool)
     GetIsPersistentCookieEnabled()(*bool)
@@ -897,6 +932,7 @@ type OnPremisesPublishingable interface {
     SetInternalUrl(value *string)()
     SetIsAccessibleViaZTNAClient(value *bool)()
     SetIsBackendCertificateValidationEnabled(value *bool)()
+    SetIsDnsResolutionEnabled(value *bool)()
     SetIsHttpOnlyCookieEnabled(value *bool)()
     SetIsOnPremPublishingEnabled(value *bool)()
     SetIsPersistentCookieEnabled(value *bool)()

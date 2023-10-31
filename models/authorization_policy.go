@@ -33,7 +33,7 @@ func (m *AuthorizationPolicy) GetAllowedToSignUpEmailBasedSubscriptions()(*bool)
     }
     return nil
 }
-// GetAllowedToUseSSPR gets the allowedToUseSSPR property value. Indicates whether the Admin Self-Serve Password Reset feature is enabled on the tenant.
+// GetAllowedToUseSSPR gets the allowedToUseSSPR property value. Indicates whether users can use the Self-Service Password Reset feature on the tenant.
 func (m *AuthorizationPolicy) GetAllowedToUseSSPR()(*bool) {
     val, err := m.GetBackingStore().Get("allowedToUseSSPR")
     if err != nil {
@@ -364,7 +364,7 @@ func (m *AuthorizationPolicy) SetAllowedToSignUpEmailBasedSubscriptions(value *b
         panic(err)
     }
 }
-// SetAllowedToUseSSPR sets the allowedToUseSSPR property value. Indicates whether the Admin Self-Serve Password Reset feature is enabled on the tenant.
+// SetAllowedToUseSSPR sets the allowedToUseSSPR property value. Indicates whether users can use the Self-Service Password Reset feature on the tenant.
 func (m *AuthorizationPolicy) SetAllowedToUseSSPR(value *bool)() {
     err := m.GetBackingStore().Set("allowedToUseSSPR", value)
     if err != nil {

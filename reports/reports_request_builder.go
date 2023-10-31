@@ -688,6 +688,10 @@ func (m *ReportsRequestBuilder) ToPatchRequestInformation(ctx context.Context, b
 func (m *ReportsRequestBuilder) UserCredentialUsageDetails()(*UserCredentialUsageDetailsRequestBuilder) {
     return NewUserCredentialUsageDetailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// UserInsights provides operations to manage the userInsights property of the microsoft.graph.reportRoot entity.
+func (m *ReportsRequestBuilder) UserInsights()(*UserInsightsRequestBuilder) {
+    return NewUserInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 func (m *ReportsRequestBuilder) WithUrl(rawUrl string)(*ReportsRequestBuilder) {
     return NewReportsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

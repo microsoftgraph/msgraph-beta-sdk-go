@@ -24,22 +24,6 @@ func CreateFido2AuthenticationMethodConfigurationFromDiscriminatorValue(parseNod
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Fido2AuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethodConfiguration.GetFieldDeserializers()
-    res["includeTargets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAuthenticationMethodTargetFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AuthenticationMethodTargetable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(AuthenticationMethodTargetable)
-                }
-            }
-            m.SetIncludeTargets(res)
-        }
-        return nil
-    }
     res["isAttestationEnforced"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -71,17 +55,6 @@ func (m *Fido2AuthenticationMethodConfiguration) GetFieldDeserializers()(map[str
         return nil
     }
     return res
-}
-// GetIncludeTargets gets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
-func (m *Fido2AuthenticationMethodConfiguration) GetIncludeTargets()([]AuthenticationMethodTargetable) {
-    val, err := m.GetBackingStore().Get("includeTargets")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]AuthenticationMethodTargetable)
-    }
-    return nil
 }
 // GetIsAttestationEnforced gets the isAttestationEnforced property value. Determines whether attestation must be enforced for FIDO2 security key registration.
 func (m *Fido2AuthenticationMethodConfiguration) GetIsAttestationEnforced()(*bool) {
@@ -122,18 +95,6 @@ func (m *Fido2AuthenticationMethodConfiguration) Serialize(writer i878a80d2330e8
     if err != nil {
         return err
     }
-    if m.GetIncludeTargets() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIncludeTargets()))
-        for i, v := range m.GetIncludeTargets() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("includeTargets", cast)
-        if err != nil {
-            return err
-        }
-    }
     {
         err = writer.WriteBoolValue("isAttestationEnforced", m.GetIsAttestationEnforced())
         if err != nil {
@@ -153,13 +114,6 @@ func (m *Fido2AuthenticationMethodConfiguration) Serialize(writer i878a80d2330e8
         }
     }
     return nil
-}
-// SetIncludeTargets sets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
-func (m *Fido2AuthenticationMethodConfiguration) SetIncludeTargets(value []AuthenticationMethodTargetable)() {
-    err := m.GetBackingStore().Set("includeTargets", value)
-    if err != nil {
-        panic(err)
-    }
 }
 // SetIsAttestationEnforced sets the isAttestationEnforced property value. Determines whether attestation must be enforced for FIDO2 security key registration.
 func (m *Fido2AuthenticationMethodConfiguration) SetIsAttestationEnforced(value *bool)() {
@@ -186,11 +140,9 @@ func (m *Fido2AuthenticationMethodConfiguration) SetKeyRestrictions(value Fido2K
 type Fido2AuthenticationMethodConfigurationable interface {
     AuthenticationMethodConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetIncludeTargets()([]AuthenticationMethodTargetable)
     GetIsAttestationEnforced()(*bool)
     GetIsSelfServiceRegistrationAllowed()(*bool)
     GetKeyRestrictions()(Fido2KeyRestrictionsable)
-    SetIncludeTargets(value []AuthenticationMethodTargetable)()
     SetIsAttestationEnforced(value *bool)()
     SetIsSelfServiceRegistrationAllowed(value *bool)()
     SetKeyRestrictions(value Fido2KeyRestrictionsable)()

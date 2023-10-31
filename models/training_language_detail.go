@@ -42,7 +42,7 @@ func (m *TrainingLanguageDetail) GetCreatedBy()(EmailIdentityable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. Date and time when the language details were created.
+// GetCreatedDateTime gets the createdDateTime property value. Date and time when the language details were created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *TrainingLanguageDetail) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -290,7 +290,7 @@ func (m *TrainingLanguageDetail) SetCreatedBy(value EmailIdentityable)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. Date and time when the language details were created.
+// SetCreatedDateTime sets the createdDateTime property value. Date and time when the language details were created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *TrainingLanguageDetail) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {

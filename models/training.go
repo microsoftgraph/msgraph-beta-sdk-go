@@ -20,7 +20,7 @@ func NewTraining()(*Training) {
 func CreateTrainingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTraining(), nil
 }
-// GetAvailabilityStatus gets the availabilityStatus property value. Training availability status.Possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.
+// GetAvailabilityStatus gets the availabilityStatus property value. Training availability status. Possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.
 func (m *Training) GetAvailabilityStatus()(*TrainingAvailabilityStatus) {
     val, err := m.GetBackingStore().Get("availabilityStatus")
     if err != nil {
@@ -438,7 +438,7 @@ func (m *Training) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetAvailabilityStatus sets the availabilityStatus property value. Training availability status.Possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.
+// SetAvailabilityStatus sets the availabilityStatus property value. Training availability status. Possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.
 func (m *Training) SetAvailabilityStatus(value *TrainingAvailabilityStatus)() {
     err := m.GetBackingStore().Set("availabilityStatus", value)
     if err != nil {

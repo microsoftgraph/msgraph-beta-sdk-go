@@ -96,6 +96,10 @@ func (m *AuthenticationEventsFlowsRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventsFlowCollectionResponseable), nil
 }
+// GraphExternalUsersSelfServiceSignUpEventsFlow casts the previous resource to externalUsersSelfServiceSignUpEventsFlow.
+func (m *AuthenticationEventsFlowsRequestBuilder) GraphExternalUsersSelfServiceSignUpEventsFlow()(*AuthenticationEventsFlowsGraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder) {
+    return NewAuthenticationEventsFlowsGraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Post create a new authenticationEventsFlow object that is of the type specified in the request body. You can create only an externalUsersSelfServiceSignupEventsFlow object type. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 

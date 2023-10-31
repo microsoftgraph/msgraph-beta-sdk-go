@@ -82,6 +82,16 @@ func (m *RelatedPerson) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserId(val)
+        }
+        return nil
+    }
     res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -116,6 +126,17 @@ func (m *RelatedPerson) GetRelationship()(*PersonRelationship) {
     }
     return nil
 }
+// GetUserId gets the userId property value. The userId property
+func (m *RelatedPerson) GetUserId()(*string) {
+    val, err := m.GetBackingStore().Get("userId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetUserPrincipalName gets the userPrincipalName property value. Email address or reference to person within organization.
 func (m *RelatedPerson) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
@@ -144,6 +165,12 @@ func (m *RelatedPerson) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetRelationship() != nil {
         cast := (*m.GetRelationship()).String()
         err := writer.WriteStringValue("relationship", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("userId", m.GetUserId())
         if err != nil {
             return err
         }
@@ -194,6 +221,13 @@ func (m *RelatedPerson) SetRelationship(value *PersonRelationship)() {
         panic(err)
     }
 }
+// SetUserId sets the userId property value. The userId property
+func (m *RelatedPerson) SetUserId(value *string)() {
+    err := m.GetBackingStore().Set("userId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUserPrincipalName sets the userPrincipalName property value. Email address or reference to person within organization.
 func (m *RelatedPerson) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
@@ -210,10 +244,12 @@ type RelatedPersonable interface {
     GetDisplayName()(*string)
     GetOdataType()(*string)
     GetRelationship()(*PersonRelationship)
+    GetUserId()(*string)
     GetUserPrincipalName()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDisplayName(value *string)()
     SetOdataType(value *string)()
     SetRelationship(value *PersonRelationship)()
+    SetUserId(value *string)()
     SetUserPrincipalName(value *string)()
 }

@@ -18,7 +18,7 @@ type WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderGetQueryParameters read the properties of an azureADDevice object. This API is available in the following national cloud deployments.
+// WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderGetQueryParameters read the properties and relationships of an updatableAsset object. This API is available in the following national cloud deployments.
 type WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,10 +73,10 @@ func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get read the properties of an azureADDevice object. This API is available in the following national cloud deployments.
+// Get read the properties and relationships of an updatableAsset object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-azureaddevice-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-get?view=graph-rest-1.0
 func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -143,7 +143,7 @@ func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) ToDelete
     requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties of an azureADDevice object. This API is available in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of an updatableAsset object. This API is available in the following national cloud deployments.
 func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

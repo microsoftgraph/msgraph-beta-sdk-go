@@ -20,7 +20,7 @@ func NewPayload()(*Payload) {
 func CreatePayloadFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPayload(), nil
 }
-// GetBrand gets the brand property value. The branch of a payload. Possible values are: unknown, other, americanExpress, capitalOne, dhl, docuSign, dropbox, facebook, firstAmerican, microsoft, netflix, scotiabank, stewartTitle, tesco, wellsFargo, syrinxCloud, adobe, teams, zoom, unknownFutureValue.
+// GetBrand gets the brand property value. The branch of a payload. Possible values are: unknown, other, americanExpress, capitalOne, dhl, docuSign, dropbox, facebook, firstAmerican, microsoft, netflix, scotiabank, sendGrid, stewartTitle, tesco, wellsFargo, syrinxCloud, adobe, teams, zoom, unknownFutureValue.
 func (m *Payload) GetBrand()(*PayloadBrand) {
     val, err := m.GetBackingStore().Get("brand")
     if err != nil {
@@ -31,7 +31,7 @@ func (m *Payload) GetBrand()(*PayloadBrand) {
     }
     return nil
 }
-// GetComplexity gets the complexity property value. The complexity of a payload.Possible values are: unknown, low, medium, high, unknownFutureValue
+// GetComplexity gets the complexity property value. The complexity of a payload. Possible values are: unknown, low, medium, high, unknownFutureValue.
 func (m *Payload) GetComplexity()(*PayloadComplexity) {
     val, err := m.GetBackingStore().Get("complexity")
     if err != nil {
@@ -53,7 +53,7 @@ func (m *Payload) GetCreatedBy()(EmailIdentityable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. Date and time when the attack simulation and training campaign payload.
+// GetCreatedDateTime gets the createdDateTime property value. Date and time when the attack simulation and training campaign payload. The timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *Payload) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -394,7 +394,7 @@ func (m *Payload) GetLastModifiedBy()(EmailIdentityable) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time when the attack simulation and training campaign payload was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time when the attack simulation and training campaign payload was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *Payload) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -460,7 +460,7 @@ func (m *Payload) GetSource()(*SimulationContentSource) {
     }
     return nil
 }
-// GetStatus gets the status property value. Simulation content status. Supports $filter and $orderby. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue. Inherited from simulation.
+// GetStatus gets the status property value. Simulation content status. Supports $filter and $orderby. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
 func (m *Payload) GetStatus()(*SimulationContentStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -471,7 +471,7 @@ func (m *Payload) GetStatus()(*SimulationContentStatus) {
     }
     return nil
 }
-// GetTechnique gets the technique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue. For more information on the types of social engineering attack techniques, see simulations.
+// GetTechnique gets the technique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.
 func (m *Payload) GetTechnique()(*SimulationAttackTechnique) {
     val, err := m.GetBackingStore().Get("technique")
     if err != nil {
@@ -482,7 +482,7 @@ func (m *Payload) GetTechnique()(*SimulationAttackTechnique) {
     }
     return nil
 }
-// GetTheme gets the theme property value. The theme of a payload. Possible values are: unknown, other, accountActivation, accountVerification, billing, cleanUpMail, controversial, documentReceived, expense, incomingMessages, invoice, itemReceived, loginAlert, mailReceived, password, payment, payroll, personalizedOffer, quarantine, remoteWork, reviewMessage, securityUpdate, serviceSuspended, signatureRequired, upgradeMailboxStorage, verifyMailbox, voicemail, advertisement, employeeEngagement, unknownFutureValue.
+// GetTheme gets the theme property value. The theme of a payload. Possible values are: unknown, other, accountActivation, accountVerification, billing, cleanUpMail, controversial, documentReceived, expense, fax, financeReport, incomingMessages, invoice, itemReceived, loginAlert, mailReceived, password, payment, payroll, personalizedOffer, quarantine, remoteWork, reviewMessage, securityUpdate, serviceSuspended, signatureRequired, upgradeMailboxStorage, verifyMailbox, voicemail, advertisement, employeeEngagement, unknownFutureValue.
 func (m *Payload) GetTheme()(*PayloadTheme) {
     val, err := m.GetBackingStore().Get("theme")
     if err != nil {
@@ -642,14 +642,14 @@ func (m *Payload) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     return nil
 }
-// SetBrand sets the brand property value. The branch of a payload. Possible values are: unknown, other, americanExpress, capitalOne, dhl, docuSign, dropbox, facebook, firstAmerican, microsoft, netflix, scotiabank, stewartTitle, tesco, wellsFargo, syrinxCloud, adobe, teams, zoom, unknownFutureValue.
+// SetBrand sets the brand property value. The branch of a payload. Possible values are: unknown, other, americanExpress, capitalOne, dhl, docuSign, dropbox, facebook, firstAmerican, microsoft, netflix, scotiabank, sendGrid, stewartTitle, tesco, wellsFargo, syrinxCloud, adobe, teams, zoom, unknownFutureValue.
 func (m *Payload) SetBrand(value *PayloadBrand)() {
     err := m.GetBackingStore().Set("brand", value)
     if err != nil {
         panic(err)
     }
 }
-// SetComplexity sets the complexity property value. The complexity of a payload.Possible values are: unknown, low, medium, high, unknownFutureValue
+// SetComplexity sets the complexity property value. The complexity of a payload. Possible values are: unknown, low, medium, high, unknownFutureValue.
 func (m *Payload) SetComplexity(value *PayloadComplexity)() {
     err := m.GetBackingStore().Set("complexity", value)
     if err != nil {
@@ -663,7 +663,7 @@ func (m *Payload) SetCreatedBy(value EmailIdentityable)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. Date and time when the attack simulation and training campaign payload.
+// SetCreatedDateTime sets the createdDateTime property value. Date and time when the attack simulation and training campaign payload. The timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *Payload) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
@@ -733,7 +733,7 @@ func (m *Payload) SetLastModifiedBy(value EmailIdentityable)() {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Date and time when the attack simulation and training campaign payload was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Date and time when the attack simulation and training campaign payload was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *Payload) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
@@ -775,21 +775,21 @@ func (m *Payload) SetSource(value *SimulationContentSource)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Simulation content status. Supports $filter and $orderby. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue. Inherited from simulation.
+// SetStatus sets the status property value. Simulation content status. Supports $filter and $orderby. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
 func (m *Payload) SetStatus(value *SimulationContentStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTechnique sets the technique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue. For more information on the types of social engineering attack techniques, see simulations.
+// SetTechnique sets the technique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.
 func (m *Payload) SetTechnique(value *SimulationAttackTechnique)() {
     err := m.GetBackingStore().Set("technique", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTheme sets the theme property value. The theme of a payload. Possible values are: unknown, other, accountActivation, accountVerification, billing, cleanUpMail, controversial, documentReceived, expense, incomingMessages, invoice, itemReceived, loginAlert, mailReceived, password, payment, payroll, personalizedOffer, quarantine, remoteWork, reviewMessage, securityUpdate, serviceSuspended, signatureRequired, upgradeMailboxStorage, verifyMailbox, voicemail, advertisement, employeeEngagement, unknownFutureValue.
+// SetTheme sets the theme property value. The theme of a payload. Possible values are: unknown, other, accountActivation, accountVerification, billing, cleanUpMail, controversial, documentReceived, expense, fax, financeReport, incomingMessages, invoice, itemReceived, loginAlert, mailReceived, password, payment, payroll, personalizedOffer, quarantine, remoteWork, reviewMessage, securityUpdate, serviceSuspended, signatureRequired, upgradeMailboxStorage, verifyMailbox, voicemail, advertisement, employeeEngagement, unknownFutureValue.
 func (m *Payload) SetTheme(value *PayloadTheme)() {
     err := m.GetBackingStore().Set("theme", value)
     if err != nil {

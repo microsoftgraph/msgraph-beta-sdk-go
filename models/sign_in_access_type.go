@@ -13,13 +13,14 @@ const (
     MICROSOFTSUPPORT_SIGNINACCESSTYPE
     SERVICEPROVIDER_SIGNINACCESSTYPE
     UNKNOWNFUTUREVALUE_SIGNINACCESSTYPE
+    PASSTHROUGH_SIGNINACCESSTYPE
 )
 
 func (i SignInAccessType) String() string {
     var values []string
-    for p := SignInAccessType(1); p <= UNKNOWNFUTUREVALUE_SIGNINACCESSTYPE; p <<= 1 {
+    for p := SignInAccessType(1); p <= PASSTHROUGH_SIGNINACCESSTYPE; p <<= 1 {
         if i&p == p {
-            values = append(values, []string{"none", "b2bCollaboration", "b2bDirectConnect", "microsoftSupport", "serviceProvider", "unknownFutureValue"}[p])
+            values = append(values, []string{"none", "b2bCollaboration", "b2bDirectConnect", "microsoftSupport", "serviceProvider", "unknownFutureValue", "passthrough"}[p])
         }
     }
     return strings.Join(values, ",")
@@ -41,6 +42,8 @@ func ParseSignInAccessType(v string) (any, error) {
                 result |= SERVICEPROVIDER_SIGNINACCESSTYPE
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_SIGNINACCESSTYPE
+            case "passthrough":
+                result |= PASSTHROUGH_SIGNINACCESSTYPE
             default:
                 return 0, errors.New("Unknown SignInAccessType value: " + v)
         }
