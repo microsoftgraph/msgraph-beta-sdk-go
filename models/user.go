@@ -22,7 +22,7 @@ func NewUser()(*User) {
 func CreateUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUser(), nil
 }
-// GetAboutMe gets the aboutMe property value. A freeform text entry field for the user to describe themselves. Returned only on $select.
+// GetAboutMe gets the aboutMe property value. A freeform text entry field for users to describe themselves. Returned only on $select.
 func (m *User) GetAboutMe()(*string) {
     val, err := m.GetBackingStore().Get("aboutMe")
     if err != nil {
@@ -55,7 +55,7 @@ func (m *User) GetActivities()([]UserActivityable) {
     }
     return nil
 }
-// GetAgeGroup gets the ageGroup property value. Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).
+// GetAgeGroup gets the ageGroup property value. Sets the age group of the user. Allowed values: null, Minor, NotAdult, and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).
 func (m *User) GetAgeGroup()(*string) {
     val, err := m.GetBackingStore().Get("ageGroup")
     if err != nil {
@@ -132,7 +132,7 @@ func (m *User) GetApprovals()([]Approvalable) {
     }
     return nil
 }
-// GetAssignedLicenses gets the assignedLicenses property value. The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
+// GetAssignedLicenses gets the assignedLicenses property value. The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate between directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
 func (m *User) GetAssignedLicenses()([]AssignedLicenseable) {
     val, err := m.GetBackingStore().Get("assignedLicenses")
     if err != nil {
@@ -165,7 +165,7 @@ func (m *User) GetAuthentication()(Authenticationable) {
     }
     return nil
 }
-// GetAuthorizationInfo gets the authorizationInfo property value. Identifiers that can be used to identify and authenticate a user in non-Azure AD environments. This property can be used to store identifiers for smartcard-based certificates that a user uses for access to on-premises Active Directory deployments or for federated access. It can also be used to store the Subject Alternate Name (SAN) that's associated with a Common Access Card (CAC). Nullable.Supports $filter (eq and startsWith).
+// GetAuthorizationInfo gets the authorizationInfo property value. Identifiers that can be used to identify and authenticate a user in non-Azure AD environments. This property can store identifiers for smartcard-based certificates that users use to access on-premises Active Directory deployments or federated access. It can also be used to store the Subject Alternate Name (SAN) that's associated with a Common Access Card (CAC). Nullable.Supports $filter (eq and startsWith).
 func (m *User) GetAuthorizationInfo()(AuthorizationInfoable) {
     val, err := m.GetBackingStore().Get("authorizationInfo")
     if err != nil {
@@ -176,7 +176,7 @@ func (m *User) GetAuthorizationInfo()(AuthorizationInfoable) {
     }
     return nil
 }
-// GetBirthday gets the birthday property value. The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
+// GetBirthday gets the birthday property value. The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
 func (m *User) GetBirthday()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("birthday")
     if err != nil {
@@ -286,7 +286,7 @@ func (m *User) GetCloudRealtimeCommunicationInfo()(CloudRealtimeCommunicationInf
     }
     return nil
 }
-// GetCompanyName gets the companyName property value. The name of the company that the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// GetCompanyName gets the companyName property value. The name of the company the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetCompanyName()(*string) {
     val, err := m.GetBackingStore().Get("companyName")
     if err != nil {
@@ -341,7 +341,7 @@ func (m *User) GetCountry()(*string) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users that were synced to Microsoft Entra ID before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).
+// GetCreatedDateTime gets the createdDateTime property value. The date and time the user was created in ISO 8601 format and UTC. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users synced to Microsoft Entra ID before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).
 func (m *User) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -374,7 +374,7 @@ func (m *User) GetCreationType()(*string) {
     }
     return nil
 }
-// GetCustomSecurityAttributes gets the customSecurityAttributes property value. An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith). Filter value is case sensitive.
+// GetCustomSecurityAttributes gets the customSecurityAttributes property value. An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith). The filter value is case-sensitive.
 func (m *User) GetCustomSecurityAttributes()(CustomSecurityAttributeValueable) {
     val, err := m.GetBackingStore().Get("customSecurityAttributes")
     if err != nil {
@@ -385,7 +385,7 @@ func (m *User) GetCustomSecurityAttributes()(CustomSecurityAttributeValueable) {
     }
     return nil
 }
-// GetDepartment gets the department property value. The name for the department in which the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
+// GetDepartment gets the department property value. The name of the department where the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
 func (m *User) GetDepartment()(*string) {
     val, err := m.GetBackingStore().Get("department")
     if err != nil {
@@ -451,7 +451,7 @@ func (m *User) GetDevices()([]Deviceable) {
     }
     return nil
 }
-// GetDirectReports gets the directReports property value. The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
+// GetDirectReports gets the directReports property value. The users and contacts that report to the user. (The users and contacts with their manager property set to this user.) Read-only. Nullable. Supports $expand.
 func (m *User) GetDirectReports()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("directReports")
     if err != nil {
@@ -462,7 +462,7 @@ func (m *User) GetDirectReports()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.
+// GetDisplayName gets the displayName property value. The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created, and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.
 func (m *User) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -506,7 +506,7 @@ func (m *User) GetEmployeeExperience()(EmployeeExperienceUserable) {
     }
     return nil
 }
-// GetEmployeeHireDate gets the employeeHireDate property value. The date and time when the user was hired or will start work in case of a future hire. Supports $filter (eq, ne, not , ge, le, in).
+// GetEmployeeHireDate gets the employeeHireDate property value. The date and time when the user was hired or will start work if there is a future hire. Supports $filter (eq, ne, not , ge, le, in).
 func (m *User) GetEmployeeHireDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("employeeHireDate")
     if err != nil {
@@ -561,7 +561,7 @@ func (m *User) GetEmployeeType()(*string) {
     }
     return nil
 }
-// GetEvents gets the events property value. The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+// GetEvents gets the events property value. The user's events. The default is to show events under the Default Calendar. Read-only. Nullable.
 func (m *User) GetEvents()([]Eventable) {
     val, err := m.GetBackingStore().Get("events")
     if err != nil {
@@ -2549,7 +2549,7 @@ func (m *User) GetGivenName()(*string) {
     }
     return nil
 }
-// GetHireDate gets the hireDate property value. The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
+// GetHireDate gets the hireDate property value. The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
 func (m *User) GetHireDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("hireDate")
     if err != nil {
@@ -2560,7 +2560,7 @@ func (m *User) GetHireDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec7
     }
     return nil
 }
-// GetIdentities gets the identities property value. Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
+// GetIdentities gets the identities property value. Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
 func (m *User) GetIdentities()([]ObjectIdentityable) {
     val, err := m.GetBackingStore().Get("identities")
     if err != nil {
@@ -2571,7 +2571,7 @@ func (m *User) GetIdentities()([]ObjectIdentityable) {
     }
     return nil
 }
-// GetImAddresses gets the imAddresses property value. The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
+// GetImAddresses gets the imAddresses property value. The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
 func (m *User) GetImAddresses()([]string) {
     val, err := m.GetBackingStore().Get("imAddresses")
     if err != nil {
@@ -2626,7 +2626,7 @@ func (m *User) GetInsights()(ItemInsightsable) {
     }
     return nil
 }
-// GetInterests gets the interests property value. A list for the user to describe their interests. Returned only on $select.
+// GetInterests gets the interests property value. A list for users to describe their interests. Returned only on $select.
 func (m *User) GetInterests()([]string) {
     val, err := m.GetBackingStore().Get("interests")
     if err != nil {
@@ -2648,7 +2648,7 @@ func (m *User) GetIsLicenseReconciliationNeeded()(*bool) {
     }
     return nil
 }
-// GetIsManagementRestricted gets the isManagementRestricted property value. true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+// GetIsManagementRestricted gets the isManagementRestricted property value. true if the user is a member of a restricted management administrative unit, which requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
 func (m *User) GetIsManagementRestricted()(*bool) {
     val, err := m.GetBackingStore().Get("isManagementRestricted")
     if err != nil {
@@ -2692,7 +2692,7 @@ func (m *User) GetJoinedGroups()([]Groupable) {
     }
     return nil
 }
-// GetJoinedTeams gets the joinedTeams property value. The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+// GetJoinedTeams gets the joinedTeams property value. The Microsoft Teams teams the user is a member of. Read-only. Nullable.
 func (m *User) GetJoinedTeams()([]Teamable) {
     val, err := m.GetBackingStore().Get("joinedTeams")
     if err != nil {
@@ -2703,7 +2703,7 @@ func (m *User) GetJoinedTeams()([]Teamable) {
     }
     return nil
 }
-// GetLastPasswordChangeDateTime gets the lastPasswordChangeDateTime property value. The time when this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
+// GetLastPasswordChangeDateTime gets the lastPasswordChangeDateTime property value. When this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
 func (m *User) GetLastPasswordChangeDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastPasswordChangeDateTime")
     if err != nil {
@@ -2714,7 +2714,7 @@ func (m *User) GetLastPasswordChangeDateTime()(*i336074805fc853987abe6f7fe3ad97a
     }
     return nil
 }
-// GetLegalAgeGroupClassification gets the legalAgeGroupClassification property value. Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. For more information, see legal age group property definitions. Returned only on $select.
+// GetLegalAgeGroupClassification gets the legalAgeGroupClassification property value. Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.
 func (m *User) GetLegalAgeGroupClassification()(*string) {
     val, err := m.GetBackingStore().Get("legalAgeGroupClassification")
     if err != nil {
@@ -2725,7 +2725,7 @@ func (m *User) GetLegalAgeGroupClassification()(*string) {
     }
     return nil
 }
-// GetLicenseAssignmentStates gets the licenseAssignmentStates property value. State of license assignments for this user. Also indicates licenses that are directly assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
+// GetLicenseAssignmentStates gets the licenseAssignmentStates property value. State of license assignments for this user. It also indicates licenses that are directly assigned and the ones the user inherited through group memberships. Read-only. Returned only on $select.
 func (m *User) GetLicenseAssignmentStates()([]LicenseAssignmentStateable) {
     val, err := m.GetBackingStore().Get("licenseAssignmentStates")
     if err != nil {
@@ -2747,7 +2747,7 @@ func (m *User) GetLicenseDetails()([]LicenseDetailsable) {
     }
     return nil
 }
-// GetMail gets the mail property value. The SMTP address for the user, for example, admin@contoso.com. Changes to this property also updates the user's proxyAddresses collection to include the value as an SMTP address. This property can't contain accent characters.  NOTE: We don't recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
+// GetMail gets the mail property value. The SMTP address for the user, for example, admin@contoso.com. Changes to this property also update the user's proxyAddresses collection to include the value as an SMTP address. This property can't contain accent characters.  NOTE: We don't recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
 func (m *User) GetMail()(*string) {
     val, err := m.GetBackingStore().Get("mail")
     if err != nil {
@@ -2824,7 +2824,7 @@ func (m *User) GetManager()(DirectoryObjectable) {
     }
     return nil
 }
-// GetMemberOf gets the memberOf property value. The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
+// GetMemberOf gets the memberOf property value. The groups, directory roles, and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
 func (m *User) GetMemberOf()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("memberOf")
     if err != nil {
@@ -2868,7 +2868,7 @@ func (m *User) GetMobileAppTroubleshootingEvents()([]MobileAppTroubleshootingEve
     }
     return nil
 }
-// GetMobilePhone gets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
+// GetMobilePhone gets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
 func (m *User) GetMobilePhone()(*string) {
     val, err := m.GetBackingStore().Get("mobilePhone")
     if err != nil {
@@ -2879,7 +2879,7 @@ func (m *User) GetMobilePhone()(*string) {
     }
     return nil
 }
-// GetMySite gets the mySite property value. The URL for the user's personal site. Returned only on $select.
+// GetMySite gets the mySite property value. The URL for the user's site. Returned only on $select.
 func (m *User) GetMySite()(*string) {
     val, err := m.GetBackingStore().Get("mySite")
     if err != nil {
@@ -2934,7 +2934,7 @@ func (m *User) GetOnenote()(Onenoteable) {
     }
     return nil
 }
-// GetOnlineMeetings gets the onlineMeetings property value. Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
+// GetOnlineMeetings gets the onlineMeetings property value. Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
 func (m *User) GetOnlineMeetings()([]OnlineMeetingable) {
     val, err := m.GetBackingStore().Get("onlineMeetings")
     if err != nil {
@@ -2945,7 +2945,7 @@ func (m *User) GetOnlineMeetings()([]OnlineMeetingable) {
     }
     return nil
 }
-// GetOnPremisesDistinguishedName gets the onPremisesDistinguishedName property value. Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
+// GetOnPremisesDistinguishedName gets the onPremisesDistinguishedName property value. Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
 func (m *User) GetOnPremisesDistinguishedName()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesDistinguishedName")
     if err != nil {
@@ -2956,7 +2956,7 @@ func (m *User) GetOnPremisesDistinguishedName()(*string) {
     }
     return nil
 }
-// GetOnPremisesDomainName gets the onPremisesDomainName property value. Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
+// GetOnPremisesDomainName gets the onPremisesDomainName property value. Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
 func (m *User) GetOnPremisesDomainName()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesDomainName")
     if err != nil {
@@ -2967,7 +2967,7 @@ func (m *User) GetOnPremisesDomainName()(*string) {
     }
     return nil
 }
-// GetOnPremisesExtensionAttributes gets the onPremisesExtensionAttributes property value. Contains extensionAttributes1-15 for the user. These extension attributes are also known as Exchange custom attributes 1-15. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. Supports $filter (eq, ne, not, in).
+// GetOnPremisesExtensionAttributes gets the onPremisesExtensionAttributes property value. Contains extensionAttributes1-15 for the user. These extension attributes are also known as Exchange custom attributes 1-15. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during the creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. Supports $filter (eq, ne, not, in).
 func (m *User) GetOnPremisesExtensionAttributes()(OnPremisesExtensionAttributesable) {
     val, err := m.GetBackingStore().Get("onPremisesExtensionAttributes")
     if err != nil {
@@ -2978,7 +2978,7 @@ func (m *User) GetOnPremisesExtensionAttributes()(OnPremisesExtensionAttributesa
     }
     return nil
 }
-// GetOnPremisesImmutableId gets the onPremisesImmutableId property value. This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's userPrincipalName (UPN) property. Note: The $ and _ characters can't be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).
+// GetOnPremisesImmutableId gets the onPremisesImmutableId property value. This property associates an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's userPrincipalName (UPN) property. Note: The $ and _ characters can't be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).
 func (m *User) GetOnPremisesImmutableId()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesImmutableId")
     if err != nil {
@@ -2989,7 +2989,7 @@ func (m *User) GetOnPremisesImmutableId()(*string) {
     }
     return nil
 }
-// GetOnPremisesLastSyncDateTime gets the onPremisesLastSyncDateTime property value. Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).
+// GetOnPremisesLastSyncDateTime gets the onPremisesLastSyncDateTime property value. Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).
 func (m *User) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("onPremisesLastSyncDateTime")
     if err != nil {
@@ -3011,7 +3011,7 @@ func (m *User) GetOnPremisesProvisioningErrors()([]OnPremisesProvisioningErrorab
     }
     return nil
 }
-// GetOnPremisesSamAccountName gets the onPremisesSamAccountName property value. Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+// GetOnPremisesSamAccountName gets the onPremisesSamAccountName property value. Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
 func (m *User) GetOnPremisesSamAccountName()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesSamAccountName")
     if err != nil {
@@ -3022,7 +3022,7 @@ func (m *User) GetOnPremisesSamAccountName()(*string) {
     }
     return nil
 }
-// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
+// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the user synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
 func (m *User) GetOnPremisesSecurityIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesSecurityIdentifier")
     if err != nil {
@@ -3044,7 +3044,7 @@ func (m *User) GetOnPremisesSipInfo()(OnPremisesSipInfoable) {
     }
     return nil
 }
-// GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Microsoft Entra ID. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
+// GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise, the user isn't being synced and can be managed in Microsoft Entra ID. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
 func (m *User) GetOnPremisesSyncEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("onPremisesSyncEnabled")
     if err != nil {
@@ -3055,7 +3055,7 @@ func (m *User) GetOnPremisesSyncEnabled()(*bool) {
     }
     return nil
 }
-// GetOnPremisesUserPrincipalName gets the onPremisesUserPrincipalName property value. Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+// GetOnPremisesUserPrincipalName gets the onPremisesUserPrincipalName property value. Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
 func (m *User) GetOnPremisesUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesUserPrincipalName")
     if err != nil {
@@ -3088,7 +3088,7 @@ func (m *User) GetOutlook()(OutlookUserable) {
     }
     return nil
 }
-// GetOwnedDevices gets the ownedDevices property value. Devices that are owned by the user. Read-only. Nullable. Supports $expand.
+// GetOwnedDevices gets the ownedDevices property value. Devices owned by the user. Read-only. Nullable. Supports $expand.
 func (m *User) GetOwnedDevices()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("ownedDevices")
     if err != nil {
@@ -3099,7 +3099,7 @@ func (m *User) GetOwnedDevices()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetOwnedObjects gets the ownedObjects property value. Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+// GetOwnedObjects gets the ownedObjects property value. Directory objects owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *User) GetOwnedObjects()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("ownedObjects")
     if err != nil {
@@ -3132,7 +3132,7 @@ func (m *User) GetPasswordProfile()(PasswordProfileable) {
     }
     return nil
 }
-// GetPastProjects gets the pastProjects property value. A list for the user to enumerate their past projects. Returned only on $select.
+// GetPastProjects gets the pastProjects property value. A list for users to enumerate their past projects. Returned only on $select.
 func (m *User) GetPastProjects()([]string) {
     val, err := m.GetBackingStore().Get("pastProjects")
     if err != nil {
@@ -3143,7 +3143,7 @@ func (m *User) GetPastProjects()([]string) {
     }
     return nil
 }
-// GetPendingAccessReviewInstances gets the pendingAccessReviewInstances property value. Navigation property to get list of access reviews pending approval by reviewer.
+// GetPendingAccessReviewInstances gets the pendingAccessReviewInstances property value. Navigation property to get a list of access reviews pending approval by the reviewer.
 func (m *User) GetPendingAccessReviewInstances()([]AccessReviewInstanceable) {
     val, err := m.GetBackingStore().Get("pendingAccessReviewInstances")
     if err != nil {
@@ -3154,7 +3154,7 @@ func (m *User) GetPendingAccessReviewInstances()([]AccessReviewInstanceable) {
     }
     return nil
 }
-// GetPeople gets the people property value. Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
+// GetPeople gets the people property value. Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration, and business relationships. A person aggregates information from mail, contacts, and social networks.
 func (m *User) GetPeople()([]Personable) {
     val, err := m.GetBackingStore().Get("people")
     if err != nil {
@@ -3187,7 +3187,7 @@ func (m *User) GetPhoto()(ProfilePhotoable) {
     }
     return nil
 }
-// GetPhotos gets the photos property value. The photos property
+// GetPhotos gets the photos property value. The collection of the user's profile photos in different sizes. Read-only.
 func (m *User) GetPhotos()([]ProfilePhotoable) {
     val, err := m.GetBackingStore().Get("photos")
     if err != nil {
@@ -3231,7 +3231,7 @@ func (m *User) GetPreferredDataLocation()(*string) {
     }
     return nil
 }
-// GetPreferredLanguage gets the preferredLanguage property value. The preferred language for the user. The preferred language format is based on RFC 4646. The name is a combination of an ISO 639 two-letter lowercase culture code associated with the language, and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: 'en-US', or 'es-ES'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// GetPreferredLanguage gets the preferredLanguage property value. The preferred language for the user. The preferred language format is based on RFC 4646. The name combines an ISO 639 two-letter lowercase culture code associated with the language and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: 'en-US', or 'es-ES'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetPreferredLanguage()(*string) {
     val, err := m.GetBackingStore().Get("preferredLanguage")
     if err != nil {
@@ -3297,7 +3297,7 @@ func (m *User) GetProvisionedPlans()([]ProvisionedPlanable) {
     }
     return nil
 }
-// GetProxyAddresses gets the proxyAddresses property value. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
+// GetProxyAddresses gets the proxyAddresses property value. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address, while the ones prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
 func (m *User) GetProxyAddresses()([]string) {
     val, err := m.GetBackingStore().Get("proxyAddresses")
     if err != nil {
@@ -3308,7 +3308,7 @@ func (m *User) GetProxyAddresses()([]string) {
     }
     return nil
 }
-// GetRefreshTokensValidFromDateTime gets the refreshTokensValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use invalidateAllRefreshTokens to reset.
+// GetRefreshTokensValidFromDateTime gets the refreshTokensValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If it happens, the application must acquire a new refresh token by requesting the authorized endpoint. Read-only. Use invalidateAllRefreshTokens to reset.
 func (m *User) GetRefreshTokensValidFromDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("refreshTokensValidFromDateTime")
     if err != nil {
@@ -3418,7 +3418,7 @@ func (m *User) GetSignInActivity()(SignInActivityable) {
     }
     return nil
 }
-// GetSignInSessionsValidFromDateTime gets the signInSessionsValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.
+// GetSignInSessionsValidFromDateTime gets the signInSessionsValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application must acquire a new refresh token by requesting the authorized endpoint. Read-only. Use revokeSignInSessions to reset.
 func (m *User) GetSignInSessionsValidFromDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("signInSessionsValidFromDateTime")
     if err != nil {
@@ -3440,7 +3440,7 @@ func (m *User) GetSkills()([]string) {
     }
     return nil
 }
-// GetSponsors gets the sponsors property value. The users and groups that are responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
+// GetSponsors gets the sponsors property value. The users and groups responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
 func (m *User) GetSponsors()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("sponsors")
     if err != nil {
@@ -3506,7 +3506,7 @@ func (m *User) GetTodo()(Todoable) {
     }
     return nil
 }
-// GetTransitiveMemberOf gets the transitiveMemberOf property value. The groups, including nested groups, and directory roles that a user is a member of. Nullable.
+// GetTransitiveMemberOf gets the transitiveMemberOf property value. The groups, including nested groups and directory roles that a user is a member of. Nullable.
 func (m *User) GetTransitiveMemberOf()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("transitiveMemberOf")
     if err != nil {
@@ -3528,7 +3528,7 @@ func (m *User) GetTransitiveReports()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetUsageLocation gets the usageLocation property value. A two letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// GetUsageLocation gets the usageLocation property value. A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetUsageLocation()(*string) {
     val, err := m.GetBackingStore().Get("usageLocation")
     if err != nil {
@@ -3550,7 +3550,7 @@ func (m *User) GetUsageRights()([]UsageRightable) {
     }
     return nil
 }
-// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can't contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.
+// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where the domain must be present in the tenant's verified domain collection. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can't contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.
 func (m *User) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -4844,7 +4844,7 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     return nil
 }
-// SetAboutMe sets the aboutMe property value. A freeform text entry field for the user to describe themselves. Returned only on $select.
+// SetAboutMe sets the aboutMe property value. A freeform text entry field for users to describe themselves. Returned only on $select.
 func (m *User) SetAboutMe(value *string)() {
     err := m.GetBackingStore().Set("aboutMe", value)
     if err != nil {
@@ -4865,7 +4865,7 @@ func (m *User) SetActivities(value []UserActivityable)() {
         panic(err)
     }
 }
-// SetAgeGroup sets the ageGroup property value. Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).
+// SetAgeGroup sets the ageGroup property value. Sets the age group of the user. Allowed values: null, Minor, NotAdult, and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).
 func (m *User) SetAgeGroup(value *string)() {
     err := m.GetBackingStore().Set("ageGroup", value)
     if err != nil {
@@ -4914,7 +4914,7 @@ func (m *User) SetApprovals(value []Approvalable)() {
         panic(err)
     }
 }
-// SetAssignedLicenses sets the assignedLicenses property value. The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
+// SetAssignedLicenses sets the assignedLicenses property value. The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate between directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
 func (m *User) SetAssignedLicenses(value []AssignedLicenseable)() {
     err := m.GetBackingStore().Set("assignedLicenses", value)
     if err != nil {
@@ -4935,14 +4935,14 @@ func (m *User) SetAuthentication(value Authenticationable)() {
         panic(err)
     }
 }
-// SetAuthorizationInfo sets the authorizationInfo property value. Identifiers that can be used to identify and authenticate a user in non-Azure AD environments. This property can be used to store identifiers for smartcard-based certificates that a user uses for access to on-premises Active Directory deployments or for federated access. It can also be used to store the Subject Alternate Name (SAN) that's associated with a Common Access Card (CAC). Nullable.Supports $filter (eq and startsWith).
+// SetAuthorizationInfo sets the authorizationInfo property value. Identifiers that can be used to identify and authenticate a user in non-Azure AD environments. This property can store identifiers for smartcard-based certificates that users use to access on-premises Active Directory deployments or federated access. It can also be used to store the Subject Alternate Name (SAN) that's associated with a Common Access Card (CAC). Nullable.Supports $filter (eq and startsWith).
 func (m *User) SetAuthorizationInfo(value AuthorizationInfoable)() {
     err := m.GetBackingStore().Set("authorizationInfo", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBirthday sets the birthday property value. The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
+// SetBirthday sets the birthday property value. The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
 func (m *User) SetBirthday(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("birthday", value)
     if err != nil {
@@ -5012,7 +5012,7 @@ func (m *User) SetCloudRealtimeCommunicationInfo(value CloudRealtimeCommunicatio
         panic(err)
     }
 }
-// SetCompanyName sets the companyName property value. The name of the company that the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// SetCompanyName sets the companyName property value. The name of the company the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetCompanyName(value *string)() {
     err := m.GetBackingStore().Set("companyName", value)
     if err != nil {
@@ -5047,7 +5047,7 @@ func (m *User) SetCountry(value *string)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users that were synced to Microsoft Entra ID before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).
+// SetCreatedDateTime sets the createdDateTime property value. The date and time the user was created in ISO 8601 format and UTC. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users synced to Microsoft Entra ID before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).
 func (m *User) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
@@ -5068,14 +5068,14 @@ func (m *User) SetCreationType(value *string)() {
         panic(err)
     }
 }
-// SetCustomSecurityAttributes sets the customSecurityAttributes property value. An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith). Filter value is case sensitive.
+// SetCustomSecurityAttributes sets the customSecurityAttributes property value. An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith). The filter value is case-sensitive.
 func (m *User) SetCustomSecurityAttributes(value CustomSecurityAttributeValueable)() {
     err := m.GetBackingStore().Set("customSecurityAttributes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDepartment sets the department property value. The name for the department in which the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
+// SetDepartment sets the department property value. The name of the department where the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
 func (m *User) SetDepartment(value *string)() {
     err := m.GetBackingStore().Set("department", value)
     if err != nil {
@@ -5117,14 +5117,14 @@ func (m *User) SetDevices(value []Deviceable)() {
         panic(err)
     }
 }
-// SetDirectReports sets the directReports property value. The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
+// SetDirectReports sets the directReports property value. The users and contacts that report to the user. (The users and contacts with their manager property set to this user.) Read-only. Nullable. Supports $expand.
 func (m *User) SetDirectReports(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("directReports", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.
+// SetDisplayName sets the displayName property value. The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created, and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.
 func (m *User) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -5152,7 +5152,7 @@ func (m *User) SetEmployeeExperience(value EmployeeExperienceUserable)() {
         panic(err)
     }
 }
-// SetEmployeeHireDate sets the employeeHireDate property value. The date and time when the user was hired or will start work in case of a future hire. Supports $filter (eq, ne, not , ge, le, in).
+// SetEmployeeHireDate sets the employeeHireDate property value. The date and time when the user was hired or will start work if there is a future hire. Supports $filter (eq, ne, not , ge, le, in).
 func (m *User) SetEmployeeHireDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("employeeHireDate", value)
     if err != nil {
@@ -5187,7 +5187,7 @@ func (m *User) SetEmployeeType(value *string)() {
         panic(err)
     }
 }
-// SetEvents sets the events property value. The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+// SetEvents sets the events property value. The user's events. The default is to show events under the Default Calendar. Read-only. Nullable.
 func (m *User) SetEvents(value []Eventable)() {
     err := m.GetBackingStore().Set("events", value)
     if err != nil {
@@ -5236,21 +5236,21 @@ func (m *User) SetGivenName(value *string)() {
         panic(err)
     }
 }
-// SetHireDate sets the hireDate property value. The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
+// SetHireDate sets the hireDate property value. The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
 func (m *User) SetHireDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("hireDate", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIdentities sets the identities property value. Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
+// SetIdentities sets the identities property value. Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
 func (m *User) SetIdentities(value []ObjectIdentityable)() {
     err := m.GetBackingStore().Set("identities", value)
     if err != nil {
         panic(err)
     }
 }
-// SetImAddresses sets the imAddresses property value. The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
+// SetImAddresses sets the imAddresses property value. The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
 func (m *User) SetImAddresses(value []string)() {
     err := m.GetBackingStore().Set("imAddresses", value)
     if err != nil {
@@ -5285,7 +5285,7 @@ func (m *User) SetInsights(value ItemInsightsable)() {
         panic(err)
     }
 }
-// SetInterests sets the interests property value. A list for the user to describe their interests. Returned only on $select.
+// SetInterests sets the interests property value. A list for users to describe their interests. Returned only on $select.
 func (m *User) SetInterests(value []string)() {
     err := m.GetBackingStore().Set("interests", value)
     if err != nil {
@@ -5299,7 +5299,7 @@ func (m *User) SetIsLicenseReconciliationNeeded(value *bool)() {
         panic(err)
     }
 }
-// SetIsManagementRestricted sets the isManagementRestricted property value. true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+// SetIsManagementRestricted sets the isManagementRestricted property value. true if the user is a member of a restricted management administrative unit, which requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
 func (m *User) SetIsManagementRestricted(value *bool)() {
     err := m.GetBackingStore().Set("isManagementRestricted", value)
     if err != nil {
@@ -5327,28 +5327,28 @@ func (m *User) SetJoinedGroups(value []Groupable)() {
         panic(err)
     }
 }
-// SetJoinedTeams sets the joinedTeams property value. The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+// SetJoinedTeams sets the joinedTeams property value. The Microsoft Teams teams the user is a member of. Read-only. Nullable.
 func (m *User) SetJoinedTeams(value []Teamable)() {
     err := m.GetBackingStore().Set("joinedTeams", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastPasswordChangeDateTime sets the lastPasswordChangeDateTime property value. The time when this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
+// SetLastPasswordChangeDateTime sets the lastPasswordChangeDateTime property value. When this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
 func (m *User) SetLastPasswordChangeDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastPasswordChangeDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLegalAgeGroupClassification sets the legalAgeGroupClassification property value. Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. For more information, see legal age group property definitions. Returned only on $select.
+// SetLegalAgeGroupClassification sets the legalAgeGroupClassification property value. Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.
 func (m *User) SetLegalAgeGroupClassification(value *string)() {
     err := m.GetBackingStore().Set("legalAgeGroupClassification", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLicenseAssignmentStates sets the licenseAssignmentStates property value. State of license assignments for this user. Also indicates licenses that are directly assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
+// SetLicenseAssignmentStates sets the licenseAssignmentStates property value. State of license assignments for this user. It also indicates licenses that are directly assigned and the ones the user inherited through group memberships. Read-only. Returned only on $select.
 func (m *User) SetLicenseAssignmentStates(value []LicenseAssignmentStateable)() {
     err := m.GetBackingStore().Set("licenseAssignmentStates", value)
     if err != nil {
@@ -5362,7 +5362,7 @@ func (m *User) SetLicenseDetails(value []LicenseDetailsable)() {
         panic(err)
     }
 }
-// SetMail sets the mail property value. The SMTP address for the user, for example, admin@contoso.com. Changes to this property also updates the user's proxyAddresses collection to include the value as an SMTP address. This property can't contain accent characters.  NOTE: We don't recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
+// SetMail sets the mail property value. The SMTP address for the user, for example, admin@contoso.com. Changes to this property also update the user's proxyAddresses collection to include the value as an SMTP address. This property can't contain accent characters.  NOTE: We don't recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
 func (m *User) SetMail(value *string)() {
     err := m.GetBackingStore().Set("mail", value)
     if err != nil {
@@ -5411,7 +5411,7 @@ func (m *User) SetManager(value DirectoryObjectable)() {
         panic(err)
     }
 }
-// SetMemberOf sets the memberOf property value. The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
+// SetMemberOf sets the memberOf property value. The groups, directory roles, and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
 func (m *User) SetMemberOf(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("memberOf", value)
     if err != nil {
@@ -5439,14 +5439,14 @@ func (m *User) SetMobileAppTroubleshootingEvents(value []MobileAppTroubleshootin
         panic(err)
     }
 }
-// SetMobilePhone sets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
+// SetMobilePhone sets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
 func (m *User) SetMobilePhone(value *string)() {
     err := m.GetBackingStore().Set("mobilePhone", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMySite sets the mySite property value. The URL for the user's personal site. Returned only on $select.
+// SetMySite sets the mySite property value. The URL for the user's site. Returned only on $select.
 func (m *User) SetMySite(value *string)() {
     err := m.GetBackingStore().Set("mySite", value)
     if err != nil {
@@ -5481,42 +5481,42 @@ func (m *User) SetOnenote(value Onenoteable)() {
         panic(err)
     }
 }
-// SetOnlineMeetings sets the onlineMeetings property value. Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
+// SetOnlineMeetings sets the onlineMeetings property value. Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
 func (m *User) SetOnlineMeetings(value []OnlineMeetingable)() {
     err := m.GetBackingStore().Set("onlineMeetings", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOnPremisesDistinguishedName sets the onPremisesDistinguishedName property value. Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
+// SetOnPremisesDistinguishedName sets the onPremisesDistinguishedName property value. Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
 func (m *User) SetOnPremisesDistinguishedName(value *string)() {
     err := m.GetBackingStore().Set("onPremisesDistinguishedName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOnPremisesDomainName sets the onPremisesDomainName property value. Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
+// SetOnPremisesDomainName sets the onPremisesDomainName property value. Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
 func (m *User) SetOnPremisesDomainName(value *string)() {
     err := m.GetBackingStore().Set("onPremisesDomainName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOnPremisesExtensionAttributes sets the onPremisesExtensionAttributes property value. Contains extensionAttributes1-15 for the user. These extension attributes are also known as Exchange custom attributes 1-15. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. Supports $filter (eq, ne, not, in).
+// SetOnPremisesExtensionAttributes sets the onPremisesExtensionAttributes property value. Contains extensionAttributes1-15 for the user. These extension attributes are also known as Exchange custom attributes 1-15. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during the creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. Supports $filter (eq, ne, not, in).
 func (m *User) SetOnPremisesExtensionAttributes(value OnPremisesExtensionAttributesable)() {
     err := m.GetBackingStore().Set("onPremisesExtensionAttributes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOnPremisesImmutableId sets the onPremisesImmutableId property value. This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's userPrincipalName (UPN) property. Note: The $ and _ characters can't be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).
+// SetOnPremisesImmutableId sets the onPremisesImmutableId property value. This property associates an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's userPrincipalName (UPN) property. Note: The $ and _ characters can't be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).
 func (m *User) SetOnPremisesImmutableId(value *string)() {
     err := m.GetBackingStore().Set("onPremisesImmutableId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOnPremisesLastSyncDateTime sets the onPremisesLastSyncDateTime property value. Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).
+// SetOnPremisesLastSyncDateTime sets the onPremisesLastSyncDateTime property value. Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).
 func (m *User) SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("onPremisesLastSyncDateTime", value)
     if err != nil {
@@ -5530,14 +5530,14 @@ func (m *User) SetOnPremisesProvisioningErrors(value []OnPremisesProvisioningErr
         panic(err)
     }
 }
-// SetOnPremisesSamAccountName sets the onPremisesSamAccountName property value. Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+// SetOnPremisesSamAccountName sets the onPremisesSamAccountName property value. Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
 func (m *User) SetOnPremisesSamAccountName(value *string)() {
     err := m.GetBackingStore().Set("onPremisesSamAccountName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
+// SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the user synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
 func (m *User) SetOnPremisesSecurityIdentifier(value *string)() {
     err := m.GetBackingStore().Set("onPremisesSecurityIdentifier", value)
     if err != nil {
@@ -5551,14 +5551,14 @@ func (m *User) SetOnPremisesSipInfo(value OnPremisesSipInfoable)() {
         panic(err)
     }
 }
-// SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Microsoft Entra ID. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
+// SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise, the user isn't being synced and can be managed in Microsoft Entra ID. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
 func (m *User) SetOnPremisesSyncEnabled(value *bool)() {
     err := m.GetBackingStore().Set("onPremisesSyncEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOnPremisesUserPrincipalName sets the onPremisesUserPrincipalName property value. Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+// SetOnPremisesUserPrincipalName sets the onPremisesUserPrincipalName property value. Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
 func (m *User) SetOnPremisesUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("onPremisesUserPrincipalName", value)
     if err != nil {
@@ -5579,14 +5579,14 @@ func (m *User) SetOutlook(value OutlookUserable)() {
         panic(err)
     }
 }
-// SetOwnedDevices sets the ownedDevices property value. Devices that are owned by the user. Read-only. Nullable. Supports $expand.
+// SetOwnedDevices sets the ownedDevices property value. Devices owned by the user. Read-only. Nullable. Supports $expand.
 func (m *User) SetOwnedDevices(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("ownedDevices", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOwnedObjects sets the ownedObjects property value. Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+// SetOwnedObjects sets the ownedObjects property value. Directory objects owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *User) SetOwnedObjects(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("ownedObjects", value)
     if err != nil {
@@ -5607,21 +5607,21 @@ func (m *User) SetPasswordProfile(value PasswordProfileable)() {
         panic(err)
     }
 }
-// SetPastProjects sets the pastProjects property value. A list for the user to enumerate their past projects. Returned only on $select.
+// SetPastProjects sets the pastProjects property value. A list for users to enumerate their past projects. Returned only on $select.
 func (m *User) SetPastProjects(value []string)() {
     err := m.GetBackingStore().Set("pastProjects", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPendingAccessReviewInstances sets the pendingAccessReviewInstances property value. Navigation property to get list of access reviews pending approval by reviewer.
+// SetPendingAccessReviewInstances sets the pendingAccessReviewInstances property value. Navigation property to get a list of access reviews pending approval by the reviewer.
 func (m *User) SetPendingAccessReviewInstances(value []AccessReviewInstanceable)() {
     err := m.GetBackingStore().Set("pendingAccessReviewInstances", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPeople sets the people property value. Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
+// SetPeople sets the people property value. Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration, and business relationships. A person aggregates information from mail, contacts, and social networks.
 func (m *User) SetPeople(value []Personable)() {
     err := m.GetBackingStore().Set("people", value)
     if err != nil {
@@ -5642,7 +5642,7 @@ func (m *User) SetPhoto(value ProfilePhotoable)() {
         panic(err)
     }
 }
-// SetPhotos sets the photos property value. The photos property
+// SetPhotos sets the photos property value. The collection of the user's profile photos in different sizes. Read-only.
 func (m *User) SetPhotos(value []ProfilePhotoable)() {
     err := m.GetBackingStore().Set("photos", value)
     if err != nil {
@@ -5670,7 +5670,7 @@ func (m *User) SetPreferredDataLocation(value *string)() {
         panic(err)
     }
 }
-// SetPreferredLanguage sets the preferredLanguage property value. The preferred language for the user. The preferred language format is based on RFC 4646. The name is a combination of an ISO 639 two-letter lowercase culture code associated with the language, and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: 'en-US', or 'es-ES'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// SetPreferredLanguage sets the preferredLanguage property value. The preferred language for the user. The preferred language format is based on RFC 4646. The name combines an ISO 639 two-letter lowercase culture code associated with the language and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: 'en-US', or 'es-ES'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetPreferredLanguage(value *string)() {
     err := m.GetBackingStore().Set("preferredLanguage", value)
     if err != nil {
@@ -5712,14 +5712,14 @@ func (m *User) SetProvisionedPlans(value []ProvisionedPlanable)() {
         panic(err)
     }
 }
-// SetProxyAddresses sets the proxyAddresses property value. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
+// SetProxyAddresses sets the proxyAddresses property value. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address, while the ones prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
 func (m *User) SetProxyAddresses(value []string)() {
     err := m.GetBackingStore().Set("proxyAddresses", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRefreshTokensValidFromDateTime sets the refreshTokensValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use invalidateAllRefreshTokens to reset.
+// SetRefreshTokensValidFromDateTime sets the refreshTokensValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If it happens, the application must acquire a new refresh token by requesting the authorized endpoint. Read-only. Use invalidateAllRefreshTokens to reset.
 func (m *User) SetRefreshTokensValidFromDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("refreshTokensValidFromDateTime", value)
     if err != nil {
@@ -5789,7 +5789,7 @@ func (m *User) SetSignInActivity(value SignInActivityable)() {
         panic(err)
     }
 }
-// SetSignInSessionsValidFromDateTime sets the signInSessionsValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.
+// SetSignInSessionsValidFromDateTime sets the signInSessionsValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application must acquire a new refresh token by requesting the authorized endpoint. Read-only. Use revokeSignInSessions to reset.
 func (m *User) SetSignInSessionsValidFromDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("signInSessionsValidFromDateTime", value)
     if err != nil {
@@ -5803,7 +5803,7 @@ func (m *User) SetSkills(value []string)() {
         panic(err)
     }
 }
-// SetSponsors sets the sponsors property value. The users and groups that are responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
+// SetSponsors sets the sponsors property value. The users and groups responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
 func (m *User) SetSponsors(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("sponsors", value)
     if err != nil {
@@ -5845,7 +5845,7 @@ func (m *User) SetTodo(value Todoable)() {
         panic(err)
     }
 }
-// SetTransitiveMemberOf sets the transitiveMemberOf property value. The groups, including nested groups, and directory roles that a user is a member of. Nullable.
+// SetTransitiveMemberOf sets the transitiveMemberOf property value. The groups, including nested groups and directory roles that a user is a member of. Nullable.
 func (m *User) SetTransitiveMemberOf(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("transitiveMemberOf", value)
     if err != nil {
@@ -5859,7 +5859,7 @@ func (m *User) SetTransitiveReports(value []DirectoryObjectable)() {
         panic(err)
     }
 }
-// SetUsageLocation sets the usageLocation property value. A two letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// SetUsageLocation sets the usageLocation property value. A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetUsageLocation(value *string)() {
     err := m.GetBackingStore().Set("usageLocation", value)
     if err != nil {
@@ -5873,7 +5873,7 @@ func (m *User) SetUsageRights(value []UsageRightable)() {
         panic(err)
     }
 }
-// SetUserPrincipalName sets the userPrincipalName property value. The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can't contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.
+// SetUserPrincipalName sets the userPrincipalName property value. The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where the domain must be present in the tenant's verified domain collection. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can't contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.
 func (m *User) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
     if err != nil {

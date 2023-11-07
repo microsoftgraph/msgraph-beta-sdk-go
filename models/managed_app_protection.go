@@ -665,6 +665,16 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["protectedMessagingRedirectAppType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseMessagingRedirectAppType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProtectedMessagingRedirectAppType(val.(*MessagingRedirectAppType))
+        }
+        return nil
+    }
     res["saveAsBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -1006,6 +1016,17 @@ func (m *ManagedAppProtection) GetPrintBlocked()(*bool) {
     }
     return nil
 }
+// GetProtectedMessagingRedirectAppType gets the protectedMessagingRedirectAppType property value. Defines how app messaging redirection is protected by an App Protection Policy. Default is anyApp.
+func (m *ManagedAppProtection) GetProtectedMessagingRedirectAppType()(*MessagingRedirectAppType) {
+    val, err := m.GetBackingStore().Get("protectedMessagingRedirectAppType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MessagingRedirectAppType)
+    }
+    return nil
+}
 // GetSaveAsBlocked gets the saveAsBlocked property value. Indicates whether users may use the 'Save As' menu item to save a copy of protected files.
 func (m *ManagedAppProtection) GetSaveAsBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("saveAsBlocked")
@@ -1307,6 +1328,13 @@ func (m *ManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err = writer.WriteBoolValue("printBlocked", m.GetPrintBlocked())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetProtectedMessagingRedirectAppType() != nil {
+        cast := (*m.GetProtectedMessagingRedirectAppType()).String()
+        err = writer.WriteStringValue("protectedMessagingRedirectAppType", &cast)
         if err != nil {
             return err
         }
@@ -1633,6 +1661,13 @@ func (m *ManagedAppProtection) SetPrintBlocked(value *bool)() {
         panic(err)
     }
 }
+// SetProtectedMessagingRedirectAppType sets the protectedMessagingRedirectAppType property value. Defines how app messaging redirection is protected by an App Protection Policy. Default is anyApp.
+func (m *ManagedAppProtection) SetProtectedMessagingRedirectAppType(value *MessagingRedirectAppType)() {
+    err := m.GetBackingStore().Set("protectedMessagingRedirectAppType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSaveAsBlocked sets the saveAsBlocked property value. Indicates whether users may use the 'Save As' menu item to save a copy of protected files.
 func (m *ManagedAppProtection) SetSaveAsBlocked(value *bool)() {
     err := m.GetBackingStore().Set("saveAsBlocked", value)
@@ -1695,6 +1730,7 @@ type ManagedAppProtectionable interface {
     GetPinRequiredInsteadOfBiometricTimeout()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetPreviousPinBlockCount()(*int32)
     GetPrintBlocked()(*bool)
+    GetProtectedMessagingRedirectAppType()(*MessagingRedirectAppType)
     GetSaveAsBlocked()(*bool)
     GetSimplePinBlocked()(*bool)
     SetAllowedDataIngestionLocations(value []ManagedAppDataIngestionLocation)()
@@ -1741,6 +1777,7 @@ type ManagedAppProtectionable interface {
     SetPinRequiredInsteadOfBiometricTimeout(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetPreviousPinBlockCount(value *int32)()
     SetPrintBlocked(value *bool)()
+    SetProtectedMessagingRedirectAppType(value *MessagingRedirectAppType)()
     SetSaveAsBlocked(value *bool)()
     SetSimplePinBlocked(value *bool)()
 }

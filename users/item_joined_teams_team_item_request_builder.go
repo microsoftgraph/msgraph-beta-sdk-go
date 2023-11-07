@@ -11,7 +11,7 @@ import (
 type ItemJoinedTeamsTeamItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemJoinedTeamsTeamItemRequestBuilderGetQueryParameters the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+// ItemJoinedTeamsTeamItemRequestBuilderGetQueryParameters the Microsoft Teams teams the user is a member of. Read-only. Nullable.
 type ItemJoinedTeamsTeamItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewItemJoinedTeamsTeamItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewItemJoinedTeamsTeamItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+// Get the Microsoft Teams teams the user is a member of. Read-only. Nullable.
 func (m *ItemJoinedTeamsTeamItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedTeamsTeamItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ItemJoinedTeamsTeamItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable), nil
 }
-// ToGetRequestInformation the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+// ToGetRequestInformation the Microsoft Teams teams the user is a member of. Read-only. Nullable.
 func (m *ItemJoinedTeamsTeamItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsTeamItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

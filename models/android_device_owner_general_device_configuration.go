@@ -219,6 +219,17 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDetailedHelpText()(And
     }
     return nil
 }
+// GetDeviceLocationMode gets the deviceLocationMode property value. Indicates the location setting configuration for fully managed devices (COBO) and corporate owned devices with a work profile (COPE)
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDeviceLocationMode()(*AndroidDeviceOwnerLocationMode) {
+    val, err := m.GetBackingStore().Get("deviceLocationMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidDeviceOwnerLocationMode)
+    }
+    return nil
+}
 // GetDeviceOwnerLockScreenMessage gets the deviceOwnerLockScreenMessage property value. Represents the customized lock screen message provided to users when they attempt to modify managed settings on their device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDeviceOwnerLockScreenMessage()(AndroidDeviceOwnerUserFacingMessageable) {
     val, err := m.GetBackingStore().Get("deviceOwnerLockScreenMessage")
@@ -455,6 +466,16 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         }
         if val != nil {
             m.SetDetailedHelpText(val.(AndroidDeviceOwnerUserFacingMessageable))
+        }
+        return nil
+    }
+    res["deviceLocationMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerLocationMode)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceLocationMode(val.(*AndroidDeviceOwnerLocationMode))
         }
         return nil
     }
@@ -1387,6 +1408,16 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         }
         if val != nil {
             m.SetSecurityRequireVerifyApps(val)
+        }
+        return nil
+    }
+    res["shareDeviceLocationDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetShareDeviceLocationDisabled(val)
         }
         return nil
     }
@@ -2639,6 +2670,17 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSecurityRequireVerifyA
     }
     return nil
 }
+// GetShareDeviceLocationDisabled gets the shareDeviceLocationDisabled property value. Indicates whether or not location sharing is disabled for fully managed devices (COBO), and corporate owned devices with a work profile (COPE)
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetShareDeviceLocationDisabled()(*bool) {
+    val, err := m.GetBackingStore().Get("shareDeviceLocationDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetShortHelpText gets the shortHelpText property value. Represents the customized short help text provided to users when they attempt to modify managed settings on their device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetShortHelpText()(AndroidDeviceOwnerUserFacingMessageable) {
     val, err := m.GetBackingStore().Get("shortHelpText")
@@ -3094,6 +3136,13 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
     }
     {
         err = writer.WriteObjectValue("detailedHelpText", m.GetDetailedHelpText())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetDeviceLocationMode() != nil {
+        cast := (*m.GetDeviceLocationMode()).String()
+        err = writer.WriteStringValue("deviceLocationMode", &cast)
         if err != nil {
             return err
         }
@@ -3672,6 +3721,12 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
         }
     }
     {
+        err = writer.WriteBoolValue("shareDeviceLocationDisabled", m.GetShareDeviceLocationDisabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("shortHelpText", m.GetShortHelpText())
         if err != nil {
             return err
@@ -3984,6 +4039,13 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetDateTimeConfigurationB
 // SetDetailedHelpText sets the detailedHelpText property value. Represents the customized detailed help text provided to users when they attempt to modify managed settings on their device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetDetailedHelpText(value AndroidDeviceOwnerUserFacingMessageable)() {
     err := m.GetBackingStore().Set("detailedHelpText", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDeviceLocationMode sets the deviceLocationMode property value. Indicates the location setting configuration for fully managed devices (COBO) and corporate owned devices with a work profile (COPE)
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetDeviceLocationMode(value *AndroidDeviceOwnerLocationMode)() {
+    err := m.GetBackingStore().Set("deviceLocationMode", value)
     if err != nil {
         panic(err)
     }
@@ -4611,6 +4673,13 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetSecurityRequireVerifyA
         panic(err)
     }
 }
+// SetShareDeviceLocationDisabled sets the shareDeviceLocationDisabled property value. Indicates whether or not location sharing is disabled for fully managed devices (COBO), and corporate owned devices with a work profile (COPE)
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetShareDeviceLocationDisabled(value *bool)() {
+    err := m.GetBackingStore().Set("shareDeviceLocationDisabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetShortHelpText sets the shortHelpText property value. Represents the customized short help text provided to users when they attempt to modify managed settings on their device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetShortHelpText(value AndroidDeviceOwnerUserFacingMessageable)() {
     err := m.GetBackingStore().Set("shortHelpText", value)
@@ -4843,6 +4912,7 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     GetDataRoamingBlocked()(*bool)
     GetDateTimeConfigurationBlocked()(*bool)
     GetDetailedHelpText()(AndroidDeviceOwnerUserFacingMessageable)
+    GetDeviceLocationMode()(*AndroidDeviceOwnerLocationMode)
     GetDeviceOwnerLockScreenMessage()(AndroidDeviceOwnerUserFacingMessageable)
     GetEnrollmentProfile()(*AndroidDeviceOwnerEnrollmentProfileType)
     GetFactoryResetBlocked()(*bool)
@@ -4932,6 +5002,7 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     GetSecurityCommonCriteriaModeEnabled()(*bool)
     GetSecurityDeveloperSettingsEnabled()(*bool)
     GetSecurityRequireVerifyApps()(*bool)
+    GetShareDeviceLocationDisabled()(*bool)
     GetShortHelpText()(AndroidDeviceOwnerUserFacingMessageable)
     GetStatusBarBlocked()(*bool)
     GetStayOnModes()([]AndroidDeviceOwnerBatteryPluggedMode)
@@ -4980,6 +5051,7 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     SetDataRoamingBlocked(value *bool)()
     SetDateTimeConfigurationBlocked(value *bool)()
     SetDetailedHelpText(value AndroidDeviceOwnerUserFacingMessageable)()
+    SetDeviceLocationMode(value *AndroidDeviceOwnerLocationMode)()
     SetDeviceOwnerLockScreenMessage(value AndroidDeviceOwnerUserFacingMessageable)()
     SetEnrollmentProfile(value *AndroidDeviceOwnerEnrollmentProfileType)()
     SetFactoryResetBlocked(value *bool)()
@@ -5069,6 +5141,7 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     SetSecurityCommonCriteriaModeEnabled(value *bool)()
     SetSecurityDeveloperSettingsEnabled(value *bool)()
     SetSecurityRequireVerifyApps(value *bool)()
+    SetShareDeviceLocationDisabled(value *bool)()
     SetShortHelpText(value AndroidDeviceOwnerUserFacingMessageable)()
     SetStatusBarBlocked(value *bool)()
     SetStayOnModes(value []AndroidDeviceOwnerBatteryPluggedMode)()

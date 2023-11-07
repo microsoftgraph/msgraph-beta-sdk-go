@@ -18,7 +18,7 @@ type ItemOnlineMeetingsOnlineMeetingItemRequestBuilderDeleteRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemOnlineMeetingsOnlineMeetingItemRequestBuilderGetQueryParameters information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
+// ItemOnlineMeetingsOnlineMeetingItemRequestBuilderGetQueryParameters information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
 type ItemOnlineMeetingsOnlineMeetingItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -89,7 +89,7 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// Get information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
+// Get information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnlineMeetingsOnlineMeetingItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -163,7 +163,7 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) ToDeleteRequestInfor
     requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
+// ToGetRequestInformation information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsOnlineMeetingItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

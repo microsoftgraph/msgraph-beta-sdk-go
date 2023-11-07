@@ -18,7 +18,7 @@ type ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthentication
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticationMethodItemRequestBuilderGetQueryParameters get platformCredentialMethods from users
+// ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticationMethodItemRequestBuilderGetQueryParameters read the properties and relationships of a platformCredentialAuthenticationMethod object.
 type ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticationMethodItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,7 +47,10 @@ func NewItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticat
     urlParams["request-raw-url"] = rawUrl
     return NewItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property platformCredentialMethods for users
+// Delete delete a platformCredentialAuthenticationMethod object.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/platformcredentialauthenticationmethod-delete?view=graph-rest-1.0
 func (m *ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticationMethodItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -67,7 +70,10 @@ func (m *ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthentica
 func (m *ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticationMethodItemRequestBuilder) Device()(*ItemAuthenticationPlatformCredentialMethodsItemDeviceRequestBuilder) {
     return NewItemAuthenticationPlatformCredentialMethodsItemDeviceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get platformCredentialMethods from users
+// Get read the properties and relationships of a platformCredentialAuthenticationMethod object.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/platformcredentialauthenticationmethod-get?view=graph-rest-1.0
 func (m *ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticationMethodItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlatformCredentialAuthenticationMethodable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +92,7 @@ func (m *ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthentica
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlatformCredentialAuthenticationMethodable), nil
 }
-// ToDeleteRequestInformation delete navigation property platformCredentialMethods for users
+// ToDeleteRequestInformation delete a platformCredentialAuthenticationMethod object.
 func (m *ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticationMethodItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {
@@ -99,7 +105,7 @@ func (m *ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthentica
     requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get platformCredentialMethods from users
+// ToGetRequestInformation read the properties and relationships of a platformCredentialAuthenticationMethod object.
 func (m *ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticationMethodItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

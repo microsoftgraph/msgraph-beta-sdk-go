@@ -12,10 +12,12 @@ const (
     MANUAL_WIFIPROXYSETTING
     // Automatic Proxy Settings via URL.
     AUTOMATIC_WIFIPROXYSETTING
+    // Unknown future value for evolvable enum patterns.
+    UNKNOWNFUTUREVALUE_WIFIPROXYSETTING
 )
 
 func (i WiFiProxySetting) String() string {
-    return []string{"none", "manual", "automatic"}[i]
+    return []string{"none", "manual", "automatic", "unknownFutureValue"}[i]
 }
 func ParseWiFiProxySetting(v string) (any, error) {
     result := NONE_WIFIPROXYSETTING
@@ -26,6 +28,8 @@ func ParseWiFiProxySetting(v string) (any, error) {
             result = MANUAL_WIFIPROXYSETTING
         case "automatic":
             result = AUTOMATIC_WIFIPROXYSETTING
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_WIFIPROXYSETTING
         default:
             return 0, errors.New("Unknown WiFiProxySetting value: " + v)
     }

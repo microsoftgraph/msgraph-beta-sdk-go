@@ -248,6 +248,12 @@ func (m *DeviceManagementExportJob) Serialize(writer i878a80d2330e89d26896388a3f
         return err
     }
     {
+        err = writer.WriteTimeValue("expirationDateTime", m.GetExpirationDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("filter", m.GetFilter())
         if err != nil {
             return err
@@ -273,6 +279,12 @@ func (m *DeviceManagementExportJob) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteTimeValue("requestDateTime", m.GetRequestDateTime())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSelectEscaped() != nil {
         err = writer.WriteCollectionOfStringValues("select", m.GetSelectEscaped())
         if err != nil {
@@ -288,6 +300,12 @@ func (m *DeviceManagementExportJob) Serialize(writer i878a80d2330e89d26896388a3f
     if m.GetStatus() != nil {
         cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("url", m.GetUrl())
         if err != nil {
             return err
         }

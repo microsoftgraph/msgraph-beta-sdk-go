@@ -11,7 +11,7 @@ import (
 type ItemOwnedDevicesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOwnedDevicesRequestBuilderGetQueryParameters devices that are owned by the user. Read-only. Nullable. Supports $expand.
+// ItemOwnedDevicesRequestBuilderGetQueryParameters devices owned by the user. Read-only. Nullable. Supports $expand.
 type ItemOwnedDevicesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewItemOwnedDevicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *ItemOwnedDevicesRequestBuilder) Count()(*ItemOwnedDevicesCountRequestBuilder) {
     return NewItemOwnedDevicesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get devices that are owned by the user. Read-only. Nullable. Supports $expand.
+// Get devices owned by the user. Read-only. Nullable. Supports $expand.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/user-list-owneddevices?view=graph-rest-1.0
@@ -97,7 +97,7 @@ func (m *ItemOwnedDevicesRequestBuilder) GraphDevice()(*ItemOwnedDevicesGraphDev
 func (m *ItemOwnedDevicesRequestBuilder) GraphEndpoint()(*ItemOwnedDevicesGraphEndpointRequestBuilder) {
     return NewItemOwnedDevicesGraphEndpointRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation devices that are owned by the user. Read-only. Nullable. Supports $expand.
+// ToGetRequestInformation devices owned by the user. Read-only. Nullable. Supports $expand.
 func (m *ItemOwnedDevicesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOwnedDevicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

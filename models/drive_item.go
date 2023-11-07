@@ -609,7 +609,7 @@ func (m *DriveItem) GetPackageEscaped()(PackageEscapedable) {
     }
     return nil
 }
-// GetPendingOperations gets the pendingOperations property value. If present, indicates that indicates that one or more operations that may affect the state of the driveItem are pending completion. Read-only.
+// GetPendingOperations gets the pendingOperations property value. If present, indicates that indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.
 func (m *DriveItem) GetPendingOperations()(PendingOperationsable) {
     val, err := m.GetBackingStore().Get("pendingOperations")
     if err != nil {
@@ -697,7 +697,7 @@ func (m *DriveItem) GetSearchResult()(SearchResultable) {
     }
     return nil
 }
-// GetShared gets the shared property value. Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.
+// GetShared gets the shared property value. Indicates that the item was shared with others and provides information about the shared state of the item. Read-only.
 func (m *DriveItem) GetShared()(Sharedable) {
     val, err := m.GetBackingStore().Get("shared")
     if err != nil {
@@ -763,7 +763,7 @@ func (m *DriveItem) GetSubscriptions()([]Subscriptionable) {
     }
     return nil
 }
-// GetThumbnails gets the thumbnails property value. Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
+// GetThumbnails gets the thumbnails property value. Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.
 func (m *DriveItem) GetThumbnails()([]ThumbnailSetable) {
     val, err := m.GetBackingStore().Get("thumbnails")
     if err != nil {
@@ -1197,7 +1197,7 @@ func (m *DriveItem) SetPackageEscaped(value PackageEscapedable)() {
         panic(err)
     }
 }
-// SetPendingOperations sets the pendingOperations property value. If present, indicates that indicates that one or more operations that may affect the state of the driveItem are pending completion. Read-only.
+// SetPendingOperations sets the pendingOperations property value. If present, indicates that indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.
 func (m *DriveItem) SetPendingOperations(value PendingOperationsable)() {
     err := m.GetBackingStore().Set("pendingOperations", value)
     if err != nil {
@@ -1253,7 +1253,7 @@ func (m *DriveItem) SetSearchResult(value SearchResultable)() {
         panic(err)
     }
 }
-// SetShared sets the shared property value. Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.
+// SetShared sets the shared property value. Indicates that the item was shared with others and provides information about the shared state of the item. Read-only.
 func (m *DriveItem) SetShared(value Sharedable)() {
     err := m.GetBackingStore().Set("shared", value)
     if err != nil {
@@ -1295,7 +1295,7 @@ func (m *DriveItem) SetSubscriptions(value []Subscriptionable)() {
         panic(err)
     }
 }
-// SetThumbnails sets the thumbnails property value. Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
+// SetThumbnails sets the thumbnails property value. Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.
 func (m *DriveItem) SetThumbnails(value []ThumbnailSetable)() {
     err := m.GetBackingStore().Set("thumbnails", value)
     if err != nil {

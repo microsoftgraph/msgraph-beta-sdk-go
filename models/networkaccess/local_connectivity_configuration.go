@@ -34,7 +34,7 @@ func (m *LocalConnectivityConfiguration) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAsn gets the asn property value. The asn property
+// GetAsn gets the asn property value. Specifies ASN of one end of IPSec tunnel (local or peer).
 func (m *LocalConnectivityConfiguration) GetAsn()(*int32) {
     val, err := m.GetBackingStore().Get("asn")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *LocalConnectivityConfiguration) GetAsn()(*int32) {
 func (m *LocalConnectivityConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBgpAddress gets the bgpAddress property value. The bgpAddress property
+// GetBgpAddress gets the bgpAddress property value. Specifies BGP IPv4 address of one end of IPSec tunnel (local or peer).
 func (m *LocalConnectivityConfiguration) GetBgpAddress()(*string) {
     val, err := m.GetBackingStore().Get("bgpAddress")
     if err != nil {
@@ -60,7 +60,7 @@ func (m *LocalConnectivityConfiguration) GetBgpAddress()(*string) {
     }
     return nil
 }
-// GetEndpoint gets the endpoint property value. The endpoint property
+// GetEndpoint gets the endpoint property value. Specifies public IPv4 address of one end of IPSec tunnel (local or peer).
 func (m *LocalConnectivityConfiguration) GetEndpoint()(*string) {
     val, err := m.GetBackingStore().Get("endpoint")
     if err != nil {
@@ -196,7 +196,7 @@ func (m *LocalConnectivityConfiguration) SetAdditionalData(value map[string]any)
         panic(err)
     }
 }
-// SetAsn sets the asn property value. The asn property
+// SetAsn sets the asn property value. Specifies ASN of one end of IPSec tunnel (local or peer).
 func (m *LocalConnectivityConfiguration) SetAsn(value *int32)() {
     err := m.GetBackingStore().Set("asn", value)
     if err != nil {
@@ -207,14 +207,14 @@ func (m *LocalConnectivityConfiguration) SetAsn(value *int32)() {
 func (m *LocalConnectivityConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBgpAddress sets the bgpAddress property value. The bgpAddress property
+// SetBgpAddress sets the bgpAddress property value. Specifies BGP IPv4 address of one end of IPSec tunnel (local or peer).
 func (m *LocalConnectivityConfiguration) SetBgpAddress(value *string)() {
     err := m.GetBackingStore().Set("bgpAddress", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEndpoint sets the endpoint property value. The endpoint property
+// SetEndpoint sets the endpoint property value. Specifies public IPv4 address of one end of IPSec tunnel (local or peer).
 func (m *LocalConnectivityConfiguration) SetEndpoint(value *string)() {
     err := m.GetBackingStore().Set("endpoint", value)
     if err != nil {

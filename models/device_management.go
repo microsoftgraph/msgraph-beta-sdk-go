@@ -648,6 +648,17 @@ func (m *DeviceManagement) GetDomainJoinConnectors()([]DeviceManagementDomainJoi
     }
     return nil
 }
+// GetElevationRequests gets the elevationRequests property value. List of elevation requests
+func (m *DeviceManagement) GetElevationRequests()([]PrivilegeManagementElevationRequestable) {
+    val, err := m.GetBackingStore().Get("elevationRequests")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrivilegeManagementElevationRequestable)
+    }
+    return nil
+}
 // GetEmbeddedSIMActivationCodePools gets the embeddedSIMActivationCodePools property value. The embedded SIM activation code pools created by this account.
 func (m *DeviceManagement) GetEmbeddedSIMActivationCodePools()([]EmbeddedSIMActivationCodePoolable) {
     val, err := m.GetBackingStore().Get("embeddedSIMActivationCodePools")
@@ -1526,6 +1537,22 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
                 }
             }
             m.SetDomainJoinConnectors(res)
+        }
+        return nil
+    }
+    res["elevationRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePrivilegeManagementElevationRequestFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PrivilegeManagementElevationRequestable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(PrivilegeManagementElevationRequestable)
+                }
+            }
+            m.SetElevationRequests(res)
         }
         return nil
     }
@@ -5219,6 +5246,18 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    if m.GetElevationRequests() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetElevationRequests()))
+        for i, v := range m.GetElevationRequests() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("elevationRequests", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetEmbeddedSIMActivationCodePools() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEmbeddedSIMActivationCodePools()))
         for i, v := range m.GetEmbeddedSIMActivationCodePools() {
@@ -6900,6 +6939,13 @@ func (m *DeviceManagement) SetDomainJoinConnectors(value []DeviceManagementDomai
         panic(err)
     }
 }
+// SetElevationRequests sets the elevationRequests property value. List of elevation requests
+func (m *DeviceManagement) SetElevationRequests(value []PrivilegeManagementElevationRequestable)() {
+    err := m.GetBackingStore().Set("elevationRequests", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetEmbeddedSIMActivationCodePools sets the embeddedSIMActivationCodePools property value. The embedded SIM activation code pools created by this account.
 func (m *DeviceManagement) SetEmbeddedSIMActivationCodePools(value []EmbeddedSIMActivationCodePoolable)() {
     err := m.GetBackingStore().Set("embeddedSIMActivationCodePools", value)
@@ -7815,6 +7861,7 @@ type DeviceManagementable interface {
     GetDeviceProtectionOverview()(DeviceProtectionOverviewable)
     GetDeviceShellScripts()([]DeviceShellScriptable)
     GetDomainJoinConnectors()([]DeviceManagementDomainJoinConnectorable)
+    GetElevationRequests()([]PrivilegeManagementElevationRequestable)
     GetEmbeddedSIMActivationCodePools()([]EmbeddedSIMActivationCodePoolable)
     GetExchangeConnectors()([]DeviceManagementExchangeConnectorable)
     GetExchangeOnPremisesPolicies()([]DeviceManagementExchangeOnPremisesPolicyable)
@@ -7994,6 +8041,7 @@ type DeviceManagementable interface {
     SetDeviceProtectionOverview(value DeviceProtectionOverviewable)()
     SetDeviceShellScripts(value []DeviceShellScriptable)()
     SetDomainJoinConnectors(value []DeviceManagementDomainJoinConnectorable)()
+    SetElevationRequests(value []PrivilegeManagementElevationRequestable)()
     SetEmbeddedSIMActivationCodePools(value []EmbeddedSIMActivationCodePoolable)()
     SetExchangeConnectors(value []DeviceManagementExchangeConnectorable)()
     SetExchangeOnPremisesPolicies(value []DeviceManagementExchangeOnPremisesPolicyable)()

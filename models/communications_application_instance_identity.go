@@ -46,7 +46,7 @@ func (m *CommunicationsApplicationInstanceIdentity) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetHidden gets the hidden property value. True if the participant wouldn't like to be shown in other participants' rosters.
+// GetHidden gets the hidden property value. True if the participant shouldn't be shown in other participants' rosters.
 func (m *CommunicationsApplicationInstanceIdentity) GetHidden()(*bool) {
     val, err := m.GetBackingStore().Get("hidden")
     if err != nil {
@@ -57,7 +57,7 @@ func (m *CommunicationsApplicationInstanceIdentity) GetHidden()(*bool) {
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. The application's tenant ID.
+// GetTenantId gets the tenantId property value. The tenant ID of the application.
 func (m *CommunicationsApplicationInstanceIdentity) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -88,14 +88,14 @@ func (m *CommunicationsApplicationInstanceIdentity) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetHidden sets the hidden property value. True if the participant wouldn't like to be shown in other participants' rosters.
+// SetHidden sets the hidden property value. True if the participant shouldn't be shown in other participants' rosters.
 func (m *CommunicationsApplicationInstanceIdentity) SetHidden(value *bool)() {
     err := m.GetBackingStore().Set("hidden", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. The application's tenant ID.
+// SetTenantId sets the tenantId property value. The tenant ID of the application.
 func (m *CommunicationsApplicationInstanceIdentity) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

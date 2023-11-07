@@ -18,7 +18,7 @@ type ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilderGetQueryParameters get links from networkAccess
+// ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilderGetQueryParameters list of connectivity configurations for deviceLink objects.
 type ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfi
     }
     return nil
 }
-// Get get links from networkAccess
+// Get list of connectivity configurations for deviceLink objects.
 func (m *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ConnectivityConfigurationLinkable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +121,7 @@ func (m *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfi
     requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get links from networkAccess
+// ToGetRequestInformation list of connectivity configurations for deviceLink objects.
 func (m *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

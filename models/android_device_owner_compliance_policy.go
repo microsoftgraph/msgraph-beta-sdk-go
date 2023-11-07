@@ -237,6 +237,16 @@ func (m *AndroidDeviceOwnerCompliancePolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
+    res["requireNoPendingSystemUpdates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRequireNoPendingSystemUpdates(val)
+        }
+        return nil
+    }
     res["securityRequireIntuneAppIntegrity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -444,6 +454,17 @@ func (m *AndroidDeviceOwnerCompliancePolicy) GetPasswordRequiredType()(*AndroidD
     }
     return nil
 }
+// GetRequireNoPendingSystemUpdates gets the requireNoPendingSystemUpdates property value. Require device to have no pending Android system updates.
+func (m *AndroidDeviceOwnerCompliancePolicy) GetRequireNoPendingSystemUpdates()(*bool) {
+    val, err := m.GetBackingStore().Get("requireNoPendingSystemUpdates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetSecurityRequireIntuneAppIntegrity gets the securityRequireIntuneAppIntegrity property value. If setting is set to true, checks that the Intune app installed on fully managed, dedicated, or corporate-owned work profile Android Enterprise enrolled devices, is the one provided by Microsoft from the Managed Google Playstore. If the check fails, the device will be reported as non-compliant.
 func (m *AndroidDeviceOwnerCompliancePolicy) GetSecurityRequireIntuneAppIntegrity()(*bool) {
     val, err := m.GetBackingStore().Get("securityRequireIntuneAppIntegrity")
@@ -606,6 +627,12 @@ func (m *AndroidDeviceOwnerCompliancePolicy) Serialize(writer i878a80d2330e89d26
         }
     }
     {
+        err = writer.WriteBoolValue("requireNoPendingSystemUpdates", m.GetRequireNoPendingSystemUpdates())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("securityRequireIntuneAppIntegrity", m.GetSecurityRequireIntuneAppIntegrity())
         if err != nil {
             return err
@@ -757,6 +784,13 @@ func (m *AndroidDeviceOwnerCompliancePolicy) SetPasswordRequiredType(value *Andr
         panic(err)
     }
 }
+// SetRequireNoPendingSystemUpdates sets the requireNoPendingSystemUpdates property value. Require device to have no pending Android system updates.
+func (m *AndroidDeviceOwnerCompliancePolicy) SetRequireNoPendingSystemUpdates(value *bool)() {
+    err := m.GetBackingStore().Set("requireNoPendingSystemUpdates", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSecurityRequireIntuneAppIntegrity sets the securityRequireIntuneAppIntegrity property value. If setting is set to true, checks that the Intune app installed on fully managed, dedicated, or corporate-owned work profile Android Enterprise enrolled devices, is the one provided by Microsoft from the Managed Google Playstore. If the check fails, the device will be reported as non-compliant.
 func (m *AndroidDeviceOwnerCompliancePolicy) SetSecurityRequireIntuneAppIntegrity(value *bool)() {
     err := m.GetBackingStore().Set("securityRequireIntuneAppIntegrity", value)
@@ -807,6 +841,7 @@ type AndroidDeviceOwnerCompliancePolicyable interface {
     GetPasswordPreviousPasswordCountToBlock()(*int32)
     GetPasswordRequired()(*bool)
     GetPasswordRequiredType()(*AndroidDeviceOwnerRequiredPasswordType)
+    GetRequireNoPendingSystemUpdates()(*bool)
     GetSecurityRequireIntuneAppIntegrity()(*bool)
     GetSecurityRequireSafetyNetAttestationBasicIntegrity()(*bool)
     GetSecurityRequireSafetyNetAttestationCertifiedDevice()(*bool)
@@ -829,6 +864,7 @@ type AndroidDeviceOwnerCompliancePolicyable interface {
     SetPasswordPreviousPasswordCountToBlock(value *int32)()
     SetPasswordRequired(value *bool)()
     SetPasswordRequiredType(value *AndroidDeviceOwnerRequiredPasswordType)()
+    SetRequireNoPendingSystemUpdates(value *bool)()
     SetSecurityRequireIntuneAppIntegrity(value *bool)()
     SetSecurityRequireSafetyNetAttestationBasicIntegrity(value *bool)()
     SetSecurityRequireSafetyNetAttestationCertifiedDevice(value *bool)()

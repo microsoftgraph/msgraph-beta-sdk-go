@@ -20,7 +20,7 @@ func NewConnectivityConfigurationLink()(*ConnectivityConfigurationLink) {
 func CreateConnectivityConfigurationLinkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConnectivityConfigurationLink(), nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Specifies the name of the link.
 func (m *ConnectivityConfigurationLink) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -72,7 +72,7 @@ func (m *ConnectivityConfigurationLink) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetLocalConfigurations gets the localConfigurations property value. The localConfigurations property
+// GetLocalConfigurations gets the localConfigurations property value. Specifies Microsoft's end of the tunnel configuration for a device link.
 func (m *ConnectivityConfigurationLink) GetLocalConfigurations()([]LocalConnectivityConfigurationable) {
     val, err := m.GetBackingStore().Get("localConfigurations")
     if err != nil {
@@ -126,14 +126,14 @@ func (m *ConnectivityConfigurationLink) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Specifies the name of the link.
 func (m *ConnectivityConfigurationLink) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLocalConfigurations sets the localConfigurations property value. The localConfigurations property
+// SetLocalConfigurations sets the localConfigurations property value. Specifies Microsoft's end of the tunnel configuration for a device link.
 func (m *ConnectivityConfigurationLink) SetLocalConfigurations(value []LocalConnectivityConfigurationable)() {
     err := m.GetBackingStore().Set("localConfigurations", value)
     if err != nil {

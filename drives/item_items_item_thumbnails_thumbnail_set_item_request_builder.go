@@ -18,7 +18,7 @@ type ItemItemsItemThumbnailsThumbnailSetItemRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemThumbnailsThumbnailSetItemRequestBuilderGetQueryParameters collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
+// ItemItemsItemThumbnailsThumbnailSetItemRequestBuilderGetQueryParameters collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.
 type ItemItemsItemThumbnailsThumbnailSetItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemItemsItemThumbnailsThumbnailSetItemRequestBuilder) Delete(ctx conte
     }
     return nil
 }
-// Get collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
+// Get collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.
 func (m *ItemItemsItemThumbnailsThumbnailSetItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemThumbnailsThumbnailSetItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ThumbnailSetable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +121,7 @@ func (m *ItemItemsItemThumbnailsThumbnailSetItemRequestBuilder) ToDeleteRequestI
     requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
+// ToGetRequestInformation collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.
 func (m *ItemItemsItemThumbnailsThumbnailSetItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemThumbnailsThumbnailSetItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

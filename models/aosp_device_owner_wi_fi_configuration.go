@@ -114,6 +114,62 @@ func (m *AospDeviceOwnerWiFiConfiguration) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["proxyAutomaticConfigurationUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProxyAutomaticConfigurationUrl(val)
+        }
+        return nil
+    }
+    res["proxyExclusionList"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetProxyExclusionList(res)
+        }
+        return nil
+    }
+    res["proxyManualAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProxyManualAddress(val)
+        }
+        return nil
+    }
+    res["proxyManualPort"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProxyManualPort(val)
+        }
+        return nil
+    }
+    res["proxySetting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseWiFiProxySetting)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProxySetting(val.(*WiFiProxySetting))
+        }
+        return nil
+    }
     res["ssid"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -166,6 +222,61 @@ func (m *AospDeviceOwnerWiFiConfiguration) GetPreSharedKeyIsSet()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetProxyAutomaticConfigurationUrl gets the proxyAutomaticConfigurationUrl property value. Specify the proxy server configuration script URL.
+func (m *AospDeviceOwnerWiFiConfiguration) GetProxyAutomaticConfigurationUrl()(*string) {
+    val, err := m.GetBackingStore().Get("proxyAutomaticConfigurationUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetProxyExclusionList gets the proxyExclusionList property value. List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as *.example.com.
+func (m *AospDeviceOwnerWiFiConfiguration) GetProxyExclusionList()([]string) {
+    val, err := m.GetBackingStore().Get("proxyExclusionList")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
+}
+// GetProxyManualAddress gets the proxyManualAddress property value. Specify the proxy server IP address. Both IPv4 and IPv6 addresses are supported. For example: 192.168.1.1.
+func (m *AospDeviceOwnerWiFiConfiguration) GetProxyManualAddress()(*string) {
+    val, err := m.GetBackingStore().Get("proxyManualAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetProxyManualPort gets the proxyManualPort property value. Specify the proxy server port.
+func (m *AospDeviceOwnerWiFiConfiguration) GetProxyManualPort()(*int32) {
+    val, err := m.GetBackingStore().Get("proxyManualPort")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetProxySetting gets the proxySetting property value. Wi-Fi Proxy Settings.
+func (m *AospDeviceOwnerWiFiConfiguration) GetProxySetting()(*WiFiProxySetting) {
+    val, err := m.GetBackingStore().Get("proxySetting")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WiFiProxySetting)
     }
     return nil
 }
@@ -228,6 +339,37 @@ func (m *AospDeviceOwnerWiFiConfiguration) Serialize(writer i878a80d2330e89d2689
         }
     }
     {
+        err = writer.WriteStringValue("proxyAutomaticConfigurationUrl", m.GetProxyAutomaticConfigurationUrl())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetProxyExclusionList() != nil {
+        err = writer.WriteCollectionOfStringValues("proxyExclusionList", m.GetProxyExclusionList())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("proxyManualAddress", m.GetProxyManualAddress())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("proxyManualPort", m.GetProxyManualPort())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetProxySetting() != nil {
+        cast := (*m.GetProxySetting()).String()
+        err = writer.WriteStringValue("proxySetting", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("ssid", m.GetSsid())
         if err != nil {
             return err
@@ -277,6 +419,41 @@ func (m *AospDeviceOwnerWiFiConfiguration) SetPreSharedKeyIsSet(value *bool)() {
         panic(err)
     }
 }
+// SetProxyAutomaticConfigurationUrl sets the proxyAutomaticConfigurationUrl property value. Specify the proxy server configuration script URL.
+func (m *AospDeviceOwnerWiFiConfiguration) SetProxyAutomaticConfigurationUrl(value *string)() {
+    err := m.GetBackingStore().Set("proxyAutomaticConfigurationUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetProxyExclusionList sets the proxyExclusionList property value. List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as *.example.com.
+func (m *AospDeviceOwnerWiFiConfiguration) SetProxyExclusionList(value []string)() {
+    err := m.GetBackingStore().Set("proxyExclusionList", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetProxyManualAddress sets the proxyManualAddress property value. Specify the proxy server IP address. Both IPv4 and IPv6 addresses are supported. For example: 192.168.1.1.
+func (m *AospDeviceOwnerWiFiConfiguration) SetProxyManualAddress(value *string)() {
+    err := m.GetBackingStore().Set("proxyManualAddress", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetProxyManualPort sets the proxyManualPort property value. Specify the proxy server port.
+func (m *AospDeviceOwnerWiFiConfiguration) SetProxyManualPort(value *int32)() {
+    err := m.GetBackingStore().Set("proxyManualPort", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetProxySetting sets the proxySetting property value. Wi-Fi Proxy Settings.
+func (m *AospDeviceOwnerWiFiConfiguration) SetProxySetting(value *WiFiProxySetting)() {
+    err := m.GetBackingStore().Set("proxySetting", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSsid sets the ssid property value. This is the name of the Wi-Fi network that is broadcast to all devices.
 func (m *AospDeviceOwnerWiFiConfiguration) SetSsid(value *string)() {
     err := m.GetBackingStore().Set("ssid", value)
@@ -300,6 +477,11 @@ type AospDeviceOwnerWiFiConfigurationable interface {
     GetNetworkName()(*string)
     GetPreSharedKey()(*string)
     GetPreSharedKeyIsSet()(*bool)
+    GetProxyAutomaticConfigurationUrl()(*string)
+    GetProxyExclusionList()([]string)
+    GetProxyManualAddress()(*string)
+    GetProxyManualPort()(*int32)
+    GetProxySetting()(*WiFiProxySetting)
     GetSsid()(*string)
     GetWiFiSecurityType()(*AospDeviceOwnerWiFiSecurityType)
     SetConnectAutomatically(value *bool)()
@@ -307,6 +489,11 @@ type AospDeviceOwnerWiFiConfigurationable interface {
     SetNetworkName(value *string)()
     SetPreSharedKey(value *string)()
     SetPreSharedKeyIsSet(value *bool)()
+    SetProxyAutomaticConfigurationUrl(value *string)()
+    SetProxyExclusionList(value []string)()
+    SetProxyManualAddress(value *string)()
+    SetProxyManualPort(value *int32)()
+    SetProxySetting(value *WiFiProxySetting)()
     SetSsid(value *string)()
     SetWiFiSecurityType(value *AospDeviceOwnerWiFiSecurityType)()
 }

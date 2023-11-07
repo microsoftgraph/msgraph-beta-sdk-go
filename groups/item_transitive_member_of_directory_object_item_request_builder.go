@@ -11,7 +11,7 @@ import (
 type ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTransitiveMemberOfDirectoryObjectItemRequestBuilderGetQueryParameters the groups that a group is a member of, either directly and through nested membership. Nullable.
+// ItemTransitiveMemberOfDirectoryObjectItemRequestBuilderGetQueryParameters the groups a group is a member of, either directly or through nested membership. Nullable.
 type ItemTransitiveMemberOfDirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewItemTransitiveMemberOfDirectoryObjectItemRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewItemTransitiveMemberOfDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the groups that a group is a member of, either directly and through nested membership. Nullable.
+// Get the groups a group is a member of, either directly or through nested membership. Nullable.
 func (m *ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTransitiveMemberOfDirectoryObjectItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -67,7 +67,7 @@ func (m *ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) GraphAdministr
 func (m *ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) GraphGroup()(*ItemTransitiveMemberOfItemGraphGroupRequestBuilder) {
     return NewItemTransitiveMemberOfItemGraphGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation the groups that a group is a member of, either directly and through nested membership. Nullable.
+// ToGetRequestInformation the groups a group is a member of, either directly or through nested membership. Nullable.
 func (m *ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTransitiveMemberOfDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

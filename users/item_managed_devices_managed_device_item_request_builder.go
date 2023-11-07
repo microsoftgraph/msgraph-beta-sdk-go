@@ -216,6 +216,10 @@ func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) Patch(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable), nil
 }
+// PauseConfigurationRefresh provides operations to call the pauseConfigurationRefresh method.
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) PauseConfigurationRefresh()(*ItemManagedDevicesItemPauseConfigurationRefreshRequestBuilder) {
+    return NewItemManagedDevicesItemPauseConfigurationRefreshRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // PlayLostModeSound provides operations to call the playLostModeSound method.
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) PlayLostModeSound()(*ItemManagedDevicesItemPlayLostModeSoundRequestBuilder) {
     return NewItemManagedDevicesItemPlayLostModeSoundRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

@@ -11,7 +11,7 @@ import (
 type ItemCreatedOnBehalfOfRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCreatedOnBehalfOfRequestBuilderGetQueryParameters the user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.
+// ItemCreatedOnBehalfOfRequestBuilderGetQueryParameters the user (or application) that created the group. Note: This isn't set if the user is an administrator. Read-only.
 type ItemCreatedOnBehalfOfRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewItemCreatedOnBehalfOfRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewItemCreatedOnBehalfOfRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.
+// Get the user (or application) that created the group. Note: This isn't set if the user is an administrator. Read-only.
 func (m *ItemCreatedOnBehalfOfRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCreatedOnBehalfOfRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ItemCreatedOnBehalfOfRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
-// ToGetRequestInformation the user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.
+// ToGetRequestInformation the user (or application) that created the group. Note: This isn't set if the user is an administrator. Read-only.
 func (m *ItemCreatedOnBehalfOfRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCreatedOnBehalfOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

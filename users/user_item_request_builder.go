@@ -157,6 +157,10 @@ func (m *UserItemRequestBuilder) Delete(ctx context.Context, requestConfiguratio
     }
     return nil
 }
+// DeletePasswordSingleSignOnCredentials provides operations to call the deletePasswordSingleSignOnCredentials method.
+func (m *UserItemRequestBuilder) DeletePasswordSingleSignOnCredentials()(*ItemDeletePasswordSingleSignOnCredentialsRequestBuilder) {
+    return NewItemDeletePasswordSingleSignOnCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // DeviceEnrollmentConfigurations provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.user entity.
 func (m *UserItemRequestBuilder) DeviceEnrollmentConfigurations()(*ItemDeviceEnrollmentConfigurationsRequestBuilder) {
     return NewItemDeviceEnrollmentConfigurationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -282,6 +286,10 @@ func (m *UserItemRequestBuilder) GetMemberGroups()(*ItemGetMemberGroupsRequestBu
 // GetMemberObjects provides operations to call the getMemberObjects method.
 func (m *UserItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsRequestBuilder) {
     return NewItemGetMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GetPasswordSingleSignOnCredentials provides operations to call the getPasswordSingleSignOnCredentials method.
+func (m *UserItemRequestBuilder) GetPasswordSingleSignOnCredentials()(*ItemGetPasswordSingleSignOnCredentialsRequestBuilder) {
+    return NewItemGetPasswordSingleSignOnCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // InferenceClassification provides operations to manage the inferenceClassification property of the microsoft.graph.user entity.
 func (m *UserItemRequestBuilder) InferenceClassification()(*ItemInferenceClassificationRequestBuilder) {

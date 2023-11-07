@@ -38,7 +38,7 @@ func (m *BranchConnectivityConfiguration) GetAdditionalData()(map[string]any) {
 func (m *BranchConnectivityConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBranchId gets the branchId property value. The branchId property
+// GetBranchId gets the branchId property value. Unique identifier or a specific reference assigned to a branchSite. Key.
 func (m *BranchConnectivityConfiguration) GetBranchId()(*string) {
     val, err := m.GetBackingStore().Get("branchId")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *BranchConnectivityConfiguration) GetBranchId()(*string) {
     }
     return nil
 }
-// GetBranchName gets the branchName property value. The branchName property
+// GetBranchName gets the branchName property value. Display name assigned to a branchSite.
 func (m *BranchConnectivityConfiguration) GetBranchName()(*string) {
     val, err := m.GetBackingStore().Get("branchName")
     if err != nil {
@@ -111,7 +111,7 @@ func (m *BranchConnectivityConfiguration) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetLinks gets the links property value. The links property
+// GetLinks gets the links property value. List of connectivity configurations for deviceLink objects.
 func (m *BranchConnectivityConfiguration) GetLinks()([]ConnectivityConfigurationLinkable) {
     val, err := m.GetBackingStore().Get("links")
     if err != nil {
@@ -184,21 +184,21 @@ func (m *BranchConnectivityConfiguration) SetAdditionalData(value map[string]any
 func (m *BranchConnectivityConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBranchId sets the branchId property value. The branchId property
+// SetBranchId sets the branchId property value. Unique identifier or a specific reference assigned to a branchSite. Key.
 func (m *BranchConnectivityConfiguration) SetBranchId(value *string)() {
     err := m.GetBackingStore().Set("branchId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBranchName sets the branchName property value. The branchName property
+// SetBranchName sets the branchName property value. Display name assigned to a branchSite.
 func (m *BranchConnectivityConfiguration) SetBranchName(value *string)() {
     err := m.GetBackingStore().Set("branchName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLinks sets the links property value. The links property
+// SetLinks sets the links property value. List of connectivity configurations for deviceLink objects.
 func (m *BranchConnectivityConfiguration) SetLinks(value []ConnectivityConfigurationLinkable)() {
     err := m.GetBackingStore().Set("links", value)
     if err != nil {

@@ -30,6 +30,17 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetBatteryAgeInD
     }
     return nil
 }
+// GetDeviceBatteriesDetails gets the deviceBatteriesDetails property value. Properties (maxCapacity and cycleCount) related to all batteries of the device.
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceBatteriesDetails()([]UserExperienceAnalyticsDeviceBatteryDetailable) {
+    val, err := m.GetBackingStore().Get("deviceBatteriesDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserExperienceAnalyticsDeviceBatteryDetailable)
+    }
+    return nil
+}
 // GetDeviceBatteryCount gets the deviceBatteryCount property value. Number of batteries in a user device. Valid values 1 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceBatteryCount()(*int32) {
     val, err := m.GetBackingStore().Get("deviceBatteryCount")
@@ -95,6 +106,22 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
         }
         if val != nil {
             m.SetBatteryAgeInDays(val)
+        }
+        return nil
+    }
+    res["deviceBatteriesDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUserExperienceAnalyticsDeviceBatteryDetailFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UserExperienceAnalyticsDeviceBatteryDetailable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(UserExperienceAnalyticsDeviceBatteryDetailable)
+                }
+            }
+            m.SetDeviceBatteriesDetails(res)
         }
         return nil
     }
@@ -267,6 +294,18 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) Serialize(writer
             return err
         }
     }
+    if m.GetDeviceBatteriesDetails() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceBatteriesDetails()))
+        for i, v := range m.GetDeviceBatteriesDetails() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("deviceBatteriesDetails", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteInt32Value("deviceBatteryCount", m.GetDeviceBatteryCount())
         if err != nil {
@@ -333,6 +372,13 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) Serialize(writer
 // SetBatteryAgeInDays sets the batteryAgeInDays property value. Estimated battery age. Unit in days. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetBatteryAgeInDays(value *int32)() {
     err := m.GetBackingStore().Set("batteryAgeInDays", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDeviceBatteriesDetails sets the deviceBatteriesDetails property value. Properties (maxCapacity and cycleCount) related to all batteries of the device.
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetDeviceBatteriesDetails(value []UserExperienceAnalyticsDeviceBatteryDetailable)() {
+    err := m.GetBackingStore().Set("deviceBatteriesDetails", value)
     if err != nil {
         panic(err)
     }
@@ -412,6 +458,7 @@ type UserExperienceAnalyticsBatteryHealthDevicePerformanceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBatteryAgeInDays()(*int32)
+    GetDeviceBatteriesDetails()([]UserExperienceAnalyticsDeviceBatteryDetailable)
     GetDeviceBatteryCount()(*int32)
     GetDeviceBatteryHealthScore()(*int32)
     GetDeviceId()(*string)
@@ -423,6 +470,7 @@ type UserExperienceAnalyticsBatteryHealthDevicePerformanceable interface {
     GetMaxCapacityPercentage()(*int32)
     GetModel()(*string)
     SetBatteryAgeInDays(value *int32)()
+    SetDeviceBatteriesDetails(value []UserExperienceAnalyticsDeviceBatteryDetailable)()
     SetDeviceBatteryCount(value *int32)()
     SetDeviceBatteryHealthScore(value *int32)()
     SetDeviceId(value *string)()
