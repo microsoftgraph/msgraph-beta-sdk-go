@@ -788,6 +788,36 @@ func (m *DefaultManagedAppProtection) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["messagingRedirectAppDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMessagingRedirectAppDisplayName(val)
+        }
+        return nil
+    }
+    res["messagingRedirectAppPackageId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMessagingRedirectAppPackageId(val)
+        }
+        return nil
+    }
+    res["messagingRedirectAppUrlScheme"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMessagingRedirectAppUrlScheme(val)
+        }
+        return nil
+    }
     res["minimumRequiredCompanyPortalVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -999,6 +1029,39 @@ func (m *DefaultManagedAppProtection) GetFingerprintAndBiometricEnabled()(*bool)
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetMessagingRedirectAppDisplayName gets the messagingRedirectAppDisplayName property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app name which are allowed to be used.
+func (m *DefaultManagedAppProtection) GetMessagingRedirectAppDisplayName()(*string) {
+    val, err := m.GetBackingStore().Get("messagingRedirectAppDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetMessagingRedirectAppPackageId gets the messagingRedirectAppPackageId property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app package ids which are allowed to be used.
+func (m *DefaultManagedAppProtection) GetMessagingRedirectAppPackageId()(*string) {
+    val, err := m.GetBackingStore().Get("messagingRedirectAppPackageId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetMessagingRedirectAppUrlScheme gets the messagingRedirectAppUrlScheme property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app url redirect schemes which are allowed to be used.
+func (m *DefaultManagedAppProtection) GetMessagingRedirectAppUrlScheme()(*string) {
+    val, err := m.GetBackingStore().Get("messagingRedirectAppUrlScheme")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -1469,6 +1532,24 @@ func (m *DefaultManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteStringValue("messagingRedirectAppDisplayName", m.GetMessagingRedirectAppDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("messagingRedirectAppPackageId", m.GetMessagingRedirectAppPackageId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("messagingRedirectAppUrlScheme", m.GetMessagingRedirectAppUrlScheme())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("minimumRequiredCompanyPortalVersion", m.GetMinimumRequiredCompanyPortalVersion())
         if err != nil {
             return err
@@ -1839,6 +1920,27 @@ func (m *DefaultManagedAppProtection) SetFingerprintAndBiometricEnabled(value *b
         panic(err)
     }
 }
+// SetMessagingRedirectAppDisplayName sets the messagingRedirectAppDisplayName property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app name which are allowed to be used.
+func (m *DefaultManagedAppProtection) SetMessagingRedirectAppDisplayName(value *string)() {
+    err := m.GetBackingStore().Set("messagingRedirectAppDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMessagingRedirectAppPackageId sets the messagingRedirectAppPackageId property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app package ids which are allowed to be used.
+func (m *DefaultManagedAppProtection) SetMessagingRedirectAppPackageId(value *string)() {
+    err := m.GetBackingStore().Set("messagingRedirectAppPackageId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMessagingRedirectAppUrlScheme sets the messagingRedirectAppUrlScheme property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app url redirect schemes which are allowed to be used.
+func (m *DefaultManagedAppProtection) SetMessagingRedirectAppUrlScheme(value *string)() {
+    err := m.GetBackingStore().Set("messagingRedirectAppUrlScheme", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMinimumRequiredCompanyPortalVersion sets the minimumRequiredCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or app access will be blocked
 func (m *DefaultManagedAppProtection) SetMinimumRequiredCompanyPortalVersion(value *string)() {
     err := m.GetBackingStore().Set("minimumRequiredCompanyPortalVersion", value)
@@ -2012,6 +2114,9 @@ type DefaultManagedAppProtectionable interface {
     GetFaceIdBlocked()(*bool)
     GetFilterOpenInToOnlyManagedApps()(*bool)
     GetFingerprintAndBiometricEnabled()(*bool)
+    GetMessagingRedirectAppDisplayName()(*string)
+    GetMessagingRedirectAppPackageId()(*string)
+    GetMessagingRedirectAppUrlScheme()(*string)
     GetMinimumRequiredCompanyPortalVersion()(*string)
     GetMinimumRequiredPatchVersion()(*string)
     GetMinimumRequiredSdkVersion()(*string)
@@ -2067,6 +2172,9 @@ type DefaultManagedAppProtectionable interface {
     SetFaceIdBlocked(value *bool)()
     SetFilterOpenInToOnlyManagedApps(value *bool)()
     SetFingerprintAndBiometricEnabled(value *bool)()
+    SetMessagingRedirectAppDisplayName(value *string)()
+    SetMessagingRedirectAppPackageId(value *string)()
+    SetMessagingRedirectAppUrlScheme(value *string)()
     SetMinimumRequiredCompanyPortalVersion(value *string)()
     SetMinimumRequiredPatchVersion(value *string)()
     SetMinimumRequiredSdkVersion(value *string)()

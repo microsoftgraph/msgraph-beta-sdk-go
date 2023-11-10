@@ -22,7 +22,7 @@ func NewPlatformCredentialAuthenticationMethod()(*PlatformCredentialAuthenticati
 func CreatePlatformCredentialAuthenticationMethodFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlatformCredentialAuthenticationMethod(), nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date and time that this Platform Credential Key was registered.
 func (m *PlatformCredentialAuthenticationMethod) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -33,7 +33,7 @@ func (m *PlatformCredentialAuthenticationMethod) GetCreatedDateTime()(*i33607480
     }
     return nil
 }
-// GetDevice gets the device property value. The device property
+// GetDevice gets the device property value. The registered device on which this Platform Credential resides. Supports $expand. When you get a user's Platform Credential registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/platformCredentialAuthenticationMethod/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.
 func (m *PlatformCredentialAuthenticationMethod) GetDevice()(Deviceable) {
     val, err := m.GetBackingStore().Get("device")
     if err != nil {
@@ -44,7 +44,7 @@ func (m *PlatformCredentialAuthenticationMethod) GetDevice()(Deviceable) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The name of the device on which Platform Credential is registered.
 func (m *PlatformCredentialAuthenticationMethod) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -110,7 +110,7 @@ func (m *PlatformCredentialAuthenticationMethod) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetKeyStrength gets the keyStrength property value. The keyStrength property
+// GetKeyStrength gets the keyStrength property value. Key strength of this Platform Credential key. Possible values are: normal, weak, unknown.
 func (m *PlatformCredentialAuthenticationMethod) GetKeyStrength()(*AuthenticationMethodKeyStrength) {
     val, err := m.GetBackingStore().Get("keyStrength")
     if err != nil {
@@ -121,7 +121,7 @@ func (m *PlatformCredentialAuthenticationMethod) GetKeyStrength()(*Authenticatio
     }
     return nil
 }
-// GetPlatform gets the platform property value. The platform property
+// GetPlatform gets the platform property value. Platform on which this Platform Credential key is present. Possible values are: unknown, windows, macOS,iOS, android, linux.
 func (m *PlatformCredentialAuthenticationMethod) GetPlatform()(*AuthenticationMethodPlatform) {
     val, err := m.GetBackingStore().Get("platform")
     if err != nil {
@@ -172,35 +172,35 @@ func (m *PlatformCredentialAuthenticationMethod) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date and time that this Platform Credential Key was registered.
 func (m *PlatformCredentialAuthenticationMethod) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDevice sets the device property value. The device property
+// SetDevice sets the device property value. The registered device on which this Platform Credential resides. Supports $expand. When you get a user's Platform Credential registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/platformCredentialAuthenticationMethod/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.
 func (m *PlatformCredentialAuthenticationMethod) SetDevice(value Deviceable)() {
     err := m.GetBackingStore().Set("device", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The name of the device on which Platform Credential is registered.
 func (m *PlatformCredentialAuthenticationMethod) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetKeyStrength sets the keyStrength property value. The keyStrength property
+// SetKeyStrength sets the keyStrength property value. Key strength of this Platform Credential key. Possible values are: normal, weak, unknown.
 func (m *PlatformCredentialAuthenticationMethod) SetKeyStrength(value *AuthenticationMethodKeyStrength)() {
     err := m.GetBackingStore().Set("keyStrength", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPlatform sets the platform property value. The platform property
+// SetPlatform sets the platform property value. Platform on which this Platform Credential key is present. Possible values are: unknown, windows, macOS,iOS, android, linux.
 func (m *PlatformCredentialAuthenticationMethod) SetPlatform(value *AuthenticationMethodPlatform)() {
     err := m.GetBackingStore().Set("platform", value)
     if err != nil {

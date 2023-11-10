@@ -51,6 +51,16 @@ func (m *ExpediteSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["isReadinessTest"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsReadinessTest(val)
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -74,6 +84,17 @@ func (m *ExpediteSettings) GetIsExpedited()(*bool) {
     }
     return nil
 }
+// GetIsReadinessTest gets the isReadinessTest property value. The isReadinessTest property
+func (m *ExpediteSettings) GetIsReadinessTest()(*bool) {
+    val, err := m.GetBackingStore().Get("isReadinessTest")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ExpediteSettings) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
@@ -89,6 +110,12 @@ func (m *ExpediteSettings) GetOdataType()(*string) {
 func (m *ExpediteSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("isExpedited", m.GetIsExpedited())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("isReadinessTest", m.GetIsReadinessTest())
         if err != nil {
             return err
         }
@@ -125,6 +152,13 @@ func (m *ExpediteSettings) SetIsExpedited(value *bool)() {
         panic(err)
     }
 }
+// SetIsReadinessTest sets the isReadinessTest property value. The isReadinessTest property
+func (m *ExpediteSettings) SetIsReadinessTest(value *bool)() {
+    err := m.GetBackingStore().Set("isReadinessTest", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ExpediteSettings) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -139,8 +173,10 @@ type ExpediteSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetIsExpedited()(*bool)
+    GetIsReadinessTest()(*bool)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetIsExpedited(value *bool)()
+    SetIsReadinessTest(value *bool)()
     SetOdataType(value *string)()
 }

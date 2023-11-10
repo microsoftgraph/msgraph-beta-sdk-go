@@ -320,6 +320,16 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["messagingRedirectAppUrlScheme"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMessagingRedirectAppUrlScheme(val)
+        }
+        return nil
+    }
     res["minimumRequiredSdkVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -391,6 +401,17 @@ func (m *IosManagedAppProtection) GetManagedUniversalLinks()([]string) {
     }
     if val != nil {
         return val.([]string)
+    }
+    return nil
+}
+// GetMessagingRedirectAppUrlScheme gets the messagingRedirectAppUrlScheme property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app url redirect schemes which are allowed to be used.
+func (m *IosManagedAppProtection) GetMessagingRedirectAppUrlScheme()(*string) {
+    val, err := m.GetBackingStore().Get("messagingRedirectAppUrlScheme")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -554,6 +575,12 @@ func (m *IosManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     {
+        err = writer.WriteStringValue("messagingRedirectAppUrlScheme", m.GetMessagingRedirectAppUrlScheme())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("minimumRequiredSdkVersion", m.GetMinimumRequiredSdkVersion())
         if err != nil {
             return err
@@ -683,6 +710,13 @@ func (m *IosManagedAppProtection) SetManagedUniversalLinks(value []string)() {
         panic(err)
     }
 }
+// SetMessagingRedirectAppUrlScheme sets the messagingRedirectAppUrlScheme property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app url redirect schemes which are allowed to be used.
+func (m *IosManagedAppProtection) SetMessagingRedirectAppUrlScheme(value *string)() {
+    err := m.GetBackingStore().Set("messagingRedirectAppUrlScheme", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMinimumRequiredSdkVersion sets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data.
 func (m *IosManagedAppProtection) SetMinimumRequiredSdkVersion(value *string)() {
     err := m.GetBackingStore().Set("minimumRequiredSdkVersion", value)
@@ -736,6 +770,7 @@ type IosManagedAppProtectionable interface {
     GetFaceIdBlocked()(*bool)
     GetFilterOpenInToOnlyManagedApps()(*bool)
     GetManagedUniversalLinks()([]string)
+    GetMessagingRedirectAppUrlScheme()(*string)
     GetMinimumRequiredSdkVersion()(*string)
     GetMinimumWarningSdkVersion()(*string)
     GetMinimumWipeSdkVersion()(*string)
@@ -755,6 +790,7 @@ type IosManagedAppProtectionable interface {
     SetFaceIdBlocked(value *bool)()
     SetFilterOpenInToOnlyManagedApps(value *bool)()
     SetManagedUniversalLinks(value []string)()
+    SetMessagingRedirectAppUrlScheme(value *string)()
     SetMinimumRequiredSdkVersion(value *string)()
     SetMinimumWarningSdkVersion(value *string)()
     SetMinimumWipeSdkVersion(value *string)()

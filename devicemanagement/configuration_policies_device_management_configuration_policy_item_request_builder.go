@@ -124,6 +124,10 @@ func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuil
 func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) Reorder()(*ConfigurationPoliciesItemReorderRequestBuilder) {
     return NewConfigurationPoliciesItemReorderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RetrieveLatestUpgradeDefaultBaselinePolicy provides operations to call the retrieveLatestUpgradeDefaultBaselinePolicy method.
+func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) RetrieveLatestUpgradeDefaultBaselinePolicy()(*ConfigurationPoliciesItemRetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilder) {
+    return NewConfigurationPoliciesItemRetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Settings provides operations to manage the settings property of the microsoft.graph.deviceManagementConfigurationPolicy entity.
 func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) Settings()(*ConfigurationPoliciesItemSettingsRequestBuilder) {
     return NewConfigurationPoliciesItemSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

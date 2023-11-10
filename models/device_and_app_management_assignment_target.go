@@ -44,6 +44,8 @@ func CreateDeviceAndAppManagementAssignmentTargetFromDiscriminatorValue(parseNod
                         return NewExclusionGroupAssignmentTarget(), nil
                     case "#microsoft.graph.groupAssignmentTarget":
                         return NewGroupAssignmentTarget(), nil
+                    case "#microsoft.graph.scopeTagGroupAssignmentTarget":
+                        return NewScopeTagGroupAssignmentTarget(), nil
                 }
             }
         }

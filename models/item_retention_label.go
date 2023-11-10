@@ -97,7 +97,7 @@ func (m *ItemRetentionLabel) GetLabelAppliedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetLabelAppliedDateTime gets the labelAppliedDateTime property value. The date and time when the label was applied on the item. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// GetLabelAppliedDateTime gets the labelAppliedDateTime property value. The date and time when the label was applied on the item. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *ItemRetentionLabel) GetLabelAppliedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("labelAppliedDateTime")
     if err != nil {
@@ -182,7 +182,7 @@ func (m *ItemRetentionLabel) SetLabelAppliedBy(value IdentitySetable)() {
         panic(err)
     }
 }
-// SetLabelAppliedDateTime sets the labelAppliedDateTime property value. The date and time when the label was applied on the item. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// SetLabelAppliedDateTime sets the labelAppliedDateTime property value. The date and time when the label was applied on the item. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *ItemRetentionLabel) SetLabelAppliedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("labelAppliedDateTime", value)
     if err != nil {

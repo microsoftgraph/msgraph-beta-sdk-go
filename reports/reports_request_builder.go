@@ -643,6 +643,10 @@ func (m *ReportsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4b
 func (m *ReportsRequestBuilder) Security()(*SecurityRequestBuilder) {
     return NewSecurityRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ServiceActivity provides operations to manage the serviceActivity property of the microsoft.graph.reportRoot entity.
+func (m *ReportsRequestBuilder) ServiceActivity()(*ServiceActivityRequestBuilder) {
+    return NewServiceActivityRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ServicePrincipalSignInActivities provides operations to manage the servicePrincipalSignInActivities property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) ServicePrincipalSignInActivities()(*ServicePrincipalSignInActivitiesRequestBuilder) {
     return NewServicePrincipalSignInActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

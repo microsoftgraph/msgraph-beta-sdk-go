@@ -156,6 +156,26 @@ func (m *MobileAppContentFile) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["sizeEncryptedInBytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSizeEncryptedInBytes(val)
+        }
+        return nil
+    }
+    res["sizeInBytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSizeInBytes(val)
+        }
+        return nil
+    }
     res["uploadState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMobileAppContentFileUploadState)
         if err != nil {
@@ -245,6 +265,28 @@ func (m *MobileAppContentFile) GetSizeEncrypted()(*int64) {
     }
     return nil
 }
+// GetSizeEncryptedInBytes gets the sizeEncryptedInBytes property value. Indicates the size of the file after encryption, in bytes.
+func (m *MobileAppContentFile) GetSizeEncryptedInBytes()(*int64) {
+    val, err := m.GetBackingStore().Get("sizeEncryptedInBytes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
+}
+// GetSizeInBytes gets the sizeInBytes property value. Indicates the original size of the file, in bytes.
+func (m *MobileAppContentFile) GetSizeInBytes()(*int64) {
+    val, err := m.GetBackingStore().Get("sizeInBytes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
+}
 // GetUploadState gets the uploadState property value. Contains properties for upload request states.
 func (m *MobileAppContentFile) GetUploadState()(*MobileAppContentFileUploadState) {
     val, err := m.GetBackingStore().Get("uploadState")
@@ -318,6 +360,18 @@ func (m *MobileAppContentFile) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err = writer.WriteInt64Value("sizeEncrypted", m.GetSizeEncrypted())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt64Value("sizeEncryptedInBytes", m.GetSizeEncryptedInBytes())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt64Value("sizeInBytes", m.GetSizeInBytes())
         if err != nil {
             return err
         }
@@ -401,6 +455,20 @@ func (m *MobileAppContentFile) SetSizeEncrypted(value *int64)() {
         panic(err)
     }
 }
+// SetSizeEncryptedInBytes sets the sizeEncryptedInBytes property value. Indicates the size of the file after encryption, in bytes.
+func (m *MobileAppContentFile) SetSizeEncryptedInBytes(value *int64)() {
+    err := m.GetBackingStore().Set("sizeEncryptedInBytes", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSizeInBytes sets the sizeInBytes property value. Indicates the original size of the file, in bytes.
+func (m *MobileAppContentFile) SetSizeInBytes(value *int64)() {
+    err := m.GetBackingStore().Set("sizeInBytes", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUploadState sets the uploadState property value. Contains properties for upload request states.
 func (m *MobileAppContentFile) SetUploadState(value *MobileAppContentFileUploadState)() {
     err := m.GetBackingStore().Set("uploadState", value)
@@ -422,6 +490,8 @@ type MobileAppContentFileable interface {
     GetName()(*string)
     GetSize()(*int64)
     GetSizeEncrypted()(*int64)
+    GetSizeEncryptedInBytes()(*int64)
+    GetSizeInBytes()(*int64)
     GetUploadState()(*MobileAppContentFileUploadState)
     SetAzureStorageUri(value *string)()
     SetAzureStorageUriExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -433,5 +503,7 @@ type MobileAppContentFileable interface {
     SetName(value *string)()
     SetSize(value *int64)()
     SetSizeEncrypted(value *int64)()
+    SetSizeEncryptedInBytes(value *int64)()
+    SetSizeInBytes(value *int64)()
     SetUploadState(value *MobileAppContentFileUploadState)()
 }

@@ -18,7 +18,7 @@ type ItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters the permissions that have been granted for a group to a specific application. Supports $expand.
+// ItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters the permissions granted for a group to a specific application. Supports $expand.
 type ItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) 
     }
     return nil
 }
-// Get the permissions that have been granted for a group to a specific application. Supports $expand.
+// Get the permissions granted for a group to a specific application. Supports $expand.
 func (m *ItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +121,7 @@ func (m *ItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) 
     requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the permissions that have been granted for a group to a specific application. Supports $expand.
+// ToGetRequestInformation the permissions granted for a group to a specific application. Supports $expand.
 func (m *ItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

@@ -635,6 +635,26 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["messagingRedirectAppDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMessagingRedirectAppDisplayName(val)
+        }
+        return nil
+    }
+    res["messagingRedirectAppPackageId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMessagingRedirectAppPackageId(val)
+        }
+        return nil
+    }
     res["minimumRequiredCompanyPortalVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -796,6 +816,28 @@ func (m *AndroidManagedAppProtection) GetKeyboardsRestricted()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetMessagingRedirectAppDisplayName gets the messagingRedirectAppDisplayName property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app name which is allowed to be used.
+func (m *AndroidManagedAppProtection) GetMessagingRedirectAppDisplayName()(*string) {
+    val, err := m.GetBackingStore().Get("messagingRedirectAppDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetMessagingRedirectAppPackageId gets the messagingRedirectAppPackageId property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app package id which is allowed to be used.
+func (m *AndroidManagedAppProtection) GetMessagingRedirectAppPackageId()(*string) {
+    val, err := m.GetBackingStore().Get("messagingRedirectAppPackageId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -1162,6 +1204,18 @@ func (m *AndroidManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteStringValue("messagingRedirectAppDisplayName", m.GetMessagingRedirectAppDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("messagingRedirectAppPackageId", m.GetMessagingRedirectAppPackageId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("minimumRequiredCompanyPortalVersion", m.GetMinimumRequiredCompanyPortalVersion())
         if err != nil {
             return err
@@ -1453,6 +1507,20 @@ func (m *AndroidManagedAppProtection) SetKeyboardsRestricted(value *bool)() {
         panic(err)
     }
 }
+// SetMessagingRedirectAppDisplayName sets the messagingRedirectAppDisplayName property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app name which is allowed to be used.
+func (m *AndroidManagedAppProtection) SetMessagingRedirectAppDisplayName(value *string)() {
+    err := m.GetBackingStore().Set("messagingRedirectAppDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMessagingRedirectAppPackageId sets the messagingRedirectAppPackageId property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app package id which is allowed to be used.
+func (m *AndroidManagedAppProtection) SetMessagingRedirectAppPackageId(value *string)() {
+    err := m.GetBackingStore().Set("messagingRedirectAppPackageId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMinimumRequiredCompanyPortalVersion sets the minimumRequiredCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or app access will be blocked
 func (m *AndroidManagedAppProtection) SetMinimumRequiredCompanyPortalVersion(value *string)() {
     err := m.GetBackingStore().Set("minimumRequiredCompanyPortalVersion", value)
@@ -1584,6 +1652,8 @@ type AndroidManagedAppProtectionable interface {
     GetExemptedAppPackages()([]KeyValuePairable)
     GetFingerprintAndBiometricEnabled()(*bool)
     GetKeyboardsRestricted()(*bool)
+    GetMessagingRedirectAppDisplayName()(*string)
+    GetMessagingRedirectAppPackageId()(*string)
     GetMinimumRequiredCompanyPortalVersion()(*string)
     GetMinimumRequiredPatchVersion()(*string)
     GetMinimumWarningCompanyPortalVersion()(*string)
@@ -1627,6 +1697,8 @@ type AndroidManagedAppProtectionable interface {
     SetExemptedAppPackages(value []KeyValuePairable)()
     SetFingerprintAndBiometricEnabled(value *bool)()
     SetKeyboardsRestricted(value *bool)()
+    SetMessagingRedirectAppDisplayName(value *string)()
+    SetMessagingRedirectAppPackageId(value *string)()
     SetMinimumRequiredCompanyPortalVersion(value *string)()
     SetMinimumRequiredPatchVersion(value *string)()
     SetMinimumWarningCompanyPortalVersion(value *string)()

@@ -83,7 +83,7 @@ func (m *ItemMessagesRequestBuilder) Delta()(*ItemMessagesDeltaRequestBuilder) {
 // Get the messages in a mailbox or folder. Read-only. Nullable.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
 func (m *ItemMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMessagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

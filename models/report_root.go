@@ -333,6 +333,16 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["serviceActivity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateServiceActivityFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetServiceActivity(val.(ServiceActivityable))
+        }
+        return nil
+    }
     res["servicePrincipalSignInActivities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateServicePrincipalSignInActivityFromDiscriminatorValue)
         if err != nil {
@@ -439,6 +449,17 @@ func (m *ReportRoot) GetSecurity()(SecurityReportsRootable) {
     }
     if val != nil {
         return val.(SecurityReportsRootable)
+    }
+    return nil
+}
+// GetServiceActivity gets the serviceActivity property value. A placeholder to the Microsoft Entra service activity.
+func (m *ReportRoot) GetServiceActivity()(ServiceActivityable) {
+    val, err := m.GetBackingStore().Get("serviceActivity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ServiceActivityable)
     }
     return nil
 }
@@ -648,6 +669,12 @@ func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("serviceActivity", m.GetServiceActivity())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetServicePrincipalSignInActivities() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServicePrincipalSignInActivities()))
         for i, v := range m.GetServicePrincipalSignInActivities() {
@@ -784,6 +811,13 @@ func (m *ReportRoot) SetSecurity(value SecurityReportsRootable)() {
         panic(err)
     }
 }
+// SetServiceActivity sets the serviceActivity property value. A placeholder to the Microsoft Entra service activity.
+func (m *ReportRoot) SetServiceActivity(value ServiceActivityable)() {
+    err := m.GetBackingStore().Set("serviceActivity", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetServicePrincipalSignInActivities sets the servicePrincipalSignInActivities property value. Represents a collection of sign-in activities of service principals.
 func (m *ReportRoot) SetServicePrincipalSignInActivities(value []ServicePrincipalSignInActivityable)() {
     err := m.GetBackingStore().Set("servicePrincipalSignInActivities", value)
@@ -830,6 +864,7 @@ type ReportRootable interface {
     GetMonthlyPrintUsageSummariesByPrinter()([]PrintUsageByPrinterable)
     GetMonthlyPrintUsageSummariesByUser()([]PrintUsageByUserable)
     GetSecurity()(SecurityReportsRootable)
+    GetServiceActivity()(ServiceActivityable)
     GetServicePrincipalSignInActivities()([]ServicePrincipalSignInActivityable)
     GetSla()(ServiceLevelAgreementRootable)
     GetUserCredentialUsageDetails()([]UserCredentialUsageDetailsable)
@@ -848,6 +883,7 @@ type ReportRootable interface {
     SetMonthlyPrintUsageSummariesByPrinter(value []PrintUsageByPrinterable)()
     SetMonthlyPrintUsageSummariesByUser(value []PrintUsageByUserable)()
     SetSecurity(value SecurityReportsRootable)()
+    SetServiceActivity(value ServiceActivityable)()
     SetServicePrincipalSignInActivities(value []ServicePrincipalSignInActivityable)()
     SetSla(value ServiceLevelAgreementRootable)()
     SetUserCredentialUsageDetails(value []UserCredentialUsageDetailsable)()

@@ -65,7 +65,7 @@ func (m *CommunicationsIdentitySet) GetEncrypted()(Identityable) {
     }
     return nil
 }
-// GetEndpointType gets the endpointType property value. Type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
+// GetEndpointType gets the endpointType property value. Type of endpoint the participant uses. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
 func (m *CommunicationsIdentitySet) GetEndpointType()(*EndpointType) {
     val, err := m.GetBackingStore().Get("endpointType")
     if err != nil {
@@ -172,7 +172,7 @@ func (m *CommunicationsIdentitySet) GetGuest()(Identityable) {
     }
     return nil
 }
-// GetOnPremises gets the onPremises property value. The Skype for Business On-Premises user associated with this action.
+// GetOnPremises gets the onPremises property value. The Skype for Business on-premises user associated with this action.
 func (m *CommunicationsIdentitySet) GetOnPremises()(Identityable) {
     val, err := m.GetBackingStore().Get("onPremises")
     if err != nil {
@@ -183,7 +183,7 @@ func (m *CommunicationsIdentitySet) GetOnPremises()(Identityable) {
     }
     return nil
 }
-// GetPhone gets the phone property value. Inherited from identitySet. The phone user associated with this action.
+// GetPhone gets the phone property value. The phone user associated with this action.
 func (m *CommunicationsIdentitySet) GetPhone()(Identityable) {
     val, err := m.GetBackingStore().Get("phone")
     if err != nil {
@@ -279,7 +279,7 @@ func (m *CommunicationsIdentitySet) SetEncrypted(value Identityable)() {
         panic(err)
     }
 }
-// SetEndpointType sets the endpointType property value. Type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
+// SetEndpointType sets the endpointType property value. Type of endpoint the participant uses. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
 func (m *CommunicationsIdentitySet) SetEndpointType(value *EndpointType)() {
     err := m.GetBackingStore().Set("endpointType", value)
     if err != nil {
@@ -293,14 +293,14 @@ func (m *CommunicationsIdentitySet) SetGuest(value Identityable)() {
         panic(err)
     }
 }
-// SetOnPremises sets the onPremises property value. The Skype for Business On-Premises user associated with this action.
+// SetOnPremises sets the onPremises property value. The Skype for Business on-premises user associated with this action.
 func (m *CommunicationsIdentitySet) SetOnPremises(value Identityable)() {
     err := m.GetBackingStore().Set("onPremises", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPhone sets the phone property value. Inherited from identitySet. The phone user associated with this action.
+// SetPhone sets the phone property value. The phone user associated with this action.
 func (m *CommunicationsIdentitySet) SetPhone(value Identityable)() {
     err := m.GetBackingStore().Set("phone", value)
     if err != nil {

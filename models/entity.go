@@ -2166,6 +2166,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewPrivilegeEscalationUserFinding(), nil
                     case "#microsoft.graph.privilegeManagementElevation":
                         return NewPrivilegeManagementElevation(), nil
+                    case "#microsoft.graph.privilegeManagementElevationRequest":
+                        return NewPrivilegeManagementElevationRequest(), nil
                     case "#microsoft.graph.profile":
                         return NewProfile(), nil
                     case "#microsoft.graph.profileCardProperty":
@@ -2344,6 +2346,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSequentialActivationRenewalsAlertConfiguration(), nil
                     case "#microsoft.graph.sequentialActivationRenewalsAlertIncident":
                         return NewSequentialActivationRenewalsAlertIncident(), nil
+                    case "#microsoft.graph.serviceActivity":
+                        return NewServiceActivity(), nil
                     case "#microsoft.graph.serviceAnnouncement":
                         return NewServiceAnnouncement(), nil
                     case "#microsoft.graph.serviceAnnouncementAttachment":

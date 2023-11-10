@@ -96,10 +96,10 @@ func (m *IndustryDataInboundFlowsRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowCollectionResponseable), nil
 }
-// Post create a new inboundFileFlow object. The following prerequisite resources are required when you create an inboundFileFlow: This API is available in the following national cloud deployments.
+// Post create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow: This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-post?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundflow-post?view=graph-rest-1.0
 func (m *IndustryDataInboundFlowsRequestBuilder) Post(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable, requestConfiguration *IndustryDataInboundFlowsRequestBuilderPostRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -134,7 +134,7 @@ func (m *IndustryDataInboundFlowsRequestBuilder) ToGetRequestInformation(ctx con
     requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new inboundFileFlow object. The following prerequisite resources are required when you create an inboundFileFlow: This API is available in the following national cloud deployments.
+// ToPostRequestInformation create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow: This API is available in the following national cloud deployments.
 func (m *IndustryDataInboundFlowsRequestBuilder) ToPostRequestInformation(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable, requestConfiguration *IndustryDataInboundFlowsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

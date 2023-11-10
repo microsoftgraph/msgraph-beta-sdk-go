@@ -11,7 +11,7 @@ import (
 type ItemMemberOfDirectoryObjectItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemMemberOfDirectoryObjectItemRequestBuilderGetQueryParameters the groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
+// ItemMemberOfDirectoryObjectItemRequestBuilderGetQueryParameters the groups, directory roles, and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
 type ItemMemberOfDirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewItemMemberOfDirectoryObjectItemRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewItemMemberOfDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
+// Get the groups, directory roles, and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
 func (m *ItemMemberOfDirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMemberOfDirectoryObjectItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -71,7 +71,7 @@ func (m *ItemMemberOfDirectoryObjectItemRequestBuilder) GraphDirectoryRole()(*It
 func (m *ItemMemberOfDirectoryObjectItemRequestBuilder) GraphGroup()(*ItemMemberOfItemGraphGroupRequestBuilder) {
     return NewItemMemberOfItemGraphGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation the groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
+// ToGetRequestInformation the groups, directory roles, and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
 func (m *ItemMemberOfDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMemberOfDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

@@ -11,7 +11,7 @@ import (
 type PrivilegedAccessGroupAssignmentScheduleInstancesItemGroupServiceProvisioningErrorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrivilegedAccessGroupAssignmentScheduleInstancesItemGroupServiceProvisioningErrorsRequestBuilderGetQueryParameters errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).
+// PrivilegedAccessGroupAssignmentScheduleInstancesItemGroupServiceProvisioningErrorsRequestBuilderGetQueryParameters errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object.  Supports $filter (eq, not, for isResolved and serviceInstance).
 type PrivilegedAccessGroupAssignmentScheduleInstancesItemGroupServiceProvisioningErrorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ func NewPrivilegedAccessGroupAssignmentScheduleInstancesItemGroupServiceProvisio
 func (m *PrivilegedAccessGroupAssignmentScheduleInstancesItemGroupServiceProvisioningErrorsRequestBuilder) Count()(*PrivilegedAccessGroupAssignmentScheduleInstancesItemGroupServiceProvisioningErrorsCountRequestBuilder) {
     return NewPrivilegedAccessGroupAssignmentScheduleInstancesItemGroupServiceProvisioningErrorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).
+// Get errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object.  Supports $filter (eq, not, for isResolved and serviceInstance).
 func (m *PrivilegedAccessGroupAssignmentScheduleInstancesItemGroupServiceProvisioningErrorsRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentScheduleInstancesItemGroupServiceProvisioningErrorsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceProvisioningErrorCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,7 +75,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleInstancesItemGroupServiceProvisi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceProvisioningErrorCollectionResponseable), nil
 }
-// ToGetRequestInformation errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).
+// ToGetRequestInformation errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object.  Supports $filter (eq, not, for isResolved and serviceInstance).
 func (m *PrivilegedAccessGroupAssignmentScheduleInstancesItemGroupServiceProvisioningErrorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentScheduleInstancesItemGroupServiceProvisioningErrorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

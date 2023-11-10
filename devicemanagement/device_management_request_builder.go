@@ -251,6 +251,10 @@ func (m *DeviceManagementRequestBuilder) DeviceShellScripts()(*DeviceShellScript
 func (m *DeviceManagementRequestBuilder) DomainJoinConnectors()(*DomainJoinConnectorsRequestBuilder) {
     return NewDomainJoinConnectorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ElevationRequests provides operations to manage the elevationRequests property of the microsoft.graph.deviceManagement entity.
+func (m *DeviceManagementRequestBuilder) ElevationRequests()(*ElevationRequestsRequestBuilder) {
+    return NewElevationRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // EmbeddedSIMActivationCodePools provides operations to manage the embeddedSIMActivationCodePools property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) EmbeddedSIMActivationCodePools()(*EmbeddedSIMActivationCodePoolsRequestBuilder) {
     return NewEmbeddedSIMActivationCodePoolsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

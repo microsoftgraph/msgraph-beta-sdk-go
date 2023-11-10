@@ -11,7 +11,7 @@ import (
 type ConnectivityBranchesItemConnectivityConfigurationLinksRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConnectivityBranchesItemConnectivityConfigurationLinksRequestBuilderGetQueryParameters get links from networkAccess
+// ConnectivityBranchesItemConnectivityConfigurationLinksRequestBuilderGetQueryParameters list of connectivity configurations for deviceLink objects.
 type ConnectivityBranchesItemConnectivityConfigurationLinksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewConnectivityBranchesItemConnectivityConfigurationLinksRequestBuilder(raw
 func (m *ConnectivityBranchesItemConnectivityConfigurationLinksRequestBuilder) Count()(*ConnectivityBranchesItemConnectivityConfigurationLinksCountRequestBuilder) {
     return NewConnectivityBranchesItemConnectivityConfigurationLinksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get links from networkAccess
+// Get list of connectivity configurations for deviceLink objects.
 func (m *ConnectivityBranchesItemConnectivityConfigurationLinksRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityBranchesItemConnectivityConfigurationLinksRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ConnectivityConfigurationLinkCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ConnectivityBranchesItemConnectivityConfigurationLinksRequestBuilder) P
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ConnectivityConfigurationLinkable), nil
 }
-// ToGetRequestInformation get links from networkAccess
+// ToGetRequestInformation list of connectivity configurations for deviceLink objects.
 func (m *ConnectivityBranchesItemConnectivityConfigurationLinksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesItemConnectivityConfigurationLinksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

@@ -90,7 +90,7 @@ func (m *ProfileCardAnnotation) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetLocalizations gets the localizations property value. Each resource in this collection represents the localized value of the attribute name for a given language, used as the default label for that locale. For example, a user with a no-NB client gets 'Kostnads Senter' as the attribute label, rather than 'Cost Center.'
+// GetLocalizations gets the localizations property value. Each resource in this collection represents the localized value of the attribute name for a given language, used as the default label for that locale. For example, a user with a nb-NO client gets 'Kostnadssenter' as the attribute label, rather than 'Cost Center.'
 func (m *ProfileCardAnnotation) GetLocalizations()([]DisplayNameLocalizationable) {
     val, err := m.GetBackingStore().Get("localizations")
     if err != nil {
@@ -164,7 +164,7 @@ func (m *ProfileCardAnnotation) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetLocalizations sets the localizations property value. Each resource in this collection represents the localized value of the attribute name for a given language, used as the default label for that locale. For example, a user with a no-NB client gets 'Kostnads Senter' as the attribute label, rather than 'Cost Center.'
+// SetLocalizations sets the localizations property value. Each resource in this collection represents the localized value of the attribute name for a given language, used as the default label for that locale. For example, a user with a nb-NO client gets 'Kostnadssenter' as the attribute label, rather than 'Cost Center.'
 func (m *ProfileCardAnnotation) SetLocalizations(value []DisplayNameLocalizationable)() {
     err := m.GetBackingStore().Set("localizations", value)
     if err != nil {

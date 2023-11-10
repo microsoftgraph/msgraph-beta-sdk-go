@@ -96,7 +96,7 @@ func (m *PeopleProfileCardPropertiesRequestBuilder) Get(ctx context.Context, req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfileCardPropertyCollectionResponseable), nil
 }
-// Post create a new profileCardProperty for an organization. The new property is identified by its directoryPropertyName property. For more information about how to add properties to the profile card for an organization, see Add or delete custom attributes on a profile card using the profile card API. This API is available in the following national cloud deployments.
+// Post create a new profileCardProperty for an organization. The new property is identified by its directoryPropertyName property. For more information about how to add properties to the profile card for an organization, see Add or remove custom attributes on a profile card using the profile card API. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/peopleadminsettings-post-profilecardproperties?view=graph-rest-1.0
@@ -134,7 +134,7 @@ func (m *PeopleProfileCardPropertiesRequestBuilder) ToGetRequestInformation(ctx 
     requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new profileCardProperty for an organization. The new property is identified by its directoryPropertyName property. For more information about how to add properties to the profile card for an organization, see Add or delete custom attributes on a profile card using the profile card API. This API is available in the following national cloud deployments.
+// ToPostRequestInformation create a new profileCardProperty for an organization. The new property is identified by its directoryPropertyName property. For more information about how to add properties to the profile card for an organization, see Add or remove custom attributes on a profile card using the profile card API. This API is available in the following national cloud deployments.
 func (m *PeopleProfileCardPropertiesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfileCardPropertyable, requestConfiguration *PeopleProfileCardPropertiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

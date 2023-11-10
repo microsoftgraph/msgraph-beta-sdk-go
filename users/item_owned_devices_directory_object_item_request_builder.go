@@ -11,7 +11,7 @@ import (
 type ItemOwnedDevicesDirectoryObjectItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOwnedDevicesDirectoryObjectItemRequestBuilderGetQueryParameters devices that are owned by the user. Read-only. Nullable. Supports $expand.
+// ItemOwnedDevicesDirectoryObjectItemRequestBuilderGetQueryParameters devices owned by the user. Read-only. Nullable. Supports $expand.
 type ItemOwnedDevicesDirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewItemOwnedDevicesDirectoryObjectItemRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewItemOwnedDevicesDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get devices that are owned by the user. Read-only. Nullable. Supports $expand.
+// Get devices owned by the user. Read-only. Nullable. Supports $expand.
 func (m *ItemOwnedDevicesDirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOwnedDevicesDirectoryObjectItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -67,7 +67,7 @@ func (m *ItemOwnedDevicesDirectoryObjectItemRequestBuilder) GraphDevice()(*ItemO
 func (m *ItemOwnedDevicesDirectoryObjectItemRequestBuilder) GraphEndpoint()(*ItemOwnedDevicesItemGraphEndpointRequestBuilder) {
     return NewItemOwnedDevicesItemGraphEndpointRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation devices that are owned by the user. Read-only. Nullable. Supports $expand.
+// ToGetRequestInformation devices owned by the user. Read-only. Nullable. Supports $expand.
 func (m *ItemOwnedDevicesDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOwnedDevicesDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {
