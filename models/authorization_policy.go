@@ -77,7 +77,7 @@ func (m *AuthorizationPolicy) GetAllowUserConsentForRiskyApps()(*bool) {
     }
     return nil
 }
-// GetBlockMsolPowerShell gets the blockMsolPowerShell property value. To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This doesn't affect Microsoft Entra Connect or Microsoft Graph.
+// GetBlockMsolPowerShell gets the blockMsolPowerShell property value. To disable the use of the Microsoft Graph PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the Microsoft Graph PowerShell module. This doesn't affect Microsoft Entra Connect or Microsoft Graph.
 func (m *AuthorizationPolicy) GetBlockMsolPowerShell()(*bool) {
     val, err := m.GetBackingStore().Get("blockMsolPowerShell")
     if err != nil {
@@ -392,7 +392,7 @@ func (m *AuthorizationPolicy) SetAllowUserConsentForRiskyApps(value *bool)() {
         panic(err)
     }
 }
-// SetBlockMsolPowerShell sets the blockMsolPowerShell property value. To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This doesn't affect Microsoft Entra Connect or Microsoft Graph.
+// SetBlockMsolPowerShell sets the blockMsolPowerShell property value. To disable the use of the Microsoft Graph PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the Microsoft Graph PowerShell module. This doesn't affect Microsoft Entra Connect or Microsoft Graph.
 func (m *AuthorizationPolicy) SetBlockMsolPowerShell(value *bool)() {
     err := m.GetBackingStore().Set("blockMsolPowerShell", value)
     if err != nil {

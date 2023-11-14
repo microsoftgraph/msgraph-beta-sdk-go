@@ -16,10 +16,14 @@ const (
     TROUBLESHOOT_CLOUDPCREMOTEACTIONNAME
     PLACEUNDERREVIEW_CLOUDPCREMOTEACTIONNAME
     UNKNOWNFUTUREVALUE_CLOUDPCREMOTEACTIONNAME
+    CREATESNAPSHOT_CLOUDPCREMOTEACTIONNAME
+    POWERON_CLOUDPCREMOTEACTIONNAME
+    POWEROFF_CLOUDPCREMOTEACTIONNAME
+    MOVEREGION_CLOUDPCREMOTEACTIONNAME
 )
 
 func (i CloudPcRemoteActionName) String() string {
-    return []string{"unknown", "restart", "rename", "resize", "restore", "reprovision", "changeUserAccountType", "troubleshoot", "placeUnderReview", "unknownFutureValue"}[i]
+    return []string{"unknown", "restart", "rename", "resize", "restore", "reprovision", "changeUserAccountType", "troubleshoot", "placeUnderReview", "unknownFutureValue", "createSnapshot", "powerOn", "powerOff", "moveRegion"}[i]
 }
 func ParseCloudPcRemoteActionName(v string) (any, error) {
     result := UNKNOWN_CLOUDPCREMOTEACTIONNAME
@@ -44,6 +48,14 @@ func ParseCloudPcRemoteActionName(v string) (any, error) {
             result = PLACEUNDERREVIEW_CLOUDPCREMOTEACTIONNAME
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCREMOTEACTIONNAME
+        case "createSnapshot":
+            result = CREATESNAPSHOT_CLOUDPCREMOTEACTIONNAME
+        case "powerOn":
+            result = POWERON_CLOUDPCREMOTEACTIONNAME
+        case "powerOff":
+            result = POWEROFF_CLOUDPCREMOTEACTIONNAME
+        case "moveRegion":
+            result = MOVEREGION_CLOUDPCREMOTEACTIONNAME
         default:
             return 0, errors.New("Unknown CloudPcRemoteActionName value: " + v)
     }

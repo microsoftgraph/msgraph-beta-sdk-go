@@ -95,10 +95,10 @@ func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) Get(ctx
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable), nil
 }
-// Patch update the properties of a countryNamedLocation object. This API is available in the following national cloud deployments.
+// Patch update the properties of an ipNamedLocation object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/countrynamedlocation-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/ipnamedlocation-update?view=graph-rest-1.0
 func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable, requestConfiguration *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -127,7 +127,7 @@ func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) ToDelet
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve the properties and relationships of a namedLocation object. This API is available in the following national cloud deployments.
@@ -143,10 +143,10 @@ func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) ToGetRe
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a countryNamedLocation object. This API is available in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of an ipNamedLocation object. This API is available in the following national cloud deployments.
 func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable, requestConfiguration *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {
@@ -156,7 +156,7 @@ func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) ToPatch
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

@@ -54,10 +54,10 @@ func NewWindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted. This API is available in the following national cloud deployments.
+// Delete delete an updatableAsset object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-delete?view=graph-rest-1.0
 func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -130,7 +130,7 @@ func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) Patch(ct
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable), nil
 }
-// ToDeleteRequestInformation delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted. This API is available in the following national cloud deployments.
+// ToDeleteRequestInformation delete an updatableAsset object. This API is available in the following national cloud deployments.
 func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {
@@ -140,7 +140,7 @@ func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) ToDelete
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties of an azureADDevice object. This API is available in the following national cloud deployments.
@@ -156,7 +156,7 @@ func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) ToGetReq
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property updatableAssets in admin
@@ -169,7 +169,7 @@ func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) ToPatchR
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

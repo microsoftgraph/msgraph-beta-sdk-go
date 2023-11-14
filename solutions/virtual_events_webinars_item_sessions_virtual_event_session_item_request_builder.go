@@ -41,21 +41,9 @@ type VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilderPatch
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AlternativeRecording provides operations to manage the media for the solutionsRoot entity.
-func (m *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder) AlternativeRecording()(*VirtualEventsWebinarsItemSessionsItemAlternativeRecordingRequestBuilder) {
-    return NewVirtualEventsWebinarsItemSessionsItemAlternativeRecordingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// AttendanceReports provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeeting entity.
+// AttendanceReports provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeetingBase entity.
 func (m *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder) AttendanceReports()(*VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilder) {
     return NewVirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// AttendeeReport provides operations to manage the media for the solutionsRoot entity.
-func (m *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder) AttendeeReport()(*VirtualEventsWebinarsItemSessionsItemAttendeeReportRequestBuilder) {
-    return NewVirtualEventsWebinarsItemSessionsItemAttendeeReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// BroadcastRecording provides operations to manage the media for the solutionsRoot entity.
-func (m *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder) BroadcastRecording()(*VirtualEventsWebinarsItemSessionsItemBroadcastRecordingRequestBuilder) {
-    return NewVirtualEventsWebinarsItemSessionsItemBroadcastRecordingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewVirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilderInternal instantiates a new VirtualEventSessionItemRequestBuilder and sets the default values.
 func NewVirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder) {
@@ -105,10 +93,6 @@ func (m *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder)
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventSessionable), nil
 }
-// MeetingAttendanceReport provides operations to manage the meetingAttendanceReport property of the microsoft.graph.onlineMeeting entity.
-func (m *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder) MeetingAttendanceReport()(*VirtualEventsWebinarsItemSessionsItemMeetingAttendanceReportRequestBuilder) {
-    return NewVirtualEventsWebinarsItemSessionsItemMeetingAttendanceReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property sessions in solutions
 func (m *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventSessionable, requestConfiguration *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventSessionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -128,17 +112,9 @@ func (m *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder)
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventSessionable), nil
 }
-// Recording provides operations to manage the media for the solutionsRoot entity.
-func (m *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder) Recording()(*VirtualEventsWebinarsItemSessionsItemRecordingRequestBuilder) {
-    return NewVirtualEventsWebinarsItemSessionsItemRecordingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// Recordings provides operations to manage the recordings property of the microsoft.graph.onlineMeeting entity.
-func (m *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder) Recordings()(*VirtualEventsWebinarsItemSessionsItemRecordingsRequestBuilder) {
-    return NewVirtualEventsWebinarsItemSessionsItemRecordingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// Registration provides operations to manage the registration property of the microsoft.graph.onlineMeeting entity.
-func (m *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder) Registration()(*VirtualEventsWebinarsItemSessionsItemRegistrationRequestBuilder) {
-    return NewVirtualEventsWebinarsItemSessionsItemRegistrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// Presenters provides operations to manage the presenters property of the microsoft.graph.virtualEventSession entity.
+func (m *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder) Presenters()(*VirtualEventsWebinarsItemSessionsItemPresentersRequestBuilder) {
+    return NewVirtualEventsWebinarsItemSessionsItemPresentersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Registrations provides operations to manage the registrations property of the microsoft.graph.virtualEventSession entity.
 func (m *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder) Registrations()(*VirtualEventsWebinarsItemSessionsItemRegistrationsRequestBuilder) {
@@ -154,7 +130,7 @@ func (m *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder)
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation sessions of the virtual event.
@@ -170,7 +146,7 @@ func (m *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder)
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property sessions in solutions
@@ -183,16 +159,12 @@ func (m *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder)
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }
     return requestInfo, nil
-}
-// Transcripts provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
-func (m *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder) Transcripts()(*VirtualEventsWebinarsItemSessionsItemTranscriptsRequestBuilder) {
-    return NewVirtualEventsWebinarsItemSessionsItemTranscriptsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 func (m *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder) WithUrl(rawUrl string)(*VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder) {

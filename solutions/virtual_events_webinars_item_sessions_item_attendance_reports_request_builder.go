@@ -7,11 +7,11 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilder provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeeting entity.
+// VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilder provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeetingBase entity.
 type VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilderGetQueryParameters get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session. This API is available in the following national cloud deployments.
+// VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilderGetQueryParameters get attendanceReports from solutions
 type VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -46,7 +46,7 @@ type VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilderPostReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMeetingAttendanceReportId provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeeting entity.
+// ByMeetingAttendanceReportId provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeetingBase entity.
 func (m *VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilder) ByMeetingAttendanceReportId(meetingAttendanceReportId string)(*VirtualEventsWebinarsItemSessionsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -74,10 +74,7 @@ func NewVirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilder(raw
 func (m *VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilder) Count()(*VirtualEventsWebinarsItemSessionsItemAttendanceReportsCountRequestBuilder) {
     return NewVirtualEventsWebinarsItemSessionsItemAttendanceReportsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session. This API is available in the following national cloud deployments.
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
+// Get get attendanceReports from solutions
 func (m *VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilder) P
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable), nil
 }
-// ToGetRequestInformation get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session. This API is available in the following national cloud deployments.
+// ToGetRequestInformation get attendanceReports from solutions
 func (m *VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {
@@ -128,7 +125,7 @@ func (m *VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilder) T
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to attendanceReports for solutions
@@ -141,7 +138,7 @@ func (m *VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilder) T
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

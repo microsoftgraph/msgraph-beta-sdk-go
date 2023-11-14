@@ -160,6 +160,14 @@ func (m *VirtualEndpointRequestBuilder) ProvisioningPolicies()(*VirtualEndpointP
 func (m *VirtualEndpointRequestBuilder) Reports()(*VirtualEndpointReportsRequestBuilder) {
     return NewVirtualEndpointReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RetrieveScopedPermissions provides operations to call the retrieveScopedPermissions method.
+func (m *VirtualEndpointRequestBuilder) RetrieveScopedPermissions()(*VirtualEndpointRetrieveScopedPermissionsRequestBuilder) {
+    return NewVirtualEndpointRetrieveScopedPermissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RetrieveTenantEncryptionSetting provides operations to call the retrieveTenantEncryptionSetting method.
+func (m *VirtualEndpointRequestBuilder) RetrieveTenantEncryptionSetting()(*VirtualEndpointRetrieveTenantEncryptionSettingRequestBuilder) {
+    return NewVirtualEndpointRetrieveTenantEncryptionSettingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ServicePlans provides operations to manage the servicePlans property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) ServicePlans()(*VirtualEndpointServicePlansRequestBuilder) {
     return NewVirtualEndpointServicePlansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -186,7 +194,7 @@ func (m *VirtualEndpointRequestBuilder) ToDeleteRequestInformation(ctx context.C
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get virtualEndpoint from deviceManagement
@@ -202,7 +210,7 @@ func (m *VirtualEndpointRequestBuilder) ToGetRequestInformation(ctx context.Cont
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property virtualEndpoint in deviceManagement
@@ -215,7 +223,7 @@ func (m *VirtualEndpointRequestBuilder) ToPatchRequestInformation(ctx context.Co
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

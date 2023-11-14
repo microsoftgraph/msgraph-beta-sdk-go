@@ -11,7 +11,7 @@ import (
 type MeAssignmentsItemSubmissionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MeAssignmentsItemSubmissionsRequestBuilderGetQueryParameters list all the submissions associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can get all the submissions, a student can only get submissions that they are associated with. Provide the header Prefer: include-unknown-enum-members to properly list submissions with the reassigned status. For details, see the examples section. This API is available in the following national cloud deployments.
+// MeAssignmentsItemSubmissionsRequestBuilderGetQueryParameters list all the submissions associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can get all the submissions, a student can only get submissions that they're associated with. Provide the header Prefer: include-unknown-enum-members to properly list submissions with the reassigned status. For details, see the examples section. This API is available in the following national cloud deployments.
 type MeAssignmentsItemSubmissionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewMeAssignmentsItemSubmissionsRequestBuilder(rawUrl string, requestAdapter
 func (m *MeAssignmentsItemSubmissionsRequestBuilder) Count()(*MeAssignmentsItemSubmissionsCountRequestBuilder) {
     return NewMeAssignmentsItemSubmissionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list all the submissions associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can get all the submissions, a student can only get submissions that they are associated with. Provide the header Prefer: include-unknown-enum-members to properly list submissions with the reassigned status. For details, see the examples section. This API is available in the following national cloud deployments.
+// Get list all the submissions associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can get all the submissions, a student can only get submissions that they're associated with. Provide the header Prefer: include-unknown-enum-members to properly list submissions with the reassigned status. For details, see the examples section. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-list-submissions?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *MeAssignmentsItemSubmissionsRequestBuilder) Post(ctx context.Context, b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSubmissionable), nil
 }
-// ToGetRequestInformation list all the submissions associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can get all the submissions, a student can only get submissions that they are associated with. Provide the header Prefer: include-unknown-enum-members to properly list submissions with the reassigned status. For details, see the examples section. This API is available in the following national cloud deployments.
+// ToGetRequestInformation list all the submissions associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can get all the submissions, a student can only get submissions that they're associated with. Provide the header Prefer: include-unknown-enum-members to properly list submissions with the reassigned status. For details, see the examples section. This API is available in the following national cloud deployments.
 func (m *MeAssignmentsItemSubmissionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MeAssignmentsItemSubmissionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {
@@ -128,7 +128,7 @@ func (m *MeAssignmentsItemSubmissionsRequestBuilder) ToGetRequestInformation(ctx
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to submissions for education
@@ -141,7 +141,7 @@ func (m *MeAssignmentsItemSubmissionsRequestBuilder) ToPostRequestInformation(ct
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

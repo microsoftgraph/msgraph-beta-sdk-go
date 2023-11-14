@@ -58,10 +58,10 @@ func NewIndustryDataInboundFlowsInboundFlowItemRequestBuilder(rawUrl string, req
 func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) DataConnector()(*IndustryDataInboundFlowsItemDataConnectorRequestBuilder) {
     return NewIndustryDataInboundFlowsItemDataConnectorRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete delete an inboundFlow object. This API is available in the following national cloud deployments.
+// Delete delete an inboundFileFlow object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundflow-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-delete?view=graph-rest-1.0
 func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IndustryDataInboundFlowsInboundFlowItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +121,7 @@ func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) Patch(ctx contex
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable), nil
 }
-// ToDeleteRequestInformation delete an inboundFlow object. This API is available in the following national cloud deployments.
+// ToDeleteRequestInformation delete an inboundFileFlow object. This API is available in the following national cloud deployments.
 func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *IndustryDataInboundFlowsInboundFlowItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {
@@ -131,7 +131,7 @@ func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) ToDeleteRequestI
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of an inboundFileFlow object. This API is available in the following national cloud deployments.
@@ -147,7 +147,7 @@ func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) ToGetRequestInfo
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of an inboundFileFlow object. This API is available in the following national cloud deployments.
@@ -160,7 +160,7 @@ func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) ToPatchRequestIn
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

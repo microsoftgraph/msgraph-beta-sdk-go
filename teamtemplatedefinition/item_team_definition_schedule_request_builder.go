@@ -54,6 +54,10 @@ func NewItemTeamDefinitionScheduleRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionScheduleRequestBuilderInternal(urlParams, requestAdapter)
 }
+// DayNotes provides operations to manage the dayNotes property of the microsoft.graph.schedule entity.
+func (m *ItemTeamDefinitionScheduleRequestBuilder) DayNotes()(*ItemTeamDefinitionScheduleDayNotesRequestBuilder) {
+    return NewItemTeamDefinitionScheduleDayNotesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete navigation property schedule for teamTemplateDefinition
 func (m *ItemTeamDefinitionScheduleRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -165,7 +169,7 @@ func (m *ItemTeamDefinitionScheduleRequestBuilder) ToDeleteRequestInformation(ct
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve the properties and relationships of a schedule object. The schedule creation process conforms to the One API guideline for resource based long running operations (RELO).When clients use the PUT method, if the schedule is provisioned, the operation updates the schedule; otherwise, the operation starts the schedule provisioning process in the background. During schedule provisioning, clients can use the GET method to get the schedule and look at the provisionStatus property for the current state of the provisioning. If the provisioning failed, clients can get additional information from the provisionStatusCode property. Clients can also inspect the configuration of the schedule. This API is available in the following national cloud deployments.
@@ -181,7 +185,7 @@ func (m *ItemTeamDefinitionScheduleRequestBuilder) ToGetRequestInformation(ctx c
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation update the navigation property schedule in teamTemplateDefinition
@@ -194,7 +198,7 @@ func (m *ItemTeamDefinitionScheduleRequestBuilder) ToPutRequestInformation(ctx c
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

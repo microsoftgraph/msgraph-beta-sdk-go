@@ -748,6 +748,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDataPolicyOperation(), nil
                     case "#microsoft.graph.dataSharingConsent":
                         return NewDataSharingConsent(), nil
+                    case "#microsoft.graph.dayNote":
+                        return NewDayNote(), nil
                     case "#microsoft.graph.defaultDeviceCompliancePolicy":
                         return NewDefaultDeviceCompliancePolicy(), nil
                     case "#microsoft.graph.defaultManagedAppProtection":
@@ -1892,6 +1894,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOnInteractiveAuthFlowStartListener(), nil
                     case "#microsoft.graph.onlineMeeting":
                         return NewOnlineMeeting(), nil
+                    case "#microsoft.graph.onlineMeetingBase":
+                        return NewOnlineMeetingBase(), nil
                     case "#microsoft.graph.onPremisesAgent":
                         return NewOnPremisesAgent(), nil
                     case "#microsoft.graph.onPremisesAgentGroup":
@@ -2336,6 +2340,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSecurityToolAwsServerlessFunctionAdministratorFinding(), nil
                     case "#microsoft.graph.securityToolAwsUserAdministratorFinding":
                         return NewSecurityToolAwsUserAdministratorFinding(), nil
+                    case "#microsoft.graph.sendDtmfTonesOperation":
+                        return NewSendDtmfTonesOperation(), nil
                     case "#microsoft.graph.sensitiveType":
                         return NewSensitiveType(), nil
                     case "#microsoft.graph.sensitivityLabel":
@@ -2830,6 +2836,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewVirtualEventSession(), nil
                     case "#microsoft.graph.virtualEventsRoot":
                         return NewVirtualEventsRoot(), nil
+                    case "#microsoft.graph.virtualEventTownhall":
+                        return NewVirtualEventTownhall(), nil
                     case "#microsoft.graph.virtualEventWebinar":
                         return NewVirtualEventWebinar(), nil
                     case "#microsoft.graph.virtualEventWebinarRegistrationConfiguration":

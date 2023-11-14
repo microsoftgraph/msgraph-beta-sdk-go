@@ -453,7 +453,7 @@ func (m *AndroidForWorkCompliancePolicy) GetSecurityRequireCompanyPortalAppInteg
     }
     return nil
 }
-// GetSecurityRequiredAndroidSafetyNetEvaluationType gets the securityRequiredAndroidSafetyNetEvaluationType property value. An enum representing the Android SafetyNet attestation evaluation types.
+// GetSecurityRequiredAndroidSafetyNetEvaluationType gets the securityRequiredAndroidSafetyNetEvaluationType property value. An enum representing the Android Play Integrity API evaluation types.
 func (m *AndroidForWorkCompliancePolicy) GetSecurityRequiredAndroidSafetyNetEvaluationType()(*AndroidSafetyNetEvaluationType) {
     val, err := m.GetBackingStore().Get("securityRequiredAndroidSafetyNetEvaluationType")
     if err != nil {
@@ -805,7 +805,7 @@ func (m *AndroidForWorkCompliancePolicy) SetSecurityRequireCompanyPortalAppInteg
         panic(err)
     }
 }
-// SetSecurityRequiredAndroidSafetyNetEvaluationType sets the securityRequiredAndroidSafetyNetEvaluationType property value. An enum representing the Android SafetyNet attestation evaluation types.
+// SetSecurityRequiredAndroidSafetyNetEvaluationType sets the securityRequiredAndroidSafetyNetEvaluationType property value. An enum representing the Android Play Integrity API evaluation types.
 func (m *AndroidForWorkCompliancePolicy) SetSecurityRequiredAndroidSafetyNetEvaluationType(value *AndroidSafetyNetEvaluationType)() {
     err := m.GetBackingStore().Set("securityRequiredAndroidSafetyNetEvaluationType", value)
     if err != nil {
