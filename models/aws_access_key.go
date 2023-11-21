@@ -36,7 +36,7 @@ func (m *AwsAccessKey) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetOwner gets the owner property value. The owner property
+// GetOwner gets the owner property value. Represents the owner of the access key.
 func (m *AwsAccessKey) GetOwner()(AwsUserable) {
     val, err := m.GetBackingStore().Get("owner")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *AwsAccessKey) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetOwner sets the owner property value. The owner property
+// SetOwner sets the owner property value. Represents the owner of the access key.
 func (m *AwsAccessKey) SetOwner(value AwsUserable)() {
     err := m.GetBackingStore().Set("owner", value)
     if err != nil {

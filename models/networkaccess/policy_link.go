@@ -30,6 +30,8 @@ func CreatePolicyLinkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.networkaccess.filteringPolicyLink":
+                        return NewFilteringPolicyLink(), nil
                     case "#microsoft.graph.networkaccess.forwardingPolicyLink":
                         return NewForwardingPolicyLink(), nil
                 }

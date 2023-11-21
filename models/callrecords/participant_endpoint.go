@@ -22,6 +22,17 @@ func NewParticipantEndpoint()(*ParticipantEndpoint) {
 func CreateParticipantEndpointFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewParticipantEndpoint(), nil
 }
+// GetAssociatedIdentity gets the associatedIdentity property value. Identity associated with the endpoint.
+func (m *ParticipantEndpoint) GetAssociatedIdentity()(UserIdentityable) {
+    val, err := m.GetBackingStore().Get("associatedIdentity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UserIdentityable)
+    }
+    return nil
+}
 // GetCpuCoresCount gets the cpuCoresCount property value. CPU number of cores used by the media endpoint.
 func (m *ParticipantEndpoint) GetCpuCoresCount()(*int32) {
     val, err := m.GetBackingStore().Get("cpuCoresCount")
@@ -69,6 +80,16 @@ func (m *ParticipantEndpoint) GetFeedback()(UserFeedbackable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ParticipantEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Endpoint.GetFieldDeserializers()
+    res["associatedIdentity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateUserIdentityFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAssociatedIdentity(val.(UserIdentityable))
+        }
+        return nil
+    }
     res["cpuCoresCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -131,7 +152,7 @@ func (m *ParticipantEndpoint) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetIdentity gets the identity property value. Identity associated with the endpoint.
+// GetIdentity gets the identity property value. The identity property
 func (m *ParticipantEndpoint) GetIdentity()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
     val, err := m.GetBackingStore().Get("identity")
     if err != nil {
@@ -158,6 +179,12 @@ func (m *ParticipantEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef
     err := m.Endpoint.Serialize(writer)
     if err != nil {
         return err
+    }
+    {
+        err = writer.WriteObjectValue("associatedIdentity", m.GetAssociatedIdentity())
+        if err != nil {
+            return err
+        }
     }
     {
         err = writer.WriteInt32Value("cpuCoresCount", m.GetCpuCoresCount())
@@ -197,6 +224,13 @@ func (m *ParticipantEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
+// SetAssociatedIdentity sets the associatedIdentity property value. Identity associated with the endpoint.
+func (m *ParticipantEndpoint) SetAssociatedIdentity(value UserIdentityable)() {
+    err := m.GetBackingStore().Set("associatedIdentity", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCpuCoresCount sets the cpuCoresCount property value. CPU number of cores used by the media endpoint.
 func (m *ParticipantEndpoint) SetCpuCoresCount(value *int32)() {
     err := m.GetBackingStore().Set("cpuCoresCount", value)
@@ -225,7 +259,7 @@ func (m *ParticipantEndpoint) SetFeedback(value UserFeedbackable)() {
         panic(err)
     }
 }
-// SetIdentity sets the identity property value. Identity associated with the endpoint.
+// SetIdentity sets the identity property value. The identity property
 func (m *ParticipantEndpoint) SetIdentity(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)() {
     err := m.GetBackingStore().Set("identity", value)
     if err != nil {
@@ -243,12 +277,14 @@ func (m *ParticipantEndpoint) SetName(value *string)() {
 type ParticipantEndpointable interface {
     Endpointable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssociatedIdentity()(UserIdentityable)
     GetCpuCoresCount()(*int32)
     GetCpuName()(*string)
     GetCpuProcessorSpeedInMhz()(*int32)
     GetFeedback()(UserFeedbackable)
     GetIdentity()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)
     GetName()(*string)
+    SetAssociatedIdentity(value UserIdentityable)()
     SetCpuCoresCount(value *int32)()
     SetCpuName(value *string)()
     SetCpuProcessorSpeedInMhz(value *int32)()

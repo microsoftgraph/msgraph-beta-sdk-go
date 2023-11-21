@@ -105,6 +105,22 @@ func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["scopeIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetScopeIds(res)
+        }
+        return nil
+    }
     res["sourceImageResourceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -188,6 +204,17 @@ func (m *CloudPcDeviceImage) GetOsStatus()(*CloudPcDeviceImageOsStatus) {
     }
     if val != nil {
         return val.(*CloudPcDeviceImageOsStatus)
+    }
+    return nil
+}
+// GetScopeIds gets the scopeIds property value. The scopeIds property
+func (m *CloudPcDeviceImage) GetScopeIds()([]string) {
+    val, err := m.GetBackingStore().Get("scopeIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
     }
     return nil
 }
@@ -278,6 +305,12 @@ func (m *CloudPcDeviceImage) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    if m.GetScopeIds() != nil {
+        err = writer.WriteCollectionOfStringValues("scopeIds", m.GetScopeIds())
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("sourceImageResourceId", m.GetSourceImageResourceId())
         if err != nil {
@@ -348,6 +381,13 @@ func (m *CloudPcDeviceImage) SetOsStatus(value *CloudPcDeviceImageOsStatus)() {
         panic(err)
     }
 }
+// SetScopeIds sets the scopeIds property value. The scopeIds property
+func (m *CloudPcDeviceImage) SetScopeIds(value []string)() {
+    err := m.GetBackingStore().Set("scopeIds", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSourceImageResourceId sets the sourceImageResourceId property value. The ID of the source image resource on Azure. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}.
 func (m *CloudPcDeviceImage) SetSourceImageResourceId(value *string)() {
     err := m.GetBackingStore().Set("sourceImageResourceId", value)
@@ -386,6 +426,7 @@ type CloudPcDeviceImageable interface {
     GetOperatingSystem()(*string)
     GetOsBuildNumber()(*string)
     GetOsStatus()(*CloudPcDeviceImageOsStatus)
+    GetScopeIds()([]string)
     GetSourceImageResourceId()(*string)
     GetStatus()(*CloudPcDeviceImageStatus)
     GetStatusDetails()(*CloudPcDeviceImageStatusDetails)
@@ -396,6 +437,7 @@ type CloudPcDeviceImageable interface {
     SetOperatingSystem(value *string)()
     SetOsBuildNumber(value *string)()
     SetOsStatus(value *CloudPcDeviceImageOsStatus)()
+    SetScopeIds(value []string)()
     SetSourceImageResourceId(value *string)()
     SetStatus(value *CloudPcDeviceImageStatus)()
     SetStatusDetails(value *CloudPcDeviceImageStatusDetails)()

@@ -77,6 +77,16 @@ func (m *X509CertificateAuthenticationModeConfiguration) GetFieldDeserializers()
         }
         return nil
     }
+    res["x509CertificateDefaultRequiredAffinityLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseX509CertificateAffinityLevel)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetX509CertificateDefaultRequiredAffinityLevel(val.(*X509CertificateAffinityLevel))
+        }
+        return nil
+    }
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -112,6 +122,17 @@ func (m *X509CertificateAuthenticationModeConfiguration) GetX509CertificateAuthe
     }
     return nil
 }
+// GetX509CertificateDefaultRequiredAffinityLevel gets the x509CertificateDefaultRequiredAffinityLevel property value. Determines the default value for the tenant affinity binding level. The possible values are: low, high, unknownFutureValue.
+func (m *X509CertificateAuthenticationModeConfiguration) GetX509CertificateDefaultRequiredAffinityLevel()(*X509CertificateAffinityLevel) {
+    val, err := m.GetBackingStore().Get("x509CertificateDefaultRequiredAffinityLevel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*X509CertificateAffinityLevel)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *X509CertificateAuthenticationModeConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -135,6 +156,13 @@ func (m *X509CertificateAuthenticationModeConfiguration) Serialize(writer i878a8
     if m.GetX509CertificateAuthenticationDefaultMode() != nil {
         cast := (*m.GetX509CertificateAuthenticationDefaultMode()).String()
         err := writer.WriteStringValue("x509CertificateAuthenticationDefaultMode", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetX509CertificateDefaultRequiredAffinityLevel() != nil {
+        cast := (*m.GetX509CertificateDefaultRequiredAffinityLevel()).String()
+        err := writer.WriteStringValue("x509CertificateDefaultRequiredAffinityLevel", &cast)
         if err != nil {
             return err
         }
@@ -179,6 +207,13 @@ func (m *X509CertificateAuthenticationModeConfiguration) SetX509CertificateAuthe
         panic(err)
     }
 }
+// SetX509CertificateDefaultRequiredAffinityLevel sets the x509CertificateDefaultRequiredAffinityLevel property value. Determines the default value for the tenant affinity binding level. The possible values are: low, high, unknownFutureValue.
+func (m *X509CertificateAuthenticationModeConfiguration) SetX509CertificateDefaultRequiredAffinityLevel(value *X509CertificateAffinityLevel)() {
+    err := m.GetBackingStore().Set("x509CertificateDefaultRequiredAffinityLevel", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // X509CertificateAuthenticationModeConfigurationable 
 type X509CertificateAuthenticationModeConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
@@ -188,8 +223,10 @@ type X509CertificateAuthenticationModeConfigurationable interface {
     GetOdataType()(*string)
     GetRules()([]X509CertificateRuleable)
     GetX509CertificateAuthenticationDefaultMode()(*X509CertificateAuthenticationMode)
+    GetX509CertificateDefaultRequiredAffinityLevel()(*X509CertificateAffinityLevel)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetRules(value []X509CertificateRuleable)()
     SetX509CertificateAuthenticationDefaultMode(value *X509CertificateAuthenticationMode)()
+    SetX509CertificateDefaultRequiredAffinityLevel(value *X509CertificateAffinityLevel)()
 }

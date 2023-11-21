@@ -274,6 +274,22 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["scopeIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetScopeIds(res)
+        }
+        return nil
+    }
     res["servicePlanId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -500,6 +516,17 @@ func (m *CloudPC) GetProvisioningType()(*CloudPcProvisioningType) {
     }
     return nil
 }
+// GetScopeIds gets the scopeIds property value. The scopeIds property
+func (m *CloudPC) GetScopeIds()([]string) {
+    val, err := m.GetBackingStore().Get("scopeIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
+}
 // GetServicePlanId gets the servicePlanId property value. The service plan ID of the Cloud PC.
 func (m *CloudPC) GetServicePlanId()(*string) {
     val, err := m.GetBackingStore().Get("servicePlanId")
@@ -707,6 +734,12 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    if m.GetScopeIds() != nil {
+        err = writer.WriteCollectionOfStringValues("scopeIds", m.GetScopeIds())
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("servicePlanId", m.GetServicePlanId())
         if err != nil {
@@ -887,6 +920,13 @@ func (m *CloudPC) SetProvisioningType(value *CloudPcProvisioningType)() {
         panic(err)
     }
 }
+// SetScopeIds sets the scopeIds property value. The scopeIds property
+func (m *CloudPC) SetScopeIds(value []string)() {
+    err := m.GetBackingStore().Set("scopeIds", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetServicePlanId sets the servicePlanId property value. The service plan ID of the Cloud PC.
 func (m *CloudPC) SetServicePlanId(value *string)() {
     err := m.GetBackingStore().Set("servicePlanId", value)
@@ -959,6 +999,7 @@ type CloudPCable interface {
     GetProvisioningPolicyId()(*string)
     GetProvisioningPolicyName()(*string)
     GetProvisioningType()(*CloudPcProvisioningType)
+    GetScopeIds()([]string)
     GetServicePlanId()(*string)
     GetServicePlanName()(*string)
     GetServicePlanType()(*CloudPcServicePlanType)
@@ -985,6 +1026,7 @@ type CloudPCable interface {
     SetProvisioningPolicyId(value *string)()
     SetProvisioningPolicyName(value *string)()
     SetProvisioningType(value *CloudPcProvisioningType)()
+    SetScopeIds(value []string)()
     SetServicePlanId(value *string)()
     SetServicePlanName(value *string)()
     SetServicePlanType(value *CloudPcServicePlanType)()

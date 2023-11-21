@@ -21,7 +21,7 @@ func NewGcpAuthorizationSystem()(*GcpAuthorizationSystem) {
 func CreateGcpAuthorizationSystemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGcpAuthorizationSystem(), nil
 }
-// GetActions gets the actions property value. The actions property
+// GetActions gets the actions property value. List of actions for service in authorization system.
 func (m *GcpAuthorizationSystem) GetActions()([]GcpAuthorizationSystemTypeActionable) {
     val, err := m.GetBackingStore().Get("actions")
     if err != nil {
@@ -32,7 +32,7 @@ func (m *GcpAuthorizationSystem) GetActions()([]GcpAuthorizationSystemTypeAction
     }
     return nil
 }
-// GetAssociatedIdentities gets the associatedIdentities property value. The associatedIdentities property
+// GetAssociatedIdentities gets the associatedIdentities property value. Identities in the authorization system.
 func (m *GcpAuthorizationSystem) GetAssociatedIdentities()(GcpAssociatedIdentitiesable) {
     val, err := m.GetBackingStore().Get("associatedIdentities")
     if err != nil {
@@ -122,7 +122,7 @@ func (m *GcpAuthorizationSystem) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetResources gets the resources property value. The resources property
+// GetResources gets the resources property value. Resources associated with the authorization system type.
 func (m *GcpAuthorizationSystem) GetResources()([]GcpAuthorizationSystemResourceable) {
     val, err := m.GetBackingStore().Get("resources")
     if err != nil {
@@ -133,7 +133,7 @@ func (m *GcpAuthorizationSystem) GetResources()([]GcpAuthorizationSystemResource
     }
     return nil
 }
-// GetRoles gets the roles property value. The roles property
+// GetRoles gets the roles property value. Roles associated with the authorization system type.
 func (m *GcpAuthorizationSystem) GetRoles()([]GcpRoleable) {
     val, err := m.GetBackingStore().Get("roles")
     if err != nil {
@@ -144,7 +144,7 @@ func (m *GcpAuthorizationSystem) GetRoles()([]GcpRoleable) {
     }
     return nil
 }
-// GetServices gets the services property value. The services property
+// GetServices gets the services property value. Services associated with the authorization system type.
 func (m *GcpAuthorizationSystem) GetServices()([]AuthorizationSystemTypeServiceable) {
     val, err := m.GetBackingStore().Get("services")
     if err != nil {
@@ -217,35 +217,35 @@ func (m *GcpAuthorizationSystem) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetActions sets the actions property value. The actions property
+// SetActions sets the actions property value. List of actions for service in authorization system.
 func (m *GcpAuthorizationSystem) SetActions(value []GcpAuthorizationSystemTypeActionable)() {
     err := m.GetBackingStore().Set("actions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAssociatedIdentities sets the associatedIdentities property value. The associatedIdentities property
+// SetAssociatedIdentities sets the associatedIdentities property value. Identities in the authorization system.
 func (m *GcpAuthorizationSystem) SetAssociatedIdentities(value GcpAssociatedIdentitiesable)() {
     err := m.GetBackingStore().Set("associatedIdentities", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResources sets the resources property value. The resources property
+// SetResources sets the resources property value. Resources associated with the authorization system type.
 func (m *GcpAuthorizationSystem) SetResources(value []GcpAuthorizationSystemResourceable)() {
     err := m.GetBackingStore().Set("resources", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRoles sets the roles property value. The roles property
+// SetRoles sets the roles property value. Roles associated with the authorization system type.
 func (m *GcpAuthorizationSystem) SetRoles(value []GcpRoleable)() {
     err := m.GetBackingStore().Set("roles", value)
     if err != nil {
         panic(err)
     }
 }
-// SetServices sets the services property value. The services property
+// SetServices sets the services property value. Services associated with the authorization system type.
 func (m *GcpAuthorizationSystem) SetServices(value []AuthorizationSystemTypeServiceable)() {
     err := m.GetBackingStore().Set("services", value)
     if err != nil {

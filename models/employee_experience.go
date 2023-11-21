@@ -41,6 +41,16 @@ func (m *EmployeeExperience) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d4
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EmployeeExperience) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["goals"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateGoalsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGoals(val.(Goalsable))
+        }
+        return nil
+    }
     res["learningCourseActivities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateLearningCourseActivityFromDiscriminatorValue)
         if err != nil {
@@ -85,6 +95,17 @@ func (m *EmployeeExperience) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
+// GetGoals gets the goals property value. Represents a collection of goals in a Viva Goals organization.
+func (m *EmployeeExperience) GetGoals()(Goalsable) {
+    val, err := m.GetBackingStore().Get("goals")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Goalsable)
+    }
+    return nil
+}
 // GetLearningCourseActivities gets the learningCourseActivities property value. The learningCourseActivities property
 func (m *EmployeeExperience) GetLearningCourseActivities()([]LearningCourseActivityable) {
     val, err := m.GetBackingStore().Get("learningCourseActivities")
@@ -120,6 +141,12 @@ func (m *EmployeeExperience) GetOdataType()(*string) {
 }
 // Serialize serializes information the current object
 func (m *EmployeeExperience) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteObjectValue("goals", m.GetGoals())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetLearningCourseActivities() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLearningCourseActivities()))
         for i, v := range m.GetLearningCourseActivities() {
@@ -169,6 +196,13 @@ func (m *EmployeeExperience) SetAdditionalData(value map[string]any)() {
 func (m *EmployeeExperience) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetGoals sets the goals property value. Represents a collection of goals in a Viva Goals organization.
+func (m *EmployeeExperience) SetGoals(value Goalsable)() {
+    err := m.GetBackingStore().Set("goals", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLearningCourseActivities sets the learningCourseActivities property value. The learningCourseActivities property
 func (m *EmployeeExperience) SetLearningCourseActivities(value []LearningCourseActivityable)() {
     err := m.GetBackingStore().Set("learningCourseActivities", value)
@@ -196,10 +230,12 @@ type EmployeeExperienceable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetGoals()(Goalsable)
     GetLearningCourseActivities()([]LearningCourseActivityable)
     GetLearningProviders()([]LearningProviderable)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetGoals(value Goalsable)()
     SetLearningCourseActivities(value []LearningCourseActivityable)()
     SetLearningProviders(value []LearningProviderable)()
     SetOdataType(value *string)()

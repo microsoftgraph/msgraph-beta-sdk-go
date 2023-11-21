@@ -30,12 +30,20 @@ func CreatePolicyRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.networkaccess.filteringRule":
+                        return NewFilteringRule(), nil
                     case "#microsoft.graph.networkaccess.forwardingRule":
                         return NewForwardingRule(), nil
+                    case "#microsoft.graph.networkaccess.fqdnFilteringRule":
+                        return NewFqdnFilteringRule(), nil
+                    case "#microsoft.graph.networkaccess.internetAccessForwardingRule":
+                        return NewInternetAccessForwardingRule(), nil
                     case "#microsoft.graph.networkaccess.m365ForwardingRule":
                         return NewM365ForwardingRule(), nil
                     case "#microsoft.graph.networkaccess.privateAccessForwardingRule":
                         return NewPrivateAccessForwardingRule(), nil
+                    case "#microsoft.graph.networkaccess.webCategoryFilteringRule":
+                        return NewWebCategoryFilteringRule(), nil
                 }
             }
         }

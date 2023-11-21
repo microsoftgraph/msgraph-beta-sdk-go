@@ -193,7 +193,7 @@ func (m *VirtualEventRegistration) GetRegistrationQuestionAnswers()([]VirtualEve
     }
     return nil
 }
-// GetSessions gets the sessions property value. Sessions of the webinar.
+// GetSessions gets the sessions property value. The sessions property
 func (m *VirtualEventRegistration) GetSessions()([]VirtualEventSessionable) {
     val, err := m.GetBackingStore().Get("sessions")
     if err != nil {
@@ -204,7 +204,7 @@ func (m *VirtualEventRegistration) GetSessions()([]VirtualEventSessionable) {
     }
     return nil
 }
-// GetStatus gets the status property value. Registration status of the registrant. Read-only. Possible values are: registered, canceled, waitlisted, pendingApproval, rejectedByOrganizer, unknownFutureValue.
+// GetStatus gets the status property value. Registration status of the registrant. Read-only.
 func (m *VirtualEventRegistration) GetStatus()(*VirtualEventAttendeeRegistrationStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -343,14 +343,14 @@ func (m *VirtualEventRegistration) SetRegistrationQuestionAnswers(value []Virtua
         panic(err)
     }
 }
-// SetSessions sets the sessions property value. Sessions of the webinar.
+// SetSessions sets the sessions property value. The sessions property
 func (m *VirtualEventRegistration) SetSessions(value []VirtualEventSessionable)() {
     err := m.GetBackingStore().Set("sessions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Registration status of the registrant. Read-only. Possible values are: registered, canceled, waitlisted, pendingApproval, rejectedByOrganizer, unknownFutureValue.
+// SetStatus sets the status property value. Registration status of the registrant. Read-only.
 func (m *VirtualEventRegistration) SetStatus(value *VirtualEventAttendeeRegistrationStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

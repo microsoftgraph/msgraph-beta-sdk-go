@@ -34,7 +34,7 @@ func (m *PermissionsDefinitionAuthorizationSystem) GetAdditionalData()(map[strin
     }
     return val.(map[string]any)
 }
-// GetAuthorizationSystemId gets the authorizationSystemId property value. The authorizationSystemId property
+// GetAuthorizationSystemId gets the authorizationSystemId property value. ID of the authorization system retrieved from the customer cloud environment.
 func (m *PermissionsDefinitionAuthorizationSystem) GetAuthorizationSystemId()(*string) {
     val, err := m.GetBackingStore().Get("authorizationSystemId")
     if err != nil {
@@ -45,7 +45,7 @@ func (m *PermissionsDefinitionAuthorizationSystem) GetAuthorizationSystemId()(*s
     }
     return nil
 }
-// GetAuthorizationSystemType gets the authorizationSystemType property value. The authorizationSystemType property
+// GetAuthorizationSystemType gets the authorizationSystemType property value. The type of authorization system.
 func (m *PermissionsDefinitionAuthorizationSystem) GetAuthorizationSystemType()(*string) {
     val, err := m.GetBackingStore().Get("authorizationSystemType")
     if err != nil {
@@ -141,14 +141,14 @@ func (m *PermissionsDefinitionAuthorizationSystem) SetAdditionalData(value map[s
         panic(err)
     }
 }
-// SetAuthorizationSystemId sets the authorizationSystemId property value. The authorizationSystemId property
+// SetAuthorizationSystemId sets the authorizationSystemId property value. ID of the authorization system retrieved from the customer cloud environment.
 func (m *PermissionsDefinitionAuthorizationSystem) SetAuthorizationSystemId(value *string)() {
     err := m.GetBackingStore().Set("authorizationSystemId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAuthorizationSystemType sets the authorizationSystemType property value. The authorizationSystemType property
+// SetAuthorizationSystemType sets the authorizationSystemType property value. The type of authorization system.
 func (m *PermissionsDefinitionAuthorizationSystem) SetAuthorizationSystemType(value *string)() {
     err := m.GetBackingStore().Set("authorizationSystemType", value)
     if err != nil {

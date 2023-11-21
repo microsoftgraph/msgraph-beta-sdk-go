@@ -31,6 +31,8 @@ func CreateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.networkaccess.filteringProfile":
+                        return NewFilteringProfile(), nil
                     case "#microsoft.graph.networkaccess.forwardingProfile":
                         return NewForwardingProfile(), nil
                 }

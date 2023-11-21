@@ -38,7 +38,7 @@ func (m *WebCategoriesSummary) GetAdditionalData()(map[string]any) {
 func (m *WebCategoriesSummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDeviceCount gets the deviceCount property value. The deviceCount property
+// GetDeviceCount gets the deviceCount property value. The number of unique devices that were seen.
 func (m *WebCategoriesSummary) GetDeviceCount()(*int64) {
     val, err := m.GetBackingStore().Get("deviceCount")
     if err != nil {
@@ -92,6 +92,16 @@ func (m *WebCategoriesSummary) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["webCategory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWebCategoryFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWebCategory(val.(WebCategoryable))
+        }
+        return nil
+    }
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -105,7 +115,7 @@ func (m *WebCategoriesSummary) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTransactionCount gets the transactionCount property value. The transactionCount property
+// GetTransactionCount gets the transactionCount property value. The number of transactions that were seen.
 func (m *WebCategoriesSummary) GetTransactionCount()(*int64) {
     val, err := m.GetBackingStore().Get("transactionCount")
     if err != nil {
@@ -116,7 +126,7 @@ func (m *WebCategoriesSummary) GetTransactionCount()(*int64) {
     }
     return nil
 }
-// GetUserCount gets the userCount property value. The userCount property
+// GetUserCount gets the userCount property value. The number of unique Microsoft Entra ID users that were seen.
 func (m *WebCategoriesSummary) GetUserCount()(*int64) {
     val, err := m.GetBackingStore().Get("userCount")
     if err != nil {
@@ -124,6 +134,17 @@ func (m *WebCategoriesSummary) GetUserCount()(*int64) {
     }
     if val != nil {
         return val.(*int64)
+    }
+    return nil
+}
+// GetWebCategory gets the webCategory property value. The webCategory property
+func (m *WebCategoriesSummary) GetWebCategory()(WebCategoryable) {
+    val, err := m.GetBackingStore().Get("webCategory")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WebCategoryable)
     }
     return nil
 }
@@ -154,6 +175,12 @@ func (m *WebCategoriesSummary) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err := writer.WriteObjectValue("webCategory", m.GetWebCategory())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
@@ -172,7 +199,7 @@ func (m *WebCategoriesSummary) SetAdditionalData(value map[string]any)() {
 func (m *WebCategoriesSummary) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDeviceCount sets the deviceCount property value. The deviceCount property
+// SetDeviceCount sets the deviceCount property value. The number of unique devices that were seen.
 func (m *WebCategoriesSummary) SetDeviceCount(value *int64)() {
     err := m.GetBackingStore().Set("deviceCount", value)
     if err != nil {
@@ -186,16 +213,23 @@ func (m *WebCategoriesSummary) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTransactionCount sets the transactionCount property value. The transactionCount property
+// SetTransactionCount sets the transactionCount property value. The number of transactions that were seen.
 func (m *WebCategoriesSummary) SetTransactionCount(value *int64)() {
     err := m.GetBackingStore().Set("transactionCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserCount sets the userCount property value. The userCount property
+// SetUserCount sets the userCount property value. The number of unique Microsoft Entra ID users that were seen.
 func (m *WebCategoriesSummary) SetUserCount(value *int64)() {
     err := m.GetBackingStore().Set("userCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetWebCategory sets the webCategory property value. The webCategory property
+func (m *WebCategoriesSummary) SetWebCategory(value WebCategoryable)() {
+    err := m.GetBackingStore().Set("webCategory", value)
     if err != nil {
         panic(err)
     }
@@ -210,9 +244,11 @@ type WebCategoriesSummaryable interface {
     GetOdataType()(*string)
     GetTransactionCount()(*int64)
     GetUserCount()(*int64)
+    GetWebCategory()(WebCategoryable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDeviceCount(value *int64)()
     SetOdataType(value *string)()
     SetTransactionCount(value *int64)()
     SetUserCount(value *int64)()
+    SetWebCategory(value WebCategoryable)()
 }

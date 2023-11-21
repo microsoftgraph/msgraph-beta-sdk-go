@@ -126,7 +126,7 @@ func (m *RelatedPerson) GetRelationship()(*PersonRelationship) {
     }
     return nil
 }
-// GetUserId gets the userId property value. The userId property
+// GetUserId gets the userId property value. The user's directory object ID (Microsoft Entra ID or CID).
 func (m *RelatedPerson) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -137,7 +137,7 @@ func (m *RelatedPerson) GetUserId()(*string) {
     }
     return nil
 }
-// GetUserPrincipalName gets the userPrincipalName property value. Email address or reference to person within organization.
+// GetUserPrincipalName gets the userPrincipalName property value. Email address or reference to person within the organization.
 func (m *RelatedPerson) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -221,14 +221,14 @@ func (m *RelatedPerson) SetRelationship(value *PersonRelationship)() {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. The userId property
+// SetUserId sets the userId property value. The user's directory object ID (Microsoft Entra ID or CID).
 func (m *RelatedPerson) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserPrincipalName sets the userPrincipalName property value. Email address or reference to person within organization.
+// SetUserPrincipalName sets the userPrincipalName property value. Email address or reference to person within the organization.
 func (m *RelatedPerson) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
     if err != nil {

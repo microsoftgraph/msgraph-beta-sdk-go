@@ -23,6 +23,17 @@ func NewNetworkAccessTraffic()(*NetworkAccessTraffic) {
 func CreateNetworkAccessTrafficFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNetworkAccessTraffic(), nil
 }
+// GetAction gets the action property value. The action property
+func (m *NetworkAccessTraffic) GetAction()(*FilteringPolicyAction) {
+    val, err := m.GetBackingStore().Get("action")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*FilteringPolicyAction)
+    }
+    return nil
+}
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NetworkAccessTraffic) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
@@ -105,6 +116,17 @@ func (m *NetworkAccessTraffic) GetDestinationPort()(*int32) {
     }
     return nil
 }
+// GetDestinationWebCategory gets the destinationWebCategory property value. The destinationWebCategory property
+func (m *NetworkAccessTraffic) GetDestinationWebCategory()(WebCategoryable) {
+    val, err := m.GetBackingStore().Get("destinationWebCategory")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WebCategoryable)
+    }
+    return nil
+}
 // GetDeviceCategory gets the deviceCategory property value. Represents the category classification of a device within a network infrastructure. The possible values are: client, branch, unknownFutureValue. Supports $filter (eq) and $orderby.
 func (m *NetworkAccessTraffic) GetDeviceCategory()(*DeviceCategory) {
     val, err := m.GetBackingStore().Get("deviceCategory")
@@ -152,6 +174,16 @@ func (m *NetworkAccessTraffic) GetDeviceOperatingSystemVersion()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseFilteringPolicyAction)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAction(val.(*FilteringPolicyAction))
+        }
+        return nil
+    }
     res["agentVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -209,6 +241,16 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetDestinationPort(val)
+        }
+        return nil
+    }
+    res["destinationWebCategory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWebCategoryFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDestinationWebCategory(val.(WebCategoryable))
         }
         return nil
     }
@@ -718,6 +760,13 @@ func (m *NetworkAccessTraffic) GetUserPrincipalName()(*string) {
 }
 // Serialize serializes information the current object
 func (m *NetworkAccessTraffic) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetAction() != nil {
+        cast := (*m.GetAction()).String()
+        err := writer.WriteStringValue("action", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("agentVersion", m.GetAgentVersion())
         if err != nil {
@@ -750,6 +799,12 @@ func (m *NetworkAccessTraffic) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err := writer.WriteInt32Value("destinationPort", m.GetDestinationPort())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("destinationWebCategory", m.GetDestinationWebCategory())
         if err != nil {
             return err
         }
@@ -922,6 +977,13 @@ func (m *NetworkAccessTraffic) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
+// SetAction sets the action property value. The action property
+func (m *NetworkAccessTraffic) SetAction(value *FilteringPolicyAction)() {
+    err := m.GetBackingStore().Set("action", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NetworkAccessTraffic) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
@@ -971,6 +1033,13 @@ func (m *NetworkAccessTraffic) SetDestinationIp(value *string)() {
 // SetDestinationPort sets the destinationPort property value. Represents the network port number on the destination host or server in a network communication. Supports $filter (eq) and $orderby.
 func (m *NetworkAccessTraffic) SetDestinationPort(value *int32)() {
     err := m.GetBackingStore().Set("destinationPort", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDestinationWebCategory sets the destinationWebCategory property value. The destinationWebCategory property
+func (m *NetworkAccessTraffic) SetDestinationWebCategory(value WebCategoryable)() {
+    err := m.GetBackingStore().Set("destinationWebCategory", value)
     if err != nil {
         panic(err)
     }
@@ -1162,6 +1231,7 @@ type NetworkAccessTrafficable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAction()(*FilteringPolicyAction)
     GetAgentVersion()(*string)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetConnectionId()(*string)
@@ -1169,6 +1239,7 @@ type NetworkAccessTrafficable interface {
     GetDestinationFQDN()(*string)
     GetDestinationIp()(*string)
     GetDestinationPort()(*int32)
+    GetDestinationWebCategory()(WebCategoryable)
     GetDeviceCategory()(*DeviceCategory)
     GetDeviceId()(*string)
     GetDeviceOperatingSystem()(*string)
@@ -1195,6 +1266,7 @@ type NetworkAccessTrafficable interface {
     GetTransportProtocol()(*NetworkingProtocol)
     GetUserId()(*string)
     GetUserPrincipalName()(*string)
+    SetAction(value *FilteringPolicyAction)()
     SetAgentVersion(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetConnectionId(value *string)()
@@ -1202,6 +1274,7 @@ type NetworkAccessTrafficable interface {
     SetDestinationFQDN(value *string)()
     SetDestinationIp(value *string)()
     SetDestinationPort(value *int32)()
+    SetDestinationWebCategory(value WebCategoryable)()
     SetDeviceCategory(value *DeviceCategory)()
     SetDeviceId(value *string)()
     SetDeviceOperatingSystem(value *string)()

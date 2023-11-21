@@ -36,7 +36,7 @@ func (m *GcpCloudFunction) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetResource gets the resource property value. The resource property
+// GetResource gets the resource property value. Represents the resources in an authorization system..
 func (m *GcpCloudFunction) GetResource()(GcpAuthorizationSystemResourceable) {
     val, err := m.GetBackingStore().Get("resource")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *GcpCloudFunction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetResource sets the resource property value. The resource property
+// SetResource sets the resource property value. Represents the resources in an authorization system..
 func (m *GcpCloudFunction) SetResource(value GcpAuthorizationSystemResourceable)() {
     err := m.GetBackingStore().Set("resource", value)
     if err != nil {

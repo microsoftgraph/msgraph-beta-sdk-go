@@ -91,6 +91,16 @@ func (m *CallRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["organizer_v2"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateOrganizerFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOrganizerV2(val.(Organizerable))
+        }
+        return nil
+    }
     res["participants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
@@ -104,6 +114,22 @@ func (m *CallRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
                 }
             }
             m.SetParticipants(res)
+        }
+        return nil
+    }
+    res["participants_v2"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateParticipantFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Participantable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(Participantable)
+                }
+            }
+            m.SetParticipantsV2(res)
         }
         return nil
     }
@@ -188,7 +214,7 @@ func (m *CallRecord) GetModalities()([]Modality) {
     }
     return nil
 }
-// GetOrganizer gets the organizer property value. The organizing party's identity.
+// GetOrganizer gets the organizer property value. The organizer property
 func (m *CallRecord) GetOrganizer()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
     val, err := m.GetBackingStore().Get("organizer")
     if err != nil {
@@ -199,7 +225,18 @@ func (m *CallRecord) GetOrganizer()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9
     }
     return nil
 }
-// GetParticipants gets the participants property value. List of distinct identities involved in the call.
+// GetOrganizerV2 gets the organizer_v2 property value. Identity of the organizer of the call. This relationship is expanded by default in callRecord methods.
+func (m *CallRecord) GetOrganizerV2()(Organizerable) {
+    val, err := m.GetBackingStore().Get("organizer_v2")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Organizerable)
+    }
+    return nil
+}
+// GetParticipants gets the participants property value. The participants property
 func (m *CallRecord) GetParticipants()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
     val, err := m.GetBackingStore().Get("participants")
     if err != nil {
@@ -207,6 +244,17 @@ func (m *CallRecord) GetParticipants()([]ie233ee762e29b4ba6970aa2a2efce4b7fde116
     }
     if val != nil {
         return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)
+    }
+    return nil
+}
+// GetParticipantsV2 gets the participants_v2 property value. List of distinct participants in the call.
+func (m *CallRecord) GetParticipantsV2()([]Participantable) {
+    val, err := m.GetBackingStore().Get("participants_v2")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Participantable)
     }
     return nil
 }
@@ -243,7 +291,7 @@ func (m *CallRecord) GetTypeEscaped()(*CallType) {
     }
     return nil
 }
-// GetVersion gets the version property value. Monotonically increasing version of the call record. Higher version call records with the same ID includes additional data compared to the lower version.
+// GetVersion gets the version property value. Monotonically increasing version of the call record. Higher version call records with the same ID include additional data compared to the lower version.
 func (m *CallRecord) GetVersion()(*int64) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -290,6 +338,12 @@ func (m *CallRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("organizer_v2", m.GetOrganizerV2())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetParticipants() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetParticipants()))
         for i, v := range m.GetParticipants() {
@@ -298,6 +352,18 @@ func (m *CallRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             }
         }
         err = writer.WriteCollectionOfObjectValues("participants", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetParticipantsV2() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetParticipantsV2()))
+        for i, v := range m.GetParticipantsV2() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("participants_v2", cast)
         if err != nil {
             return err
         }
@@ -363,16 +429,30 @@ func (m *CallRecord) SetModalities(value []Modality)() {
         panic(err)
     }
 }
-// SetOrganizer sets the organizer property value. The organizing party's identity.
+// SetOrganizer sets the organizer property value. The organizer property
 func (m *CallRecord) SetOrganizer(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)() {
     err := m.GetBackingStore().Set("organizer", value)
     if err != nil {
         panic(err)
     }
 }
-// SetParticipants sets the participants property value. List of distinct identities involved in the call.
+// SetOrganizerV2 sets the organizer_v2 property value. Identity of the organizer of the call. This relationship is expanded by default in callRecord methods.
+func (m *CallRecord) SetOrganizerV2(value Organizerable)() {
+    err := m.GetBackingStore().Set("organizer_v2", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetParticipants sets the participants property value. The participants property
 func (m *CallRecord) SetParticipants(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)() {
     err := m.GetBackingStore().Set("participants", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetParticipantsV2 sets the participants_v2 property value. List of distinct participants in the call.
+func (m *CallRecord) SetParticipantsV2(value []Participantable)() {
+    err := m.GetBackingStore().Set("participants_v2", value)
     if err != nil {
         panic(err)
     }
@@ -398,7 +478,7 @@ func (m *CallRecord) SetTypeEscaped(value *CallType)() {
         panic(err)
     }
 }
-// SetVersion sets the version property value. Monotonically increasing version of the call record. Higher version call records with the same ID includes additional data compared to the lower version.
+// SetVersion sets the version property value. Monotonically increasing version of the call record. Higher version call records with the same ID include additional data compared to the lower version.
 func (m *CallRecord) SetVersion(value *int64)() {
     err := m.GetBackingStore().Set("version", value)
     if err != nil {
@@ -414,7 +494,9 @@ type CallRecordable interface {
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetModalities()([]Modality)
     GetOrganizer()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)
+    GetOrganizerV2()(Organizerable)
     GetParticipants()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)
+    GetParticipantsV2()([]Participantable)
     GetSessions()([]Sessionable)
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetTypeEscaped()(*CallType)
@@ -424,7 +506,9 @@ type CallRecordable interface {
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetModalities(value []Modality)()
     SetOrganizer(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)()
+    SetOrganizerV2(value Organizerable)()
     SetParticipants(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)()
+    SetParticipantsV2(value []Participantable)()
     SetSessions(value []Sessionable)()
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetTypeEscaped(value *CallType)()

@@ -21,7 +21,7 @@ func NewAzureAuthorizationSystem()(*AzureAuthorizationSystem) {
 func CreateAzureAuthorizationSystemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAzureAuthorizationSystem(), nil
 }
-// GetActions gets the actions property value. The actions property
+// GetActions gets the actions property value. List of actions for service in authorization system.
 func (m *AzureAuthorizationSystem) GetActions()([]AzureAuthorizationSystemTypeActionable) {
     val, err := m.GetBackingStore().Get("actions")
     if err != nil {
@@ -32,7 +32,7 @@ func (m *AzureAuthorizationSystem) GetActions()([]AzureAuthorizationSystemTypeAc
     }
     return nil
 }
-// GetAssociatedIdentities gets the associatedIdentities property value. The associatedIdentities property
+// GetAssociatedIdentities gets the associatedIdentities property value. Identities in the authorization system.
 func (m *AzureAuthorizationSystem) GetAssociatedIdentities()(AzureAssociatedIdentitiesable) {
     val, err := m.GetBackingStore().Get("associatedIdentities")
     if err != nil {
@@ -122,7 +122,7 @@ func (m *AzureAuthorizationSystem) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetResources gets the resources property value. The resources property
+// GetResources gets the resources property value. Resources associated with the authorization system type.
 func (m *AzureAuthorizationSystem) GetResources()([]AzureAuthorizationSystemResourceable) {
     val, err := m.GetBackingStore().Get("resources")
     if err != nil {
@@ -133,7 +133,7 @@ func (m *AzureAuthorizationSystem) GetResources()([]AzureAuthorizationSystemReso
     }
     return nil
 }
-// GetRoleDefinitions gets the roleDefinitions property value. The roleDefinitions property
+// GetRoleDefinitions gets the roleDefinitions property value. Roles associated with the authorization system type.
 func (m *AzureAuthorizationSystem) GetRoleDefinitions()([]AzureRoleDefinitionable) {
     val, err := m.GetBackingStore().Get("roleDefinitions")
     if err != nil {
@@ -144,7 +144,7 @@ func (m *AzureAuthorizationSystem) GetRoleDefinitions()([]AzureRoleDefinitionabl
     }
     return nil
 }
-// GetServices gets the services property value. The services property
+// GetServices gets the services property value. Services associated with the authorization system type.
 func (m *AzureAuthorizationSystem) GetServices()([]AuthorizationSystemTypeServiceable) {
     val, err := m.GetBackingStore().Get("services")
     if err != nil {
@@ -217,35 +217,35 @@ func (m *AzureAuthorizationSystem) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetActions sets the actions property value. The actions property
+// SetActions sets the actions property value. List of actions for service in authorization system.
 func (m *AzureAuthorizationSystem) SetActions(value []AzureAuthorizationSystemTypeActionable)() {
     err := m.GetBackingStore().Set("actions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAssociatedIdentities sets the associatedIdentities property value. The associatedIdentities property
+// SetAssociatedIdentities sets the associatedIdentities property value. Identities in the authorization system.
 func (m *AzureAuthorizationSystem) SetAssociatedIdentities(value AzureAssociatedIdentitiesable)() {
     err := m.GetBackingStore().Set("associatedIdentities", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResources sets the resources property value. The resources property
+// SetResources sets the resources property value. Resources associated with the authorization system type.
 func (m *AzureAuthorizationSystem) SetResources(value []AzureAuthorizationSystemResourceable)() {
     err := m.GetBackingStore().Set("resources", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRoleDefinitions sets the roleDefinitions property value. The roleDefinitions property
+// SetRoleDefinitions sets the roleDefinitions property value. Roles associated with the authorization system type.
 func (m *AzureAuthorizationSystem) SetRoleDefinitions(value []AzureRoleDefinitionable)() {
     err := m.GetBackingStore().Set("roleDefinitions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetServices sets the services property value. The services property
+// SetServices sets the services property value. Services associated with the authorization system type.
 func (m *AzureAuthorizationSystem) SetServices(value []AuthorizationSystemTypeServiceable)() {
     err := m.GetBackingStore().Set("services", value)
     if err != nil {

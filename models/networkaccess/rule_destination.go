@@ -42,6 +42,8 @@ func CreateRuleDestinationFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                         return NewIpSubnet(), nil
                     case "#microsoft.graph.networkaccess.url":
                         return NewUrl(), nil
+                    case "#microsoft.graph.networkaccess.webCategory":
+                        return NewWebCategory(), nil
                 }
             }
         }

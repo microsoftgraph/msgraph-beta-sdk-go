@@ -34,7 +34,7 @@ func (m *ActionSummary) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAssigned gets the assigned property value. The assigned property
+// GetAssigned gets the assigned property value. This is the number of authorization system actions that have been assigned to the identity.
 func (m *ActionSummary) GetAssigned()(*int32) {
     val, err := m.GetBackingStore().Get("assigned")
     if err != nil {
@@ -45,7 +45,7 @@ func (m *ActionSummary) GetAssigned()(*int32) {
     }
     return nil
 }
-// GetAvailable gets the available property value. The available property
+// GetAvailable gets the available property value. This is the number of authorization system actions that the identity has exercised in the last 90 days.
 func (m *ActionSummary) GetAvailable()(*int32) {
     val, err := m.GetBackingStore().Get("available")
     if err != nil {
@@ -60,7 +60,7 @@ func (m *ActionSummary) GetAvailable()(*int32) {
 func (m *ActionSummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetExercised gets the exercised property value. The exercised property
+// GetExercised gets the exercised property value. This is the maximum number of actions that are available in the authorization system.
 func (m *ActionSummary) GetExercised()(*int32) {
     val, err := m.GetBackingStore().Get("exercised")
     if err != nil {
@@ -168,14 +168,14 @@ func (m *ActionSummary) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAssigned sets the assigned property value. The assigned property
+// SetAssigned sets the assigned property value. This is the number of authorization system actions that have been assigned to the identity.
 func (m *ActionSummary) SetAssigned(value *int32)() {
     err := m.GetBackingStore().Set("assigned", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAvailable sets the available property value. The available property
+// SetAvailable sets the available property value. This is the number of authorization system actions that the identity has exercised in the last 90 days.
 func (m *ActionSummary) SetAvailable(value *int32)() {
     err := m.GetBackingStore().Set("available", value)
     if err != nil {
@@ -186,7 +186,7 @@ func (m *ActionSummary) SetAvailable(value *int32)() {
 func (m *ActionSummary) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetExercised sets the exercised property value. The exercised property
+// SetExercised sets the exercised property value. This is the maximum number of actions that are available in the authorization system.
 func (m *ActionSummary) SetExercised(value *int32)() {
     err := m.GetBackingStore().Set("exercised", value)
     if err != nil {

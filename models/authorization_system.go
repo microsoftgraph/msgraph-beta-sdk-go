@@ -41,7 +41,7 @@ func CreateAuthorizationSystemFromDiscriminatorValue(parseNode i878a80d2330e89d2
     }
     return NewAuthorizationSystem(), nil
 }
-// GetAuthorizationSystemId gets the authorizationSystemId property value. The authorizationSystemId property
+// GetAuthorizationSystemId gets the authorizationSystemId property value. ID of the authorization system retrieved from the customer cloud environment. Supports $filter(eq, contains) and $orderBy.
 func (m *AuthorizationSystem) GetAuthorizationSystemId()(*string) {
     val, err := m.GetBackingStore().Get("authorizationSystemId")
     if err != nil {
@@ -52,7 +52,7 @@ func (m *AuthorizationSystem) GetAuthorizationSystemId()(*string) {
     }
     return nil
 }
-// GetAuthorizationSystemName gets the authorizationSystemName property value. The authorizationSystemName property
+// GetAuthorizationSystemName gets the authorizationSystemName property value. Name of the authorization system detected after onboarding. Supports $filter(eq,contains) and $orderBy.
 func (m *AuthorizationSystem) GetAuthorizationSystemName()(*string) {
     val, err := m.GetBackingStore().Get("authorizationSystemName")
     if err != nil {
@@ -63,7 +63,7 @@ func (m *AuthorizationSystem) GetAuthorizationSystemName()(*string) {
     }
     return nil
 }
-// GetAuthorizationSystemType gets the authorizationSystemType property value. The authorizationSystemType property
+// GetAuthorizationSystemType gets the authorizationSystemType property value. The type of authorization system. Can be gcp, azure, or aws. Supports $filter(eq).
 func (m *AuthorizationSystem) GetAuthorizationSystemType()(*string) {
     val, err := m.GetBackingStore().Get("authorizationSystemType")
     if err != nil {
@@ -74,7 +74,7 @@ func (m *AuthorizationSystem) GetAuthorizationSystemType()(*string) {
     }
     return nil
 }
-// GetDataCollectionInfo gets the dataCollectionInfo property value. The dataCollectionInfo property
+// GetDataCollectionInfo gets the dataCollectionInfo property value. Defines how and whether Permissions Management collects data from the onboarded authorization system. Supports $filter (eq) as follows:  $filter=dataCollectionInfo/entitlements/permissionsModificationCapability and $filter=dataCollectionInfo/entitlements/status.
 func (m *AuthorizationSystem) GetDataCollectionInfo()(DataCollectionInfoable) {
     val, err := m.GetBackingStore().Get("dataCollectionInfo")
     if err != nil {
@@ -162,28 +162,28 @@ func (m *AuthorizationSystem) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetAuthorizationSystemId sets the authorizationSystemId property value. The authorizationSystemId property
+// SetAuthorizationSystemId sets the authorizationSystemId property value. ID of the authorization system retrieved from the customer cloud environment. Supports $filter(eq, contains) and $orderBy.
 func (m *AuthorizationSystem) SetAuthorizationSystemId(value *string)() {
     err := m.GetBackingStore().Set("authorizationSystemId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAuthorizationSystemName sets the authorizationSystemName property value. The authorizationSystemName property
+// SetAuthorizationSystemName sets the authorizationSystemName property value. Name of the authorization system detected after onboarding. Supports $filter(eq,contains) and $orderBy.
 func (m *AuthorizationSystem) SetAuthorizationSystemName(value *string)() {
     err := m.GetBackingStore().Set("authorizationSystemName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAuthorizationSystemType sets the authorizationSystemType property value. The authorizationSystemType property
+// SetAuthorizationSystemType sets the authorizationSystemType property value. The type of authorization system. Can be gcp, azure, or aws. Supports $filter(eq).
 func (m *AuthorizationSystem) SetAuthorizationSystemType(value *string)() {
     err := m.GetBackingStore().Set("authorizationSystemType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDataCollectionInfo sets the dataCollectionInfo property value. The dataCollectionInfo property
+// SetDataCollectionInfo sets the dataCollectionInfo property value. Defines how and whether Permissions Management collects data from the onboarded authorization system. Supports $filter (eq) as follows:  $filter=dataCollectionInfo/entitlements/permissionsModificationCapability and $filter=dataCollectionInfo/entitlements/status.
 func (m *AuthorizationSystem) SetDataCollectionInfo(value DataCollectionInfoable)() {
     err := m.GetBackingStore().Set("dataCollectionInfo", value)
     if err != nil {

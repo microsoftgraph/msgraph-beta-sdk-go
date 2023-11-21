@@ -73,7 +73,7 @@ func (m *RiskProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetHumanCount gets the humanCount property value. The humanCount property
+// GetHumanCount gets the humanCount property value. This is the count of human identities that have been assigned to this riskScoreBracket,
 func (m *RiskProfile) GetHumanCount()(*int32) {
     val, err := m.GetBackingStore().Get("humanCount")
     if err != nil {
@@ -84,7 +84,7 @@ func (m *RiskProfile) GetHumanCount()(*int32) {
     }
     return nil
 }
-// GetNonHumanCount gets the nonHumanCount property value. The nonHumanCount property
+// GetNonHumanCount gets the nonHumanCount property value. This is the count of nonhuman identities that have been assigned to this riskScoreBracket
 func (m *RiskProfile) GetNonHumanCount()(*int32) {
     val, err := m.GetBackingStore().Get("nonHumanCount")
     if err != nil {
@@ -145,14 +145,14 @@ func (m *RiskProfile) SetAdditionalData(value map[string]any)() {
 func (m *RiskProfile) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetHumanCount sets the humanCount property value. The humanCount property
+// SetHumanCount sets the humanCount property value. This is the count of human identities that have been assigned to this riskScoreBracket,
 func (m *RiskProfile) SetHumanCount(value *int32)() {
     err := m.GetBackingStore().Set("humanCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNonHumanCount sets the nonHumanCount property value. The nonHumanCount property
+// SetNonHumanCount sets the nonHumanCount property value. This is the count of nonhuman identities that have been assigned to this riskScoreBracket
 func (m *RiskProfile) SetNonHumanCount(value *int32)() {
     err := m.GetBackingStore().Set("nonHumanCount", value)
     if err != nil {

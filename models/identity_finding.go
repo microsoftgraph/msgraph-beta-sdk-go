@@ -140,7 +140,7 @@ func (m *IdentityFinding) GetIdentity()(AuthorizationSystemIdentityable) {
     }
     return nil
 }
-// GetIdentityDetails gets the identityDetails property value. The identityDetails property
+// GetIdentityDetails gets the identityDetails property value. An identity's information details.
 func (m *IdentityFinding) GetIdentityDetails()(IdentityDetailsable) {
     val, err := m.GetBackingStore().Get("identityDetails")
     if err != nil {
@@ -208,7 +208,7 @@ func (m *IdentityFinding) SetIdentity(value AuthorizationSystemIdentityable)() {
         panic(err)
     }
 }
-// SetIdentityDetails sets the identityDetails property value. The identityDetails property
+// SetIdentityDetails sets the identityDetails property value. An identity's information details.
 func (m *IdentityFinding) SetIdentityDetails(value IdentityDetailsable)() {
     err := m.GetBackingStore().Set("identityDetails", value)
     if err != nil {

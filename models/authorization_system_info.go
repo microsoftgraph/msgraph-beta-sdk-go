@@ -34,7 +34,7 @@ func (m *AuthorizationSystemInfo) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAuthorizationSystemType gets the authorizationSystemType property value. The authorizationSystemType property
+// GetAuthorizationSystemType gets the authorizationSystemType property value. The type of authorization system.The possible values are: azure, gcp, aws, unknownFutureValue.
 func (m *AuthorizationSystemInfo) GetAuthorizationSystemType()(*AuthorizationSystemType) {
     val, err := m.GetBackingStore().Get("authorizationSystemType")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *AuthorizationSystemInfo) GetAuthorizationSystemType()(*AuthorizationSys
 func (m *AuthorizationSystemInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Display name for the authorization system.
 func (m *AuthorizationSystemInfo) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -105,7 +105,7 @@ func (m *AuthorizationSystemInfo) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetId gets the id property value. The id property
+// GetId gets the id property value. Unique identifier for the authorization system.
 func (m *AuthorizationSystemInfo) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -169,7 +169,7 @@ func (m *AuthorizationSystemInfo) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAuthorizationSystemType sets the authorizationSystemType property value. The authorizationSystemType property
+// SetAuthorizationSystemType sets the authorizationSystemType property value. The type of authorization system.The possible values are: azure, gcp, aws, unknownFutureValue.
 func (m *AuthorizationSystemInfo) SetAuthorizationSystemType(value *AuthorizationSystemType)() {
     err := m.GetBackingStore().Set("authorizationSystemType", value)
     if err != nil {
@@ -180,14 +180,14 @@ func (m *AuthorizationSystemInfo) SetAuthorizationSystemType(value *Authorizatio
 func (m *AuthorizationSystemInfo) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Display name for the authorization system.
 func (m *AuthorizationSystemInfo) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetId sets the id property value. The id property
+// SetId sets the id property value. Unique identifier for the authorization system.
 func (m *AuthorizationSystemInfo) SetId(value *string)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {

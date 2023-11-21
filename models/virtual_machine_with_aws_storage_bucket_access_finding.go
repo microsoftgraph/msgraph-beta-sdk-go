@@ -19,7 +19,7 @@ func NewVirtualMachineWithAwsStorageBucketAccessFinding()(*VirtualMachineWithAws
 func CreateVirtualMachineWithAwsStorageBucketAccessFindingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVirtualMachineWithAwsStorageBucketAccessFinding(), nil
 }
-// GetAccessibleCount gets the accessibleCount property value. The total number of storage buckets that the EC2 instance can access using the role
+// GetAccessibleCount gets the accessibleCount property value. The total number of storage buckets that the EC2 instance can access using the role.
 func (m *VirtualMachineWithAwsStorageBucketAccessFinding) GetAccessibleCount()(*int32) {
     val, err := m.GetBackingStore().Get("accessibleCount")
     if err != nil {
@@ -30,7 +30,7 @@ func (m *VirtualMachineWithAwsStorageBucketAccessFinding) GetAccessibleCount()(*
     }
     return nil
 }
-// GetBucketCount gets the bucketCount property value. The total number of storage buckets in the authorization system that host the EC2 instance
+// GetBucketCount gets the bucketCount property value. The total number of storage buckets in the authorization system that hosts the EC2 instance.
 func (m *VirtualMachineWithAwsStorageBucketAccessFinding) GetBucketCount()(*int32) {
     val, err := m.GetBackingStore().Get("bucketCount")
     if err != nil {
@@ -167,14 +167,14 @@ func (m *VirtualMachineWithAwsStorageBucketAccessFinding) Serialize(writer i878a
     }
     return nil
 }
-// SetAccessibleCount sets the accessibleCount property value. The total number of storage buckets that the EC2 instance can access using the role
+// SetAccessibleCount sets the accessibleCount property value. The total number of storage buckets that the EC2 instance can access using the role.
 func (m *VirtualMachineWithAwsStorageBucketAccessFinding) SetAccessibleCount(value *int32)() {
     err := m.GetBackingStore().Set("accessibleCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBucketCount sets the bucketCount property value. The total number of storage buckets in the authorization system that host the EC2 instance
+// SetBucketCount sets the bucketCount property value. The total number of storage buckets in the authorization system that hosts the EC2 instance.
 func (m *VirtualMachineWithAwsStorageBucketAccessFinding) SetBucketCount(value *int32)() {
     err := m.GetBackingStore().Set("bucketCount", value)
     if err != nil {

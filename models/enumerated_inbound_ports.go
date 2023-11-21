@@ -42,7 +42,7 @@ func (m *EnumeratedInboundPorts) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetPorts gets the ports property value. The ports property
+// GetPorts gets the ports property value. Collection of ports that allow inbound traffic.
 func (m *EnumeratedInboundPorts) GetPorts()([]string) {
     val, err := m.GetBackingStore().Get("ports")
     if err != nil {
@@ -67,7 +67,7 @@ func (m *EnumeratedInboundPorts) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetPorts sets the ports property value. The ports property
+// SetPorts sets the ports property value. Collection of ports that allow inbound traffic.
 func (m *EnumeratedInboundPorts) SetPorts(value []string)() {
     err := m.GetBackingStore().Set("ports", value)
     if err != nil {

@@ -30,6 +30,8 @@ func CreateChangeTrackedEntityFromDiscriminatorValue(parseNode i878a80d2330e89d2
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.dayNote":
+                        return NewDayNote(), nil
                     case "#microsoft.graph.offerShiftRequest":
                         return NewOfferShiftRequest(), nil
                     case "#microsoft.graph.openShift":

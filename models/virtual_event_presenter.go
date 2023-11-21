@@ -63,6 +63,32 @@ func (m *VirtualEventPresenter) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["profilePhoto"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetByteArrayValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProfilePhoto(val)
+        }
+        return nil
+    }
+    res["sessions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateVirtualEventSessionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]VirtualEventSessionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(VirtualEventSessionable)
+                }
+            }
+            m.SetSessions(res)
+        }
+        return nil
+    }
     return res
 }
 // GetIdentity gets the identity property value. Identity information of the presenter.
@@ -84,6 +110,28 @@ func (m *VirtualEventPresenter) GetPresenterDetails()(VirtualEventPresenterDetai
     }
     if val != nil {
         return val.(VirtualEventPresenterDetailsable)
+    }
+    return nil
+}
+// GetProfilePhoto gets the profilePhoto property value. The profilePhoto property
+func (m *VirtualEventPresenter) GetProfilePhoto()([]byte) {
+    val, err := m.GetBackingStore().Get("profilePhoto")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
+}
+// GetSessions gets the sessions property value. The sessions property
+func (m *VirtualEventPresenter) GetSessions()([]VirtualEventSessionable) {
+    val, err := m.GetBackingStore().Get("sessions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]VirtualEventSessionable)
     }
     return nil
 }
@@ -111,6 +159,24 @@ func (m *VirtualEventPresenter) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteByteArrayValue("profilePhoto", m.GetProfilePhoto())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetSessions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSessions()))
+        for i, v := range m.GetSessions() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("sessions", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetEmail sets the email property value. Email address of the presenter.
@@ -134,6 +200,20 @@ func (m *VirtualEventPresenter) SetPresenterDetails(value VirtualEventPresenterD
         panic(err)
     }
 }
+// SetProfilePhoto sets the profilePhoto property value. The profilePhoto property
+func (m *VirtualEventPresenter) SetProfilePhoto(value []byte)() {
+    err := m.GetBackingStore().Set("profilePhoto", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSessions sets the sessions property value. The sessions property
+func (m *VirtualEventPresenter) SetSessions(value []VirtualEventSessionable)() {
+    err := m.GetBackingStore().Set("sessions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // VirtualEventPresenterable 
 type VirtualEventPresenterable interface {
     Entityable
@@ -141,7 +221,11 @@ type VirtualEventPresenterable interface {
     GetEmail()(*string)
     GetIdentity()(CommunicationsUserIdentityable)
     GetPresenterDetails()(VirtualEventPresenterDetailsable)
+    GetProfilePhoto()([]byte)
+    GetSessions()([]VirtualEventSessionable)
     SetEmail(value *string)()
     SetIdentity(value CommunicationsUserIdentityable)()
     SetPresenterDetails(value VirtualEventPresenterDetailsable)()
+    SetProfilePhoto(value []byte)()
+    SetSessions(value []VirtualEventSessionable)()
 }

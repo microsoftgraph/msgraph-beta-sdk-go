@@ -19,7 +19,7 @@ func NewAuthorizationSystemTypeService()(*AuthorizationSystemTypeService) {
 func CreateAuthorizationSystemTypeServiceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthorizationSystemTypeService(), nil
 }
-// GetActions gets the actions property value. The actions property
+// GetActions gets the actions property value. List of actions for the service in an authorization system that is onboarded to Permissions Management.
 func (m *AuthorizationSystemTypeService) GetActions()([]AuthorizationSystemTypeActionable) {
     val, err := m.GetBackingStore().Get("actions")
     if err != nil {
@@ -71,7 +71,7 @@ func (m *AuthorizationSystemTypeService) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetActions sets the actions property value. The actions property
+// SetActions sets the actions property value. List of actions for the service in an authorization system that is onboarded to Permissions Management.
 func (m *AuthorizationSystemTypeService) SetActions(value []AuthorizationSystemTypeActionable)() {
     err := m.GetBackingStore().Set("actions", value)
     if err != nil {

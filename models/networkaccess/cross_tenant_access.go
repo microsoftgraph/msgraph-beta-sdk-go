@@ -39,7 +39,7 @@ func (m *CrossTenantAccess) GetAdditionalData()(map[string]any) {
 func (m *CrossTenantAccess) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDeviceCount gets the deviceCount property value. The deviceCount property
+// GetDeviceCount gets the deviceCount property value. The number of devices that accessed the external tenant.
 func (m *CrossTenantAccess) GetDeviceCount()(*int64) {
     val, err := m.GetBackingStore().Get("deviceCount")
     if err != nil {
@@ -135,7 +135,7 @@ func (m *CrossTenantAccess) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetLastAccessDateTime gets the lastAccessDateTime property value. The lastAccessDateTime property
+// GetLastAccessDateTime gets the lastAccessDateTime property value. The timestamp of the most recent access to the external tenant.
 func (m *CrossTenantAccess) GetLastAccessDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastAccessDateTime")
     if err != nil {
@@ -157,7 +157,7 @@ func (m *CrossTenantAccess) GetOdataType()(*string) {
     }
     return nil
 }
-// GetResourceTenantId gets the resourceTenantId property value. The resourceTenantId property
+// GetResourceTenantId gets the resourceTenantId property value. The tenant ID of the external tenant.
 func (m *CrossTenantAccess) GetResourceTenantId()(*string) {
     val, err := m.GetBackingStore().Get("resourceTenantId")
     if err != nil {
@@ -168,7 +168,7 @@ func (m *CrossTenantAccess) GetResourceTenantId()(*string) {
     }
     return nil
 }
-// GetResourceTenantName gets the resourceTenantName property value. The resourceTenantName property
+// GetResourceTenantName gets the resourceTenantName property value. The name of the external tenant.
 func (m *CrossTenantAccess) GetResourceTenantName()(*string) {
     val, err := m.GetBackingStore().Get("resourceTenantName")
     if err != nil {
@@ -179,7 +179,7 @@ func (m *CrossTenantAccess) GetResourceTenantName()(*string) {
     }
     return nil
 }
-// GetResourceTenantPrimaryDomain gets the resourceTenantPrimaryDomain property value. The resourceTenantPrimaryDomain property
+// GetResourceTenantPrimaryDomain gets the resourceTenantPrimaryDomain property value. The domain of the external tenant.
 func (m *CrossTenantAccess) GetResourceTenantPrimaryDomain()(*string) {
     val, err := m.GetBackingStore().Get("resourceTenantPrimaryDomain")
     if err != nil {
@@ -201,7 +201,7 @@ func (m *CrossTenantAccess) GetUsageStatus()(*UsageStatus) {
     }
     return nil
 }
-// GetUserCount gets the userCount property value. The userCount property
+// GetUserCount gets the userCount property value. The number of users that accessed the external tenant.
 func (m *CrossTenantAccess) GetUserCount()(*int64) {
     val, err := m.GetBackingStore().Get("userCount")
     if err != nil {
@@ -282,14 +282,14 @@ func (m *CrossTenantAccess) SetAdditionalData(value map[string]any)() {
 func (m *CrossTenantAccess) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDeviceCount sets the deviceCount property value. The deviceCount property
+// SetDeviceCount sets the deviceCount property value. The number of devices that accessed the external tenant.
 func (m *CrossTenantAccess) SetDeviceCount(value *int64)() {
     err := m.GetBackingStore().Set("deviceCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastAccessDateTime sets the lastAccessDateTime property value. The lastAccessDateTime property
+// SetLastAccessDateTime sets the lastAccessDateTime property value. The timestamp of the most recent access to the external tenant.
 func (m *CrossTenantAccess) SetLastAccessDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastAccessDateTime", value)
     if err != nil {
@@ -303,21 +303,21 @@ func (m *CrossTenantAccess) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetResourceTenantId sets the resourceTenantId property value. The resourceTenantId property
+// SetResourceTenantId sets the resourceTenantId property value. The tenant ID of the external tenant.
 func (m *CrossTenantAccess) SetResourceTenantId(value *string)() {
     err := m.GetBackingStore().Set("resourceTenantId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResourceTenantName sets the resourceTenantName property value. The resourceTenantName property
+// SetResourceTenantName sets the resourceTenantName property value. The name of the external tenant.
 func (m *CrossTenantAccess) SetResourceTenantName(value *string)() {
     err := m.GetBackingStore().Set("resourceTenantName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResourceTenantPrimaryDomain sets the resourceTenantPrimaryDomain property value. The resourceTenantPrimaryDomain property
+// SetResourceTenantPrimaryDomain sets the resourceTenantPrimaryDomain property value. The domain of the external tenant.
 func (m *CrossTenantAccess) SetResourceTenantPrimaryDomain(value *string)() {
     err := m.GetBackingStore().Set("resourceTenantPrimaryDomain", value)
     if err != nil {
@@ -331,7 +331,7 @@ func (m *CrossTenantAccess) SetUsageStatus(value *UsageStatus)() {
         panic(err)
     }
 }
-// SetUserCount sets the userCount property value. The userCount property
+// SetUserCount sets the userCount property value. The number of users that accessed the external tenant.
 func (m *CrossTenantAccess) SetUserCount(value *int64)() {
     err := m.GetBackingStore().Set("userCount", value)
     if err != nil {

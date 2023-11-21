@@ -19,7 +19,7 @@ func NewAwsExternalSystemAccessRoleFinding()(*AwsExternalSystemAccessRoleFinding
 func CreateAwsExternalSystemAccessRoleFindingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAwsExternalSystemAccessRoleFinding(), nil
 }
-// GetAccessibleSystemIds gets the accessibleSystemIds property value. The accessibleSystemIds property
+// GetAccessibleSystemIds gets the accessibleSystemIds property value. The IDs of the accounts that this role is able to access.
 func (m *AwsExternalSystemAccessRoleFinding) GetAccessibleSystemIds()([]string) {
     val, err := m.GetBackingStore().Get("accessibleSystemIds")
     if err != nil {
@@ -119,7 +119,7 @@ func (m *AwsExternalSystemAccessRoleFinding) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetAccessibleSystemIds sets the accessibleSystemIds property value. The accessibleSystemIds property
+// SetAccessibleSystemIds sets the accessibleSystemIds property value. The IDs of the accounts that this role is able to access.
 func (m *AwsExternalSystemAccessRoleFinding) SetAccessibleSystemIds(value []string)() {
     err := m.GetBackingStore().Set("accessibleSystemIds", value)
     if err != nil {

@@ -41,7 +41,7 @@ func CreateAuthorizationSystemTypeActionFromDiscriminatorValue(parseNode i878a80
     }
     return NewAuthorizationSystemTypeAction(), nil
 }
-// GetActionType gets the actionType property value. The actionType property
+// GetActionType gets the actionType property value. The type of action allowed in the authorization system's service. The possible values are: delete, read, unknownFutureValue. Supports $filter and (eq).
 func (m *AuthorizationSystemTypeAction) GetActionType()(*AuthorizationSystemActionType) {
     val, err := m.GetBackingStore().Get("actionType")
     if err != nil {
@@ -52,7 +52,7 @@ func (m *AuthorizationSystemTypeAction) GetActionType()(*AuthorizationSystemActi
     }
     return nil
 }
-// GetExternalId gets the externalId property value. The externalId property
+// GetExternalId gets the externalId property value. The display name of an action. Read-only. Supports $filter and (eq).
 func (m *AuthorizationSystemTypeAction) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -114,7 +114,7 @@ func (m *AuthorizationSystemTypeAction) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetResourceTypes gets the resourceTypes property value. The resourceTypes property
+// GetResourceTypes gets the resourceTypes property value. The resource types in the authorization system's service where the action can be performed. Supports $filter and (eq).
 func (m *AuthorizationSystemTypeAction) GetResourceTypes()([]string) {
     val, err := m.GetBackingStore().Get("resourceTypes")
     if err != nil {
@@ -170,21 +170,21 @@ func (m *AuthorizationSystemTypeAction) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetActionType sets the actionType property value. The actionType property
+// SetActionType sets the actionType property value. The type of action allowed in the authorization system's service. The possible values are: delete, read, unknownFutureValue. Supports $filter and (eq).
 func (m *AuthorizationSystemTypeAction) SetActionType(value *AuthorizationSystemActionType)() {
     err := m.GetBackingStore().Set("actionType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExternalId sets the externalId property value. The externalId property
+// SetExternalId sets the externalId property value. The display name of an action. Read-only. Supports $filter and (eq).
 func (m *AuthorizationSystemTypeAction) SetExternalId(value *string)() {
     err := m.GetBackingStore().Set("externalId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResourceTypes sets the resourceTypes property value. The resourceTypes property
+// SetResourceTypes sets the resourceTypes property value. The resource types in the authorization system's service where the action can be performed. Supports $filter and (eq).
 func (m *AuthorizationSystemTypeAction) SetResourceTypes(value []string)() {
     err := m.GetBackingStore().Set("resourceTypes", value)
     if err != nil {
