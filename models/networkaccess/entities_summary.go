@@ -38,7 +38,7 @@ func (m *EntitiesSummary) GetAdditionalData()(map[string]any) {
 func (m *EntitiesSummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDeviceCount gets the deviceCount property value. Count of unique devices that were seen.
+// GetDeviceCount gets the deviceCount property value. The number of unique devices that were seen.
 func (m *EntitiesSummary) GetDeviceCount()(*int64) {
     val, err := m.GetBackingStore().Get("deviceCount")
     if err != nil {
@@ -126,7 +126,7 @@ func (m *EntitiesSummary) GetTrafficType()(*TrafficType) {
     }
     return nil
 }
-// GetUserCount gets the userCount property value. Count of unique Microsoft Entra users that were seen.
+// GetUserCount gets the userCount property value. The number of unique Microsoft Entra ID users that were seen.
 func (m *EntitiesSummary) GetUserCount()(*int64) {
     val, err := m.GetBackingStore().Get("userCount")
     if err != nil {
@@ -137,7 +137,7 @@ func (m *EntitiesSummary) GetUserCount()(*int64) {
     }
     return nil
 }
-// GetWorkloadCount gets the workloadCount property value. Count of unique target workloads or hosts that were seen.
+// GetWorkloadCount gets the workloadCount property value. The number of unique target workloads/hosts that were seen.
 func (m *EntitiesSummary) GetWorkloadCount()(*int64) {
     val, err := m.GetBackingStore().Get("workloadCount")
     if err != nil {
@@ -200,7 +200,7 @@ func (m *EntitiesSummary) SetAdditionalData(value map[string]any)() {
 func (m *EntitiesSummary) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDeviceCount sets the deviceCount property value. Count of unique devices that were seen.
+// SetDeviceCount sets the deviceCount property value. The number of unique devices that were seen.
 func (m *EntitiesSummary) SetDeviceCount(value *int64)() {
     err := m.GetBackingStore().Set("deviceCount", value)
     if err != nil {
@@ -221,14 +221,14 @@ func (m *EntitiesSummary) SetTrafficType(value *TrafficType)() {
         panic(err)
     }
 }
-// SetUserCount sets the userCount property value. Count of unique Microsoft Entra users that were seen.
+// SetUserCount sets the userCount property value. The number of unique Microsoft Entra ID users that were seen.
 func (m *EntitiesSummary) SetUserCount(value *int64)() {
     err := m.GetBackingStore().Set("userCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWorkloadCount sets the workloadCount property value. Count of unique target workloads or hosts that were seen.
+// SetWorkloadCount sets the workloadCount property value. The number of unique target workloads/hosts that were seen.
 func (m *EntitiesSummary) SetWorkloadCount(value *int64)() {
     err := m.GetBackingStore().Set("workloadCount", value)
     if err != nil {

@@ -19,7 +19,7 @@ func NewDailyUserInsightMetricsRoot()(*DailyUserInsightMetricsRoot) {
 func CreateDailyUserInsightMetricsRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDailyUserInsightMetricsRoot(), nil
 }
-// GetActiveUsers gets the activeUsers property value. The activeUsers property
+// GetActiveUsers gets the activeUsers property value. Insights for active users on apps registered in the tenant for a specified period.
 func (m *DailyUserInsightMetricsRoot) GetActiveUsers()([]ActiveUsersMetricable) {
     val, err := m.GetBackingStore().Get("activeUsers")
     if err != nil {
@@ -30,7 +30,7 @@ func (m *DailyUserInsightMetricsRoot) GetActiveUsers()([]ActiveUsersMetricable) 
     }
     return nil
 }
-// GetActiveUsersBreakdown gets the activeUsersBreakdown property value. The activeUsersBreakdown property
+// GetActiveUsersBreakdown gets the activeUsersBreakdown property value. Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
 func (m *DailyUserInsightMetricsRoot) GetActiveUsersBreakdown()([]ActiveUsersBreakdownMetricable) {
     val, err := m.GetBackingStore().Get("activeUsersBreakdown")
     if err != nil {
@@ -41,7 +41,7 @@ func (m *DailyUserInsightMetricsRoot) GetActiveUsersBreakdown()([]ActiveUsersBre
     }
     return nil
 }
-// GetAuthentications gets the authentications property value. The authentications property
+// GetAuthentications gets the authentications property value. Insights for authentications on apps registered in the tenant for a specified period.
 func (m *DailyUserInsightMetricsRoot) GetAuthentications()([]AuthenticationsMetricable) {
     val, err := m.GetBackingStore().Get("authentications")
     if err != nil {
@@ -223,7 +223,7 @@ func (m *DailyUserInsightMetricsRoot) GetInactiveUsersByApplication()([]DailyIna
     }
     return nil
 }
-// GetMfaCompletions gets the mfaCompletions property value. The mfaCompletions property
+// GetMfaCompletions gets the mfaCompletions property value. Insights for MFA usage on apps registered in the tenant for a specified period.
 func (m *DailyUserInsightMetricsRoot) GetMfaCompletions()([]MfaCompletionMetricable) {
     val, err := m.GetBackingStore().Get("mfaCompletions")
     if err != nil {
@@ -234,7 +234,7 @@ func (m *DailyUserInsightMetricsRoot) GetMfaCompletions()([]MfaCompletionMetrica
     }
     return nil
 }
-// GetSignUps gets the signUps property value. The signUps property
+// GetSignUps gets the signUps property value. Total sign-ups on apps registered in the tenant for a specified period.
 func (m *DailyUserInsightMetricsRoot) GetSignUps()([]UserSignUpMetricable) {
     val, err := m.GetBackingStore().Get("signUps")
     if err != nil {
@@ -245,7 +245,7 @@ func (m *DailyUserInsightMetricsRoot) GetSignUps()([]UserSignUpMetricable) {
     }
     return nil
 }
-// GetSummary gets the summary property value. The summary property
+// GetSummary gets the summary property value. Summary of all usage insights on apps registered in the tenant for a specified period.
 func (m *DailyUserInsightMetricsRoot) GetSummary()([]InsightSummaryable) {
     val, err := m.GetBackingStore().Get("summary")
     if err != nil {
@@ -256,7 +256,7 @@ func (m *DailyUserInsightMetricsRoot) GetSummary()([]InsightSummaryable) {
     }
     return nil
 }
-// GetUserCount gets the userCount property value. The userCount property
+// GetUserCount gets the userCount property value. Insights for total users on apps registered in the tenant for a specified period.
 func (m *DailyUserInsightMetricsRoot) GetUserCount()([]UserCountMetricable) {
     val, err := m.GetBackingStore().Get("userCount")
     if err != nil {
@@ -383,21 +383,21 @@ func (m *DailyUserInsightMetricsRoot) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetActiveUsers sets the activeUsers property value. The activeUsers property
+// SetActiveUsers sets the activeUsers property value. Insights for active users on apps registered in the tenant for a specified period.
 func (m *DailyUserInsightMetricsRoot) SetActiveUsers(value []ActiveUsersMetricable)() {
     err := m.GetBackingStore().Set("activeUsers", value)
     if err != nil {
         panic(err)
     }
 }
-// SetActiveUsersBreakdown sets the activeUsersBreakdown property value. The activeUsersBreakdown property
+// SetActiveUsersBreakdown sets the activeUsersBreakdown property value. Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
 func (m *DailyUserInsightMetricsRoot) SetActiveUsersBreakdown(value []ActiveUsersBreakdownMetricable)() {
     err := m.GetBackingStore().Set("activeUsersBreakdown", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAuthentications sets the authentications property value. The authentications property
+// SetAuthentications sets the authentications property value. Insights for authentications on apps registered in the tenant for a specified period.
 func (m *DailyUserInsightMetricsRoot) SetAuthentications(value []AuthenticationsMetricable)() {
     err := m.GetBackingStore().Set("authentications", value)
     if err != nil {
@@ -418,28 +418,28 @@ func (m *DailyUserInsightMetricsRoot) SetInactiveUsersByApplication(value []Dail
         panic(err)
     }
 }
-// SetMfaCompletions sets the mfaCompletions property value. The mfaCompletions property
+// SetMfaCompletions sets the mfaCompletions property value. Insights for MFA usage on apps registered in the tenant for a specified period.
 func (m *DailyUserInsightMetricsRoot) SetMfaCompletions(value []MfaCompletionMetricable)() {
     err := m.GetBackingStore().Set("mfaCompletions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSignUps sets the signUps property value. The signUps property
+// SetSignUps sets the signUps property value. Total sign-ups on apps registered in the tenant for a specified period.
 func (m *DailyUserInsightMetricsRoot) SetSignUps(value []UserSignUpMetricable)() {
     err := m.GetBackingStore().Set("signUps", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSummary sets the summary property value. The summary property
+// SetSummary sets the summary property value. Summary of all usage insights on apps registered in the tenant for a specified period.
 func (m *DailyUserInsightMetricsRoot) SetSummary(value []InsightSummaryable)() {
     err := m.GetBackingStore().Set("summary", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserCount sets the userCount property value. The userCount property
+// SetUserCount sets the userCount property value. Insights for total users on apps registered in the tenant for a specified period.
 func (m *DailyUserInsightMetricsRoot) SetUserCount(value []UserCountMetricable)() {
     err := m.GetBackingStore().Set("userCount", value)
     if err != nil {

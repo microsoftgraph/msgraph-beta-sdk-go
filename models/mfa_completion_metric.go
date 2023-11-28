@@ -19,7 +19,7 @@ func NewMfaCompletionMetric()(*MfaCompletionMetric) {
 func CreateMfaCompletionMetricFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMfaCompletionMetric(), nil
 }
-// GetAppId gets the appId property value. The appId property
+// GetAppId gets the appId property value. The ID of the Microsoft Entra application. Supports $filter (eq).
 func (m *MfaCompletionMetric) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -30,7 +30,7 @@ func (m *MfaCompletionMetric) GetAppId()(*string) {
     }
     return nil
 }
-// GetAttemptsCount gets the attemptsCount property value. The attemptsCount property
+// GetAttemptsCount gets the attemptsCount property value. Number of users who attempted to sign up. Supports $filter (eq).
 func (m *MfaCompletionMetric) GetAttemptsCount()(*int64) {
     val, err := m.GetBackingStore().Get("attemptsCount")
     if err != nil {
@@ -41,7 +41,7 @@ func (m *MfaCompletionMetric) GetAttemptsCount()(*int64) {
     }
     return nil
 }
-// GetFactDate gets the factDate property value. The factDate property
+// GetFactDate gets the factDate property value. The date of the user insight.
 func (m *MfaCompletionMetric) GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("factDate")
     if err != nil {
@@ -117,7 +117,7 @@ func (m *MfaCompletionMetric) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetMfaMethod gets the mfaMethod property value. The mfaMethod property
+// GetMfaMethod gets the mfaMethod property value. The MFA authentication method used by the customers. Supports $filter (eq).
 func (m *MfaCompletionMetric) GetMfaMethod()(*string) {
     val, err := m.GetBackingStore().Get("mfaMethod")
     if err != nil {
@@ -128,7 +128,7 @@ func (m *MfaCompletionMetric) GetMfaMethod()(*string) {
     }
     return nil
 }
-// GetOs gets the os property value. The os property
+// GetOs gets the os property value. The platform of the device that the customers used. Supports $filter (eq).
 func (m *MfaCompletionMetric) GetOs()(*string) {
     val, err := m.GetBackingStore().Get("os")
     if err != nil {
@@ -139,7 +139,7 @@ func (m *MfaCompletionMetric) GetOs()(*string) {
     }
     return nil
 }
-// GetSuccessCount gets the successCount property value. The successCount property
+// GetSuccessCount gets the successCount property value. Number of users who signed up successfully. Supports $filter (eq).
 func (m *MfaCompletionMetric) GetSuccessCount()(*int64) {
     val, err := m.GetBackingStore().Get("successCount")
     if err != nil {
@@ -194,42 +194,42 @@ func (m *MfaCompletionMetric) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetAppId sets the appId property value. The appId property
+// SetAppId sets the appId property value. The ID of the Microsoft Entra application. Supports $filter (eq).
 func (m *MfaCompletionMetric) SetAppId(value *string)() {
     err := m.GetBackingStore().Set("appId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAttemptsCount sets the attemptsCount property value. The attemptsCount property
+// SetAttemptsCount sets the attemptsCount property value. Number of users who attempted to sign up. Supports $filter (eq).
 func (m *MfaCompletionMetric) SetAttemptsCount(value *int64)() {
     err := m.GetBackingStore().Set("attemptsCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFactDate sets the factDate property value. The factDate property
+// SetFactDate sets the factDate property value. The date of the user insight.
 func (m *MfaCompletionMetric) SetFactDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     err := m.GetBackingStore().Set("factDate", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMfaMethod sets the mfaMethod property value. The mfaMethod property
+// SetMfaMethod sets the mfaMethod property value. The MFA authentication method used by the customers. Supports $filter (eq).
 func (m *MfaCompletionMetric) SetMfaMethod(value *string)() {
     err := m.GetBackingStore().Set("mfaMethod", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOs sets the os property value. The os property
+// SetOs sets the os property value. The platform of the device that the customers used. Supports $filter (eq).
 func (m *MfaCompletionMetric) SetOs(value *string)() {
     err := m.GetBackingStore().Set("os", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSuccessCount sets the successCount property value. The successCount property
+// SetSuccessCount sets the successCount property value. Number of users who signed up successfully. Supports $filter (eq).
 func (m *MfaCompletionMetric) SetSuccessCount(value *int64)() {
     err := m.GetBackingStore().Set("successCount", value)
     if err != nil {

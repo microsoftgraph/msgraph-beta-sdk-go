@@ -19,7 +19,7 @@ func NewUserSignUpMetric()(*UserSignUpMetric) {
 func CreateUserSignUpMetricFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserSignUpMetric(), nil
 }
-// GetCount gets the count property value. The count property
+// GetCount gets the count property value. The total number of users who signed up in the specified period. Supports $filter (eq).
 func (m *UserSignUpMetric) GetCount()(*int64) {
     val, err := m.GetBackingStore().Get("count")
     if err != nil {
@@ -30,7 +30,7 @@ func (m *UserSignUpMetric) GetCount()(*int64) {
     }
     return nil
 }
-// GetFactDate gets the factDate property value. The factDate property
+// GetFactDate gets the factDate property value. The date of the user insight.
 func (m *UserSignUpMetric) GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("factDate")
     if err != nil {
@@ -76,7 +76,7 @@ func (m *UserSignUpMetric) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetOs gets the os property value. The os property
+// GetOs gets the os property value. The device plaform that the customers used. Supports $filter (eq).
 func (m *UserSignUpMetric) GetOs()(*string) {
     val, err := m.GetBackingStore().Get("os")
     if err != nil {
@@ -113,21 +113,21 @@ func (m *UserSignUpMetric) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetCount sets the count property value. The count property
+// SetCount sets the count property value. The total number of users who signed up in the specified period. Supports $filter (eq).
 func (m *UserSignUpMetric) SetCount(value *int64)() {
     err := m.GetBackingStore().Set("count", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFactDate sets the factDate property value. The factDate property
+// SetFactDate sets the factDate property value. The date of the user insight.
 func (m *UserSignUpMetric) SetFactDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     err := m.GetBackingStore().Set("factDate", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOs sets the os property value. The os property
+// SetOs sets the os property value. The device plaform that the customers used. Supports $filter (eq).
 func (m *UserSignUpMetric) SetOs(value *string)() {
     err := m.GetBackingStore().Set("os", value)
     if err != nil {

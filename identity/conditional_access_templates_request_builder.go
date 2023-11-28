@@ -11,7 +11,7 @@ import (
 type ConditionalAccessTemplatesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConditionalAccessTemplatesRequestBuilderGetQueryParameters get a list of the conditionalAccessTemplate objects and their properties. This API is available in the following national cloud deployments.
+// ConditionalAccessTemplatesRequestBuilderGetQueryParameters get a list of the conditionalAccessTemplate objects and their properties.
 type ConditionalAccessTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -40,6 +40,7 @@ type ConditionalAccessTemplatesRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ConditionalAccessTemplatesRequestBuilderGetQueryParameters
 }
 // ByConditionalAccessTemplateId provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.
+// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *ConditionalAccessTemplatesRequestBuilder) ByConditionalAccessTemplateId(conditionalAccessTemplateId string)(*ConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -67,7 +68,8 @@ func NewConditionalAccessTemplatesRequestBuilder(rawUrl string, requestAdapter i
 func (m *ConditionalAccessTemplatesRequestBuilder) Count()(*ConditionalAccessTemplatesCountRequestBuilder) {
     return NewConditionalAccessTemplatesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the conditionalAccessTemplate objects and their properties. This API is available in the following national cloud deployments.
+// Get get a list of the conditionalAccessTemplate objects and their properties.
+// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/conditionalaccessroot-list-templates?view=graph-rest-1.0
@@ -89,9 +91,10 @@ func (m *ConditionalAccessTemplatesRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessTemplateCollectionResponseable), nil
 }
-// ToGetRequestInformation get a list of the conditionalAccessTemplate objects and their properties. This API is available in the following national cloud deployments.
+// ToGetRequestInformation get a list of the conditionalAccessTemplate objects and their properties.
+// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *ConditionalAccessTemplatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -99,13 +102,11 @@ func (m *ConditionalAccessTemplatesRequestBuilder) ToGetRequestInformation(ctx c
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *ConditionalAccessTemplatesRequestBuilder) WithUrl(rawUrl string)(*ConditionalAccessTemplatesRequestBuilder) {
     return NewConditionalAccessTemplatesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

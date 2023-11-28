@@ -2,13 +2,13 @@ package models
 import (
     "errors"
 )
-// An enum representing the Android SafetyNet attestation evaluation types.
+// An enum representing the Android Play Integrity API evaluation types.
 type AndroidSafetyNetEvaluationType int
 
 const (
     // Default value. Typical measurements and reference data were used.
     BASIC_ANDROIDSAFETYNETEVALUATIONTYPE AndroidSafetyNetEvaluationType = iota
-    // Hardware-backed security features (such as Key Attestation) were used.
+    // Strong Integrity checks (such as a hardware-backed proof of boot integrity) were used.
     HARDWAREBACKED_ANDROIDSAFETYNETEVALUATIONTYPE
 )
 

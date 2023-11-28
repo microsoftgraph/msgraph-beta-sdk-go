@@ -36,7 +36,7 @@ func (m *AzureAuthorizationSystemResource) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetService gets the service property value. The service property
+// GetService gets the service property value. The service associated with the resource in an Azure authorization system. This object is auto-expanded.
 func (m *AzureAuthorizationSystemResource) GetService()(AuthorizationSystemTypeServiceable) {
     val, err := m.GetBackingStore().Get("service")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *AzureAuthorizationSystemResource) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetService sets the service property value. The service property
+// SetService sets the service property value. The service associated with the resource in an Azure authorization system. This object is auto-expanded.
 func (m *AzureAuthorizationSystemResource) SetService(value AuthorizationSystemTypeServiceable)() {
     err := m.GetBackingStore().Set("service", value)
     if err != nil {

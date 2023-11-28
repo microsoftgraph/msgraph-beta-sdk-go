@@ -19,7 +19,7 @@ func NewGcpRole()(*GcpRole) {
 func CreateGcpRoleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGcpRole(), nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The name of the GCP role. Supports $filter and (eq,contains).
 func (m *GcpRole) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -30,7 +30,7 @@ func (m *GcpRole) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetExternalId gets the externalId property value. The externalId property
+// GetExternalId gets the externalId property value. The ID of the GCP role as defined by GCP. Alternate key.
 func (m *GcpRole) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -103,7 +103,7 @@ func (m *GcpRole) GetGcpRoleType()(*GcpRoleType) {
     }
     return nil
 }
-// GetScopes gets the scopes property value. The scopes property
+// GetScopes gets the scopes property value. Resources that an identity assigned this GCP role can perform actions on. Supports $filter and (eq).
 func (m *GcpRole) GetScopes()([]GcpScopeable) {
     val, err := m.GetBackingStore().Get("scopes")
     if err != nil {
@@ -153,14 +153,14 @@ func (m *GcpRole) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     return nil
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The name of the GCP role. Supports $filter and (eq,contains).
 func (m *GcpRole) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExternalId sets the externalId property value. The externalId property
+// SetExternalId sets the externalId property value. The ID of the GCP role as defined by GCP. Alternate key.
 func (m *GcpRole) SetExternalId(value *string)() {
     err := m.GetBackingStore().Set("externalId", value)
     if err != nil {
@@ -174,7 +174,7 @@ func (m *GcpRole) SetGcpRoleType(value *GcpRoleType)() {
         panic(err)
     }
 }
-// SetScopes sets the scopes property value. The scopes property
+// SetScopes sets the scopes property value. Resources that an identity assigned this GCP role can perform actions on. Supports $filter and (eq).
 func (m *GcpRole) SetScopes(value []GcpScopeable)() {
     err := m.GetBackingStore().Set("scopes", value)
     if err != nil {

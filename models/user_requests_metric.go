@@ -19,7 +19,7 @@ func NewUserRequestsMetric()(*UserRequestsMetric) {
 func CreateUserRequestsMetricFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserRequestsMetric(), nil
 }
-// GetFactDate gets the factDate property value. The factDate property
+// GetFactDate gets the factDate property value. The date of the user insight.
 func (m *UserRequestsMetric) GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("factDate")
     if err != nil {
@@ -55,7 +55,7 @@ func (m *UserRequestsMetric) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetRequestCount gets the requestCount property value. The requestCount property
+// GetRequestCount gets the requestCount property value. Number of requests to the tenant. Supports $filter (eq).
 func (m *UserRequestsMetric) GetRequestCount()(*int64) {
     val, err := m.GetBackingStore().Get("requestCount")
     if err != nil {
@@ -86,14 +86,14 @@ func (m *UserRequestsMetric) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetFactDate sets the factDate property value. The factDate property
+// SetFactDate sets the factDate property value. The date of the user insight.
 func (m *UserRequestsMetric) SetFactDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     err := m.GetBackingStore().Set("factDate", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRequestCount sets the requestCount property value. The requestCount property
+// SetRequestCount sets the requestCount property value. Number of requests to the tenant. Supports $filter (eq).
 func (m *UserRequestsMetric) SetRequestCount(value *int64)() {
     err := m.GetBackingStore().Set("requestCount", value)
     if err != nil {

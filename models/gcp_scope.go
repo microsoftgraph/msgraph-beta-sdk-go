@@ -84,7 +84,7 @@ func (m *GcpScope) GetOdataType()(*string) {
     }
     return nil
 }
-// GetResourceType gets the resourceType property value. The resourceType property
+// GetResourceType gets the resourceType property value. Type of GCP resource.
 func (m *GcpScope) GetResourceType()(*string) {
     val, err := m.GetBackingStore().Get("resourceType")
     if err != nil {
@@ -152,7 +152,7 @@ func (m *GcpScope) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetResourceType sets the resourceType property value. The resourceType property
+// SetResourceType sets the resourceType property value. Type of GCP resource.
 func (m *GcpScope) SetResourceType(value *string)() {
     err := m.GetBackingStore().Set("resourceType", value)
     if err != nil {

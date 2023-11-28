@@ -18,7 +18,7 @@ type ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderGetQueryParameters get the properties of a customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported. This API is available in the following national cloud deployments.
+// ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderGetQueryParameters get the properties of a customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
 type ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewExchangeCustomAppScopesCustomAppScopeItemRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewExchangeCustomAppScopesCustomAppScopeItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported. This API is available in the following national cloud deployments.
+// Delete delete a customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/customappscope-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// Get get the properties of a customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported. This API is available in the following national cloud deployments.
+// Get get the properties of a customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/customappscope-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) Get(ctx contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAppScopeable), nil
 }
-// Patch update an existing customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported. This API is available in the following national cloud deployments.
+// Patch update an existing customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/customappscope-update?view=graph-rest-1.0
@@ -117,22 +117,19 @@ func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) Patch(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAppScopeable), nil
 }
-// ToDeleteRequestInformation delete a customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported. This API is available in the following national cloud deployments.
+// ToDeleteRequestInformation delete a customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
 func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties of a customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported. This API is available in the following national cloud deployments.
+// ToGetRequestInformation get the properties of a customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
 func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -140,23 +137,17 @@ func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) ToGetRequestIn
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update an existing customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported. This API is available in the following national cloud deployments.
+// ToPatchRequestInformation update an existing customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
 func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAppScopeable, requestConfiguration *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

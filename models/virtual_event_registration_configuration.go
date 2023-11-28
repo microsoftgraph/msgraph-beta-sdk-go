@@ -62,15 +62,15 @@ func (m *VirtualEventRegistrationConfiguration) GetFieldDeserializers()(map[stri
         return nil
     }
     res["questions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateVirtualEventRegistrationQuestionFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateVirtualEventRegistrationQuestionBaseFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]VirtualEventRegistrationQuestionable, len(val))
+            res := make([]VirtualEventRegistrationQuestionBaseable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(VirtualEventRegistrationQuestionable)
+                    res[i] = v.(VirtualEventRegistrationQuestionBaseable)
                 }
             }
             m.SetQuestions(res)
@@ -90,13 +90,13 @@ func (m *VirtualEventRegistrationConfiguration) GetFieldDeserializers()(map[stri
     return res
 }
 // GetQuestions gets the questions property value. Registration questions.
-func (m *VirtualEventRegistrationConfiguration) GetQuestions()([]VirtualEventRegistrationQuestionable) {
+func (m *VirtualEventRegistrationConfiguration) GetQuestions()([]VirtualEventRegistrationQuestionBaseable) {
     val, err := m.GetBackingStore().Get("questions")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]VirtualEventRegistrationQuestionable)
+        return val.([]VirtualEventRegistrationQuestionBaseable)
     }
     return nil
 }
@@ -151,7 +151,7 @@ func (m *VirtualEventRegistrationConfiguration) SetCapacity(value *int32)() {
     }
 }
 // SetQuestions sets the questions property value. Registration questions.
-func (m *VirtualEventRegistrationConfiguration) SetQuestions(value []VirtualEventRegistrationQuestionable)() {
+func (m *VirtualEventRegistrationConfiguration) SetQuestions(value []VirtualEventRegistrationQuestionBaseable)() {
     err := m.GetBackingStore().Set("questions", value)
     if err != nil {
         panic(err)
@@ -169,9 +169,9 @@ type VirtualEventRegistrationConfigurationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCapacity()(*int32)
-    GetQuestions()([]VirtualEventRegistrationQuestionable)
+    GetQuestions()([]VirtualEventRegistrationQuestionBaseable)
     GetRegistrationWebUrl()(*string)
     SetCapacity(value *int32)()
-    SetQuestions(value []VirtualEventRegistrationQuestionable)()
+    SetQuestions(value []VirtualEventRegistrationQuestionBaseable)()
     SetRegistrationWebUrl(value *string)()
 }

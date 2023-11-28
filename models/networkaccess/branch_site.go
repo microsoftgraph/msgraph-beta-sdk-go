@@ -32,7 +32,7 @@ func (m *BranchSite) GetBandwidthCapacity()(*int64) {
     }
     return nil
 }
-// GetConnectivityConfiguration gets the connectivityConfiguration property value. The connectivityConfiguration property
+// GetConnectivityConfiguration gets the connectivityConfiguration property value. Specifies the connectivity details of all device links associated with a branch.
 func (m *BranchSite) GetConnectivityConfiguration()(BranchConnectivityConfigurationable) {
     val, err := m.GetBackingStore().Get("connectivityConfiguration")
     if err != nil {
@@ -337,7 +337,7 @@ func (m *BranchSite) SetBandwidthCapacity(value *int64)() {
         panic(err)
     }
 }
-// SetConnectivityConfiguration sets the connectivityConfiguration property value. The connectivityConfiguration property
+// SetConnectivityConfiguration sets the connectivityConfiguration property value. Specifies the connectivity details of all device links associated with a branch.
 func (m *BranchSite) SetConnectivityConfiguration(value BranchConnectivityConfigurationable)() {
     err := m.GetBackingStore().Set("connectivityConfiguration", value)
     if err != nil {

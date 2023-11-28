@@ -11,7 +11,7 @@ import (
 type IndustryDataRunsIndustryDataRunItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IndustryDataRunsIndustryDataRunItemRequestBuilderGetQueryParameters read the properties and relationships of an industryDataRun object. This API is available in the following national cloud deployments.
+// IndustryDataRunsIndustryDataRunItemRequestBuilderGetQueryParameters read the properties and relationships of an industryDataRun object.
 type IndustryDataRunsIndustryDataRunItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -44,7 +44,7 @@ func NewIndustryDataRunsIndustryDataRunItemRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewIndustryDataRunsIndustryDataRunItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get read the properties and relationships of an industryDataRun object. This API is available in the following national cloud deployments.
+// Get read the properties and relationships of an industryDataRun object.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-industrydatarun-get?view=graph-rest-1.0
@@ -70,9 +70,9 @@ func (m *IndustryDataRunsIndustryDataRunItemRequestBuilder) Get(ctx context.Cont
 func (m *IndustryDataRunsIndustryDataRunItemRequestBuilder) MicrosoftGraphIndustryDataGetStatistics()(*IndustryDataRunsItemMicrosoftGraphIndustryDataGetStatisticsRequestBuilder) {
     return NewIndustryDataRunsItemMicrosoftGraphIndustryDataGetStatisticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation read the properties and relationships of an industryDataRun object. This API is available in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of an industryDataRun object.
 func (m *IndustryDataRunsIndustryDataRunItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataRunsIndustryDataRunItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -80,10 +80,7 @@ func (m *IndustryDataRunsIndustryDataRunItemRequestBuilder) ToGetRequestInformat
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

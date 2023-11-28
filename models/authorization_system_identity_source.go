@@ -89,7 +89,7 @@ func (m *AuthorizationSystemIdentitySource) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetIdentityProviderType gets the identityProviderType property value. The identityProviderType property
+// GetIdentityProviderType gets the identityProviderType property value. Type of identity provider. Read-only.
 func (m *AuthorizationSystemIdentitySource) GetIdentityProviderType()(*string) {
     val, err := m.GetBackingStore().Get("identityProviderType")
     if err != nil {
@@ -144,7 +144,7 @@ func (m *AuthorizationSystemIdentitySource) SetAdditionalData(value map[string]a
 func (m *AuthorizationSystemIdentitySource) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIdentityProviderType sets the identityProviderType property value. The identityProviderType property
+// SetIdentityProviderType sets the identityProviderType property value. Type of identity provider. Read-only.
 func (m *AuthorizationSystemIdentitySource) SetIdentityProviderType(value *string)() {
     err := m.GetBackingStore().Set("identityProviderType", value)
     if err != nil {

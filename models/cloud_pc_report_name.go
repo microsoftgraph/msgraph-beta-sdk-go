@@ -18,10 +18,11 @@ const (
     REMOTECONNECTIONQUALITYREPORTS_CLOUDPCREPORTNAME
     INACCESSIBLECLOUDPCREPORTS_CLOUDPCREPORTNAME
     RAWREMOTECONNECTIONREPORTS_CLOUDPCREPORTNAME
+    CLOUDPCUSAGECATEGORYREPORTS_CLOUDPCREPORTNAME
 )
 
 func (i CloudPcReportName) String() string {
-    return []string{"remoteConnectionHistoricalReports", "dailyAggregatedRemoteConnectionReports", "totalAggregatedRemoteConnectionReports", "sharedUseLicenseUsageReport", "sharedUseLicenseUsageRealTimeReport", "unknownFutureValue", "noLicenseAvailableConnectivityFailureReport", "frontlineLicenseUsageReport", "frontlineLicenseUsageRealTimeReport", "remoteConnectionQualityReports", "inaccessibleCloudPcReports", "rawRemoteConnectionReports"}[i]
+    return []string{"remoteConnectionHistoricalReports", "dailyAggregatedRemoteConnectionReports", "totalAggregatedRemoteConnectionReports", "sharedUseLicenseUsageReport", "sharedUseLicenseUsageRealTimeReport", "unknownFutureValue", "noLicenseAvailableConnectivityFailureReport", "frontlineLicenseUsageReport", "frontlineLicenseUsageRealTimeReport", "remoteConnectionQualityReports", "inaccessibleCloudPcReports", "rawRemoteConnectionReports", "cloudPcUsageCategoryReports"}[i]
 }
 func ParseCloudPcReportName(v string) (any, error) {
     result := REMOTECONNECTIONHISTORICALREPORTS_CLOUDPCREPORTNAME
@@ -50,6 +51,8 @@ func ParseCloudPcReportName(v string) (any, error) {
             result = INACCESSIBLECLOUDPCREPORTS_CLOUDPCREPORTNAME
         case "rawRemoteConnectionReports":
             result = RAWREMOTECONNECTIONREPORTS_CLOUDPCREPORTNAME
+        case "cloudPcUsageCategoryReports":
+            result = CLOUDPCUSAGECATEGORYREPORTS_CLOUDPCREPORTNAME
         default:
             return 0, errors.New("Unknown CloudPcReportName value: " + v)
     }

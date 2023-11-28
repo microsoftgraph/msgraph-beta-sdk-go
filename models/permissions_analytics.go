@@ -56,7 +56,7 @@ func (m *PermissionsAnalytics) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetFindings gets the findings property value. The findings property
+// GetFindings gets the findings property value. The output of the permissions usage data analysis performed by Permissions Management to assess risk with identities and resources.
 func (m *PermissionsAnalytics) GetFindings()([]Findingable) {
     val, err := m.GetBackingStore().Get("findings")
     if err != nil {
@@ -67,7 +67,7 @@ func (m *PermissionsAnalytics) GetFindings()([]Findingable) {
     }
     return nil
 }
-// GetPermissionsCreepIndexDistributions gets the permissionsCreepIndexDistributions property value. The permissionsCreepIndexDistributions property
+// GetPermissionsCreepIndexDistributions gets the permissionsCreepIndexDistributions property value. Represents the Permissions Creep Index (PCI) for the authorization system. PCI distribution chart shows the classification of human and nonhuman identities based on the PCI score in three buckets (low, medium, high).
 func (m *PermissionsAnalytics) GetPermissionsCreepIndexDistributions()([]PermissionsCreepIndexDistributionable) {
     val, err := m.GetBackingStore().Get("permissionsCreepIndexDistributions")
     if err != nil {
@@ -110,14 +110,14 @@ func (m *PermissionsAnalytics) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetFindings sets the findings property value. The findings property
+// SetFindings sets the findings property value. The output of the permissions usage data analysis performed by Permissions Management to assess risk with identities and resources.
 func (m *PermissionsAnalytics) SetFindings(value []Findingable)() {
     err := m.GetBackingStore().Set("findings", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPermissionsCreepIndexDistributions sets the permissionsCreepIndexDistributions property value. The permissionsCreepIndexDistributions property
+// SetPermissionsCreepIndexDistributions sets the permissionsCreepIndexDistributions property value. Represents the Permissions Creep Index (PCI) for the authorization system. PCI distribution chart shows the classification of human and nonhuman identities based on the PCI score in three buckets (low, medium, high).
 func (m *PermissionsAnalytics) SetPermissionsCreepIndexDistributions(value []PermissionsCreepIndexDistributionable)() {
     err := m.GetBackingStore().Set("permissionsCreepIndexDistributions", value)
     if err != nil {

@@ -10,7 +10,7 @@ import (
 type GetCredentialUserRegistrationCountRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters report the current state of how many users in your organization are registered for self-service password reset and multifactor authentication (MFA) capabilities. This API is available in the following national cloud deployments.
+// GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters report the current state of how many users in your organization are registered for self-service password reset and multifactor authentication (MFA) capabilities.
 type GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -49,7 +49,7 @@ func NewGetCredentialUserRegistrationCountRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewGetCredentialUserRegistrationCountRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get report the current state of how many users in your organization are registered for self-service password reset and multifactor authentication (MFA) capabilities. This API is available in the following national cloud deployments.
+// Get report the current state of how many users in your organization are registered for self-service password reset and multifactor authentication (MFA) capabilities.
 // Deprecated: This method is obsolete. Use GetAsGetCredentialUserRegistrationCountGetResponse instead.
 // [Find more info here]
 // 
@@ -72,7 +72,7 @@ func (m *GetCredentialUserRegistrationCountRequestBuilder) Get(ctx context.Conte
     }
     return res.(GetCredentialUserRegistrationCountResponseable), nil
 }
-// GetAsGetCredentialUserRegistrationCountGetResponse report the current state of how many users in your organization are registered for self-service password reset and multifactor authentication (MFA) capabilities. This API is available in the following national cloud deployments.
+// GetAsGetCredentialUserRegistrationCountGetResponse report the current state of how many users in your organization are registered for self-service password reset and multifactor authentication (MFA) capabilities.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getcredentialuserregistrationcount?view=graph-rest-1.0
@@ -94,9 +94,9 @@ func (m *GetCredentialUserRegistrationCountRequestBuilder) GetAsGetCredentialUse
     }
     return res.(GetCredentialUserRegistrationCountGetResponseable), nil
 }
-// ToGetRequestInformation report the current state of how many users in your organization are registered for self-service password reset and multifactor authentication (MFA) capabilities. This API is available in the following national cloud deployments.
+// ToGetRequestInformation report the current state of how many users in your organization are registered for self-service password reset and multifactor authentication (MFA) capabilities.
 func (m *GetCredentialUserRegistrationCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetCredentialUserRegistrationCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -104,10 +104,7 @@ func (m *GetCredentialUserRegistrationCountRequestBuilder) ToGetRequestInformati
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

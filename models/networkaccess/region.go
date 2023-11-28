@@ -25,11 +25,23 @@ const (
     SOUTHAFRICAWEST_REGION
     SOUTHAFRICANORTH_REGION
     UAENORTH_REGION
+    AUSTRALIAEAST_REGION
+    WESTCENTRALUS_REGION
+    CENTRALINDIA_REGION
+    SOUTHEASTASIA_REGION
+    SWEDENCENTRAL_REGION
+    SOUTHINDIA_REGION
+    AUSTRALIASOUTHEAST_REGION
+    KOREACENTRAL_REGION
+    POLANDCENTRAL_REGION
+    BRAZILSOUTH_REGION
+    JAPANEAST_REGION
+    JAPANWEST_REGION
     UNKNOWNFUTUREVALUE_REGION
 )
 
 func (i Region) String() string {
-    return []string{"eastUS", "eastUS2", "westUS", "westUS2", "westUS3", "centralUS", "northCentralUS", "southCentralUS", "northEurope", "westEurope", "franceCentral", "germanyWestCentral", "switzerlandNorth", "ukSouth", "canadaEast", "canadaCentral", "southAfricaWest", "southAfricaNorth", "uaeNorth", "unknownFutureValue"}[i]
+    return []string{"eastUS", "eastUS2", "westUS", "westUS2", "westUS3", "centralUS", "northCentralUS", "southCentralUS", "northEurope", "westEurope", "franceCentral", "germanyWestCentral", "switzerlandNorth", "ukSouth", "canadaEast", "canadaCentral", "southAfricaWest", "southAfricaNorth", "uaeNorth", "australiaEast", "westCentralUS", "centralIndia", "southEastAsia", "swedenCentral", "southIndia", "australiaSouthEast", "koreaCentral", "polandCentral", "brazilSouth", "japanEast", "japanWest", "unknownFutureValue"}[i]
 }
 func ParseRegion(v string) (any, error) {
     result := EASTUS_REGION
@@ -72,6 +84,30 @@ func ParseRegion(v string) (any, error) {
             result = SOUTHAFRICANORTH_REGION
         case "uaeNorth":
             result = UAENORTH_REGION
+        case "australiaEast":
+            result = AUSTRALIAEAST_REGION
+        case "westCentralUS":
+            result = WESTCENTRALUS_REGION
+        case "centralIndia":
+            result = CENTRALINDIA_REGION
+        case "southEastAsia":
+            result = SOUTHEASTASIA_REGION
+        case "swedenCentral":
+            result = SWEDENCENTRAL_REGION
+        case "southIndia":
+            result = SOUTHINDIA_REGION
+        case "australiaSouthEast":
+            result = AUSTRALIASOUTHEAST_REGION
+        case "koreaCentral":
+            result = KOREACENTRAL_REGION
+        case "polandCentral":
+            result = POLANDCENTRAL_REGION
+        case "brazilSouth":
+            result = BRAZILSOUTH_REGION
+        case "japanEast":
+            result = JAPANEAST_REGION
+        case "japanWest":
+            result = JAPANWEST_REGION
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REGION
         default:

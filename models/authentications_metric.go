@@ -19,7 +19,7 @@ func NewAuthenticationsMetric()(*AuthenticationsMetric) {
 func CreateAuthenticationsMetricFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationsMetric(), nil
 }
-// GetAppid gets the appid property value. The appid property
+// GetAppid gets the appid property value. The ID of the Microsoft Entra application. Supports $filter (eq).
 func (m *AuthenticationsMetric) GetAppid()(*string) {
     val, err := m.GetBackingStore().Get("appid")
     if err != nil {
@@ -30,7 +30,7 @@ func (m *AuthenticationsMetric) GetAppid()(*string) {
     }
     return nil
 }
-// GetAttemptsCount gets the attemptsCount property value. The attemptsCount property
+// GetAttemptsCount gets the attemptsCount property value. The number of authentication requests made in the specified period. Supports $filter (eq).
 func (m *AuthenticationsMetric) GetAttemptsCount()(*int64) {
     val, err := m.GetBackingStore().Get("attemptsCount")
     if err != nil {
@@ -41,7 +41,7 @@ func (m *AuthenticationsMetric) GetAttemptsCount()(*int64) {
     }
     return nil
 }
-// GetCountry gets the country property value. The country property
+// GetCountry gets the country property value. The location where the customers authenticated from. Supports $filter (eq).
 func (m *AuthenticationsMetric) GetCountry()(*string) {
     val, err := m.GetBackingStore().Get("country")
     if err != nil {
@@ -52,7 +52,7 @@ func (m *AuthenticationsMetric) GetCountry()(*string) {
     }
     return nil
 }
-// GetFactDate gets the factDate property value. The factDate property
+// GetFactDate gets the factDate property value. The date of the user insight.
 func (m *AuthenticationsMetric) GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("factDate")
     if err != nil {
@@ -128,7 +128,7 @@ func (m *AuthenticationsMetric) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetOs gets the os property value. The os property
+// GetOs gets the os property value. The platform for the device that the customers used. Supports $filter (eq).
 func (m *AuthenticationsMetric) GetOs()(*string) {
     val, err := m.GetBackingStore().Get("os")
     if err != nil {
@@ -139,7 +139,7 @@ func (m *AuthenticationsMetric) GetOs()(*string) {
     }
     return nil
 }
-// GetSuccessCount gets the successCount property value. The successCount property
+// GetSuccessCount gets the successCount property value. Number of successful authentication requests. Supports $filter (eq).
 func (m *AuthenticationsMetric) GetSuccessCount()(*int64) {
     val, err := m.GetBackingStore().Get("successCount")
     if err != nil {
@@ -194,42 +194,42 @@ func (m *AuthenticationsMetric) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetAppid sets the appid property value. The appid property
+// SetAppid sets the appid property value. The ID of the Microsoft Entra application. Supports $filter (eq).
 func (m *AuthenticationsMetric) SetAppid(value *string)() {
     err := m.GetBackingStore().Set("appid", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAttemptsCount sets the attemptsCount property value. The attemptsCount property
+// SetAttemptsCount sets the attemptsCount property value. The number of authentication requests made in the specified period. Supports $filter (eq).
 func (m *AuthenticationsMetric) SetAttemptsCount(value *int64)() {
     err := m.GetBackingStore().Set("attemptsCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCountry sets the country property value. The country property
+// SetCountry sets the country property value. The location where the customers authenticated from. Supports $filter (eq).
 func (m *AuthenticationsMetric) SetCountry(value *string)() {
     err := m.GetBackingStore().Set("country", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFactDate sets the factDate property value. The factDate property
+// SetFactDate sets the factDate property value. The date of the user insight.
 func (m *AuthenticationsMetric) SetFactDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     err := m.GetBackingStore().Set("factDate", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOs sets the os property value. The os property
+// SetOs sets the os property value. The platform for the device that the customers used. Supports $filter (eq).
 func (m *AuthenticationsMetric) SetOs(value *string)() {
     err := m.GetBackingStore().Set("os", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSuccessCount sets the successCount property value. The successCount property
+// SetSuccessCount sets the successCount property value. Number of successful authentication requests. Supports $filter (eq).
 func (m *AuthenticationsMetric) SetSuccessCount(value *int64)() {
     err := m.GetBackingStore().Set("successCount", value)
     if err != nil {

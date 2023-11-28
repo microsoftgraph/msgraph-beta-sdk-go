@@ -11,7 +11,7 @@ import (
 type PrinterSharesItemAllowedUsersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrinterSharesItemAllowedUsersRequestBuilderGetQueryParameters retrieve a list of users who have been granted access to submit print jobs to the associated printerShare. This API is available in the following national cloud deployments.
+// PrinterSharesItemAllowedUsersRequestBuilderGetQueryParameters retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
 type PrinterSharesItemAllowedUsersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewPrinterSharesItemAllowedUsersRequestBuilder(rawUrl string, requestAdapte
 func (m *PrinterSharesItemAllowedUsersRequestBuilder) Count()(*PrinterSharesItemAllowedUsersCountRequestBuilder) {
     return NewPrinterSharesItemAllowedUsersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of users who have been granted access to submit print jobs to the associated printerShare. This API is available in the following national cloud deployments.
+// Get retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // [Find more info here]
 // 
@@ -94,10 +94,10 @@ func (m *PrinterSharesItemAllowedUsersRequestBuilder) Get(ctx context.Context, r
 func (m *PrinterSharesItemAllowedUsersRequestBuilder) Ref()(*PrinterSharesItemAllowedUsersRefRequestBuilder) {
     return NewPrinterSharesItemAllowedUsersRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation retrieve a list of users who have been granted access to submit print jobs to the associated printerShare. This API is available in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 func (m *PrinterSharesItemAllowedUsersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrinterSharesItemAllowedUsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -105,10 +105,7 @@ func (m *PrinterSharesItemAllowedUsersRequestBuilder) ToGetRequestInformation(ct
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

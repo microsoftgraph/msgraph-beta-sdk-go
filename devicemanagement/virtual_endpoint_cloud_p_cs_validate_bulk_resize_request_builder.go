@@ -30,7 +30,7 @@ func NewVirtualEndpointCloudPCsValidateBulkResizeRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointCloudPCsValidateBulkResizeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post validate that a set of cloudPC devices meet the requirements to be bulk resized. This API is available in the following national cloud deployments.
+// Post validate that a set of cloudPC devices meet the requirements to be bulk resized.
 // Deprecated: This method is obsolete. Use PostAsValidateBulkResizePostResponse instead.
 // [Find more info here]
 // 
@@ -53,7 +53,7 @@ func (m *VirtualEndpointCloudPCsValidateBulkResizeRequestBuilder) Post(ctx conte
     }
     return res.(VirtualEndpointCloudPCsValidateBulkResizeResponseable), nil
 }
-// PostAsValidateBulkResizePostResponse validate that a set of cloudPC devices meet the requirements to be bulk resized. This API is available in the following national cloud deployments.
+// PostAsValidateBulkResizePostResponse validate that a set of cloudPC devices meet the requirements to be bulk resized.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-validatebulkresize?view=graph-rest-1.0
@@ -75,17 +75,14 @@ func (m *VirtualEndpointCloudPCsValidateBulkResizeRequestBuilder) PostAsValidate
     }
     return res.(VirtualEndpointCloudPCsValidateBulkResizePostResponseable), nil
 }
-// ToPostRequestInformation validate that a set of cloudPC devices meet the requirements to be bulk resized. This API is available in the following national cloud deployments.
+// ToPostRequestInformation validate that a set of cloudPC devices meet the requirements to be bulk resized.
 func (m *VirtualEndpointCloudPCsValidateBulkResizeRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointCloudPCsValidateBulkResizePostRequestBodyable, requestConfiguration *VirtualEndpointCloudPCsValidateBulkResizeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

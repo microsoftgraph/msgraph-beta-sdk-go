@@ -19,7 +19,7 @@ func NewOpenAwsSecurityGroupFinding()(*OpenAwsSecurityGroupFinding) {
 func CreateOpenAwsSecurityGroupFindingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOpenAwsSecurityGroupFinding(), nil
 }
-// GetAssignedComputeInstancesDetails gets the assignedComputeInstancesDetails property value. The assignedComputeInstancesDetails property
+// GetAssignedComputeInstancesDetails gets the assignedComputeInstancesDetails property value. A set of AWS EC2 compute instances related to this open security group.
 func (m *OpenAwsSecurityGroupFinding) GetAssignedComputeInstancesDetails()([]AssignedComputeInstanceDetailsable) {
     val, err := m.GetBackingStore().Get("assignedComputeInstancesDetails")
     if err != nil {
@@ -103,7 +103,7 @@ func (m *OpenAwsSecurityGroupFinding) GetSecurityGroup()(AwsAuthorizationSystemR
     }
     return nil
 }
-// GetTotalStorageBucketCount gets the totalStorageBucketCount property value. The totalStorageBucketCount property
+// GetTotalStorageBucketCount gets the totalStorageBucketCount property value. The number of storage buckets accessed by the assigned compute instances.
 func (m *OpenAwsSecurityGroupFinding) GetTotalStorageBucketCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalStorageBucketCount")
     if err != nil {
@@ -152,7 +152,7 @@ func (m *OpenAwsSecurityGroupFinding) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetAssignedComputeInstancesDetails sets the assignedComputeInstancesDetails property value. The assignedComputeInstancesDetails property
+// SetAssignedComputeInstancesDetails sets the assignedComputeInstancesDetails property value. A set of AWS EC2 compute instances related to this open security group.
 func (m *OpenAwsSecurityGroupFinding) SetAssignedComputeInstancesDetails(value []AssignedComputeInstanceDetailsable)() {
     err := m.GetBackingStore().Set("assignedComputeInstancesDetails", value)
     if err != nil {
@@ -173,7 +173,7 @@ func (m *OpenAwsSecurityGroupFinding) SetSecurityGroup(value AwsAuthorizationSys
         panic(err)
     }
 }
-// SetTotalStorageBucketCount sets the totalStorageBucketCount property value. The totalStorageBucketCount property
+// SetTotalStorageBucketCount sets the totalStorageBucketCount property value. The number of storage buckets accessed by the assigned compute instances.
 func (m *OpenAwsSecurityGroupFinding) SetTotalStorageBucketCount(value *int32)() {
     err := m.GetBackingStore().Set("totalStorageBucketCount", value)
     if err != nil {

@@ -313,6 +313,22 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["scopeIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetScopeIds(res)
+        }
+        return nil
+    }
     res["windowsSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCloudPcWindowsSettingsFromDiscriminatorValue)
         if err != nil {
@@ -421,6 +437,17 @@ func (m *CloudPcProvisioningPolicy) GetProvisioningType()(*CloudPcProvisioningTy
     }
     if val != nil {
         return val.(*CloudPcProvisioningType)
+    }
+    return nil
+}
+// GetScopeIds gets the scopeIds property value. The scopeIds property
+func (m *CloudPcProvisioningPolicy) GetScopeIds()([]string) {
+    val, err := m.GetBackingStore().Get("scopeIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
     }
     return nil
 }
@@ -564,6 +591,12 @@ func (m *CloudPcProvisioningPolicy) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    if m.GetScopeIds() != nil {
+        err = writer.WriteCollectionOfStringValues("scopeIds", m.GetScopeIds())
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("windowsSettings", m.GetWindowsSettings())
         if err != nil {
@@ -698,6 +731,13 @@ func (m *CloudPcProvisioningPolicy) SetProvisioningType(value *CloudPcProvisioni
         panic(err)
     }
 }
+// SetScopeIds sets the scopeIds property value. The scopeIds property
+func (m *CloudPcProvisioningPolicy) SetScopeIds(value []string)() {
+    err := m.GetBackingStore().Set("scopeIds", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetWindowsSettings sets the windowsSettings property value. Specific Windows settings to configure while creating Cloud PCs for this provisioning policy.
 func (m *CloudPcProvisioningPolicy) SetWindowsSettings(value CloudPcWindowsSettingsable)() {
     err := m.GetBackingStore().Set("windowsSettings", value)
@@ -727,6 +767,7 @@ type CloudPcProvisioningPolicyable interface {
     GetMicrosoftManagedDesktop()(MicrosoftManagedDesktopable)
     GetOnPremisesConnectionId()(*string)
     GetProvisioningType()(*CloudPcProvisioningType)
+    GetScopeIds()([]string)
     GetWindowsSettings()(CloudPcWindowsSettingsable)
     SetAlternateResourceUrl(value *string)()
     SetAssignments(value []CloudPcProvisioningPolicyAssignmentable)()
@@ -746,5 +787,6 @@ type CloudPcProvisioningPolicyable interface {
     SetMicrosoftManagedDesktop(value MicrosoftManagedDesktopable)()
     SetOnPremisesConnectionId(value *string)()
     SetProvisioningType(value *CloudPcProvisioningType)()
+    SetScopeIds(value []string)()
     SetWindowsSettings(value CloudPcWindowsSettingsable)()
 }

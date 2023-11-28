@@ -11,7 +11,7 @@ import (
 type UserInsightsMonthlySummaryInsightSummaryItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// UserInsightsMonthlySummaryInsightSummaryItemRequestBuilderGetQueryParameters get summary from reports
+// UserInsightsMonthlySummaryInsightSummaryItemRequestBuilderGetQueryParameters summary of all usage insights on apps registered in the tenant for a specified period.
 type UserInsightsMonthlySummaryInsightSummaryItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewUserInsightsMonthlySummaryInsightSummaryItemRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewUserInsightsMonthlySummaryInsightSummaryItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get summary from reports
+// Get summary of all usage insights on apps registered in the tenant for a specified period.
 func (m *UserInsightsMonthlySummaryInsightSummaryItemRequestBuilder) Get(ctx context.Context, requestConfiguration *UserInsightsMonthlySummaryInsightSummaryItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InsightSummaryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,9 +59,9 @@ func (m *UserInsightsMonthlySummaryInsightSummaryItemRequestBuilder) Get(ctx con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InsightSummaryable), nil
 }
-// ToGetRequestInformation get summary from reports
+// ToGetRequestInformation summary of all usage insights on apps registered in the tenant for a specified period.
 func (m *UserInsightsMonthlySummaryInsightSummaryItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserInsightsMonthlySummaryInsightSummaryItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -69,10 +69,7 @@ func (m *UserInsightsMonthlySummaryInsightSummaryItemRequestBuilder) ToGetReques
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

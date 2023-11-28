@@ -11,7 +11,7 @@ import (
 type AttackSimulationPayloadsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AttackSimulationPayloadsRequestBuilderGetQueryParameters get a list of payloads for attack simulation campaigns. This operation expects the mandatory parameter source to filter and query the respective data source. This API is available in the following national cloud deployments.
+// AttackSimulationPayloadsRequestBuilderGetQueryParameters get a list of payloads for attack simulation campaigns. This operation expects the mandatory parameter source to filter and query the respective data source.
 type AttackSimulationPayloadsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewAttackSimulationPayloadsRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *AttackSimulationPayloadsRequestBuilder) Count()(*AttackSimulationPayloadsCountRequestBuilder) {
     return NewAttackSimulationPayloadsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of payloads for attack simulation campaigns. This operation expects the mandatory parameter source to filter and query the respective data source. This API is available in the following national cloud deployments.
+// Get get a list of payloads for attack simulation campaigns. This operation expects the mandatory parameter source to filter and query the respective data source.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/attacksimulationroot-list-payloads?view=graph-rest-1.0
@@ -115,9 +115,9 @@ func (m *AttackSimulationPayloadsRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Payloadable), nil
 }
-// ToGetRequestInformation get a list of payloads for attack simulation campaigns. This operation expects the mandatory parameter source to filter and query the respective data source. This API is available in the following national cloud deployments.
+// ToGetRequestInformation get a list of payloads for attack simulation campaigns. This operation expects the mandatory parameter source to filter and query the respective data source.
 func (m *AttackSimulationPayloadsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationPayloadsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -125,23 +125,17 @@ func (m *AttackSimulationPayloadsRequestBuilder) ToGetRequestInformation(ctx con
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to payloads for security
 func (m *AttackSimulationPayloadsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Payloadable, requestConfiguration *AttackSimulationPayloadsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

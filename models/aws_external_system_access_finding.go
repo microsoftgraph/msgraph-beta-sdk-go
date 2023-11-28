@@ -107,7 +107,7 @@ func (m *AwsExternalSystemAccessFinding) GetSystemWithAccess()(AuthorizationSyst
     }
     return nil
 }
-// GetTrustedIdentityCount gets the trustedIdentityCount property value. The trustedIdentityCount property
+// GetTrustedIdentityCount gets the trustedIdentityCount property value. The number of identities in the external system that are trusted, if not all. Supports $orderby.
 func (m *AwsExternalSystemAccessFinding) GetTrustedIdentityCount()(*int32) {
     val, err := m.GetBackingStore().Get("trustedIdentityCount")
     if err != nil {
@@ -118,7 +118,7 @@ func (m *AwsExternalSystemAccessFinding) GetTrustedIdentityCount()(*int32) {
     }
     return nil
 }
-// GetTrustsAllIdentities gets the trustsAllIdentities property value. The trustsAllIdentities property
+// GetTrustsAllIdentities gets the trustsAllIdentities property value. Flag that determines if all identities in the external system are trusted, or only a subset.
 func (m *AwsExternalSystemAccessFinding) GetTrustsAllIdentities()(*bool) {
     val, err := m.GetBackingStore().Get("trustsAllIdentities")
     if err != nil {
@@ -189,14 +189,14 @@ func (m *AwsExternalSystemAccessFinding) SetSystemWithAccess(value Authorization
         panic(err)
     }
 }
-// SetTrustedIdentityCount sets the trustedIdentityCount property value. The trustedIdentityCount property
+// SetTrustedIdentityCount sets the trustedIdentityCount property value. The number of identities in the external system that are trusted, if not all. Supports $orderby.
 func (m *AwsExternalSystemAccessFinding) SetTrustedIdentityCount(value *int32)() {
     err := m.GetBackingStore().Set("trustedIdentityCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTrustsAllIdentities sets the trustsAllIdentities property value. The trustsAllIdentities property
+// SetTrustsAllIdentities sets the trustsAllIdentities property value. Flag that determines if all identities in the external system are trusted, or only a subset.
 func (m *AwsExternalSystemAccessFinding) SetTrustsAllIdentities(value *bool)() {
     err := m.GetBackingStore().Set("trustsAllIdentities", value)
     if err != nil {

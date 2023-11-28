@@ -52,7 +52,7 @@ func (m *ReportRoot) GetAuthenticationMethods()(AuthenticationMethodsRootable) {
     }
     return nil
 }
-// GetCredentialUserRegistrationDetails gets the credentialUserRegistrationDetails property value. Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+// GetCredentialUserRegistrationDetails gets the credentialUserRegistrationDetails property value. Details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.
 func (m *ReportRoot) GetCredentialUserRegistrationDetails()([]CredentialUserRegistrationDetailsable) {
     val, err := m.GetBackingStore().Get("credentialUserRegistrationDetails")
     if err != nil {
@@ -441,7 +441,7 @@ func (m *ReportRoot) GetMonthlyPrintUsageSummariesByUser()([]PrintUsageByUserabl
     }
     return nil
 }
-// GetSecurity gets the security property value. Provides the ability to launch a realistically simulated phishing attack that organizations can learn from.
+// GetSecurity gets the security property value. Provides the ability to launch a simulated phishing attack that organizations can learn from.
 func (m *ReportRoot) GetSecurity()(SecurityReportsRootable) {
     val, err := m.GetBackingStore().Get("security")
     if err != nil {
@@ -452,7 +452,7 @@ func (m *ReportRoot) GetSecurity()(SecurityReportsRootable) {
     }
     return nil
 }
-// GetServiceActivity gets the serviceActivity property value. A placeholder to the Microsoft Entra service activity.
+// GetServiceActivity gets the serviceActivity property value. Reports that relate to tenant-level authentication activities in Microsoft Entra.
 func (m *ReportRoot) GetServiceActivity()(ServiceActivityable) {
     val, err := m.GetBackingStore().Get("serviceActivity")
     if err != nil {
@@ -474,7 +474,7 @@ func (m *ReportRoot) GetServicePrincipalSignInActivities()([]ServicePrincipalSig
     }
     return nil
 }
-// GetSla gets the sla property value. A placeholder to allow for the desired URL path for SLA.
+// GetSla gets the sla property value. Reports that relate to tenant-level Microsoft Entra SLA attainment.
 func (m *ReportRoot) GetSla()(ServiceLevelAgreementRootable) {
     val, err := m.GetBackingStore().Get("sla")
     if err != nil {
@@ -496,7 +496,7 @@ func (m *ReportRoot) GetUserCredentialUsageDetails()([]UserCredentialUsageDetail
     }
     return nil
 }
-// GetUserInsights gets the userInsights property value. The userInsights property
+// GetUserInsights gets the userInsights property value. Represents a collection of user activities on applications in a tenant that is configured for Microsoft Entra External ID for customers.
 func (m *ReportRoot) GetUserInsights()(UserInsightsRootable) {
     val, err := m.GetBackingStore().Get("userInsights")
     if err != nil {
@@ -734,7 +734,7 @@ func (m *ReportRoot) SetAuthenticationMethods(value AuthenticationMethodsRootabl
         panic(err)
     }
 }
-// SetCredentialUserRegistrationDetails sets the credentialUserRegistrationDetails property value. Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+// SetCredentialUserRegistrationDetails sets the credentialUserRegistrationDetails property value. Details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.
 func (m *ReportRoot) SetCredentialUserRegistrationDetails(value []CredentialUserRegistrationDetailsable)() {
     err := m.GetBackingStore().Set("credentialUserRegistrationDetails", value)
     if err != nil {
@@ -804,14 +804,14 @@ func (m *ReportRoot) SetMonthlyPrintUsageSummariesByUser(value []PrintUsageByUse
         panic(err)
     }
 }
-// SetSecurity sets the security property value. Provides the ability to launch a realistically simulated phishing attack that organizations can learn from.
+// SetSecurity sets the security property value. Provides the ability to launch a simulated phishing attack that organizations can learn from.
 func (m *ReportRoot) SetSecurity(value SecurityReportsRootable)() {
     err := m.GetBackingStore().Set("security", value)
     if err != nil {
         panic(err)
     }
 }
-// SetServiceActivity sets the serviceActivity property value. A placeholder to the Microsoft Entra service activity.
+// SetServiceActivity sets the serviceActivity property value. Reports that relate to tenant-level authentication activities in Microsoft Entra.
 func (m *ReportRoot) SetServiceActivity(value ServiceActivityable)() {
     err := m.GetBackingStore().Set("serviceActivity", value)
     if err != nil {
@@ -825,7 +825,7 @@ func (m *ReportRoot) SetServicePrincipalSignInActivities(value []ServicePrincipa
         panic(err)
     }
 }
-// SetSla sets the sla property value. A placeholder to allow for the desired URL path for SLA.
+// SetSla sets the sla property value. Reports that relate to tenant-level Microsoft Entra SLA attainment.
 func (m *ReportRoot) SetSla(value ServiceLevelAgreementRootable)() {
     err := m.GetBackingStore().Set("sla", value)
     if err != nil {
@@ -839,7 +839,7 @@ func (m *ReportRoot) SetUserCredentialUsageDetails(value []UserCredentialUsageDe
         panic(err)
     }
 }
-// SetUserInsights sets the userInsights property value. The userInsights property
+// SetUserInsights sets the userInsights property value. Represents a collection of user activities on applications in a tenant that is configured for Microsoft Entra External ID for customers.
 func (m *ReportRoot) SetUserInsights(value UserInsightsRootable)() {
     err := m.GetBackingStore().Set("userInsights", value)
     if err != nil {

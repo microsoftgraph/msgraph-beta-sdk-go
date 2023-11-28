@@ -57,7 +57,7 @@ func (m *SingleResourceGcpPermissionsDefinition) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetResourceId gets the resourceId property value. The resourceId property
+// GetResourceId gets the resourceId property value. Identifier for the resource.
 func (m *SingleResourceGcpPermissionsDefinition) GetResourceId()(*string) {
     val, err := m.GetBackingStore().Get("resourceId")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *SingleResourceGcpPermissionsDefinition) SetActionInfo(value GcpPermissi
         panic(err)
     }
 }
-// SetResourceId sets the resourceId property value. The resourceId property
+// SetResourceId sets the resourceId property value. Identifier for the resource.
 func (m *SingleResourceGcpPermissionsDefinition) SetResourceId(value *string)() {
     err := m.GetBackingStore().Set("resourceId", value)
     if err != nil {

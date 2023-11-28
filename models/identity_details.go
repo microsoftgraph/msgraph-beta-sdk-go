@@ -39,7 +39,7 @@ func (m *IdentityDetails) GetAdditionalData()(map[string]any) {
 func (m *IdentityDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. A date specifiying when the Identity was created, could be null
 func (m *IdentityDetails) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -85,7 +85,7 @@ func (m *IdentityDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetLastActiveDateTime gets the lastActiveDateTime property value. The lastActiveDateTime property
+// GetLastActiveDateTime gets the lastActiveDateTime property value. A date specifiying when the Identity was active last time, could be null
 func (m *IdentityDetails) GetLastActiveDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastActiveDateTime")
     if err != nil {
@@ -146,14 +146,14 @@ func (m *IdentityDetails) SetAdditionalData(value map[string]any)() {
 func (m *IdentityDetails) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. A date specifiying when the Identity was created, could be null
 func (m *IdentityDetails) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastActiveDateTime sets the lastActiveDateTime property value. The lastActiveDateTime property
+// SetLastActiveDateTime sets the lastActiveDateTime property value. A date specifiying when the Identity was active last time, could be null
 func (m *IdentityDetails) SetLastActiveDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastActiveDateTime", value)
     if err != nil {

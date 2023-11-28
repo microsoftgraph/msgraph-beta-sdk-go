@@ -11,7 +11,7 @@ import (
 type UserInsightsDailyAuthenticationsAuthenticationsMetricItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// UserInsightsDailyAuthenticationsAuthenticationsMetricItemRequestBuilderGetQueryParameters get authentications from reports
+// UserInsightsDailyAuthenticationsAuthenticationsMetricItemRequestBuilderGetQueryParameters insights for authentications on apps registered in the tenant for a specified period.
 type UserInsightsDailyAuthenticationsAuthenticationsMetricItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewUserInsightsDailyAuthenticationsAuthenticationsMetricItemRequestBuilder(
     urlParams["request-raw-url"] = rawUrl
     return NewUserInsightsDailyAuthenticationsAuthenticationsMetricItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get authentications from reports
+// Get insights for authentications on apps registered in the tenant for a specified period.
 func (m *UserInsightsDailyAuthenticationsAuthenticationsMetricItemRequestBuilder) Get(ctx context.Context, requestConfiguration *UserInsightsDailyAuthenticationsAuthenticationsMetricItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationsMetricable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,9 +59,9 @@ func (m *UserInsightsDailyAuthenticationsAuthenticationsMetricItemRequestBuilder
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationsMetricable), nil
 }
-// ToGetRequestInformation get authentications from reports
+// ToGetRequestInformation insights for authentications on apps registered in the tenant for a specified period.
 func (m *UserInsightsDailyAuthenticationsAuthenticationsMetricItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserInsightsDailyAuthenticationsAuthenticationsMetricItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -69,10 +69,7 @@ func (m *UserInsightsDailyAuthenticationsAuthenticationsMetricItemRequestBuilder
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

@@ -20,7 +20,7 @@ func NewPermissionsRequestChange()(*PermissionsRequestChange) {
 func CreatePermissionsRequestChangeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPermissionsRequestChange(), nil
 }
-// GetActiveOccurrenceStatus gets the activeOccurrenceStatus property value. The activeOccurrenceStatus property
+// GetActiveOccurrenceStatus gets the activeOccurrenceStatus property value. The status of the active occurence of the schedule if one exists. The possible values are: grantingFailed, granted, granting, revoked, revoking, revokingFailed, unknownFutureValue.
 func (m *PermissionsRequestChange) GetActiveOccurrenceStatus()(*PermissionsRequestOccurrenceStatus) {
     val, err := m.GetBackingStore().Get("activeOccurrenceStatus")
     if err != nil {
@@ -86,7 +86,7 @@ func (m *PermissionsRequestChange) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetModificationDateTime gets the modificationDateTime property value. The modificationDateTime property
+// GetModificationDateTime gets the modificationDateTime property value. Time when the change occurred.
 func (m *PermissionsRequestChange) GetModificationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("modificationDateTime")
     if err != nil {
@@ -97,7 +97,7 @@ func (m *PermissionsRequestChange) GetModificationDateTime()(*i336074805fc853987
     }
     return nil
 }
-// GetPermissionsRequestId gets the permissionsRequestId property value. The permissionsRequestId property
+// GetPermissionsRequestId gets the permissionsRequestId property value. The ID of the scheduledPermissionsRequest object.
 func (m *PermissionsRequestChange) GetPermissionsRequestId()(*string) {
     val, err := m.GetBackingStore().Get("permissionsRequestId")
     if err != nil {
@@ -119,7 +119,7 @@ func (m *PermissionsRequestChange) GetStatusDetail()(*StatusDetail) {
     }
     return nil
 }
-// GetTicketId gets the ticketId property value. The ticketId property
+// GetTicketId gets the ticketId property value. Represents the ticketing system identifier.
 func (m *PermissionsRequestChange) GetTicketId()(*string) {
     val, err := m.GetBackingStore().Get("ticketId")
     if err != nil {
@@ -170,21 +170,21 @@ func (m *PermissionsRequestChange) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetActiveOccurrenceStatus sets the activeOccurrenceStatus property value. The activeOccurrenceStatus property
+// SetActiveOccurrenceStatus sets the activeOccurrenceStatus property value. The status of the active occurence of the schedule if one exists. The possible values are: grantingFailed, granted, granting, revoked, revoking, revokingFailed, unknownFutureValue.
 func (m *PermissionsRequestChange) SetActiveOccurrenceStatus(value *PermissionsRequestOccurrenceStatus)() {
     err := m.GetBackingStore().Set("activeOccurrenceStatus", value)
     if err != nil {
         panic(err)
     }
 }
-// SetModificationDateTime sets the modificationDateTime property value. The modificationDateTime property
+// SetModificationDateTime sets the modificationDateTime property value. Time when the change occurred.
 func (m *PermissionsRequestChange) SetModificationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("modificationDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPermissionsRequestId sets the permissionsRequestId property value. The permissionsRequestId property
+// SetPermissionsRequestId sets the permissionsRequestId property value. The ID of the scheduledPermissionsRequest object.
 func (m *PermissionsRequestChange) SetPermissionsRequestId(value *string)() {
     err := m.GetBackingStore().Set("permissionsRequestId", value)
     if err != nil {
@@ -198,7 +198,7 @@ func (m *PermissionsRequestChange) SetStatusDetail(value *StatusDetail)() {
         panic(err)
     }
 }
-// SetTicketId sets the ticketId property value. The ticketId property
+// SetTicketId sets the ticketId property value. Represents the ticketing system identifier.
 func (m *PermissionsRequestChange) SetTicketId(value *string)() {
     err := m.GetBackingStore().Set("ticketId", value)
     if err != nil {

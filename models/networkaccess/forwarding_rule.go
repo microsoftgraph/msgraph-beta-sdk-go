@@ -31,6 +31,8 @@ func CreateForwardingRuleFromDiscriminatorValue(parseNode i878a80d2330e89d268963
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.networkaccess.internetAccessForwardingRule":
+                        return NewInternetAccessForwardingRule(), nil
                     case "#microsoft.graph.networkaccess.m365ForwardingRule":
                         return NewM365ForwardingRule(), nil
                     case "#microsoft.graph.networkaccess.privateAccessForwardingRule":

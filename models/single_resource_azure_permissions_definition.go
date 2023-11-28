@@ -57,7 +57,7 @@ func (m *SingleResourceAzurePermissionsDefinition) GetFieldDeserializers()(map[s
     }
     return res
 }
-// GetResourceId gets the resourceId property value. The resourceId property
+// GetResourceId gets the resourceId property value. Identifier for the resource.
 func (m *SingleResourceAzurePermissionsDefinition) GetResourceId()(*string) {
     val, err := m.GetBackingStore().Get("resourceId")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *SingleResourceAzurePermissionsDefinition) SetActionInfo(value AzurePerm
         panic(err)
     }
 }
-// SetResourceId sets the resourceId property value. The resourceId property
+// SetResourceId sets the resourceId property value. Identifier for the resource.
 func (m *SingleResourceAzurePermissionsDefinition) SetResourceId(value *string)() {
     err := m.GetBackingStore().Set("resourceId", value)
     if err != nil {

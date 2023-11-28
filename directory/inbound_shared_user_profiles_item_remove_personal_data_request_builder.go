@@ -30,7 +30,7 @@ func NewInboundSharedUserProfilesItemRemovePersonalDataRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewInboundSharedUserProfilesItemRemovePersonalDataRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post create a request to remove the personal data for an inboundSharedUserProfile.  This API is available in the following national cloud deployments.
+// Post create a request to remove the personal data for an inboundSharedUserProfile. 
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/inboundshareduserprofile-removepersonaldata?view=graph-rest-1.0
@@ -49,17 +49,14 @@ func (m *InboundSharedUserProfilesItemRemovePersonalDataRequestBuilder) Post(ctx
     }
     return nil
 }
-// ToPostRequestInformation create a request to remove the personal data for an inboundSharedUserProfile.  This API is available in the following national cloud deployments.
+// ToPostRequestInformation create a request to remove the personal data for an inboundSharedUserProfile. 
 func (m *InboundSharedUserProfilesItemRemovePersonalDataRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *InboundSharedUserProfilesItemRemovePersonalDataRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

@@ -11,7 +11,7 @@ import (
 type ItemPlannerRecentPlansRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemPlannerRecentPlansRequestBuilderGetQueryParameters retrieve a list of plannerPlans recently viewed by a user. You can update recently viewed plans by updating the plannerUser resource. This API is available in the following national cloud deployments.
+// ItemPlannerRecentPlansRequestBuilderGetQueryParameters retrieve a list of plannerPlans recently viewed by a user. You can update recently viewed plans by updating the plannerUser resource.
 type ItemPlannerRecentPlansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewItemPlannerRecentPlansRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ItemPlannerRecentPlansRequestBuilder) Count()(*ItemPlannerRecentPlansCountRequestBuilder) {
     return NewItemPlannerRecentPlansCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of plannerPlans recently viewed by a user. You can update recently viewed plans by updating the plannerUser resource. This API is available in the following national cloud deployments.
+// Get retrieve a list of plannerPlans recently viewed by a user. You can update recently viewed plans by updating the plannerUser resource.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/planneruser-list-recentplans?view=graph-rest-1.0
@@ -89,9 +89,9 @@ func (m *ItemPlannerRecentPlansRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanCollectionResponseable), nil
 }
-// ToGetRequestInformation retrieve a list of plannerPlans recently viewed by a user. You can update recently viewed plans by updating the plannerUser resource. This API is available in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of plannerPlans recently viewed by a user. You can update recently viewed plans by updating the plannerUser resource.
 func (m *ItemPlannerRecentPlansRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerRecentPlansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -99,10 +99,7 @@ func (m *ItemPlannerRecentPlansRequestBuilder) ToGetRequestInformation(ctx conte
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

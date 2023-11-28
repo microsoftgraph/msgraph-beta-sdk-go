@@ -56,7 +56,7 @@ func (m *PermissionsManagement) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetPermissionsRequestChanges gets the permissionsRequestChanges property value. The permissionsRequestChanges property
+// GetPermissionsRequestChanges gets the permissionsRequestChanges property value. Represents a change event of the scheduledPermissionsRequest entity.
 func (m *PermissionsManagement) GetPermissionsRequestChanges()([]PermissionsRequestChangeable) {
     val, err := m.GetBackingStore().Get("permissionsRequestChanges")
     if err != nil {
@@ -67,7 +67,7 @@ func (m *PermissionsManagement) GetPermissionsRequestChanges()([]PermissionsRequ
     }
     return nil
 }
-// GetScheduledPermissionsRequests gets the scheduledPermissionsRequests property value. The scheduledPermissionsRequests property
+// GetScheduledPermissionsRequests gets the scheduledPermissionsRequests property value. Represents a permissions request that Permissions Management uses to manage permissions for an identity on resources in the authorization system. This request can be granted, rejected or canceled by identities in Permissions Management.
 func (m *PermissionsManagement) GetScheduledPermissionsRequests()([]ScheduledPermissionsRequestable) {
     val, err := m.GetBackingStore().Get("scheduledPermissionsRequests")
     if err != nil {
@@ -110,14 +110,14 @@ func (m *PermissionsManagement) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetPermissionsRequestChanges sets the permissionsRequestChanges property value. The permissionsRequestChanges property
+// SetPermissionsRequestChanges sets the permissionsRequestChanges property value. Represents a change event of the scheduledPermissionsRequest entity.
 func (m *PermissionsManagement) SetPermissionsRequestChanges(value []PermissionsRequestChangeable)() {
     err := m.GetBackingStore().Set("permissionsRequestChanges", value)
     if err != nil {
         panic(err)
     }
 }
-// SetScheduledPermissionsRequests sets the scheduledPermissionsRequests property value. The scheduledPermissionsRequests property
+// SetScheduledPermissionsRequests sets the scheduledPermissionsRequests property value. Represents a permissions request that Permissions Management uses to manage permissions for an identity on resources in the authorization system. This request can be granted, rejected or canceled by identities in Permissions Management.
 func (m *PermissionsManagement) SetScheduledPermissionsRequests(value []ScheduledPermissionsRequestable)() {
     err := m.GetBackingStore().Set("scheduledPermissionsRequests", value)
     if err != nil {

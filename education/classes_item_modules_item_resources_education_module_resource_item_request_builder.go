@@ -18,7 +18,7 @@ type ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilderDel
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilderGetQueryParameters get the properties of a resource associated with a module. Only teachers, students, and applications with application permissions can perform this operation. This API is available in the following national cloud deployments.
+// ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilderGetQueryParameters get the properties of a resource associated with a module. Only teachers, students, and applications with application permissions can perform this operation.
 type ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a specific educationModuleResource attached to a module. Only teachers in the class can remove a resource. This API is available in the following national cloud deployments.
+// Delete delete a specific educationModuleResource attached to a module. Only teachers in the class can remove a resource.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationmoduleresource-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilde
     }
     return nil
 }
-// Get get the properties of a resource associated with a module. Only teachers, students, and applications with application permissions can perform this operation. This API is available in the following national cloud deployments.
+// Get get the properties of a resource associated with a module. Only teachers, students, and applications with application permissions can perform this operation.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationmoduleresource-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilde
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationModuleResourceable), nil
 }
-// Patch update a resource in a module. Only teachers can perform this operation. The only one property that can be updated is displayName, for all resource types. This API is available in the following national cloud deployments.
+// Patch update a resource in a module. Only teachers can perform this operation. The only one property that can be updated is displayName, for all resource types.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationmoduleresource-update?view=graph-rest-1.0
@@ -117,22 +117,19 @@ func (m *ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilde
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationModuleResourceable), nil
 }
-// ToDeleteRequestInformation delete a specific educationModuleResource attached to a module. Only teachers in the class can remove a resource. This API is available in the following national cloud deployments.
+// ToDeleteRequestInformation delete a specific educationModuleResource attached to a module. Only teachers in the class can remove a resource.
 func (m *ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties of a resource associated with a module. Only teachers, students, and applications with application permissions can perform this operation. This API is available in the following national cloud deployments.
+// ToGetRequestInformation get the properties of a resource associated with a module. Only teachers, students, and applications with application permissions can perform this operation.
 func (m *ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -140,23 +137,17 @@ func (m *ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilde
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update a resource in a module. Only teachers can perform this operation. The only one property that can be updated is displayName, for all resource types. This API is available in the following national cloud deployments.
+// ToPatchRequestInformation update a resource in a module. Only teachers can perform this operation. The only one property that can be updated is displayName, for all resource types.
 func (m *ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationModuleResourceable, requestConfiguration *ClassesItemModulesItemResourcesEducationModuleResourceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

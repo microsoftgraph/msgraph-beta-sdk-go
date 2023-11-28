@@ -38,7 +38,7 @@ func (m *DestinationSummary) GetAdditionalData()(map[string]any) {
 func (m *DestinationSummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCount gets the count property value. Count of the aggregation.
+// GetCount gets the count property value. The number of the destinationSummary objects, aggregated by Global Secure Access service.
 func (m *DestinationSummary) GetCount()(*int32) {
     val, err := m.GetBackingStore().Get("count")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *DestinationSummary) GetCount()(*int32) {
     }
     return nil
 }
-// GetDestination gets the destination property value. Destination FQDN or IP address.
+// GetDestination gets the destination property value. The IP address or FQDN of the destination.
 func (m *DestinationSummary) GetDestination()(*string) {
     val, err := m.GetBackingStore().Get("destination")
     if err != nil {
@@ -116,7 +116,7 @@ func (m *DestinationSummary) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTrafficType gets the trafficType property value. The trafficType property
+// GetTrafficType gets the trafficType property value. The traffic classification. The allowed values are internet, private, microsoft365, all, and unknownFutureValue.
 func (m *DestinationSummary) GetTrafficType()(*TrafficType) {
     val, err := m.GetBackingStore().Get("trafficType")
     if err != nil {
@@ -173,14 +173,14 @@ func (m *DestinationSummary) SetAdditionalData(value map[string]any)() {
 func (m *DestinationSummary) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCount sets the count property value. Count of the aggregation.
+// SetCount sets the count property value. The number of the destinationSummary objects, aggregated by Global Secure Access service.
 func (m *DestinationSummary) SetCount(value *int32)() {
     err := m.GetBackingStore().Set("count", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDestination sets the destination property value. Destination FQDN or IP address.
+// SetDestination sets the destination property value. The IP address or FQDN of the destination.
 func (m *DestinationSummary) SetDestination(value *string)() {
     err := m.GetBackingStore().Set("destination", value)
     if err != nil {
@@ -194,7 +194,7 @@ func (m *DestinationSummary) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTrafficType sets the trafficType property value. The trafficType property
+// SetTrafficType sets the trafficType property value. The traffic classification. The allowed values are internet, private, microsoft365, all, and unknownFutureValue.
 func (m *DestinationSummary) SetTrafficType(value *TrafficType)() {
     err := m.GetBackingStore().Set("trafficType", value)
     if err != nil {

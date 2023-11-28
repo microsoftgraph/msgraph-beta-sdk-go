@@ -31,7 +31,7 @@ func (m *PlannerPlan) GetBuckets()([]PlannerBucketable) {
     }
     return nil
 }
-// GetContainer gets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it's set, this property can’t be updated. Required.
+// GetContainer gets the container property value. Identifies the container of the plan. Either specify all properties, or specify only the url, the containerId, and type. After it's set, this property can’t be updated. It changes when a plan is moved from one container to another, using plan move to container. Required.
 func (m *PlannerPlan) GetContainer()(PlannerPlanContainerable) {
     val, err := m.GetBackingStore().Get("container")
     if err != nil {
@@ -42,7 +42,7 @@ func (m *PlannerPlan) GetContainer()(PlannerPlanContainerable) {
     }
     return nil
 }
-// GetContexts gets the contexts property value. Read-only. Additional user experiences in which this plan is used, represented as plannerPlanContext entries.
+// GetContexts gets the contexts property value. Read-only. Other user experiences in which this plan is used, represented as plannerPlanContext entries.
 func (m *PlannerPlan) GetContexts()(PlannerPlanContextCollectionable) {
     val, err := m.GetBackingStore().Get("contexts")
     if err != nil {
@@ -86,7 +86,7 @@ func (m *PlannerPlan) GetCreationSource()(PlannerPlanCreationable) {
     }
     return nil
 }
-// GetDetails gets the details property value. Additional details about the plan. Read-only. Nullable.
+// GetDetails gets the details property value. Extra details about the plan. Read-only. Nullable.
 func (m *PlannerPlan) GetDetails()(PlannerPlanDetailsable) {
     val, err := m.GetBackingStore().Get("details")
     if err != nil {
@@ -373,14 +373,14 @@ func (m *PlannerPlan) SetBuckets(value []PlannerBucketable)() {
         panic(err)
     }
 }
-// SetContainer sets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it's set, this property can’t be updated. Required.
+// SetContainer sets the container property value. Identifies the container of the plan. Either specify all properties, or specify only the url, the containerId, and type. After it's set, this property can’t be updated. It changes when a plan is moved from one container to another, using plan move to container. Required.
 func (m *PlannerPlan) SetContainer(value PlannerPlanContainerable)() {
     err := m.GetBackingStore().Set("container", value)
     if err != nil {
         panic(err)
     }
 }
-// SetContexts sets the contexts property value. Read-only. Additional user experiences in which this plan is used, represented as plannerPlanContext entries.
+// SetContexts sets the contexts property value. Read-only. Other user experiences in which this plan is used, represented as plannerPlanContext entries.
 func (m *PlannerPlan) SetContexts(value PlannerPlanContextCollectionable)() {
     err := m.GetBackingStore().Set("contexts", value)
     if err != nil {
@@ -408,7 +408,7 @@ func (m *PlannerPlan) SetCreationSource(value PlannerPlanCreationable)() {
         panic(err)
     }
 }
-// SetDetails sets the details property value. Additional details about the plan. Read-only. Nullable.
+// SetDetails sets the details property value. Extra details about the plan. Read-only. Nullable.
 func (m *PlannerPlan) SetDetails(value PlannerPlanDetailsable)() {
     err := m.GetBackingStore().Set("details", value)
     if err != nil {

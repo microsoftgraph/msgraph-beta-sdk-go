@@ -187,7 +187,7 @@ func (m *PositionDetail) GetJobTitle()(*string) {
     }
     return nil
 }
-// GetLayer gets the layer property value. The layer property
+// GetLayer gets the layer property value. The place where the employee is within the organizational hierarchy.
 func (m *PositionDetail) GetLayer()(*int32) {
     val, err := m.GetBackingStore().Get("layer")
     if err != nil {
@@ -198,7 +198,7 @@ func (m *PositionDetail) GetLayer()(*int32) {
     }
     return nil
 }
-// GetLevel gets the level property value. The level property
+// GetLevel gets the level property value. The employee’s experience or management level.
 func (m *PositionDetail) GetLevel()(*string) {
     val, err := m.GetBackingStore().Get("level")
     if err != nil {
@@ -242,7 +242,7 @@ func (m *PositionDetail) GetStartMonthYear()(*i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// GetSummary gets the summary property value. Short summary of the position.
+// GetSummary gets the summary property value. summary of the position.
 func (m *PositionDetail) GetSummary()(*string) {
     val, err := m.GetBackingStore().Get("summary")
     if err != nil {
@@ -362,14 +362,14 @@ func (m *PositionDetail) SetJobTitle(value *string)() {
         panic(err)
     }
 }
-// SetLayer sets the layer property value. The layer property
+// SetLayer sets the layer property value. The place where the employee is within the organizational hierarchy.
 func (m *PositionDetail) SetLayer(value *int32)() {
     err := m.GetBackingStore().Set("layer", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLevel sets the level property value. The level property
+// SetLevel sets the level property value. The employee’s experience or management level.
 func (m *PositionDetail) SetLevel(value *string)() {
     err := m.GetBackingStore().Set("level", value)
     if err != nil {
@@ -397,7 +397,7 @@ func (m *PositionDetail) SetStartMonthYear(value *i878a80d2330e89d26896388a3f487
         panic(err)
     }
 }
-// SetSummary sets the summary property value. Short summary of the position.
+// SetSummary sets the summary property value. summary of the position.
 func (m *PositionDetail) SetSummary(value *string)() {
     err := m.GetBackingStore().Set("summary", value)
     if err != nil {

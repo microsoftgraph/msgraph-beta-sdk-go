@@ -30,7 +30,7 @@ func (m *AwsPolicy) GetAwsPolicyType()(*AwsPolicyType) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name for the AWS policy. Read-only. Supports $filter and (eq,contains).
 func (m *AwsPolicy) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -41,7 +41,7 @@ func (m *AwsPolicy) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetExternalId gets the externalId property value. The externalId property
+// GetExternalId gets the externalId property value. The base64 encoded identifier for the AWS policy as defined by AWS. Read-only. Alternate key. Supports $filter and eq.
 func (m *AwsPolicy) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -121,14 +121,14 @@ func (m *AwsPolicy) SetAwsPolicyType(value *AwsPolicyType)() {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name for the AWS policy. Read-only. Supports $filter and (eq,contains).
 func (m *AwsPolicy) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExternalId sets the externalId property value. The externalId property
+// SetExternalId sets the externalId property value. The base64 encoded identifier for the AWS policy as defined by AWS. Read-only. Alternate key. Supports $filter and eq.
 func (m *AwsPolicy) SetExternalId(value *string)() {
     err := m.GetBackingStore().Set("externalId", value)
     if err != nil {
