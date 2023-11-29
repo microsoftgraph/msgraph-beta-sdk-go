@@ -19,7 +19,7 @@ func NewAzureRoleDefinition()(*AzureRoleDefinition) {
 func CreateAzureRoleDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAzureRoleDefinition(), nil
 }
-// GetAssignableScopes gets the assignableScopes property value. The assignableScopes property
+// GetAssignableScopes gets the assignableScopes property value. Scopes at which the Azure role can be assigned. For more information about common patterns, see Understand Azure role definitions: AssignableScopes. Supports $filter (eq).
 func (m *AzureRoleDefinition) GetAssignableScopes()([]string) {
     val, err := m.GetBackingStore().Get("assignableScopes")
     if err != nil {
@@ -41,7 +41,7 @@ func (m *AzureRoleDefinition) GetAzureRoleDefinitionType()(*AzureRoleDefinitionT
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Name of the Azure role. Supports $filter (eq, contains).
 func (m *AzureRoleDefinition) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -52,7 +52,7 @@ func (m *AzureRoleDefinition) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetExternalId gets the externalId property value. The externalId property
+// GetExternalId gets the externalId property value. Identifier of an Azure role defined by Microsoft Azure. Alternate key. Supports $filter (eq).
 func (m *AzureRoleDefinition) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -147,7 +147,7 @@ func (m *AzureRoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetAssignableScopes sets the assignableScopes property value. The assignableScopes property
+// SetAssignableScopes sets the assignableScopes property value. Scopes at which the Azure role can be assigned. For more information about common patterns, see Understand Azure role definitions: AssignableScopes. Supports $filter (eq).
 func (m *AzureRoleDefinition) SetAssignableScopes(value []string)() {
     err := m.GetBackingStore().Set("assignableScopes", value)
     if err != nil {
@@ -161,14 +161,14 @@ func (m *AzureRoleDefinition) SetAzureRoleDefinitionType(value *AzureRoleDefinit
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Name of the Azure role. Supports $filter (eq, contains).
 func (m *AzureRoleDefinition) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExternalId sets the externalId property value. The externalId property
+// SetExternalId sets the externalId property value. Identifier of an Azure role defined by Microsoft Azure. Alternate key. Supports $filter (eq).
 func (m *AzureRoleDefinition) SetExternalId(value *string)() {
     err := m.GetBackingStore().Set("externalId", value)
     if err != nil {

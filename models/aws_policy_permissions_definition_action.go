@@ -21,7 +21,7 @@ func NewAwsPolicyPermissionsDefinitionAction()(*AwsPolicyPermissionsDefinitionAc
 func CreateAwsPolicyPermissionsDefinitionActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAwsPolicyPermissionsDefinitionAction(), nil
 }
-// GetAssignToRoleId gets the assignToRoleId property value. The assignToRoleId property
+// GetAssignToRoleId gets the assignToRoleId property value. ID for the role.
 func (m *AwsPolicyPermissionsDefinitionAction) GetAssignToRoleId()(*string) {
     val, err := m.GetBackingStore().Get("assignToRoleId")
     if err != nil {
@@ -100,7 +100,7 @@ func (m *AwsPolicyPermissionsDefinitionAction) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetAssignToRoleId sets the assignToRoleId property value. The assignToRoleId property
+// SetAssignToRoleId sets the assignToRoleId property value. ID for the role.
 func (m *AwsPolicyPermissionsDefinitionAction) SetAssignToRoleId(value *string)() {
     err := m.GetBackingStore().Set("assignToRoleId", value)
     if err != nil {

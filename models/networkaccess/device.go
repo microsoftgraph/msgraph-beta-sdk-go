@@ -39,7 +39,7 @@ func (m *Device) GetAdditionalData()(map[string]any) {
 func (m *Device) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDeviceId gets the deviceId property value. The deviceId property
+// GetDeviceId gets the deviceId property value. A unique device ID.
 func (m *Device) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -50,7 +50,7 @@ func (m *Device) GetDeviceId()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name for the device.
 func (m *Device) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -136,7 +136,7 @@ func (m *Device) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     }
     return res
 }
-// GetIsCompliant gets the isCompliant property value. The isCompliant property
+// GetIsCompliant gets the isCompliant property value. A value that indicates whether or not the device is compliant.
 func (m *Device) GetIsCompliant()(*bool) {
     val, err := m.GetBackingStore().Get("isCompliant")
     if err != nil {
@@ -147,7 +147,7 @@ func (m *Device) GetIsCompliant()(*bool) {
     }
     return nil
 }
-// GetLastAccessDateTime gets the lastAccessDateTime property value. The lastAccessDateTime property
+// GetLastAccessDateTime gets the lastAccessDateTime property value. The most recent access time for the device.
 func (m *Device) GetLastAccessDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastAccessDateTime")
     if err != nil {
@@ -169,7 +169,7 @@ func (m *Device) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOperatingSystem gets the operatingSystem property value. The operatingSystem property
+// GetOperatingSystem gets the operatingSystem property value. The operating system on the device.
 func (m *Device) GetOperatingSystem()(*string) {
     val, err := m.GetBackingStore().Get("operatingSystem")
     if err != nil {
@@ -255,28 +255,28 @@ func (m *Device) SetAdditionalData(value map[string]any)() {
 func (m *Device) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDeviceId sets the deviceId property value. The deviceId property
+// SetDeviceId sets the deviceId property value. A unique device ID.
 func (m *Device) SetDeviceId(value *string)() {
     err := m.GetBackingStore().Set("deviceId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name for the device.
 func (m *Device) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsCompliant sets the isCompliant property value. The isCompliant property
+// SetIsCompliant sets the isCompliant property value. A value that indicates whether or not the device is compliant.
 func (m *Device) SetIsCompliant(value *bool)() {
     err := m.GetBackingStore().Set("isCompliant", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastAccessDateTime sets the lastAccessDateTime property value. The lastAccessDateTime property
+// SetLastAccessDateTime sets the lastAccessDateTime property value. The most recent access time for the device.
 func (m *Device) SetLastAccessDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastAccessDateTime", value)
     if err != nil {
@@ -290,7 +290,7 @@ func (m *Device) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOperatingSystem sets the operatingSystem property value. The operatingSystem property
+// SetOperatingSystem sets the operatingSystem property value. The operating system on the device.
 func (m *Device) SetOperatingSystem(value *string)() {
     err := m.GetBackingStore().Set("operatingSystem", value)
     if err != nil {

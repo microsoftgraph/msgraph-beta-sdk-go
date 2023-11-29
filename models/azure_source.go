@@ -36,7 +36,7 @@ func (m *AzureSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetSubscriptionId gets the subscriptionId property value. The subscriptionId property
+// GetSubscriptionId gets the subscriptionId property value. Azure subscription ID.
 func (m *AzureSource) GetSubscriptionId()(*string) {
     val, err := m.GetBackingStore().Get("subscriptionId")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *AzureSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetSubscriptionId sets the subscriptionId property value. The subscriptionId property
+// SetSubscriptionId sets the subscriptionId property value. Azure subscription ID.
 func (m *AzureSource) SetSubscriptionId(value *string)() {
     err := m.GetBackingStore().Set("subscriptionId", value)
     if err != nil {

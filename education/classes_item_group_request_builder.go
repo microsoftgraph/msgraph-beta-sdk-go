@@ -11,7 +11,7 @@ import (
 type ClassesItemGroupRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ClassesItemGroupRequestBuilderGetQueryParameters retrieve the Microsoft 365 group that corresponds to this educationClass. This API is available in the following national cloud deployments.
+// ClassesItemGroupRequestBuilderGetQueryParameters retrieve the Microsoft 365 group that corresponds to this educationClass.
 type ClassesItemGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewClassesItemGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieve the Microsoft 365 group that corresponds to this educationClass. This API is available in the following national cloud deployments.
+// Get retrieve the Microsoft 365 group that corresponds to this educationClass.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-get-group?view=graph-rest-1.0
@@ -66,9 +66,9 @@ func (m *ClassesItemGroupRequestBuilder) Get(ctx context.Context, requestConfigu
 func (m *ClassesItemGroupRequestBuilder) ServiceProvisioningErrors()(*ClassesItemGroupServiceProvisioningErrorsRequestBuilder) {
     return NewClassesItemGroupServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation retrieve the Microsoft 365 group that corresponds to this educationClass. This API is available in the following national cloud deployments.
+// ToGetRequestInformation retrieve the Microsoft 365 group that corresponds to this educationClass.
 func (m *ClassesItemGroupRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemGroupRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -76,10 +76,7 @@ func (m *ClassesItemGroupRequestBuilder) ToGetRequestInformation(ctx context.Con
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

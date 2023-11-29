@@ -41,7 +41,7 @@ func CreateAuthorizationSystemResourceFromDiscriminatorValue(parseNode i878a80d2
     }
     return NewAuthorizationSystemResource(), nil
 }
-// GetAuthorizationSystem gets the authorizationSystem property value. The authorizationSystem property
+// GetAuthorizationSystem gets the authorizationSystem property value. The authorization system that the resource exists in.
 func (m *AuthorizationSystemResource) GetAuthorizationSystem()(AuthorizationSystemable) {
     val, err := m.GetBackingStore().Get("authorizationSystem")
     if err != nil {
@@ -52,7 +52,7 @@ func (m *AuthorizationSystemResource) GetAuthorizationSystem()(AuthorizationSyst
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The name of the resource. Read-only. Supports $filter (eq,contains).
 func (m *AuthorizationSystemResource) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -63,7 +63,7 @@ func (m *AuthorizationSystemResource) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetExternalId gets the externalId property value. The externalId property
+// GetExternalId gets the externalId property value. The ID of the resource as defined by the authorization system provider. Read-only. Supports $filter (eq).
 func (m *AuthorizationSystemResource) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -119,7 +119,7 @@ func (m *AuthorizationSystemResource) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetResourceType gets the resourceType property value. The resourceType property
+// GetResourceType gets the resourceType property value. The type of the resource. Read-only. Supports $filter (eq).
 func (m *AuthorizationSystemResource) GetResourceType()(*string) {
     val, err := m.GetBackingStore().Get("resourceType")
     if err != nil {
@@ -162,28 +162,28 @@ func (m *AuthorizationSystemResource) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetAuthorizationSystem sets the authorizationSystem property value. The authorizationSystem property
+// SetAuthorizationSystem sets the authorizationSystem property value. The authorization system that the resource exists in.
 func (m *AuthorizationSystemResource) SetAuthorizationSystem(value AuthorizationSystemable)() {
     err := m.GetBackingStore().Set("authorizationSystem", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The name of the resource. Read-only. Supports $filter (eq,contains).
 func (m *AuthorizationSystemResource) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExternalId sets the externalId property value. The externalId property
+// SetExternalId sets the externalId property value. The ID of the resource as defined by the authorization system provider. Read-only. Supports $filter (eq).
 func (m *AuthorizationSystemResource) SetExternalId(value *string)() {
     err := m.GetBackingStore().Set("externalId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResourceType sets the resourceType property value. The resourceType property
+// SetResourceType sets the resourceType property value. The type of the resource. Read-only. Supports $filter (eq).
 func (m *AuthorizationSystemResource) SetResourceType(value *string)() {
     err := m.GetBackingStore().Set("resourceType", value)
     if err != nil {

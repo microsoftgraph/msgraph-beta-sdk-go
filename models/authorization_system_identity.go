@@ -71,7 +71,7 @@ func CreateAuthorizationSystemIdentityFromDiscriminatorValue(parseNode i878a80d2
     }
     return NewAuthorizationSystemIdentity(), nil
 }
-// GetAuthorizationSystem gets the authorizationSystem property value. The authorizationSystem property
+// GetAuthorizationSystem gets the authorizationSystem property value. Navigation to the authorizationSystem object
 func (m *AuthorizationSystemIdentity) GetAuthorizationSystem()(AuthorizationSystemable) {
     val, err := m.GetBackingStore().Get("authorizationSystem")
     if err != nil {
@@ -82,7 +82,7 @@ func (m *AuthorizationSystemIdentity) GetAuthorizationSystem()(AuthorizationSyst
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The name of the identity. Read-only. Supports $filter and (eq,contains).
 func (m *AuthorizationSystemIdentity) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -93,7 +93,7 @@ func (m *AuthorizationSystemIdentity) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetExternalId gets the externalId property value. The externalId property
+// GetExternalId gets the externalId property value. Unique ID of the identity within the external system. Read-only.
 func (m *AuthorizationSystemIdentity) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -149,7 +149,7 @@ func (m *AuthorizationSystemIdentity) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetSource gets the source property value. The source property
+// GetSource gets the source property value. Represents details of the source of the identity.
 func (m *AuthorizationSystemIdentity) GetSource()(AuthorizationSystemIdentitySourceable) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
@@ -192,28 +192,28 @@ func (m *AuthorizationSystemIdentity) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetAuthorizationSystem sets the authorizationSystem property value. The authorizationSystem property
+// SetAuthorizationSystem sets the authorizationSystem property value. Navigation to the authorizationSystem object
 func (m *AuthorizationSystemIdentity) SetAuthorizationSystem(value AuthorizationSystemable)() {
     err := m.GetBackingStore().Set("authorizationSystem", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The name of the identity. Read-only. Supports $filter and (eq,contains).
 func (m *AuthorizationSystemIdentity) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExternalId sets the externalId property value. The externalId property
+// SetExternalId sets the externalId property value. Unique ID of the identity within the external system. Read-only.
 func (m *AuthorizationSystemIdentity) SetExternalId(value *string)() {
     err := m.GetBackingStore().Set("externalId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSource sets the source property value. The source property
+// SetSource sets the source property value. Represents details of the source of the identity.
 func (m *AuthorizationSystemIdentity) SetSource(value AuthorizationSystemIdentitySourceable)() {
     err := m.GetBackingStore().Set("source", value)
     if err != nil {

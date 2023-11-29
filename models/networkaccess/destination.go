@@ -39,7 +39,7 @@ func (m *Destination) GetAdditionalData()(map[string]any) {
 func (m *Destination) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDeviceCount gets the deviceCount property value. The deviceCount property
+// GetDeviceCount gets the deviceCount property value. The number of unique devices that were seen.
 func (m *Destination) GetDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("deviceCount")
     if err != nil {
@@ -155,7 +155,7 @@ func (m *Destination) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetFqdn gets the fqdn property value. The fqdn property
+// GetFqdn gets the fqdn property value. The fully qualified domain name (FQDN) of the destination.
 func (m *Destination) GetFqdn()(*string) {
     val, err := m.GetBackingStore().Get("fqdn")
     if err != nil {
@@ -166,7 +166,7 @@ func (m *Destination) GetFqdn()(*string) {
     }
     return nil
 }
-// GetIp gets the ip property value. The ip property
+// GetIp gets the ip property value. The internet protocol (IP) used to access the destination.
 func (m *Destination) GetIp()(*string) {
     val, err := m.GetBackingStore().Get("ip")
     if err != nil {
@@ -177,7 +177,7 @@ func (m *Destination) GetIp()(*string) {
     }
     return nil
 }
-// GetLastAccessDateTime gets the lastAccessDateTime property value. The lastAccessDateTime property
+// GetLastAccessDateTime gets the lastAccessDateTime property value. The most recent access DateTime.
 func (m *Destination) GetLastAccessDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastAccessDateTime")
     if err != nil {
@@ -210,7 +210,7 @@ func (m *Destination) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPort gets the port property value. The port property
+// GetPort gets the port property value. The numeric identifier that is associated with a specific endpoint in a network.
 func (m *Destination) GetPort()(*int32) {
     val, err := m.GetBackingStore().Get("port")
     if err != nil {
@@ -232,7 +232,7 @@ func (m *Destination) GetTrafficType()(*TrafficType) {
     }
     return nil
 }
-// GetTransactionCount gets the transactionCount property value. The transactionCount property
+// GetTransactionCount gets the transactionCount property value. The number of transactions.
 func (m *Destination) GetTransactionCount()(*int32) {
     val, err := m.GetBackingStore().Get("transactionCount")
     if err != nil {
@@ -243,7 +243,7 @@ func (m *Destination) GetTransactionCount()(*int32) {
     }
     return nil
 }
-// GetUserCount gets the userCount property value. The userCount property
+// GetUserCount gets the userCount property value. The number of unique Microsoft Entra ID users that were seen.
 func (m *Destination) GetUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("userCount")
     if err != nil {
@@ -337,28 +337,28 @@ func (m *Destination) SetAdditionalData(value map[string]any)() {
 func (m *Destination) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDeviceCount sets the deviceCount property value. The deviceCount property
+// SetDeviceCount sets the deviceCount property value. The number of unique devices that were seen.
 func (m *Destination) SetDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("deviceCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFqdn sets the fqdn property value. The fqdn property
+// SetFqdn sets the fqdn property value. The fully qualified domain name (FQDN) of the destination.
 func (m *Destination) SetFqdn(value *string)() {
     err := m.GetBackingStore().Set("fqdn", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIp sets the ip property value. The ip property
+// SetIp sets the ip property value. The internet protocol (IP) used to access the destination.
 func (m *Destination) SetIp(value *string)() {
     err := m.GetBackingStore().Set("ip", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastAccessDateTime sets the lastAccessDateTime property value. The lastAccessDateTime property
+// SetLastAccessDateTime sets the lastAccessDateTime property value. The most recent access DateTime.
 func (m *Destination) SetLastAccessDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastAccessDateTime", value)
     if err != nil {
@@ -379,7 +379,7 @@ func (m *Destination) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPort sets the port property value. The port property
+// SetPort sets the port property value. The numeric identifier that is associated with a specific endpoint in a network.
 func (m *Destination) SetPort(value *int32)() {
     err := m.GetBackingStore().Set("port", value)
     if err != nil {
@@ -393,14 +393,14 @@ func (m *Destination) SetTrafficType(value *TrafficType)() {
         panic(err)
     }
 }
-// SetTransactionCount sets the transactionCount property value. The transactionCount property
+// SetTransactionCount sets the transactionCount property value. The number of transactions.
 func (m *Destination) SetTransactionCount(value *int32)() {
     err := m.GetBackingStore().Set("transactionCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserCount sets the userCount property value. The userCount property
+// SetUserCount sets the userCount property value. The number of unique Microsoft Entra ID users that were seen.
 func (m *Destination) SetUserCount(value *int32)() {
     err := m.GetBackingStore().Set("userCount", value)
     if err != nil {

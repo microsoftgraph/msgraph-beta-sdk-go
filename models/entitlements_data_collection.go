@@ -57,7 +57,7 @@ func (m *EntitlementsDataCollection) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetLastCollectionDateTime gets the lastCollectionDateTime property value. The lastCollectionDateTime property
+// GetLastCollectionDateTime gets the lastCollectionDateTime property value. Last transformation time of entitlements.
 func (m *EntitlementsDataCollection) GetLastCollectionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastCollectionDateTime")
     if err != nil {
@@ -118,7 +118,7 @@ func (m *EntitlementsDataCollection) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetLastCollectionDateTime sets the lastCollectionDateTime property value. The lastCollectionDateTime property
+// SetLastCollectionDateTime sets the lastCollectionDateTime property value. Last transformation time of entitlements.
 func (m *EntitlementsDataCollection) SetLastCollectionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastCollectionDateTime", value)
     if err != nil {

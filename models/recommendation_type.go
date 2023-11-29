@@ -38,10 +38,15 @@ const (
     MANAGEDIDENTITY_RECOMMENDATIONTYPE
     OVERPRIVILEGEDAPPS_RECOMMENDATIONTYPE
     UNKNOWNFUTUREVALUE_RECOMMENDATIONTYPE
+    LONGLIVEDCREDENTIALS_RECOMMENDATIONTYPE
+    AADCONNECTDEPRECATED_RECOMMENDATIONTYPE
+    ADALTOMSALMIGRATION_RECOMMENDATIONTYPE
+    OWNERLESSAPPS_RECOMMENDATIONTYPE
+    INACTIVEGUESTS_RECOMMENDATIONTYPE
 )
 
 func (i RecommendationType) String() string {
-    return []string{"adfsAppsMigration", "enableDesktopSSO", "enablePHS", "enableProvisioning", "switchFromPerUserMFA", "tenantMFA", "thirdPartyApps", "turnOffPerUserMFA", "useAuthenticatorApp", "useMyApps", "staleApps", "staleAppCreds", "applicationCredentialExpiry", "servicePrincipalKeyExpiry", "adminMFAV2", "blockLegacyAuthentication", "integratedApps", "mfaRegistrationV2", "pwagePolicyNew", "passwordHashSync", "oneAdmin", "roleOverlap", "selfServicePasswordReset", "signinRiskPolicy", "userRiskPolicy", "verifyAppPublisher", "privateLinkForAAD", "appRoleAssignmentsGroups", "appRoleAssignmentsUsers", "managedIdentity", "overprivilegedApps", "unknownFutureValue"}[i]
+    return []string{"adfsAppsMigration", "enableDesktopSSO", "enablePHS", "enableProvisioning", "switchFromPerUserMFA", "tenantMFA", "thirdPartyApps", "turnOffPerUserMFA", "useAuthenticatorApp", "useMyApps", "staleApps", "staleAppCreds", "applicationCredentialExpiry", "servicePrincipalKeyExpiry", "adminMFAV2", "blockLegacyAuthentication", "integratedApps", "mfaRegistrationV2", "pwagePolicyNew", "passwordHashSync", "oneAdmin", "roleOverlap", "selfServicePasswordReset", "signinRiskPolicy", "userRiskPolicy", "verifyAppPublisher", "privateLinkForAAD", "appRoleAssignmentsGroups", "appRoleAssignmentsUsers", "managedIdentity", "overprivilegedApps", "unknownFutureValue", "longLivedCredentials", "aadConnectDeprecated", "adalToMsalMigration", "ownerlessApps", "inactiveGuests"}[i]
 }
 func ParseRecommendationType(v string) (any, error) {
     result := ADFSAPPSMIGRATION_RECOMMENDATIONTYPE
@@ -110,6 +115,16 @@ func ParseRecommendationType(v string) (any, error) {
             result = OVERPRIVILEGEDAPPS_RECOMMENDATIONTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RECOMMENDATIONTYPE
+        case "longLivedCredentials":
+            result = LONGLIVEDCREDENTIALS_RECOMMENDATIONTYPE
+        case "aadConnectDeprecated":
+            result = AADCONNECTDEPRECATED_RECOMMENDATIONTYPE
+        case "adalToMsalMigration":
+            result = ADALTOMSALMIGRATION_RECOMMENDATIONTYPE
+        case "ownerlessApps":
+            result = OWNERLESSAPPS_RECOMMENDATIONTYPE
+        case "inactiveGuests":
+            result = INACTIVEGUESTS_RECOMMENDATIONTYPE
         default:
             return 0, errors.New("Unknown RecommendationType value: " + v)
     }

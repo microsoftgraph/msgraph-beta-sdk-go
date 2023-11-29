@@ -21,7 +21,7 @@ func NewAwsUser()(*AwsUser) {
 func CreateAwsUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAwsUser(), nil
 }
-// GetAssumableRoles gets the assumableRoles property value. The assumableRoles property
+// GetAssumableRoles gets the assumableRoles property value. Roles assumed by the user.
 func (m *AwsUser) GetAssumableRoles()([]AwsRoleable) {
     val, err := m.GetBackingStore().Get("assumableRoles")
     if err != nil {
@@ -73,7 +73,7 @@ func (m *AwsUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     return nil
 }
-// SetAssumableRoles sets the assumableRoles property value. The assumableRoles property
+// SetAssumableRoles sets the assumableRoles property value. Roles assumed by the user.
 func (m *AwsUser) SetAssumableRoles(value []AwsRoleable)() {
     err := m.GetBackingStore().Set("assumableRoles", value)
     if err != nil {

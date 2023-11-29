@@ -43,15 +43,15 @@ func (m *OpenNetworkAzureSecurityGroupFinding) GetFieldDeserializers()(map[strin
         return nil
     }
     res["virtualMachines"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAuthorizationSystemResourceFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateVirtualMachineDetailsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AuthorizationSystemResourceable, len(val))
+            res := make([]VirtualMachineDetailsable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(AuthorizationSystemResourceable)
+                    res[i] = v.(VirtualMachineDetailsable)
                 }
             }
             m.SetVirtualMachines(res)
@@ -82,14 +82,14 @@ func (m *OpenNetworkAzureSecurityGroupFinding) GetSecurityGroup()(AuthorizationS
     }
     return nil
 }
-// GetVirtualMachines gets the virtualMachines property value. The virtualMachines property
-func (m *OpenNetworkAzureSecurityGroupFinding) GetVirtualMachines()([]AuthorizationSystemResourceable) {
+// GetVirtualMachines gets the virtualMachines property value. Represents a virtual machine in an authorization system.
+func (m *OpenNetworkAzureSecurityGroupFinding) GetVirtualMachines()([]VirtualMachineDetailsable) {
     val, err := m.GetBackingStore().Get("virtualMachines")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]AuthorizationSystemResourceable)
+        return val.([]VirtualMachineDetailsable)
     }
     return nil
 }
@@ -139,8 +139,8 @@ func (m *OpenNetworkAzureSecurityGroupFinding) SetSecurityGroup(value Authorizat
         panic(err)
     }
 }
-// SetVirtualMachines sets the virtualMachines property value. The virtualMachines property
-func (m *OpenNetworkAzureSecurityGroupFinding) SetVirtualMachines(value []AuthorizationSystemResourceable)() {
+// SetVirtualMachines sets the virtualMachines property value. Represents a virtual machine in an authorization system.
+func (m *OpenNetworkAzureSecurityGroupFinding) SetVirtualMachines(value []VirtualMachineDetailsable)() {
     err := m.GetBackingStore().Set("virtualMachines", value)
     if err != nil {
         panic(err)
@@ -152,8 +152,8 @@ type OpenNetworkAzureSecurityGroupFindingable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetInboundPorts()(InboundPortsable)
     GetSecurityGroup()(AuthorizationSystemResourceable)
-    GetVirtualMachines()([]AuthorizationSystemResourceable)
+    GetVirtualMachines()([]VirtualMachineDetailsable)
     SetInboundPorts(value InboundPortsable)()
     SetSecurityGroup(value AuthorizationSystemResourceable)()
-    SetVirtualMachines(value []AuthorizationSystemResourceable)()
+    SetVirtualMachines(value []VirtualMachineDetailsable)()
 }

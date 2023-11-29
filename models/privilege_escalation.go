@@ -19,7 +19,7 @@ func NewPrivilegeEscalation()(*PrivilegeEscalation) {
 func CreatePrivilegeEscalationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrivilegeEscalation(), nil
 }
-// GetActions gets the actions property value. The actions property
+// GetActions gets the actions property value. The list of actions that the identity could perform.
 func (m *PrivilegeEscalation) GetActions()([]AuthorizationSystemTypeActionable) {
     val, err := m.GetBackingStore().Get("actions")
     if err != nil {
@@ -30,7 +30,7 @@ func (m *PrivilegeEscalation) GetActions()([]AuthorizationSystemTypeActionable) 
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. A detailed description of the privilege escalation.
 func (m *PrivilegeEscalation) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -41,7 +41,7 @@ func (m *PrivilegeEscalation) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The name of the policy that defines the escalation
 func (m *PrivilegeEscalation) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -109,7 +109,7 @@ func (m *PrivilegeEscalation) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetResources gets the resources property value. The resources property
+// GetResources gets the resources property value. The list of resources that the identity could perform actions on.
 func (m *PrivilegeEscalation) GetResources()([]AuthorizationSystemResourceable) {
     val, err := m.GetBackingStore().Get("resources")
     if err != nil {
@@ -164,28 +164,28 @@ func (m *PrivilegeEscalation) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetActions sets the actions property value. The actions property
+// SetActions sets the actions property value. The list of actions that the identity could perform.
 func (m *PrivilegeEscalation) SetActions(value []AuthorizationSystemTypeActionable)() {
     err := m.GetBackingStore().Set("actions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. A detailed description of the privilege escalation.
 func (m *PrivilegeEscalation) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The name of the policy that defines the escalation
 func (m *PrivilegeEscalation) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResources sets the resources property value. The resources property
+// SetResources sets the resources property value. The list of resources that the identity could perform actions on.
 func (m *PrivilegeEscalation) SetResources(value []AuthorizationSystemResourceable)() {
     err := m.GetBackingStore().Set("resources", value)
     if err != nil {

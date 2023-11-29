@@ -104,7 +104,7 @@ func (m *TicketInfo) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTicketApproverIdentityId gets the ticketApproverIdentityId property value. The ticketApproverIdentityId property
+// GetTicketApproverIdentityId gets the ticketApproverIdentityId property value. ID for the request approver.
 func (m *TicketInfo) GetTicketApproverIdentityId()(*string) {
     val, err := m.GetBackingStore().Get("ticketApproverIdentityId")
     if err != nil {
@@ -126,7 +126,7 @@ func (m *TicketInfo) GetTicketNumber()(*string) {
     }
     return nil
 }
-// GetTicketSubmitterIdentityId gets the ticketSubmitterIdentityId property value. The ticketSubmitterIdentityId property
+// GetTicketSubmitterIdentityId gets the ticketSubmitterIdentityId property value. ID for the request submitter.
 func (m *TicketInfo) GetTicketSubmitterIdentityId()(*string) {
     val, err := m.GetBackingStore().Get("ticketSubmitterIdentityId")
     if err != nil {
@@ -206,7 +206,7 @@ func (m *TicketInfo) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTicketApproverIdentityId sets the ticketApproverIdentityId property value. The ticketApproverIdentityId property
+// SetTicketApproverIdentityId sets the ticketApproverIdentityId property value. ID for the request approver.
 func (m *TicketInfo) SetTicketApproverIdentityId(value *string)() {
     err := m.GetBackingStore().Set("ticketApproverIdentityId", value)
     if err != nil {
@@ -220,7 +220,7 @@ func (m *TicketInfo) SetTicketNumber(value *string)() {
         panic(err)
     }
 }
-// SetTicketSubmitterIdentityId sets the ticketSubmitterIdentityId property value. The ticketSubmitterIdentityId property
+// SetTicketSubmitterIdentityId sets the ticketSubmitterIdentityId property value. ID for the request submitter.
 func (m *TicketInfo) SetTicketSubmitterIdentityId(value *string)() {
     err := m.GetBackingStore().Set("ticketSubmitterIdentityId", value)
     if err != nil {

@@ -21,7 +21,7 @@ func NewGcpActionPermissionsDefinitionAction()(*GcpActionPermissionsDefinitionAc
 func CreateGcpActionPermissionsDefinitionActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGcpActionPermissionsDefinitionAction(), nil
 }
-// GetActions gets the actions property value. The actions property
+// GetActions gets the actions property value. List of actions.
 func (m *GcpActionPermissionsDefinitionAction) GetActions()([]string) {
     val, err := m.GetBackingStore().Get("actions")
     if err != nil {
@@ -67,7 +67,7 @@ func (m *GcpActionPermissionsDefinitionAction) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetActions sets the actions property value. The actions property
+// SetActions sets the actions property value. List of actions.
 func (m *GcpActionPermissionsDefinitionAction) SetActions(value []string)() {
     err := m.GetBackingStore().Set("actions", value)
     if err != nil {

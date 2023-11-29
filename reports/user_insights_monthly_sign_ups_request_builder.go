@@ -11,7 +11,7 @@ import (
 type UserInsightsMonthlySignUpsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// UserInsightsMonthlySignUpsRequestBuilderGetQueryParameters get signUps from reports
+// UserInsightsMonthlySignUpsRequestBuilderGetQueryParameters get a list of monthly user sign-ups on apps registered in your tenant configured for Microsoft Entra External ID for customers.
 type UserInsightsMonthlySignUpsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,10 @@ func NewUserInsightsMonthlySignUpsRequestBuilder(rawUrl string, requestAdapter i
 func (m *UserInsightsMonthlySignUpsRequestBuilder) Count()(*UserInsightsMonthlySignUpsCountRequestBuilder) {
     return NewUserInsightsMonthlySignUpsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get signUps from reports
+// Get get a list of monthly user sign-ups on apps registered in your tenant configured for Microsoft Entra External ID for customers.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/monthlyuserinsightmetricsroot-list-signups?view=graph-rest-1.0
 func (m *UserInsightsMonthlySignUpsRequestBuilder) Get(ctx context.Context, requestConfiguration *UserInsightsMonthlySignUpsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSignUpMetricCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,9 +89,9 @@ func (m *UserInsightsMonthlySignUpsRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSignUpMetricCollectionResponseable), nil
 }
-// ToGetRequestInformation get signUps from reports
+// ToGetRequestInformation get a list of monthly user sign-ups on apps registered in your tenant configured for Microsoft Entra External ID for customers.
 func (m *UserInsightsMonthlySignUpsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserInsightsMonthlySignUpsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -96,10 +99,7 @@ func (m *UserInsightsMonthlySignUpsRequestBuilder) ToGetRequestInformation(ctx c
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

@@ -36,7 +36,7 @@ func (m *AwsLambda) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     }
     return res
 }
-// GetResource gets the resource property value. The resource property
+// GetResource gets the resource property value. Represents the resources in an authorization system..
 func (m *AwsLambda) GetResource()(AwsAuthorizationSystemResourceable) {
     val, err := m.GetBackingStore().Get("resource")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *AwsLambda) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     return nil
 }
-// SetResource sets the resource property value. The resource property
+// SetResource sets the resource property value. Represents the resources in an authorization system..
 func (m *AwsLambda) SetResource(value AwsAuthorizationSystemResourceable)() {
     err := m.GetBackingStore().Set("resource", value)
     if err != nil {

@@ -11,7 +11,7 @@ import (
 type UserInsightsMonthlyMfaCompletionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// UserInsightsMonthlyMfaCompletionsRequestBuilderGetQueryParameters get mfaCompletions from reports
+// UserInsightsMonthlyMfaCompletionsRequestBuilderGetQueryParameters get a list of monthly MFA completions on apps registered in your tenant configured for Microsoft Entra External ID for customers.
 type UserInsightsMonthlyMfaCompletionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,10 @@ func NewUserInsightsMonthlyMfaCompletionsRequestBuilder(rawUrl string, requestAd
 func (m *UserInsightsMonthlyMfaCompletionsRequestBuilder) Count()(*UserInsightsMonthlyMfaCompletionsCountRequestBuilder) {
     return NewUserInsightsMonthlyMfaCompletionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get mfaCompletions from reports
+// Get get a list of monthly MFA completions on apps registered in your tenant configured for Microsoft Entra External ID for customers.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/monthlyuserinsightmetricsroot-list-mfacompletions?view=graph-rest-1.0
 func (m *UserInsightsMonthlyMfaCompletionsRequestBuilder) Get(ctx context.Context, requestConfiguration *UserInsightsMonthlyMfaCompletionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MfaCompletionMetricCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,9 +89,9 @@ func (m *UserInsightsMonthlyMfaCompletionsRequestBuilder) Get(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MfaCompletionMetricCollectionResponseable), nil
 }
-// ToGetRequestInformation get mfaCompletions from reports
+// ToGetRequestInformation get a list of monthly MFA completions on apps registered in your tenant configured for Microsoft Entra External ID for customers.
 func (m *UserInsightsMonthlyMfaCompletionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserInsightsMonthlyMfaCompletionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -96,10 +99,7 @@ func (m *UserInsightsMonthlyMfaCompletionsRequestBuilder) ToGetRequestInformatio
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

@@ -105,7 +105,7 @@ func (m *PrivilegeEscalationFinding) GetIdentity()(AuthorizationSystemIdentityab
     }
     return nil
 }
-// GetIdentityDetails gets the identityDetails property value. The identityDetails property
+// GetIdentityDetails gets the identityDetails property value. An identity's information details. Inherited from finding.
 func (m *PrivilegeEscalationFinding) GetIdentityDetails()(IdentityDetailsable) {
     val, err := m.GetBackingStore().Get("identityDetails")
     if err != nil {
@@ -127,7 +127,7 @@ func (m *PrivilegeEscalationFinding) GetPermissionsCreepIndex()(PermissionsCreep
     }
     return nil
 }
-// GetPrivilegeEscalationDetails gets the privilegeEscalationDetails property value. The privilegeEscalationDetails property
+// GetPrivilegeEscalationDetails gets the privilegeEscalationDetails property value. The list of escalations that the identity is capable of performing.
 func (m *PrivilegeEscalationFinding) GetPrivilegeEscalationDetails()([]PrivilegeEscalationable) {
     val, err := m.GetBackingStore().Get("privilegeEscalationDetails")
     if err != nil {
@@ -183,7 +183,7 @@ func (m *PrivilegeEscalationFinding) SetIdentity(value AuthorizationSystemIdenti
         panic(err)
     }
 }
-// SetIdentityDetails sets the identityDetails property value. The identityDetails property
+// SetIdentityDetails sets the identityDetails property value. An identity's information details. Inherited from finding.
 func (m *PrivilegeEscalationFinding) SetIdentityDetails(value IdentityDetailsable)() {
     err := m.GetBackingStore().Set("identityDetails", value)
     if err != nil {
@@ -197,7 +197,7 @@ func (m *PrivilegeEscalationFinding) SetPermissionsCreepIndex(value PermissionsC
         panic(err)
     }
 }
-// SetPrivilegeEscalationDetails sets the privilegeEscalationDetails property value. The privilegeEscalationDetails property
+// SetPrivilegeEscalationDetails sets the privilegeEscalationDetails property value. The list of escalations that the identity is capable of performing.
 func (m *PrivilegeEscalationFinding) SetPrivilegeEscalationDetails(value []PrivilegeEscalationable)() {
     err := m.GetBackingStore().Set("privilegeEscalationDetails", value)
     if err != nil {

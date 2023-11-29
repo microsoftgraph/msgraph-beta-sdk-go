@@ -38,7 +38,7 @@ func (m *PermissionsDefinitionAuthorizationSystemIdentity) GetAdditionalData()(m
 func (m *PermissionsDefinitionAuthorizationSystemIdentity) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetExternalId gets the externalId property value. The externalId property
+// GetExternalId gets the externalId property value. Unique ID of the identity within the external system. Prefixed with rsn: if this is a SAML or ED user in AWS. Alternate key.
 func (m *PermissionsDefinitionAuthorizationSystemIdentity) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -173,7 +173,7 @@ func (m *PermissionsDefinitionAuthorizationSystemIdentity) SetAdditionalData(val
 func (m *PermissionsDefinitionAuthorizationSystemIdentity) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetExternalId sets the externalId property value. The externalId property
+// SetExternalId sets the externalId property value. Unique ID of the identity within the external system. Prefixed with rsn: if this is a SAML or ED user in AWS. Alternate key.
 func (m *PermissionsDefinitionAuthorizationSystemIdentity) SetExternalId(value *string)() {
     err := m.GetBackingStore().Set("externalId", value)
     if err != nil {

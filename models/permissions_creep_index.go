@@ -74,7 +74,7 @@ func (m *PermissionsCreepIndex) GetOdataType()(*string) {
     }
     return nil
 }
-// GetScore gets the score property value. The score property
+// GetScore gets the score property value. This value represents how much risk an identity poses. This risk range is classified in three buckets: 0-33: low, 34-66: medium, 67-100: high..
 func (m *PermissionsCreepIndex) GetScore()(*int32) {
     val, err := m.GetBackingStore().Get("score")
     if err != nil {
@@ -125,7 +125,7 @@ func (m *PermissionsCreepIndex) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetScore sets the score property value. The score property
+// SetScore sets the score property value. This value represents how much risk an identity poses. This risk range is classified in three buckets: 0-33: low, 34-66: medium, 67-100: high..
 func (m *PermissionsCreepIndex) SetScore(value *int32)() {
     err := m.GetBackingStore().Set("score", value)
     if err != nil {

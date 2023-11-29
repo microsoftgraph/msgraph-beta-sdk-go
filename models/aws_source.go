@@ -21,7 +21,7 @@ func NewAwsSource()(*AwsSource) {
 func CreateAwsSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAwsSource(), nil
 }
-// GetAccountId gets the accountId property value. The accountId property
+// GetAccountId gets the accountId property value. AWS account ID.
 func (m *AwsSource) GetAccountId()(*string) {
     val, err := m.GetBackingStore().Get("accountId")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *AwsSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     return nil
 }
-// SetAccountId sets the accountId property value. The accountId property
+// SetAccountId sets the accountId property value. AWS account ID.
 func (m *AwsSource) SetAccountId(value *string)() {
     err := m.GetBackingStore().Set("accountId", value)
     if err != nil {

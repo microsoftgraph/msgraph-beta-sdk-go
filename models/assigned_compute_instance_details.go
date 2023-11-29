@@ -19,7 +19,7 @@ func NewAssignedComputeInstanceDetails()(*AssignedComputeInstanceDetails) {
 func CreateAssignedComputeInstanceDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAssignedComputeInstanceDetails(), nil
 }
-// GetAccessedStorageBuckets gets the accessedStorageBuckets property value. The accessedStorageBuckets property
+// GetAccessedStorageBuckets gets the accessedStorageBuckets property value. Represents a set of S3 buckets accessed by this EC2 instance.
 func (m *AssignedComputeInstanceDetails) GetAccessedStorageBuckets()([]AuthorizationSystemResourceable) {
     val, err := m.GetBackingStore().Get("accessedStorageBuckets")
     if err != nil {
@@ -30,7 +30,7 @@ func (m *AssignedComputeInstanceDetails) GetAccessedStorageBuckets()([]Authoriza
     }
     return nil
 }
-// GetAssignedComputeInstance gets the assignedComputeInstance property value. The assignedComputeInstance property
+// GetAssignedComputeInstance gets the assignedComputeInstance property value. assigned EC2 instance.
 func (m *AssignedComputeInstanceDetails) GetAssignedComputeInstance()(AuthorizationSystemResourceable) {
     val, err := m.GetBackingStore().Get("assignedComputeInstance")
     if err != nil {
@@ -98,14 +98,14 @@ func (m *AssignedComputeInstanceDetails) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetAccessedStorageBuckets sets the accessedStorageBuckets property value. The accessedStorageBuckets property
+// SetAccessedStorageBuckets sets the accessedStorageBuckets property value. Represents a set of S3 buckets accessed by this EC2 instance.
 func (m *AssignedComputeInstanceDetails) SetAccessedStorageBuckets(value []AuthorizationSystemResourceable)() {
     err := m.GetBackingStore().Set("accessedStorageBuckets", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAssignedComputeInstance sets the assignedComputeInstance property value. The assignedComputeInstance property
+// SetAssignedComputeInstance sets the assignedComputeInstance property value. assigned EC2 instance.
 func (m *AssignedComputeInstanceDetails) SetAssignedComputeInstance(value AuthorizationSystemResourceable)() {
     err := m.GetBackingStore().Set("assignedComputeInstance", value)
     if err != nil {

@@ -19,7 +19,7 @@ func NewUserCountMetric()(*UserCountMetric) {
 func CreateUserCountMetricFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserCountMetric(), nil
 }
-// GetCount gets the count property value. The count property
+// GetCount gets the count property value. The total number of users in the tenant over time.
 func (m *UserCountMetric) GetCount()(*int64) {
     val, err := m.GetBackingStore().Get("count")
     if err != nil {
@@ -30,7 +30,7 @@ func (m *UserCountMetric) GetCount()(*int64) {
     }
     return nil
 }
-// GetFactDate gets the factDate property value. The factDate property
+// GetFactDate gets the factDate property value. The date of the insight.
 func (m *UserCountMetric) GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("factDate")
     if err != nil {
@@ -86,14 +86,14 @@ func (m *UserCountMetric) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetCount sets the count property value. The count property
+// SetCount sets the count property value. The total number of users in the tenant over time.
 func (m *UserCountMetric) SetCount(value *int64)() {
     err := m.GetBackingStore().Set("count", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFactDate sets the factDate property value. The factDate property
+// SetFactDate sets the factDate property value. The date of the insight.
 func (m *UserCountMetric) SetFactDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     err := m.GetBackingStore().Set("factDate", value)
     if err != nil {

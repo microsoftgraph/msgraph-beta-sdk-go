@@ -187,6 +187,22 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["scopeIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetScopeIds(res)
+        }
+        return nil
+    }
     res["subnetId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -312,6 +328,17 @@ func (m *CloudPcOnPremisesConnection) GetResourceGroupId()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetScopeIds gets the scopeIds property value. The scopeIds property
+func (m *CloudPcOnPremisesConnection) GetScopeIds()([]string) {
+    val, err := m.GetBackingStore().Get("scopeIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
     }
     return nil
 }
@@ -455,6 +482,12 @@ func (m *CloudPcOnPremisesConnection) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    if m.GetScopeIds() != nil {
+        err = writer.WriteCollectionOfStringValues("scopeIds", m.GetScopeIds())
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("subnetId", m.GetSubnetId())
         if err != nil {
@@ -571,6 +604,13 @@ func (m *CloudPcOnPremisesConnection) SetResourceGroupId(value *string)() {
         panic(err)
     }
 }
+// SetScopeIds sets the scopeIds property value. The scopeIds property
+func (m *CloudPcOnPremisesConnection) SetScopeIds(value []string)() {
+    err := m.GetBackingStore().Set("scopeIds", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSubnetId sets the subnetId property value. The ID of the target subnet. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}.
 func (m *CloudPcOnPremisesConnection) SetSubnetId(value *string)() {
     err := m.GetBackingStore().Set("subnetId", value)
@@ -628,6 +668,7 @@ type CloudPcOnPremisesConnectionable interface {
     GetManagedBy()(*CloudPcManagementService)
     GetOrganizationalUnit()(*string)
     GetResourceGroupId()(*string)
+    GetScopeIds()([]string)
     GetSubnetId()(*string)
     GetSubscriptionId()(*string)
     GetSubscriptionName()(*string)
@@ -645,6 +686,7 @@ type CloudPcOnPremisesConnectionable interface {
     SetManagedBy(value *CloudPcManagementService)()
     SetOrganizationalUnit(value *string)()
     SetResourceGroupId(value *string)()
+    SetScopeIds(value []string)()
     SetSubnetId(value *string)()
     SetSubscriptionId(value *string)()
     SetSubscriptionName(value *string)()

@@ -29,6 +29,8 @@ func CreateVirtualEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.virtualEventTownhall":
+                        return NewVirtualEventTownhall(), nil
                     case "#microsoft.graph.virtualEventWebinar":
                         return NewVirtualEventWebinar(), nil
                 }
@@ -49,13 +51,13 @@ func (m *VirtualEvent) GetCreatedBy()(CommunicationsIdentitySetable) {
     return nil
 }
 // GetDescription gets the description property value. Description of the virtual event.
-func (m *VirtualEvent) GetDescription()(*string) {
+func (m *VirtualEvent) GetDescription()(ItemBodyable) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*string)
+        return val.(ItemBodyable)
     }
     return nil
 }
@@ -70,7 +72,7 @@ func (m *VirtualEvent) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetEndDateTime gets the endDateTime property value. End time of the virtual event.
+// GetEndDateTime gets the endDateTime property value. End time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows.
 func (m *VirtualEvent) GetEndDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -95,12 +97,12 @@ func (m *VirtualEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDescription(val)
+            m.SetDescription(val.(ItemBodyable))
         }
         return nil
     }
@@ -200,7 +202,7 @@ func (m *VirtualEvent) GetSessions()([]VirtualEventSessionable) {
     }
     return nil
 }
-// GetStartDateTime gets the startDateTime property value. Start time of the virtual event.
+// GetStartDateTime gets the startDateTime property value. Start time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows.
 func (m *VirtualEvent) GetStartDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -235,7 +237,7 @@ func (m *VirtualEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         }
     }
     {
-        err = writer.WriteStringValue("description", m.GetDescription())
+        err = writer.WriteObjectValue("description", m.GetDescription())
         if err != nil {
             return err
         }
@@ -299,7 +301,7 @@ func (m *VirtualEvent) SetCreatedBy(value CommunicationsIdentitySetable)() {
     }
 }
 // SetDescription sets the description property value. Description of the virtual event.
-func (m *VirtualEvent) SetDescription(value *string)() {
+func (m *VirtualEvent) SetDescription(value ItemBodyable)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
@@ -312,7 +314,7 @@ func (m *VirtualEvent) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetEndDateTime sets the endDateTime property value. End time of the virtual event.
+// SetEndDateTime sets the endDateTime property value. End time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows.
 func (m *VirtualEvent) SetEndDateTime(value DateTimeTimeZoneable)() {
     err := m.GetBackingStore().Set("endDateTime", value)
     if err != nil {
@@ -333,7 +335,7 @@ func (m *VirtualEvent) SetSessions(value []VirtualEventSessionable)() {
         panic(err)
     }
 }
-// SetStartDateTime sets the startDateTime property value. Start time of the virtual event.
+// SetStartDateTime sets the startDateTime property value. Start time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows.
 func (m *VirtualEvent) SetStartDateTime(value DateTimeTimeZoneable)() {
     err := m.GetBackingStore().Set("startDateTime", value)
     if err != nil {
@@ -352,7 +354,7 @@ type VirtualEventable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCreatedBy()(CommunicationsIdentitySetable)
-    GetDescription()(*string)
+    GetDescription()(ItemBodyable)
     GetDisplayName()(*string)
     GetEndDateTime()(DateTimeTimeZoneable)
     GetPresenters()([]VirtualEventPresenterable)
@@ -360,7 +362,7 @@ type VirtualEventable interface {
     GetStartDateTime()(DateTimeTimeZoneable)
     GetStatus()(*VirtualEventStatus)
     SetCreatedBy(value CommunicationsIdentitySetable)()
-    SetDescription(value *string)()
+    SetDescription(value ItemBodyable)()
     SetDisplayName(value *string)()
     SetEndDateTime(value DateTimeTimeZoneable)()
     SetPresenters(value []VirtualEventPresenterable)()

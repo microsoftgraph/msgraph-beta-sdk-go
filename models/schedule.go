@@ -19,6 +19,17 @@ func NewSchedule()(*Schedule) {
 func CreateScheduleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSchedule(), nil
 }
+// GetDayNotes gets the dayNotes property value. The dayNotes property
+func (m *Schedule) GetDayNotes()([]DayNoteable) {
+    val, err := m.GetBackingStore().Get("dayNotes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DayNoteable)
+    }
+    return nil
+}
 // GetEnabled gets the enabled property value. Indicates whether the schedule is enabled for the team. Required.
 func (m *Schedule) GetEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("enabled")
@@ -33,6 +44,22 @@ func (m *Schedule) GetEnabled()(*bool) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Schedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["dayNotes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDayNoteFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DayNoteable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(DayNoteable)
+                }
+            }
+            m.SetDayNotes(res)
+        }
+        return nil
+    }
     res["enabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -537,6 +564,18 @@ func (m *Schedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if err != nil {
         return err
     }
+    if m.GetDayNotes() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDayNotes()))
+        for i, v := range m.GetDayNotes() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("dayNotes", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("enabled", m.GetEnabled())
         if err != nil {
@@ -713,6 +752,13 @@ func (m *Schedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
+// SetDayNotes sets the dayNotes property value. The dayNotes property
+func (m *Schedule) SetDayNotes(value []DayNoteable)() {
+    err := m.GetBackingStore().Set("dayNotes", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetEnabled sets the enabled property value. Indicates whether the schedule is enabled for the team. Required.
 func (m *Schedule) SetEnabled(value *bool)() {
     err := m.GetBackingStore().Set("enabled", value)
@@ -864,6 +910,7 @@ func (m *Schedule) SetWorkforceIntegrationIds(value []string)() {
 type Scheduleable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDayNotes()([]DayNoteable)
     GetEnabled()(*bool)
     GetOfferShiftRequests()([]OfferShiftRequestable)
     GetOfferShiftRequestsEnabled()(*bool)
@@ -885,6 +932,7 @@ type Scheduleable interface {
     GetTimesOff()([]TimeOffable)
     GetTimeZone()(*string)
     GetWorkforceIntegrationIds()([]string)
+    SetDayNotes(value []DayNoteable)()
     SetEnabled(value *bool)()
     SetOfferShiftRequests(value []OfferShiftRequestable)()
     SetOfferShiftRequestsEnabled(value *bool)()

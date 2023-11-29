@@ -38,7 +38,7 @@ func (m *AuditLogRoot) GetAdditionalData()(map[string]any) {
 func (m *AuditLogRoot) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCustomSecurityAttributeAudits gets the customSecurityAttributeAudits property value. The customSecurityAttributeAudits property
+// GetCustomSecurityAttributeAudits gets the customSecurityAttributeAudits property value. Represents a custom security attribute audit log.
 func (m *AuditLogRoot) GetCustomSecurityAttributeAudits()([]CustomSecurityAttributeAuditable) {
     val, err := m.GetBackingStore().Get("customSecurityAttributeAudits")
     if err != nil {
@@ -177,7 +177,7 @@ func (m *AuditLogRoot) GetOdataType()(*string) {
     }
     return nil
 }
-// GetProvisioning gets the provisioning property value. The provisioning property
+// GetProvisioning gets the provisioning property value. Represents an action performed by the Microsoft Entra provisioning service and its associated properties.
 func (m *AuditLogRoot) GetProvisioning()([]ProvisioningObjectSummaryable) {
     val, err := m.GetBackingStore().Get("provisioning")
     if err != nil {
@@ -286,7 +286,7 @@ func (m *AuditLogRoot) SetAdditionalData(value map[string]any)() {
 func (m *AuditLogRoot) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCustomSecurityAttributeAudits sets the customSecurityAttributeAudits property value. The customSecurityAttributeAudits property
+// SetCustomSecurityAttributeAudits sets the customSecurityAttributeAudits property value. Represents a custom security attribute audit log.
 func (m *AuditLogRoot) SetCustomSecurityAttributeAudits(value []CustomSecurityAttributeAuditable)() {
     err := m.GetBackingStore().Set("customSecurityAttributeAudits", value)
     if err != nil {
@@ -314,7 +314,7 @@ func (m *AuditLogRoot) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetProvisioning sets the provisioning property value. The provisioning property
+// SetProvisioning sets the provisioning property value. Represents an action performed by the Microsoft Entra provisioning service and its associated properties.
 func (m *AuditLogRoot) SetProvisioning(value []ProvisioningObjectSummaryable)() {
     err := m.GetBackingStore().Set("provisioning", value)
     if err != nil {

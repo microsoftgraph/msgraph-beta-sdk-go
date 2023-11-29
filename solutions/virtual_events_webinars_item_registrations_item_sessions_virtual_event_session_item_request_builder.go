@@ -11,7 +11,7 @@ import (
 type VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilderGetQueryParameters sessions of the webinar.
+// VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilderGetQueryParameters get sessions from solutions
 type VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -27,18 +27,6 @@ type VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRe
     // Request query parameters
     QueryParameters *VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilderGetQueryParameters
 }
-// AlternativeRecording provides operations to manage the media for the solutionsRoot entity.
-func (m *VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilder) AlternativeRecording()(*VirtualEventsWebinarsItemRegistrationsItemSessionsItemAlternativeRecordingRequestBuilder) {
-    return NewVirtualEventsWebinarsItemRegistrationsItemSessionsItemAlternativeRecordingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// AttendeeReport provides operations to manage the media for the solutionsRoot entity.
-func (m *VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilder) AttendeeReport()(*VirtualEventsWebinarsItemRegistrationsItemSessionsItemAttendeeReportRequestBuilder) {
-    return NewVirtualEventsWebinarsItemRegistrationsItemSessionsItemAttendeeReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// BroadcastRecording provides operations to manage the media for the solutionsRoot entity.
-func (m *VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilder) BroadcastRecording()(*VirtualEventsWebinarsItemRegistrationsItemSessionsItemBroadcastRecordingRequestBuilder) {
-    return NewVirtualEventsWebinarsItemRegistrationsItemSessionsItemBroadcastRecordingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewVirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilderInternal instantiates a new VirtualEventSessionItemRequestBuilder and sets the default values.
 func NewVirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilder) {
     m := &VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilder{
@@ -52,7 +40,7 @@ func NewVirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionIte
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get sessions of the webinar.
+// Get get sessions from solutions
 func (m *VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventSessionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -71,13 +59,9 @@ func (m *VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionIt
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventSessionable), nil
 }
-// Recording provides operations to manage the media for the solutionsRoot entity.
-func (m *VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilder) Recording()(*VirtualEventsWebinarsItemRegistrationsItemSessionsItemRecordingRequestBuilder) {
-    return NewVirtualEventsWebinarsItemRegistrationsItemSessionsItemRecordingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// ToGetRequestInformation sessions of the webinar.
+// ToGetRequestInformation get sessions from solutions
 func (m *VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -85,10 +69,7 @@ func (m *VirtualEventsWebinarsItemRegistrationsItemSessionsVirtualEventSessionIt
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

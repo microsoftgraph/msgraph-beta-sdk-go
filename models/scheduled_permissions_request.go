@@ -20,7 +20,7 @@ func NewScheduledPermissionsRequest()(*ScheduledPermissionsRequest) {
 func CreateScheduledPermissionsRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewScheduledPermissionsRequest(), nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Defines when the identity created the request.
 func (m *ScheduledPermissionsRequest) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -106,7 +106,7 @@ func (m *ScheduledPermissionsRequest) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetJustification gets the justification property value. The justification property
+// GetJustification gets the justification property value. The identity's justification for the request.
 func (m *ScheduledPermissionsRequest) GetJustification()(*string) {
     val, err := m.GetBackingStore().Get("justification")
     if err != nil {
@@ -117,7 +117,7 @@ func (m *ScheduledPermissionsRequest) GetJustification()(*string) {
     }
     return nil
 }
-// GetNotes gets the notes property value. The notes property
+// GetNotes gets the notes property value. Additional context for the permissions request.
 func (m *ScheduledPermissionsRequest) GetNotes()(*string) {
     val, err := m.GetBackingStore().Get("notes")
     if err != nil {
@@ -139,7 +139,7 @@ func (m *ScheduledPermissionsRequest) GetRequestedPermissions()(PermissionsDefin
     }
     return nil
 }
-// GetScheduleInfo gets the scheduleInfo property value. The scheduleInfo property
+// GetScheduleInfo gets the scheduleInfo property value. When to assign the requested permissions.
 func (m *ScheduledPermissionsRequest) GetScheduleInfo()(RequestScheduleable) {
     val, err := m.GetBackingStore().Get("scheduleInfo")
     if err != nil {
@@ -161,7 +161,7 @@ func (m *ScheduledPermissionsRequest) GetStatusDetail()(*StatusDetail) {
     }
     return nil
 }
-// GetTicketInfo gets the ticketInfo property value. The ticketInfo property
+// GetTicketInfo gets the ticketInfo property value. Ticketing-related metadata that you can use to correlate to the request.
 func (m *ScheduledPermissionsRequest) GetTicketInfo()(TicketInfoable) {
     val, err := m.GetBackingStore().Get("ticketInfo")
     if err != nil {
@@ -223,21 +223,21 @@ func (m *ScheduledPermissionsRequest) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Defines when the identity created the request.
 func (m *ScheduledPermissionsRequest) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetJustification sets the justification property value. The justification property
+// SetJustification sets the justification property value. The identity's justification for the request.
 func (m *ScheduledPermissionsRequest) SetJustification(value *string)() {
     err := m.GetBackingStore().Set("justification", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNotes sets the notes property value. The notes property
+// SetNotes sets the notes property value. Additional context for the permissions request.
 func (m *ScheduledPermissionsRequest) SetNotes(value *string)() {
     err := m.GetBackingStore().Set("notes", value)
     if err != nil {
@@ -251,7 +251,7 @@ func (m *ScheduledPermissionsRequest) SetRequestedPermissions(value PermissionsD
         panic(err)
     }
 }
-// SetScheduleInfo sets the scheduleInfo property value. The scheduleInfo property
+// SetScheduleInfo sets the scheduleInfo property value. When to assign the requested permissions.
 func (m *ScheduledPermissionsRequest) SetScheduleInfo(value RequestScheduleable)() {
     err := m.GetBackingStore().Set("scheduleInfo", value)
     if err != nil {
@@ -265,7 +265,7 @@ func (m *ScheduledPermissionsRequest) SetStatusDetail(value *StatusDetail)() {
         panic(err)
     }
 }
-// SetTicketInfo sets the ticketInfo property value. The ticketInfo property
+// SetTicketInfo sets the ticketInfo property value. Ticketing-related metadata that you can use to correlate to the request.
 func (m *ScheduledPermissionsRequest) SetTicketInfo(value TicketInfoable)() {
     err := m.GetBackingStore().Set("ticketInfo", value)
     if err != nil {

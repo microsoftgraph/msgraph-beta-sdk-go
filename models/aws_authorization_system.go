@@ -21,7 +21,7 @@ func NewAwsAuthorizationSystem()(*AwsAuthorizationSystem) {
 func CreateAwsAuthorizationSystemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAwsAuthorizationSystem(), nil
 }
-// GetActions gets the actions property value. The actions property
+// GetActions gets the actions property value. List of actions for service in authorization system.
 func (m *AwsAuthorizationSystem) GetActions()([]AwsAuthorizationSystemTypeActionable) {
     val, err := m.GetBackingStore().Get("actions")
     if err != nil {
@@ -32,7 +32,7 @@ func (m *AwsAuthorizationSystem) GetActions()([]AwsAuthorizationSystemTypeAction
     }
     return nil
 }
-// GetAssociatedIdentities gets the associatedIdentities property value. The associatedIdentities property
+// GetAssociatedIdentities gets the associatedIdentities property value. Identities in the authorization system.
 func (m *AwsAuthorizationSystem) GetAssociatedIdentities()(AwsAssociatedIdentitiesable) {
     val, err := m.GetBackingStore().Get("associatedIdentities")
     if err != nil {
@@ -122,7 +122,7 @@ func (m *AwsAuthorizationSystem) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetPolicies gets the policies property value. The policies property
+// GetPolicies gets the policies property value. Policies associated with the AWS authorization system type.
 func (m *AwsAuthorizationSystem) GetPolicies()([]AwsPolicyable) {
     val, err := m.GetBackingStore().Get("policies")
     if err != nil {
@@ -133,7 +133,7 @@ func (m *AwsAuthorizationSystem) GetPolicies()([]AwsPolicyable) {
     }
     return nil
 }
-// GetResources gets the resources property value. The resources property
+// GetResources gets the resources property value. Resources associated with the authorization system type.
 func (m *AwsAuthorizationSystem) GetResources()([]AwsAuthorizationSystemResourceable) {
     val, err := m.GetBackingStore().Get("resources")
     if err != nil {
@@ -144,7 +144,7 @@ func (m *AwsAuthorizationSystem) GetResources()([]AwsAuthorizationSystemResource
     }
     return nil
 }
-// GetServices gets the services property value. The services property
+// GetServices gets the services property value. Services associated with the authorization system type.
 func (m *AwsAuthorizationSystem) GetServices()([]AuthorizationSystemTypeServiceable) {
     val, err := m.GetBackingStore().Get("services")
     if err != nil {
@@ -217,35 +217,35 @@ func (m *AwsAuthorizationSystem) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetActions sets the actions property value. The actions property
+// SetActions sets the actions property value. List of actions for service in authorization system.
 func (m *AwsAuthorizationSystem) SetActions(value []AwsAuthorizationSystemTypeActionable)() {
     err := m.GetBackingStore().Set("actions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAssociatedIdentities sets the associatedIdentities property value. The associatedIdentities property
+// SetAssociatedIdentities sets the associatedIdentities property value. Identities in the authorization system.
 func (m *AwsAuthorizationSystem) SetAssociatedIdentities(value AwsAssociatedIdentitiesable)() {
     err := m.GetBackingStore().Set("associatedIdentities", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPolicies sets the policies property value. The policies property
+// SetPolicies sets the policies property value. Policies associated with the AWS authorization system type.
 func (m *AwsAuthorizationSystem) SetPolicies(value []AwsPolicyable)() {
     err := m.GetBackingStore().Set("policies", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResources sets the resources property value. The resources property
+// SetResources sets the resources property value. Resources associated with the authorization system type.
 func (m *AwsAuthorizationSystem) SetResources(value []AwsAuthorizationSystemResourceable)() {
     err := m.GetBackingStore().Set("resources", value)
     if err != nil {
         panic(err)
     }
 }
-// SetServices sets the services property value. The services property
+// SetServices sets the services property value. Services associated with the authorization system type.
 func (m *AwsAuthorizationSystem) SetServices(value []AuthorizationSystemTypeServiceable)() {
     err := m.GetBackingStore().Set("services", value)
     if err != nil {

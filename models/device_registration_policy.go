@@ -20,13 +20,13 @@ func CreateDeviceRegistrationPolicyFromDiscriminatorValue(parseNode i878a80d2330
     return NewDeviceRegistrationPolicy(), nil
 }
 // GetAzureADJoin gets the azureADJoin property value. Specifies the authorization policy for controlling registration of new devices using Microsoft Entra join within your organization. Required. For more information, see What is a device identity?.
-func (m *DeviceRegistrationPolicy) GetAzureADJoin()(AzureAdJoinPolicyable) {
+func (m *DeviceRegistrationPolicy) GetAzureADJoin()(AzureADJoinPolicyable) {
     val, err := m.GetBackingStore().Get("azureADJoin")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(AzureAdJoinPolicyable)
+        return val.(AzureADJoinPolicyable)
     }
     return nil
 }
@@ -67,12 +67,12 @@ func (m *DeviceRegistrationPolicy) GetDisplayName()(*string) {
 func (m *DeviceRegistrationPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["azureADJoin"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAzureAdJoinPolicyFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateAzureADJoinPolicyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAzureADJoin(val.(AzureAdJoinPolicyable))
+            m.SetAzureADJoin(val.(AzureADJoinPolicyable))
         }
         return nil
     }
@@ -223,7 +223,7 @@ func (m *DeviceRegistrationPolicy) Serialize(writer i878a80d2330e89d26896388a3f4
     return nil
 }
 // SetAzureADJoin sets the azureADJoin property value. Specifies the authorization policy for controlling registration of new devices using Microsoft Entra join within your organization. Required. For more information, see What is a device identity?.
-func (m *DeviceRegistrationPolicy) SetAzureADJoin(value AzureAdJoinPolicyable)() {
+func (m *DeviceRegistrationPolicy) SetAzureADJoin(value AzureADJoinPolicyable)() {
     err := m.GetBackingStore().Set("azureADJoin", value)
     if err != nil {
         panic(err)
@@ -275,14 +275,14 @@ func (m *DeviceRegistrationPolicy) SetUserDeviceQuota(value *int32)() {
 type DeviceRegistrationPolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAzureADJoin()(AzureAdJoinPolicyable)
+    GetAzureADJoin()(AzureADJoinPolicyable)
     GetAzureADRegistration()(AzureADRegistrationPolicyable)
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetLocalAdminPassword()(LocalAdminPasswordSettingsable)
     GetMultiFactorAuthConfiguration()(*MultiFactorAuthConfiguration)
     GetUserDeviceQuota()(*int32)
-    SetAzureADJoin(value AzureAdJoinPolicyable)()
+    SetAzureADJoin(value AzureADJoinPolicyable)()
     SetAzureADRegistration(value AzureADRegistrationPolicyable)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()

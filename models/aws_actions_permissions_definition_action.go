@@ -21,7 +21,7 @@ func NewAwsActionsPermissionsDefinitionAction()(*AwsActionsPermissionsDefinition
 func CreateAwsActionsPermissionsDefinitionActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAwsActionsPermissionsDefinitionAction(), nil
 }
-// GetAssignToRoleId gets the assignToRoleId property value. The assignToRoleId property
+// GetAssignToRoleId gets the assignToRoleId property value. Defines AWS statements.
 func (m *AwsActionsPermissionsDefinitionAction) GetAssignToRoleId()(*string) {
     val, err := m.GetBackingStore().Get("assignToRoleId")
     if err != nil {
@@ -100,7 +100,7 @@ func (m *AwsActionsPermissionsDefinitionAction) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetAssignToRoleId sets the assignToRoleId property value. The assignToRoleId property
+// SetAssignToRoleId sets the assignToRoleId property value. Defines AWS statements.
 func (m *AwsActionsPermissionsDefinitionAction) SetAssignToRoleId(value *string)() {
     err := m.GetBackingStore().Set("assignToRoleId", value)
     if err != nil {

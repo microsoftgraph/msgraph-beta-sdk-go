@@ -22,7 +22,7 @@ func NewAwsStatement()(*AwsStatement) {
 func CreateAwsStatementFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAwsStatement(), nil
 }
-// GetActions gets the actions property value. The actions property
+// GetActions gets the actions property value. The AWS actions.
 func (m *AwsStatement) GetActions()([]string) {
     val, err := m.GetBackingStore().Get("actions")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *AwsStatement) GetAdditionalData()(map[string]any) {
 func (m *AwsStatement) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCondition gets the condition property value. The condition property
+// GetCondition gets the condition property value. The AWS conditions associated with the statement.
 func (m *AwsStatement) GetCondition()(AwsConditionable) {
     val, err := m.GetBackingStore().Get("condition")
     if err != nil {
@@ -180,7 +180,7 @@ func (m *AwsStatement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetNotActions gets the notActions property value. The notActions property
+// GetNotActions gets the notActions property value. AWS Not Actions
 func (m *AwsStatement) GetNotActions()([]string) {
     val, err := m.GetBackingStore().Get("notActions")
     if err != nil {
@@ -191,7 +191,7 @@ func (m *AwsStatement) GetNotActions()([]string) {
     }
     return nil
 }
-// GetNotResources gets the notResources property value. The notResources property
+// GetNotResources gets the notResources property value. AWS Not Resources
 func (m *AwsStatement) GetNotResources()([]string) {
     val, err := m.GetBackingStore().Get("notResources")
     if err != nil {
@@ -213,7 +213,7 @@ func (m *AwsStatement) GetOdataType()(*string) {
     }
     return nil
 }
-// GetResources gets the resources property value. The resources property
+// GetResources gets the resources property value. The AWS resources associated with the statement.
 func (m *AwsStatement) GetResources()([]string) {
     val, err := m.GetBackingStore().Get("resources")
     if err != nil {
@@ -224,7 +224,7 @@ func (m *AwsStatement) GetResources()([]string) {
     }
     return nil
 }
-// GetStatementId gets the statementId property value. The statementId property
+// GetStatementId gets the statementId property value. The ID of the AWS statement.
 func (m *AwsStatement) GetStatementId()(*string) {
     val, err := m.GetBackingStore().Get("statementId")
     if err != nil {
@@ -294,7 +294,7 @@ func (m *AwsStatement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetActions sets the actions property value. The actions property
+// SetActions sets the actions property value. The AWS actions.
 func (m *AwsStatement) SetActions(value []string)() {
     err := m.GetBackingStore().Set("actions", value)
     if err != nil {
@@ -312,7 +312,7 @@ func (m *AwsStatement) SetAdditionalData(value map[string]any)() {
 func (m *AwsStatement) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCondition sets the condition property value. The condition property
+// SetCondition sets the condition property value. The AWS conditions associated with the statement.
 func (m *AwsStatement) SetCondition(value AwsConditionable)() {
     err := m.GetBackingStore().Set("condition", value)
     if err != nil {
@@ -326,14 +326,14 @@ func (m *AwsStatement) SetEffect(value *AwsStatementEffect)() {
         panic(err)
     }
 }
-// SetNotActions sets the notActions property value. The notActions property
+// SetNotActions sets the notActions property value. AWS Not Actions
 func (m *AwsStatement) SetNotActions(value []string)() {
     err := m.GetBackingStore().Set("notActions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNotResources sets the notResources property value. The notResources property
+// SetNotResources sets the notResources property value. AWS Not Resources
 func (m *AwsStatement) SetNotResources(value []string)() {
     err := m.GetBackingStore().Set("notResources", value)
     if err != nil {
@@ -347,14 +347,14 @@ func (m *AwsStatement) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetResources sets the resources property value. The resources property
+// SetResources sets the resources property value. The AWS resources associated with the statement.
 func (m *AwsStatement) SetResources(value []string)() {
     err := m.GetBackingStore().Set("resources", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatementId sets the statementId property value. The statementId property
+// SetStatementId sets the statementId property value. The ID of the AWS statement.
 func (m *AwsStatement) SetStatementId(value *string)() {
     err := m.GetBackingStore().Set("statementId", value)
     if err != nil {
