@@ -30,7 +30,7 @@ func (m *UnifiedRoleAssignment) GetAppScope()(AppScopeable) {
     }
     return nil
 }
-// GetAppScopeId gets the appScopeId property value. Identifier of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.  For the entitlement management provider, use app scopes to specify a catalog, for example /AccessPackageCatalog/beedadfe-01d5-4025-910b-84abb9369997.
+// GetAppScopeId gets the appScopeId property value. Identifier of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by a resource application only. For the entitlement management provider, use this property to specify a catalog, for example /AccessPackageCatalog/beedadfe-01d5-4025-910b-84abb9369997. Supports $filter (eq, in). For example /roleManagement/entitlementManagement/roleAssignments?$filter=appScopeId eq '/AccessPackageCatalog/{catalog id}'.
 func (m *UnifiedRoleAssignment) GetAppScopeId()(*string) {
     val, err := m.GetBackingStore().Get("appScopeId")
     if err != nil {
@@ -63,7 +63,7 @@ func (m *UnifiedRoleAssignment) GetDirectoryScope()(DirectoryObjectable) {
     }
     return nil
 }
-// GetDirectoryScopeId gets the directoryScopeId property value. Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
+// GetDirectoryScopeId gets the directoryScopeId property value. Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications, unlike app scopes that are defined and understood by a resource application only. Supports $filter (eq, in).
 func (m *UnifiedRoleAssignment) GetDirectoryScopeId()(*string) {
     val, err := m.GetBackingStore().Get("directoryScopeId")
     if err != nil {
@@ -200,7 +200,7 @@ func (m *UnifiedRoleAssignment) GetPrincipal()(DirectoryObjectable) {
     }
     return nil
 }
-// GetPrincipalId gets the principalId property value. Identifier of the principal to which the assignment is granted. Supports $filter (eq operator only).
+// GetPrincipalId gets the principalId property value. Identifier of the principal to which the assignment is granted. Supported principals are users, role-assignable groups, and service principals. Supports $filter (eq, in).
 func (m *UnifiedRoleAssignment) GetPrincipalId()(*string) {
     val, err := m.GetBackingStore().Get("principalId")
     if err != nil {
@@ -211,7 +211,7 @@ func (m *UnifiedRoleAssignment) GetPrincipalId()(*string) {
     }
     return nil
 }
-// GetPrincipalOrganizationId gets the principalOrganizationId property value. The principalOrganizationId property
+// GetPrincipalOrganizationId gets the principalOrganizationId property value. Identifier of the home tenant for the principal to which the assignment is granted.
 func (m *UnifiedRoleAssignment) GetPrincipalOrganizationId()(*string) {
     val, err := m.GetBackingStore().Get("principalOrganizationId")
     if err != nil {
@@ -244,7 +244,7 @@ func (m *UnifiedRoleAssignment) GetRoleDefinition()(UnifiedRoleDefinitionable) {
     }
     return nil
 }
-// GetRoleDefinitionId gets the roleDefinitionId property value. Identifier of the unifiedRoleDefinition the assignment is for. Read-only. Supports $filter (eq operator only).
+// GetRoleDefinitionId gets the roleDefinitionId property value. Identifier of the unifiedRoleDefinition the assignment is for. Read-only. Supports $filter (eq, in).
 func (m *UnifiedRoleAssignment) GetRoleDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("roleDefinitionId")
     if err != nil {
@@ -336,7 +336,7 @@ func (m *UnifiedRoleAssignment) SetAppScope(value AppScopeable)() {
         panic(err)
     }
 }
-// SetAppScopeId sets the appScopeId property value. Identifier of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.  For the entitlement management provider, use app scopes to specify a catalog, for example /AccessPackageCatalog/beedadfe-01d5-4025-910b-84abb9369997.
+// SetAppScopeId sets the appScopeId property value. Identifier of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by a resource application only. For the entitlement management provider, use this property to specify a catalog, for example /AccessPackageCatalog/beedadfe-01d5-4025-910b-84abb9369997. Supports $filter (eq, in). For example /roleManagement/entitlementManagement/roleAssignments?$filter=appScopeId eq '/AccessPackageCatalog/{catalog id}'.
 func (m *UnifiedRoleAssignment) SetAppScopeId(value *string)() {
     err := m.GetBackingStore().Set("appScopeId", value)
     if err != nil {
@@ -357,7 +357,7 @@ func (m *UnifiedRoleAssignment) SetDirectoryScope(value DirectoryObjectable)() {
         panic(err)
     }
 }
-// SetDirectoryScopeId sets the directoryScopeId property value. Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
+// SetDirectoryScopeId sets the directoryScopeId property value. Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications, unlike app scopes that are defined and understood by a resource application only. Supports $filter (eq, in).
 func (m *UnifiedRoleAssignment) SetDirectoryScopeId(value *string)() {
     err := m.GetBackingStore().Set("directoryScopeId", value)
     if err != nil {
@@ -371,14 +371,14 @@ func (m *UnifiedRoleAssignment) SetPrincipal(value DirectoryObjectable)() {
         panic(err)
     }
 }
-// SetPrincipalId sets the principalId property value. Identifier of the principal to which the assignment is granted. Supports $filter (eq operator only).
+// SetPrincipalId sets the principalId property value. Identifier of the principal to which the assignment is granted. Supported principals are users, role-assignable groups, and service principals. Supports $filter (eq, in).
 func (m *UnifiedRoleAssignment) SetPrincipalId(value *string)() {
     err := m.GetBackingStore().Set("principalId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPrincipalOrganizationId sets the principalOrganizationId property value. The principalOrganizationId property
+// SetPrincipalOrganizationId sets the principalOrganizationId property value. Identifier of the home tenant for the principal to which the assignment is granted.
 func (m *UnifiedRoleAssignment) SetPrincipalOrganizationId(value *string)() {
     err := m.GetBackingStore().Set("principalOrganizationId", value)
     if err != nil {
@@ -399,7 +399,7 @@ func (m *UnifiedRoleAssignment) SetRoleDefinition(value UnifiedRoleDefinitionabl
         panic(err)
     }
 }
-// SetRoleDefinitionId sets the roleDefinitionId property value. Identifier of the unifiedRoleDefinition the assignment is for. Read-only. Supports $filter (eq operator only).
+// SetRoleDefinitionId sets the roleDefinitionId property value. Identifier of the unifiedRoleDefinition the assignment is for. Read-only. Supports $filter (eq, in).
 func (m *UnifiedRoleAssignment) SetRoleDefinitionId(value *string)() {
     err := m.GetBackingStore().Set("roleDefinitionId", value)
     if err != nil {

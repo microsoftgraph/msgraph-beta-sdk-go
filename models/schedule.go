@@ -481,7 +481,7 @@ func (m *Schedule) GetTimeClockEnabled()(*bool) {
     }
     return nil
 }
-// GetTimeClockSettings gets the timeClockSettings property value. The timeClockSettings property
+// GetTimeClockSettings gets the timeClockSettings property value. The time clock location settings for this schedule.
 func (m *Schedule) GetTimeClockSettings()(TimeClockSettingsable) {
     val, err := m.GetBackingStore().Get("timeClockSettings")
     if err != nil {
@@ -547,7 +547,7 @@ func (m *Schedule) GetTimeZone()(*string) {
     }
     return nil
 }
-// GetWorkforceIntegrationIds gets the workforceIntegrationIds property value. The workforceIntegrationIds property
+// GetWorkforceIntegrationIds gets the workforceIntegrationIds property value. The Ids for the workforce integrations associated with this schedule.
 func (m *Schedule) GetWorkforceIntegrationIds()([]string) {
     val, err := m.GetBackingStore().Get("workforceIntegrationIds")
     if err != nil {
@@ -857,7 +857,7 @@ func (m *Schedule) SetTimeClockEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetTimeClockSettings sets the timeClockSettings property value. The timeClockSettings property
+// SetTimeClockSettings sets the timeClockSettings property value. The time clock location settings for this schedule.
 func (m *Schedule) SetTimeClockSettings(value TimeClockSettingsable)() {
     err := m.GetBackingStore().Set("timeClockSettings", value)
     if err != nil {
@@ -899,7 +899,7 @@ func (m *Schedule) SetTimeZone(value *string)() {
         panic(err)
     }
 }
-// SetWorkforceIntegrationIds sets the workforceIntegrationIds property value. The workforceIntegrationIds property
+// SetWorkforceIntegrationIds sets the workforceIntegrationIds property value. The Ids for the workforce integrations associated with this schedule.
 func (m *Schedule) SetWorkforceIntegrationIds(value []string)() {
     err := m.GetBackingStore().Set("workforceIntegrationIds", value)
     if err != nil {
