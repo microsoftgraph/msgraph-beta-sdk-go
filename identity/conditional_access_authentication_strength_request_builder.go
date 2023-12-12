@@ -59,7 +59,6 @@ func NewConditionalAccessAuthenticationStrengthRequestBuilder(rawUrl string, req
     return NewConditionalAccessAuthenticationStrengthRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property authenticationStrength for identity
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *ConditionalAccessAuthenticationStrengthRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationStrengthRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +75,6 @@ func (m *ConditionalAccessAuthenticationStrengthRequestBuilder) Delete(ctx conte
     return nil
 }
 // Get defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *ConditionalAccessAuthenticationStrengthRequestBuilder) Get(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationStrengthRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationStrengthRootable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,7 +94,6 @@ func (m *ConditionalAccessAuthenticationStrengthRequestBuilder) Get(ctx context.
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationStrengthRootable), nil
 }
 // Patch update the navigation property authenticationStrength in identity
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *ConditionalAccessAuthenticationStrengthRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationStrengthRootable, requestConfiguration *ConditionalAccessAuthenticationStrengthRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationStrengthRootable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,7 +117,6 @@ func (m *ConditionalAccessAuthenticationStrengthRequestBuilder) Policies()(*Cond
     return NewConditionalAccessAuthenticationStrengthPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property authenticationStrength for identity
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *ConditionalAccessAuthenticationStrengthRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationStrengthRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -131,7 +127,6 @@ func (m *ConditionalAccessAuthenticationStrengthRequestBuilder) ToDeleteRequestI
     return requestInfo, nil
 }
 // ToGetRequestInformation defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *ConditionalAccessAuthenticationStrengthRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationStrengthRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -145,7 +140,6 @@ func (m *ConditionalAccessAuthenticationStrengthRequestBuilder) ToGetRequestInfo
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property authenticationStrength in identity
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *ConditionalAccessAuthenticationStrengthRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationStrengthRootable, requestConfiguration *ConditionalAccessAuthenticationStrengthRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -160,7 +154,6 @@ func (m *ConditionalAccessAuthenticationStrengthRequestBuilder) ToPatchRequestIn
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *ConditionalAccessAuthenticationStrengthRequestBuilder) WithUrl(rawUrl string)(*ConditionalAccessAuthenticationStrengthRequestBuilder) {
     return NewConditionalAccessAuthenticationStrengthRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

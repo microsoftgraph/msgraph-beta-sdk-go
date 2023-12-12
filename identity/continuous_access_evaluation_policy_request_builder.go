@@ -55,7 +55,6 @@ func NewContinuousAccessEvaluationPolicyRequestBuilder(rawUrl string, requestAda
     return NewContinuousAccessEvaluationPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property continuousAccessEvaluationPolicy for identity
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *ContinuousAccessEvaluationPolicyRequestBuilder) Delete(ctx context.Context, requestConfiguration *ContinuousAccessEvaluationPolicyRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,7 +71,6 @@ func (m *ContinuousAccessEvaluationPolicyRequestBuilder) Delete(ctx context.Cont
     return nil
 }
 // Get read the properties and relationships of a continuousAccessEvaluationPolicy object.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/continuousaccessevaluationpolicy-get?view=graph-rest-1.0
@@ -95,7 +93,6 @@ func (m *ContinuousAccessEvaluationPolicyRequestBuilder) Get(ctx context.Context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContinuousAccessEvaluationPolicyable), nil
 }
 // Patch update the properties of a continuousAccessEvaluationPolicy object.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/continuousaccessevaluationpolicy-update?view=graph-rest-1.0
@@ -118,7 +115,6 @@ func (m *ContinuousAccessEvaluationPolicyRequestBuilder) Patch(ctx context.Conte
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContinuousAccessEvaluationPolicyable), nil
 }
 // ToDeleteRequestInformation delete navigation property continuousAccessEvaluationPolicy for identity
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *ContinuousAccessEvaluationPolicyRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ContinuousAccessEvaluationPolicyRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -129,7 +125,6 @@ func (m *ContinuousAccessEvaluationPolicyRequestBuilder) ToDeleteRequestInformat
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a continuousAccessEvaluationPolicy object.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *ContinuousAccessEvaluationPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ContinuousAccessEvaluationPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -143,7 +138,6 @@ func (m *ContinuousAccessEvaluationPolicyRequestBuilder) ToGetRequestInformation
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of a continuousAccessEvaluationPolicy object.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *ContinuousAccessEvaluationPolicyRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContinuousAccessEvaluationPolicyable, requestConfiguration *ContinuousAccessEvaluationPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -158,7 +152,6 @@ func (m *ContinuousAccessEvaluationPolicyRequestBuilder) ToPatchRequestInformati
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *ContinuousAccessEvaluationPolicyRequestBuilder) WithUrl(rawUrl string)(*ContinuousAccessEvaluationPolicyRequestBuilder) {
     return NewContinuousAccessEvaluationPolicyRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

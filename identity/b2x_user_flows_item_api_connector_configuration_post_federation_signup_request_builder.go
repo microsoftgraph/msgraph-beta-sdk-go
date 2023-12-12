@@ -55,7 +55,6 @@ func NewB2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuil
     return NewB2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property postFederationSignup for identity
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilder) Delete(ctx context.Context, requestConfiguration *B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,7 +71,6 @@ func (m *B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBui
     return nil
 }
 // Get get postFederationSignup from identity
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilder) Get(ctx context.Context, requestConfiguration *B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityApiConnectorable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +90,6 @@ func (m *B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBui
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityApiConnectorable), nil
 }
 // Patch update the navigation property postFederationSignup in identity
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityApiConnectorable, requestConfiguration *B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityApiConnectorable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +113,6 @@ func (m *B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBui
     return NewB2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property postFederationSignup for identity
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -127,7 +123,6 @@ func (m *B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBui
     return requestInfo, nil
 }
 // ToGetRequestInformation get postFederationSignup from identity
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -141,7 +136,6 @@ func (m *B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBui
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property postFederationSignup in identity
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityApiConnectorable, requestConfiguration *B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -160,7 +154,6 @@ func (m *B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBui
     return NewB2xUserFlowsItemApiConnectorConfigurationPostFederationSignupUploadClientCertificateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilder) WithUrl(rawUrl string)(*B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilder) {
     return NewB2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

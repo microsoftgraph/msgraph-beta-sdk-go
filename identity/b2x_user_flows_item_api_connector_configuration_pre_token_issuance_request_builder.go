@@ -55,7 +55,6 @@ func NewB2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilder(
     return NewB2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property preTokenIssuance for identity
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *B2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilder) Delete(ctx context.Context, requestConfiguration *B2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,7 +71,6 @@ func (m *B2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilder
     return nil
 }
 // Get get preTokenIssuance from identity
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *B2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilder) Get(ctx context.Context, requestConfiguration *B2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityApiConnectorable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +90,6 @@ func (m *B2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilder
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityApiConnectorable), nil
 }
 // Patch update the navigation property preTokenIssuance in identity
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *B2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityApiConnectorable, requestConfiguration *B2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityApiConnectorable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +109,6 @@ func (m *B2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilder
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityApiConnectorable), nil
 }
 // ToDeleteRequestInformation delete navigation property preTokenIssuance for identity
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *B2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *B2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -123,7 +119,6 @@ func (m *B2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilder
     return requestInfo, nil
 }
 // ToGetRequestInformation get preTokenIssuance from identity
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *B2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -137,7 +132,6 @@ func (m *B2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilder
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property preTokenIssuance in identity
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *B2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityApiConnectorable, requestConfiguration *B2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -156,7 +150,6 @@ func (m *B2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilder
     return NewB2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceUploadClientCertificateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *B2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilder) WithUrl(rawUrl string)(*B2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilder) {
     return NewB2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

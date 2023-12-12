@@ -336,7 +336,7 @@ func (m *OnlineMeeting) GetMeetingAttendanceReport()(MeetingAttendanceReportable
     }
     return nil
 }
-// GetParticipants gets the participants property value. The participants associated with the online meeting. This includes the organizer and the attendees.
+// GetParticipants gets the participants property value. The participants associated with the online meeting, including the organizer and the attendees.
 func (m *OnlineMeeting) GetParticipants()(MeetingParticipantsable) {
     val, err := m.GetBackingStore().Get("participants")
     if err != nil {
@@ -369,7 +369,7 @@ func (m *OnlineMeeting) GetRecordings()([]CallRecordingable) {
     }
     return nil
 }
-// GetRegistration gets the registration property value. The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
+// GetRegistration gets the registration property value. The registration that is enabled for an online meeting. One online meeting can only have one registration enabled.
 func (m *OnlineMeeting) GetRegistration()(MeetingRegistrationable) {
     val, err := m.GetBackingStore().Get("registration")
     if err != nil {
@@ -601,7 +601,7 @@ func (m *OnlineMeeting) SetMeetingAttendanceReport(value MeetingAttendanceReport
         panic(err)
     }
 }
-// SetParticipants sets the participants property value. The participants associated with the online meeting. This includes the organizer and the attendees.
+// SetParticipants sets the participants property value. The participants associated with the online meeting, including the organizer and the attendees.
 func (m *OnlineMeeting) SetParticipants(value MeetingParticipantsable)() {
     err := m.GetBackingStore().Set("participants", value)
     if err != nil {
@@ -622,7 +622,7 @@ func (m *OnlineMeeting) SetRecordings(value []CallRecordingable)() {
         panic(err)
     }
 }
-// SetRegistration sets the registration property value. The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
+// SetRegistration sets the registration property value. The registration that is enabled for an online meeting. One online meeting can only have one registration enabled.
 func (m *OnlineMeeting) SetRegistration(value MeetingRegistrationable)() {
     err := m.GetBackingStore().Set("registration", value)
     if err != nil {

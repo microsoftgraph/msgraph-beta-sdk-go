@@ -57,7 +57,6 @@ func (m *AuthenticationEventsFlowsGraphExternalUsersSelfServiceSignUpEventsFlowR
     return NewAuthenticationEventsFlowsGraphExternalUsersSelfServiceSignUpEventsFlowCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the items of type microsoft.graph.externalUsersSelfServiceSignUpEventsFlow in the microsoft.graph.authenticationEventsFlow collection
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *AuthenticationEventsFlowsGraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthenticationEventsFlowsGraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalUsersSelfServiceSignUpEventsFlowCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -77,7 +76,6 @@ func (m *AuthenticationEventsFlowsGraphExternalUsersSelfServiceSignUpEventsFlowR
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalUsersSelfServiceSignUpEventsFlowCollectionResponseable), nil
 }
 // ToGetRequestInformation get the items of type microsoft.graph.externalUsersSelfServiceSignUpEventsFlow in the microsoft.graph.authenticationEventsFlow collection
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *AuthenticationEventsFlowsGraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationEventsFlowsGraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -91,7 +89,6 @@ func (m *AuthenticationEventsFlowsGraphExternalUsersSelfServiceSignUpEventsFlowR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *AuthenticationEventsFlowsGraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder) WithUrl(rawUrl string)(*AuthenticationEventsFlowsGraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder) {
     return NewAuthenticationEventsFlowsGraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

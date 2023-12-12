@@ -9,10 +9,11 @@ const (
     CALLSTARTED_CALLEVENTTYPE CallEventType = iota
     CALLENDED_CALLEVENTTYPE
     UNKNOWNFUTUREVALUE_CALLEVENTTYPE
+    ROSTERUPDATED_CALLEVENTTYPE
 )
 
 func (i CallEventType) String() string {
-    return []string{"callStarted", "callEnded", "unknownFutureValue"}[i]
+    return []string{"callStarted", "callEnded", "unknownFutureValue", "rosterUpdated"}[i]
 }
 func ParseCallEventType(v string) (any, error) {
     result := CALLSTARTED_CALLEVENTTYPE
@@ -23,6 +24,8 @@ func ParseCallEventType(v string) (any, error) {
             result = CALLENDED_CALLEVENTTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CALLEVENTTYPE
+        case "rosterUpdated":
+            result = ROSTERUPDATED_CALLEVENTTYPE
         default:
             return 0, errors.New("Unknown CallEventType value: " + v)
     }

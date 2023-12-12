@@ -55,7 +55,6 @@ func NewAuthenticationEventListenersAuthenticationEventListenerItemRequestBuilde
     return NewAuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete deletes an authenticationEventListener object.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/authenticationeventlistener-delete?view=graph-rest-1.0
@@ -75,7 +74,6 @@ func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuild
     return nil
 }
 // Get get authenticationEventListeners from identity
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventListenerable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +93,6 @@ func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuild
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventListenerable), nil
 }
 // Patch update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/authenticationeventlistener-update?view=graph-rest-1.0
@@ -118,7 +115,6 @@ func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuild
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventListenerable), nil
 }
 // ToDeleteRequestInformation deletes an authenticationEventListener object.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -129,7 +125,6 @@ func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuild
     return requestInfo, nil
 }
 // ToGetRequestInformation get authenticationEventListeners from identity
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -143,7 +138,6 @@ func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuild
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventListenerable, requestConfiguration *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -158,7 +152,6 @@ func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuild
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder) WithUrl(rawUrl string)(*AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder) {
     return NewAuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

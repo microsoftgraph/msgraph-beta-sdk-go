@@ -70,6 +70,10 @@ func (m *ClassesItemAssignmentsItemSubmissionsEducationSubmissionItemRequestBuil
     }
     return nil
 }
+// Excuse provides operations to call the excuse method.
+func (m *ClassesItemAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) Excuse()(*ClassesItemAssignmentsItemSubmissionsItemExcuseRequestBuilder) {
+    return NewClassesItemAssignmentsItemSubmissionsItemExcuseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get retrieve a particular submission. Only teachers, students, and applications with application permissions can perform this operation. A submission object represents a student's work for an assignment. Resources associated with the submission represent this work. Only the assignedTo student can see and modify the submission. A teacher or application with application permissions has full access to all submissions. The grade and feedback from a teacher are part of the educationOutcome associated with this object. Only teachers or applications with application permissions can add or change grades and feedback. Students will not see the grade or feedback until the assignment has been released. Provide the header Prefer: include-unknown-enum-members to properly list submissions with the reassigned status. For details, see the examples section.
 // [Find more info here]
 // 

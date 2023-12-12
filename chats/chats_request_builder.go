@@ -104,6 +104,10 @@ func (m *ChatsRequestBuilder) Get(ctx context.Context, requestConfiguration *Cha
 func (m *ChatsRequestBuilder) GetAllMessages()(*GetAllMessagesRequestBuilder) {
     return NewGetAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GetAllRetainedMessages provides operations to call the getAllRetainedMessages method.
+func (m *ChatsRequestBuilder) GetAllRetainedMessages()(*GetAllRetainedMessagesRequestBuilder) {
+    return NewGetAllRetainedMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Post create a new chat object.
 // [Find more info here]
 // 

@@ -38,7 +38,6 @@ func NewB2xUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder(
     return NewB2xUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get media content for the navigation property defaultPages from identity
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/userflowlanguageconfiguration-list-defaultpages?view=graph-rest-1.0
@@ -61,7 +60,6 @@ func (m *B2xUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder
     return res.([]byte), nil
 }
 // Put update media content for the navigation property defaultPages in identity
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *B2xUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *B2xUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -81,7 +79,6 @@ func (m *B2xUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder
     return res.([]byte), nil
 }
 // ToGetRequestInformation get media content for the navigation property defaultPages from identity
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *B2xUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2xUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -92,7 +89,6 @@ func (m *B2xUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder
     return requestInfo, nil
 }
 // ToPutRequestInformation update media content for the navigation property defaultPages in identity
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *B2xUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *B2xUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -104,7 +100,6 @@ func (m *B2xUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *B2xUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder) WithUrl(rawUrl string)(*B2xUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder) {
     return NewB2xUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

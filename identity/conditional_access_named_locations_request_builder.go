@@ -47,7 +47,6 @@ type ConditionalAccessNamedLocationsRequestBuilderPostRequestConfiguration struc
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByNamedLocationId provides operations to manage the namedLocations property of the microsoft.graph.conditionalAccessRoot entity.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *ConditionalAccessNamedLocationsRequestBuilder) ByNamedLocationId(namedLocationId string)(*ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -76,7 +75,6 @@ func (m *ConditionalAccessNamedLocationsRequestBuilder) Count()(*ConditionalAcce
     return NewConditionalAccessNamedLocationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of namedLocation objects.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/conditionalaccessroot-list-namedlocations?view=graph-rest-1.0
@@ -99,7 +97,6 @@ func (m *ConditionalAccessNamedLocationsRequestBuilder) Get(ctx context.Context,
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationCollectionResponseable), nil
 }
 // Post create a new namedLocation object. Named locations can be either ipNamedLocation or countryNamedLocation objects.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/conditionalaccessroot-post-namedlocations?view=graph-rest-1.0
@@ -122,7 +119,6 @@ func (m *ConditionalAccessNamedLocationsRequestBuilder) Post(ctx context.Context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable), nil
 }
 // ToGetRequestInformation get a list of namedLocation objects.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *ConditionalAccessNamedLocationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessNamedLocationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -136,7 +132,6 @@ func (m *ConditionalAccessNamedLocationsRequestBuilder) ToGetRequestInformation(
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new namedLocation object. Named locations can be either ipNamedLocation or countryNamedLocation objects.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *ConditionalAccessNamedLocationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable, requestConfiguration *ConditionalAccessNamedLocationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -151,7 +146,6 @@ func (m *ConditionalAccessNamedLocationsRequestBuilder) ToPostRequestInformation
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *ConditionalAccessNamedLocationsRequestBuilder) WithUrl(rawUrl string)(*ConditionalAccessNamedLocationsRequestBuilder) {
     return NewConditionalAccessNamedLocationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -1,6 +1,7 @@
 package models
 
 import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -30,14 +31,14 @@ func (m *CallEvent) GetCallEventType()(*CallEventType) {
     }
     return nil
 }
-// GetDirection gets the direction property value. The direction property
-func (m *CallEvent) GetDirection()(*CallDirection) {
-    val, err := m.GetBackingStore().Get("direction")
+// GetEventDateTime gets the eventDateTime property value. The eventDateTime property
+func (m *CallEvent) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("eventDateTime")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CallDirection)
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     }
     return nil
 }
@@ -54,36 +55,42 @@ func (m *CallEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
-    res["direction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCallDirection)
+    res["eventDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDirection(val.(*CallDirection))
+            m.SetEventDateTime(val)
         }
         return nil
     }
-    res["joinCallUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+    res["participants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateParticipantFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetJoinCallUrl(val)
+            res := make([]Participantable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(Participantable)
+                }
+            }
+            m.SetParticipants(res)
         }
         return nil
     }
     return res
 }
-// GetJoinCallUrl gets the joinCallUrl property value. The joinCallUrl property
-func (m *CallEvent) GetJoinCallUrl()(*string) {
-    val, err := m.GetBackingStore().Get("joinCallUrl")
+// GetParticipants gets the participants property value. The participants property
+func (m *CallEvent) GetParticipants()([]Participantable) {
+    val, err := m.GetBackingStore().Get("participants")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*string)
+        return val.([]Participantable)
     }
     return nil
 }
@@ -100,15 +107,20 @@ func (m *CallEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
-    if m.GetDirection() != nil {
-        cast := (*m.GetDirection()).String()
-        err = writer.WriteStringValue("direction", &cast)
+    {
+        err = writer.WriteTimeValue("eventDateTime", m.GetEventDateTime())
         if err != nil {
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("joinCallUrl", m.GetJoinCallUrl())
+    if m.GetParticipants() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetParticipants()))
+        for i, v := range m.GetParticipants() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("participants", cast)
         if err != nil {
             return err
         }
@@ -122,16 +134,16 @@ func (m *CallEvent) SetCallEventType(value *CallEventType)() {
         panic(err)
     }
 }
-// SetDirection sets the direction property value. The direction property
-func (m *CallEvent) SetDirection(value *CallDirection)() {
-    err := m.GetBackingStore().Set("direction", value)
+// SetEventDateTime sets the eventDateTime property value. The eventDateTime property
+func (m *CallEvent) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("eventDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetJoinCallUrl sets the joinCallUrl property value. The joinCallUrl property
-func (m *CallEvent) SetJoinCallUrl(value *string)() {
-    err := m.GetBackingStore().Set("joinCallUrl", value)
+// SetParticipants sets the participants property value. The participants property
+func (m *CallEvent) SetParticipants(value []Participantable)() {
+    err := m.GetBackingStore().Set("participants", value)
     if err != nil {
         panic(err)
     }
@@ -141,9 +153,9 @@ type CallEventable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCallEventType()(*CallEventType)
-    GetDirection()(*CallDirection)
-    GetJoinCallUrl()(*string)
+    GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetParticipants()([]Participantable)
     SetCallEventType(value *CallEventType)()
-    SetDirection(value *CallDirection)()
-    SetJoinCallUrl(value *string)()
+    SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetParticipants(value []Participantable)()
 }

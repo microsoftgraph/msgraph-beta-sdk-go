@@ -31,7 +31,6 @@ func NewB2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder(rawUrl st
     return NewB2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post set the order of identityUserFlowAttributeAssignments being collected within a user flow.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identityuserflowattributeassignment-setorder?view=graph-rest-1.0
@@ -51,7 +50,6 @@ func (m *B2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder) Post(ct
     return nil
 }
 // ToPostRequestInformation set the order of identityUserFlowAttributeAssignments being collected within a user flow.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *B2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder) ToPostRequestInformation(ctx context.Context, body B2cUserFlowsItemUserAttributeAssignmentsSetOrderPostRequestBodyable, requestConfiguration *B2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -66,7 +64,6 @@ func (m *B2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder) ToPostR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *B2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder) WithUrl(rawUrl string)(*B2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder) {
     return NewB2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

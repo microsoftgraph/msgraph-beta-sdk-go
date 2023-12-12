@@ -69,10 +69,10 @@ func (m *ItemSchemaRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Schemaable), nil
 }
-// Patch create the schema for a Microsoft Search connection.
+// Patch update the properties of a schema for an externalConnection.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-1.0
 func (m *ItemSchemaRequestBuilder) Patch(ctx context.Context, body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Schemaable, requestConfiguration *ItemSchemaRequestBuilderPatchRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Schemaable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -104,7 +104,7 @@ func (m *ItemSchemaRequestBuilder) ToGetRequestInformation(ctx context.Context, 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation create the schema for a Microsoft Search connection.
+// ToPatchRequestInformation update the properties of a schema for an externalConnection.
 func (m *ItemSchemaRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Schemaable, requestConfiguration *ItemSchemaRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

@@ -40,7 +40,7 @@ func NewB2cUserFlowsItemIdentityProvidersCountRequestBuilder(rawUrl string, requ
     return NewB2cUserFlowsItemIdentityProvidersCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
+// Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 func (m *B2cUserFlowsItemIdentityProvidersCountRequestBuilder) Get(ctx context.Context, requestConfiguration *B2cUserFlowsItemIdentityProvidersCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -60,7 +60,7 @@ func (m *B2cUserFlowsItemIdentityProvidersCountRequestBuilder) Get(ctx context.C
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
+// Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 func (m *B2cUserFlowsItemIdentityProvidersCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2cUserFlowsItemIdentityProvidersCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -74,7 +74,7 @@ func (m *B2cUserFlowsItemIdentityProvidersCountRequestBuilder) ToGetRequestInfor
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
+// Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 func (m *B2cUserFlowsItemIdentityProvidersCountRequestBuilder) WithUrl(rawUrl string)(*B2cUserFlowsItemIdentityProvidersCountRequestBuilder) {
     return NewB2cUserFlowsItemIdentityProvidersCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

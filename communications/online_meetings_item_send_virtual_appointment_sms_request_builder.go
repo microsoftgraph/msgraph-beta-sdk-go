@@ -30,7 +30,10 @@ func NewOnlineMeetingsItemSendVirtualAppointmentSmsRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewOnlineMeetingsItemSendVirtualAppointmentSmsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action sendVirtualAppointmentSms
+// Post send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled. This feature requires Teams Premium. Attendees must have a valid United States phone number to receive these SMS notifications.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentsms?view=graph-rest-1.0
 func (m *OnlineMeetingsItemSendVirtualAppointmentSmsRequestBuilder) Post(ctx context.Context, body OnlineMeetingsItemSendVirtualAppointmentSmsPostRequestBodyable, requestConfiguration *OnlineMeetingsItemSendVirtualAppointmentSmsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *OnlineMeetingsItemSendVirtualAppointmentSmsRequestBuilder) Post(ctx con
     }
     return nil
 }
-// ToPostRequestInformation invoke action sendVirtualAppointmentSms
+// ToPostRequestInformation send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled. This feature requires Teams Premium. Attendees must have a valid United States phone number to receive these SMS notifications.
 func (m *OnlineMeetingsItemSendVirtualAppointmentSmsRequestBuilder) ToPostRequestInformation(ctx context.Context, body OnlineMeetingsItemSendVirtualAppointmentSmsPostRequestBodyable, requestConfiguration *OnlineMeetingsItemSendVirtualAppointmentSmsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

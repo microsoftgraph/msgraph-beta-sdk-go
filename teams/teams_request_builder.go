@@ -104,6 +104,10 @@ func (m *TeamsRequestBuilder) Get(ctx context.Context, requestConfiguration *Tea
 func (m *TeamsRequestBuilder) GetAllMessages()(*GetAllMessagesRequestBuilder) {
     return NewGetAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GetOpenShifts provides operations to call the getOpenShifts method.
+func (m *TeamsRequestBuilder) GetOpenShifts()(*GetOpenShiftsRequestBuilder) {
+    return NewGetOpenShiftsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Post create a new team.
 // [Find more info here]
 // 

@@ -21,6 +21,17 @@ func NewSchedulingGroup()(*SchedulingGroup) {
 func CreateSchedulingGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSchedulingGroup(), nil
 }
+// GetCode gets the code property value. The code for the schedulingGroup to represent an external identifier.
+func (m *SchedulingGroup) GetCode()(*string) {
+    val, err := m.GetBackingStore().Get("code")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetDisplayName gets the displayName property value. The display name for the schedulingGroup. Required.
 func (m *SchedulingGroup) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -35,6 +46,16 @@ func (m *SchedulingGroup) GetDisplayName()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SchedulingGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ChangeTrackedEntity.GetFieldDeserializers()
+    res["code"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCode(val)
+        }
+        return nil
+    }
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -102,6 +123,12 @@ func (m *SchedulingGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         return err
     }
     {
+        err = writer.WriteStringValue("code", m.GetCode())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
             return err
@@ -114,6 +141,13 @@ func (m *SchedulingGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     return nil
+}
+// SetCode sets the code property value. The code for the schedulingGroup to represent an external identifier.
+func (m *SchedulingGroup) SetCode(value *string)() {
+    err := m.GetBackingStore().Set("code", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the schedulingGroup. Required.
 func (m *SchedulingGroup) SetDisplayName(value *string)() {
@@ -140,9 +174,11 @@ func (m *SchedulingGroup) SetUserIds(value []string)() {
 type SchedulingGroupable interface {
     ChangeTrackedEntityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCode()(*string)
     GetDisplayName()(*string)
     GetIsActive()(*bool)
     GetUserIds()([]string)
+    SetCode(value *string)()
     SetDisplayName(value *string)()
     SetIsActive(value *bool)()
     SetUserIds(value []string)()

@@ -32,7 +32,6 @@ func NewCustomAuthenticationExtensionsItemValidateAuthenticationConfigurationReq
     return NewCustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post an API to check validity of the endpoint and and authentication configuration for a customAuthenticationExtension.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/customauthenticationextension-validateauthenticationconfiguration?view=graph-rest-1.0
@@ -55,7 +54,6 @@ func (m *CustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRe
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationConfigurationValidationable), nil
 }
 // ToPostRequestInformation an API to check validity of the endpoint and and authentication configuration for a customAuthenticationExtension.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *CustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *CustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -66,7 +64,6 @@ func (m *CustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *CustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRequestBuilder) WithUrl(rawUrl string)(*CustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRequestBuilder) {
     return NewCustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

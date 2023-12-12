@@ -21,6 +21,17 @@ func NewTimeOffReason()(*TimeOffReason) {
 func CreateTimeOffReasonFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTimeOffReason(), nil
 }
+// GetCode gets the code property value. The code of the timeOffReason to represent an external identifier.
+func (m *TimeOffReason) GetCode()(*string) {
+    val, err := m.GetBackingStore().Get("code")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetDisplayName gets the displayName property value. The name of the timeOffReason. Required.
 func (m *TimeOffReason) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -35,6 +46,16 @@ func (m *TimeOffReason) GetDisplayName()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TimeOffReason) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ChangeTrackedEntity.GetFieldDeserializers()
+    res["code"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCode(val)
+        }
+        return nil
+    }
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -96,6 +117,12 @@ func (m *TimeOffReason) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         return err
     }
     {
+        err = writer.WriteStringValue("code", m.GetCode())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
             return err
@@ -115,6 +142,13 @@ func (m *TimeOffReason) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     return nil
+}
+// SetCode sets the code property value. The code of the timeOffReason to represent an external identifier.
+func (m *TimeOffReason) SetCode(value *string)() {
+    err := m.GetBackingStore().Set("code", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the timeOffReason. Required.
 func (m *TimeOffReason) SetDisplayName(value *string)() {
@@ -141,9 +175,11 @@ func (m *TimeOffReason) SetIsActive(value *bool)() {
 type TimeOffReasonable interface {
     ChangeTrackedEntityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCode()(*string)
     GetDisplayName()(*string)
     GetIconType()(*TimeOffReasonIconType)
     GetIsActive()(*bool)
+    SetCode(value *string)()
     SetDisplayName(value *string)()
     SetIconType(value *TimeOffReasonIconType)()
     SetIsActive(value *bool)()

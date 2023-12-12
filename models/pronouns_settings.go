@@ -34,7 +34,7 @@ func (m *PronounsSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetIsEnabledInOrganization gets the isEnabledInOrganization property value. true to enable pronouns in the organization, false otherwise. The default is false, and pronouns are disabled.
+// GetIsEnabledInOrganization gets the isEnabledInOrganization property value. true to enable pronouns in the organization; otherwise, false. The default value is false, and pronouns are disabled.
 func (m *PronounsSettings) GetIsEnabledInOrganization()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabledInOrganization")
     if err != nil {
@@ -59,7 +59,7 @@ func (m *PronounsSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetIsEnabledInOrganization sets the isEnabledInOrganization property value. true to enable pronouns in the organization, false otherwise. The default is false, and pronouns are disabled.
+// SetIsEnabledInOrganization sets the isEnabledInOrganization property value. true to enable pronouns in the organization; otherwise, false. The default value is false, and pronouns are disabled.
 func (m *PronounsSettings) SetIsEnabledInOrganization(value *bool)() {
     err := m.GetBackingStore().Set("isEnabledInOrganization", value)
     if err != nil {

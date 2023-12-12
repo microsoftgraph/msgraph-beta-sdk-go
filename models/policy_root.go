@@ -2,20 +2,17 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // PolicyRoot 
 type PolicyRoot struct {
-    // Stores model information.
-    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+    Entity
 }
 // NewPolicyRoot instantiates a new policyRoot and sets the default values.
 func NewPolicyRoot()(*PolicyRoot) {
     m := &PolicyRoot{
+        Entity: *NewEntity(),
     }
-    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
-    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePolicyRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,18 +40,6 @@ func (m *PolicyRoot) GetActivityBasedTimeoutPolicies()([]ActivityBasedTimeoutPol
         return val.([]ActivityBasedTimeoutPolicyable)
     }
     return nil
-}
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PolicyRoot) GetAdditionalData()(map[string]any) {
-    val , err :=  m.backingStore.Get("additionalData")
-    if err != nil {
-        panic(err)
-    }
-    if val == nil {
-        var value = make(map[string]any);
-        m.SetAdditionalData(value);
-    }
-    return val.(map[string]any)
 }
 // GetAdminConsentRequestPolicy gets the adminConsentRequestPolicy property value. The policy by which consent requests are created and managed for the entire tenant.
 func (m *PolicyRoot) GetAdminConsentRequestPolicy()(AdminConsentRequestPolicyable) {
@@ -132,10 +117,6 @@ func (m *PolicyRoot) GetB2cAuthenticationMethodsPolicy()(B2cAuthenticationMethod
         return val.(B2cAuthenticationMethodsPolicyable)
     }
     return nil
-}
-// GetBackingStore gets the BackingStore property value. Stores model information.
-func (m *PolicyRoot) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
-    return m.backingStore
 }
 // GetClaimsMappingPolicies gets the claimsMappingPolicies property value. The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
 func (m *PolicyRoot) GetClaimsMappingPolicies()([]ClaimsMappingPolicyable) {
@@ -238,7 +219,7 @@ func (m *PolicyRoot) GetFederatedTokenValidationPolicy()(FederatedTokenValidatio
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res := m.Entity.GetFieldDeserializers()
     res["accessReviewPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessReviewPolicyFromDiscriminatorValue)
         if err != nil {
@@ -519,16 +500,6 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["permissionGrantPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePermissionGrantPolicyFromDiscriminatorValue)
         if err != nil {
@@ -671,17 +642,6 @@ func (m *PolicyRoot) GetMobileDeviceManagementPolicies()([]MobilityManagementPol
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *PolicyRoot) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetPermissionGrantPolicies gets the permissionGrantPolicies property value. The policy that specifies the conditions under which consent can be granted.
 func (m *PolicyRoot) GetPermissionGrantPolicies()([]PermissionGrantPolicyable) {
     val, err := m.GetBackingStore().Get("permissionGrantPolicies")
@@ -750,8 +710,12 @@ func (m *PolicyRoot) GetTokenLifetimePolicies()([]TokenLifetimePolicyable) {
 }
 // Serialize serializes information the current object
 func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.Entity.Serialize(writer)
+    if err != nil {
+        return err
+    }
     {
-        err := writer.WriteObjectValue("accessReviewPolicy", m.GetAccessReviewPolicy())
+        err = writer.WriteObjectValue("accessReviewPolicy", m.GetAccessReviewPolicy())
         if err != nil {
             return err
         }
@@ -763,13 +727,13 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err := writer.WriteCollectionOfObjectValues("activityBasedTimeoutPolicies", cast)
+        err = writer.WriteCollectionOfObjectValues("activityBasedTimeoutPolicies", cast)
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteObjectValue("adminConsentRequestPolicy", m.GetAdminConsentRequestPolicy())
+        err = writer.WriteObjectValue("adminConsentRequestPolicy", m.GetAdminConsentRequestPolicy())
         if err != nil {
             return err
         }
@@ -781,19 +745,19 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err := writer.WriteCollectionOfObjectValues("appManagementPolicies", cast)
+        err = writer.WriteCollectionOfObjectValues("appManagementPolicies", cast)
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteObjectValue("authenticationFlowsPolicy", m.GetAuthenticationFlowsPolicy())
+        err = writer.WriteObjectValue("authenticationFlowsPolicy", m.GetAuthenticationFlowsPolicy())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteObjectValue("authenticationMethodsPolicy", m.GetAuthenticationMethodsPolicy())
+        err = writer.WriteObjectValue("authenticationMethodsPolicy", m.GetAuthenticationMethodsPolicy())
         if err != nil {
             return err
         }
@@ -805,7 +769,7 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err := writer.WriteCollectionOfObjectValues("authenticationStrengthPolicies", cast)
+        err = writer.WriteCollectionOfObjectValues("authenticationStrengthPolicies", cast)
         if err != nil {
             return err
         }
@@ -817,13 +781,13 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err := writer.WriteCollectionOfObjectValues("authorizationPolicy", cast)
+        err = writer.WriteCollectionOfObjectValues("authorizationPolicy", cast)
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteObjectValue("b2cAuthenticationMethodsPolicy", m.GetB2cAuthenticationMethodsPolicy())
+        err = writer.WriteObjectValue("b2cAuthenticationMethodsPolicy", m.GetB2cAuthenticationMethodsPolicy())
         if err != nil {
             return err
         }
@@ -835,7 +799,7 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err := writer.WriteCollectionOfObjectValues("claimsMappingPolicies", cast)
+        err = writer.WriteCollectionOfObjectValues("claimsMappingPolicies", cast)
         if err != nil {
             return err
         }
@@ -847,37 +811,37 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err := writer.WriteCollectionOfObjectValues("conditionalAccessPolicies", cast)
+        err = writer.WriteCollectionOfObjectValues("conditionalAccessPolicies", cast)
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteObjectValue("crossTenantAccessPolicy", m.GetCrossTenantAccessPolicy())
+        err = writer.WriteObjectValue("crossTenantAccessPolicy", m.GetCrossTenantAccessPolicy())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteObjectValue("defaultAppManagementPolicy", m.GetDefaultAppManagementPolicy())
+        err = writer.WriteObjectValue("defaultAppManagementPolicy", m.GetDefaultAppManagementPolicy())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteObjectValue("deviceRegistrationPolicy", m.GetDeviceRegistrationPolicy())
+        err = writer.WriteObjectValue("deviceRegistrationPolicy", m.GetDeviceRegistrationPolicy())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteObjectValue("directoryRoleAccessReviewPolicy", m.GetDirectoryRoleAccessReviewPolicy())
+        err = writer.WriteObjectValue("directoryRoleAccessReviewPolicy", m.GetDirectoryRoleAccessReviewPolicy())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteObjectValue("externalIdentitiesPolicy", m.GetExternalIdentitiesPolicy())
+        err = writer.WriteObjectValue("externalIdentitiesPolicy", m.GetExternalIdentitiesPolicy())
         if err != nil {
             return err
         }
@@ -889,13 +853,13 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err := writer.WriteCollectionOfObjectValues("featureRolloutPolicies", cast)
+        err = writer.WriteCollectionOfObjectValues("featureRolloutPolicies", cast)
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteObjectValue("federatedTokenValidationPolicy", m.GetFederatedTokenValidationPolicy())
+        err = writer.WriteObjectValue("federatedTokenValidationPolicy", m.GetFederatedTokenValidationPolicy())
         if err != nil {
             return err
         }
@@ -907,13 +871,13 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err := writer.WriteCollectionOfObjectValues("homeRealmDiscoveryPolicies", cast)
+        err = writer.WriteCollectionOfObjectValues("homeRealmDiscoveryPolicies", cast)
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteObjectValue("identitySecurityDefaultsEnforcementPolicy", m.GetIdentitySecurityDefaultsEnforcementPolicy())
+        err = writer.WriteObjectValue("identitySecurityDefaultsEnforcementPolicy", m.GetIdentitySecurityDefaultsEnforcementPolicy())
         if err != nil {
             return err
         }
@@ -925,7 +889,7 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err := writer.WriteCollectionOfObjectValues("mobileAppManagementPolicies", cast)
+        err = writer.WriteCollectionOfObjectValues("mobileAppManagementPolicies", cast)
         if err != nil {
             return err
         }
@@ -937,13 +901,7 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err := writer.WriteCollectionOfObjectValues("mobileDeviceManagementPolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        err = writer.WriteCollectionOfObjectValues("mobileDeviceManagementPolicies", cast)
         if err != nil {
             return err
         }
@@ -955,7 +913,7 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err := writer.WriteCollectionOfObjectValues("permissionGrantPolicies", cast)
+        err = writer.WriteCollectionOfObjectValues("permissionGrantPolicies", cast)
         if err != nil {
             return err
         }
@@ -967,7 +925,7 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err := writer.WriteCollectionOfObjectValues("roleManagementPolicies", cast)
+        err = writer.WriteCollectionOfObjectValues("roleManagementPolicies", cast)
         if err != nil {
             return err
         }
@@ -979,7 +937,7 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err := writer.WriteCollectionOfObjectValues("roleManagementPolicyAssignments", cast)
+        err = writer.WriteCollectionOfObjectValues("roleManagementPolicyAssignments", cast)
         if err != nil {
             return err
         }
@@ -991,7 +949,7 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err := writer.WriteCollectionOfObjectValues("servicePrincipalCreationPolicies", cast)
+        err = writer.WriteCollectionOfObjectValues("servicePrincipalCreationPolicies", cast)
         if err != nil {
             return err
         }
@@ -1003,7 +961,7 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err := writer.WriteCollectionOfObjectValues("tokenIssuancePolicies", cast)
+        err = writer.WriteCollectionOfObjectValues("tokenIssuancePolicies", cast)
         if err != nil {
             return err
         }
@@ -1015,13 +973,7 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err := writer.WriteCollectionOfObjectValues("tokenLifetimePolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteAdditionalData(m.GetAdditionalData())
+        err = writer.WriteCollectionOfObjectValues("tokenLifetimePolicies", cast)
         if err != nil {
             return err
         }
@@ -1038,13 +990,6 @@ func (m *PolicyRoot) SetAccessReviewPolicy(value AccessReviewPolicyable)() {
 // SetActivityBasedTimeoutPolicies sets the activityBasedTimeoutPolicies property value. The policy that controls the idle time-out for web sessions for applications.
 func (m *PolicyRoot) SetActivityBasedTimeoutPolicies(value []ActivityBasedTimeoutPolicyable)() {
     err := m.GetBackingStore().Set("activityBasedTimeoutPolicies", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PolicyRoot) SetAdditionalData(value map[string]any)() {
-    err := m.GetBackingStore().Set("additionalData", value)
     if err != nil {
         panic(err)
     }
@@ -1097,10 +1042,6 @@ func (m *PolicyRoot) SetB2cAuthenticationMethodsPolicy(value B2cAuthenticationMe
     if err != nil {
         panic(err)
     }
-}
-// SetBackingStore sets the BackingStore property value. Stores model information.
-func (m *PolicyRoot) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
-    m.backingStore = value
 }
 // SetClaimsMappingPolicies sets the claimsMappingPolicies property value. The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
 func (m *PolicyRoot) SetClaimsMappingPolicies(value []ClaimsMappingPolicyable)() {
@@ -1193,13 +1134,6 @@ func (m *PolicyRoot) SetMobileDeviceManagementPolicies(value []MobilityManagemen
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *PolicyRoot) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetPermissionGrantPolicies sets the permissionGrantPolicies property value. The policy that specifies the conditions under which consent can be granted.
 func (m *PolicyRoot) SetPermissionGrantPolicies(value []PermissionGrantPolicyable)() {
     err := m.GetBackingStore().Set("permissionGrantPolicies", value)
@@ -1244,8 +1178,7 @@ func (m *PolicyRoot) SetTokenLifetimePolicies(value []TokenLifetimePolicyable)()
 }
 // PolicyRootable 
 type PolicyRootable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
-    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAccessReviewPolicy()(AccessReviewPolicyable)
     GetActivityBasedTimeoutPolicies()([]ActivityBasedTimeoutPolicyable)
@@ -1256,7 +1189,6 @@ type PolicyRootable interface {
     GetAuthenticationStrengthPolicies()([]AuthenticationStrengthPolicyable)
     GetAuthorizationPolicy()([]AuthorizationPolicyable)
     GetB2cAuthenticationMethodsPolicy()(B2cAuthenticationMethodsPolicyable)
-    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetClaimsMappingPolicies()([]ClaimsMappingPolicyable)
     GetConditionalAccessPolicies()([]ConditionalAccessPolicyable)
     GetCrossTenantAccessPolicy()(CrossTenantAccessPolicyable)
@@ -1270,7 +1202,6 @@ type PolicyRootable interface {
     GetIdentitySecurityDefaultsEnforcementPolicy()(IdentitySecurityDefaultsEnforcementPolicyable)
     GetMobileAppManagementPolicies()([]MobilityManagementPolicyable)
     GetMobileDeviceManagementPolicies()([]MobilityManagementPolicyable)
-    GetOdataType()(*string)
     GetPermissionGrantPolicies()([]PermissionGrantPolicyable)
     GetRoleManagementPolicies()([]UnifiedRoleManagementPolicyable)
     GetRoleManagementPolicyAssignments()([]UnifiedRoleManagementPolicyAssignmentable)
@@ -1286,7 +1217,6 @@ type PolicyRootable interface {
     SetAuthenticationStrengthPolicies(value []AuthenticationStrengthPolicyable)()
     SetAuthorizationPolicy(value []AuthorizationPolicyable)()
     SetB2cAuthenticationMethodsPolicy(value B2cAuthenticationMethodsPolicyable)()
-    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetClaimsMappingPolicies(value []ClaimsMappingPolicyable)()
     SetConditionalAccessPolicies(value []ConditionalAccessPolicyable)()
     SetCrossTenantAccessPolicy(value CrossTenantAccessPolicyable)()
@@ -1300,7 +1230,6 @@ type PolicyRootable interface {
     SetIdentitySecurityDefaultsEnforcementPolicy(value IdentitySecurityDefaultsEnforcementPolicyable)()
     SetMobileAppManagementPolicies(value []MobilityManagementPolicyable)()
     SetMobileDeviceManagementPolicies(value []MobilityManagementPolicyable)()
-    SetOdataType(value *string)()
     SetPermissionGrantPolicies(value []PermissionGrantPolicyable)()
     SetRoleManagementPolicies(value []UnifiedRoleManagementPolicyable)()
     SetRoleManagementPolicyAssignments(value []UnifiedRoleManagementPolicyAssignmentable)()

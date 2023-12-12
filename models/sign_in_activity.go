@@ -82,6 +82,26 @@ func (m *SignInActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["lastSuccessfulSignInDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastSuccessfulSignInDateTime(val)
+        }
+        return nil
+    }
+    res["lastSuccessfulSignInRequestId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastSuccessfulSignInRequestId(val)
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -138,6 +158,28 @@ func (m *SignInActivity) GetLastSignInRequestId()(*string) {
     }
     return nil
 }
+// GetLastSuccessfulSignInDateTime gets the lastSuccessfulSignInDateTime property value. The datetime of the user's most recent successful sign in activity.
+func (m *SignInActivity) GetLastSuccessfulSignInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("lastSuccessfulSignInDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetLastSuccessfulSignInRequestId gets the lastSuccessfulSignInRequestId property value. The requestID of the last successful signIn.
+func (m *SignInActivity) GetLastSuccessfulSignInRequestId()(*string) {
+    val, err := m.GetBackingStore().Get("lastSuccessfulSignInRequestId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SignInActivity) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
@@ -171,6 +213,18 @@ func (m *SignInActivity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err := writer.WriteStringValue("lastSignInRequestId", m.GetLastSignInRequestId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteTimeValue("lastSuccessfulSignInDateTime", m.GetLastSuccessfulSignInDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("lastSuccessfulSignInRequestId", m.GetLastSuccessfulSignInRequestId())
         if err != nil {
             return err
         }
@@ -228,6 +282,20 @@ func (m *SignInActivity) SetLastSignInRequestId(value *string)() {
         panic(err)
     }
 }
+// SetLastSuccessfulSignInDateTime sets the lastSuccessfulSignInDateTime property value. The datetime of the user's most recent successful sign in activity.
+func (m *SignInActivity) SetLastSuccessfulSignInDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("lastSuccessfulSignInDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLastSuccessfulSignInRequestId sets the lastSuccessfulSignInRequestId property value. The requestID of the last successful signIn.
+func (m *SignInActivity) SetLastSuccessfulSignInRequestId(value *string)() {
+    err := m.GetBackingStore().Set("lastSuccessfulSignInRequestId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SignInActivity) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -245,11 +313,15 @@ type SignInActivityable interface {
     GetLastNonInteractiveSignInRequestId()(*string)
     GetLastSignInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastSignInRequestId()(*string)
+    GetLastSuccessfulSignInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetLastSuccessfulSignInRequestId()(*string)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetLastNonInteractiveSignInDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastNonInteractiveSignInRequestId(value *string)()
     SetLastSignInDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastSignInRequestId(value *string)()
+    SetLastSuccessfulSignInDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetLastSuccessfulSignInRequestId(value *string)()
     SetOdataType(value *string)()
 }
