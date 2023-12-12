@@ -46,6 +46,10 @@ func (m *SecurityRequestBuilder) Alerts_v2()(*Alerts_v2RequestBuilder) {
 func (m *SecurityRequestBuilder) AttackSimulation()(*AttackSimulationRequestBuilder) {
     return NewAttackSimulationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// AuditLog provides operations to manage the auditLog property of the microsoft.graph.security entity.
+func (m *SecurityRequestBuilder) AuditLog()(*AuditLogRequestBuilder) {
+    return NewAuditLogRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Cases provides operations to manage the cases property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) Cases()(*CasesRequestBuilder) {
     return NewCasesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

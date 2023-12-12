@@ -104,6 +104,10 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilder) G
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilder) GetAllMessages()(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsGetAllMessagesRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsGetAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GetAllRetainedMessages provides operations to call the getAllRetainedMessages method.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilder) GetAllRetainedMessages()(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsGetAllRetainedMessagesRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsGetAllRetainedMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Post create a new channel in a team, as specified in the request body. When you create a channel, the maximum length of the channel's displayName is 50 characters. This is the name that appears to the user in Microsoft Teams. You can add a maximum of 200 members when you create a private channel.
 // [Find more info here]
 // 

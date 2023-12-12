@@ -11,7 +11,7 @@ import (
 type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleDayNotesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleDayNotesRequestBuilderGetQueryParameters get dayNotes from teamwork
+// TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleDayNotesRequestBuilderGetQueryParameters the day notes in the schedule.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleDayNotesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleDayNotesRequestBui
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleDayNotesRequestBuilder) Count()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleDayNotesCountRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleDayNotesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get dayNotes from teamwork
+// Get the day notes in the schedule.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleDayNotesRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleDayNotesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DayNoteCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleDayNotesRequestBu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DayNoteable), nil
 }
-// ToGetRequestInformation get dayNotes from teamwork
+// ToGetRequestInformation the day notes in the schedule.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleDayNotesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleDayNotesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

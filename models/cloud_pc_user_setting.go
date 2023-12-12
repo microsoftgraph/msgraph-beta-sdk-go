@@ -31,7 +31,7 @@ func (m *CloudPcUserSetting) GetAssignments()([]CloudPcUserSettingAssignmentable
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The date and time the setting was created. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
+// GetCreatedDateTime gets the createdDateTime property value. The date and time the setting was created. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
 func (m *CloudPcUserSetting) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -144,7 +144,7 @@ func (m *CloudPcUserSetting) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The last date and time the setting was modified. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The last date and time the setting was modified. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
 func (m *CloudPcUserSetting) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -188,7 +188,7 @@ func (m *CloudPcUserSetting) GetRestorePointSetting()(CloudPcRestorePointSetting
     }
     return nil
 }
-// GetSelfServiceEnabled gets the selfServiceEnabled property value. Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal.
+// GetSelfServiceEnabled gets the selfServiceEnabled property value. The selfServiceEnabled property
 func (m *CloudPcUserSetting) GetSelfServiceEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("selfServiceEnabled")
     if err != nil {
@@ -268,7 +268,7 @@ func (m *CloudPcUserSetting) SetAssignments(value []CloudPcUserSettingAssignment
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The date and time the setting was created. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
+// SetCreatedDateTime sets the createdDateTime property value. The date and time the setting was created. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
 func (m *CloudPcUserSetting) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
@@ -282,7 +282,7 @@ func (m *CloudPcUserSetting) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The last date and time the setting was modified. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The last date and time the setting was modified. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
 func (m *CloudPcUserSetting) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
@@ -310,7 +310,7 @@ func (m *CloudPcUserSetting) SetRestorePointSetting(value CloudPcRestorePointSet
         panic(err)
     }
 }
-// SetSelfServiceEnabled sets the selfServiceEnabled property value. Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal.
+// SetSelfServiceEnabled sets the selfServiceEnabled property value. The selfServiceEnabled property
 func (m *CloudPcUserSetting) SetSelfServiceEnabled(value *bool)() {
     err := m.GetBackingStore().Set("selfServiceEnabled", value)
     if err != nil {

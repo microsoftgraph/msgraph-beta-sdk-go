@@ -1272,6 +1272,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewGcpServiceAccount(), nil
                     case "#microsoft.graph.gcpUser":
                         return NewGcpUser(), nil
+                    case "#microsoft.graph.goals":
+                        return NewGoals(), nil
+                    case "#microsoft.graph.goalsExportJob":
+                        return NewGoalsExportJob(), nil
                     case "#microsoft.graph.governanceInsight":
                         return NewGovernanceInsight(), nil
                     case "#microsoft.graph.governancePolicyTemplate":
@@ -2070,6 +2074,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewPlayPromptOperation(), nil
                     case "#microsoft.graph.policyBase":
                         return NewPolicyBase(), nil
+                    case "#microsoft.graph.policyRoot":
+                        return NewPolicyRoot(), nil
                     case "#microsoft.graph.policySet":
                         return NewPolicySet(), nil
                     case "#microsoft.graph.policySetAssignment":
@@ -3178,6 +3184,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewWorkspace(), nil
                     case "#microsoft.graph.x509CertificateAuthenticationMethodConfiguration":
                         return NewX509CertificateAuthenticationMethodConfiguration(), nil
+                    case "#microsoft.graph.x509CertificateCombinationConfiguration":
+                        return NewX509CertificateCombinationConfiguration(), nil
                     case "#microsoft.graph.zebraFotaArtifact":
                         return NewZebraFotaArtifact(), nil
                     case "#microsoft.graph.zebraFotaConnector":

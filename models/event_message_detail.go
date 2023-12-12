@@ -50,6 +50,8 @@ func CreateEventMessageDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26
                         return NewChannelRenamedEventMessageDetail(), nil
                     case "#microsoft.graph.channelSetAsFavoriteByDefaultEventMessageDetail":
                         return NewChannelSetAsFavoriteByDefaultEventMessageDetail(), nil
+                    case "#microsoft.graph.channelSharingUpdatedEventMessageDetail":
+                        return NewChannelSharingUpdatedEventMessageDetail(), nil
                     case "#microsoft.graph.channelUnsetAsFavoriteByDefaultEventMessageDetail":
                         return NewChannelUnsetAsFavoriteByDefaultEventMessageDetail(), nil
                     case "#microsoft.graph.chatRenamedEventMessageDetail":

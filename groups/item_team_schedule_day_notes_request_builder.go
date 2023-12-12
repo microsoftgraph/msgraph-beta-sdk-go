@@ -11,7 +11,7 @@ import (
 type ItemTeamScheduleDayNotesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamScheduleDayNotesRequestBuilderGetQueryParameters get dayNotes from groups
+// ItemTeamScheduleDayNotesRequestBuilderGetQueryParameters the day notes in the schedule.
 type ItemTeamScheduleDayNotesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemTeamScheduleDayNotesRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *ItemTeamScheduleDayNotesRequestBuilder) Count()(*ItemTeamScheduleDayNotesCountRequestBuilder) {
     return NewItemTeamScheduleDayNotesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get dayNotes from groups
+// Get the day notes in the schedule.
 func (m *ItemTeamScheduleDayNotesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamScheduleDayNotesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DayNoteCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ItemTeamScheduleDayNotesRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DayNoteable), nil
 }
-// ToGetRequestInformation get dayNotes from groups
+// ToGetRequestInformation the day notes in the schedule.
 func (m *ItemTeamScheduleDayNotesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamScheduleDayNotesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

@@ -325,7 +325,7 @@ func (m *Authentication) GetPlatformCredentialMethods()([]PlatformCredentialAuth
     }
     return nil
 }
-// GetSignInPreferences gets the signInPreferences property value. The settings and preferences for to the sign-in experience of a user.
+// GetSignInPreferences gets the signInPreferences property value. The settings and preferences for to the sign-in experience of a user. Use this property to configure the user's default multifactor authentication (MFA) method.
 func (m *Authentication) GetSignInPreferences()(SignInPreferencesable) {
     val, err := m.GetBackingStore().Get("signInPreferences")
     if err != nil {
@@ -590,7 +590,7 @@ func (m *Authentication) SetPlatformCredentialMethods(value []PlatformCredential
         panic(err)
     }
 }
-// SetSignInPreferences sets the signInPreferences property value. The settings and preferences for to the sign-in experience of a user.
+// SetSignInPreferences sets the signInPreferences property value. The settings and preferences for to the sign-in experience of a user. Use this property to configure the user's default multifactor authentication (MFA) method.
 func (m *Authentication) SetSignInPreferences(value SignInPreferencesable)() {
     err := m.GetBackingStore().Set("signInPreferences", value)
     if err != nil {

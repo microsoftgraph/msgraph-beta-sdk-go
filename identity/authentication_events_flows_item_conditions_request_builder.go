@@ -45,7 +45,6 @@ func NewAuthenticationEventsFlowsItemConditionsRequestBuilder(rawUrl string, req
     return NewAuthenticationEventsFlowsItemConditionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the conditions representing the context of the authentication request that will be used to decide whether the events policy will be invoked.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *AuthenticationEventsFlowsItemConditionsRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthenticationEventsFlowsItemConditionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationConditionsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -65,7 +64,6 @@ func (m *AuthenticationEventsFlowsItemConditionsRequestBuilder) Get(ctx context.
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationConditionsable), nil
 }
 // ToGetRequestInformation the conditions representing the context of the authentication request that will be used to decide whether the events policy will be invoked.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *AuthenticationEventsFlowsItemConditionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationEventsFlowsItemConditionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -79,7 +77,6 @@ func (m *AuthenticationEventsFlowsItemConditionsRequestBuilder) ToGetRequestInfo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23
 func (m *AuthenticationEventsFlowsItemConditionsRequestBuilder) WithUrl(rawUrl string)(*AuthenticationEventsFlowsItemConditionsRequestBuilder) {
     return NewAuthenticationEventsFlowsItemConditionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

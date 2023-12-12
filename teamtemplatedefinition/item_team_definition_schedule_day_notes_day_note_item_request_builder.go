@@ -18,7 +18,7 @@ type ItemTeamDefinitionScheduleDayNotesDayNoteItemRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamDefinitionScheduleDayNotesDayNoteItemRequestBuilderGetQueryParameters get dayNotes from teamTemplateDefinition
+// ItemTeamDefinitionScheduleDayNotesDayNoteItemRequestBuilderGetQueryParameters the day notes in the schedule.
 type ItemTeamDefinitionScheduleDayNotesDayNoteItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemTeamDefinitionScheduleDayNotesDayNoteItemRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get get dayNotes from teamTemplateDefinition
+// Get the day notes in the schedule.
 func (m *ItemTeamDefinitionScheduleDayNotesDayNoteItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleDayNotesDayNoteItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DayNoteable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +89,10 @@ func (m *ItemTeamDefinitionScheduleDayNotesDayNoteItemRequestBuilder) Get(ctx co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DayNoteable), nil
 }
-// Patch update the navigation property dayNotes in teamTemplateDefinition
+// Patch update the properties of a day note.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/daynote-update?view=graph-rest-1.0
 func (m *ItemTeamDefinitionScheduleDayNotesDayNoteItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DayNoteable, requestConfiguration *ItemTeamDefinitionScheduleDayNotesDayNoteItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DayNoteable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +121,7 @@ func (m *ItemTeamDefinitionScheduleDayNotesDayNoteItemRequestBuilder) ToDeleteRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get dayNotes from teamTemplateDefinition
+// ToGetRequestInformation the day notes in the schedule.
 func (m *ItemTeamDefinitionScheduleDayNotesDayNoteItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleDayNotesDayNoteItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -131,7 +134,7 @@ func (m *ItemTeamDefinitionScheduleDayNotesDayNoteItemRequestBuilder) ToGetReque
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property dayNotes in teamTemplateDefinition
+// ToPatchRequestInformation update the properties of a day note.
 func (m *ItemTeamDefinitionScheduleDayNotesDayNoteItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DayNoteable, requestConfiguration *ItemTeamDefinitionScheduleDayNotesDayNoteItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

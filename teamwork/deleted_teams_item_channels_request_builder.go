@@ -101,6 +101,10 @@ func (m *DeletedTeamsItemChannelsRequestBuilder) Get(ctx context.Context, reques
 func (m *DeletedTeamsItemChannelsRequestBuilder) GetAllMessages()(*DeletedTeamsItemChannelsGetAllMessagesRequestBuilder) {
     return NewDeletedTeamsItemChannelsGetAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GetAllRetainedMessages provides operations to call the getAllRetainedMessages method.
+func (m *DeletedTeamsItemChannelsRequestBuilder) GetAllRetainedMessages()(*DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder) {
+    return NewDeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Post create new navigation property to channels for teamwork
 func (m *DeletedTeamsItemChannelsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, requestConfiguration *DeletedTeamsItemChannelsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
