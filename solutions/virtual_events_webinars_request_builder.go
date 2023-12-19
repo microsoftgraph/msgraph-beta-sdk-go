@@ -11,7 +11,7 @@ import (
 type VirtualEventsWebinarsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEventsWebinarsRequestBuilderGetQueryParameters get the list of all virtualEventWebinar objects created in a tenant.
+// VirtualEventsWebinarsRequestBuilderGetQueryParameters get the list of all virtualEventWebinar objects created in the tenant.
 type VirtualEventsWebinarsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewVirtualEventsWebinarsRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *VirtualEventsWebinarsRequestBuilder) Count()(*VirtualEventsWebinarsCountRequestBuilder) {
     return NewVirtualEventsWebinarsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of all virtualEventWebinar objects created in a tenant.
+// Get get the list of all virtualEventWebinar objects created in the tenant.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/virtualeventsroot-list-webinars?view=graph-rest-1.0
@@ -123,7 +123,7 @@ func (m *VirtualEventsWebinarsRequestBuilder) Post(ctx context.Context, body ie2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventWebinarable), nil
 }
-// ToGetRequestInformation get the list of all virtualEventWebinar objects created in a tenant.
+// ToGetRequestInformation get the list of all virtualEventWebinar objects created in the tenant.
 func (m *VirtualEventsWebinarsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

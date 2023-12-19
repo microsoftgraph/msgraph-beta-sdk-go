@@ -41,6 +41,16 @@ func (m *MicrosoftManagedDesktop) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MicrosoftManagedDesktop) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["managedType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseMicrosoftManagedDesktopType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetManagedType(val.(*MicrosoftManagedDesktopType))
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -72,6 +82,17 @@ func (m *MicrosoftManagedDesktop) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     return res
+}
+// GetManagedType gets the managedType property value. The managedType property
+func (m *MicrosoftManagedDesktop) GetManagedType()(*MicrosoftManagedDesktopType) {
+    val, err := m.GetBackingStore().Get("managedType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MicrosoftManagedDesktopType)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MicrosoftManagedDesktop) GetOdataType()(*string) {
@@ -108,6 +129,13 @@ func (m *MicrosoftManagedDesktop) GetTypeEscaped()(*MicrosoftManagedDesktopType)
 }
 // Serialize serializes information the current object
 func (m *MicrosoftManagedDesktop) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetManagedType() != nil {
+        cast := (*m.GetManagedType()).String()
+        err := writer.WriteStringValue("managedType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
@@ -146,6 +174,13 @@ func (m *MicrosoftManagedDesktop) SetAdditionalData(value map[string]any)() {
 func (m *MicrosoftManagedDesktop) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetManagedType sets the managedType property value. The managedType property
+func (m *MicrosoftManagedDesktop) SetManagedType(value *MicrosoftManagedDesktopType)() {
+    err := m.GetBackingStore().Set("managedType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MicrosoftManagedDesktop) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -173,10 +208,12 @@ type MicrosoftManagedDesktopable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetManagedType()(*MicrosoftManagedDesktopType)
     GetOdataType()(*string)
     GetProfile()(*string)
     GetTypeEscaped()(*MicrosoftManagedDesktopType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetManagedType(value *MicrosoftManagedDesktopType)()
     SetOdataType(value *string)()
     SetProfile(value *string)()
     SetTypeEscaped(value *MicrosoftManagedDesktopType)()

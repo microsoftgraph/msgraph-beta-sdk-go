@@ -58,7 +58,7 @@ func (m *EnumeratedDeviceRegistrationMembership) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetGroups gets the groups property value. The groups property
+// GetGroups gets the groups property value. List of groups that this policy applies to.
 func (m *EnumeratedDeviceRegistrationMembership) GetGroups()([]string) {
     val, err := m.GetBackingStore().Get("groups")
     if err != nil {
@@ -69,7 +69,7 @@ func (m *EnumeratedDeviceRegistrationMembership) GetGroups()([]string) {
     }
     return nil
 }
-// GetUsers gets the users property value. The users property
+// GetUsers gets the users property value. List of users that this policy applies to.
 func (m *EnumeratedDeviceRegistrationMembership) GetUsers()([]string) {
     val, err := m.GetBackingStore().Get("users")
     if err != nil {
@@ -100,14 +100,14 @@ func (m *EnumeratedDeviceRegistrationMembership) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetGroups sets the groups property value. The groups property
+// SetGroups sets the groups property value. List of groups that this policy applies to.
 func (m *EnumeratedDeviceRegistrationMembership) SetGroups(value []string)() {
     err := m.GetBackingStore().Set("groups", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUsers sets the users property value. The users property
+// SetUsers sets the users property value. List of users that this policy applies to.
 func (m *EnumeratedDeviceRegistrationMembership) SetUsers(value []string)() {
     err := m.GetBackingStore().Set("users", value)
     if err != nil {

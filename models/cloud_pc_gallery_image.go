@@ -105,6 +105,16 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["offerName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOfferName(val)
+        }
+        return nil
+    }
     res["publisher"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -112,6 +122,16 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetPublisher(val)
+        }
+        return nil
+    }
+    res["publisherName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPublisherName(val)
         }
         return nil
     }
@@ -152,6 +172,16 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetSkuDisplayName(val)
+        }
+        return nil
+    }
+    res["skuName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSkuName(val)
         }
         return nil
     }
@@ -199,9 +229,31 @@ func (m *CloudPcGalleryImage) GetOfferDisplayName()(*string) {
     }
     return nil
 }
+// GetOfferName gets the offerName property value. The offerName property
+func (m *CloudPcGalleryImage) GetOfferName()(*string) {
+    val, err := m.GetBackingStore().Get("offerName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetPublisher gets the publisher property value. The publisher name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
 func (m *CloudPcGalleryImage) GetPublisher()(*string) {
     val, err := m.GetBackingStore().Get("publisher")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetPublisherName gets the publisherName property value. The publisherName property
+func (m *CloudPcGalleryImage) GetPublisherName()(*string) {
+    val, err := m.GetBackingStore().Get("publisherName")
     if err != nil {
         panic(err)
     }
@@ -246,6 +298,17 @@ func (m *CloudPcGalleryImage) GetSku()(*string) {
 // GetSkuDisplayName gets the skuDisplayName property value. The official display stock keeping unit (SKU) name of this gallery image. For example, 2004. Read-only.
 func (m *CloudPcGalleryImage) GetSkuDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("skuDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetSkuName gets the skuName property value. The skuName property
+func (m *CloudPcGalleryImage) GetSkuName()(*string) {
+    val, err := m.GetBackingStore().Get("skuName")
     if err != nil {
         panic(err)
     }
@@ -313,7 +376,19 @@ func (m *CloudPcGalleryImage) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err = writer.WriteStringValue("offerName", m.GetOfferName())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("publisher", m.GetPublisher())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("publisherName", m.GetPublisherName())
         if err != nil {
             return err
         }
@@ -338,6 +413,12 @@ func (m *CloudPcGalleryImage) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     {
         err = writer.WriteStringValue("skuDisplayName", m.GetSkuDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("skuName", m.GetSkuName())
         if err != nil {
             return err
         }
@@ -392,9 +473,23 @@ func (m *CloudPcGalleryImage) SetOfferDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetOfferName sets the offerName property value. The offerName property
+func (m *CloudPcGalleryImage) SetOfferName(value *string)() {
+    err := m.GetBackingStore().Set("offerName", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPublisher sets the publisher property value. The publisher name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
 func (m *CloudPcGalleryImage) SetPublisher(value *string)() {
     err := m.GetBackingStore().Set("publisher", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetPublisherName sets the publisherName property value. The publisherName property
+func (m *CloudPcGalleryImage) SetPublisherName(value *string)() {
+    err := m.GetBackingStore().Set("publisherName", value)
     if err != nil {
         panic(err)
     }
@@ -427,6 +522,13 @@ func (m *CloudPcGalleryImage) SetSkuDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetSkuName sets the skuName property value. The skuName property
+func (m *CloudPcGalleryImage) SetSkuName(value *string)() {
+    err := m.GetBackingStore().Set("skuName", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStartDate sets the startDate property value. The date when the image becomes available. Read-only.
 func (m *CloudPcGalleryImage) SetStartDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     err := m.GetBackingStore().Set("startDate", value)
@@ -450,11 +552,14 @@ type CloudPcGalleryImageable interface {
     GetExpirationDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetOffer()(*string)
     GetOfferDisplayName()(*string)
+    GetOfferName()(*string)
     GetPublisher()(*string)
+    GetPublisherName()(*string)
     GetRecommendedSku()(*string)
     GetSizeInGB()(*int32)
     GetSku()(*string)
     GetSkuDisplayName()(*string)
+    GetSkuName()(*string)
     GetStartDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetStatus()(*CloudPcGalleryImageStatus)
     SetDisplayName(value *string)()
@@ -462,11 +567,14 @@ type CloudPcGalleryImageable interface {
     SetExpirationDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetOffer(value *string)()
     SetOfferDisplayName(value *string)()
+    SetOfferName(value *string)()
     SetPublisher(value *string)()
+    SetPublisherName(value *string)()
     SetRecommendedSku(value *string)()
     SetSizeInGB(value *int32)()
     SetSku(value *string)()
     SetSkuDisplayName(value *string)()
+    SetSkuName(value *string)()
     SetStartDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetStatus(value *CloudPcGalleryImageStatus)()
 }

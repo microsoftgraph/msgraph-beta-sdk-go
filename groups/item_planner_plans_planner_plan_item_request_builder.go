@@ -41,6 +41,10 @@ type ItemPlannerPlansPlannerPlanItemRequestBuilderPatchRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Archive provides operations to call the archive method.
+func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) Archive()(*ItemPlannerPlansItemArchiveRequestBuilder) {
+    return NewItemPlannerPlansItemArchiveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Buckets provides operations to manage the buckets property of the microsoft.graph.plannerPlan entity.
 func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) Buckets()(*ItemPlannerPlansItemBucketsRequestBuilder) {
     return NewItemPlannerPlansItemBucketsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -160,6 +164,10 @@ func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) ToPatchRequestInformatio
         return nil, err
     }
     return requestInfo, nil
+}
+// Unarchive provides operations to call the unarchive method.
+func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) Unarchive()(*ItemPlannerPlansItemUnarchiveRequestBuilder) {
+    return NewItemPlannerPlansItemUnarchiveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) WithUrl(rawUrl string)(*ItemPlannerPlansPlannerPlanItemRequestBuilder) {

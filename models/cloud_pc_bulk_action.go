@@ -30,6 +30,8 @@ func CreateCloudPcBulkActionFromDiscriminatorValue(parseNode i878a80d2330e89d268
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.cloudPcBulkModifyDiskEncryptionType":
+                        return NewCloudPcBulkModifyDiskEncryptionType(), nil
                     case "#microsoft.graph.cloudPcBulkPowerOff":
                         return NewCloudPcBulkPowerOff(), nil
                     case "#microsoft.graph.cloudPcBulkPowerOn":

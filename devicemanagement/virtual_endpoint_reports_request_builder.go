@@ -97,6 +97,10 @@ func (m *VirtualEndpointReportsRequestBuilder) Get(ctx context.Context, requestC
 func (m *VirtualEndpointReportsRequestBuilder) GetActionStatusReports()(*VirtualEndpointReportsGetActionStatusReportsRequestBuilder) {
     return NewVirtualEndpointReportsGetActionStatusReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GetCloudPcPerformanceReport provides operations to call the getCloudPcPerformanceReport method.
+func (m *VirtualEndpointReportsRequestBuilder) GetCloudPcPerformanceReport()(*VirtualEndpointReportsGetCloudPcPerformanceReportRequestBuilder) {
+    return NewVirtualEndpointReportsGetCloudPcPerformanceReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GetCloudPcRecommendationReports provides operations to call the getCloudPcRecommendationReports method.
 func (m *VirtualEndpointReportsRequestBuilder) GetCloudPcRecommendationReports()(*VirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilder) {
     return NewVirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
