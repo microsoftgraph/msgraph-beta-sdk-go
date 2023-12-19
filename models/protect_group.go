@@ -67,25 +67,25 @@ func (m *ProtectGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     res["privacy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseGroupPrivacy)
+        val, err := n.GetEnumValue(ParseProtectGroup_privacy)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPrivacy(val.(*GroupPrivacy))
+            m.SetPrivacy(val.(*ProtectGroup_privacy))
         }
         return nil
     }
     return res
 }
 // GetPrivacy gets the privacy property value. The privacy property
-func (m *ProtectGroup) GetPrivacy()(*GroupPrivacy) {
+func (m *ProtectGroup) GetPrivacy()(*ProtectGroup_privacy) {
     val, err := m.GetBackingStore().Get("privacy")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*GroupPrivacy)
+        return val.(*ProtectGroup_privacy)
     }
     return nil
 }
@@ -131,7 +131,7 @@ func (m *ProtectGroup) SetAllowGuestUsers(value *bool)() {
     }
 }
 // SetPrivacy sets the privacy property value. The privacy property
-func (m *ProtectGroup) SetPrivacy(value *GroupPrivacy)() {
+func (m *ProtectGroup) SetPrivacy(value *ProtectGroup_privacy)() {
     err := m.GetBackingStore().Set("privacy", value)
     if err != nil {
         panic(err)
@@ -143,8 +143,8 @@ type ProtectGroupable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAllowEmailFromGuestUsers()(*bool)
     GetAllowGuestUsers()(*bool)
-    GetPrivacy()(*GroupPrivacy)
+    GetPrivacy()(*ProtectGroup_privacy)
     SetAllowEmailFromGuestUsers(value *bool)()
     SetAllowGuestUsers(value *bool)()
-    SetPrivacy(value *GroupPrivacy)()
+    SetPrivacy(value *ProtectGroup_privacy)()
 }

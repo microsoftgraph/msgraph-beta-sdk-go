@@ -55,13 +55,13 @@ func (m *WindowsManagedAppProtection) GetAllowedOutboundDataTransferDestinations
     return nil
 }
 // GetAppActionIfUnableToAuthenticateUser gets the appActionIfUnableToAuthenticateUser property value. If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD. Some possible values are block or wipe. If this property is not set, no action will be taken. Possible values are: block, wipe, warn.
-func (m *WindowsManagedAppProtection) GetAppActionIfUnableToAuthenticateUser()(*ManagedAppRemediationAction) {
+func (m *WindowsManagedAppProtection) GetAppActionIfUnableToAuthenticateUser()(*WindowsManagedAppProtection_appActionIfUnableToAuthenticateUser) {
     val, err := m.GetBackingStore().Get("appActionIfUnableToAuthenticateUser")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ManagedAppRemediationAction)
+        return val.(*WindowsManagedAppProtection_appActionIfUnableToAuthenticateUser)
     }
     return nil
 }
@@ -132,12 +132,12 @@ func (m *WindowsManagedAppProtection) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     res["appActionIfUnableToAuthenticateUser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseManagedAppRemediationAction)
+        val, err := n.GetEnumValue(ParseWindowsManagedAppProtection_appActionIfUnableToAuthenticateUser)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAppActionIfUnableToAuthenticateUser(val.(*ManagedAppRemediationAction))
+            m.SetAppActionIfUnableToAuthenticateUser(val.(*WindowsManagedAppProtection_appActionIfUnableToAuthenticateUser))
         }
         return nil
     }
@@ -734,7 +734,7 @@ func (m *WindowsManagedAppProtection) SetAllowedOutboundDataTransferDestinations
     }
 }
 // SetAppActionIfUnableToAuthenticateUser sets the appActionIfUnableToAuthenticateUser property value. If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD. Some possible values are block or wipe. If this property is not set, no action will be taken. Possible values are: block, wipe, warn.
-func (m *WindowsManagedAppProtection) SetAppActionIfUnableToAuthenticateUser(value *ManagedAppRemediationAction)() {
+func (m *WindowsManagedAppProtection) SetAppActionIfUnableToAuthenticateUser(value *WindowsManagedAppProtection_appActionIfUnableToAuthenticateUser)() {
     err := m.GetBackingStore().Set("appActionIfUnableToAuthenticateUser", value)
     if err != nil {
         panic(err)
@@ -887,7 +887,7 @@ type WindowsManagedAppProtectionable interface {
     GetAllowedInboundDataTransferSources()(*WindowsManagedAppDataTransferLevel)
     GetAllowedOutboundClipboardSharingLevel()(*WindowsManagedAppClipboardSharingLevel)
     GetAllowedOutboundDataTransferDestinations()(*WindowsManagedAppDataTransferLevel)
-    GetAppActionIfUnableToAuthenticateUser()(*ManagedAppRemediationAction)
+    GetAppActionIfUnableToAuthenticateUser()(*WindowsManagedAppProtection_appActionIfUnableToAuthenticateUser)
     GetApps()([]ManagedMobileAppable)
     GetAssignments()([]TargetedManagedAppPolicyAssignmentable)
     GetDeployedAppCount()(*int32)
@@ -911,7 +911,7 @@ type WindowsManagedAppProtectionable interface {
     SetAllowedInboundDataTransferSources(value *WindowsManagedAppDataTransferLevel)()
     SetAllowedOutboundClipboardSharingLevel(value *WindowsManagedAppClipboardSharingLevel)()
     SetAllowedOutboundDataTransferDestinations(value *WindowsManagedAppDataTransferLevel)()
-    SetAppActionIfUnableToAuthenticateUser(value *ManagedAppRemediationAction)()
+    SetAppActionIfUnableToAuthenticateUser(value *WindowsManagedAppProtection_appActionIfUnableToAuthenticateUser)()
     SetApps(value []ManagedMobileAppable)()
     SetAssignments(value []TargetedManagedAppPolicyAssignmentable)()
     SetDeployedAppCount(value *int32)()

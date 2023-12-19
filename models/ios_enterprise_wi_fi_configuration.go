@@ -22,13 +22,13 @@ func CreateIosEnterpriseWiFiConfigurationFromDiscriminatorValue(parseNode i878a8
     return NewIosEnterpriseWiFiConfiguration(), nil
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. Authentication Method when EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.
-func (m *IosEnterpriseWiFiConfiguration) GetAuthenticationMethod()(*WiFiAuthenticationMethod) {
+func (m *IosEnterpriseWiFiConfiguration) GetAuthenticationMethod()(*IosEnterpriseWiFiConfiguration_authenticationMethod) {
     val, err := m.GetBackingStore().Get("authenticationMethod")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*WiFiAuthenticationMethod)
+        return val.(*IosEnterpriseWiFiConfiguration_authenticationMethod)
     }
     return nil
 }
@@ -44,13 +44,13 @@ func (m *IosEnterpriseWiFiConfiguration) GetDerivedCredentialSettings()(DeviceMa
     return nil
 }
 // GetEapFastConfiguration gets the eapFastConfiguration property value. EAP-FAST Configuration Option when EAP-FAST is the selected EAP Type. Possible values are: noProtectedAccessCredential, useProtectedAccessCredential, useProtectedAccessCredentialAndProvision, useProtectedAccessCredentialAndProvisionAnonymously.
-func (m *IosEnterpriseWiFiConfiguration) GetEapFastConfiguration()(*EapFastConfiguration) {
+func (m *IosEnterpriseWiFiConfiguration) GetEapFastConfiguration()(*IosEnterpriseWiFiConfiguration_eapFastConfiguration) {
     val, err := m.GetBackingStore().Get("eapFastConfiguration")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EapFastConfiguration)
+        return val.(*IosEnterpriseWiFiConfiguration_eapFastConfiguration)
     }
     return nil
 }
@@ -69,12 +69,12 @@ func (m *IosEnterpriseWiFiConfiguration) GetEapType()(*EapType) {
 func (m *IosEnterpriseWiFiConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IosWiFiConfiguration.GetFieldDeserializers()
     res["authenticationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWiFiAuthenticationMethod)
+        val, err := n.GetEnumValue(ParseIosEnterpriseWiFiConfiguration_authenticationMethod)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAuthenticationMethod(val.(*WiFiAuthenticationMethod))
+            m.SetAuthenticationMethod(val.(*IosEnterpriseWiFiConfiguration_authenticationMethod))
         }
         return nil
     }
@@ -89,12 +89,12 @@ func (m *IosEnterpriseWiFiConfiguration) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["eapFastConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEapFastConfiguration)
+        val, err := n.GetEnumValue(ParseIosEnterpriseWiFiConfiguration_eapFastConfiguration)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEapFastConfiguration(val.(*EapFastConfiguration))
+            m.SetEapFastConfiguration(val.(*IosEnterpriseWiFiConfiguration_eapFastConfiguration))
         }
         return nil
     }
@@ -119,12 +119,12 @@ func (m *IosEnterpriseWiFiConfiguration) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["innerAuthenticationProtocolForEapTtls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseNonEapAuthenticationMethodForEapTtlsType)
+        val, err := n.GetEnumValue(ParseIosEnterpriseWiFiConfiguration_innerAuthenticationProtocolForEapTtls)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInnerAuthenticationProtocolForEapTtls(val.(*NonEapAuthenticationMethodForEapTtlsType))
+            m.SetInnerAuthenticationProtocolForEapTtls(val.(*IosEnterpriseWiFiConfiguration_innerAuthenticationProtocolForEapTtls))
         }
         return nil
     }
@@ -204,13 +204,13 @@ func (m *IosEnterpriseWiFiConfiguration) GetIdentityCertificateForClientAuthenti
     return nil
 }
 // GetInnerAuthenticationProtocolForEapTtls gets the innerAuthenticationProtocolForEapTtls property value. Non-EAP Method for Authentication when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
-func (m *IosEnterpriseWiFiConfiguration) GetInnerAuthenticationProtocolForEapTtls()(*NonEapAuthenticationMethodForEapTtlsType) {
+func (m *IosEnterpriseWiFiConfiguration) GetInnerAuthenticationProtocolForEapTtls()(*IosEnterpriseWiFiConfiguration_innerAuthenticationProtocolForEapTtls) {
     val, err := m.GetBackingStore().Get("innerAuthenticationProtocolForEapTtls")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*NonEapAuthenticationMethodForEapTtlsType)
+        return val.(*IosEnterpriseWiFiConfiguration_innerAuthenticationProtocolForEapTtls)
     }
     return nil
 }
@@ -354,7 +354,7 @@ func (m *IosEnterpriseWiFiConfiguration) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. Authentication Method when EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.
-func (m *IosEnterpriseWiFiConfiguration) SetAuthenticationMethod(value *WiFiAuthenticationMethod)() {
+func (m *IosEnterpriseWiFiConfiguration) SetAuthenticationMethod(value *IosEnterpriseWiFiConfiguration_authenticationMethod)() {
     err := m.GetBackingStore().Set("authenticationMethod", value)
     if err != nil {
         panic(err)
@@ -368,7 +368,7 @@ func (m *IosEnterpriseWiFiConfiguration) SetDerivedCredentialSettings(value Devi
     }
 }
 // SetEapFastConfiguration sets the eapFastConfiguration property value. EAP-FAST Configuration Option when EAP-FAST is the selected EAP Type. Possible values are: noProtectedAccessCredential, useProtectedAccessCredential, useProtectedAccessCredentialAndProvision, useProtectedAccessCredentialAndProvisionAnonymously.
-func (m *IosEnterpriseWiFiConfiguration) SetEapFastConfiguration(value *EapFastConfiguration)() {
+func (m *IosEnterpriseWiFiConfiguration) SetEapFastConfiguration(value *IosEnterpriseWiFiConfiguration_eapFastConfiguration)() {
     err := m.GetBackingStore().Set("eapFastConfiguration", value)
     if err != nil {
         panic(err)
@@ -389,7 +389,7 @@ func (m *IosEnterpriseWiFiConfiguration) SetIdentityCertificateForClientAuthenti
     }
 }
 // SetInnerAuthenticationProtocolForEapTtls sets the innerAuthenticationProtocolForEapTtls property value. Non-EAP Method for Authentication when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
-func (m *IosEnterpriseWiFiConfiguration) SetInnerAuthenticationProtocolForEapTtls(value *NonEapAuthenticationMethodForEapTtlsType)() {
+func (m *IosEnterpriseWiFiConfiguration) SetInnerAuthenticationProtocolForEapTtls(value *IosEnterpriseWiFiConfiguration_innerAuthenticationProtocolForEapTtls)() {
     err := m.GetBackingStore().Set("innerAuthenticationProtocolForEapTtls", value)
     if err != nil {
         panic(err)
@@ -434,23 +434,23 @@ func (m *IosEnterpriseWiFiConfiguration) SetUsernameFormatString(value *string)(
 type IosEnterpriseWiFiConfigurationable interface {
     IosWiFiConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAuthenticationMethod()(*WiFiAuthenticationMethod)
+    GetAuthenticationMethod()(*IosEnterpriseWiFiConfiguration_authenticationMethod)
     GetDerivedCredentialSettings()(DeviceManagementDerivedCredentialSettingsable)
-    GetEapFastConfiguration()(*EapFastConfiguration)
+    GetEapFastConfiguration()(*IosEnterpriseWiFiConfiguration_eapFastConfiguration)
     GetEapType()(*EapType)
     GetIdentityCertificateForClientAuthentication()(IosCertificateProfileBaseable)
-    GetInnerAuthenticationProtocolForEapTtls()(*NonEapAuthenticationMethodForEapTtlsType)
+    GetInnerAuthenticationProtocolForEapTtls()(*IosEnterpriseWiFiConfiguration_innerAuthenticationProtocolForEapTtls)
     GetOuterIdentityPrivacyTemporaryValue()(*string)
     GetPasswordFormatString()(*string)
     GetRootCertificatesForServerValidation()([]IosTrustedRootCertificateable)
     GetTrustedServerCertificateNames()([]string)
     GetUsernameFormatString()(*string)
-    SetAuthenticationMethod(value *WiFiAuthenticationMethod)()
+    SetAuthenticationMethod(value *IosEnterpriseWiFiConfiguration_authenticationMethod)()
     SetDerivedCredentialSettings(value DeviceManagementDerivedCredentialSettingsable)()
-    SetEapFastConfiguration(value *EapFastConfiguration)()
+    SetEapFastConfiguration(value *IosEnterpriseWiFiConfiguration_eapFastConfiguration)()
     SetEapType(value *EapType)()
     SetIdentityCertificateForClientAuthentication(value IosCertificateProfileBaseable)()
-    SetInnerAuthenticationProtocolForEapTtls(value *NonEapAuthenticationMethodForEapTtlsType)()
+    SetInnerAuthenticationProtocolForEapTtls(value *IosEnterpriseWiFiConfiguration_innerAuthenticationProtocolForEapTtls)()
     SetOuterIdentityPrivacyTemporaryValue(value *string)()
     SetPasswordFormatString(value *string)()
     SetRootCertificatesForServerValidation(value []IosTrustedRootCertificateable)()

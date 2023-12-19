@@ -54,12 +54,12 @@ func (m *CloudPcSupportedRegion) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["regionStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcSupportedRegionStatus)
+        val, err := n.GetEnumValue(ParseCloudPcSupportedRegion_regionStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRegionStatus(val.(*CloudPcSupportedRegionStatus))
+            m.SetRegionStatus(val.(*CloudPcSupportedRegion_regionStatus))
         }
         return nil
     }
@@ -87,13 +87,13 @@ func (m *CloudPcSupportedRegion) GetRegionGroup()(*CloudPcRegionGroup) {
     return nil
 }
 // GetRegionStatus gets the regionStatus property value. The status of the supported region. Possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.
-func (m *CloudPcSupportedRegion) GetRegionStatus()(*CloudPcSupportedRegionStatus) {
+func (m *CloudPcSupportedRegion) GetRegionStatus()(*CloudPcSupportedRegion_regionStatus) {
     val, err := m.GetBackingStore().Get("regionStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcSupportedRegionStatus)
+        return val.(*CloudPcSupportedRegion_regionStatus)
     }
     return nil
 }
@@ -158,7 +158,7 @@ func (m *CloudPcSupportedRegion) SetRegionGroup(value *CloudPcRegionGroup)() {
     }
 }
 // SetRegionStatus sets the regionStatus property value. The status of the supported region. Possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.
-func (m *CloudPcSupportedRegion) SetRegionStatus(value *CloudPcSupportedRegionStatus)() {
+func (m *CloudPcSupportedRegion) SetRegionStatus(value *CloudPcSupportedRegion_regionStatus)() {
     err := m.GetBackingStore().Set("regionStatus", value)
     if err != nil {
         panic(err)
@@ -177,10 +177,10 @@ type CloudPcSupportedRegionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
     GetRegionGroup()(*CloudPcRegionGroup)
-    GetRegionStatus()(*CloudPcSupportedRegionStatus)
+    GetRegionStatus()(*CloudPcSupportedRegion_regionStatus)
     GetSupportedSolution()(*CloudPcManagementService)
     SetDisplayName(value *string)()
     SetRegionGroup(value *CloudPcRegionGroup)()
-    SetRegionStatus(value *CloudPcSupportedRegionStatus)()
+    SetRegionStatus(value *CloudPcSupportedRegion_regionStatus)()
     SetSupportedSolution(value *CloudPcManagementService)()
 }

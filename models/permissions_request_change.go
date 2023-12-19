@@ -21,13 +21,13 @@ func CreatePermissionsRequestChangeFromDiscriminatorValue(parseNode i878a80d2330
     return NewPermissionsRequestChange(), nil
 }
 // GetActiveOccurrenceStatus gets the activeOccurrenceStatus property value. The status of the active occurence of the schedule if one exists. The possible values are: grantingFailed, granted, granting, revoked, revoking, revokingFailed, unknownFutureValue.
-func (m *PermissionsRequestChange) GetActiveOccurrenceStatus()(*PermissionsRequestOccurrenceStatus) {
+func (m *PermissionsRequestChange) GetActiveOccurrenceStatus()(*PermissionsRequestChange_activeOccurrenceStatus) {
     val, err := m.GetBackingStore().Get("activeOccurrenceStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PermissionsRequestOccurrenceStatus)
+        return val.(*PermissionsRequestChange_activeOccurrenceStatus)
     }
     return nil
 }
@@ -35,12 +35,12 @@ func (m *PermissionsRequestChange) GetActiveOccurrenceStatus()(*PermissionsReque
 func (m *PermissionsRequestChange) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activeOccurrenceStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePermissionsRequestOccurrenceStatus)
+        val, err := n.GetEnumValue(ParsePermissionsRequestChange_activeOccurrenceStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetActiveOccurrenceStatus(val.(*PermissionsRequestOccurrenceStatus))
+            m.SetActiveOccurrenceStatus(val.(*PermissionsRequestChange_activeOccurrenceStatus))
         }
         return nil
     }
@@ -171,7 +171,7 @@ func (m *PermissionsRequestChange) Serialize(writer i878a80d2330e89d26896388a3f4
     return nil
 }
 // SetActiveOccurrenceStatus sets the activeOccurrenceStatus property value. The status of the active occurence of the schedule if one exists. The possible values are: grantingFailed, granted, granting, revoked, revoking, revokingFailed, unknownFutureValue.
-func (m *PermissionsRequestChange) SetActiveOccurrenceStatus(value *PermissionsRequestOccurrenceStatus)() {
+func (m *PermissionsRequestChange) SetActiveOccurrenceStatus(value *PermissionsRequestChange_activeOccurrenceStatus)() {
     err := m.GetBackingStore().Set("activeOccurrenceStatus", value)
     if err != nil {
         panic(err)
@@ -209,12 +209,12 @@ func (m *PermissionsRequestChange) SetTicketId(value *string)() {
 type PermissionsRequestChangeable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetActiveOccurrenceStatus()(*PermissionsRequestOccurrenceStatus)
+    GetActiveOccurrenceStatus()(*PermissionsRequestChange_activeOccurrenceStatus)
     GetModificationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetPermissionsRequestId()(*string)
     GetStatusDetail()(*StatusDetail)
     GetTicketId()(*string)
-    SetActiveOccurrenceStatus(value *PermissionsRequestOccurrenceStatus)()
+    SetActiveOccurrenceStatus(value *PermissionsRequestChange_activeOccurrenceStatus)()
     SetModificationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetPermissionsRequestId(value *string)()
     SetStatusDetail(value *StatusDetail)()

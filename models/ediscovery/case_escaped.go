@@ -288,12 +288,12 @@ func (m *CaseEscaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCaseStatus)
+        val, err := n.GetEnumValue(ParseCase_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*CaseStatus))
+            m.SetStatus(val.(*Case_status))
         }
         return nil
     }
@@ -404,13 +404,13 @@ func (m *CaseEscaped) GetSourceCollections()([]SourceCollectionable) {
     return nil
 }
 // GetStatus gets the status property value. The case status. Possible values are unknown, active, pendingDelete, closing, closed, and closedWithError. For details, see the following table.
-func (m *CaseEscaped) GetStatus()(*CaseStatus) {
+func (m *CaseEscaped) GetStatus()(*Case_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CaseStatus)
+        return val.(*Case_status)
     }
     return nil
 }
@@ -684,7 +684,7 @@ func (m *CaseEscaped) SetSourceCollections(value []SourceCollectionable)() {
     }
 }
 // SetStatus sets the status property value. The case status. Possible values are unknown, active, pendingDelete, closing, closed, and closedWithError. For details, see the following table.
-func (m *CaseEscaped) SetStatus(value *CaseStatus)() {
+func (m *CaseEscaped) SetStatus(value *Case_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -716,7 +716,7 @@ type CaseEscapedable interface {
     GetReviewSets()([]ReviewSetable)
     GetSettings()(CaseSettingsable)
     GetSourceCollections()([]SourceCollectionable)
-    GetStatus()(*CaseStatus)
+    GetStatus()(*Case_status)
     GetTags()([]Tagable)
     SetClosedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)()
     SetClosedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -733,6 +733,6 @@ type CaseEscapedable interface {
     SetReviewSets(value []ReviewSetable)()
     SetSettings(value CaseSettingsable)()
     SetSourceCollections(value []SourceCollectionable)()
-    SetStatus(value *CaseStatus)()
+    SetStatus(value *Case_status)()
     SetTags(value []Tagable)()
 }

@@ -72,22 +72,22 @@ func (m *IosVpnSecurityAssociationParameters) GetFieldDeserializers()(map[string
         return nil
     }
     res["securityEncryptionAlgorithm"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVpnEncryptionAlgorithmType)
+        val, err := n.GetEnumValue(ParseIosVpnSecurityAssociationParameters_securityEncryptionAlgorithm)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSecurityEncryptionAlgorithm(val.(*VpnEncryptionAlgorithmType))
+            m.SetSecurityEncryptionAlgorithm(val.(*IosVpnSecurityAssociationParameters_securityEncryptionAlgorithm))
         }
         return nil
     }
     res["securityIntegrityAlgorithm"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVpnIntegrityAlgorithmType)
+        val, err := n.GetEnumValue(ParseIosVpnSecurityAssociationParameters_securityIntegrityAlgorithm)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSecurityIntegrityAlgorithm(val.(*VpnIntegrityAlgorithmType))
+            m.SetSecurityIntegrityAlgorithm(val.(*IosVpnSecurityAssociationParameters_securityIntegrityAlgorithm))
         }
         return nil
     }
@@ -127,24 +127,24 @@ func (m *IosVpnSecurityAssociationParameters) GetSecurityDiffieHellmanGroup()(*i
     return nil
 }
 // GetSecurityEncryptionAlgorithm gets the securityEncryptionAlgorithm property value. Encryption algorithm. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
-func (m *IosVpnSecurityAssociationParameters) GetSecurityEncryptionAlgorithm()(*VpnEncryptionAlgorithmType) {
+func (m *IosVpnSecurityAssociationParameters) GetSecurityEncryptionAlgorithm()(*IosVpnSecurityAssociationParameters_securityEncryptionAlgorithm) {
     val, err := m.GetBackingStore().Get("securityEncryptionAlgorithm")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*VpnEncryptionAlgorithmType)
+        return val.(*IosVpnSecurityAssociationParameters_securityEncryptionAlgorithm)
     }
     return nil
 }
 // GetSecurityIntegrityAlgorithm gets the securityIntegrityAlgorithm property value. Integrity algorithm. Possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.
-func (m *IosVpnSecurityAssociationParameters) GetSecurityIntegrityAlgorithm()(*VpnIntegrityAlgorithmType) {
+func (m *IosVpnSecurityAssociationParameters) GetSecurityIntegrityAlgorithm()(*IosVpnSecurityAssociationParameters_securityIntegrityAlgorithm) {
     val, err := m.GetBackingStore().Get("securityIntegrityAlgorithm")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*VpnIntegrityAlgorithmType)
+        return val.(*IosVpnSecurityAssociationParameters_securityIntegrityAlgorithm)
     }
     return nil
 }
@@ -223,14 +223,14 @@ func (m *IosVpnSecurityAssociationParameters) SetSecurityDiffieHellmanGroup(valu
     }
 }
 // SetSecurityEncryptionAlgorithm sets the securityEncryptionAlgorithm property value. Encryption algorithm. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
-func (m *IosVpnSecurityAssociationParameters) SetSecurityEncryptionAlgorithm(value *VpnEncryptionAlgorithmType)() {
+func (m *IosVpnSecurityAssociationParameters) SetSecurityEncryptionAlgorithm(value *IosVpnSecurityAssociationParameters_securityEncryptionAlgorithm)() {
     err := m.GetBackingStore().Set("securityEncryptionAlgorithm", value)
     if err != nil {
         panic(err)
     }
 }
 // SetSecurityIntegrityAlgorithm sets the securityIntegrityAlgorithm property value. Integrity algorithm. Possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.
-func (m *IosVpnSecurityAssociationParameters) SetSecurityIntegrityAlgorithm(value *VpnIntegrityAlgorithmType)() {
+func (m *IosVpnSecurityAssociationParameters) SetSecurityIntegrityAlgorithm(value *IosVpnSecurityAssociationParameters_securityIntegrityAlgorithm)() {
     err := m.GetBackingStore().Set("securityIntegrityAlgorithm", value)
     if err != nil {
         panic(err)
@@ -245,12 +245,12 @@ type IosVpnSecurityAssociationParametersable interface {
     GetLifetimeInMinutes()(*int32)
     GetOdataType()(*string)
     GetSecurityDiffieHellmanGroup()(*int32)
-    GetSecurityEncryptionAlgorithm()(*VpnEncryptionAlgorithmType)
-    GetSecurityIntegrityAlgorithm()(*VpnIntegrityAlgorithmType)
+    GetSecurityEncryptionAlgorithm()(*IosVpnSecurityAssociationParameters_securityEncryptionAlgorithm)
+    GetSecurityIntegrityAlgorithm()(*IosVpnSecurityAssociationParameters_securityIntegrityAlgorithm)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetLifetimeInMinutes(value *int32)()
     SetOdataType(value *string)()
     SetSecurityDiffieHellmanGroup(value *int32)()
-    SetSecurityEncryptionAlgorithm(value *VpnEncryptionAlgorithmType)()
-    SetSecurityIntegrityAlgorithm(value *VpnIntegrityAlgorithmType)()
+    SetSecurityEncryptionAlgorithm(value *IosVpnSecurityAssociationParameters_securityEncryptionAlgorithm)()
+    SetSecurityIntegrityAlgorithm(value *IosVpnSecurityAssociationParameters_securityIntegrityAlgorithm)()
 }

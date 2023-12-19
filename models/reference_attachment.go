@@ -35,12 +35,12 @@ func (m *ReferenceAttachment) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["permission"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseReferenceAttachmentPermission)
+        val, err := n.GetEnumValue(ParseReferenceAttachment_permission)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPermission(val.(*ReferenceAttachmentPermission))
+            m.SetPermission(val.(*ReferenceAttachment_permission))
         }
         return nil
     }
@@ -55,12 +55,12 @@ func (m *ReferenceAttachment) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["providerType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseReferenceAttachmentProvider)
+        val, err := n.GetEnumValue(ParseReferenceAttachment_providerType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProviderType(val.(*ReferenceAttachmentProvider))
+            m.SetProviderType(val.(*ReferenceAttachment_providerType))
         }
         return nil
     }
@@ -98,13 +98,13 @@ func (m *ReferenceAttachment) GetIsFolder()(*bool) {
     return nil
 }
 // GetPermission gets the permission property value. Specifies the permissions granted for the attachment by the type of provider in providerType. Possible values are: other, view, edit, anonymousView, anonymousEdit, organizationView, organizationEdit. Optional.
-func (m *ReferenceAttachment) GetPermission()(*ReferenceAttachmentPermission) {
+func (m *ReferenceAttachment) GetPermission()(*ReferenceAttachment_permission) {
     val, err := m.GetBackingStore().Get("permission")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ReferenceAttachmentPermission)
+        return val.(*ReferenceAttachment_permission)
     }
     return nil
 }
@@ -120,13 +120,13 @@ func (m *ReferenceAttachment) GetPreviewUrl()(*string) {
     return nil
 }
 // GetProviderType gets the providerType property value. The type of provider that supports an attachment of this contentType. Possible values are: other, oneDriveBusiness, oneDriveConsumer, dropbox. Optional.
-func (m *ReferenceAttachment) GetProviderType()(*ReferenceAttachmentProvider) {
+func (m *ReferenceAttachment) GetProviderType()(*ReferenceAttachment_providerType) {
     val, err := m.GetBackingStore().Get("providerType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ReferenceAttachmentProvider)
+        return val.(*ReferenceAttachment_providerType)
     }
     return nil
 }
@@ -206,7 +206,7 @@ func (m *ReferenceAttachment) SetIsFolder(value *bool)() {
     }
 }
 // SetPermission sets the permission property value. Specifies the permissions granted for the attachment by the type of provider in providerType. Possible values are: other, view, edit, anonymousView, anonymousEdit, organizationView, organizationEdit. Optional.
-func (m *ReferenceAttachment) SetPermission(value *ReferenceAttachmentPermission)() {
+func (m *ReferenceAttachment) SetPermission(value *ReferenceAttachment_permission)() {
     err := m.GetBackingStore().Set("permission", value)
     if err != nil {
         panic(err)
@@ -220,7 +220,7 @@ func (m *ReferenceAttachment) SetPreviewUrl(value *string)() {
     }
 }
 // SetProviderType sets the providerType property value. The type of provider that supports an attachment of this contentType. Possible values are: other, oneDriveBusiness, oneDriveConsumer, dropbox. Optional.
-func (m *ReferenceAttachment) SetProviderType(value *ReferenceAttachmentProvider)() {
+func (m *ReferenceAttachment) SetProviderType(value *ReferenceAttachment_providerType)() {
     err := m.GetBackingStore().Set("providerType", value)
     if err != nil {
         panic(err)
@@ -245,15 +245,15 @@ type ReferenceAttachmentable interface {
     Attachmentable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetIsFolder()(*bool)
-    GetPermission()(*ReferenceAttachmentPermission)
+    GetPermission()(*ReferenceAttachment_permission)
     GetPreviewUrl()(*string)
-    GetProviderType()(*ReferenceAttachmentProvider)
+    GetProviderType()(*ReferenceAttachment_providerType)
     GetSourceUrl()(*string)
     GetThumbnailUrl()(*string)
     SetIsFolder(value *bool)()
-    SetPermission(value *ReferenceAttachmentPermission)()
+    SetPermission(value *ReferenceAttachment_permission)()
     SetPreviewUrl(value *string)()
-    SetProviderType(value *ReferenceAttachmentProvider)()
+    SetProviderType(value *ReferenceAttachment_providerType)()
     SetSourceUrl(value *string)()
     SetThumbnailUrl(value *string)()
 }

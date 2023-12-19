@@ -38,9 +38,30 @@ func (m *CloudPcDomainJoinConfiguration) GetAdditionalData()(map[string]any) {
 func (m *CloudPcDomainJoinConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
+// GetDomainJoinType gets the domainJoinType property value. The domainJoinType property
+func (m *CloudPcDomainJoinConfiguration) GetDomainJoinType()(*CloudPcDomainJoinConfiguration_domainJoinType) {
+    val, err := m.GetBackingStore().Get("domainJoinType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcDomainJoinConfiguration_domainJoinType)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcDomainJoinConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["domainJoinType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcDomainJoinConfiguration_domainJoinType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDomainJoinType(val.(*CloudPcDomainJoinConfiguration_domainJoinType))
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -62,12 +83,12 @@ func (m *CloudPcDomainJoinConfiguration) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["regionGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcRegionGroup)
+        val, err := n.GetEnumValue(ParseCloudPcDomainJoinConfiguration_regionGroup)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRegionGroup(val.(*CloudPcRegionGroup))
+            m.SetRegionGroup(val.(*CloudPcDomainJoinConfiguration_regionGroup))
         }
         return nil
     }
@@ -82,12 +103,12 @@ func (m *CloudPcDomainJoinConfiguration) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcDomainJoinType)
+        val, err := n.GetEnumValue(ParseCloudPcDomainJoinConfiguration_type)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTypeEscaped(val.(*CloudPcDomainJoinType))
+            m.SetTypeEscaped(val.(*CloudPcDomainJoinConfiguration_type))
         }
         return nil
     }
@@ -116,13 +137,13 @@ func (m *CloudPcDomainJoinConfiguration) GetOnPremisesConnectionId()(*string) {
     return nil
 }
 // GetRegionGroup gets the regionGroup property value. The logical geographic group this region belongs to. Multiple regions can belong to one region group. A customer can select a regionGroup when provisioning a Cloud PC, and the Cloud PC will be put in one of the regions in the group based on resource status. For example, the Europe region group contains the Northern Europe and Western Europe regions. Possible values are: default, australia, canada, usCentral, usEast, usWest, france, germany, europeUnion, unitedKingdom, japan, asia, india, southAmerica, euap, usGovernment, usGovernmentDOD, unknownFutureValue, norway, switzerland, and southKorea. Read-only.
-func (m *CloudPcDomainJoinConfiguration) GetRegionGroup()(*CloudPcRegionGroup) {
+func (m *CloudPcDomainJoinConfiguration) GetRegionGroup()(*CloudPcDomainJoinConfiguration_regionGroup) {
     val, err := m.GetBackingStore().Get("regionGroup")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcRegionGroup)
+        return val.(*CloudPcDomainJoinConfiguration_regionGroup)
     }
     return nil
 }
@@ -138,18 +159,25 @@ func (m *CloudPcDomainJoinConfiguration) GetRegionName()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. Specifies how the provisioned Cloud PC will be joined to Microsoft Entra ID. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave regionName as empty. If you choose the azureADJoin type, provide a value for either onPremisesConnectionId or regionName. The possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
-func (m *CloudPcDomainJoinConfiguration) GetTypeEscaped()(*CloudPcDomainJoinType) {
+func (m *CloudPcDomainJoinConfiguration) GetTypeEscaped()(*CloudPcDomainJoinConfiguration_type) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcDomainJoinType)
+        return val.(*CloudPcDomainJoinConfiguration_type)
     }
     return nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcDomainJoinConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetDomainJoinType() != nil {
+        cast := (*m.GetDomainJoinType()).String()
+        err := writer.WriteStringValue("domainJoinType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
@@ -201,6 +229,13 @@ func (m *CloudPcDomainJoinConfiguration) SetAdditionalData(value map[string]any)
 func (m *CloudPcDomainJoinConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetDomainJoinType sets the domainJoinType property value. The domainJoinType property
+func (m *CloudPcDomainJoinConfiguration) SetDomainJoinType(value *CloudPcDomainJoinConfiguration_domainJoinType)() {
+    err := m.GetBackingStore().Set("domainJoinType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CloudPcDomainJoinConfiguration) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -216,7 +251,7 @@ func (m *CloudPcDomainJoinConfiguration) SetOnPremisesConnectionId(value *string
     }
 }
 // SetRegionGroup sets the regionGroup property value. The logical geographic group this region belongs to. Multiple regions can belong to one region group. A customer can select a regionGroup when provisioning a Cloud PC, and the Cloud PC will be put in one of the regions in the group based on resource status. For example, the Europe region group contains the Northern Europe and Western Europe regions. Possible values are: default, australia, canada, usCentral, usEast, usWest, france, germany, europeUnion, unitedKingdom, japan, asia, india, southAmerica, euap, usGovernment, usGovernmentDOD, unknownFutureValue, norway, switzerland, and southKorea. Read-only.
-func (m *CloudPcDomainJoinConfiguration) SetRegionGroup(value *CloudPcRegionGroup)() {
+func (m *CloudPcDomainJoinConfiguration) SetRegionGroup(value *CloudPcDomainJoinConfiguration_regionGroup)() {
     err := m.GetBackingStore().Set("regionGroup", value)
     if err != nil {
         panic(err)
@@ -230,7 +265,7 @@ func (m *CloudPcDomainJoinConfiguration) SetRegionName(value *string)() {
     }
 }
 // SetTypeEscaped sets the type property value. Specifies how the provisioned Cloud PC will be joined to Microsoft Entra ID. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave regionName as empty. If you choose the azureADJoin type, provide a value for either onPremisesConnectionId or regionName. The possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
-func (m *CloudPcDomainJoinConfiguration) SetTypeEscaped(value *CloudPcDomainJoinType)() {
+func (m *CloudPcDomainJoinConfiguration) SetTypeEscaped(value *CloudPcDomainJoinConfiguration_type)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -242,15 +277,17 @@ type CloudPcDomainJoinConfigurationable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDomainJoinType()(*CloudPcDomainJoinConfiguration_domainJoinType)
     GetOdataType()(*string)
     GetOnPremisesConnectionId()(*string)
-    GetRegionGroup()(*CloudPcRegionGroup)
+    GetRegionGroup()(*CloudPcDomainJoinConfiguration_regionGroup)
     GetRegionName()(*string)
-    GetTypeEscaped()(*CloudPcDomainJoinType)
+    GetTypeEscaped()(*CloudPcDomainJoinConfiguration_type)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDomainJoinType(value *CloudPcDomainJoinConfiguration_domainJoinType)()
     SetOdataType(value *string)()
     SetOnPremisesConnectionId(value *string)()
-    SetRegionGroup(value *CloudPcRegionGroup)()
+    SetRegionGroup(value *CloudPcDomainJoinConfiguration_regionGroup)()
     SetRegionName(value *string)()
-    SetTypeEscaped(value *CloudPcDomainJoinType)()
+    SetTypeEscaped(value *CloudPcDomainJoinConfiguration_type)()
 }

@@ -24,13 +24,13 @@ func CreateNetworkAccessTrafficFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewNetworkAccessTraffic(), nil
 }
 // GetAction gets the action property value. The action property
-func (m *NetworkAccessTraffic) GetAction()(*FilteringPolicyAction) {
+func (m *NetworkAccessTraffic) GetAction()(*NetworkAccessTraffic_action) {
     val, err := m.GetBackingStore().Get("action")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*FilteringPolicyAction)
+        return val.(*NetworkAccessTraffic_action)
     }
     return nil
 }
@@ -128,13 +128,13 @@ func (m *NetworkAccessTraffic) GetDestinationWebCategory()(WebCategoryable) {
     return nil
 }
 // GetDeviceCategory gets the deviceCategory property value. Represents the category classification of a device within a network infrastructure. The possible values are: client, branch, unknownFutureValue. Supports $filter (eq) and $orderby.
-func (m *NetworkAccessTraffic) GetDeviceCategory()(*DeviceCategory) {
+func (m *NetworkAccessTraffic) GetDeviceCategory()(*NetworkAccessTraffic_deviceCategory) {
     val, err := m.GetBackingStore().Get("deviceCategory")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DeviceCategory)
+        return val.(*NetworkAccessTraffic_deviceCategory)
     }
     return nil
 }
@@ -175,12 +175,12 @@ func (m *NetworkAccessTraffic) GetDeviceOperatingSystemVersion()(*string) {
 func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseFilteringPolicyAction)
+        val, err := n.GetEnumValue(ParseNetworkAccessTraffic_action)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAction(val.(*FilteringPolicyAction))
+            m.SetAction(val.(*NetworkAccessTraffic_action))
         }
         return nil
     }
@@ -255,12 +255,12 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["deviceCategory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDeviceCategory)
+        val, err := n.GetEnumValue(ParseNetworkAccessTraffic_deviceCategory)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceCategory(val.(*DeviceCategory))
+            m.SetDeviceCategory(val.(*NetworkAccessTraffic_deviceCategory))
         }
         return nil
     }
@@ -335,12 +335,12 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["networkProtocol"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseNetworkingProtocol)
+        val, err := n.GetEnumValue(ParseNetworkAccessTraffic_networkProtocol)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetNetworkProtocol(val.(*NetworkingProtocol))
+            m.SetNetworkProtocol(val.(*NetworkAccessTraffic_networkProtocol))
         }
         return nil
     }
@@ -485,12 +485,12 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["transportProtocol"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseNetworkingProtocol)
+        val, err := n.GetEnumValue(ParseNetworkAccessTraffic_transportProtocol)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTransportProtocol(val.(*NetworkingProtocol))
+            m.SetTransportProtocol(val.(*NetworkAccessTraffic_transportProtocol))
         }
         return nil
     }
@@ -561,13 +561,13 @@ func (m *NetworkAccessTraffic) GetInitiatingProcessName()(*string) {
     return nil
 }
 // GetNetworkProtocol gets the networkProtocol property value. Represents the networking protocol used for communication.The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue. Supports $filter (eq) and $orderby.
-func (m *NetworkAccessTraffic) GetNetworkProtocol()(*NetworkingProtocol) {
+func (m *NetworkAccessTraffic) GetNetworkProtocol()(*NetworkAccessTraffic_networkProtocol) {
     val, err := m.GetBackingStore().Get("networkProtocol")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*NetworkingProtocol)
+        return val.(*NetworkAccessTraffic_networkProtocol)
     }
     return nil
 }
@@ -726,13 +726,13 @@ func (m *NetworkAccessTraffic) GetTransactionId()(*string) {
     return nil
 }
 // GetTransportProtocol gets the transportProtocol property value. Represents the transport protocol used for communication.The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue. Supports $filter (eq) and $orderby.
-func (m *NetworkAccessTraffic) GetTransportProtocol()(*NetworkingProtocol) {
+func (m *NetworkAccessTraffic) GetTransportProtocol()(*NetworkAccessTraffic_transportProtocol) {
     val, err := m.GetBackingStore().Get("transportProtocol")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*NetworkingProtocol)
+        return val.(*NetworkAccessTraffic_transportProtocol)
     }
     return nil
 }
@@ -978,7 +978,7 @@ func (m *NetworkAccessTraffic) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAction sets the action property value. The action property
-func (m *NetworkAccessTraffic) SetAction(value *FilteringPolicyAction)() {
+func (m *NetworkAccessTraffic) SetAction(value *NetworkAccessTraffic_action)() {
     err := m.GetBackingStore().Set("action", value)
     if err != nil {
         panic(err)
@@ -1045,7 +1045,7 @@ func (m *NetworkAccessTraffic) SetDestinationWebCategory(value WebCategoryable)(
     }
 }
 // SetDeviceCategory sets the deviceCategory property value. Represents the category classification of a device within a network infrastructure. The possible values are: client, branch, unknownFutureValue. Supports $filter (eq) and $orderby.
-func (m *NetworkAccessTraffic) SetDeviceCategory(value *DeviceCategory)() {
+func (m *NetworkAccessTraffic) SetDeviceCategory(value *NetworkAccessTraffic_deviceCategory)() {
     err := m.GetBackingStore().Set("deviceCategory", value)
     if err != nil {
         panic(err)
@@ -1101,7 +1101,7 @@ func (m *NetworkAccessTraffic) SetInitiatingProcessName(value *string)() {
     }
 }
 // SetNetworkProtocol sets the networkProtocol property value. Represents the networking protocol used for communication.The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue. Supports $filter (eq) and $orderby.
-func (m *NetworkAccessTraffic) SetNetworkProtocol(value *NetworkingProtocol)() {
+func (m *NetworkAccessTraffic) SetNetworkProtocol(value *NetworkAccessTraffic_networkProtocol)() {
     err := m.GetBackingStore().Set("networkProtocol", value)
     if err != nil {
         panic(err)
@@ -1206,7 +1206,7 @@ func (m *NetworkAccessTraffic) SetTransactionId(value *string)() {
     }
 }
 // SetTransportProtocol sets the transportProtocol property value. Represents the transport protocol used for communication.The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue. Supports $filter (eq) and $orderby.
-func (m *NetworkAccessTraffic) SetTransportProtocol(value *NetworkingProtocol)() {
+func (m *NetworkAccessTraffic) SetTransportProtocol(value *NetworkAccessTraffic_transportProtocol)() {
     err := m.GetBackingStore().Set("transportProtocol", value)
     if err != nil {
         panic(err)
@@ -1231,7 +1231,7 @@ type NetworkAccessTrafficable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAction()(*FilteringPolicyAction)
+    GetAction()(*NetworkAccessTraffic_action)
     GetAgentVersion()(*string)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetConnectionId()(*string)
@@ -1240,7 +1240,7 @@ type NetworkAccessTrafficable interface {
     GetDestinationIp()(*string)
     GetDestinationPort()(*int32)
     GetDestinationWebCategory()(WebCategoryable)
-    GetDeviceCategory()(*DeviceCategory)
+    GetDeviceCategory()(*NetworkAccessTraffic_deviceCategory)
     GetDeviceId()(*string)
     GetDeviceOperatingSystem()(*string)
     GetDeviceOperatingSystemVersion()(*string)
@@ -1248,7 +1248,7 @@ type NetworkAccessTrafficable interface {
     GetFilteringProfileName()(*string)
     GetHeaders()(Headersable)
     GetInitiatingProcessName()(*string)
-    GetNetworkProtocol()(*NetworkingProtocol)
+    GetNetworkProtocol()(*NetworkAccessTraffic_networkProtocol)
     GetOdataType()(*string)
     GetPolicyId()(*string)
     GetPolicyName()(*string)
@@ -1263,10 +1263,10 @@ type NetworkAccessTrafficable interface {
     GetTenantId()(*string)
     GetTrafficType()(*TrafficType)
     GetTransactionId()(*string)
-    GetTransportProtocol()(*NetworkingProtocol)
+    GetTransportProtocol()(*NetworkAccessTraffic_transportProtocol)
     GetUserId()(*string)
     GetUserPrincipalName()(*string)
-    SetAction(value *FilteringPolicyAction)()
+    SetAction(value *NetworkAccessTraffic_action)()
     SetAgentVersion(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetConnectionId(value *string)()
@@ -1275,7 +1275,7 @@ type NetworkAccessTrafficable interface {
     SetDestinationIp(value *string)()
     SetDestinationPort(value *int32)()
     SetDestinationWebCategory(value WebCategoryable)()
-    SetDeviceCategory(value *DeviceCategory)()
+    SetDeviceCategory(value *NetworkAccessTraffic_deviceCategory)()
     SetDeviceId(value *string)()
     SetDeviceOperatingSystem(value *string)()
     SetDeviceOperatingSystemVersion(value *string)()
@@ -1283,7 +1283,7 @@ type NetworkAccessTrafficable interface {
     SetFilteringProfileName(value *string)()
     SetHeaders(value Headersable)()
     SetInitiatingProcessName(value *string)()
-    SetNetworkProtocol(value *NetworkingProtocol)()
+    SetNetworkProtocol(value *NetworkAccessTraffic_networkProtocol)()
     SetOdataType(value *string)()
     SetPolicyId(value *string)()
     SetPolicyName(value *string)()
@@ -1298,7 +1298,7 @@ type NetworkAccessTrafficable interface {
     SetTenantId(value *string)()
     SetTrafficType(value *TrafficType)()
     SetTransactionId(value *string)()
-    SetTransportProtocol(value *NetworkingProtocol)()
+    SetTransportProtocol(value *NetworkAccessTraffic_transportProtocol)()
     SetUserId(value *string)()
     SetUserPrincipalName(value *string)()
 }

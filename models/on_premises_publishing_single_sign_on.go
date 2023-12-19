@@ -62,12 +62,12 @@ func (m *OnPremisesPublishingSingleSignOn) GetFieldDeserializers()(map[string]fu
         return nil
     }
     res["singleSignOnMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSingleSignOnMode)
+        val, err := n.GetEnumValue(ParseOnPremisesPublishingSingleSignOn_singleSignOnMode)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSingleSignOnMode(val.(*SingleSignOnMode))
+            m.SetSingleSignOnMode(val.(*OnPremisesPublishingSingleSignOn_singleSignOnMode))
         }
         return nil
     }
@@ -96,13 +96,13 @@ func (m *OnPremisesPublishingSingleSignOn) GetOdataType()(*string) {
     return nil
 }
 // GetSingleSignOnMode gets the singleSignOnMode property value. The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased, oAuthToken.
-func (m *OnPremisesPublishingSingleSignOn) GetSingleSignOnMode()(*SingleSignOnMode) {
+func (m *OnPremisesPublishingSingleSignOn) GetSingleSignOnMode()(*OnPremisesPublishingSingleSignOn_singleSignOnMode) {
     val, err := m.GetBackingStore().Get("singleSignOnMode")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SingleSignOnMode)
+        return val.(*OnPremisesPublishingSingleSignOn_singleSignOnMode)
     }
     return nil
 }
@@ -161,7 +161,7 @@ func (m *OnPremisesPublishingSingleSignOn) SetOdataType(value *string)() {
     }
 }
 // SetSingleSignOnMode sets the singleSignOnMode property value. The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased, oAuthToken.
-func (m *OnPremisesPublishingSingleSignOn) SetSingleSignOnMode(value *SingleSignOnMode)() {
+func (m *OnPremisesPublishingSingleSignOn) SetSingleSignOnMode(value *OnPremisesPublishingSingleSignOn_singleSignOnMode)() {
     err := m.GetBackingStore().Set("singleSignOnMode", value)
     if err != nil {
         panic(err)
@@ -175,9 +175,9 @@ type OnPremisesPublishingSingleSignOnable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetKerberosSignOnSettings()(KerberosSignOnSettingsable)
     GetOdataType()(*string)
-    GetSingleSignOnMode()(*SingleSignOnMode)
+    GetSingleSignOnMode()(*OnPremisesPublishingSingleSignOn_singleSignOnMode)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetKerberosSignOnSettings(value KerberosSignOnSettingsable)()
     SetOdataType(value *string)()
-    SetSingleSignOnMode(value *SingleSignOnMode)()
+    SetSingleSignOnMode(value *OnPremisesPublishingSingleSignOn_singleSignOnMode)()
 }

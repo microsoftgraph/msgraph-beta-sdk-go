@@ -99,12 +99,12 @@ func (m *MacOSCertificateProfileBase) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     res["subjectAlternativeNameType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSubjectAlternativeNameType)
+        val, err := n.GetEnumValue(ParseMacOSCertificateProfileBase_subjectAlternativeNameType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSubjectAlternativeNameType(val.(*SubjectAlternativeNameType))
+            m.SetSubjectAlternativeNameType(val.(*MacOSCertificateProfileBase_subjectAlternativeNameType))
         }
         return nil
     }
@@ -132,13 +132,13 @@ func (m *MacOSCertificateProfileBase) GetRenewalThresholdPercentage()(*int32) {
     return nil
 }
 // GetSubjectAlternativeNameType gets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
-func (m *MacOSCertificateProfileBase) GetSubjectAlternativeNameType()(*SubjectAlternativeNameType) {
+func (m *MacOSCertificateProfileBase) GetSubjectAlternativeNameType()(*MacOSCertificateProfileBase_subjectAlternativeNameType) {
     val, err := m.GetBackingStore().Get("subjectAlternativeNameType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SubjectAlternativeNameType)
+        return val.(*MacOSCertificateProfileBase_subjectAlternativeNameType)
     }
     return nil
 }
@@ -216,7 +216,7 @@ func (m *MacOSCertificateProfileBase) SetRenewalThresholdPercentage(value *int32
     }
 }
 // SetSubjectAlternativeNameType sets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
-func (m *MacOSCertificateProfileBase) SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)() {
+func (m *MacOSCertificateProfileBase) SetSubjectAlternativeNameType(value *MacOSCertificateProfileBase_subjectAlternativeNameType)() {
     err := m.GetBackingStore().Set("subjectAlternativeNameType", value)
     if err != nil {
         panic(err)
@@ -236,11 +236,11 @@ type MacOSCertificateProfileBaseable interface {
     GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale)
     GetCertificateValidityPeriodValue()(*int32)
     GetRenewalThresholdPercentage()(*int32)
-    GetSubjectAlternativeNameType()(*SubjectAlternativeNameType)
+    GetSubjectAlternativeNameType()(*MacOSCertificateProfileBase_subjectAlternativeNameType)
     GetSubjectNameFormat()(*AppleSubjectNameFormat)
     SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)()
     SetCertificateValidityPeriodValue(value *int32)()
     SetRenewalThresholdPercentage(value *int32)()
-    SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)()
+    SetSubjectAlternativeNameType(value *MacOSCertificateProfileBase_subjectAlternativeNameType)()
     SetSubjectNameFormat(value *AppleSubjectNameFormat)()
 }

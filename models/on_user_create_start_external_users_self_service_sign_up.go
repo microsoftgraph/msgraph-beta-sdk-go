@@ -25,25 +25,25 @@ func CreateOnUserCreateStartExternalUsersSelfServiceSignUpFromDiscriminatorValue
 func (m *OnUserCreateStartExternalUsersSelfServiceSignUp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.OnUserCreateStartHandler.GetFieldDeserializers()
     res["userTypeToCreate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseUserType)
+        val, err := n.GetEnumValue(ParseOnUserCreateStartExternalUsersSelfServiceSignUp_userTypeToCreate)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUserTypeToCreate(val.(*UserType))
+            m.SetUserTypeToCreate(val.(*OnUserCreateStartExternalUsersSelfServiceSignUp_userTypeToCreate))
         }
         return nil
     }
     return res
 }
 // GetUserTypeToCreate gets the userTypeToCreate property value. The type of user object to create. The possible values are: member, guest, unknownFutureValue.
-func (m *OnUserCreateStartExternalUsersSelfServiceSignUp) GetUserTypeToCreate()(*UserType) {
+func (m *OnUserCreateStartExternalUsersSelfServiceSignUp) GetUserTypeToCreate()(*OnUserCreateStartExternalUsersSelfServiceSignUp_userTypeToCreate) {
     val, err := m.GetBackingStore().Get("userTypeToCreate")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*UserType)
+        return val.(*OnUserCreateStartExternalUsersSelfServiceSignUp_userTypeToCreate)
     }
     return nil
 }
@@ -63,7 +63,7 @@ func (m *OnUserCreateStartExternalUsersSelfServiceSignUp) Serialize(writer i878a
     return nil
 }
 // SetUserTypeToCreate sets the userTypeToCreate property value. The type of user object to create. The possible values are: member, guest, unknownFutureValue.
-func (m *OnUserCreateStartExternalUsersSelfServiceSignUp) SetUserTypeToCreate(value *UserType)() {
+func (m *OnUserCreateStartExternalUsersSelfServiceSignUp) SetUserTypeToCreate(value *OnUserCreateStartExternalUsersSelfServiceSignUp_userTypeToCreate)() {
     err := m.GetBackingStore().Set("userTypeToCreate", value)
     if err != nil {
         panic(err)
@@ -73,6 +73,6 @@ func (m *OnUserCreateStartExternalUsersSelfServiceSignUp) SetUserTypeToCreate(va
 type OnUserCreateStartExternalUsersSelfServiceSignUpable interface {
     OnUserCreateStartHandlerable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetUserTypeToCreate()(*UserType)
-    SetUserTypeToCreate(value *UserType)()
+    GetUserTypeToCreate()(*OnUserCreateStartExternalUsersSelfServiceSignUp_userTypeToCreate)
+    SetUserTypeToCreate(value *OnUserCreateStartExternalUsersSelfServiceSignUp_userTypeToCreate)()
 }

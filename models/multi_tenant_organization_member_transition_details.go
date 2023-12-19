@@ -39,24 +39,24 @@ func (m *MultiTenantOrganizationMemberTransitionDetails) GetBackingStore()(ie867
     return m.backingStore
 }
 // GetDesiredRole gets the desiredRole property value. Role of the tenant in the multitenant organization. The possible values are: owner, member, unknownFutureValue.
-func (m *MultiTenantOrganizationMemberTransitionDetails) GetDesiredRole()(*MultiTenantOrganizationMemberRole) {
+func (m *MultiTenantOrganizationMemberTransitionDetails) GetDesiredRole()(*MultiTenantOrganizationMemberTransitionDetails_desiredRole) {
     val, err := m.GetBackingStore().Get("desiredRole")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MultiTenantOrganizationMemberRole)
+        return val.(*MultiTenantOrganizationMemberTransitionDetails_desiredRole)
     }
     return nil
 }
 // GetDesiredState gets the desiredState property value. State of the tenant in the multitenant organization currently being processed. The possible values are: pending, active, removed, unknownFutureValue. Read-only.
-func (m *MultiTenantOrganizationMemberTransitionDetails) GetDesiredState()(*MultiTenantOrganizationMemberState) {
+func (m *MultiTenantOrganizationMemberTransitionDetails) GetDesiredState()(*MultiTenantOrganizationMemberTransitionDetails_desiredState) {
     val, err := m.GetBackingStore().Get("desiredState")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MultiTenantOrganizationMemberState)
+        return val.(*MultiTenantOrganizationMemberTransitionDetails_desiredState)
     }
     return nil
 }
@@ -75,22 +75,22 @@ func (m *MultiTenantOrganizationMemberTransitionDetails) GetDetails()(*string) {
 func (m *MultiTenantOrganizationMemberTransitionDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["desiredRole"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMultiTenantOrganizationMemberRole)
+        val, err := n.GetEnumValue(ParseMultiTenantOrganizationMemberTransitionDetails_desiredRole)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDesiredRole(val.(*MultiTenantOrganizationMemberRole))
+            m.SetDesiredRole(val.(*MultiTenantOrganizationMemberTransitionDetails_desiredRole))
         }
         return nil
     }
     res["desiredState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMultiTenantOrganizationMemberState)
+        val, err := n.GetEnumValue(ParseMultiTenantOrganizationMemberTransitionDetails_desiredState)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDesiredState(val.(*MultiTenantOrganizationMemberState))
+            m.SetDesiredState(val.(*MultiTenantOrganizationMemberTransitionDetails_desiredState))
         }
         return nil
     }
@@ -115,12 +115,12 @@ func (m *MultiTenantOrganizationMemberTransitionDetails) GetFieldDeserializers()
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMultiTenantOrganizationMemberProcessingStatus)
+        val, err := n.GetEnumValue(ParseMultiTenantOrganizationMemberTransitionDetails_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*MultiTenantOrganizationMemberProcessingStatus))
+            m.SetStatus(val.(*MultiTenantOrganizationMemberTransitionDetails_status))
         }
         return nil
     }
@@ -138,13 +138,13 @@ func (m *MultiTenantOrganizationMemberTransitionDetails) GetOdataType()(*string)
     return nil
 }
 // GetStatus gets the status property value. Processing state of the asynchronous job. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue. Read-only.
-func (m *MultiTenantOrganizationMemberTransitionDetails) GetStatus()(*MultiTenantOrganizationMemberProcessingStatus) {
+func (m *MultiTenantOrganizationMemberTransitionDetails) GetStatus()(*MultiTenantOrganizationMemberTransitionDetails_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MultiTenantOrganizationMemberProcessingStatus)
+        return val.(*MultiTenantOrganizationMemberTransitionDetails_status)
     }
     return nil
 }
@@ -203,14 +203,14 @@ func (m *MultiTenantOrganizationMemberTransitionDetails) SetBackingStore(value i
     m.backingStore = value
 }
 // SetDesiredRole sets the desiredRole property value. Role of the tenant in the multitenant organization. The possible values are: owner, member, unknownFutureValue.
-func (m *MultiTenantOrganizationMemberTransitionDetails) SetDesiredRole(value *MultiTenantOrganizationMemberRole)() {
+func (m *MultiTenantOrganizationMemberTransitionDetails) SetDesiredRole(value *MultiTenantOrganizationMemberTransitionDetails_desiredRole)() {
     err := m.GetBackingStore().Set("desiredRole", value)
     if err != nil {
         panic(err)
     }
 }
 // SetDesiredState sets the desiredState property value. State of the tenant in the multitenant organization currently being processed. The possible values are: pending, active, removed, unknownFutureValue. Read-only.
-func (m *MultiTenantOrganizationMemberTransitionDetails) SetDesiredState(value *MultiTenantOrganizationMemberState)() {
+func (m *MultiTenantOrganizationMemberTransitionDetails) SetDesiredState(value *MultiTenantOrganizationMemberTransitionDetails_desiredState)() {
     err := m.GetBackingStore().Set("desiredState", value)
     if err != nil {
         panic(err)
@@ -231,7 +231,7 @@ func (m *MultiTenantOrganizationMemberTransitionDetails) SetOdataType(value *str
     }
 }
 // SetStatus sets the status property value. Processing state of the asynchronous job. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue. Read-only.
-func (m *MultiTenantOrganizationMemberTransitionDetails) SetStatus(value *MultiTenantOrganizationMemberProcessingStatus)() {
+func (m *MultiTenantOrganizationMemberTransitionDetails) SetStatus(value *MultiTenantOrganizationMemberTransitionDetails_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -243,15 +243,15 @@ type MultiTenantOrganizationMemberTransitionDetailsable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetDesiredRole()(*MultiTenantOrganizationMemberRole)
-    GetDesiredState()(*MultiTenantOrganizationMemberState)
+    GetDesiredRole()(*MultiTenantOrganizationMemberTransitionDetails_desiredRole)
+    GetDesiredState()(*MultiTenantOrganizationMemberTransitionDetails_desiredState)
     GetDetails()(*string)
     GetOdataType()(*string)
-    GetStatus()(*MultiTenantOrganizationMemberProcessingStatus)
+    GetStatus()(*MultiTenantOrganizationMemberTransitionDetails_status)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetDesiredRole(value *MultiTenantOrganizationMemberRole)()
-    SetDesiredState(value *MultiTenantOrganizationMemberState)()
+    SetDesiredRole(value *MultiTenantOrganizationMemberTransitionDetails_desiredRole)()
+    SetDesiredState(value *MultiTenantOrganizationMemberTransitionDetails_desiredState)()
     SetDetails(value *string)()
     SetOdataType(value *string)()
-    SetStatus(value *MultiTenantOrganizationMemberProcessingStatus)()
+    SetStatus(value *MultiTenantOrganizationMemberTransitionDetails_status)()
 }

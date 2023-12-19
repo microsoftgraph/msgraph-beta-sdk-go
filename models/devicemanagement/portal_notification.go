@@ -79,13 +79,13 @@ func (m *PortalNotification) GetAlertRuleName()(*string) {
     return nil
 }
 // GetAlertRuleTemplate gets the alertRuleTemplate property value. The associated alert rule template. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue, cloudPcInGracePeriodScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.
-func (m *PortalNotification) GetAlertRuleTemplate()(*AlertRuleTemplate) {
+func (m *PortalNotification) GetAlertRuleTemplate()(*PortalNotification_alertRuleTemplate) {
     val, err := m.GetBackingStore().Get("alertRuleTemplate")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AlertRuleTemplate)
+        return val.(*PortalNotification_alertRuleTemplate)
     }
     return nil
 }
@@ -137,12 +137,12 @@ func (m *PortalNotification) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["alertRuleTemplate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAlertRuleTemplate)
+        val, err := n.GetEnumValue(ParsePortalNotification_alertRuleTemplate)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAlertRuleTemplate(val.(*AlertRuleTemplate))
+            m.SetAlertRuleTemplate(val.(*PortalNotification_alertRuleTemplate))
         }
         return nil
     }
@@ -177,12 +177,12 @@ func (m *PortalNotification) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["severity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRuleSeverityType)
+        val, err := n.GetEnumValue(ParsePortalNotification_severity)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSeverity(val.(*RuleSeverityType))
+            m.SetSeverity(val.(*PortalNotification_severity))
         }
         return nil
     }
@@ -222,13 +222,13 @@ func (m *PortalNotification) GetOdataType()(*string) {
     return nil
 }
 // GetSeverity gets the severity property value. The associated alert rule severity. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
-func (m *PortalNotification) GetSeverity()(*RuleSeverityType) {
+func (m *PortalNotification) GetSeverity()(*PortalNotification_severity) {
     val, err := m.GetBackingStore().Get("severity")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RuleSeverityType)
+        return val.(*PortalNotification_severity)
     }
     return nil
 }
@@ -334,7 +334,7 @@ func (m *PortalNotification) SetAlertRuleName(value *string)() {
     }
 }
 // SetAlertRuleTemplate sets the alertRuleTemplate property value. The associated alert rule template. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue, cloudPcInGracePeriodScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.
-func (m *PortalNotification) SetAlertRuleTemplate(value *AlertRuleTemplate)() {
+func (m *PortalNotification) SetAlertRuleTemplate(value *PortalNotification_alertRuleTemplate)() {
     err := m.GetBackingStore().Set("alertRuleTemplate", value)
     if err != nil {
         panic(err)
@@ -366,7 +366,7 @@ func (m *PortalNotification) SetOdataType(value *string)() {
     }
 }
 // SetSeverity sets the severity property value. The associated alert rule severity. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
-func (m *PortalNotification) SetSeverity(value *RuleSeverityType)() {
+func (m *PortalNotification) SetSeverity(value *PortalNotification_severity)() {
     err := m.GetBackingStore().Set("severity", value)
     if err != nil {
         panic(err)
@@ -381,20 +381,20 @@ type PortalNotificationable interface {
     GetAlertRecordId()(*string)
     GetAlertRuleId()(*string)
     GetAlertRuleName()(*string)
-    GetAlertRuleTemplate()(*AlertRuleTemplate)
+    GetAlertRuleTemplate()(*PortalNotification_alertRuleTemplate)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetId()(*string)
     GetIsPortalNotificationSent()(*bool)
     GetOdataType()(*string)
-    GetSeverity()(*RuleSeverityType)
+    GetSeverity()(*PortalNotification_severity)
     SetAlertImpact(value AlertImpactable)()
     SetAlertRecordId(value *string)()
     SetAlertRuleId(value *string)()
     SetAlertRuleName(value *string)()
-    SetAlertRuleTemplate(value *AlertRuleTemplate)()
+    SetAlertRuleTemplate(value *PortalNotification_alertRuleTemplate)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetId(value *string)()
     SetIsPortalNotificationSent(value *bool)()
     SetOdataType(value *string)()
-    SetSeverity(value *RuleSeverityType)()
+    SetSeverity(value *PortalNotification_severity)()
 }

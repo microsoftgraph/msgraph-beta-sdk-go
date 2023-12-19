@@ -2,7 +2,6 @@ package devicemanagement
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
@@ -72,16 +71,6 @@ func (m *ManagedDevicesItemWipePostRequestBody) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["obliterationBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseObliterationBehavior)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetObliterationBehavior(val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ObliterationBehavior))
-        }
-        return nil
-    }
     res["persistEsimDataPlan"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -137,17 +126,6 @@ func (m *ManagedDevicesItemWipePostRequestBody) GetMacOsUnlockCode()(*string) {
     }
     return nil
 }
-// GetObliterationBehavior gets the obliterationBehavior property value. The obliterationBehavior property
-func (m *ManagedDevicesItemWipePostRequestBody) GetObliterationBehavior()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ObliterationBehavior) {
-    val, err := m.GetBackingStore().Get("obliterationBehavior")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ObliterationBehavior)
-    }
-    return nil
-}
 // GetPersistEsimDataPlan gets the persistEsimDataPlan property value. The persistEsimDataPlan property
 func (m *ManagedDevicesItemWipePostRequestBody) GetPersistEsimDataPlan()(*bool) {
     val, err := m.GetBackingStore().Get("persistEsimDataPlan")
@@ -186,13 +164,6 @@ func (m *ManagedDevicesItemWipePostRequestBody) Serialize(writer i878a80d2330e89
     }
     {
         err := writer.WriteStringValue("macOsUnlockCode", m.GetMacOsUnlockCode())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetObliterationBehavior() != nil {
-        cast := (*m.GetObliterationBehavior()).String()
-        err := writer.WriteStringValue("obliterationBehavior", &cast)
         if err != nil {
             return err
         }
@@ -249,13 +220,6 @@ func (m *ManagedDevicesItemWipePostRequestBody) SetMacOsUnlockCode(value *string
         panic(err)
     }
 }
-// SetObliterationBehavior sets the obliterationBehavior property value. The obliterationBehavior property
-func (m *ManagedDevicesItemWipePostRequestBody) SetObliterationBehavior(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ObliterationBehavior)() {
-    err := m.GetBackingStore().Set("obliterationBehavior", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetPersistEsimDataPlan sets the persistEsimDataPlan property value. The persistEsimDataPlan property
 func (m *ManagedDevicesItemWipePostRequestBody) SetPersistEsimDataPlan(value *bool)() {
     err := m.GetBackingStore().Set("persistEsimDataPlan", value)
@@ -279,14 +243,12 @@ type ManagedDevicesItemWipePostRequestBodyable interface {
     GetKeepEnrollmentData()(*bool)
     GetKeepUserData()(*bool)
     GetMacOsUnlockCode()(*string)
-    GetObliterationBehavior()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ObliterationBehavior)
     GetPersistEsimDataPlan()(*bool)
     GetUseProtectedWipe()(*bool)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetKeepEnrollmentData(value *bool)()
     SetKeepUserData(value *bool)()
     SetMacOsUnlockCode(value *string)()
-    SetObliterationBehavior(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ObliterationBehavior)()
     SetPersistEsimDataPlan(value *bool)()
     SetUseProtectedWipe(value *bool)()
 }

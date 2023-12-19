@@ -484,13 +484,13 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderCheckForSignatures
     return nil
 }
 // GetDefenderCloudBlockLevel gets the defenderCloudBlockLevel property value. Added in Windows 10, version 1709. This policy setting determines how aggressive Windows Defender Antivirus will be in blocking and scanning suspicious files. Value type is integer. This feature requires the 'Join Microsoft MAPS' setting enabled in order to function. Possible values are: notConfigured, high, highPlus, zeroTolerance.
-func (m *Windows10EndpointProtectionConfiguration) GetDefenderCloudBlockLevel()(*DefenderCloudBlockLevelType) {
+func (m *Windows10EndpointProtectionConfiguration) GetDefenderCloudBlockLevel()(*Windows10EndpointProtectionConfiguration_defenderCloudBlockLevel) {
     val, err := m.GetBackingStore().Get("defenderCloudBlockLevel")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DefenderCloudBlockLevelType)
+        return val.(*Windows10EndpointProtectionConfiguration_defenderCloudBlockLevel)
     }
     return nil
 }
@@ -891,13 +891,13 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeMacroCodeAll
     return nil
 }
 // GetDefenderPotentiallyUnwantedAppAction gets the defenderPotentiallyUnwantedAppAction property value. Added in Windows 10, version 1607. Specifies the level of detection for potentially unwanted applications (PUAs). Windows Defender alerts you when potentially unwanted software is being downloaded or attempts to install itself on your computer. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
-func (m *Windows10EndpointProtectionConfiguration) GetDefenderPotentiallyUnwantedAppAction()(*DefenderProtectionType) {
+func (m *Windows10EndpointProtectionConfiguration) GetDefenderPotentiallyUnwantedAppAction()(*Windows10EndpointProtectionConfiguration_defenderPotentiallyUnwantedAppAction) {
     val, err := m.GetBackingStore().Get("defenderPotentiallyUnwantedAppAction")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DefenderProtectionType)
+        return val.(*Windows10EndpointProtectionConfiguration_defenderPotentiallyUnwantedAppAction)
     }
     return nil
 }
@@ -946,13 +946,13 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderProcessesToExclude
     return nil
 }
 // GetDefenderScanDirection gets the defenderScanDirection property value. Controls which sets of files should be monitored. Possible values are: monitorAllFiles, monitorIncomingFilesOnly, monitorOutgoingFilesOnly.
-func (m *Windows10EndpointProtectionConfiguration) GetDefenderScanDirection()(*DefenderRealtimeScanDirection) {
+func (m *Windows10EndpointProtectionConfiguration) GetDefenderScanDirection()(*Windows10EndpointProtectionConfiguration_defenderScanDirection) {
     val, err := m.GetBackingStore().Get("defenderScanDirection")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DefenderRealtimeScanDirection)
+        return val.(*Windows10EndpointProtectionConfiguration_defenderScanDirection)
     }
     return nil
 }
@@ -968,13 +968,13 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderScanMaxCpuPercenta
     return nil
 }
 // GetDefenderScanType gets the defenderScanType property value. Selects whether to perform a quick scan or full scan. Possible values are: userDefined, disabled, quick, full.
-func (m *Windows10EndpointProtectionConfiguration) GetDefenderScanType()(*DefenderScanType) {
+func (m *Windows10EndpointProtectionConfiguration) GetDefenderScanType()(*Windows10EndpointProtectionConfiguration_defenderScanType) {
     val, err := m.GetBackingStore().Get("defenderScanType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DefenderScanType)
+        return val.(*Windows10EndpointProtectionConfiguration_defenderScanType)
     }
     return nil
 }
@@ -990,13 +990,13 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderScheduledQuickScan
     return nil
 }
 // GetDefenderScheduledScanDay gets the defenderScheduledScanDay property value. Selects the day that the Windows Defender scan should run. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday, noScheduledScan.
-func (m *Windows10EndpointProtectionConfiguration) GetDefenderScheduledScanDay()(*WeeklySchedule) {
+func (m *Windows10EndpointProtectionConfiguration) GetDefenderScheduledScanDay()(*Windows10EndpointProtectionConfiguration_defenderScheduledScanDay) {
     val, err := m.GetBackingStore().Get("defenderScheduledScanDay")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*WeeklySchedule)
+        return val.(*Windows10EndpointProtectionConfiguration_defenderScheduledScanDay)
     }
     return nil
 }
@@ -1287,13 +1287,13 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderSignatureUpdateInt
     return nil
 }
 // GetDefenderSubmitSamplesConsentType gets the defenderSubmitSamplesConsentType property value. Checks for the user consent level in Windows Defender to send data. Possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.
-func (m *Windows10EndpointProtectionConfiguration) GetDefenderSubmitSamplesConsentType()(*DefenderSubmitSamplesConsentType) {
+func (m *Windows10EndpointProtectionConfiguration) GetDefenderSubmitSamplesConsentType()(*Windows10EndpointProtectionConfiguration_defenderSubmitSamplesConsentType) {
     val, err := m.GetBackingStore().Get("defenderSubmitSamplesConsentType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DefenderSubmitSamplesConsentType)
+        return val.(*Windows10EndpointProtectionConfiguration_defenderSubmitSamplesConsentType)
     }
     return nil
 }
@@ -1849,12 +1849,12 @@ func (m *Windows10EndpointProtectionConfiguration) GetFieldDeserializers()(map[s
         return nil
     }
     res["defenderCloudBlockLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDefenderCloudBlockLevelType)
+        val, err := n.GetEnumValue(ParseWindows10EndpointProtectionConfiguration_defenderCloudBlockLevel)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefenderCloudBlockLevel(val.(*DefenderCloudBlockLevelType))
+            m.SetDefenderCloudBlockLevel(val.(*Windows10EndpointProtectionConfiguration_defenderCloudBlockLevel))
         }
         return nil
     }
@@ -2237,12 +2237,12 @@ func (m *Windows10EndpointProtectionConfiguration) GetFieldDeserializers()(map[s
         return nil
     }
     res["defenderPotentiallyUnwantedAppAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDefenderProtectionType)
+        val, err := n.GetEnumValue(ParseWindows10EndpointProtectionConfiguration_defenderPotentiallyUnwantedAppAction)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefenderPotentiallyUnwantedAppAction(val.(*DefenderProtectionType))
+            m.SetDefenderPotentiallyUnwantedAppAction(val.(*Windows10EndpointProtectionConfiguration_defenderPotentiallyUnwantedAppAction))
         }
         return nil
     }
@@ -2293,12 +2293,12 @@ func (m *Windows10EndpointProtectionConfiguration) GetFieldDeserializers()(map[s
         return nil
     }
     res["defenderScanDirection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDefenderRealtimeScanDirection)
+        val, err := n.GetEnumValue(ParseWindows10EndpointProtectionConfiguration_defenderScanDirection)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefenderScanDirection(val.(*DefenderRealtimeScanDirection))
+            m.SetDefenderScanDirection(val.(*Windows10EndpointProtectionConfiguration_defenderScanDirection))
         }
         return nil
     }
@@ -2313,12 +2313,12 @@ func (m *Windows10EndpointProtectionConfiguration) GetFieldDeserializers()(map[s
         return nil
     }
     res["defenderScanType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDefenderScanType)
+        val, err := n.GetEnumValue(ParseWindows10EndpointProtectionConfiguration_defenderScanType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefenderScanType(val.(*DefenderScanType))
+            m.SetDefenderScanType(val.(*Windows10EndpointProtectionConfiguration_defenderScanType))
         }
         return nil
     }
@@ -2333,12 +2333,12 @@ func (m *Windows10EndpointProtectionConfiguration) GetFieldDeserializers()(map[s
         return nil
     }
     res["defenderScheduledScanDay"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWeeklySchedule)
+        val, err := n.GetEnumValue(ParseWindows10EndpointProtectionConfiguration_defenderScheduledScanDay)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefenderScheduledScanDay(val.(*WeeklySchedule))
+            m.SetDefenderScheduledScanDay(val.(*Windows10EndpointProtectionConfiguration_defenderScheduledScanDay))
         }
         return nil
     }
@@ -2603,12 +2603,12 @@ func (m *Windows10EndpointProtectionConfiguration) GetFieldDeserializers()(map[s
         return nil
     }
     res["defenderSubmitSamplesConsentType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDefenderSubmitSamplesConsentType)
+        val, err := n.GetEnumValue(ParseWindows10EndpointProtectionConfiguration_defenderSubmitSamplesConsentType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefenderSubmitSamplesConsentType(val.(*DefenderSubmitSamplesConsentType))
+            m.SetDefenderSubmitSamplesConsentType(val.(*Windows10EndpointProtectionConfiguration_defenderSubmitSamplesConsentType))
         }
         return nil
     }
@@ -6546,7 +6546,7 @@ func (m *Windows10EndpointProtectionConfiguration) SetDefenderCheckForSignatures
     }
 }
 // SetDefenderCloudBlockLevel sets the defenderCloudBlockLevel property value. Added in Windows 10, version 1709. This policy setting determines how aggressive Windows Defender Antivirus will be in blocking and scanning suspicious files. Value type is integer. This feature requires the 'Join Microsoft MAPS' setting enabled in order to function. Possible values are: notConfigured, high, highPlus, zeroTolerance.
-func (m *Windows10EndpointProtectionConfiguration) SetDefenderCloudBlockLevel(value *DefenderCloudBlockLevelType)() {
+func (m *Windows10EndpointProtectionConfiguration) SetDefenderCloudBlockLevel(value *Windows10EndpointProtectionConfiguration_defenderCloudBlockLevel)() {
     err := m.GetBackingStore().Set("defenderCloudBlockLevel", value)
     if err != nil {
         panic(err)
@@ -6805,7 +6805,7 @@ func (m *Windows10EndpointProtectionConfiguration) SetDefenderOfficeMacroCodeAll
     }
 }
 // SetDefenderPotentiallyUnwantedAppAction sets the defenderPotentiallyUnwantedAppAction property value. Added in Windows 10, version 1607. Specifies the level of detection for potentially unwanted applications (PUAs). Windows Defender alerts you when potentially unwanted software is being downloaded or attempts to install itself on your computer. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
-func (m *Windows10EndpointProtectionConfiguration) SetDefenderPotentiallyUnwantedAppAction(value *DefenderProtectionType)() {
+func (m *Windows10EndpointProtectionConfiguration) SetDefenderPotentiallyUnwantedAppAction(value *Windows10EndpointProtectionConfiguration_defenderPotentiallyUnwantedAppAction)() {
     err := m.GetBackingStore().Set("defenderPotentiallyUnwantedAppAction", value)
     if err != nil {
         panic(err)
@@ -6840,7 +6840,7 @@ func (m *Windows10EndpointProtectionConfiguration) SetDefenderProcessesToExclude
     }
 }
 // SetDefenderScanDirection sets the defenderScanDirection property value. Controls which sets of files should be monitored. Possible values are: monitorAllFiles, monitorIncomingFilesOnly, monitorOutgoingFilesOnly.
-func (m *Windows10EndpointProtectionConfiguration) SetDefenderScanDirection(value *DefenderRealtimeScanDirection)() {
+func (m *Windows10EndpointProtectionConfiguration) SetDefenderScanDirection(value *Windows10EndpointProtectionConfiguration_defenderScanDirection)() {
     err := m.GetBackingStore().Set("defenderScanDirection", value)
     if err != nil {
         panic(err)
@@ -6854,7 +6854,7 @@ func (m *Windows10EndpointProtectionConfiguration) SetDefenderScanMaxCpuPercenta
     }
 }
 // SetDefenderScanType sets the defenderScanType property value. Selects whether to perform a quick scan or full scan. Possible values are: userDefined, disabled, quick, full.
-func (m *Windows10EndpointProtectionConfiguration) SetDefenderScanType(value *DefenderScanType)() {
+func (m *Windows10EndpointProtectionConfiguration) SetDefenderScanType(value *Windows10EndpointProtectionConfiguration_defenderScanType)() {
     err := m.GetBackingStore().Set("defenderScanType", value)
     if err != nil {
         panic(err)
@@ -6868,7 +6868,7 @@ func (m *Windows10EndpointProtectionConfiguration) SetDefenderScheduledQuickScan
     }
 }
 // SetDefenderScheduledScanDay sets the defenderScheduledScanDay property value. Selects the day that the Windows Defender scan should run. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday, noScheduledScan.
-func (m *Windows10EndpointProtectionConfiguration) SetDefenderScheduledScanDay(value *WeeklySchedule)() {
+func (m *Windows10EndpointProtectionConfiguration) SetDefenderScheduledScanDay(value *Windows10EndpointProtectionConfiguration_defenderScheduledScanDay)() {
     err := m.GetBackingStore().Set("defenderScheduledScanDay", value)
     if err != nil {
         panic(err)
@@ -7057,7 +7057,7 @@ func (m *Windows10EndpointProtectionConfiguration) SetDefenderSignatureUpdateInt
     }
 }
 // SetDefenderSubmitSamplesConsentType sets the defenderSubmitSamplesConsentType property value. Checks for the user consent level in Windows Defender to send data. Possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.
-func (m *Windows10EndpointProtectionConfiguration) SetDefenderSubmitSamplesConsentType(value *DefenderSubmitSamplesConsentType)() {
+func (m *Windows10EndpointProtectionConfiguration) SetDefenderSubmitSamplesConsentType(value *Windows10EndpointProtectionConfiguration_defenderSubmitSamplesConsentType)() {
     err := m.GetBackingStore().Set("defenderSubmitSamplesConsentType", value)
     if err != nil {
         panic(err)
@@ -7879,7 +7879,7 @@ type Windows10EndpointProtectionConfigurationable interface {
     GetDefenderBlockEndUserAccess()(*bool)
     GetDefenderBlockPersistenceThroughWmiType()(*DefenderAttackSurfaceType)
     GetDefenderCheckForSignaturesBeforeRunningScan()(*bool)
-    GetDefenderCloudBlockLevel()(*DefenderCloudBlockLevelType)
+    GetDefenderCloudBlockLevel()(*Windows10EndpointProtectionConfiguration_defenderCloudBlockLevel)
     GetDefenderCloudExtendedTimeoutInSeconds()(*int32)
     GetDefenderDaysBeforeDeletingQuarantinedMalware()(*int32)
     GetDefenderDetectedMalwareActions()(DefenderDetectedMalwareActionsable)
@@ -7916,16 +7916,16 @@ type Windows10EndpointProtectionConfigurationable interface {
     GetDefenderOfficeCommunicationAppsLaunchChildProcess()(*DefenderProtectionType)
     GetDefenderOfficeMacroCodeAllowWin32Imports()(*DefenderProtectionType)
     GetDefenderOfficeMacroCodeAllowWin32ImportsType()(*DefenderAttackSurfaceType)
-    GetDefenderPotentiallyUnwantedAppAction()(*DefenderProtectionType)
+    GetDefenderPotentiallyUnwantedAppAction()(*Windows10EndpointProtectionConfiguration_defenderPotentiallyUnwantedAppAction)
     GetDefenderPreventCredentialStealingType()(*DefenderProtectionType)
     GetDefenderProcessCreation()(*DefenderProtectionType)
     GetDefenderProcessCreationType()(*DefenderAttackSurfaceType)
     GetDefenderProcessesToExclude()([]string)
-    GetDefenderScanDirection()(*DefenderRealtimeScanDirection)
+    GetDefenderScanDirection()(*Windows10EndpointProtectionConfiguration_defenderScanDirection)
     GetDefenderScanMaxCpuPercentage()(*int32)
-    GetDefenderScanType()(*DefenderScanType)
+    GetDefenderScanType()(*Windows10EndpointProtectionConfiguration_defenderScanType)
     GetDefenderScheduledQuickScanTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
-    GetDefenderScheduledScanDay()(*WeeklySchedule)
+    GetDefenderScheduledScanDay()(*Windows10EndpointProtectionConfiguration_defenderScheduledScanDay)
     GetDefenderScheduledScanTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
     GetDefenderScriptDownloadedPayloadExecution()(*DefenderProtectionType)
     GetDefenderScriptDownloadedPayloadExecutionType()(*DefenderAttackSurfaceType)
@@ -7952,7 +7952,7 @@ type Windows10EndpointProtectionConfigurationable interface {
     GetDefenderSecurityCenterNotificationsFromApp()(*DefenderSecurityCenterNotificationsFromAppType)
     GetDefenderSecurityCenterOrganizationDisplayName()(*string)
     GetDefenderSignatureUpdateIntervalInHours()(*int32)
-    GetDefenderSubmitSamplesConsentType()(*DefenderSubmitSamplesConsentType)
+    GetDefenderSubmitSamplesConsentType()(*Windows10EndpointProtectionConfiguration_defenderSubmitSamplesConsentType)
     GetDefenderUntrustedExecutable()(*DefenderProtectionType)
     GetDefenderUntrustedExecutableType()(*DefenderAttackSurfaceType)
     GetDefenderUntrustedUSBProcess()(*DefenderProtectionType)
@@ -8105,7 +8105,7 @@ type Windows10EndpointProtectionConfigurationable interface {
     SetDefenderBlockEndUserAccess(value *bool)()
     SetDefenderBlockPersistenceThroughWmiType(value *DefenderAttackSurfaceType)()
     SetDefenderCheckForSignaturesBeforeRunningScan(value *bool)()
-    SetDefenderCloudBlockLevel(value *DefenderCloudBlockLevelType)()
+    SetDefenderCloudBlockLevel(value *Windows10EndpointProtectionConfiguration_defenderCloudBlockLevel)()
     SetDefenderCloudExtendedTimeoutInSeconds(value *int32)()
     SetDefenderDaysBeforeDeletingQuarantinedMalware(value *int32)()
     SetDefenderDetectedMalwareActions(value DefenderDetectedMalwareActionsable)()
@@ -8142,16 +8142,16 @@ type Windows10EndpointProtectionConfigurationable interface {
     SetDefenderOfficeCommunicationAppsLaunchChildProcess(value *DefenderProtectionType)()
     SetDefenderOfficeMacroCodeAllowWin32Imports(value *DefenderProtectionType)()
     SetDefenderOfficeMacroCodeAllowWin32ImportsType(value *DefenderAttackSurfaceType)()
-    SetDefenderPotentiallyUnwantedAppAction(value *DefenderProtectionType)()
+    SetDefenderPotentiallyUnwantedAppAction(value *Windows10EndpointProtectionConfiguration_defenderPotentiallyUnwantedAppAction)()
     SetDefenderPreventCredentialStealingType(value *DefenderProtectionType)()
     SetDefenderProcessCreation(value *DefenderProtectionType)()
     SetDefenderProcessCreationType(value *DefenderAttackSurfaceType)()
     SetDefenderProcessesToExclude(value []string)()
-    SetDefenderScanDirection(value *DefenderRealtimeScanDirection)()
+    SetDefenderScanDirection(value *Windows10EndpointProtectionConfiguration_defenderScanDirection)()
     SetDefenderScanMaxCpuPercentage(value *int32)()
-    SetDefenderScanType(value *DefenderScanType)()
+    SetDefenderScanType(value *Windows10EndpointProtectionConfiguration_defenderScanType)()
     SetDefenderScheduledQuickScanTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)()
-    SetDefenderScheduledScanDay(value *WeeklySchedule)()
+    SetDefenderScheduledScanDay(value *Windows10EndpointProtectionConfiguration_defenderScheduledScanDay)()
     SetDefenderScheduledScanTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)()
     SetDefenderScriptDownloadedPayloadExecution(value *DefenderProtectionType)()
     SetDefenderScriptDownloadedPayloadExecutionType(value *DefenderAttackSurfaceType)()
@@ -8178,7 +8178,7 @@ type Windows10EndpointProtectionConfigurationable interface {
     SetDefenderSecurityCenterNotificationsFromApp(value *DefenderSecurityCenterNotificationsFromAppType)()
     SetDefenderSecurityCenterOrganizationDisplayName(value *string)()
     SetDefenderSignatureUpdateIntervalInHours(value *int32)()
-    SetDefenderSubmitSamplesConsentType(value *DefenderSubmitSamplesConsentType)()
+    SetDefenderSubmitSamplesConsentType(value *Windows10EndpointProtectionConfiguration_defenderSubmitSamplesConsentType)()
     SetDefenderUntrustedExecutable(value *DefenderProtectionType)()
     SetDefenderUntrustedExecutableType(value *DefenderAttackSurfaceType)()
     SetDefenderUntrustedUSBProcess(value *DefenderProtectionType)()

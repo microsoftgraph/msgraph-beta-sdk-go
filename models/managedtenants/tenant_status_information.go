@@ -40,13 +40,13 @@ func (m *TenantStatusInformation) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd
     return m.backingStore
 }
 // GetDelegatedPrivilegeStatus gets the delegatedPrivilegeStatus property value. The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges. Optional. Read-only.
-func (m *TenantStatusInformation) GetDelegatedPrivilegeStatus()(*DelegatedPrivilegeStatus) {
+func (m *TenantStatusInformation) GetDelegatedPrivilegeStatus()(*TenantStatusInformation_delegatedPrivilegeStatus) {
     val, err := m.GetBackingStore().Get("delegatedPrivilegeStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DelegatedPrivilegeStatus)
+        return val.(*TenantStatusInformation_delegatedPrivilegeStatus)
     }
     return nil
 }
@@ -54,12 +54,12 @@ func (m *TenantStatusInformation) GetDelegatedPrivilegeStatus()(*DelegatedPrivil
 func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["delegatedPrivilegeStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDelegatedPrivilegeStatus)
+        val, err := n.GetEnumValue(ParseTenantStatusInformation_delegatedPrivilegeStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDelegatedPrivilegeStatus(val.(*DelegatedPrivilegeStatus))
+            m.SetDelegatedPrivilegeStatus(val.(*TenantStatusInformation_delegatedPrivilegeStatus))
         }
         return nil
     }
@@ -124,22 +124,22 @@ func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     res["onboardingStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTenantOnboardingStatus)
+        val, err := n.GetEnumValue(ParseTenantStatusInformation_onboardingStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOnboardingStatus(val.(*TenantOnboardingStatus))
+            m.SetOnboardingStatus(val.(*TenantStatusInformation_onboardingStatus))
         }
         return nil
     }
     res["tenantOnboardingEligibilityReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTenantOnboardingEligibilityReason)
+        val, err := n.GetEnumValue(ParseTenantStatusInformation_tenantOnboardingEligibilityReason)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTenantOnboardingEligibilityReason(val.(*TenantOnboardingEligibilityReason))
+            m.SetTenantOnboardingEligibilityReason(val.(*TenantStatusInformation_tenantOnboardingEligibilityReason))
         }
         return nil
     }
@@ -228,24 +228,24 @@ func (m *TenantStatusInformation) GetOnboardedDateTime()(*i336074805fc853987abe6
     return nil
 }
 // GetOnboardingStatus gets the onboardingStatus property value. The onboarding status for the managed tenant.. Possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.
-func (m *TenantStatusInformation) GetOnboardingStatus()(*TenantOnboardingStatus) {
+func (m *TenantStatusInformation) GetOnboardingStatus()(*TenantStatusInformation_onboardingStatus) {
     val, err := m.GetBackingStore().Get("onboardingStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TenantOnboardingStatus)
+        return val.(*TenantStatusInformation_onboardingStatus)
     }
     return nil
 }
 // GetTenantOnboardingEligibilityReason gets the tenantOnboardingEligibilityReason property value. Organization's onboarding eligibility reason in Microsoft 365 Lighthouse.. Possible values are: none, contractType, delegatedAdminPrivileges,usersCount,license and unknownFutureValue. Optional. Read-only.
-func (m *TenantStatusInformation) GetTenantOnboardingEligibilityReason()(*TenantOnboardingEligibilityReason) {
+func (m *TenantStatusInformation) GetTenantOnboardingEligibilityReason()(*TenantStatusInformation_tenantOnboardingEligibilityReason) {
     val, err := m.GetBackingStore().Get("tenantOnboardingEligibilityReason")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TenantOnboardingEligibilityReason)
+        return val.(*TenantStatusInformation_tenantOnboardingEligibilityReason)
     }
     return nil
 }
@@ -351,7 +351,7 @@ func (m *TenantStatusInformation) SetBackingStore(value ie8677ce2c7e1b4c22e9c382
     m.backingStore = value
 }
 // SetDelegatedPrivilegeStatus sets the delegatedPrivilegeStatus property value. The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges. Optional. Read-only.
-func (m *TenantStatusInformation) SetDelegatedPrivilegeStatus(value *DelegatedPrivilegeStatus)() {
+func (m *TenantStatusInformation) SetDelegatedPrivilegeStatus(value *TenantStatusInformation_delegatedPrivilegeStatus)() {
     err := m.GetBackingStore().Set("delegatedPrivilegeStatus", value)
     if err != nil {
         panic(err)
@@ -400,14 +400,14 @@ func (m *TenantStatusInformation) SetOnboardedDateTime(value *i336074805fc853987
     }
 }
 // SetOnboardingStatus sets the onboardingStatus property value. The onboarding status for the managed tenant.. Possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.
-func (m *TenantStatusInformation) SetOnboardingStatus(value *TenantOnboardingStatus)() {
+func (m *TenantStatusInformation) SetOnboardingStatus(value *TenantStatusInformation_onboardingStatus)() {
     err := m.GetBackingStore().Set("onboardingStatus", value)
     if err != nil {
         panic(err)
     }
 }
 // SetTenantOnboardingEligibilityReason sets the tenantOnboardingEligibilityReason property value. Organization's onboarding eligibility reason in Microsoft 365 Lighthouse.. Possible values are: none, contractType, delegatedAdminPrivileges,usersCount,license and unknownFutureValue. Optional. Read-only.
-func (m *TenantStatusInformation) SetTenantOnboardingEligibilityReason(value *TenantOnboardingEligibilityReason)() {
+func (m *TenantStatusInformation) SetTenantOnboardingEligibilityReason(value *TenantStatusInformation_tenantOnboardingEligibilityReason)() {
     err := m.GetBackingStore().Set("tenantOnboardingEligibilityReason", value)
     if err != nil {
         panic(err)
@@ -426,25 +426,25 @@ type TenantStatusInformationable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetDelegatedPrivilegeStatus()(*DelegatedPrivilegeStatus)
+    GetDelegatedPrivilegeStatus()(*TenantStatusInformation_delegatedPrivilegeStatus)
     GetLastDelegatedPrivilegeRefreshDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOdataType()(*string)
     GetOffboardedByUserId()(*string)
     GetOffboardedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOnboardedByUserId()(*string)
     GetOnboardedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetOnboardingStatus()(*TenantOnboardingStatus)
-    GetTenantOnboardingEligibilityReason()(*TenantOnboardingEligibilityReason)
+    GetOnboardingStatus()(*TenantStatusInformation_onboardingStatus)
+    GetTenantOnboardingEligibilityReason()(*TenantStatusInformation_tenantOnboardingEligibilityReason)
     GetWorkloadStatuses()([]WorkloadStatusable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetDelegatedPrivilegeStatus(value *DelegatedPrivilegeStatus)()
+    SetDelegatedPrivilegeStatus(value *TenantStatusInformation_delegatedPrivilegeStatus)()
     SetLastDelegatedPrivilegeRefreshDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOdataType(value *string)()
     SetOffboardedByUserId(value *string)()
     SetOffboardedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOnboardedByUserId(value *string)()
     SetOnboardedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetOnboardingStatus(value *TenantOnboardingStatus)()
-    SetTenantOnboardingEligibilityReason(value *TenantOnboardingEligibilityReason)()
+    SetOnboardingStatus(value *TenantStatusInformation_onboardingStatus)()
+    SetTenantOnboardingEligibilityReason(value *TenantStatusInformation_tenantOnboardingEligibilityReason)()
     SetWorkloadStatuses(value []WorkloadStatusable)()
 }

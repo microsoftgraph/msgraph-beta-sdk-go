@@ -94,12 +94,12 @@ func (m *TitleArea) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         return nil
     }
     res["layout"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTitleAreaLayoutType)
+        val, err := n.GetEnumValue(ParseTitleArea_layout)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLayout(val.(*TitleAreaLayoutType))
+            m.SetLayout(val.(*TitleArea_layout))
         }
         return nil
     }
@@ -164,12 +164,12 @@ func (m *TitleArea) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         return nil
     }
     res["textAlignment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTitleAreaTextAlignmentType)
+        val, err := n.GetEnumValue(ParseTitleArea_textAlignment)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTextAlignment(val.(*TitleAreaTextAlignmentType))
+            m.SetTextAlignment(val.(*TitleArea_textAlignment))
         }
         return nil
     }
@@ -187,13 +187,13 @@ func (m *TitleArea) GetImageWebUrl()(*string) {
     return nil
 }
 // GetLayout gets the layout property value. Enumeration value that indicates the layout of the title area. The possible values are: imageAndTitle, plain, colorBlock, overlap, unknownFutureValue.
-func (m *TitleArea) GetLayout()(*TitleAreaLayoutType) {
+func (m *TitleArea) GetLayout()(*TitleArea_layout) {
     val, err := m.GetBackingStore().Get("layout")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TitleAreaLayoutType)
+        return val.(*TitleArea_layout)
     }
     return nil
 }
@@ -264,13 +264,13 @@ func (m *TitleArea) GetTextAboveTitle()(*string) {
     return nil
 }
 // GetTextAlignment gets the textAlignment property value. Enumeration value that indicates the text alignment of the title area. The possible values are: left, center, unknownFutureValue.
-func (m *TitleArea) GetTextAlignment()(*TitleAreaTextAlignmentType) {
+func (m *TitleArea) GetTextAlignment()(*TitleArea_textAlignment) {
     val, err := m.GetBackingStore().Get("textAlignment")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TitleAreaTextAlignmentType)
+        return val.(*TitleArea_textAlignment)
     }
     return nil
 }
@@ -385,7 +385,7 @@ func (m *TitleArea) SetImageWebUrl(value *string)() {
     }
 }
 // SetLayout sets the layout property value. Enumeration value that indicates the layout of the title area. The possible values are: imageAndTitle, plain, colorBlock, overlap, unknownFutureValue.
-func (m *TitleArea) SetLayout(value *TitleAreaLayoutType)() {
+func (m *TitleArea) SetLayout(value *TitleArea_layout)() {
     err := m.GetBackingStore().Set("layout", value)
     if err != nil {
         panic(err)
@@ -434,7 +434,7 @@ func (m *TitleArea) SetTextAboveTitle(value *string)() {
     }
 }
 // SetTextAlignment sets the textAlignment property value. Enumeration value that indicates the text alignment of the title area. The possible values are: left, center, unknownFutureValue.
-func (m *TitleArea) SetTextAlignment(value *TitleAreaTextAlignmentType)() {
+func (m *TitleArea) SetTextAlignment(value *TitleArea_textAlignment)() {
     err := m.GetBackingStore().Set("textAlignment", value)
     if err != nil {
         panic(err)
@@ -449,24 +449,24 @@ type TitleAreaable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetEnableGradientEffect()(*bool)
     GetImageWebUrl()(*string)
-    GetLayout()(*TitleAreaLayoutType)
+    GetLayout()(*TitleArea_layout)
     GetOdataType()(*string)
     GetServerProcessedContent()(ServerProcessedContentable)
     GetShowAuthor()(*bool)
     GetShowPublishedDate()(*bool)
     GetShowTextBlockAboveTitle()(*bool)
     GetTextAboveTitle()(*string)
-    GetTextAlignment()(*TitleAreaTextAlignmentType)
+    GetTextAlignment()(*TitleArea_textAlignment)
     SetAlternativeText(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetEnableGradientEffect(value *bool)()
     SetImageWebUrl(value *string)()
-    SetLayout(value *TitleAreaLayoutType)()
+    SetLayout(value *TitleArea_layout)()
     SetOdataType(value *string)()
     SetServerProcessedContent(value ServerProcessedContentable)()
     SetShowAuthor(value *bool)()
     SetShowPublishedDate(value *bool)()
     SetShowTextBlockAboveTitle(value *bool)()
     SetTextAboveTitle(value *string)()
-    SetTextAlignment(value *TitleAreaTextAlignmentType)()
+    SetTextAlignment(value *TitleArea_textAlignment)()
 }

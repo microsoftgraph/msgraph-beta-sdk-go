@@ -35,13 +35,13 @@ func (m *CryptographySuite) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAuthenticationTransformConstants gets the authenticationTransformConstants property value. Authentication Transform Constants. Possible values are: md596, sha196, sha256128, aes128Gcm, aes192Gcm, aes256Gcm.
-func (m *CryptographySuite) GetAuthenticationTransformConstants()(*AuthenticationTransformConstant) {
+func (m *CryptographySuite) GetAuthenticationTransformConstants()(*CryptographySuite_authenticationTransformConstants) {
     val, err := m.GetBackingStore().Get("authenticationTransformConstants")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AuthenticationTransformConstant)
+        return val.(*CryptographySuite_authenticationTransformConstants)
     }
     return nil
 }
@@ -50,35 +50,35 @@ func (m *CryptographySuite) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41
     return m.backingStore
 }
 // GetCipherTransformConstants gets the cipherTransformConstants property value. Cipher Transform Constants. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
-func (m *CryptographySuite) GetCipherTransformConstants()(*VpnEncryptionAlgorithmType) {
+func (m *CryptographySuite) GetCipherTransformConstants()(*CryptographySuite_cipherTransformConstants) {
     val, err := m.GetBackingStore().Get("cipherTransformConstants")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*VpnEncryptionAlgorithmType)
+        return val.(*CryptographySuite_cipherTransformConstants)
     }
     return nil
 }
 // GetDhGroup gets the dhGroup property value. Diffie Hellman Group. Possible values are: group1, group2, group14, ecp256, ecp384, group24.
-func (m *CryptographySuite) GetDhGroup()(*DiffieHellmanGroup) {
+func (m *CryptographySuite) GetDhGroup()(*CryptographySuite_dhGroup) {
     val, err := m.GetBackingStore().Get("dhGroup")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DiffieHellmanGroup)
+        return val.(*CryptographySuite_dhGroup)
     }
     return nil
 }
 // GetEncryptionMethod gets the encryptionMethod property value. Encryption Method. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
-func (m *CryptographySuite) GetEncryptionMethod()(*VpnEncryptionAlgorithmType) {
+func (m *CryptographySuite) GetEncryptionMethod()(*CryptographySuite_encryptionMethod) {
     val, err := m.GetBackingStore().Get("encryptionMethod")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*VpnEncryptionAlgorithmType)
+        return val.(*CryptographySuite_encryptionMethod)
     }
     return nil
 }
@@ -86,52 +86,52 @@ func (m *CryptographySuite) GetEncryptionMethod()(*VpnEncryptionAlgorithmType) {
 func (m *CryptographySuite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["authenticationTransformConstants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAuthenticationTransformConstant)
+        val, err := n.GetEnumValue(ParseCryptographySuite_authenticationTransformConstants)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAuthenticationTransformConstants(val.(*AuthenticationTransformConstant))
+            m.SetAuthenticationTransformConstants(val.(*CryptographySuite_authenticationTransformConstants))
         }
         return nil
     }
     res["cipherTransformConstants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVpnEncryptionAlgorithmType)
+        val, err := n.GetEnumValue(ParseCryptographySuite_cipherTransformConstants)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCipherTransformConstants(val.(*VpnEncryptionAlgorithmType))
+            m.SetCipherTransformConstants(val.(*CryptographySuite_cipherTransformConstants))
         }
         return nil
     }
     res["dhGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDiffieHellmanGroup)
+        val, err := n.GetEnumValue(ParseCryptographySuite_dhGroup)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDhGroup(val.(*DiffieHellmanGroup))
+            m.SetDhGroup(val.(*CryptographySuite_dhGroup))
         }
         return nil
     }
     res["encryptionMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVpnEncryptionAlgorithmType)
+        val, err := n.GetEnumValue(ParseCryptographySuite_encryptionMethod)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEncryptionMethod(val.(*VpnEncryptionAlgorithmType))
+            m.SetEncryptionMethod(val.(*CryptographySuite_encryptionMethod))
         }
         return nil
     }
     res["integrityCheckMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVpnIntegrityAlgorithmType)
+        val, err := n.GetEnumValue(ParseCryptographySuite_integrityCheckMethod)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetIntegrityCheckMethod(val.(*VpnIntegrityAlgorithmType))
+            m.SetIntegrityCheckMethod(val.(*CryptographySuite_integrityCheckMethod))
         }
         return nil
     }
@@ -146,25 +146,25 @@ func (m *CryptographySuite) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["pfsGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePerfectForwardSecrecyGroup)
+        val, err := n.GetEnumValue(ParseCryptographySuite_pfsGroup)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPfsGroup(val.(*PerfectForwardSecrecyGroup))
+            m.SetPfsGroup(val.(*CryptographySuite_pfsGroup))
         }
         return nil
     }
     return res
 }
 // GetIntegrityCheckMethod gets the integrityCheckMethod property value. Integrity Check Method. Possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.
-func (m *CryptographySuite) GetIntegrityCheckMethod()(*VpnIntegrityAlgorithmType) {
+func (m *CryptographySuite) GetIntegrityCheckMethod()(*CryptographySuite_integrityCheckMethod) {
     val, err := m.GetBackingStore().Get("integrityCheckMethod")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*VpnIntegrityAlgorithmType)
+        return val.(*CryptographySuite_integrityCheckMethod)
     }
     return nil
 }
@@ -180,13 +180,13 @@ func (m *CryptographySuite) GetOdataType()(*string) {
     return nil
 }
 // GetPfsGroup gets the pfsGroup property value. Perfect Forward Secrecy Group. Possible values are: pfs1, pfs2, pfs2048, ecp256, ecp384, pfsMM, pfs24.
-func (m *CryptographySuite) GetPfsGroup()(*PerfectForwardSecrecyGroup) {
+func (m *CryptographySuite) GetPfsGroup()(*CryptographySuite_pfsGroup) {
     val, err := m.GetBackingStore().Get("pfsGroup")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PerfectForwardSecrecyGroup)
+        return val.(*CryptographySuite_pfsGroup)
     }
     return nil
 }
@@ -256,7 +256,7 @@ func (m *CryptographySuite) SetAdditionalData(value map[string]any)() {
     }
 }
 // SetAuthenticationTransformConstants sets the authenticationTransformConstants property value. Authentication Transform Constants. Possible values are: md596, sha196, sha256128, aes128Gcm, aes192Gcm, aes256Gcm.
-func (m *CryptographySuite) SetAuthenticationTransformConstants(value *AuthenticationTransformConstant)() {
+func (m *CryptographySuite) SetAuthenticationTransformConstants(value *CryptographySuite_authenticationTransformConstants)() {
     err := m.GetBackingStore().Set("authenticationTransformConstants", value)
     if err != nil {
         panic(err)
@@ -267,28 +267,28 @@ func (m *CryptographySuite) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd07
     m.backingStore = value
 }
 // SetCipherTransformConstants sets the cipherTransformConstants property value. Cipher Transform Constants. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
-func (m *CryptographySuite) SetCipherTransformConstants(value *VpnEncryptionAlgorithmType)() {
+func (m *CryptographySuite) SetCipherTransformConstants(value *CryptographySuite_cipherTransformConstants)() {
     err := m.GetBackingStore().Set("cipherTransformConstants", value)
     if err != nil {
         panic(err)
     }
 }
 // SetDhGroup sets the dhGroup property value. Diffie Hellman Group. Possible values are: group1, group2, group14, ecp256, ecp384, group24.
-func (m *CryptographySuite) SetDhGroup(value *DiffieHellmanGroup)() {
+func (m *CryptographySuite) SetDhGroup(value *CryptographySuite_dhGroup)() {
     err := m.GetBackingStore().Set("dhGroup", value)
     if err != nil {
         panic(err)
     }
 }
 // SetEncryptionMethod sets the encryptionMethod property value. Encryption Method. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
-func (m *CryptographySuite) SetEncryptionMethod(value *VpnEncryptionAlgorithmType)() {
+func (m *CryptographySuite) SetEncryptionMethod(value *CryptographySuite_encryptionMethod)() {
     err := m.GetBackingStore().Set("encryptionMethod", value)
     if err != nil {
         panic(err)
     }
 }
 // SetIntegrityCheckMethod sets the integrityCheckMethod property value. Integrity Check Method. Possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.
-func (m *CryptographySuite) SetIntegrityCheckMethod(value *VpnIntegrityAlgorithmType)() {
+func (m *CryptographySuite) SetIntegrityCheckMethod(value *CryptographySuite_integrityCheckMethod)() {
     err := m.GetBackingStore().Set("integrityCheckMethod", value)
     if err != nil {
         panic(err)
@@ -302,7 +302,7 @@ func (m *CryptographySuite) SetOdataType(value *string)() {
     }
 }
 // SetPfsGroup sets the pfsGroup property value. Perfect Forward Secrecy Group. Possible values are: pfs1, pfs2, pfs2048, ecp256, ecp384, pfsMM, pfs24.
-func (m *CryptographySuite) SetPfsGroup(value *PerfectForwardSecrecyGroup)() {
+func (m *CryptographySuite) SetPfsGroup(value *CryptographySuite_pfsGroup)() {
     err := m.GetBackingStore().Set("pfsGroup", value)
     if err != nil {
         panic(err)
@@ -313,20 +313,20 @@ type CryptographySuiteable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAuthenticationTransformConstants()(*AuthenticationTransformConstant)
+    GetAuthenticationTransformConstants()(*CryptographySuite_authenticationTransformConstants)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetCipherTransformConstants()(*VpnEncryptionAlgorithmType)
-    GetDhGroup()(*DiffieHellmanGroup)
-    GetEncryptionMethod()(*VpnEncryptionAlgorithmType)
-    GetIntegrityCheckMethod()(*VpnIntegrityAlgorithmType)
+    GetCipherTransformConstants()(*CryptographySuite_cipherTransformConstants)
+    GetDhGroup()(*CryptographySuite_dhGroup)
+    GetEncryptionMethod()(*CryptographySuite_encryptionMethod)
+    GetIntegrityCheckMethod()(*CryptographySuite_integrityCheckMethod)
     GetOdataType()(*string)
-    GetPfsGroup()(*PerfectForwardSecrecyGroup)
-    SetAuthenticationTransformConstants(value *AuthenticationTransformConstant)()
+    GetPfsGroup()(*CryptographySuite_pfsGroup)
+    SetAuthenticationTransformConstants(value *CryptographySuite_authenticationTransformConstants)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetCipherTransformConstants(value *VpnEncryptionAlgorithmType)()
-    SetDhGroup(value *DiffieHellmanGroup)()
-    SetEncryptionMethod(value *VpnEncryptionAlgorithmType)()
-    SetIntegrityCheckMethod(value *VpnIntegrityAlgorithmType)()
+    SetCipherTransformConstants(value *CryptographySuite_cipherTransformConstants)()
+    SetDhGroup(value *CryptographySuite_dhGroup)()
+    SetEncryptionMethod(value *CryptographySuite_encryptionMethod)()
+    SetIntegrityCheckMethod(value *CryptographySuite_integrityCheckMethod)()
     SetOdataType(value *string)()
-    SetPfsGroup(value *PerfectForwardSecrecyGroup)()
+    SetPfsGroup(value *CryptographySuite_pfsGroup)()
 }

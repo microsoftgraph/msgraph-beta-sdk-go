@@ -42,13 +42,13 @@ func CreateAuthorizationSystemTypeActionFromDiscriminatorValue(parseNode i878a80
     return NewAuthorizationSystemTypeAction(), nil
 }
 // GetActionType gets the actionType property value. The type of action allowed in the authorization system's service. The possible values are: delete, read, unknownFutureValue. Supports $filter and (eq).
-func (m *AuthorizationSystemTypeAction) GetActionType()(*AuthorizationSystemActionType) {
+func (m *AuthorizationSystemTypeAction) GetActionType()(*AuthorizationSystemTypeAction_actionType) {
     val, err := m.GetBackingStore().Get("actionType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AuthorizationSystemActionType)
+        return val.(*AuthorizationSystemTypeAction_actionType)
     }
     return nil
 }
@@ -67,12 +67,12 @@ func (m *AuthorizationSystemTypeAction) GetExternalId()(*string) {
 func (m *AuthorizationSystemTypeAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["actionType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAuthorizationSystemActionType)
+        val, err := n.GetEnumValue(ParseAuthorizationSystemTypeAction_actionType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetActionType(val.(*AuthorizationSystemActionType))
+            m.SetActionType(val.(*AuthorizationSystemTypeAction_actionType))
         }
         return nil
     }
@@ -171,7 +171,7 @@ func (m *AuthorizationSystemTypeAction) Serialize(writer i878a80d2330e89d2689638
     return nil
 }
 // SetActionType sets the actionType property value. The type of action allowed in the authorization system's service. The possible values are: delete, read, unknownFutureValue. Supports $filter and (eq).
-func (m *AuthorizationSystemTypeAction) SetActionType(value *AuthorizationSystemActionType)() {
+func (m *AuthorizationSystemTypeAction) SetActionType(value *AuthorizationSystemTypeAction_actionType)() {
     err := m.GetBackingStore().Set("actionType", value)
     if err != nil {
         panic(err)
@@ -202,11 +202,11 @@ func (m *AuthorizationSystemTypeAction) SetSeverity(value *AuthorizationSystemAc
 type AuthorizationSystemTypeActionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetActionType()(*AuthorizationSystemActionType)
+    GetActionType()(*AuthorizationSystemTypeAction_actionType)
     GetExternalId()(*string)
     GetResourceTypes()([]string)
     GetSeverity()(*AuthorizationSystemActionSeverity)
-    SetActionType(value *AuthorizationSystemActionType)()
+    SetActionType(value *AuthorizationSystemTypeAction_actionType)()
     SetExternalId(value *string)()
     SetResourceTypes(value []string)()
     SetSeverity(value *AuthorizationSystemActionSeverity)()

@@ -40,13 +40,13 @@ func (m *TenantAllowBlockListEntryResult) GetBackingStore()(ie8677ce2c7e1b4c22e9
     return m.backingStore
 }
 // GetEntryType gets the entryType property value. The tenant allow-block list entry type. The possible values are: url, fileHash, sender, recipient and unkownFutureValue.
-func (m *TenantAllowBlockListEntryResult) GetEntryType()(*TenantAllowBlockListEntryType) {
+func (m *TenantAllowBlockListEntryResult) GetEntryType()(*TenantAllowBlockListEntryResult_entryType) {
     val, err := m.GetBackingStore().Get("entryType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TenantAllowBlockListEntryType)
+        return val.(*TenantAllowBlockListEntryResult_entryType)
     }
     return nil
 }
@@ -65,12 +65,12 @@ func (m *TenantAllowBlockListEntryResult) GetExpirationDateTime()(*i336074805fc8
 func (m *TenantAllowBlockListEntryResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["entryType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTenantAllowBlockListEntryType)
+        val, err := n.GetEnumValue(ParseTenantAllowBlockListEntryResult_entryType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEntryType(val.(*TenantAllowBlockListEntryType))
+            m.SetEntryType(val.(*TenantAllowBlockListEntryResult_entryType))
         }
         return nil
     }
@@ -105,12 +105,12 @@ func (m *TenantAllowBlockListEntryResult) GetFieldDeserializers()(map[string]fun
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseLongRunningOperationStatus)
+        val, err := n.GetEnumValue(ParseTenantAllowBlockListEntryResult_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*LongRunningOperationStatus))
+            m.SetStatus(val.(*TenantAllowBlockListEntryResult_status))
         }
         return nil
     }
@@ -149,13 +149,13 @@ func (m *TenantAllowBlockListEntryResult) GetOdataType()(*string) {
     return nil
 }
 // GetStatus gets the status property value. Specifies whether the tenant allow block list entry creation operation was successful. The possible values are: notStarted, running, succeeded, failed, skipped and unkownFutureValue.
-func (m *TenantAllowBlockListEntryResult) GetStatus()(*LongRunningOperationStatus) {
+func (m *TenantAllowBlockListEntryResult) GetStatus()(*TenantAllowBlockListEntryResult_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*LongRunningOperationStatus)
+        return val.(*TenantAllowBlockListEntryResult_status)
     }
     return nil
 }
@@ -230,7 +230,7 @@ func (m *TenantAllowBlockListEntryResult) SetBackingStore(value ie8677ce2c7e1b4c
     m.backingStore = value
 }
 // SetEntryType sets the entryType property value. The tenant allow-block list entry type. The possible values are: url, fileHash, sender, recipient and unkownFutureValue.
-func (m *TenantAllowBlockListEntryResult) SetEntryType(value *TenantAllowBlockListEntryType)() {
+func (m *TenantAllowBlockListEntryResult) SetEntryType(value *TenantAllowBlockListEntryResult_entryType)() {
     err := m.GetBackingStore().Set("entryType", value)
     if err != nil {
         panic(err)
@@ -258,7 +258,7 @@ func (m *TenantAllowBlockListEntryResult) SetOdataType(value *string)() {
     }
 }
 // SetStatus sets the status property value. Specifies whether the tenant allow block list entry creation operation was successful. The possible values are: notStarted, running, succeeded, failed, skipped and unkownFutureValue.
-func (m *TenantAllowBlockListEntryResult) SetStatus(value *LongRunningOperationStatus)() {
+func (m *TenantAllowBlockListEntryResult) SetStatus(value *TenantAllowBlockListEntryResult_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -277,17 +277,17 @@ type TenantAllowBlockListEntryResultable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetEntryType()(*TenantAllowBlockListEntryType)
+    GetEntryType()(*TenantAllowBlockListEntryResult_entryType)
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetIdentity()(*string)
     GetOdataType()(*string)
-    GetStatus()(*LongRunningOperationStatus)
+    GetStatus()(*TenantAllowBlockListEntryResult_status)
     GetValue()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetEntryType(value *TenantAllowBlockListEntryType)()
+    SetEntryType(value *TenantAllowBlockListEntryResult_entryType)()
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetIdentity(value *string)()
     SetOdataType(value *string)()
-    SetStatus(value *LongRunningOperationStatus)()
+    SetStatus(value *TenantAllowBlockListEntryResult_status)()
     SetValue(value *string)()
 }

@@ -42,12 +42,12 @@ func (m *ContinuousAccessEvaluationSessionControl) GetBackingStore()(ie8677ce2c7
 func (m *ContinuousAccessEvaluationSessionControl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["mode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseContinuousAccessEvaluationMode)
+        val, err := n.GetEnumValue(ParseContinuousAccessEvaluationSessionControl_mode)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMode(val.(*ContinuousAccessEvaluationMode))
+            m.SetMode(val.(*ContinuousAccessEvaluationSessionControl_mode))
         }
         return nil
     }
@@ -64,13 +64,13 @@ func (m *ContinuousAccessEvaluationSessionControl) GetFieldDeserializers()(map[s
     return res
 }
 // GetMode gets the mode property value. Specifies continuous access evaluation settings. The possible values are: strictEnforcement, disabled, unknownFutureValue, strictLocation. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: strictLocation.
-func (m *ContinuousAccessEvaluationSessionControl) GetMode()(*ContinuousAccessEvaluationMode) {
+func (m *ContinuousAccessEvaluationSessionControl) GetMode()(*ContinuousAccessEvaluationSessionControl_mode) {
     val, err := m.GetBackingStore().Get("mode")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ContinuousAccessEvaluationMode)
+        return val.(*ContinuousAccessEvaluationSessionControl_mode)
     }
     return nil
 }
@@ -120,7 +120,7 @@ func (m *ContinuousAccessEvaluationSessionControl) SetBackingStore(value ie8677c
     m.backingStore = value
 }
 // SetMode sets the mode property value. Specifies continuous access evaluation settings. The possible values are: strictEnforcement, disabled, unknownFutureValue, strictLocation. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: strictLocation.
-func (m *ContinuousAccessEvaluationSessionControl) SetMode(value *ContinuousAccessEvaluationMode)() {
+func (m *ContinuousAccessEvaluationSessionControl) SetMode(value *ContinuousAccessEvaluationSessionControl_mode)() {
     err := m.GetBackingStore().Set("mode", value)
     if err != nil {
         panic(err)
@@ -139,9 +139,9 @@ type ContinuousAccessEvaluationSessionControlable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetMode()(*ContinuousAccessEvaluationMode)
+    GetMode()(*ContinuousAccessEvaluationSessionControl_mode)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetMode(value *ContinuousAccessEvaluationMode)()
+    SetMode(value *ContinuousAccessEvaluationSessionControl_mode)()
     SetOdataType(value *string)()
 }

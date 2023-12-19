@@ -72,13 +72,13 @@ func (m *OnPremisesPublishing) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078
     return m.backingStore
 }
 // GetExternalAuthenticationType gets the externalAuthenticationType property value. Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn't require authentication. Possible values are: passthru, aadPreAuthentication.
-func (m *OnPremisesPublishing) GetExternalAuthenticationType()(*ExternalAuthenticationType) {
+func (m *OnPremisesPublishing) GetExternalAuthenticationType()(*OnPremisesPublishing_externalAuthenticationType) {
     val, err := m.GetBackingStore().Get("externalAuthenticationType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ExternalAuthenticationType)
+        return val.(*OnPremisesPublishing_externalAuthenticationType)
     }
     return nil
 }
@@ -127,12 +127,12 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["externalAuthenticationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseExternalAuthenticationType)
+        val, err := n.GetEnumValue(ParseOnPremisesPublishing_externalAuthenticationType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetExternalAuthenticationType(val.(*ExternalAuthenticationType))
+            m.SetExternalAuthenticationType(val.(*OnPremisesPublishing_externalAuthenticationType))
         }
         return nil
     }
@@ -747,7 +747,7 @@ func (m *OnPremisesPublishing) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ec
     m.backingStore = value
 }
 // SetExternalAuthenticationType sets the externalAuthenticationType property value. Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn't require authentication. Possible values are: passthru, aadPreAuthentication.
-func (m *OnPremisesPublishing) SetExternalAuthenticationType(value *ExternalAuthenticationType)() {
+func (m *OnPremisesPublishing) SetExternalAuthenticationType(value *OnPremisesPublishing_externalAuthenticationType)() {
     err := m.GetBackingStore().Set("externalAuthenticationType", value)
     if err != nil {
         panic(err)
@@ -902,7 +902,7 @@ type OnPremisesPublishingable interface {
     GetApplicationServerTimeout()(*string)
     GetApplicationType()(*string)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetExternalAuthenticationType()(*ExternalAuthenticationType)
+    GetExternalAuthenticationType()(*OnPremisesPublishing_externalAuthenticationType)
     GetExternalUrl()(*string)
     GetInternalUrl()(*string)
     GetIsAccessibleViaZTNAClient()(*bool)
@@ -927,7 +927,7 @@ type OnPremisesPublishingable interface {
     SetApplicationServerTimeout(value *string)()
     SetApplicationType(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetExternalAuthenticationType(value *ExternalAuthenticationType)()
+    SetExternalAuthenticationType(value *OnPremisesPublishing_externalAuthenticationType)()
     SetExternalUrl(value *string)()
     SetInternalUrl(value *string)()
     SetIsAccessibleViaZTNAClient(value *bool)()

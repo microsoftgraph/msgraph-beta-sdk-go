@@ -50,13 +50,13 @@ func (m *SessionLifetimePolicy) GetDetail()(*string) {
     return nil
 }
 // GetExpirationRequirement gets the expirationRequirement property value. If a conditional access session management policy required the user to authenticate in this sign-in event, this field describes the policy type that required authentication. The possible values are: rememberMultifactorAuthenticationOnTrustedDevices, tenantTokenLifetimePolicy, audienceTokenLifetimePolicy, signInFrequencyPeriodicReauthentication, ngcMfa, signInFrequencyEveryTime, unknownFutureValue.
-func (m *SessionLifetimePolicy) GetExpirationRequirement()(*ExpirationRequirement) {
+func (m *SessionLifetimePolicy) GetExpirationRequirement()(*SessionLifetimePolicy_expirationRequirement) {
     val, err := m.GetBackingStore().Get("expirationRequirement")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ExpirationRequirement)
+        return val.(*SessionLifetimePolicy_expirationRequirement)
     }
     return nil
 }
@@ -74,12 +74,12 @@ func (m *SessionLifetimePolicy) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     res["expirationRequirement"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseExpirationRequirement)
+        val, err := n.GetEnumValue(ParseSessionLifetimePolicy_expirationRequirement)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetExpirationRequirement(val.(*ExpirationRequirement))
+            m.SetExpirationRequirement(val.(*SessionLifetimePolicy_expirationRequirement))
         }
         return nil
     }
@@ -154,7 +154,7 @@ func (m *SessionLifetimePolicy) SetDetail(value *string)() {
     }
 }
 // SetExpirationRequirement sets the expirationRequirement property value. If a conditional access session management policy required the user to authenticate in this sign-in event, this field describes the policy type that required authentication. The possible values are: rememberMultifactorAuthenticationOnTrustedDevices, tenantTokenLifetimePolicy, audienceTokenLifetimePolicy, signInFrequencyPeriodicReauthentication, ngcMfa, signInFrequencyEveryTime, unknownFutureValue.
-func (m *SessionLifetimePolicy) SetExpirationRequirement(value *ExpirationRequirement)() {
+func (m *SessionLifetimePolicy) SetExpirationRequirement(value *SessionLifetimePolicy_expirationRequirement)() {
     err := m.GetBackingStore().Set("expirationRequirement", value)
     if err != nil {
         panic(err)
@@ -174,10 +174,10 @@ type SessionLifetimePolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDetail()(*string)
-    GetExpirationRequirement()(*ExpirationRequirement)
+    GetExpirationRequirement()(*SessionLifetimePolicy_expirationRequirement)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDetail(value *string)()
-    SetExpirationRequirement(value *ExpirationRequirement)()
+    SetExpirationRequirement(value *SessionLifetimePolicy_expirationRequirement)()
     SetOdataType(value *string)()
 }

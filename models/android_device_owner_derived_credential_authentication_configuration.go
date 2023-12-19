@@ -22,13 +22,13 @@ func CreateAndroidDeviceOwnerDerivedCredentialAuthenticationConfigurationFromDis
     return NewAndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration(), nil
 }
 // GetCertificateAccessType gets the certificateAccessType property value. Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
-func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) GetCertificateAccessType()(*AndroidDeviceOwnerCertificateAccessType) {
+func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) GetCertificateAccessType()(*AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration_certificateAccessType) {
     val, err := m.GetBackingStore().Get("certificateAccessType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AndroidDeviceOwnerCertificateAccessType)
+        return val.(*AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration_certificateAccessType)
     }
     return nil
 }
@@ -47,12 +47,12 @@ func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) GetDeri
 func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["certificateAccessType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerCertificateAccessType)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration_certificateAccessType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCertificateAccessType(val.(*AndroidDeviceOwnerCertificateAccessType))
+            m.SetCertificateAccessType(val.(*AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration_certificateAccessType))
         }
         return nil
     }
@@ -129,7 +129,7 @@ func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) Seriali
     return nil
 }
 // SetCertificateAccessType sets the certificateAccessType property value. Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
-func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) SetCertificateAccessType(value *AndroidDeviceOwnerCertificateAccessType)() {
+func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) SetCertificateAccessType(value *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration_certificateAccessType)() {
     err := m.GetBackingStore().Set("certificateAccessType", value)
     if err != nil {
         panic(err)
@@ -153,10 +153,10 @@ func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) SetSile
 type AndroidDeviceOwnerDerivedCredentialAuthenticationConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetCertificateAccessType()(*AndroidDeviceOwnerCertificateAccessType)
+    GetCertificateAccessType()(*AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration_certificateAccessType)
     GetDerivedCredentialSettings()(DeviceManagementDerivedCredentialSettingsable)
     GetSilentCertificateAccessDetails()([]AndroidDeviceOwnerSilentCertificateAccessable)
-    SetCertificateAccessType(value *AndroidDeviceOwnerCertificateAccessType)()
+    SetCertificateAccessType(value *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration_certificateAccessType)()
     SetDerivedCredentialSettings(value DeviceManagementDerivedCredentialSettingsable)()
     SetSilentCertificateAccessDetails(value []AndroidDeviceOwnerSilentCertificateAccessable)()
 }

@@ -39,13 +39,13 @@ func (m *InvitationParticipantInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827e
     return m.backingStore
 }
 // GetEndpointType gets the endpointType property value. The type of endpoint. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
-func (m *InvitationParticipantInfo) GetEndpointType()(*EndpointType) {
+func (m *InvitationParticipantInfo) GetEndpointType()(*InvitationParticipantInfo_endpointType) {
     val, err := m.GetBackingStore().Get("endpointType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EndpointType)
+        return val.(*InvitationParticipantInfo_endpointType)
     }
     return nil
 }
@@ -53,12 +53,12 @@ func (m *InvitationParticipantInfo) GetEndpointType()(*EndpointType) {
 func (m *InvitationParticipantInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["endpointType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEndpointType)
+        val, err := n.GetEnumValue(ParseInvitationParticipantInfo_endpointType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEndpointType(val.(*EndpointType))
+            m.SetEndpointType(val.(*InvitationParticipantInfo_endpointType))
         }
         return nil
     }
@@ -255,7 +255,7 @@ func (m *InvitationParticipantInfo) SetBackingStore(value ie8677ce2c7e1b4c22e9c3
     m.backingStore = value
 }
 // SetEndpointType sets the endpointType property value. The type of endpoint. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
-func (m *InvitationParticipantInfo) SetEndpointType(value *EndpointType)() {
+func (m *InvitationParticipantInfo) SetEndpointType(value *InvitationParticipantInfo_endpointType)() {
     err := m.GetBackingStore().Set("endpointType", value)
     if err != nil {
         panic(err)
@@ -309,7 +309,7 @@ type InvitationParticipantInfoable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetEndpointType()(*EndpointType)
+    GetEndpointType()(*InvitationParticipantInfo_endpointType)
     GetHidden()(*bool)
     GetIdentity()(IdentitySetable)
     GetOdataType()(*string)
@@ -317,7 +317,7 @@ type InvitationParticipantInfoable interface {
     GetRemoveFromDefaultAudioRoutingGroup()(*bool)
     GetReplacesCallId()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetEndpointType(value *EndpointType)()
+    SetEndpointType(value *InvitationParticipantInfo_endpointType)()
     SetHidden(value *bool)()
     SetIdentity(value IdentitySetable)()
     SetOdataType(value *string)()

@@ -77,13 +77,13 @@ func (m *IosikEv2VpnConfiguration) GetClientAuthenticationType()(*VpnClientAuthe
     return nil
 }
 // GetDeadPeerDetectionRate gets the deadPeerDetectionRate property value. Determine how often to check if a peer connection is still active. . Possible values are: medium, none, low, high.
-func (m *IosikEv2VpnConfiguration) GetDeadPeerDetectionRate()(*VpnDeadPeerDetectionRate) {
+func (m *IosikEv2VpnConfiguration) GetDeadPeerDetectionRate()(*IosikEv2VpnConfiguration_deadPeerDetectionRate) {
     val, err := m.GetBackingStore().Get("deadPeerDetectionRate")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*VpnDeadPeerDetectionRate)
+        return val.(*IosikEv2VpnConfiguration_deadPeerDetectionRate)
     }
     return nil
 }
@@ -218,12 +218,12 @@ func (m *IosikEv2VpnConfiguration) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     res["deadPeerDetectionRate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVpnDeadPeerDetectionRate)
+        val, err := n.GetEnumValue(ParseIosikEv2VpnConfiguration_deadPeerDetectionRate)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeadPeerDetectionRate(val.(*VpnDeadPeerDetectionRate))
+            m.SetDeadPeerDetectionRate(val.(*IosikEv2VpnConfiguration_deadPeerDetectionRate))
         }
         return nil
     }
@@ -358,12 +358,12 @@ func (m *IosikEv2VpnConfiguration) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     res["serverCertificateType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVpnServerCertificateType)
+        val, err := n.GetEnumValue(ParseIosikEv2VpnConfiguration_serverCertificateType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetServerCertificateType(val.(*VpnServerCertificateType))
+            m.SetServerCertificateType(val.(*IosikEv2VpnConfiguration_serverCertificateType))
         }
         return nil
     }
@@ -466,13 +466,13 @@ func (m *IosikEv2VpnConfiguration) GetServerCertificateIssuerCommonName()(*strin
     return nil
 }
 // GetServerCertificateType gets the serverCertificateType property value. The type of certificate the VPN server will present to the VPN client for authentication. Possible values are: rsa, ecdsa256, ecdsa384, ecdsa521.
-func (m *IosikEv2VpnConfiguration) GetServerCertificateType()(*VpnServerCertificateType) {
+func (m *IosikEv2VpnConfiguration) GetServerCertificateType()(*IosikEv2VpnConfiguration_serverCertificateType) {
     val, err := m.GetBackingStore().Get("serverCertificateType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*VpnServerCertificateType)
+        return val.(*IosikEv2VpnConfiguration_serverCertificateType)
     }
     return nil
 }
@@ -695,7 +695,7 @@ func (m *IosikEv2VpnConfiguration) SetClientAuthenticationType(value *VpnClientA
     }
 }
 // SetDeadPeerDetectionRate sets the deadPeerDetectionRate property value. Determine how often to check if a peer connection is still active. . Possible values are: medium, none, low, high.
-func (m *IosikEv2VpnConfiguration) SetDeadPeerDetectionRate(value *VpnDeadPeerDetectionRate)() {
+func (m *IosikEv2VpnConfiguration) SetDeadPeerDetectionRate(value *IosikEv2VpnConfiguration_deadPeerDetectionRate)() {
     err := m.GetBackingStore().Set("deadPeerDetectionRate", value)
     if err != nil {
         panic(err)
@@ -793,7 +793,7 @@ func (m *IosikEv2VpnConfiguration) SetServerCertificateIssuerCommonName(value *s
     }
 }
 // SetServerCertificateType sets the serverCertificateType property value. The type of certificate the VPN server will present to the VPN client for authentication. Possible values are: rsa, ecdsa256, ecdsa384, ecdsa521.
-func (m *IosikEv2VpnConfiguration) SetServerCertificateType(value *VpnServerCertificateType)() {
+func (m *IosikEv2VpnConfiguration) SetServerCertificateType(value *IosikEv2VpnConfiguration_serverCertificateType)() {
     err := m.GetBackingStore().Set("serverCertificateType", value)
     if err != nil {
         panic(err)
@@ -829,7 +829,7 @@ type IosikEv2VpnConfigurationable interface {
     GetAlwaysOnConfiguration()(AppleVpnAlwaysOnConfigurationable)
     GetChildSecurityAssociationParameters()(IosVpnSecurityAssociationParametersable)
     GetClientAuthenticationType()(*VpnClientAuthenticationType)
-    GetDeadPeerDetectionRate()(*VpnDeadPeerDetectionRate)
+    GetDeadPeerDetectionRate()(*IosikEv2VpnConfiguration_deadPeerDetectionRate)
     GetDisableMobilityAndMultihoming()(*bool)
     GetDisableRedirect()(*bool)
     GetEnableAlwaysOnConfiguration()(*bool)
@@ -843,7 +843,7 @@ type IosikEv2VpnConfigurationable interface {
     GetSecurityAssociationParameters()(IosVpnSecurityAssociationParametersable)
     GetServerCertificateCommonName()(*string)
     GetServerCertificateIssuerCommonName()(*string)
-    GetServerCertificateType()(*VpnServerCertificateType)
+    GetServerCertificateType()(*IosikEv2VpnConfiguration_serverCertificateType)
     GetSharedSecret()(*string)
     GetTlsMaximumVersion()(*string)
     GetTlsMinimumVersion()(*string)
@@ -852,7 +852,7 @@ type IosikEv2VpnConfigurationable interface {
     SetAlwaysOnConfiguration(value AppleVpnAlwaysOnConfigurationable)()
     SetChildSecurityAssociationParameters(value IosVpnSecurityAssociationParametersable)()
     SetClientAuthenticationType(value *VpnClientAuthenticationType)()
-    SetDeadPeerDetectionRate(value *VpnDeadPeerDetectionRate)()
+    SetDeadPeerDetectionRate(value *IosikEv2VpnConfiguration_deadPeerDetectionRate)()
     SetDisableMobilityAndMultihoming(value *bool)()
     SetDisableRedirect(value *bool)()
     SetEnableAlwaysOnConfiguration(value *bool)()
@@ -866,7 +866,7 @@ type IosikEv2VpnConfigurationable interface {
     SetSecurityAssociationParameters(value IosVpnSecurityAssociationParametersable)()
     SetServerCertificateCommonName(value *string)()
     SetServerCertificateIssuerCommonName(value *string)()
-    SetServerCertificateType(value *VpnServerCertificateType)()
+    SetServerCertificateType(value *IosikEv2VpnConfiguration_serverCertificateType)()
     SetSharedSecret(value *string)()
     SetTlsMaximumVersion(value *string)()
     SetTlsMinimumVersion(value *string)()

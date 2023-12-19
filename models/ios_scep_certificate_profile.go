@@ -22,13 +22,13 @@ func CreateIosScepCertificateProfileFromDiscriminatorValue(parseNode i878a80d233
     return NewIosScepCertificateProfile(), nil
 }
 // GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
-func (m *IosScepCertificateProfile) GetCertificateStore()(*CertificateStore) {
+func (m *IosScepCertificateProfile) GetCertificateStore()(*IosScepCertificateProfile_certificateStore) {
     val, err := m.GetBackingStore().Get("certificateStore")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CertificateStore)
+        return val.(*IosScepCertificateProfile_certificateStore)
     }
     return nil
 }
@@ -58,12 +58,12 @@ func (m *IosScepCertificateProfile) GetExtendedKeyUsages()([]ExtendedKeyUsageabl
 func (m *IosScepCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IosCertificateProfileBase.GetFieldDeserializers()
     res["certificateStore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCertificateStore)
+        val, err := n.GetEnumValue(ParseIosScepCertificateProfile_certificateStore)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCertificateStore(val.(*CertificateStore))
+            m.SetCertificateStore(val.(*IosScepCertificateProfile_certificateStore))
         }
         return nil
     }
@@ -350,7 +350,7 @@ func (m *IosScepCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetCertificateStore sets the certificateStore property value. Target store certificate. Possible values are: user, machine.
-func (m *IosScepCertificateProfile) SetCertificateStore(value *CertificateStore)() {
+func (m *IosScepCertificateProfile) SetCertificateStore(value *IosScepCertificateProfile_certificateStore)() {
     err := m.GetBackingStore().Set("certificateStore", value)
     if err != nil {
         panic(err)
@@ -423,7 +423,7 @@ func (m *IosScepCertificateProfile) SetSubjectNameFormatString(value *string)() 
 type IosScepCertificateProfileable interface {
     IosCertificateProfileBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetCertificateStore()(*CertificateStore)
+    GetCertificateStore()(*IosScepCertificateProfile_certificateStore)
     GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable)
     GetExtendedKeyUsages()([]ExtendedKeyUsageable)
     GetKeySize()(*KeySize)
@@ -433,7 +433,7 @@ type IosScepCertificateProfileable interface {
     GetScepServerUrls()([]string)
     GetSubjectAlternativeNameFormatString()(*string)
     GetSubjectNameFormatString()(*string)
-    SetCertificateStore(value *CertificateStore)()
+    SetCertificateStore(value *IosScepCertificateProfile_certificateStore)()
     SetCustomSubjectAlternativeNames(value []CustomSubjectAlternativeNameable)()
     SetExtendedKeyUsages(value []ExtendedKeyUsageable)()
     SetKeySize(value *KeySize)()

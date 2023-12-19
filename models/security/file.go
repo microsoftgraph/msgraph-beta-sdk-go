@@ -157,12 +157,12 @@ func (m *File) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         return nil
     }
     res["processingStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseFileProcessingStatus)
+        val, err := n.GetEnumValue(ParseFile_processingStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProcessingStatus(val.(*FileProcessingStatus))
+            m.SetProcessingStatus(val.(*File_processingStatus))
         }
         return nil
     }
@@ -193,12 +193,12 @@ func (m *File) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         return nil
     }
     res["sourceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSourceType)
+        val, err := n.GetEnumValue(ParseFile_sourceType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSourceType(val.(*SourceType))
+            m.SetSourceType(val.(*File_sourceType))
         }
         return nil
     }
@@ -248,13 +248,13 @@ func (m *File) GetOtherProperties()(StringValueDictionaryable) {
     return nil
 }
 // GetProcessingStatus gets the processingStatus property value. The processingStatus property
-func (m *File) GetProcessingStatus()(*FileProcessingStatus) {
+func (m *File) GetProcessingStatus()(*File_processingStatus) {
     val, err := m.GetBackingStore().Get("processingStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*FileProcessingStatus)
+        return val.(*File_processingStatus)
     }
     return nil
 }
@@ -281,13 +281,13 @@ func (m *File) GetSize()(*int64) {
     return nil
 }
 // GetSourceType gets the sourceType property value. The sourceType property
-func (m *File) GetSourceType()(*SourceType) {
+func (m *File) GetSourceType()(*File_sourceType) {
     val, err := m.GetBackingStore().Get("sourceType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SourceType)
+        return val.(*File_sourceType)
     }
     return nil
 }
@@ -434,7 +434,7 @@ func (m *File) SetOtherProperties(value StringValueDictionaryable)() {
     }
 }
 // SetProcessingStatus sets the processingStatus property value. The processingStatus property
-func (m *File) SetProcessingStatus(value *FileProcessingStatus)() {
+func (m *File) SetProcessingStatus(value *File_processingStatus)() {
     err := m.GetBackingStore().Set("processingStatus", value)
     if err != nil {
         panic(err)
@@ -455,7 +455,7 @@ func (m *File) SetSize(value *int64)() {
     }
 }
 // SetSourceType sets the sourceType property value. The sourceType property
-func (m *File) SetSourceType(value *SourceType)() {
+func (m *File) SetSourceType(value *File_sourceType)() {
     err := m.GetBackingStore().Set("sourceType", value)
     if err != nil {
         panic(err)
@@ -479,10 +479,10 @@ type Fileable interface {
     GetMediaType()(*string)
     GetName()(*string)
     GetOtherProperties()(StringValueDictionaryable)
-    GetProcessingStatus()(*FileProcessingStatus)
+    GetProcessingStatus()(*File_processingStatus)
     GetSenderOrAuthors()([]string)
     GetSize()(*int64)
-    GetSourceType()(*SourceType)
+    GetSourceType()(*File_sourceType)
     GetSubjectTitle()(*string)
     SetContent(value []byte)()
     SetDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -491,9 +491,9 @@ type Fileable interface {
     SetMediaType(value *string)()
     SetName(value *string)()
     SetOtherProperties(value StringValueDictionaryable)()
-    SetProcessingStatus(value *FileProcessingStatus)()
+    SetProcessingStatus(value *File_processingStatus)()
     SetSenderOrAuthors(value []string)()
     SetSize(value *int64)()
-    SetSourceType(value *SourceType)()
+    SetSourceType(value *File_sourceType)()
     SetSubjectTitle(value *string)()
 }

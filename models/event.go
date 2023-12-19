@@ -286,12 +286,12 @@ func (m *Event) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         return nil
     }
     res["importance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseImportance)
+        val, err := n.GetEnumValue(ParseEvent_importance)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetImportance(val.(*Importance))
+            m.SetImportance(val.(*Event_importance))
         }
         return nil
     }
@@ -434,12 +434,12 @@ func (m *Event) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         return nil
     }
     res["onlineMeetingProvider"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOnlineMeetingProviderType)
+        val, err := n.GetEnumValue(ParseEvent_onlineMeetingProvider)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOnlineMeetingProvider(val.(*OnlineMeetingProviderType))
+            m.SetOnlineMeetingProvider(val.(*Event_onlineMeetingProvider))
         }
         return nil
     }
@@ -534,12 +534,12 @@ func (m *Event) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         return nil
     }
     res["sensitivity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSensitivity)
+        val, err := n.GetEnumValue(ParseEvent_sensitivity)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSensitivity(val.(*Sensitivity))
+            m.SetSensitivity(val.(*Event_sensitivity))
         }
         return nil
     }
@@ -554,12 +554,12 @@ func (m *Event) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         return nil
     }
     res["showAs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseFreeBusyStatus)
+        val, err := n.GetEnumValue(ParseEvent_showAs)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetShowAs(val.(*FreeBusyStatus))
+            m.SetShowAs(val.(*Event_showAs))
         }
         return nil
     }
@@ -610,12 +610,12 @@ func (m *Event) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         return nil
     }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEventType)
+        val, err := n.GetEnumValue(ParseEvent_type)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTypeEscaped(val.(*EventType))
+            m.SetTypeEscaped(val.(*Event_type))
         }
         return nil
     }
@@ -664,13 +664,13 @@ func (m *Event) GetHideAttendees()(*bool) {
     return nil
 }
 // GetImportance gets the importance property value. The importance property
-func (m *Event) GetImportance()(*Importance) {
+func (m *Event) GetImportance()(*Event_importance) {
     val, err := m.GetBackingStore().Get("importance")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*Importance)
+        return val.(*Event_importance)
     }
     return nil
 }
@@ -807,13 +807,13 @@ func (m *Event) GetOnlineMeeting()(OnlineMeetingInfoable) {
     return nil
 }
 // GetOnlineMeetingProvider gets the onlineMeetingProvider property value. The onlineMeetingProvider property
-func (m *Event) GetOnlineMeetingProvider()(*OnlineMeetingProviderType) {
+func (m *Event) GetOnlineMeetingProvider()(*Event_onlineMeetingProvider) {
     val, err := m.GetBackingStore().Get("onlineMeetingProvider")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*OnlineMeetingProviderType)
+        return val.(*Event_onlineMeetingProvider)
     }
     return nil
 }
@@ -917,13 +917,13 @@ func (m *Event) GetResponseStatus()(ResponseStatusable) {
     return nil
 }
 // GetSensitivity gets the sensitivity property value. The sensitivity property
-func (m *Event) GetSensitivity()(*Sensitivity) {
+func (m *Event) GetSensitivity()(*Event_sensitivity) {
     val, err := m.GetBackingStore().Get("sensitivity")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*Sensitivity)
+        return val.(*Event_sensitivity)
     }
     return nil
 }
@@ -939,13 +939,13 @@ func (m *Event) GetSeriesMasterId()(*string) {
     return nil
 }
 // GetShowAs gets the showAs property value. The showAs property
-func (m *Event) GetShowAs()(*FreeBusyStatus) {
+func (m *Event) GetShowAs()(*Event_showAs) {
     val, err := m.GetBackingStore().Get("showAs")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*FreeBusyStatus)
+        return val.(*Event_showAs)
     }
     return nil
 }
@@ -994,13 +994,13 @@ func (m *Event) GetTransactionId()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type property
-func (m *Event) GetTypeEscaped()(*EventType) {
+func (m *Event) GetTypeEscaped()(*Event_type) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EventType)
+        return val.(*Event_type)
     }
     return nil
 }
@@ -1442,7 +1442,7 @@ func (m *Event) SetHideAttendees(value *bool)() {
     }
 }
 // SetImportance sets the importance property value. The importance property
-func (m *Event) SetImportance(value *Importance)() {
+func (m *Event) SetImportance(value *Event_importance)() {
     err := m.GetBackingStore().Set("importance", value)
     if err != nil {
         panic(err)
@@ -1533,7 +1533,7 @@ func (m *Event) SetOnlineMeeting(value OnlineMeetingInfoable)() {
     }
 }
 // SetOnlineMeetingProvider sets the onlineMeetingProvider property value. The onlineMeetingProvider property
-func (m *Event) SetOnlineMeetingProvider(value *OnlineMeetingProviderType)() {
+func (m *Event) SetOnlineMeetingProvider(value *Event_onlineMeetingProvider)() {
     err := m.GetBackingStore().Set("onlineMeetingProvider", value)
     if err != nil {
         panic(err)
@@ -1603,7 +1603,7 @@ func (m *Event) SetResponseStatus(value ResponseStatusable)() {
     }
 }
 // SetSensitivity sets the sensitivity property value. The sensitivity property
-func (m *Event) SetSensitivity(value *Sensitivity)() {
+func (m *Event) SetSensitivity(value *Event_sensitivity)() {
     err := m.GetBackingStore().Set("sensitivity", value)
     if err != nil {
         panic(err)
@@ -1617,7 +1617,7 @@ func (m *Event) SetSeriesMasterId(value *string)() {
     }
 }
 // SetShowAs sets the showAs property value. The showAs property
-func (m *Event) SetShowAs(value *FreeBusyStatus)() {
+func (m *Event) SetShowAs(value *Event_showAs)() {
     err := m.GetBackingStore().Set("showAs", value)
     if err != nil {
         panic(err)
@@ -1652,7 +1652,7 @@ func (m *Event) SetTransactionId(value *string)() {
     }
 }
 // SetTypeEscaped sets the type property value. The type property
-func (m *Event) SetTypeEscaped(value *EventType)() {
+func (m *Event) SetTypeEscaped(value *Event_type)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -1688,7 +1688,7 @@ type Eventable interface {
     GetExtensions()([]Extensionable)
     GetHasAttachments()(*bool)
     GetHideAttendees()(*bool)
-    GetImportance()(*Importance)
+    GetImportance()(*Event_importance)
     GetInstances()([]Eventable)
     GetIsAllDay()(*bool)
     GetIsCancelled()(*bool)
@@ -1701,7 +1701,7 @@ type Eventable interface {
     GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable)
     GetOccurrenceId()(*string)
     GetOnlineMeeting()(OnlineMeetingInfoable)
-    GetOnlineMeetingProvider()(*OnlineMeetingProviderType)
+    GetOnlineMeetingProvider()(*Event_onlineMeetingProvider)
     GetOnlineMeetingUrl()(*string)
     GetOrganizer()(Recipientable)
     GetOriginalEndTimeZone()(*string)
@@ -1711,14 +1711,14 @@ type Eventable interface {
     GetReminderMinutesBeforeStart()(*int32)
     GetResponseRequested()(*bool)
     GetResponseStatus()(ResponseStatusable)
-    GetSensitivity()(*Sensitivity)
+    GetSensitivity()(*Event_sensitivity)
     GetSeriesMasterId()(*string)
-    GetShowAs()(*FreeBusyStatus)
+    GetShowAs()(*Event_showAs)
     GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable)
     GetStart()(DateTimeTimeZoneable)
     GetSubject()(*string)
     GetTransactionId()(*string)
-    GetTypeEscaped()(*EventType)
+    GetTypeEscaped()(*Event_type)
     GetUid()(*string)
     GetWebLink()(*string)
     SetAllowNewTimeProposals(value *bool)()
@@ -1733,7 +1733,7 @@ type Eventable interface {
     SetExtensions(value []Extensionable)()
     SetHasAttachments(value *bool)()
     SetHideAttendees(value *bool)()
-    SetImportance(value *Importance)()
+    SetImportance(value *Event_importance)()
     SetInstances(value []Eventable)()
     SetIsAllDay(value *bool)()
     SetIsCancelled(value *bool)()
@@ -1746,7 +1746,7 @@ type Eventable interface {
     SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)()
     SetOccurrenceId(value *string)()
     SetOnlineMeeting(value OnlineMeetingInfoable)()
-    SetOnlineMeetingProvider(value *OnlineMeetingProviderType)()
+    SetOnlineMeetingProvider(value *Event_onlineMeetingProvider)()
     SetOnlineMeetingUrl(value *string)()
     SetOrganizer(value Recipientable)()
     SetOriginalEndTimeZone(value *string)()
@@ -1756,14 +1756,14 @@ type Eventable interface {
     SetReminderMinutesBeforeStart(value *int32)()
     SetResponseRequested(value *bool)()
     SetResponseStatus(value ResponseStatusable)()
-    SetSensitivity(value *Sensitivity)()
+    SetSensitivity(value *Event_sensitivity)()
     SetSeriesMasterId(value *string)()
-    SetShowAs(value *FreeBusyStatus)()
+    SetShowAs(value *Event_showAs)()
     SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)()
     SetStart(value DateTimeTimeZoneable)()
     SetSubject(value *string)()
     SetTransactionId(value *string)()
-    SetTypeEscaped(value *EventType)()
+    SetTypeEscaped(value *Event_type)()
     SetUid(value *string)()
     SetWebLink(value *string)()
 }

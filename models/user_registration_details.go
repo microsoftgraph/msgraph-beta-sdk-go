@@ -21,13 +21,13 @@ func CreateUserRegistrationDetailsFromDiscriminatorValue(parseNode i878a80d2330e
     return NewUserRegistrationDetails(), nil
 }
 // GetDefaultMfaMethod gets the defaultMfaMethod property value. The method the user or admin selected as default for performing multifactor authentication for the user. The possible values are: none, mobilePhone, alternateMobilePhone, officePhone, microsoftAuthenticatorPush, softwareOneTimePasscode, unknownFutureValue.
-func (m *UserRegistrationDetails) GetDefaultMfaMethod()(*DefaultMfaMethodType) {
+func (m *UserRegistrationDetails) GetDefaultMfaMethod()(*UserRegistrationDetails_defaultMfaMethod) {
     val, err := m.GetBackingStore().Get("defaultMfaMethod")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DefaultMfaMethodType)
+        return val.(*UserRegistrationDetails_defaultMfaMethod)
     }
     return nil
 }
@@ -35,12 +35,12 @@ func (m *UserRegistrationDetails) GetDefaultMfaMethod()(*DefaultMfaMethodType) {
 func (m *UserRegistrationDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["defaultMfaMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDefaultMfaMethodType)
+        val, err := n.GetEnumValue(ParseUserRegistrationDetails_defaultMfaMethod)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefaultMfaMethod(val.(*DefaultMfaMethodType))
+            m.SetDefaultMfaMethod(val.(*UserRegistrationDetails_defaultMfaMethod))
         }
         return nil
     }
@@ -177,12 +177,12 @@ func (m *UserRegistrationDetails) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     res["userPreferredMethodForSecondaryAuthentication"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseUserDefaultAuthenticationMethod)
+        val, err := n.GetEnumValue(ParseUserRegistrationDetails_userPreferredMethodForSecondaryAuthentication)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUserPreferredMethodForSecondaryAuthentication(val.(*UserDefaultAuthenticationMethod))
+            m.SetUserPreferredMethodForSecondaryAuthentication(val.(*UserRegistrationDetails_userPreferredMethodForSecondaryAuthentication))
         }
         return nil
     }
@@ -197,12 +197,12 @@ func (m *UserRegistrationDetails) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     res["userType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSignInUserType)
+        val, err := n.GetEnumValue(ParseUserRegistrationDetails_userType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUserType(val.(*SignInUserType))
+            m.SetUserType(val.(*UserRegistrationDetails_userType))
         }
         return nil
     }
@@ -341,13 +341,13 @@ func (m *UserRegistrationDetails) GetUserDisplayName()(*string) {
     return nil
 }
 // GetUserPreferredMethodForSecondaryAuthentication gets the userPreferredMethodForSecondaryAuthentication property value. The method the user selected as the default second-factor for performing multifactor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
-func (m *UserRegistrationDetails) GetUserPreferredMethodForSecondaryAuthentication()(*UserDefaultAuthenticationMethod) {
+func (m *UserRegistrationDetails) GetUserPreferredMethodForSecondaryAuthentication()(*UserRegistrationDetails_userPreferredMethodForSecondaryAuthentication) {
     val, err := m.GetBackingStore().Get("userPreferredMethodForSecondaryAuthentication")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*UserDefaultAuthenticationMethod)
+        return val.(*UserRegistrationDetails_userPreferredMethodForSecondaryAuthentication)
     }
     return nil
 }
@@ -363,13 +363,13 @@ func (m *UserRegistrationDetails) GetUserPrincipalName()(*string) {
     return nil
 }
 // GetUserType gets the userType property value. Identifies whether the user is a member or guest in the tenant. The possible values are: member, guest, unknownFutureValue.
-func (m *UserRegistrationDetails) GetUserType()(*SignInUserType) {
+func (m *UserRegistrationDetails) GetUserType()(*UserRegistrationDetails_userType) {
     val, err := m.GetBackingStore().Get("userType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SignInUserType)
+        return val.(*UserRegistrationDetails_userType)
     }
     return nil
 }
@@ -481,7 +481,7 @@ func (m *UserRegistrationDetails) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetDefaultMfaMethod sets the defaultMfaMethod property value. The method the user or admin selected as default for performing multifactor authentication for the user. The possible values are: none, mobilePhone, alternateMobilePhone, officePhone, microsoftAuthenticatorPush, softwareOneTimePasscode, unknownFutureValue.
-func (m *UserRegistrationDetails) SetDefaultMfaMethod(value *DefaultMfaMethodType)() {
+func (m *UserRegistrationDetails) SetDefaultMfaMethod(value *UserRegistrationDetails_defaultMfaMethod)() {
     err := m.GetBackingStore().Set("defaultMfaMethod", value)
     if err != nil {
         panic(err)
@@ -572,7 +572,7 @@ func (m *UserRegistrationDetails) SetUserDisplayName(value *string)() {
     }
 }
 // SetUserPreferredMethodForSecondaryAuthentication sets the userPreferredMethodForSecondaryAuthentication property value. The method the user selected as the default second-factor for performing multifactor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
-func (m *UserRegistrationDetails) SetUserPreferredMethodForSecondaryAuthentication(value *UserDefaultAuthenticationMethod)() {
+func (m *UserRegistrationDetails) SetUserPreferredMethodForSecondaryAuthentication(value *UserRegistrationDetails_userPreferredMethodForSecondaryAuthentication)() {
     err := m.GetBackingStore().Set("userPreferredMethodForSecondaryAuthentication", value)
     if err != nil {
         panic(err)
@@ -586,7 +586,7 @@ func (m *UserRegistrationDetails) SetUserPrincipalName(value *string)() {
     }
 }
 // SetUserType sets the userType property value. Identifies whether the user is a member or guest in the tenant. The possible values are: member, guest, unknownFutureValue.
-func (m *UserRegistrationDetails) SetUserType(value *SignInUserType)() {
+func (m *UserRegistrationDetails) SetUserType(value *UserRegistrationDetails_userType)() {
     err := m.GetBackingStore().Set("userType", value)
     if err != nil {
         panic(err)
@@ -596,7 +596,7 @@ func (m *UserRegistrationDetails) SetUserType(value *SignInUserType)() {
 type UserRegistrationDetailsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetDefaultMfaMethod()(*DefaultMfaMethodType)
+    GetDefaultMfaMethod()(*UserRegistrationDetails_defaultMfaMethod)
     GetIsAdmin()(*bool)
     GetIsMfaCapable()(*bool)
     GetIsMfaRegistered()(*bool)
@@ -609,10 +609,10 @@ type UserRegistrationDetailsable interface {
     GetMethodsRegistered()([]string)
     GetSystemPreferredAuthenticationMethods()([]string)
     GetUserDisplayName()(*string)
-    GetUserPreferredMethodForSecondaryAuthentication()(*UserDefaultAuthenticationMethod)
+    GetUserPreferredMethodForSecondaryAuthentication()(*UserRegistrationDetails_userPreferredMethodForSecondaryAuthentication)
     GetUserPrincipalName()(*string)
-    GetUserType()(*SignInUserType)
-    SetDefaultMfaMethod(value *DefaultMfaMethodType)()
+    GetUserType()(*UserRegistrationDetails_userType)
+    SetDefaultMfaMethod(value *UserRegistrationDetails_defaultMfaMethod)()
     SetIsAdmin(value *bool)()
     SetIsMfaCapable(value *bool)()
     SetIsMfaRegistered(value *bool)()
@@ -625,7 +625,7 @@ type UserRegistrationDetailsable interface {
     SetMethodsRegistered(value []string)()
     SetSystemPreferredAuthenticationMethods(value []string)()
     SetUserDisplayName(value *string)()
-    SetUserPreferredMethodForSecondaryAuthentication(value *UserDefaultAuthenticationMethod)()
+    SetUserPreferredMethodForSecondaryAuthentication(value *UserRegistrationDetails_userPreferredMethodForSecondaryAuthentication)()
     SetUserPrincipalName(value *string)()
-    SetUserType(value *SignInUserType)()
+    SetUserType(value *UserRegistrationDetails_userType)()
 }

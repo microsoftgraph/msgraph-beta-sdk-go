@@ -49,13 +49,13 @@ func (m *DetectedSensitiveContent) GetClassificationAttributes()([]Classificatio
     return nil
 }
 // GetClassificationMethod gets the classificationMethod property value. The classificationMethod property
-func (m *DetectedSensitiveContent) GetClassificationMethod()(*ClassificationMethod) {
+func (m *DetectedSensitiveContent) GetClassificationMethod()(*DetectedSensitiveContent_classificationMethod) {
     val, err := m.GetBackingStore().Get("classificationMethod")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ClassificationMethod)
+        return val.(*DetectedSensitiveContent_classificationMethod)
     }
     return nil
 }
@@ -79,12 +79,12 @@ func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     res["classificationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseClassificationMethod)
+        val, err := n.GetEnumValue(ParseDetectedSensitiveContent_classificationMethod)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetClassificationMethod(val.(*ClassificationMethod))
+            m.SetClassificationMethod(val.(*DetectedSensitiveContent_classificationMethod))
         }
         return nil
     }
@@ -105,22 +105,22 @@ func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     res["scope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSensitiveTypeScope)
+        val, err := n.GetEnumValue(ParseDetectedSensitiveContent_scope)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetScope(val.(*SensitiveTypeScope))
+            m.SetScope(val.(*DetectedSensitiveContent_scope))
         }
         return nil
     }
     res["sensitiveTypeSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSensitiveTypeSource)
+        val, err := n.GetEnumValue(ParseDetectedSensitiveContent_sensitiveTypeSource)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSensitiveTypeSource(val.(*SensitiveTypeSource))
+            m.SetSensitiveTypeSource(val.(*DetectedSensitiveContent_sensitiveTypeSource))
         }
         return nil
     }
@@ -138,24 +138,24 @@ func (m *DetectedSensitiveContent) GetMatches()([]SensitiveContentLocationable) 
     return nil
 }
 // GetScope gets the scope property value. The scope property
-func (m *DetectedSensitiveContent) GetScope()(*SensitiveTypeScope) {
+func (m *DetectedSensitiveContent) GetScope()(*DetectedSensitiveContent_scope) {
     val, err := m.GetBackingStore().Get("scope")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SensitiveTypeScope)
+        return val.(*DetectedSensitiveContent_scope)
     }
     return nil
 }
 // GetSensitiveTypeSource gets the sensitiveTypeSource property value. The sensitiveTypeSource property
-func (m *DetectedSensitiveContent) GetSensitiveTypeSource()(*SensitiveTypeSource) {
+func (m *DetectedSensitiveContent) GetSensitiveTypeSource()(*DetectedSensitiveContent_sensitiveTypeSource) {
     val, err := m.GetBackingStore().Get("sensitiveTypeSource")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SensitiveTypeSource)
+        return val.(*DetectedSensitiveContent_sensitiveTypeSource)
     }
     return nil
 }
@@ -220,7 +220,7 @@ func (m *DetectedSensitiveContent) SetClassificationAttributes(value []Classific
     }
 }
 // SetClassificationMethod sets the classificationMethod property value. The classificationMethod property
-func (m *DetectedSensitiveContent) SetClassificationMethod(value *ClassificationMethod)() {
+func (m *DetectedSensitiveContent) SetClassificationMethod(value *DetectedSensitiveContent_classificationMethod)() {
     err := m.GetBackingStore().Set("classificationMethod", value)
     if err != nil {
         panic(err)
@@ -234,14 +234,14 @@ func (m *DetectedSensitiveContent) SetMatches(value []SensitiveContentLocationab
     }
 }
 // SetScope sets the scope property value. The scope property
-func (m *DetectedSensitiveContent) SetScope(value *SensitiveTypeScope)() {
+func (m *DetectedSensitiveContent) SetScope(value *DetectedSensitiveContent_scope)() {
     err := m.GetBackingStore().Set("scope", value)
     if err != nil {
         panic(err)
     }
 }
 // SetSensitiveTypeSource sets the sensitiveTypeSource property value. The sensitiveTypeSource property
-func (m *DetectedSensitiveContent) SetSensitiveTypeSource(value *SensitiveTypeSource)() {
+func (m *DetectedSensitiveContent) SetSensitiveTypeSource(value *DetectedSensitiveContent_sensitiveTypeSource)() {
     err := m.GetBackingStore().Set("sensitiveTypeSource", value)
     if err != nil {
         panic(err)
@@ -252,13 +252,13 @@ type DetectedSensitiveContentable interface {
     DetectedSensitiveContentBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetClassificationAttributes()([]ClassificationAttributeable)
-    GetClassificationMethod()(*ClassificationMethod)
+    GetClassificationMethod()(*DetectedSensitiveContent_classificationMethod)
     GetMatches()([]SensitiveContentLocationable)
-    GetScope()(*SensitiveTypeScope)
-    GetSensitiveTypeSource()(*SensitiveTypeSource)
+    GetScope()(*DetectedSensitiveContent_scope)
+    GetSensitiveTypeSource()(*DetectedSensitiveContent_sensitiveTypeSource)
     SetClassificationAttributes(value []ClassificationAttributeable)()
-    SetClassificationMethod(value *ClassificationMethod)()
+    SetClassificationMethod(value *DetectedSensitiveContent_classificationMethod)()
     SetMatches(value []SensitiveContentLocationable)()
-    SetScope(value *SensitiveTypeScope)()
-    SetSensitiveTypeSource(value *SensitiveTypeSource)()
+    SetScope(value *DetectedSensitiveContent_scope)()
+    SetSensitiveTypeSource(value *DetectedSensitiveContent_sensitiveTypeSource)()
 }

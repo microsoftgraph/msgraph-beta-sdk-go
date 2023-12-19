@@ -35,12 +35,12 @@ func (m *TypedEmailAddress) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEmailType)
+        val, err := n.GetEnumValue(ParseTypedEmailAddress_type)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTypeEscaped(val.(*EmailType))
+            m.SetTypeEscaped(val.(*TypedEmailAddress_type))
         }
         return nil
     }
@@ -58,13 +58,13 @@ func (m *TypedEmailAddress) GetOtherLabel()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.
-func (m *TypedEmailAddress) GetTypeEscaped()(*EmailType) {
+func (m *TypedEmailAddress) GetTypeEscaped()(*TypedEmailAddress_type) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EmailType)
+        return val.(*TypedEmailAddress_type)
     }
     return nil
 }
@@ -97,7 +97,7 @@ func (m *TypedEmailAddress) SetOtherLabel(value *string)() {
     }
 }
 // SetTypeEscaped sets the type property value. The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.
-func (m *TypedEmailAddress) SetTypeEscaped(value *EmailType)() {
+func (m *TypedEmailAddress) SetTypeEscaped(value *TypedEmailAddress_type)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -108,7 +108,7 @@ type TypedEmailAddressable interface {
     EmailAddressable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetOtherLabel()(*string)
-    GetTypeEscaped()(*EmailType)
+    GetTypeEscaped()(*TypedEmailAddress_type)
     SetOtherLabel(value *string)()
-    SetTypeEscaped(value *EmailType)()
+    SetTypeEscaped(value *TypedEmailAddress_type)()
 }

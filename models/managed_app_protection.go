@@ -134,13 +134,13 @@ func (m *ManagedAppProtection) GetAppActionIfMaximumPinRetriesExceeded()(*Manage
     return nil
 }
 // GetAppActionIfUnableToAuthenticateUser gets the appActionIfUnableToAuthenticateUser property value. If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD. Possible values are: block, wipe, warn.
-func (m *ManagedAppProtection) GetAppActionIfUnableToAuthenticateUser()(*ManagedAppRemediationAction) {
+func (m *ManagedAppProtection) GetAppActionIfUnableToAuthenticateUser()(*ManagedAppProtection_appActionIfUnableToAuthenticateUser) {
     val, err := m.GetBackingStore().Get("appActionIfUnableToAuthenticateUser")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ManagedAppRemediationAction)
+        return val.(*ManagedAppProtection_appActionIfUnableToAuthenticateUser)
     }
     return nil
 }
@@ -306,12 +306,12 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["appActionIfUnableToAuthenticateUser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseManagedAppRemediationAction)
+        val, err := n.GetEnumValue(ParseManagedAppProtection_appActionIfUnableToAuthenticateUser)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAppActionIfUnableToAuthenticateUser(val.(*ManagedAppRemediationAction))
+            m.SetAppActionIfUnableToAuthenticateUser(val.(*ManagedAppProtection_appActionIfUnableToAuthenticateUser))
         }
         return nil
     }
@@ -536,12 +536,12 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["mobileThreatDefensePartnerPriority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMobileThreatDefensePartnerPriority)
+        val, err := n.GetEnumValue(ParseManagedAppProtection_mobileThreatDefensePartnerPriority)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMobileThreatDefensePartnerPriority(val.(*MobileThreatDefensePartnerPriority))
+            m.SetMobileThreatDefensePartnerPriority(val.(*ManagedAppProtection_mobileThreatDefensePartnerPriority))
         }
         return nil
     }
@@ -874,13 +874,13 @@ func (m *ManagedAppProtection) GetMinimumWipeOsVersion()(*string) {
     return nil
 }
 // GetMobileThreatDefensePartnerPriority gets the mobileThreatDefensePartnerPriority property value. Indicates how to prioritize which Mobile Threat Defense (MTD) partner is enabled for a given platform, when more than one is enabled. An app can only be actively using a single Mobile Threat Defense partner. When NULL, Microsoft Defender will be given preference. Otherwise setting the value to defenderOverThirdPartyPartner or thirdPartyPartnerOverDefender will make explicit which partner to prioritize. Possible values are: null, defenderOverThirdPartyPartner, thirdPartyPartnerOverDefender and unknownFutureValue. Default value is null. Possible values are: defenderOverThirdPartyPartner, thirdPartyPartnerOverDefender, unknownFutureValue.
-func (m *ManagedAppProtection) GetMobileThreatDefensePartnerPriority()(*MobileThreatDefensePartnerPriority) {
+func (m *ManagedAppProtection) GetMobileThreatDefensePartnerPriority()(*ManagedAppProtection_mobileThreatDefensePartnerPriority) {
     val, err := m.GetBackingStore().Get("mobileThreatDefensePartnerPriority")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MobileThreatDefensePartnerPriority)
+        return val.(*ManagedAppProtection_mobileThreatDefensePartnerPriority)
     }
     return nil
 }
@@ -1410,7 +1410,7 @@ func (m *ManagedAppProtection) SetAppActionIfMaximumPinRetriesExceeded(value *Ma
     }
 }
 // SetAppActionIfUnableToAuthenticateUser sets the appActionIfUnableToAuthenticateUser property value. If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD. Possible values are: block, wipe, warn.
-func (m *ManagedAppProtection) SetAppActionIfUnableToAuthenticateUser(value *ManagedAppRemediationAction)() {
+func (m *ManagedAppProtection) SetAppActionIfUnableToAuthenticateUser(value *ManagedAppProtection_appActionIfUnableToAuthenticateUser)() {
     err := m.GetBackingStore().Set("appActionIfUnableToAuthenticateUser", value)
     if err != nil {
         panic(err)
@@ -1571,7 +1571,7 @@ func (m *ManagedAppProtection) SetMinimumWipeOsVersion(value *string)() {
     }
 }
 // SetMobileThreatDefensePartnerPriority sets the mobileThreatDefensePartnerPriority property value. Indicates how to prioritize which Mobile Threat Defense (MTD) partner is enabled for a given platform, when more than one is enabled. An app can only be actively using a single Mobile Threat Defense partner. When NULL, Microsoft Defender will be given preference. Otherwise setting the value to defenderOverThirdPartyPartner or thirdPartyPartnerOverDefender will make explicit which partner to prioritize. Possible values are: null, defenderOverThirdPartyPartner, thirdPartyPartnerOverDefender and unknownFutureValue. Default value is null. Possible values are: defenderOverThirdPartyPartner, thirdPartyPartnerOverDefender, unknownFutureValue.
-func (m *ManagedAppProtection) SetMobileThreatDefensePartnerPriority(value *MobileThreatDefensePartnerPriority)() {
+func (m *ManagedAppProtection) SetMobileThreatDefensePartnerPriority(value *ManagedAppProtection_mobileThreatDefensePartnerPriority)() {
     err := m.GetBackingStore().Set("mobileThreatDefensePartnerPriority", value)
     if err != nil {
         panic(err)
@@ -1694,7 +1694,7 @@ type ManagedAppProtectionable interface {
     GetAllowedOutboundDataTransferDestinations()(*ManagedAppDataTransferLevel)
     GetAppActionIfDeviceComplianceRequired()(*ManagedAppRemediationAction)
     GetAppActionIfMaximumPinRetriesExceeded()(*ManagedAppRemediationAction)
-    GetAppActionIfUnableToAuthenticateUser()(*ManagedAppRemediationAction)
+    GetAppActionIfUnableToAuthenticateUser()(*ManagedAppProtection_appActionIfUnableToAuthenticateUser)
     GetBlockDataIngestionIntoOrganizationDocuments()(*bool)
     GetContactSyncBlocked()(*bool)
     GetDataBackupBlocked()(*bool)
@@ -1717,7 +1717,7 @@ type ManagedAppProtectionable interface {
     GetMinimumWarningOsVersion()(*string)
     GetMinimumWipeAppVersion()(*string)
     GetMinimumWipeOsVersion()(*string)
-    GetMobileThreatDefensePartnerPriority()(*MobileThreatDefensePartnerPriority)
+    GetMobileThreatDefensePartnerPriority()(*ManagedAppProtection_mobileThreatDefensePartnerPriority)
     GetMobileThreatDefenseRemediationAction()(*ManagedAppRemediationAction)
     GetNotificationRestriction()(*ManagedAppNotificationRestriction)
     GetOrganizationalCredentialsRequired()(*bool)
@@ -1741,7 +1741,7 @@ type ManagedAppProtectionable interface {
     SetAllowedOutboundDataTransferDestinations(value *ManagedAppDataTransferLevel)()
     SetAppActionIfDeviceComplianceRequired(value *ManagedAppRemediationAction)()
     SetAppActionIfMaximumPinRetriesExceeded(value *ManagedAppRemediationAction)()
-    SetAppActionIfUnableToAuthenticateUser(value *ManagedAppRemediationAction)()
+    SetAppActionIfUnableToAuthenticateUser(value *ManagedAppProtection_appActionIfUnableToAuthenticateUser)()
     SetBlockDataIngestionIntoOrganizationDocuments(value *bool)()
     SetContactSyncBlocked(value *bool)()
     SetDataBackupBlocked(value *bool)()
@@ -1764,7 +1764,7 @@ type ManagedAppProtectionable interface {
     SetMinimumWarningOsVersion(value *string)()
     SetMinimumWipeAppVersion(value *string)()
     SetMinimumWipeOsVersion(value *string)()
-    SetMobileThreatDefensePartnerPriority(value *MobileThreatDefensePartnerPriority)()
+    SetMobileThreatDefensePartnerPriority(value *ManagedAppProtection_mobileThreatDefensePartnerPriority)()
     SetMobileThreatDefenseRemediationAction(value *ManagedAppRemediationAction)()
     SetNotificationRestriction(value *ManagedAppNotificationRestriction)()
     SetOrganizationalCredentialsRequired(value *bool)()

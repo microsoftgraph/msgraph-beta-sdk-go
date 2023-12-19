@@ -20,13 +20,13 @@ func CreateSensitivityPolicySettingsFromDiscriminatorValue(parseNode i878a80d233
     return NewSensitivityPolicySettings(), nil
 }
 // GetApplicableTo gets the applicableTo property value. The applicableTo property
-func (m *SensitivityPolicySettings) GetApplicableTo()(*SensitivityLabelTarget) {
+func (m *SensitivityPolicySettings) GetApplicableTo()(*SensitivityPolicySettings_applicableTo) {
     val, err := m.GetBackingStore().Get("applicableTo")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SensitivityLabelTarget)
+        return val.(*SensitivityPolicySettings_applicableTo)
     }
     return nil
 }
@@ -45,12 +45,12 @@ func (m *SensitivityPolicySettings) GetDowngradeSensitivityRequiresJustification
 func (m *SensitivityPolicySettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["applicableTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSensitivityLabelTarget)
+        val, err := n.GetEnumValue(ParseSensitivityPolicySettings_applicableTo)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetApplicableTo(val.(*SensitivityLabelTarget))
+            m.SetApplicableTo(val.(*SensitivityPolicySettings_applicableTo))
         }
         return nil
     }
@@ -142,7 +142,7 @@ func (m *SensitivityPolicySettings) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetApplicableTo sets the applicableTo property value. The applicableTo property
-func (m *SensitivityPolicySettings) SetApplicableTo(value *SensitivityLabelTarget)() {
+func (m *SensitivityPolicySettings) SetApplicableTo(value *SensitivityPolicySettings_applicableTo)() {
     err := m.GetBackingStore().Set("applicableTo", value)
     if err != nil {
         panic(err)
@@ -173,11 +173,11 @@ func (m *SensitivityPolicySettings) SetIsMandatory(value *bool)() {
 type SensitivityPolicySettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetApplicableTo()(*SensitivityLabelTarget)
+    GetApplicableTo()(*SensitivityPolicySettings_applicableTo)
     GetDowngradeSensitivityRequiresJustification()(*bool)
     GetHelpWebUrl()(*string)
     GetIsMandatory()(*bool)
-    SetApplicableTo(value *SensitivityLabelTarget)()
+    SetApplicableTo(value *SensitivityPolicySettings_applicableTo)()
     SetDowngradeSensitivityRequiresJustification(value *bool)()
     SetHelpWebUrl(value *string)()
     SetIsMandatory(value *bool)()

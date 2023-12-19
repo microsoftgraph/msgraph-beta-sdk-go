@@ -146,12 +146,12 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     res["importance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseImportance)
+        val, err := n.GetEnumValue(ParseOutlookTask_importance)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetImportance(val.(*Importance))
+            m.SetImportance(val.(*OutlookTask_importance))
         }
         return nil
     }
@@ -222,12 +222,12 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     res["sensitivity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSensitivity)
+        val, err := n.GetEnumValue(ParseOutlookTask_sensitivity)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSensitivity(val.(*Sensitivity))
+            m.SetSensitivity(val.(*OutlookTask_sensitivity))
         }
         return nil
     }
@@ -258,12 +258,12 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTaskStatus)
+        val, err := n.GetEnumValue(ParseOutlookTask_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*TaskStatus))
+            m.SetStatus(val.(*OutlookTask_status))
         }
         return nil
     }
@@ -291,13 +291,13 @@ func (m *OutlookTask) GetHasAttachments()(*bool) {
     return nil
 }
 // GetImportance gets the importance property value. The importance property
-func (m *OutlookTask) GetImportance()(*Importance) {
+func (m *OutlookTask) GetImportance()(*OutlookTask_importance) {
     val, err := m.GetBackingStore().Get("importance")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*Importance)
+        return val.(*OutlookTask_importance)
     }
     return nil
 }
@@ -368,13 +368,13 @@ func (m *OutlookTask) GetReminderDateTime()(DateTimeTimeZoneable) {
     return nil
 }
 // GetSensitivity gets the sensitivity property value. The sensitivity property
-func (m *OutlookTask) GetSensitivity()(*Sensitivity) {
+func (m *OutlookTask) GetSensitivity()(*OutlookTask_sensitivity) {
     val, err := m.GetBackingStore().Get("sensitivity")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*Sensitivity)
+        return val.(*OutlookTask_sensitivity)
     }
     return nil
 }
@@ -401,13 +401,13 @@ func (m *OutlookTask) GetStartDateTime()(DateTimeTimeZoneable) {
     return nil
 }
 // GetStatus gets the status property value. The status property
-func (m *OutlookTask) GetStatus()(*TaskStatus) {
+func (m *OutlookTask) GetStatus()(*OutlookTask_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TaskStatus)
+        return val.(*OutlookTask_status)
     }
     return nil
 }
@@ -602,7 +602,7 @@ func (m *OutlookTask) SetHasAttachments(value *bool)() {
     }
 }
 // SetImportance sets the importance property value. The importance property
-func (m *OutlookTask) SetImportance(value *Importance)() {
+func (m *OutlookTask) SetImportance(value *OutlookTask_importance)() {
     err := m.GetBackingStore().Set("importance", value)
     if err != nil {
         panic(err)
@@ -651,7 +651,7 @@ func (m *OutlookTask) SetReminderDateTime(value DateTimeTimeZoneable)() {
     }
 }
 // SetSensitivity sets the sensitivity property value. The sensitivity property
-func (m *OutlookTask) SetSensitivity(value *Sensitivity)() {
+func (m *OutlookTask) SetSensitivity(value *OutlookTask_sensitivity)() {
     err := m.GetBackingStore().Set("sensitivity", value)
     if err != nil {
         panic(err)
@@ -672,7 +672,7 @@ func (m *OutlookTask) SetStartDateTime(value DateTimeTimeZoneable)() {
     }
 }
 // SetStatus sets the status property value. The status property
-func (m *OutlookTask) SetStatus(value *TaskStatus)() {
+func (m *OutlookTask) SetStatus(value *OutlookTask_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -695,17 +695,17 @@ type OutlookTaskable interface {
     GetCompletedDateTime()(DateTimeTimeZoneable)
     GetDueDateTime()(DateTimeTimeZoneable)
     GetHasAttachments()(*bool)
-    GetImportance()(*Importance)
+    GetImportance()(*OutlookTask_importance)
     GetIsReminderOn()(*bool)
     GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable)
     GetOwner()(*string)
     GetParentFolderId()(*string)
     GetRecurrence()(PatternedRecurrenceable)
     GetReminderDateTime()(DateTimeTimeZoneable)
-    GetSensitivity()(*Sensitivity)
+    GetSensitivity()(*OutlookTask_sensitivity)
     GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable)
     GetStartDateTime()(DateTimeTimeZoneable)
-    GetStatus()(*TaskStatus)
+    GetStatus()(*OutlookTask_status)
     GetSubject()(*string)
     SetAssignedTo(value *string)()
     SetAttachments(value []Attachmentable)()
@@ -713,16 +713,16 @@ type OutlookTaskable interface {
     SetCompletedDateTime(value DateTimeTimeZoneable)()
     SetDueDateTime(value DateTimeTimeZoneable)()
     SetHasAttachments(value *bool)()
-    SetImportance(value *Importance)()
+    SetImportance(value *OutlookTask_importance)()
     SetIsReminderOn(value *bool)()
     SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)()
     SetOwner(value *string)()
     SetParentFolderId(value *string)()
     SetRecurrence(value PatternedRecurrenceable)()
     SetReminderDateTime(value DateTimeTimeZoneable)()
-    SetSensitivity(value *Sensitivity)()
+    SetSensitivity(value *OutlookTask_sensitivity)()
     SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)()
     SetStartDateTime(value DateTimeTimeZoneable)()
-    SetStatus(value *TaskStatus)()
+    SetStatus(value *OutlookTask_status)()
     SetSubject(value *string)()
 }

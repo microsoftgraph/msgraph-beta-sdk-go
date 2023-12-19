@@ -20,13 +20,13 @@ func CreateVirtualEventTownhallFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewVirtualEventTownhall(), nil
 }
 // GetAudience gets the audience property value. The audience property
-func (m *VirtualEventTownhall) GetAudience()(*MeetingAudience) {
+func (m *VirtualEventTownhall) GetAudience()(*VirtualEventTownhall_audience) {
     val, err := m.GetBackingStore().Get("audience")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MeetingAudience)
+        return val.(*VirtualEventTownhall_audience)
     }
     return nil
 }
@@ -45,12 +45,12 @@ func (m *VirtualEventTownhall) GetCoOrganizers()([]CommunicationsUserIdentityabl
 func (m *VirtualEventTownhall) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.VirtualEvent.GetFieldDeserializers()
     res["audience"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMeetingAudience)
+        val, err := n.GetEnumValue(ParseVirtualEventTownhall_audience)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAudience(val.(*MeetingAudience))
+            m.SetAudience(val.(*VirtualEventTownhall_audience))
         }
         return nil
     }
@@ -166,7 +166,7 @@ func (m *VirtualEventTownhall) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAudience sets the audience property value. The audience property
-func (m *VirtualEventTownhall) SetAudience(value *MeetingAudience)() {
+func (m *VirtualEventTownhall) SetAudience(value *VirtualEventTownhall_audience)() {
     err := m.GetBackingStore().Set("audience", value)
     if err != nil {
         panic(err)
@@ -197,11 +197,11 @@ func (m *VirtualEventTownhall) SetIsInviteOnly(value *bool)() {
 type VirtualEventTownhallable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     VirtualEventable
-    GetAudience()(*MeetingAudience)
+    GetAudience()(*VirtualEventTownhall_audience)
     GetCoOrganizers()([]CommunicationsUserIdentityable)
     GetInvitedAttendees()([]CommunicationsUserIdentityable)
     GetIsInviteOnly()(*bool)
-    SetAudience(value *MeetingAudience)()
+    SetAudience(value *VirtualEventTownhall_audience)()
     SetCoOrganizers(value []CommunicationsUserIdentityable)()
     SetInvitedAttendees(value []CommunicationsUserIdentityable)()
     SetIsInviteOnly(value *bool)()

@@ -29,8 +29,8 @@ func CreateVirtualEventRegistrationQuestionBaseFromDiscriminatorValue(parseNode 
             }
             if mappingValue != nil {
                 switch *mappingValue {
-                    case "#microsoft.graph.virtualEventRegistratioCustomQuestion":
-                        return NewVirtualEventRegistratioCustomQuestion(), nil
+                    case "#microsoft.graph.virtualEventRegistrationCustomQuestion":
+                        return NewVirtualEventRegistrationCustomQuestion(), nil
                     case "#microsoft.graph.virtualEventRegistrationPredefinedQuestion":
                         return NewVirtualEventRegistrationPredefinedQuestion(), nil
                 }

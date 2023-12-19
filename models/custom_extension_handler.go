@@ -44,25 +44,25 @@ func (m *CustomExtensionHandler) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["stage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAccessPackageCustomExtensionStage)
+        val, err := n.GetEnumValue(ParseCustomExtensionHandler_stage)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStage(val.(*AccessPackageCustomExtensionStage))
+            m.SetStage(val.(*CustomExtensionHandler_stage))
         }
         return nil
     }
     return res
 }
 // GetStage gets the stage property value. Indicates the stage of the access package assignment request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
-func (m *CustomExtensionHandler) GetStage()(*AccessPackageCustomExtensionStage) {
+func (m *CustomExtensionHandler) GetStage()(*CustomExtensionHandler_stage) {
     val, err := m.GetBackingStore().Get("stage")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AccessPackageCustomExtensionStage)
+        return val.(*CustomExtensionHandler_stage)
     }
     return nil
 }
@@ -95,7 +95,7 @@ func (m *CustomExtensionHandler) SetCustomExtension(value CustomAccessPackageWor
     }
 }
 // SetStage sets the stage property value. Indicates the stage of the access package assignment request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
-func (m *CustomExtensionHandler) SetStage(value *AccessPackageCustomExtensionStage)() {
+func (m *CustomExtensionHandler) SetStage(value *CustomExtensionHandler_stage)() {
     err := m.GetBackingStore().Set("stage", value)
     if err != nil {
         panic(err)
@@ -106,7 +106,7 @@ type CustomExtensionHandlerable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCustomExtension()(CustomAccessPackageWorkflowExtensionable)
-    GetStage()(*AccessPackageCustomExtensionStage)
+    GetStage()(*CustomExtensionHandler_stage)
     SetCustomExtension(value CustomAccessPackageWorkflowExtensionable)()
-    SetStage(value *AccessPackageCustomExtensionStage)()
+    SetStage(value *CustomExtensionHandler_stage)()
 }

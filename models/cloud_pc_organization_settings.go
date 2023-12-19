@@ -65,22 +65,22 @@ func (m *CloudPcOrganizationSettings) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     res["osVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcOperatingSystem)
+        val, err := n.GetEnumValue(ParseCloudPcOrganizationSettings_osVersion)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOsVersion(val.(*CloudPcOperatingSystem))
+            m.SetOsVersion(val.(*CloudPcOrganizationSettings_osVersion))
         }
         return nil
     }
     res["userAccountType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcUserAccountType)
+        val, err := n.GetEnumValue(ParseCloudPcOrganizationSettings_userAccountType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUserAccountType(val.(*CloudPcUserAccountType))
+            m.SetUserAccountType(val.(*CloudPcOrganizationSettings_userAccountType))
         }
         return nil
     }
@@ -97,24 +97,24 @@ func (m *CloudPcOrganizationSettings) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetOsVersion gets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
-func (m *CloudPcOrganizationSettings) GetOsVersion()(*CloudPcOperatingSystem) {
+func (m *CloudPcOrganizationSettings) GetOsVersion()(*CloudPcOrganizationSettings_osVersion) {
     val, err := m.GetBackingStore().Get("osVersion")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcOperatingSystem)
+        return val.(*CloudPcOrganizationSettings_osVersion)
     }
     return nil
 }
 // GetUserAccountType gets the userAccountType property value. The account type of the user on provisioned Cloud PCs. The possible values are: standardUser, administrator, unknownFutureValue.
-func (m *CloudPcOrganizationSettings) GetUserAccountType()(*CloudPcUserAccountType) {
+func (m *CloudPcOrganizationSettings) GetUserAccountType()(*CloudPcOrganizationSettings_userAccountType) {
     val, err := m.GetBackingStore().Get("userAccountType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcUserAccountType)
+        return val.(*CloudPcOrganizationSettings_userAccountType)
     }
     return nil
 }
@@ -184,14 +184,14 @@ func (m *CloudPcOrganizationSettings) SetEnableSingleSignOn(value *bool)() {
     }
 }
 // SetOsVersion sets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
-func (m *CloudPcOrganizationSettings) SetOsVersion(value *CloudPcOperatingSystem)() {
+func (m *CloudPcOrganizationSettings) SetOsVersion(value *CloudPcOrganizationSettings_osVersion)() {
     err := m.GetBackingStore().Set("osVersion", value)
     if err != nil {
         panic(err)
     }
 }
 // SetUserAccountType sets the userAccountType property value. The account type of the user on provisioned Cloud PCs. The possible values are: standardUser, administrator, unknownFutureValue.
-func (m *CloudPcOrganizationSettings) SetUserAccountType(value *CloudPcUserAccountType)() {
+func (m *CloudPcOrganizationSettings) SetUserAccountType(value *CloudPcOrganizationSettings_userAccountType)() {
     err := m.GetBackingStore().Set("userAccountType", value)
     if err != nil {
         panic(err)
@@ -210,12 +210,12 @@ type CloudPcOrganizationSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEnableMEMAutoEnroll()(*bool)
     GetEnableSingleSignOn()(*bool)
-    GetOsVersion()(*CloudPcOperatingSystem)
-    GetUserAccountType()(*CloudPcUserAccountType)
+    GetOsVersion()(*CloudPcOrganizationSettings_osVersion)
+    GetUserAccountType()(*CloudPcOrganizationSettings_userAccountType)
     GetWindowsSettings()(CloudPcWindowsSettingsable)
     SetEnableMEMAutoEnroll(value *bool)()
     SetEnableSingleSignOn(value *bool)()
-    SetOsVersion(value *CloudPcOperatingSystem)()
-    SetUserAccountType(value *CloudPcUserAccountType)()
+    SetOsVersion(value *CloudPcOrganizationSettings_osVersion)()
+    SetUserAccountType(value *CloudPcOrganizationSettings_userAccountType)()
     SetWindowsSettings(value CloudPcWindowsSettingsable)()
 }

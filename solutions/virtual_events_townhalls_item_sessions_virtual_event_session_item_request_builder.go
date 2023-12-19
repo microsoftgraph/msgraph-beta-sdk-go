@@ -18,7 +18,7 @@ type VirtualEventsTownhallsItemSessionsVirtualEventSessionItemRequestBuilderDele
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEventsTownhallsItemSessionsVirtualEventSessionItemRequestBuilderGetQueryParameters sessions of the virtual event.
+// VirtualEventsTownhallsItemSessionsVirtualEventSessionItemRequestBuilderGetQueryParameters sessions for the virtual event.
 type VirtualEventsTownhallsItemSessionsVirtualEventSessionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *VirtualEventsTownhallsItemSessionsVirtualEventSessionItemRequestBuilder
     }
     return nil
 }
-// Get sessions of the virtual event.
+// Get sessions for the virtual event.
 func (m *VirtualEventsTownhallsItemSessionsVirtualEventSessionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemSessionsVirtualEventSessionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventSessionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -130,7 +130,7 @@ func (m *VirtualEventsTownhallsItemSessionsVirtualEventSessionItemRequestBuilder
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation sessions of the virtual event.
+// ToGetRequestInformation sessions for the virtual event.
 func (m *VirtualEventsTownhallsItemSessionsVirtualEventSessionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemSessionsVirtualEventSessionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

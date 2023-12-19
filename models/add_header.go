@@ -22,13 +22,13 @@ func CreateAddHeaderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
     return NewAddHeader(), nil
 }
 // GetAlignment gets the alignment property value. The alignment property
-func (m *AddHeader) GetAlignment()(*Alignment) {
+func (m *AddHeader) GetAlignment()(*AddHeader_alignment) {
     val, err := m.GetBackingStore().Get("alignment")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*Alignment)
+        return val.(*AddHeader_alignment)
     }
     return nil
 }
@@ -36,12 +36,12 @@ func (m *AddHeader) GetAlignment()(*Alignment) {
 func (m *AddHeader) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MarkContent.GetFieldDeserializers()
     res["alignment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAlignment)
+        val, err := n.GetEnumValue(ParseAddHeader_alignment)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAlignment(val.(*Alignment))
+            m.SetAlignment(val.(*AddHeader_alignment))
         }
         return nil
     }
@@ -90,7 +90,7 @@ func (m *AddHeader) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     return nil
 }
 // SetAlignment sets the alignment property value. The alignment property
-func (m *AddHeader) SetAlignment(value *Alignment)() {
+func (m *AddHeader) SetAlignment(value *AddHeader_alignment)() {
     err := m.GetBackingStore().Set("alignment", value)
     if err != nil {
         panic(err)
@@ -107,8 +107,8 @@ func (m *AddHeader) SetMargin(value *int32)() {
 type AddHeaderable interface {
     MarkContentable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAlignment()(*Alignment)
+    GetAlignment()(*AddHeader_alignment)
     GetMargin()(*int32)
-    SetAlignment(value *Alignment)()
+    SetAlignment(value *AddHeader_alignment)()
     SetMargin(value *int32)()
 }

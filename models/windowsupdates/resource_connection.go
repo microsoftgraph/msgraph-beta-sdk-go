@@ -42,25 +42,25 @@ func CreateResourceConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d26
 func (m *ResourceConnection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseResourceConnectionState)
+        val, err := n.GetEnumValue(ParseResourceConnection_state)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetState(val.(*ResourceConnectionState))
+            m.SetState(val.(*ResourceConnection_state))
         }
         return nil
     }
     return res
 }
 // GetState gets the state property value. The state of the connection. The possible values are: connected, notAuthorized, notFound, unknownFutureValue.
-func (m *ResourceConnection) GetState()(*ResourceConnectionState) {
+func (m *ResourceConnection) GetState()(*ResourceConnection_state) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ResourceConnectionState)
+        return val.(*ResourceConnection_state)
     }
     return nil
 }
@@ -80,7 +80,7 @@ func (m *ResourceConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetState sets the state property value. The state of the connection. The possible values are: connected, notAuthorized, notFound, unknownFutureValue.
-func (m *ResourceConnection) SetState(value *ResourceConnectionState)() {
+func (m *ResourceConnection) SetState(value *ResourceConnection_state)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {
         panic(err)
@@ -90,6 +90,6 @@ func (m *ResourceConnection) SetState(value *ResourceConnectionState)() {
 type ResourceConnectionable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetState()(*ResourceConnectionState)
-    SetState(value *ResourceConnectionState)()
+    GetState()(*ResourceConnection_state)
+    SetState(value *ResourceConnection_state)()
 }

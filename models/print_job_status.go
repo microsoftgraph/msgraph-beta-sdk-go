@@ -131,12 +131,12 @@ func (m *PrintJobStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["processingState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePrintJobProcessingState)
+        val, err := n.GetEnumValue(ParsePrintJobStatus_processingState)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProcessingState(val.(*PrintJobProcessingState))
+            m.SetProcessingState(val.(*PrintJobStatus_processingState))
         }
         return nil
     }
@@ -185,13 +185,13 @@ func (m *PrintJobStatus) GetOdataType()(*string) {
     return nil
 }
 // GetProcessingState gets the processingState property value. The processingState property
-func (m *PrintJobStatus) GetProcessingState()(*PrintJobProcessingState) {
+func (m *PrintJobStatus) GetProcessingState()(*PrintJobStatus_processingState) {
     val, err := m.GetBackingStore().Get("processingState")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PrintJobProcessingState)
+        return val.(*PrintJobStatus_processingState)
     }
     return nil
 }
@@ -324,7 +324,7 @@ func (m *PrintJobStatus) SetOdataType(value *string)() {
     }
 }
 // SetProcessingState sets the processingState property value. The processingState property
-func (m *PrintJobStatus) SetProcessingState(value *PrintJobProcessingState)() {
+func (m *PrintJobStatus) SetProcessingState(value *PrintJobStatus_processingState)() {
     err := m.GetBackingStore().Set("processingState", value)
     if err != nil {
         panic(err)
@@ -355,7 +355,7 @@ type PrintJobStatusable interface {
     GetDetails()([]PrintJobStateDetail)
     GetIsAcquiredByPrinter()(*bool)
     GetOdataType()(*string)
-    GetProcessingState()(*PrintJobProcessingState)
+    GetProcessingState()(*PrintJobStatus_processingState)
     GetProcessingStateDescription()(*string)
     GetState()(*PrintJobProcessingState)
     SetAcquiredByPrinter(value *bool)()
@@ -364,7 +364,7 @@ type PrintJobStatusable interface {
     SetDetails(value []PrintJobStateDetail)()
     SetIsAcquiredByPrinter(value *bool)()
     SetOdataType(value *string)()
-    SetProcessingState(value *PrintJobProcessingState)()
+    SetProcessingState(value *PrintJobStatus_processingState)()
     SetProcessingStateDescription(value *string)()
     SetState(value *PrintJobProcessingState)()
 }

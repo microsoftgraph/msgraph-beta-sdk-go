@@ -3,8 +3,8 @@ package users
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    iaf9274241d5101da68937e82d42cc86d252661bad301303aadd017d8b9c074b4 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/cloudpcs/item/getshiftworkcloudpcaccessstate"
 )
 
 // ItemCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilder provides operations to call the getShiftWorkCloudPcAccessState method.
@@ -33,7 +33,7 @@ func NewItemCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilder(rawUrl stri
 }
 // Get invoke function getShiftWorkCloudPcAccessState
 // Deprecated: The getShiftWorkCloudPcAccessState API is deprecated and will stop returning data on Dec 31, 2023. Please use the new getFrontlineCloudPcAccessState API as of 2023-08/getShiftWorkCloudPcAccessState on 2023-09-05 and will be removed 2023-12-31
-func (m *ItemCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilderGetRequestConfiguration)(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftWorkCloudPcAccessState, error) {
+func (m *ItemCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilderGetRequestConfiguration)(*iaf9274241d5101da68937e82d42cc86d252661bad301303aadd017d8b9c074b4.GetShiftWorkCloudPcAccessStateGetResponse, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -42,14 +42,14 @@ func (m *ItemCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilder) Get(ctx c
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendEnum(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseShiftWorkCloudPcAccessState, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendEnum(ctx, requestInfo, iaf9274241d5101da68937e82d42cc86d252661bad301303aadd017d8b9c074b4.ParseGetShiftWorkCloudPcAccessStateGetResponse, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftWorkCloudPcAccessState), nil
+    return res.(*iaf9274241d5101da68937e82d42cc86d252661bad301303aadd017d8b9c074b4.GetShiftWorkCloudPcAccessStateGetResponse), nil
 }
 // ToGetRequestInformation invoke function getShiftWorkCloudPcAccessState
 // Deprecated: The getShiftWorkCloudPcAccessState API is deprecated and will stop returning data on Dec 31, 2023. Please use the new getFrontlineCloudPcAccessState API as of 2023-08/getShiftWorkCloudPcAccessState on 2023-09-05 and will be removed 2023-12-31

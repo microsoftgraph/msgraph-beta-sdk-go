@@ -22,13 +22,13 @@ func CreateManagementTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewManagementTemplate(), nil
 }
 // GetCategory gets the category property value. The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
-func (m *ManagementTemplate) GetCategory()(*ManagementCategory) {
+func (m *ManagementTemplate) GetCategory()(*ManagementTemplate_category) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ManagementCategory)
+        return val.(*ManagementTemplate_category)
     }
     return nil
 }
@@ -80,12 +80,12 @@ func (m *ManagementTemplate) GetDisplayName()(*string) {
 func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseManagementCategory)
+        val, err := n.GetEnumValue(ParseManagementTemplate_category)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCategory(val.(*ManagementCategory))
+            m.SetCategory(val.(*ManagementTemplate_category))
         }
         return nil
     }
@@ -529,7 +529,7 @@ func (m *ManagementTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetCategory sets the category property value. The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
-func (m *ManagementTemplate) SetCategory(value *ManagementCategory)() {
+func (m *ManagementTemplate) SetCategory(value *ManagementTemplate_category)() {
     err := m.GetBackingStore().Set("category", value)
     if err != nil {
         panic(err)
@@ -644,7 +644,7 @@ func (m *ManagementTemplate) SetWorkloadActions(value []WorkloadActionable)() {
 type ManagementTemplateable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetCategory()(*ManagementCategory)
+    GetCategory()(*ManagementTemplate_category)
     GetCreatedByUserId()(*string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDescription()(*string)
@@ -660,7 +660,7 @@ type ManagementTemplateable interface {
     GetUserImpact()(*string)
     GetVersion()(*int32)
     GetWorkloadActions()([]WorkloadActionable)
-    SetCategory(value *ManagementCategory)()
+    SetCategory(value *ManagementTemplate_category)()
     SetCreatedByUserId(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()

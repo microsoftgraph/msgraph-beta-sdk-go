@@ -20,13 +20,13 @@ func CreateEdiscoverySearchExportOperationFromDiscriminatorValue(parseNode i878a
     return NewEdiscoverySearchExportOperation(), nil
 }
 // GetAdditionalOptions gets the additionalOptions property value. The additionalOptions property
-func (m *EdiscoverySearchExportOperation) GetAdditionalOptions()(*AdditionalOptions) {
+func (m *EdiscoverySearchExportOperation) GetAdditionalOptions()(*EdiscoverySearchExportOperation_additionalOptions) {
     val, err := m.GetBackingStore().Get("additionalOptions")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AdditionalOptions)
+        return val.(*EdiscoverySearchExportOperation_additionalOptions)
     }
     return nil
 }
@@ -53,13 +53,13 @@ func (m *EdiscoverySearchExportOperation) GetDisplayName()(*string) {
     return nil
 }
 // GetExportCriteria gets the exportCriteria property value. The exportCriteria property
-func (m *EdiscoverySearchExportOperation) GetExportCriteria()(*ExportCriteria) {
+func (m *EdiscoverySearchExportOperation) GetExportCriteria()(*EdiscoverySearchExportOperation_exportCriteria) {
     val, err := m.GetBackingStore().Get("exportCriteria")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ExportCriteria)
+        return val.(*EdiscoverySearchExportOperation_exportCriteria)
     }
     return nil
 }
@@ -75,24 +75,24 @@ func (m *EdiscoverySearchExportOperation) GetExportFileMetadata()([]ExportFileMe
     return nil
 }
 // GetExportFormat gets the exportFormat property value. The exportFormat property
-func (m *EdiscoverySearchExportOperation) GetExportFormat()(*ExportFormat) {
+func (m *EdiscoverySearchExportOperation) GetExportFormat()(*EdiscoverySearchExportOperation_exportFormat) {
     val, err := m.GetBackingStore().Get("exportFormat")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ExportFormat)
+        return val.(*EdiscoverySearchExportOperation_exportFormat)
     }
     return nil
 }
 // GetExportLocation gets the exportLocation property value. The exportLocation property
-func (m *EdiscoverySearchExportOperation) GetExportLocation()(*ExportLocation) {
+func (m *EdiscoverySearchExportOperation) GetExportLocation()(*EdiscoverySearchExportOperation_exportLocation) {
     val, err := m.GetBackingStore().Get("exportLocation")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ExportLocation)
+        return val.(*EdiscoverySearchExportOperation_exportLocation)
     }
     return nil
 }
@@ -111,12 +111,12 @@ func (m *EdiscoverySearchExportOperation) GetExportSingleItems()(*bool) {
 func (m *EdiscoverySearchExportOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CaseOperation.GetFieldDeserializers()
     res["additionalOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAdditionalOptions)
+        val, err := n.GetEnumValue(ParseEdiscoverySearchExportOperation_additionalOptions)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAdditionalOptions(val.(*AdditionalOptions))
+            m.SetAdditionalOptions(val.(*EdiscoverySearchExportOperation_additionalOptions))
         }
         return nil
     }
@@ -141,12 +141,12 @@ func (m *EdiscoverySearchExportOperation) GetFieldDeserializers()(map[string]fun
         return nil
     }
     res["exportCriteria"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseExportCriteria)
+        val, err := n.GetEnumValue(ParseEdiscoverySearchExportOperation_exportCriteria)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetExportCriteria(val.(*ExportCriteria))
+            m.SetExportCriteria(val.(*EdiscoverySearchExportOperation_exportCriteria))
         }
         return nil
     }
@@ -167,22 +167,22 @@ func (m *EdiscoverySearchExportOperation) GetFieldDeserializers()(map[string]fun
         return nil
     }
     res["exportFormat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseExportFormat)
+        val, err := n.GetEnumValue(ParseEdiscoverySearchExportOperation_exportFormat)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetExportFormat(val.(*ExportFormat))
+            m.SetExportFormat(val.(*EdiscoverySearchExportOperation_exportFormat))
         }
         return nil
     }
     res["exportLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseExportLocation)
+        val, err := n.GetEnumValue(ParseEdiscoverySearchExportOperation_exportLocation)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetExportLocation(val.(*ExportLocation))
+            m.SetExportLocation(val.(*EdiscoverySearchExportOperation_exportLocation))
         }
         return nil
     }
@@ -292,7 +292,7 @@ func (m *EdiscoverySearchExportOperation) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetAdditionalOptions sets the additionalOptions property value. The additionalOptions property
-func (m *EdiscoverySearchExportOperation) SetAdditionalOptions(value *AdditionalOptions)() {
+func (m *EdiscoverySearchExportOperation) SetAdditionalOptions(value *EdiscoverySearchExportOperation_additionalOptions)() {
     err := m.GetBackingStore().Set("additionalOptions", value)
     if err != nil {
         panic(err)
@@ -313,7 +313,7 @@ func (m *EdiscoverySearchExportOperation) SetDisplayName(value *string)() {
     }
 }
 // SetExportCriteria sets the exportCriteria property value. The exportCriteria property
-func (m *EdiscoverySearchExportOperation) SetExportCriteria(value *ExportCriteria)() {
+func (m *EdiscoverySearchExportOperation) SetExportCriteria(value *EdiscoverySearchExportOperation_exportCriteria)() {
     err := m.GetBackingStore().Set("exportCriteria", value)
     if err != nil {
         panic(err)
@@ -327,14 +327,14 @@ func (m *EdiscoverySearchExportOperation) SetExportFileMetadata(value []ExportFi
     }
 }
 // SetExportFormat sets the exportFormat property value. The exportFormat property
-func (m *EdiscoverySearchExportOperation) SetExportFormat(value *ExportFormat)() {
+func (m *EdiscoverySearchExportOperation) SetExportFormat(value *EdiscoverySearchExportOperation_exportFormat)() {
     err := m.GetBackingStore().Set("exportFormat", value)
     if err != nil {
         panic(err)
     }
 }
 // SetExportLocation sets the exportLocation property value. The exportLocation property
-func (m *EdiscoverySearchExportOperation) SetExportLocation(value *ExportLocation)() {
+func (m *EdiscoverySearchExportOperation) SetExportLocation(value *EdiscoverySearchExportOperation_exportLocation)() {
     err := m.GetBackingStore().Set("exportLocation", value)
     if err != nil {
         panic(err)
@@ -358,22 +358,22 @@ func (m *EdiscoverySearchExportOperation) SetSearch(value EdiscoverySearchable)(
 type EdiscoverySearchExportOperationable interface {
     CaseOperationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAdditionalOptions()(*AdditionalOptions)
+    GetAdditionalOptions()(*EdiscoverySearchExportOperation_additionalOptions)
     GetDescription()(*string)
     GetDisplayName()(*string)
-    GetExportCriteria()(*ExportCriteria)
+    GetExportCriteria()(*EdiscoverySearchExportOperation_exportCriteria)
     GetExportFileMetadata()([]ExportFileMetadataable)
-    GetExportFormat()(*ExportFormat)
-    GetExportLocation()(*ExportLocation)
+    GetExportFormat()(*EdiscoverySearchExportOperation_exportFormat)
+    GetExportLocation()(*EdiscoverySearchExportOperation_exportLocation)
     GetExportSingleItems()(*bool)
     GetSearch()(EdiscoverySearchable)
-    SetAdditionalOptions(value *AdditionalOptions)()
+    SetAdditionalOptions(value *EdiscoverySearchExportOperation_additionalOptions)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
-    SetExportCriteria(value *ExportCriteria)()
+    SetExportCriteria(value *EdiscoverySearchExportOperation_exportCriteria)()
     SetExportFileMetadata(value []ExportFileMetadataable)()
-    SetExportFormat(value *ExportFormat)()
-    SetExportLocation(value *ExportLocation)()
+    SetExportFormat(value *EdiscoverySearchExportOperation_exportFormat)()
+    SetExportLocation(value *EdiscoverySearchExportOperation_exportLocation)()
     SetExportSingleItems(value *bool)()
     SetSearch(value EdiscoverySearchable)()
 }

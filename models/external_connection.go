@@ -133,12 +133,12 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseConnectionState)
+        val, err := n.GetEnumValue(ParseExternalConnection_state)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetState(val.(*ConnectionState))
+            m.SetState(val.(*ExternalConnection_state))
         }
         return nil
     }
@@ -200,13 +200,13 @@ func (m *ExternalConnection) GetSchema()(Schemaable) {
     return nil
 }
 // GetState gets the state property value. The state property
-func (m *ExternalConnection) GetState()(*ConnectionState) {
+func (m *ExternalConnection) GetState()(*ExternalConnection_state) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ConnectionState)
+        return val.(*ExternalConnection_state)
     }
     return nil
 }
@@ -328,7 +328,7 @@ func (m *ExternalConnection) SetSchema(value Schemaable)() {
     }
 }
 // SetState sets the state property value. The state property
-func (m *ExternalConnection) SetState(value *ConnectionState)() {
+func (m *ExternalConnection) SetState(value *ExternalConnection_state)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {
         panic(err)
@@ -345,7 +345,7 @@ type ExternalConnectionable interface {
     GetName()(*string)
     GetOperations()([]ConnectionOperationable)
     GetSchema()(Schemaable)
-    GetState()(*ConnectionState)
+    GetState()(*ExternalConnection_state)
     SetConfiguration(value Configurationable)()
     SetDescription(value *string)()
     SetGroups(value []ExternalGroupable)()
@@ -353,5 +353,5 @@ type ExternalConnectionable interface {
     SetName(value *string)()
     SetOperations(value []ConnectionOperationable)()
     SetSchema(value Schemaable)()
-    SetState(value *ConnectionState)()
+    SetState(value *ExternalConnection_state)()
 }

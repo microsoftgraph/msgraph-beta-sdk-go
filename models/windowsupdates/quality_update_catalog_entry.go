@@ -93,12 +93,12 @@ func (m *QualityUpdateCatalogEntry) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     res["qualityUpdateCadence"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseQualityUpdateCadence)
+        val, err := n.GetEnumValue(ParseQualityUpdateCatalogEntry_qualityUpdateCadence)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetQualityUpdateCadence(val.(*QualityUpdateCadence))
+            m.SetQualityUpdateCadence(val.(*QualityUpdateCatalogEntry_qualityUpdateCadence))
         }
         return nil
     }
@@ -147,13 +147,13 @@ func (m *QualityUpdateCatalogEntry) GetProductRevisions()([]ProductRevisionable)
     return nil
 }
 // GetQualityUpdateCadence gets the qualityUpdateCadence property value. The publishing cadence of the quality update. Possible values are: monthly, outOfBand, unknownFutureValue. Read-only.
-func (m *QualityUpdateCatalogEntry) GetQualityUpdateCadence()(*QualityUpdateCadence) {
+func (m *QualityUpdateCatalogEntry) GetQualityUpdateCadence()(*QualityUpdateCatalogEntry_qualityUpdateCadence) {
     val, err := m.GetBackingStore().Get("qualityUpdateCadence")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*QualityUpdateCadence)
+        return val.(*QualityUpdateCatalogEntry_qualityUpdateCadence)
     }
     return nil
 }
@@ -266,7 +266,7 @@ func (m *QualityUpdateCatalogEntry) SetProductRevisions(value []ProductRevisiona
     }
 }
 // SetQualityUpdateCadence sets the qualityUpdateCadence property value. The publishing cadence of the quality update. Possible values are: monthly, outOfBand, unknownFutureValue. Read-only.
-func (m *QualityUpdateCatalogEntry) SetQualityUpdateCadence(value *QualityUpdateCadence)() {
+func (m *QualityUpdateCatalogEntry) SetQualityUpdateCadence(value *QualityUpdateCatalogEntry_qualityUpdateCadence)() {
     err := m.GetBackingStore().Set("qualityUpdateCadence", value)
     if err != nil {
         panic(err)
@@ -294,14 +294,14 @@ type QualityUpdateCatalogEntryable interface {
     GetCveSeverityInformation()(QualityUpdateCveSeverityInformationable)
     GetIsExpeditable()(*bool)
     GetProductRevisions()([]ProductRevisionable)
-    GetQualityUpdateCadence()(*QualityUpdateCadence)
+    GetQualityUpdateCadence()(*QualityUpdateCatalogEntry_qualityUpdateCadence)
     GetQualityUpdateClassification()(*QualityUpdateClassification)
     GetShortName()(*string)
     SetCatalogName(value *string)()
     SetCveSeverityInformation(value QualityUpdateCveSeverityInformationable)()
     SetIsExpeditable(value *bool)()
     SetProductRevisions(value []ProductRevisionable)()
-    SetQualityUpdateCadence(value *QualityUpdateCadence)()
+    SetQualityUpdateCadence(value *QualityUpdateCatalogEntry_qualityUpdateCadence)()
     SetQualityUpdateClassification(value *QualityUpdateClassification)()
     SetShortName(value *string)()
 }

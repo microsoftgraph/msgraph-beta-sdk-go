@@ -22,13 +22,13 @@ func CreateIosPkcsCertificateProfileFromDiscriminatorValue(parseNode i878a80d233
     return NewIosPkcsCertificateProfile(), nil
 }
 // GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
-func (m *IosPkcsCertificateProfile) GetCertificateStore()(*CertificateStore) {
+func (m *IosPkcsCertificateProfile) GetCertificateStore()(*IosPkcsCertificateProfile_certificateStore) {
     val, err := m.GetBackingStore().Get("certificateStore")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CertificateStore)
+        return val.(*IosPkcsCertificateProfile_certificateStore)
     }
     return nil
 }
@@ -80,12 +80,12 @@ func (m *IosPkcsCertificateProfile) GetCustomSubjectAlternativeNames()([]CustomS
 func (m *IosPkcsCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IosCertificateProfileBase.GetFieldDeserializers()
     res["certificateStore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCertificateStore)
+        val, err := n.GetEnumValue(ParseIosPkcsCertificateProfile_certificateStore)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCertificateStore(val.(*CertificateStore))
+            m.SetCertificateStore(val.(*IosPkcsCertificateProfile_certificateStore))
         }
         return nil
     }
@@ -276,7 +276,7 @@ func (m *IosPkcsCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetCertificateStore sets the certificateStore property value. Target store certificate. Possible values are: user, machine.
-func (m *IosPkcsCertificateProfile) SetCertificateStore(value *CertificateStore)() {
+func (m *IosPkcsCertificateProfile) SetCertificateStore(value *IosPkcsCertificateProfile_certificateStore)() {
     err := m.GetBackingStore().Set("certificateStore", value)
     if err != nil {
         panic(err)
@@ -335,7 +335,7 @@ func (m *IosPkcsCertificateProfile) SetSubjectNameFormatString(value *string)() 
 type IosPkcsCertificateProfileable interface {
     IosCertificateProfileBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetCertificateStore()(*CertificateStore)
+    GetCertificateStore()(*IosPkcsCertificateProfile_certificateStore)
     GetCertificateTemplateName()(*string)
     GetCertificationAuthority()(*string)
     GetCertificationAuthorityName()(*string)
@@ -343,7 +343,7 @@ type IosPkcsCertificateProfileable interface {
     GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable)
     GetSubjectAlternativeNameFormatString()(*string)
     GetSubjectNameFormatString()(*string)
-    SetCertificateStore(value *CertificateStore)()
+    SetCertificateStore(value *IosPkcsCertificateProfile_certificateStore)()
     SetCertificateTemplateName(value *string)()
     SetCertificationAuthority(value *string)()
     SetCertificationAuthorityName(value *string)()

@@ -41,12 +41,12 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetFieldDese
         return nil
     }
     res["format"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDeviceManagementConfigurationStringFormat)
+        val, err := n.GetEnumValue(ParseDeviceManagementConfigurationStringSettingValueDefinition_format)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFormat(val.(*DeviceManagementConfigurationStringFormat))
+            m.SetFormat(val.(*DeviceManagementConfigurationStringSettingValueDefinition_format))
         }
         return nil
     }
@@ -104,13 +104,13 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetFileTypes
     return nil
 }
 // GetFormat gets the format property value. Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub, bashScript, unknownFutureValue.
-func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetFormat()(*DeviceManagementConfigurationStringFormat) {
+func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetFormat()(*DeviceManagementConfigurationStringSettingValueDefinition_format) {
     val, err := m.GetBackingStore().Get("format")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DeviceManagementConfigurationStringFormat)
+        return val.(*DeviceManagementConfigurationStringSettingValueDefinition_format)
     }
     return nil
 }
@@ -211,7 +211,7 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetFileTypes
     }
 }
 // SetFormat sets the format property value. Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub, bashScript, unknownFutureValue.
-func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetFormat(value *DeviceManagementConfigurationStringFormat)() {
+func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetFormat(value *DeviceManagementConfigurationStringSettingValueDefinition_format)() {
     err := m.GetBackingStore().Set("format", value)
     if err != nil {
         panic(err)
@@ -250,13 +250,13 @@ type DeviceManagementConfigurationStringSettingValueDefinitionable interface {
     DeviceManagementConfigurationSettingValueDefinitionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetFileTypes()([]string)
-    GetFormat()(*DeviceManagementConfigurationStringFormat)
+    GetFormat()(*DeviceManagementConfigurationStringSettingValueDefinition_format)
     GetInputValidationSchema()(*string)
     GetIsSecret()(*bool)
     GetMaximumLength()(*int64)
     GetMinimumLength()(*int64)
     SetFileTypes(value []string)()
-    SetFormat(value *DeviceManagementConfigurationStringFormat)()
+    SetFormat(value *DeviceManagementConfigurationStringSettingValueDefinition_format)()
     SetInputValidationSchema(value *string)()
     SetIsSecret(value *bool)()
     SetMaximumLength(value *int64)()

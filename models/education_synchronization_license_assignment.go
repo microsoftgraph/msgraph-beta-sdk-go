@@ -35,13 +35,13 @@ func (m *EducationSynchronizationLicenseAssignment) GetAdditionalData()(map[stri
     return val.(map[string]any)
 }
 // GetAppliesTo gets the appliesTo property value. The user role type to assign to license. Possible values are: student, teacher, faculty.
-func (m *EducationSynchronizationLicenseAssignment) GetAppliesTo()(*EducationUserRole) {
+func (m *EducationSynchronizationLicenseAssignment) GetAppliesTo()(*EducationSynchronizationLicenseAssignment_appliesTo) {
     val, err := m.GetBackingStore().Get("appliesTo")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EducationUserRole)
+        return val.(*EducationSynchronizationLicenseAssignment_appliesTo)
     }
     return nil
 }
@@ -53,12 +53,12 @@ func (m *EducationSynchronizationLicenseAssignment) GetBackingStore()(ie8677ce2c
 func (m *EducationSynchronizationLicenseAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["appliesTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEducationUserRole)
+        val, err := n.GetEnumValue(ParseEducationSynchronizationLicenseAssignment_appliesTo)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAppliesTo(val.(*EducationUserRole))
+            m.SetAppliesTo(val.(*EducationSynchronizationLicenseAssignment_appliesTo))
         }
         return nil
     }
@@ -149,7 +149,7 @@ func (m *EducationSynchronizationLicenseAssignment) SetAdditionalData(value map[
     }
 }
 // SetAppliesTo sets the appliesTo property value. The user role type to assign to license. Possible values are: student, teacher, faculty.
-func (m *EducationSynchronizationLicenseAssignment) SetAppliesTo(value *EducationUserRole)() {
+func (m *EducationSynchronizationLicenseAssignment) SetAppliesTo(value *EducationSynchronizationLicenseAssignment_appliesTo)() {
     err := m.GetBackingStore().Set("appliesTo", value)
     if err != nil {
         panic(err)
@@ -178,11 +178,11 @@ type EducationSynchronizationLicenseAssignmentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAppliesTo()(*EducationUserRole)
+    GetAppliesTo()(*EducationSynchronizationLicenseAssignment_appliesTo)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetSkuIds()([]string)
-    SetAppliesTo(value *EducationUserRole)()
+    SetAppliesTo(value *EducationSynchronizationLicenseAssignment_appliesTo)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetSkuIds(value []string)()

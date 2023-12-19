@@ -129,12 +129,12 @@ func (m *MatchingDlpRule) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     res["ruleMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRuleMode)
+        val, err := n.GetEnumValue(ParseMatchingDlpRule_ruleMode)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRuleMode(val.(*RuleMode))
+            m.SetRuleMode(val.(*MatchingDlpRule_ruleMode))
         }
         return nil
     }
@@ -217,13 +217,13 @@ func (m *MatchingDlpRule) GetRuleId()(*string) {
     return nil
 }
 // GetRuleMode gets the ruleMode property value. The ruleMode property
-func (m *MatchingDlpRule) GetRuleMode()(*RuleMode) {
+func (m *MatchingDlpRule) GetRuleMode()(*MatchingDlpRule_ruleMode) {
     val, err := m.GetBackingStore().Get("ruleMode")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RuleMode)
+        return val.(*MatchingDlpRule_ruleMode)
     }
     return nil
 }
@@ -370,7 +370,7 @@ func (m *MatchingDlpRule) SetRuleId(value *string)() {
     }
 }
 // SetRuleMode sets the ruleMode property value. The ruleMode property
-func (m *MatchingDlpRule) SetRuleMode(value *RuleMode)() {
+func (m *MatchingDlpRule) SetRuleMode(value *MatchingDlpRule_ruleMode)() {
     err := m.GetBackingStore().Set("ruleMode", value)
     if err != nil {
         panic(err)
@@ -396,7 +396,7 @@ type MatchingDlpRuleable interface {
     GetPolicyName()(*string)
     GetPriority()(*int32)
     GetRuleId()(*string)
-    GetRuleMode()(*RuleMode)
+    GetRuleMode()(*MatchingDlpRule_ruleMode)
     GetRuleName()(*string)
     SetActions(value []DlpActionInfoable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
@@ -406,6 +406,6 @@ type MatchingDlpRuleable interface {
     SetPolicyName(value *string)()
     SetPriority(value *int32)()
     SetRuleId(value *string)()
-    SetRuleMode(value *RuleMode)()
+    SetRuleMode(value *MatchingDlpRule_ruleMode)()
     SetRuleName(value *string)()
 }

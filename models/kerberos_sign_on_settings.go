@@ -52,12 +52,12 @@ func (m *KerberosSignOnSettings) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["kerberosSignOnMappingAttributeType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseKerberosSignOnMappingAttributeType)
+        val, err := n.GetEnumValue(ParseKerberosSignOnSettings_kerberosSignOnMappingAttributeType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetKerberosSignOnMappingAttributeType(val.(*KerberosSignOnMappingAttributeType))
+            m.SetKerberosSignOnMappingAttributeType(val.(*KerberosSignOnSettings_kerberosSignOnMappingAttributeType))
         }
         return nil
     }
@@ -85,13 +85,13 @@ func (m *KerberosSignOnSettings) GetKerberosServicePrincipalName()(*string) {
     return nil
 }
 // GetKerberosSignOnMappingAttributeType gets the kerberosSignOnMappingAttributeType property value. The Delegated Login Identity for the connector to use on behalf of your users. For more information, see Working with different on-premises and cloud identities . Possible values are: userPrincipalName, onPremisesUserPrincipalName, userPrincipalUsername, onPremisesUserPrincipalUsername, onPremisesSAMAccountName.
-func (m *KerberosSignOnSettings) GetKerberosSignOnMappingAttributeType()(*KerberosSignOnMappingAttributeType) {
+func (m *KerberosSignOnSettings) GetKerberosSignOnMappingAttributeType()(*KerberosSignOnSettings_kerberosSignOnMappingAttributeType) {
     val, err := m.GetBackingStore().Get("kerberosSignOnMappingAttributeType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*KerberosSignOnMappingAttributeType)
+        return val.(*KerberosSignOnSettings_kerberosSignOnMappingAttributeType)
     }
     return nil
 }
@@ -154,7 +154,7 @@ func (m *KerberosSignOnSettings) SetKerberosServicePrincipalName(value *string)(
     }
 }
 // SetKerberosSignOnMappingAttributeType sets the kerberosSignOnMappingAttributeType property value. The Delegated Login Identity for the connector to use on behalf of your users. For more information, see Working with different on-premises and cloud identities . Possible values are: userPrincipalName, onPremisesUserPrincipalName, userPrincipalUsername, onPremisesUserPrincipalUsername, onPremisesSAMAccountName.
-func (m *KerberosSignOnSettings) SetKerberosSignOnMappingAttributeType(value *KerberosSignOnMappingAttributeType)() {
+func (m *KerberosSignOnSettings) SetKerberosSignOnMappingAttributeType(value *KerberosSignOnSettings_kerberosSignOnMappingAttributeType)() {
     err := m.GetBackingStore().Set("kerberosSignOnMappingAttributeType", value)
     if err != nil {
         panic(err)
@@ -174,10 +174,10 @@ type KerberosSignOnSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetKerberosServicePrincipalName()(*string)
-    GetKerberosSignOnMappingAttributeType()(*KerberosSignOnMappingAttributeType)
+    GetKerberosSignOnMappingAttributeType()(*KerberosSignOnSettings_kerberosSignOnMappingAttributeType)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetKerberosServicePrincipalName(value *string)()
-    SetKerberosSignOnMappingAttributeType(value *KerberosSignOnMappingAttributeType)()
+    SetKerberosSignOnMappingAttributeType(value *KerberosSignOnSettings_kerberosSignOnMappingAttributeType)()
     SetOdataType(value *string)()
 }

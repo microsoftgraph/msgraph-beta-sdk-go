@@ -22,13 +22,13 @@ func CreateDeviceLinkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     return NewDeviceLink(), nil
 }
 // GetBandwidthCapacityInMbps gets the bandwidthCapacityInMbps property value. Determines the maximum allowed Mbps (megabits per second) bandwidth from a branch site. The possible values are:250,500,750,1000.
-func (m *DeviceLink) GetBandwidthCapacityInMbps()(*BandwidthCapacityInMbps) {
+func (m *DeviceLink) GetBandwidthCapacityInMbps()(*DeviceLink_bandwidthCapacityInMbps) {
     val, err := m.GetBackingStore().Get("bandwidthCapacityInMbps")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*BandwidthCapacityInMbps)
+        return val.(*DeviceLink_bandwidthCapacityInMbps)
     }
     return nil
 }
@@ -58,12 +58,12 @@ func (m *DeviceLink) GetDeviceVendor()(*DeviceVendor) {
 func (m *DeviceLink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["bandwidthCapacityInMbps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseBandwidthCapacityInMbps)
+        val, err := n.GetEnumValue(ParseDeviceLink_bandwidthCapacityInMbps)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBandwidthCapacityInMbps(val.(*BandwidthCapacityInMbps))
+            m.SetBandwidthCapacityInMbps(val.(*DeviceLink_bandwidthCapacityInMbps))
         }
         return nil
     }
@@ -253,7 +253,7 @@ func (m *DeviceLink) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     return nil
 }
 // SetBandwidthCapacityInMbps sets the bandwidthCapacityInMbps property value. Determines the maximum allowed Mbps (megabits per second) bandwidth from a branch site. The possible values are:250,500,750,1000.
-func (m *DeviceLink) SetBandwidthCapacityInMbps(value *BandwidthCapacityInMbps)() {
+func (m *DeviceLink) SetBandwidthCapacityInMbps(value *DeviceLink_bandwidthCapacityInMbps)() {
     err := m.GetBackingStore().Set("bandwidthCapacityInMbps", value)
     if err != nil {
         panic(err)
@@ -312,7 +312,7 @@ func (m *DeviceLink) SetTunnelConfiguration(value TunnelConfigurationable)() {
 type DeviceLinkable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetBandwidthCapacityInMbps()(*BandwidthCapacityInMbps)
+    GetBandwidthCapacityInMbps()(*DeviceLink_bandwidthCapacityInMbps)
     GetBgpConfiguration()(BgpConfigurationable)
     GetDeviceVendor()(*DeviceVendor)
     GetIpAddress()(*string)
@@ -320,7 +320,7 @@ type DeviceLinkable interface {
     GetName()(*string)
     GetRedundancyConfiguration()(RedundancyConfigurationable)
     GetTunnelConfiguration()(TunnelConfigurationable)
-    SetBandwidthCapacityInMbps(value *BandwidthCapacityInMbps)()
+    SetBandwidthCapacityInMbps(value *DeviceLink_bandwidthCapacityInMbps)()
     SetBgpConfiguration(value BgpConfigurationable)()
     SetDeviceVendor(value *DeviceVendor)()
     SetIpAddress(value *string)()

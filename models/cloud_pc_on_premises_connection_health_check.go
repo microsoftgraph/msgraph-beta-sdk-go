@@ -35,6 +35,17 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetAdditionalData()(map[string]
     }
     return val.(map[string]any)
 }
+// GetAdditionalDetail gets the additionalDetail property value. The additionalDetail property
+func (m *CloudPcOnPremisesConnectionHealthCheck) GetAdditionalDetail()(*string) {
+    val, err := m.GetBackingStore().Get("additionalDetail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetAdditionalDetails gets the additionalDetails property value. More details about the health check or the recommended action.
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetAdditionalDetails()(*string) {
     val, err := m.GetBackingStore().Get("additionalDetails")
@@ -84,19 +95,29 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetEndDateTime()(*i336074805fc8
     return nil
 }
 // GetErrorType gets the errorType property value. The type of error that occurred during this health check.
-func (m *CloudPcOnPremisesConnectionHealthCheck) GetErrorType()(*CloudPcOnPremisesConnectionHealthCheckErrorType) {
+func (m *CloudPcOnPremisesConnectionHealthCheck) GetErrorType()(*CloudPcOnPremisesConnectionHealthCheck_errorType) {
     val, err := m.GetBackingStore().Get("errorType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcOnPremisesConnectionHealthCheckErrorType)
+        return val.(*CloudPcOnPremisesConnectionHealthCheck_errorType)
     }
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["additionalDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAdditionalDetail(val)
+        }
+        return nil
+    }
     res["additionalDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -138,12 +159,12 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetFieldDeserializers()(map[str
         return nil
     }
     res["errorType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcOnPremisesConnectionHealthCheckErrorType)
+        val, err := n.GetEnumValue(ParseCloudPcOnPremisesConnectionHealthCheck_errorType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetErrorType(val.(*CloudPcOnPremisesConnectionHealthCheckErrorType))
+            m.SetErrorType(val.(*CloudPcOnPremisesConnectionHealthCheck_errorType))
         }
         return nil
     }
@@ -236,6 +257,12 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetStatus()(*CloudPcOnPremisesC
 // Serialize serializes information the current object
 func (m *CloudPcOnPremisesConnectionHealthCheck) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteStringValue("additionalDetail", m.GetAdditionalDetail())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("additionalDetails", m.GetAdditionalDetails())
         if err != nil {
             return err
@@ -306,6 +333,13 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) SetAdditionalData(value map[str
         panic(err)
     }
 }
+// SetAdditionalDetail sets the additionalDetail property value. The additionalDetail property
+func (m *CloudPcOnPremisesConnectionHealthCheck) SetAdditionalDetail(value *string)() {
+    err := m.GetBackingStore().Set("additionalDetail", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAdditionalDetails sets the additionalDetails property value. More details about the health check or the recommended action.
 func (m *CloudPcOnPremisesConnectionHealthCheck) SetAdditionalDetails(value *string)() {
     err := m.GetBackingStore().Set("additionalDetails", value)
@@ -339,7 +373,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) SetEndDateTime(value *i33607480
     }
 }
 // SetErrorType sets the errorType property value. The type of error that occurred during this health check.
-func (m *CloudPcOnPremisesConnectionHealthCheck) SetErrorType(value *CloudPcOnPremisesConnectionHealthCheckErrorType)() {
+func (m *CloudPcOnPremisesConnectionHealthCheck) SetErrorType(value *CloudPcOnPremisesConnectionHealthCheck_errorType)() {
     err := m.GetBackingStore().Set("errorType", value)
     if err != nil {
         panic(err)
@@ -378,22 +412,24 @@ type CloudPcOnPremisesConnectionHealthCheckable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAdditionalDetail()(*string)
     GetAdditionalDetails()(*string)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCorrelationId()(*string)
     GetDisplayName()(*string)
     GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetErrorType()(*CloudPcOnPremisesConnectionHealthCheckErrorType)
+    GetErrorType()(*CloudPcOnPremisesConnectionHealthCheck_errorType)
     GetOdataType()(*string)
     GetRecommendedAction()(*string)
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetStatus()(*CloudPcOnPremisesConnectionStatus)
+    SetAdditionalDetail(value *string)()
     SetAdditionalDetails(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCorrelationId(value *string)()
     SetDisplayName(value *string)()
     SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetErrorType(value *CloudPcOnPremisesConnectionHealthCheckErrorType)()
+    SetErrorType(value *CloudPcOnPremisesConnectionHealthCheck_errorType)()
     SetOdataType(value *string)()
     SetRecommendedAction(value *string)()
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

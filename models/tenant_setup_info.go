@@ -70,12 +70,12 @@ func (m *TenantSetupInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     res["setupStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSetupStatus)
+        val, err := n.GetEnumValue(ParseTenantSetupInfo_setupStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSetupStatus(val.(*SetupStatus))
+            m.SetSetupStatus(val.(*TenantSetupInfo_setupStatus))
         }
         return nil
     }
@@ -124,13 +124,13 @@ func (m *TenantSetupInfo) GetRelevantRolesSettings()([]string) {
     return nil
 }
 // GetSetupStatus gets the setupStatus property value. The setupStatus property
-func (m *TenantSetupInfo) GetSetupStatus()(*SetupStatus) {
+func (m *TenantSetupInfo) GetSetupStatus()(*TenantSetupInfo_setupStatus) {
     val, err := m.GetBackingStore().Get("setupStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SetupStatus)
+        return val.(*TenantSetupInfo_setupStatus)
     }
     return nil
 }
@@ -223,7 +223,7 @@ func (m *TenantSetupInfo) SetRelevantRolesSettings(value []string)() {
     }
 }
 // SetSetupStatus sets the setupStatus property value. The setupStatus property
-func (m *TenantSetupInfo) SetSetupStatus(value *SetupStatus)() {
+func (m *TenantSetupInfo) SetSetupStatus(value *TenantSetupInfo_setupStatus)() {
     err := m.GetBackingStore().Set("setupStatus", value)
     if err != nil {
         panic(err)
@@ -250,13 +250,13 @@ type TenantSetupInfoable interface {
     GetDefaultRolesSettings()(PrivilegedRoleSettingsable)
     GetFirstTimeSetup()(*bool)
     GetRelevantRolesSettings()([]string)
-    GetSetupStatus()(*SetupStatus)
+    GetSetupStatus()(*TenantSetupInfo_setupStatus)
     GetSkipSetup()(*bool)
     GetUserRolesActions()(*string)
     SetDefaultRolesSettings(value PrivilegedRoleSettingsable)()
     SetFirstTimeSetup(value *bool)()
     SetRelevantRolesSettings(value []string)()
-    SetSetupStatus(value *SetupStatus)()
+    SetSetupStatus(value *TenantSetupInfo_setupStatus)()
     SetSkipSetup(value *bool)()
     SetUserRolesActions(value *string)()
 }

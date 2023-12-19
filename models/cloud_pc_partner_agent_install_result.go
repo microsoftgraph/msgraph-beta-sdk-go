@@ -63,12 +63,12 @@ func (m *CloudPcPartnerAgentInstallResult) GetFieldDeserializers()(map[string]fu
         return nil
     }
     res["installStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcPartnerAgentInstallStatus)
+        val, err := n.GetEnumValue(ParseCloudPcPartnerAgentInstallResult_installStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInstallStatus(val.(*CloudPcPartnerAgentInstallStatus))
+            m.SetInstallStatus(val.(*CloudPcPartnerAgentInstallResult_installStatus))
         }
         return nil
     }
@@ -93,12 +93,12 @@ func (m *CloudPcPartnerAgentInstallResult) GetFieldDeserializers()(map[string]fu
         return nil
     }
     res["partnerAgentName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcPartnerAgentName)
+        val, err := n.GetEnumValue(ParseCloudPcPartnerAgentInstallResult_partnerAgentName)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPartnerAgentName(val.(*CloudPcPartnerAgentName))
+            m.SetPartnerAgentName(val.(*CloudPcPartnerAgentInstallResult_partnerAgentName))
         }
         return nil
     }
@@ -115,13 +115,13 @@ func (m *CloudPcPartnerAgentInstallResult) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetInstallStatus gets the installStatus property value. The status of a partner agent installation. Possible values are: installed, installFailed, installing, uninstalling, uninstallFailed and licensed. Read-Only.
-func (m *CloudPcPartnerAgentInstallResult) GetInstallStatus()(*CloudPcPartnerAgentInstallStatus) {
+func (m *CloudPcPartnerAgentInstallResult) GetInstallStatus()(*CloudPcPartnerAgentInstallResult_installStatus) {
     val, err := m.GetBackingStore().Get("installStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcPartnerAgentInstallStatus)
+        return val.(*CloudPcPartnerAgentInstallResult_installStatus)
     }
     return nil
 }
@@ -148,13 +148,13 @@ func (m *CloudPcPartnerAgentInstallResult) GetOdataType()(*string) {
     return nil
 }
 // GetPartnerAgentName gets the partnerAgentName property value. The name of the first-party or third-party partner agent. Possible values for third-party partners are Citrix, VMware and HP. Read-Only.
-func (m *CloudPcPartnerAgentInstallResult) GetPartnerAgentName()(*CloudPcPartnerAgentName) {
+func (m *CloudPcPartnerAgentInstallResult) GetPartnerAgentName()(*CloudPcPartnerAgentInstallResult_partnerAgentName) {
     val, err := m.GetBackingStore().Get("partnerAgentName")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcPartnerAgentName)
+        return val.(*CloudPcPartnerAgentInstallResult_partnerAgentName)
     }
     return nil
 }
@@ -236,7 +236,7 @@ func (m *CloudPcPartnerAgentInstallResult) SetErrorMessage(value *string)() {
     }
 }
 // SetInstallStatus sets the installStatus property value. The status of a partner agent installation. Possible values are: installed, installFailed, installing, uninstalling, uninstallFailed and licensed. Read-Only.
-func (m *CloudPcPartnerAgentInstallResult) SetInstallStatus(value *CloudPcPartnerAgentInstallStatus)() {
+func (m *CloudPcPartnerAgentInstallResult) SetInstallStatus(value *CloudPcPartnerAgentInstallResult_installStatus)() {
     err := m.GetBackingStore().Set("installStatus", value)
     if err != nil {
         panic(err)
@@ -257,7 +257,7 @@ func (m *CloudPcPartnerAgentInstallResult) SetOdataType(value *string)() {
     }
 }
 // SetPartnerAgentName sets the partnerAgentName property value. The name of the first-party or third-party partner agent. Possible values for third-party partners are Citrix, VMware and HP. Read-Only.
-func (m *CloudPcPartnerAgentInstallResult) SetPartnerAgentName(value *CloudPcPartnerAgentName)() {
+func (m *CloudPcPartnerAgentInstallResult) SetPartnerAgentName(value *CloudPcPartnerAgentInstallResult_partnerAgentName)() {
     err := m.GetBackingStore().Set("partnerAgentName", value)
     if err != nil {
         panic(err)
@@ -277,16 +277,16 @@ type CloudPcPartnerAgentInstallResultable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetErrorMessage()(*string)
-    GetInstallStatus()(*CloudPcPartnerAgentInstallStatus)
+    GetInstallStatus()(*CloudPcPartnerAgentInstallResult_installStatus)
     GetIsThirdPartyPartner()(*bool)
     GetOdataType()(*string)
-    GetPartnerAgentName()(*CloudPcPartnerAgentName)
+    GetPartnerAgentName()(*CloudPcPartnerAgentInstallResult_partnerAgentName)
     GetRetriable()(*bool)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetErrorMessage(value *string)()
-    SetInstallStatus(value *CloudPcPartnerAgentInstallStatus)()
+    SetInstallStatus(value *CloudPcPartnerAgentInstallResult_installStatus)()
     SetIsThirdPartyPartner(value *bool)()
     SetOdataType(value *string)()
-    SetPartnerAgentName(value *CloudPcPartnerAgentName)()
+    SetPartnerAgentName(value *CloudPcPartnerAgentInstallResult_partnerAgentName)()
     SetRetriable(value *bool)()
 }

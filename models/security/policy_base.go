@@ -147,12 +147,12 @@ func (m *PolicyBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePolicyStatus)
+        val, err := n.GetEnumValue(ParsePolicyBase_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*PolicyStatus))
+            m.SetStatus(val.(*PolicyBase_status))
         }
         return nil
     }
@@ -181,13 +181,13 @@ func (m *PolicyBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetStatus gets the status property value. The status property
-func (m *PolicyBase) GetStatus()(*PolicyStatus) {
+func (m *PolicyBase) GetStatus()(*PolicyBase_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PolicyStatus)
+        return val.(*PolicyBase_status)
     }
     return nil
 }
@@ -285,7 +285,7 @@ func (m *PolicyBase) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3a
     }
 }
 // SetStatus sets the status property value. The status property
-func (m *PolicyBase) SetStatus(value *PolicyStatus)() {
+func (m *PolicyBase) SetStatus(value *PolicyBase_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -301,12 +301,12 @@ type PolicyBaseable interface {
     GetDisplayName()(*string)
     GetLastModifiedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetStatus()(*PolicyStatus)
+    GetStatus()(*PolicyBase_status)
     SetCreatedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetLastModifiedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetStatus(value *PolicyStatus)()
+    SetStatus(value *PolicyBase_status)()
 }

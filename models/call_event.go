@@ -21,13 +21,13 @@ func CreateCallEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
     return NewCallEvent(), nil
 }
 // GetCallEventType gets the callEventType property value. The callEventType property
-func (m *CallEvent) GetCallEventType()(*CallEventType) {
+func (m *CallEvent) GetCallEventType()(*CallEvent_callEventType) {
     val, err := m.GetBackingStore().Get("callEventType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CallEventType)
+        return val.(*CallEvent_callEventType)
     }
     return nil
 }
@@ -46,12 +46,12 @@ func (m *CallEvent) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077
 func (m *CallEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["callEventType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCallEventType)
+        val, err := n.GetEnumValue(ParseCallEvent_callEventType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCallEventType(val.(*CallEventType))
+            m.SetCallEventType(val.(*CallEvent_callEventType))
         }
         return nil
     }
@@ -128,7 +128,7 @@ func (m *CallEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     return nil
 }
 // SetCallEventType sets the callEventType property value. The callEventType property
-func (m *CallEvent) SetCallEventType(value *CallEventType)() {
+func (m *CallEvent) SetCallEventType(value *CallEvent_callEventType)() {
     err := m.GetBackingStore().Set("callEventType", value)
     if err != nil {
         panic(err)
@@ -152,10 +152,10 @@ func (m *CallEvent) SetParticipants(value []Participantable)() {
 type CallEventable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetCallEventType()(*CallEventType)
+    GetCallEventType()(*CallEvent_callEventType)
     GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetParticipants()([]Participantable)
-    SetCallEventType(value *CallEventType)()
+    SetCallEventType(value *CallEvent_callEventType)()
     SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetParticipants(value []Participantable)()
 }

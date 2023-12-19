@@ -32,13 +32,13 @@ func (m *TeamworkDevice) GetActivity()(TeamworkDeviceActivityable) {
     return nil
 }
 // GetActivityState gets the activityState property value. The activity state of the device. The possible values are: unknown, busy, idle, unavailable, unknownFutureValue.
-func (m *TeamworkDevice) GetActivityState()(*TeamworkDeviceActivityState) {
+func (m *TeamworkDevice) GetActivityState()(*TeamworkDevice_activityState) {
     val, err := m.GetBackingStore().Get("activityState")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TeamworkDeviceActivityState)
+        return val.(*TeamworkDevice_activityState)
     }
     return nil
 }
@@ -122,12 +122,12 @@ func (m *TeamworkDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["activityState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTeamworkDeviceActivityState)
+        val, err := n.GetEnumValue(ParseTeamworkDevice_activityState)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetActivityState(val.(*TeamworkDeviceActivityState))
+            m.SetActivityState(val.(*TeamworkDevice_activityState))
         }
         return nil
     }
@@ -212,12 +212,12 @@ func (m *TeamworkDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["healthStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTeamworkDeviceHealthStatus)
+        val, err := n.GetEnumValue(ParseTeamworkDevice_healthStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetHealthStatus(val.(*TeamworkDeviceHealthStatus))
+            m.SetHealthStatus(val.(*TeamworkDevice_healthStatus))
         }
         return nil
     }
@@ -292,13 +292,13 @@ func (m *TeamworkDevice) GetHealth()(TeamworkDeviceHealthable) {
     return nil
 }
 // GetHealthStatus gets the healthStatus property value. The health status of the device. The possible values are: unknown, offline, critical, nonUrgent, healthy, unknownFutureValue.
-func (m *TeamworkDevice) GetHealthStatus()(*TeamworkDeviceHealthStatus) {
+func (m *TeamworkDevice) GetHealthStatus()(*TeamworkDevice_healthStatus) {
     val, err := m.GetBackingStore().Get("healthStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TeamworkDeviceHealthStatus)
+        return val.(*TeamworkDevice_healthStatus)
     }
     return nil
 }
@@ -461,7 +461,7 @@ func (m *TeamworkDevice) SetActivity(value TeamworkDeviceActivityable)() {
     }
 }
 // SetActivityState sets the activityState property value. The activity state of the device. The possible values are: unknown, busy, idle, unavailable, unknownFutureValue.
-func (m *TeamworkDevice) SetActivityState(value *TeamworkDeviceActivityState)() {
+func (m *TeamworkDevice) SetActivityState(value *TeamworkDevice_activityState)() {
     err := m.GetBackingStore().Set("activityState", value)
     if err != nil {
         panic(err)
@@ -524,7 +524,7 @@ func (m *TeamworkDevice) SetHealth(value TeamworkDeviceHealthable)() {
     }
 }
 // SetHealthStatus sets the healthStatus property value. The health status of the device. The possible values are: unknown, offline, critical, nonUrgent, healthy, unknownFutureValue.
-func (m *TeamworkDevice) SetHealthStatus(value *TeamworkDeviceHealthStatus)() {
+func (m *TeamworkDevice) SetHealthStatus(value *TeamworkDevice_healthStatus)() {
     err := m.GetBackingStore().Set("healthStatus", value)
     if err != nil {
         panic(err)
@@ -563,7 +563,7 @@ type TeamworkDeviceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetActivity()(TeamworkDeviceActivityable)
-    GetActivityState()(*TeamworkDeviceActivityState)
+    GetActivityState()(*TeamworkDevice_activityState)
     GetCompanyAssetTag()(*string)
     GetConfiguration()(TeamworkDeviceConfigurationable)
     GetCreatedBy()(IdentitySetable)
@@ -572,13 +572,13 @@ type TeamworkDeviceable interface {
     GetDeviceType()(*TeamworkDeviceType)
     GetHardwareDetail()(TeamworkHardwareDetailable)
     GetHealth()(TeamworkDeviceHealthable)
-    GetHealthStatus()(*TeamworkDeviceHealthStatus)
+    GetHealthStatus()(*TeamworkDevice_healthStatus)
     GetLastModifiedBy()(IdentitySetable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetNotes()(*string)
     GetOperations()([]TeamworkDeviceOperationable)
     SetActivity(value TeamworkDeviceActivityable)()
-    SetActivityState(value *TeamworkDeviceActivityState)()
+    SetActivityState(value *TeamworkDevice_activityState)()
     SetCompanyAssetTag(value *string)()
     SetConfiguration(value TeamworkDeviceConfigurationable)()
     SetCreatedBy(value IdentitySetable)()
@@ -587,7 +587,7 @@ type TeamworkDeviceable interface {
     SetDeviceType(value *TeamworkDeviceType)()
     SetHardwareDetail(value TeamworkHardwareDetailable)()
     SetHealth(value TeamworkDeviceHealthable)()
-    SetHealthStatus(value *TeamworkDeviceHealthStatus)()
+    SetHealthStatus(value *TeamworkDevice_healthStatus)()
     SetLastModifiedBy(value IdentitySetable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetNotes(value *string)()

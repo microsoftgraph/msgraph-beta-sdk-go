@@ -44,13 +44,13 @@ func (m *AuditLogRecord) GetAuditData()(AuditDataable) {
     return nil
 }
 // GetAuditLogRecordType gets the auditLogRecordType property value. The auditLogRecordType property
-func (m *AuditLogRecord) GetAuditLogRecordType()(*AuditLogRecordType) {
+func (m *AuditLogRecord) GetAuditLogRecordType()(*AuditLogRecord_auditLogRecordType) {
     val, err := m.GetBackingStore().Get("auditLogRecordType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AuditLogRecordType)
+        return val.(*AuditLogRecord_auditLogRecordType)
     }
     return nil
 }
@@ -106,12 +106,12 @@ func (m *AuditLogRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["auditLogRecordType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAuditLogRecordType)
+        val, err := n.GetEnumValue(ParseAuditLogRecord_auditLogRecordType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAuditLogRecordType(val.(*AuditLogRecordType))
+            m.SetAuditLogRecordType(val.(*AuditLogRecord_auditLogRecordType))
         }
         return nil
     }
@@ -196,12 +196,12 @@ func (m *AuditLogRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["userType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAuditLogUserType)
+        val, err := n.GetEnumValue(ParseAuditLogRecord_userType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUserType(val.(*AuditLogUserType))
+            m.SetUserType(val.(*AuditLogRecord_userType))
         }
         return nil
     }
@@ -274,13 +274,13 @@ func (m *AuditLogRecord) GetUserPrincipalName()(*string) {
     return nil
 }
 // GetUserType gets the userType property value. The userType property
-func (m *AuditLogRecord) GetUserType()(*AuditLogUserType) {
+func (m *AuditLogRecord) GetUserType()(*AuditLogRecord_userType) {
     val, err := m.GetBackingStore().Get("userType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AuditLogUserType)
+        return val.(*AuditLogRecord_userType)
     }
     return nil
 }
@@ -381,7 +381,7 @@ func (m *AuditLogRecord) SetAuditData(value AuditDataable)() {
     }
 }
 // SetAuditLogRecordType sets the auditLogRecordType property value. The auditLogRecordType property
-func (m *AuditLogRecord) SetAuditLogRecordType(value *AuditLogRecordType)() {
+func (m *AuditLogRecord) SetAuditLogRecordType(value *AuditLogRecord_auditLogRecordType)() {
     err := m.GetBackingStore().Set("auditLogRecordType", value)
     if err != nil {
         panic(err)
@@ -444,7 +444,7 @@ func (m *AuditLogRecord) SetUserPrincipalName(value *string)() {
     }
 }
 // SetUserType sets the userType property value. The userType property
-func (m *AuditLogRecord) SetUserType(value *AuditLogUserType)() {
+func (m *AuditLogRecord) SetUserType(value *AuditLogRecord_userType)() {
     err := m.GetBackingStore().Set("userType", value)
     if err != nil {
         panic(err)
@@ -456,7 +456,7 @@ type AuditLogRecordable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAdministrativeUnits()([]string)
     GetAuditData()(AuditDataable)
-    GetAuditLogRecordType()(*AuditLogRecordType)
+    GetAuditLogRecordType()(*AuditLogRecord_auditLogRecordType)
     GetClientIp()(*string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetObjectId()(*string)
@@ -465,10 +465,10 @@ type AuditLogRecordable interface {
     GetService()(*string)
     GetUserId()(*string)
     GetUserPrincipalName()(*string)
-    GetUserType()(*AuditLogUserType)
+    GetUserType()(*AuditLogRecord_userType)
     SetAdministrativeUnits(value []string)()
     SetAuditData(value AuditDataable)()
-    SetAuditLogRecordType(value *AuditLogRecordType)()
+    SetAuditLogRecordType(value *AuditLogRecord_auditLogRecordType)()
     SetClientIp(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetObjectId(value *string)()
@@ -477,5 +477,5 @@ type AuditLogRecordable interface {
     SetService(value *string)()
     SetUserId(value *string)()
     SetUserPrincipalName(value *string)()
-    SetUserType(value *AuditLogUserType)()
+    SetUserType(value *AuditLogRecord_userType)()
 }

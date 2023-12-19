@@ -22,13 +22,13 @@ func CreateAndroidDeviceOwnerCompliancePolicyFromDiscriminatorValue(parseNode i8
     return NewAndroidDeviceOwnerCompliancePolicy(), nil
 }
 // GetAdvancedThreatProtectionRequiredSecurityLevel gets the advancedThreatProtectionRequiredSecurityLevel property value. MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
-func (m *AndroidDeviceOwnerCompliancePolicy) GetAdvancedThreatProtectionRequiredSecurityLevel()(*DeviceThreatProtectionLevel) {
+func (m *AndroidDeviceOwnerCompliancePolicy) GetAdvancedThreatProtectionRequiredSecurityLevel()(*AndroidDeviceOwnerCompliancePolicy_advancedThreatProtectionRequiredSecurityLevel) {
     val, err := m.GetBackingStore().Get("advancedThreatProtectionRequiredSecurityLevel")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DeviceThreatProtectionLevel)
+        return val.(*AndroidDeviceOwnerCompliancePolicy_advancedThreatProtectionRequiredSecurityLevel)
     }
     return nil
 }
@@ -44,13 +44,13 @@ func (m *AndroidDeviceOwnerCompliancePolicy) GetDeviceThreatProtectionEnabled()(
     return nil
 }
 // GetDeviceThreatProtectionRequiredSecurityLevel gets the deviceThreatProtectionRequiredSecurityLevel property value. Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
-func (m *AndroidDeviceOwnerCompliancePolicy) GetDeviceThreatProtectionRequiredSecurityLevel()(*DeviceThreatProtectionLevel) {
+func (m *AndroidDeviceOwnerCompliancePolicy) GetDeviceThreatProtectionRequiredSecurityLevel()(*AndroidDeviceOwnerCompliancePolicy_deviceThreatProtectionRequiredSecurityLevel) {
     val, err := m.GetBackingStore().Get("deviceThreatProtectionRequiredSecurityLevel")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DeviceThreatProtectionLevel)
+        return val.(*AndroidDeviceOwnerCompliancePolicy_deviceThreatProtectionRequiredSecurityLevel)
     }
     return nil
 }
@@ -58,12 +58,12 @@ func (m *AndroidDeviceOwnerCompliancePolicy) GetDeviceThreatProtectionRequiredSe
 func (m *AndroidDeviceOwnerCompliancePolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceCompliancePolicy.GetFieldDeserializers()
     res["advancedThreatProtectionRequiredSecurityLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDeviceThreatProtectionLevel)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerCompliancePolicy_advancedThreatProtectionRequiredSecurityLevel)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAdvancedThreatProtectionRequiredSecurityLevel(val.(*DeviceThreatProtectionLevel))
+            m.SetAdvancedThreatProtectionRequiredSecurityLevel(val.(*AndroidDeviceOwnerCompliancePolicy_advancedThreatProtectionRequiredSecurityLevel))
         }
         return nil
     }
@@ -78,12 +78,12 @@ func (m *AndroidDeviceOwnerCompliancePolicy) GetFieldDeserializers()(map[string]
         return nil
     }
     res["deviceThreatProtectionRequiredSecurityLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDeviceThreatProtectionLevel)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerCompliancePolicy_deviceThreatProtectionRequiredSecurityLevel)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceThreatProtectionRequiredSecurityLevel(val.(*DeviceThreatProtectionLevel))
+            m.SetDeviceThreatProtectionRequiredSecurityLevel(val.(*AndroidDeviceOwnerCompliancePolicy_deviceThreatProtectionRequiredSecurityLevel))
         }
         return nil
     }
@@ -228,12 +228,12 @@ func (m *AndroidDeviceOwnerCompliancePolicy) GetFieldDeserializers()(map[string]
         return nil
     }
     res["passwordRequiredType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerRequiredPasswordType)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerCompliancePolicy_passwordRequiredType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPasswordRequiredType(val.(*AndroidDeviceOwnerRequiredPasswordType))
+            m.SetPasswordRequiredType(val.(*AndroidDeviceOwnerCompliancePolicy_passwordRequiredType))
         }
         return nil
     }
@@ -444,13 +444,13 @@ func (m *AndroidDeviceOwnerCompliancePolicy) GetPasswordRequired()(*bool) {
     return nil
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Type of characters in password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
-func (m *AndroidDeviceOwnerCompliancePolicy) GetPasswordRequiredType()(*AndroidDeviceOwnerRequiredPasswordType) {
+func (m *AndroidDeviceOwnerCompliancePolicy) GetPasswordRequiredType()(*AndroidDeviceOwnerCompliancePolicy_passwordRequiredType) {
     val, err := m.GetBackingStore().Get("passwordRequiredType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AndroidDeviceOwnerRequiredPasswordType)
+        return val.(*AndroidDeviceOwnerCompliancePolicy_passwordRequiredType)
     }
     return nil
 }
@@ -659,7 +659,7 @@ func (m *AndroidDeviceOwnerCompliancePolicy) Serialize(writer i878a80d2330e89d26
     return nil
 }
 // SetAdvancedThreatProtectionRequiredSecurityLevel sets the advancedThreatProtectionRequiredSecurityLevel property value. MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
-func (m *AndroidDeviceOwnerCompliancePolicy) SetAdvancedThreatProtectionRequiredSecurityLevel(value *DeviceThreatProtectionLevel)() {
+func (m *AndroidDeviceOwnerCompliancePolicy) SetAdvancedThreatProtectionRequiredSecurityLevel(value *AndroidDeviceOwnerCompliancePolicy_advancedThreatProtectionRequiredSecurityLevel)() {
     err := m.GetBackingStore().Set("advancedThreatProtectionRequiredSecurityLevel", value)
     if err != nil {
         panic(err)
@@ -673,7 +673,7 @@ func (m *AndroidDeviceOwnerCompliancePolicy) SetDeviceThreatProtectionEnabled(va
     }
 }
 // SetDeviceThreatProtectionRequiredSecurityLevel sets the deviceThreatProtectionRequiredSecurityLevel property value. Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
-func (m *AndroidDeviceOwnerCompliancePolicy) SetDeviceThreatProtectionRequiredSecurityLevel(value *DeviceThreatProtectionLevel)() {
+func (m *AndroidDeviceOwnerCompliancePolicy) SetDeviceThreatProtectionRequiredSecurityLevel(value *AndroidDeviceOwnerCompliancePolicy_deviceThreatProtectionRequiredSecurityLevel)() {
     err := m.GetBackingStore().Set("deviceThreatProtectionRequiredSecurityLevel", value)
     if err != nil {
         panic(err)
@@ -778,7 +778,7 @@ func (m *AndroidDeviceOwnerCompliancePolicy) SetPasswordRequired(value *bool)() 
     }
 }
 // SetPasswordRequiredType sets the passwordRequiredType property value. Type of characters in password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
-func (m *AndroidDeviceOwnerCompliancePolicy) SetPasswordRequiredType(value *AndroidDeviceOwnerRequiredPasswordType)() {
+func (m *AndroidDeviceOwnerCompliancePolicy) SetPasswordRequiredType(value *AndroidDeviceOwnerCompliancePolicy_passwordRequiredType)() {
     err := m.GetBackingStore().Set("passwordRequiredType", value)
     if err != nil {
         panic(err)
@@ -823,9 +823,9 @@ func (m *AndroidDeviceOwnerCompliancePolicy) SetStorageRequireEncryption(value *
 type AndroidDeviceOwnerCompliancePolicyable interface {
     DeviceCompliancePolicyable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAdvancedThreatProtectionRequiredSecurityLevel()(*DeviceThreatProtectionLevel)
+    GetAdvancedThreatProtectionRequiredSecurityLevel()(*AndroidDeviceOwnerCompliancePolicy_advancedThreatProtectionRequiredSecurityLevel)
     GetDeviceThreatProtectionEnabled()(*bool)
-    GetDeviceThreatProtectionRequiredSecurityLevel()(*DeviceThreatProtectionLevel)
+    GetDeviceThreatProtectionRequiredSecurityLevel()(*AndroidDeviceOwnerCompliancePolicy_deviceThreatProtectionRequiredSecurityLevel)
     GetMinAndroidSecurityPatchLevel()(*string)
     GetOsMaximumVersion()(*string)
     GetOsMinimumVersion()(*string)
@@ -840,15 +840,15 @@ type AndroidDeviceOwnerCompliancePolicyable interface {
     GetPasswordMinutesOfInactivityBeforeLock()(*int32)
     GetPasswordPreviousPasswordCountToBlock()(*int32)
     GetPasswordRequired()(*bool)
-    GetPasswordRequiredType()(*AndroidDeviceOwnerRequiredPasswordType)
+    GetPasswordRequiredType()(*AndroidDeviceOwnerCompliancePolicy_passwordRequiredType)
     GetRequireNoPendingSystemUpdates()(*bool)
     GetSecurityRequireIntuneAppIntegrity()(*bool)
     GetSecurityRequireSafetyNetAttestationBasicIntegrity()(*bool)
     GetSecurityRequireSafetyNetAttestationCertifiedDevice()(*bool)
     GetStorageRequireEncryption()(*bool)
-    SetAdvancedThreatProtectionRequiredSecurityLevel(value *DeviceThreatProtectionLevel)()
+    SetAdvancedThreatProtectionRequiredSecurityLevel(value *AndroidDeviceOwnerCompliancePolicy_advancedThreatProtectionRequiredSecurityLevel)()
     SetDeviceThreatProtectionEnabled(value *bool)()
-    SetDeviceThreatProtectionRequiredSecurityLevel(value *DeviceThreatProtectionLevel)()
+    SetDeviceThreatProtectionRequiredSecurityLevel(value *AndroidDeviceOwnerCompliancePolicy_deviceThreatProtectionRequiredSecurityLevel)()
     SetMinAndroidSecurityPatchLevel(value *string)()
     SetOsMaximumVersion(value *string)()
     SetOsMinimumVersion(value *string)()
@@ -863,7 +863,7 @@ type AndroidDeviceOwnerCompliancePolicyable interface {
     SetPasswordMinutesOfInactivityBeforeLock(value *int32)()
     SetPasswordPreviousPasswordCountToBlock(value *int32)()
     SetPasswordRequired(value *bool)()
-    SetPasswordRequiredType(value *AndroidDeviceOwnerRequiredPasswordType)()
+    SetPasswordRequiredType(value *AndroidDeviceOwnerCompliancePolicy_passwordRequiredType)()
     SetRequireNoPendingSystemUpdates(value *bool)()
     SetSecurityRequireIntuneAppIntegrity(value *bool)()
     SetSecurityRequireSafetyNetAttestationBasicIntegrity(value *bool)()

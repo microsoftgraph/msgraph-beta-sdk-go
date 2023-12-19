@@ -76,13 +76,13 @@ func (m *ExternalConnection) GetDescription()(*string) {
     return nil
 }
 // GetEnabledContentExperiences gets the enabledContentExperiences property value. The list of content experiences the connection will participate in. Possible values are search.
-func (m *ExternalConnection) GetEnabledContentExperiences()(*ContentExperienceType) {
+func (m *ExternalConnection) GetEnabledContentExperiences()(*ExternalConnection_enabledContentExperiences) {
     val, err := m.GetBackingStore().Get("enabledContentExperiences")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ContentExperienceType)
+        return val.(*ExternalConnection_enabledContentExperiences)
     }
     return nil
 }
@@ -140,12 +140,12 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["enabledContentExperiences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseContentExperienceType)
+        val, err := n.GetEnumValue(ParseExternalConnection_enabledContentExperiences)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEnabledContentExperiences(val.(*ContentExperienceType))
+            m.SetEnabledContentExperiences(val.(*ExternalConnection_enabledContentExperiences))
         }
         return nil
     }
@@ -248,12 +248,12 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseConnectionState)
+        val, err := n.GetEnumValue(ParseExternalConnection_state)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetState(val.(*ConnectionState))
+            m.SetState(val.(*ExternalConnection_state))
         }
         return nil
     }
@@ -348,13 +348,13 @@ func (m *ExternalConnection) GetSearchSettings()(SearchSettingsable) {
     return nil
 }
 // GetState gets the state property value. Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.
-func (m *ExternalConnection) GetState()(*ConnectionState) {
+func (m *ExternalConnection) GetState()(*ExternalConnection_state) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ConnectionState)
+        return val.(*ExternalConnection_state)
     }
     return nil
 }
@@ -505,7 +505,7 @@ func (m *ExternalConnection) SetDescription(value *string)() {
     }
 }
 // SetEnabledContentExperiences sets the enabledContentExperiences property value. The list of content experiences the connection will participate in. Possible values are search.
-func (m *ExternalConnection) SetEnabledContentExperiences(value *ContentExperienceType)() {
+func (m *ExternalConnection) SetEnabledContentExperiences(value *ExternalConnection_enabledContentExperiences)() {
     err := m.GetBackingStore().Set("enabledContentExperiences", value)
     if err != nil {
         panic(err)
@@ -568,7 +568,7 @@ func (m *ExternalConnection) SetSearchSettings(value SearchSettingsable)() {
     }
 }
 // SetState sets the state property value. Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.
-func (m *ExternalConnection) SetState(value *ConnectionState)() {
+func (m *ExternalConnection) SetState(value *ExternalConnection_state)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {
         panic(err)
@@ -583,7 +583,7 @@ type ExternalConnectionable interface {
     GetConfiguration()(Configurationable)
     GetConnectorId()(*string)
     GetDescription()(*string)
-    GetEnabledContentExperiences()(*ContentExperienceType)
+    GetEnabledContentExperiences()(*ExternalConnection_enabledContentExperiences)
     GetGroups()([]ExternalGroupable)
     GetIngestedItemsCount()(*int64)
     GetItems()([]ExternalItemable)
@@ -592,13 +592,13 @@ type ExternalConnectionable interface {
     GetQuota()(ConnectionQuotaable)
     GetSchema()(Schemaable)
     GetSearchSettings()(SearchSettingsable)
-    GetState()(*ConnectionState)
+    GetState()(*ExternalConnection_state)
     SetActivitySettings(value ActivitySettingsable)()
     SetComplianceSettings(value ComplianceSettingsable)()
     SetConfiguration(value Configurationable)()
     SetConnectorId(value *string)()
     SetDescription(value *string)()
-    SetEnabledContentExperiences(value *ContentExperienceType)()
+    SetEnabledContentExperiences(value *ExternalConnection_enabledContentExperiences)()
     SetGroups(value []ExternalGroupable)()
     SetIngestedItemsCount(value *int64)()
     SetItems(value []ExternalItemable)()
@@ -607,5 +607,5 @@ type ExternalConnectionable interface {
     SetQuota(value ConnectionQuotaable)()
     SetSchema(value Schemaable)()
     SetSearchSettings(value SearchSettingsable)()
-    SetState(value *ConnectionState)()
+    SetState(value *ExternalConnection_state)()
 }

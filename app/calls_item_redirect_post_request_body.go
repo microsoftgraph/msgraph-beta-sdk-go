@@ -83,16 +83,6 @@ func (m *CallsItemRedirectPostRequestBody) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["targetDisposition"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseCallDisposition)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTargetDisposition(val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallDisposition))
-        }
-        return nil
-    }
     res["targets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateInvitationParticipantInfoFromDiscriminatorValue)
         if err != nil {
@@ -143,17 +133,6 @@ func (m *CallsItemRedirectPostRequestBody) GetMaskCaller()(*bool) {
     }
     return nil
 }
-// GetTargetDisposition gets the targetDisposition property value. The targetDisposition property
-func (m *CallsItemRedirectPostRequestBody) GetTargetDisposition()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallDisposition) {
-    val, err := m.GetBackingStore().Get("targetDisposition")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallDisposition)
-    }
-    return nil
-}
 // GetTargets gets the targets property value. The targets property
 func (m *CallsItemRedirectPostRequestBody) GetTargets()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InvitationParticipantInfoable) {
     val, err := m.GetBackingStore().Get("targets")
@@ -192,13 +171,6 @@ func (m *CallsItemRedirectPostRequestBody) Serialize(writer i878a80d2330e89d2689
     }
     {
         err := writer.WriteBoolValue("maskCaller", m.GetMaskCaller())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetTargetDisposition() != nil {
-        cast := (*m.GetTargetDisposition()).String()
-        err := writer.WriteStringValue("targetDisposition", &cast)
         if err != nil {
             return err
         }
@@ -261,13 +233,6 @@ func (m *CallsItemRedirectPostRequestBody) SetMaskCaller(value *bool)() {
         panic(err)
     }
 }
-// SetTargetDisposition sets the targetDisposition property value. The targetDisposition property
-func (m *CallsItemRedirectPostRequestBody) SetTargetDisposition(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallDisposition)() {
-    err := m.GetBackingStore().Set("targetDisposition", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetTargets sets the targets property value. The targets property
 func (m *CallsItemRedirectPostRequestBody) SetTargets(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InvitationParticipantInfoable)() {
     err := m.GetBackingStore().Set("targets", value)
@@ -291,14 +256,12 @@ type CallsItemRedirectPostRequestBodyable interface {
     GetCallbackUri()(*string)
     GetMaskCallee()(*bool)
     GetMaskCaller()(*bool)
-    GetTargetDisposition()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallDisposition)
     GetTargets()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InvitationParticipantInfoable)
     GetTimeout()(*int32)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCallbackUri(value *string)()
     SetMaskCallee(value *bool)()
     SetMaskCaller(value *bool)()
-    SetTargetDisposition(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallDisposition)()
     SetTargets(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InvitationParticipantInfoable)()
     SetTimeout(value *int32)()
 }

@@ -97,12 +97,12 @@ func (m *MultiTenantOrganization) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMultiTenantOrganizationState)
+        val, err := n.GetEnumValue(ParseMultiTenantOrganization_state)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetState(val.(*MultiTenantOrganizationState))
+            m.SetState(val.(*MultiTenantOrganization_state))
         }
         return nil
     }
@@ -136,13 +136,13 @@ func (m *MultiTenantOrganization) GetJoinRequest()(MultiTenantOrganizationJoinRe
     return nil
 }
 // GetState gets the state property value. State of the multitenant organization. The possible values are: active, inactive, unknownFutureValue. active indicates the multitenant organization is created. inactive indicates the multitenant organization isn't created. Read-only.
-func (m *MultiTenantOrganization) GetState()(*MultiTenantOrganizationState) {
+func (m *MultiTenantOrganization) GetState()(*MultiTenantOrganization_state) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MultiTenantOrganizationState)
+        return val.(*MultiTenantOrganization_state)
     }
     return nil
 }
@@ -237,7 +237,7 @@ func (m *MultiTenantOrganization) SetJoinRequest(value MultiTenantOrganizationJo
     }
 }
 // SetState sets the state property value. State of the multitenant organization. The possible values are: active, inactive, unknownFutureValue. active indicates the multitenant organization is created. inactive indicates the multitenant organization isn't created. Read-only.
-func (m *MultiTenantOrganization) SetState(value *MultiTenantOrganizationState)() {
+func (m *MultiTenantOrganization) SetState(value *MultiTenantOrganization_state)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {
         panic(err)
@@ -258,12 +258,12 @@ type MultiTenantOrganizationable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetJoinRequest()(MultiTenantOrganizationJoinRequestRecordable)
-    GetState()(*MultiTenantOrganizationState)
+    GetState()(*MultiTenantOrganization_state)
     GetTenants()([]MultiTenantOrganizationMemberable)
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetJoinRequest(value MultiTenantOrganizationJoinRequestRecordable)()
-    SetState(value *MultiTenantOrganizationState)()
+    SetState(value *MultiTenantOrganization_state)()
     SetTenants(value []MultiTenantOrganizationMemberable)()
 }

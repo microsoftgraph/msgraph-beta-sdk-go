@@ -89,46 +89,46 @@ func (m *PlatformCredentialAuthenticationMethod) GetFieldDeserializers()(map[str
         return nil
     }
     res["keyStrength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAuthenticationMethodKeyStrength)
+        val, err := n.GetEnumValue(ParsePlatformCredentialAuthenticationMethod_keyStrength)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetKeyStrength(val.(*AuthenticationMethodKeyStrength))
+            m.SetKeyStrength(val.(*PlatformCredentialAuthenticationMethod_keyStrength))
         }
         return nil
     }
     res["platform"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAuthenticationMethodPlatform)
+        val, err := n.GetEnumValue(ParsePlatformCredentialAuthenticationMethod_platform)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPlatform(val.(*AuthenticationMethodPlatform))
+            m.SetPlatform(val.(*PlatformCredentialAuthenticationMethod_platform))
         }
         return nil
     }
     return res
 }
 // GetKeyStrength gets the keyStrength property value. Key strength of this Platform Credential key. Possible values are: normal, weak, unknown.
-func (m *PlatformCredentialAuthenticationMethod) GetKeyStrength()(*AuthenticationMethodKeyStrength) {
+func (m *PlatformCredentialAuthenticationMethod) GetKeyStrength()(*PlatformCredentialAuthenticationMethod_keyStrength) {
     val, err := m.GetBackingStore().Get("keyStrength")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AuthenticationMethodKeyStrength)
+        return val.(*PlatformCredentialAuthenticationMethod_keyStrength)
     }
     return nil
 }
 // GetPlatform gets the platform property value. Platform on which this Platform Credential key is present. Possible values are: unknown, windows, macOS,iOS, android, linux.
-func (m *PlatformCredentialAuthenticationMethod) GetPlatform()(*AuthenticationMethodPlatform) {
+func (m *PlatformCredentialAuthenticationMethod) GetPlatform()(*PlatformCredentialAuthenticationMethod_platform) {
     val, err := m.GetBackingStore().Get("platform")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AuthenticationMethodPlatform)
+        return val.(*PlatformCredentialAuthenticationMethod_platform)
     }
     return nil
 }
@@ -194,14 +194,14 @@ func (m *PlatformCredentialAuthenticationMethod) SetDisplayName(value *string)()
     }
 }
 // SetKeyStrength sets the keyStrength property value. Key strength of this Platform Credential key. Possible values are: normal, weak, unknown.
-func (m *PlatformCredentialAuthenticationMethod) SetKeyStrength(value *AuthenticationMethodKeyStrength)() {
+func (m *PlatformCredentialAuthenticationMethod) SetKeyStrength(value *PlatformCredentialAuthenticationMethod_keyStrength)() {
     err := m.GetBackingStore().Set("keyStrength", value)
     if err != nil {
         panic(err)
     }
 }
 // SetPlatform sets the platform property value. Platform on which this Platform Credential key is present. Possible values are: unknown, windows, macOS,iOS, android, linux.
-func (m *PlatformCredentialAuthenticationMethod) SetPlatform(value *AuthenticationMethodPlatform)() {
+func (m *PlatformCredentialAuthenticationMethod) SetPlatform(value *PlatformCredentialAuthenticationMethod_platform)() {
     err := m.GetBackingStore().Set("platform", value)
     if err != nil {
         panic(err)
@@ -214,11 +214,11 @@ type PlatformCredentialAuthenticationMethodable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDevice()(Deviceable)
     GetDisplayName()(*string)
-    GetKeyStrength()(*AuthenticationMethodKeyStrength)
-    GetPlatform()(*AuthenticationMethodPlatform)
+    GetKeyStrength()(*PlatformCredentialAuthenticationMethod_keyStrength)
+    GetPlatform()(*PlatformCredentialAuthenticationMethod_platform)
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDevice(value Deviceable)()
     SetDisplayName(value *string)()
-    SetKeyStrength(value *AuthenticationMethodKeyStrength)()
-    SetPlatform(value *AuthenticationMethodPlatform)()
+    SetKeyStrength(value *PlatformCredentialAuthenticationMethod_keyStrength)()
+    SetPlatform(value *PlatformCredentialAuthenticationMethod_platform)()
 }

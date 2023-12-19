@@ -21,13 +21,24 @@ func CreateAlertRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
     return NewAlertRule(), nil
 }
 // GetAlertRuleTemplate gets the alertRuleTemplate property value. The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, cloudPcInGracePeriodScenario, cloudPcFrontlineInsufficientLicensesScenario, cloudPcInaccessibleScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.
-func (m *AlertRule) GetAlertRuleTemplate()(*AlertRuleTemplate) {
+func (m *AlertRule) GetAlertRuleTemplate()(*AlertRule_alertRuleTemplate) {
     val, err := m.GetBackingStore().Get("alertRuleTemplate")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AlertRuleTemplate)
+        return val.(*AlertRule_alertRuleTemplate)
+    }
+    return nil
+}
+// GetConditions gets the conditions property value. The conditions that determine when to send alerts. For example, you can configure a condition to send an alert when provisioning fails for six or more Cloud PCs.
+func (m *AlertRule) GetConditions()([]RuleConditionable) {
+    val, err := m.GetBackingStore().Get("conditions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RuleConditionable)
     }
     return nil
 }
@@ -68,12 +79,28 @@ func (m *AlertRule) GetEnabled()(*bool) {
 func (m *AlertRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["alertRuleTemplate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAlertRuleTemplate)
+        val, err := n.GetEnumValue(ParseAlertRule_alertRuleTemplate)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAlertRuleTemplate(val.(*AlertRuleTemplate))
+            m.SetAlertRuleTemplate(val.(*AlertRule_alertRuleTemplate))
+        }
+        return nil
+    }
+    res["conditions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateRuleConditionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]RuleConditionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(RuleConditionable)
+                }
+            }
+            m.SetConditions(res)
         }
         return nil
     }
@@ -134,12 +161,12 @@ func (m *AlertRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         return nil
     }
     res["severity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRuleSeverityType)
+        val, err := n.GetEnumValue(ParseAlertRule_severity)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSeverity(val.(*RuleSeverityType))
+            m.SetSeverity(val.(*AlertRule_severity))
         }
         return nil
     }
@@ -178,13 +205,13 @@ func (m *AlertRule) GetNotificationChannels()([]NotificationChannelable) {
     return nil
 }
 // GetSeverity gets the severity property value. The severity of the rule. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
-func (m *AlertRule) GetSeverity()(*RuleSeverityType) {
+func (m *AlertRule) GetSeverity()(*AlertRule_severity) {
     val, err := m.GetBackingStore().Get("severity")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RuleSeverityType)
+        return val.(*AlertRule_severity)
     }
     return nil
 }
@@ -208,6 +235,18 @@ func (m *AlertRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetAlertRuleTemplate() != nil {
         cast := (*m.GetAlertRuleTemplate()).String()
         err = writer.WriteStringValue("alertRuleTemplate", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetConditions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConditions()))
+        for i, v := range m.GetConditions() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("conditions", cast)
         if err != nil {
             return err
         }
@@ -264,8 +303,15 @@ func (m *AlertRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     return nil
 }
 // SetAlertRuleTemplate sets the alertRuleTemplate property value. The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, cloudPcInGracePeriodScenario, cloudPcFrontlineInsufficientLicensesScenario, cloudPcInaccessibleScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.
-func (m *AlertRule) SetAlertRuleTemplate(value *AlertRuleTemplate)() {
+func (m *AlertRule) SetAlertRuleTemplate(value *AlertRule_alertRuleTemplate)() {
     err := m.GetBackingStore().Set("alertRuleTemplate", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetConditions sets the conditions property value. The conditions that determine when to send alerts. For example, you can configure a condition to send an alert when provisioning fails for six or more Cloud PCs.
+func (m *AlertRule) SetConditions(value []RuleConditionable)() {
+    err := m.GetBackingStore().Set("conditions", value)
     if err != nil {
         panic(err)
     }
@@ -306,7 +352,7 @@ func (m *AlertRule) SetNotificationChannels(value []NotificationChannelable)() {
     }
 }
 // SetSeverity sets the severity property value. The severity of the rule. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
-func (m *AlertRule) SetSeverity(value *RuleSeverityType)() {
+func (m *AlertRule) SetSeverity(value *AlertRule_severity)() {
     err := m.GetBackingStore().Set("severity", value)
     if err != nil {
         panic(err)
@@ -323,20 +369,22 @@ func (m *AlertRule) SetThreshold(value RuleThresholdable)() {
 type AlertRuleable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAlertRuleTemplate()(*AlertRuleTemplate)
+    GetAlertRuleTemplate()(*AlertRule_alertRuleTemplate)
+    GetConditions()([]RuleConditionable)
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetEnabled()(*bool)
     GetIsSystemRule()(*bool)
     GetNotificationChannels()([]NotificationChannelable)
-    GetSeverity()(*RuleSeverityType)
+    GetSeverity()(*AlertRule_severity)
     GetThreshold()(RuleThresholdable)
-    SetAlertRuleTemplate(value *AlertRuleTemplate)()
+    SetAlertRuleTemplate(value *AlertRule_alertRuleTemplate)()
+    SetConditions(value []RuleConditionable)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetEnabled(value *bool)()
     SetIsSystemRule(value *bool)()
     SetNotificationChannels(value []NotificationChannelable)()
-    SetSeverity(value *RuleSeverityType)()
+    SetSeverity(value *AlertRule_severity)()
     SetThreshold(value RuleThresholdable)()
 }

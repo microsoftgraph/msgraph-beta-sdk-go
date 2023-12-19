@@ -33,13 +33,13 @@ func (m *MacOSPkcsCertificateProfile) GetAllowAllAppsAccess()(*bool) {
     return nil
 }
 // GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
-func (m *MacOSPkcsCertificateProfile) GetCertificateStore()(*CertificateStore) {
+func (m *MacOSPkcsCertificateProfile) GetCertificateStore()(*MacOSPkcsCertificateProfile_certificateStore) {
     val, err := m.GetBackingStore().Get("certificateStore")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CertificateStore)
+        return val.(*MacOSPkcsCertificateProfile_certificateStore)
     }
     return nil
 }
@@ -101,12 +101,12 @@ func (m *MacOSPkcsCertificateProfile) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     res["certificateStore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCertificateStore)
+        val, err := n.GetEnumValue(ParseMacOSPkcsCertificateProfile_certificateStore)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCertificateStore(val.(*CertificateStore))
+            m.SetCertificateStore(val.(*MacOSPkcsCertificateProfile_certificateStore))
         }
         return nil
     }
@@ -310,7 +310,7 @@ func (m *MacOSPkcsCertificateProfile) SetAllowAllAppsAccess(value *bool)() {
     }
 }
 // SetCertificateStore sets the certificateStore property value. Target store certificate. Possible values are: user, machine.
-func (m *MacOSPkcsCertificateProfile) SetCertificateStore(value *CertificateStore)() {
+func (m *MacOSPkcsCertificateProfile) SetCertificateStore(value *MacOSPkcsCertificateProfile_certificateStore)() {
     err := m.GetBackingStore().Set("certificateStore", value)
     if err != nil {
         panic(err)
@@ -370,7 +370,7 @@ type MacOSPkcsCertificateProfileable interface {
     MacOSCertificateProfileBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAllowAllAppsAccess()(*bool)
-    GetCertificateStore()(*CertificateStore)
+    GetCertificateStore()(*MacOSPkcsCertificateProfile_certificateStore)
     GetCertificateTemplateName()(*string)
     GetCertificationAuthority()(*string)
     GetCertificationAuthorityName()(*string)
@@ -379,7 +379,7 @@ type MacOSPkcsCertificateProfileable interface {
     GetSubjectAlternativeNameFormatString()(*string)
     GetSubjectNameFormatString()(*string)
     SetAllowAllAppsAccess(value *bool)()
-    SetCertificateStore(value *CertificateStore)()
+    SetCertificateStore(value *MacOSPkcsCertificateProfile_certificateStore)()
     SetCertificateTemplateName(value *string)()
     SetCertificationAuthority(value *string)()
     SetCertificationAuthorityName(value *string)()

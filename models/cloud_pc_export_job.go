@@ -32,13 +32,13 @@ func (m *CloudPcExportJob) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetExportJobStatus gets the exportJobStatus property value. The status of the export job. The possible values are: notStarted, inProgress, completed, unknownFutureValue. Read-only.
-func (m *CloudPcExportJob) GetExportJobStatus()(*CloudPcExportJobStatus) {
+func (m *CloudPcExportJob) GetExportJobStatus()(*CloudPcExportJob_exportJobStatus) {
     val, err := m.GetBackingStore().Get("exportJobStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcExportJobStatus)
+        return val.(*CloudPcExportJob_exportJobStatus)
     }
     return nil
 }
@@ -67,12 +67,12 @@ func (m *CloudPcExportJob) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["exportJobStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcExportJobStatus)
+        val, err := n.GetEnumValue(ParseCloudPcExportJob_exportJobStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetExportJobStatus(val.(*CloudPcExportJobStatus))
+            m.SetExportJobStatus(val.(*CloudPcExportJob_exportJobStatus))
         }
         return nil
     }
@@ -107,12 +107,12 @@ func (m *CloudPcExportJob) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["reportName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcReportName)
+        val, err := n.GetEnumValue(ParseCloudPcExportJob_reportName)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetReportName(val.(*CloudPcReportName))
+            m.SetReportName(val.(*CloudPcExportJob_reportName))
         }
         return nil
     }
@@ -167,13 +167,13 @@ func (m *CloudPcExportJob) GetFormat()(*string) {
     return nil
 }
 // GetReportName gets the reportName property value. The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, sharedUseLicenseUsageReport, sharedUseLicenseUsageRealTimeReport, unknownFutureValue,  noLicenseAvailableConnectivityFailureReport, frontlineLicenseUsageReport, frontlineLicenseUsageRealTimeReport,  remoteConnectionQualityReports, inaccessibleCloudPcReports, rawRemoteConnectionReports. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: noLicenseAvailableConnectivityFailureReport, frontlineLicenseUsageReport, frontlineLicenseUsageRealTimeReport, remoteConnectionQualityReports, inaccessibleCloudPcReports, rawRemoteConnectionReports.
-func (m *CloudPcExportJob) GetReportName()(*CloudPcReportName) {
+func (m *CloudPcExportJob) GetReportName()(*CloudPcExportJob_reportName) {
     val, err := m.GetBackingStore().Get("reportName")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcReportName)
+        return val.(*CloudPcExportJob_reportName)
     }
     return nil
 }
@@ -265,7 +265,7 @@ func (m *CloudPcExportJob) SetExpirationDateTime(value *i336074805fc853987abe6f7
     }
 }
 // SetExportJobStatus sets the exportJobStatus property value. The status of the export job. The possible values are: notStarted, inProgress, completed, unknownFutureValue. Read-only.
-func (m *CloudPcExportJob) SetExportJobStatus(value *CloudPcExportJobStatus)() {
+func (m *CloudPcExportJob) SetExportJobStatus(value *CloudPcExportJob_exportJobStatus)() {
     err := m.GetBackingStore().Set("exportJobStatus", value)
     if err != nil {
         panic(err)
@@ -293,7 +293,7 @@ func (m *CloudPcExportJob) SetFormat(value *string)() {
     }
 }
 // SetReportName sets the reportName property value. The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, sharedUseLicenseUsageReport, sharedUseLicenseUsageRealTimeReport, unknownFutureValue,  noLicenseAvailableConnectivityFailureReport, frontlineLicenseUsageReport, frontlineLicenseUsageRealTimeReport,  remoteConnectionQualityReports, inaccessibleCloudPcReports, rawRemoteConnectionReports. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: noLicenseAvailableConnectivityFailureReport, frontlineLicenseUsageReport, frontlineLicenseUsageRealTimeReport, remoteConnectionQualityReports, inaccessibleCloudPcReports, rawRemoteConnectionReports.
-func (m *CloudPcExportJob) SetReportName(value *CloudPcReportName)() {
+func (m *CloudPcExportJob) SetReportName(value *CloudPcExportJob_reportName)() {
     err := m.GetBackingStore().Set("reportName", value)
     if err != nil {
         panic(err)
@@ -318,19 +318,19 @@ type CloudPcExportJobable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetExportJobStatus()(*CloudPcExportJobStatus)
+    GetExportJobStatus()(*CloudPcExportJob_exportJobStatus)
     GetExportUrl()(*string)
     GetFilter()(*string)
     GetFormat()(*string)
-    GetReportName()(*CloudPcReportName)
+    GetReportName()(*CloudPcExportJob_reportName)
     GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSelectEscaped()([]string)
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetExportJobStatus(value *CloudPcExportJobStatus)()
+    SetExportJobStatus(value *CloudPcExportJob_exportJobStatus)()
     SetExportUrl(value *string)()
     SetFilter(value *string)()
     SetFormat(value *string)()
-    SetReportName(value *CloudPcReportName)()
+    SetReportName(value *CloudPcExportJob_reportName)()
     SetRequestDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSelectEscaped(value []string)()
 }

@@ -22,13 +22,13 @@ func CreateAospDeviceOwnerScepCertificateProfileFromDiscriminatorValue(parseNode
     return NewAospDeviceOwnerScepCertificateProfile(), nil
 }
 // GetCertificateStore gets the certificateStore property value. Target store certificate. This collection can contain a maximum of 500 elements. Possible values are: user, machine.
-func (m *AospDeviceOwnerScepCertificateProfile) GetCertificateStore()(*CertificateStore) {
+func (m *AospDeviceOwnerScepCertificateProfile) GetCertificateStore()(*AospDeviceOwnerScepCertificateProfile_certificateStore) {
     val, err := m.GetBackingStore().Get("certificateStore")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CertificateStore)
+        return val.(*AospDeviceOwnerScepCertificateProfile_certificateStore)
     }
     return nil
 }
@@ -47,12 +47,12 @@ func (m *AospDeviceOwnerScepCertificateProfile) GetCustomSubjectAlternativeNames
 func (m *AospDeviceOwnerScepCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AospDeviceOwnerCertificateProfileBase.GetFieldDeserializers()
     res["certificateStore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCertificateStore)
+        val, err := n.GetEnumValue(ParseAospDeviceOwnerScepCertificateProfile_certificateStore)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCertificateStore(val.(*CertificateStore))
+            m.SetCertificateStore(val.(*AospDeviceOwnerScepCertificateProfile_certificateStore))
         }
         return nil
     }
@@ -312,7 +312,7 @@ func (m *AospDeviceOwnerScepCertificateProfile) Serialize(writer i878a80d2330e89
     return nil
 }
 // SetCertificateStore sets the certificateStore property value. Target store certificate. This collection can contain a maximum of 500 elements. Possible values are: user, machine.
-func (m *AospDeviceOwnerScepCertificateProfile) SetCertificateStore(value *CertificateStore)() {
+func (m *AospDeviceOwnerScepCertificateProfile) SetCertificateStore(value *AospDeviceOwnerScepCertificateProfile_certificateStore)() {
     err := m.GetBackingStore().Set("certificateStore", value)
     if err != nil {
         panic(err)
@@ -378,7 +378,7 @@ func (m *AospDeviceOwnerScepCertificateProfile) SetSubjectNameFormatString(value
 type AospDeviceOwnerScepCertificateProfileable interface {
     AospDeviceOwnerCertificateProfileBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetCertificateStore()(*CertificateStore)
+    GetCertificateStore()(*AospDeviceOwnerScepCertificateProfile_certificateStore)
     GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable)
     GetHashAlgorithm()(*HashAlgorithms)
     GetKeySize()(*KeySize)
@@ -387,7 +387,7 @@ type AospDeviceOwnerScepCertificateProfileable interface {
     GetScepServerUrls()([]string)
     GetSubjectAlternativeNameFormatString()(*string)
     GetSubjectNameFormatString()(*string)
-    SetCertificateStore(value *CertificateStore)()
+    SetCertificateStore(value *AospDeviceOwnerScepCertificateProfile_certificateStore)()
     SetCustomSubjectAlternativeNames(value []CustomSubjectAlternativeNameable)()
     SetHashAlgorithm(value *HashAlgorithms)()
     SetKeySize(value *KeySize)()

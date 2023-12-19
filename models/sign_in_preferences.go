@@ -62,12 +62,12 @@ func (m *SignInPreferences) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["userPreferredMethodForSecondaryAuthentication"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseUserDefaultAuthenticationMethodType)
+        val, err := n.GetEnumValue(ParseSignInPreferences_userPreferredMethodForSecondaryAuthentication)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUserPreferredMethodForSecondaryAuthentication(val.(*UserDefaultAuthenticationMethodType))
+            m.SetUserPreferredMethodForSecondaryAuthentication(val.(*SignInPreferences_userPreferredMethodForSecondaryAuthentication))
         }
         return nil
     }
@@ -96,13 +96,13 @@ func (m *SignInPreferences) GetOdataType()(*string) {
     return nil
 }
 // GetUserPreferredMethodForSecondaryAuthentication gets the userPreferredMethodForSecondaryAuthentication property value. The default second-factor method used by the user when signing in. If a user is enabled for system-preferred authentication, then this value is ignored except for a few scenarios where a user is authenticating via NPS extension or ADFS adapter. Possible values are push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, and unknownFutureValue
-func (m *SignInPreferences) GetUserPreferredMethodForSecondaryAuthentication()(*UserDefaultAuthenticationMethodType) {
+func (m *SignInPreferences) GetUserPreferredMethodForSecondaryAuthentication()(*SignInPreferences_userPreferredMethodForSecondaryAuthentication) {
     val, err := m.GetBackingStore().Get("userPreferredMethodForSecondaryAuthentication")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*UserDefaultAuthenticationMethodType)
+        return val.(*SignInPreferences_userPreferredMethodForSecondaryAuthentication)
     }
     return nil
 }
@@ -161,7 +161,7 @@ func (m *SignInPreferences) SetOdataType(value *string)() {
     }
 }
 // SetUserPreferredMethodForSecondaryAuthentication sets the userPreferredMethodForSecondaryAuthentication property value. The default second-factor method used by the user when signing in. If a user is enabled for system-preferred authentication, then this value is ignored except for a few scenarios where a user is authenticating via NPS extension or ADFS adapter. Possible values are push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, and unknownFutureValue
-func (m *SignInPreferences) SetUserPreferredMethodForSecondaryAuthentication(value *UserDefaultAuthenticationMethodType)() {
+func (m *SignInPreferences) SetUserPreferredMethodForSecondaryAuthentication(value *SignInPreferences_userPreferredMethodForSecondaryAuthentication)() {
     err := m.GetBackingStore().Set("userPreferredMethodForSecondaryAuthentication", value)
     if err != nil {
         panic(err)
@@ -175,9 +175,9 @@ type SignInPreferencesable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetIsSystemPreferredAuthenticationMethodEnabled()(*bool)
     GetOdataType()(*string)
-    GetUserPreferredMethodForSecondaryAuthentication()(*UserDefaultAuthenticationMethodType)
+    GetUserPreferredMethodForSecondaryAuthentication()(*SignInPreferences_userPreferredMethodForSecondaryAuthentication)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetIsSystemPreferredAuthenticationMethodEnabled(value *bool)()
     SetOdataType(value *string)()
-    SetUserPreferredMethodForSecondaryAuthentication(value *UserDefaultAuthenticationMethodType)()
+    SetUserPreferredMethodForSecondaryAuthentication(value *SignInPreferences_userPreferredMethodForSecondaryAuthentication)()
 }

@@ -24,13 +24,13 @@ func CreateTenantAllowOrBlockListActionFromDiscriminatorValue(parseNode i878a80d
     return NewTenantAllowOrBlockListAction(), nil
 }
 // GetAction gets the action property value. Specifies whether the tenant allow-or-block list is an allow or block. The possible values are: allow, block, and unkownFutureValue.
-func (m *TenantAllowOrBlockListAction) GetAction()(*TenantAllowBlockListAction) {
+func (m *TenantAllowOrBlockListAction) GetAction()(*TenantAllowOrBlockListAction_action) {
     val, err := m.GetBackingStore().Get("action")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TenantAllowBlockListAction)
+        return val.(*TenantAllowOrBlockListAction_action)
     }
     return nil
 }
@@ -65,12 +65,12 @@ func (m *TenantAllowOrBlockListAction) GetExpirationDateTime()(*i336074805fc8539
 func (m *TenantAllowOrBlockListAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTenantAllowBlockListAction)
+        val, err := n.GetEnumValue(ParseTenantAllowOrBlockListAction_action)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAction(val.(*TenantAllowBlockListAction))
+            m.SetAction(val.(*TenantAllowOrBlockListAction_action))
         }
         return nil
     }
@@ -203,7 +203,7 @@ func (m *TenantAllowOrBlockListAction) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAction sets the action property value. Specifies whether the tenant allow-or-block list is an allow or block. The possible values are: allow, block, and unkownFutureValue.
-func (m *TenantAllowOrBlockListAction) SetAction(value *TenantAllowBlockListAction)() {
+func (m *TenantAllowOrBlockListAction) SetAction(value *TenantAllowOrBlockListAction_action)() {
     err := m.GetBackingStore().Set("action", value)
     if err != nil {
         panic(err)
@@ -253,13 +253,13 @@ type TenantAllowOrBlockListActionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAction()(*TenantAllowBlockListAction)
+    GetAction()(*TenantAllowOrBlockListAction_action)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetNote()(*string)
     GetOdataType()(*string)
     GetResults()([]TenantAllowBlockListEntryResultable)
-    SetAction(value *TenantAllowBlockListAction)()
+    SetAction(value *TenantAllowOrBlockListAction_action)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetNote(value *string)()

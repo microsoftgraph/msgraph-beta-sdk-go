@@ -67,25 +67,25 @@ func (m *PersonAnnualEvent) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePersonAnnualEventType)
+        val, err := n.GetEnumValue(ParsePersonAnnualEvent_type)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTypeEscaped(val.(*PersonAnnualEventType))
+            m.SetTypeEscaped(val.(*PersonAnnualEvent_type))
         }
         return nil
     }
     return res
 }
 // GetTypeEscaped gets the type property value. The type property
-func (m *PersonAnnualEvent) GetTypeEscaped()(*PersonAnnualEventType) {
+func (m *PersonAnnualEvent) GetTypeEscaped()(*PersonAnnualEvent_type) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PersonAnnualEventType)
+        return val.(*PersonAnnualEvent_type)
     }
     return nil
 }
@@ -131,7 +131,7 @@ func (m *PersonAnnualEvent) SetDisplayName(value *string)() {
     }
 }
 // SetTypeEscaped sets the type property value. The type property
-func (m *PersonAnnualEvent) SetTypeEscaped(value *PersonAnnualEventType)() {
+func (m *PersonAnnualEvent) SetTypeEscaped(value *PersonAnnualEvent_type)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -143,8 +143,8 @@ type PersonAnnualEventable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetDisplayName()(*string)
-    GetTypeEscaped()(*PersonAnnualEventType)
+    GetTypeEscaped()(*PersonAnnualEvent_type)
     SetDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetDisplayName(value *string)()
-    SetTypeEscaped(value *PersonAnnualEventType)()
+    SetTypeEscaped(value *PersonAnnualEvent_type)()
 }

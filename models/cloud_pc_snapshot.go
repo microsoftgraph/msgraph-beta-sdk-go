@@ -97,22 +97,22 @@ func (m *CloudPcSnapshot) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     res["snapshotType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcSnapshotType)
+        val, err := n.GetEnumValue(ParseCloudPcSnapshot_snapshotType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSnapshotType(val.(*CloudPcSnapshotType))
+            m.SetSnapshotType(val.(*CloudPcSnapshot_snapshotType))
         }
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcSnapshotStatus)
+        val, err := n.GetEnumValue(ParseCloudPcSnapshot_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*CloudPcSnapshotStatus))
+            m.SetStatus(val.(*CloudPcSnapshot_status))
         }
         return nil
     }
@@ -130,24 +130,24 @@ func (m *CloudPcSnapshot) GetLastRestoredDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetSnapshotType gets the snapshotType property value. The type of snapshot that indicates how to create the snapshot. Possible values are automatic, manual. Default value is automatic.
-func (m *CloudPcSnapshot) GetSnapshotType()(*CloudPcSnapshotType) {
+func (m *CloudPcSnapshot) GetSnapshotType()(*CloudPcSnapshot_snapshotType) {
     val, err := m.GetBackingStore().Get("snapshotType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcSnapshotType)
+        return val.(*CloudPcSnapshot_snapshotType)
     }
     return nil
 }
 // GetStatus gets the status property value. The status of the Cloud PC snapshot. The possible values are: ready, unknownFutureValue.
-func (m *CloudPcSnapshot) GetStatus()(*CloudPcSnapshotStatus) {
+func (m *CloudPcSnapshot) GetStatus()(*CloudPcSnapshot_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcSnapshotStatus)
+        return val.(*CloudPcSnapshot_status)
     }
     return nil
 }
@@ -226,14 +226,14 @@ func (m *CloudPcSnapshot) SetLastRestoredDateTime(value *i336074805fc853987abe6f
     }
 }
 // SetSnapshotType sets the snapshotType property value. The type of snapshot that indicates how to create the snapshot. Possible values are automatic, manual. Default value is automatic.
-func (m *CloudPcSnapshot) SetSnapshotType(value *CloudPcSnapshotType)() {
+func (m *CloudPcSnapshot) SetSnapshotType(value *CloudPcSnapshot_snapshotType)() {
     err := m.GetBackingStore().Set("snapshotType", value)
     if err != nil {
         panic(err)
     }
 }
 // SetStatus sets the status property value. The status of the Cloud PC snapshot. The possible values are: ready, unknownFutureValue.
-func (m *CloudPcSnapshot) SetStatus(value *CloudPcSnapshotStatus)() {
+func (m *CloudPcSnapshot) SetStatus(value *CloudPcSnapshot_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -247,12 +247,12 @@ type CloudPcSnapshotable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastRestoredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetSnapshotType()(*CloudPcSnapshotType)
-    GetStatus()(*CloudPcSnapshotStatus)
+    GetSnapshotType()(*CloudPcSnapshot_snapshotType)
+    GetStatus()(*CloudPcSnapshot_status)
     SetCloudPcId(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastRestoredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetSnapshotType(value *CloudPcSnapshotType)()
-    SetStatus(value *CloudPcSnapshotStatus)()
+    SetSnapshotType(value *CloudPcSnapshot_snapshotType)()
+    SetStatus(value *CloudPcSnapshot_status)()
 }

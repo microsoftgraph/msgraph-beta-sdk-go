@@ -119,15 +119,15 @@ func (m *Property) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["labels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseLabel)
+        val, err := n.GetCollectionOfEnumValues(ParseProperty_labels)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Label, len(val))
+            res := make([]Property_labels, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*Label))
+                    res[i] = *(v.(*Property_labels))
                 }
             }
             m.SetLabels(res)
@@ -232,13 +232,13 @@ func (m *Property) GetIsSearchable()(*bool) {
     return nil
 }
 // GetLabels gets the labels property value. Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, containerName, containerUrl, iconUrl. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: containerName, containerUrl, iconUrl.
-func (m *Property) GetLabels()([]Label) {
+func (m *Property) GetLabels()([]Property_labels) {
     val, err := m.GetBackingStore().Get("labels")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]Label)
+        return val.([]Property_labels)
     }
     return nil
 }
@@ -325,7 +325,7 @@ func (m *Property) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     if m.GetLabels() != nil {
-        err := writer.WriteCollectionOfStringValues("labels", SerializeLabel(m.GetLabels()))
+        err := writer.WriteCollectionOfStringValues("labels", SerializeProperty_labels(m.GetLabels()))
         if err != nil {
             return err
         }
@@ -417,7 +417,7 @@ func (m *Property) SetIsSearchable(value *bool)() {
     }
 }
 // SetLabels sets the labels property value. Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, containerName, containerUrl, iconUrl. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: containerName, containerUrl, iconUrl.
-func (m *Property) SetLabels(value []Label)() {
+func (m *Property) SetLabels(value []Property_labels)() {
     err := m.GetBackingStore().Set("labels", value)
     if err != nil {
         panic(err)
@@ -463,7 +463,7 @@ type Propertyable interface {
     GetIsRefinable()(*bool)
     GetIsRetrievable()(*bool)
     GetIsSearchable()(*bool)
-    GetLabels()([]Label)
+    GetLabels()([]Property_labels)
     GetName()(*string)
     GetOdataType()(*string)
     GetRankingHint()(RankingHintable)
@@ -475,7 +475,7 @@ type Propertyable interface {
     SetIsRefinable(value *bool)()
     SetIsRetrievable(value *bool)()
     SetIsSearchable(value *bool)()
-    SetLabels(value []Label)()
+    SetLabels(value []Property_labels)()
     SetName(value *string)()
     SetOdataType(value *string)()
     SetRankingHint(value RankingHintable)()

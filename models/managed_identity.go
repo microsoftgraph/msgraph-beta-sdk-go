@@ -105,12 +105,12 @@ func (m *ManagedIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     res["msiType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMsiType)
+        val, err := n.GetEnumValue(ParseManagedIdentity_msiType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMsiType(val.(*MsiType))
+            m.SetMsiType(val.(*ManagedIdentity_msiType))
         }
         return nil
     }
@@ -127,13 +127,13 @@ func (m *ManagedIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetMsiType gets the msiType property value. The possible values are: none, userAssigned, systemAssigned, unknownFutureValue.
-func (m *ManagedIdentity) GetMsiType()(*MsiType) {
+func (m *ManagedIdentity) GetMsiType()(*ManagedIdentity_msiType) {
     val, err := m.GetBackingStore().Get("msiType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MsiType)
+        return val.(*ManagedIdentity_msiType)
     }
     return nil
 }
@@ -222,7 +222,7 @@ func (m *ManagedIdentity) SetFederatedTokenIssuer(value *string)() {
     }
 }
 // SetMsiType sets the msiType property value. The possible values are: none, userAssigned, systemAssigned, unknownFutureValue.
-func (m *ManagedIdentity) SetMsiType(value *MsiType)() {
+func (m *ManagedIdentity) SetMsiType(value *ManagedIdentity_msiType)() {
     err := m.GetBackingStore().Set("msiType", value)
     if err != nil {
         panic(err)
@@ -244,12 +244,12 @@ type ManagedIdentityable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetFederatedTokenId()(*string)
     GetFederatedTokenIssuer()(*string)
-    GetMsiType()(*MsiType)
+    GetMsiType()(*ManagedIdentity_msiType)
     GetOdataType()(*string)
     SetAssociatedResourceId(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetFederatedTokenId(value *string)()
     SetFederatedTokenIssuer(value *string)()
-    SetMsiType(value *MsiType)()
+    SetMsiType(value *ManagedIdentity_msiType)()
     SetOdataType(value *string)()
 }

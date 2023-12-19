@@ -62,6 +62,16 @@ func (m *PlannerTaskCompletionRequirementDetails) GetFieldDeserializers()(map[st
         }
         return nil
     }
+    res["formsRequirement"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePlannerFormsRequirementFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFormsRequirement(val.(PlannerFormsRequirementable))
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -73,6 +83,17 @@ func (m *PlannerTaskCompletionRequirementDetails) GetFieldDeserializers()(map[st
         return nil
     }
     return res
+}
+// GetFormsRequirement gets the formsRequirement property value. The formsRequirement property
+func (m *PlannerTaskCompletionRequirementDetails) GetFormsRequirement()(PlannerFormsRequirementable) {
+    val, err := m.GetBackingStore().Get("formsRequirement")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PlannerFormsRequirementable)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PlannerTaskCompletionRequirementDetails) GetOdataType()(*string) {
@@ -89,6 +110,12 @@ func (m *PlannerTaskCompletionRequirementDetails) GetOdataType()(*string) {
 func (m *PlannerTaskCompletionRequirementDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("checklistRequirement", m.GetChecklistRequirement())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("formsRequirement", m.GetFormsRequirement())
         if err != nil {
             return err
         }
@@ -125,6 +152,13 @@ func (m *PlannerTaskCompletionRequirementDetails) SetChecklistRequirement(value 
         panic(err)
     }
 }
+// SetFormsRequirement sets the formsRequirement property value. The formsRequirement property
+func (m *PlannerTaskCompletionRequirementDetails) SetFormsRequirement(value PlannerFormsRequirementable)() {
+    err := m.GetBackingStore().Set("formsRequirement", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PlannerTaskCompletionRequirementDetails) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -139,8 +173,10 @@ type PlannerTaskCompletionRequirementDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetChecklistRequirement()(PlannerChecklistRequirementable)
+    GetFormsRequirement()(PlannerFormsRequirementable)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetChecklistRequirement(value PlannerChecklistRequirementable)()
+    SetFormsRequirement(value PlannerFormsRequirementable)()
     SetOdataType(value *string)()
 }

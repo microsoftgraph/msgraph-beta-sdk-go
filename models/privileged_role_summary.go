@@ -64,12 +64,12 @@ func (m *PrivilegedRoleSummary) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRoleSummaryStatus)
+        val, err := n.GetEnumValue(ParsePrivilegedRoleSummary_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*RoleSummaryStatus))
+            m.SetStatus(val.(*PrivilegedRoleSummary_status))
         }
         return nil
     }
@@ -108,13 +108,13 @@ func (m *PrivilegedRoleSummary) GetMfaEnabled()(*bool) {
     return nil
 }
 // GetStatus gets the status property value. The status property
-func (m *PrivilegedRoleSummary) GetStatus()(*RoleSummaryStatus) {
+func (m *PrivilegedRoleSummary) GetStatus()(*PrivilegedRoleSummary_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RoleSummaryStatus)
+        return val.(*PrivilegedRoleSummary_status)
     }
     return nil
 }
@@ -190,7 +190,7 @@ func (m *PrivilegedRoleSummary) SetMfaEnabled(value *bool)() {
     }
 }
 // SetStatus sets the status property value. The status property
-func (m *PrivilegedRoleSummary) SetStatus(value *RoleSummaryStatus)() {
+func (m *PrivilegedRoleSummary) SetStatus(value *PrivilegedRoleSummary_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -210,11 +210,11 @@ type PrivilegedRoleSummaryable interface {
     GetElevatedCount()(*int32)
     GetManagedCount()(*int32)
     GetMfaEnabled()(*bool)
-    GetStatus()(*RoleSummaryStatus)
+    GetStatus()(*PrivilegedRoleSummary_status)
     GetUsersCount()(*int32)
     SetElevatedCount(value *int32)()
     SetManagedCount(value *int32)()
     SetMfaEnabled(value *bool)()
-    SetStatus(value *RoleSummaryStatus)()
+    SetStatus(value *PrivilegedRoleSummary_status)()
     SetUsersCount(value *int32)()
 }

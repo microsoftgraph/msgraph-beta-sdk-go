@@ -44,12 +44,12 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["provisioningType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcProvisioningType)
+        val, err := n.GetEnumValue(ParseCloudPcServicePlan_provisioningType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProvisioningType(val.(*CloudPcProvisioningType))
+            m.SetProvisioningType(val.(*CloudPcServicePlan_provisioningType))
         }
         return nil
     }
@@ -84,12 +84,12 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcServicePlanType)
+        val, err := n.GetEnumValue(ParseCloudPcServicePlan_type)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTypeEscaped(val.(*CloudPcServicePlanType))
+            m.SetTypeEscaped(val.(*CloudPcServicePlan_type))
         }
         return nil
     }
@@ -116,13 +116,13 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetProvisioningType gets the provisioningType property value. Specifies the type of license used when provisioning Cloud PCs. By default, the license type is dedicated. Possible values are: dedicated, shared, unknownFutureValue.
-func (m *CloudPcServicePlan) GetProvisioningType()(*CloudPcProvisioningType) {
+func (m *CloudPcServicePlan) GetProvisioningType()(*CloudPcServicePlan_provisioningType) {
     val, err := m.GetBackingStore().Get("provisioningType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcProvisioningType)
+        return val.(*CloudPcServicePlan_provisioningType)
     }
     return nil
 }
@@ -160,13 +160,13 @@ func (m *CloudPcServicePlan) GetSupportedSolution()(*CloudPcManagementService) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
-func (m *CloudPcServicePlan) GetTypeEscaped()(*CloudPcServicePlanType) {
+func (m *CloudPcServicePlan) GetTypeEscaped()(*CloudPcServicePlan_type) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcServicePlanType)
+        return val.(*CloudPcServicePlan_type)
     }
     return nil
 }
@@ -259,7 +259,7 @@ func (m *CloudPcServicePlan) SetDisplayName(value *string)() {
     }
 }
 // SetProvisioningType sets the provisioningType property value. Specifies the type of license used when provisioning Cloud PCs. By default, the license type is dedicated. Possible values are: dedicated, shared, unknownFutureValue.
-func (m *CloudPcServicePlan) SetProvisioningType(value *CloudPcProvisioningType)() {
+func (m *CloudPcServicePlan) SetProvisioningType(value *CloudPcServicePlan_provisioningType)() {
     err := m.GetBackingStore().Set("provisioningType", value)
     if err != nil {
         panic(err)
@@ -287,7 +287,7 @@ func (m *CloudPcServicePlan) SetSupportedSolution(value *CloudPcManagementServic
     }
 }
 // SetTypeEscaped sets the type property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
-func (m *CloudPcServicePlan) SetTypeEscaped(value *CloudPcServicePlanType)() {
+func (m *CloudPcServicePlan) SetTypeEscaped(value *CloudPcServicePlan_type)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -312,19 +312,19 @@ type CloudPcServicePlanable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
-    GetProvisioningType()(*CloudPcProvisioningType)
+    GetProvisioningType()(*CloudPcServicePlan_provisioningType)
     GetRamInGB()(*int32)
     GetStorageInGB()(*int32)
     GetSupportedSolution()(*CloudPcManagementService)
-    GetTypeEscaped()(*CloudPcServicePlanType)
+    GetTypeEscaped()(*CloudPcServicePlan_type)
     GetUserProfileInGB()(*int32)
     GetVCpuCount()(*int32)
     SetDisplayName(value *string)()
-    SetProvisioningType(value *CloudPcProvisioningType)()
+    SetProvisioningType(value *CloudPcServicePlan_provisioningType)()
     SetRamInGB(value *int32)()
     SetStorageInGB(value *int32)()
     SetSupportedSolution(value *CloudPcManagementService)()
-    SetTypeEscaped(value *CloudPcServicePlanType)()
+    SetTypeEscaped(value *CloudPcServicePlan_type)()
     SetUserProfileInGB(value *int32)()
     SetVCpuCount(value *int32)()
 }

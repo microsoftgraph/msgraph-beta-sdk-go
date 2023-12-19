@@ -21,13 +21,13 @@ func CreateTiIndicatorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewTiIndicator(), nil
 }
 // GetAction gets the action property value. The action to apply if the indicator is matched from within the targetProduct security tool. Possible values are: unknown, allow, block, alert. Required.
-func (m *TiIndicator) GetAction()(*TiAction) {
+func (m *TiIndicator) GetAction()(*TiIndicator_action) {
     val, err := m.GetBackingStore().Get("action")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TiAction)
+        return val.(*TiIndicator_action)
     }
     return nil
 }
@@ -87,13 +87,13 @@ func (m *TiIndicator) GetDescription()(*string) {
     return nil
 }
 // GetDiamondModel gets the diamondModel property value. The area of the Diamond Model in which this indicator exists. Possible values are: unknown, adversary, capability, infrastructure, victim.
-func (m *TiIndicator) GetDiamondModel()(*DiamondModel) {
+func (m *TiIndicator) GetDiamondModel()(*TiIndicator_diamondModel) {
     val, err := m.GetBackingStore().Get("diamondModel")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DiamondModel)
+        return val.(*TiIndicator_diamondModel)
     }
     return nil
 }
@@ -233,12 +233,12 @@ func (m *TiIndicator) GetExternalId()(*string) {
 func (m *TiIndicator) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTiAction)
+        val, err := n.GetEnumValue(ParseTiIndicator_action)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAction(val.(*TiAction))
+            m.SetAction(val.(*TiIndicator_action))
         }
         return nil
     }
@@ -299,12 +299,12 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     res["diamondModel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDiamondModel)
+        val, err := n.GetEnumValue(ParseTiIndicator_diamondModel)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDiamondModel(val.(*DiamondModel))
+            m.SetDiamondModel(val.(*TiIndicator_diamondModel))
         }
         return nil
     }
@@ -449,12 +449,12 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     res["fileHashType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseFileHashType)
+        val, err := n.GetEnumValue(ParseTiIndicator_fileHashType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFileHashType(val.(*FileHashType))
+            m.SetFileHashType(val.(*TiIndicator_fileHashType))
         }
         return nil
     }
@@ -807,12 +807,12 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     res["tlpLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTlpLevel)
+        val, err := n.GetEnumValue(ParseTiIndicator_tlpLevel)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTlpLevel(val.(*TlpLevel))
+            m.SetTlpLevel(val.(*TiIndicator_tlpLevel))
         }
         return nil
     }
@@ -861,13 +861,13 @@ func (m *TiIndicator) GetFileCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetFileHashType gets the fileHashType property value. The fileHashType property
-func (m *TiIndicator) GetFileHashType()(*FileHashType) {
+func (m *TiIndicator) GetFileHashType()(*TiIndicator_fileHashType) {
     val, err := m.GetBackingStore().Get("fileHashType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*FileHashType)
+        return val.(*TiIndicator_fileHashType)
     }
     return nil
 }
@@ -1235,13 +1235,13 @@ func (m *TiIndicator) GetThreatType()(*string) {
     return nil
 }
 // GetTlpLevel gets the tlpLevel property value. Traffic Light Protocol value for the indicator. Possible values are: unknown, white, green, amber, red. Required.
-func (m *TiIndicator) GetTlpLevel()(*TlpLevel) {
+func (m *TiIndicator) GetTlpLevel()(*TiIndicator_tlpLevel) {
     val, err := m.GetBackingStore().Get("tlpLevel")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TlpLevel)
+        return val.(*TiIndicator_tlpLevel)
     }
     return nil
 }
@@ -1628,7 +1628,7 @@ func (m *TiIndicator) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     return nil
 }
 // SetAction sets the action property value. The action to apply if the indicator is matched from within the targetProduct security tool. Possible values are: unknown, allow, block, alert. Required.
-func (m *TiIndicator) SetAction(value *TiAction)() {
+func (m *TiIndicator) SetAction(value *TiIndicator_action)() {
     err := m.GetBackingStore().Set("action", value)
     if err != nil {
         panic(err)
@@ -1670,7 +1670,7 @@ func (m *TiIndicator) SetDescription(value *string)() {
     }
 }
 // SetDiamondModel sets the diamondModel property value. The area of the Diamond Model in which this indicator exists. Possible values are: unknown, adversary, capability, infrastructure, victim.
-func (m *TiIndicator) SetDiamondModel(value *DiamondModel)() {
+func (m *TiIndicator) SetDiamondModel(value *TiIndicator_diamondModel)() {
     err := m.GetBackingStore().Set("diamondModel", value)
     if err != nil {
         panic(err)
@@ -1775,7 +1775,7 @@ func (m *TiIndicator) SetFileCreatedDateTime(value *i336074805fc853987abe6f7fe3a
     }
 }
 // SetFileHashType sets the fileHashType property value. The fileHashType property
-func (m *TiIndicator) SetFileHashType(value *FileHashType)() {
+func (m *TiIndicator) SetFileHashType(value *TiIndicator_fileHashType)() {
     err := m.GetBackingStore().Set("fileHashType", value)
     if err != nil {
         panic(err)
@@ -2013,7 +2013,7 @@ func (m *TiIndicator) SetThreatType(value *string)() {
     }
 }
 // SetTlpLevel sets the tlpLevel property value. Traffic Light Protocol value for the indicator. Possible values are: unknown, white, green, amber, red. Required.
-func (m *TiIndicator) SetTlpLevel(value *TlpLevel)() {
+func (m *TiIndicator) SetTlpLevel(value *TiIndicator_tlpLevel)() {
     err := m.GetBackingStore().Set("tlpLevel", value)
     if err != nil {
         panic(err)
@@ -2037,13 +2037,13 @@ func (m *TiIndicator) SetUserAgent(value *string)() {
 type TiIndicatorable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAction()(*TiAction)
+    GetAction()(*TiIndicator_action)
     GetActivityGroupNames()([]string)
     GetAdditionalInformation()(*string)
     GetAzureTenantId()(*string)
     GetConfidence()(*int32)
     GetDescription()(*string)
-    GetDiamondModel()(*DiamondModel)
+    GetDiamondModel()(*TiIndicator_diamondModel)
     GetDomainName()(*string)
     GetEmailEncoding()(*string)
     GetEmailLanguage()(*string)
@@ -2058,7 +2058,7 @@ type TiIndicatorable interface {
     GetExternalId()(*string)
     GetFileCompileDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetFileCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetFileHashType()(*FileHashType)
+    GetFileHashType()(*TiIndicator_fileHashType)
     GetFileHashValue()(*string)
     GetFileMutexName()(*string)
     GetFileName()(*string)
@@ -2092,16 +2092,16 @@ type TiIndicatorable interface {
     GetTags()([]string)
     GetTargetProduct()(*string)
     GetThreatType()(*string)
-    GetTlpLevel()(*TlpLevel)
+    GetTlpLevel()(*TiIndicator_tlpLevel)
     GetUrl()(*string)
     GetUserAgent()(*string)
-    SetAction(value *TiAction)()
+    SetAction(value *TiIndicator_action)()
     SetActivityGroupNames(value []string)()
     SetAdditionalInformation(value *string)()
     SetAzureTenantId(value *string)()
     SetConfidence(value *int32)()
     SetDescription(value *string)()
-    SetDiamondModel(value *DiamondModel)()
+    SetDiamondModel(value *TiIndicator_diamondModel)()
     SetDomainName(value *string)()
     SetEmailEncoding(value *string)()
     SetEmailLanguage(value *string)()
@@ -2116,7 +2116,7 @@ type TiIndicatorable interface {
     SetExternalId(value *string)()
     SetFileCompileDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetFileCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetFileHashType(value *FileHashType)()
+    SetFileHashType(value *TiIndicator_fileHashType)()
     SetFileHashValue(value *string)()
     SetFileMutexName(value *string)()
     SetFileName(value *string)()
@@ -2150,7 +2150,7 @@ type TiIndicatorable interface {
     SetTags(value []string)()
     SetTargetProduct(value *string)()
     SetThreatType(value *string)()
-    SetTlpLevel(value *TlpLevel)()
+    SetTlpLevel(value *TiIndicator_tlpLevel)()
     SetUrl(value *string)()
     SetUserAgent(value *string)()
 }

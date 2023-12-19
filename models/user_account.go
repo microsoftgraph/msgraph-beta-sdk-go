@@ -114,12 +114,12 @@ func (m *UserAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAccountStatus)
+        val, err := n.GetEnumValue(ParseUserAccount_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*AccountStatus))
+            m.SetStatus(val.(*UserAccount_status))
         }
         return nil
     }
@@ -181,13 +181,13 @@ func (m *UserAccount) GetSigninName()(*string) {
     return nil
 }
 // GetStatus gets the status property value. The status property
-func (m *UserAccount) GetStatus()(*AccountStatus) {
+func (m *UserAccount) GetStatus()(*UserAccount_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AccountStatus)
+        return val.(*UserAccount_status)
     }
     return nil
 }
@@ -298,7 +298,7 @@ func (m *UserAccount) SetSigninName(value *string)() {
     }
 }
 // SetStatus sets the status property value. The status property
-func (m *UserAccount) SetStatus(value *AccountStatus)() {
+func (m *UserAccount) SetStatus(value *UserAccount_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -316,7 +316,7 @@ type UserAccountable interface {
     GetRiskScore()(*string)
     GetService()(*string)
     GetSigninName()(*string)
-    GetStatus()(*AccountStatus)
+    GetStatus()(*UserAccount_status)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDisplayName(value *string)()
     SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -324,5 +324,5 @@ type UserAccountable interface {
     SetRiskScore(value *string)()
     SetService(value *string)()
     SetSigninName(value *string)()
-    SetStatus(value *AccountStatus)()
+    SetStatus(value *UserAccount_status)()
 }

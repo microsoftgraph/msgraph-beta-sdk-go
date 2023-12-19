@@ -22,24 +22,24 @@ func CreateProtectOnlineMeetingActionFromDiscriminatorValue(parseNode i878a80d23
     return NewProtectOnlineMeetingAction(), nil
 }
 // GetAllowedForwarders gets the allowedForwarders property value. The allowedForwarders property
-func (m *ProtectOnlineMeetingAction) GetAllowedForwarders()(*OnlineMeetingForwarders) {
+func (m *ProtectOnlineMeetingAction) GetAllowedForwarders()(*ProtectOnlineMeetingAction_allowedForwarders) {
     val, err := m.GetBackingStore().Get("allowedForwarders")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*OnlineMeetingForwarders)
+        return val.(*ProtectOnlineMeetingAction_allowedForwarders)
     }
     return nil
 }
 // GetAllowedPresenters gets the allowedPresenters property value. The allowedPresenters property
-func (m *ProtectOnlineMeetingAction) GetAllowedPresenters()(*OnlineMeetingPresenters) {
+func (m *ProtectOnlineMeetingAction) GetAllowedPresenters()(*ProtectOnlineMeetingAction_allowedPresenters) {
     val, err := m.GetBackingStore().Get("allowedPresenters")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*OnlineMeetingPresenters)
+        return val.(*ProtectOnlineMeetingAction_allowedPresenters)
     }
     return nil
 }
@@ -47,22 +47,22 @@ func (m *ProtectOnlineMeetingAction) GetAllowedPresenters()(*OnlineMeetingPresen
 func (m *ProtectOnlineMeetingAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.LabelActionBase.GetFieldDeserializers()
     res["allowedForwarders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOnlineMeetingForwarders)
+        val, err := n.GetEnumValue(ParseProtectOnlineMeetingAction_allowedForwarders)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAllowedForwarders(val.(*OnlineMeetingForwarders))
+            m.SetAllowedForwarders(val.(*ProtectOnlineMeetingAction_allowedForwarders))
         }
         return nil
     }
     res["allowedPresenters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOnlineMeetingPresenters)
+        val, err := n.GetEnumValue(ParseProtectOnlineMeetingAction_allowedPresenters)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAllowedPresenters(val.(*OnlineMeetingPresenters))
+            m.SetAllowedPresenters(val.(*ProtectOnlineMeetingAction_allowedPresenters))
         }
         return nil
     }
@@ -172,14 +172,14 @@ func (m *ProtectOnlineMeetingAction) Serialize(writer i878a80d2330e89d26896388a3
     return nil
 }
 // SetAllowedForwarders sets the allowedForwarders property value. The allowedForwarders property
-func (m *ProtectOnlineMeetingAction) SetAllowedForwarders(value *OnlineMeetingForwarders)() {
+func (m *ProtectOnlineMeetingAction) SetAllowedForwarders(value *ProtectOnlineMeetingAction_allowedForwarders)() {
     err := m.GetBackingStore().Set("allowedForwarders", value)
     if err != nil {
         panic(err)
     }
 }
 // SetAllowedPresenters sets the allowedPresenters property value. The allowedPresenters property
-func (m *ProtectOnlineMeetingAction) SetAllowedPresenters(value *OnlineMeetingPresenters)() {
+func (m *ProtectOnlineMeetingAction) SetAllowedPresenters(value *ProtectOnlineMeetingAction_allowedPresenters)() {
     err := m.GetBackingStore().Set("allowedPresenters", value)
     if err != nil {
         panic(err)
@@ -210,13 +210,13 @@ func (m *ProtectOnlineMeetingAction) SetLobbyBypassSettings(value LobbyBypassSet
 type ProtectOnlineMeetingActionable interface {
     LabelActionBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAllowedForwarders()(*OnlineMeetingForwarders)
-    GetAllowedPresenters()(*OnlineMeetingPresenters)
+    GetAllowedForwarders()(*ProtectOnlineMeetingAction_allowedForwarders)
+    GetAllowedPresenters()(*ProtectOnlineMeetingAction_allowedPresenters)
     GetIsCopyToClipboardEnabled()(*bool)
     GetIsLobbyEnabled()(*bool)
     GetLobbyBypassSettings()(LobbyBypassSettingsable)
-    SetAllowedForwarders(value *OnlineMeetingForwarders)()
-    SetAllowedPresenters(value *OnlineMeetingPresenters)()
+    SetAllowedForwarders(value *ProtectOnlineMeetingAction_allowedForwarders)()
+    SetAllowedPresenters(value *ProtectOnlineMeetingAction_allowedPresenters)()
     SetIsCopyToClipboardEnabled(value *bool)()
     SetIsLobbyEnabled(value *bool)()
     SetLobbyBypassSettings(value LobbyBypassSettingsable)()

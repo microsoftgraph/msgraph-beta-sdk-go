@@ -116,12 +116,12 @@ func (m *WindowsWifiConfiguration) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     res["meteredConnectionLimit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMeteredConnectionLimitType)
+        val, err := n.GetEnumValue(ParseWindowsWifiConfiguration_meteredConnectionLimit)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMeteredConnectionLimit(val.(*MeteredConnectionLimitType))
+            m.SetMeteredConnectionLimit(val.(*WindowsWifiConfiguration_meteredConnectionLimit))
         }
         return nil
     }
@@ -176,12 +176,12 @@ func (m *WindowsWifiConfiguration) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     res["proxySetting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWiFiProxySetting)
+        val, err := n.GetEnumValue(ParseWindowsWifiConfiguration_proxySetting)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProxySetting(val.(*WiFiProxySetting))
+            m.SetProxySetting(val.(*WindowsWifiConfiguration_proxySetting))
         }
         return nil
     }
@@ -196,12 +196,12 @@ func (m *WindowsWifiConfiguration) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     res["wifiSecurityType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWiFiSecurityType)
+        val, err := n.GetEnumValue(ParseWindowsWifiConfiguration_wifiSecurityType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetWifiSecurityType(val.(*WiFiSecurityType))
+            m.SetWifiSecurityType(val.(*WindowsWifiConfiguration_wifiSecurityType))
         }
         return nil
     }
@@ -219,13 +219,13 @@ func (m *WindowsWifiConfiguration) GetForceFIPSCompliance()(*bool) {
     return nil
 }
 // GetMeteredConnectionLimit gets the meteredConnectionLimit property value. Specify the metered connection limit type for the wifi connection. Possible values are: unrestricted, fixed, variable.
-func (m *WindowsWifiConfiguration) GetMeteredConnectionLimit()(*MeteredConnectionLimitType) {
+func (m *WindowsWifiConfiguration) GetMeteredConnectionLimit()(*WindowsWifiConfiguration_meteredConnectionLimit) {
     val, err := m.GetBackingStore().Get("meteredConnectionLimit")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MeteredConnectionLimitType)
+        return val.(*WindowsWifiConfiguration_meteredConnectionLimit)
     }
     return nil
 }
@@ -285,13 +285,13 @@ func (m *WindowsWifiConfiguration) GetProxyManualPort()(*int32) {
     return nil
 }
 // GetProxySetting gets the proxySetting property value. Specify the proxy setting for Wi-Fi configuration. Possible values are: none, manual, automatic.
-func (m *WindowsWifiConfiguration) GetProxySetting()(*WiFiProxySetting) {
+func (m *WindowsWifiConfiguration) GetProxySetting()(*WindowsWifiConfiguration_proxySetting) {
     val, err := m.GetBackingStore().Get("proxySetting")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*WiFiProxySetting)
+        return val.(*WindowsWifiConfiguration_proxySetting)
     }
     return nil
 }
@@ -307,13 +307,13 @@ func (m *WindowsWifiConfiguration) GetSsid()(*string) {
     return nil
 }
 // GetWifiSecurityType gets the wifiSecurityType property value. Specify the Wifi Security Type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.
-func (m *WindowsWifiConfiguration) GetWifiSecurityType()(*WiFiSecurityType) {
+func (m *WindowsWifiConfiguration) GetWifiSecurityType()(*WindowsWifiConfiguration_wifiSecurityType) {
     val, err := m.GetBackingStore().Get("wifiSecurityType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*WiFiSecurityType)
+        return val.(*WindowsWifiConfiguration_wifiSecurityType)
     }
     return nil
 }
@@ -435,7 +435,7 @@ func (m *WindowsWifiConfiguration) SetForceFIPSCompliance(value *bool)() {
     }
 }
 // SetMeteredConnectionLimit sets the meteredConnectionLimit property value. Specify the metered connection limit type for the wifi connection. Possible values are: unrestricted, fixed, variable.
-func (m *WindowsWifiConfiguration) SetMeteredConnectionLimit(value *MeteredConnectionLimitType)() {
+func (m *WindowsWifiConfiguration) SetMeteredConnectionLimit(value *WindowsWifiConfiguration_meteredConnectionLimit)() {
     err := m.GetBackingStore().Set("meteredConnectionLimit", value)
     if err != nil {
         panic(err)
@@ -477,7 +477,7 @@ func (m *WindowsWifiConfiguration) SetProxyManualPort(value *int32)() {
     }
 }
 // SetProxySetting sets the proxySetting property value. Specify the proxy setting for Wi-Fi configuration. Possible values are: none, manual, automatic.
-func (m *WindowsWifiConfiguration) SetProxySetting(value *WiFiProxySetting)() {
+func (m *WindowsWifiConfiguration) SetProxySetting(value *WindowsWifiConfiguration_proxySetting)() {
     err := m.GetBackingStore().Set("proxySetting", value)
     if err != nil {
         panic(err)
@@ -491,7 +491,7 @@ func (m *WindowsWifiConfiguration) SetSsid(value *string)() {
     }
 }
 // SetWifiSecurityType sets the wifiSecurityType property value. Specify the Wifi Security Type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.
-func (m *WindowsWifiConfiguration) SetWifiSecurityType(value *WiFiSecurityType)() {
+func (m *WindowsWifiConfiguration) SetWifiSecurityType(value *WindowsWifiConfiguration_wifiSecurityType)() {
     err := m.GetBackingStore().Set("wifiSecurityType", value)
     if err != nil {
         panic(err)
@@ -505,26 +505,26 @@ type WindowsWifiConfigurationable interface {
     GetConnectToPreferredNetwork()(*bool)
     GetConnectWhenNetworkNameIsHidden()(*bool)
     GetForceFIPSCompliance()(*bool)
-    GetMeteredConnectionLimit()(*MeteredConnectionLimitType)
+    GetMeteredConnectionLimit()(*WindowsWifiConfiguration_meteredConnectionLimit)
     GetNetworkName()(*string)
     GetPreSharedKey()(*string)
     GetProxyAutomaticConfigurationUrl()(*string)
     GetProxyManualAddress()(*string)
     GetProxyManualPort()(*int32)
-    GetProxySetting()(*WiFiProxySetting)
+    GetProxySetting()(*WindowsWifiConfiguration_proxySetting)
     GetSsid()(*string)
-    GetWifiSecurityType()(*WiFiSecurityType)
+    GetWifiSecurityType()(*WindowsWifiConfiguration_wifiSecurityType)
     SetConnectAutomatically(value *bool)()
     SetConnectToPreferredNetwork(value *bool)()
     SetConnectWhenNetworkNameIsHidden(value *bool)()
     SetForceFIPSCompliance(value *bool)()
-    SetMeteredConnectionLimit(value *MeteredConnectionLimitType)()
+    SetMeteredConnectionLimit(value *WindowsWifiConfiguration_meteredConnectionLimit)()
     SetNetworkName(value *string)()
     SetPreSharedKey(value *string)()
     SetProxyAutomaticConfigurationUrl(value *string)()
     SetProxyManualAddress(value *string)()
     SetProxyManualPort(value *int32)()
-    SetProxySetting(value *WiFiProxySetting)()
+    SetProxySetting(value *WindowsWifiConfiguration_proxySetting)()
     SetSsid(value *string)()
-    SetWifiSecurityType(value *WiFiSecurityType)()
+    SetWifiSecurityType(value *WindowsWifiConfiguration_wifiSecurityType)()
 }

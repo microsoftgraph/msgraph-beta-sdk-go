@@ -33,13 +33,13 @@ func (m *PlannerExternalTaskSource) GetContextScenarioId()(*string) {
     return nil
 }
 // GetDisplayLinkType gets the displayLinkType property value. Specifies how an application should display the link to the associated plannerExternalTaskSource. The possible values are: none, default.
-func (m *PlannerExternalTaskSource) GetDisplayLinkType()(*PlannerExternalTaskSourceDisplayType) {
+func (m *PlannerExternalTaskSource) GetDisplayLinkType()(*PlannerExternalTaskSource_displayLinkType) {
     val, err := m.GetBackingStore().Get("displayLinkType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PlannerExternalTaskSourceDisplayType)
+        return val.(*PlannerExternalTaskSource_displayLinkType)
     }
     return nil
 }
@@ -101,12 +101,12 @@ func (m *PlannerExternalTaskSource) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     res["displayLinkType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePlannerExternalTaskSourceDisplayType)
+        val, err := n.GetEnumValue(ParsePlannerExternalTaskSource_displayLinkType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDisplayLinkType(val.(*PlannerExternalTaskSourceDisplayType))
+            m.SetDisplayLinkType(val.(*PlannerExternalTaskSource_displayLinkType))
         }
         return nil
     }
@@ -238,7 +238,7 @@ func (m *PlannerExternalTaskSource) SetContextScenarioId(value *string)() {
     }
 }
 // SetDisplayLinkType sets the displayLinkType property value. Specifies how an application should display the link to the associated plannerExternalTaskSource. The possible values are: none, default.
-func (m *PlannerExternalTaskSource) SetDisplayLinkType(value *PlannerExternalTaskSourceDisplayType)() {
+func (m *PlannerExternalTaskSource) SetDisplayLinkType(value *PlannerExternalTaskSource_displayLinkType)() {
     err := m.GetBackingStore().Set("displayLinkType", value)
     if err != nil {
         panic(err)
@@ -284,14 +284,14 @@ type PlannerExternalTaskSourceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PlannerTaskCreationable
     GetContextScenarioId()(*string)
-    GetDisplayLinkType()(*PlannerExternalTaskSourceDisplayType)
+    GetDisplayLinkType()(*PlannerExternalTaskSource_displayLinkType)
     GetDisplayNameSegments()([]string)
     GetExternalContextId()(*string)
     GetExternalObjectId()(*string)
     GetExternalObjectVersion()(*string)
     GetWebUrl()(*string)
     SetContextScenarioId(value *string)()
-    SetDisplayLinkType(value *PlannerExternalTaskSourceDisplayType)()
+    SetDisplayLinkType(value *PlannerExternalTaskSource_displayLinkType)()
     SetDisplayNameSegments(value []string)()
     SetExternalContextId(value *string)()
     SetExternalObjectId(value *string)()

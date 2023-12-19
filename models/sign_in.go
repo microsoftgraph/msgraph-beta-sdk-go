@@ -65,13 +65,13 @@ func (m *SignIn) GetAppliedEventListeners()([]AppliedAuthenticationEventListener
     return nil
 }
 // GetAppTokenProtectionStatus gets the appTokenProtectionStatus property value. The appTokenProtectionStatus property
-func (m *SignIn) GetAppTokenProtectionStatus()(*TokenProtectionStatus) {
+func (m *SignIn) GetAppTokenProtectionStatus()(*SignIn_appTokenProtectionStatus) {
     val, err := m.GetBackingStore().Get("appTokenProtectionStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TokenProtectionStatus)
+        return val.(*SignIn_appTokenProtectionStatus)
     }
     return nil
 }
@@ -142,13 +142,13 @@ func (m *SignIn) GetAuthenticationProcessingDetails()([]KeyValueable) {
     return nil
 }
 // GetAuthenticationProtocol gets the authenticationProtocol property value. Lists the protocol type or grant type used in the authentication. The possible values are: oAuth2, ropc, wsFederation, saml20, deviceCode, unknownFutureValue, authenticationTransfer, and none. Use none for all authentications that don't have a specific value in that list.
-func (m *SignIn) GetAuthenticationProtocol()(*ProtocolType) {
+func (m *SignIn) GetAuthenticationProtocol()(*SignIn_authenticationProtocol) {
     val, err := m.GetBackingStore().Get("authenticationProtocol")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ProtocolType)
+        return val.(*SignIn_authenticationProtocol)
     }
     return nil
 }
@@ -208,24 +208,24 @@ func (m *SignIn) GetClientAppUsed()(*string) {
     return nil
 }
 // GetClientCredentialType gets the clientCredentialType property value. Describes the credential type that a user client or service principal provided to Microsoft Entra ID to authenticate itself. You can review this property to track and eliminate less secure credential types or to watch for clients and service principals using anomalous credential types. The possible values are: none, clientSecret, clientAssertion, federatedIdentityCredential, managedIdentity, certificate, unknownFutureValue.
-func (m *SignIn) GetClientCredentialType()(*ClientCredentialType) {
+func (m *SignIn) GetClientCredentialType()(*SignIn_clientCredentialType) {
     val, err := m.GetBackingStore().Get("clientCredentialType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ClientCredentialType)
+        return val.(*SignIn_clientCredentialType)
     }
     return nil
 }
 // GetConditionalAccessStatus gets the conditionalAccessStatus property value. The status of the conditional access policy triggered. Possible values: success, failure, notApplied, or unknownFutureValue.  Supports $filter (eq).
-func (m *SignIn) GetConditionalAccessStatus()(*ConditionalAccessStatus) {
+func (m *SignIn) GetConditionalAccessStatus()(*SignIn_conditionalAccessStatus) {
     val, err := m.GetBackingStore().Get("conditionalAccessStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ConditionalAccessStatus)
+        return val.(*SignIn_conditionalAccessStatus)
     }
     return nil
 }
@@ -252,13 +252,13 @@ func (m *SignIn) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a
     return nil
 }
 // GetCrossTenantAccessType gets the crossTenantAccessType property value. Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue, passthrough. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: passthrough. If the sign in didn't cross tenant boundaries, the value is none.
-func (m *SignIn) GetCrossTenantAccessType()(*SignInAccessType) {
+func (m *SignIn) GetCrossTenantAccessType()(*SignIn_crossTenantAccessType) {
     val, err := m.GetBackingStore().Get("crossTenantAccessType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SignInAccessType)
+        return val.(*SignIn_crossTenantAccessType)
     }
     return nil
 }
@@ -340,12 +340,12 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         return nil
     }
     res["appTokenProtectionStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTokenProtectionStatus)
+        val, err := n.GetEnumValue(ParseSignIn_appTokenProtectionStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAppTokenProtectionStatus(val.(*TokenProtectionStatus))
+            m.SetAppTokenProtectionStatus(val.(*SignIn_appTokenProtectionStatus))
         }
         return nil
     }
@@ -440,12 +440,12 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         return nil
     }
     res["authenticationProtocol"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseProtocolType)
+        val, err := n.GetEnumValue(ParseSignIn_authenticationProtocol)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAuthenticationProtocol(val.(*ProtocolType))
+            m.SetAuthenticationProtocol(val.(*SignIn_authenticationProtocol))
         }
         return nil
     }
@@ -506,22 +506,22 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         return nil
     }
     res["clientCredentialType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseClientCredentialType)
+        val, err := n.GetEnumValue(ParseSignIn_clientCredentialType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetClientCredentialType(val.(*ClientCredentialType))
+            m.SetClientCredentialType(val.(*SignIn_clientCredentialType))
         }
         return nil
     }
     res["conditionalAccessStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseConditionalAccessStatus)
+        val, err := n.GetEnumValue(ParseSignIn_conditionalAccessStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetConditionalAccessStatus(val.(*ConditionalAccessStatus))
+            m.SetConditionalAccessStatus(val.(*SignIn_conditionalAccessStatus))
         }
         return nil
     }
@@ -546,12 +546,12 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         return nil
     }
     res["crossTenantAccessType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSignInAccessType)
+        val, err := n.GetEnumValue(ParseSignIn_crossTenantAccessType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCrossTenantAccessType(val.(*SignInAccessType))
+            m.SetCrossTenantAccessType(val.(*SignIn_crossTenantAccessType))
         }
         return nil
     }
@@ -606,12 +606,12 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         return nil
     }
     res["incomingTokenType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseIncomingTokenType)
+        val, err := n.GetEnumValue(ParseSignIn_incomingTokenType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetIncomingTokenType(val.(*IncomingTokenType))
+            m.SetIncomingTokenType(val.(*SignIn_incomingTokenType))
         }
         return nil
     }
@@ -712,12 +712,12 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         return nil
     }
     res["originalTransferMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOriginalTransferMethods)
+        val, err := n.GetEnumValue(ParseSignIn_originalTransferMethod)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOriginalTransferMethod(val.(*OriginalTransferMethods))
+            m.SetOriginalTransferMethod(val.(*SignIn_originalTransferMethod))
         }
         return nil
     }
@@ -782,12 +782,12 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         return nil
     }
     res["riskDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRiskDetail)
+        val, err := n.GetEnumValue(ParseSignIn_riskDetail)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRiskDetail(val.(*RiskDetail))
+            m.SetRiskDetail(val.(*SignIn_riskDetail))
         }
         return nil
     }
@@ -808,32 +808,32 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         return nil
     }
     res["riskLevelAggregated"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRiskLevel)
+        val, err := n.GetEnumValue(ParseSignIn_riskLevelAggregated)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRiskLevelAggregated(val.(*RiskLevel))
+            m.SetRiskLevelAggregated(val.(*SignIn_riskLevelAggregated))
         }
         return nil
     }
     res["riskLevelDuringSignIn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRiskLevel)
+        val, err := n.GetEnumValue(ParseSignIn_riskLevelDuringSignIn)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRiskLevelDuringSignIn(val.(*RiskLevel))
+            m.SetRiskLevelDuringSignIn(val.(*SignIn_riskLevelDuringSignIn))
         }
         return nil
     }
     res["riskState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRiskState)
+        val, err := n.GetEnumValue(ParseSignIn_riskState)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRiskState(val.(*RiskState))
+            m.SetRiskState(val.(*SignIn_riskState))
         }
         return nil
     }
@@ -920,22 +920,22 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         return nil
     }
     res["signInIdentifierType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSignInIdentifierType)
+        val, err := n.GetEnumValue(ParseSignIn_signInIdentifierType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSignInIdentifierType(val.(*SignInIdentifierType))
+            m.SetSignInIdentifierType(val.(*SignIn_signInIdentifierType))
         }
         return nil
     }
     res["signInTokenProtectionStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTokenProtectionStatus)
+        val, err := n.GetEnumValue(ParseSignIn_signInTokenProtectionStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSignInTokenProtectionStatus(val.(*TokenProtectionStatus))
+            m.SetSignInTokenProtectionStatus(val.(*SignIn_signInTokenProtectionStatus))
         }
         return nil
     }
@@ -960,12 +960,12 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         return nil
     }
     res["tokenIssuerType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTokenIssuerType)
+        val, err := n.GetEnumValue(ParseSignIn_tokenIssuerType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTokenIssuerType(val.(*TokenIssuerType))
+            m.SetTokenIssuerType(val.(*SignIn_tokenIssuerType))
         }
         return nil
     }
@@ -1020,12 +1020,12 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         return nil
     }
     res["userType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSignInUserType)
+        val, err := n.GetEnumValue(ParseSignIn_userType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUserType(val.(*SignInUserType))
+            m.SetUserType(val.(*SignIn_userType))
         }
         return nil
     }
@@ -1065,13 +1065,13 @@ func (m *SignIn) GetHomeTenantName()(*string) {
     return nil
 }
 // GetIncomingTokenType gets the incomingTokenType property value. Indicates the token types that were presented to Microsoft Entra ID to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Microsoft Entra ID might have also used token types not listed in this enum type to authenticate the actor. Don't infer the lack of a token if it isn't one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.
-func (m *SignIn) GetIncomingTokenType()(*IncomingTokenType) {
+func (m *SignIn) GetIncomingTokenType()(*SignIn_incomingTokenType) {
     val, err := m.GetBackingStore().Get("incomingTokenType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*IncomingTokenType)
+        return val.(*SignIn_incomingTokenType)
     }
     return nil
 }
@@ -1175,13 +1175,13 @@ func (m *SignIn) GetOriginalRequestId()(*string) {
     return nil
 }
 // GetOriginalTransferMethod gets the originalTransferMethod property value. Transfer method used to initiate a session throughout all subsequent request. The possible values are: none, deviceCodeFlow, authenticationTransfer, unknownFutureValue.
-func (m *SignIn) GetOriginalTransferMethod()(*OriginalTransferMethods) {
+func (m *SignIn) GetOriginalTransferMethod()(*SignIn_originalTransferMethod) {
     val, err := m.GetBackingStore().Get("originalTransferMethod")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*OriginalTransferMethods)
+        return val.(*SignIn_originalTransferMethod)
     }
     return nil
 }
@@ -1252,13 +1252,13 @@ func (m *SignIn) GetResourceTenantId()(*string) {
     return nil
 }
 // GetRiskDetail gets the riskDetail property value. The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that Microsoft Entra risk detection has not flagged the user or the sign-in as a risky event so far.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
-func (m *SignIn) GetRiskDetail()(*RiskDetail) {
+func (m *SignIn) GetRiskDetail()(*SignIn_riskDetail) {
     val, err := m.GetBackingStore().Get("riskDetail")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RiskDetail)
+        return val.(*SignIn_riskDetail)
     }
     return nil
 }
@@ -1274,35 +1274,35 @@ func (m *SignIn) GetRiskEventTypesV2()([]string) {
     return nil
 }
 // GetRiskLevelAggregated gets the riskLevelAggregated property value. The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Microsoft Entra ID Protection.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
-func (m *SignIn) GetRiskLevelAggregated()(*RiskLevel) {
+func (m *SignIn) GetRiskLevelAggregated()(*SignIn_riskLevelAggregated) {
     val, err := m.GetBackingStore().Get("riskLevelAggregated")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RiskLevel)
+        return val.(*SignIn_riskLevelAggregated)
     }
     return nil
 }
 // GetRiskLevelDuringSignIn gets the riskLevelDuringSignIn property value. The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Microsoft Entra ID Protection.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
-func (m *SignIn) GetRiskLevelDuringSignIn()(*RiskLevel) {
+func (m *SignIn) GetRiskLevelDuringSignIn()(*SignIn_riskLevelDuringSignIn) {
     val, err := m.GetBackingStore().Get("riskLevelDuringSignIn")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RiskLevel)
+        return val.(*SignIn_riskLevelDuringSignIn)
     }
     return nil
 }
 // GetRiskState gets the riskState property value. The risk state of a risky user, sign-in, or a risk event. Possible values: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, or unknownFutureValue.  Supports $filter (eq).
-func (m *SignIn) GetRiskState()(*RiskState) {
+func (m *SignIn) GetRiskState()(*SignIn_riskState) {
     val, err := m.GetBackingStore().Get("riskState")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RiskState)
+        return val.(*SignIn_riskState)
     }
     return nil
 }
@@ -1384,24 +1384,24 @@ func (m *SignIn) GetSignInIdentifier()(*string) {
     return nil
 }
 // GetSignInIdentifierType gets the signInIdentifierType property value. The type of sign in identifier. Possible values are: userPrincipalName, phoneNumber, proxyAddress, qrCode, onPremisesUserPrincipalName, unknownFutureValue.
-func (m *SignIn) GetSignInIdentifierType()(*SignInIdentifierType) {
+func (m *SignIn) GetSignInIdentifierType()(*SignIn_signInIdentifierType) {
     val, err := m.GetBackingStore().Get("signInIdentifierType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SignInIdentifierType)
+        return val.(*SignIn_signInIdentifierType)
     }
     return nil
 }
 // GetSignInTokenProtectionStatus gets the signInTokenProtectionStatus property value. Token protection creates a cryptographically secure tie between the token and the device it is issued to. This field indicates whether the signin token was bound to the device or not. The possible values are: none, bound, unbound, unknownFutureValue.
-func (m *SignIn) GetSignInTokenProtectionStatus()(*TokenProtectionStatus) {
+func (m *SignIn) GetSignInTokenProtectionStatus()(*SignIn_signInTokenProtectionStatus) {
     val, err := m.GetBackingStore().Get("signInTokenProtectionStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TokenProtectionStatus)
+        return val.(*SignIn_signInTokenProtectionStatus)
     }
     return nil
 }
@@ -1428,13 +1428,13 @@ func (m *SignIn) GetTokenIssuerName()(*string) {
     return nil
 }
 // GetTokenIssuerType gets the tokenIssuerType property value. The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth, ADFederationServicesMFAAdapter, NPSExtension. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: AzureADBackupAuth , ADFederationServicesMFAAdapter , NPSExtension.
-func (m *SignIn) GetTokenIssuerType()(*TokenIssuerType) {
+func (m *SignIn) GetTokenIssuerType()(*SignIn_tokenIssuerType) {
     val, err := m.GetBackingStore().Get("tokenIssuerType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TokenIssuerType)
+        return val.(*SignIn_tokenIssuerType)
     }
     return nil
 }
@@ -1494,13 +1494,13 @@ func (m *SignIn) GetUserPrincipalName()(*string) {
     return nil
 }
 // GetUserType gets the userType property value. Identifies whether the user is a member or guest in the tenant. Possible values are: member, guest, unknownFutureValue.
-func (m *SignIn) GetUserType()(*SignInUserType) {
+func (m *SignIn) GetUserType()(*SignIn_userType) {
     val, err := m.GetBackingStore().Get("userType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SignInUserType)
+        return val.(*SignIn_userType)
     }
     return nil
 }
@@ -2012,7 +2012,7 @@ func (m *SignIn) SetAppliedEventListeners(value []AppliedAuthenticationEventList
     }
 }
 // SetAppTokenProtectionStatus sets the appTokenProtectionStatus property value. The appTokenProtectionStatus property
-func (m *SignIn) SetAppTokenProtectionStatus(value *TokenProtectionStatus)() {
+func (m *SignIn) SetAppTokenProtectionStatus(value *SignIn_appTokenProtectionStatus)() {
     err := m.GetBackingStore().Set("appTokenProtectionStatus", value)
     if err != nil {
         panic(err)
@@ -2061,7 +2061,7 @@ func (m *SignIn) SetAuthenticationProcessingDetails(value []KeyValueable)() {
     }
 }
 // SetAuthenticationProtocol sets the authenticationProtocol property value. Lists the protocol type or grant type used in the authentication. The possible values are: oAuth2, ropc, wsFederation, saml20, deviceCode, unknownFutureValue, authenticationTransfer, and none. Use none for all authentications that don't have a specific value in that list.
-func (m *SignIn) SetAuthenticationProtocol(value *ProtocolType)() {
+func (m *SignIn) SetAuthenticationProtocol(value *SignIn_authenticationProtocol)() {
     err := m.GetBackingStore().Set("authenticationProtocol", value)
     if err != nil {
         panic(err)
@@ -2103,14 +2103,14 @@ func (m *SignIn) SetClientAppUsed(value *string)() {
     }
 }
 // SetClientCredentialType sets the clientCredentialType property value. Describes the credential type that a user client or service principal provided to Microsoft Entra ID to authenticate itself. You can review this property to track and eliminate less secure credential types or to watch for clients and service principals using anomalous credential types. The possible values are: none, clientSecret, clientAssertion, federatedIdentityCredential, managedIdentity, certificate, unknownFutureValue.
-func (m *SignIn) SetClientCredentialType(value *ClientCredentialType)() {
+func (m *SignIn) SetClientCredentialType(value *SignIn_clientCredentialType)() {
     err := m.GetBackingStore().Set("clientCredentialType", value)
     if err != nil {
         panic(err)
     }
 }
 // SetConditionalAccessStatus sets the conditionalAccessStatus property value. The status of the conditional access policy triggered. Possible values: success, failure, notApplied, or unknownFutureValue.  Supports $filter (eq).
-func (m *SignIn) SetConditionalAccessStatus(value *ConditionalAccessStatus)() {
+func (m *SignIn) SetConditionalAccessStatus(value *SignIn_conditionalAccessStatus)() {
     err := m.GetBackingStore().Set("conditionalAccessStatus", value)
     if err != nil {
         panic(err)
@@ -2131,7 +2131,7 @@ func (m *SignIn) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3
     }
 }
 // SetCrossTenantAccessType sets the crossTenantAccessType property value. Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue, passthrough. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: passthrough. If the sign in didn't cross tenant boundaries, the value is none.
-func (m *SignIn) SetCrossTenantAccessType(value *SignInAccessType)() {
+func (m *SignIn) SetCrossTenantAccessType(value *SignIn_crossTenantAccessType)() {
     err := m.GetBackingStore().Set("crossTenantAccessType", value)
     if err != nil {
         panic(err)
@@ -2173,7 +2173,7 @@ func (m *SignIn) SetHomeTenantName(value *string)() {
     }
 }
 // SetIncomingTokenType sets the incomingTokenType property value. Indicates the token types that were presented to Microsoft Entra ID to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Microsoft Entra ID might have also used token types not listed in this enum type to authenticate the actor. Don't infer the lack of a token if it isn't one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.
-func (m *SignIn) SetIncomingTokenType(value *IncomingTokenType)() {
+func (m *SignIn) SetIncomingTokenType(value *SignIn_incomingTokenType)() {
     err := m.GetBackingStore().Set("incomingTokenType", value)
     if err != nil {
         panic(err)
@@ -2243,7 +2243,7 @@ func (m *SignIn) SetOriginalRequestId(value *string)() {
     }
 }
 // SetOriginalTransferMethod sets the originalTransferMethod property value. Transfer method used to initiate a session throughout all subsequent request. The possible values are: none, deviceCodeFlow, authenticationTransfer, unknownFutureValue.
-func (m *SignIn) SetOriginalTransferMethod(value *OriginalTransferMethods)() {
+func (m *SignIn) SetOriginalTransferMethod(value *SignIn_originalTransferMethod)() {
     err := m.GetBackingStore().Set("originalTransferMethod", value)
     if err != nil {
         panic(err)
@@ -2292,7 +2292,7 @@ func (m *SignIn) SetResourceTenantId(value *string)() {
     }
 }
 // SetRiskDetail sets the riskDetail property value. The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that Microsoft Entra risk detection has not flagged the user or the sign-in as a risky event so far.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
-func (m *SignIn) SetRiskDetail(value *RiskDetail)() {
+func (m *SignIn) SetRiskDetail(value *SignIn_riskDetail)() {
     err := m.GetBackingStore().Set("riskDetail", value)
     if err != nil {
         panic(err)
@@ -2306,21 +2306,21 @@ func (m *SignIn) SetRiskEventTypesV2(value []string)() {
     }
 }
 // SetRiskLevelAggregated sets the riskLevelAggregated property value. The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Microsoft Entra ID Protection.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
-func (m *SignIn) SetRiskLevelAggregated(value *RiskLevel)() {
+func (m *SignIn) SetRiskLevelAggregated(value *SignIn_riskLevelAggregated)() {
     err := m.GetBackingStore().Set("riskLevelAggregated", value)
     if err != nil {
         panic(err)
     }
 }
 // SetRiskLevelDuringSignIn sets the riskLevelDuringSignIn property value. The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Microsoft Entra ID Protection.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
-func (m *SignIn) SetRiskLevelDuringSignIn(value *RiskLevel)() {
+func (m *SignIn) SetRiskLevelDuringSignIn(value *SignIn_riskLevelDuringSignIn)() {
     err := m.GetBackingStore().Set("riskLevelDuringSignIn", value)
     if err != nil {
         panic(err)
     }
 }
 // SetRiskState sets the riskState property value. The risk state of a risky user, sign-in, or a risk event. Possible values: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, or unknownFutureValue.  Supports $filter (eq).
-func (m *SignIn) SetRiskState(value *RiskState)() {
+func (m *SignIn) SetRiskState(value *SignIn_riskState)() {
     err := m.GetBackingStore().Set("riskState", value)
     if err != nil {
         panic(err)
@@ -2376,14 +2376,14 @@ func (m *SignIn) SetSignInIdentifier(value *string)() {
     }
 }
 // SetSignInIdentifierType sets the signInIdentifierType property value. The type of sign in identifier. Possible values are: userPrincipalName, phoneNumber, proxyAddress, qrCode, onPremisesUserPrincipalName, unknownFutureValue.
-func (m *SignIn) SetSignInIdentifierType(value *SignInIdentifierType)() {
+func (m *SignIn) SetSignInIdentifierType(value *SignIn_signInIdentifierType)() {
     err := m.GetBackingStore().Set("signInIdentifierType", value)
     if err != nil {
         panic(err)
     }
 }
 // SetSignInTokenProtectionStatus sets the signInTokenProtectionStatus property value. Token protection creates a cryptographically secure tie between the token and the device it is issued to. This field indicates whether the signin token was bound to the device or not. The possible values are: none, bound, unbound, unknownFutureValue.
-func (m *SignIn) SetSignInTokenProtectionStatus(value *TokenProtectionStatus)() {
+func (m *SignIn) SetSignInTokenProtectionStatus(value *SignIn_signInTokenProtectionStatus)() {
     err := m.GetBackingStore().Set("signInTokenProtectionStatus", value)
     if err != nil {
         panic(err)
@@ -2404,7 +2404,7 @@ func (m *SignIn) SetTokenIssuerName(value *string)() {
     }
 }
 // SetTokenIssuerType sets the tokenIssuerType property value. The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth, ADFederationServicesMFAAdapter, NPSExtension. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: AzureADBackupAuth , ADFederationServicesMFAAdapter , NPSExtension.
-func (m *SignIn) SetTokenIssuerType(value *TokenIssuerType)() {
+func (m *SignIn) SetTokenIssuerType(value *SignIn_tokenIssuerType)() {
     err := m.GetBackingStore().Set("tokenIssuerType", value)
     if err != nil {
         panic(err)
@@ -2446,7 +2446,7 @@ func (m *SignIn) SetUserPrincipalName(value *string)() {
     }
 }
 // SetUserType sets the userType property value. Identifies whether the user is a member or guest in the tenant. Possible values are: member, guest, unknownFutureValue.
-func (m *SignIn) SetUserType(value *SignInUserType)() {
+func (m *SignIn) SetUserType(value *SignIn_userType)() {
     err := m.GetBackingStore().Set("userType", value)
     if err != nil {
         panic(err)
@@ -2460,30 +2460,30 @@ type SignInable interface {
     GetAppId()(*string)
     GetAppliedConditionalAccessPolicies()([]AppliedConditionalAccessPolicyable)
     GetAppliedEventListeners()([]AppliedAuthenticationEventListenerable)
-    GetAppTokenProtectionStatus()(*TokenProtectionStatus)
+    GetAppTokenProtectionStatus()(*SignIn_appTokenProtectionStatus)
     GetAuthenticationAppDeviceDetails()(AuthenticationAppDeviceDetailsable)
     GetAuthenticationAppPolicyEvaluationDetails()([]AuthenticationAppPolicyDetailsable)
     GetAuthenticationContextClassReferences()([]AuthenticationContextable)
     GetAuthenticationDetails()([]AuthenticationDetailable)
     GetAuthenticationMethodsUsed()([]string)
     GetAuthenticationProcessingDetails()([]KeyValueable)
-    GetAuthenticationProtocol()(*ProtocolType)
+    GetAuthenticationProtocol()(*SignIn_authenticationProtocol)
     GetAuthenticationRequirement()(*string)
     GetAuthenticationRequirementPolicies()([]AuthenticationRequirementPolicyable)
     GetAutonomousSystemNumber()(*int32)
     GetAzureResourceId()(*string)
     GetClientAppUsed()(*string)
-    GetClientCredentialType()(*ClientCredentialType)
-    GetConditionalAccessStatus()(*ConditionalAccessStatus)
+    GetClientCredentialType()(*SignIn_clientCredentialType)
+    GetConditionalAccessStatus()(*SignIn_conditionalAccessStatus)
     GetCorrelationId()(*string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetCrossTenantAccessType()(*SignInAccessType)
+    GetCrossTenantAccessType()(*SignIn_crossTenantAccessType)
     GetDeviceDetail()(DeviceDetailable)
     GetFederatedCredentialId()(*string)
     GetFlaggedForReview()(*bool)
     GetHomeTenantId()(*string)
     GetHomeTenantName()(*string)
-    GetIncomingTokenType()(*IncomingTokenType)
+    GetIncomingTokenType()(*SignIn_incomingTokenType)
     GetIpAddress()(*string)
     GetIpAddressFromResourceProvider()(*string)
     GetIsInteractive()(*bool)
@@ -2493,18 +2493,18 @@ type SignInable interface {
     GetMfaDetail()(MfaDetailable)
     GetNetworkLocationDetails()([]NetworkLocationDetailable)
     GetOriginalRequestId()(*string)
-    GetOriginalTransferMethod()(*OriginalTransferMethods)
+    GetOriginalTransferMethod()(*SignIn_originalTransferMethod)
     GetPrivateLinkDetails()(PrivateLinkDetailsable)
     GetProcessingTimeInMilliseconds()(*int32)
     GetResourceDisplayName()(*string)
     GetResourceId()(*string)
     GetResourceServicePrincipalId()(*string)
     GetResourceTenantId()(*string)
-    GetRiskDetail()(*RiskDetail)
+    GetRiskDetail()(*SignIn_riskDetail)
     GetRiskEventTypesV2()([]string)
-    GetRiskLevelAggregated()(*RiskLevel)
-    GetRiskLevelDuringSignIn()(*RiskLevel)
-    GetRiskState()(*RiskState)
+    GetRiskLevelAggregated()(*SignIn_riskLevelAggregated)
+    GetRiskLevelDuringSignIn()(*SignIn_riskLevelDuringSignIn)
+    GetRiskState()(*SignIn_riskState)
     GetServicePrincipalCredentialKeyId()(*string)
     GetServicePrincipalCredentialThumbprint()(*string)
     GetServicePrincipalId()(*string)
@@ -2512,45 +2512,45 @@ type SignInable interface {
     GetSessionLifetimePolicies()([]SessionLifetimePolicyable)
     GetSignInEventTypes()([]string)
     GetSignInIdentifier()(*string)
-    GetSignInIdentifierType()(*SignInIdentifierType)
-    GetSignInTokenProtectionStatus()(*TokenProtectionStatus)
+    GetSignInIdentifierType()(*SignIn_signInIdentifierType)
+    GetSignInTokenProtectionStatus()(*SignIn_signInTokenProtectionStatus)
     GetStatus()(SignInStatusable)
     GetTokenIssuerName()(*string)
-    GetTokenIssuerType()(*TokenIssuerType)
+    GetTokenIssuerType()(*SignIn_tokenIssuerType)
     GetUniqueTokenIdentifier()(*string)
     GetUserAgent()(*string)
     GetUserDisplayName()(*string)
     GetUserId()(*string)
     GetUserPrincipalName()(*string)
-    GetUserType()(*SignInUserType)
+    GetUserType()(*SignIn_userType)
     SetAppDisplayName(value *string)()
     SetAppId(value *string)()
     SetAppliedConditionalAccessPolicies(value []AppliedConditionalAccessPolicyable)()
     SetAppliedEventListeners(value []AppliedAuthenticationEventListenerable)()
-    SetAppTokenProtectionStatus(value *TokenProtectionStatus)()
+    SetAppTokenProtectionStatus(value *SignIn_appTokenProtectionStatus)()
     SetAuthenticationAppDeviceDetails(value AuthenticationAppDeviceDetailsable)()
     SetAuthenticationAppPolicyEvaluationDetails(value []AuthenticationAppPolicyDetailsable)()
     SetAuthenticationContextClassReferences(value []AuthenticationContextable)()
     SetAuthenticationDetails(value []AuthenticationDetailable)()
     SetAuthenticationMethodsUsed(value []string)()
     SetAuthenticationProcessingDetails(value []KeyValueable)()
-    SetAuthenticationProtocol(value *ProtocolType)()
+    SetAuthenticationProtocol(value *SignIn_authenticationProtocol)()
     SetAuthenticationRequirement(value *string)()
     SetAuthenticationRequirementPolicies(value []AuthenticationRequirementPolicyable)()
     SetAutonomousSystemNumber(value *int32)()
     SetAzureResourceId(value *string)()
     SetClientAppUsed(value *string)()
-    SetClientCredentialType(value *ClientCredentialType)()
-    SetConditionalAccessStatus(value *ConditionalAccessStatus)()
+    SetClientCredentialType(value *SignIn_clientCredentialType)()
+    SetConditionalAccessStatus(value *SignIn_conditionalAccessStatus)()
     SetCorrelationId(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetCrossTenantAccessType(value *SignInAccessType)()
+    SetCrossTenantAccessType(value *SignIn_crossTenantAccessType)()
     SetDeviceDetail(value DeviceDetailable)()
     SetFederatedCredentialId(value *string)()
     SetFlaggedForReview(value *bool)()
     SetHomeTenantId(value *string)()
     SetHomeTenantName(value *string)()
-    SetIncomingTokenType(value *IncomingTokenType)()
+    SetIncomingTokenType(value *SignIn_incomingTokenType)()
     SetIpAddress(value *string)()
     SetIpAddressFromResourceProvider(value *string)()
     SetIsInteractive(value *bool)()
@@ -2560,18 +2560,18 @@ type SignInable interface {
     SetMfaDetail(value MfaDetailable)()
     SetNetworkLocationDetails(value []NetworkLocationDetailable)()
     SetOriginalRequestId(value *string)()
-    SetOriginalTransferMethod(value *OriginalTransferMethods)()
+    SetOriginalTransferMethod(value *SignIn_originalTransferMethod)()
     SetPrivateLinkDetails(value PrivateLinkDetailsable)()
     SetProcessingTimeInMilliseconds(value *int32)()
     SetResourceDisplayName(value *string)()
     SetResourceId(value *string)()
     SetResourceServicePrincipalId(value *string)()
     SetResourceTenantId(value *string)()
-    SetRiskDetail(value *RiskDetail)()
+    SetRiskDetail(value *SignIn_riskDetail)()
     SetRiskEventTypesV2(value []string)()
-    SetRiskLevelAggregated(value *RiskLevel)()
-    SetRiskLevelDuringSignIn(value *RiskLevel)()
-    SetRiskState(value *RiskState)()
+    SetRiskLevelAggregated(value *SignIn_riskLevelAggregated)()
+    SetRiskLevelDuringSignIn(value *SignIn_riskLevelDuringSignIn)()
+    SetRiskState(value *SignIn_riskState)()
     SetServicePrincipalCredentialKeyId(value *string)()
     SetServicePrincipalCredentialThumbprint(value *string)()
     SetServicePrincipalId(value *string)()
@@ -2579,15 +2579,15 @@ type SignInable interface {
     SetSessionLifetimePolicies(value []SessionLifetimePolicyable)()
     SetSignInEventTypes(value []string)()
     SetSignInIdentifier(value *string)()
-    SetSignInIdentifierType(value *SignInIdentifierType)()
-    SetSignInTokenProtectionStatus(value *TokenProtectionStatus)()
+    SetSignInIdentifierType(value *SignIn_signInIdentifierType)()
+    SetSignInTokenProtectionStatus(value *SignIn_signInTokenProtectionStatus)()
     SetStatus(value SignInStatusable)()
     SetTokenIssuerName(value *string)()
-    SetTokenIssuerType(value *TokenIssuerType)()
+    SetTokenIssuerType(value *SignIn_tokenIssuerType)()
     SetUniqueTokenIdentifier(value *string)()
     SetUserAgent(value *string)()
     SetUserDisplayName(value *string)()
     SetUserId(value *string)()
     SetUserPrincipalName(value *string)()
-    SetUserType(value *SignInUserType)()
+    SetUserType(value *SignIn_userType)()
 }

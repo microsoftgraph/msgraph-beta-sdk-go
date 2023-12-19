@@ -85,12 +85,12 @@ func (m *AospDeviceOwnerCompliancePolicy) GetFieldDeserializers()(map[string]fun
         return nil
     }
     res["passwordRequiredType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerRequiredPasswordType)
+        val, err := n.GetEnumValue(ParseAospDeviceOwnerCompliancePolicy_passwordRequiredType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPasswordRequiredType(val.(*AndroidDeviceOwnerRequiredPasswordType))
+            m.SetPasswordRequiredType(val.(*AospDeviceOwnerCompliancePolicy_passwordRequiredType))
         }
         return nil
     }
@@ -183,13 +183,13 @@ func (m *AospDeviceOwnerCompliancePolicy) GetPasswordRequired()(*bool) {
     return nil
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Type of characters in password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
-func (m *AospDeviceOwnerCompliancePolicy) GetPasswordRequiredType()(*AndroidDeviceOwnerRequiredPasswordType) {
+func (m *AospDeviceOwnerCompliancePolicy) GetPasswordRequiredType()(*AospDeviceOwnerCompliancePolicy_passwordRequiredType) {
     val, err := m.GetBackingStore().Get("passwordRequiredType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AndroidDeviceOwnerRequiredPasswordType)
+        return val.(*AospDeviceOwnerCompliancePolicy_passwordRequiredType)
     }
     return nil
 }
@@ -321,7 +321,7 @@ func (m *AospDeviceOwnerCompliancePolicy) SetPasswordRequired(value *bool)() {
     }
 }
 // SetPasswordRequiredType sets the passwordRequiredType property value. Type of characters in password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
-func (m *AospDeviceOwnerCompliancePolicy) SetPasswordRequiredType(value *AndroidDeviceOwnerRequiredPasswordType)() {
+func (m *AospDeviceOwnerCompliancePolicy) SetPasswordRequiredType(value *AospDeviceOwnerCompliancePolicy_passwordRequiredType)() {
     err := m.GetBackingStore().Set("passwordRequiredType", value)
     if err != nil {
         panic(err)
@@ -351,7 +351,7 @@ type AospDeviceOwnerCompliancePolicyable interface {
     GetPasswordMinimumLength()(*int32)
     GetPasswordMinutesOfInactivityBeforeLock()(*int32)
     GetPasswordRequired()(*bool)
-    GetPasswordRequiredType()(*AndroidDeviceOwnerRequiredPasswordType)
+    GetPasswordRequiredType()(*AospDeviceOwnerCompliancePolicy_passwordRequiredType)
     GetSecurityBlockJailbrokenDevices()(*bool)
     GetStorageRequireEncryption()(*bool)
     SetMinAndroidSecurityPatchLevel(value *string)()
@@ -360,7 +360,7 @@ type AospDeviceOwnerCompliancePolicyable interface {
     SetPasswordMinimumLength(value *int32)()
     SetPasswordMinutesOfInactivityBeforeLock(value *int32)()
     SetPasswordRequired(value *bool)()
-    SetPasswordRequiredType(value *AndroidDeviceOwnerRequiredPasswordType)()
+    SetPasswordRequiredType(value *AospDeviceOwnerCompliancePolicy_passwordRequiredType)()
     SetSecurityBlockJailbrokenDevices(value *bool)()
     SetStorageRequireEncryption(value *bool)()
 }

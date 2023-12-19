@@ -50,13 +50,13 @@ func (m *WorkloadAction) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185
     return m.backingStore
 }
 // GetCategory gets the category property value. The category for the workload action. Possible values are: automated, manual, unknownFutureValue. Optional. Read-only.
-func (m *WorkloadAction) GetCategory()(*WorkloadActionCategory) {
+func (m *WorkloadAction) GetCategory()(*WorkloadAction_category) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*WorkloadActionCategory)
+        return val.(*WorkloadAction_category)
     }
     return nil
 }
@@ -96,12 +96,12 @@ func (m *WorkloadAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWorkloadActionCategory)
+        val, err := n.GetEnumValue(ParseWorkloadAction_category)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCategory(val.(*WorkloadActionCategory))
+            m.SetCategory(val.(*WorkloadAction_category))
         }
         return nil
     }
@@ -307,7 +307,7 @@ func (m *WorkloadAction) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d4
     m.backingStore = value
 }
 // SetCategory sets the category property value. The category for the workload action. Possible values are: automated, manual, unknownFutureValue. Optional. Read-only.
-func (m *WorkloadAction) SetCategory(value *WorkloadActionCategory)() {
+func (m *WorkloadAction) SetCategory(value *WorkloadAction_category)() {
     err := m.GetBackingStore().Set("category", value)
     if err != nil {
         panic(err)
@@ -362,7 +362,7 @@ type WorkloadActionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetActionId()(*string)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetCategory()(*WorkloadActionCategory)
+    GetCategory()(*WorkloadAction_category)
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetLicenses()([]string)
@@ -371,7 +371,7 @@ type WorkloadActionable interface {
     GetSettings()([]Settingable)
     SetActionId(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetCategory(value *WorkloadActionCategory)()
+    SetCategory(value *WorkloadAction_category)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetLicenses(value []string)()

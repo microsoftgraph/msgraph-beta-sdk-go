@@ -3,7 +3,6 @@ package security
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
-    i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/security"
 )
 
 // CasesEdiscoveryCasesItemReviewSetsItemQueriesItemMicrosoftGraphSecurityExportExportPostRequestBody 
@@ -72,28 +71,6 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemMicrosoftGraphSecurity
     }
     return nil
 }
-// GetExportOptions gets the exportOptions property value. The exportOptions property
-func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemMicrosoftGraphSecurityExportExportPostRequestBody) GetExportOptions()(*i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ExportOptions) {
-    val, err := m.GetBackingStore().Get("exportOptions")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ExportOptions)
-    }
-    return nil
-}
-// GetExportStructure gets the exportStructure property value. The exportStructure property
-func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemMicrosoftGraphSecurityExportExportPostRequestBody) GetExportStructure()(*i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ExportFileStructure) {
-    val, err := m.GetBackingStore().Get("exportStructure")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ExportFileStructure)
-    }
-    return nil
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemMicrosoftGraphSecurityExportExportPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
@@ -124,26 +101,6 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemMicrosoftGraphSecurity
         }
         if val != nil {
             m.SetDescription(val)
-        }
-        return nil
-    }
-    res["exportOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ParseExportOptions)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetExportOptions(val.(*i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ExportOptions))
-        }
-        return nil
-    }
-    res["exportStructure"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ParseExportFileStructure)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetExportStructure(val.(*i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ExportFileStructure))
         }
         return nil
     }
@@ -186,20 +143,6 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemMicrosoftGraphSecurity
     }
     {
         err := writer.WriteStringValue("description", m.GetDescription())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetExportOptions() != nil {
-        cast := (*m.GetExportOptions()).String()
-        err := writer.WriteStringValue("exportOptions", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetExportStructure() != nil {
-        cast := (*m.GetExportStructure()).String()
-        err := writer.WriteStringValue("exportStructure", &cast)
         if err != nil {
             return err
         }
@@ -250,20 +193,6 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemMicrosoftGraphSecurity
         panic(err)
     }
 }
-// SetExportOptions sets the exportOptions property value. The exportOptions property
-func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemMicrosoftGraphSecurityExportExportPostRequestBody) SetExportOptions(value *i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ExportOptions)() {
-    err := m.GetBackingStore().Set("exportOptions", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetExportStructure sets the exportStructure property value. The exportStructure property
-func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemMicrosoftGraphSecurityExportExportPostRequestBody) SetExportStructure(value *i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ExportFileStructure)() {
-    err := m.GetBackingStore().Set("exportStructure", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOutputName sets the outputName property value. The outputName property
 func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemMicrosoftGraphSecurityExportExportPostRequestBody) SetOutputName(value *string)() {
     err := m.GetBackingStore().Set("outputName", value)
@@ -280,14 +209,10 @@ type CasesEdiscoveryCasesItemReviewSetsItemQueriesItemMicrosoftGraphSecurityExpo
     GetAzureBlobToken()(*string)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDescription()(*string)
-    GetExportOptions()(*i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ExportOptions)
-    GetExportStructure()(*i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ExportFileStructure)
     GetOutputName()(*string)
     SetAzureBlobContainer(value *string)()
     SetAzureBlobToken(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDescription(value *string)()
-    SetExportOptions(value *i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ExportOptions)()
-    SetExportStructure(value *i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ExportFileStructure)()
     SetOutputName(value *string)()
 }

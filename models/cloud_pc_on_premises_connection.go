@@ -63,6 +63,17 @@ func (m *CloudPcOnPremisesConnection) GetAlternateResourceUrl()(*string) {
     }
     return nil
 }
+// GetConnectionType gets the connectionType property value. The connectionType property
+func (m *CloudPcOnPremisesConnection) GetConnectionType()(*CloudPcOnPremisesConnection_connectionType) {
+    val, err := m.GetBackingStore().Get("connectionType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcOnPremisesConnection_connectionType)
+    }
+    return nil
+}
 // GetDisplayName gets the displayName property value. The display name for the Azure network connection.
 func (m *CloudPcOnPremisesConnection) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -117,6 +128,16 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["connectionType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcOnPremisesConnection_connectionType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetConnectionType(val.(*CloudPcOnPremisesConnection_connectionType))
+        }
+        return nil
+    }
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -134,6 +155,16 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(i8
         }
         if val != nil {
             m.SetHealthCheckStatus(val.(*CloudPcOnPremisesConnectionStatus))
+        }
+        return nil
+    }
+    res["healthCheckStatusDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcOnPremisesConnectionStatusDetailFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHealthCheckStatusDetail(val.(CloudPcOnPremisesConnectionStatusDetailable))
         }
         return nil
     }
@@ -234,12 +265,12 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcOnPremisesConnectionType)
+        val, err := n.GetEnumValue(ParseCloudPcOnPremisesConnection_type)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTypeEscaped(val.(*CloudPcOnPremisesConnectionType))
+            m.SetTypeEscaped(val.(*CloudPcOnPremisesConnection_type))
         }
         return nil
     }
@@ -273,6 +304,17 @@ func (m *CloudPcOnPremisesConnection) GetHealthCheckStatus()(*CloudPcOnPremisesC
     }
     if val != nil {
         return val.(*CloudPcOnPremisesConnectionStatus)
+    }
+    return nil
+}
+// GetHealthCheckStatusDetail gets the healthCheckStatusDetail property value. The healthCheckStatusDetail property
+func (m *CloudPcOnPremisesConnection) GetHealthCheckStatusDetail()(CloudPcOnPremisesConnectionStatusDetailable) {
+    val, err := m.GetBackingStore().Get("healthCheckStatusDetail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcOnPremisesConnectionStatusDetailable)
     }
     return nil
 }
@@ -376,13 +418,13 @@ func (m *CloudPcOnPremisesConnection) GetSubscriptionName()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. Specifies how the provisioned Cloud PC is joined to Microsoft Entra ID. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
-func (m *CloudPcOnPremisesConnection) GetTypeEscaped()(*CloudPcOnPremisesConnectionType) {
+func (m *CloudPcOnPremisesConnection) GetTypeEscaped()(*CloudPcOnPremisesConnection_type) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcOnPremisesConnectionType)
+        return val.(*CloudPcOnPremisesConnection_type)
     }
     return nil
 }
@@ -438,6 +480,13 @@ func (m *CloudPcOnPremisesConnection) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    if m.GetConnectionType() != nil {
+        cast := (*m.GetConnectionType()).String()
+        err = writer.WriteStringValue("connectionType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
@@ -447,6 +496,12 @@ func (m *CloudPcOnPremisesConnection) Serialize(writer i878a80d2330e89d26896388a
     if m.GetHealthCheckStatus() != nil {
         cast := (*m.GetHealthCheckStatus()).String()
         err = writer.WriteStringValue("healthCheckStatus", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("healthCheckStatusDetail", m.GetHealthCheckStatusDetail())
         if err != nil {
             return err
         }
@@ -555,6 +610,13 @@ func (m *CloudPcOnPremisesConnection) SetAlternateResourceUrl(value *string)() {
         panic(err)
     }
 }
+// SetConnectionType sets the connectionType property value. The connectionType property
+func (m *CloudPcOnPremisesConnection) SetConnectionType(value *CloudPcOnPremisesConnection_connectionType)() {
+    err := m.GetBackingStore().Set("connectionType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDisplayName sets the displayName property value. The display name for the Azure network connection.
 func (m *CloudPcOnPremisesConnection) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
@@ -565,6 +627,13 @@ func (m *CloudPcOnPremisesConnection) SetDisplayName(value *string)() {
 // SetHealthCheckStatus sets the healthCheckStatus property value. The healthCheckStatus property
 func (m *CloudPcOnPremisesConnection) SetHealthCheckStatus(value *CloudPcOnPremisesConnectionStatus)() {
     err := m.GetBackingStore().Set("healthCheckStatus", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetHealthCheckStatusDetail sets the healthCheckStatusDetail property value. The healthCheckStatusDetail property
+func (m *CloudPcOnPremisesConnection) SetHealthCheckStatusDetail(value CloudPcOnPremisesConnectionStatusDetailable)() {
+    err := m.GetBackingStore().Set("healthCheckStatusDetail", value)
     if err != nil {
         panic(err)
     }
@@ -633,7 +702,7 @@ func (m *CloudPcOnPremisesConnection) SetSubscriptionName(value *string)() {
     }
 }
 // SetTypeEscaped sets the type property value. Specifies how the provisioned Cloud PC is joined to Microsoft Entra ID. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
-func (m *CloudPcOnPremisesConnection) SetTypeEscaped(value *CloudPcOnPremisesConnectionType)() {
+func (m *CloudPcOnPremisesConnection) SetTypeEscaped(value *CloudPcOnPremisesConnection_type)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -661,8 +730,10 @@ type CloudPcOnPremisesConnectionable interface {
     GetAdDomainPassword()(*string)
     GetAdDomainUsername()(*string)
     GetAlternateResourceUrl()(*string)
+    GetConnectionType()(*CloudPcOnPremisesConnection_connectionType)
     GetDisplayName()(*string)
     GetHealthCheckStatus()(*CloudPcOnPremisesConnectionStatus)
+    GetHealthCheckStatusDetail()(CloudPcOnPremisesConnectionStatusDetailable)
     GetHealthCheckStatusDetails()(CloudPcOnPremisesConnectionStatusDetailsable)
     GetInUse()(*bool)
     GetManagedBy()(*CloudPcManagementService)
@@ -672,15 +743,17 @@ type CloudPcOnPremisesConnectionable interface {
     GetSubnetId()(*string)
     GetSubscriptionId()(*string)
     GetSubscriptionName()(*string)
-    GetTypeEscaped()(*CloudPcOnPremisesConnectionType)
+    GetTypeEscaped()(*CloudPcOnPremisesConnection_type)
     GetVirtualNetworkId()(*string)
     GetVirtualNetworkLocation()(*string)
     SetAdDomainName(value *string)()
     SetAdDomainPassword(value *string)()
     SetAdDomainUsername(value *string)()
     SetAlternateResourceUrl(value *string)()
+    SetConnectionType(value *CloudPcOnPremisesConnection_connectionType)()
     SetDisplayName(value *string)()
     SetHealthCheckStatus(value *CloudPcOnPremisesConnectionStatus)()
+    SetHealthCheckStatusDetail(value CloudPcOnPremisesConnectionStatusDetailable)()
     SetHealthCheckStatusDetails(value CloudPcOnPremisesConnectionStatusDetailsable)()
     SetInUse(value *bool)()
     SetManagedBy(value *CloudPcManagementService)()
@@ -690,7 +763,7 @@ type CloudPcOnPremisesConnectionable interface {
     SetSubnetId(value *string)()
     SetSubscriptionId(value *string)()
     SetSubscriptionName(value *string)()
-    SetTypeEscaped(value *CloudPcOnPremisesConnectionType)()
+    SetTypeEscaped(value *CloudPcOnPremisesConnection_type)()
     SetVirtualNetworkId(value *string)()
     SetVirtualNetworkLocation(value *string)()
 }

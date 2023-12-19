@@ -22,13 +22,13 @@ func CreateAndroidWorkProfileScepCertificateProfileFromDiscriminatorValue(parseN
     return NewAndroidWorkProfileScepCertificateProfile(), nil
 }
 // GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
-func (m *AndroidWorkProfileScepCertificateProfile) GetCertificateStore()(*CertificateStore) {
+func (m *AndroidWorkProfileScepCertificateProfile) GetCertificateStore()(*AndroidWorkProfileScepCertificateProfile_certificateStore) {
     val, err := m.GetBackingStore().Get("certificateStore")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CertificateStore)
+        return val.(*AndroidWorkProfileScepCertificateProfile_certificateStore)
     }
     return nil
 }
@@ -47,12 +47,12 @@ func (m *AndroidWorkProfileScepCertificateProfile) GetCustomSubjectAlternativeNa
 func (m *AndroidWorkProfileScepCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AndroidWorkProfileCertificateProfileBase.GetFieldDeserializers()
     res["certificateStore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCertificateStore)
+        val, err := n.GetEnumValue(ParseAndroidWorkProfileScepCertificateProfile_certificateStore)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCertificateStore(val.(*CertificateStore))
+            m.SetCertificateStore(val.(*AndroidWorkProfileScepCertificateProfile_certificateStore))
         }
         return nil
     }
@@ -312,7 +312,7 @@ func (m *AndroidWorkProfileScepCertificateProfile) Serialize(writer i878a80d2330
     return nil
 }
 // SetCertificateStore sets the certificateStore property value. Target store certificate. Possible values are: user, machine.
-func (m *AndroidWorkProfileScepCertificateProfile) SetCertificateStore(value *CertificateStore)() {
+func (m *AndroidWorkProfileScepCertificateProfile) SetCertificateStore(value *AndroidWorkProfileScepCertificateProfile_certificateStore)() {
     err := m.GetBackingStore().Set("certificateStore", value)
     if err != nil {
         panic(err)
@@ -378,7 +378,7 @@ func (m *AndroidWorkProfileScepCertificateProfile) SetSubjectNameFormatString(va
 type AndroidWorkProfileScepCertificateProfileable interface {
     AndroidWorkProfileCertificateProfileBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetCertificateStore()(*CertificateStore)
+    GetCertificateStore()(*AndroidWorkProfileScepCertificateProfile_certificateStore)
     GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable)
     GetHashAlgorithm()(*HashAlgorithms)
     GetKeySize()(*KeySize)
@@ -387,7 +387,7 @@ type AndroidWorkProfileScepCertificateProfileable interface {
     GetScepServerUrls()([]string)
     GetSubjectAlternativeNameFormatString()(*string)
     GetSubjectNameFormatString()(*string)
-    SetCertificateStore(value *CertificateStore)()
+    SetCertificateStore(value *AndroidWorkProfileScepCertificateProfile_certificateStore)()
     SetCustomSubjectAlternativeNames(value []CustomSubjectAlternativeNameable)()
     SetHashAlgorithm(value *HashAlgorithms)()
     SetKeySize(value *KeySize)()

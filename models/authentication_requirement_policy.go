@@ -73,12 +73,12 @@ func (m *AuthenticationRequirementPolicy) GetFieldDeserializers()(map[string]fun
         return nil
     }
     res["requirementProvider"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRequirementProvider)
+        val, err := n.GetEnumValue(ParseAuthenticationRequirementPolicy_requirementProvider)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRequirementProvider(val.(*RequirementProvider))
+            m.SetRequirementProvider(val.(*AuthenticationRequirementPolicy_requirementProvider))
         }
         return nil
     }
@@ -96,13 +96,13 @@ func (m *AuthenticationRequirementPolicy) GetOdataType()(*string) {
     return nil
 }
 // GetRequirementProvider gets the requirementProvider property value. Identifies what Microsoft Entra feature requires MFA in this policy. Possible values are: user, request, servicePrincipal, v1ConditionalAccess, multiConditionalAccess, tenantSessionRiskPolicy, accountCompromisePolicies, v1ConditionalAccessDependency, v1ConditionalAccessPolicyIdRequested, mfaRegistrationRequiredByIdentityProtectionPolicy, baselineProtection, mfaRegistrationRequiredByBaselineProtection, mfaRegistrationRequiredByMultiConditionalAccess, enforcedForCspAdmins, securityDefaults, mfaRegistrationRequiredBySecurityDefaults, proofUpCodeRequest, crossTenantOutboundRule, gpsLocationCondition, riskBasedPolicy, unknownFutureValue.
-func (m *AuthenticationRequirementPolicy) GetRequirementProvider()(*RequirementProvider) {
+func (m *AuthenticationRequirementPolicy) GetRequirementProvider()(*AuthenticationRequirementPolicy_requirementProvider) {
     val, err := m.GetBackingStore().Get("requirementProvider")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RequirementProvider)
+        return val.(*AuthenticationRequirementPolicy_requirementProvider)
     }
     return nil
 }
@@ -161,7 +161,7 @@ func (m *AuthenticationRequirementPolicy) SetOdataType(value *string)() {
     }
 }
 // SetRequirementProvider sets the requirementProvider property value. Identifies what Microsoft Entra feature requires MFA in this policy. Possible values are: user, request, servicePrincipal, v1ConditionalAccess, multiConditionalAccess, tenantSessionRiskPolicy, accountCompromisePolicies, v1ConditionalAccessDependency, v1ConditionalAccessPolicyIdRequested, mfaRegistrationRequiredByIdentityProtectionPolicy, baselineProtection, mfaRegistrationRequiredByBaselineProtection, mfaRegistrationRequiredByMultiConditionalAccess, enforcedForCspAdmins, securityDefaults, mfaRegistrationRequiredBySecurityDefaults, proofUpCodeRequest, crossTenantOutboundRule, gpsLocationCondition, riskBasedPolicy, unknownFutureValue.
-func (m *AuthenticationRequirementPolicy) SetRequirementProvider(value *RequirementProvider)() {
+func (m *AuthenticationRequirementPolicy) SetRequirementProvider(value *AuthenticationRequirementPolicy_requirementProvider)() {
     err := m.GetBackingStore().Set("requirementProvider", value)
     if err != nil {
         panic(err)
@@ -175,9 +175,9 @@ type AuthenticationRequirementPolicyable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDetail()(*string)
     GetOdataType()(*string)
-    GetRequirementProvider()(*RequirementProvider)
+    GetRequirementProvider()(*AuthenticationRequirementPolicy_requirementProvider)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDetail(value *string)()
     SetOdataType(value *string)()
-    SetRequirementProvider(value *RequirementProvider)()
+    SetRequirementProvider(value *AuthenticationRequirementPolicy_requirementProvider)()
 }

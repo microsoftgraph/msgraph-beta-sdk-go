@@ -2,7 +2,6 @@ package devicemanagement
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
@@ -69,40 +68,12 @@ func (m *VirtualEndpointProvisioningPoliciesApplyConfigPostRequestBody) GetField
         }
         return nil
     }
-    res["policySettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseCloudPcPolicySettingType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPolicySettings(val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPolicySettingType))
-        }
-        return nil
-    }
     return res
-}
-// GetPolicySettings gets the policySettings property value. The policySettings property
-func (m *VirtualEndpointProvisioningPoliciesApplyConfigPostRequestBody) GetPolicySettings()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPolicySettingType) {
-    val, err := m.GetBackingStore().Get("policySettings")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPolicySettingType)
-    }
-    return nil
 }
 // Serialize serializes information the current object
 func (m *VirtualEndpointProvisioningPoliciesApplyConfigPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetCloudPcIds() != nil {
         err := writer.WriteCollectionOfStringValues("cloudPcIds", m.GetCloudPcIds())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetPolicySettings() != nil {
-        cast := (*m.GetPolicySettings()).String()
-        err := writer.WriteStringValue("policySettings", &cast)
         if err != nil {
             return err
         }
@@ -133,13 +104,6 @@ func (m *VirtualEndpointProvisioningPoliciesApplyConfigPostRequestBody) SetCloud
         panic(err)
     }
 }
-// SetPolicySettings sets the policySettings property value. The policySettings property
-func (m *VirtualEndpointProvisioningPoliciesApplyConfigPostRequestBody) SetPolicySettings(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPolicySettingType)() {
-    err := m.GetBackingStore().Set("policySettings", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // VirtualEndpointProvisioningPoliciesApplyConfigPostRequestBodyable 
 type VirtualEndpointProvisioningPoliciesApplyConfigPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
@@ -147,8 +111,6 @@ type VirtualEndpointProvisioningPoliciesApplyConfigPostRequestBodyable interface
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCloudPcIds()([]string)
-    GetPolicySettings()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPolicySettingType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCloudPcIds(value []string)()
-    SetPolicySettings(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPolicySettingType)()
 }

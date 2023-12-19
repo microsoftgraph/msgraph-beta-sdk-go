@@ -134,12 +134,12 @@ func (m *AndroidWorkProfileCertificateProfileBase) GetFieldDeserializers()(map[s
         return nil
     }
     res["subjectAlternativeNameType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSubjectAlternativeNameType)
+        val, err := n.GetEnumValue(ParseAndroidWorkProfileCertificateProfileBase_subjectAlternativeNameType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSubjectAlternativeNameType(val.(*SubjectAlternativeNameType))
+            m.SetSubjectAlternativeNameType(val.(*AndroidWorkProfileCertificateProfileBase_subjectAlternativeNameType))
         }
         return nil
     }
@@ -178,13 +178,13 @@ func (m *AndroidWorkProfileCertificateProfileBase) GetRootCertificate()(AndroidW
     return nil
 }
 // GetSubjectAlternativeNameType gets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
-func (m *AndroidWorkProfileCertificateProfileBase) GetSubjectAlternativeNameType()(*SubjectAlternativeNameType) {
+func (m *AndroidWorkProfileCertificateProfileBase) GetSubjectAlternativeNameType()(*AndroidWorkProfileCertificateProfileBase_subjectAlternativeNameType) {
     val, err := m.GetBackingStore().Get("subjectAlternativeNameType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SubjectAlternativeNameType)
+        return val.(*AndroidWorkProfileCertificateProfileBase_subjectAlternativeNameType)
     }
     return nil
 }
@@ -294,7 +294,7 @@ func (m *AndroidWorkProfileCertificateProfileBase) SetRootCertificate(value Andr
     }
 }
 // SetSubjectAlternativeNameType sets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
-func (m *AndroidWorkProfileCertificateProfileBase) SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)() {
+func (m *AndroidWorkProfileCertificateProfileBase) SetSubjectAlternativeNameType(value *AndroidWorkProfileCertificateProfileBase_subjectAlternativeNameType)() {
     err := m.GetBackingStore().Set("subjectAlternativeNameType", value)
     if err != nil {
         panic(err)
@@ -316,13 +316,13 @@ type AndroidWorkProfileCertificateProfileBaseable interface {
     GetExtendedKeyUsages()([]ExtendedKeyUsageable)
     GetRenewalThresholdPercentage()(*int32)
     GetRootCertificate()(AndroidWorkProfileTrustedRootCertificateable)
-    GetSubjectAlternativeNameType()(*SubjectAlternativeNameType)
+    GetSubjectAlternativeNameType()(*AndroidWorkProfileCertificateProfileBase_subjectAlternativeNameType)
     GetSubjectNameFormat()(*SubjectNameFormat)
     SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)()
     SetCertificateValidityPeriodValue(value *int32)()
     SetExtendedKeyUsages(value []ExtendedKeyUsageable)()
     SetRenewalThresholdPercentage(value *int32)()
     SetRootCertificate(value AndroidWorkProfileTrustedRootCertificateable)()
-    SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)()
+    SetSubjectAlternativeNameType(value *AndroidWorkProfileCertificateProfileBase_subjectAlternativeNameType)()
     SetSubjectNameFormat(value *SubjectNameFormat)()
 }

@@ -39,24 +39,24 @@ func (m *RiskUserActivity) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d411
     return m.backingStore
 }
 // GetDetail gets the detail property value. The possible values are none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
-func (m *RiskUserActivity) GetDetail()(*RiskDetail) {
+func (m *RiskUserActivity) GetDetail()(*RiskUserActivity_detail) {
     val, err := m.GetBackingStore().Get("detail")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RiskDetail)
+        return val.(*RiskUserActivity_detail)
     }
     return nil
 }
 // GetEventTypes gets the eventTypes property value. The eventTypes property
-func (m *RiskUserActivity) GetEventTypes()([]RiskEventType) {
+func (m *RiskUserActivity) GetEventTypes()([]RiskUserActivity_eventTypes) {
     val, err := m.GetBackingStore().Get("eventTypes")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]RiskEventType)
+        return val.([]RiskUserActivity_eventTypes)
     }
     return nil
 }
@@ -64,25 +64,25 @@ func (m *RiskUserActivity) GetEventTypes()([]RiskEventType) {
 func (m *RiskUserActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["detail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRiskDetail)
+        val, err := n.GetEnumValue(ParseRiskUserActivity_detail)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDetail(val.(*RiskDetail))
+            m.SetDetail(val.(*RiskUserActivity_detail))
         }
         return nil
     }
     res["eventTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseRiskEventType)
+        val, err := n.GetCollectionOfEnumValues(ParseRiskUserActivity_eventTypes)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]RiskEventType, len(val))
+            res := make([]RiskUserActivity_eventTypes, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*RiskEventType))
+                    res[i] = *(v.(*RiskUserActivity_eventTypes))
                 }
             }
             m.SetEventTypes(res)
@@ -149,7 +149,7 @@ func (m *RiskUserActivity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     if m.GetEventTypes() != nil {
-        err := writer.WriteCollectionOfStringValues("eventTypes", SerializeRiskEventType(m.GetEventTypes()))
+        err := writer.WriteCollectionOfStringValues("eventTypes", SerializeRiskUserActivity_eventTypes(m.GetEventTypes()))
         if err != nil {
             return err
         }
@@ -186,14 +186,14 @@ func (m *RiskUserActivity) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078
     m.backingStore = value
 }
 // SetDetail sets the detail property value. The possible values are none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
-func (m *RiskUserActivity) SetDetail(value *RiskDetail)() {
+func (m *RiskUserActivity) SetDetail(value *RiskUserActivity_detail)() {
     err := m.GetBackingStore().Set("detail", value)
     if err != nil {
         panic(err)
     }
 }
 // SetEventTypes sets the eventTypes property value. The eventTypes property
-func (m *RiskUserActivity) SetEventTypes(value []RiskEventType)() {
+func (m *RiskUserActivity) SetEventTypes(value []RiskUserActivity_eventTypes)() {
     err := m.GetBackingStore().Set("eventTypes", value)
     if err != nil {
         panic(err)
@@ -219,13 +219,13 @@ type RiskUserActivityable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetDetail()(*RiskDetail)
-    GetEventTypes()([]RiskEventType)
+    GetDetail()(*RiskUserActivity_detail)
+    GetEventTypes()([]RiskUserActivity_eventTypes)
     GetOdataType()(*string)
     GetRiskEventTypes()([]string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetDetail(value *RiskDetail)()
-    SetEventTypes(value []RiskEventType)()
+    SetDetail(value *RiskUserActivity_detail)()
+    SetEventTypes(value []RiskUserActivity_eventTypes)()
     SetOdataType(value *string)()
     SetRiskEventTypes(value []string)()
 }

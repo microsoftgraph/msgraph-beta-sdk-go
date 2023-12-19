@@ -36,13 +36,13 @@ func (m *AlertImpact) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAggregationType gets the aggregationType property value. The aggregation type of the impact. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.
-func (m *AlertImpact) GetAggregationType()(*AggregationType) {
+func (m *AlertImpact) GetAggregationType()(*AlertImpact_aggregationType) {
     val, err := m.GetBackingStore().Get("aggregationType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AggregationType)
+        return val.(*AlertImpact_aggregationType)
     }
     return nil
 }
@@ -65,12 +65,12 @@ func (m *AlertImpact) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424
 func (m *AlertImpact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["aggregationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAggregationType)
+        val, err := n.GetEnumValue(ParseAlertImpact_aggregationType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAggregationType(val.(*AggregationType))
+            m.SetAggregationType(val.(*AlertImpact_aggregationType))
         }
         return nil
     }
@@ -183,7 +183,7 @@ func (m *AlertImpact) SetAdditionalData(value map[string]any)() {
     }
 }
 // SetAggregationType sets the aggregationType property value. The aggregation type of the impact. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.
-func (m *AlertImpact) SetAggregationType(value *AggregationType)() {
+func (m *AlertImpact) SetAggregationType(value *AlertImpact_aggregationType)() {
     err := m.GetBackingStore().Set("aggregationType", value)
     if err != nil {
         panic(err)
@@ -219,12 +219,12 @@ type AlertImpactable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAggregationType()(*AggregationType)
+    GetAggregationType()(*AlertImpact_aggregationType)
     GetAlertImpactDetails()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyValuePairable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetValue()(*int32)
-    SetAggregationType(value *AggregationType)()
+    SetAggregationType(value *AlertImpact_aggregationType)()
     SetAlertImpactDetails(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyValuePairable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()

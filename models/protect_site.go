@@ -22,13 +22,13 @@ func CreateProtectSiteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewProtectSite(), nil
 }
 // GetAccessType gets the accessType property value. The accessType property
-func (m *ProtectSite) GetAccessType()(*SiteAccessType) {
+func (m *ProtectSite) GetAccessType()(*ProtectSite_accessType) {
     val, err := m.GetBackingStore().Get("accessType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SiteAccessType)
+        return val.(*ProtectSite_accessType)
     }
     return nil
 }
@@ -47,12 +47,12 @@ func (m *ProtectSite) GetConditionalAccessProtectionLevelId()(*string) {
 func (m *ProtectSite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.LabelActionBase.GetFieldDeserializers()
     res["accessType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSiteAccessType)
+        val, err := n.GetEnumValue(ParseProtectSite_accessType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccessType(val.(*SiteAccessType))
+            m.SetAccessType(val.(*ProtectSite_accessType))
         }
         return nil
     }
@@ -90,7 +90,7 @@ func (m *ProtectSite) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     return nil
 }
 // SetAccessType sets the accessType property value. The accessType property
-func (m *ProtectSite) SetAccessType(value *SiteAccessType)() {
+func (m *ProtectSite) SetAccessType(value *ProtectSite_accessType)() {
     err := m.GetBackingStore().Set("accessType", value)
     if err != nil {
         panic(err)
@@ -107,8 +107,8 @@ func (m *ProtectSite) SetConditionalAccessProtectionLevelId(value *string)() {
 type ProtectSiteable interface {
     LabelActionBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAccessType()(*SiteAccessType)
+    GetAccessType()(*ProtectSite_accessType)
     GetConditionalAccessProtectionLevelId()(*string)
-    SetAccessType(value *SiteAccessType)()
+    SetAccessType(value *ProtectSite_accessType)()
     SetConditionalAccessProtectionLevelId(value *string)()
 }

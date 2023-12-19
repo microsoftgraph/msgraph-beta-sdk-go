@@ -39,13 +39,13 @@ func (m *AuthenticationContext) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd07
     return m.backingStore
 }
 // GetDetail gets the detail property value. Describes how the conditional access authentication context was triggered. A value of previouslySatisfied means the auth context was because the user already satisfied the requirements for that authentication context in some previous authentication event. A value of required means the user had to meet the authentication context requirement as part of the sign-in flow. The possible values are: required, previouslySatisfied, notApplicable, unknownFutureValue.
-func (m *AuthenticationContext) GetDetail()(*AuthenticationContextDetail) {
+func (m *AuthenticationContext) GetDetail()(*AuthenticationContext_detail) {
     val, err := m.GetBackingStore().Get("detail")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AuthenticationContextDetail)
+        return val.(*AuthenticationContext_detail)
     }
     return nil
 }
@@ -53,12 +53,12 @@ func (m *AuthenticationContext) GetDetail()(*AuthenticationContextDetail) {
 func (m *AuthenticationContext) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["detail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAuthenticationContextDetail)
+        val, err := n.GetEnumValue(ParseAuthenticationContext_detail)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDetail(val.(*AuthenticationContextDetail))
+            m.SetDetail(val.(*AuthenticationContext_detail))
         }
         return nil
     }
@@ -147,7 +147,7 @@ func (m *AuthenticationContext) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827e
     m.backingStore = value
 }
 // SetDetail sets the detail property value. Describes how the conditional access authentication context was triggered. A value of previouslySatisfied means the auth context was because the user already satisfied the requirements for that authentication context in some previous authentication event. A value of required means the user had to meet the authentication context requirement as part of the sign-in flow. The possible values are: required, previouslySatisfied, notApplicable, unknownFutureValue.
-func (m *AuthenticationContext) SetDetail(value *AuthenticationContextDetail)() {
+func (m *AuthenticationContext) SetDetail(value *AuthenticationContext_detail)() {
     err := m.GetBackingStore().Set("detail", value)
     if err != nil {
         panic(err)
@@ -173,11 +173,11 @@ type AuthenticationContextable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetDetail()(*AuthenticationContextDetail)
+    GetDetail()(*AuthenticationContext_detail)
     GetId()(*string)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetDetail(value *AuthenticationContextDetail)()
+    SetDetail(value *AuthenticationContext_detail)()
     SetId(value *string)()
     SetOdataType(value *string)()
 }

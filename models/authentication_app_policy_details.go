@@ -35,24 +35,24 @@ func (m *AuthenticationAppPolicyDetails) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAdminConfiguration gets the adminConfiguration property value. The admin configuration of the policy on the user's authentication app. For a policy that does not impact the success/failure of the authentication, the evaluation defaults to notApplicable. The possible values are: notApplicable, enabled, disabled, unknownFutureValue.
-func (m *AuthenticationAppPolicyDetails) GetAdminConfiguration()(*AuthenticationAppAdminConfiguration) {
+func (m *AuthenticationAppPolicyDetails) GetAdminConfiguration()(*AuthenticationAppPolicyDetails_adminConfiguration) {
     val, err := m.GetBackingStore().Get("adminConfiguration")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AuthenticationAppAdminConfiguration)
+        return val.(*AuthenticationAppPolicyDetails_adminConfiguration)
     }
     return nil
 }
 // GetAuthenticationEvaluation gets the authenticationEvaluation property value. Evaluates the success/failure of the authentication based on the admin configuration of the policy on the user's client authentication app. The possible values are: success, failure, unknownFutureValue.
-func (m *AuthenticationAppPolicyDetails) GetAuthenticationEvaluation()(*AuthenticationAppEvaluation) {
+func (m *AuthenticationAppPolicyDetails) GetAuthenticationEvaluation()(*AuthenticationAppPolicyDetails_authenticationEvaluation) {
     val, err := m.GetBackingStore().Get("authenticationEvaluation")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AuthenticationAppEvaluation)
+        return val.(*AuthenticationAppPolicyDetails_authenticationEvaluation)
     }
     return nil
 }
@@ -64,22 +64,22 @@ func (m *AuthenticationAppPolicyDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c
 func (m *AuthenticationAppPolicyDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["adminConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAuthenticationAppAdminConfiguration)
+        val, err := n.GetEnumValue(ParseAuthenticationAppPolicyDetails_adminConfiguration)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAdminConfiguration(val.(*AuthenticationAppAdminConfiguration))
+            m.SetAdminConfiguration(val.(*AuthenticationAppPolicyDetails_adminConfiguration))
         }
         return nil
     }
     res["authenticationEvaluation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAuthenticationAppEvaluation)
+        val, err := n.GetEnumValue(ParseAuthenticationAppPolicyDetails_authenticationEvaluation)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAuthenticationEvaluation(val.(*AuthenticationAppEvaluation))
+            m.SetAuthenticationEvaluation(val.(*AuthenticationAppPolicyDetails_authenticationEvaluation))
         }
         return nil
     }
@@ -104,12 +104,12 @@ func (m *AuthenticationAppPolicyDetails) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAuthenticationAppPolicyStatus)
+        val, err := n.GetEnumValue(ParseAuthenticationAppPolicyDetails_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*AuthenticationAppPolicyStatus))
+            m.SetStatus(val.(*AuthenticationAppPolicyDetails_status))
         }
         return nil
     }
@@ -138,13 +138,13 @@ func (m *AuthenticationAppPolicyDetails) GetPolicyName()(*string) {
     return nil
 }
 // GetStatus gets the status property value. Refers to whether the policy executed as expected on the user's client authentication app. The possible values are: unknown, appLockOutOfDate, appLockEnabled, appLockDisabled, appContextOutOfDate, appContextShown, appContextNotShown, locationContextOutOfDate, locationContextShown, locationContextNotShown, numberMatchOutOfDate, numberMatchCorrectNumberEntered, numberMatchIncorrectNumberEntered, numberMatchDeny, tamperResistantHardwareOutOfDate, tamperResistantHardwareUsed, tamperResistantHardwareNotUsed, unknownFutureValue.
-func (m *AuthenticationAppPolicyDetails) GetStatus()(*AuthenticationAppPolicyStatus) {
+func (m *AuthenticationAppPolicyDetails) GetStatus()(*AuthenticationAppPolicyDetails_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AuthenticationAppPolicyStatus)
+        return val.(*AuthenticationAppPolicyDetails_status)
     }
     return nil
 }
@@ -199,14 +199,14 @@ func (m *AuthenticationAppPolicyDetails) SetAdditionalData(value map[string]any)
     }
 }
 // SetAdminConfiguration sets the adminConfiguration property value. The admin configuration of the policy on the user's authentication app. For a policy that does not impact the success/failure of the authentication, the evaluation defaults to notApplicable. The possible values are: notApplicable, enabled, disabled, unknownFutureValue.
-func (m *AuthenticationAppPolicyDetails) SetAdminConfiguration(value *AuthenticationAppAdminConfiguration)() {
+func (m *AuthenticationAppPolicyDetails) SetAdminConfiguration(value *AuthenticationAppPolicyDetails_adminConfiguration)() {
     err := m.GetBackingStore().Set("adminConfiguration", value)
     if err != nil {
         panic(err)
     }
 }
 // SetAuthenticationEvaluation sets the authenticationEvaluation property value. Evaluates the success/failure of the authentication based on the admin configuration of the policy on the user's client authentication app. The possible values are: success, failure, unknownFutureValue.
-func (m *AuthenticationAppPolicyDetails) SetAuthenticationEvaluation(value *AuthenticationAppEvaluation)() {
+func (m *AuthenticationAppPolicyDetails) SetAuthenticationEvaluation(value *AuthenticationAppPolicyDetails_authenticationEvaluation)() {
     err := m.GetBackingStore().Set("authenticationEvaluation", value)
     if err != nil {
         panic(err)
@@ -231,7 +231,7 @@ func (m *AuthenticationAppPolicyDetails) SetPolicyName(value *string)() {
     }
 }
 // SetStatus sets the status property value. Refers to whether the policy executed as expected on the user's client authentication app. The possible values are: unknown, appLockOutOfDate, appLockEnabled, appLockDisabled, appContextOutOfDate, appContextShown, appContextNotShown, locationContextOutOfDate, locationContextShown, locationContextNotShown, numberMatchOutOfDate, numberMatchCorrectNumberEntered, numberMatchIncorrectNumberEntered, numberMatchDeny, tamperResistantHardwareOutOfDate, tamperResistantHardwareUsed, tamperResistantHardwareNotUsed, unknownFutureValue.
-func (m *AuthenticationAppPolicyDetails) SetStatus(value *AuthenticationAppPolicyStatus)() {
+func (m *AuthenticationAppPolicyDetails) SetStatus(value *AuthenticationAppPolicyDetails_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -242,16 +242,16 @@ type AuthenticationAppPolicyDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAdminConfiguration()(*AuthenticationAppAdminConfiguration)
-    GetAuthenticationEvaluation()(*AuthenticationAppEvaluation)
+    GetAdminConfiguration()(*AuthenticationAppPolicyDetails_adminConfiguration)
+    GetAuthenticationEvaluation()(*AuthenticationAppPolicyDetails_authenticationEvaluation)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetPolicyName()(*string)
-    GetStatus()(*AuthenticationAppPolicyStatus)
-    SetAdminConfiguration(value *AuthenticationAppAdminConfiguration)()
-    SetAuthenticationEvaluation(value *AuthenticationAppEvaluation)()
+    GetStatus()(*AuthenticationAppPolicyDetails_status)
+    SetAdminConfiguration(value *AuthenticationAppPolicyDetails_adminConfiguration)()
+    SetAuthenticationEvaluation(value *AuthenticationAppPolicyDetails_authenticationEvaluation)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetPolicyName(value *string)()
-    SetStatus(value *AuthenticationAppPolicyStatus)()
+    SetStatus(value *AuthenticationAppPolicyDetails_status)()
 }

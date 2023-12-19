@@ -180,12 +180,12 @@ func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["subjectLifecycle"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAccessPackageSubjectLifecycle)
+        val, err := n.GetEnumValue(ParseAccessPackageSubject_subjectLifecycle)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSubjectLifecycle(val.(*AccessPackageSubjectLifecycle))
+            m.SetSubjectLifecycle(val.(*AccessPackageSubject_subjectLifecycle))
         }
         return nil
     }
@@ -235,13 +235,13 @@ func (m *AccessPackageSubject) GetPrincipalName()(*string) {
     return nil
 }
 // GetSubjectLifecycle gets the subjectLifecycle property value. The lifecycle of the subject user, if a guest. The possible values are: notDefined, notGoverned, governed, unknownFutureValue.
-func (m *AccessPackageSubject) GetSubjectLifecycle()(*AccessPackageSubjectLifecycle) {
+func (m *AccessPackageSubject) GetSubjectLifecycle()(*AccessPackageSubject_subjectLifecycle) {
     val, err := m.GetBackingStore().Get("subjectLifecycle")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AccessPackageSubjectLifecycle)
+        return val.(*AccessPackageSubject_subjectLifecycle)
     }
     return nil
 }
@@ -395,7 +395,7 @@ func (m *AccessPackageSubject) SetPrincipalName(value *string)() {
     }
 }
 // SetSubjectLifecycle sets the subjectLifecycle property value. The lifecycle of the subject user, if a guest. The possible values are: notDefined, notGoverned, governed, unknownFutureValue.
-func (m *AccessPackageSubject) SetSubjectLifecycle(value *AccessPackageSubjectLifecycle)() {
+func (m *AccessPackageSubject) SetSubjectLifecycle(value *AccessPackageSubject_subjectLifecycle)() {
     err := m.GetBackingStore().Set("subjectLifecycle", value)
     if err != nil {
         panic(err)
@@ -421,7 +421,7 @@ type AccessPackageSubjectable interface {
     GetObjectId()(*string)
     GetOnPremisesSecurityIdentifier()(*string)
     GetPrincipalName()(*string)
-    GetSubjectLifecycle()(*AccessPackageSubjectLifecycle)
+    GetSubjectLifecycle()(*AccessPackageSubject_subjectLifecycle)
     GetTypeEscaped()(*string)
     SetAltSecId(value *string)()
     SetCleanupScheduledDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -432,6 +432,6 @@ type AccessPackageSubjectable interface {
     SetObjectId(value *string)()
     SetOnPremisesSecurityIdentifier(value *string)()
     SetPrincipalName(value *string)()
-    SetSubjectLifecycle(value *AccessPackageSubjectLifecycle)()
+    SetSubjectLifecycle(value *AccessPackageSubject_subjectLifecycle)()
     SetTypeEscaped(value *string)()
 }

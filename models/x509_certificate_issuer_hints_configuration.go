@@ -52,12 +52,12 @@ func (m *X509CertificateIssuerHintsConfiguration) GetFieldDeserializers()(map[st
         return nil
     }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseX509CertificateIssuerHintsState)
+        val, err := n.GetEnumValue(ParseX509CertificateIssuerHintsConfiguration_state)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetState(val.(*X509CertificateIssuerHintsState))
+            m.SetState(val.(*X509CertificateIssuerHintsConfiguration_state))
         }
         return nil
     }
@@ -75,13 +75,13 @@ func (m *X509CertificateIssuerHintsConfiguration) GetOdataType()(*string) {
     return nil
 }
 // GetState gets the state property value. The possible values are: disabled, enabled, unknownFutureValue.
-func (m *X509CertificateIssuerHintsConfiguration) GetState()(*X509CertificateIssuerHintsState) {
+func (m *X509CertificateIssuerHintsConfiguration) GetState()(*X509CertificateIssuerHintsConfiguration_state) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*X509CertificateIssuerHintsState)
+        return val.(*X509CertificateIssuerHintsConfiguration_state)
     }
     return nil
 }
@@ -127,7 +127,7 @@ func (m *X509CertificateIssuerHintsConfiguration) SetOdataType(value *string)() 
     }
 }
 // SetState sets the state property value. The possible values are: disabled, enabled, unknownFutureValue.
-func (m *X509CertificateIssuerHintsConfiguration) SetState(value *X509CertificateIssuerHintsState)() {
+func (m *X509CertificateIssuerHintsConfiguration) SetState(value *X509CertificateIssuerHintsConfiguration_state)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {
         panic(err)
@@ -140,8 +140,8 @@ type X509CertificateIssuerHintsConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
-    GetState()(*X509CertificateIssuerHintsState)
+    GetState()(*X509CertificateIssuerHintsConfiguration_state)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
-    SetState(value *X509CertificateIssuerHintsState)()
+    SetState(value *X509CertificateIssuerHintsConfiguration_state)()
 }

@@ -39,13 +39,13 @@ func (m *SafeguardProfile) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d411
     return m.backingStore
 }
 // GetCategory gets the category property value. Specifies the category of safeguards. The possible values are: likelyIssues, unknownFutureValue.
-func (m *SafeguardProfile) GetCategory()(*SafeguardCategory) {
+func (m *SafeguardProfile) GetCategory()(*SafeguardProfile_category) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SafeguardCategory)
+        return val.(*SafeguardProfile_category)
     }
     return nil
 }
@@ -53,12 +53,12 @@ func (m *SafeguardProfile) GetCategory()(*SafeguardCategory) {
 func (m *SafeguardProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSafeguardCategory)
+        val, err := n.GetEnumValue(ParseSafeguardProfile_category)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCategory(val.(*SafeguardCategory))
+            m.SetCategory(val.(*SafeguardProfile_category))
         }
         return nil
     }
@@ -120,7 +120,7 @@ func (m *SafeguardProfile) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078
     m.backingStore = value
 }
 // SetCategory sets the category property value. Specifies the category of safeguards. The possible values are: likelyIssues, unknownFutureValue.
-func (m *SafeguardProfile) SetCategory(value *SafeguardCategory)() {
+func (m *SafeguardProfile) SetCategory(value *SafeguardProfile_category)() {
     err := m.GetBackingStore().Set("category", value)
     if err != nil {
         panic(err)
@@ -139,9 +139,9 @@ type SafeguardProfileable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetCategory()(*SafeguardCategory)
+    GetCategory()(*SafeguardProfile_category)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetCategory(value *SafeguardCategory)()
+    SetCategory(value *SafeguardProfile_category)()
     SetOdataType(value *string)()
 }

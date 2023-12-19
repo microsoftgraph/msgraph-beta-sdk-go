@@ -40,13 +40,13 @@ func (m *RunDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424d
     return m.backingStore
 }
 // GetErrorCode gets the errorCode property value. The errorCode property
-func (m *RunDetails) GetErrorCode()(*HuntingRuleErrorCode) {
+func (m *RunDetails) GetErrorCode()(*RunDetails_errorCode) {
     val, err := m.GetBackingStore().Get("errorCode")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*HuntingRuleErrorCode)
+        return val.(*RunDetails_errorCode)
     }
     return nil
 }
@@ -65,12 +65,12 @@ func (m *RunDetails) GetFailureReason()(*string) {
 func (m *RunDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["errorCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseHuntingRuleErrorCode)
+        val, err := n.GetEnumValue(ParseRunDetails_errorCode)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetErrorCode(val.(*HuntingRuleErrorCode))
+            m.SetErrorCode(val.(*RunDetails_errorCode))
         }
         return nil
     }
@@ -105,12 +105,12 @@ func (m *RunDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseHuntingRuleRunStatus)
+        val, err := n.GetEnumValue(ParseRunDetails_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*HuntingRuleRunStatus))
+            m.SetStatus(val.(*RunDetails_status))
         }
         return nil
     }
@@ -139,13 +139,13 @@ func (m *RunDetails) GetOdataType()(*string) {
     return nil
 }
 // GetStatus gets the status property value. The status property
-func (m *RunDetails) GetStatus()(*HuntingRuleRunStatus) {
+func (m *RunDetails) GetStatus()(*RunDetails_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*HuntingRuleRunStatus)
+        return val.(*RunDetails_status)
     }
     return nil
 }
@@ -203,7 +203,7 @@ func (m *RunDetails) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185
     m.backingStore = value
 }
 // SetErrorCode sets the errorCode property value. The errorCode property
-func (m *RunDetails) SetErrorCode(value *HuntingRuleErrorCode)() {
+func (m *RunDetails) SetErrorCode(value *RunDetails_errorCode)() {
     err := m.GetBackingStore().Set("errorCode", value)
     if err != nil {
         panic(err)
@@ -231,7 +231,7 @@ func (m *RunDetails) SetOdataType(value *string)() {
     }
 }
 // SetStatus sets the status property value. The status property
-func (m *RunDetails) SetStatus(value *HuntingRuleRunStatus)() {
+func (m *RunDetails) SetStatus(value *RunDetails_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -243,15 +243,15 @@ type RunDetailsable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetErrorCode()(*HuntingRuleErrorCode)
+    GetErrorCode()(*RunDetails_errorCode)
     GetFailureReason()(*string)
     GetLastRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOdataType()(*string)
-    GetStatus()(*HuntingRuleRunStatus)
+    GetStatus()(*RunDetails_status)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetErrorCode(value *HuntingRuleErrorCode)()
+    SetErrorCode(value *RunDetails_errorCode)()
     SetFailureReason(value *string)()
     SetLastRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOdataType(value *string)()
-    SetStatus(value *HuntingRuleRunStatus)()
+    SetStatus(value *RunDetails_status)()
 }

@@ -39,7 +39,7 @@ func CreateVirtualEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     }
     return NewVirtualEvent(), nil
 }
-// GetCreatedBy gets the createdBy property value. Identity information of who created the virtual event. Inherited from virtualEvent.
+// GetCreatedBy gets the createdBy property value. Identity information for the creator of the virtual event. Inherited from virtualEvent.
 func (m *VirtualEvent) GetCreatedBy()(CommunicationsIdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *VirtualEvent) GetDescription()(ItemBodyable) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. Display name of the virtual event
+// GetDisplayName gets the displayName property value. Display name of the virtual event.
 func (m *VirtualEvent) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -169,18 +169,18 @@ func (m *VirtualEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVirtualEventStatus)
+        val, err := n.GetEnumValue(ParseVirtualEvent_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*VirtualEventStatus))
+            m.SetStatus(val.(*VirtualEvent_status))
         }
         return nil
     }
     return res
 }
-// GetPresenters gets the presenters property value. Presenters' information of the virtual event.
+// GetPresenters gets the presenters property value. The virtual event presenters.
 func (m *VirtualEvent) GetPresenters()([]VirtualEventPresenterable) {
     val, err := m.GetBackingStore().Get("presenters")
     if err != nil {
@@ -191,7 +191,7 @@ func (m *VirtualEvent) GetPresenters()([]VirtualEventPresenterable) {
     }
     return nil
 }
-// GetSessions gets the sessions property value. Sessions of the virtual event.
+// GetSessions gets the sessions property value. Sessions for the virtual event.
 func (m *VirtualEvent) GetSessions()([]VirtualEventSessionable) {
     val, err := m.GetBackingStore().Get("sessions")
     if err != nil {
@@ -214,13 +214,13 @@ func (m *VirtualEvent) GetStartDateTime()(DateTimeTimeZoneable) {
     return nil
 }
 // GetStatus gets the status property value. Status of the virtual event. The possible values are: draft, published, canceled, unknownFutureValue.
-func (m *VirtualEvent) GetStatus()(*VirtualEventStatus) {
+func (m *VirtualEvent) GetStatus()(*VirtualEvent_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*VirtualEventStatus)
+        return val.(*VirtualEvent_status)
     }
     return nil
 }
@@ -293,7 +293,7 @@ func (m *VirtualEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetCreatedBy sets the createdBy property value. Identity information of who created the virtual event. Inherited from virtualEvent.
+// SetCreatedBy sets the createdBy property value. Identity information for the creator of the virtual event. Inherited from virtualEvent.
 func (m *VirtualEvent) SetCreatedBy(value CommunicationsIdentitySetable)() {
     err := m.GetBackingStore().Set("createdBy", value)
     if err != nil {
@@ -307,7 +307,7 @@ func (m *VirtualEvent) SetDescription(value ItemBodyable)() {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. Display name of the virtual event
+// SetDisplayName sets the displayName property value. Display name of the virtual event.
 func (m *VirtualEvent) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -321,14 +321,14 @@ func (m *VirtualEvent) SetEndDateTime(value DateTimeTimeZoneable)() {
         panic(err)
     }
 }
-// SetPresenters sets the presenters property value. Presenters' information of the virtual event.
+// SetPresenters sets the presenters property value. The virtual event presenters.
 func (m *VirtualEvent) SetPresenters(value []VirtualEventPresenterable)() {
     err := m.GetBackingStore().Set("presenters", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSessions sets the sessions property value. Sessions of the virtual event.
+// SetSessions sets the sessions property value. Sessions for the virtual event.
 func (m *VirtualEvent) SetSessions(value []VirtualEventSessionable)() {
     err := m.GetBackingStore().Set("sessions", value)
     if err != nil {
@@ -343,7 +343,7 @@ func (m *VirtualEvent) SetStartDateTime(value DateTimeTimeZoneable)() {
     }
 }
 // SetStatus sets the status property value. Status of the virtual event. The possible values are: draft, published, canceled, unknownFutureValue.
-func (m *VirtualEvent) SetStatus(value *VirtualEventStatus)() {
+func (m *VirtualEvent) SetStatus(value *VirtualEvent_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -360,7 +360,7 @@ type VirtualEventable interface {
     GetPresenters()([]VirtualEventPresenterable)
     GetSessions()([]VirtualEventSessionable)
     GetStartDateTime()(DateTimeTimeZoneable)
-    GetStatus()(*VirtualEventStatus)
+    GetStatus()(*VirtualEvent_status)
     SetCreatedBy(value CommunicationsIdentitySetable)()
     SetDescription(value ItemBodyable)()
     SetDisplayName(value *string)()
@@ -368,5 +368,5 @@ type VirtualEventable interface {
     SetPresenters(value []VirtualEventPresenterable)()
     SetSessions(value []VirtualEventSessionable)()
     SetStartDateTime(value DateTimeTimeZoneable)()
-    SetStatus(value *VirtualEventStatus)()
+    SetStatus(value *VirtualEvent_status)()
 }

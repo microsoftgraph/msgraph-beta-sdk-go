@@ -74,24 +74,24 @@ func (m *ThreatSubmission) GetCategory()(*SubmissionCategory) {
     return nil
 }
 // GetClientSource gets the clientSource property value. Specifies the source of the submission. The possible values are: microsoft,  other and unkownFutureValue.
-func (m *ThreatSubmission) GetClientSource()(*SubmissionClientSource) {
+func (m *ThreatSubmission) GetClientSource()(*ThreatSubmission_clientSource) {
     val, err := m.GetBackingStore().Get("clientSource")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SubmissionClientSource)
+        return val.(*ThreatSubmission_clientSource)
     }
     return nil
 }
 // GetContentType gets the contentType property value. Specifies the type of content being submitted. The possible values are: email, url, file, app and unkownFutureValue.
-func (m *ThreatSubmission) GetContentType()(*SubmissionContentType) {
+func (m *ThreatSubmission) GetContentType()(*ThreatSubmission_contentType) {
     val, err := m.GetBackingStore().Get("contentType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SubmissionContentType)
+        return val.(*ThreatSubmission_contentType)
     }
     return nil
 }
@@ -141,22 +141,22 @@ func (m *ThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["clientSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSubmissionClientSource)
+        val, err := n.GetEnumValue(ParseThreatSubmission_clientSource)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetClientSource(val.(*SubmissionClientSource))
+            m.SetClientSource(val.(*ThreatSubmission_clientSource))
         }
         return nil
     }
     res["contentType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSubmissionContentType)
+        val, err := n.GetEnumValue(ParseThreatSubmission_contentType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetContentType(val.(*SubmissionContentType))
+            m.SetContentType(val.(*ThreatSubmission_contentType))
         }
         return nil
     }
@@ -191,22 +191,22 @@ func (m *ThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSubmissionSource)
+        val, err := n.GetEnumValue(ParseThreatSubmission_source)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSource(val.(*SubmissionSource))
+            m.SetSource(val.(*ThreatSubmission_source))
         }
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseLongRunningOperationStatus)
+        val, err := n.GetEnumValue(ParseThreatSubmission_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*LongRunningOperationStatus))
+            m.SetStatus(val.(*ThreatSubmission_status))
         }
         return nil
     }
@@ -234,24 +234,24 @@ func (m *ThreatSubmission) GetResult()(SubmissionResultable) {
     return nil
 }
 // GetSource gets the source property value. Specifies the role of the submitter. Supports $filter = source eq 'value'. The possible values are: administrator,  user and unkownFutureValue.
-func (m *ThreatSubmission) GetSource()(*SubmissionSource) {
+func (m *ThreatSubmission) GetSource()(*ThreatSubmission_source) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SubmissionSource)
+        return val.(*ThreatSubmission_source)
     }
     return nil
 }
 // GetStatus gets the status property value. Indicates whether the threat submission has been analyzed by Microsoft. Supports $filter = status eq 'value'. The possible values are: notStarted, running, succeeded, failed, skipped and unkownFutureValue.
-func (m *ThreatSubmission) GetStatus()(*LongRunningOperationStatus) {
+func (m *ThreatSubmission) GetStatus()(*ThreatSubmission_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*LongRunningOperationStatus)
+        return val.(*ThreatSubmission_status)
     }
     return nil
 }
@@ -354,14 +354,14 @@ func (m *ThreatSubmission) SetCategory(value *SubmissionCategory)() {
     }
 }
 // SetClientSource sets the clientSource property value. Specifies the source of the submission. The possible values are: microsoft,  other and unkownFutureValue.
-func (m *ThreatSubmission) SetClientSource(value *SubmissionClientSource)() {
+func (m *ThreatSubmission) SetClientSource(value *ThreatSubmission_clientSource)() {
     err := m.GetBackingStore().Set("clientSource", value)
     if err != nil {
         panic(err)
     }
 }
 // SetContentType sets the contentType property value. Specifies the type of content being submitted. The possible values are: email, url, file, app and unkownFutureValue.
-func (m *ThreatSubmission) SetContentType(value *SubmissionContentType)() {
+func (m *ThreatSubmission) SetContentType(value *ThreatSubmission_contentType)() {
     err := m.GetBackingStore().Set("contentType", value)
     if err != nil {
         panic(err)
@@ -389,14 +389,14 @@ func (m *ThreatSubmission) SetResult(value SubmissionResultable)() {
     }
 }
 // SetSource sets the source property value. Specifies the role of the submitter. Supports $filter = source eq 'value'. The possible values are: administrator,  user and unkownFutureValue.
-func (m *ThreatSubmission) SetSource(value *SubmissionSource)() {
+func (m *ThreatSubmission) SetSource(value *ThreatSubmission_source)() {
     err := m.GetBackingStore().Set("source", value)
     if err != nil {
         panic(err)
     }
 }
 // SetStatus sets the status property value. Indicates whether the threat submission has been analyzed by Microsoft. Supports $filter = status eq 'value'. The possible values are: notStarted, running, succeeded, failed, skipped and unkownFutureValue.
-func (m *ThreatSubmission) SetStatus(value *LongRunningOperationStatus)() {
+func (m *ThreatSubmission) SetStatus(value *ThreatSubmission_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -415,22 +415,22 @@ type ThreatSubmissionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAdminReview()(SubmissionAdminReviewable)
     GetCategory()(*SubmissionCategory)
-    GetClientSource()(*SubmissionClientSource)
-    GetContentType()(*SubmissionContentType)
+    GetClientSource()(*ThreatSubmission_clientSource)
+    GetContentType()(*ThreatSubmission_contentType)
     GetCreatedBy()(SubmissionUserIdentityable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetResult()(SubmissionResultable)
-    GetSource()(*SubmissionSource)
-    GetStatus()(*LongRunningOperationStatus)
+    GetSource()(*ThreatSubmission_source)
+    GetStatus()(*ThreatSubmission_status)
     GetTenantId()(*string)
     SetAdminReview(value SubmissionAdminReviewable)()
     SetCategory(value *SubmissionCategory)()
-    SetClientSource(value *SubmissionClientSource)()
-    SetContentType(value *SubmissionContentType)()
+    SetClientSource(value *ThreatSubmission_clientSource)()
+    SetContentType(value *ThreatSubmission_contentType)()
     SetCreatedBy(value SubmissionUserIdentityable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetResult(value SubmissionResultable)()
-    SetSource(value *SubmissionSource)()
-    SetStatus(value *LongRunningOperationStatus)()
+    SetSource(value *ThreatSubmission_source)()
+    SetStatus(value *ThreatSubmission_status)()
     SetTenantId(value *string)()
 }

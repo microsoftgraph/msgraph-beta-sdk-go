@@ -203,12 +203,12 @@ func (m *LegalHold) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseLegalHoldStatus)
+        val, err := n.GetEnumValue(ParseLegalHold_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*LegalHoldStatus))
+            m.SetStatus(val.(*LegalHold_status))
         }
         return nil
     }
@@ -291,13 +291,13 @@ func (m *LegalHold) GetSiteSources()([]SiteSourceable) {
     return nil
 }
 // GetStatus gets the status property value. The status of the legal hold. Possible values are: Pending, Error, Success, UnknownFutureValue.
-func (m *LegalHold) GetStatus()(*LegalHoldStatus) {
+func (m *LegalHold) GetStatus()(*LegalHold_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*LegalHoldStatus)
+        return val.(*LegalHold_status)
     }
     return nil
 }
@@ -499,7 +499,7 @@ func (m *LegalHold) SetSiteSources(value []SiteSourceable)() {
     }
 }
 // SetStatus sets the status property value. The status of the legal hold. Possible values are: Pending, Error, Success, UnknownFutureValue.
-func (m *LegalHold) SetStatus(value *LegalHoldStatus)() {
+func (m *LegalHold) SetStatus(value *LegalHold_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -533,7 +533,7 @@ type LegalHoldable interface {
     GetLastModifiedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSiteSources()([]SiteSourceable)
-    GetStatus()(*LegalHoldStatus)
+    GetStatus()(*LegalHold_status)
     GetUnifiedGroupSources()([]UnifiedGroupSourceable)
     GetUserSources()([]UserSourceable)
     SetContentQuery(value *string)()
@@ -546,7 +546,7 @@ type LegalHoldable interface {
     SetLastModifiedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSiteSources(value []SiteSourceable)()
-    SetStatus(value *LegalHoldStatus)()
+    SetStatus(value *LegalHold_status)()
     SetUnifiedGroupSources(value []UnifiedGroupSourceable)()
     SetUserSources(value []UserSourceable)()
 }

@@ -53,24 +53,24 @@ func (m *CaseExportOperation) GetDescription()(*string) {
     return nil
 }
 // GetExportOptions gets the exportOptions property value. The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
-func (m *CaseExportOperation) GetExportOptions()(*ExportOptions) {
+func (m *CaseExportOperation) GetExportOptions()(*CaseExportOperation_exportOptions) {
     val, err := m.GetBackingStore().Get("exportOptions")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ExportOptions)
+        return val.(*CaseExportOperation_exportOptions)
     }
     return nil
 }
 // GetExportStructure gets the exportStructure property value. The options provided specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.
-func (m *CaseExportOperation) GetExportStructure()(*ExportFileStructure) {
+func (m *CaseExportOperation) GetExportStructure()(*CaseExportOperation_exportStructure) {
     val, err := m.GetBackingStore().Get("exportStructure")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ExportFileStructure)
+        return val.(*CaseExportOperation_exportStructure)
     }
     return nil
 }
@@ -108,22 +108,22 @@ func (m *CaseExportOperation) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["exportOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseExportOptions)
+        val, err := n.GetEnumValue(ParseCaseExportOperation_exportOptions)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetExportOptions(val.(*ExportOptions))
+            m.SetExportOptions(val.(*CaseExportOperation_exportOptions))
         }
         return nil
     }
     res["exportStructure"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseExportFileStructure)
+        val, err := n.GetEnumValue(ParseCaseExportOperation_exportStructure)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetExportStructure(val.(*ExportFileStructure))
+            m.SetExportStructure(val.(*CaseExportOperation_exportStructure))
         }
         return nil
     }
@@ -272,14 +272,14 @@ func (m *CaseExportOperation) SetDescription(value *string)() {
     }
 }
 // SetExportOptions sets the exportOptions property value. The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
-func (m *CaseExportOperation) SetExportOptions(value *ExportOptions)() {
+func (m *CaseExportOperation) SetExportOptions(value *CaseExportOperation_exportOptions)() {
     err := m.GetBackingStore().Set("exportOptions", value)
     if err != nil {
         panic(err)
     }
 }
 // SetExportStructure sets the exportStructure property value. The options provided specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.
-func (m *CaseExportOperation) SetExportStructure(value *ExportFileStructure)() {
+func (m *CaseExportOperation) SetExportStructure(value *CaseExportOperation_exportStructure)() {
     err := m.GetBackingStore().Set("exportStructure", value)
     if err != nil {
         panic(err)
@@ -313,16 +313,16 @@ type CaseExportOperationable interface {
     GetAzureBlobContainer()(*string)
     GetAzureBlobToken()(*string)
     GetDescription()(*string)
-    GetExportOptions()(*ExportOptions)
-    GetExportStructure()(*ExportFileStructure)
+    GetExportOptions()(*CaseExportOperation_exportOptions)
+    GetExportStructure()(*CaseExportOperation_exportStructure)
     GetOutputFolderId()(*string)
     GetOutputName()(*string)
     GetReviewSet()(ReviewSetable)
     SetAzureBlobContainer(value *string)()
     SetAzureBlobToken(value *string)()
     SetDescription(value *string)()
-    SetExportOptions(value *ExportOptions)()
-    SetExportStructure(value *ExportFileStructure)()
+    SetExportOptions(value *CaseExportOperation_exportOptions)()
+    SetExportStructure(value *CaseExportOperation_exportStructure)()
     SetOutputFolderId(value *string)()
     SetOutputName(value *string)()
     SetReviewSet(value ReviewSetable)()

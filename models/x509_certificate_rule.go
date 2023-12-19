@@ -82,32 +82,32 @@ func (m *X509CertificateRule) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["x509CertificateAuthenticationMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseX509CertificateAuthenticationMode)
+        val, err := n.GetEnumValue(ParseX509CertificateRule_x509CertificateAuthenticationMode)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetX509CertificateAuthenticationMode(val.(*X509CertificateAuthenticationMode))
+            m.SetX509CertificateAuthenticationMode(val.(*X509CertificateRule_x509CertificateAuthenticationMode))
         }
         return nil
     }
     res["x509CertificateRequiredAffinityLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseX509CertificateAffinityLevel)
+        val, err := n.GetEnumValue(ParseX509CertificateRule_x509CertificateRequiredAffinityLevel)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetX509CertificateRequiredAffinityLevel(val.(*X509CertificateAffinityLevel))
+            m.SetX509CertificateRequiredAffinityLevel(val.(*X509CertificateRule_x509CertificateRequiredAffinityLevel))
         }
         return nil
     }
     res["x509CertificateRuleType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseX509CertificateRuleType)
+        val, err := n.GetEnumValue(ParseX509CertificateRule_x509CertificateRuleType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetX509CertificateRuleType(val.(*X509CertificateRuleType))
+            m.SetX509CertificateRuleType(val.(*X509CertificateRule_x509CertificateRuleType))
         }
         return nil
     }
@@ -158,35 +158,35 @@ func (m *X509CertificateRule) GetPolicyOidIdentifier()(*string) {
     return nil
 }
 // GetX509CertificateAuthenticationMode gets the x509CertificateAuthenticationMode property value. The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue. Required.
-func (m *X509CertificateRule) GetX509CertificateAuthenticationMode()(*X509CertificateAuthenticationMode) {
+func (m *X509CertificateRule) GetX509CertificateAuthenticationMode()(*X509CertificateRule_x509CertificateAuthenticationMode) {
     val, err := m.GetBackingStore().Get("x509CertificateAuthenticationMode")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*X509CertificateAuthenticationMode)
+        return val.(*X509CertificateRule_x509CertificateAuthenticationMode)
     }
     return nil
 }
 // GetX509CertificateRequiredAffinityLevel gets the x509CertificateRequiredAffinityLevel property value. The possible values are: low, high, unknownFutureValue.
-func (m *X509CertificateRule) GetX509CertificateRequiredAffinityLevel()(*X509CertificateAffinityLevel) {
+func (m *X509CertificateRule) GetX509CertificateRequiredAffinityLevel()(*X509CertificateRule_x509CertificateRequiredAffinityLevel) {
     val, err := m.GetBackingStore().Get("x509CertificateRequiredAffinityLevel")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*X509CertificateAffinityLevel)
+        return val.(*X509CertificateRule_x509CertificateRequiredAffinityLevel)
     }
     return nil
 }
 // GetX509CertificateRuleType gets the x509CertificateRuleType property value. The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue, issuerSubjectAndPolicyOID. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: issuerSubjectAndPolicyOID. Required.
-func (m *X509CertificateRule) GetX509CertificateRuleType()(*X509CertificateRuleType) {
+func (m *X509CertificateRule) GetX509CertificateRuleType()(*X509CertificateRule_x509CertificateRuleType) {
     val, err := m.GetBackingStore().Get("x509CertificateRuleType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*X509CertificateRuleType)
+        return val.(*X509CertificateRule_x509CertificateRuleType)
     }
     return nil
 }
@@ -285,21 +285,21 @@ func (m *X509CertificateRule) SetPolicyOidIdentifier(value *string)() {
     }
 }
 // SetX509CertificateAuthenticationMode sets the x509CertificateAuthenticationMode property value. The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue. Required.
-func (m *X509CertificateRule) SetX509CertificateAuthenticationMode(value *X509CertificateAuthenticationMode)() {
+func (m *X509CertificateRule) SetX509CertificateAuthenticationMode(value *X509CertificateRule_x509CertificateAuthenticationMode)() {
     err := m.GetBackingStore().Set("x509CertificateAuthenticationMode", value)
     if err != nil {
         panic(err)
     }
 }
 // SetX509CertificateRequiredAffinityLevel sets the x509CertificateRequiredAffinityLevel property value. The possible values are: low, high, unknownFutureValue.
-func (m *X509CertificateRule) SetX509CertificateRequiredAffinityLevel(value *X509CertificateAffinityLevel)() {
+func (m *X509CertificateRule) SetX509CertificateRequiredAffinityLevel(value *X509CertificateRule_x509CertificateRequiredAffinityLevel)() {
     err := m.GetBackingStore().Set("x509CertificateRequiredAffinityLevel", value)
     if err != nil {
         panic(err)
     }
 }
 // SetX509CertificateRuleType sets the x509CertificateRuleType property value. The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue, issuerSubjectAndPolicyOID. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: issuerSubjectAndPolicyOID. Required.
-func (m *X509CertificateRule) SetX509CertificateRuleType(value *X509CertificateRuleType)() {
+func (m *X509CertificateRule) SetX509CertificateRuleType(value *X509CertificateRule_x509CertificateRuleType)() {
     err := m.GetBackingStore().Set("x509CertificateRuleType", value)
     if err != nil {
         panic(err)
@@ -315,15 +315,15 @@ type X509CertificateRuleable interface {
     GetIssuerSubjectIdentifier()(*string)
     GetOdataType()(*string)
     GetPolicyOidIdentifier()(*string)
-    GetX509CertificateAuthenticationMode()(*X509CertificateAuthenticationMode)
-    GetX509CertificateRequiredAffinityLevel()(*X509CertificateAffinityLevel)
-    GetX509CertificateRuleType()(*X509CertificateRuleType)
+    GetX509CertificateAuthenticationMode()(*X509CertificateRule_x509CertificateAuthenticationMode)
+    GetX509CertificateRequiredAffinityLevel()(*X509CertificateRule_x509CertificateRequiredAffinityLevel)
+    GetX509CertificateRuleType()(*X509CertificateRule_x509CertificateRuleType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetIdentifier(value *string)()
     SetIssuerSubjectIdentifier(value *string)()
     SetOdataType(value *string)()
     SetPolicyOidIdentifier(value *string)()
-    SetX509CertificateAuthenticationMode(value *X509CertificateAuthenticationMode)()
-    SetX509CertificateRequiredAffinityLevel(value *X509CertificateAffinityLevel)()
-    SetX509CertificateRuleType(value *X509CertificateRuleType)()
+    SetX509CertificateAuthenticationMode(value *X509CertificateRule_x509CertificateAuthenticationMode)()
+    SetX509CertificateRequiredAffinityLevel(value *X509CertificateRule_x509CertificateRequiredAffinityLevel)()
+    SetX509CertificateRuleType(value *X509CertificateRule_x509CertificateRuleType)()
 }

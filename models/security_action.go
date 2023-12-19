@@ -223,12 +223,12 @@ func (m *SecurityAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOperationStatus)
+        val, err := n.GetEnumValue(ParseSecurityAction_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*OperationStatus))
+            m.SetStatus(val.(*SecurityAction_status))
         }
         return nil
     }
@@ -299,13 +299,13 @@ func (m *SecurityAction) GetStates()([]SecurityActionStateable) {
     return nil
 }
 // GetStatus gets the status property value. Status of the action. Possible values are: NotStarted, Running, Completed, Failed.
-func (m *SecurityAction) GetStatus()(*OperationStatus) {
+func (m *SecurityAction) GetStatus()(*SecurityAction_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*OperationStatus)
+        return val.(*SecurityAction_status)
     }
     return nil
 }
@@ -514,7 +514,7 @@ func (m *SecurityAction) SetStates(value []SecurityActionStateable)() {
     }
 }
 // SetStatus sets the status property value. Status of the action. Possible values are: NotStarted, Running, Completed, Failed.
-func (m *SecurityAction) SetStatus(value *OperationStatus)() {
+func (m *SecurityAction) SetStatus(value *SecurityAction_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -549,7 +549,7 @@ type SecurityActionable interface {
     GetName()(*string)
     GetParameters()([]KeyValuePairable)
     GetStates()([]SecurityActionStateable)
-    GetStatus()(*OperationStatus)
+    GetStatus()(*SecurityAction_status)
     GetUser()(*string)
     GetVendorInformation()(SecurityVendorInformationable)
     SetActionReason(value *string)()
@@ -563,7 +563,7 @@ type SecurityActionable interface {
     SetName(value *string)()
     SetParameters(value []KeyValuePairable)()
     SetStates(value []SecurityActionStateable)()
-    SetStatus(value *OperationStatus)()
+    SetStatus(value *SecurityAction_status)()
     SetUser(value *string)()
     SetVendorInformation(value SecurityVendorInformationable)()
 }

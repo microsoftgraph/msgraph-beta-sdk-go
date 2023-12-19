@@ -159,12 +159,12 @@ func (m *EducationSynchronizationProfile) GetFieldDeserializers()(map[string]fun
         return nil
     }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEducationSynchronizationProfileState)
+        val, err := n.GetEnumValue(ParseEducationSynchronizationProfile_state)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetState(val.(*EducationSynchronizationProfileState))
+            m.SetState(val.(*EducationSynchronizationProfile_state))
         }
         return nil
     }
@@ -215,13 +215,13 @@ func (m *EducationSynchronizationProfile) GetProfileStatus()(EducationSynchroniz
     return nil
 }
 // GetState gets the state property value. The state of the profile. Possible values are: provisioning, provisioned, provisioningFailed, deleting, deletionFailed.
-func (m *EducationSynchronizationProfile) GetState()(*EducationSynchronizationProfileState) {
+func (m *EducationSynchronizationProfile) GetState()(*EducationSynchronizationProfile_state) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EducationSynchronizationProfileState)
+        return val.(*EducationSynchronizationProfile_state)
     }
     return nil
 }
@@ -357,7 +357,7 @@ func (m *EducationSynchronizationProfile) SetProfileStatus(value EducationSynchr
     }
 }
 // SetState sets the state property value. The state of the profile. Possible values are: provisioning, provisioned, provisioningFailed, deleting, deletionFailed.
-func (m *EducationSynchronizationProfile) SetState(value *EducationSynchronizationProfileState)() {
+func (m *EducationSynchronizationProfile) SetState(value *EducationSynchronizationProfile_state)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {
         panic(err)
@@ -375,7 +375,7 @@ type EducationSynchronizationProfileable interface {
     GetIdentitySynchronizationConfiguration()(EducationIdentitySynchronizationConfigurationable)
     GetLicensesToAssign()([]EducationSynchronizationLicenseAssignmentable)
     GetProfileStatus()(EducationSynchronizationProfileStatusable)
-    GetState()(*EducationSynchronizationProfileState)
+    GetState()(*EducationSynchronizationProfile_state)
     SetDataProvider(value EducationSynchronizationDataProviderable)()
     SetDisplayName(value *string)()
     SetErrors(value []EducationSynchronizationErrorable)()
@@ -384,5 +384,5 @@ type EducationSynchronizationProfileable interface {
     SetIdentitySynchronizationConfiguration(value EducationIdentitySynchronizationConfigurationable)()
     SetLicensesToAssign(value []EducationSynchronizationLicenseAssignmentable)()
     SetProfileStatus(value EducationSynchronizationProfileStatusable)()
-    SetState(value *EducationSynchronizationProfileState)()
+    SetState(value *EducationSynchronizationProfile_state)()
 }

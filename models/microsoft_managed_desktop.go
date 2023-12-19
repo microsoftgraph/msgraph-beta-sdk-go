@@ -41,6 +41,16 @@ func (m *MicrosoftManagedDesktop) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MicrosoftManagedDesktop) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["managedType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseMicrosoftManagedDesktop_managedType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetManagedType(val.(*MicrosoftManagedDesktop_managedType))
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -62,16 +72,27 @@ func (m *MicrosoftManagedDesktop) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMicrosoftManagedDesktopType)
+        val, err := n.GetEnumValue(ParseMicrosoftManagedDesktop_type)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTypeEscaped(val.(*MicrosoftManagedDesktopType))
+            m.SetTypeEscaped(val.(*MicrosoftManagedDesktop_type))
         }
         return nil
     }
     return res
+}
+// GetManagedType gets the managedType property value. The managedType property
+func (m *MicrosoftManagedDesktop) GetManagedType()(*MicrosoftManagedDesktop_managedType) {
+    val, err := m.GetBackingStore().Get("managedType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MicrosoftManagedDesktop_managedType)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MicrosoftManagedDesktop) GetOdataType()(*string) {
@@ -96,18 +117,25 @@ func (m *MicrosoftManagedDesktop) GetProfile()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. Indicates whether the provisioning policy enables Microsoft Managed Desktop. It indicates the type of plan under which the device is managed if the provisioning policy is enabled. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue.
-func (m *MicrosoftManagedDesktop) GetTypeEscaped()(*MicrosoftManagedDesktopType) {
+func (m *MicrosoftManagedDesktop) GetTypeEscaped()(*MicrosoftManagedDesktop_type) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MicrosoftManagedDesktopType)
+        return val.(*MicrosoftManagedDesktop_type)
     }
     return nil
 }
 // Serialize serializes information the current object
 func (m *MicrosoftManagedDesktop) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetManagedType() != nil {
+        cast := (*m.GetManagedType()).String()
+        err := writer.WriteStringValue("managedType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
@@ -146,6 +174,13 @@ func (m *MicrosoftManagedDesktop) SetAdditionalData(value map[string]any)() {
 func (m *MicrosoftManagedDesktop) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetManagedType sets the managedType property value. The managedType property
+func (m *MicrosoftManagedDesktop) SetManagedType(value *MicrosoftManagedDesktop_managedType)() {
+    err := m.GetBackingStore().Set("managedType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MicrosoftManagedDesktop) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -161,7 +196,7 @@ func (m *MicrosoftManagedDesktop) SetProfile(value *string)() {
     }
 }
 // SetTypeEscaped sets the type property value. Indicates whether the provisioning policy enables Microsoft Managed Desktop. It indicates the type of plan under which the device is managed if the provisioning policy is enabled. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue.
-func (m *MicrosoftManagedDesktop) SetTypeEscaped(value *MicrosoftManagedDesktopType)() {
+func (m *MicrosoftManagedDesktop) SetTypeEscaped(value *MicrosoftManagedDesktop_type)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -173,11 +208,13 @@ type MicrosoftManagedDesktopable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetManagedType()(*MicrosoftManagedDesktop_managedType)
     GetOdataType()(*string)
     GetProfile()(*string)
-    GetTypeEscaped()(*MicrosoftManagedDesktopType)
+    GetTypeEscaped()(*MicrosoftManagedDesktop_type)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetManagedType(value *MicrosoftManagedDesktop_managedType)()
     SetOdataType(value *string)()
     SetProfile(value *string)()
-    SetTypeEscaped(value *MicrosoftManagedDesktopType)()
+    SetTypeEscaped(value *MicrosoftManagedDesktop_type)()
 }

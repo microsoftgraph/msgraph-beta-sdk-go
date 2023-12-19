@@ -56,13 +56,13 @@ func (m *AuthorizationPolicy) GetAllowEmailVerifiedUsersToJoinOrganization()(*bo
     return nil
 }
 // GetAllowInvitesFrom gets the allowInvitesFrom property value. Indicates who can invite guests to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone. everyone is the default setting for all cloud environments except US Government. See more in the table below.
-func (m *AuthorizationPolicy) GetAllowInvitesFrom()(*AllowInvitesFrom) {
+func (m *AuthorizationPolicy) GetAllowInvitesFrom()(*AuthorizationPolicy_allowInvitesFrom) {
     val, err := m.GetBackingStore().Get("allowInvitesFrom")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AllowInvitesFrom)
+        return val.(*AuthorizationPolicy_allowInvitesFrom)
     }
     return nil
 }
@@ -155,12 +155,12 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["allowInvitesFrom"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAllowInvitesFrom)
+        val, err := n.GetEnumValue(ParseAuthorizationPolicy_allowInvitesFrom)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAllowInvitesFrom(val.(*AllowInvitesFrom))
+            m.SetAllowInvitesFrom(val.(*AuthorizationPolicy_allowInvitesFrom))
         }
         return nil
     }
@@ -379,7 +379,7 @@ func (m *AuthorizationPolicy) SetAllowEmailVerifiedUsersToJoinOrganization(value
     }
 }
 // SetAllowInvitesFrom sets the allowInvitesFrom property value. Indicates who can invite guests to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone. everyone is the default setting for all cloud environments except US Government. See more in the table below.
-func (m *AuthorizationPolicy) SetAllowInvitesFrom(value *AllowInvitesFrom)() {
+func (m *AuthorizationPolicy) SetAllowInvitesFrom(value *AuthorizationPolicy_allowInvitesFrom)() {
     err := m.GetBackingStore().Set("allowInvitesFrom", value)
     if err != nil {
         panic(err)
@@ -441,7 +441,7 @@ type AuthorizationPolicyable interface {
     GetAllowedToSignUpEmailBasedSubscriptions()(*bool)
     GetAllowedToUseSSPR()(*bool)
     GetAllowEmailVerifiedUsersToJoinOrganization()(*bool)
-    GetAllowInvitesFrom()(*AllowInvitesFrom)
+    GetAllowInvitesFrom()(*AuthorizationPolicy_allowInvitesFrom)
     GetAllowUserConsentForRiskyApps()(*bool)
     GetBlockMsolPowerShell()(*bool)
     GetDefaultUserRoleOverrides()([]DefaultUserRoleOverrideable)
@@ -452,7 +452,7 @@ type AuthorizationPolicyable interface {
     SetAllowedToSignUpEmailBasedSubscriptions(value *bool)()
     SetAllowedToUseSSPR(value *bool)()
     SetAllowEmailVerifiedUsersToJoinOrganization(value *bool)()
-    SetAllowInvitesFrom(value *AllowInvitesFrom)()
+    SetAllowInvitesFrom(value *AuthorizationPolicy_allowInvitesFrom)()
     SetAllowUserConsentForRiskyApps(value *bool)()
     SetBlockMsolPowerShell(value *bool)()
     SetDefaultUserRoleOverrides(value []DefaultUserRoleOverrideable)()

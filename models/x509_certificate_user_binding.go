@@ -62,12 +62,12 @@ func (m *X509CertificateUserBinding) GetFieldDeserializers()(map[string]func(i87
         return nil
     }
     res["trustAffinityLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseX509CertificateAffinityLevel)
+        val, err := n.GetEnumValue(ParseX509CertificateUserBinding_trustAffinityLevel)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTrustAffinityLevel(val.(*X509CertificateAffinityLevel))
+            m.SetTrustAffinityLevel(val.(*X509CertificateUserBinding_trustAffinityLevel))
         }
         return nil
     }
@@ -116,13 +116,13 @@ func (m *X509CertificateUserBinding) GetPriority()(*int32) {
     return nil
 }
 // GetTrustAffinityLevel gets the trustAffinityLevel property value. The affinity level of the username binding rule. The possible values are: low, high, unknownFutureValue.
-func (m *X509CertificateUserBinding) GetTrustAffinityLevel()(*X509CertificateAffinityLevel) {
+func (m *X509CertificateUserBinding) GetTrustAffinityLevel()(*X509CertificateUserBinding_trustAffinityLevel) {
     val, err := m.GetBackingStore().Get("trustAffinityLevel")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*X509CertificateAffinityLevel)
+        return val.(*X509CertificateUserBinding_trustAffinityLevel)
     }
     return nil
 }
@@ -215,7 +215,7 @@ func (m *X509CertificateUserBinding) SetPriority(value *int32)() {
     }
 }
 // SetTrustAffinityLevel sets the trustAffinityLevel property value. The affinity level of the username binding rule. The possible values are: low, high, unknownFutureValue.
-func (m *X509CertificateUserBinding) SetTrustAffinityLevel(value *X509CertificateAffinityLevel)() {
+func (m *X509CertificateUserBinding) SetTrustAffinityLevel(value *X509CertificateUserBinding_trustAffinityLevel)() {
     err := m.GetBackingStore().Set("trustAffinityLevel", value)
     if err != nil {
         panic(err)
@@ -243,13 +243,13 @@ type X509CertificateUserBindingable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetPriority()(*int32)
-    GetTrustAffinityLevel()(*X509CertificateAffinityLevel)
+    GetTrustAffinityLevel()(*X509CertificateUserBinding_trustAffinityLevel)
     GetUserProperty()(*string)
     GetX509CertificateField()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetPriority(value *int32)()
-    SetTrustAffinityLevel(value *X509CertificateAffinityLevel)()
+    SetTrustAffinityLevel(value *X509CertificateUserBinding_trustAffinityLevel)()
     SetUserProperty(value *string)()
     SetX509CertificateField(value *string)()
 }

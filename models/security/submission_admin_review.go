@@ -73,12 +73,12 @@ func (m *SubmissionAdminReview) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     res["reviewResult"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSubmissionResultCategory)
+        val, err := n.GetEnumValue(ParseSubmissionAdminReview_reviewResult)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetReviewResult(val.(*SubmissionResultCategory))
+            m.SetReviewResult(val.(*SubmissionAdminReview_reviewResult))
         }
         return nil
     }
@@ -118,13 +118,13 @@ func (m *SubmissionAdminReview) GetReviewDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetReviewResult gets the reviewResult property value. Specifies what the review result was. The possible values are: notJunk, spam, phishing, malware, allowedByPolicy, blockedByPolicy, spoof, unknown, noResultAvailable, and unknownFutureValue.
-func (m *SubmissionAdminReview) GetReviewResult()(*SubmissionResultCategory) {
+func (m *SubmissionAdminReview) GetReviewResult()(*SubmissionAdminReview_reviewResult) {
     val, err := m.GetBackingStore().Get("reviewResult")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SubmissionResultCategory)
+        return val.(*SubmissionAdminReview_reviewResult)
     }
     return nil
 }
@@ -196,7 +196,7 @@ func (m *SubmissionAdminReview) SetReviewDateTime(value *i336074805fc853987abe6f
     }
 }
 // SetReviewResult sets the reviewResult property value. Specifies what the review result was. The possible values are: notJunk, spam, phishing, malware, allowedByPolicy, blockedByPolicy, spoof, unknown, noResultAvailable, and unknownFutureValue.
-func (m *SubmissionAdminReview) SetReviewResult(value *SubmissionResultCategory)() {
+func (m *SubmissionAdminReview) SetReviewResult(value *SubmissionAdminReview_reviewResult)() {
     err := m.GetBackingStore().Set("reviewResult", value)
     if err != nil {
         panic(err)
@@ -211,10 +211,10 @@ type SubmissionAdminReviewable interface {
     GetOdataType()(*string)
     GetReviewBy()(*string)
     GetReviewDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetReviewResult()(*SubmissionResultCategory)
+    GetReviewResult()(*SubmissionAdminReview_reviewResult)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetReviewBy(value *string)()
     SetReviewDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetReviewResult(value *SubmissionResultCategory)()
+    SetReviewResult(value *SubmissionAdminReview_reviewResult)()
 }

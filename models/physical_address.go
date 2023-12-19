@@ -134,12 +134,12 @@ func (m *PhysicalAddress) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePhysicalAddressType)
+        val, err := n.GetEnumValue(ParsePhysicalAddress_type)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTypeEscaped(val.(*PhysicalAddressType))
+            m.SetTypeEscaped(val.(*PhysicalAddress_type))
         }
         return nil
     }
@@ -201,13 +201,13 @@ func (m *PhysicalAddress) GetStreet()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type of address. Possible values are: unknown, home, business, other.
-func (m *PhysicalAddress) GetTypeEscaped()(*PhysicalAddressType) {
+func (m *PhysicalAddress) GetTypeEscaped()(*PhysicalAddress_type) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PhysicalAddressType)
+        return val.(*PhysicalAddress_type)
     }
     return nil
 }
@@ -331,7 +331,7 @@ func (m *PhysicalAddress) SetStreet(value *string)() {
     }
 }
 // SetTypeEscaped sets the type property value. The type of address. Possible values are: unknown, home, business, other.
-func (m *PhysicalAddress) SetTypeEscaped(value *PhysicalAddressType)() {
+func (m *PhysicalAddress) SetTypeEscaped(value *PhysicalAddress_type)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -350,7 +350,7 @@ type PhysicalAddressable interface {
     GetPostOfficeBox()(*string)
     GetState()(*string)
     GetStreet()(*string)
-    GetTypeEscaped()(*PhysicalAddressType)
+    GetTypeEscaped()(*PhysicalAddress_type)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCity(value *string)()
     SetCountryOrRegion(value *string)()
@@ -359,5 +359,5 @@ type PhysicalAddressable interface {
     SetPostOfficeBox(value *string)()
     SetState(value *string)()
     SetStreet(value *string)()
-    SetTypeEscaped(value *PhysicalAddressType)()
+    SetTypeEscaped(value *PhysicalAddress_type)()
 }

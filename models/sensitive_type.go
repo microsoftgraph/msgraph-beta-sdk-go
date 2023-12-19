@@ -20,13 +20,13 @@ func CreateSensitiveTypeFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewSensitiveType(), nil
 }
 // GetClassificationMethod gets the classificationMethod property value. The classificationMethod property
-func (m *SensitiveType) GetClassificationMethod()(*ClassificationMethod) {
+func (m *SensitiveType) GetClassificationMethod()(*SensitiveType_classificationMethod) {
     val, err := m.GetBackingStore().Get("classificationMethod")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ClassificationMethod)
+        return val.(*SensitiveType_classificationMethod)
     }
     return nil
 }
@@ -45,12 +45,12 @@ func (m *SensitiveType) GetDescription()(*string) {
 func (m *SensitiveType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["classificationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseClassificationMethod)
+        val, err := n.GetEnumValue(ParseSensitiveType_classificationMethod)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetClassificationMethod(val.(*ClassificationMethod))
+            m.SetClassificationMethod(val.(*SensitiveType_classificationMethod))
         }
         return nil
     }
@@ -105,22 +105,22 @@ func (m *SensitiveType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["scope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSensitiveTypeScope)
+        val, err := n.GetEnumValue(ParseSensitiveType_scope)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetScope(val.(*SensitiveTypeScope))
+            m.SetScope(val.(*SensitiveType_scope))
         }
         return nil
     }
     res["sensitiveTypeSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSensitiveTypeSource)
+        val, err := n.GetEnumValue(ParseSensitiveType_sensitiveTypeSource)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSensitiveTypeSource(val.(*SensitiveTypeSource))
+            m.SetSensitiveTypeSource(val.(*SensitiveType_sensitiveTypeSource))
         }
         return nil
     }
@@ -181,24 +181,24 @@ func (m *SensitiveType) GetRulePackageType()(*string) {
     return nil
 }
 // GetScope gets the scope property value. The scope property
-func (m *SensitiveType) GetScope()(*SensitiveTypeScope) {
+func (m *SensitiveType) GetScope()(*SensitiveType_scope) {
     val, err := m.GetBackingStore().Get("scope")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SensitiveTypeScope)
+        return val.(*SensitiveType_scope)
     }
     return nil
 }
 // GetSensitiveTypeSource gets the sensitiveTypeSource property value. The sensitiveTypeSource property
-func (m *SensitiveType) GetSensitiveTypeSource()(*SensitiveTypeSource) {
+func (m *SensitiveType) GetSensitiveTypeSource()(*SensitiveType_sensitiveTypeSource) {
     val, err := m.GetBackingStore().Get("sensitiveTypeSource")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SensitiveTypeSource)
+        return val.(*SensitiveType_sensitiveTypeSource)
     }
     return nil
 }
@@ -279,7 +279,7 @@ func (m *SensitiveType) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetClassificationMethod sets the classificationMethod property value. The classificationMethod property
-func (m *SensitiveType) SetClassificationMethod(value *ClassificationMethod)() {
+func (m *SensitiveType) SetClassificationMethod(value *SensitiveType_classificationMethod)() {
     err := m.GetBackingStore().Set("classificationMethod", value)
     if err != nil {
         panic(err)
@@ -321,14 +321,14 @@ func (m *SensitiveType) SetRulePackageType(value *string)() {
     }
 }
 // SetScope sets the scope property value. The scope property
-func (m *SensitiveType) SetScope(value *SensitiveTypeScope)() {
+func (m *SensitiveType) SetScope(value *SensitiveType_scope)() {
     err := m.GetBackingStore().Set("scope", value)
     if err != nil {
         panic(err)
     }
 }
 // SetSensitiveTypeSource sets the sensitiveTypeSource property value. The sensitiveTypeSource property
-func (m *SensitiveType) SetSensitiveTypeSource(value *SensitiveTypeSource)() {
+func (m *SensitiveType) SetSensitiveTypeSource(value *SensitiveType_sensitiveTypeSource)() {
     err := m.GetBackingStore().Set("sensitiveTypeSource", value)
     if err != nil {
         panic(err)
@@ -345,22 +345,22 @@ func (m *SensitiveType) SetState(value *string)() {
 type SensitiveTypeable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetClassificationMethod()(*ClassificationMethod)
+    GetClassificationMethod()(*SensitiveType_classificationMethod)
     GetDescription()(*string)
     GetName()(*string)
     GetPublisherName()(*string)
     GetRulePackageId()(*string)
     GetRulePackageType()(*string)
-    GetScope()(*SensitiveTypeScope)
-    GetSensitiveTypeSource()(*SensitiveTypeSource)
+    GetScope()(*SensitiveType_scope)
+    GetSensitiveTypeSource()(*SensitiveType_sensitiveTypeSource)
     GetState()(*string)
-    SetClassificationMethod(value *ClassificationMethod)()
+    SetClassificationMethod(value *SensitiveType_classificationMethod)()
     SetDescription(value *string)()
     SetName(value *string)()
     SetPublisherName(value *string)()
     SetRulePackageId(value *string)()
     SetRulePackageType(value *string)()
-    SetScope(value *SensitiveTypeScope)()
-    SetSensitiveTypeSource(value *SensitiveTypeSource)()
+    SetScope(value *SensitiveType_scope)()
+    SetSensitiveTypeSource(value *SensitiveType_sensitiveTypeSource)()
     SetState(value *string)()
 }

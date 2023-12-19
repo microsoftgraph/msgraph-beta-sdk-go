@@ -187,12 +187,12 @@ func (m *ConnectedOrganization) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseConnectedOrganizationState)
+        val, err := n.GetEnumValue(ParseConnectedOrganization_state)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetState(val.(*ConnectedOrganizationState))
+            m.SetState(val.(*ConnectedOrganization_state))
         }
         return nil
     }
@@ -243,13 +243,13 @@ func (m *ConnectedOrganization) GetModifiedDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetState gets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
-func (m *ConnectedOrganization) GetState()(*ConnectedOrganizationState) {
+func (m *ConnectedOrganization) GetState()(*ConnectedOrganization_state) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ConnectedOrganizationState)
+        return val.(*ConnectedOrganization_state)
     }
     return nil
 }
@@ -404,7 +404,7 @@ func (m *ConnectedOrganization) SetModifiedDateTime(value *i336074805fc853987abe
     }
 }
 // SetState sets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
-func (m *ConnectedOrganization) SetState(value *ConnectedOrganizationState)() {
+func (m *ConnectedOrganization) SetState(value *ConnectedOrganization_state)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {
         panic(err)
@@ -423,7 +423,7 @@ type ConnectedOrganizationable interface {
     GetInternalSponsors()([]DirectoryObjectable)
     GetModifiedBy()(*string)
     GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetState()(*ConnectedOrganizationState)
+    GetState()(*ConnectedOrganization_state)
     SetCreatedBy(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
@@ -433,5 +433,5 @@ type ConnectedOrganizationable interface {
     SetInternalSponsors(value []DirectoryObjectable)()
     SetModifiedBy(value *string)()
     SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetState(value *ConnectedOrganizationState)()
+    SetState(value *ConnectedOrganization_state)()
 }

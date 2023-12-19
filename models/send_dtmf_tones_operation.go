@@ -20,13 +20,13 @@ func CreateSendDtmfTonesOperationFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewSendDtmfTonesOperation(), nil
 }
 // GetCompletionReason gets the completionReason property value. The results of the action. Possible values are: unknown, completedSuccessfully, mediaOperationCanceled, unknownfutureValue.
-func (m *SendDtmfTonesOperation) GetCompletionReason()(*SendDtmfCompletionReason) {
+func (m *SendDtmfTonesOperation) GetCompletionReason()(*SendDtmfTonesOperation_completionReason) {
     val, err := m.GetBackingStore().Get("completionReason")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SendDtmfCompletionReason)
+        return val.(*SendDtmfTonesOperation_completionReason)
     }
     return nil
 }
@@ -34,12 +34,12 @@ func (m *SendDtmfTonesOperation) GetCompletionReason()(*SendDtmfCompletionReason
 func (m *SendDtmfTonesOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CommsOperation.GetFieldDeserializers()
     res["completionReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSendDtmfCompletionReason)
+        val, err := n.GetEnumValue(ParseSendDtmfTonesOperation_completionReason)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCompletionReason(val.(*SendDtmfCompletionReason))
+            m.SetCompletionReason(val.(*SendDtmfTonesOperation_completionReason))
         }
         return nil
     }
@@ -61,7 +61,7 @@ func (m *SendDtmfTonesOperation) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetCompletionReason sets the completionReason property value. The results of the action. Possible values are: unknown, completedSuccessfully, mediaOperationCanceled, unknownfutureValue.
-func (m *SendDtmfTonesOperation) SetCompletionReason(value *SendDtmfCompletionReason)() {
+func (m *SendDtmfTonesOperation) SetCompletionReason(value *SendDtmfTonesOperation_completionReason)() {
     err := m.GetBackingStore().Set("completionReason", value)
     if err != nil {
         panic(err)
@@ -71,6 +71,6 @@ func (m *SendDtmfTonesOperation) SetCompletionReason(value *SendDtmfCompletionRe
 type SendDtmfTonesOperationable interface {
     CommsOperationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetCompletionReason()(*SendDtmfCompletionReason)
-    SetCompletionReason(value *SendDtmfCompletionReason)()
+    GetCompletionReason()(*SendDtmfTonesOperation_completionReason)
+    SetCompletionReason(value *SendDtmfTonesOperation_completionReason)()
 }

@@ -22,13 +22,13 @@ func CreateWindows10PkcsCertificateProfileFromDiscriminatorValue(parseNode i878a
     return NewWindows10PkcsCertificateProfile(), nil
 }
 // GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
-func (m *Windows10PkcsCertificateProfile) GetCertificateStore()(*CertificateStore) {
+func (m *Windows10PkcsCertificateProfile) GetCertificateStore()(*Windows10PkcsCertificateProfile_certificateStore) {
     val, err := m.GetBackingStore().Get("certificateStore")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CertificateStore)
+        return val.(*Windows10PkcsCertificateProfile_certificateStore)
     }
     return nil
 }
@@ -91,12 +91,12 @@ func (m *Windows10PkcsCertificateProfile) GetExtendedKeyUsages()([]ExtendedKeyUs
 func (m *Windows10PkcsCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Windows10CertificateProfileBase.GetFieldDeserializers()
     res["certificateStore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCertificateStore)
+        val, err := n.GetEnumValue(ParseWindows10PkcsCertificateProfile_certificateStore)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCertificateStore(val.(*CertificateStore))
+            m.SetCertificateStore(val.(*Windows10PkcsCertificateProfile_certificateStore))
         }
         return nil
     }
@@ -315,7 +315,7 @@ func (m *Windows10PkcsCertificateProfile) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetCertificateStore sets the certificateStore property value. Target store certificate. Possible values are: user, machine.
-func (m *Windows10PkcsCertificateProfile) SetCertificateStore(value *CertificateStore)() {
+func (m *Windows10PkcsCertificateProfile) SetCertificateStore(value *Windows10PkcsCertificateProfile_certificateStore)() {
     err := m.GetBackingStore().Set("certificateStore", value)
     if err != nil {
         panic(err)
@@ -381,7 +381,7 @@ func (m *Windows10PkcsCertificateProfile) SetSubjectNameFormatString(value *stri
 type Windows10PkcsCertificateProfileable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Windows10CertificateProfileBaseable
-    GetCertificateStore()(*CertificateStore)
+    GetCertificateStore()(*Windows10PkcsCertificateProfile_certificateStore)
     GetCertificateTemplateName()(*string)
     GetCertificationAuthority()(*string)
     GetCertificationAuthorityName()(*string)
@@ -390,7 +390,7 @@ type Windows10PkcsCertificateProfileable interface {
     GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable)
     GetSubjectAlternativeNameFormatString()(*string)
     GetSubjectNameFormatString()(*string)
-    SetCertificateStore(value *CertificateStore)()
+    SetCertificateStore(value *Windows10PkcsCertificateProfile_certificateStore)()
     SetCertificateTemplateName(value *string)()
     SetCertificationAuthority(value *string)()
     SetCertificationAuthorityName(value *string)()

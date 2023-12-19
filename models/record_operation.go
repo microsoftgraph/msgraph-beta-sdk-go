@@ -20,13 +20,13 @@ func CreateRecordOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewRecordOperation(), nil
 }
 // GetCompletionReason gets the completionReason property value. Possible values are: operationCanceled, stopToneDetected, maxRecordDurationReached, initialSilenceTimeout, maxSilenceTimeout, playPromptFailed, playBeepFailed, mediaReceiveTimeout, unspecifiedError, none.
-func (m *RecordOperation) GetCompletionReason()(*RecordCompletionReason) {
+func (m *RecordOperation) GetCompletionReason()(*RecordOperation_completionReason) {
     val, err := m.GetBackingStore().Get("completionReason")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RecordCompletionReason)
+        return val.(*RecordOperation_completionReason)
     }
     return nil
 }
@@ -34,12 +34,12 @@ func (m *RecordOperation) GetCompletionReason()(*RecordCompletionReason) {
 func (m *RecordOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CommsOperation.GetFieldDeserializers()
     res["completionReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRecordCompletionReason)
+        val, err := n.GetEnumValue(ParseRecordOperation_completionReason)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCompletionReason(val.(*RecordCompletionReason))
+            m.SetCompletionReason(val.(*RecordOperation_completionReason))
         }
         return nil
     }
@@ -115,7 +115,7 @@ func (m *RecordOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetCompletionReason sets the completionReason property value. Possible values are: operationCanceled, stopToneDetected, maxRecordDurationReached, initialSilenceTimeout, maxSilenceTimeout, playPromptFailed, playBeepFailed, mediaReceiveTimeout, unspecifiedError, none.
-func (m *RecordOperation) SetCompletionReason(value *RecordCompletionReason)() {
+func (m *RecordOperation) SetCompletionReason(value *RecordOperation_completionReason)() {
     err := m.GetBackingStore().Set("completionReason", value)
     if err != nil {
         panic(err)
@@ -139,10 +139,10 @@ func (m *RecordOperation) SetRecordingLocation(value *string)() {
 type RecordOperationable interface {
     CommsOperationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetCompletionReason()(*RecordCompletionReason)
+    GetCompletionReason()(*RecordOperation_completionReason)
     GetRecordingAccessToken()(*string)
     GetRecordingLocation()(*string)
-    SetCompletionReason(value *RecordCompletionReason)()
+    SetCompletionReason(value *RecordOperation_completionReason)()
     SetRecordingAccessToken(value *string)()
     SetRecordingLocation(value *string)()
 }

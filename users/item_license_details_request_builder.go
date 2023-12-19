@@ -96,6 +96,10 @@ func (m *ItemLicenseDetailsRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LicenseDetailsCollectionResponseable), nil
 }
+// GetTeamsLicensingDetails provides operations to call the getTeamsLicensingDetails method.
+func (m *ItemLicenseDetailsRequestBuilder) GetTeamsLicensingDetails()(*ItemLicenseDetailsGetTeamsLicensingDetailsRequestBuilder) {
+    return NewItemLicenseDetailsGetTeamsLicensingDetailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Post create new navigation property to licenseDetails for users
 func (m *ItemLicenseDetailsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LicenseDetailsable, requestConfiguration *ItemLicenseDetailsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LicenseDetailsable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);

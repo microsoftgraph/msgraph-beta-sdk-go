@@ -39,13 +39,13 @@ func (m *BitLockerSystemDrivePolicy) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827
     return m.backingStore
 }
 // GetEncryptionMethod gets the encryptionMethod property value. Select the encryption method for operating system drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
-func (m *BitLockerSystemDrivePolicy) GetEncryptionMethod()(*BitLockerEncryptionMethod) {
+func (m *BitLockerSystemDrivePolicy) GetEncryptionMethod()(*BitLockerSystemDrivePolicy_encryptionMethod) {
     val, err := m.GetBackingStore().Get("encryptionMethod")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*BitLockerEncryptionMethod)
+        return val.(*BitLockerSystemDrivePolicy_encryptionMethod)
     }
     return nil
 }
@@ -53,12 +53,12 @@ func (m *BitLockerSystemDrivePolicy) GetEncryptionMethod()(*BitLockerEncryptionM
 func (m *BitLockerSystemDrivePolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["encryptionMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseBitLockerEncryptionMethod)
+        val, err := n.GetEnumValue(ParseBitLockerSystemDrivePolicy_encryptionMethod)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEncryptionMethod(val.(*BitLockerEncryptionMethod))
+            m.SetEncryptionMethod(val.(*BitLockerSystemDrivePolicy_encryptionMethod))
         }
         return nil
     }
@@ -421,7 +421,7 @@ func (m *BitLockerSystemDrivePolicy) SetBackingStore(value ie8677ce2c7e1b4c22e9c
     m.backingStore = value
 }
 // SetEncryptionMethod sets the encryptionMethod property value. Select the encryption method for operating system drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
-func (m *BitLockerSystemDrivePolicy) SetEncryptionMethod(value *BitLockerEncryptionMethod)() {
+func (m *BitLockerSystemDrivePolicy) SetEncryptionMethod(value *BitLockerSystemDrivePolicy_encryptionMethod)() {
     err := m.GetBackingStore().Set("encryptionMethod", value)
     if err != nil {
         panic(err)
@@ -517,7 +517,7 @@ type BitLockerSystemDrivePolicyable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetEncryptionMethod()(*BitLockerEncryptionMethod)
+    GetEncryptionMethod()(*BitLockerSystemDrivePolicy_encryptionMethod)
     GetMinimumPinLength()(*int32)
     GetOdataType()(*string)
     GetPrebootRecoveryEnableMessageAndUrl()(*bool)
@@ -531,7 +531,7 @@ type BitLockerSystemDrivePolicyable interface {
     GetStartupAuthenticationTpmPinUsage()(*ConfigurationUsage)
     GetStartupAuthenticationTpmUsage()(*ConfigurationUsage)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetEncryptionMethod(value *BitLockerEncryptionMethod)()
+    SetEncryptionMethod(value *BitLockerSystemDrivePolicy_encryptionMethod)()
     SetMinimumPinLength(value *int32)()
     SetOdataType(value *string)()
     SetPrebootRecoveryEnableMessageAndUrl(value *bool)()

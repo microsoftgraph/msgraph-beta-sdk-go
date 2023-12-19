@@ -55,13 +55,13 @@ func (m *WindowsPhoneEASEmailProfileConfiguration) GetDurationOfEmailToSync()(*E
     return nil
 }
 // GetEmailAddressSource gets the emailAddressSource property value. Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
-func (m *WindowsPhoneEASEmailProfileConfiguration) GetEmailAddressSource()(*UserEmailSource) {
+func (m *WindowsPhoneEASEmailProfileConfiguration) GetEmailAddressSource()(*WindowsPhoneEASEmailProfileConfiguration_emailAddressSource) {
     val, err := m.GetBackingStore().Get("emailAddressSource")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*UserEmailSource)
+        return val.(*WindowsPhoneEASEmailProfileConfiguration_emailAddressSource)
     }
     return nil
 }
@@ -110,12 +110,12 @@ func (m *WindowsPhoneEASEmailProfileConfiguration) GetFieldDeserializers()(map[s
         return nil
     }
     res["emailAddressSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseUserEmailSource)
+        val, err := n.GetEnumValue(ParseWindowsPhoneEASEmailProfileConfiguration_emailAddressSource)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEmailAddressSource(val.(*UserEmailSource))
+            m.SetEmailAddressSource(val.(*WindowsPhoneEASEmailProfileConfiguration_emailAddressSource))
         }
         return nil
     }
@@ -323,7 +323,7 @@ func (m *WindowsPhoneEASEmailProfileConfiguration) SetDurationOfEmailToSync(valu
     }
 }
 // SetEmailAddressSource sets the emailAddressSource property value. Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
-func (m *WindowsPhoneEASEmailProfileConfiguration) SetEmailAddressSource(value *UserEmailSource)() {
+func (m *WindowsPhoneEASEmailProfileConfiguration) SetEmailAddressSource(value *WindowsPhoneEASEmailProfileConfiguration_emailAddressSource)() {
     err := m.GetBackingStore().Set("emailAddressSource", value)
     if err != nil {
         panic(err)
@@ -378,7 +378,7 @@ type WindowsPhoneEASEmailProfileConfigurationable interface {
     GetAccountName()(*string)
     GetApplyOnlyToWindowsPhone81()(*bool)
     GetDurationOfEmailToSync()(*EmailSyncDuration)
-    GetEmailAddressSource()(*UserEmailSource)
+    GetEmailAddressSource()(*WindowsPhoneEASEmailProfileConfiguration_emailAddressSource)
     GetEmailSyncSchedule()(*EmailSyncSchedule)
     GetHostName()(*string)
     GetRequireSsl()(*bool)
@@ -388,7 +388,7 @@ type WindowsPhoneEASEmailProfileConfigurationable interface {
     SetAccountName(value *string)()
     SetApplyOnlyToWindowsPhone81(value *bool)()
     SetDurationOfEmailToSync(value *EmailSyncDuration)()
-    SetEmailAddressSource(value *UserEmailSource)()
+    SetEmailAddressSource(value *WindowsPhoneEASEmailProfileConfiguration_emailAddressSource)()
     SetEmailSyncSchedule(value *EmailSyncSchedule)()
     SetHostName(value *string)()
     SetRequireSsl(value *bool)()

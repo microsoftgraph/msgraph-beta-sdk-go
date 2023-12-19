@@ -65,12 +65,12 @@ func (m *EducationSynchronizationProfileStatus) GetFieldDeserializers()(map[stri
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEducationSynchronizationStatus)
+        val, err := n.GetEnumValue(ParseEducationSynchronizationProfileStatus_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*EducationSynchronizationStatus))
+            m.SetStatus(val.(*EducationSynchronizationProfileStatus_status))
         }
         return nil
     }
@@ -109,13 +109,13 @@ func (m *EducationSynchronizationProfileStatus) GetLastSynchronizationDateTime()
     return nil
 }
 // GetStatus gets the status property value. The status of a sync. The possible values are: paused, inProgress, success, error, validationError, quarantined, unknownFutureValue, extracting, validating. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: extracting, validating.
-func (m *EducationSynchronizationProfileStatus) GetStatus()(*EducationSynchronizationStatus) {
+func (m *EducationSynchronizationProfileStatus) GetStatus()(*EducationSynchronizationProfileStatus_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EducationSynchronizationStatus)
+        return val.(*EducationSynchronizationProfileStatus_status)
     }
     return nil
 }
@@ -191,7 +191,7 @@ func (m *EducationSynchronizationProfileStatus) SetLastSynchronizationDateTime(v
     }
 }
 // SetStatus sets the status property value. The status of a sync. The possible values are: paused, inProgress, success, error, validationError, quarantined, unknownFutureValue, extracting, validating. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: extracting, validating.
-func (m *EducationSynchronizationProfileStatus) SetStatus(value *EducationSynchronizationStatus)() {
+func (m *EducationSynchronizationProfileStatus) SetStatus(value *EducationSynchronizationProfileStatus_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -211,11 +211,11 @@ type EducationSynchronizationProfileStatusable interface {
     GetErrorCount()(*int64)
     GetLastActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastSynchronizationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetStatus()(*EducationSynchronizationStatus)
+    GetStatus()(*EducationSynchronizationProfileStatus_status)
     GetStatusMessage()(*string)
     SetErrorCount(value *int64)()
     SetLastActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastSynchronizationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetStatus(value *EducationSynchronizationStatus)()
+    SetStatus(value *EducationSynchronizationProfileStatus_status)()
     SetStatusMessage(value *string)()
 }

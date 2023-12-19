@@ -799,12 +799,12 @@ func (m *MacOSGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]fun
         return nil
     }
     res["updateDelayPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMacOSSoftwareUpdateDelayPolicy)
+        val, err := n.GetEnumValue(ParseMacOSGeneralDeviceConfiguration_updateDelayPolicy)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUpdateDelayPolicy(val.(*MacOSSoftwareUpdateDelayPolicy))
+            m.SetUpdateDelayPolicy(val.(*MacOSGeneralDeviceConfiguration_updateDelayPolicy))
         }
         return nil
     }
@@ -1283,13 +1283,13 @@ func (m *MacOSGeneralDeviceConfiguration) GetTouchIdTimeoutInHours()(*int32) {
     return nil
 }
 // GetUpdateDelayPolicy gets the updateDelayPolicy property value. Determines whether to delay OS and/or app updates for macOS. Possible values are: none, delayOSUpdateVisibility, delayAppUpdateVisibility, unknownFutureValue, delayMajorOsUpdateVisibility.
-func (m *MacOSGeneralDeviceConfiguration) GetUpdateDelayPolicy()(*MacOSSoftwareUpdateDelayPolicy) {
+func (m *MacOSGeneralDeviceConfiguration) GetUpdateDelayPolicy()(*MacOSGeneralDeviceConfiguration_updateDelayPolicy) {
     val, err := m.GetBackingStore().Get("updateDelayPolicy")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MacOSSoftwareUpdateDelayPolicy)
+        return val.(*MacOSGeneralDeviceConfiguration_updateDelayPolicy)
     }
     return nil
 }
@@ -2094,7 +2094,7 @@ func (m *MacOSGeneralDeviceConfiguration) SetTouchIdTimeoutInHours(value *int32)
     }
 }
 // SetUpdateDelayPolicy sets the updateDelayPolicy property value. Determines whether to delay OS and/or app updates for macOS. Possible values are: none, delayOSUpdateVisibility, delayAppUpdateVisibility, unknownFutureValue, delayMajorOsUpdateVisibility.
-func (m *MacOSGeneralDeviceConfiguration) SetUpdateDelayPolicy(value *MacOSSoftwareUpdateDelayPolicy)() {
+func (m *MacOSGeneralDeviceConfiguration) SetUpdateDelayPolicy(value *MacOSGeneralDeviceConfiguration_updateDelayPolicy)() {
     err := m.GetBackingStore().Set("updateDelayPolicy", value)
     if err != nil {
         panic(err)
@@ -2169,7 +2169,7 @@ type MacOSGeneralDeviceConfigurationable interface {
     GetSoftwareUpdatesEnforcedDelayInDays()(*int32)
     GetSpotlightBlockInternetResults()(*bool)
     GetTouchIdTimeoutInHours()(*int32)
-    GetUpdateDelayPolicy()(*MacOSSoftwareUpdateDelayPolicy)
+    GetUpdateDelayPolicy()(*MacOSGeneralDeviceConfiguration_updateDelayPolicy)
     GetWallpaperModificationBlocked()(*bool)
     SetActivationLockWhenSupervisedAllowed(value *bool)()
     SetAddingGameCenterFriendsBlocked(value *bool)()
@@ -2229,6 +2229,6 @@ type MacOSGeneralDeviceConfigurationable interface {
     SetSoftwareUpdatesEnforcedDelayInDays(value *int32)()
     SetSpotlightBlockInternetResults(value *bool)()
     SetTouchIdTimeoutInHours(value *int32)()
-    SetUpdateDelayPolicy(value *MacOSSoftwareUpdateDelayPolicy)()
+    SetUpdateDelayPolicy(value *MacOSGeneralDeviceConfiguration_updateDelayPolicy)()
     SetWallpaperModificationBlocked(value *bool)()
 }

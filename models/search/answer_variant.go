@@ -2,7 +2,6 @@ package search
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
@@ -105,12 +104,12 @@ func (m *AnswerVariant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["platform"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseDevicePlatformType)
+        val, err := n.GetEnumValue(ParseAnswerVariant_platform)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPlatform(val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DevicePlatformType))
+            m.SetPlatform(val.(*AnswerVariant_platform))
         }
         return nil
     }
@@ -149,13 +148,13 @@ func (m *AnswerVariant) GetOdataType()(*string) {
     return nil
 }
 // GetPlatform gets the platform property value. The platform property
-func (m *AnswerVariant) GetPlatform()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DevicePlatformType) {
+func (m *AnswerVariant) GetPlatform()(*AnswerVariant_platform) {
     val, err := m.GetBackingStore().Get("platform")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DevicePlatformType)
+        return val.(*AnswerVariant_platform)
     }
     return nil
 }
@@ -257,7 +256,7 @@ func (m *AnswerVariant) SetOdataType(value *string)() {
     }
 }
 // SetPlatform sets the platform property value. The platform property
-func (m *AnswerVariant) SetPlatform(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DevicePlatformType)() {
+func (m *AnswerVariant) SetPlatform(value *AnswerVariant_platform)() {
     err := m.GetBackingStore().Set("platform", value)
     if err != nil {
         panic(err)
@@ -280,13 +279,13 @@ type AnswerVariantable interface {
     GetDisplayName()(*string)
     GetLanguageTag()(*string)
     GetOdataType()(*string)
-    GetPlatform()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DevicePlatformType)
+    GetPlatform()(*AnswerVariant_platform)
     GetWebUrl()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetLanguageTag(value *string)()
     SetOdataType(value *string)()
-    SetPlatform(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DevicePlatformType)()
+    SetPlatform(value *AnswerVariant_platform)()
     SetWebUrl(value *string)()
 }

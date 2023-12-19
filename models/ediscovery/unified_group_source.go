@@ -36,12 +36,12 @@ func (m *UnifiedGroupSource) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["includedSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSourceType)
+        val, err := n.GetEnumValue(ParseUnifiedGroupSource_includedSources)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetIncludedSources(val.(*SourceType))
+            m.SetIncludedSources(val.(*UnifiedGroupSource_includedSources))
         }
         return nil
     }
@@ -59,13 +59,13 @@ func (m *UnifiedGroupSource) GetGroup()(ie233ee762e29b4ba6970aa2a2efce4b7fde1169
     return nil
 }
 // GetIncludedSources gets the includedSources property value. Specifies which sources are included in this group. Possible values are: mailbox, site.
-func (m *UnifiedGroupSource) GetIncludedSources()(*SourceType) {
+func (m *UnifiedGroupSource) GetIncludedSources()(*UnifiedGroupSource_includedSources) {
     val, err := m.GetBackingStore().Get("includedSources")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SourceType)
+        return val.(*UnifiedGroupSource_includedSources)
     }
     return nil
 }
@@ -98,7 +98,7 @@ func (m *UnifiedGroupSource) SetGroup(value ie233ee762e29b4ba6970aa2a2efce4b7fde
     }
 }
 // SetIncludedSources sets the includedSources property value. Specifies which sources are included in this group. Possible values are: mailbox, site.
-func (m *UnifiedGroupSource) SetIncludedSources(value *SourceType)() {
+func (m *UnifiedGroupSource) SetIncludedSources(value *UnifiedGroupSource_includedSources)() {
     err := m.GetBackingStore().Set("includedSources", value)
     if err != nil {
         panic(err)
@@ -109,7 +109,7 @@ type UnifiedGroupSourceable interface {
     DataSourceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetGroup()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable)
-    GetIncludedSources()(*SourceType)
+    GetIncludedSources()(*UnifiedGroupSource_includedSources)
     SetGroup(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable)()
-    SetIncludedSources(value *SourceType)()
+    SetIncludedSources(value *UnifiedGroupSource_includedSources)()
 }

@@ -72,17 +72,6 @@ func (m *EdiscoveryCasesItemReviewSetsItemMicrosoftGraphEdiscoveryExportExportPo
     }
     return nil
 }
-// GetExportOptions gets the exportOptions property value. The exportOptions property
-func (m *EdiscoveryCasesItemReviewSetsItemMicrosoftGraphEdiscoveryExportExportPostRequestBody) GetExportOptions()(*ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ExportOptions) {
-    val, err := m.GetBackingStore().Get("exportOptions")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ExportOptions)
-    }
-    return nil
-}
 // GetExportStructure gets the exportStructure property value. The exportStructure property
 func (m *EdiscoveryCasesItemReviewSetsItemMicrosoftGraphEdiscoveryExportExportPostRequestBody) GetExportStructure()(*ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ExportFileStructure) {
     val, err := m.GetBackingStore().Get("exportStructure")
@@ -124,16 +113,6 @@ func (m *EdiscoveryCasesItemReviewSetsItemMicrosoftGraphEdiscoveryExportExportPo
         }
         if val != nil {
             m.SetDescription(val)
-        }
-        return nil
-    }
-    res["exportOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ParseExportOptions)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetExportOptions(val.(*ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ExportOptions))
         }
         return nil
     }
@@ -186,13 +165,6 @@ func (m *EdiscoveryCasesItemReviewSetsItemMicrosoftGraphEdiscoveryExportExportPo
     }
     {
         err := writer.WriteStringValue("description", m.GetDescription())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetExportOptions() != nil {
-        cast := (*m.GetExportOptions()).String()
-        err := writer.WriteStringValue("exportOptions", &cast)
         if err != nil {
             return err
         }
@@ -250,13 +222,6 @@ func (m *EdiscoveryCasesItemReviewSetsItemMicrosoftGraphEdiscoveryExportExportPo
         panic(err)
     }
 }
-// SetExportOptions sets the exportOptions property value. The exportOptions property
-func (m *EdiscoveryCasesItemReviewSetsItemMicrosoftGraphEdiscoveryExportExportPostRequestBody) SetExportOptions(value *ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ExportOptions)() {
-    err := m.GetBackingStore().Set("exportOptions", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetExportStructure sets the exportStructure property value. The exportStructure property
 func (m *EdiscoveryCasesItemReviewSetsItemMicrosoftGraphEdiscoveryExportExportPostRequestBody) SetExportStructure(value *ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ExportFileStructure)() {
     err := m.GetBackingStore().Set("exportStructure", value)
@@ -280,14 +245,12 @@ type EdiscoveryCasesItemReviewSetsItemMicrosoftGraphEdiscoveryExportExportPostRe
     GetAzureBlobToken()(*string)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDescription()(*string)
-    GetExportOptions()(*ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ExportOptions)
     GetExportStructure()(*ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ExportFileStructure)
     GetOutputName()(*string)
     SetAzureBlobContainer(value *string)()
     SetAzureBlobToken(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDescription(value *string)()
-    SetExportOptions(value *ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ExportOptions)()
     SetExportStructure(value *ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ExportFileStructure)()
     SetOutputName(value *string)()
 }

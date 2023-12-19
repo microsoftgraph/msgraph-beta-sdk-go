@@ -20,13 +20,13 @@ func CreateManagedDeviceEncryptionStateFromDiscriminatorValue(parseNode i878a80d
     return NewManagedDeviceEncryptionState(), nil
 }
 // GetAdvancedBitLockerStates gets the advancedBitLockerStates property value. Advanced BitLocker State. Possible values are: success, noUserConsent, osVolumeUnprotected, osVolumeTpmRequired, osVolumeTpmOnlyRequired, osVolumeTpmPinRequired, osVolumeTpmStartupKeyRequired, osVolumeTpmPinStartupKeyRequired, osVolumeEncryptionMethodMismatch, recoveryKeyBackupFailed, fixedDriveNotEncrypted, fixedDriveEncryptionMethodMismatch, loggedOnUserNonAdmin, windowsRecoveryEnvironmentNotConfigured, tpmNotAvailable, tpmNotReady, networkError.
-func (m *ManagedDeviceEncryptionState) GetAdvancedBitLockerStates()(*AdvancedBitLockerState) {
+func (m *ManagedDeviceEncryptionState) GetAdvancedBitLockerStates()(*ManagedDeviceEncryptionState_advancedBitLockerStates) {
     val, err := m.GetBackingStore().Get("advancedBitLockerStates")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AdvancedBitLockerState)
+        return val.(*ManagedDeviceEncryptionState_advancedBitLockerStates)
     }
     return nil
 }
@@ -89,12 +89,12 @@ func (m *ManagedDeviceEncryptionState) GetEncryptionState()(*EncryptionState) {
 func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["advancedBitLockerStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAdvancedBitLockerState)
+        val, err := n.GetEnumValue(ParseManagedDeviceEncryptionState_advancedBitLockerStates)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAdvancedBitLockerStates(val.(*AdvancedBitLockerState))
+            m.SetAdvancedBitLockerStates(val.(*ManagedDeviceEncryptionState_advancedBitLockerStates))
         }
         return nil
     }
@@ -149,12 +149,12 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["fileVaultStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseFileVaultState)
+        val, err := n.GetEnumValue(ParseManagedDeviceEncryptionState_fileVaultStates)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFileVaultStates(val.(*FileVaultState))
+            m.SetFileVaultStates(val.(*ManagedDeviceEncryptionState_fileVaultStates))
         }
         return nil
     }
@@ -207,13 +207,13 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetFileVaultStates gets the fileVaultStates property value. FileVault State. Possible values are: success, driveEncryptedByUser, userDeferredEncryption, escrowNotEnabled.
-func (m *ManagedDeviceEncryptionState) GetFileVaultStates()(*FileVaultState) {
+func (m *ManagedDeviceEncryptionState) GetFileVaultStates()(*ManagedDeviceEncryptionState_fileVaultStates) {
     val, err := m.GetBackingStore().Get("fileVaultStates")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*FileVaultState)
+        return val.(*ManagedDeviceEncryptionState_fileVaultStates)
     }
     return nil
 }
@@ -348,7 +348,7 @@ func (m *ManagedDeviceEncryptionState) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdvancedBitLockerStates sets the advancedBitLockerStates property value. Advanced BitLocker State. Possible values are: success, noUserConsent, osVolumeUnprotected, osVolumeTpmRequired, osVolumeTpmOnlyRequired, osVolumeTpmPinRequired, osVolumeTpmStartupKeyRequired, osVolumeTpmPinStartupKeyRequired, osVolumeEncryptionMethodMismatch, recoveryKeyBackupFailed, fixedDriveNotEncrypted, fixedDriveEncryptionMethodMismatch, loggedOnUserNonAdmin, windowsRecoveryEnvironmentNotConfigured, tpmNotAvailable, tpmNotReady, networkError.
-func (m *ManagedDeviceEncryptionState) SetAdvancedBitLockerStates(value *AdvancedBitLockerState)() {
+func (m *ManagedDeviceEncryptionState) SetAdvancedBitLockerStates(value *ManagedDeviceEncryptionState_advancedBitLockerStates)() {
     err := m.GetBackingStore().Set("advancedBitLockerStates", value)
     if err != nil {
         panic(err)
@@ -390,7 +390,7 @@ func (m *ManagedDeviceEncryptionState) SetEncryptionState(value *EncryptionState
     }
 }
 // SetFileVaultStates sets the fileVaultStates property value. FileVault State. Possible values are: success, driveEncryptedByUser, userDeferredEncryption, escrowNotEnabled.
-func (m *ManagedDeviceEncryptionState) SetFileVaultStates(value *FileVaultState)() {
+func (m *ManagedDeviceEncryptionState) SetFileVaultStates(value *ManagedDeviceEncryptionState_fileVaultStates)() {
     err := m.GetBackingStore().Set("fileVaultStates", value)
     if err != nil {
         panic(err)
@@ -428,24 +428,24 @@ func (m *ManagedDeviceEncryptionState) SetUserPrincipalName(value *string)() {
 type ManagedDeviceEncryptionStateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAdvancedBitLockerStates()(*AdvancedBitLockerState)
+    GetAdvancedBitLockerStates()(*ManagedDeviceEncryptionState_advancedBitLockerStates)
     GetDeviceName()(*string)
     GetDeviceType()(*DeviceTypes)
     GetEncryptionPolicySettingState()(*ComplianceStatus)
     GetEncryptionReadinessState()(*EncryptionReadinessState)
     GetEncryptionState()(*EncryptionState)
-    GetFileVaultStates()(*FileVaultState)
+    GetFileVaultStates()(*ManagedDeviceEncryptionState_fileVaultStates)
     GetOsVersion()(*string)
     GetPolicyDetails()([]EncryptionReportPolicyDetailsable)
     GetTpmSpecificationVersion()(*string)
     GetUserPrincipalName()(*string)
-    SetAdvancedBitLockerStates(value *AdvancedBitLockerState)()
+    SetAdvancedBitLockerStates(value *ManagedDeviceEncryptionState_advancedBitLockerStates)()
     SetDeviceName(value *string)()
     SetDeviceType(value *DeviceTypes)()
     SetEncryptionPolicySettingState(value *ComplianceStatus)()
     SetEncryptionReadinessState(value *EncryptionReadinessState)()
     SetEncryptionState(value *EncryptionState)()
-    SetFileVaultStates(value *FileVaultState)()
+    SetFileVaultStates(value *ManagedDeviceEncryptionState_fileVaultStates)()
     SetOsVersion(value *string)()
     SetPolicyDetails(value []EncryptionReportPolicyDetailsable)()
     SetTpmSpecificationVersion(value *string)()

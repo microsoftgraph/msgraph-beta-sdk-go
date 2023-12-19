@@ -23,13 +23,13 @@ func CreateMicrosoftAuthenticatorAuthenticationMethodFromDiscriminatorValue(pars
     return NewMicrosoftAuthenticatorAuthenticationMethod(), nil
 }
 // GetClientAppName gets the clientAppName property value. The app that the user has registered to use to approve push notifications. The possible values are: microsoftAuthenticator, outlookMobile, unknownFutureValue.
-func (m *MicrosoftAuthenticatorAuthenticationMethod) GetClientAppName()(*MicrosoftAuthenticatorAuthenticationMethodClientAppName) {
+func (m *MicrosoftAuthenticatorAuthenticationMethod) GetClientAppName()(*MicrosoftAuthenticatorAuthenticationMethod_clientAppName) {
     val, err := m.GetBackingStore().Get("clientAppName")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MicrosoftAuthenticatorAuthenticationMethodClientAppName)
+        return val.(*MicrosoftAuthenticatorAuthenticationMethod_clientAppName)
     }
     return nil
 }
@@ -81,12 +81,12 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) GetDisplayName()(*string) {
 func (m *MicrosoftAuthenticatorAuthenticationMethod) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethod.GetFieldDeserializers()
     res["clientAppName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMicrosoftAuthenticatorAuthenticationMethodClientAppName)
+        val, err := n.GetEnumValue(ParseMicrosoftAuthenticatorAuthenticationMethod_clientAppName)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetClientAppName(val.(*MicrosoftAuthenticatorAuthenticationMethodClientAppName))
+            m.SetClientAppName(val.(*MicrosoftAuthenticatorAuthenticationMethod_clientAppName))
         }
         return nil
     }
@@ -199,7 +199,7 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) Serialize(writer i878a80d23
     return nil
 }
 // SetClientAppName sets the clientAppName property value. The app that the user has registered to use to approve push notifications. The possible values are: microsoftAuthenticator, outlookMobile, unknownFutureValue.
-func (m *MicrosoftAuthenticatorAuthenticationMethod) SetClientAppName(value *MicrosoftAuthenticatorAuthenticationMethodClientAppName)() {
+func (m *MicrosoftAuthenticatorAuthenticationMethod) SetClientAppName(value *MicrosoftAuthenticatorAuthenticationMethod_clientAppName)() {
     err := m.GetBackingStore().Set("clientAppName", value)
     if err != nil {
         panic(err)
@@ -244,13 +244,13 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) SetPhoneAppVersion(value *s
 type MicrosoftAuthenticatorAuthenticationMethodable interface {
     AuthenticationMethodable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetClientAppName()(*MicrosoftAuthenticatorAuthenticationMethodClientAppName)
+    GetClientAppName()(*MicrosoftAuthenticatorAuthenticationMethod_clientAppName)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDevice()(Deviceable)
     GetDeviceTag()(*string)
     GetDisplayName()(*string)
     GetPhoneAppVersion()(*string)
-    SetClientAppName(value *MicrosoftAuthenticatorAuthenticationMethodClientAppName)()
+    SetClientAppName(value *MicrosoftAuthenticatorAuthenticationMethod_clientAppName)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDevice(value Deviceable)()
     SetDeviceTag(value *string)()

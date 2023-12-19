@@ -33,13 +33,13 @@ func (m *IpApplicationSegment) GetDestinationHost()(*string) {
     return nil
 }
 // GetDestinationType gets the destinationType property value. The destinationType property
-func (m *IpApplicationSegment) GetDestinationType()(*PrivateNetworkDestinationType) {
+func (m *IpApplicationSegment) GetDestinationType()(*IpApplicationSegment_destinationType) {
     val, err := m.GetBackingStore().Get("destinationType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PrivateNetworkDestinationType)
+        return val.(*IpApplicationSegment_destinationType)
     }
     return nil
 }
@@ -57,12 +57,12 @@ func (m *IpApplicationSegment) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["destinationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePrivateNetworkDestinationType)
+        val, err := n.GetEnumValue(ParseIpApplicationSegment_destinationType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDestinationType(val.(*PrivateNetworkDestinationType))
+            m.SetDestinationType(val.(*IpApplicationSegment_destinationType))
         }
         return nil
     }
@@ -93,12 +93,12 @@ func (m *IpApplicationSegment) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["protocol"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePrivateNetworkProtocol)
+        val, err := n.GetEnumValue(ParseIpApplicationSegment_protocol)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProtocol(val.(*PrivateNetworkProtocol))
+            m.SetProtocol(val.(*IpApplicationSegment_protocol))
         }
         return nil
     }
@@ -127,13 +127,13 @@ func (m *IpApplicationSegment) GetPorts()([]string) {
     return nil
 }
 // GetProtocol gets the protocol property value. The protocol property
-func (m *IpApplicationSegment) GetProtocol()(*PrivateNetworkProtocol) {
+func (m *IpApplicationSegment) GetProtocol()(*IpApplicationSegment_protocol) {
     val, err := m.GetBackingStore().Get("protocol")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PrivateNetworkProtocol)
+        return val.(*IpApplicationSegment_protocol)
     }
     return nil
 }
@@ -185,7 +185,7 @@ func (m *IpApplicationSegment) SetDestinationHost(value *string)() {
     }
 }
 // SetDestinationType sets the destinationType property value. The destinationType property
-func (m *IpApplicationSegment) SetDestinationType(value *PrivateNetworkDestinationType)() {
+func (m *IpApplicationSegment) SetDestinationType(value *IpApplicationSegment_destinationType)() {
     err := m.GetBackingStore().Set("destinationType", value)
     if err != nil {
         panic(err)
@@ -206,7 +206,7 @@ func (m *IpApplicationSegment) SetPorts(value []string)() {
     }
 }
 // SetProtocol sets the protocol property value. The protocol property
-func (m *IpApplicationSegment) SetProtocol(value *PrivateNetworkProtocol)() {
+func (m *IpApplicationSegment) SetProtocol(value *IpApplicationSegment_protocol)() {
     err := m.GetBackingStore().Set("protocol", value)
     if err != nil {
         panic(err)
@@ -217,13 +217,13 @@ type IpApplicationSegmentable interface {
     ApplicationSegmentable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDestinationHost()(*string)
-    GetDestinationType()(*PrivateNetworkDestinationType)
+    GetDestinationType()(*IpApplicationSegment_destinationType)
     GetPort()(*int32)
     GetPorts()([]string)
-    GetProtocol()(*PrivateNetworkProtocol)
+    GetProtocol()(*IpApplicationSegment_protocol)
     SetDestinationHost(value *string)()
-    SetDestinationType(value *PrivateNetworkDestinationType)()
+    SetDestinationType(value *IpApplicationSegment_destinationType)()
     SetPort(value *int32)()
     SetPorts(value []string)()
-    SetProtocol(value *PrivateNetworkProtocol)()
+    SetProtocol(value *IpApplicationSegment_protocol)()
 }

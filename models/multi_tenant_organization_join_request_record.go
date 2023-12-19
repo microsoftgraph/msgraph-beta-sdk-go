@@ -44,22 +44,22 @@ func (m *MultiTenantOrganizationJoinRequestRecord) GetFieldDeserializers()(map[s
         return nil
     }
     res["memberState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMultiTenantOrganizationMemberState)
+        val, err := n.GetEnumValue(ParseMultiTenantOrganizationJoinRequestRecord_memberState)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMemberState(val.(*MultiTenantOrganizationMemberState))
+            m.SetMemberState(val.(*MultiTenantOrganizationJoinRequestRecord_memberState))
         }
         return nil
     }
     res["role"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMultiTenantOrganizationMemberRole)
+        val, err := n.GetEnumValue(ParseMultiTenantOrganizationJoinRequestRecord_role)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRole(val.(*MultiTenantOrganizationMemberRole))
+            m.SetRole(val.(*MultiTenantOrganizationJoinRequestRecord_role))
         }
         return nil
     }
@@ -76,24 +76,24 @@ func (m *MultiTenantOrganizationJoinRequestRecord) GetFieldDeserializers()(map[s
     return res
 }
 // GetMemberState gets the memberState property value. State of the tenant in the multi-tenant organization. The possible values are: pending, active, removed, unknownFutureValue. Tenants in the pending state must join the multi-tenant organization to participate in the multi-tenant organization. Tenants in the active state can participate in the multi-tenant organization. Tenants in the removed state are in the process of being removed from the multi-tenant organization. Read-only.
-func (m *MultiTenantOrganizationJoinRequestRecord) GetMemberState()(*MultiTenantOrganizationMemberState) {
+func (m *MultiTenantOrganizationJoinRequestRecord) GetMemberState()(*MultiTenantOrganizationJoinRequestRecord_memberState) {
     val, err := m.GetBackingStore().Get("memberState")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MultiTenantOrganizationMemberState)
+        return val.(*MultiTenantOrganizationJoinRequestRecord_memberState)
     }
     return nil
 }
 // GetRole gets the role property value. Role of the tenant in the multi-tenant organization. The possible values are: owner, member (default), unknownFutureValue. Tenants with the owner role can manage the multi-tenant organization. There can be multiple tenants with the owner role in a multi-tenant organization. Tenants with the member role can participate in a multi-tenant organization.
-func (m *MultiTenantOrganizationJoinRequestRecord) GetRole()(*MultiTenantOrganizationMemberRole) {
+func (m *MultiTenantOrganizationJoinRequestRecord) GetRole()(*MultiTenantOrganizationJoinRequestRecord_role) {
     val, err := m.GetBackingStore().Get("role")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MultiTenantOrganizationMemberRole)
+        return val.(*MultiTenantOrganizationJoinRequestRecord_role)
     }
     return nil
 }
@@ -150,14 +150,14 @@ func (m *MultiTenantOrganizationJoinRequestRecord) SetAddedByTenantId(value *str
     }
 }
 // SetMemberState sets the memberState property value. State of the tenant in the multi-tenant organization. The possible values are: pending, active, removed, unknownFutureValue. Tenants in the pending state must join the multi-tenant organization to participate in the multi-tenant organization. Tenants in the active state can participate in the multi-tenant organization. Tenants in the removed state are in the process of being removed from the multi-tenant organization. Read-only.
-func (m *MultiTenantOrganizationJoinRequestRecord) SetMemberState(value *MultiTenantOrganizationMemberState)() {
+func (m *MultiTenantOrganizationJoinRequestRecord) SetMemberState(value *MultiTenantOrganizationJoinRequestRecord_memberState)() {
     err := m.GetBackingStore().Set("memberState", value)
     if err != nil {
         panic(err)
     }
 }
 // SetRole sets the role property value. Role of the tenant in the multi-tenant organization. The possible values are: owner, member (default), unknownFutureValue. Tenants with the owner role can manage the multi-tenant organization. There can be multiple tenants with the owner role in a multi-tenant organization. Tenants with the member role can participate in a multi-tenant organization.
-func (m *MultiTenantOrganizationJoinRequestRecord) SetRole(value *MultiTenantOrganizationMemberRole)() {
+func (m *MultiTenantOrganizationJoinRequestRecord) SetRole(value *MultiTenantOrganizationJoinRequestRecord_role)() {
     err := m.GetBackingStore().Set("role", value)
     if err != nil {
         panic(err)
@@ -175,11 +175,11 @@ type MultiTenantOrganizationJoinRequestRecordable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAddedByTenantId()(*string)
-    GetMemberState()(*MultiTenantOrganizationMemberState)
-    GetRole()(*MultiTenantOrganizationMemberRole)
+    GetMemberState()(*MultiTenantOrganizationJoinRequestRecord_memberState)
+    GetRole()(*MultiTenantOrganizationJoinRequestRecord_role)
     GetTransitionDetails()(MultiTenantOrganizationJoinRequestTransitionDetailsable)
     SetAddedByTenantId(value *string)()
-    SetMemberState(value *MultiTenantOrganizationMemberState)()
-    SetRole(value *MultiTenantOrganizationMemberRole)()
+    SetMemberState(value *MultiTenantOrganizationJoinRequestRecord_memberState)()
+    SetRole(value *MultiTenantOrganizationJoinRequestRecord_role)()
     SetTransitionDetails(value MultiTenantOrganizationJoinRequestTransitionDetailsable)()
 }

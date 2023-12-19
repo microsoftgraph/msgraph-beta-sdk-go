@@ -40,13 +40,13 @@ func (m *TeamworkConnection) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d4
     return m.backingStore
 }
 // GetConnectionStatus gets the connectionStatus property value. Indicates whether a component/peripheral is connected/disconnected or its state is unknown. The possible values are: unknown, connected, disconnected, unknownFutureValue.
-func (m *TeamworkConnection) GetConnectionStatus()(*TeamworkConnectionStatus) {
+func (m *TeamworkConnection) GetConnectionStatus()(*TeamworkConnection_connectionStatus) {
     val, err := m.GetBackingStore().Get("connectionStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TeamworkConnectionStatus)
+        return val.(*TeamworkConnection_connectionStatus)
     }
     return nil
 }
@@ -54,12 +54,12 @@ func (m *TeamworkConnection) GetConnectionStatus()(*TeamworkConnectionStatus) {
 func (m *TeamworkConnection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["connectionStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTeamworkConnectionStatus)
+        val, err := n.GetEnumValue(ParseTeamworkConnection_connectionStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetConnectionStatus(val.(*TeamworkConnectionStatus))
+            m.SetConnectionStatus(val.(*TeamworkConnection_connectionStatus))
         }
         return nil
     }
@@ -148,7 +148,7 @@ func (m *TeamworkConnection) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd0
     m.backingStore = value
 }
 // SetConnectionStatus sets the connectionStatus property value. Indicates whether a component/peripheral is connected/disconnected or its state is unknown. The possible values are: unknown, connected, disconnected, unknownFutureValue.
-func (m *TeamworkConnection) SetConnectionStatus(value *TeamworkConnectionStatus)() {
+func (m *TeamworkConnection) SetConnectionStatus(value *TeamworkConnection_connectionStatus)() {
     err := m.GetBackingStore().Set("connectionStatus", value)
     if err != nil {
         panic(err)
@@ -174,11 +174,11 @@ type TeamworkConnectionable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetConnectionStatus()(*TeamworkConnectionStatus)
+    GetConnectionStatus()(*TeamworkConnection_connectionStatus)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetConnectionStatus(value *TeamworkConnectionStatus)()
+    SetConnectionStatus(value *TeamworkConnection_connectionStatus)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOdataType(value *string)()
 }

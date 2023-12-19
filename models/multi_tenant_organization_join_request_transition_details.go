@@ -39,13 +39,13 @@ func (m *MultiTenantOrganizationJoinRequestTransitionDetails) GetBackingStore()(
     return m.backingStore
 }
 // GetDesiredMemberState gets the desiredMemberState property value. State of the tenant in the multitenant organization currently being processed. The possible values are: pending, active, removed, unknownFutureValue. Read-only.
-func (m *MultiTenantOrganizationJoinRequestTransitionDetails) GetDesiredMemberState()(*MultiTenantOrganizationMemberState) {
+func (m *MultiTenantOrganizationJoinRequestTransitionDetails) GetDesiredMemberState()(*MultiTenantOrganizationJoinRequestTransitionDetails_desiredMemberState) {
     val, err := m.GetBackingStore().Get("desiredMemberState")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MultiTenantOrganizationMemberState)
+        return val.(*MultiTenantOrganizationJoinRequestTransitionDetails_desiredMemberState)
     }
     return nil
 }
@@ -64,12 +64,12 @@ func (m *MultiTenantOrganizationJoinRequestTransitionDetails) GetDetails()(*stri
 func (m *MultiTenantOrganizationJoinRequestTransitionDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["desiredMemberState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMultiTenantOrganizationMemberState)
+        val, err := n.GetEnumValue(ParseMultiTenantOrganizationJoinRequestTransitionDetails_desiredMemberState)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDesiredMemberState(val.(*MultiTenantOrganizationMemberState))
+            m.SetDesiredMemberState(val.(*MultiTenantOrganizationJoinRequestTransitionDetails_desiredMemberState))
         }
         return nil
     }
@@ -94,12 +94,12 @@ func (m *MultiTenantOrganizationJoinRequestTransitionDetails) GetFieldDeserializ
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMultiTenantOrganizationMemberProcessingStatus)
+        val, err := n.GetEnumValue(ParseMultiTenantOrganizationJoinRequestTransitionDetails_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*MultiTenantOrganizationMemberProcessingStatus))
+            m.SetStatus(val.(*MultiTenantOrganizationJoinRequestTransitionDetails_status))
         }
         return nil
     }
@@ -117,13 +117,13 @@ func (m *MultiTenantOrganizationJoinRequestTransitionDetails) GetOdataType()(*st
     return nil
 }
 // GetStatus gets the status property value. Processing state of the asynchronous job. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue. Read-only.
-func (m *MultiTenantOrganizationJoinRequestTransitionDetails) GetStatus()(*MultiTenantOrganizationMemberProcessingStatus) {
+func (m *MultiTenantOrganizationJoinRequestTransitionDetails) GetStatus()(*MultiTenantOrganizationJoinRequestTransitionDetails_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MultiTenantOrganizationMemberProcessingStatus)
+        return val.(*MultiTenantOrganizationJoinRequestTransitionDetails_status)
     }
     return nil
 }
@@ -175,7 +175,7 @@ func (m *MultiTenantOrganizationJoinRequestTransitionDetails) SetBackingStore(va
     m.backingStore = value
 }
 // SetDesiredMemberState sets the desiredMemberState property value. State of the tenant in the multitenant organization currently being processed. The possible values are: pending, active, removed, unknownFutureValue. Read-only.
-func (m *MultiTenantOrganizationJoinRequestTransitionDetails) SetDesiredMemberState(value *MultiTenantOrganizationMemberState)() {
+func (m *MultiTenantOrganizationJoinRequestTransitionDetails) SetDesiredMemberState(value *MultiTenantOrganizationJoinRequestTransitionDetails_desiredMemberState)() {
     err := m.GetBackingStore().Set("desiredMemberState", value)
     if err != nil {
         panic(err)
@@ -196,7 +196,7 @@ func (m *MultiTenantOrganizationJoinRequestTransitionDetails) SetOdataType(value
     }
 }
 // SetStatus sets the status property value. Processing state of the asynchronous job. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue. Read-only.
-func (m *MultiTenantOrganizationJoinRequestTransitionDetails) SetStatus(value *MultiTenantOrganizationMemberProcessingStatus)() {
+func (m *MultiTenantOrganizationJoinRequestTransitionDetails) SetStatus(value *MultiTenantOrganizationJoinRequestTransitionDetails_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -208,13 +208,13 @@ type MultiTenantOrganizationJoinRequestTransitionDetailsable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetDesiredMemberState()(*MultiTenantOrganizationMemberState)
+    GetDesiredMemberState()(*MultiTenantOrganizationJoinRequestTransitionDetails_desiredMemberState)
     GetDetails()(*string)
     GetOdataType()(*string)
-    GetStatus()(*MultiTenantOrganizationMemberProcessingStatus)
+    GetStatus()(*MultiTenantOrganizationJoinRequestTransitionDetails_status)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetDesiredMemberState(value *MultiTenantOrganizationMemberState)()
+    SetDesiredMemberState(value *MultiTenantOrganizationJoinRequestTransitionDetails_desiredMemberState)()
     SetDetails(value *string)()
     SetOdataType(value *string)()
-    SetStatus(value *MultiTenantOrganizationMemberProcessingStatus)()
+    SetStatus(value *MultiTenantOrganizationJoinRequestTransitionDetails_status)()
 }

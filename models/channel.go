@@ -117,6 +117,16 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["isArchived"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsArchived(val)
+        }
+        return nil
+    }
     res["isFavoriteByDefault"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -144,12 +154,12 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     res["membershipType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseChannelMembershipType)
+        val, err := n.GetEnumValue(ParseChannel_membershipType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMembershipType(val.(*ChannelMembershipType))
+            m.SetMembershipType(val.(*Channel_membershipType))
         }
         return nil
     }
@@ -254,6 +264,17 @@ func (m *Channel) GetFilesFolder()(DriveItemable) {
     }
     return nil
 }
+// GetIsArchived gets the isArchived property value. The isArchived property
+func (m *Channel) GetIsArchived()(*bool) {
+    val, err := m.GetBackingStore().Get("isArchived")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetIsFavoriteByDefault gets the isFavoriteByDefault property value. Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
 func (m *Channel) GetIsFavoriteByDefault()(*bool) {
     val, err := m.GetBackingStore().Get("isFavoriteByDefault")
@@ -277,13 +298,13 @@ func (m *Channel) GetMembers()([]ConversationMemberable) {
     return nil
 }
 // GetMembershipType gets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.
-func (m *Channel) GetMembershipType()(*ChannelMembershipType) {
+func (m *Channel) GetMembershipType()(*Channel_membershipType) {
     val, err := m.GetBackingStore().Get("membershipType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ChannelMembershipType)
+        return val.(*Channel_membershipType)
     }
     return nil
 }
@@ -396,6 +417,12 @@ func (m *Channel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     {
         err = writer.WriteObjectValue("filesFolder", m.GetFilesFolder())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("isArchived", m.GetIsArchived())
         if err != nil {
             return err
         }
@@ -522,6 +549,13 @@ func (m *Channel) SetFilesFolder(value DriveItemable)() {
         panic(err)
     }
 }
+// SetIsArchived sets the isArchived property value. The isArchived property
+func (m *Channel) SetIsArchived(value *bool)() {
+    err := m.GetBackingStore().Set("isArchived", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsFavoriteByDefault sets the isFavoriteByDefault property value. Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
 func (m *Channel) SetIsFavoriteByDefault(value *bool)() {
     err := m.GetBackingStore().Set("isFavoriteByDefault", value)
@@ -537,7 +571,7 @@ func (m *Channel) SetMembers(value []ConversationMemberable)() {
     }
 }
 // SetMembershipType sets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.
-func (m *Channel) SetMembershipType(value *ChannelMembershipType)() {
+func (m *Channel) SetMembershipType(value *Channel_membershipType)() {
     err := m.GetBackingStore().Set("membershipType", value)
     if err != nil {
         panic(err)
@@ -601,9 +635,10 @@ type Channelable interface {
     GetDisplayName()(*string)
     GetEmail()(*string)
     GetFilesFolder()(DriveItemable)
+    GetIsArchived()(*bool)
     GetIsFavoriteByDefault()(*bool)
     GetMembers()([]ConversationMemberable)
-    GetMembershipType()(*ChannelMembershipType)
+    GetMembershipType()(*Channel_membershipType)
     GetMessages()([]ChatMessageable)
     GetModerationSettings()(ChannelModerationSettingsable)
     GetSharedWithTeams()([]SharedWithChannelTeamInfoable)
@@ -616,9 +651,10 @@ type Channelable interface {
     SetDisplayName(value *string)()
     SetEmail(value *string)()
     SetFilesFolder(value DriveItemable)()
+    SetIsArchived(value *bool)()
     SetIsFavoriteByDefault(value *bool)()
     SetMembers(value []ConversationMemberable)()
-    SetMembershipType(value *ChannelMembershipType)()
+    SetMembershipType(value *Channel_membershipType)()
     SetMessages(value []ChatMessageable)()
     SetModerationSettings(value ChannelModerationSettingsable)()
     SetSharedWithTeams(value []SharedWithChannelTeamInfoable)()

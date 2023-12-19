@@ -79,12 +79,12 @@ func (m *QualityUpdateCveSeverityInformation) GetFieldDeserializers()(map[string
         return nil
     }
     res["maxSeverity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCveSeverityLevel)
+        val, err := n.GetEnumValue(ParseQualityUpdateCveSeverityInformation_maxSeverity)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMaxSeverity(val.(*CveSeverityLevel))
+            m.SetMaxSeverity(val.(*QualityUpdateCveSeverityInformation_maxSeverity))
         }
         return nil
     }
@@ -112,13 +112,13 @@ func (m *QualityUpdateCveSeverityInformation) GetMaxBaseScore()(*float64) {
     return nil
 }
 // GetMaxSeverity gets the maxSeverity property value. The maxSeverity property
-func (m *QualityUpdateCveSeverityInformation) GetMaxSeverity()(*CveSeverityLevel) {
+func (m *QualityUpdateCveSeverityInformation) GetMaxSeverity()(*QualityUpdateCveSeverityInformation_maxSeverity) {
     val, err := m.GetBackingStore().Get("maxSeverity")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CveSeverityLevel)
+        return val.(*QualityUpdateCveSeverityInformation_maxSeverity)
     }
     return nil
 }
@@ -200,7 +200,7 @@ func (m *QualityUpdateCveSeverityInformation) SetMaxBaseScore(value *float64)() 
     }
 }
 // SetMaxSeverity sets the maxSeverity property value. The maxSeverity property
-func (m *QualityUpdateCveSeverityInformation) SetMaxSeverity(value *CveSeverityLevel)() {
+func (m *QualityUpdateCveSeverityInformation) SetMaxSeverity(value *QualityUpdateCveSeverityInformation_maxSeverity)() {
     err := m.GetBackingStore().Set("maxSeverity", value)
     if err != nil {
         panic(err)
@@ -221,11 +221,11 @@ type QualityUpdateCveSeverityInformationable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetExploitedCves()([]CveInformationable)
     GetMaxBaseScore()(*float64)
-    GetMaxSeverity()(*CveSeverityLevel)
+    GetMaxSeverity()(*QualityUpdateCveSeverityInformation_maxSeverity)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetExploitedCves(value []CveInformationable)()
     SetMaxBaseScore(value *float64)()
-    SetMaxSeverity(value *CveSeverityLevel)()
+    SetMaxSeverity(value *QualityUpdateCveSeverityInformation_maxSeverity)()
     SetOdataType(value *string)()
 }

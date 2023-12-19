@@ -86,12 +86,12 @@ func (m *Notification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     res["priority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePriority)
+        val, err := n.GetEnumValue(ParseNotification_priority)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPriority(val.(*Priority))
+            m.SetPriority(val.(*Notification_priority))
         }
         return nil
     }
@@ -140,13 +140,13 @@ func (m *Notification) GetPayload()(PayloadTypesable) {
     return nil
 }
 // GetPriority gets the priority property value. Indicates the priority of a raw user notification. Visual notifications are sent with high priority by default. Valid values are None, High and Low.
-func (m *Notification) GetPriority()(*Priority) {
+func (m *Notification) GetPriority()(*Notification_priority) {
     val, err := m.GetBackingStore().Get("priority")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*Priority)
+        return val.(*Notification_priority)
     }
     return nil
 }
@@ -252,7 +252,7 @@ func (m *Notification) SetPayload(value PayloadTypesable)() {
     }
 }
 // SetPriority sets the priority property value. Indicates the priority of a raw user notification. Visual notifications are sent with high priority by default. Valid values are None, High and Low.
-func (m *Notification) SetPriority(value *Priority)() {
+func (m *Notification) SetPriority(value *Notification_priority)() {
     err := m.GetBackingStore().Set("priority", value)
     if err != nil {
         panic(err)
@@ -280,14 +280,14 @@ type Notificationable interface {
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetGroupName()(*string)
     GetPayload()(PayloadTypesable)
-    GetPriority()(*Priority)
+    GetPriority()(*Notification_priority)
     GetTargetHostName()(*string)
     GetTargetPolicy()(TargetPolicyEndpointsable)
     SetDisplayTimeToLive(value *int32)()
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetGroupName(value *string)()
     SetPayload(value PayloadTypesable)()
-    SetPriority(value *Priority)()
+    SetPriority(value *Notification_priority)()
     SetTargetHostName(value *string)()
     SetTargetPolicy(value TargetPolicyEndpointsable)()
 }

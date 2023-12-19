@@ -33,13 +33,13 @@ func (m *StatusDetails) GetAdditionalDetails()(*string) {
     return nil
 }
 // GetErrorCategory gets the errorCategory property value. Categorizes the error code. Possible values are Failure, NonServiceFailure, Success.
-func (m *StatusDetails) GetErrorCategory()(*ProvisioningStatusErrorCategory) {
+func (m *StatusDetails) GetErrorCategory()(*StatusDetails_errorCategory) {
     val, err := m.GetBackingStore().Get("errorCategory")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ProvisioningStatusErrorCategory)
+        return val.(*StatusDetails_errorCategory)
     }
     return nil
 }
@@ -68,12 +68,12 @@ func (m *StatusDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["errorCategory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseProvisioningStatusErrorCategory)
+        val, err := n.GetEnumValue(ParseStatusDetails_errorCategory)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetErrorCategory(val.(*ProvisioningStatusErrorCategory))
+            m.SetErrorCategory(val.(*StatusDetails_errorCategory))
         }
         return nil
     }
@@ -178,7 +178,7 @@ func (m *StatusDetails) SetAdditionalDetails(value *string)() {
     }
 }
 // SetErrorCategory sets the errorCategory property value. Categorizes the error code. Possible values are Failure, NonServiceFailure, Success.
-func (m *StatusDetails) SetErrorCategory(value *ProvisioningStatusErrorCategory)() {
+func (m *StatusDetails) SetErrorCategory(value *StatusDetails_errorCategory)() {
     err := m.GetBackingStore().Set("errorCategory", value)
     if err != nil {
         panic(err)
@@ -210,12 +210,12 @@ type StatusDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     StatusBaseable
     GetAdditionalDetails()(*string)
-    GetErrorCategory()(*ProvisioningStatusErrorCategory)
+    GetErrorCategory()(*StatusDetails_errorCategory)
     GetErrorCode()(*string)
     GetReason()(*string)
     GetRecommendedAction()(*string)
     SetAdditionalDetails(value *string)()
-    SetErrorCategory(value *ProvisioningStatusErrorCategory)()
+    SetErrorCategory(value *StatusDetails_errorCategory)()
     SetErrorCode(value *string)()
     SetReason(value *string)()
     SetRecommendedAction(value *string)()

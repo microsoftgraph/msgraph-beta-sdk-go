@@ -44,25 +44,25 @@ func (m *ConnectionOperation) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseConnectionOperationStatus)
+        val, err := n.GetEnumValue(ParseConnectionOperation_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*ConnectionOperationStatus))
+            m.SetStatus(val.(*ConnectionOperation_status))
         }
         return nil
     }
     return res
 }
 // GetStatus gets the status property value. The status property
-func (m *ConnectionOperation) GetStatus()(*ConnectionOperationStatus) {
+func (m *ConnectionOperation) GetStatus()(*ConnectionOperation_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ConnectionOperationStatus)
+        return val.(*ConnectionOperation_status)
     }
     return nil
 }
@@ -95,7 +95,7 @@ func (m *ConnectionOperation) SetError(value PublicErrorable)() {
     }
 }
 // SetStatus sets the status property value. The status property
-func (m *ConnectionOperation) SetStatus(value *ConnectionOperationStatus)() {
+func (m *ConnectionOperation) SetStatus(value *ConnectionOperation_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -106,7 +106,7 @@ type ConnectionOperationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetError()(PublicErrorable)
-    GetStatus()(*ConnectionOperationStatus)
+    GetStatus()(*ConnectionOperation_status)
     SetError(value PublicErrorable)()
-    SetStatus(value *ConnectionOperationStatus)()
+    SetStatus(value *ConnectionOperation_status)()
 }

@@ -44,13 +44,13 @@ func (m *AndroidManagedAppProtection) GetAllowedAndroidDeviceModels()([]string) 
     return nil
 }
 // GetAppActionIfAccountIsClockedOut gets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time).
-func (m *AndroidManagedAppProtection) GetAppActionIfAccountIsClockedOut()(*ManagedAppRemediationAction) {
+func (m *AndroidManagedAppProtection) GetAppActionIfAccountIsClockedOut()(*AndroidManagedAppProtection_appActionIfAccountIsClockedOut) {
     val, err := m.GetBackingStore().Get("appActionIfAccountIsClockedOut")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ManagedAppRemediationAction)
+        return val.(*AndroidManagedAppProtection_appActionIfAccountIsClockedOut)
     }
     return nil
 }
@@ -110,46 +110,46 @@ func (m *AndroidManagedAppProtection) GetAppActionIfDeviceLockNotSet()(*ManagedA
     return nil
 }
 // GetAppActionIfDevicePasscodeComplexityLessThanHigh gets the appActionIfDevicePasscodeComplexityLessThanHigh property value. If the device does not have a passcode of high complexity or higher, trigger the stored action.
-func (m *AndroidManagedAppProtection) GetAppActionIfDevicePasscodeComplexityLessThanHigh()(*ManagedAppRemediationAction) {
+func (m *AndroidManagedAppProtection) GetAppActionIfDevicePasscodeComplexityLessThanHigh()(*AndroidManagedAppProtection_appActionIfDevicePasscodeComplexityLessThanHigh) {
     val, err := m.GetBackingStore().Get("appActionIfDevicePasscodeComplexityLessThanHigh")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ManagedAppRemediationAction)
+        return val.(*AndroidManagedAppProtection_appActionIfDevicePasscodeComplexityLessThanHigh)
     }
     return nil
 }
 // GetAppActionIfDevicePasscodeComplexityLessThanLow gets the appActionIfDevicePasscodeComplexityLessThanLow property value. If the device does not have a passcode of low complexity or higher, trigger the stored action.
-func (m *AndroidManagedAppProtection) GetAppActionIfDevicePasscodeComplexityLessThanLow()(*ManagedAppRemediationAction) {
+func (m *AndroidManagedAppProtection) GetAppActionIfDevicePasscodeComplexityLessThanLow()(*AndroidManagedAppProtection_appActionIfDevicePasscodeComplexityLessThanLow) {
     val, err := m.GetBackingStore().Get("appActionIfDevicePasscodeComplexityLessThanLow")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ManagedAppRemediationAction)
+        return val.(*AndroidManagedAppProtection_appActionIfDevicePasscodeComplexityLessThanLow)
     }
     return nil
 }
 // GetAppActionIfDevicePasscodeComplexityLessThanMedium gets the appActionIfDevicePasscodeComplexityLessThanMedium property value. If the device does not have a passcode of medium complexity or higher, trigger the stored action.
-func (m *AndroidManagedAppProtection) GetAppActionIfDevicePasscodeComplexityLessThanMedium()(*ManagedAppRemediationAction) {
+func (m *AndroidManagedAppProtection) GetAppActionIfDevicePasscodeComplexityLessThanMedium()(*AndroidManagedAppProtection_appActionIfDevicePasscodeComplexityLessThanMedium) {
     val, err := m.GetBackingStore().Get("appActionIfDevicePasscodeComplexityLessThanMedium")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ManagedAppRemediationAction)
+        return val.(*AndroidManagedAppProtection_appActionIfDevicePasscodeComplexityLessThanMedium)
     }
     return nil
 }
 // GetAppActionIfSamsungKnoxAttestationRequired gets the appActionIfSamsungKnoxAttestationRequired property value. Defines the behavior of a managed app when Samsung Knox Attestation is required. Possible values are null, warn, block & wipe. If the admin does not set this action, the default is null, which indicates this setting is not configured.
-func (m *AndroidManagedAppProtection) GetAppActionIfSamsungKnoxAttestationRequired()(*ManagedAppRemediationAction) {
+func (m *AndroidManagedAppProtection) GetAppActionIfSamsungKnoxAttestationRequired()(*AndroidManagedAppProtection_appActionIfSamsungKnoxAttestationRequired) {
     val, err := m.GetBackingStore().Get("appActionIfSamsungKnoxAttestationRequired")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ManagedAppRemediationAction)
+        return val.(*AndroidManagedAppProtection_appActionIfSamsungKnoxAttestationRequired)
     }
     return nil
 }
@@ -348,12 +348,12 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     res["appActionIfAccountIsClockedOut"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseManagedAppRemediationAction)
+        val, err := n.GetEnumValue(ParseAndroidManagedAppProtection_appActionIfAccountIsClockedOut)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAppActionIfAccountIsClockedOut(val.(*ManagedAppRemediationAction))
+            m.SetAppActionIfAccountIsClockedOut(val.(*AndroidManagedAppProtection_appActionIfAccountIsClockedOut))
         }
         return nil
     }
@@ -408,42 +408,42 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     res["appActionIfDevicePasscodeComplexityLessThanHigh"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseManagedAppRemediationAction)
+        val, err := n.GetEnumValue(ParseAndroidManagedAppProtection_appActionIfDevicePasscodeComplexityLessThanHigh)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAppActionIfDevicePasscodeComplexityLessThanHigh(val.(*ManagedAppRemediationAction))
+            m.SetAppActionIfDevicePasscodeComplexityLessThanHigh(val.(*AndroidManagedAppProtection_appActionIfDevicePasscodeComplexityLessThanHigh))
         }
         return nil
     }
     res["appActionIfDevicePasscodeComplexityLessThanLow"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseManagedAppRemediationAction)
+        val, err := n.GetEnumValue(ParseAndroidManagedAppProtection_appActionIfDevicePasscodeComplexityLessThanLow)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAppActionIfDevicePasscodeComplexityLessThanLow(val.(*ManagedAppRemediationAction))
+            m.SetAppActionIfDevicePasscodeComplexityLessThanLow(val.(*AndroidManagedAppProtection_appActionIfDevicePasscodeComplexityLessThanLow))
         }
         return nil
     }
     res["appActionIfDevicePasscodeComplexityLessThanMedium"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseManagedAppRemediationAction)
+        val, err := n.GetEnumValue(ParseAndroidManagedAppProtection_appActionIfDevicePasscodeComplexityLessThanMedium)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAppActionIfDevicePasscodeComplexityLessThanMedium(val.(*ManagedAppRemediationAction))
+            m.SetAppActionIfDevicePasscodeComplexityLessThanMedium(val.(*AndroidManagedAppProtection_appActionIfDevicePasscodeComplexityLessThanMedium))
         }
         return nil
     }
     res["appActionIfSamsungKnoxAttestationRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseManagedAppRemediationAction)
+        val, err := n.GetEnumValue(ParseAndroidManagedAppProtection_appActionIfSamsungKnoxAttestationRequired)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAppActionIfSamsungKnoxAttestationRequired(val.(*ManagedAppRemediationAction))
+            m.SetAppActionIfSamsungKnoxAttestationRequired(val.(*AndroidManagedAppProtection_appActionIfSamsungKnoxAttestationRequired))
         }
         return nil
     }
@@ -1319,7 +1319,7 @@ func (m *AndroidManagedAppProtection) SetAllowedAndroidDeviceModels(value []stri
     }
 }
 // SetAppActionIfAccountIsClockedOut sets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time).
-func (m *AndroidManagedAppProtection) SetAppActionIfAccountIsClockedOut(value *ManagedAppRemediationAction)() {
+func (m *AndroidManagedAppProtection) SetAppActionIfAccountIsClockedOut(value *AndroidManagedAppProtection_appActionIfAccountIsClockedOut)() {
     err := m.GetBackingStore().Set("appActionIfAccountIsClockedOut", value)
     if err != nil {
         panic(err)
@@ -1361,28 +1361,28 @@ func (m *AndroidManagedAppProtection) SetAppActionIfDeviceLockNotSet(value *Mana
     }
 }
 // SetAppActionIfDevicePasscodeComplexityLessThanHigh sets the appActionIfDevicePasscodeComplexityLessThanHigh property value. If the device does not have a passcode of high complexity or higher, trigger the stored action.
-func (m *AndroidManagedAppProtection) SetAppActionIfDevicePasscodeComplexityLessThanHigh(value *ManagedAppRemediationAction)() {
+func (m *AndroidManagedAppProtection) SetAppActionIfDevicePasscodeComplexityLessThanHigh(value *AndroidManagedAppProtection_appActionIfDevicePasscodeComplexityLessThanHigh)() {
     err := m.GetBackingStore().Set("appActionIfDevicePasscodeComplexityLessThanHigh", value)
     if err != nil {
         panic(err)
     }
 }
 // SetAppActionIfDevicePasscodeComplexityLessThanLow sets the appActionIfDevicePasscodeComplexityLessThanLow property value. If the device does not have a passcode of low complexity or higher, trigger the stored action.
-func (m *AndroidManagedAppProtection) SetAppActionIfDevicePasscodeComplexityLessThanLow(value *ManagedAppRemediationAction)() {
+func (m *AndroidManagedAppProtection) SetAppActionIfDevicePasscodeComplexityLessThanLow(value *AndroidManagedAppProtection_appActionIfDevicePasscodeComplexityLessThanLow)() {
     err := m.GetBackingStore().Set("appActionIfDevicePasscodeComplexityLessThanLow", value)
     if err != nil {
         panic(err)
     }
 }
 // SetAppActionIfDevicePasscodeComplexityLessThanMedium sets the appActionIfDevicePasscodeComplexityLessThanMedium property value. If the device does not have a passcode of medium complexity or higher, trigger the stored action.
-func (m *AndroidManagedAppProtection) SetAppActionIfDevicePasscodeComplexityLessThanMedium(value *ManagedAppRemediationAction)() {
+func (m *AndroidManagedAppProtection) SetAppActionIfDevicePasscodeComplexityLessThanMedium(value *AndroidManagedAppProtection_appActionIfDevicePasscodeComplexityLessThanMedium)() {
     err := m.GetBackingStore().Set("appActionIfDevicePasscodeComplexityLessThanMedium", value)
     if err != nil {
         panic(err)
     }
 }
 // SetAppActionIfSamsungKnoxAttestationRequired sets the appActionIfSamsungKnoxAttestationRequired property value. Defines the behavior of a managed app when Samsung Knox Attestation is required. Possible values are null, warn, block & wipe. If the admin does not set this action, the default is null, which indicates this setting is not configured.
-func (m *AndroidManagedAppProtection) SetAppActionIfSamsungKnoxAttestationRequired(value *ManagedAppRemediationAction)() {
+func (m *AndroidManagedAppProtection) SetAppActionIfSamsungKnoxAttestationRequired(value *AndroidManagedAppProtection_appActionIfSamsungKnoxAttestationRequired)() {
     err := m.GetBackingStore().Set("appActionIfSamsungKnoxAttestationRequired", value)
     if err != nil {
         panic(err)
@@ -1625,16 +1625,16 @@ type AndroidManagedAppProtectionable interface {
     TargetedManagedAppProtectionable
     GetAllowedAndroidDeviceManufacturers()(*string)
     GetAllowedAndroidDeviceModels()([]string)
-    GetAppActionIfAccountIsClockedOut()(*ManagedAppRemediationAction)
+    GetAppActionIfAccountIsClockedOut()(*AndroidManagedAppProtection_appActionIfAccountIsClockedOut)
     GetAppActionIfAndroidDeviceManufacturerNotAllowed()(*ManagedAppRemediationAction)
     GetAppActionIfAndroidDeviceModelNotAllowed()(*ManagedAppRemediationAction)
     GetAppActionIfAndroidSafetyNetAppsVerificationFailed()(*ManagedAppRemediationAction)
     GetAppActionIfAndroidSafetyNetDeviceAttestationFailed()(*ManagedAppRemediationAction)
     GetAppActionIfDeviceLockNotSet()(*ManagedAppRemediationAction)
-    GetAppActionIfDevicePasscodeComplexityLessThanHigh()(*ManagedAppRemediationAction)
-    GetAppActionIfDevicePasscodeComplexityLessThanLow()(*ManagedAppRemediationAction)
-    GetAppActionIfDevicePasscodeComplexityLessThanMedium()(*ManagedAppRemediationAction)
-    GetAppActionIfSamsungKnoxAttestationRequired()(*ManagedAppRemediationAction)
+    GetAppActionIfDevicePasscodeComplexityLessThanHigh()(*AndroidManagedAppProtection_appActionIfDevicePasscodeComplexityLessThanHigh)
+    GetAppActionIfDevicePasscodeComplexityLessThanLow()(*AndroidManagedAppProtection_appActionIfDevicePasscodeComplexityLessThanLow)
+    GetAppActionIfDevicePasscodeComplexityLessThanMedium()(*AndroidManagedAppProtection_appActionIfDevicePasscodeComplexityLessThanMedium)
+    GetAppActionIfSamsungKnoxAttestationRequired()(*AndroidManagedAppProtection_appActionIfSamsungKnoxAttestationRequired)
     GetApprovedKeyboards()([]KeyValuePairable)
     GetApps()([]ManagedMobileAppable)
     GetBiometricAuthenticationBlocked()(*bool)
@@ -1670,16 +1670,16 @@ type AndroidManagedAppProtectionable interface {
     GetWipeAfterCompanyPortalUpdateDeferralInDays()(*int32)
     SetAllowedAndroidDeviceManufacturers(value *string)()
     SetAllowedAndroidDeviceModels(value []string)()
-    SetAppActionIfAccountIsClockedOut(value *ManagedAppRemediationAction)()
+    SetAppActionIfAccountIsClockedOut(value *AndroidManagedAppProtection_appActionIfAccountIsClockedOut)()
     SetAppActionIfAndroidDeviceManufacturerNotAllowed(value *ManagedAppRemediationAction)()
     SetAppActionIfAndroidDeviceModelNotAllowed(value *ManagedAppRemediationAction)()
     SetAppActionIfAndroidSafetyNetAppsVerificationFailed(value *ManagedAppRemediationAction)()
     SetAppActionIfAndroidSafetyNetDeviceAttestationFailed(value *ManagedAppRemediationAction)()
     SetAppActionIfDeviceLockNotSet(value *ManagedAppRemediationAction)()
-    SetAppActionIfDevicePasscodeComplexityLessThanHigh(value *ManagedAppRemediationAction)()
-    SetAppActionIfDevicePasscodeComplexityLessThanLow(value *ManagedAppRemediationAction)()
-    SetAppActionIfDevicePasscodeComplexityLessThanMedium(value *ManagedAppRemediationAction)()
-    SetAppActionIfSamsungKnoxAttestationRequired(value *ManagedAppRemediationAction)()
+    SetAppActionIfDevicePasscodeComplexityLessThanHigh(value *AndroidManagedAppProtection_appActionIfDevicePasscodeComplexityLessThanHigh)()
+    SetAppActionIfDevicePasscodeComplexityLessThanLow(value *AndroidManagedAppProtection_appActionIfDevicePasscodeComplexityLessThanLow)()
+    SetAppActionIfDevicePasscodeComplexityLessThanMedium(value *AndroidManagedAppProtection_appActionIfDevicePasscodeComplexityLessThanMedium)()
+    SetAppActionIfSamsungKnoxAttestationRequired(value *AndroidManagedAppProtection_appActionIfSamsungKnoxAttestationRequired)()
     SetApprovedKeyboards(value []KeyValuePairable)()
     SetApps(value []ManagedMobileAppable)()
     SetBiometricAuthenticationBlocked(value *bool)()

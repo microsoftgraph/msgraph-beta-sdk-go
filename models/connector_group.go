@@ -107,12 +107,12 @@ func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["region"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseConnectorGroupRegion)
+        val, err := n.GetEnumValue(ParseConnectorGroup_region)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRegion(val.(*ConnectorGroupRegion))
+            m.SetRegion(val.(*ConnectorGroup_region))
         }
         return nil
     }
@@ -152,13 +152,13 @@ func (m *ConnectorGroup) GetName()(*string) {
     return nil
 }
 // GetRegion gets the region property value. The region the connectorGroup is assigned to and will optimize traffic for. This region can only be set if no connectors or applications are assigned to the connectorGroup. The possible values are: nam (for North America), eur (for Europe), aus (for Australia), asia (for Asia), ind (for India), and unknownFutureValue.
-func (m *ConnectorGroup) GetRegion()(*ConnectorGroupRegion) {
+func (m *ConnectorGroup) GetRegion()(*ConnectorGroup_region) {
     val, err := m.GetBackingStore().Get("region")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ConnectorGroupRegion)
+        return val.(*ConnectorGroup_region)
     }
     return nil
 }
@@ -256,7 +256,7 @@ func (m *ConnectorGroup) SetName(value *string)() {
     }
 }
 // SetRegion sets the region property value. The region the connectorGroup is assigned to and will optimize traffic for. This region can only be set if no connectors or applications are assigned to the connectorGroup. The possible values are: nam (for North America), eur (for Europe), aus (for Australia), asia (for Asia), ind (for India), and unknownFutureValue.
-func (m *ConnectorGroup) SetRegion(value *ConnectorGroupRegion)() {
+func (m *ConnectorGroup) SetRegion(value *ConnectorGroup_region)() {
     err := m.GetBackingStore().Set("region", value)
     if err != nil {
         panic(err)
@@ -271,11 +271,11 @@ type ConnectorGroupable interface {
     GetIsDefault()(*bool)
     GetMembers()([]Connectorable)
     GetName()(*string)
-    GetRegion()(*ConnectorGroupRegion)
+    GetRegion()(*ConnectorGroup_region)
     SetApplications(value []Applicationable)()
     SetConnectorGroupType(value *ConnectorGroupType)()
     SetIsDefault(value *bool)()
     SetMembers(value []Connectorable)()
     SetName(value *string)()
-    SetRegion(value *ConnectorGroupRegion)()
+    SetRegion(value *ConnectorGroup_region)()
 }

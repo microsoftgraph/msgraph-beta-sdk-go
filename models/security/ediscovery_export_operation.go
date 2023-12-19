@@ -64,24 +64,24 @@ func (m *EdiscoveryExportOperation) GetExportFileMetadata()([]ExportFileMetadata
     return nil
 }
 // GetExportOptions gets the exportOptions property value. The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags. The fileInfo member is deprecated and will stop returning data on April 30, 2023. Going forward, the summary and load file are always included.
-func (m *EdiscoveryExportOperation) GetExportOptions()(*ExportOptions) {
+func (m *EdiscoveryExportOperation) GetExportOptions()(*EdiscoveryExportOperation_exportOptions) {
     val, err := m.GetBackingStore().Get("exportOptions")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ExportOptions)
+        return val.(*EdiscoveryExportOperation_exportOptions)
     }
     return nil
 }
 // GetExportStructure gets the exportStructure property value. The options provided that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.
-func (m *EdiscoveryExportOperation) GetExportStructure()(*ExportFileStructure) {
+func (m *EdiscoveryExportOperation) GetExportStructure()(*EdiscoveryExportOperation_exportStructure) {
     val, err := m.GetBackingStore().Get("exportStructure")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ExportFileStructure)
+        return val.(*EdiscoveryExportOperation_exportStructure)
     }
     return nil
 }
@@ -135,22 +135,22 @@ func (m *EdiscoveryExportOperation) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     res["exportOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseExportOptions)
+        val, err := n.GetEnumValue(ParseEdiscoveryExportOperation_exportOptions)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetExportOptions(val.(*ExportOptions))
+            m.SetExportOptions(val.(*EdiscoveryExportOperation_exportOptions))
         }
         return nil
     }
     res["exportStructure"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseExportFileStructure)
+        val, err := n.GetEnumValue(ParseEdiscoveryExportOperation_exportStructure)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetExportStructure(val.(*ExportFileStructure))
+            m.SetExportStructure(val.(*EdiscoveryExportOperation_exportStructure))
         }
         return nil
     }
@@ -345,14 +345,14 @@ func (m *EdiscoveryExportOperation) SetExportFileMetadata(value []ExportFileMeta
     }
 }
 // SetExportOptions sets the exportOptions property value. The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags. The fileInfo member is deprecated and will stop returning data on April 30, 2023. Going forward, the summary and load file are always included.
-func (m *EdiscoveryExportOperation) SetExportOptions(value *ExportOptions)() {
+func (m *EdiscoveryExportOperation) SetExportOptions(value *EdiscoveryExportOperation_exportOptions)() {
     err := m.GetBackingStore().Set("exportOptions", value)
     if err != nil {
         panic(err)
     }
 }
 // SetExportStructure sets the exportStructure property value. The options provided that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.
-func (m *EdiscoveryExportOperation) SetExportStructure(value *ExportFileStructure)() {
+func (m *EdiscoveryExportOperation) SetExportStructure(value *EdiscoveryExportOperation_exportStructure)() {
     err := m.GetBackingStore().Set("exportStructure", value)
     if err != nil {
         panic(err)
@@ -394,8 +394,8 @@ type EdiscoveryExportOperationable interface {
     GetAzureBlobToken()(*string)
     GetDescription()(*string)
     GetExportFileMetadata()([]ExportFileMetadataable)
-    GetExportOptions()(*ExportOptions)
-    GetExportStructure()(*ExportFileStructure)
+    GetExportOptions()(*EdiscoveryExportOperation_exportOptions)
+    GetExportStructure()(*EdiscoveryExportOperation_exportStructure)
     GetOutputFolderId()(*string)
     GetOutputName()(*string)
     GetReviewSet()(EdiscoveryReviewSetable)
@@ -404,8 +404,8 @@ type EdiscoveryExportOperationable interface {
     SetAzureBlobToken(value *string)()
     SetDescription(value *string)()
     SetExportFileMetadata(value []ExportFileMetadataable)()
-    SetExportOptions(value *ExportOptions)()
-    SetExportStructure(value *ExportFileStructure)()
+    SetExportOptions(value *EdiscoveryExportOperation_exportOptions)()
+    SetExportStructure(value *EdiscoveryExportOperation_exportStructure)()
     SetOutputFolderId(value *string)()
     SetOutputName(value *string)()
     SetReviewSet(value EdiscoveryReviewSetable)()

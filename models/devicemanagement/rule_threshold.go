@@ -35,13 +35,13 @@ func (m *RuleThreshold) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAggregation gets the aggregation property value. Indicates the built-in aggregation methods. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.
-func (m *RuleThreshold) GetAggregation()(*AggregationType) {
+func (m *RuleThreshold) GetAggregation()(*RuleThreshold_aggregation) {
     val, err := m.GetBackingStore().Get("aggregation")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AggregationType)
+        return val.(*RuleThreshold_aggregation)
     }
     return nil
 }
@@ -53,12 +53,12 @@ func (m *RuleThreshold) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d411854
 func (m *RuleThreshold) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["aggregation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAggregationType)
+        val, err := n.GetEnumValue(ParseRuleThreshold_aggregation)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAggregation(val.(*AggregationType))
+            m.SetAggregation(val.(*RuleThreshold_aggregation))
         }
         return nil
     }
@@ -73,12 +73,12 @@ func (m *RuleThreshold) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["operator"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOperatorType)
+        val, err := n.GetEnumValue(ParseRuleThreshold_operator)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOperator(val.(*OperatorType))
+            m.SetOperator(val.(*RuleThreshold_operator))
         }
         return nil
     }
@@ -106,13 +106,13 @@ func (m *RuleThreshold) GetOdataType()(*string) {
     return nil
 }
 // GetOperator gets the operator property value. Indicates the built-in operator. The possible values are: greaterOrEqual, equal, greater, less, lessOrEqual, notEqual, unknownFutureValue.
-func (m *RuleThreshold) GetOperator()(*OperatorType) {
+func (m *RuleThreshold) GetOperator()(*RuleThreshold_operator) {
     val, err := m.GetBackingStore().Get("operator")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*OperatorType)
+        return val.(*RuleThreshold_operator)
     }
     return nil
 }
@@ -171,7 +171,7 @@ func (m *RuleThreshold) SetAdditionalData(value map[string]any)() {
     }
 }
 // SetAggregation sets the aggregation property value. Indicates the built-in aggregation methods. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.
-func (m *RuleThreshold) SetAggregation(value *AggregationType)() {
+func (m *RuleThreshold) SetAggregation(value *RuleThreshold_aggregation)() {
     err := m.GetBackingStore().Set("aggregation", value)
     if err != nil {
         panic(err)
@@ -189,7 +189,7 @@ func (m *RuleThreshold) SetOdataType(value *string)() {
     }
 }
 // SetOperator sets the operator property value. Indicates the built-in operator. The possible values are: greaterOrEqual, equal, greater, less, lessOrEqual, notEqual, unknownFutureValue.
-func (m *RuleThreshold) SetOperator(value *OperatorType)() {
+func (m *RuleThreshold) SetOperator(value *RuleThreshold_operator)() {
     err := m.GetBackingStore().Set("operator", value)
     if err != nil {
         panic(err)
@@ -207,14 +207,14 @@ type RuleThresholdable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAggregation()(*AggregationType)
+    GetAggregation()(*RuleThreshold_aggregation)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
-    GetOperator()(*OperatorType)
+    GetOperator()(*RuleThreshold_operator)
     GetTarget()(*int32)
-    SetAggregation(value *AggregationType)()
+    SetAggregation(value *RuleThreshold_aggregation)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
-    SetOperator(value *OperatorType)()
+    SetOperator(value *RuleThreshold_operator)()
     SetTarget(value *int32)()
 }

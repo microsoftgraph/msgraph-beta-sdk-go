@@ -20,13 +20,13 @@ func CreateMobilityManagementPolicyFromDiscriminatorValue(parseNode i878a80d2330
     return NewMobilityManagementPolicy(), nil
 }
 // GetAppliesTo gets the appliesTo property value. Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.
-func (m *MobilityManagementPolicy) GetAppliesTo()(*PolicyScope) {
+func (m *MobilityManagementPolicy) GetAppliesTo()(*MobilityManagementPolicy_appliesTo) {
     val, err := m.GetBackingStore().Get("appliesTo")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PolicyScope)
+        return val.(*MobilityManagementPolicy_appliesTo)
     }
     return nil
 }
@@ -78,12 +78,12 @@ func (m *MobilityManagementPolicy) GetDisplayName()(*string) {
 func (m *MobilityManagementPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appliesTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePolicyScope)
+        val, err := n.GetEnumValue(ParseMobilityManagementPolicy_appliesTo)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAppliesTo(val.(*PolicyScope))
+            m.SetAppliesTo(val.(*MobilityManagementPolicy_appliesTo))
         }
         return nil
     }
@@ -262,7 +262,7 @@ func (m *MobilityManagementPolicy) Serialize(writer i878a80d2330e89d26896388a3f4
     return nil
 }
 // SetAppliesTo sets the appliesTo property value. Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.
-func (m *MobilityManagementPolicy) SetAppliesTo(value *PolicyScope)() {
+func (m *MobilityManagementPolicy) SetAppliesTo(value *MobilityManagementPolicy_appliesTo)() {
     err := m.GetBackingStore().Set("appliesTo", value)
     if err != nil {
         panic(err)
@@ -321,7 +321,7 @@ func (m *MobilityManagementPolicy) SetTermsOfUseUrl(value *string)() {
 type MobilityManagementPolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAppliesTo()(*PolicyScope)
+    GetAppliesTo()(*MobilityManagementPolicy_appliesTo)
     GetComplianceUrl()(*string)
     GetDescription()(*string)
     GetDiscoveryUrl()(*string)
@@ -329,7 +329,7 @@ type MobilityManagementPolicyable interface {
     GetIncludedGroups()([]Groupable)
     GetIsValid()(*bool)
     GetTermsOfUseUrl()(*string)
-    SetAppliesTo(value *PolicyScope)()
+    SetAppliesTo(value *MobilityManagementPolicy_appliesTo)()
     SetComplianceUrl(value *string)()
     SetDescription(value *string)()
     SetDiscoveryUrl(value *string)()

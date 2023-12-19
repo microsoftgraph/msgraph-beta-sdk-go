@@ -100,12 +100,12 @@ func (m *SkillProficiency) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["proficiency"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSkillProficiencyLevel)
+        val, err := n.GetEnumValue(ParseSkillProficiency_proficiency)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProficiency(val.(*SkillProficiencyLevel))
+            m.SetProficiency(val.(*SkillProficiency_proficiency))
         }
         return nil
     }
@@ -132,13 +132,13 @@ func (m *SkillProficiency) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetProficiency gets the proficiency property value. Detail of the users proficiency with this skill. Possible values are: elementary, limitedWorking, generalProfessional, advancedProfessional, expert, unknownFutureValue.
-func (m *SkillProficiency) GetProficiency()(*SkillProficiencyLevel) {
+func (m *SkillProficiency) GetProficiency()(*SkillProficiency_proficiency) {
     val, err := m.GetBackingStore().Get("proficiency")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SkillProficiencyLevel)
+        return val.(*SkillProficiency_proficiency)
     }
     return nil
 }
@@ -231,7 +231,7 @@ func (m *SkillProficiency) SetDisplayName(value *string)() {
     }
 }
 // SetProficiency sets the proficiency property value. Detail of the users proficiency with this skill. Possible values are: elementary, limitedWorking, generalProfessional, advancedProfessional, expert, unknownFutureValue.
-func (m *SkillProficiency) SetProficiency(value *SkillProficiencyLevel)() {
+func (m *SkillProficiency) SetProficiency(value *SkillProficiency_proficiency)() {
     err := m.GetBackingStore().Set("proficiency", value)
     if err != nil {
         panic(err)
@@ -258,13 +258,13 @@ type SkillProficiencyable interface {
     GetCategories()([]string)
     GetCollaborationTags()([]string)
     GetDisplayName()(*string)
-    GetProficiency()(*SkillProficiencyLevel)
+    GetProficiency()(*SkillProficiency_proficiency)
     GetThumbnailUrl()(*string)
     GetWebUrl()(*string)
     SetCategories(value []string)()
     SetCollaborationTags(value []string)()
     SetDisplayName(value *string)()
-    SetProficiency(value *SkillProficiencyLevel)()
+    SetProficiency(value *SkillProficiency_proficiency)()
     SetThumbnailUrl(value *string)()
     SetWebUrl(value *string)()
 }

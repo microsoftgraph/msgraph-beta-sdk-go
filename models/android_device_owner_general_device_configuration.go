@@ -55,24 +55,24 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAppsAllowInstallFromUn
     return nil
 }
 // GetAppsAutoUpdatePolicy gets the appsAutoUpdatePolicy property value. Indicates the value of the app auto update policy. Possible values are: notConfigured, userChoice, never, wiFiOnly, always.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAppsAutoUpdatePolicy()(*AndroidDeviceOwnerAppAutoUpdatePolicyType) {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAppsAutoUpdatePolicy()(*AndroidDeviceOwnerGeneralDeviceConfiguration_appsAutoUpdatePolicy) {
     val, err := m.GetBackingStore().Get("appsAutoUpdatePolicy")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AndroidDeviceOwnerAppAutoUpdatePolicyType)
+        return val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_appsAutoUpdatePolicy)
     }
     return nil
 }
 // GetAppsDefaultPermissionPolicy gets the appsDefaultPermissionPolicy property value. Indicates the permission policy for requests for runtime permissions if one is not defined for the app specifically. Possible values are: deviceDefault, prompt, autoGrant, autoDeny.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAppsDefaultPermissionPolicy()(*AndroidDeviceOwnerDefaultAppPermissionPolicyType) {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAppsDefaultPermissionPolicy()(*AndroidDeviceOwnerGeneralDeviceConfiguration_appsDefaultPermissionPolicy) {
     val, err := m.GetBackingStore().Get("appsDefaultPermissionPolicy")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AndroidDeviceOwnerDefaultAppPermissionPolicyType)
+        return val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_appsDefaultPermissionPolicy)
     }
     return nil
 }
@@ -165,13 +165,13 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetCrossProfilePoliciesAl
     return nil
 }
 // GetCrossProfilePoliciesAllowDataSharing gets the crossProfilePoliciesAllowDataSharing property value. Indicates whether data from one profile (personal or work) can be shared with apps in the other profile. Possible values are: notConfigured, crossProfileDataSharingBlocked, dataSharingFromWorkToPersonalBlocked, crossProfileDataSharingAllowed, unkownFutureValue.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetCrossProfilePoliciesAllowDataSharing()(*AndroidDeviceOwnerCrossProfileDataSharing) {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetCrossProfilePoliciesAllowDataSharing()(*AndroidDeviceOwnerGeneralDeviceConfiguration_crossProfilePoliciesAllowDataSharing) {
     val, err := m.GetBackingStore().Get("crossProfilePoliciesAllowDataSharing")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AndroidDeviceOwnerCrossProfileDataSharing)
+        return val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_crossProfilePoliciesAllowDataSharing)
     }
     return nil
 }
@@ -220,13 +220,13 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDetailedHelpText()(And
     return nil
 }
 // GetDeviceLocationMode gets the deviceLocationMode property value. Indicates the location setting configuration for fully managed devices (COBO) and corporate owned devices with a work profile (COPE)
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDeviceLocationMode()(*AndroidDeviceOwnerLocationMode) {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDeviceLocationMode()(*AndroidDeviceOwnerGeneralDeviceConfiguration_deviceLocationMode) {
     val, err := m.GetBackingStore().Get("deviceLocationMode")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AndroidDeviceOwnerLocationMode)
+        return val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_deviceLocationMode)
     }
     return nil
 }
@@ -314,22 +314,22 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         return nil
     }
     res["appsAutoUpdatePolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerAppAutoUpdatePolicyType)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerGeneralDeviceConfiguration_appsAutoUpdatePolicy)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAppsAutoUpdatePolicy(val.(*AndroidDeviceOwnerAppAutoUpdatePolicyType))
+            m.SetAppsAutoUpdatePolicy(val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_appsAutoUpdatePolicy))
         }
         return nil
     }
     res["appsDefaultPermissionPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerDefaultAppPermissionPolicyType)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerGeneralDeviceConfiguration_appsDefaultPermissionPolicy)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAppsDefaultPermissionPolicy(val.(*AndroidDeviceOwnerDefaultAppPermissionPolicyType))
+            m.SetAppsDefaultPermissionPolicy(val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_appsDefaultPermissionPolicy))
         }
         return nil
     }
@@ -420,12 +420,12 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         return nil
     }
     res["crossProfilePoliciesAllowDataSharing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerCrossProfileDataSharing)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerGeneralDeviceConfiguration_crossProfilePoliciesAllowDataSharing)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCrossProfilePoliciesAllowDataSharing(val.(*AndroidDeviceOwnerCrossProfileDataSharing))
+            m.SetCrossProfilePoliciesAllowDataSharing(val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_crossProfilePoliciesAllowDataSharing))
         }
         return nil
     }
@@ -470,12 +470,12 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         return nil
     }
     res["deviceLocationMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerLocationMode)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerGeneralDeviceConfiguration_deviceLocationMode)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceLocationMode(val.(*AndroidDeviceOwnerLocationMode))
+            m.SetDeviceLocationMode(val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_deviceLocationMode))
         }
         return nil
     }
@@ -566,12 +566,12 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         return nil
     }
     res["kioskCustomizationStatusBar"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerKioskCustomizationStatusBar)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerGeneralDeviceConfiguration_kioskCustomizationStatusBar)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetKioskCustomizationStatusBar(val.(*AndroidDeviceOwnerKioskCustomizationStatusBar))
+            m.SetKioskCustomizationStatusBar(val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskCustomizationStatusBar))
         }
         return nil
     }
@@ -586,12 +586,12 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         return nil
     }
     res["kioskCustomizationSystemNavigation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerKioskCustomizationSystemNavigation)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerGeneralDeviceConfiguration_kioskCustomizationSystemNavigation)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetKioskCustomizationSystemNavigation(val.(*AndroidDeviceOwnerKioskCustomizationSystemNavigation))
+            m.SetKioskCustomizationSystemNavigation(val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskCustomizationSystemNavigation))
         }
         return nil
     }
@@ -688,12 +688,12 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         return nil
     }
     res["kioskModeFolderIcon"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerKioskModeFolderIcon)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeFolderIcon)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetKioskModeFolderIcon(val.(*AndroidDeviceOwnerKioskModeFolderIcon))
+            m.SetKioskModeFolderIcon(val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeFolderIcon))
         }
         return nil
     }
@@ -718,12 +718,12 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         return nil
     }
     res["kioskModeIconSize"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerKioskModeIconSize)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeIconSize)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetKioskModeIconSize(val.(*AndroidDeviceOwnerKioskModeIconSize))
+            m.SetKioskModeIconSize(val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeIconSize))
         }
         return nil
     }
@@ -784,12 +784,12 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         return nil
     }
     res["kioskModeManagedHomeScreenPinComplexity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseKioskModeManagedHomeScreenPinComplexity)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeManagedHomeScreenPinComplexity)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetKioskModeManagedHomeScreenPinComplexity(val.(*KioskModeManagedHomeScreenPinComplexity))
+            m.SetKioskModeManagedHomeScreenPinComplexity(val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeManagedHomeScreenPinComplexity))
         }
         return nil
     }
@@ -864,12 +864,12 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         return nil
     }
     res["kioskModeScreenOrientation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerKioskModeScreenOrientation)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeScreenOrientation)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetKioskModeScreenOrientation(val.(*AndroidDeviceOwnerKioskModeScreenOrientation))
+            m.SetKioskModeScreenOrientation(val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeScreenOrientation))
         }
         return nil
     }
@@ -944,12 +944,12 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         return nil
     }
     res["kioskModeUseManagedHomeScreenApp"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseKioskModeType)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeUseManagedHomeScreenApp)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetKioskModeUseManagedHomeScreenApp(val.(*KioskModeType))
+            m.SetKioskModeUseManagedHomeScreenApp(val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeUseManagedHomeScreenApp))
         }
         return nil
     }
@@ -964,12 +964,12 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         return nil
     }
     res["kioskModeVirtualHomeButtonType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerVirtualHomeButtonType)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeVirtualHomeButtonType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetKioskModeVirtualHomeButtonType(val.(*AndroidDeviceOwnerVirtualHomeButtonType))
+            m.SetKioskModeVirtualHomeButtonType(val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeVirtualHomeButtonType))
         }
         return nil
     }
@@ -1090,12 +1090,12 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         return nil
     }
     res["microsoftLauncherDockPresenceConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMicrosoftLauncherDockPresence)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerGeneralDeviceConfiguration_microsoftLauncherDockPresenceConfiguration)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMicrosoftLauncherDockPresenceConfiguration(val.(*MicrosoftLauncherDockPresence))
+            m.SetMicrosoftLauncherDockPresenceConfiguration(val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_microsoftLauncherDockPresenceConfiguration))
         }
         return nil
     }
@@ -1120,12 +1120,12 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         return nil
     }
     res["microsoftLauncherSearchBarPlacementConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMicrosoftLauncherSearchBarPlacement)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerGeneralDeviceConfiguration_microsoftLauncherSearchBarPlacementConfiguration)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMicrosoftLauncherSearchBarPlacementConfiguration(val.(*MicrosoftLauncherSearchBarPlacement))
+            m.SetMicrosoftLauncherSearchBarPlacementConfiguration(val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_microsoftLauncherSearchBarPlacementConfiguration))
         }
         return nil
     }
@@ -1276,22 +1276,22 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         return nil
     }
     res["passwordRequiredType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerRequiredPasswordType)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerGeneralDeviceConfiguration_passwordRequiredType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPasswordRequiredType(val.(*AndroidDeviceOwnerRequiredPasswordType))
+            m.SetPasswordRequiredType(val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_passwordRequiredType))
         }
         return nil
     }
     res["passwordRequireUnlock"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerRequiredPasswordUnlock)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerGeneralDeviceConfiguration_passwordRequireUnlock)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPasswordRequireUnlock(val.(*AndroidDeviceOwnerRequiredPasswordUnlock))
+            m.SetPasswordRequireUnlock(val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_passwordRequireUnlock))
         }
         return nil
     }
@@ -1342,12 +1342,12 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         return nil
     }
     res["personalProfilePlayStoreMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePersonalProfilePersonalPlayStoreMode)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerGeneralDeviceConfiguration_personalProfilePlayStoreMode)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPersonalProfilePlayStoreMode(val.(*PersonalProfilePersonalPlayStoreMode))
+            m.SetPersonalProfilePlayStoreMode(val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_personalProfilePlayStoreMode))
         }
         return nil
     }
@@ -1362,12 +1362,12 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         return nil
     }
     res["playStoreMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerPlayStoreMode)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerGeneralDeviceConfiguration_playStoreMode)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPlayStoreMode(val.(*AndroidDeviceOwnerPlayStoreMode))
+            m.SetPlayStoreMode(val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_playStoreMode))
         }
         return nil
     }
@@ -1504,12 +1504,12 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         return nil
     }
     res["systemUpdateInstallType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerSystemUpdateInstallType)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerGeneralDeviceConfiguration_systemUpdateInstallType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSystemUpdateInstallType(val.(*AndroidDeviceOwnerSystemUpdateInstallType))
+            m.SetSystemUpdateInstallType(val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_systemUpdateInstallType))
         }
         return nil
     }
@@ -1704,22 +1704,22 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         return nil
     }
     res["workProfilePasswordRequiredType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerRequiredPasswordType)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerGeneralDeviceConfiguration_workProfilePasswordRequiredType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetWorkProfilePasswordRequiredType(val.(*AndroidDeviceOwnerRequiredPasswordType))
+            m.SetWorkProfilePasswordRequiredType(val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_workProfilePasswordRequiredType))
         }
         return nil
     }
     res["workProfilePasswordRequireUnlock"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerRequiredPasswordUnlock)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerGeneralDeviceConfiguration_workProfilePasswordRequireUnlock)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetWorkProfilePasswordRequireUnlock(val.(*AndroidDeviceOwnerRequiredPasswordUnlock))
+            m.SetWorkProfilePasswordRequireUnlock(val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_workProfilePasswordRequireUnlock))
         }
         return nil
     }
@@ -1780,13 +1780,13 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationPowe
     return nil
 }
 // GetKioskCustomizationStatusBar gets the kioskCustomizationStatusBar property value. Indicates whether system info and notifications are disabled in Kiosk Mode. Possible values are: notConfigured, notificationsAndSystemInfoEnabled, systemInfoOnly.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationStatusBar()(*AndroidDeviceOwnerKioskCustomizationStatusBar) {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationStatusBar()(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskCustomizationStatusBar) {
     val, err := m.GetBackingStore().Get("kioskCustomizationStatusBar")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AndroidDeviceOwnerKioskCustomizationStatusBar)
+        return val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskCustomizationStatusBar)
     }
     return nil
 }
@@ -1802,13 +1802,13 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationSyst
     return nil
 }
 // GetKioskCustomizationSystemNavigation gets the kioskCustomizationSystemNavigation property value. Indicates which navigation features are enabled in Kiosk Mode. Possible values are: notConfigured, navigationEnabled, homeButtonOnly.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationSystemNavigation()(*AndroidDeviceOwnerKioskCustomizationSystemNavigation) {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationSystemNavigation()(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskCustomizationSystemNavigation) {
     val, err := m.GetBackingStore().Get("kioskCustomizationSystemNavigation")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AndroidDeviceOwnerKioskCustomizationSystemNavigation)
+        return val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskCustomizationSystemNavigation)
     }
     return nil
 }
@@ -1901,13 +1901,13 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeFlashlightCon
     return nil
 }
 // GetKioskModeFolderIcon gets the kioskModeFolderIcon property value. Folder icon configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, darkSquare, darkCircle, lightSquare, lightCircle.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeFolderIcon()(*AndroidDeviceOwnerKioskModeFolderIcon) {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeFolderIcon()(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeFolderIcon) {
     val, err := m.GetBackingStore().Get("kioskModeFolderIcon")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AndroidDeviceOwnerKioskModeFolderIcon)
+        return val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeFolderIcon)
     }
     return nil
 }
@@ -1934,13 +1934,13 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeGridWidth()(*
     return nil
 }
 // GetKioskModeIconSize gets the kioskModeIconSize property value. Icon size configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, smallest, small, regular, large, largest.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeIconSize()(*AndroidDeviceOwnerKioskModeIconSize) {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeIconSize()(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeIconSize) {
     val, err := m.GetBackingStore().Get("kioskModeIconSize")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AndroidDeviceOwnerKioskModeIconSize)
+        return val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeIconSize)
     }
     return nil
 }
@@ -2000,13 +2000,13 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeSc
     return nil
 }
 // GetKioskModeManagedHomeScreenPinComplexity gets the kioskModeManagedHomeScreenPinComplexity property value. Complexity of PIN for sign-in session for Managed Home Screen. Possible values are: notConfigured, simple, complex.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeScreenPinComplexity()(*KioskModeManagedHomeScreenPinComplexity) {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeScreenPinComplexity()(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeManagedHomeScreenPinComplexity) {
     val, err := m.GetBackingStore().Get("kioskModeManagedHomeScreenPinComplexity")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*KioskModeManagedHomeScreenPinComplexity)
+        return val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeManagedHomeScreenPinComplexity)
     }
     return nil
 }
@@ -2088,13 +2088,13 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeMediaVolumeCo
     return nil
 }
 // GetKioskModeScreenOrientation gets the kioskModeScreenOrientation property value. Screen orientation configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, portrait, landscape, autoRotate.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeScreenOrientation()(*AndroidDeviceOwnerKioskModeScreenOrientation) {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeScreenOrientation()(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeScreenOrientation) {
     val, err := m.GetBackingStore().Get("kioskModeScreenOrientation")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AndroidDeviceOwnerKioskModeScreenOrientation)
+        return val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeScreenOrientation)
     }
     return nil
 }
@@ -2176,13 +2176,13 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeShowDeviceInf
     return nil
 }
 // GetKioskModeUseManagedHomeScreenApp gets the kioskModeUseManagedHomeScreenApp property value. Whether or not to use single app kiosk mode or multi-app kiosk mode. Possible values are: notConfigured, singleAppMode, multiAppMode.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeUseManagedHomeScreenApp()(*KioskModeType) {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeUseManagedHomeScreenApp()(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeUseManagedHomeScreenApp) {
     val, err := m.GetBackingStore().Get("kioskModeUseManagedHomeScreenApp")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*KioskModeType)
+        return val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeUseManagedHomeScreenApp)
     }
     return nil
 }
@@ -2198,13 +2198,13 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeVirtualHomeBu
     return nil
 }
 // GetKioskModeVirtualHomeButtonType gets the kioskModeVirtualHomeButtonType property value. Indicates whether the virtual home button is a swipe up home button or a floating home button. Possible values are: notConfigured, swipeUp, floating.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeVirtualHomeButtonType()(*AndroidDeviceOwnerVirtualHomeButtonType) {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeVirtualHomeButtonType()(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeVirtualHomeButtonType) {
     val, err := m.GetBackingStore().Get("kioskModeVirtualHomeButtonType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AndroidDeviceOwnerVirtualHomeButtonType)
+        return val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeVirtualHomeButtonType)
     }
     return nil
 }
@@ -2330,13 +2330,13 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherDockP
     return nil
 }
 // GetMicrosoftLauncherDockPresenceConfiguration gets the microsoftLauncherDockPresenceConfiguration property value. Indicates whether or not you want to configure the device dock. Possible values are: notConfigured, show, hide, disabled.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherDockPresenceConfiguration()(*MicrosoftLauncherDockPresence) {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherDockPresenceConfiguration()(*AndroidDeviceOwnerGeneralDeviceConfiguration_microsoftLauncherDockPresenceConfiguration) {
     val, err := m.GetBackingStore().Get("microsoftLauncherDockPresenceConfiguration")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MicrosoftLauncherDockPresence)
+        return val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_microsoftLauncherDockPresenceConfiguration)
     }
     return nil
 }
@@ -2363,13 +2363,13 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherFeedE
     return nil
 }
 // GetMicrosoftLauncherSearchBarPlacementConfiguration gets the microsoftLauncherSearchBarPlacementConfiguration property value. Indicates the search bar placement configuration on the device. Possible values are: notConfigured, top, bottom, hide.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherSearchBarPlacementConfiguration()(*MicrosoftLauncherSearchBarPlacement) {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherSearchBarPlacementConfiguration()(*AndroidDeviceOwnerGeneralDeviceConfiguration_microsoftLauncherSearchBarPlacementConfiguration) {
     val, err := m.GetBackingStore().Get("microsoftLauncherSearchBarPlacementConfiguration")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MicrosoftLauncherSearchBarPlacement)
+        return val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_microsoftLauncherSearchBarPlacementConfiguration)
     }
     return nil
 }
@@ -2528,24 +2528,24 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordPreviousPasswo
     return nil
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Indicates the minimum password quality required on the device. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordRequiredType()(*AndroidDeviceOwnerRequiredPasswordType) {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordRequiredType()(*AndroidDeviceOwnerGeneralDeviceConfiguration_passwordRequiredType) {
     val, err := m.GetBackingStore().Get("passwordRequiredType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AndroidDeviceOwnerRequiredPasswordType)
+        return val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_passwordRequiredType)
     }
     return nil
 }
 // GetPasswordRequireUnlock gets the passwordRequireUnlock property value. Indicates the timeout period after which a device must be unlocked using a form of strong authentication. Possible values are: deviceDefault, daily, unkownFutureValue.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordRequireUnlock()(*AndroidDeviceOwnerRequiredPasswordUnlock) {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordRequireUnlock()(*AndroidDeviceOwnerGeneralDeviceConfiguration_passwordRequireUnlock) {
     val, err := m.GetBackingStore().Get("passwordRequireUnlock")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AndroidDeviceOwnerRequiredPasswordUnlock)
+        return val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_passwordRequireUnlock)
     }
     return nil
 }
@@ -2594,13 +2594,13 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPersonalProfilePersona
     return nil
 }
 // GetPersonalProfilePlayStoreMode gets the personalProfilePlayStoreMode property value. Used together with PersonalProfilePersonalApplications to control how apps in the personal profile are allowed or blocked. Possible values are: notConfigured, blockedApps, allowedApps.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPersonalProfilePlayStoreMode()(*PersonalProfilePersonalPlayStoreMode) {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPersonalProfilePlayStoreMode()(*AndroidDeviceOwnerGeneralDeviceConfiguration_personalProfilePlayStoreMode) {
     val, err := m.GetBackingStore().Get("personalProfilePlayStoreMode")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PersonalProfilePersonalPlayStoreMode)
+        return val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_personalProfilePlayStoreMode)
     }
     return nil
 }
@@ -2616,13 +2616,13 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPersonalProfileScreenC
     return nil
 }
 // GetPlayStoreMode gets the playStoreMode property value. Indicates the Play Store mode of the device. Possible values are: notConfigured, allowList, blockList.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPlayStoreMode()(*AndroidDeviceOwnerPlayStoreMode) {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPlayStoreMode()(*AndroidDeviceOwnerGeneralDeviceConfiguration_playStoreMode) {
     val, err := m.GetBackingStore().Get("playStoreMode")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AndroidDeviceOwnerPlayStoreMode)
+        return val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_playStoreMode)
     }
     return nil
 }
@@ -2759,13 +2759,13 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSystemUpdateFreezePeri
     return nil
 }
 // GetSystemUpdateInstallType gets the systemUpdateInstallType property value. The type of system update configuration. Possible values are: deviceDefault, postpone, windowed, automatic.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSystemUpdateInstallType()(*AndroidDeviceOwnerSystemUpdateInstallType) {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSystemUpdateInstallType()(*AndroidDeviceOwnerGeneralDeviceConfiguration_systemUpdateInstallType) {
     val, err := m.GetBackingStore().Get("systemUpdateInstallType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AndroidDeviceOwnerSystemUpdateInstallType)
+        return val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_systemUpdateInstallType)
     }
     return nil
 }
@@ -2979,24 +2979,24 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordPre
     return nil
 }
 // GetWorkProfilePasswordRequiredType gets the workProfilePasswordRequiredType property value. Indicates the minimum password quality required on the work profile password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordRequiredType()(*AndroidDeviceOwnerRequiredPasswordType) {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordRequiredType()(*AndroidDeviceOwnerGeneralDeviceConfiguration_workProfilePasswordRequiredType) {
     val, err := m.GetBackingStore().Get("workProfilePasswordRequiredType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AndroidDeviceOwnerRequiredPasswordType)
+        return val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_workProfilePasswordRequiredType)
     }
     return nil
 }
 // GetWorkProfilePasswordRequireUnlock gets the workProfilePasswordRequireUnlock property value. Indicates the timeout period after which a work profile must be unlocked using a form of strong authentication. Possible values are: deviceDefault, daily, unkownFutureValue.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordRequireUnlock()(*AndroidDeviceOwnerRequiredPasswordUnlock) {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordRequireUnlock()(*AndroidDeviceOwnerGeneralDeviceConfiguration_workProfilePasswordRequireUnlock) {
     val, err := m.GetBackingStore().Get("workProfilePasswordRequireUnlock")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AndroidDeviceOwnerRequiredPasswordUnlock)
+        return val.(*AndroidDeviceOwnerGeneralDeviceConfiguration_workProfilePasswordRequireUnlock)
     }
     return nil
 }
@@ -3939,14 +3939,14 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetAppsAllowInstallFromUn
     }
 }
 // SetAppsAutoUpdatePolicy sets the appsAutoUpdatePolicy property value. Indicates the value of the app auto update policy. Possible values are: notConfigured, userChoice, never, wiFiOnly, always.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetAppsAutoUpdatePolicy(value *AndroidDeviceOwnerAppAutoUpdatePolicyType)() {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetAppsAutoUpdatePolicy(value *AndroidDeviceOwnerGeneralDeviceConfiguration_appsAutoUpdatePolicy)() {
     err := m.GetBackingStore().Set("appsAutoUpdatePolicy", value)
     if err != nil {
         panic(err)
     }
 }
 // SetAppsDefaultPermissionPolicy sets the appsDefaultPermissionPolicy property value. Indicates the permission policy for requests for runtime permissions if one is not defined for the app specifically. Possible values are: deviceDefault, prompt, autoGrant, autoDeny.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetAppsDefaultPermissionPolicy(value *AndroidDeviceOwnerDefaultAppPermissionPolicyType)() {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetAppsDefaultPermissionPolicy(value *AndroidDeviceOwnerGeneralDeviceConfiguration_appsDefaultPermissionPolicy)() {
     err := m.GetBackingStore().Set("appsDefaultPermissionPolicy", value)
     if err != nil {
         panic(err)
@@ -4009,7 +4009,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetCrossProfilePoliciesAl
     }
 }
 // SetCrossProfilePoliciesAllowDataSharing sets the crossProfilePoliciesAllowDataSharing property value. Indicates whether data from one profile (personal or work) can be shared with apps in the other profile. Possible values are: notConfigured, crossProfileDataSharingBlocked, dataSharingFromWorkToPersonalBlocked, crossProfileDataSharingAllowed, unkownFutureValue.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetCrossProfilePoliciesAllowDataSharing(value *AndroidDeviceOwnerCrossProfileDataSharing)() {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetCrossProfilePoliciesAllowDataSharing(value *AndroidDeviceOwnerGeneralDeviceConfiguration_crossProfilePoliciesAllowDataSharing)() {
     err := m.GetBackingStore().Set("crossProfilePoliciesAllowDataSharing", value)
     if err != nil {
         panic(err)
@@ -4044,7 +4044,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetDetailedHelpText(value
     }
 }
 // SetDeviceLocationMode sets the deviceLocationMode property value. Indicates the location setting configuration for fully managed devices (COBO) and corporate owned devices with a work profile (COPE)
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetDeviceLocationMode(value *AndroidDeviceOwnerLocationMode)() {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetDeviceLocationMode(value *AndroidDeviceOwnerGeneralDeviceConfiguration_deviceLocationMode)() {
     err := m.GetBackingStore().Set("deviceLocationMode", value)
     if err != nil {
         panic(err)
@@ -4107,7 +4107,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskCustomizationPowe
     }
 }
 // SetKioskCustomizationStatusBar sets the kioskCustomizationStatusBar property value. Indicates whether system info and notifications are disabled in Kiosk Mode. Possible values are: notConfigured, notificationsAndSystemInfoEnabled, systemInfoOnly.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskCustomizationStatusBar(value *AndroidDeviceOwnerKioskCustomizationStatusBar)() {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskCustomizationStatusBar(value *AndroidDeviceOwnerGeneralDeviceConfiguration_kioskCustomizationStatusBar)() {
     err := m.GetBackingStore().Set("kioskCustomizationStatusBar", value)
     if err != nil {
         panic(err)
@@ -4121,7 +4121,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskCustomizationSyst
     }
 }
 // SetKioskCustomizationSystemNavigation sets the kioskCustomizationSystemNavigation property value. Indicates which navigation features are enabled in Kiosk Mode. Possible values are: notConfigured, navigationEnabled, homeButtonOnly.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskCustomizationSystemNavigation(value *AndroidDeviceOwnerKioskCustomizationSystemNavigation)() {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskCustomizationSystemNavigation(value *AndroidDeviceOwnerGeneralDeviceConfiguration_kioskCustomizationSystemNavigation)() {
     err := m.GetBackingStore().Set("kioskCustomizationSystemNavigation", value)
     if err != nil {
         panic(err)
@@ -4184,7 +4184,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeFlashlightCon
     }
 }
 // SetKioskModeFolderIcon sets the kioskModeFolderIcon property value. Folder icon configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, darkSquare, darkCircle, lightSquare, lightCircle.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeFolderIcon(value *AndroidDeviceOwnerKioskModeFolderIcon)() {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeFolderIcon(value *AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeFolderIcon)() {
     err := m.GetBackingStore().Set("kioskModeFolderIcon", value)
     if err != nil {
         panic(err)
@@ -4205,7 +4205,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeGridWidth(val
     }
 }
 // SetKioskModeIconSize sets the kioskModeIconSize property value. Icon size configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, smallest, small, regular, large, largest.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeIconSize(value *AndroidDeviceOwnerKioskModeIconSize)() {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeIconSize(value *AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeIconSize)() {
     err := m.GetBackingStore().Set("kioskModeIconSize", value)
     if err != nil {
         panic(err)
@@ -4247,7 +4247,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeManagedHomeSc
     }
 }
 // SetKioskModeManagedHomeScreenPinComplexity sets the kioskModeManagedHomeScreenPinComplexity property value. Complexity of PIN for sign-in session for Managed Home Screen. Possible values are: notConfigured, simple, complex.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeManagedHomeScreenPinComplexity(value *KioskModeManagedHomeScreenPinComplexity)() {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeManagedHomeScreenPinComplexity(value *AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeManagedHomeScreenPinComplexity)() {
     err := m.GetBackingStore().Set("kioskModeManagedHomeScreenPinComplexity", value)
     if err != nil {
         panic(err)
@@ -4303,7 +4303,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeMediaVolumeCo
     }
 }
 // SetKioskModeScreenOrientation sets the kioskModeScreenOrientation property value. Screen orientation configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, portrait, landscape, autoRotate.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeScreenOrientation(value *AndroidDeviceOwnerKioskModeScreenOrientation)() {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeScreenOrientation(value *AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeScreenOrientation)() {
     err := m.GetBackingStore().Set("kioskModeScreenOrientation", value)
     if err != nil {
         panic(err)
@@ -4359,7 +4359,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeShowDeviceInf
     }
 }
 // SetKioskModeUseManagedHomeScreenApp sets the kioskModeUseManagedHomeScreenApp property value. Whether or not to use single app kiosk mode or multi-app kiosk mode. Possible values are: notConfigured, singleAppMode, multiAppMode.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeUseManagedHomeScreenApp(value *KioskModeType)() {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeUseManagedHomeScreenApp(value *AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeUseManagedHomeScreenApp)() {
     err := m.GetBackingStore().Set("kioskModeUseManagedHomeScreenApp", value)
     if err != nil {
         panic(err)
@@ -4373,7 +4373,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeVirtualHomeBu
     }
 }
 // SetKioskModeVirtualHomeButtonType sets the kioskModeVirtualHomeButtonType property value. Indicates whether the virtual home button is a swipe up home button or a floating home button. Possible values are: notConfigured, swipeUp, floating.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeVirtualHomeButtonType(value *AndroidDeviceOwnerVirtualHomeButtonType)() {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeVirtualHomeButtonType(value *AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeVirtualHomeButtonType)() {
     err := m.GetBackingStore().Set("kioskModeVirtualHomeButtonType", value)
     if err != nil {
         panic(err)
@@ -4457,7 +4457,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetMicrosoftLauncherDockP
     }
 }
 // SetMicrosoftLauncherDockPresenceConfiguration sets the microsoftLauncherDockPresenceConfiguration property value. Indicates whether or not you want to configure the device dock. Possible values are: notConfigured, show, hide, disabled.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetMicrosoftLauncherDockPresenceConfiguration(value *MicrosoftLauncherDockPresence)() {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetMicrosoftLauncherDockPresenceConfiguration(value *AndroidDeviceOwnerGeneralDeviceConfiguration_microsoftLauncherDockPresenceConfiguration)() {
     err := m.GetBackingStore().Set("microsoftLauncherDockPresenceConfiguration", value)
     if err != nil {
         panic(err)
@@ -4478,7 +4478,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetMicrosoftLauncherFeedE
     }
 }
 // SetMicrosoftLauncherSearchBarPlacementConfiguration sets the microsoftLauncherSearchBarPlacementConfiguration property value. Indicates the search bar placement configuration on the device. Possible values are: notConfigured, top, bottom, hide.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetMicrosoftLauncherSearchBarPlacementConfiguration(value *MicrosoftLauncherSearchBarPlacement)() {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetMicrosoftLauncherSearchBarPlacementConfiguration(value *AndroidDeviceOwnerGeneralDeviceConfiguration_microsoftLauncherSearchBarPlacementConfiguration)() {
     err := m.GetBackingStore().Set("microsoftLauncherSearchBarPlacementConfiguration", value)
     if err != nil {
         panic(err)
@@ -4583,14 +4583,14 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordPreviousPasswo
     }
 }
 // SetPasswordRequiredType sets the passwordRequiredType property value. Indicates the minimum password quality required on the device. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordRequiredType(value *AndroidDeviceOwnerRequiredPasswordType)() {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordRequiredType(value *AndroidDeviceOwnerGeneralDeviceConfiguration_passwordRequiredType)() {
     err := m.GetBackingStore().Set("passwordRequiredType", value)
     if err != nil {
         panic(err)
     }
 }
 // SetPasswordRequireUnlock sets the passwordRequireUnlock property value. Indicates the timeout period after which a device must be unlocked using a form of strong authentication. Possible values are: deviceDefault, daily, unkownFutureValue.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordRequireUnlock(value *AndroidDeviceOwnerRequiredPasswordUnlock)() {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordRequireUnlock(value *AndroidDeviceOwnerGeneralDeviceConfiguration_passwordRequireUnlock)() {
     err := m.GetBackingStore().Set("passwordRequireUnlock", value)
     if err != nil {
         panic(err)
@@ -4625,7 +4625,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPersonalProfilePersona
     }
 }
 // SetPersonalProfilePlayStoreMode sets the personalProfilePlayStoreMode property value. Used together with PersonalProfilePersonalApplications to control how apps in the personal profile are allowed or blocked. Possible values are: notConfigured, blockedApps, allowedApps.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPersonalProfilePlayStoreMode(value *PersonalProfilePersonalPlayStoreMode)() {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPersonalProfilePlayStoreMode(value *AndroidDeviceOwnerGeneralDeviceConfiguration_personalProfilePlayStoreMode)() {
     err := m.GetBackingStore().Set("personalProfilePlayStoreMode", value)
     if err != nil {
         panic(err)
@@ -4639,7 +4639,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPersonalProfileScreenC
     }
 }
 // SetPlayStoreMode sets the playStoreMode property value. Indicates the Play Store mode of the device. Possible values are: notConfigured, allowList, blockList.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPlayStoreMode(value *AndroidDeviceOwnerPlayStoreMode)() {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPlayStoreMode(value *AndroidDeviceOwnerGeneralDeviceConfiguration_playStoreMode)() {
     err := m.GetBackingStore().Set("playStoreMode", value)
     if err != nil {
         panic(err)
@@ -4730,7 +4730,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetSystemUpdateFreezePeri
     }
 }
 // SetSystemUpdateInstallType sets the systemUpdateInstallType property value. The type of system update configuration. Possible values are: deviceDefault, postpone, windowed, automatic.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetSystemUpdateInstallType(value *AndroidDeviceOwnerSystemUpdateInstallType)() {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetSystemUpdateInstallType(value *AndroidDeviceOwnerGeneralDeviceConfiguration_systemUpdateInstallType)() {
     err := m.GetBackingStore().Set("systemUpdateInstallType", value)
     if err != nil {
         panic(err)
@@ -4870,14 +4870,14 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetWorkProfilePasswordPre
     }
 }
 // SetWorkProfilePasswordRequiredType sets the workProfilePasswordRequiredType property value. Indicates the minimum password quality required on the work profile password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetWorkProfilePasswordRequiredType(value *AndroidDeviceOwnerRequiredPasswordType)() {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetWorkProfilePasswordRequiredType(value *AndroidDeviceOwnerGeneralDeviceConfiguration_workProfilePasswordRequiredType)() {
     err := m.GetBackingStore().Set("workProfilePasswordRequiredType", value)
     if err != nil {
         panic(err)
     }
 }
 // SetWorkProfilePasswordRequireUnlock sets the workProfilePasswordRequireUnlock property value. Indicates the timeout period after which a work profile must be unlocked using a form of strong authentication. Possible values are: deviceDefault, daily, unkownFutureValue.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetWorkProfilePasswordRequireUnlock(value *AndroidDeviceOwnerRequiredPasswordUnlock)() {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetWorkProfilePasswordRequireUnlock(value *AndroidDeviceOwnerGeneralDeviceConfiguration_workProfilePasswordRequireUnlock)() {
     err := m.GetBackingStore().Set("workProfilePasswordRequireUnlock", value)
     if err != nil {
         panic(err)
@@ -4897,8 +4897,8 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     GetAccountsBlockModification()(*bool)
     GetAndroidDeviceOwnerDelegatedScopeAppSettings()([]AndroidDeviceOwnerDelegatedScopeAppSettingable)
     GetAppsAllowInstallFromUnknownSources()(*bool)
-    GetAppsAutoUpdatePolicy()(*AndroidDeviceOwnerAppAutoUpdatePolicyType)
-    GetAppsDefaultPermissionPolicy()(*AndroidDeviceOwnerDefaultAppPermissionPolicyType)
+    GetAppsAutoUpdatePolicy()(*AndroidDeviceOwnerGeneralDeviceConfiguration_appsAutoUpdatePolicy)
+    GetAppsDefaultPermissionPolicy()(*AndroidDeviceOwnerGeneralDeviceConfiguration_appsDefaultPermissionPolicy)
     GetAppsRecommendSkippingFirstUseHints()(*bool)
     GetAzureAdSharedDeviceDataClearApps()([]AppListItemable)
     GetBluetoothBlockConfiguration()(*bool)
@@ -4907,12 +4907,12 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     GetCellularBlockWiFiTethering()(*bool)
     GetCertificateCredentialConfigurationDisabled()(*bool)
     GetCrossProfilePoliciesAllowCopyPaste()(*bool)
-    GetCrossProfilePoliciesAllowDataSharing()(*AndroidDeviceOwnerCrossProfileDataSharing)
+    GetCrossProfilePoliciesAllowDataSharing()(*AndroidDeviceOwnerGeneralDeviceConfiguration_crossProfilePoliciesAllowDataSharing)
     GetCrossProfilePoliciesShowWorkContactsInPersonalProfile()(*bool)
     GetDataRoamingBlocked()(*bool)
     GetDateTimeConfigurationBlocked()(*bool)
     GetDetailedHelpText()(AndroidDeviceOwnerUserFacingMessageable)
-    GetDeviceLocationMode()(*AndroidDeviceOwnerLocationMode)
+    GetDeviceLocationMode()(*AndroidDeviceOwnerGeneralDeviceConfiguration_deviceLocationMode)
     GetDeviceOwnerLockScreenMessage()(AndroidDeviceOwnerUserFacingMessageable)
     GetEnrollmentProfile()(*AndroidDeviceOwnerEnrollmentProfileType)
     GetFactoryResetBlocked()(*bool)
@@ -4921,9 +4921,9 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     GetGoogleAccountsBlocked()(*bool)
     GetKioskCustomizationDeviceSettingsBlocked()(*bool)
     GetKioskCustomizationPowerButtonActionsBlocked()(*bool)
-    GetKioskCustomizationStatusBar()(*AndroidDeviceOwnerKioskCustomizationStatusBar)
+    GetKioskCustomizationStatusBar()(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskCustomizationStatusBar)
     GetKioskCustomizationSystemErrorWarnings()(*bool)
-    GetKioskCustomizationSystemNavigation()(*AndroidDeviceOwnerKioskCustomizationSystemNavigation)
+    GetKioskCustomizationSystemNavigation()(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskCustomizationSystemNavigation)
     GetKioskModeAppOrderEnabled()(*bool)
     GetKioskModeAppPositions()([]AndroidDeviceOwnerKioskModeAppPositionItemable)
     GetKioskModeApps()([]AppListItemable)
@@ -4932,16 +4932,16 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     GetKioskModeDebugMenuEasyAccessEnabled()(*bool)
     GetKioskModeExitCode()(*string)
     GetKioskModeFlashlightConfigurationEnabled()(*bool)
-    GetKioskModeFolderIcon()(*AndroidDeviceOwnerKioskModeFolderIcon)
+    GetKioskModeFolderIcon()(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeFolderIcon)
     GetKioskModeGridHeight()(*int32)
     GetKioskModeGridWidth()(*int32)
-    GetKioskModeIconSize()(*AndroidDeviceOwnerKioskModeIconSize)
+    GetKioskModeIconSize()(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeIconSize)
     GetKioskModeLockHomeScreen()(*bool)
     GetKioskModeManagedFolders()([]AndroidDeviceOwnerKioskModeManagedFolderable)
     GetKioskModeManagedHomeScreenAutoSignout()(*bool)
     GetKioskModeManagedHomeScreenInactiveSignOutDelayInSeconds()(*int32)
     GetKioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds()(*int32)
-    GetKioskModeManagedHomeScreenPinComplexity()(*KioskModeManagedHomeScreenPinComplexity)
+    GetKioskModeManagedHomeScreenPinComplexity()(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeManagedHomeScreenPinComplexity)
     GetKioskModeManagedHomeScreenPinRequired()(*bool)
     GetKioskModeManagedHomeScreenPinRequiredToResume()(*bool)
     GetKioskModeManagedHomeScreenSignInBackground()(*string)
@@ -4949,7 +4949,7 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     GetKioskModeManagedHomeScreenSignInEnabled()(*bool)
     GetKioskModeManagedSettingsEntryDisabled()(*bool)
     GetKioskModeMediaVolumeConfigurationEnabled()(*bool)
-    GetKioskModeScreenOrientation()(*AndroidDeviceOwnerKioskModeScreenOrientation)
+    GetKioskModeScreenOrientation()(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeScreenOrientation)
     GetKioskModeScreenSaverConfigurationEnabled()(*bool)
     GetKioskModeScreenSaverDetectMediaDisabled()(*bool)
     GetKioskModeScreenSaverDisplayTimeInSeconds()(*int32)
@@ -4957,9 +4957,9 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     GetKioskModeScreenSaverStartDelayInSeconds()(*int32)
     GetKioskModeShowAppNotificationBadge()(*bool)
     GetKioskModeShowDeviceInfo()(*bool)
-    GetKioskModeUseManagedHomeScreenApp()(*KioskModeType)
+    GetKioskModeUseManagedHomeScreenApp()(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeUseManagedHomeScreenApp)
     GetKioskModeVirtualHomeButtonEnabled()(*bool)
-    GetKioskModeVirtualHomeButtonType()(*AndroidDeviceOwnerVirtualHomeButtonType)
+    GetKioskModeVirtualHomeButtonType()(*AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeVirtualHomeButtonType)
     GetKioskModeWallpaperUrl()(*string)
     GetKioskModeWifiAllowedSsids()([]string)
     GetKioskModeWiFiConfigurationEnabled()(*bool)
@@ -4971,10 +4971,10 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     GetMicrosoftLauncherCustomWallpaperEnabled()(*bool)
     GetMicrosoftLauncherCustomWallpaperImageUrl()(*string)
     GetMicrosoftLauncherDockPresenceAllowUserModification()(*bool)
-    GetMicrosoftLauncherDockPresenceConfiguration()(*MicrosoftLauncherDockPresence)
+    GetMicrosoftLauncherDockPresenceConfiguration()(*AndroidDeviceOwnerGeneralDeviceConfiguration_microsoftLauncherDockPresenceConfiguration)
     GetMicrosoftLauncherFeedAllowUserModification()(*bool)
     GetMicrosoftLauncherFeedEnabled()(*bool)
-    GetMicrosoftLauncherSearchBarPlacementConfiguration()(*MicrosoftLauncherSearchBarPlacement)
+    GetMicrosoftLauncherSearchBarPlacementConfiguration()(*AndroidDeviceOwnerGeneralDeviceConfiguration_microsoftLauncherSearchBarPlacementConfiguration)
     GetNetworkEscapeHatchAllowed()(*bool)
     GetNfcBlockOutgoingBeam()(*bool)
     GetPasswordBlockKeyguard()(*bool)
@@ -4989,15 +4989,15 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     GetPasswordMinimumUpperCaseCharacters()(*int32)
     GetPasswordMinutesOfInactivityBeforeScreenTimeout()(*int32)
     GetPasswordPreviousPasswordCountToBlock()(*int32)
-    GetPasswordRequiredType()(*AndroidDeviceOwnerRequiredPasswordType)
-    GetPasswordRequireUnlock()(*AndroidDeviceOwnerRequiredPasswordUnlock)
+    GetPasswordRequiredType()(*AndroidDeviceOwnerGeneralDeviceConfiguration_passwordRequiredType)
+    GetPasswordRequireUnlock()(*AndroidDeviceOwnerGeneralDeviceConfiguration_passwordRequireUnlock)
     GetPasswordSignInFailureCountBeforeFactoryReset()(*int32)
     GetPersonalProfileAppsAllowInstallFromUnknownSources()(*bool)
     GetPersonalProfileCameraBlocked()(*bool)
     GetPersonalProfilePersonalApplications()([]AppListItemable)
-    GetPersonalProfilePlayStoreMode()(*PersonalProfilePersonalPlayStoreMode)
+    GetPersonalProfilePlayStoreMode()(*AndroidDeviceOwnerGeneralDeviceConfiguration_personalProfilePlayStoreMode)
     GetPersonalProfileScreenCaptureBlocked()(*bool)
-    GetPlayStoreMode()(*AndroidDeviceOwnerPlayStoreMode)
+    GetPlayStoreMode()(*AndroidDeviceOwnerGeneralDeviceConfiguration_playStoreMode)
     GetScreenCaptureBlocked()(*bool)
     GetSecurityCommonCriteriaModeEnabled()(*bool)
     GetSecurityDeveloperSettingsEnabled()(*bool)
@@ -5010,7 +5010,7 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     GetStorageBlockExternalMedia()(*bool)
     GetStorageBlockUsbFileTransfer()(*bool)
     GetSystemUpdateFreezePeriods()([]AndroidDeviceOwnerSystemUpdateFreezePeriodable)
-    GetSystemUpdateInstallType()(*AndroidDeviceOwnerSystemUpdateInstallType)
+    GetSystemUpdateInstallType()(*AndroidDeviceOwnerGeneralDeviceConfiguration_systemUpdateInstallType)
     GetSystemUpdateWindowEndMinutesAfterMidnight()(*int32)
     GetSystemUpdateWindowStartMinutesAfterMidnight()(*int32)
     GetSystemWindowsBlocked()(*bool)
@@ -5030,14 +5030,14 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     GetWorkProfilePasswordMinimumSymbolCharacters()(*int32)
     GetWorkProfilePasswordMinimumUpperCaseCharacters()(*int32)
     GetWorkProfilePasswordPreviousPasswordCountToBlock()(*int32)
-    GetWorkProfilePasswordRequiredType()(*AndroidDeviceOwnerRequiredPasswordType)
-    GetWorkProfilePasswordRequireUnlock()(*AndroidDeviceOwnerRequiredPasswordUnlock)
+    GetWorkProfilePasswordRequiredType()(*AndroidDeviceOwnerGeneralDeviceConfiguration_workProfilePasswordRequiredType)
+    GetWorkProfilePasswordRequireUnlock()(*AndroidDeviceOwnerGeneralDeviceConfiguration_workProfilePasswordRequireUnlock)
     GetWorkProfilePasswordSignInFailureCountBeforeFactoryReset()(*int32)
     SetAccountsBlockModification(value *bool)()
     SetAndroidDeviceOwnerDelegatedScopeAppSettings(value []AndroidDeviceOwnerDelegatedScopeAppSettingable)()
     SetAppsAllowInstallFromUnknownSources(value *bool)()
-    SetAppsAutoUpdatePolicy(value *AndroidDeviceOwnerAppAutoUpdatePolicyType)()
-    SetAppsDefaultPermissionPolicy(value *AndroidDeviceOwnerDefaultAppPermissionPolicyType)()
+    SetAppsAutoUpdatePolicy(value *AndroidDeviceOwnerGeneralDeviceConfiguration_appsAutoUpdatePolicy)()
+    SetAppsDefaultPermissionPolicy(value *AndroidDeviceOwnerGeneralDeviceConfiguration_appsDefaultPermissionPolicy)()
     SetAppsRecommendSkippingFirstUseHints(value *bool)()
     SetAzureAdSharedDeviceDataClearApps(value []AppListItemable)()
     SetBluetoothBlockConfiguration(value *bool)()
@@ -5046,12 +5046,12 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     SetCellularBlockWiFiTethering(value *bool)()
     SetCertificateCredentialConfigurationDisabled(value *bool)()
     SetCrossProfilePoliciesAllowCopyPaste(value *bool)()
-    SetCrossProfilePoliciesAllowDataSharing(value *AndroidDeviceOwnerCrossProfileDataSharing)()
+    SetCrossProfilePoliciesAllowDataSharing(value *AndroidDeviceOwnerGeneralDeviceConfiguration_crossProfilePoliciesAllowDataSharing)()
     SetCrossProfilePoliciesShowWorkContactsInPersonalProfile(value *bool)()
     SetDataRoamingBlocked(value *bool)()
     SetDateTimeConfigurationBlocked(value *bool)()
     SetDetailedHelpText(value AndroidDeviceOwnerUserFacingMessageable)()
-    SetDeviceLocationMode(value *AndroidDeviceOwnerLocationMode)()
+    SetDeviceLocationMode(value *AndroidDeviceOwnerGeneralDeviceConfiguration_deviceLocationMode)()
     SetDeviceOwnerLockScreenMessage(value AndroidDeviceOwnerUserFacingMessageable)()
     SetEnrollmentProfile(value *AndroidDeviceOwnerEnrollmentProfileType)()
     SetFactoryResetBlocked(value *bool)()
@@ -5060,9 +5060,9 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     SetGoogleAccountsBlocked(value *bool)()
     SetKioskCustomizationDeviceSettingsBlocked(value *bool)()
     SetKioskCustomizationPowerButtonActionsBlocked(value *bool)()
-    SetKioskCustomizationStatusBar(value *AndroidDeviceOwnerKioskCustomizationStatusBar)()
+    SetKioskCustomizationStatusBar(value *AndroidDeviceOwnerGeneralDeviceConfiguration_kioskCustomizationStatusBar)()
     SetKioskCustomizationSystemErrorWarnings(value *bool)()
-    SetKioskCustomizationSystemNavigation(value *AndroidDeviceOwnerKioskCustomizationSystemNavigation)()
+    SetKioskCustomizationSystemNavigation(value *AndroidDeviceOwnerGeneralDeviceConfiguration_kioskCustomizationSystemNavigation)()
     SetKioskModeAppOrderEnabled(value *bool)()
     SetKioskModeAppPositions(value []AndroidDeviceOwnerKioskModeAppPositionItemable)()
     SetKioskModeApps(value []AppListItemable)()
@@ -5071,16 +5071,16 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     SetKioskModeDebugMenuEasyAccessEnabled(value *bool)()
     SetKioskModeExitCode(value *string)()
     SetKioskModeFlashlightConfigurationEnabled(value *bool)()
-    SetKioskModeFolderIcon(value *AndroidDeviceOwnerKioskModeFolderIcon)()
+    SetKioskModeFolderIcon(value *AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeFolderIcon)()
     SetKioskModeGridHeight(value *int32)()
     SetKioskModeGridWidth(value *int32)()
-    SetKioskModeIconSize(value *AndroidDeviceOwnerKioskModeIconSize)()
+    SetKioskModeIconSize(value *AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeIconSize)()
     SetKioskModeLockHomeScreen(value *bool)()
     SetKioskModeManagedFolders(value []AndroidDeviceOwnerKioskModeManagedFolderable)()
     SetKioskModeManagedHomeScreenAutoSignout(value *bool)()
     SetKioskModeManagedHomeScreenInactiveSignOutDelayInSeconds(value *int32)()
     SetKioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds(value *int32)()
-    SetKioskModeManagedHomeScreenPinComplexity(value *KioskModeManagedHomeScreenPinComplexity)()
+    SetKioskModeManagedHomeScreenPinComplexity(value *AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeManagedHomeScreenPinComplexity)()
     SetKioskModeManagedHomeScreenPinRequired(value *bool)()
     SetKioskModeManagedHomeScreenPinRequiredToResume(value *bool)()
     SetKioskModeManagedHomeScreenSignInBackground(value *string)()
@@ -5088,7 +5088,7 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     SetKioskModeManagedHomeScreenSignInEnabled(value *bool)()
     SetKioskModeManagedSettingsEntryDisabled(value *bool)()
     SetKioskModeMediaVolumeConfigurationEnabled(value *bool)()
-    SetKioskModeScreenOrientation(value *AndroidDeviceOwnerKioskModeScreenOrientation)()
+    SetKioskModeScreenOrientation(value *AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeScreenOrientation)()
     SetKioskModeScreenSaverConfigurationEnabled(value *bool)()
     SetKioskModeScreenSaverDetectMediaDisabled(value *bool)()
     SetKioskModeScreenSaverDisplayTimeInSeconds(value *int32)()
@@ -5096,9 +5096,9 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     SetKioskModeScreenSaverStartDelayInSeconds(value *int32)()
     SetKioskModeShowAppNotificationBadge(value *bool)()
     SetKioskModeShowDeviceInfo(value *bool)()
-    SetKioskModeUseManagedHomeScreenApp(value *KioskModeType)()
+    SetKioskModeUseManagedHomeScreenApp(value *AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeUseManagedHomeScreenApp)()
     SetKioskModeVirtualHomeButtonEnabled(value *bool)()
-    SetKioskModeVirtualHomeButtonType(value *AndroidDeviceOwnerVirtualHomeButtonType)()
+    SetKioskModeVirtualHomeButtonType(value *AndroidDeviceOwnerGeneralDeviceConfiguration_kioskModeVirtualHomeButtonType)()
     SetKioskModeWallpaperUrl(value *string)()
     SetKioskModeWifiAllowedSsids(value []string)()
     SetKioskModeWiFiConfigurationEnabled(value *bool)()
@@ -5110,10 +5110,10 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     SetMicrosoftLauncherCustomWallpaperEnabled(value *bool)()
     SetMicrosoftLauncherCustomWallpaperImageUrl(value *string)()
     SetMicrosoftLauncherDockPresenceAllowUserModification(value *bool)()
-    SetMicrosoftLauncherDockPresenceConfiguration(value *MicrosoftLauncherDockPresence)()
+    SetMicrosoftLauncherDockPresenceConfiguration(value *AndroidDeviceOwnerGeneralDeviceConfiguration_microsoftLauncherDockPresenceConfiguration)()
     SetMicrosoftLauncherFeedAllowUserModification(value *bool)()
     SetMicrosoftLauncherFeedEnabled(value *bool)()
-    SetMicrosoftLauncherSearchBarPlacementConfiguration(value *MicrosoftLauncherSearchBarPlacement)()
+    SetMicrosoftLauncherSearchBarPlacementConfiguration(value *AndroidDeviceOwnerGeneralDeviceConfiguration_microsoftLauncherSearchBarPlacementConfiguration)()
     SetNetworkEscapeHatchAllowed(value *bool)()
     SetNfcBlockOutgoingBeam(value *bool)()
     SetPasswordBlockKeyguard(value *bool)()
@@ -5128,15 +5128,15 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     SetPasswordMinimumUpperCaseCharacters(value *int32)()
     SetPasswordMinutesOfInactivityBeforeScreenTimeout(value *int32)()
     SetPasswordPreviousPasswordCountToBlock(value *int32)()
-    SetPasswordRequiredType(value *AndroidDeviceOwnerRequiredPasswordType)()
-    SetPasswordRequireUnlock(value *AndroidDeviceOwnerRequiredPasswordUnlock)()
+    SetPasswordRequiredType(value *AndroidDeviceOwnerGeneralDeviceConfiguration_passwordRequiredType)()
+    SetPasswordRequireUnlock(value *AndroidDeviceOwnerGeneralDeviceConfiguration_passwordRequireUnlock)()
     SetPasswordSignInFailureCountBeforeFactoryReset(value *int32)()
     SetPersonalProfileAppsAllowInstallFromUnknownSources(value *bool)()
     SetPersonalProfileCameraBlocked(value *bool)()
     SetPersonalProfilePersonalApplications(value []AppListItemable)()
-    SetPersonalProfilePlayStoreMode(value *PersonalProfilePersonalPlayStoreMode)()
+    SetPersonalProfilePlayStoreMode(value *AndroidDeviceOwnerGeneralDeviceConfiguration_personalProfilePlayStoreMode)()
     SetPersonalProfileScreenCaptureBlocked(value *bool)()
-    SetPlayStoreMode(value *AndroidDeviceOwnerPlayStoreMode)()
+    SetPlayStoreMode(value *AndroidDeviceOwnerGeneralDeviceConfiguration_playStoreMode)()
     SetScreenCaptureBlocked(value *bool)()
     SetSecurityCommonCriteriaModeEnabled(value *bool)()
     SetSecurityDeveloperSettingsEnabled(value *bool)()
@@ -5149,7 +5149,7 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     SetStorageBlockExternalMedia(value *bool)()
     SetStorageBlockUsbFileTransfer(value *bool)()
     SetSystemUpdateFreezePeriods(value []AndroidDeviceOwnerSystemUpdateFreezePeriodable)()
-    SetSystemUpdateInstallType(value *AndroidDeviceOwnerSystemUpdateInstallType)()
+    SetSystemUpdateInstallType(value *AndroidDeviceOwnerGeneralDeviceConfiguration_systemUpdateInstallType)()
     SetSystemUpdateWindowEndMinutesAfterMidnight(value *int32)()
     SetSystemUpdateWindowStartMinutesAfterMidnight(value *int32)()
     SetSystemWindowsBlocked(value *bool)()
@@ -5169,7 +5169,7 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     SetWorkProfilePasswordMinimumSymbolCharacters(value *int32)()
     SetWorkProfilePasswordMinimumUpperCaseCharacters(value *int32)()
     SetWorkProfilePasswordPreviousPasswordCountToBlock(value *int32)()
-    SetWorkProfilePasswordRequiredType(value *AndroidDeviceOwnerRequiredPasswordType)()
-    SetWorkProfilePasswordRequireUnlock(value *AndroidDeviceOwnerRequiredPasswordUnlock)()
+    SetWorkProfilePasswordRequiredType(value *AndroidDeviceOwnerGeneralDeviceConfiguration_workProfilePasswordRequiredType)()
+    SetWorkProfilePasswordRequireUnlock(value *AndroidDeviceOwnerGeneralDeviceConfiguration_workProfilePasswordRequireUnlock)()
     SetWorkProfilePasswordSignInFailureCountBeforeFactoryReset(value *int32)()
 }

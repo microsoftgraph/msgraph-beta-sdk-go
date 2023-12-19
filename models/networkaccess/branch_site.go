@@ -44,13 +44,13 @@ func (m *BranchSite) GetConnectivityConfiguration()(BranchConnectivityConfigurat
     return nil
 }
 // GetConnectivityState gets the connectivityState property value. Determines the branch site status. The possible values are: pending, connected, inactive, error.
-func (m *BranchSite) GetConnectivityState()(*ConnectivityState) {
+func (m *BranchSite) GetConnectivityState()(*BranchSite_connectivityState) {
     val, err := m.GetBackingStore().Get("connectivityState")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ConnectivityState)
+        return val.(*BranchSite_connectivityState)
     }
     return nil
 }
@@ -100,12 +100,12 @@ func (m *BranchSite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     res["connectivityState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseConnectivityState)
+        val, err := n.GetEnumValue(ParseBranchSite_connectivityState)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetConnectivityState(val.(*ConnectivityState))
+            m.SetConnectivityState(val.(*BranchSite_connectivityState))
         }
         return nil
     }
@@ -345,7 +345,7 @@ func (m *BranchSite) SetConnectivityConfiguration(value BranchConnectivityConfig
     }
 }
 // SetConnectivityState sets the connectivityState property value. Determines the branch site status. The possible values are: pending, connected, inactive, error.
-func (m *BranchSite) SetConnectivityState(value *ConnectivityState)() {
+func (m *BranchSite) SetConnectivityState(value *BranchSite_connectivityState)() {
     err := m.GetBackingStore().Set("connectivityState", value)
     if err != nil {
         panic(err)
@@ -406,7 +406,7 @@ type BranchSiteable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBandwidthCapacity()(*int64)
     GetConnectivityConfiguration()(BranchConnectivityConfigurationable)
-    GetConnectivityState()(*ConnectivityState)
+    GetConnectivityState()(*BranchSite_connectivityState)
     GetCountry()(*string)
     GetDeviceLinks()([]DeviceLinkable)
     GetForwardingProfiles()([]ForwardingProfileable)
@@ -416,7 +416,7 @@ type BranchSiteable interface {
     GetVersion()(*string)
     SetBandwidthCapacity(value *int64)()
     SetConnectivityConfiguration(value BranchConnectivityConfigurationable)()
-    SetConnectivityState(value *ConnectivityState)()
+    SetConnectivityState(value *BranchSite_connectivityState)()
     SetCountry(value *string)()
     SetDeviceLinks(value []DeviceLinkable)()
     SetForwardingProfiles(value []ForwardingProfileable)()

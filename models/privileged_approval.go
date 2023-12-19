@@ -32,13 +32,13 @@ func (m *PrivilegedApproval) GetApprovalDuration()(*i878a80d2330e89d26896388a3f4
     return nil
 }
 // GetApprovalState gets the approvalState property value. The approvalState property
-func (m *PrivilegedApproval) GetApprovalState()(*ApprovalState) {
+func (m *PrivilegedApproval) GetApprovalState()(*PrivilegedApproval_approvalState) {
     val, err := m.GetBackingStore().Get("approvalState")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ApprovalState)
+        return val.(*PrivilegedApproval_approvalState)
     }
     return nil
 }
@@ -89,12 +89,12 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["approvalState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseApprovalState)
+        val, err := n.GetEnumValue(ParsePrivilegedApproval_approvalState)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetApprovalState(val.(*ApprovalState))
+            m.SetApprovalState(val.(*PrivilegedApproval_approvalState))
         }
         return nil
     }
@@ -339,7 +339,7 @@ func (m *PrivilegedApproval) SetApprovalDuration(value *i878a80d2330e89d26896388
     }
 }
 // SetApprovalState sets the approvalState property value. The approvalState property
-func (m *PrivilegedApproval) SetApprovalState(value *ApprovalState)() {
+func (m *PrivilegedApproval) SetApprovalState(value *PrivilegedApproval_approvalState)() {
     err := m.GetBackingStore().Set("approvalState", value)
     if err != nil {
         panic(err)
@@ -413,7 +413,7 @@ type PrivilegedApprovalable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetApprovalDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
-    GetApprovalState()(*ApprovalState)
+    GetApprovalState()(*PrivilegedApproval_approvalState)
     GetApprovalType()(*string)
     GetApproverReason()(*string)
     GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -424,7 +424,7 @@ type PrivilegedApprovalable interface {
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetUserId()(*string)
     SetApprovalDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
-    SetApprovalState(value *ApprovalState)()
+    SetApprovalState(value *PrivilegedApproval_approvalState)()
     SetApprovalType(value *string)()
     SetApproverReason(value *string)()
     SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

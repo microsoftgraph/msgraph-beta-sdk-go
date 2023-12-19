@@ -20,13 +20,13 @@ func CreateCallFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
     return NewCall(), nil
 }
 // GetActiveModalities gets the activeModalities property value. The list of active modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data. Read-only.
-func (m *Call) GetActiveModalities()([]Modality) {
+func (m *Call) GetActiveModalities()([]Call_activeModalities) {
     val, err := m.GetBackingStore().Get("activeModalities")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]Modality)
+        return val.([]Call_activeModalities)
     }
     return nil
 }
@@ -119,13 +119,13 @@ func (m *Call) GetContentSharingSessions()([]ContentSharingSessionable) {
     return nil
 }
 // GetDirection gets the direction property value. The direction of the call. The possible values are incoming or outgoing. Read-only.
-func (m *Call) GetDirection()(*CallDirection) {
+func (m *Call) GetDirection()(*Call_direction) {
     val, err := m.GetBackingStore().Get("direction")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CallDirection)
+        return val.(*Call_direction)
     }
     return nil
 }
@@ -133,15 +133,15 @@ func (m *Call) GetDirection()(*CallDirection) {
 func (m *Call) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activeModalities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseModality)
+        val, err := n.GetCollectionOfEnumValues(ParseCall_activeModalities)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Modality, len(val))
+            res := make([]Call_activeModalities, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*Modality))
+                    res[i] = *(v.(*Call_activeModalities))
                 }
             }
             m.SetActiveModalities(res)
@@ -247,12 +247,12 @@ func (m *Call) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         return nil
     }
     res["direction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCallDirection)
+        val, err := n.GetEnumValue(ParseCall_direction)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDirection(val.(*CallDirection))
+            m.SetDirection(val.(*Call_direction))
         }
         return nil
     }
@@ -349,15 +349,15 @@ func (m *Call) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         return nil
     }
     res["requestedModalities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseModality)
+        val, err := n.GetCollectionOfEnumValues(ParseCall_requestedModalities)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Modality, len(val))
+            res := make([]Call_requestedModalities, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*Modality))
+                    res[i] = *(v.(*Call_requestedModalities))
                 }
             }
             m.SetRequestedModalities(res)
@@ -385,15 +385,15 @@ func (m *Call) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         return nil
     }
     res["routingPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseRoutingPolicy)
+        val, err := n.GetCollectionOfEnumValues(ParseCall_routingPolicies)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]RoutingPolicy, len(val))
+            res := make([]Call_routingPolicies, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*RoutingPolicy))
+                    res[i] = *(v.(*Call_routingPolicies))
                 }
             }
             m.SetRoutingPolicies(res)
@@ -411,12 +411,12 @@ func (m *Call) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         return nil
     }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCallState)
+        val, err := n.GetEnumValue(ParseCall_state)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetState(val.(*CallState))
+            m.SetState(val.(*Call_state))
         }
         return nil
     }
@@ -577,13 +577,13 @@ func (m *Call) GetParticipants()([]Participantable) {
     return nil
 }
 // GetRequestedModalities gets the requestedModalities property value. The requestedModalities property
-func (m *Call) GetRequestedModalities()([]Modality) {
+func (m *Call) GetRequestedModalities()([]Call_requestedModalities) {
     val, err := m.GetBackingStore().Get("requestedModalities")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]Modality)
+        return val.([]Call_requestedModalities)
     }
     return nil
 }
@@ -610,13 +610,13 @@ func (m *Call) GetRingingTimeoutInSeconds()(*int32) {
     return nil
 }
 // GetRoutingPolicies gets the routingPolicies property value. The routingPolicies property
-func (m *Call) GetRoutingPolicies()([]RoutingPolicy) {
+func (m *Call) GetRoutingPolicies()([]Call_routingPolicies) {
     val, err := m.GetBackingStore().Get("routingPolicies")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]RoutingPolicy)
+        return val.([]Call_routingPolicies)
     }
     return nil
 }
@@ -632,13 +632,13 @@ func (m *Call) GetSource()(ParticipantInfoable) {
     return nil
 }
 // GetState gets the state property value. The state property
-func (m *Call) GetState()(*CallState) {
+func (m *Call) GetState()(*Call_state) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CallState)
+        return val.(*Call_state)
     }
     return nil
 }
@@ -715,7 +715,7 @@ func (m *Call) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         return err
     }
     if m.GetActiveModalities() != nil {
-        err = writer.WriteCollectionOfStringValues("activeModalities", SerializeModality(m.GetActiveModalities()))
+        err = writer.WriteCollectionOfStringValues("activeModalities", SerializeCall_activeModalities(m.GetActiveModalities()))
         if err != nil {
             return err
         }
@@ -854,7 +854,7 @@ func (m *Call) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     if m.GetRequestedModalities() != nil {
-        err = writer.WriteCollectionOfStringValues("requestedModalities", SerializeModality(m.GetRequestedModalities()))
+        err = writer.WriteCollectionOfStringValues("requestedModalities", SerializeCall_requestedModalities(m.GetRequestedModalities()))
         if err != nil {
             return err
         }
@@ -872,7 +872,7 @@ func (m *Call) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     if m.GetRoutingPolicies() != nil {
-        err = writer.WriteCollectionOfStringValues("routingPolicies", SerializeRoutingPolicy(m.GetRoutingPolicies()))
+        err = writer.WriteCollectionOfStringValues("routingPolicies", SerializeCall_routingPolicies(m.GetRoutingPolicies()))
         if err != nil {
             return err
         }
@@ -935,7 +935,7 @@ func (m *Call) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     return nil
 }
 // SetActiveModalities sets the activeModalities property value. The list of active modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data. Read-only.
-func (m *Call) SetActiveModalities(value []Modality)() {
+func (m *Call) SetActiveModalities(value []Call_activeModalities)() {
     err := m.GetBackingStore().Set("activeModalities", value)
     if err != nil {
         panic(err)
@@ -998,7 +998,7 @@ func (m *Call) SetContentSharingSessions(value []ContentSharingSessionable)() {
     }
 }
 // SetDirection sets the direction property value. The direction of the call. The possible values are incoming or outgoing. Read-only.
-func (m *Call) SetDirection(value *CallDirection)() {
+func (m *Call) SetDirection(value *Call_direction)() {
     err := m.GetBackingStore().Set("direction", value)
     if err != nil {
         panic(err)
@@ -1061,7 +1061,7 @@ func (m *Call) SetParticipants(value []Participantable)() {
     }
 }
 // SetRequestedModalities sets the requestedModalities property value. The requestedModalities property
-func (m *Call) SetRequestedModalities(value []Modality)() {
+func (m *Call) SetRequestedModalities(value []Call_requestedModalities)() {
     err := m.GetBackingStore().Set("requestedModalities", value)
     if err != nil {
         panic(err)
@@ -1082,7 +1082,7 @@ func (m *Call) SetRingingTimeoutInSeconds(value *int32)() {
     }
 }
 // SetRoutingPolicies sets the routingPolicies property value. The routingPolicies property
-func (m *Call) SetRoutingPolicies(value []RoutingPolicy)() {
+func (m *Call) SetRoutingPolicies(value []Call_routingPolicies)() {
     err := m.GetBackingStore().Set("routingPolicies", value)
     if err != nil {
         panic(err)
@@ -1096,7 +1096,7 @@ func (m *Call) SetSource(value ParticipantInfoable)() {
     }
 }
 // SetState sets the state property value. The state property
-func (m *Call) SetState(value *CallState)() {
+func (m *Call) SetState(value *Call_state)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {
         panic(err)
@@ -1148,7 +1148,7 @@ func (m *Call) SetTranscription(value CallTranscriptionInfoable)() {
 type Callable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetActiveModalities()([]Modality)
+    GetActiveModalities()([]Call_activeModalities)
     GetAnsweredBy()(ParticipantInfoable)
     GetAudioRoutingGroups()([]AudioRoutingGroupable)
     GetCallbackUri()(*string)
@@ -1157,7 +1157,7 @@ type Callable interface {
     GetCallRoutes()([]CallRouteable)
     GetChatInfo()(ChatInfoable)
     GetContentSharingSessions()([]ContentSharingSessionable)
-    GetDirection()(*CallDirection)
+    GetDirection()(*Call_direction)
     GetIncomingContext()(IncomingContextable)
     GetMediaConfig()(MediaConfigable)
     GetMediaState()(CallMediaStateable)
@@ -1166,19 +1166,19 @@ type Callable interface {
     GetMyParticipantId()(*string)
     GetOperations()([]CommsOperationable)
     GetParticipants()([]Participantable)
-    GetRequestedModalities()([]Modality)
+    GetRequestedModalities()([]Call_requestedModalities)
     GetResultInfo()(ResultInfoable)
     GetRingingTimeoutInSeconds()(*int32)
-    GetRoutingPolicies()([]RoutingPolicy)
+    GetRoutingPolicies()([]Call_routingPolicies)
     GetSource()(ParticipantInfoable)
-    GetState()(*CallState)
+    GetState()(*Call_state)
     GetSubject()(*string)
     GetTargets()([]InvitationParticipantInfoable)
     GetTenantId()(*string)
     GetTerminationReason()(*string)
     GetToneInfo()(ToneInfoable)
     GetTranscription()(CallTranscriptionInfoable)
-    SetActiveModalities(value []Modality)()
+    SetActiveModalities(value []Call_activeModalities)()
     SetAnsweredBy(value ParticipantInfoable)()
     SetAudioRoutingGroups(value []AudioRoutingGroupable)()
     SetCallbackUri(value *string)()
@@ -1187,7 +1187,7 @@ type Callable interface {
     SetCallRoutes(value []CallRouteable)()
     SetChatInfo(value ChatInfoable)()
     SetContentSharingSessions(value []ContentSharingSessionable)()
-    SetDirection(value *CallDirection)()
+    SetDirection(value *Call_direction)()
     SetIncomingContext(value IncomingContextable)()
     SetMediaConfig(value MediaConfigable)()
     SetMediaState(value CallMediaStateable)()
@@ -1196,12 +1196,12 @@ type Callable interface {
     SetMyParticipantId(value *string)()
     SetOperations(value []CommsOperationable)()
     SetParticipants(value []Participantable)()
-    SetRequestedModalities(value []Modality)()
+    SetRequestedModalities(value []Call_requestedModalities)()
     SetResultInfo(value ResultInfoable)()
     SetRingingTimeoutInSeconds(value *int32)()
-    SetRoutingPolicies(value []RoutingPolicy)()
+    SetRoutingPolicies(value []Call_routingPolicies)()
     SetSource(value ParticipantInfoable)()
-    SetState(value *CallState)()
+    SetState(value *Call_state)()
     SetSubject(value *string)()
     SetTargets(value []InvitationParticipantInfoable)()
     SetTenantId(value *string)()

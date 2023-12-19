@@ -22,13 +22,13 @@ func CreateAndroidDeviceOwnerImportedPFXCertificateProfileFromDiscriminatorValue
     return NewAndroidDeviceOwnerImportedPFXCertificateProfile(), nil
 }
 // GetCertificateAccessType gets the certificateAccessType property value. Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
-func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) GetCertificateAccessType()(*AndroidDeviceOwnerCertificateAccessType) {
+func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) GetCertificateAccessType()(*AndroidDeviceOwnerImportedPFXCertificateProfile_certificateAccessType) {
     val, err := m.GetBackingStore().Get("certificateAccessType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AndroidDeviceOwnerCertificateAccessType)
+        return val.(*AndroidDeviceOwnerImportedPFXCertificateProfile_certificateAccessType)
     }
     return nil
 }
@@ -36,12 +36,12 @@ func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) GetCertificateAccessTy
 func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AndroidDeviceOwnerCertificateProfileBase.GetFieldDeserializers()
     res["certificateAccessType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerCertificateAccessType)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerImportedPFXCertificateProfile_certificateAccessType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCertificateAccessType(val.(*AndroidDeviceOwnerCertificateAccessType))
+            m.SetCertificateAccessType(val.(*AndroidDeviceOwnerImportedPFXCertificateProfile_certificateAccessType))
         }
         return nil
     }
@@ -169,7 +169,7 @@ func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) Serialize(writer i878a
     return nil
 }
 // SetCertificateAccessType sets the certificateAccessType property value. Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
-func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) SetCertificateAccessType(value *AndroidDeviceOwnerCertificateAccessType)() {
+func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) SetCertificateAccessType(value *AndroidDeviceOwnerImportedPFXCertificateProfile_certificateAccessType)() {
     err := m.GetBackingStore().Set("certificateAccessType", value)
     if err != nil {
         panic(err)
@@ -200,11 +200,11 @@ func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) SetSilentCertificateAc
 type AndroidDeviceOwnerImportedPFXCertificateProfileable interface {
     AndroidDeviceOwnerCertificateProfileBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetCertificateAccessType()(*AndroidDeviceOwnerCertificateAccessType)
+    GetCertificateAccessType()(*AndroidDeviceOwnerImportedPFXCertificateProfile_certificateAccessType)
     GetIntendedPurpose()(*IntendedPurpose)
     GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable)
     GetSilentCertificateAccessDetails()([]AndroidDeviceOwnerSilentCertificateAccessable)
-    SetCertificateAccessType(value *AndroidDeviceOwnerCertificateAccessType)()
+    SetCertificateAccessType(value *AndroidDeviceOwnerImportedPFXCertificateProfile_certificateAccessType)()
     SetIntendedPurpose(value *IntendedPurpose)()
     SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)()
     SetSilentCertificateAccessDetails(value []AndroidDeviceOwnerSilentCertificateAccessable)()

@@ -208,12 +208,12 @@ func (m *ManagedTenantAlertRule) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["notificationFinalDestinations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseNotificationDestination)
+        val, err := n.GetEnumValue(ParseManagedTenantAlertRule_notificationFinalDestinations)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetNotificationFinalDestinations(val.(*NotificationDestination))
+            m.SetNotificationFinalDestinations(val.(*ManagedTenantAlertRule_notificationFinalDestinations))
         }
         return nil
     }
@@ -228,12 +228,12 @@ func (m *ManagedTenantAlertRule) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["severity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAlertSeverity)
+        val, err := n.GetEnumValue(ParseManagedTenantAlertRule_severity)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSeverity(val.(*AlertSeverity))
+            m.SetSeverity(val.(*ManagedTenantAlertRule_severity))
         }
         return nil
     }
@@ -305,13 +305,13 @@ func (m *ManagedTenantAlertRule) GetLastRunDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetNotificationFinalDestinations gets the notificationFinalDestinations property value. The notificationFinalDestinations property
-func (m *ManagedTenantAlertRule) GetNotificationFinalDestinations()(*NotificationDestination) {
+func (m *ManagedTenantAlertRule) GetNotificationFinalDestinations()(*ManagedTenantAlertRule_notificationFinalDestinations) {
     val, err := m.GetBackingStore().Get("notificationFinalDestinations")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*NotificationDestination)
+        return val.(*ManagedTenantAlertRule_notificationFinalDestinations)
     }
     return nil
 }
@@ -327,13 +327,13 @@ func (m *ManagedTenantAlertRule) GetRuleDefinition()(ManagedTenantAlertRuleDefin
     return nil
 }
 // GetSeverity gets the severity property value. The severity property
-func (m *ManagedTenantAlertRule) GetSeverity()(*AlertSeverity) {
+func (m *ManagedTenantAlertRule) GetSeverity()(*ManagedTenantAlertRule_severity) {
     val, err := m.GetBackingStore().Get("severity")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AlertSeverity)
+        return val.(*ManagedTenantAlertRule_severity)
     }
     return nil
 }
@@ -548,7 +548,7 @@ func (m *ManagedTenantAlertRule) SetLastRunDateTime(value *i336074805fc853987abe
     }
 }
 // SetNotificationFinalDestinations sets the notificationFinalDestinations property value. The notificationFinalDestinations property
-func (m *ManagedTenantAlertRule) SetNotificationFinalDestinations(value *NotificationDestination)() {
+func (m *ManagedTenantAlertRule) SetNotificationFinalDestinations(value *ManagedTenantAlertRule_notificationFinalDestinations)() {
     err := m.GetBackingStore().Set("notificationFinalDestinations", value)
     if err != nil {
         panic(err)
@@ -562,7 +562,7 @@ func (m *ManagedTenantAlertRule) SetRuleDefinition(value ManagedTenantAlertRuleD
     }
 }
 // SetSeverity sets the severity property value. The severity property
-func (m *ManagedTenantAlertRule) SetSeverity(value *AlertSeverity)() {
+func (m *ManagedTenantAlertRule) SetSeverity(value *ManagedTenantAlertRule_severity)() {
     err := m.GetBackingStore().Set("severity", value)
     if err != nil {
         panic(err)
@@ -596,9 +596,9 @@ type ManagedTenantAlertRuleable interface {
     GetLastActionByUserId()(*string)
     GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetNotificationFinalDestinations()(*NotificationDestination)
+    GetNotificationFinalDestinations()(*ManagedTenantAlertRule_notificationFinalDestinations)
     GetRuleDefinition()(ManagedTenantAlertRuleDefinitionable)
-    GetSeverity()(*AlertSeverity)
+    GetSeverity()(*ManagedTenantAlertRule_severity)
     GetTargets()([]NotificationTargetable)
     GetTenantIds()([]TenantInfoable)
     SetAlertDisplayName(value *string)()
@@ -611,9 +611,9 @@ type ManagedTenantAlertRuleable interface {
     SetLastActionByUserId(value *string)()
     SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetNotificationFinalDestinations(value *NotificationDestination)()
+    SetNotificationFinalDestinations(value *ManagedTenantAlertRule_notificationFinalDestinations)()
     SetRuleDefinition(value ManagedTenantAlertRuleDefinitionable)()
-    SetSeverity(value *AlertSeverity)()
+    SetSeverity(value *ManagedTenantAlertRule_severity)()
     SetTargets(value []NotificationTargetable)()
     SetTenantIds(value []TenantInfoable)()
 }

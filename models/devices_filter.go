@@ -42,12 +42,12 @@ func (m *DevicesFilter) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d411854
 func (m *DevicesFilter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["mode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCrossTenantAccessPolicyTargetConfigurationAccessType)
+        val, err := n.GetEnumValue(ParseDevicesFilter_mode)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMode(val.(*CrossTenantAccessPolicyTargetConfigurationAccessType))
+            m.SetMode(val.(*DevicesFilter_mode))
         }
         return nil
     }
@@ -74,13 +74,13 @@ func (m *DevicesFilter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetMode gets the mode property value. Determines whether devices satisfying the rule should be allowed or blocked.The possible values are: allowed, blocked, unknownFutureValue.
-func (m *DevicesFilter) GetMode()(*CrossTenantAccessPolicyTargetConfigurationAccessType) {
+func (m *DevicesFilter) GetMode()(*DevicesFilter_mode) {
     val, err := m.GetBackingStore().Get("mode")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CrossTenantAccessPolicyTargetConfigurationAccessType)
+        return val.(*DevicesFilter_mode)
     }
     return nil
 }
@@ -147,7 +147,7 @@ func (m *DevicesFilter) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41
     m.backingStore = value
 }
 // SetMode sets the mode property value. Determines whether devices satisfying the rule should be allowed or blocked.The possible values are: allowed, blocked, unknownFutureValue.
-func (m *DevicesFilter) SetMode(value *CrossTenantAccessPolicyTargetConfigurationAccessType)() {
+func (m *DevicesFilter) SetMode(value *DevicesFilter_mode)() {
     err := m.GetBackingStore().Set("mode", value)
     if err != nil {
         panic(err)
@@ -173,11 +173,11 @@ type DevicesFilterable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetMode()(*CrossTenantAccessPolicyTargetConfigurationAccessType)
+    GetMode()(*DevicesFilter_mode)
     GetOdataType()(*string)
     GetRule()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetMode(value *CrossTenantAccessPolicyTargetConfigurationAccessType)()
+    SetMode(value *DevicesFilter_mode)()
     SetOdataType(value *string)()
     SetRule(value *string)()
 }

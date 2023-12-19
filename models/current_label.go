@@ -35,13 +35,13 @@ func (m *CurrentLabel) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetApplicationMode gets the applicationMode property value. The applicationMode property
-func (m *CurrentLabel) GetApplicationMode()(*ApplicationMode) {
+func (m *CurrentLabel) GetApplicationMode()(*CurrentLabel_applicationMode) {
     val, err := m.GetBackingStore().Get("applicationMode")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ApplicationMode)
+        return val.(*CurrentLabel_applicationMode)
     }
     return nil
 }
@@ -53,12 +53,12 @@ func (m *CurrentLabel) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d4118542
 func (m *CurrentLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["applicationMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseApplicationMode)
+        val, err := n.GetEnumValue(ParseCurrentLabel_applicationMode)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetApplicationMode(val.(*ApplicationMode))
+            m.SetApplicationMode(val.(*CurrentLabel_applicationMode))
         }
         return nil
     }
@@ -143,7 +143,7 @@ func (m *CurrentLabel) SetAdditionalData(value map[string]any)() {
     }
 }
 // SetApplicationMode sets the applicationMode property value. The applicationMode property
-func (m *CurrentLabel) SetApplicationMode(value *ApplicationMode)() {
+func (m *CurrentLabel) SetApplicationMode(value *CurrentLabel_applicationMode)() {
     err := m.GetBackingStore().Set("applicationMode", value)
     if err != nil {
         panic(err)
@@ -172,11 +172,11 @@ type CurrentLabelable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetApplicationMode()(*ApplicationMode)
+    GetApplicationMode()(*CurrentLabel_applicationMode)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetId()(*string)
     GetOdataType()(*string)
-    SetApplicationMode(value *ApplicationMode)()
+    SetApplicationMode(value *CurrentLabel_applicationMode)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetId(value *string)()
     SetOdataType(value *string)()

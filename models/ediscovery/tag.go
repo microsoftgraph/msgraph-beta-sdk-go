@@ -22,13 +22,13 @@ func CreateTagFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef
     return NewTag(), nil
 }
 // GetChildSelectability gets the childSelectability property value. Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
-func (m *Tag) GetChildSelectability()(*ChildSelectability) {
+func (m *Tag) GetChildSelectability()(*Tag_childSelectability) {
     val, err := m.GetBackingStore().Get("childSelectability")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ChildSelectability)
+        return val.(*Tag_childSelectability)
     }
     return nil
 }
@@ -80,12 +80,12 @@ func (m *Tag) GetDisplayName()(*string) {
 func (m *Tag) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["childSelectability"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseChildSelectability)
+        val, err := n.GetEnumValue(ParseTag_childSelectability)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetChildSelectability(val.(*ChildSelectability))
+            m.SetChildSelectability(val.(*Tag_childSelectability))
         }
         return nil
     }
@@ -237,7 +237,7 @@ func (m *Tag) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493
     return nil
 }
 // SetChildSelectability sets the childSelectability property value. Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
-func (m *Tag) SetChildSelectability(value *ChildSelectability)() {
+func (m *Tag) SetChildSelectability(value *Tag_childSelectability)() {
     err := m.GetBackingStore().Set("childSelectability", value)
     if err != nil {
         panic(err)
@@ -289,14 +289,14 @@ func (m *Tag) SetParent(value Tagable)() {
 type Tagable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetChildSelectability()(*ChildSelectability)
+    GetChildSelectability()(*Tag_childSelectability)
     GetChildTags()([]Tagable)
     GetCreatedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetParent()(Tagable)
-    SetChildSelectability(value *ChildSelectability)()
+    SetChildSelectability(value *Tag_childSelectability)()
     SetChildTags(value []Tagable)()
     SetCreatedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)()
     SetDescription(value *string)()

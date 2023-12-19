@@ -40,13 +40,13 @@ func CreateMeetingRegistrationBaseFromDiscriminatorValue(parseNode i878a80d2330e
     return NewMeetingRegistrationBase(), nil
 }
 // GetAllowedRegistrant gets the allowedRegistrant property value. Specifies who can register for the meeting.
-func (m *MeetingRegistrationBase) GetAllowedRegistrant()(*MeetingAudience) {
+func (m *MeetingRegistrationBase) GetAllowedRegistrant()(*MeetingRegistrationBase_allowedRegistrant) {
     val, err := m.GetBackingStore().Get("allowedRegistrant")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MeetingAudience)
+        return val.(*MeetingRegistrationBase_allowedRegistrant)
     }
     return nil
 }
@@ -54,12 +54,12 @@ func (m *MeetingRegistrationBase) GetAllowedRegistrant()(*MeetingAudience) {
 func (m *MeetingRegistrationBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["allowedRegistrant"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMeetingAudience)
+        val, err := n.GetEnumValue(ParseMeetingRegistrationBase_allowedRegistrant)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAllowedRegistrant(val.(*MeetingAudience))
+            m.SetAllowedRegistrant(val.(*MeetingRegistrationBase_allowedRegistrant))
         }
         return nil
     }
@@ -120,7 +120,7 @@ func (m *MeetingRegistrationBase) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAllowedRegistrant sets the allowedRegistrant property value. Specifies who can register for the meeting.
-func (m *MeetingRegistrationBase) SetAllowedRegistrant(value *MeetingAudience)() {
+func (m *MeetingRegistrationBase) SetAllowedRegistrant(value *MeetingRegistrationBase_allowedRegistrant)() {
     err := m.GetBackingStore().Set("allowedRegistrant", value)
     if err != nil {
         panic(err)
@@ -137,8 +137,8 @@ func (m *MeetingRegistrationBase) SetRegistrants(value []MeetingRegistrantBaseab
 type MeetingRegistrationBaseable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAllowedRegistrant()(*MeetingAudience)
+    GetAllowedRegistrant()(*MeetingRegistrationBase_allowedRegistrant)
     GetRegistrants()([]MeetingRegistrantBaseable)
-    SetAllowedRegistrant(value *MeetingAudience)()
+    SetAllowedRegistrant(value *MeetingRegistrationBase_allowedRegistrant)()
     SetRegistrants(value []MeetingRegistrantBaseable)()
 }

@@ -169,12 +169,12 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     res["permissionsRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseApplicationPermissionsRequired)
+        val, err := n.GetEnumValue(ParseCloudAppSecurityProfile_permissionsRequired)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPermissionsRequired(val.(*ApplicationPermissionsRequired))
+            m.SetPermissionsRequired(val.(*CloudAppSecurityProfile_permissionsRequired))
         }
         return nil
     }
@@ -301,13 +301,13 @@ func (m *CloudAppSecurityProfile) GetName()(*string) {
     return nil
 }
 // GetPermissionsRequired gets the permissionsRequired property value. The permissionsRequired property
-func (m *CloudAppSecurityProfile) GetPermissionsRequired()(*ApplicationPermissionsRequired) {
+func (m *CloudAppSecurityProfile) GetPermissionsRequired()(*CloudAppSecurityProfile_permissionsRequired) {
     val, err := m.GetBackingStore().Get("permissionsRequired")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ApplicationPermissionsRequired)
+        return val.(*CloudAppSecurityProfile_permissionsRequired)
     }
     return nil
 }
@@ -563,7 +563,7 @@ func (m *CloudAppSecurityProfile) SetName(value *string)() {
     }
 }
 // SetPermissionsRequired sets the permissionsRequired property value. The permissionsRequired property
-func (m *CloudAppSecurityProfile) SetPermissionsRequired(value *ApplicationPermissionsRequired)() {
+func (m *CloudAppSecurityProfile) SetPermissionsRequired(value *CloudAppSecurityProfile_permissionsRequired)() {
     err := m.GetBackingStore().Set("permissionsRequired", value)
     if err != nil {
         panic(err)
@@ -631,7 +631,7 @@ type CloudAppSecurityProfileable interface {
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetManifest()(*string)
     GetName()(*string)
-    GetPermissionsRequired()(*ApplicationPermissionsRequired)
+    GetPermissionsRequired()(*CloudAppSecurityProfile_permissionsRequired)
     GetPlatform()(*string)
     GetPolicyName()(*string)
     GetPublisher()(*string)
@@ -648,7 +648,7 @@ type CloudAppSecurityProfileable interface {
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetManifest(value *string)()
     SetName(value *string)()
-    SetPermissionsRequired(value *ApplicationPermissionsRequired)()
+    SetPermissionsRequired(value *CloudAppSecurityProfile_permissionsRequired)()
     SetPlatform(value *string)()
     SetPolicyName(value *string)()
     SetPublisher(value *string)()

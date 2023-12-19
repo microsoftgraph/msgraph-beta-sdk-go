@@ -62,12 +62,12 @@ func (m *TranslationLanguageOverride) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     res["translationBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTranslationBehavior)
+        val, err := n.GetEnumValue(ParseTranslationLanguageOverride_translationBehavior)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTranslationBehavior(val.(*TranslationBehavior))
+            m.SetTranslationBehavior(val.(*TranslationLanguageOverride_translationBehavior))
         }
         return nil
     }
@@ -96,13 +96,13 @@ func (m *TranslationLanguageOverride) GetOdataType()(*string) {
     return nil
 }
 // GetTranslationBehavior gets the translationBehavior property value. The translation override behavior for the language, if any.Returned by default. Not nullable.
-func (m *TranslationLanguageOverride) GetTranslationBehavior()(*TranslationBehavior) {
+func (m *TranslationLanguageOverride) GetTranslationBehavior()(*TranslationLanguageOverride_translationBehavior) {
     val, err := m.GetBackingStore().Get("translationBehavior")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TranslationBehavior)
+        return val.(*TranslationLanguageOverride_translationBehavior)
     }
     return nil
 }
@@ -161,7 +161,7 @@ func (m *TranslationLanguageOverride) SetOdataType(value *string)() {
     }
 }
 // SetTranslationBehavior sets the translationBehavior property value. The translation override behavior for the language, if any.Returned by default. Not nullable.
-func (m *TranslationLanguageOverride) SetTranslationBehavior(value *TranslationBehavior)() {
+func (m *TranslationLanguageOverride) SetTranslationBehavior(value *TranslationLanguageOverride_translationBehavior)() {
     err := m.GetBackingStore().Set("translationBehavior", value)
     if err != nil {
         panic(err)
@@ -175,9 +175,9 @@ type TranslationLanguageOverrideable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetLanguageTag()(*string)
     GetOdataType()(*string)
-    GetTranslationBehavior()(*TranslationBehavior)
+    GetTranslationBehavior()(*TranslationLanguageOverride_translationBehavior)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetLanguageTag(value *string)()
     SetOdataType(value *string)()
-    SetTranslationBehavior(value *TranslationBehavior)()
+    SetTranslationBehavior(value *TranslationLanguageOverride_translationBehavior)()
 }

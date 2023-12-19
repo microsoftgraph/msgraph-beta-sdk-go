@@ -94,13 +94,13 @@ func (m *SearchRequest) GetEnableTopResults()(*bool) {
     return nil
 }
 // GetEntityTypes gets the entityTypes property value. One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage. For details about combinations of two or more entity types that are supported in the same search request, see known limitations. Required.
-func (m *SearchRequest) GetEntityTypes()([]EntityType) {
+func (m *SearchRequest) GetEntityTypes()([]SearchRequest_entityTypes) {
     val, err := m.GetBackingStore().Get("entityTypes")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]EntityType)
+        return val.([]SearchRequest_entityTypes)
     }
     return nil
 }
@@ -182,15 +182,15 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["entityTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseEntityType)
+        val, err := n.GetCollectionOfEnumValues(ParseSearchRequest_entityTypes)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]EntityType, len(val))
+            res := make([]SearchRequest_entityTypes, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*EntityType))
+                    res[i] = *(v.(*SearchRequest_entityTypes))
                 }
             }
             m.SetEntityTypes(res)
@@ -514,7 +514,7 @@ func (m *SearchRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     if m.GetEntityTypes() != nil {
-        err := writer.WriteCollectionOfStringValues("entityTypes", SerializeEntityType(m.GetEntityTypes()))
+        err := writer.WriteCollectionOfStringValues("entityTypes", SerializeSearchRequest_entityTypes(m.GetEntityTypes()))
         if err != nil {
             return err
         }
@@ -652,7 +652,7 @@ func (m *SearchRequest) SetEnableTopResults(value *bool)() {
     }
 }
 // SetEntityTypes sets the entityTypes property value. One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage. For details about combinations of two or more entity types that are supported in the same search request, see known limitations. Required.
-func (m *SearchRequest) SetEntityTypes(value []EntityType)() {
+func (m *SearchRequest) SetEntityTypes(value []SearchRequest_entityTypes)() {
     err := m.GetBackingStore().Set("entityTypes", value)
     if err != nil {
         panic(err)
@@ -753,7 +753,7 @@ type SearchRequestable interface {
     GetCollapseProperties()([]CollapsePropertyable)
     GetContentSources()([]string)
     GetEnableTopResults()(*bool)
-    GetEntityTypes()([]EntityType)
+    GetEntityTypes()([]SearchRequest_entityTypes)
     GetFields()([]string)
     GetFrom()(*int32)
     GetOdataType()(*string)
@@ -772,7 +772,7 @@ type SearchRequestable interface {
     SetCollapseProperties(value []CollapsePropertyable)()
     SetContentSources(value []string)()
     SetEnableTopResults(value *bool)()
-    SetEntityTypes(value []EntityType)()
+    SetEntityTypes(value []SearchRequest_entityTypes)()
     SetFields(value []string)()
     SetFrom(value *int32)()
     SetOdataType(value *string)()

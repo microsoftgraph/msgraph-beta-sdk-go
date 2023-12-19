@@ -44,13 +44,13 @@ func (m *AlertRecord) GetAlertRuleId()(*string) {
     return nil
 }
 // GetAlertRuleTemplate gets the alertRuleTemplate property value. The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue, cloudPcInGracePeriodScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.
-func (m *AlertRecord) GetAlertRuleTemplate()(*AlertRuleTemplate) {
+func (m *AlertRecord) GetAlertRuleTemplate()(*AlertRecord_alertRuleTemplate) {
     val, err := m.GetBackingStore().Get("alertRuleTemplate")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AlertRuleTemplate)
+        return val.(*AlertRecord_alertRuleTemplate)
     }
     return nil
 }
@@ -100,12 +100,12 @@ func (m *AlertRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     res["alertRuleTemplate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAlertRuleTemplate)
+        val, err := n.GetEnumValue(ParseAlertRecord_alertRuleTemplate)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAlertRuleTemplate(val.(*AlertRuleTemplate))
+            m.SetAlertRuleTemplate(val.(*AlertRecord_alertRuleTemplate))
         }
         return nil
     }
@@ -150,22 +150,22 @@ func (m *AlertRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     res["severity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRuleSeverityType)
+        val, err := n.GetEnumValue(ParseAlertRecord_severity)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSeverity(val.(*RuleSeverityType))
+            m.SetSeverity(val.(*AlertRecord_severity))
         }
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAlertStatusType)
+        val, err := n.GetEnumValue(ParseAlertRecord_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*AlertStatusType))
+            m.SetStatus(val.(*AlertRecord_status))
         }
         return nil
     }
@@ -194,24 +194,24 @@ func (m *AlertRecord) GetResolvedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     return nil
 }
 // GetSeverity gets the severity property value. The severity of the alert event. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
-func (m *AlertRecord) GetSeverity()(*RuleSeverityType) {
+func (m *AlertRecord) GetSeverity()(*AlertRecord_severity) {
     val, err := m.GetBackingStore().Get("severity")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RuleSeverityType)
+        return val.(*AlertRecord_severity)
     }
     return nil
 }
 // GetStatus gets the status property value. The status of the alert record. The possible values are: active, resolved, unknownFutureValue.
-func (m *AlertRecord) GetStatus()(*AlertStatusType) {
+func (m *AlertRecord) GetStatus()(*AlertRecord_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AlertStatusType)
+        return val.(*AlertRecord_status)
     }
     return nil
 }
@@ -295,7 +295,7 @@ func (m *AlertRecord) SetAlertRuleId(value *string)() {
     }
 }
 // SetAlertRuleTemplate sets the alertRuleTemplate property value. The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue, cloudPcInGracePeriodScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.
-func (m *AlertRecord) SetAlertRuleTemplate(value *AlertRuleTemplate)() {
+func (m *AlertRecord) SetAlertRuleTemplate(value *AlertRecord_alertRuleTemplate)() {
     err := m.GetBackingStore().Set("alertRuleTemplate", value)
     if err != nil {
         panic(err)
@@ -330,14 +330,14 @@ func (m *AlertRecord) SetResolvedDateTime(value *i336074805fc853987abe6f7fe3ad97
     }
 }
 // SetSeverity sets the severity property value. The severity of the alert event. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
-func (m *AlertRecord) SetSeverity(value *RuleSeverityType)() {
+func (m *AlertRecord) SetSeverity(value *AlertRecord_severity)() {
     err := m.GetBackingStore().Set("severity", value)
     if err != nil {
         panic(err)
     }
 }
 // SetStatus sets the status property value. The status of the alert record. The possible values are: active, resolved, unknownFutureValue.
-func (m *AlertRecord) SetStatus(value *AlertStatusType)() {
+func (m *AlertRecord) SetStatus(value *AlertRecord_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -349,20 +349,20 @@ type AlertRecordable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAlertImpact()(AlertImpactable)
     GetAlertRuleId()(*string)
-    GetAlertRuleTemplate()(*AlertRuleTemplate)
+    GetAlertRuleTemplate()(*AlertRecord_alertRuleTemplate)
     GetDetectedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDisplayName()(*string)
     GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetResolvedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetSeverity()(*RuleSeverityType)
-    GetStatus()(*AlertStatusType)
+    GetSeverity()(*AlertRecord_severity)
+    GetStatus()(*AlertRecord_status)
     SetAlertImpact(value AlertImpactable)()
     SetAlertRuleId(value *string)()
-    SetAlertRuleTemplate(value *AlertRuleTemplate)()
+    SetAlertRuleTemplate(value *AlertRecord_alertRuleTemplate)()
     SetDetectedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDisplayName(value *string)()
     SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetResolvedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetSeverity(value *RuleSeverityType)()
-    SetStatus(value *AlertStatusType)()
+    SetSeverity(value *AlertRecord_severity)()
+    SetStatus(value *AlertRecord_status)()
 }

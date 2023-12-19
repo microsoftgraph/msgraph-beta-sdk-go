@@ -73,12 +73,12 @@ func (m *CloudPcResizeValidationResult) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["validationResult"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcResizeValidationCode)
+        val, err := n.GetEnumValue(ParseCloudPcResizeValidationResult_validationResult)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetValidationResult(val.(*CloudPcResizeValidationCode))
+            m.SetValidationResult(val.(*CloudPcResizeValidationResult_validationResult))
         }
         return nil
     }
@@ -96,13 +96,13 @@ func (m *CloudPcResizeValidationResult) GetOdataType()(*string) {
     return nil
 }
 // GetValidationResult gets the validationResult property value. Describes a list of the validation result for the Cloud PC resize action. The possible values are: success, cloudPcNotFound, operationCnflict, operationNotSupported, targetLicenseHasAssigned, internalServerError, and unknownFutureValue.
-func (m *CloudPcResizeValidationResult) GetValidationResult()(*CloudPcResizeValidationCode) {
+func (m *CloudPcResizeValidationResult) GetValidationResult()(*CloudPcResizeValidationResult_validationResult) {
     val, err := m.GetBackingStore().Get("validationResult")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcResizeValidationCode)
+        return val.(*CloudPcResizeValidationResult_validationResult)
     }
     return nil
 }
@@ -161,7 +161,7 @@ func (m *CloudPcResizeValidationResult) SetOdataType(value *string)() {
     }
 }
 // SetValidationResult sets the validationResult property value. Describes a list of the validation result for the Cloud PC resize action. The possible values are: success, cloudPcNotFound, operationCnflict, operationNotSupported, targetLicenseHasAssigned, internalServerError, and unknownFutureValue.
-func (m *CloudPcResizeValidationResult) SetValidationResult(value *CloudPcResizeValidationCode)() {
+func (m *CloudPcResizeValidationResult) SetValidationResult(value *CloudPcResizeValidationResult_validationResult)() {
     err := m.GetBackingStore().Set("validationResult", value)
     if err != nil {
         panic(err)
@@ -175,9 +175,9 @@ type CloudPcResizeValidationResultable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCloudPcId()(*string)
     GetOdataType()(*string)
-    GetValidationResult()(*CloudPcResizeValidationCode)
+    GetValidationResult()(*CloudPcResizeValidationResult_validationResult)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCloudPcId(value *string)()
     SetOdataType(value *string)()
-    SetValidationResult(value *CloudPcResizeValidationCode)()
+    SetValidationResult(value *CloudPcResizeValidationResult_validationResult)()
 }

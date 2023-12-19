@@ -42,13 +42,13 @@ func CreateEncryptContentFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewEncryptContent(), nil
 }
 // GetEncryptWith gets the encryptWith property value. The encryptWith property
-func (m *EncryptContent) GetEncryptWith()(*EncryptWith) {
+func (m *EncryptContent) GetEncryptWith()(*EncryptContent_encryptWith) {
     val, err := m.GetBackingStore().Get("encryptWith")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EncryptWith)
+        return val.(*EncryptContent_encryptWith)
     }
     return nil
 }
@@ -56,12 +56,12 @@ func (m *EncryptContent) GetEncryptWith()(*EncryptWith) {
 func (m *EncryptContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.LabelActionBase.GetFieldDeserializers()
     res["encryptWith"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEncryptWith)
+        val, err := n.GetEnumValue(ParseEncryptContent_encryptWith)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEncryptWith(val.(*EncryptWith))
+            m.SetEncryptWith(val.(*EncryptContent_encryptWith))
         }
         return nil
     }
@@ -83,7 +83,7 @@ func (m *EncryptContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetEncryptWith sets the encryptWith property value. The encryptWith property
-func (m *EncryptContent) SetEncryptWith(value *EncryptWith)() {
+func (m *EncryptContent) SetEncryptWith(value *EncryptContent_encryptWith)() {
     err := m.GetBackingStore().Set("encryptWith", value)
     if err != nil {
         panic(err)
@@ -93,6 +93,6 @@ func (m *EncryptContent) SetEncryptWith(value *EncryptWith)() {
 type EncryptContentable interface {
     LabelActionBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetEncryptWith()(*EncryptWith)
-    SetEncryptWith(value *EncryptWith)()
+    GetEncryptWith()(*EncryptContent_encryptWith)
+    SetEncryptWith(value *EncryptContent_encryptWith)()
 }

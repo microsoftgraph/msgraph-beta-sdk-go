@@ -9,11 +9,11 @@ const (
     CREATE_CLOUDPCAUDITACTIVITYOPERATIONTYPE CloudPcAuditActivityOperationType = iota
     DELETE_CLOUDPCAUDITACTIVITYOPERATIONTYPE
     PATCH_CLOUDPCAUDITACTIVITYOPERATIONTYPE
-    OTHER_CLOUDPCAUDITACTIVITYOPERATIONTYPE
+    UNKNOWNFUTUREVALUE_CLOUDPCAUDITACTIVITYOPERATIONTYPE
 )
 
 func (i CloudPcAuditActivityOperationType) String() string {
-    return []string{"create", "delete", "patch", "other"}[i]
+    return []string{"create", "delete", "patch", "unknownFutureValue"}[i]
 }
 func ParseCloudPcAuditActivityOperationType(v string) (any, error) {
     result := CREATE_CLOUDPCAUDITACTIVITYOPERATIONTYPE
@@ -24,8 +24,8 @@ func ParseCloudPcAuditActivityOperationType(v string) (any, error) {
             result = DELETE_CLOUDPCAUDITACTIVITYOPERATIONTYPE
         case "patch":
             result = PATCH_CLOUDPCAUDITACTIVITYOPERATIONTYPE
-        case "other":
-            result = OTHER_CLOUDPCAUDITACTIVITYOPERATIONTYPE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_CLOUDPCAUDITACTIVITYOPERATIONTYPE
         default:
             return 0, errors.New("Unknown CloudPcAuditActivityOperationType value: " + v)
     }

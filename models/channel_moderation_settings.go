@@ -94,22 +94,22 @@ func (m *ChannelModerationSettings) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     res["replyRestriction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseReplyRestriction)
+        val, err := n.GetEnumValue(ParseChannelModerationSettings_replyRestriction)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetReplyRestriction(val.(*ReplyRestriction))
+            m.SetReplyRestriction(val.(*ChannelModerationSettings_replyRestriction))
         }
         return nil
     }
     res["userNewMessageRestriction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseUserNewMessageRestriction)
+        val, err := n.GetEnumValue(ParseChannelModerationSettings_userNewMessageRestriction)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUserNewMessageRestriction(val.(*UserNewMessageRestriction))
+            m.SetUserNewMessageRestriction(val.(*ChannelModerationSettings_userNewMessageRestriction))
         }
         return nil
     }
@@ -127,24 +127,24 @@ func (m *ChannelModerationSettings) GetOdataType()(*string) {
     return nil
 }
 // GetReplyRestriction gets the replyRestriction property value. Indicates who is allowed to reply to the teams channel. Possible values are: everyone, authorAndModerators, unknownFutureValue.
-func (m *ChannelModerationSettings) GetReplyRestriction()(*ReplyRestriction) {
+func (m *ChannelModerationSettings) GetReplyRestriction()(*ChannelModerationSettings_replyRestriction) {
     val, err := m.GetBackingStore().Get("replyRestriction")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ReplyRestriction)
+        return val.(*ChannelModerationSettings_replyRestriction)
     }
     return nil
 }
 // GetUserNewMessageRestriction gets the userNewMessageRestriction property value. Indicates who is allowed to post messages to teams channel. Possible values are: everyone, everyoneExceptGuests, moderators, unknownFutureValue.
-func (m *ChannelModerationSettings) GetUserNewMessageRestriction()(*UserNewMessageRestriction) {
+func (m *ChannelModerationSettings) GetUserNewMessageRestriction()(*ChannelModerationSettings_userNewMessageRestriction) {
     val, err := m.GetBackingStore().Get("userNewMessageRestriction")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*UserNewMessageRestriction)
+        return val.(*ChannelModerationSettings_userNewMessageRestriction)
     }
     return nil
 }
@@ -223,14 +223,14 @@ func (m *ChannelModerationSettings) SetOdataType(value *string)() {
     }
 }
 // SetReplyRestriction sets the replyRestriction property value. Indicates who is allowed to reply to the teams channel. Possible values are: everyone, authorAndModerators, unknownFutureValue.
-func (m *ChannelModerationSettings) SetReplyRestriction(value *ReplyRestriction)() {
+func (m *ChannelModerationSettings) SetReplyRestriction(value *ChannelModerationSettings_replyRestriction)() {
     err := m.GetBackingStore().Set("replyRestriction", value)
     if err != nil {
         panic(err)
     }
 }
 // SetUserNewMessageRestriction sets the userNewMessageRestriction property value. Indicates who is allowed to post messages to teams channel. Possible values are: everyone, everyoneExceptGuests, moderators, unknownFutureValue.
-func (m *ChannelModerationSettings) SetUserNewMessageRestriction(value *UserNewMessageRestriction)() {
+func (m *ChannelModerationSettings) SetUserNewMessageRestriction(value *ChannelModerationSettings_userNewMessageRestriction)() {
     err := m.GetBackingStore().Set("userNewMessageRestriction", value)
     if err != nil {
         panic(err)
@@ -245,12 +245,12 @@ type ChannelModerationSettingsable interface {
     GetAllowNewMessageFromConnectors()(*bool)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
-    GetReplyRestriction()(*ReplyRestriction)
-    GetUserNewMessageRestriction()(*UserNewMessageRestriction)
+    GetReplyRestriction()(*ChannelModerationSettings_replyRestriction)
+    GetUserNewMessageRestriction()(*ChannelModerationSettings_userNewMessageRestriction)
     SetAllowNewMessageFromBots(value *bool)()
     SetAllowNewMessageFromConnectors(value *bool)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
-    SetReplyRestriction(value *ReplyRestriction)()
-    SetUserNewMessageRestriction(value *UserNewMessageRestriction)()
+    SetReplyRestriction(value *ChannelModerationSettings_replyRestriction)()
+    SetUserNewMessageRestriction(value *ChannelModerationSettings_userNewMessageRestriction)()
 }

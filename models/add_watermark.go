@@ -25,25 +25,25 @@ func CreateAddWatermarkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 func (m *AddWatermark) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MarkContent.GetFieldDeserializers()
     res["orientation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePageOrientation)
+        val, err := n.GetEnumValue(ParseAddWatermark_orientation)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOrientation(val.(*PageOrientation))
+            m.SetOrientation(val.(*AddWatermark_orientation))
         }
         return nil
     }
     return res
 }
 // GetOrientation gets the orientation property value. The orientation property
-func (m *AddWatermark) GetOrientation()(*PageOrientation) {
+func (m *AddWatermark) GetOrientation()(*AddWatermark_orientation) {
     val, err := m.GetBackingStore().Get("orientation")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PageOrientation)
+        return val.(*AddWatermark_orientation)
     }
     return nil
 }
@@ -63,7 +63,7 @@ func (m *AddWatermark) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetOrientation sets the orientation property value. The orientation property
-func (m *AddWatermark) SetOrientation(value *PageOrientation)() {
+func (m *AddWatermark) SetOrientation(value *AddWatermark_orientation)() {
     err := m.GetBackingStore().Set("orientation", value)
     if err != nil {
         panic(err)
@@ -73,6 +73,6 @@ func (m *AddWatermark) SetOrientation(value *PageOrientation)() {
 type AddWatermarkable interface {
     MarkContentable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOrientation()(*PageOrientation)
-    SetOrientation(value *PageOrientation)()
+    GetOrientation()(*AddWatermark_orientation)
+    SetOrientation(value *AddWatermark_orientation)()
 }

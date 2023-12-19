@@ -62,12 +62,12 @@ func (m *TeamworkAccountConfiguration) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["supportedClient"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTeamworkSupportedClient)
+        val, err := n.GetEnumValue(ParseTeamworkAccountConfiguration_supportedClient)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSupportedClient(val.(*TeamworkSupportedClient))
+            m.SetSupportedClient(val.(*TeamworkAccountConfiguration_supportedClient))
         }
         return nil
     }
@@ -96,13 +96,13 @@ func (m *TeamworkAccountConfiguration) GetOnPremisesCalendarSyncConfiguration()(
     return nil
 }
 // GetSupportedClient gets the supportedClient property value. The supported client for Teams Rooms devices. The possible values are: unknown, skypeDefaultAndTeams, teamsDefaultAndSkype, skypeOnly, teamsOnly, unknownFutureValue.
-func (m *TeamworkAccountConfiguration) GetSupportedClient()(*TeamworkSupportedClient) {
+func (m *TeamworkAccountConfiguration) GetSupportedClient()(*TeamworkAccountConfiguration_supportedClient) {
     val, err := m.GetBackingStore().Get("supportedClient")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TeamworkSupportedClient)
+        return val.(*TeamworkAccountConfiguration_supportedClient)
     }
     return nil
 }
@@ -161,7 +161,7 @@ func (m *TeamworkAccountConfiguration) SetOnPremisesCalendarSyncConfiguration(va
     }
 }
 // SetSupportedClient sets the supportedClient property value. The supported client for Teams Rooms devices. The possible values are: unknown, skypeDefaultAndTeams, teamsDefaultAndSkype, skypeOnly, teamsOnly, unknownFutureValue.
-func (m *TeamworkAccountConfiguration) SetSupportedClient(value *TeamworkSupportedClient)() {
+func (m *TeamworkAccountConfiguration) SetSupportedClient(value *TeamworkAccountConfiguration_supportedClient)() {
     err := m.GetBackingStore().Set("supportedClient", value)
     if err != nil {
         panic(err)
@@ -175,9 +175,9 @@ type TeamworkAccountConfigurationable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetOnPremisesCalendarSyncConfiguration()(TeamworkOnPremisesCalendarSyncConfigurationable)
-    GetSupportedClient()(*TeamworkSupportedClient)
+    GetSupportedClient()(*TeamworkAccountConfiguration_supportedClient)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetOnPremisesCalendarSyncConfiguration(value TeamworkOnPremisesCalendarSyncConfigurationable)()
-    SetSupportedClient(value *TeamworkSupportedClient)()
+    SetSupportedClient(value *TeamworkAccountConfiguration_supportedClient)()
 }

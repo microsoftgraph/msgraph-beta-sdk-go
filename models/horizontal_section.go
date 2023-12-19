@@ -31,13 +31,13 @@ func (m *HorizontalSection) GetColumns()([]HorizontalSectionColumnable) {
     return nil
 }
 // GetEmphasis gets the emphasis property value. Enumeration value that indicates the emphasis of the section background. The possible values are: none, netural, soft, strong, unknownFutureValue.
-func (m *HorizontalSection) GetEmphasis()(*SectionEmphasisType) {
+func (m *HorizontalSection) GetEmphasis()(*HorizontalSection_emphasis) {
     val, err := m.GetBackingStore().Get("emphasis")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SectionEmphasisType)
+        return val.(*HorizontalSection_emphasis)
     }
     return nil
 }
@@ -61,35 +61,35 @@ func (m *HorizontalSection) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["emphasis"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSectionEmphasisType)
+        val, err := n.GetEnumValue(ParseHorizontalSection_emphasis)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEmphasis(val.(*SectionEmphasisType))
+            m.SetEmphasis(val.(*HorizontalSection_emphasis))
         }
         return nil
     }
     res["layout"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseHorizontalSectionLayoutType)
+        val, err := n.GetEnumValue(ParseHorizontalSection_layout)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLayout(val.(*HorizontalSectionLayoutType))
+            m.SetLayout(val.(*HorizontalSection_layout))
         }
         return nil
     }
     return res
 }
 // GetLayout gets the layout property value. Layout type of the section. The possible values are: none, oneColumn, twoColumns, threeColumns, oneThirdLeftColumn, oneThirdRightColumn, fullWidth, unknownFutureValue.
-func (m *HorizontalSection) GetLayout()(*HorizontalSectionLayoutType) {
+func (m *HorizontalSection) GetLayout()(*HorizontalSection_layout) {
     val, err := m.GetBackingStore().Get("layout")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*HorizontalSectionLayoutType)
+        return val.(*HorizontalSection_layout)
     }
     return nil
 }
@@ -135,14 +135,14 @@ func (m *HorizontalSection) SetColumns(value []HorizontalSectionColumnable)() {
     }
 }
 // SetEmphasis sets the emphasis property value. Enumeration value that indicates the emphasis of the section background. The possible values are: none, netural, soft, strong, unknownFutureValue.
-func (m *HorizontalSection) SetEmphasis(value *SectionEmphasisType)() {
+func (m *HorizontalSection) SetEmphasis(value *HorizontalSection_emphasis)() {
     err := m.GetBackingStore().Set("emphasis", value)
     if err != nil {
         panic(err)
     }
 }
 // SetLayout sets the layout property value. Layout type of the section. The possible values are: none, oneColumn, twoColumns, threeColumns, oneThirdLeftColumn, oneThirdRightColumn, fullWidth, unknownFutureValue.
-func (m *HorizontalSection) SetLayout(value *HorizontalSectionLayoutType)() {
+func (m *HorizontalSection) SetLayout(value *HorizontalSection_layout)() {
     err := m.GetBackingStore().Set("layout", value)
     if err != nil {
         panic(err)
@@ -153,9 +153,9 @@ type HorizontalSectionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetColumns()([]HorizontalSectionColumnable)
-    GetEmphasis()(*SectionEmphasisType)
-    GetLayout()(*HorizontalSectionLayoutType)
+    GetEmphasis()(*HorizontalSection_emphasis)
+    GetLayout()(*HorizontalSection_layout)
     SetColumns(value []HorizontalSectionColumnable)()
-    SetEmphasis(value *SectionEmphasisType)()
-    SetLayout(value *HorizontalSectionLayoutType)()
+    SetEmphasis(value *HorizontalSection_emphasis)()
+    SetLayout(value *HorizontalSection_layout)()
 }

@@ -33,12 +33,12 @@ func (m *PrivilegedSignupStatus) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSetupStatus)
+        val, err := n.GetEnumValue(ParsePrivilegedSignupStatus_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*SetupStatus))
+            m.SetStatus(val.(*PrivilegedSignupStatus_status))
         }
         return nil
     }
@@ -56,13 +56,13 @@ func (m *PrivilegedSignupStatus) GetIsRegistered()(*bool) {
     return nil
 }
 // GetStatus gets the status property value. The status property
-func (m *PrivilegedSignupStatus) GetStatus()(*SetupStatus) {
+func (m *PrivilegedSignupStatus) GetStatus()(*PrivilegedSignupStatus_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SetupStatus)
+        return val.(*PrivilegedSignupStatus_status)
     }
     return nil
 }
@@ -95,7 +95,7 @@ func (m *PrivilegedSignupStatus) SetIsRegistered(value *bool)() {
     }
 }
 // SetStatus sets the status property value. The status property
-func (m *PrivilegedSignupStatus) SetStatus(value *SetupStatus)() {
+func (m *PrivilegedSignupStatus) SetStatus(value *PrivilegedSignupStatus_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -106,7 +106,7 @@ type PrivilegedSignupStatusable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetIsRegistered()(*bool)
-    GetStatus()(*SetupStatus)
+    GetStatus()(*PrivilegedSignupStatus_status)
     SetIsRegistered(value *bool)()
-    SetStatus(value *SetupStatus)()
+    SetStatus(value *PrivilegedSignupStatus_status)()
 }

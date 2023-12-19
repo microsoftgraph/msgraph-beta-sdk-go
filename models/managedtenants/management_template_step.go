@@ -33,13 +33,13 @@ func (m *ManagementTemplateStep) GetAcceptedVersion()(ManagementTemplateStepVers
     return nil
 }
 // GetCategory gets the category property value. The category property
-func (m *ManagementTemplateStep) GetCategory()(*ManagementCategory) {
+func (m *ManagementTemplateStep) GetCategory()(*ManagementTemplateStep_category) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ManagementCategory)
+        return val.(*ManagementTemplateStep_category)
     }
     return nil
 }
@@ -101,12 +101,12 @@ func (m *ManagementTemplateStep) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseManagementCategory)
+        val, err := n.GetEnumValue(ParseManagementTemplateStep_category)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCategory(val.(*ManagementCategory))
+            m.SetCategory(val.(*ManagementTemplateStep_category))
         }
         return nil
     }
@@ -379,7 +379,7 @@ func (m *ManagementTemplateStep) SetAcceptedVersion(value ManagementTemplateStep
     }
 }
 // SetCategory sets the category property value. The category property
-func (m *ManagementTemplateStep) SetCategory(value *ManagementCategory)() {
+func (m *ManagementTemplateStep) SetCategory(value *ManagementTemplateStep_category)() {
     err := m.GetBackingStore().Set("category", value)
     if err != nil {
         panic(err)
@@ -460,7 +460,7 @@ type ManagementTemplateStepable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAcceptedVersion()(ManagementTemplateStepVersionable)
-    GetCategory()(*ManagementCategory)
+    GetCategory()(*ManagementTemplateStep_category)
     GetCreatedByUserId()(*string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDescription()(*string)
@@ -472,7 +472,7 @@ type ManagementTemplateStepable interface {
     GetPriority()(*int32)
     GetVersions()([]ManagementTemplateStepVersionable)
     SetAcceptedVersion(value ManagementTemplateStepVersionable)()
-    SetCategory(value *ManagementCategory)()
+    SetCategory(value *ManagementTemplateStep_category)()
     SetCreatedByUserId(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()

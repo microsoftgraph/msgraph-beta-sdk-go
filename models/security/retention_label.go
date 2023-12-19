@@ -22,24 +22,24 @@ func CreateRetentionLabelFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewRetentionLabel(), nil
 }
 // GetActionAfterRetentionPeriod gets the actionAfterRetentionPeriod property value. Specifies the action to take on a document with this label applied during the retention period. The possible values are: none, delete, startDispositionReview, unknownFutureValue.
-func (m *RetentionLabel) GetActionAfterRetentionPeriod()(*ActionAfterRetentionPeriod) {
+func (m *RetentionLabel) GetActionAfterRetentionPeriod()(*RetentionLabel_actionAfterRetentionPeriod) {
     val, err := m.GetBackingStore().Get("actionAfterRetentionPeriod")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ActionAfterRetentionPeriod)
+        return val.(*RetentionLabel_actionAfterRetentionPeriod)
     }
     return nil
 }
 // GetBehaviorDuringRetentionPeriod gets the behaviorDuringRetentionPeriod property value. Specifies how the behavior of a document with this label should be during the retention period. The possible values are: doNotRetain, retain, retainAsRecord, retainAsRegulatoryRecord, unknownFutureValue.
-func (m *RetentionLabel) GetBehaviorDuringRetentionPeriod()(*BehaviorDuringRetentionPeriod) {
+func (m *RetentionLabel) GetBehaviorDuringRetentionPeriod()(*RetentionLabel_behaviorDuringRetentionPeriod) {
     val, err := m.GetBackingStore().Get("behaviorDuringRetentionPeriod")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*BehaviorDuringRetentionPeriod)
+        return val.(*RetentionLabel_behaviorDuringRetentionPeriod)
     }
     return nil
 }
@@ -66,13 +66,13 @@ func (m *RetentionLabel) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetDefaultRecordBehavior gets the defaultRecordBehavior property value. Specifies the locked or unlocked state of a record label when it is created.The possible values are: startLocked, startUnlocked, unknownFutureValue.
-func (m *RetentionLabel) GetDefaultRecordBehavior()(*DefaultRecordBehavior) {
+func (m *RetentionLabel) GetDefaultRecordBehavior()(*RetentionLabel_defaultRecordBehavior) {
     val, err := m.GetBackingStore().Get("defaultRecordBehavior")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DefaultRecordBehavior)
+        return val.(*RetentionLabel_defaultRecordBehavior)
     }
     return nil
 }
@@ -135,22 +135,22 @@ func (m *RetentionLabel) GetDispositionReviewStages()([]DispositionReviewStageab
 func (m *RetentionLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["actionAfterRetentionPeriod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseActionAfterRetentionPeriod)
+        val, err := n.GetEnumValue(ParseRetentionLabel_actionAfterRetentionPeriod)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetActionAfterRetentionPeriod(val.(*ActionAfterRetentionPeriod))
+            m.SetActionAfterRetentionPeriod(val.(*RetentionLabel_actionAfterRetentionPeriod))
         }
         return nil
     }
     res["behaviorDuringRetentionPeriod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseBehaviorDuringRetentionPeriod)
+        val, err := n.GetEnumValue(ParseRetentionLabel_behaviorDuringRetentionPeriod)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBehaviorDuringRetentionPeriod(val.(*BehaviorDuringRetentionPeriod))
+            m.SetBehaviorDuringRetentionPeriod(val.(*RetentionLabel_behaviorDuringRetentionPeriod))
         }
         return nil
     }
@@ -175,12 +175,12 @@ func (m *RetentionLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["defaultRecordBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDefaultRecordBehavior)
+        val, err := n.GetEnumValue(ParseRetentionLabel_defaultRecordBehavior)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefaultRecordBehavior(val.(*DefaultRecordBehavior))
+            m.SetDefaultRecordBehavior(val.(*RetentionLabel_defaultRecordBehavior))
         }
         return nil
     }
@@ -301,12 +301,12 @@ func (m *RetentionLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["retentionTrigger"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRetentionTrigger)
+        val, err := n.GetEnumValue(ParseRetentionLabel_retentionTrigger)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRetentionTrigger(val.(*RetentionTrigger))
+            m.SetRetentionTrigger(val.(*RetentionLabel_retentionTrigger))
         }
         return nil
     }
@@ -379,13 +379,13 @@ func (m *RetentionLabel) GetRetentionEventType()(RetentionEventTypeable) {
     return nil
 }
 // GetRetentionTrigger gets the retentionTrigger property value. Specifies whether the retention duration is calculated from the content creation date, labeled date, or last modification date. The possible values are: dateLabeled, dateCreated, dateModified, dateOfEvent, unknownFutureValue.
-func (m *RetentionLabel) GetRetentionTrigger()(*RetentionTrigger) {
+func (m *RetentionLabel) GetRetentionTrigger()(*RetentionLabel_retentionTrigger) {
     val, err := m.GetBackingStore().Get("retentionTrigger")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RetentionTrigger)
+        return val.(*RetentionLabel_retentionTrigger)
     }
     return nil
 }
@@ -510,14 +510,14 @@ func (m *RetentionLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetActionAfterRetentionPeriod sets the actionAfterRetentionPeriod property value. Specifies the action to take on a document with this label applied during the retention period. The possible values are: none, delete, startDispositionReview, unknownFutureValue.
-func (m *RetentionLabel) SetActionAfterRetentionPeriod(value *ActionAfterRetentionPeriod)() {
+func (m *RetentionLabel) SetActionAfterRetentionPeriod(value *RetentionLabel_actionAfterRetentionPeriod)() {
     err := m.GetBackingStore().Set("actionAfterRetentionPeriod", value)
     if err != nil {
         panic(err)
     }
 }
 // SetBehaviorDuringRetentionPeriod sets the behaviorDuringRetentionPeriod property value. Specifies how the behavior of a document with this label should be during the retention period. The possible values are: doNotRetain, retain, retainAsRecord, retainAsRegulatoryRecord, unknownFutureValue.
-func (m *RetentionLabel) SetBehaviorDuringRetentionPeriod(value *BehaviorDuringRetentionPeriod)() {
+func (m *RetentionLabel) SetBehaviorDuringRetentionPeriod(value *RetentionLabel_behaviorDuringRetentionPeriod)() {
     err := m.GetBackingStore().Set("behaviorDuringRetentionPeriod", value)
     if err != nil {
         panic(err)
@@ -538,7 +538,7 @@ func (m *RetentionLabel) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad
     }
 }
 // SetDefaultRecordBehavior sets the defaultRecordBehavior property value. Specifies the locked or unlocked state of a record label when it is created.The possible values are: startLocked, startUnlocked, unknownFutureValue.
-func (m *RetentionLabel) SetDefaultRecordBehavior(value *DefaultRecordBehavior)() {
+func (m *RetentionLabel) SetDefaultRecordBehavior(value *RetentionLabel_defaultRecordBehavior)() {
     err := m.GetBackingStore().Set("defaultRecordBehavior", value)
     if err != nil {
         panic(err)
@@ -622,7 +622,7 @@ func (m *RetentionLabel) SetRetentionEventType(value RetentionEventTypeable)() {
     }
 }
 // SetRetentionTrigger sets the retentionTrigger property value. Specifies whether the retention duration is calculated from the content creation date, labeled date, or last modification date. The possible values are: dateLabeled, dateCreated, dateModified, dateOfEvent, unknownFutureValue.
-func (m *RetentionLabel) SetRetentionTrigger(value *RetentionTrigger)() {
+func (m *RetentionLabel) SetRetentionTrigger(value *RetentionLabel_retentionTrigger)() {
     err := m.GetBackingStore().Set("retentionTrigger", value)
     if err != nil {
         panic(err)
@@ -632,11 +632,11 @@ func (m *RetentionLabel) SetRetentionTrigger(value *RetentionTrigger)() {
 type RetentionLabelable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetActionAfterRetentionPeriod()(*ActionAfterRetentionPeriod)
-    GetBehaviorDuringRetentionPeriod()(*BehaviorDuringRetentionPeriod)
+    GetActionAfterRetentionPeriod()(*RetentionLabel_actionAfterRetentionPeriod)
+    GetBehaviorDuringRetentionPeriod()(*RetentionLabel_behaviorDuringRetentionPeriod)
     GetCreatedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetDefaultRecordBehavior()(*DefaultRecordBehavior)
+    GetDefaultRecordBehavior()(*RetentionLabel_defaultRecordBehavior)
     GetDescriptionForAdmins()(*string)
     GetDescriptionForUsers()(*string)
     GetDescriptors()(FilePlanDescriptorable)
@@ -648,12 +648,12 @@ type RetentionLabelable interface {
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRetentionDuration()(RetentionDurationable)
     GetRetentionEventType()(RetentionEventTypeable)
-    GetRetentionTrigger()(*RetentionTrigger)
-    SetActionAfterRetentionPeriod(value *ActionAfterRetentionPeriod)()
-    SetBehaviorDuringRetentionPeriod(value *BehaviorDuringRetentionPeriod)()
+    GetRetentionTrigger()(*RetentionLabel_retentionTrigger)
+    SetActionAfterRetentionPeriod(value *RetentionLabel_actionAfterRetentionPeriod)()
+    SetBehaviorDuringRetentionPeriod(value *RetentionLabel_behaviorDuringRetentionPeriod)()
     SetCreatedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetDefaultRecordBehavior(value *DefaultRecordBehavior)()
+    SetDefaultRecordBehavior(value *RetentionLabel_defaultRecordBehavior)()
     SetDescriptionForAdmins(value *string)()
     SetDescriptionForUsers(value *string)()
     SetDescriptors(value FilePlanDescriptorable)()
@@ -665,5 +665,5 @@ type RetentionLabelable interface {
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRetentionDuration(value RetentionDurationable)()
     SetRetentionEventType(value RetentionEventTypeable)()
-    SetRetentionTrigger(value *RetentionTrigger)()
+    SetRetentionTrigger(value *RetentionLabel_retentionTrigger)()
 }

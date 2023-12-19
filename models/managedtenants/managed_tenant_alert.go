@@ -331,22 +331,22 @@ func (m *ManagedTenantAlert) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["severity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAlertSeverity)
+        val, err := n.GetEnumValue(ParseManagedTenantAlert_severity)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSeverity(val.(*AlertSeverity))
+            m.SetSeverity(val.(*ManagedTenantAlert_severity))
         }
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAlertStatus)
+        val, err := n.GetEnumValue(ParseManagedTenantAlert_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*AlertStatus))
+            m.SetStatus(val.(*ManagedTenantAlert_status))
         }
         return nil
     }
@@ -406,24 +406,24 @@ func (m *ManagedTenantAlert) GetMessage()(*string) {
     return nil
 }
 // GetSeverity gets the severity property value. The severity property
-func (m *ManagedTenantAlert) GetSeverity()(*AlertSeverity) {
+func (m *ManagedTenantAlert) GetSeverity()(*ManagedTenantAlert_severity) {
     val, err := m.GetBackingStore().Get("severity")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AlertSeverity)
+        return val.(*ManagedTenantAlert_severity)
     }
     return nil
 }
 // GetStatus gets the status property value. The status property
-func (m *ManagedTenantAlert) GetStatus()(*AlertStatus) {
+func (m *ManagedTenantAlert) GetStatus()(*ManagedTenantAlert_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AlertStatus)
+        return val.(*ManagedTenantAlert_status)
     }
     return nil
 }
@@ -703,14 +703,14 @@ func (m *ManagedTenantAlert) SetMessage(value *string)() {
     }
 }
 // SetSeverity sets the severity property value. The severity property
-func (m *ManagedTenantAlert) SetSeverity(value *AlertSeverity)() {
+func (m *ManagedTenantAlert) SetSeverity(value *ManagedTenantAlert_severity)() {
     err := m.GetBackingStore().Set("severity", value)
     if err != nil {
         panic(err)
     }
 }
 // SetStatus sets the status property value. The status property
-func (m *ManagedTenantAlert) SetStatus(value *AlertStatus)() {
+func (m *ManagedTenantAlert) SetStatus(value *ManagedTenantAlert_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -749,8 +749,8 @@ type ManagedTenantAlertable interface {
     GetLastActionByUserId()(*string)
     GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMessage()(*string)
-    GetSeverity()(*AlertSeverity)
-    GetStatus()(*AlertStatus)
+    GetSeverity()(*ManagedTenantAlert_severity)
+    GetStatus()(*ManagedTenantAlert_status)
     GetTenantId()(*string)
     GetTitle()(*string)
     SetAlertData(value AlertDataable)()
@@ -768,8 +768,8 @@ type ManagedTenantAlertable interface {
     SetLastActionByUserId(value *string)()
     SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMessage(value *string)()
-    SetSeverity(value *AlertSeverity)()
-    SetStatus(value *AlertStatus)()
+    SetSeverity(value *ManagedTenantAlert_severity)()
+    SetStatus(value *ManagedTenantAlert_status)()
     SetTenantId(value *string)()
     SetTitle(value *string)()
 }

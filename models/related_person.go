@@ -73,12 +73,12 @@ func (m *RelatedPerson) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["relationship"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePersonRelationship)
+        val, err := n.GetEnumValue(ParseRelatedPerson_relationship)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRelationship(val.(*PersonRelationship))
+            m.SetRelationship(val.(*RelatedPerson_relationship))
         }
         return nil
     }
@@ -116,13 +116,13 @@ func (m *RelatedPerson) GetOdataType()(*string) {
     return nil
 }
 // GetRelationship gets the relationship property value. Possible values are: manager, colleague, directReport, dotLineReport, assistant, dotLineManager, alternateContact, friend, spouse, sibling, child, parent, sponsor, emergencyContact, other, unknownFutureValue.
-func (m *RelatedPerson) GetRelationship()(*PersonRelationship) {
+func (m *RelatedPerson) GetRelationship()(*RelatedPerson_relationship) {
     val, err := m.GetBackingStore().Get("relationship")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PersonRelationship)
+        return val.(*RelatedPerson_relationship)
     }
     return nil
 }
@@ -215,7 +215,7 @@ func (m *RelatedPerson) SetOdataType(value *string)() {
     }
 }
 // SetRelationship sets the relationship property value. Possible values are: manager, colleague, directReport, dotLineReport, assistant, dotLineManager, alternateContact, friend, spouse, sibling, child, parent, sponsor, emergencyContact, other, unknownFutureValue.
-func (m *RelatedPerson) SetRelationship(value *PersonRelationship)() {
+func (m *RelatedPerson) SetRelationship(value *RelatedPerson_relationship)() {
     err := m.GetBackingStore().Set("relationship", value)
     if err != nil {
         panic(err)
@@ -243,13 +243,13 @@ type RelatedPersonable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDisplayName()(*string)
     GetOdataType()(*string)
-    GetRelationship()(*PersonRelationship)
+    GetRelationship()(*RelatedPerson_relationship)
     GetUserId()(*string)
     GetUserPrincipalName()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDisplayName(value *string)()
     SetOdataType(value *string)()
-    SetRelationship(value *PersonRelationship)()
+    SetRelationship(value *RelatedPerson_relationship)()
     SetUserId(value *string)()
     SetUserPrincipalName(value *string)()
 }

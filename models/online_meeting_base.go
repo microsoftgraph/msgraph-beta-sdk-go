@@ -62,24 +62,24 @@ func (m *OnlineMeetingBase) GetAllowAttendeeToEnableMic()(*bool) {
     return nil
 }
 // GetAllowedPresenters gets the allowedPresenters property value. Specifies who can be a presenter in a meeting.
-func (m *OnlineMeetingBase) GetAllowedPresenters()(*OnlineMeetingPresenters) {
+func (m *OnlineMeetingBase) GetAllowedPresenters()(*OnlineMeetingBase_allowedPresenters) {
     val, err := m.GetBackingStore().Get("allowedPresenters")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*OnlineMeetingPresenters)
+        return val.(*OnlineMeetingBase_allowedPresenters)
     }
     return nil
 }
 // GetAllowMeetingChat gets the allowMeetingChat property value. Specifies the mode of meeting chat.
-func (m *OnlineMeetingBase) GetAllowMeetingChat()(*MeetingChatMode) {
+func (m *OnlineMeetingBase) GetAllowMeetingChat()(*OnlineMeetingBase_allowMeetingChat) {
     val, err := m.GetBackingStore().Get("allowMeetingChat")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MeetingChatMode)
+        return val.(*OnlineMeetingBase_allowMeetingChat)
     }
     return nil
 }
@@ -128,13 +128,13 @@ func (m *OnlineMeetingBase) GetAllowTranscription()(*bool) {
     return nil
 }
 // GetAnonymizeIdentityForRoles gets the anonymizeIdentityForRoles property value. Specifies whose identity is anonymized in the meeting. Possible values are: attendee. The attendee value can't be removed through a PATCH operation once added.
-func (m *OnlineMeetingBase) GetAnonymizeIdentityForRoles()([]OnlineMeetingRole) {
+func (m *OnlineMeetingBase) GetAnonymizeIdentityForRoles()([]OnlineMeetingBase_anonymizeIdentityForRoles) {
     val, err := m.GetBackingStore().Get("anonymizeIdentityForRoles")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]OnlineMeetingRole)
+        return val.([]OnlineMeetingBase_anonymizeIdentityForRoles)
     }
     return nil
 }
@@ -206,22 +206,22 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["allowedPresenters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOnlineMeetingPresenters)
+        val, err := n.GetEnumValue(ParseOnlineMeetingBase_allowedPresenters)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAllowedPresenters(val.(*OnlineMeetingPresenters))
+            m.SetAllowedPresenters(val.(*OnlineMeetingBase_allowedPresenters))
         }
         return nil
     }
     res["allowMeetingChat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMeetingChatMode)
+        val, err := n.GetEnumValue(ParseOnlineMeetingBase_allowMeetingChat)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAllowMeetingChat(val.(*MeetingChatMode))
+            m.SetAllowMeetingChat(val.(*OnlineMeetingBase_allowMeetingChat))
         }
         return nil
     }
@@ -266,15 +266,15 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["anonymizeIdentityForRoles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseOnlineMeetingRole)
+        val, err := n.GetCollectionOfEnumValues(ParseOnlineMeetingBase_anonymizeIdentityForRoles)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]OnlineMeetingRole, len(val))
+            res := make([]OnlineMeetingBase_anonymizeIdentityForRoles, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*OnlineMeetingRole))
+                    res[i] = *(v.(*OnlineMeetingBase_anonymizeIdentityForRoles))
                 }
             }
             m.SetAnonymizeIdentityForRoles(res)
@@ -398,12 +398,12 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["shareMeetingChatHistoryDefault"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMeetingChatHistoryDefaultMode)
+        val, err := n.GetEnumValue(ParseOnlineMeetingBase_shareMeetingChatHistoryDefault)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetShareMeetingChatHistoryDefault(val.(*MeetingChatHistoryDefaultMode))
+            m.SetShareMeetingChatHistoryDefault(val.(*OnlineMeetingBase_shareMeetingChatHistoryDefault))
         }
         return nil
     }
@@ -517,13 +517,13 @@ func (m *OnlineMeetingBase) GetRecordAutomatically()(*bool) {
     return nil
 }
 // GetShareMeetingChatHistoryDefault gets the shareMeetingChatHistoryDefault property value. The shareMeetingChatHistoryDefault property
-func (m *OnlineMeetingBase) GetShareMeetingChatHistoryDefault()(*MeetingChatHistoryDefaultMode) {
+func (m *OnlineMeetingBase) GetShareMeetingChatHistoryDefault()(*OnlineMeetingBase_shareMeetingChatHistoryDefault) {
     val, err := m.GetBackingStore().Get("shareMeetingChatHistoryDefault")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MeetingChatHistoryDefaultMode)
+        return val.(*OnlineMeetingBase_shareMeetingChatHistoryDefault)
     }
     return nil
 }
@@ -617,7 +617,7 @@ func (m *OnlineMeetingBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     if m.GetAnonymizeIdentityForRoles() != nil {
-        err = writer.WriteCollectionOfStringValues("anonymizeIdentityForRoles", SerializeOnlineMeetingRole(m.GetAnonymizeIdentityForRoles()))
+        err = writer.WriteCollectionOfStringValues("anonymizeIdentityForRoles", SerializeOnlineMeetingBase_anonymizeIdentityForRoles(m.GetAnonymizeIdentityForRoles()))
         if err != nil {
             return err
         }
@@ -736,14 +736,14 @@ func (m *OnlineMeetingBase) SetAllowAttendeeToEnableMic(value *bool)() {
     }
 }
 // SetAllowedPresenters sets the allowedPresenters property value. Specifies who can be a presenter in a meeting.
-func (m *OnlineMeetingBase) SetAllowedPresenters(value *OnlineMeetingPresenters)() {
+func (m *OnlineMeetingBase) SetAllowedPresenters(value *OnlineMeetingBase_allowedPresenters)() {
     err := m.GetBackingStore().Set("allowedPresenters", value)
     if err != nil {
         panic(err)
     }
 }
 // SetAllowMeetingChat sets the allowMeetingChat property value. Specifies the mode of meeting chat.
-func (m *OnlineMeetingBase) SetAllowMeetingChat(value *MeetingChatMode)() {
+func (m *OnlineMeetingBase) SetAllowMeetingChat(value *OnlineMeetingBase_allowMeetingChat)() {
     err := m.GetBackingStore().Set("allowMeetingChat", value)
     if err != nil {
         panic(err)
@@ -778,7 +778,7 @@ func (m *OnlineMeetingBase) SetAllowTranscription(value *bool)() {
     }
 }
 // SetAnonymizeIdentityForRoles sets the anonymizeIdentityForRoles property value. Specifies whose identity is anonymized in the meeting. Possible values are: attendee. The attendee value can't be removed through a PATCH operation once added.
-func (m *OnlineMeetingBase) SetAnonymizeIdentityForRoles(value []OnlineMeetingRole)() {
+func (m *OnlineMeetingBase) SetAnonymizeIdentityForRoles(value []OnlineMeetingBase_anonymizeIdentityForRoles)() {
     err := m.GetBackingStore().Set("anonymizeIdentityForRoles", value)
     if err != nil {
         panic(err)
@@ -862,7 +862,7 @@ func (m *OnlineMeetingBase) SetRecordAutomatically(value *bool)() {
     }
 }
 // SetShareMeetingChatHistoryDefault sets the shareMeetingChatHistoryDefault property value. The shareMeetingChatHistoryDefault property
-func (m *OnlineMeetingBase) SetShareMeetingChatHistoryDefault(value *MeetingChatHistoryDefaultMode)() {
+func (m *OnlineMeetingBase) SetShareMeetingChatHistoryDefault(value *OnlineMeetingBase_shareMeetingChatHistoryDefault)() {
     err := m.GetBackingStore().Set("shareMeetingChatHistoryDefault", value)
     if err != nil {
         panic(err)
@@ -895,13 +895,13 @@ type OnlineMeetingBaseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAllowAttendeeToEnableCamera()(*bool)
     GetAllowAttendeeToEnableMic()(*bool)
-    GetAllowedPresenters()(*OnlineMeetingPresenters)
-    GetAllowMeetingChat()(*MeetingChatMode)
+    GetAllowedPresenters()(*OnlineMeetingBase_allowedPresenters)
+    GetAllowMeetingChat()(*OnlineMeetingBase_allowMeetingChat)
     GetAllowParticipantsToChangeName()(*bool)
     GetAllowRecording()(*bool)
     GetAllowTeamworkReactions()(*bool)
     GetAllowTranscription()(*bool)
-    GetAnonymizeIdentityForRoles()([]OnlineMeetingRole)
+    GetAnonymizeIdentityForRoles()([]OnlineMeetingBase_anonymizeIdentityForRoles)
     GetAttendanceReports()([]MeetingAttendanceReportable)
     GetAudioConferencing()(AudioConferencingable)
     GetChatInfo()(ChatInfoable)
@@ -913,19 +913,19 @@ type OnlineMeetingBaseable interface {
     GetJoinWebUrl()(*string)
     GetLobbyBypassSettings()(LobbyBypassSettingsable)
     GetRecordAutomatically()(*bool)
-    GetShareMeetingChatHistoryDefault()(*MeetingChatHistoryDefaultMode)
+    GetShareMeetingChatHistoryDefault()(*OnlineMeetingBase_shareMeetingChatHistoryDefault)
     GetSubject()(*string)
     GetVideoTeleconferenceId()(*string)
     GetWatermarkProtection()(WatermarkProtectionValuesable)
     SetAllowAttendeeToEnableCamera(value *bool)()
     SetAllowAttendeeToEnableMic(value *bool)()
-    SetAllowedPresenters(value *OnlineMeetingPresenters)()
-    SetAllowMeetingChat(value *MeetingChatMode)()
+    SetAllowedPresenters(value *OnlineMeetingBase_allowedPresenters)()
+    SetAllowMeetingChat(value *OnlineMeetingBase_allowMeetingChat)()
     SetAllowParticipantsToChangeName(value *bool)()
     SetAllowRecording(value *bool)()
     SetAllowTeamworkReactions(value *bool)()
     SetAllowTranscription(value *bool)()
-    SetAnonymizeIdentityForRoles(value []OnlineMeetingRole)()
+    SetAnonymizeIdentityForRoles(value []OnlineMeetingBase_anonymizeIdentityForRoles)()
     SetAttendanceReports(value []MeetingAttendanceReportable)()
     SetAudioConferencing(value AudioConferencingable)()
     SetChatInfo(value ChatInfoable)()
@@ -937,7 +937,7 @@ type OnlineMeetingBaseable interface {
     SetJoinWebUrl(value *string)()
     SetLobbyBypassSettings(value LobbyBypassSettingsable)()
     SetRecordAutomatically(value *bool)()
-    SetShareMeetingChatHistoryDefault(value *MeetingChatHistoryDefaultMode)()
+    SetShareMeetingChatHistoryDefault(value *OnlineMeetingBase_shareMeetingChatHistoryDefault)()
     SetSubject(value *string)()
     SetVideoTeleconferenceId(value *string)()
     SetWatermarkProtection(value WatermarkProtectionValuesable)()

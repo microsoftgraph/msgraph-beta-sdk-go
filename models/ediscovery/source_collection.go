@@ -88,13 +88,13 @@ func (m *SourceCollection) GetCustodianSources()([]DataSourceable) {
     return nil
 }
 // GetDataSourceScopes gets the dataSourceScopes property value. When specified, the collection spans across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
-func (m *SourceCollection) GetDataSourceScopes()(*DataSourceScopes) {
+func (m *SourceCollection) GetDataSourceScopes()(*SourceCollection_dataSourceScopes) {
     val, err := m.GetBackingStore().Get("dataSourceScopes")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DataSourceScopes)
+        return val.(*SourceCollection_dataSourceScopes)
     }
     return nil
 }
@@ -196,12 +196,12 @@ func (m *SourceCollection) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["dataSourceScopes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDataSourceScopes)
+        val, err := n.GetEnumValue(ParseSourceCollection_dataSourceScopes)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDataSourceScopes(val.(*DataSourceScopes))
+            m.SetDataSourceScopes(val.(*SourceCollection_dataSourceScopes))
         }
         return nil
     }
@@ -465,7 +465,7 @@ func (m *SourceCollection) SetCustodianSources(value []DataSourceable)() {
     }
 }
 // SetDataSourceScopes sets the dataSourceScopes property value. When specified, the collection spans across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
-func (m *SourceCollection) SetDataSourceScopes(value *DataSourceScopes)() {
+func (m *SourceCollection) SetDataSourceScopes(value *SourceCollection_dataSourceScopes)() {
     err := m.GetBackingStore().Set("dataSourceScopes", value)
     if err != nil {
         panic(err)
@@ -523,7 +523,7 @@ type SourceCollectionable interface {
     GetCreatedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCustodianSources()([]DataSourceable)
-    GetDataSourceScopes()(*DataSourceScopes)
+    GetDataSourceScopes()(*SourceCollection_dataSourceScopes)
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetLastEstimateStatisticsOperation()(EstimateStatisticsOperationable)
@@ -536,7 +536,7 @@ type SourceCollectionable interface {
     SetCreatedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCustodianSources(value []DataSourceable)()
-    SetDataSourceScopes(value *DataSourceScopes)()
+    SetDataSourceScopes(value *SourceCollection_dataSourceScopes)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetLastEstimateStatisticsOperation(value EstimateStatisticsOperationable)()

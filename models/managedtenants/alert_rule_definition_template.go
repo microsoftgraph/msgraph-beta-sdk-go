@@ -39,13 +39,13 @@ func (m *AlertRuleDefinitionTemplate) GetBackingStore()(ie8677ce2c7e1b4c22e9c382
     return m.backingStore
 }
 // GetDefaultSeverity gets the defaultSeverity property value. The defaultSeverity property
-func (m *AlertRuleDefinitionTemplate) GetDefaultSeverity()(*AlertSeverity) {
+func (m *AlertRuleDefinitionTemplate) GetDefaultSeverity()(*AlertRuleDefinitionTemplate_defaultSeverity) {
     val, err := m.GetBackingStore().Get("defaultSeverity")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AlertSeverity)
+        return val.(*AlertRuleDefinitionTemplate_defaultSeverity)
     }
     return nil
 }
@@ -53,12 +53,12 @@ func (m *AlertRuleDefinitionTemplate) GetDefaultSeverity()(*AlertSeverity) {
 func (m *AlertRuleDefinitionTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["defaultSeverity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAlertSeverity)
+        val, err := n.GetEnumValue(ParseAlertRuleDefinitionTemplate_defaultSeverity)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefaultSeverity(val.(*AlertSeverity))
+            m.SetDefaultSeverity(val.(*AlertRuleDefinitionTemplate_defaultSeverity))
         }
         return nil
     }
@@ -120,7 +120,7 @@ func (m *AlertRuleDefinitionTemplate) SetBackingStore(value ie8677ce2c7e1b4c22e9
     m.backingStore = value
 }
 // SetDefaultSeverity sets the defaultSeverity property value. The defaultSeverity property
-func (m *AlertRuleDefinitionTemplate) SetDefaultSeverity(value *AlertSeverity)() {
+func (m *AlertRuleDefinitionTemplate) SetDefaultSeverity(value *AlertRuleDefinitionTemplate_defaultSeverity)() {
     err := m.GetBackingStore().Set("defaultSeverity", value)
     if err != nil {
         panic(err)
@@ -139,9 +139,9 @@ type AlertRuleDefinitionTemplateable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetDefaultSeverity()(*AlertSeverity)
+    GetDefaultSeverity()(*AlertRuleDefinitionTemplate_defaultSeverity)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetDefaultSeverity(value *AlertSeverity)()
+    SetDefaultSeverity(value *AlertRuleDefinitionTemplate_defaultSeverity)()
     SetOdataType(value *string)()
 }

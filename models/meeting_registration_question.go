@@ -20,13 +20,13 @@ func CreateMeetingRegistrationQuestionFromDiscriminatorValue(parseNode i878a80d2
     return NewMeetingRegistrationQuestion(), nil
 }
 // GetAnswerInputType gets the answerInputType property value. Answer input type of the custom registration question.
-func (m *MeetingRegistrationQuestion) GetAnswerInputType()(*AnswerInputType) {
+func (m *MeetingRegistrationQuestion) GetAnswerInputType()(*MeetingRegistrationQuestion_answerInputType) {
     val, err := m.GetBackingStore().Get("answerInputType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AnswerInputType)
+        return val.(*MeetingRegistrationQuestion_answerInputType)
     }
     return nil
 }
@@ -56,12 +56,12 @@ func (m *MeetingRegistrationQuestion) GetDisplayName()(*string) {
 func (m *MeetingRegistrationQuestion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["answerInputType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAnswerInputType)
+        val, err := n.GetEnumValue(ParseMeetingRegistrationQuestion_answerInputType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAnswerInputType(val.(*AnswerInputType))
+            m.SetAnswerInputType(val.(*MeetingRegistrationQuestion_answerInputType))
         }
         return nil
     }
@@ -148,7 +148,7 @@ func (m *MeetingRegistrationQuestion) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAnswerInputType sets the answerInputType property value. Answer input type of the custom registration question.
-func (m *MeetingRegistrationQuestion) SetAnswerInputType(value *AnswerInputType)() {
+func (m *MeetingRegistrationQuestion) SetAnswerInputType(value *MeetingRegistrationQuestion_answerInputType)() {
     err := m.GetBackingStore().Set("answerInputType", value)
     if err != nil {
         panic(err)
@@ -179,11 +179,11 @@ func (m *MeetingRegistrationQuestion) SetIsRequired(value *bool)() {
 type MeetingRegistrationQuestionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAnswerInputType()(*AnswerInputType)
+    GetAnswerInputType()(*MeetingRegistrationQuestion_answerInputType)
     GetAnswerOptions()([]string)
     GetDisplayName()(*string)
     GetIsRequired()(*bool)
-    SetAnswerInputType(value *AnswerInputType)()
+    SetAnswerInputType(value *MeetingRegistrationQuestion_answerInputType)()
     SetAnswerOptions(value []string)()
     SetDisplayName(value *string)()
     SetIsRequired(value *bool)()

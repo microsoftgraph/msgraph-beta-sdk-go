@@ -21,13 +21,13 @@ func CreateTeamTemplateDefinitionFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewTeamTemplateDefinition(), nil
 }
 // GetAudience gets the audience property value. Describes the audience the team template is available to. The possible values are: organization, user, public, unknownFutureValue.
-func (m *TeamTemplateDefinition) GetAudience()(*TeamTemplateAudience) {
+func (m *TeamTemplateDefinition) GetAudience()(*TeamTemplateDefinition_audience) {
     val, err := m.GetBackingStore().Get("audience")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TeamTemplateAudience)
+        return val.(*TeamTemplateDefinition_audience)
     }
     return nil
 }
@@ -68,12 +68,12 @@ func (m *TeamTemplateDefinition) GetDisplayName()(*string) {
 func (m *TeamTemplateDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["audience"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTeamTemplateAudience)
+        val, err := n.GetEnumValue(ParseTeamTemplateDefinition_audience)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAudience(val.(*TeamTemplateAudience))
+            m.SetAudience(val.(*TeamTemplateDefinition_audience))
         }
         return nil
     }
@@ -365,7 +365,7 @@ func (m *TeamTemplateDefinition) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAudience sets the audience property value. Describes the audience the team template is available to. The possible values are: organization, user, public, unknownFutureValue.
-func (m *TeamTemplateDefinition) SetAudience(value *TeamTemplateAudience)() {
+func (m *TeamTemplateDefinition) SetAudience(value *TeamTemplateDefinition_audience)() {
     err := m.GetBackingStore().Set("audience", value)
     if err != nil {
         panic(err)
@@ -452,7 +452,7 @@ func (m *TeamTemplateDefinition) SetTeamDefinition(value Teamable)() {
 type TeamTemplateDefinitionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAudience()(*TeamTemplateAudience)
+    GetAudience()(*TeamTemplateDefinition_audience)
     GetCategories()([]string)
     GetDescription()(*string)
     GetDisplayName()(*string)
@@ -464,7 +464,7 @@ type TeamTemplateDefinitionable interface {
     GetPublisherName()(*string)
     GetShortDescription()(*string)
     GetTeamDefinition()(Teamable)
-    SetAudience(value *TeamTemplateAudience)()
+    SetAudience(value *TeamTemplateDefinition_audience)()
     SetCategories(value []string)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()

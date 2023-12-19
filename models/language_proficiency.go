@@ -46,32 +46,32 @@ func (m *LanguageProficiency) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["proficiency"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseLanguageProficiencyLevel)
+        val, err := n.GetEnumValue(ParseLanguageProficiency_proficiency)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProficiency(val.(*LanguageProficiencyLevel))
+            m.SetProficiency(val.(*LanguageProficiency_proficiency))
         }
         return nil
     }
     res["reading"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseLanguageProficiencyLevel)
+        val, err := n.GetEnumValue(ParseLanguageProficiency_reading)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetReading(val.(*LanguageProficiencyLevel))
+            m.SetReading(val.(*LanguageProficiency_reading))
         }
         return nil
     }
     res["spoken"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseLanguageProficiencyLevel)
+        val, err := n.GetEnumValue(ParseLanguageProficiency_spoken)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSpoken(val.(*LanguageProficiencyLevel))
+            m.SetSpoken(val.(*LanguageProficiency_spoken))
         }
         return nil
     }
@@ -96,47 +96,47 @@ func (m *LanguageProficiency) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["written"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseLanguageProficiencyLevel)
+        val, err := n.GetEnumValue(ParseLanguageProficiency_written)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetWritten(val.(*LanguageProficiencyLevel))
+            m.SetWritten(val.(*LanguageProficiency_written))
         }
         return nil
     }
     return res
 }
 // GetProficiency gets the proficiency property value. The proficiency property
-func (m *LanguageProficiency) GetProficiency()(*LanguageProficiencyLevel) {
+func (m *LanguageProficiency) GetProficiency()(*LanguageProficiency_proficiency) {
     val, err := m.GetBackingStore().Get("proficiency")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*LanguageProficiencyLevel)
+        return val.(*LanguageProficiency_proficiency)
     }
     return nil
 }
 // GetReading gets the reading property value. Represents the users reading comprehension for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
-func (m *LanguageProficiency) GetReading()(*LanguageProficiencyLevel) {
+func (m *LanguageProficiency) GetReading()(*LanguageProficiency_reading) {
     val, err := m.GetBackingStore().Get("reading")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*LanguageProficiencyLevel)
+        return val.(*LanguageProficiency_reading)
     }
     return nil
 }
 // GetSpoken gets the spoken property value. Represents the users spoken proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
-func (m *LanguageProficiency) GetSpoken()(*LanguageProficiencyLevel) {
+func (m *LanguageProficiency) GetSpoken()(*LanguageProficiency_spoken) {
     val, err := m.GetBackingStore().Get("spoken")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*LanguageProficiencyLevel)
+        return val.(*LanguageProficiency_spoken)
     }
     return nil
 }
@@ -163,13 +163,13 @@ func (m *LanguageProficiency) GetThumbnailUrl()(*string) {
     return nil
 }
 // GetWritten gets the written property value. Represents the users written proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
-func (m *LanguageProficiency) GetWritten()(*LanguageProficiencyLevel) {
+func (m *LanguageProficiency) GetWritten()(*LanguageProficiency_written) {
     val, err := m.GetBackingStore().Get("written")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*LanguageProficiencyLevel)
+        return val.(*LanguageProficiency_written)
     }
     return nil
 }
@@ -235,21 +235,21 @@ func (m *LanguageProficiency) SetDisplayName(value *string)() {
     }
 }
 // SetProficiency sets the proficiency property value. The proficiency property
-func (m *LanguageProficiency) SetProficiency(value *LanguageProficiencyLevel)() {
+func (m *LanguageProficiency) SetProficiency(value *LanguageProficiency_proficiency)() {
     err := m.GetBackingStore().Set("proficiency", value)
     if err != nil {
         panic(err)
     }
 }
 // SetReading sets the reading property value. Represents the users reading comprehension for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
-func (m *LanguageProficiency) SetReading(value *LanguageProficiencyLevel)() {
+func (m *LanguageProficiency) SetReading(value *LanguageProficiency_reading)() {
     err := m.GetBackingStore().Set("reading", value)
     if err != nil {
         panic(err)
     }
 }
 // SetSpoken sets the spoken property value. Represents the users spoken proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
-func (m *LanguageProficiency) SetSpoken(value *LanguageProficiencyLevel)() {
+func (m *LanguageProficiency) SetSpoken(value *LanguageProficiency_spoken)() {
     err := m.GetBackingStore().Set("spoken", value)
     if err != nil {
         panic(err)
@@ -270,7 +270,7 @@ func (m *LanguageProficiency) SetThumbnailUrl(value *string)() {
     }
 }
 // SetWritten sets the written property value. Represents the users written proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
-func (m *LanguageProficiency) SetWritten(value *LanguageProficiencyLevel)() {
+func (m *LanguageProficiency) SetWritten(value *LanguageProficiency_written)() {
     err := m.GetBackingStore().Set("written", value)
     if err != nil {
         panic(err)
@@ -281,17 +281,17 @@ type LanguageProficiencyable interface {
     ItemFacetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
-    GetProficiency()(*LanguageProficiencyLevel)
-    GetReading()(*LanguageProficiencyLevel)
-    GetSpoken()(*LanguageProficiencyLevel)
+    GetProficiency()(*LanguageProficiency_proficiency)
+    GetReading()(*LanguageProficiency_reading)
+    GetSpoken()(*LanguageProficiency_spoken)
     GetTag()(*string)
     GetThumbnailUrl()(*string)
-    GetWritten()(*LanguageProficiencyLevel)
+    GetWritten()(*LanguageProficiency_written)
     SetDisplayName(value *string)()
-    SetProficiency(value *LanguageProficiencyLevel)()
-    SetReading(value *LanguageProficiencyLevel)()
-    SetSpoken(value *LanguageProficiencyLevel)()
+    SetProficiency(value *LanguageProficiency_proficiency)()
+    SetReading(value *LanguageProficiency_reading)()
+    SetSpoken(value *LanguageProficiency_spoken)()
     SetTag(value *string)()
     SetThumbnailUrl(value *string)()
-    SetWritten(value *LanguageProficiencyLevel)()
+    SetWritten(value *LanguageProficiency_written)()
 }

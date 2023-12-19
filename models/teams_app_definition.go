@@ -21,13 +21,13 @@ func CreateTeamsAppDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewTeamsAppDefinition(), nil
 }
 // GetAllowedInstallationScopes gets the allowedInstallationScopes property value. A collection of scopes where the Teams app can be installed. Possible values are:team—Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat—Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data.  personal—Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.
-func (m *TeamsAppDefinition) GetAllowedInstallationScopes()(*TeamsAppInstallationScopes) {
+func (m *TeamsAppDefinition) GetAllowedInstallationScopes()(*TeamsAppDefinition_allowedInstallationScopes) {
     val, err := m.GetBackingStore().Get("allowedInstallationScopes")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TeamsAppInstallationScopes)
+        return val.(*TeamsAppDefinition_allowedInstallationScopes)
     }
     return nil
 }
@@ -112,12 +112,12 @@ func (m *TeamsAppDefinition) GetDisplayName()(*string) {
 func (m *TeamsAppDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["allowedInstallationScopes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTeamsAppInstallationScopes)
+        val, err := n.GetEnumValue(ParseTeamsAppDefinition_allowedInstallationScopes)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAllowedInstallationScopes(val.(*TeamsAppInstallationScopes))
+            m.SetAllowedInstallationScopes(val.(*TeamsAppDefinition_allowedInstallationScopes))
         }
         return nil
     }
@@ -212,12 +212,12 @@ func (m *TeamsAppDefinition) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["publishingState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTeamsAppPublishingState)
+        val, err := n.GetEnumValue(ParseTeamsAppDefinition_publishingState)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPublishingState(val.(*TeamsAppPublishingState))
+            m.SetPublishingState(val.(*TeamsAppDefinition_publishingState))
         }
         return nil
     }
@@ -276,13 +276,13 @@ func (m *TeamsAppDefinition) GetOutlineIcon()(TeamsAppIconable) {
     return nil
 }
 // GetPublishingState gets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published—The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
-func (m *TeamsAppDefinition) GetPublishingState()(*TeamsAppPublishingState) {
+func (m *TeamsAppDefinition) GetPublishingState()(*TeamsAppDefinition_publishingState) {
     val, err := m.GetBackingStore().Get("publishingState")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TeamsAppPublishingState)
+        return val.(*TeamsAppDefinition_publishingState)
     }
     return nil
 }
@@ -414,7 +414,7 @@ func (m *TeamsAppDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetAllowedInstallationScopes sets the allowedInstallationScopes property value. A collection of scopes where the Teams app can be installed. Possible values are:team—Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat—Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data.  personal—Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.
-func (m *TeamsAppDefinition) SetAllowedInstallationScopes(value *TeamsAppInstallationScopes)() {
+func (m *TeamsAppDefinition) SetAllowedInstallationScopes(value *TeamsAppDefinition_allowedInstallationScopes)() {
     err := m.GetBackingStore().Set("allowedInstallationScopes", value)
     if err != nil {
         panic(err)
@@ -484,7 +484,7 @@ func (m *TeamsAppDefinition) SetOutlineIcon(value TeamsAppIconable)() {
     }
 }
 // SetPublishingState sets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published—The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
-func (m *TeamsAppDefinition) SetPublishingState(value *TeamsAppPublishingState)() {
+func (m *TeamsAppDefinition) SetPublishingState(value *TeamsAppDefinition_publishingState)() {
     err := m.GetBackingStore().Set("publishingState", value)
     if err != nil {
         panic(err)
@@ -515,7 +515,7 @@ func (m *TeamsAppDefinition) SetVersion(value *string)() {
 type TeamsAppDefinitionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAllowedInstallationScopes()(*TeamsAppInstallationScopes)
+    GetAllowedInstallationScopes()(*TeamsAppDefinition_allowedInstallationScopes)
     GetAuthorization()(TeamsAppAuthorizationable)
     GetAzureADAppId()(*string)
     GetBot()(TeamworkBotable)
@@ -525,11 +525,11 @@ type TeamsAppDefinitionable interface {
     GetDisplayName()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOutlineIcon()(TeamsAppIconable)
-    GetPublishingState()(*TeamsAppPublishingState)
+    GetPublishingState()(*TeamsAppDefinition_publishingState)
     GetShortdescription()(*string)
     GetTeamsAppId()(*string)
     GetVersion()(*string)
-    SetAllowedInstallationScopes(value *TeamsAppInstallationScopes)()
+    SetAllowedInstallationScopes(value *TeamsAppDefinition_allowedInstallationScopes)()
     SetAuthorization(value TeamsAppAuthorizationable)()
     SetAzureADAppId(value *string)()
     SetBot(value TeamworkBotable)()
@@ -539,7 +539,7 @@ type TeamsAppDefinitionable interface {
     SetDisplayName(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOutlineIcon(value TeamsAppIconable)()
-    SetPublishingState(value *TeamsAppPublishingState)()
+    SetPublishingState(value *TeamsAppDefinition_publishingState)()
     SetShortdescription(value *string)()
     SetTeamsAppId(value *string)()
     SetVersion(value *string)()

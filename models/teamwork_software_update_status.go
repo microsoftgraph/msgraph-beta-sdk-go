@@ -94,12 +94,12 @@ func (m *TeamworkSoftwareUpdateStatus) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["softwareFreshness"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTeamworkSoftwareFreshness)
+        val, err := n.GetEnumValue(ParseTeamworkSoftwareUpdateStatus_softwareFreshness)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSoftwareFreshness(val.(*TeamworkSoftwareFreshness))
+            m.SetSoftwareFreshness(val.(*TeamworkSoftwareUpdateStatus_softwareFreshness))
         }
         return nil
     }
@@ -117,13 +117,13 @@ func (m *TeamworkSoftwareUpdateStatus) GetOdataType()(*string) {
     return nil
 }
 // GetSoftwareFreshness gets the softwareFreshness property value. The update status of the software. The possible values are: unknown, latest, updateAvailable, unknownFutureValue.
-func (m *TeamworkSoftwareUpdateStatus) GetSoftwareFreshness()(*TeamworkSoftwareFreshness) {
+func (m *TeamworkSoftwareUpdateStatus) GetSoftwareFreshness()(*TeamworkSoftwareUpdateStatus_softwareFreshness) {
     val, err := m.GetBackingStore().Get("softwareFreshness")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TeamworkSoftwareFreshness)
+        return val.(*TeamworkSoftwareUpdateStatus_softwareFreshness)
     }
     return nil
 }
@@ -195,7 +195,7 @@ func (m *TeamworkSoftwareUpdateStatus) SetOdataType(value *string)() {
     }
 }
 // SetSoftwareFreshness sets the softwareFreshness property value. The update status of the software. The possible values are: unknown, latest, updateAvailable, unknownFutureValue.
-func (m *TeamworkSoftwareUpdateStatus) SetSoftwareFreshness(value *TeamworkSoftwareFreshness)() {
+func (m *TeamworkSoftwareUpdateStatus) SetSoftwareFreshness(value *TeamworkSoftwareUpdateStatus_softwareFreshness)() {
     err := m.GetBackingStore().Set("softwareFreshness", value)
     if err != nil {
         panic(err)
@@ -210,10 +210,10 @@ type TeamworkSoftwareUpdateStatusable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCurrentVersion()(*string)
     GetOdataType()(*string)
-    GetSoftwareFreshness()(*TeamworkSoftwareFreshness)
+    GetSoftwareFreshness()(*TeamworkSoftwareUpdateStatus_softwareFreshness)
     SetAvailableVersion(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCurrentVersion(value *string)()
     SetOdataType(value *string)()
-    SetSoftwareFreshness(value *TeamworkSoftwareFreshness)()
+    SetSoftwareFreshness(value *TeamworkSoftwareUpdateStatus_softwareFreshness)()
 }

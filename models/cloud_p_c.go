@@ -54,13 +54,13 @@ func (m *CloudPC) GetConnectivityResult()(CloudPcConnectivityResultable) {
     return nil
 }
 // GetDiskEncryptionState gets the diskEncryptionState property value. The disk encryption applied to the Cloud PC. Possible values: notAvailable, notEncrypted, encryptedUsingPlatformManagedKey, encryptedUsingCustomerManagedKey, and unknownFutureValue.
-func (m *CloudPC) GetDiskEncryptionState()(*CloudPcDiskEncryptionState) {
+func (m *CloudPC) GetDiskEncryptionState()(*CloudPC_diskEncryptionState) {
     val, err := m.GetBackingStore().Get("diskEncryptionState")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcDiskEncryptionState)
+        return val.(*CloudPC_diskEncryptionState)
     }
     return nil
 }
@@ -109,12 +109,12 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     res["diskEncryptionState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcDiskEncryptionState)
+        val, err := n.GetEnumValue(ParseCloudPC_diskEncryptionState)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDiskEncryptionState(val.(*CloudPcDiskEncryptionState))
+            m.SetDiskEncryptionState(val.(*CloudPC_diskEncryptionState))
         }
         return nil
     }
@@ -209,12 +209,12 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     res["osVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcOperatingSystem)
+        val, err := n.GetEnumValue(ParseCloudPC_osVersion)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOsVersion(val.(*CloudPcOperatingSystem))
+            m.SetOsVersion(val.(*CloudPC_osVersion))
         }
         return nil
     }
@@ -235,12 +235,12 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     res["powerState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcPowerState)
+        val, err := n.GetEnumValue(ParseCloudPC_powerState)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPowerState(val.(*CloudPcPowerState))
+            m.SetPowerState(val.(*CloudPC_powerState))
         }
         return nil
     }
@@ -265,12 +265,12 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     res["provisioningType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcProvisioningType)
+        val, err := n.GetEnumValue(ParseCloudPC_provisioningType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProvisioningType(val.(*CloudPcProvisioningType))
+            m.SetProvisioningType(val.(*CloudPC_provisioningType))
         }
         return nil
     }
@@ -311,12 +311,12 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     res["servicePlanType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcServicePlanType)
+        val, err := n.GetEnumValue(ParseCloudPC_servicePlanType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetServicePlanType(val.(*CloudPcServicePlanType))
+            m.SetServicePlanType(val.(*CloudPC_servicePlanType))
         }
         return nil
     }
@@ -341,12 +341,12 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     res["userAccountType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcUserAccountType)
+        val, err := n.GetEnumValue(ParseCloudPC_userAccountType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUserAccountType(val.(*CloudPcUserAccountType))
+            m.SetUserAccountType(val.(*CloudPC_userAccountType))
         }
         return nil
     }
@@ -451,13 +451,13 @@ func (m *CloudPC) GetOnPremisesConnectionName()(*string) {
     return nil
 }
 // GetOsVersion gets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. Possible values are: windows10, windows11, and unknownFutureValue.
-func (m *CloudPC) GetOsVersion()(*CloudPcOperatingSystem) {
+func (m *CloudPC) GetOsVersion()(*CloudPC_osVersion) {
     val, err := m.GetBackingStore().Get("osVersion")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcOperatingSystem)
+        return val.(*CloudPC_osVersion)
     }
     return nil
 }
@@ -473,13 +473,13 @@ func (m *CloudPC) GetPartnerAgentInstallResults()([]CloudPcPartnerAgentInstallRe
     return nil
 }
 // GetPowerState gets the powerState property value. The power state of a Cloud PC. The possible values are: running, poweredOff and unknown. This property only supports shift work Cloud PCs.
-func (m *CloudPC) GetPowerState()(*CloudPcPowerState) {
+func (m *CloudPC) GetPowerState()(*CloudPC_powerState) {
     val, err := m.GetBackingStore().Get("powerState")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcPowerState)
+        return val.(*CloudPC_powerState)
     }
     return nil
 }
@@ -506,13 +506,13 @@ func (m *CloudPC) GetProvisioningPolicyName()(*string) {
     return nil
 }
 // GetProvisioningType gets the provisioningType property value. The type of licenses to be used when provisioning Cloud PCs using this policy. Possible values are: dedicated, shared, unknownFutureValue. Default value is dedicated.
-func (m *CloudPC) GetProvisioningType()(*CloudPcProvisioningType) {
+func (m *CloudPC) GetProvisioningType()(*CloudPC_provisioningType) {
     val, err := m.GetBackingStore().Get("provisioningType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcProvisioningType)
+        return val.(*CloudPC_provisioningType)
     }
     return nil
 }
@@ -550,13 +550,13 @@ func (m *CloudPC) GetServicePlanName()(*string) {
     return nil
 }
 // GetServicePlanType gets the servicePlanType property value. The service plan type of the Cloud PC.
-func (m *CloudPC) GetServicePlanType()(*CloudPcServicePlanType) {
+func (m *CloudPC) GetServicePlanType()(*CloudPC_servicePlanType) {
     val, err := m.GetBackingStore().Get("servicePlanType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcServicePlanType)
+        return val.(*CloudPC_servicePlanType)
     }
     return nil
 }
@@ -583,13 +583,13 @@ func (m *CloudPC) GetStatusDetails()(CloudPcStatusDetailsable) {
     return nil
 }
 // GetUserAccountType gets the userAccountType property value. The account type of the user on provisioned Cloud PCs. Possible values are: standardUser, administrator, and unknownFutureValue.
-func (m *CloudPC) GetUserAccountType()(*CloudPcUserAccountType) {
+func (m *CloudPC) GetUserAccountType()(*CloudPC_userAccountType) {
     val, err := m.GetBackingStore().Get("userAccountType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcUserAccountType)
+        return val.(*CloudPC_userAccountType)
     }
     return nil
 }
@@ -809,7 +809,7 @@ func (m *CloudPC) SetConnectivityResult(value CloudPcConnectivityResultable)() {
     }
 }
 // SetDiskEncryptionState sets the diskEncryptionState property value. The disk encryption applied to the Cloud PC. Possible values: notAvailable, notEncrypted, encryptedUsingPlatformManagedKey, encryptedUsingCustomerManagedKey, and unknownFutureValue.
-func (m *CloudPC) SetDiskEncryptionState(value *CloudPcDiskEncryptionState)() {
+func (m *CloudPC) SetDiskEncryptionState(value *CloudPC_diskEncryptionState)() {
     err := m.GetBackingStore().Set("diskEncryptionState", value)
     if err != nil {
         panic(err)
@@ -879,7 +879,7 @@ func (m *CloudPC) SetOnPremisesConnectionName(value *string)() {
     }
 }
 // SetOsVersion sets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. Possible values are: windows10, windows11, and unknownFutureValue.
-func (m *CloudPC) SetOsVersion(value *CloudPcOperatingSystem)() {
+func (m *CloudPC) SetOsVersion(value *CloudPC_osVersion)() {
     err := m.GetBackingStore().Set("osVersion", value)
     if err != nil {
         panic(err)
@@ -893,7 +893,7 @@ func (m *CloudPC) SetPartnerAgentInstallResults(value []CloudPcPartnerAgentInsta
     }
 }
 // SetPowerState sets the powerState property value. The power state of a Cloud PC. The possible values are: running, poweredOff and unknown. This property only supports shift work Cloud PCs.
-func (m *CloudPC) SetPowerState(value *CloudPcPowerState)() {
+func (m *CloudPC) SetPowerState(value *CloudPC_powerState)() {
     err := m.GetBackingStore().Set("powerState", value)
     if err != nil {
         panic(err)
@@ -914,7 +914,7 @@ func (m *CloudPC) SetProvisioningPolicyName(value *string)() {
     }
 }
 // SetProvisioningType sets the provisioningType property value. The type of licenses to be used when provisioning Cloud PCs using this policy. Possible values are: dedicated, shared, unknownFutureValue. Default value is dedicated.
-func (m *CloudPC) SetProvisioningType(value *CloudPcProvisioningType)() {
+func (m *CloudPC) SetProvisioningType(value *CloudPC_provisioningType)() {
     err := m.GetBackingStore().Set("provisioningType", value)
     if err != nil {
         panic(err)
@@ -942,7 +942,7 @@ func (m *CloudPC) SetServicePlanName(value *string)() {
     }
 }
 // SetServicePlanType sets the servicePlanType property value. The service plan type of the Cloud PC.
-func (m *CloudPC) SetServicePlanType(value *CloudPcServicePlanType)() {
+func (m *CloudPC) SetServicePlanType(value *CloudPC_servicePlanType)() {
     err := m.GetBackingStore().Set("servicePlanType", value)
     if err != nil {
         panic(err)
@@ -963,7 +963,7 @@ func (m *CloudPC) SetStatusDetails(value CloudPcStatusDetailsable)() {
     }
 }
 // SetUserAccountType sets the userAccountType property value. The account type of the user on provisioned Cloud PCs. Possible values are: standardUser, administrator, and unknownFutureValue.
-func (m *CloudPC) SetUserAccountType(value *CloudPcUserAccountType)() {
+func (m *CloudPC) SetUserAccountType(value *CloudPC_userAccountType)() {
     err := m.GetBackingStore().Set("userAccountType", value)
     if err != nil {
         panic(err)
@@ -983,7 +983,7 @@ type CloudPCable interface {
     GetAadDeviceId()(*string)
     GetConnectionSettings()(CloudPcConnectionSettingsable)
     GetConnectivityResult()(CloudPcConnectivityResultable)
-    GetDiskEncryptionState()(*CloudPcDiskEncryptionState)
+    GetDiskEncryptionState()(*CloudPC_diskEncryptionState)
     GetDisplayName()(*string)
     GetGracePeriodEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetImageDisplayName()(*string)
@@ -993,24 +993,24 @@ type CloudPCable interface {
     GetManagedDeviceId()(*string)
     GetManagedDeviceName()(*string)
     GetOnPremisesConnectionName()(*string)
-    GetOsVersion()(*CloudPcOperatingSystem)
+    GetOsVersion()(*CloudPC_osVersion)
     GetPartnerAgentInstallResults()([]CloudPcPartnerAgentInstallResultable)
-    GetPowerState()(*CloudPcPowerState)
+    GetPowerState()(*CloudPC_powerState)
     GetProvisioningPolicyId()(*string)
     GetProvisioningPolicyName()(*string)
-    GetProvisioningType()(*CloudPcProvisioningType)
+    GetProvisioningType()(*CloudPC_provisioningType)
     GetScopeIds()([]string)
     GetServicePlanId()(*string)
     GetServicePlanName()(*string)
-    GetServicePlanType()(*CloudPcServicePlanType)
+    GetServicePlanType()(*CloudPC_servicePlanType)
     GetStatus()(*CloudPcStatus)
     GetStatusDetails()(CloudPcStatusDetailsable)
-    GetUserAccountType()(*CloudPcUserAccountType)
+    GetUserAccountType()(*CloudPC_userAccountType)
     GetUserPrincipalName()(*string)
     SetAadDeviceId(value *string)()
     SetConnectionSettings(value CloudPcConnectionSettingsable)()
     SetConnectivityResult(value CloudPcConnectivityResultable)()
-    SetDiskEncryptionState(value *CloudPcDiskEncryptionState)()
+    SetDiskEncryptionState(value *CloudPC_diskEncryptionState)()
     SetDisplayName(value *string)()
     SetGracePeriodEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetImageDisplayName(value *string)()
@@ -1020,18 +1020,18 @@ type CloudPCable interface {
     SetManagedDeviceId(value *string)()
     SetManagedDeviceName(value *string)()
     SetOnPremisesConnectionName(value *string)()
-    SetOsVersion(value *CloudPcOperatingSystem)()
+    SetOsVersion(value *CloudPC_osVersion)()
     SetPartnerAgentInstallResults(value []CloudPcPartnerAgentInstallResultable)()
-    SetPowerState(value *CloudPcPowerState)()
+    SetPowerState(value *CloudPC_powerState)()
     SetProvisioningPolicyId(value *string)()
     SetProvisioningPolicyName(value *string)()
-    SetProvisioningType(value *CloudPcProvisioningType)()
+    SetProvisioningType(value *CloudPC_provisioningType)()
     SetScopeIds(value []string)()
     SetServicePlanId(value *string)()
     SetServicePlanName(value *string)()
-    SetServicePlanType(value *CloudPcServicePlanType)()
+    SetServicePlanType(value *CloudPC_servicePlanType)()
     SetStatus(value *CloudPcStatus)()
     SetStatusDetails(value CloudPcStatusDetailsable)()
-    SetUserAccountType(value *CloudPcUserAccountType)()
+    SetUserAccountType(value *CloudPC_userAccountType)()
     SetUserPrincipalName(value *string)()
 }

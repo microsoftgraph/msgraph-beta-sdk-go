@@ -2,7 +2,6 @@ package communications
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
@@ -58,16 +57,6 @@ func (m *OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBody) Get
         }
         return nil
     }
-    res["remindBeforeTimeInMinutesType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseRemindBeforeTimeInMinutesType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRemindBeforeTimeInMinutesType(val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemindBeforeTimeInMinutesType))
-        }
-        return nil
-    }
     return res
 }
 // GetPhoneNumbers gets the phoneNumbers property value. The phoneNumbers property
@@ -81,28 +70,10 @@ func (m *OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBody) Get
     }
     return nil
 }
-// GetRemindBeforeTimeInMinutesType gets the remindBeforeTimeInMinutesType property value. The remindBeforeTimeInMinutesType property
-func (m *OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBody) GetRemindBeforeTimeInMinutesType()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemindBeforeTimeInMinutesType) {
-    val, err := m.GetBackingStore().Get("remindBeforeTimeInMinutesType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemindBeforeTimeInMinutesType)
-    }
-    return nil
-}
 // Serialize serializes information the current object
 func (m *OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetPhoneNumbers() != nil {
         err := writer.WriteCollectionOfStringValues("phoneNumbers", m.GetPhoneNumbers())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetRemindBeforeTimeInMinutesType() != nil {
-        cast := (*m.GetRemindBeforeTimeInMinutesType()).String()
-        err := writer.WriteStringValue("remindBeforeTimeInMinutesType", &cast)
         if err != nil {
             return err
         }
@@ -133,13 +104,6 @@ func (m *OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBody) Set
         panic(err)
     }
 }
-// SetRemindBeforeTimeInMinutesType sets the remindBeforeTimeInMinutesType property value. The remindBeforeTimeInMinutesType property
-func (m *OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBody) SetRemindBeforeTimeInMinutesType(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemindBeforeTimeInMinutesType)() {
-    err := m.GetBackingStore().Set("remindBeforeTimeInMinutesType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBodyable 
 type OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
@@ -147,8 +111,6 @@ type OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBodyable inte
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetPhoneNumbers()([]string)
-    GetRemindBeforeTimeInMinutesType()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemindBeforeTimeInMinutesType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetPhoneNumbers(value []string)()
-    SetRemindBeforeTimeInMinutesType(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemindBeforeTimeInMinutesType)()
 }

@@ -44,13 +44,13 @@ func (m *WorkforceIntegration) GetDisplayName()(*string) {
     return nil
 }
 // GetEligibilityFilteringEnabledEntities gets the eligibilityFilteringEnabledEntities property value. The eligibilityFilteringEnabledEntities property
-func (m *WorkforceIntegration) GetEligibilityFilteringEnabledEntities()(*EligibilityFilteringEnabledEntities) {
+func (m *WorkforceIntegration) GetEligibilityFilteringEnabledEntities()(*WorkforceIntegration_eligibilityFilteringEnabledEntities) {
     val, err := m.GetBackingStore().Get("eligibilityFilteringEnabledEntities")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EligibilityFilteringEnabledEntities)
+        return val.(*WorkforceIntegration_eligibilityFilteringEnabledEntities)
     }
     return nil
 }
@@ -89,12 +89,12 @@ func (m *WorkforceIntegration) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["eligibilityFilteringEnabledEntities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEligibilityFilteringEnabledEntities)
+        val, err := n.GetEnumValue(ParseWorkforceIntegration_eligibilityFilteringEnabledEntities)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEligibilityFilteringEnabledEntities(val.(*EligibilityFilteringEnabledEntities))
+            m.SetEligibilityFilteringEnabledEntities(val.(*WorkforceIntegration_eligibilityFilteringEnabledEntities))
         }
         return nil
     }
@@ -119,22 +119,22 @@ func (m *WorkforceIntegration) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["supportedEntities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWorkforceIntegrationSupportedEntities)
+        val, err := n.GetEnumValue(ParseWorkforceIntegration_supportedEntities)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSupportedEntities(val.(*WorkforceIntegrationSupportedEntities))
+            m.SetSupportedEntities(val.(*WorkforceIntegration_supportedEntities))
         }
         return nil
     }
     res["supports"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWorkforceIntegrationSupportedEntities)
+        val, err := n.GetEnumValue(ParseWorkforceIntegration_supports)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSupports(val.(*WorkforceIntegrationSupportedEntities))
+            m.SetSupports(val.(*WorkforceIntegration_supports))
         }
         return nil
     }
@@ -162,24 +162,24 @@ func (m *WorkforceIntegration) GetIsActive()(*bool) {
     return nil
 }
 // GetSupportedEntities gets the supportedEntities property value. This property has replaced supports in v1.0. We recommend that you use this property instead of supports. The supports property is still supported in beta for the time being. The possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard, timeOffReason, timeOff, timeOffRequest. If selecting more than one value, all values must start with the first letter in uppercase.
-func (m *WorkforceIntegration) GetSupportedEntities()(*WorkforceIntegrationSupportedEntities) {
+func (m *WorkforceIntegration) GetSupportedEntities()(*WorkforceIntegration_supportedEntities) {
     val, err := m.GetBackingStore().Get("supportedEntities")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*WorkforceIntegrationSupportedEntities)
+        return val.(*WorkforceIntegration_supportedEntities)
     }
     return nil
 }
 // GetSupports gets the supports property value. The Shifts entities supported for synchronous change notifications. Shifts make a callback to the url provided on client changes on those entities added here. By default, no entities are supported for change notifications. The possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard, timeOffReason, timeOff, timeOffRequest. If selecting more than one value, all values must start with the first letter in uppercase.
-func (m *WorkforceIntegration) GetSupports()(*WorkforceIntegrationSupportedEntities) {
+func (m *WorkforceIntegration) GetSupports()(*WorkforceIntegration_supports) {
     val, err := m.GetBackingStore().Get("supports")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*WorkforceIntegrationSupportedEntities)
+        return val.(*WorkforceIntegration_supports)
     }
     return nil
 }
@@ -268,7 +268,7 @@ func (m *WorkforceIntegration) SetDisplayName(value *string)() {
     }
 }
 // SetEligibilityFilteringEnabledEntities sets the eligibilityFilteringEnabledEntities property value. The eligibilityFilteringEnabledEntities property
-func (m *WorkforceIntegration) SetEligibilityFilteringEnabledEntities(value *EligibilityFilteringEnabledEntities)() {
+func (m *WorkforceIntegration) SetEligibilityFilteringEnabledEntities(value *WorkforceIntegration_eligibilityFilteringEnabledEntities)() {
     err := m.GetBackingStore().Set("eligibilityFilteringEnabledEntities", value)
     if err != nil {
         panic(err)
@@ -289,14 +289,14 @@ func (m *WorkforceIntegration) SetIsActive(value *bool)() {
     }
 }
 // SetSupportedEntities sets the supportedEntities property value. This property has replaced supports in v1.0. We recommend that you use this property instead of supports. The supports property is still supported in beta for the time being. The possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard, timeOffReason, timeOff, timeOffRequest. If selecting more than one value, all values must start with the first letter in uppercase.
-func (m *WorkforceIntegration) SetSupportedEntities(value *WorkforceIntegrationSupportedEntities)() {
+func (m *WorkforceIntegration) SetSupportedEntities(value *WorkforceIntegration_supportedEntities)() {
     err := m.GetBackingStore().Set("supportedEntities", value)
     if err != nil {
         panic(err)
     }
 }
 // SetSupports sets the supports property value. The Shifts entities supported for synchronous change notifications. Shifts make a callback to the url provided on client changes on those entities added here. By default, no entities are supported for change notifications. The possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard, timeOffReason, timeOff, timeOffRequest. If selecting more than one value, all values must start with the first letter in uppercase.
-func (m *WorkforceIntegration) SetSupports(value *WorkforceIntegrationSupportedEntities)() {
+func (m *WorkforceIntegration) SetSupports(value *WorkforceIntegration_supports)() {
     err := m.GetBackingStore().Set("supports", value)
     if err != nil {
         panic(err)
@@ -315,18 +315,18 @@ type WorkforceIntegrationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetApiVersion()(*int32)
     GetDisplayName()(*string)
-    GetEligibilityFilteringEnabledEntities()(*EligibilityFilteringEnabledEntities)
+    GetEligibilityFilteringEnabledEntities()(*WorkforceIntegration_eligibilityFilteringEnabledEntities)
     GetEncryption()(WorkforceIntegrationEncryptionable)
     GetIsActive()(*bool)
-    GetSupportedEntities()(*WorkforceIntegrationSupportedEntities)
-    GetSupports()(*WorkforceIntegrationSupportedEntities)
+    GetSupportedEntities()(*WorkforceIntegration_supportedEntities)
+    GetSupports()(*WorkforceIntegration_supports)
     GetUrl()(*string)
     SetApiVersion(value *int32)()
     SetDisplayName(value *string)()
-    SetEligibilityFilteringEnabledEntities(value *EligibilityFilteringEnabledEntities)()
+    SetEligibilityFilteringEnabledEntities(value *WorkforceIntegration_eligibilityFilteringEnabledEntities)()
     SetEncryption(value WorkforceIntegrationEncryptionable)()
     SetIsActive(value *bool)()
-    SetSupportedEntities(value *WorkforceIntegrationSupportedEntities)()
-    SetSupports(value *WorkforceIntegrationSupportedEntities)()
+    SetSupportedEntities(value *WorkforceIntegration_supportedEntities)()
+    SetSupports(value *WorkforceIntegration_supports)()
     SetUrl(value *string)()
 }

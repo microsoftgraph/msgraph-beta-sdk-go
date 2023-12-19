@@ -35,13 +35,13 @@ func (m *AppleVpnAlwaysOnConfiguration) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAirPrintExceptionAction gets the airPrintExceptionAction property value. Determine whether AirPrint service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
-func (m *AppleVpnAlwaysOnConfiguration) GetAirPrintExceptionAction()(*VpnServiceExceptionAction) {
+func (m *AppleVpnAlwaysOnConfiguration) GetAirPrintExceptionAction()(*AppleVpnAlwaysOnConfiguration_airPrintExceptionAction) {
     val, err := m.GetBackingStore().Get("airPrintExceptionAction")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*VpnServiceExceptionAction)
+        return val.(*AppleVpnAlwaysOnConfiguration_airPrintExceptionAction)
     }
     return nil
 }
@@ -83,13 +83,13 @@ func (m *AppleVpnAlwaysOnConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3
     return m.backingStore
 }
 // GetCellularExceptionAction gets the cellularExceptionAction property value. Determine whether Cellular service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
-func (m *AppleVpnAlwaysOnConfiguration) GetCellularExceptionAction()(*VpnServiceExceptionAction) {
+func (m *AppleVpnAlwaysOnConfiguration) GetCellularExceptionAction()(*AppleVpnAlwaysOnConfiguration_cellularExceptionAction) {
     val, err := m.GetBackingStore().Get("cellularExceptionAction")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*VpnServiceExceptionAction)
+        return val.(*AppleVpnAlwaysOnConfiguration_cellularExceptionAction)
     }
     return nil
 }
@@ -97,12 +97,12 @@ func (m *AppleVpnAlwaysOnConfiguration) GetCellularExceptionAction()(*VpnService
 func (m *AppleVpnAlwaysOnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["airPrintExceptionAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVpnServiceExceptionAction)
+        val, err := n.GetEnumValue(ParseAppleVpnAlwaysOnConfiguration_airPrintExceptionAction)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAirPrintExceptionAction(val.(*VpnServiceExceptionAction))
+            m.SetAirPrintExceptionAction(val.(*AppleVpnAlwaysOnConfiguration_airPrintExceptionAction))
         }
         return nil
     }
@@ -137,12 +137,12 @@ func (m *AppleVpnAlwaysOnConfiguration) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["cellularExceptionAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVpnServiceExceptionAction)
+        val, err := n.GetEnumValue(ParseAppleVpnAlwaysOnConfiguration_cellularExceptionAction)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCellularExceptionAction(val.(*VpnServiceExceptionAction))
+            m.SetCellularExceptionAction(val.(*AppleVpnAlwaysOnConfiguration_cellularExceptionAction))
         }
         return nil
     }
@@ -197,12 +197,12 @@ func (m *AppleVpnAlwaysOnConfiguration) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["voicemailExceptionAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVpnServiceExceptionAction)
+        val, err := n.GetEnumValue(ParseAppleVpnAlwaysOnConfiguration_voicemailExceptionAction)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVoicemailExceptionAction(val.(*VpnServiceExceptionAction))
+            m.SetVoicemailExceptionAction(val.(*AppleVpnAlwaysOnConfiguration_voicemailExceptionAction))
         }
         return nil
     }
@@ -264,13 +264,13 @@ func (m *AppleVpnAlwaysOnConfiguration) GetUserToggleEnabled()(*bool) {
     return nil
 }
 // GetVoicemailExceptionAction gets the voicemailExceptionAction property value. Determine whether voicemail service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
-func (m *AppleVpnAlwaysOnConfiguration) GetVoicemailExceptionAction()(*VpnServiceExceptionAction) {
+func (m *AppleVpnAlwaysOnConfiguration) GetVoicemailExceptionAction()(*AppleVpnAlwaysOnConfiguration_voicemailExceptionAction) {
     val, err := m.GetBackingStore().Get("voicemailExceptionAction")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*VpnServiceExceptionAction)
+        return val.(*AppleVpnAlwaysOnConfiguration_voicemailExceptionAction)
     }
     return nil
 }
@@ -362,7 +362,7 @@ func (m *AppleVpnAlwaysOnConfiguration) SetAdditionalData(value map[string]any)(
     }
 }
 // SetAirPrintExceptionAction sets the airPrintExceptionAction property value. Determine whether AirPrint service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
-func (m *AppleVpnAlwaysOnConfiguration) SetAirPrintExceptionAction(value *VpnServiceExceptionAction)() {
+func (m *AppleVpnAlwaysOnConfiguration) SetAirPrintExceptionAction(value *AppleVpnAlwaysOnConfiguration_airPrintExceptionAction)() {
     err := m.GetBackingStore().Set("airPrintExceptionAction", value)
     if err != nil {
         panic(err)
@@ -394,7 +394,7 @@ func (m *AppleVpnAlwaysOnConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22
     m.backingStore = value
 }
 // SetCellularExceptionAction sets the cellularExceptionAction property value. Determine whether Cellular service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
-func (m *AppleVpnAlwaysOnConfiguration) SetCellularExceptionAction(value *VpnServiceExceptionAction)() {
+func (m *AppleVpnAlwaysOnConfiguration) SetCellularExceptionAction(value *AppleVpnAlwaysOnConfiguration_cellularExceptionAction)() {
     err := m.GetBackingStore().Set("cellularExceptionAction", value)
     if err != nil {
         panic(err)
@@ -436,7 +436,7 @@ func (m *AppleVpnAlwaysOnConfiguration) SetUserToggleEnabled(value *bool)() {
     }
 }
 // SetVoicemailExceptionAction sets the voicemailExceptionAction property value. Determine whether voicemail service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
-func (m *AppleVpnAlwaysOnConfiguration) SetVoicemailExceptionAction(value *VpnServiceExceptionAction)() {
+func (m *AppleVpnAlwaysOnConfiguration) SetVoicemailExceptionAction(value *AppleVpnAlwaysOnConfiguration_voicemailExceptionAction)() {
     err := m.GetBackingStore().Set("voicemailExceptionAction", value)
     if err != nil {
         panic(err)
@@ -447,28 +447,28 @@ type AppleVpnAlwaysOnConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAirPrintExceptionAction()(*VpnServiceExceptionAction)
+    GetAirPrintExceptionAction()(*AppleVpnAlwaysOnConfiguration_airPrintExceptionAction)
     GetAllowAllCaptiveNetworkPlugins()(*bool)
     GetAllowCaptiveWebSheet()(*bool)
     GetAllowedCaptiveNetworkPlugins()(SpecifiedCaptiveNetworkPluginsable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetCellularExceptionAction()(*VpnServiceExceptionAction)
+    GetCellularExceptionAction()(*AppleVpnAlwaysOnConfiguration_cellularExceptionAction)
     GetNatKeepAliveIntervalInSeconds()(*int32)
     GetNatKeepAliveOffloadEnable()(*bool)
     GetOdataType()(*string)
     GetTunnelConfiguration()(*VpnTunnelConfigurationType)
     GetUserToggleEnabled()(*bool)
-    GetVoicemailExceptionAction()(*VpnServiceExceptionAction)
-    SetAirPrintExceptionAction(value *VpnServiceExceptionAction)()
+    GetVoicemailExceptionAction()(*AppleVpnAlwaysOnConfiguration_voicemailExceptionAction)
+    SetAirPrintExceptionAction(value *AppleVpnAlwaysOnConfiguration_airPrintExceptionAction)()
     SetAllowAllCaptiveNetworkPlugins(value *bool)()
     SetAllowCaptiveWebSheet(value *bool)()
     SetAllowedCaptiveNetworkPlugins(value SpecifiedCaptiveNetworkPluginsable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetCellularExceptionAction(value *VpnServiceExceptionAction)()
+    SetCellularExceptionAction(value *AppleVpnAlwaysOnConfiguration_cellularExceptionAction)()
     SetNatKeepAliveIntervalInSeconds(value *int32)()
     SetNatKeepAliveOffloadEnable(value *bool)()
     SetOdataType(value *string)()
     SetTunnelConfiguration(value *VpnTunnelConfigurationType)()
     SetUserToggleEnabled(value *bool)()
-    SetVoicemailExceptionAction(value *VpnServiceExceptionAction)()
+    SetVoicemailExceptionAction(value *AppleVpnAlwaysOnConfiguration_voicemailExceptionAction)()
 }

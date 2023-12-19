@@ -241,12 +241,12 @@ func (m *AndroidEasEmailProfileConfiguration) GetFieldDeserializers()(map[string
         return nil
     }
     res["userDomainNameSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDomainNameSource)
+        val, err := n.GetEnumValue(ParseAndroidEasEmailProfileConfiguration_userDomainNameSource)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUserDomainNameSource(val.(*DomainNameSource))
+            m.SetUserDomainNameSource(val.(*AndroidEasEmailProfileConfiguration_userDomainNameSource))
         }
         return nil
     }
@@ -362,13 +362,13 @@ func (m *AndroidEasEmailProfileConfiguration) GetSyncTasks()(*bool) {
     return nil
 }
 // GetUserDomainNameSource gets the userDomainNameSource property value. UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.
-func (m *AndroidEasEmailProfileConfiguration) GetUserDomainNameSource()(*DomainNameSource) {
+func (m *AndroidEasEmailProfileConfiguration) GetUserDomainNameSource()(*AndroidEasEmailProfileConfiguration_userDomainNameSource) {
     val, err := m.GetBackingStore().Get("userDomainNameSource")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DomainNameSource)
+        return val.(*AndroidEasEmailProfileConfiguration_userDomainNameSource)
     }
     return nil
 }
@@ -605,7 +605,7 @@ func (m *AndroidEasEmailProfileConfiguration) SetSyncTasks(value *bool)() {
     }
 }
 // SetUserDomainNameSource sets the userDomainNameSource property value. UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.
-func (m *AndroidEasEmailProfileConfiguration) SetUserDomainNameSource(value *DomainNameSource)() {
+func (m *AndroidEasEmailProfileConfiguration) SetUserDomainNameSource(value *AndroidEasEmailProfileConfiguration_userDomainNameSource)() {
     err := m.GetBackingStore().Set("userDomainNameSource", value)
     if err != nil {
         panic(err)
@@ -637,7 +637,7 @@ type AndroidEasEmailProfileConfigurationable interface {
     GetSyncContacts()(*bool)
     GetSyncNotes()(*bool)
     GetSyncTasks()(*bool)
-    GetUserDomainNameSource()(*DomainNameSource)
+    GetUserDomainNameSource()(*AndroidEasEmailProfileConfiguration_userDomainNameSource)
     GetUsernameSource()(*AndroidUsernameSource)
     SetAccountName(value *string)()
     SetAuthenticationMethod(value *EasAuthenticationMethod)()
@@ -654,6 +654,6 @@ type AndroidEasEmailProfileConfigurationable interface {
     SetSyncContacts(value *bool)()
     SetSyncNotes(value *bool)()
     SetSyncTasks(value *bool)()
-    SetUserDomainNameSource(value *DomainNameSource)()
+    SetUserDomainNameSource(value *AndroidEasEmailProfileConfiguration_userDomainNameSource)()
     SetUsernameSource(value *AndroidUsernameSource)()
 }

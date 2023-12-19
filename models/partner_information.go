@@ -61,13 +61,13 @@ func (m *PartnerInformation) GetCompanyName()(*string) {
     return nil
 }
 // GetCompanyType gets the companyType property value. The companyType property
-func (m *PartnerInformation) GetCompanyType()(*PartnerTenantType) {
+func (m *PartnerInformation) GetCompanyType()(*PartnerInformation_companyType) {
     val, err := m.GetBackingStore().Get("companyType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PartnerTenantType)
+        return val.(*PartnerInformation_companyType)
     }
     return nil
 }
@@ -95,12 +95,12 @@ func (m *PartnerInformation) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["companyType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePartnerTenantType)
+        val, err := n.GetEnumValue(ParsePartnerInformation_companyType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCompanyType(val.(*PartnerTenantType))
+            m.SetCompanyType(val.(*PartnerInformation_companyType))
         }
         return nil
     }
@@ -335,7 +335,7 @@ func (m *PartnerInformation) SetCompanyName(value *string)() {
     }
 }
 // SetCompanyType sets the companyType property value. The companyType property
-func (m *PartnerInformation) SetCompanyType(value *PartnerTenantType)() {
+func (m *PartnerInformation) SetCompanyType(value *PartnerInformation_companyType)() {
     err := m.GetBackingStore().Set("companyType", value)
     if err != nil {
         panic(err)
@@ -391,7 +391,7 @@ type PartnerInformationable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCommerceUrl()(*string)
     GetCompanyName()(*string)
-    GetCompanyType()(*PartnerTenantType)
+    GetCompanyType()(*PartnerInformation_companyType)
     GetHelpUrl()(*string)
     GetOdataType()(*string)
     GetPartnerTenantId()(*string)
@@ -401,7 +401,7 @@ type PartnerInformationable interface {
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCommerceUrl(value *string)()
     SetCompanyName(value *string)()
-    SetCompanyType(value *PartnerTenantType)()
+    SetCompanyType(value *PartnerInformation_companyType)()
     SetHelpUrl(value *string)()
     SetOdataType(value *string)()
     SetPartnerTenantId(value *string)()

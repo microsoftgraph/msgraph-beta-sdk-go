@@ -20,13 +20,13 @@ func CreateVirtualEventWebinarFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewVirtualEventWebinar(), nil
 }
 // GetAudience gets the audience property value. To whom the webinar is visible.
-func (m *VirtualEventWebinar) GetAudience()(*MeetingAudience) {
+func (m *VirtualEventWebinar) GetAudience()(*VirtualEventWebinar_audience) {
     val, err := m.GetBackingStore().Get("audience")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MeetingAudience)
+        return val.(*VirtualEventWebinar_audience)
     }
     return nil
 }
@@ -45,12 +45,12 @@ func (m *VirtualEventWebinar) GetCoOrganizers()([]CommunicationsUserIdentityable
 func (m *VirtualEventWebinar) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.VirtualEvent.GetFieldDeserializers()
     res["audience"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMeetingAudience)
+        val, err := n.GetEnumValue(ParseVirtualEventWebinar_audience)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAudience(val.(*MeetingAudience))
+            m.SetAudience(val.(*VirtualEventWebinar_audience))
         }
         return nil
     }
@@ -166,7 +166,7 @@ func (m *VirtualEventWebinar) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetAudience sets the audience property value. To whom the webinar is visible.
-func (m *VirtualEventWebinar) SetAudience(value *MeetingAudience)() {
+func (m *VirtualEventWebinar) SetAudience(value *VirtualEventWebinar_audience)() {
     err := m.GetBackingStore().Set("audience", value)
     if err != nil {
         panic(err)
@@ -197,11 +197,11 @@ func (m *VirtualEventWebinar) SetRegistrations(value []VirtualEventRegistrationa
 type VirtualEventWebinarable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     VirtualEventable
-    GetAudience()(*MeetingAudience)
+    GetAudience()(*VirtualEventWebinar_audience)
     GetCoOrganizers()([]CommunicationsUserIdentityable)
     GetRegistrationConfiguration()(VirtualEventWebinarRegistrationConfigurationable)
     GetRegistrations()([]VirtualEventRegistrationable)
-    SetAudience(value *MeetingAudience)()
+    SetAudience(value *VirtualEventWebinar_audience)()
     SetCoOrganizers(value []CommunicationsUserIdentityable)()
     SetRegistrationConfiguration(value VirtualEventWebinarRegistrationConfigurationable)()
     SetRegistrations(value []VirtualEventRegistrationable)()

@@ -389,12 +389,12 @@ func (m *Team) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         return nil
     }
     res["specialization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTeamSpecialization)
+        val, err := n.GetEnumValue(ParseTeam_specialization)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSpecialization(val.(*TeamSpecialization))
+            m.SetSpecialization(val.(*Team_specialization))
         }
         return nil
     }
@@ -455,12 +455,12 @@ func (m *Team) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         return nil
     }
     res["visibility"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTeamVisibilityType)
+        val, err := n.GetEnumValue(ParseTeam_visibility)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVisibility(val.(*TeamVisibilityType))
+            m.SetVisibility(val.(*Team_visibility))
         }
         return nil
     }
@@ -664,13 +664,13 @@ func (m *Team) GetSchedule()(Scheduleable) {
     return nil
 }
 // GetSpecialization gets the specialization property value. Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.
-func (m *Team) GetSpecialization()(*TeamSpecialization) {
+func (m *Team) GetSpecialization()(*Team_specialization) {
     val, err := m.GetBackingStore().Get("specialization")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TeamSpecialization)
+        return val.(*Team_specialization)
     }
     return nil
 }
@@ -730,13 +730,13 @@ func (m *Team) GetTenantId()(*string) {
     return nil
 }
 // GetVisibility gets the visibility property value. The visibility of the group and team. Defaults to Public.
-func (m *Team) GetVisibility()(*TeamVisibilityType) {
+func (m *Team) GetVisibility()(*Team_visibility) {
     val, err := m.GetBackingStore().Get("visibility")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TeamVisibilityType)
+        return val.(*Team_visibility)
     }
     return nil
 }
@@ -1176,7 +1176,7 @@ func (m *Team) SetSchedule(value Scheduleable)() {
     }
 }
 // SetSpecialization sets the specialization property value. Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.
-func (m *Team) SetSpecialization(value *TeamSpecialization)() {
+func (m *Team) SetSpecialization(value *Team_specialization)() {
     err := m.GetBackingStore().Set("specialization", value)
     if err != nil {
         panic(err)
@@ -1218,7 +1218,7 @@ func (m *Team) SetTenantId(value *string)() {
     }
 }
 // SetVisibility sets the visibility property value. The visibility of the group and team. Defaults to Public.
-func (m *Team) SetVisibility(value *TeamVisibilityType)() {
+func (m *Team) SetVisibility(value *Team_visibility)() {
     err := m.GetBackingStore().Set("visibility", value)
     if err != nil {
         panic(err)
@@ -1259,13 +1259,13 @@ type Teamable interface {
     GetPhoto()(ProfilePhotoable)
     GetPrimaryChannel()(Channelable)
     GetSchedule()(Scheduleable)
-    GetSpecialization()(*TeamSpecialization)
+    GetSpecialization()(*Team_specialization)
     GetSummary()(TeamSummaryable)
     GetTags()([]TeamworkTagable)
     GetTemplate()(TeamsTemplateable)
     GetTemplateDefinition()(TeamTemplateDefinitionable)
     GetTenantId()(*string)
-    GetVisibility()(*TeamVisibilityType)
+    GetVisibility()(*Team_visibility)
     GetWebUrl()(*string)
     SetAllChannels(value []Channelable)()
     SetChannels(value []Channelable)()
@@ -1291,12 +1291,12 @@ type Teamable interface {
     SetPhoto(value ProfilePhotoable)()
     SetPrimaryChannel(value Channelable)()
     SetSchedule(value Scheduleable)()
-    SetSpecialization(value *TeamSpecialization)()
+    SetSpecialization(value *Team_specialization)()
     SetSummary(value TeamSummaryable)()
     SetTags(value []TeamworkTagable)()
     SetTemplate(value TeamsTemplateable)()
     SetTemplateDefinition(value TeamTemplateDefinitionable)()
     SetTenantId(value *string)()
-    SetVisibility(value *TeamVisibilityType)()
+    SetVisibility(value *Team_visibility)()
     SetWebUrl(value *string)()
 }

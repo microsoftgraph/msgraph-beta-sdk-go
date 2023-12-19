@@ -35,13 +35,13 @@ func (m *CloudPcRemoteActionResult) GetActionName()(*string) {
     return nil
 }
 // GetActionState gets the actionState property value. State of the action. Possible values are: None, pending, canceled, active, done, failed, notSupported. Read-only.
-func (m *CloudPcRemoteActionResult) GetActionState()(*ActionState) {
+func (m *CloudPcRemoteActionResult) GetActionState()(*CloudPcRemoteActionResult_actionState) {
     val, err := m.GetBackingStore().Get("actionState")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ActionState)
+        return val.(*CloudPcRemoteActionResult_actionState)
     }
     return nil
 }
@@ -86,12 +86,12 @@ func (m *CloudPcRemoteActionResult) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     res["actionState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseActionState)
+        val, err := n.GetEnumValue(ParseCloudPcRemoteActionResult_actionState)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetActionState(val.(*ActionState))
+            m.SetActionState(val.(*CloudPcRemoteActionResult_actionState))
         }
         return nil
     }
@@ -279,7 +279,7 @@ func (m *CloudPcRemoteActionResult) SetActionName(value *string)() {
     }
 }
 // SetActionState sets the actionState property value. State of the action. Possible values are: None, pending, canceled, active, done, failed, notSupported. Read-only.
-func (m *CloudPcRemoteActionResult) SetActionState(value *ActionState)() {
+func (m *CloudPcRemoteActionResult) SetActionState(value *CloudPcRemoteActionResult_actionState)() {
     err := m.GetBackingStore().Set("actionState", value)
     if err != nil {
         panic(err)
@@ -344,7 +344,7 @@ type CloudPcRemoteActionResultable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetActionName()(*string)
-    GetActionState()(*ActionState)
+    GetActionState()(*CloudPcRemoteActionResult_actionState)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCloudPcId()(*string)
     GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -353,7 +353,7 @@ type CloudPcRemoteActionResultable interface {
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetStatusDetails()(CloudPcStatusDetailsable)
     SetActionName(value *string)()
-    SetActionState(value *ActionState)()
+    SetActionState(value *CloudPcRemoteActionResult_actionState)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCloudPcId(value *string)()
     SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

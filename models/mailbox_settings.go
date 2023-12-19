@@ -72,13 +72,13 @@ func (m *MailboxSettings) GetDateFormat()(*string) {
     return nil
 }
 // GetDelegateMeetingMessageDeliveryOptions gets the delegateMeetingMessageDeliveryOptions property value. If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly. The default is sendToDelegateOnly.
-func (m *MailboxSettings) GetDelegateMeetingMessageDeliveryOptions()(*DelegateMeetingMessageDeliveryOptions) {
+func (m *MailboxSettings) GetDelegateMeetingMessageDeliveryOptions()(*MailboxSettings_delegateMeetingMessageDeliveryOptions) {
     val, err := m.GetBackingStore().Get("delegateMeetingMessageDeliveryOptions")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DelegateMeetingMessageDeliveryOptions)
+        return val.(*MailboxSettings_delegateMeetingMessageDeliveryOptions)
     }
     return nil
 }
@@ -116,12 +116,12 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     res["delegateMeetingMessageDeliveryOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDelegateMeetingMessageDeliveryOptions)
+        val, err := n.GetEnumValue(ParseMailboxSettings_delegateMeetingMessageDeliveryOptions)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDelegateMeetingMessageDeliveryOptions(val.(*DelegateMeetingMessageDeliveryOptions))
+            m.SetDelegateMeetingMessageDeliveryOptions(val.(*MailboxSettings_delegateMeetingMessageDeliveryOptions))
         }
         return nil
     }
@@ -166,22 +166,22 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     res["userPurpose"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseUserPurpose)
+        val, err := n.GetEnumValue(ParseMailboxSettings_userPurpose)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUserPurpose(val.(*UserPurpose))
+            m.SetUserPurpose(val.(*MailboxSettings_userPurpose))
         }
         return nil
     }
     res["userPurposeV2"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMailboxRecipientType)
+        val, err := n.GetEnumValue(ParseMailboxSettings_userPurposeV2)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUserPurposeV2(val.(*MailboxRecipientType))
+            m.SetUserPurposeV2(val.(*MailboxSettings_userPurposeV2))
         }
         return nil
     }
@@ -242,24 +242,24 @@ func (m *MailboxSettings) GetTimeZone()(*string) {
     return nil
 }
 // GetUserPurpose gets the userPurpose property value. The purpose of the mailbox. Differentiates a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Possible values are: user, linked, shared, room, equipment, others, unknownFutureValue. Read-only.
-func (m *MailboxSettings) GetUserPurpose()(*UserPurpose) {
+func (m *MailboxSettings) GetUserPurpose()(*MailboxSettings_userPurpose) {
     val, err := m.GetBackingStore().Get("userPurpose")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*UserPurpose)
+        return val.(*MailboxSettings_userPurpose)
     }
     return nil
 }
 // GetUserPurposeV2 gets the userPurposeV2 property value. The userPurposeV2 property
-func (m *MailboxSettings) GetUserPurposeV2()(*MailboxRecipientType) {
+func (m *MailboxSettings) GetUserPurposeV2()(*MailboxSettings_userPurposeV2) {
     val, err := m.GetBackingStore().Get("userPurposeV2")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MailboxRecipientType)
+        return val.(*MailboxSettings_userPurposeV2)
     }
     return nil
 }
@@ -386,7 +386,7 @@ func (m *MailboxSettings) SetDateFormat(value *string)() {
     }
 }
 // SetDelegateMeetingMessageDeliveryOptions sets the delegateMeetingMessageDeliveryOptions property value. If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly. The default is sendToDelegateOnly.
-func (m *MailboxSettings) SetDelegateMeetingMessageDeliveryOptions(value *DelegateMeetingMessageDeliveryOptions)() {
+func (m *MailboxSettings) SetDelegateMeetingMessageDeliveryOptions(value *MailboxSettings_delegateMeetingMessageDeliveryOptions)() {
     err := m.GetBackingStore().Set("delegateMeetingMessageDeliveryOptions", value)
     if err != nil {
         panic(err)
@@ -421,14 +421,14 @@ func (m *MailboxSettings) SetTimeZone(value *string)() {
     }
 }
 // SetUserPurpose sets the userPurpose property value. The purpose of the mailbox. Differentiates a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Possible values are: user, linked, shared, room, equipment, others, unknownFutureValue. Read-only.
-func (m *MailboxSettings) SetUserPurpose(value *UserPurpose)() {
+func (m *MailboxSettings) SetUserPurpose(value *MailboxSettings_userPurpose)() {
     err := m.GetBackingStore().Set("userPurpose", value)
     if err != nil {
         panic(err)
     }
 }
 // SetUserPurposeV2 sets the userPurposeV2 property value. The userPurposeV2 property
-func (m *MailboxSettings) SetUserPurposeV2(value *MailboxRecipientType)() {
+func (m *MailboxSettings) SetUserPurposeV2(value *MailboxSettings_userPurposeV2)() {
     err := m.GetBackingStore().Set("userPurposeV2", value)
     if err != nil {
         panic(err)
@@ -450,24 +450,24 @@ type MailboxSettingsable interface {
     GetAutomaticRepliesSetting()(AutomaticRepliesSettingable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDateFormat()(*string)
-    GetDelegateMeetingMessageDeliveryOptions()(*DelegateMeetingMessageDeliveryOptions)
+    GetDelegateMeetingMessageDeliveryOptions()(*MailboxSettings_delegateMeetingMessageDeliveryOptions)
     GetLanguage()(LocaleInfoable)
     GetOdataType()(*string)
     GetTimeFormat()(*string)
     GetTimeZone()(*string)
-    GetUserPurpose()(*UserPurpose)
-    GetUserPurposeV2()(*MailboxRecipientType)
+    GetUserPurpose()(*MailboxSettings_userPurpose)
+    GetUserPurposeV2()(*MailboxSettings_userPurposeV2)
     GetWorkingHours()(WorkingHoursable)
     SetArchiveFolder(value *string)()
     SetAutomaticRepliesSetting(value AutomaticRepliesSettingable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDateFormat(value *string)()
-    SetDelegateMeetingMessageDeliveryOptions(value *DelegateMeetingMessageDeliveryOptions)()
+    SetDelegateMeetingMessageDeliveryOptions(value *MailboxSettings_delegateMeetingMessageDeliveryOptions)()
     SetLanguage(value LocaleInfoable)()
     SetOdataType(value *string)()
     SetTimeFormat(value *string)()
     SetTimeZone(value *string)()
-    SetUserPurpose(value *UserPurpose)()
-    SetUserPurposeV2(value *MailboxRecipientType)()
+    SetUserPurpose(value *MailboxSettings_userPurpose)()
+    SetUserPurposeV2(value *MailboxSettings_userPurposeV2)()
     SetWorkingHours(value WorkingHoursable)()
 }

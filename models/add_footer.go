@@ -22,13 +22,13 @@ func CreateAddFooterFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
     return NewAddFooter(), nil
 }
 // GetAlignment gets the alignment property value. The alignment property
-func (m *AddFooter) GetAlignment()(*Alignment) {
+func (m *AddFooter) GetAlignment()(*AddFooter_alignment) {
     val, err := m.GetBackingStore().Get("alignment")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*Alignment)
+        return val.(*AddFooter_alignment)
     }
     return nil
 }
@@ -36,12 +36,12 @@ func (m *AddFooter) GetAlignment()(*Alignment) {
 func (m *AddFooter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MarkContent.GetFieldDeserializers()
     res["alignment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAlignment)
+        val, err := n.GetEnumValue(ParseAddFooter_alignment)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAlignment(val.(*Alignment))
+            m.SetAlignment(val.(*AddFooter_alignment))
         }
         return nil
     }
@@ -90,7 +90,7 @@ func (m *AddFooter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     return nil
 }
 // SetAlignment sets the alignment property value. The alignment property
-func (m *AddFooter) SetAlignment(value *Alignment)() {
+func (m *AddFooter) SetAlignment(value *AddFooter_alignment)() {
     err := m.GetBackingStore().Set("alignment", value)
     if err != nil {
         panic(err)
@@ -107,8 +107,8 @@ func (m *AddFooter) SetMargin(value *int32)() {
 type AddFooterable interface {
     MarkContentable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAlignment()(*Alignment)
+    GetAlignment()(*AddFooter_alignment)
     GetMargin()(*int32)
-    SetAlignment(value *Alignment)()
+    SetAlignment(value *AddFooter_alignment)()
     SetMargin(value *int32)()
 }

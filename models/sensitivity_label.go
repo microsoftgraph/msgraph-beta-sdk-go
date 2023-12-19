@@ -20,24 +20,24 @@ func CreateSensitivityLabelFromDiscriminatorValue(parseNode i878a80d2330e89d2689
     return NewSensitivityLabel(), nil
 }
 // GetApplicableTo gets the applicableTo property value. The applicableTo property
-func (m *SensitivityLabel) GetApplicableTo()(*SensitivityLabelTarget) {
+func (m *SensitivityLabel) GetApplicableTo()(*SensitivityLabel_applicableTo) {
     val, err := m.GetBackingStore().Get("applicableTo")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SensitivityLabelTarget)
+        return val.(*SensitivityLabel_applicableTo)
     }
     return nil
 }
 // GetApplicationMode gets the applicationMode property value. The applicationMode property
-func (m *SensitivityLabel) GetApplicationMode()(*ApplicationMode) {
+func (m *SensitivityLabel) GetApplicationMode()(*SensitivityLabel_applicationMode) {
     val, err := m.GetBackingStore().Get("applicationMode")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ApplicationMode)
+        return val.(*SensitivityLabel_applicationMode)
     }
     return nil
 }
@@ -89,22 +89,22 @@ func (m *SensitivityLabel) GetDisplayName()(*string) {
 func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["applicableTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSensitivityLabelTarget)
+        val, err := n.GetEnumValue(ParseSensitivityLabel_applicableTo)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetApplicableTo(val.(*SensitivityLabelTarget))
+            m.SetApplicableTo(val.(*SensitivityLabel_applicableTo))
         }
         return nil
     }
     res["applicationMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseApplicationMode)
+        val, err := n.GetEnumValue(ParseSensitivityLabel_applicationMode)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetApplicationMode(val.(*ApplicationMode))
+            m.SetApplicationMode(val.(*SensitivityLabel_applicationMode))
         }
         return nil
     }
@@ -422,14 +422,14 @@ func (m *SensitivityLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     return nil
 }
 // SetApplicableTo sets the applicableTo property value. The applicableTo property
-func (m *SensitivityLabel) SetApplicableTo(value *SensitivityLabelTarget)() {
+func (m *SensitivityLabel) SetApplicableTo(value *SensitivityLabel_applicableTo)() {
     err := m.GetBackingStore().Set("applicableTo", value)
     if err != nil {
         panic(err)
     }
 }
 // SetApplicationMode sets the applicationMode property value. The applicationMode property
-func (m *SensitivityLabel) SetApplicationMode(value *ApplicationMode)() {
+func (m *SensitivityLabel) SetApplicationMode(value *SensitivityLabel_applicationMode)() {
     err := m.GetBackingStore().Set("applicationMode", value)
     if err != nil {
         panic(err)
@@ -516,8 +516,8 @@ func (m *SensitivityLabel) SetToolTip(value *string)() {
 type SensitivityLabelable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetApplicableTo()(*SensitivityLabelTarget)
-    GetApplicationMode()(*ApplicationMode)
+    GetApplicableTo()(*SensitivityLabel_applicableTo)
+    GetApplicationMode()(*SensitivityLabel_applicationMode)
     GetAssignedPolicies()([]LabelPolicyable)
     GetAutoLabeling()(AutoLabelingable)
     GetDescription()(*string)
@@ -529,8 +529,8 @@ type SensitivityLabelable interface {
     GetPriority()(*int32)
     GetSublabels()([]SensitivityLabelable)
     GetToolTip()(*string)
-    SetApplicableTo(value *SensitivityLabelTarget)()
-    SetApplicationMode(value *ApplicationMode)()
+    SetApplicableTo(value *SensitivityLabel_applicableTo)()
+    SetApplicationMode(value *SensitivityLabel_applicationMode)()
     SetAssignedPolicies(value []LabelPolicyable)()
     SetAutoLabeling(value AutoLabelingable)()
     SetDescription(value *string)()

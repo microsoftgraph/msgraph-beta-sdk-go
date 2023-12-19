@@ -136,22 +136,22 @@ func (m *AndroidDeviceOwnerCertificateProfileBase) GetFieldDeserializers()(map[s
         return nil
     }
     res["subjectAlternativeNameType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSubjectAlternativeNameType)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerCertificateProfileBase_subjectAlternativeNameType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSubjectAlternativeNameType(val.(*SubjectAlternativeNameType))
+            m.SetSubjectAlternativeNameType(val.(*AndroidDeviceOwnerCertificateProfileBase_subjectAlternativeNameType))
         }
         return nil
     }
     res["subjectNameFormat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSubjectNameFormat)
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerCertificateProfileBase_subjectNameFormat)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSubjectNameFormat(val.(*SubjectNameFormat))
+            m.SetSubjectNameFormat(val.(*AndroidDeviceOwnerCertificateProfileBase_subjectNameFormat))
         }
         return nil
     }
@@ -180,24 +180,24 @@ func (m *AndroidDeviceOwnerCertificateProfileBase) GetRootCertificate()(AndroidD
     return nil
 }
 // GetSubjectAlternativeNameType gets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
-func (m *AndroidDeviceOwnerCertificateProfileBase) GetSubjectAlternativeNameType()(*SubjectAlternativeNameType) {
+func (m *AndroidDeviceOwnerCertificateProfileBase) GetSubjectAlternativeNameType()(*AndroidDeviceOwnerCertificateProfileBase_subjectAlternativeNameType) {
     val, err := m.GetBackingStore().Get("subjectAlternativeNameType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SubjectAlternativeNameType)
+        return val.(*AndroidDeviceOwnerCertificateProfileBase_subjectAlternativeNameType)
     }
     return nil
 }
 // GetSubjectNameFormat gets the subjectNameFormat property value. Certificate Subject Name Format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
-func (m *AndroidDeviceOwnerCertificateProfileBase) GetSubjectNameFormat()(*SubjectNameFormat) {
+func (m *AndroidDeviceOwnerCertificateProfileBase) GetSubjectNameFormat()(*AndroidDeviceOwnerCertificateProfileBase_subjectNameFormat) {
     val, err := m.GetBackingStore().Get("subjectNameFormat")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SubjectNameFormat)
+        return val.(*AndroidDeviceOwnerCertificateProfileBase_subjectNameFormat)
     }
     return nil
 }
@@ -296,14 +296,14 @@ func (m *AndroidDeviceOwnerCertificateProfileBase) SetRootCertificate(value Andr
     }
 }
 // SetSubjectAlternativeNameType sets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
-func (m *AndroidDeviceOwnerCertificateProfileBase) SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)() {
+func (m *AndroidDeviceOwnerCertificateProfileBase) SetSubjectAlternativeNameType(value *AndroidDeviceOwnerCertificateProfileBase_subjectAlternativeNameType)() {
     err := m.GetBackingStore().Set("subjectAlternativeNameType", value)
     if err != nil {
         panic(err)
     }
 }
 // SetSubjectNameFormat sets the subjectNameFormat property value. Certificate Subject Name Format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
-func (m *AndroidDeviceOwnerCertificateProfileBase) SetSubjectNameFormat(value *SubjectNameFormat)() {
+func (m *AndroidDeviceOwnerCertificateProfileBase) SetSubjectNameFormat(value *AndroidDeviceOwnerCertificateProfileBase_subjectNameFormat)() {
     err := m.GetBackingStore().Set("subjectNameFormat", value)
     if err != nil {
         panic(err)
@@ -318,13 +318,13 @@ type AndroidDeviceOwnerCertificateProfileBaseable interface {
     GetExtendedKeyUsages()([]ExtendedKeyUsageable)
     GetRenewalThresholdPercentage()(*int32)
     GetRootCertificate()(AndroidDeviceOwnerTrustedRootCertificateable)
-    GetSubjectAlternativeNameType()(*SubjectAlternativeNameType)
-    GetSubjectNameFormat()(*SubjectNameFormat)
+    GetSubjectAlternativeNameType()(*AndroidDeviceOwnerCertificateProfileBase_subjectAlternativeNameType)
+    GetSubjectNameFormat()(*AndroidDeviceOwnerCertificateProfileBase_subjectNameFormat)
     SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)()
     SetCertificateValidityPeriodValue(value *int32)()
     SetExtendedKeyUsages(value []ExtendedKeyUsageable)()
     SetRenewalThresholdPercentage(value *int32)()
     SetRootCertificate(value AndroidDeviceOwnerTrustedRootCertificateable)()
-    SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)()
-    SetSubjectNameFormat(value *SubjectNameFormat)()
+    SetSubjectAlternativeNameType(value *AndroidDeviceOwnerCertificateProfileBase_subjectAlternativeNameType)()
+    SetSubjectNameFormat(value *AndroidDeviceOwnerCertificateProfileBase_subjectNameFormat)()
 }

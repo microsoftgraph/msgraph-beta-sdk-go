@@ -20,13 +20,13 @@ func CreateUnifiedRoleDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewUnifiedRoleDefinition(), nil
 }
 // GetAllowedPrincipalTypes gets the allowedPrincipalTypes property value. Types of principals that can be assigned the role. Read-only. The possible values are: user, servicePrincipal, group, unknownFutureValue. This is a multi-valued enumeration that can contain up to three values as a comma-separated string. For example, user, group. Supports $filter (eq).
-func (m *UnifiedRoleDefinition) GetAllowedPrincipalTypes()(*AllowedRolePrincipalTypes) {
+func (m *UnifiedRoleDefinition) GetAllowedPrincipalTypes()(*UnifiedRoleDefinition_allowedPrincipalTypes) {
     val, err := m.GetBackingStore().Get("allowedPrincipalTypes")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AllowedRolePrincipalTypes)
+        return val.(*UnifiedRoleDefinition_allowedPrincipalTypes)
     }
     return nil
 }
@@ -56,12 +56,12 @@ func (m *UnifiedRoleDefinition) GetDisplayName()(*string) {
 func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["allowedPrincipalTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAllowedRolePrincipalTypes)
+        val, err := n.GetEnumValue(ParseUnifiedRoleDefinition_allowedPrincipalTypes)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAllowedPrincipalTypes(val.(*AllowedRolePrincipalTypes))
+            m.SetAllowedPrincipalTypes(val.(*UnifiedRoleDefinition_allowedPrincipalTypes))
         }
         return nil
     }
@@ -361,7 +361,7 @@ func (m *UnifiedRoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAllowedPrincipalTypes sets the allowedPrincipalTypes property value. Types of principals that can be assigned the role. Read-only. The possible values are: user, servicePrincipal, group, unknownFutureValue. This is a multi-valued enumeration that can contain up to three values as a comma-separated string. For example, user, group. Supports $filter (eq).
-func (m *UnifiedRoleDefinition) SetAllowedPrincipalTypes(value *AllowedRolePrincipalTypes)() {
+func (m *UnifiedRoleDefinition) SetAllowedPrincipalTypes(value *UnifiedRoleDefinition_allowedPrincipalTypes)() {
     err := m.GetBackingStore().Set("allowedPrincipalTypes", value)
     if err != nil {
         panic(err)
@@ -441,7 +441,7 @@ func (m *UnifiedRoleDefinition) SetVersion(value *string)() {
 type UnifiedRoleDefinitionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAllowedPrincipalTypes()(*AllowedRolePrincipalTypes)
+    GetAllowedPrincipalTypes()(*UnifiedRoleDefinition_allowedPrincipalTypes)
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetInheritsPermissionsFrom()([]UnifiedRoleDefinitionable)
@@ -452,7 +452,7 @@ type UnifiedRoleDefinitionable interface {
     GetRolePermissions()([]UnifiedRolePermissionable)
     GetTemplateId()(*string)
     GetVersion()(*string)
-    SetAllowedPrincipalTypes(value *AllowedRolePrincipalTypes)()
+    SetAllowedPrincipalTypes(value *UnifiedRoleDefinition_allowedPrincipalTypes)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetInheritsPermissionsFrom(value []UnifiedRoleDefinitionable)()

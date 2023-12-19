@@ -167,15 +167,15 @@ func (m *AuditLogQuery) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["recordTypeFilters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseAuditLogRecordType)
+        val, err := n.GetCollectionOfEnumValues(ParseAuditLogQuery_recordTypeFilters)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AuditLogRecordType, len(val))
+            res := make([]AuditLogQuery_recordTypeFilters, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*AuditLogRecordType))
+                    res[i] = *(v.(*AuditLogQuery_recordTypeFilters))
                 }
             }
             m.SetRecordTypeFilters(res)
@@ -199,12 +199,12 @@ func (m *AuditLogQuery) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAuditLogQueryStatus)
+        val, err := n.GetEnumValue(ParseAuditLogQuery_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*AuditLogQueryStatus))
+            m.SetStatus(val.(*AuditLogQuery_status))
         }
         return nil
     }
@@ -304,13 +304,13 @@ func (m *AuditLogQuery) GetRecords()([]AuditLogRecordable) {
     return nil
 }
 // GetRecordTypeFilters gets the recordTypeFilters property value. The recordTypeFilters property
-func (m *AuditLogQuery) GetRecordTypeFilters()([]AuditLogRecordType) {
+func (m *AuditLogQuery) GetRecordTypeFilters()([]AuditLogQuery_recordTypeFilters) {
     val, err := m.GetBackingStore().Get("recordTypeFilters")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]AuditLogRecordType)
+        return val.([]AuditLogQuery_recordTypeFilters)
     }
     return nil
 }
@@ -326,13 +326,13 @@ func (m *AuditLogQuery) GetServiceFilters()([]string) {
     return nil
 }
 // GetStatus gets the status property value. The status property
-func (m *AuditLogQuery) GetStatus()(*AuditLogQueryStatus) {
+func (m *AuditLogQuery) GetStatus()(*AuditLogQuery_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AuditLogQueryStatus)
+        return val.(*AuditLogQuery_status)
     }
     return nil
 }
@@ -414,7 +414,7 @@ func (m *AuditLogQuery) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     if m.GetRecordTypeFilters() != nil {
-        err = writer.WriteCollectionOfStringValues("recordTypeFilters", SerializeAuditLogRecordType(m.GetRecordTypeFilters()))
+        err = writer.WriteCollectionOfStringValues("recordTypeFilters", SerializeAuditLogQuery_recordTypeFilters(m.GetRecordTypeFilters()))
         if err != nil {
             return err
         }
@@ -504,7 +504,7 @@ func (m *AuditLogQuery) SetRecords(value []AuditLogRecordable)() {
     }
 }
 // SetRecordTypeFilters sets the recordTypeFilters property value. The recordTypeFilters property
-func (m *AuditLogQuery) SetRecordTypeFilters(value []AuditLogRecordType)() {
+func (m *AuditLogQuery) SetRecordTypeFilters(value []AuditLogQuery_recordTypeFilters)() {
     err := m.GetBackingStore().Set("recordTypeFilters", value)
     if err != nil {
         panic(err)
@@ -518,7 +518,7 @@ func (m *AuditLogQuery) SetServiceFilters(value []string)() {
     }
 }
 // SetStatus sets the status property value. The status property
-func (m *AuditLogQuery) SetStatus(value *AuditLogQueryStatus)() {
+func (m *AuditLogQuery) SetStatus(value *AuditLogQuery_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -544,9 +544,9 @@ type AuditLogQueryable interface {
     GetObjectIdFilters()([]string)
     GetOperationFilters()([]string)
     GetRecords()([]AuditLogRecordable)
-    GetRecordTypeFilters()([]AuditLogRecordType)
+    GetRecordTypeFilters()([]AuditLogQuery_recordTypeFilters)
     GetServiceFilters()([]string)
-    GetStatus()(*AuditLogQueryStatus)
+    GetStatus()(*AuditLogQuery_status)
     GetUserPrincipalNameFilters()([]string)
     SetAdministrativeUnitIdFilters(value []string)()
     SetDisplayName(value *string)()
@@ -557,8 +557,8 @@ type AuditLogQueryable interface {
     SetObjectIdFilters(value []string)()
     SetOperationFilters(value []string)()
     SetRecords(value []AuditLogRecordable)()
-    SetRecordTypeFilters(value []AuditLogRecordType)()
+    SetRecordTypeFilters(value []AuditLogQuery_recordTypeFilters)()
     SetServiceFilters(value []string)()
-    SetStatus(value *AuditLogQueryStatus)()
+    SetStatus(value *AuditLogQuery_status)()
     SetUserPrincipalNameFilters(value []string)()
 }

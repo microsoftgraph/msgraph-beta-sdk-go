@@ -39,13 +39,13 @@ func (m *MediaSource) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424
     return m.backingStore
 }
 // GetContentCategory gets the contentCategory property value. Enumeration value that indicates the media content category.
-func (m *MediaSource) GetContentCategory()(*MediaSourceContentCategory) {
+func (m *MediaSource) GetContentCategory()(*MediaSource_contentCategory) {
     val, err := m.GetBackingStore().Get("contentCategory")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MediaSourceContentCategory)
+        return val.(*MediaSource_contentCategory)
     }
     return nil
 }
@@ -53,12 +53,12 @@ func (m *MediaSource) GetContentCategory()(*MediaSourceContentCategory) {
 func (m *MediaSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["contentCategory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMediaSourceContentCategory)
+        val, err := n.GetEnumValue(ParseMediaSource_contentCategory)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetContentCategory(val.(*MediaSourceContentCategory))
+            m.SetContentCategory(val.(*MediaSource_contentCategory))
         }
         return nil
     }
@@ -120,7 +120,7 @@ func (m *MediaSource) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d4118
     m.backingStore = value
 }
 // SetContentCategory sets the contentCategory property value. Enumeration value that indicates the media content category.
-func (m *MediaSource) SetContentCategory(value *MediaSourceContentCategory)() {
+func (m *MediaSource) SetContentCategory(value *MediaSource_contentCategory)() {
     err := m.GetBackingStore().Set("contentCategory", value)
     if err != nil {
         panic(err)
@@ -139,9 +139,9 @@ type MediaSourceable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetContentCategory()(*MediaSourceContentCategory)
+    GetContentCategory()(*MediaSource_contentCategory)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetContentCategory(value *MediaSourceContentCategory)()
+    SetContentCategory(value *MediaSource_contentCategory)()
     SetOdataType(value *string)()
 }

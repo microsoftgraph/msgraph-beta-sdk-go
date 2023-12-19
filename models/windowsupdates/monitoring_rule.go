@@ -23,13 +23,13 @@ func CreateMonitoringRuleFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewMonitoringRule(), nil
 }
 // GetAction gets the action property value. The action triggered when the threshold for the given signal is reached. Possible values are: alertError, pauseDeployment, offerFallback, unknownFutureValue. The offerFallback member is only supported on feature update deployments of Windows 11 and must be paired with the ineligible signal. The fallback version offered is the version 22H2 of Windows 10.
-func (m *MonitoringRule) GetAction()(*MonitoringAction) {
+func (m *MonitoringRule) GetAction()(*MonitoringRule_action) {
     val, err := m.GetBackingStore().Get("action")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MonitoringAction)
+        return val.(*MonitoringRule_action)
     }
     return nil
 }
@@ -53,12 +53,12 @@ func (m *MonitoringRule) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185
 func (m *MonitoringRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMonitoringAction)
+        val, err := n.GetEnumValue(ParseMonitoringRule_action)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAction(val.(*MonitoringAction))
+            m.SetAction(val.(*MonitoringRule_action))
         }
         return nil
     }
@@ -73,12 +73,12 @@ func (m *MonitoringRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["signal"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMonitoringSignal)
+        val, err := n.GetEnumValue(ParseMonitoringRule_signal)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSignal(val.(*MonitoringSignal))
+            m.SetSignal(val.(*MonitoringRule_signal))
         }
         return nil
     }
@@ -106,13 +106,13 @@ func (m *MonitoringRule) GetOdataType()(*string) {
     return nil
 }
 // GetSignal gets the signal property value. The signal to monitor. Possible values are: rollback, ineligible, unknownFutureValue. The ineligible member is only supported on feature update deployments of Windows 11 and must be paired with the offerFallback action.
-func (m *MonitoringRule) GetSignal()(*MonitoringSignal) {
+func (m *MonitoringRule) GetSignal()(*MonitoringRule_signal) {
     val, err := m.GetBackingStore().Get("signal")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MonitoringSignal)
+        return val.(*MonitoringRule_signal)
     }
     return nil
 }
@@ -164,7 +164,7 @@ func (m *MonitoringRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetAction sets the action property value. The action triggered when the threshold for the given signal is reached. Possible values are: alertError, pauseDeployment, offerFallback, unknownFutureValue. The offerFallback member is only supported on feature update deployments of Windows 11 and must be paired with the ineligible signal. The fallback version offered is the version 22H2 of Windows 10.
-func (m *MonitoringRule) SetAction(value *MonitoringAction)() {
+func (m *MonitoringRule) SetAction(value *MonitoringRule_action)() {
     err := m.GetBackingStore().Set("action", value)
     if err != nil {
         panic(err)
@@ -189,7 +189,7 @@ func (m *MonitoringRule) SetOdataType(value *string)() {
     }
 }
 // SetSignal sets the signal property value. The signal to monitor. Possible values are: rollback, ineligible, unknownFutureValue. The ineligible member is only supported on feature update deployments of Windows 11 and must be paired with the offerFallback action.
-func (m *MonitoringRule) SetSignal(value *MonitoringSignal)() {
+func (m *MonitoringRule) SetSignal(value *MonitoringRule_signal)() {
     err := m.GetBackingStore().Set("signal", value)
     if err != nil {
         panic(err)
@@ -207,14 +207,14 @@ type MonitoringRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAction()(*MonitoringAction)
+    GetAction()(*MonitoringRule_action)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
-    GetSignal()(*MonitoringSignal)
+    GetSignal()(*MonitoringRule_signal)
     GetThreshold()(*int32)
-    SetAction(value *MonitoringAction)()
+    SetAction(value *MonitoringRule_action)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
-    SetSignal(value *MonitoringSignal)()
+    SetSignal(value *MonitoringRule_signal)()
     SetThreshold(value *int32)()
 }

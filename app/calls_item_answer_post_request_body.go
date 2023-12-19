@@ -23,17 +23,6 @@ func NewCallsItemAnswerPostRequestBody()(*CallsItemAnswerPostRequestBody) {
 func CreateCallsItemAnswerPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCallsItemAnswerPostRequestBody(), nil
 }
-// GetAcceptedModalities gets the acceptedModalities property value. The acceptedModalities property
-func (m *CallsItemAnswerPostRequestBody) GetAcceptedModalities()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Modality) {
-    val, err := m.GetBackingStore().Get("acceptedModalities")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Modality)
-    }
-    return nil
-}
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CallsItemAnswerPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
@@ -75,22 +64,6 @@ func (m *CallsItemAnswerPostRequestBody) GetCallOptions()(ie233ee762e29b4ba6970a
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CallsItemAnswerPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["acceptedModalities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseModality)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Modality, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = *(v.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Modality))
-                }
-            }
-            m.SetAcceptedModalities(res)
-        }
-        return nil
-    }
     res["callbackUri"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -157,12 +130,6 @@ func (m *CallsItemAnswerPostRequestBody) GetParticipantCapacity()(*int32) {
 }
 // Serialize serializes information the current object
 func (m *CallsItemAnswerPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    if m.GetAcceptedModalities() != nil {
-        err := writer.WriteCollectionOfStringValues("acceptedModalities", ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SerializeModality(m.GetAcceptedModalities()))
-        if err != nil {
-            return err
-        }
-    }
     {
         err := writer.WriteStringValue("callbackUri", m.GetCallbackUri())
         if err != nil {
@@ -194,13 +161,6 @@ func (m *CallsItemAnswerPostRequestBody) Serialize(writer i878a80d2330e89d268963
         }
     }
     return nil
-}
-// SetAcceptedModalities sets the acceptedModalities property value. The acceptedModalities property
-func (m *CallsItemAnswerPostRequestBody) SetAcceptedModalities(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Modality)() {
-    err := m.GetBackingStore().Set("acceptedModalities", value)
-    if err != nil {
-        panic(err)
-    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CallsItemAnswerPostRequestBody) SetAdditionalData(value map[string]any)() {
@@ -246,13 +206,11 @@ type CallsItemAnswerPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAcceptedModalities()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Modality)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCallbackUri()(*string)
     GetCallOptions()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IncomingCallOptionsable)
     GetMediaConfig()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MediaConfigable)
     GetParticipantCapacity()(*int32)
-    SetAcceptedModalities(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Modality)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCallbackUri(value *string)()
     SetCallOptions(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IncomingCallOptionsable)()

@@ -163,12 +163,12 @@ func (m *Post) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         return nil
     }
     res["importance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseImportance)
+        val, err := n.GetEnumValue(ParsePost_importance)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetImportance(val.(*Importance))
+            m.SetImportance(val.(*Post_importance))
         }
         return nil
     }
@@ -291,13 +291,13 @@ func (m *Post) GetHasAttachments()(*bool) {
     return nil
 }
 // GetImportance gets the importance property value. The importance of a group post: low, normal, high.
-func (m *Post) GetImportance()(*Importance) {
+func (m *Post) GetImportance()(*Post_importance) {
     val, err := m.GetBackingStore().Get("importance")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*Importance)
+        return val.(*Post_importance)
     }
     return nil
 }
@@ -563,7 +563,7 @@ func (m *Post) SetHasAttachments(value *bool)() {
     }
 }
 // SetImportance sets the importance property value. The importance of a group post: low, normal, high.
-func (m *Post) SetImportance(value *Importance)() {
+func (m *Post) SetImportance(value *Post_importance)() {
     err := m.GetBackingStore().Set("importance", value)
     if err != nil {
         panic(err)
@@ -629,7 +629,7 @@ type Postable interface {
     GetExtensions()([]Extensionable)
     GetFrom()(Recipientable)
     GetHasAttachments()(*bool)
-    GetImportance()(*Importance)
+    GetImportance()(*Post_importance)
     GetInReplyTo()(Postable)
     GetMentions()([]Mentionable)
     GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable)
@@ -644,7 +644,7 @@ type Postable interface {
     SetExtensions(value []Extensionable)()
     SetFrom(value Recipientable)()
     SetHasAttachments(value *bool)()
-    SetImportance(value *Importance)()
+    SetImportance(value *Post_importance)()
     SetInReplyTo(value Postable)()
     SetMentions(value []Mentionable)()
     SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)()

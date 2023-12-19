@@ -165,12 +165,12 @@ func (m *CustomSecurityAttributeAudit) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["result"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOperationResult)
+        val, err := n.GetEnumValue(ParseCustomSecurityAttributeAudit_result)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetResult(val.(*OperationResult))
+            m.SetResult(val.(*CustomSecurityAttributeAudit_result))
         }
         return nil
     }
@@ -246,13 +246,13 @@ func (m *CustomSecurityAttributeAudit) GetOperationType()(*string) {
     return nil
 }
 // GetResult gets the result property value. The result property
-func (m *CustomSecurityAttributeAudit) GetResult()(*OperationResult) {
+func (m *CustomSecurityAttributeAudit) GetResult()(*CustomSecurityAttributeAudit_result) {
     val, err := m.GetBackingStore().Get("result")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*OperationResult)
+        return val.(*CustomSecurityAttributeAudit_result)
     }
     return nil
 }
@@ -439,7 +439,7 @@ func (m *CustomSecurityAttributeAudit) SetOperationType(value *string)() {
     }
 }
 // SetResult sets the result property value. The result property
-func (m *CustomSecurityAttributeAudit) SetResult(value *OperationResult)() {
+func (m *CustomSecurityAttributeAudit) SetResult(value *CustomSecurityAttributeAudit_result)() {
     err := m.GetBackingStore().Set("result", value)
     if err != nil {
         panic(err)
@@ -478,7 +478,7 @@ type CustomSecurityAttributeAuditable interface {
     GetInitiatedBy()(AuditActivityInitiatorable)
     GetLoggedByService()(*string)
     GetOperationType()(*string)
-    GetResult()(*OperationResult)
+    GetResult()(*CustomSecurityAttributeAudit_result)
     GetResultReason()(*string)
     GetTargetResources()([]TargetResourceable)
     GetUserAgent()(*string)
@@ -490,7 +490,7 @@ type CustomSecurityAttributeAuditable interface {
     SetInitiatedBy(value AuditActivityInitiatorable)()
     SetLoggedByService(value *string)()
     SetOperationType(value *string)()
-    SetResult(value *OperationResult)()
+    SetResult(value *CustomSecurityAttributeAudit_result)()
     SetResultReason(value *string)()
     SetTargetResources(value []TargetResourceable)()
     SetUserAgent(value *string)()

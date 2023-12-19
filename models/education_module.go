@@ -164,12 +164,12 @@ func (m *EducationModule) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEducationModuleStatus)
+        val, err := n.GetEnumValue(ParseEducationModule_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*EducationModuleStatus))
+            m.SetStatus(val.(*EducationModule_status))
         }
         return nil
     }
@@ -231,13 +231,13 @@ func (m *EducationModule) GetResourcesFolderUrl()(*string) {
     return nil
 }
 // GetStatus gets the status property value. Status of the module.  You can't use a PATCH operation to update this value. Possible values are: draft and published.
-func (m *EducationModule) GetStatus()(*EducationModuleStatus) {
+func (m *EducationModule) GetStatus()(*EducationModule_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EducationModuleStatus)
+        return val.(*EducationModule_status)
     }
     return nil
 }
@@ -343,7 +343,7 @@ func (m *EducationModule) SetResourcesFolderUrl(value *string)() {
     }
 }
 // SetStatus sets the status property value. Status of the module.  You can't use a PATCH operation to update this value. Possible values are: draft and published.
-func (m *EducationModule) SetStatus(value *EducationModuleStatus)() {
+func (m *EducationModule) SetStatus(value *EducationModule_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -362,7 +362,7 @@ type EducationModuleable interface {
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetResources()([]EducationModuleResourceable)
     GetResourcesFolderUrl()(*string)
-    GetStatus()(*EducationModuleStatus)
+    GetStatus()(*EducationModule_status)
     SetCreatedBy(value IdentitySetable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
@@ -372,5 +372,5 @@ type EducationModuleable interface {
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetResources(value []EducationModuleResourceable)()
     SetResourcesFolderUrl(value *string)()
-    SetStatus(value *EducationModuleStatus)()
+    SetStatus(value *EducationModule_status)()
 }

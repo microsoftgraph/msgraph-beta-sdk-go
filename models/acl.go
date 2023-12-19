@@ -63,12 +63,12 @@ func (m *Acl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
         return nil
     }
     res["identitySource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseIdentitySourceType)
+        val, err := n.GetEnumValue(ParseAcl_identitySource)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetIdentitySource(val.(*IdentitySourceType))
+            m.SetIdentitySource(val.(*Acl_identitySource))
         }
         return nil
     }
@@ -105,13 +105,13 @@ func (m *Acl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
     return res
 }
 // GetIdentitySource gets the identitySource property value. The identitySource property
-func (m *Acl) GetIdentitySource()(*IdentitySourceType) {
+func (m *Acl) GetIdentitySource()(*Acl_identitySource) {
     val, err := m.GetBackingStore().Get("identitySource")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*IdentitySourceType)
+        return val.(*Acl_identitySource)
     }
     return nil
 }
@@ -210,7 +210,7 @@ func (m *Acl) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9e
     m.backingStore = value
 }
 // SetIdentitySource sets the identitySource property value. The identitySource property
-func (m *Acl) SetIdentitySource(value *IdentitySourceType)() {
+func (m *Acl) SetIdentitySource(value *Acl_identitySource)() {
     err := m.GetBackingStore().Set("identitySource", value)
     if err != nil {
         panic(err)
@@ -244,13 +244,13 @@ type Aclable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAccessType()(*AccessType)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetIdentitySource()(*IdentitySourceType)
+    GetIdentitySource()(*Acl_identitySource)
     GetOdataType()(*string)
     GetTypeEscaped()(*AclType)
     GetValue()(*string)
     SetAccessType(value *AccessType)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetIdentitySource(value *IdentitySourceType)()
+    SetIdentitySource(value *Acl_identitySource)()
     SetOdataType(value *string)()
     SetTypeEscaped(value *AclType)()
     SetValue(value *string)()

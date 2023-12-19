@@ -39,13 +39,13 @@ func (m *AppliedAuthenticationEventListener) GetBackingStore()(ie8677ce2c7e1b4c2
     return m.backingStore
 }
 // GetEventType gets the eventType property value. The type of authentication event that triggered the custom authentication extension request. The possible values are: tokenIssuanceStart, pageRenderStart, unknownFutureValue.
-func (m *AppliedAuthenticationEventListener) GetEventType()(*AuthenticationEventType) {
+func (m *AppliedAuthenticationEventListener) GetEventType()(*AppliedAuthenticationEventListener_eventType) {
     val, err := m.GetBackingStore().Get("eventType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AuthenticationEventType)
+        return val.(*AppliedAuthenticationEventListener_eventType)
     }
     return nil
 }
@@ -64,12 +64,12 @@ func (m *AppliedAuthenticationEventListener) GetExecutedListenerId()(*string) {
 func (m *AppliedAuthenticationEventListener) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["eventType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAuthenticationEventType)
+        val, err := n.GetEnumValue(ParseAppliedAuthenticationEventListener_eventType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEventType(val.(*AuthenticationEventType))
+            m.SetEventType(val.(*AppliedAuthenticationEventListener_eventType))
         }
         return nil
     }
@@ -174,7 +174,7 @@ func (m *AppliedAuthenticationEventListener) SetBackingStore(value ie8677ce2c7e1
     m.backingStore = value
 }
 // SetEventType sets the eventType property value. The type of authentication event that triggered the custom authentication extension request. The possible values are: tokenIssuanceStart, pageRenderStart, unknownFutureValue.
-func (m *AppliedAuthenticationEventListener) SetEventType(value *AuthenticationEventType)() {
+func (m *AppliedAuthenticationEventListener) SetEventType(value *AppliedAuthenticationEventListener_eventType)() {
     err := m.GetBackingStore().Set("eventType", value)
     if err != nil {
         panic(err)
@@ -207,12 +207,12 @@ type AppliedAuthenticationEventListenerable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetEventType()(*AuthenticationEventType)
+    GetEventType()(*AppliedAuthenticationEventListener_eventType)
     GetExecutedListenerId()(*string)
     GetHandlerResult()(AuthenticationEventHandlerResultable)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetEventType(value *AuthenticationEventType)()
+    SetEventType(value *AppliedAuthenticationEventListener_eventType)()
     SetExecutedListenerId(value *string)()
     SetHandlerResult(value AuthenticationEventHandlerResultable)()
     SetOdataType(value *string)()

@@ -68,12 +68,12 @@ func (m *TranslationPreferences) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["translationBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTranslationBehavior)
+        val, err := n.GetEnumValue(ParseTranslationPreferences_translationBehavior)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTranslationBehavior(val.(*TranslationBehavior))
+            m.SetTranslationBehavior(val.(*TranslationPreferences_translationBehavior))
         }
         return nil
     }
@@ -118,13 +118,13 @@ func (m *TranslationPreferences) GetOdataType()(*string) {
     return nil
 }
 // GetTranslationBehavior gets the translationBehavior property value. The user's preferred translation behavior.Returned by default. Not nullable.
-func (m *TranslationPreferences) GetTranslationBehavior()(*TranslationBehavior) {
+func (m *TranslationPreferences) GetTranslationBehavior()(*TranslationPreferences_translationBehavior) {
     val, err := m.GetBackingStore().Get("translationBehavior")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TranslationBehavior)
+        return val.(*TranslationPreferences_translationBehavior)
     }
     return nil
 }
@@ -206,7 +206,7 @@ func (m *TranslationPreferences) SetOdataType(value *string)() {
     }
 }
 // SetTranslationBehavior sets the translationBehavior property value. The user's preferred translation behavior.Returned by default. Not nullable.
-func (m *TranslationPreferences) SetTranslationBehavior(value *TranslationBehavior)() {
+func (m *TranslationPreferences) SetTranslationBehavior(value *TranslationPreferences_translationBehavior)() {
     err := m.GetBackingStore().Set("translationBehavior", value)
     if err != nil {
         panic(err)
@@ -227,11 +227,11 @@ type TranslationPreferencesable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetLanguageOverrides()([]TranslationLanguageOverrideable)
     GetOdataType()(*string)
-    GetTranslationBehavior()(*TranslationBehavior)
+    GetTranslationBehavior()(*TranslationPreferences_translationBehavior)
     GetUntranslatedLanguages()([]string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetLanguageOverrides(value []TranslationLanguageOverrideable)()
     SetOdataType(value *string)()
-    SetTranslationBehavior(value *TranslationBehavior)()
+    SetTranslationBehavior(value *TranslationPreferences_translationBehavior)()
     SetUntranslatedLanguages(value []string)()
 }

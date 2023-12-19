@@ -115,12 +115,12 @@ func (m *WindowsCertificateProfileBase) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["subjectAlternativeNameType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSubjectAlternativeNameType)
+        val, err := n.GetEnumValue(ParseWindowsCertificateProfileBase_subjectAlternativeNameType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSubjectAlternativeNameType(val.(*SubjectAlternativeNameType))
+            m.SetSubjectAlternativeNameType(val.(*WindowsCertificateProfileBase_subjectAlternativeNameType))
         }
         return nil
     }
@@ -159,13 +159,13 @@ func (m *WindowsCertificateProfileBase) GetRenewalThresholdPercentage()(*int32) 
     return nil
 }
 // GetSubjectAlternativeNameType gets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
-func (m *WindowsCertificateProfileBase) GetSubjectAlternativeNameType()(*SubjectAlternativeNameType) {
+func (m *WindowsCertificateProfileBase) GetSubjectAlternativeNameType()(*WindowsCertificateProfileBase_subjectAlternativeNameType) {
     val, err := m.GetBackingStore().Get("subjectAlternativeNameType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SubjectAlternativeNameType)
+        return val.(*WindowsCertificateProfileBase_subjectAlternativeNameType)
     }
     return nil
 }
@@ -257,7 +257,7 @@ func (m *WindowsCertificateProfileBase) SetRenewalThresholdPercentage(value *int
     }
 }
 // SetSubjectAlternativeNameType sets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
-func (m *WindowsCertificateProfileBase) SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)() {
+func (m *WindowsCertificateProfileBase) SetSubjectAlternativeNameType(value *WindowsCertificateProfileBase_subjectAlternativeNameType)() {
     err := m.GetBackingStore().Set("subjectAlternativeNameType", value)
     if err != nil {
         panic(err)
@@ -278,12 +278,12 @@ type WindowsCertificateProfileBaseable interface {
     GetCertificateValidityPeriodValue()(*int32)
     GetKeyStorageProvider()(*KeyStorageProviderOption)
     GetRenewalThresholdPercentage()(*int32)
-    GetSubjectAlternativeNameType()(*SubjectAlternativeNameType)
+    GetSubjectAlternativeNameType()(*WindowsCertificateProfileBase_subjectAlternativeNameType)
     GetSubjectNameFormat()(*SubjectNameFormat)
     SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)()
     SetCertificateValidityPeriodValue(value *int32)()
     SetKeyStorageProvider(value *KeyStorageProviderOption)()
     SetRenewalThresholdPercentage(value *int32)()
-    SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)()
+    SetSubjectAlternativeNameType(value *WindowsCertificateProfileBase_subjectAlternativeNameType)()
     SetSubjectNameFormat(value *SubjectNameFormat)()
 }

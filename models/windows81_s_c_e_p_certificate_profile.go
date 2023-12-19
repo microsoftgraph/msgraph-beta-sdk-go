@@ -22,13 +22,13 @@ func CreateWindows81SCEPCertificateProfileFromDiscriminatorValue(parseNode i878a
     return NewWindows81SCEPCertificateProfile(), nil
 }
 // GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
-func (m *Windows81SCEPCertificateProfile) GetCertificateStore()(*CertificateStore) {
+func (m *Windows81SCEPCertificateProfile) GetCertificateStore()(*Windows81SCEPCertificateProfile_certificateStore) {
     val, err := m.GetBackingStore().Get("certificateStore")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CertificateStore)
+        return val.(*Windows81SCEPCertificateProfile_certificateStore)
     }
     return nil
 }
@@ -36,12 +36,12 @@ func (m *Windows81SCEPCertificateProfile) GetCertificateStore()(*CertificateStor
 func (m *Windows81SCEPCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Windows81CertificateProfileBase.GetFieldDeserializers()
     res["certificateStore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCertificateStore)
+        val, err := n.GetEnumValue(ParseWindows81SCEPCertificateProfile_certificateStore)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCertificateStore(val.(*CertificateStore))
+            m.SetCertificateStore(val.(*Windows81SCEPCertificateProfile_certificateStore))
         }
         return nil
     }
@@ -300,7 +300,7 @@ func (m *Windows81SCEPCertificateProfile) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetCertificateStore sets the certificateStore property value. Target store certificate. Possible values are: user, machine.
-func (m *Windows81SCEPCertificateProfile) SetCertificateStore(value *CertificateStore)() {
+func (m *Windows81SCEPCertificateProfile) SetCertificateStore(value *Windows81SCEPCertificateProfile_certificateStore)() {
     err := m.GetBackingStore().Set("certificateStore", value)
     if err != nil {
         panic(err)
@@ -366,7 +366,7 @@ func (m *Windows81SCEPCertificateProfile) SetSubjectNameFormatString(value *stri
 type Windows81SCEPCertificateProfileable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Windows81CertificateProfileBaseable
-    GetCertificateStore()(*CertificateStore)
+    GetCertificateStore()(*Windows81SCEPCertificateProfile_certificateStore)
     GetHashAlgorithm()(*HashAlgorithms)
     GetKeySize()(*KeySize)
     GetKeyUsage()(*KeyUsages)
@@ -375,7 +375,7 @@ type Windows81SCEPCertificateProfileable interface {
     GetScepServerUrls()([]string)
     GetSubjectAlternativeNameFormatString()(*string)
     GetSubjectNameFormatString()(*string)
-    SetCertificateStore(value *CertificateStore)()
+    SetCertificateStore(value *Windows81SCEPCertificateProfile_certificateStore)()
     SetHashAlgorithm(value *HashAlgorithms)()
     SetKeySize(value *KeySize)()
     SetKeyUsage(value *KeyUsages)()

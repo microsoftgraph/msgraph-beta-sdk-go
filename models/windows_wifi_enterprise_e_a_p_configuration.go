@@ -22,13 +22,13 @@ func CreateWindowsWifiEnterpriseEAPConfigurationFromDiscriminatorValue(parseNode
     return NewWindowsWifiEnterpriseEAPConfiguration(), nil
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. Specify the authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential.
-func (m *WindowsWifiEnterpriseEAPConfiguration) GetAuthenticationMethod()(*WiFiAuthenticationMethod) {
+func (m *WindowsWifiEnterpriseEAPConfiguration) GetAuthenticationMethod()(*WindowsWifiEnterpriseEAPConfiguration_authenticationMethod) {
     val, err := m.GetBackingStore().Get("authenticationMethod")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*WiFiAuthenticationMethod)
+        return val.(*WindowsWifiEnterpriseEAPConfiguration_authenticationMethod)
     }
     return nil
 }
@@ -55,13 +55,13 @@ func (m *WindowsWifiEnterpriseEAPConfiguration) GetAuthenticationRetryDelayPerio
     return nil
 }
 // GetAuthenticationType gets the authenticationType property value. Specify whether to authenticate the user, the device, either, or to use guest authentication (none). If you’re using certificate authentication, make sure the certificate type matches the authentication type. Possible values are: none, user, machine, machineOrUser, guest.
-func (m *WindowsWifiEnterpriseEAPConfiguration) GetAuthenticationType()(*WifiAuthenticationType) {
+func (m *WindowsWifiEnterpriseEAPConfiguration) GetAuthenticationType()(*WindowsWifiEnterpriseEAPConfiguration_authenticationType) {
     val, err := m.GetBackingStore().Get("authenticationType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*WifiAuthenticationType)
+        return val.(*WindowsWifiEnterpriseEAPConfiguration_authenticationType)
     }
     return nil
 }
@@ -135,12 +135,12 @@ func (m *WindowsWifiEnterpriseEAPConfiguration) GetEnablePreAuthentication()(*bo
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsWifiConfiguration.GetFieldDeserializers()
     res["authenticationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWiFiAuthenticationMethod)
+        val, err := n.GetEnumValue(ParseWindowsWifiEnterpriseEAPConfiguration_authenticationMethod)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAuthenticationMethod(val.(*WiFiAuthenticationMethod))
+            m.SetAuthenticationMethod(val.(*WindowsWifiEnterpriseEAPConfiguration_authenticationMethod))
         }
         return nil
     }
@@ -165,12 +165,12 @@ func (m *WindowsWifiEnterpriseEAPConfiguration) GetFieldDeserializers()(map[stri
         return nil
     }
     res["authenticationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWifiAuthenticationType)
+        val, err := n.GetEnumValue(ParseWindowsWifiEnterpriseEAPConfiguration_authenticationType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAuthenticationType(val.(*WifiAuthenticationType))
+            m.SetAuthenticationType(val.(*WindowsWifiEnterpriseEAPConfiguration_authenticationType))
         }
         return nil
     }
@@ -245,12 +245,12 @@ func (m *WindowsWifiEnterpriseEAPConfiguration) GetFieldDeserializers()(map[stri
         return nil
     }
     res["innerAuthenticationProtocolForEAPTTLS"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseNonEapAuthenticationMethodForEapTtlsType)
+        val, err := n.GetEnumValue(ParseWindowsWifiEnterpriseEAPConfiguration_innerAuthenticationProtocolForEAPTTLS)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInnerAuthenticationProtocolForEAPTTLS(val.(*NonEapAuthenticationMethodForEapTtlsType))
+            m.SetInnerAuthenticationProtocolForEAPTTLS(val.(*WindowsWifiEnterpriseEAPConfiguration_innerAuthenticationProtocolForEAPTTLS))
         }
         return nil
     }
@@ -315,12 +315,12 @@ func (m *WindowsWifiEnterpriseEAPConfiguration) GetFieldDeserializers()(map[stri
         return nil
     }
     res["networkSingleSignOn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseNetworkSingleSignOnType)
+        val, err := n.GetEnumValue(ParseWindowsWifiEnterpriseEAPConfiguration_networkSingleSignOn)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetNetworkSingleSignOn(val.(*NetworkSingleSignOnType))
+            m.SetNetworkSingleSignOn(val.(*WindowsWifiEnterpriseEAPConfiguration_networkSingleSignOn))
         }
         return nil
     }
@@ -430,13 +430,13 @@ func (m *WindowsWifiEnterpriseEAPConfiguration) GetIdentityCertificateForClientA
     return nil
 }
 // GetInnerAuthenticationProtocolForEAPTTLS gets the innerAuthenticationProtocolForEAPTTLS property value. Specify inner authentication protocol for EAP TTLS. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
-func (m *WindowsWifiEnterpriseEAPConfiguration) GetInnerAuthenticationProtocolForEAPTTLS()(*NonEapAuthenticationMethodForEapTtlsType) {
+func (m *WindowsWifiEnterpriseEAPConfiguration) GetInnerAuthenticationProtocolForEAPTTLS()(*WindowsWifiEnterpriseEAPConfiguration_innerAuthenticationProtocolForEAPTTLS) {
     val, err := m.GetBackingStore().Get("innerAuthenticationProtocolForEAPTTLS")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*NonEapAuthenticationMethodForEapTtlsType)
+        return val.(*WindowsWifiEnterpriseEAPConfiguration_innerAuthenticationProtocolForEAPTTLS)
     }
     return nil
 }
@@ -507,13 +507,13 @@ func (m *WindowsWifiEnterpriseEAPConfiguration) GetMaximumPreAuthenticationAttem
     return nil
 }
 // GetNetworkSingleSignOn gets the networkSingleSignOn property value. Specify the network single sign on type. Possible values are: disabled, prelogon, postlogon.
-func (m *WindowsWifiEnterpriseEAPConfiguration) GetNetworkSingleSignOn()(*NetworkSingleSignOnType) {
+func (m *WindowsWifiEnterpriseEAPConfiguration) GetNetworkSingleSignOn()(*WindowsWifiEnterpriseEAPConfiguration_networkSingleSignOn) {
     val, err := m.GetBackingStore().Get("networkSingleSignOn")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*NetworkSingleSignOnType)
+        return val.(*WindowsWifiEnterpriseEAPConfiguration_networkSingleSignOn)
     }
     return nil
 }
@@ -787,7 +787,7 @@ func (m *WindowsWifiEnterpriseEAPConfiguration) Serialize(writer i878a80d2330e89
     return nil
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. Specify the authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential.
-func (m *WindowsWifiEnterpriseEAPConfiguration) SetAuthenticationMethod(value *WiFiAuthenticationMethod)() {
+func (m *WindowsWifiEnterpriseEAPConfiguration) SetAuthenticationMethod(value *WindowsWifiEnterpriseEAPConfiguration_authenticationMethod)() {
     err := m.GetBackingStore().Set("authenticationMethod", value)
     if err != nil {
         panic(err)
@@ -808,7 +808,7 @@ func (m *WindowsWifiEnterpriseEAPConfiguration) SetAuthenticationRetryDelayPerio
     }
 }
 // SetAuthenticationType sets the authenticationType property value. Specify whether to authenticate the user, the device, either, or to use guest authentication (none). If you’re using certificate authentication, make sure the certificate type matches the authentication type. Possible values are: none, user, machine, machineOrUser, guest.
-func (m *WindowsWifiEnterpriseEAPConfiguration) SetAuthenticationType(value *WifiAuthenticationType)() {
+func (m *WindowsWifiEnterpriseEAPConfiguration) SetAuthenticationType(value *WindowsWifiEnterpriseEAPConfiguration_authenticationType)() {
     err := m.GetBackingStore().Set("authenticationType", value)
     if err != nil {
         panic(err)
@@ -864,7 +864,7 @@ func (m *WindowsWifiEnterpriseEAPConfiguration) SetIdentityCertificateForClientA
     }
 }
 // SetInnerAuthenticationProtocolForEAPTTLS sets the innerAuthenticationProtocolForEAPTTLS property value. Specify inner authentication protocol for EAP TTLS. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
-func (m *WindowsWifiEnterpriseEAPConfiguration) SetInnerAuthenticationProtocolForEAPTTLS(value *NonEapAuthenticationMethodForEapTtlsType)() {
+func (m *WindowsWifiEnterpriseEAPConfiguration) SetInnerAuthenticationProtocolForEAPTTLS(value *WindowsWifiEnterpriseEAPConfiguration_innerAuthenticationProtocolForEAPTTLS)() {
     err := m.GetBackingStore().Set("innerAuthenticationProtocolForEAPTTLS", value)
     if err != nil {
         panic(err)
@@ -913,7 +913,7 @@ func (m *WindowsWifiEnterpriseEAPConfiguration) SetMaximumPreAuthenticationAttem
     }
 }
 // SetNetworkSingleSignOn sets the networkSingleSignOn property value. Specify the network single sign on type. Possible values are: disabled, prelogon, postlogon.
-func (m *WindowsWifiEnterpriseEAPConfiguration) SetNetworkSingleSignOn(value *NetworkSingleSignOnType)() {
+func (m *WindowsWifiEnterpriseEAPConfiguration) SetNetworkSingleSignOn(value *WindowsWifiEnterpriseEAPConfiguration_networkSingleSignOn)() {
     err := m.GetBackingStore().Set("networkSingleSignOn", value)
     if err != nil {
         panic(err)
@@ -979,10 +979,10 @@ func (m *WindowsWifiEnterpriseEAPConfiguration) SetUserBasedVirtualLan(value *bo
 type WindowsWifiEnterpriseEAPConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WindowsWifiConfigurationable
-    GetAuthenticationMethod()(*WiFiAuthenticationMethod)
+    GetAuthenticationMethod()(*WindowsWifiEnterpriseEAPConfiguration_authenticationMethod)
     GetAuthenticationPeriodInSeconds()(*int32)
     GetAuthenticationRetryDelayPeriodInSeconds()(*int32)
-    GetAuthenticationType()(*WifiAuthenticationType)
+    GetAuthenticationType()(*WindowsWifiEnterpriseEAPConfiguration_authenticationType)
     GetCacheCredentials()(*bool)
     GetDisableUserPromptForServerValidation()(*bool)
     GetEapolStartPeriodInSeconds()(*int32)
@@ -990,14 +990,14 @@ type WindowsWifiEnterpriseEAPConfigurationable interface {
     GetEnablePairwiseMasterKeyCaching()(*bool)
     GetEnablePreAuthentication()(*bool)
     GetIdentityCertificateForClientAuthentication()(WindowsCertificateProfileBaseable)
-    GetInnerAuthenticationProtocolForEAPTTLS()(*NonEapAuthenticationMethodForEapTtlsType)
+    GetInnerAuthenticationProtocolForEAPTTLS()(*WindowsWifiEnterpriseEAPConfiguration_innerAuthenticationProtocolForEAPTTLS)
     GetMaximumAuthenticationFailures()(*int32)
     GetMaximumAuthenticationTimeoutInSeconds()(*int32)
     GetMaximumEAPOLStartMessages()(*int32)
     GetMaximumNumberOfPairwiseMasterKeysInCache()(*int32)
     GetMaximumPairwiseMasterKeyCacheTimeInMinutes()(*int32)
     GetMaximumPreAuthenticationAttempts()(*int32)
-    GetNetworkSingleSignOn()(*NetworkSingleSignOnType)
+    GetNetworkSingleSignOn()(*WindowsWifiEnterpriseEAPConfiguration_networkSingleSignOn)
     GetOuterIdentityPrivacyTemporaryValue()(*string)
     GetPerformServerValidation()(*bool)
     GetPromptForAdditionalAuthenticationCredentials()(*bool)
@@ -1006,10 +1006,10 @@ type WindowsWifiEnterpriseEAPConfigurationable interface {
     GetRootCertificatesForServerValidation()([]Windows81TrustedRootCertificateable)
     GetTrustedServerCertificateNames()([]string)
     GetUserBasedVirtualLan()(*bool)
-    SetAuthenticationMethod(value *WiFiAuthenticationMethod)()
+    SetAuthenticationMethod(value *WindowsWifiEnterpriseEAPConfiguration_authenticationMethod)()
     SetAuthenticationPeriodInSeconds(value *int32)()
     SetAuthenticationRetryDelayPeriodInSeconds(value *int32)()
-    SetAuthenticationType(value *WifiAuthenticationType)()
+    SetAuthenticationType(value *WindowsWifiEnterpriseEAPConfiguration_authenticationType)()
     SetCacheCredentials(value *bool)()
     SetDisableUserPromptForServerValidation(value *bool)()
     SetEapolStartPeriodInSeconds(value *int32)()
@@ -1017,14 +1017,14 @@ type WindowsWifiEnterpriseEAPConfigurationable interface {
     SetEnablePairwiseMasterKeyCaching(value *bool)()
     SetEnablePreAuthentication(value *bool)()
     SetIdentityCertificateForClientAuthentication(value WindowsCertificateProfileBaseable)()
-    SetInnerAuthenticationProtocolForEAPTTLS(value *NonEapAuthenticationMethodForEapTtlsType)()
+    SetInnerAuthenticationProtocolForEAPTTLS(value *WindowsWifiEnterpriseEAPConfiguration_innerAuthenticationProtocolForEAPTTLS)()
     SetMaximumAuthenticationFailures(value *int32)()
     SetMaximumAuthenticationTimeoutInSeconds(value *int32)()
     SetMaximumEAPOLStartMessages(value *int32)()
     SetMaximumNumberOfPairwiseMasterKeysInCache(value *int32)()
     SetMaximumPairwiseMasterKeyCacheTimeInMinutes(value *int32)()
     SetMaximumPreAuthenticationAttempts(value *int32)()
-    SetNetworkSingleSignOn(value *NetworkSingleSignOnType)()
+    SetNetworkSingleSignOn(value *WindowsWifiEnterpriseEAPConfiguration_networkSingleSignOn)()
     SetOuterIdentityPrivacyTemporaryValue(value *string)()
     SetPerformServerValidation(value *bool)()
     SetPromptForAdditionalAuthenticationCredentials(value *bool)()

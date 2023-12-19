@@ -139,22 +139,22 @@ func (m *AppCredentialSignInActivity) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     res["keyType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseApplicationKeyType)
+        val, err := n.GetEnumValue(ParseAppCredentialSignInActivity_keyType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetKeyType(val.(*ApplicationKeyType))
+            m.SetKeyType(val.(*AppCredentialSignInActivity_keyType))
         }
         return nil
     }
     res["keyUsage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseApplicationKeyUsage)
+        val, err := n.GetEnumValue(ParseAppCredentialSignInActivity_keyUsage)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetKeyUsage(val.(*ApplicationKeyUsage))
+            m.SetKeyUsage(val.(*AppCredentialSignInActivity_keyUsage))
         }
         return nil
     }
@@ -202,24 +202,24 @@ func (m *AppCredentialSignInActivity) GetKeyId()(*string) {
     return nil
 }
 // GetKeyType gets the keyType property value. Specifies the key type. The possible values are: clientSecret, certificate, unknownFutureValue.
-func (m *AppCredentialSignInActivity) GetKeyType()(*ApplicationKeyType) {
+func (m *AppCredentialSignInActivity) GetKeyType()(*AppCredentialSignInActivity_keyType) {
     val, err := m.GetBackingStore().Get("keyType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ApplicationKeyType)
+        return val.(*AppCredentialSignInActivity_keyType)
     }
     return nil
 }
 // GetKeyUsage gets the keyUsage property value. Specifies what the key was used for. The possible values are: sign, verify, unknownFutureValue.
-func (m *AppCredentialSignInActivity) GetKeyUsage()(*ApplicationKeyUsage) {
+func (m *AppCredentialSignInActivity) GetKeyUsage()(*AppCredentialSignInActivity_keyUsage) {
     val, err := m.GetBackingStore().Get("keyUsage")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ApplicationKeyUsage)
+        return val.(*AppCredentialSignInActivity_keyUsage)
     }
     return nil
 }
@@ -376,14 +376,14 @@ func (m *AppCredentialSignInActivity) SetKeyId(value *string)() {
     }
 }
 // SetKeyType sets the keyType property value. Specifies the key type. The possible values are: clientSecret, certificate, unknownFutureValue.
-func (m *AppCredentialSignInActivity) SetKeyType(value *ApplicationKeyType)() {
+func (m *AppCredentialSignInActivity) SetKeyType(value *AppCredentialSignInActivity_keyType)() {
     err := m.GetBackingStore().Set("keyType", value)
     if err != nil {
         panic(err)
     }
 }
 // SetKeyUsage sets the keyUsage property value. Specifies what the key was used for. The possible values are: sign, verify, unknownFutureValue.
-func (m *AppCredentialSignInActivity) SetKeyUsage(value *ApplicationKeyUsage)() {
+func (m *AppCredentialSignInActivity) SetKeyUsage(value *AppCredentialSignInActivity_keyUsage)() {
     err := m.GetBackingStore().Set("keyUsage", value)
     if err != nil {
         panic(err)
@@ -420,8 +420,8 @@ type AppCredentialSignInActivityable interface {
     GetCredentialOrigin()(*ApplicationKeyOrigin)
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetKeyId()(*string)
-    GetKeyType()(*ApplicationKeyType)
-    GetKeyUsage()(*ApplicationKeyUsage)
+    GetKeyType()(*AppCredentialSignInActivity_keyType)
+    GetKeyUsage()(*AppCredentialSignInActivity_keyUsage)
     GetResourceId()(*string)
     GetServicePrincipalObjectId()(*string)
     GetSignInActivity()(SignInActivityable)
@@ -431,8 +431,8 @@ type AppCredentialSignInActivityable interface {
     SetCredentialOrigin(value *ApplicationKeyOrigin)()
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetKeyId(value *string)()
-    SetKeyType(value *ApplicationKeyType)()
-    SetKeyUsage(value *ApplicationKeyUsage)()
+    SetKeyType(value *AppCredentialSignInActivity_keyType)()
+    SetKeyUsage(value *AppCredentialSignInActivity_keyUsage)()
     SetResourceId(value *string)()
     SetServicePrincipalObjectId(value *string)()
     SetSignInActivity(value SignInActivityable)()

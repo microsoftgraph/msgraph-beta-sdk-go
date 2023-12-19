@@ -39,24 +39,24 @@ func (m *SubmissionResult) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d411
     return m.backingStore
 }
 // GetCategory gets the category property value. The submission result category. The possible values are: notJunk, spam, phishing, malware, allowedByPolicy, blockedByPolicy, spoof, unknown, noResultAvailable and unkownFutureValue.
-func (m *SubmissionResult) GetCategory()(*SubmissionResultCategory) {
+func (m *SubmissionResult) GetCategory()(*SubmissionResult_category) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SubmissionResultCategory)
+        return val.(*SubmissionResult_category)
     }
     return nil
 }
 // GetDetail gets the detail property value. Specifies the extra details provided by Microsoft to substantiate their analysis result.
-func (m *SubmissionResult) GetDetail()(*SubmissionResultDetail) {
+func (m *SubmissionResult) GetDetail()(*SubmissionResult_detail) {
     val, err := m.GetBackingStore().Get("detail")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SubmissionResultDetail)
+        return val.(*SubmissionResult_detail)
     }
     return nil
 }
@@ -86,22 +86,22 @@ func (m *SubmissionResult) GetDetectedUrls()([]string) {
 func (m *SubmissionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSubmissionResultCategory)
+        val, err := n.GetEnumValue(ParseSubmissionResult_category)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCategory(val.(*SubmissionResultCategory))
+            m.SetCategory(val.(*SubmissionResult_category))
         }
         return nil
     }
     res["detail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSubmissionResultDetail)
+        val, err := n.GetEnumValue(ParseSubmissionResult_detail)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDetail(val.(*SubmissionResultDetail))
+            m.SetDetail(val.(*SubmissionResult_detail))
         }
         return nil
     }
@@ -148,12 +148,12 @@ func (m *SubmissionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["userMailboxSetting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseUserMailboxSetting)
+        val, err := n.GetEnumValue(ParseSubmissionResult_userMailboxSetting)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUserMailboxSetting(val.(*UserMailboxSetting))
+            m.SetUserMailboxSetting(val.(*SubmissionResult_userMailboxSetting))
         }
         return nil
     }
@@ -171,13 +171,13 @@ func (m *SubmissionResult) GetOdataType()(*string) {
     return nil
 }
 // GetUserMailboxSetting gets the userMailboxSetting property value. Specifies the setting for user mailbox denoted by a comma-separated string.
-func (m *SubmissionResult) GetUserMailboxSetting()(*UserMailboxSetting) {
+func (m *SubmissionResult) GetUserMailboxSetting()(*SubmissionResult_userMailboxSetting) {
     val, err := m.GetBackingStore().Get("userMailboxSetting")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*UserMailboxSetting)
+        return val.(*SubmissionResult_userMailboxSetting)
     }
     return nil
 }
@@ -248,14 +248,14 @@ func (m *SubmissionResult) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078
     m.backingStore = value
 }
 // SetCategory sets the category property value. The submission result category. The possible values are: notJunk, spam, phishing, malware, allowedByPolicy, blockedByPolicy, spoof, unknown, noResultAvailable and unkownFutureValue.
-func (m *SubmissionResult) SetCategory(value *SubmissionResultCategory)() {
+func (m *SubmissionResult) SetCategory(value *SubmissionResult_category)() {
     err := m.GetBackingStore().Set("category", value)
     if err != nil {
         panic(err)
     }
 }
 // SetDetail sets the detail property value. Specifies the extra details provided by Microsoft to substantiate their analysis result.
-func (m *SubmissionResult) SetDetail(value *SubmissionResultDetail)() {
+func (m *SubmissionResult) SetDetail(value *SubmissionResult_detail)() {
     err := m.GetBackingStore().Set("detail", value)
     if err != nil {
         panic(err)
@@ -283,7 +283,7 @@ func (m *SubmissionResult) SetOdataType(value *string)() {
     }
 }
 // SetUserMailboxSetting sets the userMailboxSetting property value. Specifies the setting for user mailbox denoted by a comma-separated string.
-func (m *SubmissionResult) SetUserMailboxSetting(value *UserMailboxSetting)() {
+func (m *SubmissionResult) SetUserMailboxSetting(value *SubmissionResult_userMailboxSetting)() {
     err := m.GetBackingStore().Set("userMailboxSetting", value)
     if err != nil {
         panic(err)
@@ -295,17 +295,17 @@ type SubmissionResultable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetCategory()(*SubmissionResultCategory)
-    GetDetail()(*SubmissionResultDetail)
+    GetCategory()(*SubmissionResult_category)
+    GetDetail()(*SubmissionResult_detail)
     GetDetectedFiles()([]SubmissionDetectedFileable)
     GetDetectedUrls()([]string)
     GetOdataType()(*string)
-    GetUserMailboxSetting()(*UserMailboxSetting)
+    GetUserMailboxSetting()(*SubmissionResult_userMailboxSetting)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetCategory(value *SubmissionResultCategory)()
-    SetDetail(value *SubmissionResultDetail)()
+    SetCategory(value *SubmissionResult_category)()
+    SetDetail(value *SubmissionResult_detail)()
     SetDetectedFiles(value []SubmissionDetectedFileable)()
     SetDetectedUrls(value []string)()
     SetOdataType(value *string)()
-    SetUserMailboxSetting(value *UserMailboxSetting)()
+    SetUserMailboxSetting(value *SubmissionResult_userMailboxSetting)()
 }

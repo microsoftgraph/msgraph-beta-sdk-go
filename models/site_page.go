@@ -44,12 +44,12 @@ func (m *SitePage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["promotionKind"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePagePromotionType)
+        val, err := n.GetEnumValue(ParseSitePage_promotionKind)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPromotionKind(val.(*PagePromotionType))
+            m.SetPromotionKind(val.(*SitePage_promotionKind))
         }
         return nil
     }
@@ -122,13 +122,13 @@ func (m *SitePage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetPromotionKind gets the promotionKind property value. Indicates the promotion kind of the sitePage. The possible values are: microsoftReserved, page, newsPost, unknownFutureValue.
-func (m *SitePage) GetPromotionKind()(*PagePromotionType) {
+func (m *SitePage) GetPromotionKind()(*SitePage_promotionKind) {
     val, err := m.GetBackingStore().Get("promotionKind")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PagePromotionType)
+        return val.(*SitePage_promotionKind)
     }
     return nil
 }
@@ -269,7 +269,7 @@ func (m *SitePage) SetCanvasLayout(value CanvasLayoutable)() {
     }
 }
 // SetPromotionKind sets the promotionKind property value. Indicates the promotion kind of the sitePage. The possible values are: microsoftReserved, page, newsPost, unknownFutureValue.
-func (m *SitePage) SetPromotionKind(value *PagePromotionType)() {
+func (m *SitePage) SetPromotionKind(value *SitePage_promotionKind)() {
     err := m.GetBackingStore().Set("promotionKind", value)
     if err != nil {
         panic(err)
@@ -322,7 +322,7 @@ type SitePageable interface {
     BaseSitePageable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCanvasLayout()(CanvasLayoutable)
-    GetPromotionKind()(*PagePromotionType)
+    GetPromotionKind()(*SitePage_promotionKind)
     GetReactions()(ReactionsFacetable)
     GetShowComments()(*bool)
     GetShowRecommendedPages()(*bool)
@@ -330,7 +330,7 @@ type SitePageable interface {
     GetTitleArea()(TitleAreaable)
     GetWebParts()([]WebPartable)
     SetCanvasLayout(value CanvasLayoutable)()
-    SetPromotionKind(value *PagePromotionType)()
+    SetPromotionKind(value *SitePage_promotionKind)()
     SetReactions(value ReactionsFacetable)()
     SetShowComments(value *bool)()
     SetShowRecommendedPages(value *bool)()

@@ -22,13 +22,13 @@ func CreateAndroidWorkProfileEnterpriseWiFiConfigurationFromDiscriminatorValue(p
     return NewAndroidWorkProfileEnterpriseWiFiConfiguration(), nil
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. Indicates the Authentication Method the client (device) needs to use when the EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.
-func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) GetAuthenticationMethod()(*WiFiAuthenticationMethod) {
+func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) GetAuthenticationMethod()(*AndroidWorkProfileEnterpriseWiFiConfiguration_authenticationMethod) {
     val, err := m.GetBackingStore().Get("authenticationMethod")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*WiFiAuthenticationMethod)
+        return val.(*AndroidWorkProfileEnterpriseWiFiConfiguration_authenticationMethod)
     }
     return nil
 }
@@ -47,12 +47,12 @@ func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) GetEapType()(*AndroidEap
 func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AndroidWorkProfileWiFiConfiguration.GetFieldDeserializers()
     res["authenticationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWiFiAuthenticationMethod)
+        val, err := n.GetEnumValue(ParseAndroidWorkProfileEnterpriseWiFiConfiguration_authenticationMethod)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAuthenticationMethod(val.(*WiFiAuthenticationMethod))
+            m.SetAuthenticationMethod(val.(*AndroidWorkProfileEnterpriseWiFiConfiguration_authenticationMethod))
         }
         return nil
     }
@@ -77,22 +77,22 @@ func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) GetFieldDeserializers()(
         return nil
     }
     res["innerAuthenticationProtocolForEapTtls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseNonEapAuthenticationMethodForEapTtlsType)
+        val, err := n.GetEnumValue(ParseAndroidWorkProfileEnterpriseWiFiConfiguration_innerAuthenticationProtocolForEapTtls)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInnerAuthenticationProtocolForEapTtls(val.(*NonEapAuthenticationMethodForEapTtlsType))
+            m.SetInnerAuthenticationProtocolForEapTtls(val.(*AndroidWorkProfileEnterpriseWiFiConfiguration_innerAuthenticationProtocolForEapTtls))
         }
         return nil
     }
     res["innerAuthenticationProtocolForPeap"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseNonEapAuthenticationMethodForPeap)
+        val, err := n.GetEnumValue(ParseAndroidWorkProfileEnterpriseWiFiConfiguration_innerAuthenticationProtocolForPeap)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInnerAuthenticationProtocolForPeap(val.(*NonEapAuthenticationMethodForPeap))
+            m.SetInnerAuthenticationProtocolForPeap(val.(*AndroidWorkProfileEnterpriseWiFiConfiguration_innerAuthenticationProtocolForPeap))
         }
         return nil
     }
@@ -166,24 +166,24 @@ func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) GetIdentityCertificateFo
     return nil
 }
 // GetInnerAuthenticationProtocolForEapTtls gets the innerAuthenticationProtocolForEapTtls property value. Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
-func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) GetInnerAuthenticationProtocolForEapTtls()(*NonEapAuthenticationMethodForEapTtlsType) {
+func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) GetInnerAuthenticationProtocolForEapTtls()(*AndroidWorkProfileEnterpriseWiFiConfiguration_innerAuthenticationProtocolForEapTtls) {
     val, err := m.GetBackingStore().Get("innerAuthenticationProtocolForEapTtls")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*NonEapAuthenticationMethodForEapTtlsType)
+        return val.(*AndroidWorkProfileEnterpriseWiFiConfiguration_innerAuthenticationProtocolForEapTtls)
     }
     return nil
 }
 // GetInnerAuthenticationProtocolForPeap gets the innerAuthenticationProtocolForPeap property value. Non-EAP Method for Authentication (Inner Identity) when EAP Type is PEAP and Authenticationmethod is Username and Password. Possible values are: none, microsoftChapVersionTwo.
-func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) GetInnerAuthenticationProtocolForPeap()(*NonEapAuthenticationMethodForPeap) {
+func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) GetInnerAuthenticationProtocolForPeap()(*AndroidWorkProfileEnterpriseWiFiConfiguration_innerAuthenticationProtocolForPeap) {
     val, err := m.GetBackingStore().Get("innerAuthenticationProtocolForPeap")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*NonEapAuthenticationMethodForPeap)
+        return val.(*AndroidWorkProfileEnterpriseWiFiConfiguration_innerAuthenticationProtocolForPeap)
     }
     return nil
 }
@@ -316,7 +316,7 @@ func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) Serialize(writer i878a80
     return nil
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. Indicates the Authentication Method the client (device) needs to use when the EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.
-func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) SetAuthenticationMethod(value *WiFiAuthenticationMethod)() {
+func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) SetAuthenticationMethod(value *AndroidWorkProfileEnterpriseWiFiConfiguration_authenticationMethod)() {
     err := m.GetBackingStore().Set("authenticationMethod", value)
     if err != nil {
         panic(err)
@@ -337,14 +337,14 @@ func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) SetIdentityCertificateFo
     }
 }
 // SetInnerAuthenticationProtocolForEapTtls sets the innerAuthenticationProtocolForEapTtls property value. Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
-func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) SetInnerAuthenticationProtocolForEapTtls(value *NonEapAuthenticationMethodForEapTtlsType)() {
+func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) SetInnerAuthenticationProtocolForEapTtls(value *AndroidWorkProfileEnterpriseWiFiConfiguration_innerAuthenticationProtocolForEapTtls)() {
     err := m.GetBackingStore().Set("innerAuthenticationProtocolForEapTtls", value)
     if err != nil {
         panic(err)
     }
 }
 // SetInnerAuthenticationProtocolForPeap sets the innerAuthenticationProtocolForPeap property value. Non-EAP Method for Authentication (Inner Identity) when EAP Type is PEAP and Authenticationmethod is Username and Password. Possible values are: none, microsoftChapVersionTwo.
-func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) SetInnerAuthenticationProtocolForPeap(value *NonEapAuthenticationMethodForPeap)() {
+func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) SetInnerAuthenticationProtocolForPeap(value *AndroidWorkProfileEnterpriseWiFiConfiguration_innerAuthenticationProtocolForPeap)() {
     err := m.GetBackingStore().Set("innerAuthenticationProtocolForPeap", value)
     if err != nil {
         panic(err)
@@ -389,21 +389,21 @@ func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) SetTrustedServerCertific
 type AndroidWorkProfileEnterpriseWiFiConfigurationable interface {
     AndroidWorkProfileWiFiConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAuthenticationMethod()(*WiFiAuthenticationMethod)
+    GetAuthenticationMethod()(*AndroidWorkProfileEnterpriseWiFiConfiguration_authenticationMethod)
     GetEapType()(*AndroidEapType)
     GetIdentityCertificateForClientAuthentication()(AndroidWorkProfileCertificateProfileBaseable)
-    GetInnerAuthenticationProtocolForEapTtls()(*NonEapAuthenticationMethodForEapTtlsType)
-    GetInnerAuthenticationProtocolForPeap()(*NonEapAuthenticationMethodForPeap)
+    GetInnerAuthenticationProtocolForEapTtls()(*AndroidWorkProfileEnterpriseWiFiConfiguration_innerAuthenticationProtocolForEapTtls)
+    GetInnerAuthenticationProtocolForPeap()(*AndroidWorkProfileEnterpriseWiFiConfiguration_innerAuthenticationProtocolForPeap)
     GetOuterIdentityPrivacyTemporaryValue()(*string)
     GetProxyAutomaticConfigurationUrl()(*string)
     GetProxySettings()(*WiFiProxySetting)
     GetRootCertificateForServerValidation()(AndroidWorkProfileTrustedRootCertificateable)
     GetTrustedServerCertificateNames()([]string)
-    SetAuthenticationMethod(value *WiFiAuthenticationMethod)()
+    SetAuthenticationMethod(value *AndroidWorkProfileEnterpriseWiFiConfiguration_authenticationMethod)()
     SetEapType(value *AndroidEapType)()
     SetIdentityCertificateForClientAuthentication(value AndroidWorkProfileCertificateProfileBaseable)()
-    SetInnerAuthenticationProtocolForEapTtls(value *NonEapAuthenticationMethodForEapTtlsType)()
-    SetInnerAuthenticationProtocolForPeap(value *NonEapAuthenticationMethodForPeap)()
+    SetInnerAuthenticationProtocolForEapTtls(value *AndroidWorkProfileEnterpriseWiFiConfiguration_innerAuthenticationProtocolForEapTtls)()
+    SetInnerAuthenticationProtocolForPeap(value *AndroidWorkProfileEnterpriseWiFiConfiguration_innerAuthenticationProtocolForPeap)()
     SetOuterIdentityPrivacyTemporaryValue(value *string)()
     SetProxyAutomaticConfigurationUrl(value *string)()
     SetProxySettings(value *WiFiProxySetting)()

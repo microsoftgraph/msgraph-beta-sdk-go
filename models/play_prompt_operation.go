@@ -20,13 +20,13 @@ func CreatePlayPromptOperationFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewPlayPromptOperation(), nil
 }
 // GetCompletionReason gets the completionReason property value. Possible values are: unknown, completedSuccessfully, mediaOperationCanceled.
-func (m *PlayPromptOperation) GetCompletionReason()(*PlayPromptCompletionReason) {
+func (m *PlayPromptOperation) GetCompletionReason()(*PlayPromptOperation_completionReason) {
     val, err := m.GetBackingStore().Get("completionReason")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PlayPromptCompletionReason)
+        return val.(*PlayPromptOperation_completionReason)
     }
     return nil
 }
@@ -34,12 +34,12 @@ func (m *PlayPromptOperation) GetCompletionReason()(*PlayPromptCompletionReason)
 func (m *PlayPromptOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CommsOperation.GetFieldDeserializers()
     res["completionReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePlayPromptCompletionReason)
+        val, err := n.GetEnumValue(ParsePlayPromptOperation_completionReason)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCompletionReason(val.(*PlayPromptCompletionReason))
+            m.SetCompletionReason(val.(*PlayPromptOperation_completionReason))
         }
         return nil
     }
@@ -61,7 +61,7 @@ func (m *PlayPromptOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetCompletionReason sets the completionReason property value. Possible values are: unknown, completedSuccessfully, mediaOperationCanceled.
-func (m *PlayPromptOperation) SetCompletionReason(value *PlayPromptCompletionReason)() {
+func (m *PlayPromptOperation) SetCompletionReason(value *PlayPromptOperation_completionReason)() {
     err := m.GetBackingStore().Set("completionReason", value)
     if err != nil {
         panic(err)
@@ -71,6 +71,6 @@ func (m *PlayPromptOperation) SetCompletionReason(value *PlayPromptCompletionRea
 type PlayPromptOperationable interface {
     CommsOperationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetCompletionReason()(*PlayPromptCompletionReason)
-    SetCompletionReason(value *PlayPromptCompletionReason)()
+    GetCompletionReason()(*PlayPromptOperation_completionReason)
+    SetCompletionReason(value *PlayPromptOperation_completionReason)()
 }

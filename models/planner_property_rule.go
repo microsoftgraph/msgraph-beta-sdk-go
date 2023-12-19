@@ -70,12 +70,12 @@ func (m *PlannerPropertyRule) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["ruleKind"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePlannerRuleKind)
+        val, err := n.GetEnumValue(ParsePlannerPropertyRule_ruleKind)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRuleKind(val.(*PlannerRuleKind))
+            m.SetRuleKind(val.(*PlannerPropertyRule_ruleKind))
         }
         return nil
     }
@@ -93,13 +93,13 @@ func (m *PlannerPropertyRule) GetOdataType()(*string) {
     return nil
 }
 // GetRuleKind gets the ruleKind property value. Identifies which type of property rules is represented by this instance. The possible values are: taskRule, bucketRule, planRule, unknownFutureValue.
-func (m *PlannerPropertyRule) GetRuleKind()(*PlannerRuleKind) {
+func (m *PlannerPropertyRule) GetRuleKind()(*PlannerPropertyRule_ruleKind) {
     val, err := m.GetBackingStore().Get("ruleKind")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PlannerRuleKind)
+        return val.(*PlannerPropertyRule_ruleKind)
     }
     return nil
 }
@@ -145,7 +145,7 @@ func (m *PlannerPropertyRule) SetOdataType(value *string)() {
     }
 }
 // SetRuleKind sets the ruleKind property value. Identifies which type of property rules is represented by this instance. The possible values are: taskRule, bucketRule, planRule, unknownFutureValue.
-func (m *PlannerPropertyRule) SetRuleKind(value *PlannerRuleKind)() {
+func (m *PlannerPropertyRule) SetRuleKind(value *PlannerPropertyRule_ruleKind)() {
     err := m.GetBackingStore().Set("ruleKind", value)
     if err != nil {
         panic(err)
@@ -158,8 +158,8 @@ type PlannerPropertyRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
-    GetRuleKind()(*PlannerRuleKind)
+    GetRuleKind()(*PlannerPropertyRule_ruleKind)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
-    SetRuleKind(value *PlannerRuleKind)()
+    SetRuleKind(value *PlannerPropertyRule_ruleKind)()
 }

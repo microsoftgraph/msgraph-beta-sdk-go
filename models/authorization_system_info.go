@@ -35,13 +35,13 @@ func (m *AuthorizationSystemInfo) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAuthorizationSystemType gets the authorizationSystemType property value. The type of authorization system.The possible values are: azure, gcp, aws, unknownFutureValue.
-func (m *AuthorizationSystemInfo) GetAuthorizationSystemType()(*AuthorizationSystemType) {
+func (m *AuthorizationSystemInfo) GetAuthorizationSystemType()(*AuthorizationSystemInfo_authorizationSystemType) {
     val, err := m.GetBackingStore().Get("authorizationSystemType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AuthorizationSystemType)
+        return val.(*AuthorizationSystemInfo_authorizationSystemType)
     }
     return nil
 }
@@ -64,12 +64,12 @@ func (m *AuthorizationSystemInfo) GetDisplayName()(*string) {
 func (m *AuthorizationSystemInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["authorizationSystemType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAuthorizationSystemType)
+        val, err := n.GetEnumValue(ParseAuthorizationSystemInfo_authorizationSystemType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAuthorizationSystemType(val.(*AuthorizationSystemType))
+            m.SetAuthorizationSystemType(val.(*AuthorizationSystemInfo_authorizationSystemType))
         }
         return nil
     }
@@ -170,7 +170,7 @@ func (m *AuthorizationSystemInfo) SetAdditionalData(value map[string]any)() {
     }
 }
 // SetAuthorizationSystemType sets the authorizationSystemType property value. The type of authorization system.The possible values are: azure, gcp, aws, unknownFutureValue.
-func (m *AuthorizationSystemInfo) SetAuthorizationSystemType(value *AuthorizationSystemType)() {
+func (m *AuthorizationSystemInfo) SetAuthorizationSystemType(value *AuthorizationSystemInfo_authorizationSystemType)() {
     err := m.GetBackingStore().Set("authorizationSystemType", value)
     if err != nil {
         panic(err)
@@ -206,12 +206,12 @@ type AuthorizationSystemInfoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAuthorizationSystemType()(*AuthorizationSystemType)
+    GetAuthorizationSystemType()(*AuthorizationSystemInfo_authorizationSystemType)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDisplayName()(*string)
     GetId()(*string)
     GetOdataType()(*string)
-    SetAuthorizationSystemType(value *AuthorizationSystemType)()
+    SetAuthorizationSystemType(value *AuthorizationSystemInfo_authorizationSystemType)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDisplayName(value *string)()
     SetId(value *string)()

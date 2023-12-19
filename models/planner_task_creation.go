@@ -59,13 +59,13 @@ func (m *PlannerTaskCreation) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d
     return m.backingStore
 }
 // GetCreationSourceKind gets the creationSourceKind property value. Specifies what kind of creation source the task is created with. The possible values are: external, publication and unknownFutureValue.
-func (m *PlannerTaskCreation) GetCreationSourceKind()(*PlannerCreationSourceKind) {
+func (m *PlannerTaskCreation) GetCreationSourceKind()(*PlannerTaskCreation_creationSourceKind) {
     val, err := m.GetBackingStore().Get("creationSourceKind")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PlannerCreationSourceKind)
+        return val.(*PlannerTaskCreation_creationSourceKind)
     }
     return nil
 }
@@ -73,12 +73,12 @@ func (m *PlannerTaskCreation) GetCreationSourceKind()(*PlannerCreationSourceKind
 func (m *PlannerTaskCreation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["creationSourceKind"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePlannerCreationSourceKind)
+        val, err := n.GetEnumValue(ParsePlannerTaskCreation_creationSourceKind)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCreationSourceKind(val.(*PlannerCreationSourceKind))
+            m.SetCreationSourceKind(val.(*PlannerTaskCreation_creationSourceKind))
         }
         return nil
     }
@@ -167,7 +167,7 @@ func (m *PlannerTaskCreation) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd
     m.backingStore = value
 }
 // SetCreationSourceKind sets the creationSourceKind property value. Specifies what kind of creation source the task is created with. The possible values are: external, publication and unknownFutureValue.
-func (m *PlannerTaskCreation) SetCreationSourceKind(value *PlannerCreationSourceKind)() {
+func (m *PlannerTaskCreation) SetCreationSourceKind(value *PlannerTaskCreation_creationSourceKind)() {
     err := m.GetBackingStore().Set("creationSourceKind", value)
     if err != nil {
         panic(err)
@@ -193,11 +193,11 @@ type PlannerTaskCreationable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetCreationSourceKind()(*PlannerCreationSourceKind)
+    GetCreationSourceKind()(*PlannerTaskCreation_creationSourceKind)
     GetOdataType()(*string)
     GetTeamsPublicationInfo()(PlannerTeamsPublicationInfoable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetCreationSourceKind(value *PlannerCreationSourceKind)()
+    SetCreationSourceKind(value *PlannerTaskCreation_creationSourceKind)()
     SetOdataType(value *string)()
     SetTeamsPublicationInfo(value PlannerTeamsPublicationInfoable)()
 }

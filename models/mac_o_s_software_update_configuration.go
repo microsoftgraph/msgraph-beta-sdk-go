@@ -135,12 +135,12 @@ func (m *MacOSSoftwareUpdateConfiguration) GetFieldDeserializers()(map[string]fu
         return nil
     }
     res["priority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMacOSPriority)
+        val, err := n.GetEnumValue(ParseMacOSSoftwareUpdateConfiguration_priority)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPriority(val.(*MacOSPriority))
+            m.SetPriority(val.(*MacOSSoftwareUpdateConfiguration_priority))
         }
         return nil
     }
@@ -189,13 +189,13 @@ func (m *MacOSSoftwareUpdateConfiguration) GetMaxUserDeferralsCount()(*int32) {
     return nil
 }
 // GetPriority gets the priority property value. The scheduling priority for downloading and preparing the requested update. Default: Low. Possible values: Null, Low, High. Possible values are: low, high, unknownFutureValue.
-func (m *MacOSSoftwareUpdateConfiguration) GetPriority()(*MacOSPriority) {
+func (m *MacOSSoftwareUpdateConfiguration) GetPriority()(*MacOSSoftwareUpdateConfiguration_priority) {
     val, err := m.GetBackingStore().Get("priority")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MacOSPriority)
+        return val.(*MacOSSoftwareUpdateConfiguration_priority)
     }
     return nil
 }
@@ -338,7 +338,7 @@ func (m *MacOSSoftwareUpdateConfiguration) SetMaxUserDeferralsCount(value *int32
     }
 }
 // SetPriority sets the priority property value. The scheduling priority for downloading and preparing the requested update. Default: Low. Possible values: Null, Low, High. Possible values are: low, high, unknownFutureValue.
-func (m *MacOSSoftwareUpdateConfiguration) SetPriority(value *MacOSPriority)() {
+func (m *MacOSSoftwareUpdateConfiguration) SetPriority(value *MacOSSoftwareUpdateConfiguration_priority)() {
     err := m.GetBackingStore().Set("priority", value)
     if err != nil {
         panic(err)
@@ -368,7 +368,7 @@ type MacOSSoftwareUpdateConfigurationable interface {
     GetCustomUpdateTimeWindows()([]CustomUpdateTimeWindowable)
     GetFirmwareUpdateBehavior()(*MacOSSoftwareUpdateBehavior)
     GetMaxUserDeferralsCount()(*int32)
-    GetPriority()(*MacOSPriority)
+    GetPriority()(*MacOSSoftwareUpdateConfiguration_priority)
     GetUpdateScheduleType()(*MacOSSoftwareUpdateScheduleType)
     GetUpdateTimeWindowUtcOffsetInMinutes()(*int32)
     SetAllOtherUpdateBehavior(value *MacOSSoftwareUpdateBehavior)()
@@ -377,7 +377,7 @@ type MacOSSoftwareUpdateConfigurationable interface {
     SetCustomUpdateTimeWindows(value []CustomUpdateTimeWindowable)()
     SetFirmwareUpdateBehavior(value *MacOSSoftwareUpdateBehavior)()
     SetMaxUserDeferralsCount(value *int32)()
-    SetPriority(value *MacOSPriority)()
+    SetPriority(value *MacOSSoftwareUpdateConfiguration_priority)()
     SetUpdateScheduleType(value *MacOSSoftwareUpdateScheduleType)()
     SetUpdateTimeWindowUtcOffsetInMinutes(value *int32)()
 }

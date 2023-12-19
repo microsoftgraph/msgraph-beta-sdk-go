@@ -68,22 +68,22 @@ func (m *X509CertificateAuthenticationModeConfiguration) GetFieldDeserializers()
         return nil
     }
     res["x509CertificateAuthenticationDefaultMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseX509CertificateAuthenticationMode)
+        val, err := n.GetEnumValue(ParseX509CertificateAuthenticationModeConfiguration_x509CertificateAuthenticationDefaultMode)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetX509CertificateAuthenticationDefaultMode(val.(*X509CertificateAuthenticationMode))
+            m.SetX509CertificateAuthenticationDefaultMode(val.(*X509CertificateAuthenticationModeConfiguration_x509CertificateAuthenticationDefaultMode))
         }
         return nil
     }
     res["x509CertificateDefaultRequiredAffinityLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseX509CertificateAffinityLevel)
+        val, err := n.GetEnumValue(ParseX509CertificateAuthenticationModeConfiguration_x509CertificateDefaultRequiredAffinityLevel)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetX509CertificateDefaultRequiredAffinityLevel(val.(*X509CertificateAffinityLevel))
+            m.SetX509CertificateDefaultRequiredAffinityLevel(val.(*X509CertificateAuthenticationModeConfiguration_x509CertificateDefaultRequiredAffinityLevel))
         }
         return nil
     }
@@ -112,24 +112,24 @@ func (m *X509CertificateAuthenticationModeConfiguration) GetRules()([]X509Certif
     return nil
 }
 // GetX509CertificateAuthenticationDefaultMode gets the x509CertificateAuthenticationDefaultMode property value. The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue.
-func (m *X509CertificateAuthenticationModeConfiguration) GetX509CertificateAuthenticationDefaultMode()(*X509CertificateAuthenticationMode) {
+func (m *X509CertificateAuthenticationModeConfiguration) GetX509CertificateAuthenticationDefaultMode()(*X509CertificateAuthenticationModeConfiguration_x509CertificateAuthenticationDefaultMode) {
     val, err := m.GetBackingStore().Get("x509CertificateAuthenticationDefaultMode")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*X509CertificateAuthenticationMode)
+        return val.(*X509CertificateAuthenticationModeConfiguration_x509CertificateAuthenticationDefaultMode)
     }
     return nil
 }
 // GetX509CertificateDefaultRequiredAffinityLevel gets the x509CertificateDefaultRequiredAffinityLevel property value. Determines the default value for the tenant affinity binding level. The possible values are: low, high, unknownFutureValue.
-func (m *X509CertificateAuthenticationModeConfiguration) GetX509CertificateDefaultRequiredAffinityLevel()(*X509CertificateAffinityLevel) {
+func (m *X509CertificateAuthenticationModeConfiguration) GetX509CertificateDefaultRequiredAffinityLevel()(*X509CertificateAuthenticationModeConfiguration_x509CertificateDefaultRequiredAffinityLevel) {
     val, err := m.GetBackingStore().Get("x509CertificateDefaultRequiredAffinityLevel")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*X509CertificateAffinityLevel)
+        return val.(*X509CertificateAuthenticationModeConfiguration_x509CertificateDefaultRequiredAffinityLevel)
     }
     return nil
 }
@@ -201,14 +201,14 @@ func (m *X509CertificateAuthenticationModeConfiguration) SetRules(value []X509Ce
     }
 }
 // SetX509CertificateAuthenticationDefaultMode sets the x509CertificateAuthenticationDefaultMode property value. The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue.
-func (m *X509CertificateAuthenticationModeConfiguration) SetX509CertificateAuthenticationDefaultMode(value *X509CertificateAuthenticationMode)() {
+func (m *X509CertificateAuthenticationModeConfiguration) SetX509CertificateAuthenticationDefaultMode(value *X509CertificateAuthenticationModeConfiguration_x509CertificateAuthenticationDefaultMode)() {
     err := m.GetBackingStore().Set("x509CertificateAuthenticationDefaultMode", value)
     if err != nil {
         panic(err)
     }
 }
 // SetX509CertificateDefaultRequiredAffinityLevel sets the x509CertificateDefaultRequiredAffinityLevel property value. Determines the default value for the tenant affinity binding level. The possible values are: low, high, unknownFutureValue.
-func (m *X509CertificateAuthenticationModeConfiguration) SetX509CertificateDefaultRequiredAffinityLevel(value *X509CertificateAffinityLevel)() {
+func (m *X509CertificateAuthenticationModeConfiguration) SetX509CertificateDefaultRequiredAffinityLevel(value *X509CertificateAuthenticationModeConfiguration_x509CertificateDefaultRequiredAffinityLevel)() {
     err := m.GetBackingStore().Set("x509CertificateDefaultRequiredAffinityLevel", value)
     if err != nil {
         panic(err)
@@ -222,11 +222,11 @@ type X509CertificateAuthenticationModeConfigurationable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetRules()([]X509CertificateRuleable)
-    GetX509CertificateAuthenticationDefaultMode()(*X509CertificateAuthenticationMode)
-    GetX509CertificateDefaultRequiredAffinityLevel()(*X509CertificateAffinityLevel)
+    GetX509CertificateAuthenticationDefaultMode()(*X509CertificateAuthenticationModeConfiguration_x509CertificateAuthenticationDefaultMode)
+    GetX509CertificateDefaultRequiredAffinityLevel()(*X509CertificateAuthenticationModeConfiguration_x509CertificateDefaultRequiredAffinityLevel)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetRules(value []X509CertificateRuleable)()
-    SetX509CertificateAuthenticationDefaultMode(value *X509CertificateAuthenticationMode)()
-    SetX509CertificateDefaultRequiredAffinityLevel(value *X509CertificateAffinityLevel)()
+    SetX509CertificateAuthenticationDefaultMode(value *X509CertificateAuthenticationModeConfiguration_x509CertificateAuthenticationDefaultMode)()
+    SetX509CertificateDefaultRequiredAffinityLevel(value *X509CertificateAuthenticationModeConfiguration_x509CertificateDefaultRequiredAffinityLevel)()
 }

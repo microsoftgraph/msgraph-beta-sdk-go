@@ -77,12 +77,12 @@ func (m *EmailThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     res["originalCategory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSubmissionCategory)
+        val, err := n.GetEnumValue(ParseEmailThreatSubmission_originalCategory)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOriginalCategory(val.(*SubmissionCategory))
+            m.SetOriginalCategory(val.(*EmailThreatSubmission_originalCategory))
         }
         return nil
     }
@@ -160,13 +160,13 @@ func (m *EmailThreatSubmission) GetInternetMessageId()(*string) {
     return nil
 }
 // GetOriginalCategory gets the originalCategory property value. The original category of the submission. The possible values are: notJunk, spam, phishing, malware and unkownFutureValue.
-func (m *EmailThreatSubmission) GetOriginalCategory()(*SubmissionCategory) {
+func (m *EmailThreatSubmission) GetOriginalCategory()(*EmailThreatSubmission_originalCategory) {
     val, err := m.GetBackingStore().Get("originalCategory")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SubmissionCategory)
+        return val.(*EmailThreatSubmission_originalCategory)
     }
     return nil
 }
@@ -314,7 +314,7 @@ func (m *EmailThreatSubmission) SetInternetMessageId(value *string)() {
     }
 }
 // SetOriginalCategory sets the originalCategory property value. The original category of the submission. The possible values are: notJunk, spam, phishing, malware and unkownFutureValue.
-func (m *EmailThreatSubmission) SetOriginalCategory(value *SubmissionCategory)() {
+func (m *EmailThreatSubmission) SetOriginalCategory(value *EmailThreatSubmission_originalCategory)() {
     err := m.GetBackingStore().Set("originalCategory", value)
     if err != nil {
         panic(err)
@@ -368,7 +368,7 @@ type EmailThreatSubmissionable interface {
     ThreatSubmissionable
     GetAttackSimulationInfo()(AttackSimulationInfoable)
     GetInternetMessageId()(*string)
-    GetOriginalCategory()(*SubmissionCategory)
+    GetOriginalCategory()(*EmailThreatSubmission_originalCategory)
     GetReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRecipientEmailAddress()(*string)
     GetSender()(*string)
@@ -377,7 +377,7 @@ type EmailThreatSubmissionable interface {
     GetTenantAllowOrBlockListAction()(TenantAllowOrBlockListActionable)
     SetAttackSimulationInfo(value AttackSimulationInfoable)()
     SetInternetMessageId(value *string)()
-    SetOriginalCategory(value *SubmissionCategory)()
+    SetOriginalCategory(value *EmailThreatSubmission_originalCategory)()
     SetReceivedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRecipientEmailAddress(value *string)()
     SetSender(value *string)()

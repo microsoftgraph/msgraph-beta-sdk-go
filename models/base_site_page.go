@@ -43,12 +43,12 @@ func CreateBaseSitePageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 func (m *BaseSitePage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseItem.GetFieldDeserializers()
     res["pageLayout"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePageLayoutType)
+        val, err := n.GetEnumValue(ParseBaseSitePage_pageLayout)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPageLayout(val.(*PageLayoutType))
+            m.SetPageLayout(val.(*BaseSitePage_pageLayout))
         }
         return nil
     }
@@ -75,13 +75,13 @@ func (m *BaseSitePage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetPageLayout gets the pageLayout property value. The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue.
-func (m *BaseSitePage) GetPageLayout()(*PageLayoutType) {
+func (m *BaseSitePage) GetPageLayout()(*BaseSitePage_pageLayout) {
     val, err := m.GetBackingStore().Get("pageLayout")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PageLayoutType)
+        return val.(*BaseSitePage_pageLayout)
     }
     return nil
 }
@@ -135,7 +135,7 @@ func (m *BaseSitePage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetPageLayout sets the pageLayout property value. The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue.
-func (m *BaseSitePage) SetPageLayout(value *PageLayoutType)() {
+func (m *BaseSitePage) SetPageLayout(value *BaseSitePage_pageLayout)() {
     err := m.GetBackingStore().Set("pageLayout", value)
     if err != nil {
         panic(err)
@@ -159,10 +159,10 @@ func (m *BaseSitePage) SetTitle(value *string)() {
 type BaseSitePageable interface {
     BaseItemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetPageLayout()(*PageLayoutType)
+    GetPageLayout()(*BaseSitePage_pageLayout)
     GetPublishingState()(PublicationFacetable)
     GetTitle()(*string)
-    SetPageLayout(value *PageLayoutType)()
+    SetPageLayout(value *BaseSitePage_pageLayout)()
     SetPublishingState(value PublicationFacetable)()
     SetTitle(value *string)()
 }

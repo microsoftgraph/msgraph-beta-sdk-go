@@ -46,13 +46,13 @@ func (m *LogonUser) GetAccountName()(*string) {
     return nil
 }
 // GetAccountType gets the accountType property value. User Account type, per Windows definition. Possible values are: unknown, standard, power, administrator.
-func (m *LogonUser) GetAccountType()(*UserAccountSecurityType) {
+func (m *LogonUser) GetAccountType()(*LogonUser_accountType) {
     val, err := m.GetBackingStore().Get("accountType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*UserAccountSecurityType)
+        return val.(*LogonUser_accountType)
     }
     return nil
 }
@@ -96,12 +96,12 @@ func (m *LogonUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         return nil
     }
     res["accountType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseUserAccountSecurityType)
+        val, err := n.GetEnumValue(ParseLogonUser_accountType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccountType(val.(*UserAccountSecurityType))
+            m.SetAccountType(val.(*LogonUser_accountType))
         }
         return nil
     }
@@ -136,15 +136,15 @@ func (m *LogonUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         return nil
     }
     res["logonTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseLogonType)
+        val, err := n.GetCollectionOfEnumValues(ParseLogonUser_logonTypes)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]LogonType, len(val))
+            res := make([]LogonUser_logonTypes, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*LogonType))
+                    res[i] = *(v.(*LogonUser_logonTypes))
                 }
             }
             m.SetLogonTypes(res)
@@ -197,13 +197,13 @@ func (m *LogonUser) GetLogonId()(*string) {
     return nil
 }
 // GetLogonTypes gets the logonTypes property value. Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
-func (m *LogonUser) GetLogonTypes()([]LogonType) {
+func (m *LogonUser) GetLogonTypes()([]LogonUser_logonTypes) {
     val, err := m.GetBackingStore().Get("logonTypes")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]LogonType)
+        return val.([]LogonUser_logonTypes)
     }
     return nil
 }
@@ -258,7 +258,7 @@ func (m *LogonUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     if m.GetLogonTypes() != nil {
-        err := writer.WriteCollectionOfStringValues("logonTypes", SerializeLogonType(m.GetLogonTypes()))
+        err := writer.WriteCollectionOfStringValues("logonTypes", SerializeLogonUser_logonTypes(m.GetLogonTypes()))
         if err != nil {
             return err
         }
@@ -292,7 +292,7 @@ func (m *LogonUser) SetAccountName(value *string)() {
     }
 }
 // SetAccountType sets the accountType property value. User Account type, per Windows definition. Possible values are: unknown, standard, power, administrator.
-func (m *LogonUser) SetAccountType(value *UserAccountSecurityType)() {
+func (m *LogonUser) SetAccountType(value *LogonUser_accountType)() {
     err := m.GetBackingStore().Set("accountType", value)
     if err != nil {
         panic(err)
@@ -331,7 +331,7 @@ func (m *LogonUser) SetLogonId(value *string)() {
     }
 }
 // SetLogonTypes sets the logonTypes property value. Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
-func (m *LogonUser) SetLogonTypes(value []LogonType)() {
+func (m *LogonUser) SetLogonTypes(value []LogonUser_logonTypes)() {
     err := m.GetBackingStore().Set("logonTypes", value)
     if err != nil {
         panic(err)
@@ -351,20 +351,20 @@ type LogonUserable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAccountDomain()(*string)
     GetAccountName()(*string)
-    GetAccountType()(*UserAccountSecurityType)
+    GetAccountType()(*LogonUser_accountType)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLogonId()(*string)
-    GetLogonTypes()([]LogonType)
+    GetLogonTypes()([]LogonUser_logonTypes)
     GetOdataType()(*string)
     SetAccountDomain(value *string)()
     SetAccountName(value *string)()
-    SetAccountType(value *UserAccountSecurityType)()
+    SetAccountType(value *LogonUser_accountType)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLogonId(value *string)()
-    SetLogonTypes(value []LogonType)()
+    SetLogonTypes(value []LogonUser_logonTypes)()
     SetOdataType(value *string)()
 }

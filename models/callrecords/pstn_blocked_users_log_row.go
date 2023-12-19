@@ -105,12 +105,12 @@ func (m *PstnBlockedUsersLogRow) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["userBlockMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePstnUserBlockMode)
+        val, err := n.GetEnumValue(ParsePstnBlockedUsersLogRow_userBlockMode)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUserBlockMode(val.(*PstnUserBlockMode))
+            m.SetUserBlockMode(val.(*PstnBlockedUsersLogRow_userBlockMode))
         }
         return nil
     }
@@ -179,13 +179,13 @@ func (m *PstnBlockedUsersLogRow) GetRemediationId()(*string) {
     return nil
 }
 // GetUserBlockMode gets the userBlockMode property value. Indicates whether the user is blocked or unblocked from making PSTN calls in Microsoft Teams. The possible values are: blocked, unblocked, unknownFutureValue.
-func (m *PstnBlockedUsersLogRow) GetUserBlockMode()(*PstnUserBlockMode) {
+func (m *PstnBlockedUsersLogRow) GetUserBlockMode()(*PstnBlockedUsersLogRow_userBlockMode) {
     val, err := m.GetBackingStore().Get("userBlockMode")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PstnUserBlockMode)
+        return val.(*PstnBlockedUsersLogRow_userBlockMode)
     }
     return nil
 }
@@ -338,7 +338,7 @@ func (m *PstnBlockedUsersLogRow) SetRemediationId(value *string)() {
     }
 }
 // SetUserBlockMode sets the userBlockMode property value. Indicates whether the user is blocked or unblocked from making PSTN calls in Microsoft Teams. The possible values are: blocked, unblocked, unknownFutureValue.
-func (m *PstnBlockedUsersLogRow) SetUserBlockMode(value *PstnUserBlockMode)() {
+func (m *PstnBlockedUsersLogRow) SetUserBlockMode(value *PstnBlockedUsersLogRow_userBlockMode)() {
     err := m.GetBackingStore().Set("userBlockMode", value)
     if err != nil {
         panic(err)
@@ -382,7 +382,7 @@ type PstnBlockedUsersLogRowable interface {
     GetBlockReason()(*string)
     GetOdataType()(*string)
     GetRemediationId()(*string)
-    GetUserBlockMode()(*PstnUserBlockMode)
+    GetUserBlockMode()(*PstnBlockedUsersLogRow_userBlockMode)
     GetUserDisplayName()(*string)
     GetUserId()(*string)
     GetUserPrincipalName()(*string)
@@ -392,7 +392,7 @@ type PstnBlockedUsersLogRowable interface {
     SetBlockReason(value *string)()
     SetOdataType(value *string)()
     SetRemediationId(value *string)()
-    SetUserBlockMode(value *PstnUserBlockMode)()
+    SetUserBlockMode(value *PstnBlockedUsersLogRow_userBlockMode)()
     SetUserDisplayName(value *string)()
     SetUserId(value *string)()
     SetUserPrincipalName(value *string)()

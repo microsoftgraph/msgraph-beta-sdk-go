@@ -54,22 +54,22 @@ func (m *TextClassificationRequest) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     res["matchTolerancesToInclude"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMlClassificationMatchTolerance)
+        val, err := n.GetEnumValue(ParseTextClassificationRequest_matchTolerancesToInclude)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMatchTolerancesToInclude(val.(*MlClassificationMatchTolerance))
+            m.SetMatchTolerancesToInclude(val.(*TextClassificationRequest_matchTolerancesToInclude))
         }
         return nil
     }
     res["scopesToRun"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSensitiveTypeScope)
+        val, err := n.GetEnumValue(ParseTextClassificationRequest_scopesToRun)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetScopesToRun(val.(*SensitiveTypeScope))
+            m.SetScopesToRun(val.(*TextClassificationRequest_scopesToRun))
         }
         return nil
     }
@@ -113,24 +113,24 @@ func (m *TextClassificationRequest) GetFileExtension()(*string) {
     return nil
 }
 // GetMatchTolerancesToInclude gets the matchTolerancesToInclude property value. The matchTolerancesToInclude property
-func (m *TextClassificationRequest) GetMatchTolerancesToInclude()(*MlClassificationMatchTolerance) {
+func (m *TextClassificationRequest) GetMatchTolerancesToInclude()(*TextClassificationRequest_matchTolerancesToInclude) {
     val, err := m.GetBackingStore().Get("matchTolerancesToInclude")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MlClassificationMatchTolerance)
+        return val.(*TextClassificationRequest_matchTolerancesToInclude)
     }
     return nil
 }
 // GetScopesToRun gets the scopesToRun property value. The scopesToRun property
-func (m *TextClassificationRequest) GetScopesToRun()(*SensitiveTypeScope) {
+func (m *TextClassificationRequest) GetScopesToRun()(*TextClassificationRequest_scopesToRun) {
     val, err := m.GetBackingStore().Get("scopesToRun")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SensitiveTypeScope)
+        return val.(*TextClassificationRequest_scopesToRun)
     }
     return nil
 }
@@ -217,14 +217,14 @@ func (m *TextClassificationRequest) SetFileExtension(value *string)() {
     }
 }
 // SetMatchTolerancesToInclude sets the matchTolerancesToInclude property value. The matchTolerancesToInclude property
-func (m *TextClassificationRequest) SetMatchTolerancesToInclude(value *MlClassificationMatchTolerance)() {
+func (m *TextClassificationRequest) SetMatchTolerancesToInclude(value *TextClassificationRequest_matchTolerancesToInclude)() {
     err := m.GetBackingStore().Set("matchTolerancesToInclude", value)
     if err != nil {
         panic(err)
     }
 }
 // SetScopesToRun sets the scopesToRun property value. The scopesToRun property
-func (m *TextClassificationRequest) SetScopesToRun(value *SensitiveTypeScope)() {
+func (m *TextClassificationRequest) SetScopesToRun(value *TextClassificationRequest_scopesToRun)() {
     err := m.GetBackingStore().Set("scopesToRun", value)
     if err != nil {
         panic(err)
@@ -250,14 +250,14 @@ type TextClassificationRequestable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetContentMetaData()(ClassificationRequestContentMetaDataable)
     GetFileExtension()(*string)
-    GetMatchTolerancesToInclude()(*MlClassificationMatchTolerance)
-    GetScopesToRun()(*SensitiveTypeScope)
+    GetMatchTolerancesToInclude()(*TextClassificationRequest_matchTolerancesToInclude)
+    GetScopesToRun()(*TextClassificationRequest_scopesToRun)
     GetSensitiveTypeIds()([]string)
     GetText()(*string)
     SetContentMetaData(value ClassificationRequestContentMetaDataable)()
     SetFileExtension(value *string)()
-    SetMatchTolerancesToInclude(value *MlClassificationMatchTolerance)()
-    SetScopesToRun(value *SensitiveTypeScope)()
+    SetMatchTolerancesToInclude(value *TextClassificationRequest_matchTolerancesToInclude)()
+    SetScopesToRun(value *TextClassificationRequest_scopesToRun)()
     SetSensitiveTypeIds(value []string)()
     SetText(value *string)()
 }

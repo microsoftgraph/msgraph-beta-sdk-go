@@ -35,12 +35,12 @@ func (m *BuiltInIdentityProvider) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseIdentityProviderState)
+        val, err := n.GetEnumValue(ParseBuiltInIdentityProvider_state)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetState(val.(*IdentityProviderState))
+            m.SetState(val.(*BuiltInIdentityProvider_state))
         }
         return nil
     }
@@ -58,13 +58,13 @@ func (m *BuiltInIdentityProvider) GetIdentityProviderType()(*string) {
     return nil
 }
 // GetState gets the state property value. The state property
-func (m *BuiltInIdentityProvider) GetState()(*IdentityProviderState) {
+func (m *BuiltInIdentityProvider) GetState()(*BuiltInIdentityProvider_state) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*IdentityProviderState)
+        return val.(*BuiltInIdentityProvider_state)
     }
     return nil
 }
@@ -97,7 +97,7 @@ func (m *BuiltInIdentityProvider) SetIdentityProviderType(value *string)() {
     }
 }
 // SetState sets the state property value. The state property
-func (m *BuiltInIdentityProvider) SetState(value *IdentityProviderState)() {
+func (m *BuiltInIdentityProvider) SetState(value *BuiltInIdentityProvider_state)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {
         panic(err)
@@ -108,7 +108,7 @@ type BuiltInIdentityProviderable interface {
     IdentityProviderBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetIdentityProviderType()(*string)
-    GetState()(*IdentityProviderState)
+    GetState()(*BuiltInIdentityProvider_state)
     SetIdentityProviderType(value *string)()
-    SetState(value *IdentityProviderState)()
+    SetState(value *BuiltInIdentityProvider_state)()
 }

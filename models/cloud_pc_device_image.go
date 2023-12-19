@@ -31,6 +31,17 @@ func (m *CloudPcDeviceImage) GetDisplayName()(*string) {
     }
     return nil
 }
+// GetErrorCode gets the errorCode property value. The errorCode property
+func (m *CloudPcDeviceImage) GetErrorCode()(*CloudPcDeviceImage_errorCode) {
+    val, err := m.GetBackingStore().Get("errorCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcDeviceImage_errorCode)
+    }
+    return nil
+}
 // GetExpirationDate gets the expirationDate property value. The date the image became unavailable.
 func (m *CloudPcDeviceImage) GetExpirationDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("expirationDate")
@@ -52,6 +63,16 @@ func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetDisplayName(val)
+        }
+        return nil
+    }
+    res["errorCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcDeviceImage_errorCode)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetErrorCode(val.(*CloudPcDeviceImage_errorCode))
         }
         return nil
     }
@@ -96,12 +117,12 @@ func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["osStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcDeviceImageOsStatus)
+        val, err := n.GetEnumValue(ParseCloudPcDeviceImage_osStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOsStatus(val.(*CloudPcDeviceImageOsStatus))
+            m.SetOsStatus(val.(*CloudPcDeviceImage_osStatus))
         }
         return nil
     }
@@ -132,22 +153,22 @@ func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcDeviceImageStatus)
+        val, err := n.GetEnumValue(ParseCloudPcDeviceImage_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*CloudPcDeviceImageStatus))
+            m.SetStatus(val.(*CloudPcDeviceImage_status))
         }
         return nil
     }
     res["statusDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcDeviceImageStatusDetails)
+        val, err := n.GetEnumValue(ParseCloudPcDeviceImage_statusDetails)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatusDetails(val.(*CloudPcDeviceImageStatusDetails))
+            m.SetStatusDetails(val.(*CloudPcDeviceImage_statusDetails))
         }
         return nil
     }
@@ -197,13 +218,13 @@ func (m *CloudPcDeviceImage) GetOsBuildNumber()(*string) {
     return nil
 }
 // GetOsStatus gets the osStatus property value. The OS status of this image. Possible values are: supported, supportedWithWarning, unknownFutureValue.
-func (m *CloudPcDeviceImage) GetOsStatus()(*CloudPcDeviceImageOsStatus) {
+func (m *CloudPcDeviceImage) GetOsStatus()(*CloudPcDeviceImage_osStatus) {
     val, err := m.GetBackingStore().Get("osStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcDeviceImageOsStatus)
+        return val.(*CloudPcDeviceImage_osStatus)
     }
     return nil
 }
@@ -230,24 +251,24 @@ func (m *CloudPcDeviceImage) GetSourceImageResourceId()(*string) {
     return nil
 }
 // GetStatus gets the status property value. The status of the image on Cloud PC. Possible values are: pending, ready, failed.
-func (m *CloudPcDeviceImage) GetStatus()(*CloudPcDeviceImageStatus) {
+func (m *CloudPcDeviceImage) GetStatus()(*CloudPcDeviceImage_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcDeviceImageStatus)
+        return val.(*CloudPcDeviceImage_status)
     }
     return nil
 }
 // GetStatusDetails gets the statusDetails property value. The details of the status of the image that indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, and sourceImageNotGeneralized.
-func (m *CloudPcDeviceImage) GetStatusDetails()(*CloudPcDeviceImageStatusDetails) {
+func (m *CloudPcDeviceImage) GetStatusDetails()(*CloudPcDeviceImage_statusDetails) {
     val, err := m.GetBackingStore().Get("statusDetails")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcDeviceImageStatusDetails)
+        return val.(*CloudPcDeviceImage_statusDetails)
     }
     return nil
 }
@@ -270,6 +291,13 @@ func (m *CloudPcDeviceImage) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetErrorCode() != nil {
+        cast := (*m.GetErrorCode()).String()
+        err = writer.WriteStringValue("errorCode", &cast)
         if err != nil {
             return err
         }
@@ -346,6 +374,13 @@ func (m *CloudPcDeviceImage) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetErrorCode sets the errorCode property value. The errorCode property
+func (m *CloudPcDeviceImage) SetErrorCode(value *CloudPcDeviceImage_errorCode)() {
+    err := m.GetBackingStore().Set("errorCode", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetExpirationDate sets the expirationDate property value. The date the image became unavailable.
 func (m *CloudPcDeviceImage) SetExpirationDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     err := m.GetBackingStore().Set("expirationDate", value)
@@ -375,7 +410,7 @@ func (m *CloudPcDeviceImage) SetOsBuildNumber(value *string)() {
     }
 }
 // SetOsStatus sets the osStatus property value. The OS status of this image. Possible values are: supported, supportedWithWarning, unknownFutureValue.
-func (m *CloudPcDeviceImage) SetOsStatus(value *CloudPcDeviceImageOsStatus)() {
+func (m *CloudPcDeviceImage) SetOsStatus(value *CloudPcDeviceImage_osStatus)() {
     err := m.GetBackingStore().Set("osStatus", value)
     if err != nil {
         panic(err)
@@ -396,14 +431,14 @@ func (m *CloudPcDeviceImage) SetSourceImageResourceId(value *string)() {
     }
 }
 // SetStatus sets the status property value. The status of the image on Cloud PC. Possible values are: pending, ready, failed.
-func (m *CloudPcDeviceImage) SetStatus(value *CloudPcDeviceImageStatus)() {
+func (m *CloudPcDeviceImage) SetStatus(value *CloudPcDeviceImage_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
     }
 }
 // SetStatusDetails sets the statusDetails property value. The details of the status of the image that indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, and sourceImageNotGeneralized.
-func (m *CloudPcDeviceImage) SetStatusDetails(value *CloudPcDeviceImageStatusDetails)() {
+func (m *CloudPcDeviceImage) SetStatusDetails(value *CloudPcDeviceImage_statusDetails)() {
     err := m.GetBackingStore().Set("statusDetails", value)
     if err != nil {
         panic(err)
@@ -421,25 +456,27 @@ type CloudPcDeviceImageable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
+    GetErrorCode()(*CloudPcDeviceImage_errorCode)
     GetExpirationDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOperatingSystem()(*string)
     GetOsBuildNumber()(*string)
-    GetOsStatus()(*CloudPcDeviceImageOsStatus)
+    GetOsStatus()(*CloudPcDeviceImage_osStatus)
     GetScopeIds()([]string)
     GetSourceImageResourceId()(*string)
-    GetStatus()(*CloudPcDeviceImageStatus)
-    GetStatusDetails()(*CloudPcDeviceImageStatusDetails)
+    GetStatus()(*CloudPcDeviceImage_status)
+    GetStatusDetails()(*CloudPcDeviceImage_statusDetails)
     GetVersion()(*string)
     SetDisplayName(value *string)()
+    SetErrorCode(value *CloudPcDeviceImage_errorCode)()
     SetExpirationDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOperatingSystem(value *string)()
     SetOsBuildNumber(value *string)()
-    SetOsStatus(value *CloudPcDeviceImageOsStatus)()
+    SetOsStatus(value *CloudPcDeviceImage_osStatus)()
     SetScopeIds(value []string)()
     SetSourceImageResourceId(value *string)()
-    SetStatus(value *CloudPcDeviceImageStatus)()
-    SetStatusDetails(value *CloudPcDeviceImageStatusDetails)()
+    SetStatus(value *CloudPcDeviceImage_status)()
+    SetStatusDetails(value *CloudPcDeviceImage_statusDetails)()
     SetVersion(value *string)()
 }

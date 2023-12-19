@@ -94,22 +94,22 @@ func (m *CustomExtensionHandlerInstance) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["stage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAccessPackageCustomExtensionStage)
+        val, err := n.GetEnumValue(ParseCustomExtensionHandlerInstance_stage)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStage(val.(*AccessPackageCustomExtensionStage))
+            m.SetStage(val.(*CustomExtensionHandlerInstance_stage))
         }
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAccessPackageCustomExtensionHandlerStatus)
+        val, err := n.GetEnumValue(ParseCustomExtensionHandlerInstance_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*AccessPackageCustomExtensionHandlerStatus))
+            m.SetStatus(val.(*CustomExtensionHandlerInstance_status))
         }
         return nil
     }
@@ -127,24 +127,24 @@ func (m *CustomExtensionHandlerInstance) GetOdataType()(*string) {
     return nil
 }
 // GetStage gets the stage property value. Indicates the stage of the request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
-func (m *CustomExtensionHandlerInstance) GetStage()(*AccessPackageCustomExtensionStage) {
+func (m *CustomExtensionHandlerInstance) GetStage()(*CustomExtensionHandlerInstance_stage) {
     val, err := m.GetBackingStore().Get("stage")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AccessPackageCustomExtensionStage)
+        return val.(*CustomExtensionHandlerInstance_stage)
     }
     return nil
 }
 // GetStatus gets the status property value. Status of the request to run the access package custom extension workflow that is associated with the logic app. The possible values are: requestSent, requestReceived, unknownFutureValue.
-func (m *CustomExtensionHandlerInstance) GetStatus()(*AccessPackageCustomExtensionHandlerStatus) {
+func (m *CustomExtensionHandlerInstance) GetStatus()(*CustomExtensionHandlerInstance_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AccessPackageCustomExtensionHandlerStatus)
+        return val.(*CustomExtensionHandlerInstance_status)
     }
     return nil
 }
@@ -223,14 +223,14 @@ func (m *CustomExtensionHandlerInstance) SetOdataType(value *string)() {
     }
 }
 // SetStage sets the stage property value. Indicates the stage of the request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
-func (m *CustomExtensionHandlerInstance) SetStage(value *AccessPackageCustomExtensionStage)() {
+func (m *CustomExtensionHandlerInstance) SetStage(value *CustomExtensionHandlerInstance_stage)() {
     err := m.GetBackingStore().Set("stage", value)
     if err != nil {
         panic(err)
     }
 }
 // SetStatus sets the status property value. Status of the request to run the access package custom extension workflow that is associated with the logic app. The possible values are: requestSent, requestReceived, unknownFutureValue.
-func (m *CustomExtensionHandlerInstance) SetStatus(value *AccessPackageCustomExtensionHandlerStatus)() {
+func (m *CustomExtensionHandlerInstance) SetStatus(value *CustomExtensionHandlerInstance_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -245,12 +245,12 @@ type CustomExtensionHandlerInstanceable interface {
     GetCustomExtensionId()(*string)
     GetExternalCorrelationId()(*string)
     GetOdataType()(*string)
-    GetStage()(*AccessPackageCustomExtensionStage)
-    GetStatus()(*AccessPackageCustomExtensionHandlerStatus)
+    GetStage()(*CustomExtensionHandlerInstance_stage)
+    GetStatus()(*CustomExtensionHandlerInstance_status)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCustomExtensionId(value *string)()
     SetExternalCorrelationId(value *string)()
     SetOdataType(value *string)()
-    SetStage(value *AccessPackageCustomExtensionStage)()
-    SetStatus(value *AccessPackageCustomExtensionHandlerStatus)()
+    SetStage(value *CustomExtensionHandlerInstance_stage)()
+    SetStatus(value *CustomExtensionHandlerInstance_status)()
 }

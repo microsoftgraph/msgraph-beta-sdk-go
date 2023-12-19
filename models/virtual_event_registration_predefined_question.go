@@ -25,25 +25,25 @@ func CreateVirtualEventRegistrationPredefinedQuestionFromDiscriminatorValue(pars
 func (m *VirtualEventRegistrationPredefinedQuestion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.VirtualEventRegistrationQuestionBase.GetFieldDeserializers()
     res["label"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVirtualEventRegistrationPredefinedQuestionLabel)
+        val, err := n.GetEnumValue(ParseVirtualEventRegistrationPredefinedQuestion_label)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLabel(val.(*VirtualEventRegistrationPredefinedQuestionLabel))
+            m.SetLabel(val.(*VirtualEventRegistrationPredefinedQuestion_label))
         }
         return nil
     }
     return res
 }
 // GetLabel gets the label property value. The label property
-func (m *VirtualEventRegistrationPredefinedQuestion) GetLabel()(*VirtualEventRegistrationPredefinedQuestionLabel) {
+func (m *VirtualEventRegistrationPredefinedQuestion) GetLabel()(*VirtualEventRegistrationPredefinedQuestion_label) {
     val, err := m.GetBackingStore().Get("label")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*VirtualEventRegistrationPredefinedQuestionLabel)
+        return val.(*VirtualEventRegistrationPredefinedQuestion_label)
     }
     return nil
 }
@@ -63,7 +63,7 @@ func (m *VirtualEventRegistrationPredefinedQuestion) Serialize(writer i878a80d23
     return nil
 }
 // SetLabel sets the label property value. The label property
-func (m *VirtualEventRegistrationPredefinedQuestion) SetLabel(value *VirtualEventRegistrationPredefinedQuestionLabel)() {
+func (m *VirtualEventRegistrationPredefinedQuestion) SetLabel(value *VirtualEventRegistrationPredefinedQuestion_label)() {
     err := m.GetBackingStore().Set("label", value)
     if err != nil {
         panic(err)
@@ -73,6 +73,6 @@ func (m *VirtualEventRegistrationPredefinedQuestion) SetLabel(value *VirtualEven
 type VirtualEventRegistrationPredefinedQuestionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     VirtualEventRegistrationQuestionBaseable
-    GetLabel()(*VirtualEventRegistrationPredefinedQuestionLabel)
-    SetLabel(value *VirtualEventRegistrationPredefinedQuestionLabel)()
+    GetLabel()(*VirtualEventRegistrationPredefinedQuestion_label)
+    SetLabel(value *VirtualEventRegistrationPredefinedQuestion_label)()
 }

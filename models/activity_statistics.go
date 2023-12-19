@@ -46,13 +46,13 @@ func CreateActivityStatisticsFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewActivityStatistics(), nil
 }
 // GetActivity gets the activity property value. The type of activity for which statistics are returned. The possible values are: call, chat, email, focus, and meeting.
-func (m *ActivityStatistics) GetActivity()(*AnalyticsActivityType) {
+func (m *ActivityStatistics) GetActivity()(*ActivityStatistics_activity) {
     val, err := m.GetBackingStore().Get("activity")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AnalyticsActivityType)
+        return val.(*ActivityStatistics_activity)
     }
     return nil
 }
@@ -82,12 +82,12 @@ func (m *ActivityStatistics) GetEndDate()(*i878a80d2330e89d26896388a3f487eef27b0
 func (m *ActivityStatistics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAnalyticsActivityType)
+        val, err := n.GetEnumValue(ParseActivityStatistics_activity)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetActivity(val.(*AnalyticsActivityType))
+            m.SetActivity(val.(*ActivityStatistics_activity))
         }
         return nil
     }
@@ -195,7 +195,7 @@ func (m *ActivityStatistics) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetActivity sets the activity property value. The type of activity for which statistics are returned. The possible values are: call, chat, email, focus, and meeting.
-func (m *ActivityStatistics) SetActivity(value *AnalyticsActivityType)() {
+func (m *ActivityStatistics) SetActivity(value *ActivityStatistics_activity)() {
     err := m.GetBackingStore().Set("activity", value)
     if err != nil {
         panic(err)
@@ -233,12 +233,12 @@ func (m *ActivityStatistics) SetTimeZoneUsed(value *string)() {
 type ActivityStatisticsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetActivity()(*AnalyticsActivityType)
+    GetActivity()(*ActivityStatistics_activity)
     GetDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetEndDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetStartDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetTimeZoneUsed()(*string)
-    SetActivity(value *AnalyticsActivityType)()
+    SetActivity(value *ActivityStatistics_activity)()
     SetDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetEndDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetStartDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()

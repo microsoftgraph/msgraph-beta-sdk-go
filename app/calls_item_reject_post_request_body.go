@@ -2,7 +2,6 @@ package app
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
@@ -63,40 +62,12 @@ func (m *CallsItemRejectPostRequestBody) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["reason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseRejectReason)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetReason(val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RejectReason))
-        }
-        return nil
-    }
     return res
-}
-// GetReason gets the reason property value. The reason property
-func (m *CallsItemRejectPostRequestBody) GetReason()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RejectReason) {
-    val, err := m.GetBackingStore().Get("reason")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RejectReason)
-    }
-    return nil
 }
 // Serialize serializes information the current object
 func (m *CallsItemRejectPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("callbackUri", m.GetCallbackUri())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetReason() != nil {
-        cast := (*m.GetReason()).String()
-        err := writer.WriteStringValue("reason", &cast)
         if err != nil {
             return err
         }
@@ -127,13 +98,6 @@ func (m *CallsItemRejectPostRequestBody) SetCallbackUri(value *string)() {
         panic(err)
     }
 }
-// SetReason sets the reason property value. The reason property
-func (m *CallsItemRejectPostRequestBody) SetReason(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RejectReason)() {
-    err := m.GetBackingStore().Set("reason", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // CallsItemRejectPostRequestBodyable 
 type CallsItemRejectPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
@@ -141,8 +105,6 @@ type CallsItemRejectPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCallbackUri()(*string)
-    GetReason()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RejectReason)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCallbackUri(value *string)()
-    SetReason(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RejectReason)()
 }

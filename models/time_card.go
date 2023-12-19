@@ -55,13 +55,13 @@ func (m *TimeCard) GetClockOutEvent()(TimeCardEventable) {
     return nil
 }
 // GetConfirmedBy gets the confirmedBy property value. Indicates whether this timeCard entry is confirmed. Possible values are none, user, manager, unknownFutureValue.
-func (m *TimeCard) GetConfirmedBy()(*ConfirmedBy) {
+func (m *TimeCard) GetConfirmedBy()(*TimeCard_confirmedBy) {
     val, err := m.GetBackingStore().Get("confirmedBy")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ConfirmedBy)
+        return val.(*TimeCard_confirmedBy)
     }
     return nil
 }
@@ -105,12 +105,12 @@ func (m *TimeCard) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["confirmedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseConfirmedBy)
+        val, err := n.GetEnumValue(ParseTimeCard_confirmedBy)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetConfirmedBy(val.(*ConfirmedBy))
+            m.SetConfirmedBy(val.(*TimeCard_confirmedBy))
         }
         return nil
     }
@@ -135,12 +135,12 @@ func (m *TimeCard) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTimeCardState)
+        val, err := n.GetEnumValue(ParseTimeCard_state)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetState(val.(*TimeCardState))
+            m.SetState(val.(*TimeCard_state))
         }
         return nil
     }
@@ -179,13 +179,13 @@ func (m *TimeCard) GetOriginalEntry()(TimeCardEntryable) {
     return nil
 }
 // GetState gets the state property value. The current state of the timeCard during its life cycle.Possible values are: clockedIn, onBreak, clockedOut, unknownFutureValue.
-func (m *TimeCard) GetState()(*TimeCardState) {
+func (m *TimeCard) GetState()(*TimeCard_state) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TimeCardState)
+        return val.(*TimeCard_state)
     }
     return nil
 }
@@ -286,7 +286,7 @@ func (m *TimeCard) SetClockOutEvent(value TimeCardEventable)() {
     }
 }
 // SetConfirmedBy sets the confirmedBy property value. Indicates whether this timeCard entry is confirmed. Possible values are none, user, manager, unknownFutureValue.
-func (m *TimeCard) SetConfirmedBy(value *ConfirmedBy)() {
+func (m *TimeCard) SetConfirmedBy(value *TimeCard_confirmedBy)() {
     err := m.GetBackingStore().Set("confirmedBy", value)
     if err != nil {
         panic(err)
@@ -307,7 +307,7 @@ func (m *TimeCard) SetOriginalEntry(value TimeCardEntryable)() {
     }
 }
 // SetState sets the state property value. The current state of the timeCard during its life cycle.Possible values are: clockedIn, onBreak, clockedOut, unknownFutureValue.
-func (m *TimeCard) SetState(value *TimeCardState)() {
+func (m *TimeCard) SetState(value *TimeCard_state)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {
         panic(err)
@@ -327,17 +327,17 @@ type TimeCardable interface {
     GetBreaks()([]TimeCardBreakable)
     GetClockInEvent()(TimeCardEventable)
     GetClockOutEvent()(TimeCardEventable)
-    GetConfirmedBy()(*ConfirmedBy)
+    GetConfirmedBy()(*TimeCard_confirmedBy)
     GetNotes()(ItemBodyable)
     GetOriginalEntry()(TimeCardEntryable)
-    GetState()(*TimeCardState)
+    GetState()(*TimeCard_state)
     GetUserId()(*string)
     SetBreaks(value []TimeCardBreakable)()
     SetClockInEvent(value TimeCardEventable)()
     SetClockOutEvent(value TimeCardEventable)()
-    SetConfirmedBy(value *ConfirmedBy)()
+    SetConfirmedBy(value *TimeCard_confirmedBy)()
     SetNotes(value ItemBodyable)()
     SetOriginalEntry(value TimeCardEntryable)()
-    SetState(value *TimeCardState)()
+    SetState(value *TimeCard_state)()
     SetUserId(value *string)()
 }

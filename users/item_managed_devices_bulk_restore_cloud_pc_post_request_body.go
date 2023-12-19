@@ -3,7 +3,6 @@ package users
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
@@ -69,16 +68,6 @@ func (m *ItemManagedDevicesBulkRestoreCloudPcPostRequestBody) GetFieldDeserializ
         }
         return nil
     }
-    res["timeRange"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseRestoreTimeRange)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTimeRange(val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RestoreTimeRange))
-        }
-        return nil
-    }
     return res
 }
 // GetManagedDeviceIds gets the managedDeviceIds property value. The managedDeviceIds property
@@ -103,17 +92,6 @@ func (m *ItemManagedDevicesBulkRestoreCloudPcPostRequestBody) GetRestorePointDat
     }
     return nil
 }
-// GetTimeRange gets the timeRange property value. The timeRange property
-func (m *ItemManagedDevicesBulkRestoreCloudPcPostRequestBody) GetTimeRange()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RestoreTimeRange) {
-    val, err := m.GetBackingStore().Get("timeRange")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RestoreTimeRange)
-    }
-    return nil
-}
 // Serialize serializes information the current object
 func (m *ItemManagedDevicesBulkRestoreCloudPcPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetManagedDeviceIds() != nil {
@@ -124,13 +102,6 @@ func (m *ItemManagedDevicesBulkRestoreCloudPcPostRequestBody) Serialize(writer i
     }
     {
         err := writer.WriteTimeValue("restorePointDateTime", m.GetRestorePointDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetTimeRange() != nil {
-        cast := (*m.GetTimeRange()).String()
-        err := writer.WriteStringValue("timeRange", &cast)
         if err != nil {
             return err
         }
@@ -168,13 +139,6 @@ func (m *ItemManagedDevicesBulkRestoreCloudPcPostRequestBody) SetRestorePointDat
         panic(err)
     }
 }
-// SetTimeRange sets the timeRange property value. The timeRange property
-func (m *ItemManagedDevicesBulkRestoreCloudPcPostRequestBody) SetTimeRange(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RestoreTimeRange)() {
-    err := m.GetBackingStore().Set("timeRange", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // ItemManagedDevicesBulkRestoreCloudPcPostRequestBodyable 
 type ItemManagedDevicesBulkRestoreCloudPcPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
@@ -183,9 +147,7 @@ type ItemManagedDevicesBulkRestoreCloudPcPostRequestBodyable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetManagedDeviceIds()([]string)
     GetRestorePointDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetTimeRange()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RestoreTimeRange)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetManagedDeviceIds(value []string)()
     SetRestorePointDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetTimeRange(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RestoreTimeRange)()
 }

@@ -304,12 +304,12 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     res["provisioningType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcProvisioningType)
+        val, err := n.GetEnumValue(ParseCloudPcProvisioningPolicy_provisioningType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProvisioningType(val.(*CloudPcProvisioningType))
+            m.SetProvisioningType(val.(*CloudPcProvisioningPolicy_provisioningType))
         }
         return nil
     }
@@ -326,6 +326,16 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(i878
                 }
             }
             m.SetScopeIds(res)
+        }
+        return nil
+    }
+    res["windowsSetting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcWindowsSettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWindowsSetting(val.(CloudPcWindowsSettingable))
         }
         return nil
     }
@@ -430,13 +440,13 @@ func (m *CloudPcProvisioningPolicy) GetOnPremisesConnectionId()(*string) {
     return nil
 }
 // GetProvisioningType gets the provisioningType property value. Specifies the type of license used when provisioning Cloud PCs using this policy. By default, the license type is dedicated if the provisioningType isn't specified when you create the cloudPcProvisioningPolicy. You can't change this property after the cloudPcProvisioningPolicy was created. Possible values are: dedicated, shared, unknownFutureValue.
-func (m *CloudPcProvisioningPolicy) GetProvisioningType()(*CloudPcProvisioningType) {
+func (m *CloudPcProvisioningPolicy) GetProvisioningType()(*CloudPcProvisioningPolicy_provisioningType) {
     val, err := m.GetBackingStore().Get("provisioningType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudPcProvisioningType)
+        return val.(*CloudPcProvisioningPolicy_provisioningType)
     }
     return nil
 }
@@ -448,6 +458,17 @@ func (m *CloudPcProvisioningPolicy) GetScopeIds()([]string) {
     }
     if val != nil {
         return val.([]string)
+    }
+    return nil
+}
+// GetWindowsSetting gets the windowsSetting property value. The windowsSetting property
+func (m *CloudPcProvisioningPolicy) GetWindowsSetting()(CloudPcWindowsSettingable) {
+    val, err := m.GetBackingStore().Get("windowsSetting")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcWindowsSettingable)
     }
     return nil
 }
@@ -598,6 +619,12 @@ func (m *CloudPcProvisioningPolicy) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteObjectValue("windowsSetting", m.GetWindowsSetting())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("windowsSettings", m.GetWindowsSettings())
         if err != nil {
             return err
@@ -725,7 +752,7 @@ func (m *CloudPcProvisioningPolicy) SetOnPremisesConnectionId(value *string)() {
     }
 }
 // SetProvisioningType sets the provisioningType property value. Specifies the type of license used when provisioning Cloud PCs using this policy. By default, the license type is dedicated if the provisioningType isn't specified when you create the cloudPcProvisioningPolicy. You can't change this property after the cloudPcProvisioningPolicy was created. Possible values are: dedicated, shared, unknownFutureValue.
-func (m *CloudPcProvisioningPolicy) SetProvisioningType(value *CloudPcProvisioningType)() {
+func (m *CloudPcProvisioningPolicy) SetProvisioningType(value *CloudPcProvisioningPolicy_provisioningType)() {
     err := m.GetBackingStore().Set("provisioningType", value)
     if err != nil {
         panic(err)
@@ -734,6 +761,13 @@ func (m *CloudPcProvisioningPolicy) SetProvisioningType(value *CloudPcProvisioni
 // SetScopeIds sets the scopeIds property value. The scopeIds property
 func (m *CloudPcProvisioningPolicy) SetScopeIds(value []string)() {
     err := m.GetBackingStore().Set("scopeIds", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetWindowsSetting sets the windowsSetting property value. The windowsSetting property
+func (m *CloudPcProvisioningPolicy) SetWindowsSetting(value CloudPcWindowsSettingable)() {
+    err := m.GetBackingStore().Set("windowsSetting", value)
     if err != nil {
         panic(err)
     }
@@ -766,8 +800,9 @@ type CloudPcProvisioningPolicyable interface {
     GetManagedBy()(*CloudPcManagementService)
     GetMicrosoftManagedDesktop()(MicrosoftManagedDesktopable)
     GetOnPremisesConnectionId()(*string)
-    GetProvisioningType()(*CloudPcProvisioningType)
+    GetProvisioningType()(*CloudPcProvisioningPolicy_provisioningType)
     GetScopeIds()([]string)
+    GetWindowsSetting()(CloudPcWindowsSettingable)
     GetWindowsSettings()(CloudPcWindowsSettingsable)
     SetAlternateResourceUrl(value *string)()
     SetAssignments(value []CloudPcProvisioningPolicyAssignmentable)()
@@ -786,7 +821,8 @@ type CloudPcProvisioningPolicyable interface {
     SetManagedBy(value *CloudPcManagementService)()
     SetMicrosoftManagedDesktop(value MicrosoftManagedDesktopable)()
     SetOnPremisesConnectionId(value *string)()
-    SetProvisioningType(value *CloudPcProvisioningType)()
+    SetProvisioningType(value *CloudPcProvisioningPolicy_provisioningType)()
     SetScopeIds(value []string)()
+    SetWindowsSetting(value CloudPcWindowsSettingable)()
     SetWindowsSettings(value CloudPcWindowsSettingsable)()
 }

@@ -35,13 +35,13 @@ func (m *DriveItemSource) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetApplication gets the application property value. Enumeration value that indicates the source application where the file was created.
-func (m *DriveItemSource) GetApplication()(*DriveItemSourceApplication) {
+func (m *DriveItemSource) GetApplication()(*DriveItemSource_application) {
     val, err := m.GetBackingStore().Get("application")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DriveItemSourceApplication)
+        return val.(*DriveItemSource_application)
     }
     return nil
 }
@@ -64,12 +64,12 @@ func (m *DriveItemSource) GetExternalId()(*string) {
 func (m *DriveItemSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["application"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDriveItemSourceApplication)
+        val, err := n.GetEnumValue(ParseDriveItemSource_application)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetApplication(val.(*DriveItemSourceApplication))
+            m.SetApplication(val.(*DriveItemSource_application))
         }
         return nil
     }
@@ -143,7 +143,7 @@ func (m *DriveItemSource) SetAdditionalData(value map[string]any)() {
     }
 }
 // SetApplication sets the application property value. Enumeration value that indicates the source application where the file was created.
-func (m *DriveItemSource) SetApplication(value *DriveItemSourceApplication)() {
+func (m *DriveItemSource) SetApplication(value *DriveItemSource_application)() {
     err := m.GetBackingStore().Set("application", value)
     if err != nil {
         panic(err)
@@ -172,11 +172,11 @@ type DriveItemSourceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetApplication()(*DriveItemSourceApplication)
+    GetApplication()(*DriveItemSource_application)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetExternalId()(*string)
     GetOdataType()(*string)
-    SetApplication(value *DriveItemSourceApplication)()
+    SetApplication(value *DriveItemSource_application)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetExternalId(value *string)()
     SetOdataType(value *string)()

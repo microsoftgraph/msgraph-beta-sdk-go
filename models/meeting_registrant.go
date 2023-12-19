@@ -104,12 +104,12 @@ func (m *MeetingRegistrant) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMeetingRegistrantStatus)
+        val, err := n.GetEnumValue(ParseMeetingRegistrant_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*MeetingRegistrantStatus))
+            m.SetStatus(val.(*MeetingRegistrant_status))
         }
         return nil
     }
@@ -149,13 +149,13 @@ func (m *MeetingRegistrant) GetRegistrationDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetStatus gets the status property value. The registration status of the registrant. Read-only.
-func (m *MeetingRegistrant) GetStatus()(*MeetingRegistrantStatus) {
+func (m *MeetingRegistrant) GetStatus()(*MeetingRegistrant_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MeetingRegistrantStatus)
+        return val.(*MeetingRegistrant_status)
     }
     return nil
 }
@@ -246,7 +246,7 @@ func (m *MeetingRegistrant) SetRegistrationDateTime(value *i336074805fc853987abe
     }
 }
 // SetStatus sets the status property value. The registration status of the registrant. Read-only.
-func (m *MeetingRegistrant) SetStatus(value *MeetingRegistrantStatus)() {
+func (m *MeetingRegistrant) SetStatus(value *MeetingRegistrant_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -261,11 +261,11 @@ type MeetingRegistrantable interface {
     GetFirstName()(*string)
     GetLastName()(*string)
     GetRegistrationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetStatus()(*MeetingRegistrantStatus)
+    GetStatus()(*MeetingRegistrant_status)
     SetCustomQuestionAnswers(value []CustomQuestionAnswerable)()
     SetEmail(value *string)()
     SetFirstName(value *string)()
     SetLastName(value *string)()
     SetRegistrationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetStatus(value *MeetingRegistrantStatus)()
+    SetStatus(value *MeetingRegistrant_status)()
 }

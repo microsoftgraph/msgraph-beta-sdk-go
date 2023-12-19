@@ -128,12 +128,12 @@ func (m *VirtualEventRegistration) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVirtualEventAttendeeRegistrationStatus)
+        val, err := n.GetEnumValue(ParseVirtualEventRegistration_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*VirtualEventAttendeeRegistrationStatus))
+            m.SetStatus(val.(*VirtualEventRegistration_status))
         }
         return nil
     }
@@ -205,13 +205,13 @@ func (m *VirtualEventRegistration) GetSessions()([]VirtualEventSessionable) {
     return nil
 }
 // GetStatus gets the status property value. Registration status of the registrant. Read-only.
-func (m *VirtualEventRegistration) GetStatus()(*VirtualEventAttendeeRegistrationStatus) {
+func (m *VirtualEventRegistration) GetStatus()(*VirtualEventRegistration_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*VirtualEventAttendeeRegistrationStatus)
+        return val.(*VirtualEventRegistration_status)
     }
     return nil
 }
@@ -351,7 +351,7 @@ func (m *VirtualEventRegistration) SetSessions(value []VirtualEventSessionable)(
     }
 }
 // SetStatus sets the status property value. Registration status of the registrant. Read-only.
-func (m *VirtualEventRegistration) SetStatus(value *VirtualEventAttendeeRegistrationStatus)() {
+func (m *VirtualEventRegistration) SetStatus(value *VirtualEventRegistration_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -375,7 +375,7 @@ type VirtualEventRegistrationable interface {
     GetRegistrationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRegistrationQuestionAnswers()([]VirtualEventRegistrationQuestionAnswerable)
     GetSessions()([]VirtualEventSessionable)
-    GetStatus()(*VirtualEventAttendeeRegistrationStatus)
+    GetStatus()(*VirtualEventRegistration_status)
     GetUserId()(*string)
     SetCancelationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetEmail(value *string)()
@@ -384,6 +384,6 @@ type VirtualEventRegistrationable interface {
     SetRegistrationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRegistrationQuestionAnswers(value []VirtualEventRegistrationQuestionAnswerable)()
     SetSessions(value []VirtualEventSessionable)()
-    SetStatus(value *VirtualEventAttendeeRegistrationStatus)()
+    SetStatus(value *VirtualEventRegistration_status)()
     SetUserId(value *string)()
 }

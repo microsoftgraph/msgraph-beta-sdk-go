@@ -369,12 +369,12 @@ func (m *AppleVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     res["providerType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVpnProviderType)
+        val, err := n.GetEnumValue(ParseAppleVpnConfiguration_providerType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProviderType(val.(*VpnProviderType))
+            m.SetProviderType(val.(*AppleVpnConfiguration_providerType))
         }
         return nil
     }
@@ -481,13 +481,13 @@ func (m *AppleVpnConfiguration) GetOptInToDeviceIdSharing()(*bool) {
     return nil
 }
 // GetProviderType gets the providerType property value. Provider type for per-app VPN. Possible values are: notConfigured, appProxy, packetTunnel.
-func (m *AppleVpnConfiguration) GetProviderType()(*VpnProviderType) {
+func (m *AppleVpnConfiguration) GetProviderType()(*AppleVpnConfiguration_providerType) {
     val, err := m.GetBackingStore().Get("providerType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*VpnProviderType)
+        return val.(*AppleVpnConfiguration_providerType)
     }
     return nil
 }
@@ -820,7 +820,7 @@ func (m *AppleVpnConfiguration) SetOptInToDeviceIdSharing(value *bool)() {
     }
 }
 // SetProviderType sets the providerType property value. Provider type for per-app VPN. Possible values are: notConfigured, appProxy, packetTunnel.
-func (m *AppleVpnConfiguration) SetProviderType(value *VpnProviderType)() {
+func (m *AppleVpnConfiguration) SetProviderType(value *AppleVpnConfiguration_providerType)() {
     err := m.GetBackingStore().Set("providerType", value)
     if err != nil {
         panic(err)
@@ -881,7 +881,7 @@ type AppleVpnConfigurationable interface {
     GetLoginGroupOrDomain()(*string)
     GetOnDemandRules()([]VpnOnDemandRuleable)
     GetOptInToDeviceIdSharing()(*bool)
-    GetProviderType()(*VpnProviderType)
+    GetProviderType()(*AppleVpnConfiguration_providerType)
     GetProxyServer()(VpnProxyServerable)
     GetRealm()(*string)
     GetRole()(*string)
@@ -903,7 +903,7 @@ type AppleVpnConfigurationable interface {
     SetLoginGroupOrDomain(value *string)()
     SetOnDemandRules(value []VpnOnDemandRuleable)()
     SetOptInToDeviceIdSharing(value *bool)()
-    SetProviderType(value *VpnProviderType)()
+    SetProviderType(value *AppleVpnConfiguration_providerType)()
     SetProxyServer(value VpnProxyServerable)()
     SetRealm(value *string)()
     SetRole(value *string)()

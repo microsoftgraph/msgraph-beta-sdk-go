@@ -135,12 +135,12 @@ func (m *UnifiedRoleManagementAlertDefinition) GetFieldDeserializers()(map[strin
         return nil
     }
     res["severityLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAlertSeverity)
+        val, err := n.GetEnumValue(ParseUnifiedRoleManagementAlertDefinition_severityLevel)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSeverityLevel(val.(*AlertSeverity))
+            m.SetSeverityLevel(val.(*UnifiedRoleManagementAlertDefinition_severityLevel))
         }
         return nil
     }
@@ -224,13 +224,13 @@ func (m *UnifiedRoleManagementAlertDefinition) GetSecurityImpact()(*string) {
     return nil
 }
 // GetSeverityLevel gets the severityLevel property value. Severity level of the alert. The possible values are: unknown, informational, low, medium, high, unknownFutureValue.
-func (m *UnifiedRoleManagementAlertDefinition) GetSeverityLevel()(*AlertSeverity) {
+func (m *UnifiedRoleManagementAlertDefinition) GetSeverityLevel()(*UnifiedRoleManagementAlertDefinition_severityLevel) {
     val, err := m.GetBackingStore().Get("severityLevel")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AlertSeverity)
+        return val.(*UnifiedRoleManagementAlertDefinition_severityLevel)
     }
     return nil
 }
@@ -367,7 +367,7 @@ func (m *UnifiedRoleManagementAlertDefinition) SetSecurityImpact(value *string)(
     }
 }
 // SetSeverityLevel sets the severityLevel property value. Severity level of the alert. The possible values are: unknown, informational, low, medium, high, unknownFutureValue.
-func (m *UnifiedRoleManagementAlertDefinition) SetSeverityLevel(value *AlertSeverity)() {
+func (m *UnifiedRoleManagementAlertDefinition) SetSeverityLevel(value *UnifiedRoleManagementAlertDefinition_severityLevel)() {
     err := m.GetBackingStore().Set("severityLevel", value)
     if err != nil {
         panic(err)
@@ -386,7 +386,7 @@ type UnifiedRoleManagementAlertDefinitionable interface {
     GetScopeId()(*string)
     GetScopeType()(*string)
     GetSecurityImpact()(*string)
-    GetSeverityLevel()(*AlertSeverity)
+    GetSeverityLevel()(*UnifiedRoleManagementAlertDefinition_severityLevel)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetHowToPrevent(value *string)()
@@ -396,5 +396,5 @@ type UnifiedRoleManagementAlertDefinitionable interface {
     SetScopeId(value *string)()
     SetScopeType(value *string)()
     SetSecurityImpact(value *string)()
-    SetSeverityLevel(value *AlertSeverity)()
+    SetSeverityLevel(value *UnifiedRoleManagementAlertDefinition_severityLevel)()
 }

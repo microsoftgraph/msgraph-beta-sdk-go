@@ -33,13 +33,13 @@ func (m *WindowsWiredNetworkConfiguration) GetAuthenticationBlockPeriodInMinutes
     return nil
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. Specify the authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential. Possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.
-func (m *WindowsWiredNetworkConfiguration) GetAuthenticationMethod()(*WiredNetworkAuthenticationMethod) {
+func (m *WindowsWiredNetworkConfiguration) GetAuthenticationMethod()(*WindowsWiredNetworkConfiguration_authenticationMethod) {
     val, err := m.GetBackingStore().Get("authenticationMethod")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*WiredNetworkAuthenticationMethod)
+        return val.(*WindowsWiredNetworkConfiguration_authenticationMethod)
     }
     return nil
 }
@@ -66,13 +66,13 @@ func (m *WindowsWiredNetworkConfiguration) GetAuthenticationRetryDelayPeriodInSe
     return nil
 }
 // GetAuthenticationType gets the authenticationType property value. Specify whether to authenticate the user, the device, either, or to use guest authentication (none). If you're using certificate authentication, make sure the certificate type matches the authentication type. Possible values are: none, user, machine, machineOrUser, guest. Possible values are: none, user, machine, machineOrUser, guest, unknownFutureValue.
-func (m *WindowsWiredNetworkConfiguration) GetAuthenticationType()(*WiredNetworkAuthenticationType) {
+func (m *WindowsWiredNetworkConfiguration) GetAuthenticationType()(*WindowsWiredNetworkConfiguration_authenticationType) {
     val, err := m.GetBackingStore().Get("authenticationType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*WiredNetworkAuthenticationType)
+        return val.(*WindowsWiredNetworkConfiguration_authenticationType)
     }
     return nil
 }
@@ -145,12 +145,12 @@ func (m *WindowsWiredNetworkConfiguration) GetFieldDeserializers()(map[string]fu
         return nil
     }
     res["authenticationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWiredNetworkAuthenticationMethod)
+        val, err := n.GetEnumValue(ParseWindowsWiredNetworkConfiguration_authenticationMethod)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAuthenticationMethod(val.(*WiredNetworkAuthenticationMethod))
+            m.SetAuthenticationMethod(val.(*WindowsWiredNetworkConfiguration_authenticationMethod))
         }
         return nil
     }
@@ -175,12 +175,12 @@ func (m *WindowsWiredNetworkConfiguration) GetFieldDeserializers()(map[string]fu
         return nil
     }
     res["authenticationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWiredNetworkAuthenticationType)
+        val, err := n.GetEnumValue(ParseWindowsWiredNetworkConfiguration_authenticationType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAuthenticationType(val.(*WiredNetworkAuthenticationType))
+            m.SetAuthenticationType(val.(*WindowsWiredNetworkConfiguration_authenticationType))
         }
         return nil
     }
@@ -255,12 +255,12 @@ func (m *WindowsWiredNetworkConfiguration) GetFieldDeserializers()(map[string]fu
         return nil
     }
     res["innerAuthenticationProtocolForEAPTTLS"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseNonEapAuthenticationMethodForEapTtlsType)
+        val, err := n.GetEnumValue(ParseWindowsWiredNetworkConfiguration_innerAuthenticationProtocolForEAPTTLS)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInnerAuthenticationProtocolForEAPTTLS(val.(*NonEapAuthenticationMethodForEapTtlsType))
+            m.SetInnerAuthenticationProtocolForEAPTTLS(val.(*WindowsWiredNetworkConfiguration_innerAuthenticationProtocolForEAPTTLS))
         }
         return nil
     }
@@ -341,12 +341,12 @@ func (m *WindowsWiredNetworkConfiguration) GetFieldDeserializers()(map[string]fu
         return nil
     }
     res["secondaryAuthenticationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWiredNetworkAuthenticationMethod)
+        val, err := n.GetEnumValue(ParseWindowsWiredNetworkConfiguration_secondaryAuthenticationMethod)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSecondaryAuthenticationMethod(val.(*WiredNetworkAuthenticationMethod))
+            m.SetSecondaryAuthenticationMethod(val.(*WindowsWiredNetworkConfiguration_secondaryAuthenticationMethod))
         }
         return nil
     }
@@ -411,13 +411,13 @@ func (m *WindowsWiredNetworkConfiguration) GetIdentityCertificateForClientAuthen
     return nil
 }
 // GetInnerAuthenticationProtocolForEAPTTLS gets the innerAuthenticationProtocolForEAPTTLS property value. Specify inner authentication protocol for EAP TTLS. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
-func (m *WindowsWiredNetworkConfiguration) GetInnerAuthenticationProtocolForEAPTTLS()(*NonEapAuthenticationMethodForEapTtlsType) {
+func (m *WindowsWiredNetworkConfiguration) GetInnerAuthenticationProtocolForEAPTTLS()(*WindowsWiredNetworkConfiguration_innerAuthenticationProtocolForEAPTTLS) {
     val, err := m.GetBackingStore().Get("innerAuthenticationProtocolForEAPTTLS")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*NonEapAuthenticationMethodForEapTtlsType)
+        return val.(*WindowsWiredNetworkConfiguration_innerAuthenticationProtocolForEAPTTLS)
     }
     return nil
 }
@@ -499,13 +499,13 @@ func (m *WindowsWiredNetworkConfiguration) GetRootCertificatesForServerValidatio
     return nil
 }
 // GetSecondaryAuthenticationMethod gets the secondaryAuthenticationMethod property value. Specify the secondary authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential. Possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.
-func (m *WindowsWiredNetworkConfiguration) GetSecondaryAuthenticationMethod()(*WiredNetworkAuthenticationMethod) {
+func (m *WindowsWiredNetworkConfiguration) GetSecondaryAuthenticationMethod()(*WindowsWiredNetworkConfiguration_secondaryAuthenticationMethod) {
     val, err := m.GetBackingStore().Get("secondaryAuthenticationMethod")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*WiredNetworkAuthenticationMethod)
+        return val.(*WindowsWiredNetworkConfiguration_secondaryAuthenticationMethod)
     }
     return nil
 }
@@ -713,7 +713,7 @@ func (m *WindowsWiredNetworkConfiguration) SetAuthenticationBlockPeriodInMinutes
     }
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. Specify the authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential. Possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.
-func (m *WindowsWiredNetworkConfiguration) SetAuthenticationMethod(value *WiredNetworkAuthenticationMethod)() {
+func (m *WindowsWiredNetworkConfiguration) SetAuthenticationMethod(value *WindowsWiredNetworkConfiguration_authenticationMethod)() {
     err := m.GetBackingStore().Set("authenticationMethod", value)
     if err != nil {
         panic(err)
@@ -734,7 +734,7 @@ func (m *WindowsWiredNetworkConfiguration) SetAuthenticationRetryDelayPeriodInSe
     }
 }
 // SetAuthenticationType sets the authenticationType property value. Specify whether to authenticate the user, the device, either, or to use guest authentication (none). If you're using certificate authentication, make sure the certificate type matches the authentication type. Possible values are: none, user, machine, machineOrUser, guest. Possible values are: none, user, machine, machineOrUser, guest, unknownFutureValue.
-func (m *WindowsWiredNetworkConfiguration) SetAuthenticationType(value *WiredNetworkAuthenticationType)() {
+func (m *WindowsWiredNetworkConfiguration) SetAuthenticationType(value *WindowsWiredNetworkConfiguration_authenticationType)() {
     err := m.GetBackingStore().Set("authenticationType", value)
     if err != nil {
         panic(err)
@@ -790,7 +790,7 @@ func (m *WindowsWiredNetworkConfiguration) SetIdentityCertificateForClientAuthen
     }
 }
 // SetInnerAuthenticationProtocolForEAPTTLS sets the innerAuthenticationProtocolForEAPTTLS property value. Specify inner authentication protocol for EAP TTLS. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
-func (m *WindowsWiredNetworkConfiguration) SetInnerAuthenticationProtocolForEAPTTLS(value *NonEapAuthenticationMethodForEapTtlsType)() {
+func (m *WindowsWiredNetworkConfiguration) SetInnerAuthenticationProtocolForEAPTTLS(value *WindowsWiredNetworkConfiguration_innerAuthenticationProtocolForEAPTTLS)() {
     err := m.GetBackingStore().Set("innerAuthenticationProtocolForEAPTTLS", value)
     if err != nil {
         panic(err)
@@ -846,7 +846,7 @@ func (m *WindowsWiredNetworkConfiguration) SetRootCertificatesForServerValidatio
     }
 }
 // SetSecondaryAuthenticationMethod sets the secondaryAuthenticationMethod property value. Specify the secondary authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential. Possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.
-func (m *WindowsWiredNetworkConfiguration) SetSecondaryAuthenticationMethod(value *WiredNetworkAuthenticationMethod)() {
+func (m *WindowsWiredNetworkConfiguration) SetSecondaryAuthenticationMethod(value *WindowsWiredNetworkConfiguration_secondaryAuthenticationMethod)() {
     err := m.GetBackingStore().Set("secondaryAuthenticationMethod", value)
     if err != nil {
         panic(err)
@@ -878,10 +878,10 @@ type WindowsWiredNetworkConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAuthenticationBlockPeriodInMinutes()(*int32)
-    GetAuthenticationMethod()(*WiredNetworkAuthenticationMethod)
+    GetAuthenticationMethod()(*WindowsWiredNetworkConfiguration_authenticationMethod)
     GetAuthenticationPeriodInSeconds()(*int32)
     GetAuthenticationRetryDelayPeriodInSeconds()(*int32)
-    GetAuthenticationType()(*WiredNetworkAuthenticationType)
+    GetAuthenticationType()(*WindowsWiredNetworkConfiguration_authenticationType)
     GetCacheCredentials()(*bool)
     GetDisableUserPromptForServerValidation()(*bool)
     GetEapolStartPeriodInSeconds()(*int32)
@@ -889,7 +889,7 @@ type WindowsWiredNetworkConfigurationable interface {
     GetEnforce8021X()(*bool)
     GetForceFIPSCompliance()(*bool)
     GetIdentityCertificateForClientAuthentication()(WindowsCertificateProfileBaseable)
-    GetInnerAuthenticationProtocolForEAPTTLS()(*NonEapAuthenticationMethodForEapTtlsType)
+    GetInnerAuthenticationProtocolForEAPTTLS()(*WindowsWiredNetworkConfiguration_innerAuthenticationProtocolForEAPTTLS)
     GetMaximumAuthenticationFailures()(*int32)
     GetMaximumEAPOLStartMessages()(*int32)
     GetOuterIdentityPrivacyTemporaryValue()(*string)
@@ -897,15 +897,15 @@ type WindowsWiredNetworkConfigurationable interface {
     GetRequireCryptographicBinding()(*bool)
     GetRootCertificateForClientValidation()(Windows81TrustedRootCertificateable)
     GetRootCertificatesForServerValidation()([]Windows81TrustedRootCertificateable)
-    GetSecondaryAuthenticationMethod()(*WiredNetworkAuthenticationMethod)
+    GetSecondaryAuthenticationMethod()(*WindowsWiredNetworkConfiguration_secondaryAuthenticationMethod)
     GetSecondaryIdentityCertificateForClientAuthentication()(WindowsCertificateProfileBaseable)
     GetSecondaryRootCertificateForClientValidation()(Windows81TrustedRootCertificateable)
     GetTrustedServerCertificateNames()([]string)
     SetAuthenticationBlockPeriodInMinutes(value *int32)()
-    SetAuthenticationMethod(value *WiredNetworkAuthenticationMethod)()
+    SetAuthenticationMethod(value *WindowsWiredNetworkConfiguration_authenticationMethod)()
     SetAuthenticationPeriodInSeconds(value *int32)()
     SetAuthenticationRetryDelayPeriodInSeconds(value *int32)()
-    SetAuthenticationType(value *WiredNetworkAuthenticationType)()
+    SetAuthenticationType(value *WindowsWiredNetworkConfiguration_authenticationType)()
     SetCacheCredentials(value *bool)()
     SetDisableUserPromptForServerValidation(value *bool)()
     SetEapolStartPeriodInSeconds(value *int32)()
@@ -913,7 +913,7 @@ type WindowsWiredNetworkConfigurationable interface {
     SetEnforce8021X(value *bool)()
     SetForceFIPSCompliance(value *bool)()
     SetIdentityCertificateForClientAuthentication(value WindowsCertificateProfileBaseable)()
-    SetInnerAuthenticationProtocolForEAPTTLS(value *NonEapAuthenticationMethodForEapTtlsType)()
+    SetInnerAuthenticationProtocolForEAPTTLS(value *WindowsWiredNetworkConfiguration_innerAuthenticationProtocolForEAPTTLS)()
     SetMaximumAuthenticationFailures(value *int32)()
     SetMaximumEAPOLStartMessages(value *int32)()
     SetOuterIdentityPrivacyTemporaryValue(value *string)()
@@ -921,7 +921,7 @@ type WindowsWiredNetworkConfigurationable interface {
     SetRequireCryptographicBinding(value *bool)()
     SetRootCertificateForClientValidation(value Windows81TrustedRootCertificateable)()
     SetRootCertificatesForServerValidation(value []Windows81TrustedRootCertificateable)()
-    SetSecondaryAuthenticationMethod(value *WiredNetworkAuthenticationMethod)()
+    SetSecondaryAuthenticationMethod(value *WindowsWiredNetworkConfiguration_secondaryAuthenticationMethod)()
     SetSecondaryIdentityCertificateForClientAuthentication(value WindowsCertificateProfileBaseable)()
     SetSecondaryRootCertificateForClientValidation(value Windows81TrustedRootCertificateable)()
     SetTrustedServerCertificateNames(value []string)()

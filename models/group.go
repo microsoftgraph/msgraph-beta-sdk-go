@@ -34,13 +34,13 @@ func (m *Group) GetAcceptedSenders()([]DirectoryObjectable) {
     return nil
 }
 // GetAccessType gets the accessType property value. The accessType property
-func (m *Group) GetAccessType()(*GroupAccessType) {
+func (m *Group) GetAccessType()(*Group_accessType) {
     val, err := m.GetBackingStore().Get("accessType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*GroupAccessType)
+        return val.(*Group_accessType)
     }
     return nil
 }
@@ -284,12 +284,12 @@ func (m *Group) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         return nil
     }
     res["accessType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseGroupAccessType)
+        val, err := n.GetEnumValue(ParseGroup_accessType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccessType(val.(*GroupAccessType))
+            m.SetAccessType(val.(*Group_accessType))
         }
         return nil
     }
@@ -2534,7 +2534,7 @@ func (m *Group) SetAcceptedSenders(value []DirectoryObjectable)() {
     }
 }
 // SetAccessType sets the accessType property value. The accessType property
-func (m *Group) SetAccessType(value *GroupAccessType)() {
+func (m *Group) SetAccessType(value *Group_accessType)() {
     err := m.GetBackingStore().Set("accessType", value)
     if err != nil {
         panic(err)
@@ -3091,7 +3091,7 @@ type Groupable interface {
     DirectoryObjectable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAcceptedSenders()([]DirectoryObjectable)
-    GetAccessType()(*GroupAccessType)
+    GetAccessType()(*Group_accessType)
     GetAllowExternalSenders()(*bool)
     GetAppRoleAssignments()([]AppRoleAssignmentable)
     GetAssignedLabels()([]AssignedLabelable)
@@ -3171,7 +3171,7 @@ type Groupable interface {
     GetVisibility()(*string)
     GetWritebackConfiguration()(GroupWritebackConfigurationable)
     SetAcceptedSenders(value []DirectoryObjectable)()
-    SetAccessType(value *GroupAccessType)()
+    SetAccessType(value *Group_accessType)()
     SetAllowExternalSenders(value *bool)()
     SetAppRoleAssignments(value []AppRoleAssignmentable)()
     SetAssignedLabels(value []AssignedLabelable)()

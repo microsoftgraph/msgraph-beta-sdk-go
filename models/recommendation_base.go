@@ -105,13 +105,13 @@ func (m *RecommendationBase) GetDisplayName()(*string) {
     return nil
 }
 // GetFeatureAreas gets the featureAreas property value. The directory feature that the recommendation is related to.
-func (m *RecommendationBase) GetFeatureAreas()([]RecommendationFeatureAreas) {
+func (m *RecommendationBase) GetFeatureAreas()([]RecommendationBase_featureAreas) {
     val, err := m.GetBackingStore().Get("featureAreas")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]RecommendationFeatureAreas)
+        return val.([]RecommendationBase_featureAreas)
     }
     return nil
 }
@@ -185,15 +185,15 @@ func (m *RecommendationBase) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["featureAreas"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseRecommendationFeatureAreas)
+        val, err := n.GetCollectionOfEnumValues(ParseRecommendationBase_featureAreas)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]RecommendationFeatureAreas, len(val))
+            res := make([]RecommendationBase_featureAreas, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*RecommendationFeatureAreas))
+                    res[i] = *(v.(*RecommendationBase_featureAreas))
                 }
             }
             m.SetFeatureAreas(res)
@@ -307,12 +307,12 @@ func (m *RecommendationBase) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["recommendationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRecommendationType)
+        val, err := n.GetEnumValue(ParseRecommendationBase_recommendationType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRecommendationType(val.(*RecommendationType))
+            m.SetRecommendationType(val.(*RecommendationBase_recommendationType))
         }
         return nil
     }
@@ -459,13 +459,13 @@ func (m *RecommendationBase) GetPriority()(*RecommendationPriority) {
     return nil
 }
 // GetRecommendationType gets the recommendationType property value. Friendly shortname to identify the recommendation. The possible values are: adfsAppsMigration, enableDesktopSSO, enablePHS, enableProvisioning, switchFromPerUserMFA, tenantMFA, thirdPartyApps, turnOffPerUserMFA, useAuthenticatorApp, useMyApps, staleApps, staleAppCreds, applicationCredentialExpiry, servicePrincipalKeyExpiry, adminMFAV2, blockLegacyAuthentication, integratedApps, mfaRegistrationV2, pwagePolicyNew, passwordHashSync, oneAdmin, roleOverlap, selfServicePasswordReset, signinRiskPolicy, userRiskPolicy, verifyAppPublisher, privateLinkForAAD, appRoleAssignmentsGroups, appRoleAssignmentsUsers, managedIdentity, overprivilegedApps, unknownFutureValue, longLivedCredentials, aadConnectDeprecated, adalToMsalMigration, ownerlessApps, inactiveGuests. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: longLivedCredentials, aadConnectDeprecated, adalToMsalMigration, ownerlessApps, inactiveGuests.
-func (m *RecommendationBase) GetRecommendationType()(*RecommendationType) {
+func (m *RecommendationBase) GetRecommendationType()(*RecommendationBase_recommendationType) {
     val, err := m.GetBackingStore().Get("recommendationType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RecommendationType)
+        return val.(*RecommendationBase_recommendationType)
     }
     return nil
 }
@@ -552,7 +552,7 @@ func (m *RecommendationBase) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     if m.GetFeatureAreas() != nil {
-        err = writer.WriteCollectionOfStringValues("featureAreas", SerializeRecommendationFeatureAreas(m.GetFeatureAreas()))
+        err = writer.WriteCollectionOfStringValues("featureAreas", SerializeRecommendationBase_featureAreas(m.GetFeatureAreas()))
         if err != nil {
             return err
         }
@@ -695,7 +695,7 @@ func (m *RecommendationBase) SetDisplayName(value *string)() {
     }
 }
 // SetFeatureAreas sets the featureAreas property value. The directory feature that the recommendation is related to.
-func (m *RecommendationBase) SetFeatureAreas(value []RecommendationFeatureAreas)() {
+func (m *RecommendationBase) SetFeatureAreas(value []RecommendationBase_featureAreas)() {
     err := m.GetBackingStore().Set("featureAreas", value)
     if err != nil {
         panic(err)
@@ -772,7 +772,7 @@ func (m *RecommendationBase) SetPriority(value *RecommendationPriority)() {
     }
 }
 // SetRecommendationType sets the recommendationType property value. Friendly shortname to identify the recommendation. The possible values are: adfsAppsMigration, enableDesktopSSO, enablePHS, enableProvisioning, switchFromPerUserMFA, tenantMFA, thirdPartyApps, turnOffPerUserMFA, useAuthenticatorApp, useMyApps, staleApps, staleAppCreds, applicationCredentialExpiry, servicePrincipalKeyExpiry, adminMFAV2, blockLegacyAuthentication, integratedApps, mfaRegistrationV2, pwagePolicyNew, passwordHashSync, oneAdmin, roleOverlap, selfServicePasswordReset, signinRiskPolicy, userRiskPolicy, verifyAppPublisher, privateLinkForAAD, appRoleAssignmentsGroups, appRoleAssignmentsUsers, managedIdentity, overprivilegedApps, unknownFutureValue, longLivedCredentials, aadConnectDeprecated, adalToMsalMigration, ownerlessApps, inactiveGuests. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: longLivedCredentials, aadConnectDeprecated, adalToMsalMigration, ownerlessApps, inactiveGuests.
-func (m *RecommendationBase) SetRecommendationType(value *RecommendationType)() {
+func (m *RecommendationBase) SetRecommendationType(value *RecommendationBase_recommendationType)() {
     err := m.GetBackingStore().Set("recommendationType", value)
     if err != nil {
         panic(err)
@@ -809,7 +809,7 @@ type RecommendationBaseable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCurrentScore()(*float64)
     GetDisplayName()(*string)
-    GetFeatureAreas()([]RecommendationFeatureAreas)
+    GetFeatureAreas()([]RecommendationBase_featureAreas)
     GetImpactedResources()([]ImpactedResourceable)
     GetImpactStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetImpactType()(*string)
@@ -820,7 +820,7 @@ type RecommendationBaseable interface {
     GetMaxScore()(*float64)
     GetPostponeUntilDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetPriority()(*RecommendationPriority)
-    GetRecommendationType()(*RecommendationType)
+    GetRecommendationType()(*RecommendationBase_recommendationType)
     GetReleaseType()(*string)
     GetRemediationImpact()(*string)
     GetStatus()(*RecommendationStatus)
@@ -830,7 +830,7 @@ type RecommendationBaseable interface {
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCurrentScore(value *float64)()
     SetDisplayName(value *string)()
-    SetFeatureAreas(value []RecommendationFeatureAreas)()
+    SetFeatureAreas(value []RecommendationBase_featureAreas)()
     SetImpactedResources(value []ImpactedResourceable)()
     SetImpactStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetImpactType(value *string)()
@@ -841,7 +841,7 @@ type RecommendationBaseable interface {
     SetMaxScore(value *float64)()
     SetPostponeUntilDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetPriority(value *RecommendationPriority)()
-    SetRecommendationType(value *RecommendationType)()
+    SetRecommendationType(value *RecommendationBase_recommendationType)()
     SetReleaseType(value *string)()
     SetRemediationImpact(value *string)()
     SetStatus(value *RecommendationStatus)()

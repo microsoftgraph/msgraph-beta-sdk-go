@@ -51,6 +51,16 @@ func (m *CloudPcRestorePointSetting) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["frequencyType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcRestorePointSetting_frequencyType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFrequencyType(val.(*CloudPcRestorePointSetting_frequencyType))
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -84,6 +94,17 @@ func (m *CloudPcRestorePointSetting) GetFrequencyInHours()(*int32) {
     }
     return nil
 }
+// GetFrequencyType gets the frequencyType property value. The frequencyType property
+func (m *CloudPcRestorePointSetting) GetFrequencyType()(*CloudPcRestorePointSetting_frequencyType) {
+    val, err := m.GetBackingStore().Get("frequencyType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcRestorePointSetting_frequencyType)
+    }
+    return nil
+}
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CloudPcRestorePointSetting) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
@@ -110,6 +131,13 @@ func (m *CloudPcRestorePointSetting) GetUserRestoreEnabled()(*bool) {
 func (m *CloudPcRestorePointSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("frequencyInHours", m.GetFrequencyInHours())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetFrequencyType() != nil {
+        cast := (*m.GetFrequencyType()).String()
+        err := writer.WriteStringValue("frequencyType", &cast)
         if err != nil {
             return err
         }
@@ -152,6 +180,13 @@ func (m *CloudPcRestorePointSetting) SetFrequencyInHours(value *int32)() {
         panic(err)
     }
 }
+// SetFrequencyType sets the frequencyType property value. The frequencyType property
+func (m *CloudPcRestorePointSetting) SetFrequencyType(value *CloudPcRestorePointSetting_frequencyType)() {
+    err := m.GetBackingStore().Set("frequencyType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CloudPcRestorePointSetting) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -173,10 +208,12 @@ type CloudPcRestorePointSettingable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetFrequencyInHours()(*int32)
+    GetFrequencyType()(*CloudPcRestorePointSetting_frequencyType)
     GetOdataType()(*string)
     GetUserRestoreEnabled()(*bool)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetFrequencyInHours(value *int32)()
+    SetFrequencyType(value *CloudPcRestorePointSetting_frequencyType)()
     SetOdataType(value *string)()
     SetUserRestoreEnabled(value *bool)()
 }

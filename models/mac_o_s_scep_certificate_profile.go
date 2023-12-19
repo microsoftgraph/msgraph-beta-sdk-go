@@ -33,13 +33,13 @@ func (m *MacOSScepCertificateProfile) GetAllowAllAppsAccess()(*bool) {
     return nil
 }
 // GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
-func (m *MacOSScepCertificateProfile) GetCertificateStore()(*CertificateStore) {
+func (m *MacOSScepCertificateProfile) GetCertificateStore()(*MacOSScepCertificateProfile_certificateStore) {
     val, err := m.GetBackingStore().Get("certificateStore")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CertificateStore)
+        return val.(*MacOSScepCertificateProfile_certificateStore)
     }
     return nil
 }
@@ -79,12 +79,12 @@ func (m *MacOSScepCertificateProfile) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     res["certificateStore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCertificateStore)
+        val, err := n.GetEnumValue(ParseMacOSScepCertificateProfile_certificateStore)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCertificateStore(val.(*CertificateStore))
+            m.SetCertificateStore(val.(*MacOSScepCertificateProfile_certificateStore))
         }
         return nil
     }
@@ -121,12 +121,12 @@ func (m *MacOSScepCertificateProfile) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     res["hashAlgorithm"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseHashAlgorithms)
+        val, err := n.GetEnumValue(ParseMacOSScepCertificateProfile_hashAlgorithm)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetHashAlgorithm(val.(*HashAlgorithms))
+            m.SetHashAlgorithm(val.(*MacOSScepCertificateProfile_hashAlgorithm))
         }
         return nil
     }
@@ -215,13 +215,13 @@ func (m *MacOSScepCertificateProfile) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetHashAlgorithm gets the hashAlgorithm property value. SCEP Hash Algorithm. Possible values are: sha1, sha2.
-func (m *MacOSScepCertificateProfile) GetHashAlgorithm()(*HashAlgorithms) {
+func (m *MacOSScepCertificateProfile) GetHashAlgorithm()(*MacOSScepCertificateProfile_hashAlgorithm) {
     val, err := m.GetBackingStore().Get("hashAlgorithm")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*HashAlgorithms)
+        return val.(*MacOSScepCertificateProfile_hashAlgorithm)
     }
     return nil
 }
@@ -412,7 +412,7 @@ func (m *MacOSScepCertificateProfile) SetAllowAllAppsAccess(value *bool)() {
     }
 }
 // SetCertificateStore sets the certificateStore property value. Target store certificate. Possible values are: user, machine.
-func (m *MacOSScepCertificateProfile) SetCertificateStore(value *CertificateStore)() {
+func (m *MacOSScepCertificateProfile) SetCertificateStore(value *MacOSScepCertificateProfile_certificateStore)() {
     err := m.GetBackingStore().Set("certificateStore", value)
     if err != nil {
         panic(err)
@@ -433,7 +433,7 @@ func (m *MacOSScepCertificateProfile) SetExtendedKeyUsages(value []ExtendedKeyUs
     }
 }
 // SetHashAlgorithm sets the hashAlgorithm property value. SCEP Hash Algorithm. Possible values are: sha1, sha2.
-func (m *MacOSScepCertificateProfile) SetHashAlgorithm(value *HashAlgorithms)() {
+func (m *MacOSScepCertificateProfile) SetHashAlgorithm(value *MacOSScepCertificateProfile_hashAlgorithm)() {
     err := m.GetBackingStore().Set("hashAlgorithm", value)
     if err != nil {
         panic(err)
@@ -493,10 +493,10 @@ type MacOSScepCertificateProfileable interface {
     MacOSCertificateProfileBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAllowAllAppsAccess()(*bool)
-    GetCertificateStore()(*CertificateStore)
+    GetCertificateStore()(*MacOSScepCertificateProfile_certificateStore)
     GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable)
     GetExtendedKeyUsages()([]ExtendedKeyUsageable)
-    GetHashAlgorithm()(*HashAlgorithms)
+    GetHashAlgorithm()(*MacOSScepCertificateProfile_hashAlgorithm)
     GetKeySize()(*KeySize)
     GetKeyUsage()(*KeyUsages)
     GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable)
@@ -505,10 +505,10 @@ type MacOSScepCertificateProfileable interface {
     GetSubjectAlternativeNameFormatString()(*string)
     GetSubjectNameFormatString()(*string)
     SetAllowAllAppsAccess(value *bool)()
-    SetCertificateStore(value *CertificateStore)()
+    SetCertificateStore(value *MacOSScepCertificateProfile_certificateStore)()
     SetCustomSubjectAlternativeNames(value []CustomSubjectAlternativeNameable)()
     SetExtendedKeyUsages(value []ExtendedKeyUsageable)()
-    SetHashAlgorithm(value *HashAlgorithms)()
+    SetHashAlgorithm(value *MacOSScepCertificateProfile_hashAlgorithm)()
     SetKeySize(value *KeySize)()
     SetKeyUsage(value *KeyUsages)()
     SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)()

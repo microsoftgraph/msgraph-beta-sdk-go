@@ -346,12 +346,12 @@ func (m *Windows10VpnConfiguration) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     res["profileTarget"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWindows10VpnProfileTarget)
+        val, err := n.GetEnumValue(ParseWindows10VpnConfiguration_profileTarget)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProfileTarget(val.(*Windows10VpnProfileTarget))
+            m.SetProfileTarget(val.(*Windows10VpnConfiguration_profileTarget))
         }
         return nil
     }
@@ -489,13 +489,13 @@ func (m *Windows10VpnConfiguration) GetOnlyAssociatedAppsCanUseConnection()(*boo
     return nil
 }
 // GetProfileTarget gets the profileTarget property value. Profile target type. Possible values are: user, device, autoPilotDevice.
-func (m *Windows10VpnConfiguration) GetProfileTarget()(*Windows10VpnProfileTarget) {
+func (m *Windows10VpnConfiguration) GetProfileTarget()(*Windows10VpnConfiguration_profileTarget) {
     val, err := m.GetBackingStore().Get("profileTarget")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*Windows10VpnProfileTarget)
+        return val.(*Windows10VpnConfiguration_profileTarget)
     }
     return nil
 }
@@ -885,7 +885,7 @@ func (m *Windows10VpnConfiguration) SetOnlyAssociatedAppsCanUseConnection(value 
     }
 }
 // SetProfileTarget sets the profileTarget property value. Profile target type. Possible values are: user, device, autoPilotDevice.
-func (m *Windows10VpnConfiguration) SetProfileTarget(value *Windows10VpnProfileTarget)() {
+func (m *Windows10VpnConfiguration) SetProfileTarget(value *Windows10VpnConfiguration_profileTarget)() {
     err := m.GetBackingStore().Set("profileTarget", value)
     if err != nil {
         panic(err)
@@ -967,7 +967,7 @@ type Windows10VpnConfigurationable interface {
     GetIdentityCertificate()(WindowsCertificateProfileBaseable)
     GetMicrosoftTunnelSiteId()(*string)
     GetOnlyAssociatedAppsCanUseConnection()(*bool)
-    GetProfileTarget()(*Windows10VpnProfileTarget)
+    GetProfileTarget()(*Windows10VpnConfiguration_profileTarget)
     GetProxyServer()(Windows10VpnProxyServerable)
     GetRememberUserCredentials()(*bool)
     GetRoutes()([]VpnRouteable)
@@ -992,7 +992,7 @@ type Windows10VpnConfigurationable interface {
     SetIdentityCertificate(value WindowsCertificateProfileBaseable)()
     SetMicrosoftTunnelSiteId(value *string)()
     SetOnlyAssociatedAppsCanUseConnection(value *bool)()
-    SetProfileTarget(value *Windows10VpnProfileTarget)()
+    SetProfileTarget(value *Windows10VpnConfiguration_profileTarget)()
     SetProxyServer(value Windows10VpnProxyServerable)()
     SetRememberUserCredentials(value *bool)()
     SetRoutes(value []VpnRouteable)()

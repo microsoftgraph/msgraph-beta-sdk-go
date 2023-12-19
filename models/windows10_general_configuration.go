@@ -473,13 +473,13 @@ func (m *Windows10GeneralConfiguration) GetDefenderMonitorFileActivity()(*Defend
     return nil
 }
 // GetDefenderPotentiallyUnwantedAppAction gets the defenderPotentiallyUnwantedAppAction property value. Gets or sets Defender’s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop. Possible values are: deviceDefault, block, audit.
-func (m *Windows10GeneralConfiguration) GetDefenderPotentiallyUnwantedAppAction()(*DefenderPotentiallyUnwantedAppAction) {
+func (m *Windows10GeneralConfiguration) GetDefenderPotentiallyUnwantedAppAction()(*Windows10GeneralConfiguration_defenderPotentiallyUnwantedAppAction) {
     val, err := m.GetBackingStore().Get("defenderPotentiallyUnwantedAppAction")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DefenderPotentiallyUnwantedAppAction)
+        return val.(*Windows10GeneralConfiguration_defenderPotentiallyUnwantedAppAction)
     }
     return nil
 }
@@ -704,13 +704,13 @@ func (m *Windows10GeneralConfiguration) GetDefenderSignatureUpdateIntervalInHour
     return nil
 }
 // GetDefenderSubmitSamplesConsentType gets the defenderSubmitSamplesConsentType property value. Checks for the user consent level in Windows Defender to send data. Possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.
-func (m *Windows10GeneralConfiguration) GetDefenderSubmitSamplesConsentType()(*DefenderSubmitSamplesConsentType) {
+func (m *Windows10GeneralConfiguration) GetDefenderSubmitSamplesConsentType()(*Windows10GeneralConfiguration_defenderSubmitSamplesConsentType) {
     val, err := m.GetBackingStore().Get("defenderSubmitSamplesConsentType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DefenderSubmitSamplesConsentType)
+        return val.(*Windows10GeneralConfiguration_defenderSubmitSamplesConsentType)
     }
     return nil
 }
@@ -1889,12 +1889,12 @@ func (m *Windows10GeneralConfiguration) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["defenderPotentiallyUnwantedAppAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDefenderPotentiallyUnwantedAppAction)
+        val, err := n.GetEnumValue(ParseWindows10GeneralConfiguration_defenderPotentiallyUnwantedAppAction)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefenderPotentiallyUnwantedAppAction(val.(*DefenderPotentiallyUnwantedAppAction))
+            m.SetDefenderPotentiallyUnwantedAppAction(val.(*Windows10GeneralConfiguration_defenderPotentiallyUnwantedAppAction))
         }
         return nil
     }
@@ -2105,12 +2105,12 @@ func (m *Windows10GeneralConfiguration) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["defenderSubmitSamplesConsentType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDefenderSubmitSamplesConsentType)
+        val, err := n.GetEnumValue(ParseWindows10GeneralConfiguration_defenderSubmitSamplesConsentType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefenderSubmitSamplesConsentType(val.(*DefenderSubmitSamplesConsentType))
+            m.SetDefenderSubmitSamplesConsentType(val.(*Windows10GeneralConfiguration_defenderSubmitSamplesConsentType))
         }
         return nil
     }
@@ -8086,7 +8086,7 @@ func (m *Windows10GeneralConfiguration) SetDefenderMonitorFileActivity(value *De
     }
 }
 // SetDefenderPotentiallyUnwantedAppAction sets the defenderPotentiallyUnwantedAppAction property value. Gets or sets Defender’s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop. Possible values are: deviceDefault, block, audit.
-func (m *Windows10GeneralConfiguration) SetDefenderPotentiallyUnwantedAppAction(value *DefenderPotentiallyUnwantedAppAction)() {
+func (m *Windows10GeneralConfiguration) SetDefenderPotentiallyUnwantedAppAction(value *Windows10GeneralConfiguration_defenderPotentiallyUnwantedAppAction)() {
     err := m.GetBackingStore().Set("defenderPotentiallyUnwantedAppAction", value)
     if err != nil {
         panic(err)
@@ -8233,7 +8233,7 @@ func (m *Windows10GeneralConfiguration) SetDefenderSignatureUpdateIntervalInHour
     }
 }
 // SetDefenderSubmitSamplesConsentType sets the defenderSubmitSamplesConsentType property value. Checks for the user consent level in Windows Defender to send data. Possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.
-func (m *Windows10GeneralConfiguration) SetDefenderSubmitSamplesConsentType(value *DefenderSubmitSamplesConsentType)() {
+func (m *Windows10GeneralConfiguration) SetDefenderSubmitSamplesConsentType(value *Windows10GeneralConfiguration_defenderSubmitSamplesConsentType)() {
     err := m.GetBackingStore().Set("defenderSubmitSamplesConsentType", value)
     if err != nil {
         panic(err)
@@ -9824,7 +9824,7 @@ type Windows10GeneralConfigurationable interface {
     GetDefenderFileExtensionsToExclude()([]string)
     GetDefenderFilesAndFoldersToExclude()([]string)
     GetDefenderMonitorFileActivity()(*DefenderMonitorFileActivity)
-    GetDefenderPotentiallyUnwantedAppAction()(*DefenderPotentiallyUnwantedAppAction)
+    GetDefenderPotentiallyUnwantedAppAction()(*Windows10GeneralConfiguration_defenderPotentiallyUnwantedAppAction)
     GetDefenderPotentiallyUnwantedAppActionSetting()(*DefenderProtectionType)
     GetDefenderProcessesToExclude()([]string)
     GetDefenderPromptForSampleSubmission()(*DefenderPromptForSampleSubmission)
@@ -9845,7 +9845,7 @@ type Windows10GeneralConfigurationable interface {
     GetDefenderScheduledScanTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
     GetDefenderScheduleScanEnableLowCpuPriority()(*bool)
     GetDefenderSignatureUpdateIntervalInHours()(*int32)
-    GetDefenderSubmitSamplesConsentType()(*DefenderSubmitSamplesConsentType)
+    GetDefenderSubmitSamplesConsentType()(*Windows10GeneralConfiguration_defenderSubmitSamplesConsentType)
     GetDefenderSystemScanSchedule()(*WeeklySchedule)
     GetDeveloperUnlockSetting()(*StateManagementSetting)
     GetDeviceManagementBlockFactoryResetOnMobile()(*bool)
@@ -10107,7 +10107,7 @@ type Windows10GeneralConfigurationable interface {
     SetDefenderFileExtensionsToExclude(value []string)()
     SetDefenderFilesAndFoldersToExclude(value []string)()
     SetDefenderMonitorFileActivity(value *DefenderMonitorFileActivity)()
-    SetDefenderPotentiallyUnwantedAppAction(value *DefenderPotentiallyUnwantedAppAction)()
+    SetDefenderPotentiallyUnwantedAppAction(value *Windows10GeneralConfiguration_defenderPotentiallyUnwantedAppAction)()
     SetDefenderPotentiallyUnwantedAppActionSetting(value *DefenderProtectionType)()
     SetDefenderProcessesToExclude(value []string)()
     SetDefenderPromptForSampleSubmission(value *DefenderPromptForSampleSubmission)()
@@ -10128,7 +10128,7 @@ type Windows10GeneralConfigurationable interface {
     SetDefenderScheduledScanTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)()
     SetDefenderScheduleScanEnableLowCpuPriority(value *bool)()
     SetDefenderSignatureUpdateIntervalInHours(value *int32)()
-    SetDefenderSubmitSamplesConsentType(value *DefenderSubmitSamplesConsentType)()
+    SetDefenderSubmitSamplesConsentType(value *Windows10GeneralConfiguration_defenderSubmitSamplesConsentType)()
     SetDefenderSystemScanSchedule(value *WeeklySchedule)()
     SetDeveloperUnlockSetting(value *StateManagementSetting)()
     SetDeviceManagementBlockFactoryResetOnMobile(value *bool)()

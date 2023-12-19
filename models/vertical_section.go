@@ -20,13 +20,13 @@ func CreateVerticalSectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewVerticalSection(), nil
 }
 // GetEmphasis gets the emphasis property value. Enumeration value that indicates the emphasis of the section background. The possible values are: none, netural, soft, strong, unknownFutureValue.
-func (m *VerticalSection) GetEmphasis()(*SectionEmphasisType) {
+func (m *VerticalSection) GetEmphasis()(*VerticalSection_emphasis) {
     val, err := m.GetBackingStore().Get("emphasis")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SectionEmphasisType)
+        return val.(*VerticalSection_emphasis)
     }
     return nil
 }
@@ -34,12 +34,12 @@ func (m *VerticalSection) GetEmphasis()(*SectionEmphasisType) {
 func (m *VerticalSection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["emphasis"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSectionEmphasisType)
+        val, err := n.GetEnumValue(ParseVerticalSection_emphasis)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEmphasis(val.(*SectionEmphasisType))
+            m.SetEmphasis(val.(*VerticalSection_emphasis))
         }
         return nil
     }
@@ -100,7 +100,7 @@ func (m *VerticalSection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetEmphasis sets the emphasis property value. Enumeration value that indicates the emphasis of the section background. The possible values are: none, netural, soft, strong, unknownFutureValue.
-func (m *VerticalSection) SetEmphasis(value *SectionEmphasisType)() {
+func (m *VerticalSection) SetEmphasis(value *VerticalSection_emphasis)() {
     err := m.GetBackingStore().Set("emphasis", value)
     if err != nil {
         panic(err)
@@ -117,8 +117,8 @@ func (m *VerticalSection) SetWebparts(value []WebPartable)() {
 type VerticalSectionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetEmphasis()(*SectionEmphasisType)
+    GetEmphasis()(*VerticalSection_emphasis)
     GetWebparts()([]WebPartable)
-    SetEmphasis(value *SectionEmphasisType)()
+    SetEmphasis(value *VerticalSection_emphasis)()
     SetWebparts(value []WebPartable)()
 }

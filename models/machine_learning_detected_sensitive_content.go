@@ -23,12 +23,12 @@ func CreateMachineLearningDetectedSensitiveContentFromDiscriminatorValue(parseNo
 func (m *MachineLearningDetectedSensitiveContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DetectedSensitiveContent.GetFieldDeserializers()
     res["matchTolerance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMlClassificationMatchTolerance)
+        val, err := n.GetEnumValue(ParseMachineLearningDetectedSensitiveContent_matchTolerance)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMatchTolerance(val.(*MlClassificationMatchTolerance))
+            m.SetMatchTolerance(val.(*MachineLearningDetectedSensitiveContent_matchTolerance))
         }
         return nil
     }
@@ -45,13 +45,13 @@ func (m *MachineLearningDetectedSensitiveContent) GetFieldDeserializers()(map[st
     return res
 }
 // GetMatchTolerance gets the matchTolerance property value. The matchTolerance property
-func (m *MachineLearningDetectedSensitiveContent) GetMatchTolerance()(*MlClassificationMatchTolerance) {
+func (m *MachineLearningDetectedSensitiveContent) GetMatchTolerance()(*MachineLearningDetectedSensitiveContent_matchTolerance) {
     val, err := m.GetBackingStore().Get("matchTolerance")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MlClassificationMatchTolerance)
+        return val.(*MachineLearningDetectedSensitiveContent_matchTolerance)
     }
     return nil
 }
@@ -88,7 +88,7 @@ func (m *MachineLearningDetectedSensitiveContent) Serialize(writer i878a80d2330e
     return nil
 }
 // SetMatchTolerance sets the matchTolerance property value. The matchTolerance property
-func (m *MachineLearningDetectedSensitiveContent) SetMatchTolerance(value *MlClassificationMatchTolerance)() {
+func (m *MachineLearningDetectedSensitiveContent) SetMatchTolerance(value *MachineLearningDetectedSensitiveContent_matchTolerance)() {
     err := m.GetBackingStore().Set("matchTolerance", value)
     if err != nil {
         panic(err)
@@ -105,8 +105,8 @@ func (m *MachineLearningDetectedSensitiveContent) SetModelVersion(value *string)
 type MachineLearningDetectedSensitiveContentable interface {
     DetectedSensitiveContentable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetMatchTolerance()(*MlClassificationMatchTolerance)
+    GetMatchTolerance()(*MachineLearningDetectedSensitiveContent_matchTolerance)
     GetModelVersion()(*string)
-    SetMatchTolerance(value *MlClassificationMatchTolerance)()
+    SetMatchTolerance(value *MachineLearningDetectedSensitiveContent_matchTolerance)()
     SetModelVersion(value *string)()
 }

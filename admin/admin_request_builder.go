@@ -82,6 +82,10 @@ func (m *AdminRequestBuilder) Get(ctx context.Context, requestConfiguration *Adm
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Adminable), nil
 }
+// Microsoft365Apps provides operations to manage the microsoft365Apps property of the microsoft.graph.admin entity.
+func (m *AdminRequestBuilder) Microsoft365Apps()(*Microsoft365AppsRequestBuilder) {
+    return NewMicrosoft365AppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update admin
 func (m *AdminRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Adminable, requestConfiguration *AdminRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Adminable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
