@@ -4,25 +4,25 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// VirtualEventRegistratioCustomQuestion 
-type VirtualEventRegistratioCustomQuestion struct {
+// VirtualEventRegistrationCustomQuestion 
+type VirtualEventRegistrationCustomQuestion struct {
     VirtualEventRegistrationQuestionBase
 }
-// NewVirtualEventRegistratioCustomQuestion instantiates a new virtualEventRegistratioCustomQuestion and sets the default values.
-func NewVirtualEventRegistratioCustomQuestion()(*VirtualEventRegistratioCustomQuestion) {
-    m := &VirtualEventRegistratioCustomQuestion{
+// NewVirtualEventRegistrationCustomQuestion instantiates a new virtualEventRegistrationCustomQuestion and sets the default values.
+func NewVirtualEventRegistrationCustomQuestion()(*VirtualEventRegistrationCustomQuestion) {
+    m := &VirtualEventRegistrationCustomQuestion{
         VirtualEventRegistrationQuestionBase: *NewVirtualEventRegistrationQuestionBase(),
     }
-    odataTypeValue := "#microsoft.graph.virtualEventRegistratioCustomQuestion"
+    odataTypeValue := "#microsoft.graph.virtualEventRegistrationCustomQuestion"
     m.SetOdataType(&odataTypeValue)
     return m
 }
-// CreateVirtualEventRegistratioCustomQuestionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateVirtualEventRegistratioCustomQuestionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewVirtualEventRegistratioCustomQuestion(), nil
+// CreateVirtualEventRegistrationCustomQuestionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateVirtualEventRegistrationCustomQuestionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewVirtualEventRegistrationCustomQuestion(), nil
 }
 // GetAnswerChoices gets the answerChoices property value. The answerChoices property
-func (m *VirtualEventRegistratioCustomQuestion) GetAnswerChoices()([]string) {
+func (m *VirtualEventRegistrationCustomQuestion) GetAnswerChoices()([]string) {
     val, err := m.GetBackingStore().Get("answerChoices")
     if err != nil {
         panic(err)
@@ -33,7 +33,7 @@ func (m *VirtualEventRegistratioCustomQuestion) GetAnswerChoices()([]string) {
     return nil
 }
 // GetAnswerInputType gets the answerInputType property value. The answerInputType property
-func (m *VirtualEventRegistratioCustomQuestion) GetAnswerInputType()(*VirtualEventRegistrationQuestionAnswerInputType) {
+func (m *VirtualEventRegistrationCustomQuestion) GetAnswerInputType()(*VirtualEventRegistrationQuestionAnswerInputType) {
     val, err := m.GetBackingStore().Get("answerInputType")
     if err != nil {
         panic(err)
@@ -44,7 +44,7 @@ func (m *VirtualEventRegistratioCustomQuestion) GetAnswerInputType()(*VirtualEve
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *VirtualEventRegistratioCustomQuestion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *VirtualEventRegistrationCustomQuestion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.VirtualEventRegistrationQuestionBase.GetFieldDeserializers()
     res["answerChoices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
@@ -75,7 +75,7 @@ func (m *VirtualEventRegistratioCustomQuestion) GetFieldDeserializers()(map[stri
     return res
 }
 // Serialize serializes information the current object
-func (m *VirtualEventRegistratioCustomQuestion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+func (m *VirtualEventRegistrationCustomQuestion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.VirtualEventRegistrationQuestionBase.Serialize(writer)
     if err != nil {
         return err
@@ -96,21 +96,21 @@ func (m *VirtualEventRegistratioCustomQuestion) Serialize(writer i878a80d2330e89
     return nil
 }
 // SetAnswerChoices sets the answerChoices property value. The answerChoices property
-func (m *VirtualEventRegistratioCustomQuestion) SetAnswerChoices(value []string)() {
+func (m *VirtualEventRegistrationCustomQuestion) SetAnswerChoices(value []string)() {
     err := m.GetBackingStore().Set("answerChoices", value)
     if err != nil {
         panic(err)
     }
 }
 // SetAnswerInputType sets the answerInputType property value. The answerInputType property
-func (m *VirtualEventRegistratioCustomQuestion) SetAnswerInputType(value *VirtualEventRegistrationQuestionAnswerInputType)() {
+func (m *VirtualEventRegistrationCustomQuestion) SetAnswerInputType(value *VirtualEventRegistrationQuestionAnswerInputType)() {
     err := m.GetBackingStore().Set("answerInputType", value)
     if err != nil {
         panic(err)
     }
 }
-// VirtualEventRegistratioCustomQuestionable 
-type VirtualEventRegistratioCustomQuestionable interface {
+// VirtualEventRegistrationCustomQuestionable 
+type VirtualEventRegistrationCustomQuestionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     VirtualEventRegistrationQuestionBaseable
     GetAnswerChoices()([]string)

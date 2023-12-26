@@ -38,9 +38,30 @@ func (m *CloudPcDomainJoinConfiguration) GetAdditionalData()(map[string]any) {
 func (m *CloudPcDomainJoinConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
+// GetDomainJoinType gets the domainJoinType property value. The domainJoinType property
+func (m *CloudPcDomainJoinConfiguration) GetDomainJoinType()(*CloudPcDomainJoinType) {
+    val, err := m.GetBackingStore().Get("domainJoinType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcDomainJoinType)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcDomainJoinConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["domainJoinType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcDomainJoinType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDomainJoinType(val.(*CloudPcDomainJoinType))
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -150,6 +171,13 @@ func (m *CloudPcDomainJoinConfiguration) GetTypeEscaped()(*CloudPcDomainJoinType
 }
 // Serialize serializes information the current object
 func (m *CloudPcDomainJoinConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetDomainJoinType() != nil {
+        cast := (*m.GetDomainJoinType()).String()
+        err := writer.WriteStringValue("domainJoinType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
@@ -201,6 +229,13 @@ func (m *CloudPcDomainJoinConfiguration) SetAdditionalData(value map[string]any)
 func (m *CloudPcDomainJoinConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetDomainJoinType sets the domainJoinType property value. The domainJoinType property
+func (m *CloudPcDomainJoinConfiguration) SetDomainJoinType(value *CloudPcDomainJoinType)() {
+    err := m.GetBackingStore().Set("domainJoinType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CloudPcDomainJoinConfiguration) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -242,12 +277,14 @@ type CloudPcDomainJoinConfigurationable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDomainJoinType()(*CloudPcDomainJoinType)
     GetOdataType()(*string)
     GetOnPremisesConnectionId()(*string)
     GetRegionGroup()(*CloudPcRegionGroup)
     GetRegionName()(*string)
     GetTypeEscaped()(*CloudPcDomainJoinType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDomainJoinType(value *CloudPcDomainJoinType)()
     SetOdataType(value *string)()
     SetOnPremisesConnectionId(value *string)()
     SetRegionGroup(value *CloudPcRegionGroup)()

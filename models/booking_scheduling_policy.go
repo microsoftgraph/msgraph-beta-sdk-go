@@ -62,6 +62,16 @@ func (m *BookingSchedulingPolicy) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["isMeetingInviteToCustomersEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsMeetingInviteToCustomersEnabled(val)
+        }
+        return nil
+    }
     res["maximumAdvance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
@@ -113,6 +123,17 @@ func (m *BookingSchedulingPolicy) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     return res
+}
+// GetIsMeetingInviteToCustomersEnabled gets the isMeetingInviteToCustomersEnabled property value. Enable sending meeting invite to customers.
+func (m *BookingSchedulingPolicy) GetIsMeetingInviteToCustomersEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isMeetingInviteToCustomersEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMaximumAdvance gets the maximumAdvance property value. Maximum number of days in advance that a booking can be made. It follows the ISO 8601 format.
 func (m *BookingSchedulingPolicy) GetMaximumAdvance()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
@@ -178,6 +199,12 @@ func (m *BookingSchedulingPolicy) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     {
+        err := writer.WriteBoolValue("isMeetingInviteToCustomersEnabled", m.GetIsMeetingInviteToCustomersEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteISODurationValue("maximumAdvance", m.GetMaximumAdvance())
         if err != nil {
             return err
@@ -233,6 +260,13 @@ func (m *BookingSchedulingPolicy) SetAllowStaffSelection(value *bool)() {
 func (m *BookingSchedulingPolicy) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetIsMeetingInviteToCustomersEnabled sets the isMeetingInviteToCustomersEnabled property value. Enable sending meeting invite to customers.
+func (m *BookingSchedulingPolicy) SetIsMeetingInviteToCustomersEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isMeetingInviteToCustomersEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMaximumAdvance sets the maximumAdvance property value. Maximum number of days in advance that a booking can be made. It follows the ISO 8601 format.
 func (m *BookingSchedulingPolicy) SetMaximumAdvance(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     err := m.GetBackingStore().Set("maximumAdvance", value)
@@ -275,6 +309,7 @@ type BookingSchedulingPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAllowStaffSelection()(*bool)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetIsMeetingInviteToCustomersEnabled()(*bool)
     GetMaximumAdvance()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetMinimumLeadTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetOdataType()(*string)
@@ -282,6 +317,7 @@ type BookingSchedulingPolicyable interface {
     GetTimeSlotInterval()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     SetAllowStaffSelection(value *bool)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetIsMeetingInviteToCustomersEnabled(value *bool)()
     SetMaximumAdvance(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetMinimumLeadTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetOdataType(value *string)()

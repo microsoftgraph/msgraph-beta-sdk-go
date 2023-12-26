@@ -34,7 +34,7 @@ func (m *AzureADRegistrationPolicy) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAllowedToRegister gets the allowedToRegister property value. The allowedToRegister property
+// GetAllowedToRegister gets the allowedToRegister property value. Determines if Microsoft Entra registered is allowed.
 func (m *AzureADRegistrationPolicy) GetAllowedToRegister()(DeviceRegistrationMembershipable) {
     val, err := m.GetBackingStore().Get("allowedToRegister")
     if err != nil {
@@ -84,7 +84,7 @@ func (m *AzureADRegistrationPolicy) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetIsAdminConfigurable gets the isAdminConfigurable property value. Specifies whether this policy scope is configurable by the admin. The default value is false. When an admin has enabled Intune (MEM) to manage devices, this property is set to false and appliesTo defaults to 1 (meaning all).
+// GetIsAdminConfigurable gets the isAdminConfigurable property value. Determines if administrators can modify this policy.
 func (m *AzureADRegistrationPolicy) GetIsAdminConfigurable()(*bool) {
     val, err := m.GetBackingStore().Get("isAdminConfigurable")
     if err != nil {
@@ -141,7 +141,7 @@ func (m *AzureADRegistrationPolicy) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAllowedToRegister sets the allowedToRegister property value. The allowedToRegister property
+// SetAllowedToRegister sets the allowedToRegister property value. Determines if Microsoft Entra registered is allowed.
 func (m *AzureADRegistrationPolicy) SetAllowedToRegister(value DeviceRegistrationMembershipable)() {
     err := m.GetBackingStore().Set("allowedToRegister", value)
     if err != nil {
@@ -152,7 +152,7 @@ func (m *AzureADRegistrationPolicy) SetAllowedToRegister(value DeviceRegistratio
 func (m *AzureADRegistrationPolicy) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsAdminConfigurable sets the isAdminConfigurable property value. Specifies whether this policy scope is configurable by the admin. The default value is false. When an admin has enabled Intune (MEM) to manage devices, this property is set to false and appliesTo defaults to 1 (meaning all).
+// SetIsAdminConfigurable sets the isAdminConfigurable property value. Determines if administrators can modify this policy.
 func (m *AzureADRegistrationPolicy) SetIsAdminConfigurable(value *bool)() {
     err := m.GetBackingStore().Set("isAdminConfigurable", value)
     if err != nil {

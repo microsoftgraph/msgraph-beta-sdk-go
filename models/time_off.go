@@ -21,7 +21,7 @@ func NewTimeOff()(*TimeOff) {
 func CreateTimeOffFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTimeOff(), nil
 }
-// GetDraftTimeOff gets the draftTimeOff property value. The draft version of this timeOff that is viewable by managers. Required.
+// GetDraftTimeOff gets the draftTimeOff property value. Draft changes in the timeOff are only visible to managers until they're shared.
 func (m *TimeOff) GetDraftTimeOff()(TimeOffItemable) {
     val, err := m.GetBackingStore().Get("draftTimeOff")
     if err != nil {
@@ -77,7 +77,7 @@ func (m *TimeOff) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     }
     return res
 }
-// GetIsStagedForDeletion gets the isStagedForDeletion property value. The isStagedForDeletion property
+// GetIsStagedForDeletion gets the isStagedForDeletion property value. The timeOff is marked for deletion, a process that is finalized when the schedule is shared.
 func (m *TimeOff) GetIsStagedForDeletion()(*bool) {
     val, err := m.GetBackingStore().Get("isStagedForDeletion")
     if err != nil {
@@ -88,7 +88,7 @@ func (m *TimeOff) GetIsStagedForDeletion()(*bool) {
     }
     return nil
 }
-// GetSharedTimeOff gets the sharedTimeOff property value. The shared version of this timeOff that is viewable by both employees and managers. Required.
+// GetSharedTimeOff gets the sharedTimeOff property value. The shared version of this timeOff that is viewable by both employees and managers.
 func (m *TimeOff) GetSharedTimeOff()(TimeOffItemable) {
     val, err := m.GetBackingStore().Get("sharedTimeOff")
     if err != nil {
@@ -142,21 +142,21 @@ func (m *TimeOff) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     return nil
 }
-// SetDraftTimeOff sets the draftTimeOff property value. The draft version of this timeOff that is viewable by managers. Required.
+// SetDraftTimeOff sets the draftTimeOff property value. Draft changes in the timeOff are only visible to managers until they're shared.
 func (m *TimeOff) SetDraftTimeOff(value TimeOffItemable)() {
     err := m.GetBackingStore().Set("draftTimeOff", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsStagedForDeletion sets the isStagedForDeletion property value. The isStagedForDeletion property
+// SetIsStagedForDeletion sets the isStagedForDeletion property value. The timeOff is marked for deletion, a process that is finalized when the schedule is shared.
 func (m *TimeOff) SetIsStagedForDeletion(value *bool)() {
     err := m.GetBackingStore().Set("isStagedForDeletion", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSharedTimeOff sets the sharedTimeOff property value. The shared version of this timeOff that is viewable by both employees and managers. Required.
+// SetSharedTimeOff sets the sharedTimeOff property value. The shared version of this timeOff that is viewable by both employees and managers.
 func (m *TimeOff) SetSharedTimeOff(value TimeOffItemable)() {
     err := m.GetBackingStore().Set("sharedTimeOff", value)
     if err != nil {

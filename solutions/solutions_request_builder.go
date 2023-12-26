@@ -34,6 +34,14 @@ type SolutionsRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// BookingBusinesses provides operations to manage the bookingBusinesses property of the microsoft.graph.solutionsRoot entity.
+func (m *SolutionsRequestBuilder) BookingBusinesses()(*BookingBusinessesRequestBuilder) {
+    return NewBookingBusinessesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// BookingCurrencies provides operations to manage the bookingCurrencies property of the microsoft.graph.solutionsRoot entity.
+func (m *SolutionsRequestBuilder) BookingCurrencies()(*BookingCurrenciesRequestBuilder) {
+    return NewBookingCurrenciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // BusinessScenarios provides operations to manage the businessScenarios property of the microsoft.graph.solutionsRoot entity.
 func (m *SolutionsRequestBuilder) BusinessScenarios()(*BusinessScenariosRequestBuilder) {
     return NewBusinessScenariosRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

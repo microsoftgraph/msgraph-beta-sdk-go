@@ -38,7 +38,7 @@ func (m *CustomExtensionOverwriteConfiguration) GetAdditionalData()(map[string]a
 func (m *CustomExtensionOverwriteConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetClientConfiguration gets the clientConfiguration property value. The clientConfiguration property
+// GetClientConfiguration gets the clientConfiguration property value. Optional. Configuration of calling external API, such as timeout, retryCount, retriableResponseCodes.
 func (m *CustomExtensionOverwriteConfiguration) GetClientConfiguration()(CustomExtensionClientConfigurationable) {
     val, err := m.GetBackingStore().Get("clientConfiguration")
     if err != nil {
@@ -118,7 +118,7 @@ func (m *CustomExtensionOverwriteConfiguration) SetAdditionalData(value map[stri
 func (m *CustomExtensionOverwriteConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetClientConfiguration sets the clientConfiguration property value. The clientConfiguration property
+// SetClientConfiguration sets the clientConfiguration property value. Optional. Configuration of calling external API, such as timeout, retryCount, retriableResponseCodes.
 func (m *CustomExtensionOverwriteConfiguration) SetClientConfiguration(value CustomExtensionClientConfigurationable)() {
     err := m.GetBackingStore().Set("clientConfiguration", value)
     if err != nil {

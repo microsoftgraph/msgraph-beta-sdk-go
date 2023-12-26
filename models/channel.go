@@ -117,6 +117,16 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["isArchived"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsArchived(val)
+        }
+        return nil
+    }
     res["isFavoriteByDefault"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -251,6 +261,17 @@ func (m *Channel) GetFilesFolder()(DriveItemable) {
     }
     if val != nil {
         return val.(DriveItemable)
+    }
+    return nil
+}
+// GetIsArchived gets the isArchived property value. The isArchived property
+func (m *Channel) GetIsArchived()(*bool) {
+    val, err := m.GetBackingStore().Get("isArchived")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
     }
     return nil
 }
@@ -401,6 +422,12 @@ func (m *Channel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
         }
     }
     {
+        err = writer.WriteBoolValue("isArchived", m.GetIsArchived())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isFavoriteByDefault", m.GetIsFavoriteByDefault())
         if err != nil {
             return err
@@ -522,6 +549,13 @@ func (m *Channel) SetFilesFolder(value DriveItemable)() {
         panic(err)
     }
 }
+// SetIsArchived sets the isArchived property value. The isArchived property
+func (m *Channel) SetIsArchived(value *bool)() {
+    err := m.GetBackingStore().Set("isArchived", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsFavoriteByDefault sets the isFavoriteByDefault property value. Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
 func (m *Channel) SetIsFavoriteByDefault(value *bool)() {
     err := m.GetBackingStore().Set("isFavoriteByDefault", value)
@@ -601,6 +635,7 @@ type Channelable interface {
     GetDisplayName()(*string)
     GetEmail()(*string)
     GetFilesFolder()(DriveItemable)
+    GetIsArchived()(*bool)
     GetIsFavoriteByDefault()(*bool)
     GetMembers()([]ConversationMemberable)
     GetMembershipType()(*ChannelMembershipType)
@@ -616,6 +651,7 @@ type Channelable interface {
     SetDisplayName(value *string)()
     SetEmail(value *string)()
     SetFilesFolder(value DriveItemable)()
+    SetIsArchived(value *bool)()
     SetIsFavoriteByDefault(value *bool)()
     SetMembers(value []ConversationMemberable)()
     SetMembershipType(value *ChannelMembershipType)()

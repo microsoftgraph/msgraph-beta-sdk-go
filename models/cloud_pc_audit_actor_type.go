@@ -9,11 +9,11 @@ const (
     ITPRO_CLOUDPCAUDITACTORTYPE CloudPcAuditActorType = iota
     APPLICATION_CLOUDPCAUDITACTORTYPE
     PARTNER_CLOUDPCAUDITACTORTYPE
-    UNKNOWN_CLOUDPCAUDITACTORTYPE
+    UNKNOWNFUTUREVALUE_CLOUDPCAUDITACTORTYPE
 )
 
 func (i CloudPcAuditActorType) String() string {
-    return []string{"itPro", "application", "partner", "unknown"}[i]
+    return []string{"itPro", "application", "partner", "unknownFutureValue"}[i]
 }
 func ParseCloudPcAuditActorType(v string) (any, error) {
     result := ITPRO_CLOUDPCAUDITACTORTYPE
@@ -24,8 +24,8 @@ func ParseCloudPcAuditActorType(v string) (any, error) {
             result = APPLICATION_CLOUDPCAUDITACTORTYPE
         case "partner":
             result = PARTNER_CLOUDPCAUDITACTORTYPE
-        case "unknown":
-            result = UNKNOWN_CLOUDPCAUDITACTORTYPE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_CLOUDPCAUDITACTORTYPE
         default:
             return 0, errors.New("Unknown CloudPcAuditActorType value: " + v)
     }

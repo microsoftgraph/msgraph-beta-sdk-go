@@ -35,6 +35,17 @@ func (m *OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBody) Get
     }
     return val.(map[string]any)
 }
+// GetAttendees gets the attendees property value. The attendees property
+func (m *OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBody) GetAttendees()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendeeNotificationInfoable) {
+    val, err := m.GetBackingStore().Get("attendees")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendeeNotificationInfoable)
+    }
+    return nil
+}
 // GetBackingStore gets the BackingStore property value. Stores model information.
 func (m *OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
@@ -42,19 +53,19 @@ func (m *OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBody) Get
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["phoneNumbers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+    res["attendees"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAttendeeNotificationInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendeeNotificationInfoable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*string))
+                    res[i] = v.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendeeNotificationInfoable)
                 }
             }
-            m.SetPhoneNumbers(res)
+            m.SetAttendees(res)
         }
         return nil
     }
@@ -70,17 +81,6 @@ func (m *OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBody) Get
     }
     return res
 }
-// GetPhoneNumbers gets the phoneNumbers property value. The phoneNumbers property
-func (m *OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBody) GetPhoneNumbers()([]string) {
-    val, err := m.GetBackingStore().Get("phoneNumbers")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]string)
-    }
-    return nil
-}
 // GetRemindBeforeTimeInMinutesType gets the remindBeforeTimeInMinutesType property value. The remindBeforeTimeInMinutesType property
 func (m *OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBody) GetRemindBeforeTimeInMinutesType()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemindBeforeTimeInMinutesType) {
     val, err := m.GetBackingStore().Get("remindBeforeTimeInMinutesType")
@@ -94,8 +94,14 @@ func (m *OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBody) Get
 }
 // Serialize serializes information the current object
 func (m *OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    if m.GetPhoneNumbers() != nil {
-        err := writer.WriteCollectionOfStringValues("phoneNumbers", m.GetPhoneNumbers())
+    if m.GetAttendees() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttendees()))
+        for i, v := range m.GetAttendees() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("attendees", cast)
         if err != nil {
             return err
         }
@@ -122,16 +128,16 @@ func (m *OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBody) Set
         panic(err)
     }
 }
-// SetBackingStore sets the BackingStore property value. Stores model information.
-func (m *OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
-    m.backingStore = value
-}
-// SetPhoneNumbers sets the phoneNumbers property value. The phoneNumbers property
-func (m *OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBody) SetPhoneNumbers(value []string)() {
-    err := m.GetBackingStore().Set("phoneNumbers", value)
+// SetAttendees sets the attendees property value. The attendees property
+func (m *OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBody) SetAttendees(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendeeNotificationInfoable)() {
+    err := m.GetBackingStore().Set("attendees", value)
     if err != nil {
         panic(err)
     }
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetRemindBeforeTimeInMinutesType sets the remindBeforeTimeInMinutesType property value. The remindBeforeTimeInMinutesType property
 func (m *OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBody) SetRemindBeforeTimeInMinutesType(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemindBeforeTimeInMinutesType)() {
@@ -145,10 +151,10 @@ type OnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBodyable inte
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAttendees()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendeeNotificationInfoable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetPhoneNumbers()([]string)
     GetRemindBeforeTimeInMinutesType()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemindBeforeTimeInMinutesType)
+    SetAttendees(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendeeNotificationInfoable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetPhoneNumbers(value []string)()
     SetRemindBeforeTimeInMinutesType(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemindBeforeTimeInMinutesType)()
 }

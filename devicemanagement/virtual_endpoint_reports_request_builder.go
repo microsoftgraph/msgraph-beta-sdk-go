@@ -97,6 +97,10 @@ func (m *VirtualEndpointReportsRequestBuilder) Get(ctx context.Context, requestC
 func (m *VirtualEndpointReportsRequestBuilder) GetActionStatusReports()(*VirtualEndpointReportsGetActionStatusReportsRequestBuilder) {
     return NewVirtualEndpointReportsGetActionStatusReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GetCloudPcPerformanceReport provides operations to call the getCloudPcPerformanceReport method.
+func (m *VirtualEndpointReportsRequestBuilder) GetCloudPcPerformanceReport()(*VirtualEndpointReportsGetCloudPcPerformanceReportRequestBuilder) {
+    return NewVirtualEndpointReportsGetCloudPcPerformanceReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GetCloudPcRecommendationReports provides operations to call the getCloudPcRecommendationReports method.
 func (m *VirtualEndpointReportsRequestBuilder) GetCloudPcRecommendationReports()(*VirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilder) {
     return NewVirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -159,6 +163,10 @@ func (m *VirtualEndpointReportsRequestBuilder) Patch(ctx context.Context, body i
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcReportsable), nil
+}
+// RetrieveCrossRegionDisasterRecoveryReport provides operations to call the retrieveCrossRegionDisasterRecoveryReport method.
+func (m *VirtualEndpointReportsRequestBuilder) RetrieveCrossRegionDisasterRecoveryReport()(*VirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportRequestBuilder) {
+    return NewVirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property reports for deviceManagement
 func (m *VirtualEndpointReportsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointReportsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
