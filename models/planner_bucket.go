@@ -19,6 +19,17 @@ func NewPlannerBucket()(*PlannerBucket) {
 func CreatePlannerBucketFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerBucket(), nil
 }
+// GetArchivalInfo gets the archivalInfo property value. The archivalInfo property
+func (m *PlannerBucket) GetArchivalInfo()(PlannerArchivalInfoable) {
+    val, err := m.GetBackingStore().Get("archivalInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PlannerArchivalInfoable)
+    }
+    return nil
+}
 // GetCreationSource gets the creationSource property value. Contains information about the origin of the bucket.
 func (m *PlannerBucket) GetCreationSource()(PlannerBucketCreationable) {
     val, err := m.GetBackingStore().Get("creationSource")
@@ -33,6 +44,16 @@ func (m *PlannerBucket) GetCreationSource()(PlannerBucketCreationable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerBucket) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PlannerDelta.GetFieldDeserializers()
+    res["archivalInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePlannerArchivalInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetArchivalInfo(val.(PlannerArchivalInfoable))
+        }
+        return nil
+    }
     res["creationSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePlannerBucketCreationFromDiscriminatorValue)
         if err != nil {
@@ -40,6 +61,16 @@ func (m *PlannerBucket) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetCreationSource(val.(PlannerBucketCreationable))
+        }
+        return nil
+    }
+    res["isArchived"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsArchived(val)
         }
         return nil
     }
@@ -90,6 +121,17 @@ func (m *PlannerBucket) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     return res
+}
+// GetIsArchived gets the isArchived property value. The isArchived property
+func (m *PlannerBucket) GetIsArchived()(*bool) {
+    val, err := m.GetBackingStore().Get("isArchived")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetName gets the name property value. Name of the bucket.
 func (m *PlannerBucket) GetName()(*string) {
@@ -142,7 +184,19 @@ func (m *PlannerBucket) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         return err
     }
     {
+        err = writer.WriteObjectValue("archivalInfo", m.GetArchivalInfo())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("creationSource", m.GetCreationSource())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("isArchived", m.GetIsArchived())
         if err != nil {
             return err
         }
@@ -179,9 +233,23 @@ func (m *PlannerBucket) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
+// SetArchivalInfo sets the archivalInfo property value. The archivalInfo property
+func (m *PlannerBucket) SetArchivalInfo(value PlannerArchivalInfoable)() {
+    err := m.GetBackingStore().Set("archivalInfo", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCreationSource sets the creationSource property value. Contains information about the origin of the bucket.
 func (m *PlannerBucket) SetCreationSource(value PlannerBucketCreationable)() {
     err := m.GetBackingStore().Set("creationSource", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsArchived sets the isArchived property value. The isArchived property
+func (m *PlannerBucket) SetIsArchived(value *bool)() {
+    err := m.GetBackingStore().Set("isArchived", value)
     if err != nil {
         panic(err)
     }
@@ -218,12 +286,16 @@ func (m *PlannerBucket) SetTasks(value []PlannerTaskable)() {
 type PlannerBucketable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PlannerDeltaable
+    GetArchivalInfo()(PlannerArchivalInfoable)
     GetCreationSource()(PlannerBucketCreationable)
+    GetIsArchived()(*bool)
     GetName()(*string)
     GetOrderHint()(*string)
     GetPlanId()(*string)
     GetTasks()([]PlannerTaskable)
+    SetArchivalInfo(value PlannerArchivalInfoable)()
     SetCreationSource(value PlannerBucketCreationable)()
+    SetIsArchived(value *bool)()
     SetName(value *string)()
     SetOrderHint(value *string)()
     SetPlanId(value *string)()

@@ -53,6 +53,17 @@ func (m *CloudPC) GetConnectivityResult()(CloudPcConnectivityResultable) {
     }
     return nil
 }
+// GetDisasterRecoveryCapability gets the disasterRecoveryCapability property value. The disasterRecoveryCapability property
+func (m *CloudPC) GetDisasterRecoveryCapability()(CloudPcDisasterRecoveryCapabilityable) {
+    val, err := m.GetBackingStore().Get("disasterRecoveryCapability")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcDisasterRecoveryCapabilityable)
+    }
+    return nil
+}
 // GetDiskEncryptionState gets the diskEncryptionState property value. The disk encryption applied to the Cloud PC. Possible values: notAvailable, notEncrypted, encryptedUsingPlatformManagedKey, encryptedUsingCustomerManagedKey, and unknownFutureValue.
 func (m *CloudPC) GetDiskEncryptionState()(*CloudPcDiskEncryptionState) {
     val, err := m.GetBackingStore().Get("diskEncryptionState")
@@ -105,6 +116,16 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         if val != nil {
             m.SetConnectivityResult(val.(CloudPcConnectivityResultable))
+        }
+        return nil
+    }
+    res["disasterRecoveryCapability"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcDisasterRecoveryCapabilityFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDisasterRecoveryCapability(val.(CloudPcDisasterRecoveryCapabilityable))
         }
         return nil
     }
@@ -628,6 +649,12 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("disasterRecoveryCapability", m.GetDisasterRecoveryCapability())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetDiskEncryptionState() != nil {
         cast := (*m.GetDiskEncryptionState()).String()
         err = writer.WriteStringValue("diskEncryptionState", &cast)
@@ -808,6 +835,13 @@ func (m *CloudPC) SetConnectivityResult(value CloudPcConnectivityResultable)() {
         panic(err)
     }
 }
+// SetDisasterRecoveryCapability sets the disasterRecoveryCapability property value. The disasterRecoveryCapability property
+func (m *CloudPC) SetDisasterRecoveryCapability(value CloudPcDisasterRecoveryCapabilityable)() {
+    err := m.GetBackingStore().Set("disasterRecoveryCapability", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDiskEncryptionState sets the diskEncryptionState property value. The disk encryption applied to the Cloud PC. Possible values: notAvailable, notEncrypted, encryptedUsingPlatformManagedKey, encryptedUsingCustomerManagedKey, and unknownFutureValue.
 func (m *CloudPC) SetDiskEncryptionState(value *CloudPcDiskEncryptionState)() {
     err := m.GetBackingStore().Set("diskEncryptionState", value)
@@ -983,6 +1017,7 @@ type CloudPCable interface {
     GetAadDeviceId()(*string)
     GetConnectionSettings()(CloudPcConnectionSettingsable)
     GetConnectivityResult()(CloudPcConnectivityResultable)
+    GetDisasterRecoveryCapability()(CloudPcDisasterRecoveryCapabilityable)
     GetDiskEncryptionState()(*CloudPcDiskEncryptionState)
     GetDisplayName()(*string)
     GetGracePeriodEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -1010,6 +1045,7 @@ type CloudPCable interface {
     SetAadDeviceId(value *string)()
     SetConnectionSettings(value CloudPcConnectionSettingsable)()
     SetConnectivityResult(value CloudPcConnectivityResultable)()
+    SetDisasterRecoveryCapability(value CloudPcDisasterRecoveryCapabilityable)()
     SetDiskEncryptionState(value *CloudPcDiskEncryptionState)()
     SetDisplayName(value *string)()
     SetGracePeriodEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

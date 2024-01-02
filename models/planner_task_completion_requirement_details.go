@@ -34,6 +34,17 @@ func (m *PlannerTaskCompletionRequirementDetails) GetAdditionalData()(map[string
     }
     return val.(map[string]any)
 }
+// GetApprovalRequirement gets the approvalRequirement property value. The approvalRequirement property
+func (m *PlannerTaskCompletionRequirementDetails) GetApprovalRequirement()(PlannerApprovalRequirementable) {
+    val, err := m.GetBackingStore().Get("approvalRequirement")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PlannerApprovalRequirementable)
+    }
+    return nil
+}
 // GetBackingStore gets the BackingStore property value. Stores model information.
 func (m *PlannerTaskCompletionRequirementDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
@@ -52,6 +63,16 @@ func (m *PlannerTaskCompletionRequirementDetails) GetChecklistRequirement()(Plan
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerTaskCompletionRequirementDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["approvalRequirement"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePlannerApprovalRequirementFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetApprovalRequirement(val.(PlannerApprovalRequirementable))
+        }
+        return nil
+    }
     res["checklistRequirement"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePlannerChecklistRequirementFromDiscriminatorValue)
         if err != nil {
@@ -59,6 +80,16 @@ func (m *PlannerTaskCompletionRequirementDetails) GetFieldDeserializers()(map[st
         }
         if val != nil {
             m.SetChecklistRequirement(val.(PlannerChecklistRequirementable))
+        }
+        return nil
+    }
+    res["formsRequirement"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePlannerFormsRequirementFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFormsRequirement(val.(PlannerFormsRequirementable))
         }
         return nil
     }
@@ -74,6 +105,17 @@ func (m *PlannerTaskCompletionRequirementDetails) GetFieldDeserializers()(map[st
     }
     return res
 }
+// GetFormsRequirement gets the formsRequirement property value. The formsRequirement property
+func (m *PlannerTaskCompletionRequirementDetails) GetFormsRequirement()(PlannerFormsRequirementable) {
+    val, err := m.GetBackingStore().Get("formsRequirement")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PlannerFormsRequirementable)
+    }
+    return nil
+}
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PlannerTaskCompletionRequirementDetails) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
@@ -88,7 +130,19 @@ func (m *PlannerTaskCompletionRequirementDetails) GetOdataType()(*string) {
 // Serialize serializes information the current object
 func (m *PlannerTaskCompletionRequirementDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteObjectValue("approvalRequirement", m.GetApprovalRequirement())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("checklistRequirement", m.GetChecklistRequirement())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("formsRequirement", m.GetFormsRequirement())
         if err != nil {
             return err
         }
@@ -114,6 +168,13 @@ func (m *PlannerTaskCompletionRequirementDetails) SetAdditionalData(value map[st
         panic(err)
     }
 }
+// SetApprovalRequirement sets the approvalRequirement property value. The approvalRequirement property
+func (m *PlannerTaskCompletionRequirementDetails) SetApprovalRequirement(value PlannerApprovalRequirementable)() {
+    err := m.GetBackingStore().Set("approvalRequirement", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *PlannerTaskCompletionRequirementDetails) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
@@ -121,6 +182,13 @@ func (m *PlannerTaskCompletionRequirementDetails) SetBackingStore(value ie8677ce
 // SetChecklistRequirement sets the checklistRequirement property value. Information about the requirements for completing the checklist.
 func (m *PlannerTaskCompletionRequirementDetails) SetChecklistRequirement(value PlannerChecklistRequirementable)() {
     err := m.GetBackingStore().Set("checklistRequirement", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetFormsRequirement sets the formsRequirement property value. The formsRequirement property
+func (m *PlannerTaskCompletionRequirementDetails) SetFormsRequirement(value PlannerFormsRequirementable)() {
+    err := m.GetBackingStore().Set("formsRequirement", value)
     if err != nil {
         panic(err)
     }
@@ -137,10 +205,14 @@ type PlannerTaskCompletionRequirementDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApprovalRequirement()(PlannerApprovalRequirementable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetChecklistRequirement()(PlannerChecklistRequirementable)
+    GetFormsRequirement()(PlannerFormsRequirementable)
     GetOdataType()(*string)
+    SetApprovalRequirement(value PlannerApprovalRequirementable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetChecklistRequirement(value PlannerChecklistRequirementable)()
+    SetFormsRequirement(value PlannerFormsRequirementable)()
     SetOdataType(value *string)()
 }

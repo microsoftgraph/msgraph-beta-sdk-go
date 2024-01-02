@@ -1,0 +1,58 @@
+package devicemanagement
+import (
+    "errors"
+)
+// 
+type ConditionCategory int
+
+const (
+    PROVISIONFAILURES_CONDITIONCATEGORY ConditionCategory = iota
+    IMAGEUPLOADFAILURES_CONDITIONCATEGORY
+    AZURENETWORKCONNECTIONCHECKFAILURES_CONDITIONCATEGORY
+    CLOUDPCINGRACEPERIOD_CONDITIONCATEGORY
+    FRONTLINEINSUFFICIENTLICENSES_CONDITIONCATEGORY
+    CLOUDPCCONNECTIONERRORS_CONDITIONCATEGORY
+    CLOUDPCHOSTHEALTHCHECKFAILURES_CONDITIONCATEGORY
+    CLOUDPCZONEOUTAGE_CONDITIONCATEGORY
+    UNKNOWNFUTUREVALUE_CONDITIONCATEGORY
+)
+
+func (i ConditionCategory) String() string {
+    return []string{"provisionFailures", "imageUploadFailures", "azureNetworkConnectionCheckFailures", "cloudPcInGracePeriod", "frontlineInsufficientLicenses", "cloudPcConnectionErrors", "cloudPcHostHealthCheckFailures", "cloudPcZoneOutage", "unknownFutureValue"}[i]
+}
+func ParseConditionCategory(v string) (any, error) {
+    result := PROVISIONFAILURES_CONDITIONCATEGORY
+    switch v {
+        case "provisionFailures":
+            result = PROVISIONFAILURES_CONDITIONCATEGORY
+        case "imageUploadFailures":
+            result = IMAGEUPLOADFAILURES_CONDITIONCATEGORY
+        case "azureNetworkConnectionCheckFailures":
+            result = AZURENETWORKCONNECTIONCHECKFAILURES_CONDITIONCATEGORY
+        case "cloudPcInGracePeriod":
+            result = CLOUDPCINGRACEPERIOD_CONDITIONCATEGORY
+        case "frontlineInsufficientLicenses":
+            result = FRONTLINEINSUFFICIENTLICENSES_CONDITIONCATEGORY
+        case "cloudPcConnectionErrors":
+            result = CLOUDPCCONNECTIONERRORS_CONDITIONCATEGORY
+        case "cloudPcHostHealthCheckFailures":
+            result = CLOUDPCHOSTHEALTHCHECKFAILURES_CONDITIONCATEGORY
+        case "cloudPcZoneOutage":
+            result = CLOUDPCZONEOUTAGE_CONDITIONCATEGORY
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_CONDITIONCATEGORY
+        default:
+            return 0, errors.New("Unknown ConditionCategory value: " + v)
+    }
+    return &result, nil
+}
+func SerializeConditionCategory(values []ConditionCategory) []string {
+    result := make([]string, len(values))
+    for i, v := range values {
+        result[i] = v.String()
+    }
+    return result
+}
+func (i ConditionCategory) isMultiValue() bool {
+    return false
+}

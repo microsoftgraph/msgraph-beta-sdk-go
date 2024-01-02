@@ -18,7 +18,7 @@ type WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilderGetQueryParameters read the properties and relationships of a contentApproval object.
+// WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilderGetQueryParameters read the properties and relationships of a complianceChange object.
 type WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,10 +73,10 @@ func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRe
     }
     return nil
 }
-// Get read the properties and relationships of a contentApproval object.
+// Get read the properties and relationships of a complianceChange object.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-get?view=graph-rest-1.0
 func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ComplianceChangeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,10 +95,10 @@ func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRe
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ComplianceChangeable), nil
 }
-// Patch update the properties of a complianceChange object.
+// Patch update the properties of a contentApproval object.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-update?view=graph-rest-1.0
 func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilder) Patch(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ComplianceChangeable, requestConfiguration *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilderPatchRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ComplianceChangeable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -127,7 +127,7 @@ func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a contentApproval object.
+// ToGetRequestInformation read the properties and relationships of a complianceChange object.
 func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -140,7 +140,7 @@ func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a complianceChange object.
+// ToPatchRequestInformation update the properties of a contentApproval object.
 func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ComplianceChangeable, requestConfiguration *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

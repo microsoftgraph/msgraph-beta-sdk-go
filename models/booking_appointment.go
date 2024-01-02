@@ -1,6 +1,7 @@
 package models
 
 import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -38,6 +39,28 @@ func (m *BookingAppointment) GetAnonymousJoinWebUrl()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetAppointmentLabel gets the appointmentLabel property value. Custom label that can be stamped on this appointment by users.
+func (m *BookingAppointment) GetAppointmentLabel()(*string) {
+    val, err := m.GetBackingStore().Get("appointmentLabel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+func (m *BookingAppointment) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     }
     return nil
 }
@@ -171,6 +194,26 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetAnonymousJoinWebUrl(val)
+        }
+        return nil
+    }
+    res["appointmentLabel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppointmentLabel(val)
+        }
+        return nil
+    }
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCreatedDateTime(val)
         }
         return nil
     }
@@ -357,6 +400,16 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetJoinWebUrl(val)
+        }
+        return nil
+    }
+    res["lastUpdatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastUpdatedDateTime(val)
         }
         return nil
     }
@@ -622,6 +675,17 @@ func (m *BookingAppointment) GetJoinWebUrl()(*string) {
     }
     return nil
 }
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+func (m *BookingAppointment) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
 // GetMaximumAttendeesCount gets the maximumAttendeesCount property value. The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
 func (m *BookingAppointment) GetMaximumAttendeesCount()(*int32) {
     val, err := m.GetBackingStore().Get("maximumAttendeesCount")
@@ -817,6 +881,18 @@ func (m *BookingAppointment) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteStringValue("appointmentLabel", m.GetAppointmentLabel())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("customerEmailAddress", m.GetCustomerEmailAddress())
         if err != nil {
             return err
@@ -915,6 +991,12 @@ func (m *BookingAppointment) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err = writer.WriteStringValue("joinWebUrl", m.GetJoinWebUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("lastUpdatedDateTime", m.GetLastUpdatedDateTime())
         if err != nil {
             return err
         }
@@ -1034,6 +1116,20 @@ func (m *BookingAppointment) SetAdditionalInformation(value *string)() {
 // SetAnonymousJoinWebUrl sets the anonymousJoinWebUrl property value. The URL of the meeting to join anonymously.
 func (m *BookingAppointment) SetAnonymousJoinWebUrl(value *string)() {
     err := m.GetBackingStore().Set("anonymousJoinWebUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAppointmentLabel sets the appointmentLabel property value. Custom label that can be stamped on this appointment by users.
+func (m *BookingAppointment) SetAppointmentLabel(value *string)() {
+    err := m.GetBackingStore().Set("appointmentLabel", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+func (m *BookingAppointment) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
@@ -1164,6 +1260,13 @@ func (m *BookingAppointment) SetJoinWebUrl(value *string)() {
         panic(err)
     }
 }
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+func (m *BookingAppointment) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("lastUpdatedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMaximumAttendeesCount sets the maximumAttendeesCount property value. The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
 func (m *BookingAppointment) SetMaximumAttendeesCount(value *int32)() {
     err := m.GetBackingStore().Set("maximumAttendeesCount", value)
@@ -1282,6 +1385,8 @@ type BookingAppointmentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAdditionalInformation()(*string)
     GetAnonymousJoinWebUrl()(*string)
+    GetAppointmentLabel()(*string)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCustomerEmailAddress()(*string)
     GetCustomerId()(*string)
     GetCustomerLocation()(Locationable)
@@ -1300,6 +1405,7 @@ type BookingAppointmentable interface {
     GetInvoiceUrl()(*string)
     GetIsLocationOnline()(*bool)
     GetJoinWebUrl()(*string)
+    GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMaximumAttendeesCount()(*int32)
     GetOnlineMeetingUrl()(*string)
     GetOptOutOfCustomerEmail()(*bool)
@@ -1318,6 +1424,8 @@ type BookingAppointmentable interface {
     GetStart()(DateTimeTimeZoneable)
     SetAdditionalInformation(value *string)()
     SetAnonymousJoinWebUrl(value *string)()
+    SetAppointmentLabel(value *string)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCustomerEmailAddress(value *string)()
     SetCustomerId(value *string)()
     SetCustomerLocation(value Locationable)()
@@ -1336,6 +1444,7 @@ type BookingAppointmentable interface {
     SetInvoiceUrl(value *string)()
     SetIsLocationOnline(value *bool)()
     SetJoinWebUrl(value *string)()
+    SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMaximumAttendeesCount(value *int32)()
     SetOnlineMeetingUrl(value *string)()
     SetOptOutOfCustomerEmail(value *bool)()

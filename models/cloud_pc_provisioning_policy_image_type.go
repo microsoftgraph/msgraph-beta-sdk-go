@@ -8,10 +8,11 @@ type CloudPcProvisioningPolicyImageType int
 const (
     GALLERY_CLOUDPCPROVISIONINGPOLICYIMAGETYPE CloudPcProvisioningPolicyImageType = iota
     CUSTOM_CLOUDPCPROVISIONINGPOLICYIMAGETYPE
+    UNKNOWNFUTUREVALUE_CLOUDPCPROVISIONINGPOLICYIMAGETYPE
 )
 
 func (i CloudPcProvisioningPolicyImageType) String() string {
-    return []string{"gallery", "custom"}[i]
+    return []string{"gallery", "custom", "unknownFutureValue"}[i]
 }
 func ParseCloudPcProvisioningPolicyImageType(v string) (any, error) {
     result := GALLERY_CLOUDPCPROVISIONINGPOLICYIMAGETYPE
@@ -20,6 +21,8 @@ func ParseCloudPcProvisioningPolicyImageType(v string) (any, error) {
             result = GALLERY_CLOUDPCPROVISIONINGPOLICYIMAGETYPE
         case "custom":
             result = CUSTOM_CLOUDPCPROVISIONINGPOLICYIMAGETYPE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_CLOUDPCPROVISIONINGPOLICYIMAGETYPE
         default:
             return 0, errors.New("Unknown CloudPcProvisioningPolicyImageType value: " + v)
     }

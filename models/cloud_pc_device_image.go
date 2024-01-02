@@ -31,6 +31,17 @@ func (m *CloudPcDeviceImage) GetDisplayName()(*string) {
     }
     return nil
 }
+// GetErrorCode gets the errorCode property value. The errorCode property
+func (m *CloudPcDeviceImage) GetErrorCode()(*CloudPcDeviceImageErrorCode) {
+    val, err := m.GetBackingStore().Get("errorCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcDeviceImageErrorCode)
+    }
+    return nil
+}
 // GetExpirationDate gets the expirationDate property value. The date the image became unavailable.
 func (m *CloudPcDeviceImage) GetExpirationDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("expirationDate")
@@ -52,6 +63,16 @@ func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetDisplayName(val)
+        }
+        return nil
+    }
+    res["errorCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcDeviceImageErrorCode)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetErrorCode(val.(*CloudPcDeviceImageErrorCode))
         }
         return nil
     }
@@ -274,6 +295,13 @@ func (m *CloudPcDeviceImage) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    if m.GetErrorCode() != nil {
+        cast := (*m.GetErrorCode()).String()
+        err = writer.WriteStringValue("errorCode", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteDateOnlyValue("expirationDate", m.GetExpirationDate())
         if err != nil {
@@ -342,6 +370,13 @@ func (m *CloudPcDeviceImage) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 // SetDisplayName sets the displayName property value. The display name of the image.
 func (m *CloudPcDeviceImage) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetErrorCode sets the errorCode property value. The errorCode property
+func (m *CloudPcDeviceImage) SetErrorCode(value *CloudPcDeviceImageErrorCode)() {
+    err := m.GetBackingStore().Set("errorCode", value)
     if err != nil {
         panic(err)
     }
@@ -421,6 +456,7 @@ type CloudPcDeviceImageable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
+    GetErrorCode()(*CloudPcDeviceImageErrorCode)
     GetExpirationDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOperatingSystem()(*string)
@@ -432,6 +468,7 @@ type CloudPcDeviceImageable interface {
     GetStatusDetails()(*CloudPcDeviceImageStatusDetails)
     GetVersion()(*string)
     SetDisplayName(value *string)()
+    SetErrorCode(value *CloudPcDeviceImageErrorCode)()
     SetExpirationDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOperatingSystem(value *string)()

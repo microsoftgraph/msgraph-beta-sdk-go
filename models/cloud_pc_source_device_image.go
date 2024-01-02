@@ -82,6 +82,16 @@ func (m *CloudPcSourceDeviceImage) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["resourceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetResourceId(val)
+        }
+        return nil
+    }
     res["subscriptionDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -118,6 +128,17 @@ func (m *CloudPcSourceDeviceImage) GetId()(*string) {
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CloudPcSourceDeviceImage) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetResourceId gets the resourceId property value. The resourceId property
+func (m *CloudPcSourceDeviceImage) GetResourceId()(*string) {
+    val, err := m.GetBackingStore().Get("resourceId")
     if err != nil {
         panic(err)
     }
@@ -164,6 +185,12 @@ func (m *CloudPcSourceDeviceImage) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("resourceId", m.GetResourceId())
         if err != nil {
             return err
         }
@@ -220,6 +247,13 @@ func (m *CloudPcSourceDeviceImage) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetResourceId sets the resourceId property value. The resourceId property
+func (m *CloudPcSourceDeviceImage) SetResourceId(value *string)() {
+    err := m.GetBackingStore().Set("resourceId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSubscriptionDisplayName sets the subscriptionDisplayName property value. The display name of subscription that hosts the source image.
 func (m *CloudPcSourceDeviceImage) SetSubscriptionDisplayName(value *string)() {
     err := m.GetBackingStore().Set("subscriptionDisplayName", value)
@@ -243,12 +277,14 @@ type CloudPcSourceDeviceImageable interface {
     GetDisplayName()(*string)
     GetId()(*string)
     GetOdataType()(*string)
+    GetResourceId()(*string)
     GetSubscriptionDisplayName()(*string)
     GetSubscriptionId()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDisplayName(value *string)()
     SetId(value *string)()
     SetOdataType(value *string)()
+    SetResourceId(value *string)()
     SetSubscriptionDisplayName(value *string)()
     SetSubscriptionId(value *string)()
 }

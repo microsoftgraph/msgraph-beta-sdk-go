@@ -10,13 +10,15 @@ const (
     NONE_PLANNERTASKCOMPLETIONREQUIREMENTS PlannerTaskCompletionRequirements = iota
     CHECKLISTCOMPLETION_PLANNERTASKCOMPLETIONREQUIREMENTS
     UNKNOWNFUTUREVALUE_PLANNERTASKCOMPLETIONREQUIREMENTS
+    FORMCOMPLETION_PLANNERTASKCOMPLETIONREQUIREMENTS
+    APPROVALCOMPLETION_PLANNERTASKCOMPLETIONREQUIREMENTS
 )
 
 func (i PlannerTaskCompletionRequirements) String() string {
     var values []string
-    for p := PlannerTaskCompletionRequirements(1); p <= UNKNOWNFUTUREVALUE_PLANNERTASKCOMPLETIONREQUIREMENTS; p <<= 1 {
+    for p := PlannerTaskCompletionRequirements(1); p <= APPROVALCOMPLETION_PLANNERTASKCOMPLETIONREQUIREMENTS; p <<= 1 {
         if i&p == p {
-            values = append(values, []string{"none", "checklistCompletion", "unknownFutureValue"}[p])
+            values = append(values, []string{"none", "checklistCompletion", "unknownFutureValue", "formCompletion", "approvalCompletion"}[p])
         }
     }
     return strings.Join(values, ",")
@@ -32,6 +34,10 @@ func ParsePlannerTaskCompletionRequirements(v string) (any, error) {
                 result |= CHECKLISTCOMPLETION_PLANNERTASKCOMPLETIONREQUIREMENTS
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_PLANNERTASKCOMPLETIONREQUIREMENTS
+            case "formCompletion":
+                result |= FORMCOMPLETION_PLANNERTASKCOMPLETIONREQUIREMENTS
+            case "approvalCompletion":
+                result |= APPROVALCOMPLETION_PLANNERTASKCOMPLETIONREQUIREMENTS
             default:
                 return 0, errors.New("Unknown PlannerTaskCompletionRequirements value: " + v)
         }
