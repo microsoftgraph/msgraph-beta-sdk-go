@@ -64,6 +64,16 @@ func (m *ItemListsItemItemsItemCreateLinkPostRequestBody) GetFieldDeserializers(
         }
         return nil
     }
+    res["message"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMessage(val)
+        }
+        return nil
+    }
     res["password"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -131,6 +141,17 @@ func (m *ItemListsItemItemsItemCreateLinkPostRequestBody) GetFieldDeserializers(
         return nil
     }
     return res
+}
+// GetMessage gets the message property value. The message property
+func (m *ItemListsItemItemsItemCreateLinkPostRequestBody) GetMessage()(*string) {
+    val, err := m.GetBackingStore().Get("message")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPassword gets the password property value. The password property
 func (m *ItemListsItemItemsItemCreateLinkPostRequestBody) GetPassword()(*string) {
@@ -207,6 +228,12 @@ func (m *ItemListsItemItemsItemCreateLinkPostRequestBody) Serialize(writer i878a
         }
     }
     {
+        err := writer.WriteStringValue("message", m.GetMessage())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("password", m.GetPassword())
         if err != nil {
             return err
@@ -274,6 +301,13 @@ func (m *ItemListsItemItemsItemCreateLinkPostRequestBody) SetExpirationDateTime(
         panic(err)
     }
 }
+// SetMessage sets the message property value. The message property
+func (m *ItemListsItemItemsItemCreateLinkPostRequestBody) SetMessage(value *string)() {
+    err := m.GetBackingStore().Set("message", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPassword sets the password property value. The password property
 func (m *ItemListsItemItemsItemCreateLinkPostRequestBody) SetPassword(value *string)() {
     err := m.GetBackingStore().Set("password", value)
@@ -323,6 +357,7 @@ type ItemListsItemItemsItemCreateLinkPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetMessage()(*string)
     GetPassword()(*string)
     GetRecipients()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveRecipientable)
     GetRetainInheritedPermissions()(*bool)
@@ -331,6 +366,7 @@ type ItemListsItemItemsItemCreateLinkPostRequestBodyable interface {
     GetTypeEscaped()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetMessage(value *string)()
     SetPassword(value *string)()
     SetRecipients(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveRecipientable)()
     SetRetainInheritedPermissions(value *bool)()

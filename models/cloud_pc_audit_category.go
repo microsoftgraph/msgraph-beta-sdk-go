@@ -7,19 +7,19 @@ type CloudPcAuditCategory int
 
 const (
     CLOUDPC_CLOUDPCAUDITCATEGORY CloudPcAuditCategory = iota
-    OTHER_CLOUDPCAUDITCATEGORY
+    UNKNOWNFUTUREVALUE_CLOUDPCAUDITCATEGORY
 )
 
 func (i CloudPcAuditCategory) String() string {
-    return []string{"cloudPC", "other"}[i]
+    return []string{"cloudPC", "unknownFutureValue"}[i]
 }
 func ParseCloudPcAuditCategory(v string) (any, error) {
     result := CLOUDPC_CLOUDPCAUDITCATEGORY
     switch v {
         case "cloudPC":
             result = CLOUDPC_CLOUDPCAUDITCATEGORY
-        case "other":
-            result = OTHER_CLOUDPCAUDITCATEGORY
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_CLOUDPCAUDITCATEGORY
         default:
             return 0, errors.New("Unknown CloudPcAuditCategory value: " + v)
     }

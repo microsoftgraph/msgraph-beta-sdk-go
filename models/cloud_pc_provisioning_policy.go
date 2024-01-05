@@ -329,6 +329,16 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["windowsSetting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcWindowsSettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWindowsSetting(val.(CloudPcWindowsSettingable))
+        }
+        return nil
+    }
     res["windowsSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCloudPcWindowsSettingsFromDiscriminatorValue)
         if err != nil {
@@ -448,6 +458,17 @@ func (m *CloudPcProvisioningPolicy) GetScopeIds()([]string) {
     }
     if val != nil {
         return val.([]string)
+    }
+    return nil
+}
+// GetWindowsSetting gets the windowsSetting property value. The windowsSetting property
+func (m *CloudPcProvisioningPolicy) GetWindowsSetting()(CloudPcWindowsSettingable) {
+    val, err := m.GetBackingStore().Get("windowsSetting")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcWindowsSettingable)
     }
     return nil
 }
@@ -598,6 +619,12 @@ func (m *CloudPcProvisioningPolicy) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteObjectValue("windowsSetting", m.GetWindowsSetting())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("windowsSettings", m.GetWindowsSettings())
         if err != nil {
             return err
@@ -738,6 +765,13 @@ func (m *CloudPcProvisioningPolicy) SetScopeIds(value []string)() {
         panic(err)
     }
 }
+// SetWindowsSetting sets the windowsSetting property value. The windowsSetting property
+func (m *CloudPcProvisioningPolicy) SetWindowsSetting(value CloudPcWindowsSettingable)() {
+    err := m.GetBackingStore().Set("windowsSetting", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetWindowsSettings sets the windowsSettings property value. Specific Windows settings to configure while creating Cloud PCs for this provisioning policy.
 func (m *CloudPcProvisioningPolicy) SetWindowsSettings(value CloudPcWindowsSettingsable)() {
     err := m.GetBackingStore().Set("windowsSettings", value)
@@ -768,6 +802,7 @@ type CloudPcProvisioningPolicyable interface {
     GetOnPremisesConnectionId()(*string)
     GetProvisioningType()(*CloudPcProvisioningType)
     GetScopeIds()([]string)
+    GetWindowsSetting()(CloudPcWindowsSettingable)
     GetWindowsSettings()(CloudPcWindowsSettingsable)
     SetAlternateResourceUrl(value *string)()
     SetAssignments(value []CloudPcProvisioningPolicyAssignmentable)()
@@ -788,5 +823,6 @@ type CloudPcProvisioningPolicyable interface {
     SetOnPremisesConnectionId(value *string)()
     SetProvisioningType(value *CloudPcProvisioningType)()
     SetScopeIds(value []string)()
+    SetWindowsSetting(value CloudPcWindowsSettingable)()
     SetWindowsSettings(value CloudPcWindowsSettingsable)()
 }

@@ -10,11 +10,11 @@ const (
     CLIENTERROR_CLOUDPCAUDITACTIVITYRESULT
     FAILURE_CLOUDPCAUDITACTIVITYRESULT
     TIMEOUT_CLOUDPCAUDITACTIVITYRESULT
-    OTHER_CLOUDPCAUDITACTIVITYRESULT
+    UNKNOWNFUTUREVALUE_CLOUDPCAUDITACTIVITYRESULT
 )
 
 func (i CloudPcAuditActivityResult) String() string {
-    return []string{"success", "clientError", "failure", "timeout", "other"}[i]
+    return []string{"success", "clientError", "failure", "timeout", "unknownFutureValue"}[i]
 }
 func ParseCloudPcAuditActivityResult(v string) (any, error) {
     result := SUCCESS_CLOUDPCAUDITACTIVITYRESULT
@@ -27,8 +27,8 @@ func ParseCloudPcAuditActivityResult(v string) (any, error) {
             result = FAILURE_CLOUDPCAUDITACTIVITYRESULT
         case "timeout":
             result = TIMEOUT_CLOUDPCAUDITACTIVITYRESULT
-        case "other":
-            result = OTHER_CLOUDPCAUDITACTIVITYRESULT
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_CLOUDPCAUDITACTIVITYRESULT
         default:
             return 0, errors.New("Unknown CloudPcAuditActivityResult value: " + v)
     }

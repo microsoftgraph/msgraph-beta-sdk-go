@@ -38,6 +38,28 @@ func (m *SolutionsRoot) GetAdditionalData()(map[string]any) {
 func (m *SolutionsRoot) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
+// GetBookingBusinesses gets the bookingBusinesses property value. The bookingBusinesses property
+func (m *SolutionsRoot) GetBookingBusinesses()([]BookingBusinessable) {
+    val, err := m.GetBackingStore().Get("bookingBusinesses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]BookingBusinessable)
+    }
+    return nil
+}
+// GetBookingCurrencies gets the bookingCurrencies property value. The bookingCurrencies property
+func (m *SolutionsRoot) GetBookingCurrencies()([]BookingCurrencyable) {
+    val, err := m.GetBackingStore().Get("bookingCurrencies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]BookingCurrencyable)
+    }
+    return nil
+}
 // GetBusinessScenarios gets the businessScenarios property value. The businessScenarios property
 func (m *SolutionsRoot) GetBusinessScenarios()([]BusinessScenarioable) {
     val, err := m.GetBackingStore().Get("businessScenarios")
@@ -52,6 +74,38 @@ func (m *SolutionsRoot) GetBusinessScenarios()([]BusinessScenarioable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SolutionsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["bookingBusinesses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateBookingBusinessFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]BookingBusinessable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(BookingBusinessable)
+                }
+            }
+            m.SetBookingBusinesses(res)
+        }
+        return nil
+    }
+    res["bookingCurrencies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateBookingCurrencyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]BookingCurrencyable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(BookingCurrencyable)
+                }
+            }
+            m.SetBookingCurrencies(res)
+        }
+        return nil
+    }
     res["businessScenarios"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateBusinessScenarioFromDiscriminatorValue)
         if err != nil {
@@ -114,6 +168,30 @@ func (m *SolutionsRoot) GetVirtualEvents()(VirtualEventsRootable) {
 }
 // Serialize serializes information the current object
 func (m *SolutionsRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetBookingBusinesses() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetBookingBusinesses()))
+        for i, v := range m.GetBookingBusinesses() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("bookingBusinesses", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetBookingCurrencies() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetBookingCurrencies()))
+        for i, v := range m.GetBookingCurrencies() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("bookingCurrencies", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetBusinessScenarios() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetBusinessScenarios()))
         for i, v := range m.GetBusinessScenarios() {
@@ -157,6 +235,20 @@ func (m *SolutionsRoot) SetAdditionalData(value map[string]any)() {
 func (m *SolutionsRoot) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetBookingBusinesses sets the bookingBusinesses property value. The bookingBusinesses property
+func (m *SolutionsRoot) SetBookingBusinesses(value []BookingBusinessable)() {
+    err := m.GetBackingStore().Set("bookingBusinesses", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBookingCurrencies sets the bookingCurrencies property value. The bookingCurrencies property
+func (m *SolutionsRoot) SetBookingCurrencies(value []BookingCurrencyable)() {
+    err := m.GetBackingStore().Set("bookingCurrencies", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetBusinessScenarios sets the businessScenarios property value. The businessScenarios property
 func (m *SolutionsRoot) SetBusinessScenarios(value []BusinessScenarioable)() {
     err := m.GetBackingStore().Set("businessScenarios", value)
@@ -184,10 +276,14 @@ type SolutionsRootable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetBookingBusinesses()([]BookingBusinessable)
+    GetBookingCurrencies()([]BookingCurrencyable)
     GetBusinessScenarios()([]BusinessScenarioable)
     GetOdataType()(*string)
     GetVirtualEvents()(VirtualEventsRootable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetBookingBusinesses(value []BookingBusinessable)()
+    SetBookingCurrencies(value []BookingCurrencyable)()
     SetBusinessScenarios(value []BusinessScenarioable)()
     SetOdataType(value *string)()
     SetVirtualEvents(value VirtualEventsRootable)()

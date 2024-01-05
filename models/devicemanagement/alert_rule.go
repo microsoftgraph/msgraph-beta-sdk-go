@@ -31,6 +31,17 @@ func (m *AlertRule) GetAlertRuleTemplate()(*AlertRuleTemplate) {
     }
     return nil
 }
+// GetConditions gets the conditions property value. The conditions that determine when to send alerts. For example, you can configure a condition to send an alert when provisioning fails for six or more Cloud PCs.
+func (m *AlertRule) GetConditions()([]RuleConditionable) {
+    val, err := m.GetBackingStore().Get("conditions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RuleConditionable)
+    }
+    return nil
+}
 // GetDescription gets the description property value. The rule description.
 func (m *AlertRule) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -74,6 +85,22 @@ func (m *AlertRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         if val != nil {
             m.SetAlertRuleTemplate(val.(*AlertRuleTemplate))
+        }
+        return nil
+    }
+    res["conditions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateRuleConditionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]RuleConditionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(RuleConditionable)
+                }
+            }
+            m.SetConditions(res)
         }
         return nil
     }
@@ -212,6 +239,18 @@ func (m *AlertRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    if m.GetConditions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConditions()))
+        for i, v := range m.GetConditions() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("conditions", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
@@ -270,6 +309,13 @@ func (m *AlertRule) SetAlertRuleTemplate(value *AlertRuleTemplate)() {
         panic(err)
     }
 }
+// SetConditions sets the conditions property value. The conditions that determine when to send alerts. For example, you can configure a condition to send an alert when provisioning fails for six or more Cloud PCs.
+func (m *AlertRule) SetConditions(value []RuleConditionable)() {
+    err := m.GetBackingStore().Set("conditions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDescription sets the description property value. The rule description.
 func (m *AlertRule) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
@@ -324,6 +370,7 @@ type AlertRuleable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAlertRuleTemplate()(*AlertRuleTemplate)
+    GetConditions()([]RuleConditionable)
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetEnabled()(*bool)
@@ -332,6 +379,7 @@ type AlertRuleable interface {
     GetSeverity()(*RuleSeverityType)
     GetThreshold()(RuleThresholdable)
     SetAlertRuleTemplate(value *AlertRuleTemplate)()
+    SetConditions(value []RuleConditionable)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetEnabled(value *bool)()

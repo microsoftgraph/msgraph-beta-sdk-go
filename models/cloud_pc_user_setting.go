@@ -42,6 +42,17 @@ func (m *CloudPcUserSetting) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad
     }
     return nil
 }
+// GetCrossRegionDisasterRecoverySetting gets the crossRegionDisasterRecoverySetting property value. The crossRegionDisasterRecoverySetting property
+func (m *CloudPcUserSetting) GetCrossRegionDisasterRecoverySetting()(CloudPcCrossRegionDisasterRecoverySettingable) {
+    val, err := m.GetBackingStore().Get("crossRegionDisasterRecoverySetting")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcCrossRegionDisasterRecoverySettingable)
+    }
+    return nil
+}
 // GetDisplayName gets the displayName property value. The setting name displayed in the user interface.
 func (m *CloudPcUserSetting) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -79,6 +90,16 @@ func (m *CloudPcUserSetting) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetCreatedDateTime(val)
+        }
+        return nil
+    }
+    res["crossRegionDisasterRecoverySetting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcCrossRegionDisasterRecoverySettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCrossRegionDisasterRecoverySetting(val.(CloudPcCrossRegionDisasterRecoverySettingable))
         }
         return nil
     }
@@ -224,6 +245,12 @@ func (m *CloudPcUserSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteObjectValue("crossRegionDisasterRecoverySetting", m.GetCrossRegionDisasterRecoverySetting())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
             return err
@@ -271,6 +298,13 @@ func (m *CloudPcUserSetting) SetAssignments(value []CloudPcUserSettingAssignment
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the setting was created. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
 func (m *CloudPcUserSetting) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCrossRegionDisasterRecoverySetting sets the crossRegionDisasterRecoverySetting property value. The crossRegionDisasterRecoverySetting property
+func (m *CloudPcUserSetting) SetCrossRegionDisasterRecoverySetting(value CloudPcCrossRegionDisasterRecoverySettingable)() {
+    err := m.GetBackingStore().Set("crossRegionDisasterRecoverySetting", value)
     if err != nil {
         panic(err)
     }
@@ -323,6 +357,7 @@ type CloudPcUserSettingable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAssignments()([]CloudPcUserSettingAssignmentable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetCrossRegionDisasterRecoverySetting()(CloudPcCrossRegionDisasterRecoverySettingable)
     GetDisplayName()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLocalAdminEnabled()(*bool)
@@ -331,6 +366,7 @@ type CloudPcUserSettingable interface {
     GetSelfServiceEnabled()(*bool)
     SetAssignments(value []CloudPcUserSettingAssignmentable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetCrossRegionDisasterRecoverySetting(value CloudPcCrossRegionDisasterRecoverySettingable)()
     SetDisplayName(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLocalAdminEnabled(value *bool)()

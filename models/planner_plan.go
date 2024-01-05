@@ -20,6 +20,17 @@ func NewPlannerPlan()(*PlannerPlan) {
 func CreatePlannerPlanFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerPlan(), nil
 }
+// GetArchivalInfo gets the archivalInfo property value. The archivalInfo property
+func (m *PlannerPlan) GetArchivalInfo()(PlannerArchivalInfoable) {
+    val, err := m.GetBackingStore().Get("archivalInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PlannerArchivalInfoable)
+    }
+    return nil
+}
 // GetBuckets gets the buckets property value. Collection of buckets in the plan. Read-only. Nullable.
 func (m *PlannerPlan) GetBuckets()([]PlannerBucketable) {
     val, err := m.GetBackingStore().Get("buckets")
@@ -100,6 +111,16 @@ func (m *PlannerPlan) GetDetails()(PlannerPlanDetailsable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PlannerDelta.GetFieldDeserializers()
+    res["archivalInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePlannerArchivalInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetArchivalInfo(val.(PlannerArchivalInfoable))
+        }
+        return nil
+    }
     res["buckets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePlannerBucketFromDiscriminatorValue)
         if err != nil {
@@ -176,6 +197,16 @@ func (m *PlannerPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["isArchived"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsArchived(val)
+        }
+        return nil
+    }
     res["owner"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -230,6 +261,17 @@ func (m *PlannerPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
+// GetIsArchived gets the isArchived property value. The isArchived property
+func (m *PlannerPlan) GetIsArchived()(*bool) {
+    val, err := m.GetBackingStore().Get("isArchived")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetOwner gets the owner property value. The owner property
 func (m *PlannerPlan) GetOwner()(*string) {
     val, err := m.GetBackingStore().Get("owner")
@@ -280,6 +322,12 @@ func (m *PlannerPlan) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteObjectValue("archivalInfo", m.GetArchivalInfo())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetBuckets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetBuckets()))
         for i, v := range m.GetBuckets() {
@@ -329,6 +377,12 @@ func (m *PlannerPlan) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteBoolValue("isArchived", m.GetIsArchived())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("owner", m.GetOwner())
         if err != nil {
             return err
@@ -365,6 +419,13 @@ func (m *PlannerPlan) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     return nil
+}
+// SetArchivalInfo sets the archivalInfo property value. The archivalInfo property
+func (m *PlannerPlan) SetArchivalInfo(value PlannerArchivalInfoable)() {
+    err := m.GetBackingStore().Set("archivalInfo", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBuckets sets the buckets property value. Collection of buckets in the plan. Read-only. Nullable.
 func (m *PlannerPlan) SetBuckets(value []PlannerBucketable)() {
@@ -415,6 +476,13 @@ func (m *PlannerPlan) SetDetails(value PlannerPlanDetailsable)() {
         panic(err)
     }
 }
+// SetIsArchived sets the isArchived property value. The isArchived property
+func (m *PlannerPlan) SetIsArchived(value *bool)() {
+    err := m.GetBackingStore().Set("isArchived", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOwner sets the owner property value. The owner property
 func (m *PlannerPlan) SetOwner(value *string)() {
     err := m.GetBackingStore().Set("owner", value)
@@ -447,6 +515,7 @@ func (m *PlannerPlan) SetTitle(value *string)() {
 type PlannerPlanable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PlannerDeltaable
+    GetArchivalInfo()(PlannerArchivalInfoable)
     GetBuckets()([]PlannerBucketable)
     GetContainer()(PlannerPlanContainerable)
     GetContexts()(PlannerPlanContextCollectionable)
@@ -454,10 +523,12 @@ type PlannerPlanable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCreationSource()(PlannerPlanCreationable)
     GetDetails()(PlannerPlanDetailsable)
+    GetIsArchived()(*bool)
     GetOwner()(*string)
     GetSharedWithContainers()([]PlannerSharedWithContainerable)
     GetTasks()([]PlannerTaskable)
     GetTitle()(*string)
+    SetArchivalInfo(value PlannerArchivalInfoable)()
     SetBuckets(value []PlannerBucketable)()
     SetContainer(value PlannerPlanContainerable)()
     SetContexts(value PlannerPlanContextCollectionable)()
@@ -465,6 +536,7 @@ type PlannerPlanable interface {
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCreationSource(value PlannerPlanCreationable)()
     SetDetails(value PlannerPlanDetailsable)()
+    SetIsArchived(value *bool)()
     SetOwner(value *string)()
     SetSharedWithContainers(value []PlannerSharedWithContainerable)()
     SetTasks(value []PlannerTaskable)()

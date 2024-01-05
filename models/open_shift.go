@@ -21,7 +21,7 @@ func NewOpenShift()(*OpenShift) {
 func CreateOpenShiftFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOpenShift(), nil
 }
-// GetDraftOpenShift gets the draftOpenShift property value. An unpublished open shift.
+// GetDraftOpenShift gets the draftOpenShift property value. Draft changes in the openShift are only visible to managers until they are shared.
 func (m *OpenShift) GetDraftOpenShift()(OpenShiftItemable) {
     val, err := m.GetBackingStore().Get("draftOpenShift")
     if err != nil {
@@ -107,7 +107,7 @@ func (m *OpenShift) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     }
     return res
 }
-// GetIsStagedForDeletion gets the isStagedForDeletion property value. The isStagedForDeletion property
+// GetIsStagedForDeletion gets the isStagedForDeletion property value. The openShift is marked for deletion, a process that is finalized when the schedule is shared.
 func (m *OpenShift) GetIsStagedForDeletion()(*bool) {
     val, err := m.GetBackingStore().Get("isStagedForDeletion")
     if err != nil {
@@ -118,7 +118,7 @@ func (m *OpenShift) GetIsStagedForDeletion()(*bool) {
     }
     return nil
 }
-// GetSchedulingGroupId gets the schedulingGroupId property value. ID for the scheduling group that the open shift belongs to.
+// GetSchedulingGroupId gets the schedulingGroupId property value. The ID of the schedulingGroup that contains the openShift.
 func (m *OpenShift) GetSchedulingGroupId()(*string) {
     val, err := m.GetBackingStore().Get("schedulingGroupId")
     if err != nil {
@@ -129,7 +129,7 @@ func (m *OpenShift) GetSchedulingGroupId()(*string) {
     }
     return nil
 }
-// GetSchedulingGroupName gets the schedulingGroupName property value. The schedulingGroupName property
+// GetSchedulingGroupName gets the schedulingGroupName property value. The name of the schedulingGroup that contains the openShift.
 func (m *OpenShift) GetSchedulingGroupName()(*string) {
     val, err := m.GetBackingStore().Get("schedulingGroupName")
     if err != nil {
@@ -140,7 +140,7 @@ func (m *OpenShift) GetSchedulingGroupName()(*string) {
     }
     return nil
 }
-// GetSharedOpenShift gets the sharedOpenShift property value. A published open shift.
+// GetSharedOpenShift gets the sharedOpenShift property value. The shared version of this openShift that is viewable by both employees and managers.
 func (m *OpenShift) GetSharedOpenShift()(OpenShiftItemable) {
     val, err := m.GetBackingStore().Get("sharedOpenShift")
     if err != nil {
@@ -151,7 +151,7 @@ func (m *OpenShift) GetSharedOpenShift()(OpenShiftItemable) {
     }
     return nil
 }
-// GetTeamId gets the teamId property value. The teamId property
+// GetTeamId gets the teamId property value. The ID of the team in which the openShift is located.
 func (m *OpenShift) GetTeamId()(*string) {
     val, err := m.GetBackingStore().Get("teamId")
     if err != nil {
@@ -162,7 +162,7 @@ func (m *OpenShift) GetTeamId()(*string) {
     }
     return nil
 }
-// GetTeamName gets the teamName property value. The teamName property
+// GetTeamName gets the teamName property value. The name of the team in which the openShift is located.
 func (m *OpenShift) GetTeamName()(*string) {
     val, err := m.GetBackingStore().Get("teamName")
     if err != nil {
@@ -205,49 +205,49 @@ func (m *OpenShift) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     return nil
 }
-// SetDraftOpenShift sets the draftOpenShift property value. An unpublished open shift.
+// SetDraftOpenShift sets the draftOpenShift property value. Draft changes in the openShift are only visible to managers until they are shared.
 func (m *OpenShift) SetDraftOpenShift(value OpenShiftItemable)() {
     err := m.GetBackingStore().Set("draftOpenShift", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsStagedForDeletion sets the isStagedForDeletion property value. The isStagedForDeletion property
+// SetIsStagedForDeletion sets the isStagedForDeletion property value. The openShift is marked for deletion, a process that is finalized when the schedule is shared.
 func (m *OpenShift) SetIsStagedForDeletion(value *bool)() {
     err := m.GetBackingStore().Set("isStagedForDeletion", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSchedulingGroupId sets the schedulingGroupId property value. ID for the scheduling group that the open shift belongs to.
+// SetSchedulingGroupId sets the schedulingGroupId property value. The ID of the schedulingGroup that contains the openShift.
 func (m *OpenShift) SetSchedulingGroupId(value *string)() {
     err := m.GetBackingStore().Set("schedulingGroupId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSchedulingGroupName sets the schedulingGroupName property value. The schedulingGroupName property
+// SetSchedulingGroupName sets the schedulingGroupName property value. The name of the schedulingGroup that contains the openShift.
 func (m *OpenShift) SetSchedulingGroupName(value *string)() {
     err := m.GetBackingStore().Set("schedulingGroupName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSharedOpenShift sets the sharedOpenShift property value. A published open shift.
+// SetSharedOpenShift sets the sharedOpenShift property value. The shared version of this openShift that is viewable by both employees and managers.
 func (m *OpenShift) SetSharedOpenShift(value OpenShiftItemable)() {
     err := m.GetBackingStore().Set("sharedOpenShift", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTeamId sets the teamId property value. The teamId property
+// SetTeamId sets the teamId property value. The ID of the team in which the openShift is located.
 func (m *OpenShift) SetTeamId(value *string)() {
     err := m.GetBackingStore().Set("teamId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTeamName sets the teamName property value. The teamName property
+// SetTeamName sets the teamName property value. The name of the team in which the openShift is located.
 func (m *OpenShift) SetTeamName(value *string)() {
     err := m.GetBackingStore().Set("teamName", value)
     if err != nil {

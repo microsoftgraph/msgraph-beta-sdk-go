@@ -1,6 +1,7 @@
 package models
 
 import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -41,6 +42,17 @@ func (m *BookingStaffMember) GetColorIndex()(*int32) {
     }
     return nil
 }
+// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+func (m *BookingStaffMember) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BookingPerson.GetFieldDeserializers()
@@ -64,6 +76,16 @@ func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
+        return nil
+    }
     res["isEmailNotificationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -71,6 +93,16 @@ func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetIsEmailNotificationEnabled(val)
+        }
+        return nil
+    }
+    res["lastUpdatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastUpdatedDateTime(val)
         }
         return nil
     }
@@ -140,6 +172,17 @@ func (m *BookingStaffMember) GetIsEmailNotificationEnabled()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+func (m *BookingStaffMember) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     }
     return nil
 }
@@ -217,7 +260,19 @@ func (m *BookingStaffMember) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isEmailNotificationEnabled", m.GetIsEmailNotificationEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("lastUpdatedDateTime", m.GetLastUpdatedDateTime())
         if err != nil {
             return err
         }
@@ -276,9 +331,23 @@ func (m *BookingStaffMember) SetColorIndex(value *int32)() {
         panic(err)
     }
 }
+// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+func (m *BookingStaffMember) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsEmailNotificationEnabled sets the isEmailNotificationEnabled property value. True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
 func (m *BookingStaffMember) SetIsEmailNotificationEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEmailNotificationEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+func (m *BookingStaffMember) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("lastUpdatedDateTime", value)
     if err != nil {
         panic(err)
     }
@@ -324,7 +393,9 @@ type BookingStaffMemberable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAvailabilityIsAffectedByPersonalCalendar()(*bool)
     GetColorIndex()(*int32)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetIsEmailNotificationEnabled()(*bool)
+    GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMembershipStatus()(*BookingStaffMembershipStatus)
     GetRole()(*BookingStaffRole)
     GetTimeZone()(*string)
@@ -332,7 +403,9 @@ type BookingStaffMemberable interface {
     GetWorkingHours()([]BookingWorkHoursable)
     SetAvailabilityIsAffectedByPersonalCalendar(value *bool)()
     SetColorIndex(value *int32)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetIsEmailNotificationEnabled(value *bool)()
+    SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMembershipStatus(value *BookingStaffMembershipStatus)()
     SetRole(value *BookingStaffRole)()
     SetTimeZone(value *string)()

@@ -60,6 +60,17 @@ func (m *PlannerTask) GetAppliedCategories()(PlannerAppliedCategoriesable) {
     }
     return nil
 }
+// GetArchivalInfo gets the archivalInfo property value. The archivalInfo property
+func (m *PlannerTask) GetArchivalInfo()(PlannerArchivalInfoable) {
+    val, err := m.GetBackingStore().Get("archivalInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PlannerArchivalInfoable)
+    }
+    return nil
+}
 // GetAssignedToTaskBoardFormat gets the assignedToTaskBoardFormat property value. Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
 func (m *PlannerTask) GetAssignedToTaskBoardFormat()(PlannerAssignedToTaskBoardTaskFormatable) {
     val, err := m.GetBackingStore().Get("assignedToTaskBoardFormat")
@@ -237,6 +248,16 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["archivalInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePlannerArchivalInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetArchivalInfo(val.(PlannerArchivalInfoable))
+        }
+        return nil
+    }
     res["assignedToTaskBoardFormat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePlannerAssignedToTaskBoardTaskFormatFromDiscriminatorValue)
         if err != nil {
@@ -387,6 +408,36 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["isArchived"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsArchived(val)
+        }
+        return nil
+    }
+    res["isOnMyDay"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsOnMyDay(val)
+        }
+        return nil
+    }
+    res["isOnMyDayLastModifiedDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetDateOnlyValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsOnMyDayLastModifiedDate(val)
+        }
+        return nil
+    }
     res["orderHint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -507,6 +558,39 @@ func (m *PlannerTask) GetHasDescription()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetIsArchived gets the isArchived property value. The isArchived property
+func (m *PlannerTask) GetIsArchived()(*bool) {
+    val, err := m.GetBackingStore().Get("isArchived")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetIsOnMyDay gets the isOnMyDay property value. The isOnMyDay property
+func (m *PlannerTask) GetIsOnMyDay()(*bool) {
+    val, err := m.GetBackingStore().Get("isOnMyDay")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetIsOnMyDayLastModifiedDate gets the isOnMyDayLastModifiedDate property value. The isOnMyDayLastModifiedDate property
+func (m *PlannerTask) GetIsOnMyDayLastModifiedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
+    val, err := m.GetBackingStore().Get("isOnMyDayLastModifiedDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     }
     return nil
 }
@@ -650,6 +734,12 @@ func (m *PlannerTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteObjectValue("archivalInfo", m.GetArchivalInfo())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("assignedToTaskBoardFormat", m.GetAssignedToTaskBoardFormat())
         if err != nil {
             return err
@@ -740,6 +830,24 @@ func (m *PlannerTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteBoolValue("isArchived", m.GetIsArchived())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("isOnMyDay", m.GetIsOnMyDay())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteDateOnlyValue("isOnMyDayLastModifiedDate", m.GetIsOnMyDayLastModifiedDate())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("orderHint", m.GetOrderHint())
         if err != nil {
             return err
@@ -819,6 +927,13 @@ func (m *PlannerTask) SetActiveChecklistItemCount(value *int32)() {
 // SetAppliedCategories sets the appliedCategories property value. The categories to which the task has been applied. See applied Categories for possible values.
 func (m *PlannerTask) SetAppliedCategories(value PlannerAppliedCategoriesable)() {
     err := m.GetBackingStore().Set("appliedCategories", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetArchivalInfo sets the archivalInfo property value. The archivalInfo property
+func (m *PlannerTask) SetArchivalInfo(value PlannerArchivalInfoable)() {
+    err := m.GetBackingStore().Set("archivalInfo", value)
     if err != nil {
         panic(err)
     }
@@ -928,6 +1043,27 @@ func (m *PlannerTask) SetHasDescription(value *bool)() {
         panic(err)
     }
 }
+// SetIsArchived sets the isArchived property value. The isArchived property
+func (m *PlannerTask) SetIsArchived(value *bool)() {
+    err := m.GetBackingStore().Set("isArchived", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsOnMyDay sets the isOnMyDay property value. The isOnMyDay property
+func (m *PlannerTask) SetIsOnMyDay(value *bool)() {
+    err := m.GetBackingStore().Set("isOnMyDay", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsOnMyDayLastModifiedDate sets the isOnMyDayLastModifiedDate property value. The isOnMyDayLastModifiedDate property
+func (m *PlannerTask) SetIsOnMyDayLastModifiedDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
+    err := m.GetBackingStore().Set("isOnMyDayLastModifiedDate", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOrderHint sets the orderHint property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
 func (m *PlannerTask) SetOrderHint(value *string)() {
     err := m.GetBackingStore().Set("orderHint", value)
@@ -1011,6 +1147,7 @@ type PlannerTaskable interface {
     PlannerDeltaable
     GetActiveChecklistItemCount()(*int32)
     GetAppliedCategories()(PlannerAppliedCategoriesable)
+    GetArchivalInfo()(PlannerArchivalInfoable)
     GetAssignedToTaskBoardFormat()(PlannerAssignedToTaskBoardTaskFormatable)
     GetAssigneePriority()(*string)
     GetAssignments()(PlannerAssignmentsable)
@@ -1026,6 +1163,9 @@ type PlannerTaskable interface {
     GetDetails()(PlannerTaskDetailsable)
     GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetHasDescription()(*bool)
+    GetIsArchived()(*bool)
+    GetIsOnMyDay()(*bool)
+    GetIsOnMyDayLastModifiedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetOrderHint()(*string)
     GetPercentComplete()(*int32)
     GetPlanId()(*string)
@@ -1039,6 +1179,7 @@ type PlannerTaskable interface {
     GetTitle()(*string)
     SetActiveChecklistItemCount(value *int32)()
     SetAppliedCategories(value PlannerAppliedCategoriesable)()
+    SetArchivalInfo(value PlannerArchivalInfoable)()
     SetAssignedToTaskBoardFormat(value PlannerAssignedToTaskBoardTaskFormatable)()
     SetAssigneePriority(value *string)()
     SetAssignments(value PlannerAssignmentsable)()
@@ -1054,6 +1195,9 @@ type PlannerTaskable interface {
     SetDetails(value PlannerTaskDetailsable)()
     SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetHasDescription(value *bool)()
+    SetIsArchived(value *bool)()
+    SetIsOnMyDay(value *bool)()
+    SetIsOnMyDayLastModifiedDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetOrderHint(value *string)()
     SetPercentComplete(value *int32)()
     SetPlanId(value *string)()

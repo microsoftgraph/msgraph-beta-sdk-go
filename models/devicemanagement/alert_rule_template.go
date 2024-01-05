@@ -12,10 +12,11 @@ const (
     UNKNOWNFUTUREVALUE_ALERTRULETEMPLATE
     CLOUDPCINGRACEPERIODSCENARIO_ALERTRULETEMPLATE
     CLOUDPCFRONTLINEINSUFFICIENTLICENSESSCENARIO_ALERTRULETEMPLATE
+    CLOUDPCINACCESSIBLESCENARIO_ALERTRULETEMPLATE
 )
 
 func (i AlertRuleTemplate) String() string {
-    return []string{"cloudPcProvisionScenario", "cloudPcImageUploadScenario", "cloudPcOnPremiseNetworkConnectionCheckScenario", "unknownFutureValue", "cloudPcInGracePeriodScenario", "cloudPcFrontlineInsufficientLicensesScenario"}[i]
+    return []string{"cloudPcProvisionScenario", "cloudPcImageUploadScenario", "cloudPcOnPremiseNetworkConnectionCheckScenario", "unknownFutureValue", "cloudPcInGracePeriodScenario", "cloudPcFrontlineInsufficientLicensesScenario", "cloudPcInaccessibleScenario"}[i]
 }
 func ParseAlertRuleTemplate(v string) (any, error) {
     result := CLOUDPCPROVISIONSCENARIO_ALERTRULETEMPLATE
@@ -32,6 +33,8 @@ func ParseAlertRuleTemplate(v string) (any, error) {
             result = CLOUDPCINGRACEPERIODSCENARIO_ALERTRULETEMPLATE
         case "cloudPcFrontlineInsufficientLicensesScenario":
             result = CLOUDPCFRONTLINEINSUFFICIENTLICENSESSCENARIO_ALERTRULETEMPLATE
+        case "cloudPcInaccessibleScenario":
+            result = CLOUDPCINACCESSIBLESCENARIO_ALERTRULETEMPLATE
         default:
             return 0, errors.New("Unknown AlertRuleTemplate value: " + v)
     }

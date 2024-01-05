@@ -32,6 +32,17 @@ func (m *PlannerTaskPropertyRule) GetAppliedCategories()(PlannerFieldRulesable) 
     }
     return nil
 }
+// GetApprovalAttachment gets the approvalAttachment property value. The approvalAttachment property
+func (m *PlannerTaskPropertyRule) GetApprovalAttachment()(PlannerFieldRulesable) {
+    val, err := m.GetBackingStore().Get("approvalAttachment")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PlannerFieldRulesable)
+    }
+    return nil
+}
 // GetAssignments gets the assignments property value. Rules and restrictions for assignments. Allowed overrides are userCreated and applicationCreated. Accepted values for the default rule and individual overrides are allow, add, addSelf, addOther, remove, removeSelf, removeOther, block.
 func (m *PlannerTaskPropertyRule) GetAssignments()(PlannerFieldRulesable) {
     val, err := m.GetBackingStore().Get("assignments")
@@ -100,6 +111,16 @@ func (m *PlannerTaskPropertyRule) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["approvalAttachment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePlannerFieldRulesFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetApprovalAttachment(val.(PlannerFieldRulesable))
+        }
+        return nil
+    }
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePlannerFieldRulesFromDiscriminatorValue)
         if err != nil {
@@ -165,6 +186,16 @@ func (m *PlannerTaskPropertyRule) GetFieldDeserializers()(map[string]func(i878a8
                 }
             }
             m.SetDueDate(res)
+        }
+        return nil
+    }
+    res["forms"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePlannerFieldRulesFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetForms(val.(PlannerFieldRulesable))
         }
         return nil
     }
@@ -308,6 +339,17 @@ func (m *PlannerTaskPropertyRule) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
+// GetForms gets the forms property value. The forms property
+func (m *PlannerTaskPropertyRule) GetForms()(PlannerFieldRulesable) {
+    val, err := m.GetBackingStore().Get("forms")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PlannerFieldRulesable)
+    }
+    return nil
+}
 // GetMove gets the move property value. Rules and restrictions for moving the task between buckets or plans. Accepted values are allow, moveBetweenPlans, moveBetweenBuckets, and block.
 func (m *PlannerTaskPropertyRule) GetMove()([]string) {
     val, err := m.GetBackingStore().Get("move")
@@ -420,6 +462,12 @@ func (m *PlannerTaskPropertyRule) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     {
+        err = writer.WriteObjectValue("approvalAttachment", m.GetApprovalAttachment())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("assignments", m.GetAssignments())
         if err != nil {
             return err
@@ -445,6 +493,12 @@ func (m *PlannerTaskPropertyRule) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     if m.GetDueDate() != nil {
         err = writer.WriteCollectionOfStringValues("dueDate", m.GetDueDate())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("forms", m.GetForms())
         if err != nil {
             return err
         }
@@ -512,6 +566,13 @@ func (m *PlannerTaskPropertyRule) SetAppliedCategories(value PlannerFieldRulesab
         panic(err)
     }
 }
+// SetApprovalAttachment sets the approvalAttachment property value. The approvalAttachment property
+func (m *PlannerTaskPropertyRule) SetApprovalAttachment(value PlannerFieldRulesable)() {
+    err := m.GetBackingStore().Set("approvalAttachment", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAssignments sets the assignments property value. Rules and restrictions for assignments. Allowed overrides are userCreated and applicationCreated. Accepted values for the default rule and individual overrides are allow, add, addSelf, addOther, remove, removeSelf, removeOther, block.
 func (m *PlannerTaskPropertyRule) SetAssignments(value PlannerFieldRulesable)() {
     err := m.GetBackingStore().Set("assignments", value)
@@ -543,6 +604,13 @@ func (m *PlannerTaskPropertyRule) SetDelete(value []string)() {
 // SetDueDate sets the dueDate property value. Rules and restrictions for changing the due date of the task. Accepted values are allow and block.
 func (m *PlannerTaskPropertyRule) SetDueDate(value []string)() {
     err := m.GetBackingStore().Set("dueDate", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetForms sets the forms property value. The forms property
+func (m *PlannerTaskPropertyRule) SetForms(value PlannerFieldRulesable)() {
+    err := m.GetBackingStore().Set("forms", value)
     if err != nil {
         panic(err)
     }
@@ -615,11 +683,13 @@ type PlannerTaskPropertyRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PlannerPropertyRuleable
     GetAppliedCategories()(PlannerFieldRulesable)
+    GetApprovalAttachment()(PlannerFieldRulesable)
     GetAssignments()(PlannerFieldRulesable)
     GetCheckLists()(PlannerFieldRulesable)
     GetCompletionRequirements()([]string)
     GetDelete()([]string)
     GetDueDate()([]string)
+    GetForms()(PlannerFieldRulesable)
     GetMove()([]string)
     GetNotes()([]string)
     GetOrder()([]string)
@@ -630,11 +700,13 @@ type PlannerTaskPropertyRuleable interface {
     GetStartDate()([]string)
     GetTitle()([]string)
     SetAppliedCategories(value PlannerFieldRulesable)()
+    SetApprovalAttachment(value PlannerFieldRulesable)()
     SetAssignments(value PlannerFieldRulesable)()
     SetCheckLists(value PlannerFieldRulesable)()
     SetCompletionRequirements(value []string)()
     SetDelete(value []string)()
     SetDueDate(value []string)()
+    SetForms(value PlannerFieldRulesable)()
     SetMove(value []string)()
     SetNotes(value []string)()
     SetOrder(value []string)()

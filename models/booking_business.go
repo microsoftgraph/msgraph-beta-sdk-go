@@ -1,6 +1,7 @@
 package models
 
 import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -43,6 +44,17 @@ func (m *BookingBusiness) GetAppointments()([]BookingAppointmentable) {
     }
     return nil
 }
+// GetBookingPageSettings gets the bookingPageSettings property value. The bookingPageSettings property
+func (m *BookingBusiness) GetBookingPageSettings()(BookingPageSettingsable) {
+    val, err := m.GetBackingStore().Get("bookingPageSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(BookingPageSettingsable)
+    }
+    return nil
+}
 // GetBusinessHours gets the businessHours property value. The hours of operation for the business.
 func (m *BookingBusiness) GetBusinessHours()([]BookingWorkHoursable) {
     val, err := m.GetBackingStore().Get("businessHours")
@@ -73,6 +85,17 @@ func (m *BookingBusiness) GetCalendarView()([]BookingAppointmentable) {
     }
     if val != nil {
         return val.([]BookingAppointmentable)
+    }
+    return nil
+}
+// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+func (m *BookingBusiness) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     }
     return nil
 }
@@ -149,6 +172,16 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["bookingPageSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateBookingPageSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBookingPageSettings(val.(BookingPageSettingsable))
+        }
+        return nil
+    }
     res["businessHours"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateBookingWorkHoursFromDiscriminatorValue)
         if err != nil {
@@ -188,6 +221,16 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(i878a80d2330e8
                 }
             }
             m.SetCalendarView(res)
+        }
+        return nil
+    }
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCreatedDateTime(val)
         }
         return nil
     }
@@ -260,6 +303,16 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         if val != nil {
             m.SetLanguageTag(val)
+        }
+        return nil
+    }
+    res["lastUpdatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastUpdatedDateTime(val)
         }
         return nil
     }
@@ -359,6 +412,17 @@ func (m *BookingBusiness) GetLanguageTag()(*string) {
     }
     return nil
 }
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+func (m *BookingBusiness) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
 // GetPhone gets the phone property value. The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.
 func (m *BookingBusiness) GetPhone()(*string) {
     val, err := m.GetBackingStore().Get("phone")
@@ -449,6 +513,12 @@ func (m *BookingBusiness) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("bookingPageSettings", m.GetBookingPageSettings())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetBusinessHours() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetBusinessHours()))
         for i, v := range m.GetBusinessHours() {
@@ -475,6 +545,12 @@ func (m *BookingBusiness) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             }
         }
         err = writer.WriteCollectionOfObjectValues("calendarView", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
         if err != nil {
             return err
         }
@@ -517,6 +593,12 @@ func (m *BookingBusiness) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     {
         err = writer.WriteStringValue("languageTag", m.GetLanguageTag())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("lastUpdatedDateTime", m.GetLastUpdatedDateTime())
         if err != nil {
             return err
         }
@@ -579,6 +661,13 @@ func (m *BookingBusiness) SetAppointments(value []BookingAppointmentable)() {
         panic(err)
     }
 }
+// SetBookingPageSettings sets the bookingPageSettings property value. The bookingPageSettings property
+func (m *BookingBusiness) SetBookingPageSettings(value BookingPageSettingsable)() {
+    err := m.GetBackingStore().Set("bookingPageSettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetBusinessHours sets the businessHours property value. The hours of operation for the business.
 func (m *BookingBusiness) SetBusinessHours(value []BookingWorkHoursable)() {
     err := m.GetBackingStore().Set("businessHours", value)
@@ -596,6 +685,13 @@ func (m *BookingBusiness) SetBusinessType(value *string)() {
 // SetCalendarView sets the calendarView property value. The set of appointments of this business in a specified date range. Read-only. Nullable.
 func (m *BookingBusiness) SetCalendarView(value []BookingAppointmentable)() {
     err := m.GetBackingStore().Set("calendarView", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+func (m *BookingBusiness) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
@@ -638,6 +734,13 @@ func (m *BookingBusiness) SetIsPublished(value *bool)() {
 // SetLanguageTag sets the languageTag property value. The language of the self service booking page
 func (m *BookingBusiness) SetLanguageTag(value *string)() {
     err := m.GetBackingStore().Set("languageTag", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+func (m *BookingBusiness) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("lastUpdatedDateTime", value)
     if err != nil {
         panic(err)
     }
@@ -690,15 +793,18 @@ type BookingBusinessable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAddress()(PhysicalAddressable)
     GetAppointments()([]BookingAppointmentable)
+    GetBookingPageSettings()(BookingPageSettingsable)
     GetBusinessHours()([]BookingWorkHoursable)
     GetBusinessType()(*string)
     GetCalendarView()([]BookingAppointmentable)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCustomers()([]BookingCustomerable)
     GetCustomQuestions()([]BookingCustomQuestionable)
     GetDefaultCurrencyIso()(*string)
     GetEmail()(*string)
     GetIsPublished()(*bool)
     GetLanguageTag()(*string)
+    GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetPhone()(*string)
     GetPublicUrl()(*string)
     GetSchedulingPolicy()(BookingSchedulingPolicyable)
@@ -707,15 +813,18 @@ type BookingBusinessable interface {
     GetWebSiteUrl()(*string)
     SetAddress(value PhysicalAddressable)()
     SetAppointments(value []BookingAppointmentable)()
+    SetBookingPageSettings(value BookingPageSettingsable)()
     SetBusinessHours(value []BookingWorkHoursable)()
     SetBusinessType(value *string)()
     SetCalendarView(value []BookingAppointmentable)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCustomers(value []BookingCustomerable)()
     SetCustomQuestions(value []BookingCustomQuestionable)()
     SetDefaultCurrencyIso(value *string)()
     SetEmail(value *string)()
     SetIsPublished(value *bool)()
     SetLanguageTag(value *string)()
+    SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetPhone(value *string)()
     SetPublicUrl(value *string)()
     SetSchedulingPolicy(value BookingSchedulingPolicyable)()

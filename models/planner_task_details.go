@@ -19,6 +19,17 @@ func NewPlannerTaskDetails()(*PlannerTaskDetails) {
 func CreatePlannerTaskDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerTaskDetails(), nil
 }
+// GetApprovalAttachment gets the approvalAttachment property value. The approvalAttachment property
+func (m *PlannerTaskDetails) GetApprovalAttachment()(PlannerBaseApprovalAttachmentable) {
+    val, err := m.GetBackingStore().Get("approvalAttachment")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PlannerBaseApprovalAttachmentable)
+    }
+    return nil
+}
 // GetChecklist gets the checklist property value. The collection of checklist items on the task.
 func (m *PlannerTaskDetails) GetChecklist()(PlannerChecklistItemsable) {
     val, err := m.GetBackingStore().Get("checklist")
@@ -55,6 +66,16 @@ func (m *PlannerTaskDetails) GetDescription()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerTaskDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PlannerDelta.GetFieldDeserializers()
+    res["approvalAttachment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePlannerBaseApprovalAttachmentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetApprovalAttachment(val.(PlannerBaseApprovalAttachmentable))
+        }
+        return nil
+    }
     res["checklist"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePlannerChecklistItemsFromDiscriminatorValue)
         if err != nil {
@@ -82,6 +103,16 @@ func (m *PlannerTaskDetails) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetDescription(val)
+        }
+        return nil
+    }
+    res["forms"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePlannerFormsDictionaryFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetForms(val.(PlannerFormsDictionaryable))
         }
         return nil
     }
@@ -116,6 +147,17 @@ func (m *PlannerTaskDetails) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     return res
+}
+// GetForms gets the forms property value. The forms property
+func (m *PlannerTaskDetails) GetForms()(PlannerFormsDictionaryable) {
+    val, err := m.GetBackingStore().Get("forms")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PlannerFormsDictionaryable)
+    }
+    return nil
 }
 // GetNotes gets the notes property value. Rich text description of the task. To be used by HTML-aware clients. For backwards compatibility, a plain-text version of the HTML description will be synced to the 'description' field. If this field hasn't previously been set but 'description' has been, the existing description is synchronized to 'notes' with minimal whitespace-preserving HTML markup. Setting both 'description' and 'notes' is an error and will result in an exception.
 func (m *PlannerTaskDetails) GetNotes()(ItemBodyable) {
@@ -157,6 +199,12 @@ func (m *PlannerTaskDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         return err
     }
     {
+        err = writer.WriteObjectValue("approvalAttachment", m.GetApprovalAttachment())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("checklist", m.GetChecklist())
         if err != nil {
             return err
@@ -170,6 +218,12 @@ func (m *PlannerTaskDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err = writer.WriteStringValue("description", m.GetDescription())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("forms", m.GetForms())
         if err != nil {
             return err
         }
@@ -195,6 +249,13 @@ func (m *PlannerTaskDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
+// SetApprovalAttachment sets the approvalAttachment property value. The approvalAttachment property
+func (m *PlannerTaskDetails) SetApprovalAttachment(value PlannerBaseApprovalAttachmentable)() {
+    err := m.GetBackingStore().Set("approvalAttachment", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetChecklist sets the checklist property value. The collection of checklist items on the task.
 func (m *PlannerTaskDetails) SetChecklist(value PlannerChecklistItemsable)() {
     err := m.GetBackingStore().Set("checklist", value)
@@ -212,6 +273,13 @@ func (m *PlannerTaskDetails) SetCompletionRequirements(value PlannerTaskCompleti
 // SetDescription sets the description property value. Description of the task.
 func (m *PlannerTaskDetails) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetForms sets the forms property value. The forms property
+func (m *PlannerTaskDetails) SetForms(value PlannerFormsDictionaryable)() {
+    err := m.GetBackingStore().Set("forms", value)
     if err != nil {
         panic(err)
     }
@@ -241,15 +309,19 @@ func (m *PlannerTaskDetails) SetReferences(value PlannerExternalReferencesable)(
 type PlannerTaskDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PlannerDeltaable
+    GetApprovalAttachment()(PlannerBaseApprovalAttachmentable)
     GetChecklist()(PlannerChecklistItemsable)
     GetCompletionRequirements()(PlannerTaskCompletionRequirementDetailsable)
     GetDescription()(*string)
+    GetForms()(PlannerFormsDictionaryable)
     GetNotes()(ItemBodyable)
     GetPreviewType()(*PlannerPreviewType)
     GetReferences()(PlannerExternalReferencesable)
+    SetApprovalAttachment(value PlannerBaseApprovalAttachmentable)()
     SetChecklist(value PlannerChecklistItemsable)()
     SetCompletionRequirements(value PlannerTaskCompletionRequirementDetailsable)()
     SetDescription(value *string)()
+    SetForms(value PlannerFormsDictionaryable)()
     SetNotes(value ItemBodyable)()
     SetPreviewType(value *PlannerPreviewType)()
     SetReferences(value PlannerExternalReferencesable)()
