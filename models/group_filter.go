@@ -69,7 +69,7 @@ func (m *GroupFilter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetIncludedGroups gets the includedGroups property value. The includedGroups property
+// GetIncludedGroups gets the includedGroups property value. Identifiers of groups that are in scope for a synchronization rule. For Active Directory groups, use the distinguished names. An empty list means no group filtering is configured.
 func (m *GroupFilter) GetIncludedGroups()([]string) {
     val, err := m.GetBackingStore().Get("includedGroups")
     if err != nil {
@@ -124,7 +124,7 @@ func (m *GroupFilter) SetAdditionalData(value map[string]any)() {
 func (m *GroupFilter) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIncludedGroups sets the includedGroups property value. The includedGroups property
+// SetIncludedGroups sets the includedGroups property value. Identifiers of groups that are in scope for a synchronization rule. For Active Directory groups, use the distinguished names. An empty list means no group filtering is configured.
 func (m *GroupFilter) SetIncludedGroups(value []string)() {
     err := m.GetBackingStore().Set("includedGroups", value)
     if err != nil {

@@ -96,6 +96,10 @@ func (m *ItemPagesRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseSitePageCollectionResponseable), nil
 }
+// GraphSitePage casts the previous resource to sitePage.
+func (m *ItemPagesRequestBuilder) GraphSitePage()(*ItemPagesGraphSitePageRequestBuilder) {
+    return NewItemPagesGraphSitePageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Post create a new [sitePage][] in the site pages [list][] in a [site][].
 // [Find more info here]
 // 

@@ -30,7 +30,7 @@ func (m *Agreement) GetAcceptances()([]AgreementAcceptanceable) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement. Supports $filter (eq).
+// GetDisplayName gets the displayName property value. Display name of the agreement. The display name is used for internal tracking of the agreement but isn't shown to end users who view the agreement. Supports $filter (eq).
 func (m *Agreement) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -160,7 +160,7 @@ func (m *Agreement) GetFiles()([]AgreementFileLocalizationable) {
     }
     return nil
 }
-// GetIsPerDeviceAcceptanceRequired gets the isPerDeviceAcceptanceRequired property value. This setting enables you to require end users to accept this agreement on every device that they are accessing it from. The end user will be required to register their device in Microsoft Entra ID, if they haven't already done so. Supports $filter (eq).
+// GetIsPerDeviceAcceptanceRequired gets the isPerDeviceAcceptanceRequired property value. This setting enables you to require end users to accept this agreement on every device that they're accessing it from. The end user is required to register their device in Microsoft Entra ID, if they haven't already done so. Supports $filter (eq).
 func (m *Agreement) GetIsPerDeviceAcceptanceRequired()(*bool) {
     val, err := m.GetBackingStore().Get("isPerDeviceAcceptanceRequired")
     if err != nil {
@@ -193,7 +193,7 @@ func (m *Agreement) GetTermsExpiration()(TermsExpirationable) {
     }
     return nil
 }
-// GetUserReacceptRequiredFrequency gets the userReacceptRequiredFrequency property value. The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations.
+// GetUserReacceptRequiredFrequency gets the userReacceptRequiredFrequency property value. The duration after which the user must reaccept the terms of use. The value is represented in ISO 8601 format for durations.
 func (m *Agreement) GetUserReacceptRequiredFrequency()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("userReacceptRequiredFrequency")
     if err != nil {
@@ -279,7 +279,7 @@ func (m *Agreement) SetAcceptances(value []AgreementAcceptanceable)() {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement. Supports $filter (eq).
+// SetDisplayName sets the displayName property value. Display name of the agreement. The display name is used for internal tracking of the agreement but isn't shown to end users who view the agreement. Supports $filter (eq).
 func (m *Agreement) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -300,7 +300,7 @@ func (m *Agreement) SetFiles(value []AgreementFileLocalizationable)() {
         panic(err)
     }
 }
-// SetIsPerDeviceAcceptanceRequired sets the isPerDeviceAcceptanceRequired property value. This setting enables you to require end users to accept this agreement on every device that they are accessing it from. The end user will be required to register their device in Microsoft Entra ID, if they haven't already done so. Supports $filter (eq).
+// SetIsPerDeviceAcceptanceRequired sets the isPerDeviceAcceptanceRequired property value. This setting enables you to require end users to accept this agreement on every device that they're accessing it from. The end user is required to register their device in Microsoft Entra ID, if they haven't already done so. Supports $filter (eq).
 func (m *Agreement) SetIsPerDeviceAcceptanceRequired(value *bool)() {
     err := m.GetBackingStore().Set("isPerDeviceAcceptanceRequired", value)
     if err != nil {
@@ -321,7 +321,7 @@ func (m *Agreement) SetTermsExpiration(value TermsExpirationable)() {
         panic(err)
     }
 }
-// SetUserReacceptRequiredFrequency sets the userReacceptRequiredFrequency property value. The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations.
+// SetUserReacceptRequiredFrequency sets the userReacceptRequiredFrequency property value. The duration after which the user must reaccept the terms of use. The value is represented in ISO 8601 format for durations.
 func (m *Agreement) SetUserReacceptRequiredFrequency(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     err := m.GetBackingStore().Set("userReacceptRequiredFrequency", value)
     if err != nil {

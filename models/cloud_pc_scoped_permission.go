@@ -90,7 +90,7 @@ func (m *CloudPcScopedPermission) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPermission gets the permission property value. The permission property
+// GetPermission gets the permission property value. The operations allowed on scoped resources for the authenticated user. Example permission is Microsoft.CloudPC/ProvisioningPolicies/Create.
 func (m *CloudPcScopedPermission) GetPermission()(*string) {
     val, err := m.GetBackingStore().Get("permission")
     if err != nil {
@@ -101,7 +101,7 @@ func (m *CloudPcScopedPermission) GetPermission()(*string) {
     }
     return nil
 }
-// GetScopeIds gets the scopeIds property value. The scopeIds property
+// GetScopeIds gets the scopeIds property value. The scope IDs of corresponding permission. Currently, it's Intune scope tag ID.
 func (m *CloudPcScopedPermission) GetScopeIds()([]string) {
     val, err := m.GetBackingStore().Get("scopeIds")
     if err != nil {
@@ -158,14 +158,14 @@ func (m *CloudPcScopedPermission) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPermission sets the permission property value. The permission property
+// SetPermission sets the permission property value. The operations allowed on scoped resources for the authenticated user. Example permission is Microsoft.CloudPC/ProvisioningPolicies/Create.
 func (m *CloudPcScopedPermission) SetPermission(value *string)() {
     err := m.GetBackingStore().Set("permission", value)
     if err != nil {
         panic(err)
     }
 }
-// SetScopeIds sets the scopeIds property value. The scopeIds property
+// SetScopeIds sets the scopeIds property value. The scope IDs of corresponding permission. Currently, it's Intune scope tag ID.
 func (m *CloudPcScopedPermission) SetScopeIds(value []string)() {
     err := m.GetBackingStore().Set("scopeIds", value)
     if err != nil {
