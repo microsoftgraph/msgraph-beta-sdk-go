@@ -31,7 +31,10 @@ func NewItemPlannerPlansItemMoveToContainerRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewItemPlannerPlansItemMoveToContainerRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action moveToContainer
+// Post move a planner plan object from one planner plan container to another. Planner plans can only be moved from a user container to a group container.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannerplan-movetocontainer?view=graph-rest-1.0
 func (m *ItemPlannerPlansItemMoveToContainerRequestBuilder) Post(ctx context.Context, body ItemPlannerPlansItemMoveToContainerPostRequestBodyable, requestConfiguration *ItemPlannerPlansItemMoveToContainerRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *ItemPlannerPlansItemMoveToContainerRequestBuilder) Post(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanable), nil
 }
-// ToPostRequestInformation invoke action moveToContainer
+// ToPostRequestInformation move a planner plan object from one planner plan container to another. Planner plans can only be moved from a user container to a group container.
 func (m *ItemPlannerPlansItemMoveToContainerRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPlannerPlansItemMoveToContainerPostRequestBodyable, requestConfiguration *ItemPlannerPlansItemMoveToContainerRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

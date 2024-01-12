@@ -18,7 +18,7 @@ type ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderDeleteRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an ipNamedLocation object.
+// ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a namedLocation object.
 type ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,10 +73,10 @@ func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) Delete(
     }
     return nil
 }
-// Get retrieve the properties and relationships of an ipNamedLocation object.
+// Get retrieve the properties and relationships of a namedLocation object.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/ipnamedlocation-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/namedlocation-get?view=graph-rest-1.0
 func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,10 +95,10 @@ func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) Get(ctx
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable), nil
 }
-// Patch update the properties of a countryNamedLocation object.
+// Patch update the properties of an ipNamedLocation object.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/countrynamedlocation-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/ipnamedlocation-update?view=graph-rest-1.0
 func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable, requestConfiguration *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -127,7 +127,7 @@ func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) ToDelet
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of an ipNamedLocation object.
+// ToGetRequestInformation retrieve the properties and relationships of a namedLocation object.
 func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -140,7 +140,7 @@ func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) ToGetRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a countryNamedLocation object.
+// ToPatchRequestInformation update the properties of an ipNamedLocation object.
 func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable, requestConfiguration *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

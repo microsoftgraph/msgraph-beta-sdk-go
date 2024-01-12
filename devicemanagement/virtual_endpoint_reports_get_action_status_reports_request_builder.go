@@ -30,7 +30,10 @@ func NewVirtualEndpointReportsGetActionStatusReportsRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointReportsGetActionStatusReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action getActionStatusReports
+// Post get the remote action status reports, including data such as the Cloud PC ID, Cloud PC device display name, initiating user's principal name, device owner's user principal name, action taken, and action state.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcreports-getactionstatusreports?view=graph-rest-1.0
 func (m *VirtualEndpointReportsGetActionStatusReportsRequestBuilder) Post(ctx context.Context, body VirtualEndpointReportsGetActionStatusReportsPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetActionStatusReportsRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *VirtualEndpointReportsGetActionStatusReportsRequestBuilder) Post(ctx co
     }
     return res.([]byte), nil
 }
-// ToPostRequestInformation invoke action getActionStatusReports
+// ToPostRequestInformation get the remote action status reports, including data such as the Cloud PC ID, Cloud PC device display name, initiating user's principal name, device owner's user principal name, action taken, and action state.
 func (m *VirtualEndpointReportsGetActionStatusReportsRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointReportsGetActionStatusReportsPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetActionStatusReportsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

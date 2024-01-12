@@ -38,7 +38,7 @@ func (m *SynchronizationRule) GetAdditionalData()(map[string]any) {
 func (m *SynchronizationRule) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetContainerFilter gets the containerFilter property value. The containerFilter property
+// GetContainerFilter gets the containerFilter property value. The names and identifiers of organizational units that are in scope for a synchronization rule. containerFilter and groupFilter are mutually exclusive properties that cannot be configured in the same request. Currently only supported for Azure AD Connect cloud sync scenarios.
 func (m *SynchronizationRule) GetContainerFilter()(ContainerFilterable) {
     val, err := m.GetBackingStore().Get("containerFilter")
     if err != nil {
@@ -187,7 +187,7 @@ func (m *SynchronizationRule) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetGroupFilter gets the groupFilter property value. The groupFilter property
+// GetGroupFilter gets the groupFilter property value. The names and identifiers of groups that are in scope for a synchronization rule. containerFilter and groupFilter are mutually exclusive properties that cannot be configured in the same request. Currently only supported for Azure AD Connect cloud sync scenarios.
 func (m *SynchronizationRule) GetGroupFilter()(GroupFilterable) {
     val, err := m.GetBackingStore().Get("groupFilter")
     if err != nil {
@@ -385,7 +385,7 @@ func (m *SynchronizationRule) SetAdditionalData(value map[string]any)() {
 func (m *SynchronizationRule) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetContainerFilter sets the containerFilter property value. The containerFilter property
+// SetContainerFilter sets the containerFilter property value. The names and identifiers of organizational units that are in scope for a synchronization rule. containerFilter and groupFilter are mutually exclusive properties that cannot be configured in the same request. Currently only supported for Azure AD Connect cloud sync scenarios.
 func (m *SynchronizationRule) SetContainerFilter(value ContainerFilterable)() {
     err := m.GetBackingStore().Set("containerFilter", value)
     if err != nil {
@@ -399,7 +399,7 @@ func (m *SynchronizationRule) SetEditable(value *bool)() {
         panic(err)
     }
 }
-// SetGroupFilter sets the groupFilter property value. The groupFilter property
+// SetGroupFilter sets the groupFilter property value. The names and identifiers of groups that are in scope for a synchronization rule. containerFilter and groupFilter are mutually exclusive properties that cannot be configured in the same request. Currently only supported for Azure AD Connect cloud sync scenarios.
 func (m *SynchronizationRule) SetGroupFilter(value GroupFilterable)() {
     err := m.GetBackingStore().Set("groupFilter", value)
     if err != nil {

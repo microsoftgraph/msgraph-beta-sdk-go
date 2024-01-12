@@ -96,6 +96,10 @@ func (m *ItemPagesBaseSitePageItemRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseSitePageable), nil
 }
+// GraphSitePage casts the previous resource to sitePage.
+func (m *ItemPagesBaseSitePageItemRequestBuilder) GraphSitePage()(*ItemPagesItemGraphSitePageRequestBuilder) {
+    return NewItemPagesItemGraphSitePageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // LastModifiedByUser provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.
 func (m *ItemPagesBaseSitePageItemRequestBuilder) LastModifiedByUser()(*ItemPagesItemLastModifiedByUserRequestBuilder) {
     return NewItemPagesItemLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

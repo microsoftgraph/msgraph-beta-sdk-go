@@ -132,7 +132,7 @@ func (m *LongRunningOperation) GetResourceLocation()(*string) {
     }
     return nil
 }
-// GetStatus gets the status property value. The status of the operation. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue.
+// GetStatus gets the status property value. The status of the operation. The possible values are: notStarted, running, succeeded, failed, skipped, unknownFutureValue.
 func (m *LongRunningOperation) GetStatus()(*LongRunningOperationStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -214,7 +214,7 @@ func (m *LongRunningOperation) SetResourceLocation(value *string)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status of the operation. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue.
+// SetStatus sets the status property value. The status of the operation. The possible values are: notStarted, running, succeeded, failed, skipped, unknownFutureValue.
 func (m *LongRunningOperation) SetStatus(value *LongRunningOperationStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
