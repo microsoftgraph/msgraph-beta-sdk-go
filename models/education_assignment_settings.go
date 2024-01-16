@@ -50,7 +50,7 @@ func (m *EducationAssignmentSettings) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetGradingCategories gets the gradingCategories property value. The gradingCategories property
+// GetGradingCategories gets the gradingCategories property value. When set, enables users to weight assignments differently when computing a class average grade.
 func (m *EducationAssignmentSettings) GetGradingCategories()([]EducationGradingCategoryable) {
     val, err := m.GetBackingStore().Get("gradingCategories")
     if err != nil {
@@ -98,7 +98,7 @@ func (m *EducationAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetGradingCategories sets the gradingCategories property value. The gradingCategories property
+// SetGradingCategories sets the gradingCategories property value. When set, enables users to weight assignments differently when computing a class average grade.
 func (m *EducationAssignmentSettings) SetGradingCategories(value []EducationGradingCategoryable)() {
     err := m.GetBackingStore().Set("gradingCategories", value)
     if err != nil {

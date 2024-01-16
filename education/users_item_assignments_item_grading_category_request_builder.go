@@ -18,7 +18,7 @@ type UsersItemAssignmentsItemGradingCategoryRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// UsersItemAssignmentsItemGradingCategoryRequestBuilderGetQueryParameters get gradingCategory from education
+// UsersItemAssignmentsItemGradingCategoryRequestBuilderGetQueryParameters when set, enables users to weight assignments differently when computing a class average grade.
 type UsersItemAssignmentsItemGradingCategoryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -66,7 +66,7 @@ func (m *UsersItemAssignmentsItemGradingCategoryRequestBuilder) Delete(ctx conte
     }
     return nil
 }
-// Get get gradingCategory from education
+// Get when set, enables users to weight assignments differently when computing a class average grade.
 func (m *UsersItemAssignmentsItemGradingCategoryRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemGradingCategoryRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationGradingCategoryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *UsersItemAssignmentsItemGradingCategoryRequestBuilder) ToDeleteRequestI
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get gradingCategory from education
+// ToGetRequestInformation when set, enables users to weight assignments differently when computing a class average grade.
 func (m *UsersItemAssignmentsItemGradingCategoryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemGradingCategoryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
