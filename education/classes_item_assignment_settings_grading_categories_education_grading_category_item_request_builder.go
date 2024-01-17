@@ -18,7 +18,7 @@ type ClassesItemAssignmentSettingsGradingCategoriesEducationGradingCategoryItemR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ClassesItemAssignmentSettingsGradingCategoriesEducationGradingCategoryItemRequestBuilderGetQueryParameters get gradingCategories from education
+// ClassesItemAssignmentSettingsGradingCategoriesEducationGradingCategoryItemRequestBuilderGetQueryParameters when set, enables users to weight assignments differently when computing a class average grade.
 type ClassesItemAssignmentSettingsGradingCategoriesEducationGradingCategoryItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ClassesItemAssignmentSettingsGradingCategoriesEducationGradingCategoryI
     }
     return nil
 }
-// Get get gradingCategories from education
+// Get when set, enables users to weight assignments differently when computing a class average grade.
 func (m *ClassesItemAssignmentSettingsGradingCategoriesEducationGradingCategoryItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemAssignmentSettingsGradingCategoriesEducationGradingCategoryItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationGradingCategoryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -118,7 +118,7 @@ func (m *ClassesItemAssignmentSettingsGradingCategoriesEducationGradingCategoryI
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get gradingCategories from education
+// ToGetRequestInformation when set, enables users to weight assignments differently when computing a class average grade.
 func (m *ClassesItemAssignmentSettingsGradingCategoriesEducationGradingCategoryItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentSettingsGradingCategoriesEducationGradingCategoryItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

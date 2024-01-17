@@ -50,7 +50,7 @@ func (m *DeltaParticipants) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetParticipants gets the participants property value. The participants property
+// GetParticipants gets the participants property value. The collection of participants that were updated since the last roster update.
 func (m *DeltaParticipants) GetParticipants()([]Participantable) {
     val, err := m.GetBackingStore().Get("participants")
     if err != nil {
@@ -98,7 +98,7 @@ func (m *DeltaParticipants) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetParticipants sets the participants property value. The participants property
+// SetParticipants sets the participants property value. The collection of participants that were updated since the last roster update.
 func (m *DeltaParticipants) SetParticipants(value []Participantable)() {
     err := m.GetBackingStore().Set("participants", value)
     if err != nil {
