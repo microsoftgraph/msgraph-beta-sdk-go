@@ -38,7 +38,7 @@ func (m *CloudPcPartnerAgentInstallResult) GetAdditionalData()(map[string]any) {
 func (m *CloudPcPartnerAgentInstallResult) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetErrorMessage gets the errorMessage property value. The errorMessage property
+// GetErrorMessage gets the errorMessage property value. Contains a detailed error message when the partner agent installation failed.
 func (m *CloudPcPartnerAgentInstallResult) GetErrorMessage()(*string) {
     val, err := m.GetBackingStore().Get("errorMessage")
     if err != nil {
@@ -125,7 +125,7 @@ func (m *CloudPcPartnerAgentInstallResult) GetInstallStatus()(*CloudPcPartnerAge
     }
     return nil
 }
-// GetIsThirdPartyPartner gets the isThirdPartyPartner property value. Indicates if the partner agent is a third party. When 'TRUE' the agent is a third-party (non-Microsoft) agent and when 'FALSE' the agent is a Microsoft agent or isn't known.  The default value is 'FALSE'
+// GetIsThirdPartyPartner gets the isThirdPartyPartner property value. Indicates whether the partner agent is a third party. When true, the agent is a third-party (non-Microsoft) agent and when false, the agent is a Microsoft agent or isn't known.  The default value is false.
 func (m *CloudPcPartnerAgentInstallResult) GetIsThirdPartyPartner()(*bool) {
     val, err := m.GetBackingStore().Get("isThirdPartyPartner")
     if err != nil {
@@ -158,7 +158,7 @@ func (m *CloudPcPartnerAgentInstallResult) GetPartnerAgentName()(*CloudPcPartner
     }
     return nil
 }
-// GetRetriable gets the retriable property value. Indicates if the partner agent is a third party. When 'TRUE' the agent is a third-party (non-Microsoft) agent and when 'FALSE' the agent is a Microsoft agent or isn't known. The default value is 'FALSE'
+// GetRetriable gets the retriable property value. Indicates whether the partner agent installation should be retried. The default value is false.
 func (m *CloudPcPartnerAgentInstallResult) GetRetriable()(*bool) {
     val, err := m.GetBackingStore().Get("retriable")
     if err != nil {
@@ -228,7 +228,7 @@ func (m *CloudPcPartnerAgentInstallResult) SetAdditionalData(value map[string]an
 func (m *CloudPcPartnerAgentInstallResult) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetErrorMessage sets the errorMessage property value. The errorMessage property
+// SetErrorMessage sets the errorMessage property value. Contains a detailed error message when the partner agent installation failed.
 func (m *CloudPcPartnerAgentInstallResult) SetErrorMessage(value *string)() {
     err := m.GetBackingStore().Set("errorMessage", value)
     if err != nil {
@@ -242,7 +242,7 @@ func (m *CloudPcPartnerAgentInstallResult) SetInstallStatus(value *CloudPcPartne
         panic(err)
     }
 }
-// SetIsThirdPartyPartner sets the isThirdPartyPartner property value. Indicates if the partner agent is a third party. When 'TRUE' the agent is a third-party (non-Microsoft) agent and when 'FALSE' the agent is a Microsoft agent or isn't known.  The default value is 'FALSE'
+// SetIsThirdPartyPartner sets the isThirdPartyPartner property value. Indicates whether the partner agent is a third party. When true, the agent is a third-party (non-Microsoft) agent and when false, the agent is a Microsoft agent or isn't known.  The default value is false.
 func (m *CloudPcPartnerAgentInstallResult) SetIsThirdPartyPartner(value *bool)() {
     err := m.GetBackingStore().Set("isThirdPartyPartner", value)
     if err != nil {
@@ -263,7 +263,7 @@ func (m *CloudPcPartnerAgentInstallResult) SetPartnerAgentName(value *CloudPcPar
         panic(err)
     }
 }
-// SetRetriable sets the retriable property value. Indicates if the partner agent is a third party. When 'TRUE' the agent is a third-party (non-Microsoft) agent and when 'FALSE' the agent is a Microsoft agent or isn't known. The default value is 'FALSE'
+// SetRetriable sets the retriable property value. Indicates whether the partner agent installation should be retried. The default value is false.
 func (m *CloudPcPartnerAgentInstallResult) SetRetriable(value *bool)() {
     err := m.GetBackingStore().Set("retriable", value)
     if err != nil {

@@ -21,7 +21,7 @@ func NewWindowsDeviceADAccount()(*WindowsDeviceADAccount) {
 func CreateWindowsDeviceADAccountFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsDeviceADAccount(), nil
 }
-// GetDomainName gets the domainName property value. Not yet documented
+// GetDomainName gets the domainName property value. The domainName property
 func (m *WindowsDeviceADAccount) GetDomainName()(*string) {
     val, err := m.GetBackingStore().Get("domainName")
     if err != nil {
@@ -57,7 +57,7 @@ func (m *WindowsDeviceADAccount) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetUserName gets the userName property value. Not yet documented
+// GetUserName gets the userName property value. The userName property
 func (m *WindowsDeviceADAccount) GetUserName()(*string) {
     val, err := m.GetBackingStore().Get("userName")
     if err != nil {
@@ -88,14 +88,14 @@ func (m *WindowsDeviceADAccount) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetDomainName sets the domainName property value. Not yet documented
+// SetDomainName sets the domainName property value. The domainName property
 func (m *WindowsDeviceADAccount) SetDomainName(value *string)() {
     err := m.GetBackingStore().Set("domainName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserName sets the userName property value. Not yet documented
+// SetUserName sets the userName property value. The userName property
 func (m *WindowsDeviceADAccount) SetUserName(value *string)() {
     err := m.GetBackingStore().Set("userName", value)
     if err != nil {

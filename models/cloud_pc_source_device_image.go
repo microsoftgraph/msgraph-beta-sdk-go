@@ -38,7 +38,7 @@ func (m *CloudPcSourceDeviceImage) GetAdditionalData()(map[string]any) {
 func (m *CloudPcSourceDeviceImage) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDisplayName gets the displayName property value. The display name for the source image.
+// GetDisplayName gets the displayName property value. The display name for the source image. Read-only.
 func (m *CloudPcSourceDeviceImage) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -114,7 +114,7 @@ func (m *CloudPcSourceDeviceImage) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetId gets the id property value. The ID of the source image.
+// GetId gets the id property value. The id property
 func (m *CloudPcSourceDeviceImage) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -136,7 +136,7 @@ func (m *CloudPcSourceDeviceImage) GetOdataType()(*string) {
     }
     return nil
 }
-// GetResourceId gets the resourceId property value. The resourceId property
+// GetResourceId gets the resourceId property value. The fully qualified unique identifier (ID) of the source image resource in Azure. The ID format is: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}'. Read-only.
 func (m *CloudPcSourceDeviceImage) GetResourceId()(*string) {
     val, err := m.GetBackingStore().Get("resourceId")
     if err != nil {
@@ -147,7 +147,7 @@ func (m *CloudPcSourceDeviceImage) GetResourceId()(*string) {
     }
     return nil
 }
-// GetSubscriptionDisplayName gets the subscriptionDisplayName property value. The display name of subscription that hosts the source image.
+// GetSubscriptionDisplayName gets the subscriptionDisplayName property value. The display name of the subscription that hosts the source image. Read-only.
 func (m *CloudPcSourceDeviceImage) GetSubscriptionDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("subscriptionDisplayName")
     if err != nil {
@@ -158,7 +158,7 @@ func (m *CloudPcSourceDeviceImage) GetSubscriptionDisplayName()(*string) {
     }
     return nil
 }
-// GetSubscriptionId gets the subscriptionId property value. The ID of subscription that hosts the source image.
+// GetSubscriptionId gets the subscriptionId property value. The unique identifier (ID) of the subscription that hosts the source image. Read-only.
 func (m *CloudPcSourceDeviceImage) GetSubscriptionId()(*string) {
     val, err := m.GetBackingStore().Get("subscriptionId")
     if err != nil {
@@ -226,14 +226,14 @@ func (m *CloudPcSourceDeviceImage) SetAdditionalData(value map[string]any)() {
 func (m *CloudPcSourceDeviceImage) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDisplayName sets the displayName property value. The display name for the source image.
+// SetDisplayName sets the displayName property value. The display name for the source image. Read-only.
 func (m *CloudPcSourceDeviceImage) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetId sets the id property value. The ID of the source image.
+// SetId sets the id property value. The id property
 func (m *CloudPcSourceDeviceImage) SetId(value *string)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {
@@ -247,21 +247,21 @@ func (m *CloudPcSourceDeviceImage) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetResourceId sets the resourceId property value. The resourceId property
+// SetResourceId sets the resourceId property value. The fully qualified unique identifier (ID) of the source image resource in Azure. The ID format is: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}'. Read-only.
 func (m *CloudPcSourceDeviceImage) SetResourceId(value *string)() {
     err := m.GetBackingStore().Set("resourceId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSubscriptionDisplayName sets the subscriptionDisplayName property value. The display name of subscription that hosts the source image.
+// SetSubscriptionDisplayName sets the subscriptionDisplayName property value. The display name of the subscription that hosts the source image. Read-only.
 func (m *CloudPcSourceDeviceImage) SetSubscriptionDisplayName(value *string)() {
     err := m.GetBackingStore().Set("subscriptionDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSubscriptionId sets the subscriptionId property value. The ID of subscription that hosts the source image.
+// SetSubscriptionId sets the subscriptionId property value. The unique identifier (ID) of the subscription that hosts the source image. Read-only.
 func (m *CloudPcSourceDeviceImage) SetSubscriptionId(value *string)() {
     err := m.GetBackingStore().Set("subscriptionId", value)
     if err != nil {

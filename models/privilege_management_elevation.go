@@ -279,6 +279,16 @@ func (m *PrivilegeManagementElevation) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["systemInitiatedElevation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSystemInitiatedElevation(val)
+        }
+        return nil
+    }
     res["upn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -444,6 +454,17 @@ func (m *PrivilegeManagementElevation) GetRuleId()(*string) {
     }
     return nil
 }
+// GetSystemInitiatedElevation gets the systemInitiatedElevation property value. To identify if the elevation is initiated by system or user interaction
+func (m *PrivilegeManagementElevation) GetSystemInitiatedElevation()(*bool) {
+    val, err := m.GetBackingStore().Get("systemInitiatedElevation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetUpn gets the upn property value. The User Principal Name of the user who performed the elevation. Example: `john@domain.com`
 func (m *PrivilegeManagementElevation) GetUpn()(*string) {
     val, err := m.GetBackingStore().Get("upn")
@@ -584,6 +605,12 @@ func (m *PrivilegeManagementElevation) Serialize(writer i878a80d2330e89d26896388
     }
     {
         err = writer.WriteStringValue("ruleId", m.GetRuleId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("systemInitiatedElevation", m.GetSystemInitiatedElevation())
         if err != nil {
             return err
         }
@@ -736,6 +763,13 @@ func (m *PrivilegeManagementElevation) SetRuleId(value *string)() {
         panic(err)
     }
 }
+// SetSystemInitiatedElevation sets the systemInitiatedElevation property value. To identify if the elevation is initiated by system or user interaction
+func (m *PrivilegeManagementElevation) SetSystemInitiatedElevation(value *bool)() {
+    err := m.GetBackingStore().Set("systemInitiatedElevation", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUpn sets the upn property value. The User Principal Name of the user who performed the elevation. Example: `john@domain.com`
 func (m *PrivilegeManagementElevation) SetUpn(value *string)() {
     err := m.GetBackingStore().Set("upn", value)
@@ -773,6 +807,7 @@ type PrivilegeManagementElevationable interface {
     GetProductName()(*string)
     GetResult()(*int32)
     GetRuleId()(*string)
+    GetSystemInitiatedElevation()(*bool)
     GetUpn()(*string)
     GetUserType()(*PrivilegeManagementEndUserType)
     SetCertificatePayload(value *string)()
@@ -794,6 +829,7 @@ type PrivilegeManagementElevationable interface {
     SetProductName(value *string)()
     SetResult(value *int32)()
     SetRuleId(value *string)()
+    SetSystemInitiatedElevation(value *bool)()
     SetUpn(value *string)()
     SetUserType(value *PrivilegeManagementEndUserType)()
 }

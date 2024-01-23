@@ -100,6 +100,10 @@ func (m *ItemPlannerRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerUserable), nil
 }
+// MyDayTasks provides operations to manage the myDayTasks property of the microsoft.graph.plannerUser entity.
+func (m *ItemPlannerRequestBuilder) MyDayTasks()(*ItemPlannerMyDayTasksRequestBuilder) {
+    return NewItemPlannerMyDayTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property planner in users
 // [Find more info here]
 // 

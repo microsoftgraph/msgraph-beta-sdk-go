@@ -61,6 +61,10 @@ func (m *UserItemRequestBuilder) AppConsentRequestsForApproval()(*ItemAppConsent
 func (m *UserItemRequestBuilder) AppRoleAssignedResources()(*ItemAppRoleAssignedResourcesRequestBuilder) {
     return NewItemAppRoleAssignedResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// AppRoleAssignedResourcesWithAppId provides operations to manage the appRoleAssignedResources property of the microsoft.graph.user entity.
+func (m *UserItemRequestBuilder) AppRoleAssignedResourcesWithAppId(appId *string)(*ItemAppRoleAssignedResourcesWithAppIdRequestBuilder) {
+    return NewItemAppRoleAssignedResourcesWithAppIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, appId)
+}
 // AppRoleAssignments provides operations to manage the appRoleAssignments property of the microsoft.graph.user entity.
 func (m *UserItemRequestBuilder) AppRoleAssignments()(*ItemAppRoleAssignmentsRequestBuilder) {
     return NewItemAppRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -172,6 +176,10 @@ func (m *UserItemRequestBuilder) DeviceManagementTroubleshootingEvents()(*ItemDe
 // Devices provides operations to manage the devices property of the microsoft.graph.user entity.
 func (m *UserItemRequestBuilder) Devices()(*ItemDevicesRequestBuilder) {
     return NewItemDevicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// DevicesWithDeviceId provides operations to manage the devices property of the microsoft.graph.user entity.
+func (m *UserItemRequestBuilder) DevicesWithDeviceId(deviceId *string)(*ItemDevicesWithDeviceIdRequestBuilder) {
+    return NewItemDevicesWithDeviceIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, deviceId)
 }
 // DirectReports provides operations to manage the directReports property of the microsoft.graph.user entity.
 func (m *UserItemRequestBuilder) DirectReports()(*ItemDirectReportsRequestBuilder) {
@@ -374,6 +382,10 @@ func (m *UserItemRequestBuilder) Onenote()(*ItemOnenoteRequestBuilder) {
 // OnlineMeetings provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.
 func (m *UserItemRequestBuilder) OnlineMeetings()(*ItemOnlineMeetingsRequestBuilder) {
     return NewItemOnlineMeetingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// OnlineMeetingsWithJoinWebUrl provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.
+func (m *UserItemRequestBuilder) OnlineMeetingsWithJoinWebUrl(joinWebUrl *string)(*ItemOnlineMeetingsWithJoinWebUrlRequestBuilder) {
+    return NewItemOnlineMeetingsWithJoinWebUrlRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, joinWebUrl)
 }
 // Outlook provides operations to manage the outlook property of the microsoft.graph.user entity.
 func (m *UserItemRequestBuilder) Outlook()(*ItemOutlookRequestBuilder) {

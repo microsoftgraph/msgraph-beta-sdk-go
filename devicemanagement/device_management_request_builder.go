@@ -442,6 +442,14 @@ func (m *DeviceManagementRequestBuilder) NdesConnectors()(*NdesConnectorsRequest
 func (m *DeviceManagementRequestBuilder) NotificationMessageTemplates()(*NotificationMessageTemplatesRequestBuilder) {
     return NewNotificationMessageTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// OperationApprovalPolicies provides operations to manage the operationApprovalPolicies property of the microsoft.graph.deviceManagement entity.
+func (m *DeviceManagementRequestBuilder) OperationApprovalPolicies()(*OperationApprovalPoliciesRequestBuilder) {
+    return NewOperationApprovalPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// OperationApprovalRequests provides operations to manage the operationApprovalRequests property of the microsoft.graph.deviceManagement entity.
+func (m *DeviceManagementRequestBuilder) OperationApprovalRequests()(*OperationApprovalRequestsRequestBuilder) {
+    return NewOperationApprovalRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update deviceManagement
 func (m *DeviceManagementRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementable, requestConfiguration *DeviceManagementRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

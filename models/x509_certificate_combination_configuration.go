@@ -21,7 +21,7 @@ func NewX509CertificateCombinationConfiguration()(*X509CertificateCombinationCon
 func CreateX509CertificateCombinationConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewX509CertificateCombinationConfiguration(), nil
 }
-// GetAllowedIssuerSkis gets the allowedIssuerSkis property value. The allowedIssuerSkis property
+// GetAllowedIssuerSkis gets the allowedIssuerSkis property value. A list of allowed subject key identifier values.
 func (m *X509CertificateCombinationConfiguration) GetAllowedIssuerSkis()([]string) {
     val, err := m.GetBackingStore().Get("allowedIssuerSkis")
     if err != nil {
@@ -32,7 +32,7 @@ func (m *X509CertificateCombinationConfiguration) GetAllowedIssuerSkis()([]strin
     }
     return nil
 }
-// GetAllowedPolicyOIDs gets the allowedPolicyOIDs property value. The allowedPolicyOIDs property
+// GetAllowedPolicyOIDs gets the allowedPolicyOIDs property value. A list of allowed policy OIDs.
 func (m *X509CertificateCombinationConfiguration) GetAllowedPolicyOIDs()([]string) {
     val, err := m.GetBackingStore().Get("allowedPolicyOIDs")
     if err != nil {
@@ -100,14 +100,14 @@ func (m *X509CertificateCombinationConfiguration) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetAllowedIssuerSkis sets the allowedIssuerSkis property value. The allowedIssuerSkis property
+// SetAllowedIssuerSkis sets the allowedIssuerSkis property value. A list of allowed subject key identifier values.
 func (m *X509CertificateCombinationConfiguration) SetAllowedIssuerSkis(value []string)() {
     err := m.GetBackingStore().Set("allowedIssuerSkis", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowedPolicyOIDs sets the allowedPolicyOIDs property value. The allowedPolicyOIDs property
+// SetAllowedPolicyOIDs sets the allowedPolicyOIDs property value. A list of allowed policy OIDs.
 func (m *X509CertificateCombinationConfiguration) SetAllowedPolicyOIDs(value []string)() {
     err := m.GetBackingStore().Set("allowedPolicyOIDs", value)
     if err != nil {

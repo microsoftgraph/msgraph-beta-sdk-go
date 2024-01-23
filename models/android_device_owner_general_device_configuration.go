@@ -219,7 +219,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDetailedHelpText()(And
     }
     return nil
 }
-// GetDeviceLocationMode gets the deviceLocationMode property value. Indicates the location setting configuration for fully managed devices (COBO) and corporate owned devices with a work profile (COPE)
+// GetDeviceLocationMode gets the deviceLocationMode property value. Indicates the location setting configuration for fully managed devices (COBO) and corporate owned devices with a work profile (COPE). Possible values are: notConfigured, disabled, unknownFutureValue.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDeviceLocationMode()(*AndroidDeviceOwnerLocationMode) {
     val, err := m.GetBackingStore().Get("deviceLocationMode")
     if err != nil {
@@ -4043,7 +4043,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetDetailedHelpText(value
         panic(err)
     }
 }
-// SetDeviceLocationMode sets the deviceLocationMode property value. Indicates the location setting configuration for fully managed devices (COBO) and corporate owned devices with a work profile (COPE)
+// SetDeviceLocationMode sets the deviceLocationMode property value. Indicates the location setting configuration for fully managed devices (COBO) and corporate owned devices with a work profile (COPE). Possible values are: notConfigured, disabled, unknownFutureValue.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetDeviceLocationMode(value *AndroidDeviceOwnerLocationMode)() {
     err := m.GetBackingStore().Set("deviceLocationMode", value)
     if err != nil {

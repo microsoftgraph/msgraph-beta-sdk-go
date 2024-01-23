@@ -335,17 +335,6 @@ func (m *ManagedDevice) GetDeviceHealthScriptStates()([]DeviceHealthScriptPolicy
     }
     return nil
 }
-// GetDeviceIdentityAttestationDetail gets the deviceIdentityAttestationDetail property value. Indicates the attestation status of the managed device. And in which way. Default: Unknown.
-func (m *ManagedDevice) GetDeviceIdentityAttestationDetail()(DeviceIdentityAttestationDetailable) {
-    val, err := m.GetBackingStore().Get("deviceIdentityAttestationDetail")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(DeviceIdentityAttestationDetailable)
-    }
-    return nil
-}
 // GetDeviceName gets the deviceName property value. Name of the device. This property is read-only.
 func (m *ManagedDevice) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
@@ -807,16 +796,6 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
                 }
             }
             m.SetDeviceHealthScriptStates(res)
-        }
-        return nil
-    }
-    res["deviceIdentityAttestationDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateDeviceIdentityAttestationDetailFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeviceIdentityAttestationDetail(val.(DeviceIdentityAttestationDetailable))
         }
         return nil
     }
@@ -2236,12 +2215,6 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
-    {
-        err = writer.WriteObjectValue("deviceIdentityAttestationDetail", m.GetDeviceIdentityAttestationDetail())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetDeviceRegistrationState() != nil {
         cast := (*m.GetDeviceRegistrationState()).String()
         err = writer.WriteStringValue("deviceRegistrationState", &cast)
@@ -2598,13 +2571,6 @@ func (m *ManagedDevice) SetDeviceHealthAttestationState(value DeviceHealthAttest
 // SetDeviceHealthScriptStates sets the deviceHealthScriptStates property value. Results of device health scripts that ran for this device. Default is empty list. This property is read-only.
 func (m *ManagedDevice) SetDeviceHealthScriptStates(value []DeviceHealthScriptPolicyStateable)() {
     err := m.GetBackingStore().Set("deviceHealthScriptStates", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetDeviceIdentityAttestationDetail sets the deviceIdentityAttestationDetail property value. Indicates the attestation status of the managed device. And in which way. Default: Unknown.
-func (m *ManagedDevice) SetDeviceIdentityAttestationDetail(value DeviceIdentityAttestationDetailable)() {
-    err := m.GetBackingStore().Set("deviceIdentityAttestationDetail", value)
     if err != nil {
         panic(err)
     }
@@ -3102,7 +3068,6 @@ type ManagedDeviceable interface {
     GetDeviceFirmwareConfigurationInterfaceManaged()(*bool)
     GetDeviceHealthAttestationState()(DeviceHealthAttestationStateable)
     GetDeviceHealthScriptStates()([]DeviceHealthScriptPolicyStateable)
-    GetDeviceIdentityAttestationDetail()(DeviceIdentityAttestationDetailable)
     GetDeviceName()(*string)
     GetDeviceRegistrationState()(*DeviceRegistrationState)
     GetDeviceType()(*DeviceType)
@@ -3196,7 +3161,6 @@ type ManagedDeviceable interface {
     SetDeviceFirmwareConfigurationInterfaceManaged(value *bool)()
     SetDeviceHealthAttestationState(value DeviceHealthAttestationStateable)()
     SetDeviceHealthScriptStates(value []DeviceHealthScriptPolicyStateable)()
-    SetDeviceIdentityAttestationDetail(value DeviceIdentityAttestationDetailable)()
     SetDeviceName(value *string)()
     SetDeviceRegistrationState(value *DeviceRegistrationState)()
     SetDeviceType(value *DeviceType)()

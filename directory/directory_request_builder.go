@@ -145,6 +145,14 @@ func (m *DirectoryRequestBuilder) SharedEmailDomains()(*SharedEmailDomainsReques
 func (m *DirectoryRequestBuilder) Subscriptions()(*SubscriptionsRequestBuilder) {
     return NewSubscriptionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// SubscriptionsWithCommerceSubscriptionId provides operations to manage the subscriptions property of the microsoft.graph.directory entity.
+func (m *DirectoryRequestBuilder) SubscriptionsWithCommerceSubscriptionId(commerceSubscriptionId *string)(*SubscriptionsWithCommerceSubscriptionIdRequestBuilder) {
+    return NewSubscriptionsWithCommerceSubscriptionIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, commerceSubscriptionId)
+}
+// SubscriptionsWithOcpSubscriptionId provides operations to manage the subscriptions property of the microsoft.graph.directory entity.
+func (m *DirectoryRequestBuilder) SubscriptionsWithOcpSubscriptionId(ocpSubscriptionId *string)(*SubscriptionsWithOcpSubscriptionIdRequestBuilder) {
+    return NewSubscriptionsWithOcpSubscriptionIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, ocpSubscriptionId)
+}
 // ToGetRequestInformation get directory
 func (m *DirectoryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DirectoryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -70,7 +70,7 @@ func (m *EntitlementManagementAccessPackageCatalogsSearchRequestBuilder) Get(ctx
     return res.(EntitlementManagementAccessPackageCatalogsSearchResponseable), nil
 }
 // GetAsSearchGetResponse invoke function Search
-// Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
+// Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
 func (m *EntitlementManagementAccessPackageCatalogsSearchRequestBuilder) GetAsSearchGetResponse(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsSearchRequestBuilderGetRequestConfiguration)(EntitlementManagementAccessPackageCatalogsSearchGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,7 +90,7 @@ func (m *EntitlementManagementAccessPackageCatalogsSearchRequestBuilder) GetAsSe
     return res.(EntitlementManagementAccessPackageCatalogsSearchGetResponseable), nil
 }
 // ToGetRequestInformation invoke function Search
-// Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
+// Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
 func (m *EntitlementManagementAccessPackageCatalogsSearchRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsSearchRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -104,7 +104,7 @@ func (m *EntitlementManagementAccessPackageCatalogsSearchRequestBuilder) ToGetRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
+// Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
 func (m *EntitlementManagementAccessPackageCatalogsSearchRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackageCatalogsSearchRequestBuilder) {
     return NewEntitlementManagementAccessPackageCatalogsSearchRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

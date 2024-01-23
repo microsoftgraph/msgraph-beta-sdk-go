@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementExportJob entity representing a job to export a report
+// DeviceManagementExportJob entity representing a job to export a report.
 type DeviceManagementExportJob struct {
     Entity
 }
@@ -20,7 +20,7 @@ func NewDeviceManagementExportJob()(*DeviceManagementExportJob) {
 func CreateDeviceManagementExportJobFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementExportJob(), nil
 }
-// GetExpirationDateTime gets the expirationDateTime property value. Time that the exported report expires. This property is read-only.
+// GetExpirationDateTime gets the expirationDateTime property value. Time that the exported report expires.
 func (m *DeviceManagementExportJob) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -94,6 +94,16 @@ func (m *DeviceManagementExportJob) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["search"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSearch(val)
+        }
+        return nil
+    }
     res["select"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -142,7 +152,7 @@ func (m *DeviceManagementExportJob) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetFilter gets the filter property value. Filters applied on the report
+// GetFilter gets the filter property value. Filters applied on the report. The maximum length allowed for this property is 2000 characters.
 func (m *DeviceManagementExportJob) GetFilter()(*string) {
     val, err := m.GetBackingStore().Get("filter")
     if err != nil {
@@ -153,7 +163,7 @@ func (m *DeviceManagementExportJob) GetFilter()(*string) {
     }
     return nil
 }
-// GetFormat gets the format property value. Possible values for the file format of a report
+// GetFormat gets the format property value. Possible values for the file format of a report.
 func (m *DeviceManagementExportJob) GetFormat()(*DeviceManagementReportFileFormat) {
     val, err := m.GetBackingStore().Get("format")
     if err != nil {
@@ -164,7 +174,7 @@ func (m *DeviceManagementExportJob) GetFormat()(*DeviceManagementReportFileForma
     }
     return nil
 }
-// GetLocalizationType gets the localizationType property value. Configures how the requested export job is localized
+// GetLocalizationType gets the localizationType property value. Configures how the requested export job is localized.
 func (m *DeviceManagementExportJob) GetLocalizationType()(*DeviceManagementExportJobLocalizationType) {
     val, err := m.GetBackingStore().Get("localizationType")
     if err != nil {
@@ -175,7 +185,7 @@ func (m *DeviceManagementExportJob) GetLocalizationType()(*DeviceManagementExpor
     }
     return nil
 }
-// GetReportName gets the reportName property value. Name of the report
+// GetReportName gets the reportName property value. Name of the report. The maximum length allowed for this property is 2000 characters.
 func (m *DeviceManagementExportJob) GetReportName()(*string) {
     val, err := m.GetBackingStore().Get("reportName")
     if err != nil {
@@ -186,7 +196,7 @@ func (m *DeviceManagementExportJob) GetReportName()(*string) {
     }
     return nil
 }
-// GetRequestDateTime gets the requestDateTime property value. Time that the exported report was requested. This property is read-only.
+// GetRequestDateTime gets the requestDateTime property value. Time that the exported report was requested.
 func (m *DeviceManagementExportJob) GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("requestDateTime")
     if err != nil {
@@ -197,7 +207,18 @@ func (m *DeviceManagementExportJob) GetRequestDateTime()(*i336074805fc853987abe6
     }
     return nil
 }
-// GetSelectEscaped gets the select property value. Columns selected from the report
+// GetSearch gets the search property value. Configures a search term to filter the data. The maximum length allowed for this property is 100 characters.
+func (m *DeviceManagementExportJob) GetSearch()(*string) {
+    val, err := m.GetBackingStore().Get("search")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetSelectEscaped gets the select property value. Columns selected from the report. The maximum number of allowed columns names is 256. The maximum length allowed for each column name in this property is 1000 characters.
 func (m *DeviceManagementExportJob) GetSelectEscaped()([]string) {
     val, err := m.GetBackingStore().Get("selectEscaped")
     if err != nil {
@@ -208,7 +229,7 @@ func (m *DeviceManagementExportJob) GetSelectEscaped()([]string) {
     }
     return nil
 }
-// GetSnapshotId gets the snapshotId property value. A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.
+// GetSnapshotId gets the snapshotId property value. A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id. The maximum length allowed for this property is 128 characters.
 func (m *DeviceManagementExportJob) GetSnapshotId()(*string) {
     val, err := m.GetBackingStore().Get("snapshotId")
     if err != nil {
@@ -219,7 +240,7 @@ func (m *DeviceManagementExportJob) GetSnapshotId()(*string) {
     }
     return nil
 }
-// GetStatus gets the status property value. Possible statuses associated with a generated report
+// GetStatus gets the status property value. Possible statuses associated with a generated report.
 func (m *DeviceManagementExportJob) GetStatus()(*DeviceManagementReportStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -230,7 +251,7 @@ func (m *DeviceManagementExportJob) GetStatus()(*DeviceManagementReportStatus) {
     }
     return nil
 }
-// GetUrl gets the url property value. Temporary location of the exported report. This property is read-only.
+// GetUrl gets the url property value. Temporary location of the exported report.
 func (m *DeviceManagementExportJob) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
     if err != nil {
@@ -285,6 +306,12 @@ func (m *DeviceManagementExportJob) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("search", m.GetSearch())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSelectEscaped() != nil {
         err = writer.WriteCollectionOfStringValues("select", m.GetSelectEscaped())
         if err != nil {
@@ -312,70 +339,77 @@ func (m *DeviceManagementExportJob) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetExpirationDateTime sets the expirationDateTime property value. Time that the exported report expires. This property is read-only.
+// SetExpirationDateTime sets the expirationDateTime property value. Time that the exported report expires.
 func (m *DeviceManagementExportJob) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expirationDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFilter sets the filter property value. Filters applied on the report
+// SetFilter sets the filter property value. Filters applied on the report. The maximum length allowed for this property is 2000 characters.
 func (m *DeviceManagementExportJob) SetFilter(value *string)() {
     err := m.GetBackingStore().Set("filter", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFormat sets the format property value. Possible values for the file format of a report
+// SetFormat sets the format property value. Possible values for the file format of a report.
 func (m *DeviceManagementExportJob) SetFormat(value *DeviceManagementReportFileFormat)() {
     err := m.GetBackingStore().Set("format", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLocalizationType sets the localizationType property value. Configures how the requested export job is localized
+// SetLocalizationType sets the localizationType property value. Configures how the requested export job is localized.
 func (m *DeviceManagementExportJob) SetLocalizationType(value *DeviceManagementExportJobLocalizationType)() {
     err := m.GetBackingStore().Set("localizationType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReportName sets the reportName property value. Name of the report
+// SetReportName sets the reportName property value. Name of the report. The maximum length allowed for this property is 2000 characters.
 func (m *DeviceManagementExportJob) SetReportName(value *string)() {
     err := m.GetBackingStore().Set("reportName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRequestDateTime sets the requestDateTime property value. Time that the exported report was requested. This property is read-only.
+// SetRequestDateTime sets the requestDateTime property value. Time that the exported report was requested.
 func (m *DeviceManagementExportJob) SetRequestDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("requestDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSelectEscaped sets the select property value. Columns selected from the report
+// SetSearch sets the search property value. Configures a search term to filter the data. The maximum length allowed for this property is 100 characters.
+func (m *DeviceManagementExportJob) SetSearch(value *string)() {
+    err := m.GetBackingStore().Set("search", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSelectEscaped sets the select property value. Columns selected from the report. The maximum number of allowed columns names is 256. The maximum length allowed for each column name in this property is 1000 characters.
 func (m *DeviceManagementExportJob) SetSelectEscaped(value []string)() {
     err := m.GetBackingStore().Set("selectEscaped", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSnapshotId sets the snapshotId property value. A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.
+// SetSnapshotId sets the snapshotId property value. A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id. The maximum length allowed for this property is 128 characters.
 func (m *DeviceManagementExportJob) SetSnapshotId(value *string)() {
     err := m.GetBackingStore().Set("snapshotId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Possible statuses associated with a generated report
+// SetStatus sets the status property value. Possible statuses associated with a generated report.
 func (m *DeviceManagementExportJob) SetStatus(value *DeviceManagementReportStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUrl sets the url property value. Temporary location of the exported report. This property is read-only.
+// SetUrl sets the url property value. Temporary location of the exported report.
 func (m *DeviceManagementExportJob) SetUrl(value *string)() {
     err := m.GetBackingStore().Set("url", value)
     if err != nil {
@@ -392,6 +426,7 @@ type DeviceManagementExportJobable interface {
     GetLocalizationType()(*DeviceManagementExportJobLocalizationType)
     GetReportName()(*string)
     GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetSearch()(*string)
     GetSelectEscaped()([]string)
     GetSnapshotId()(*string)
     GetStatus()(*DeviceManagementReportStatus)
@@ -402,6 +437,7 @@ type DeviceManagementExportJobable interface {
     SetLocalizationType(value *DeviceManagementExportJobLocalizationType)()
     SetReportName(value *string)()
     SetRequestDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetSearch(value *string)()
     SetSelectEscaped(value []string)()
     SetSnapshotId(value *string)()
     SetStatus(value *DeviceManagementReportStatus)()

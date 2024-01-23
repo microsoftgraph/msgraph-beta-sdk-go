@@ -2052,6 +2052,38 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["operationApprovalPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateOperationApprovalPolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]OperationApprovalPolicyable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(OperationApprovalPolicyable)
+                }
+            }
+            m.SetOperationApprovalPolicies(res)
+        }
+        return nil
+    }
+    res["operationApprovalRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateOperationApprovalRequestFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]OperationApprovalRequestable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(OperationApprovalRequestable)
+                }
+            }
+            m.SetOperationApprovalRequests(res)
+        }
+        return nil
+    }
     res["privilegeManagementElevations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePrivilegeManagementElevationFromDiscriminatorValue)
         if err != nil {
@@ -3669,6 +3701,28 @@ func (m *DeviceManagement) GetNotificationMessageTemplates()([]NotificationMessa
     }
     if val != nil {
         return val.([]NotificationMessageTemplateable)
+    }
+    return nil
+}
+// GetOperationApprovalPolicies gets the operationApprovalPolicies property value. The Operation Approval Policies
+func (m *DeviceManagement) GetOperationApprovalPolicies()([]OperationApprovalPolicyable) {
+    val, err := m.GetBackingStore().Get("operationApprovalPolicies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OperationApprovalPolicyable)
+    }
+    return nil
+}
+// GetOperationApprovalRequests gets the operationApprovalRequests property value. The Operation Approval Requests
+func (m *DeviceManagement) GetOperationApprovalRequests()([]OperationApprovalRequestable) {
+    val, err := m.GetBackingStore().Get("operationApprovalRequests")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OperationApprovalRequestable)
     }
     return nil
 }
@@ -5606,6 +5660,30 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    if m.GetOperationApprovalPolicies() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperationApprovalPolicies()))
+        for i, v := range m.GetOperationApprovalPolicies() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("operationApprovalPolicies", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetOperationApprovalRequests() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperationApprovalRequests()))
+        for i, v := range m.GetOperationApprovalRequests() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("operationApprovalRequests", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPrivilegeManagementElevations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPrivilegeManagementElevations()))
         for i, v := range m.GetPrivilegeManagementElevations() {
@@ -7184,6 +7262,20 @@ func (m *DeviceManagement) SetNotificationMessageTemplates(value []NotificationM
         panic(err)
     }
 }
+// SetOperationApprovalPolicies sets the operationApprovalPolicies property value. The Operation Approval Policies
+func (m *DeviceManagement) SetOperationApprovalPolicies(value []OperationApprovalPolicyable)() {
+    err := m.GetBackingStore().Set("operationApprovalPolicies", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOperationApprovalRequests sets the operationApprovalRequests property value. The Operation Approval Requests
+func (m *DeviceManagement) SetOperationApprovalRequests(value []OperationApprovalRequestable)() {
+    err := m.GetBackingStore().Set("operationApprovalRequests", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPrivilegeManagementElevations sets the privilegeManagementElevations property value. The endpoint privilege management elevation event entity contains elevation details.
 func (m *DeviceManagement) SetPrivilegeManagementElevations(value []PrivilegeManagementElevationable)() {
     err := m.GetBackingStore().Set("privilegeManagementElevations", value)
@@ -7896,6 +7988,8 @@ type DeviceManagementable interface {
     GetMobileThreatDefenseConnectors()([]MobileThreatDefenseConnectorable)
     GetNdesConnectors()([]NdesConnectorable)
     GetNotificationMessageTemplates()([]NotificationMessageTemplateable)
+    GetOperationApprovalPolicies()([]OperationApprovalPolicyable)
+    GetOperationApprovalRequests()([]OperationApprovalRequestable)
     GetPrivilegeManagementElevations()([]PrivilegeManagementElevationable)
     GetRemoteActionAudits()([]RemoteActionAuditable)
     GetRemoteAssistancePartners()([]RemoteAssistancePartnerable)
@@ -8076,6 +8170,8 @@ type DeviceManagementable interface {
     SetMobileThreatDefenseConnectors(value []MobileThreatDefenseConnectorable)()
     SetNdesConnectors(value []NdesConnectorable)()
     SetNotificationMessageTemplates(value []NotificationMessageTemplateable)()
+    SetOperationApprovalPolicies(value []OperationApprovalPolicyable)()
+    SetOperationApprovalRequests(value []OperationApprovalRequestable)()
     SetPrivilegeManagementElevations(value []PrivilegeManagementElevationable)()
     SetRemoteActionAudits(value []RemoteActionAuditable)()
     SetRemoteAssistancePartners(value []RemoteAssistancePartnerable)()

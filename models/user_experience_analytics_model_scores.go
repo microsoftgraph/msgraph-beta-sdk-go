@@ -105,6 +105,16 @@ func (m *UserExperienceAnalyticsModelScores) GetFieldDeserializers()(map[string]
         }
         return nil
     }
+    res["meanResourceSpikeTimeScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetFloat64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMeanResourceSpikeTimeScore(val)
+        }
+        return nil
+    }
     res["model"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -166,6 +176,17 @@ func (m *UserExperienceAnalyticsModelScores) GetManufacturer()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetMeanResourceSpikeTimeScore gets the meanResourceSpikeTimeScore property value. Indicates a calulated score indicating the health of the device's resource spike score . Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+func (m *UserExperienceAnalyticsModelScores) GetMeanResourceSpikeTimeScore()(*float64) {
+    val, err := m.GetBackingStore().Get("meanResourceSpikeTimeScore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
     }
     return nil
 }
@@ -251,6 +272,12 @@ func (m *UserExperienceAnalyticsModelScores) Serialize(writer i878a80d2330e89d26
         }
     }
     {
+        err = writer.WriteFloat64Value("meanResourceSpikeTimeScore", m.GetMeanResourceSpikeTimeScore())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("model", m.GetModel())
         if err != nil {
             return err
@@ -311,6 +338,13 @@ func (m *UserExperienceAnalyticsModelScores) SetManufacturer(value *string)() {
         panic(err)
     }
 }
+// SetMeanResourceSpikeTimeScore sets the meanResourceSpikeTimeScore property value. Indicates a calulated score indicating the health of the device's resource spike score . Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+func (m *UserExperienceAnalyticsModelScores) SetMeanResourceSpikeTimeScore(value *float64)() {
+    err := m.GetBackingStore().Set("meanResourceSpikeTimeScore", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetModel sets the model property value. The model name of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsModelScores) SetModel(value *string)() {
     err := m.GetBackingStore().Set("model", value)
@@ -348,6 +382,7 @@ type UserExperienceAnalyticsModelScoresable interface {
     GetEndpointAnalyticsScore()(*float64)
     GetHealthStatus()(*UserExperienceAnalyticsHealthState)
     GetManufacturer()(*string)
+    GetMeanResourceSpikeTimeScore()(*float64)
     GetModel()(*string)
     GetModelDeviceCount()(*int64)
     GetStartupPerformanceScore()(*float64)
@@ -357,6 +392,7 @@ type UserExperienceAnalyticsModelScoresable interface {
     SetEndpointAnalyticsScore(value *float64)()
     SetHealthStatus(value *UserExperienceAnalyticsHealthState)()
     SetManufacturer(value *string)()
+    SetMeanResourceSpikeTimeScore(value *float64)()
     SetModel(value *string)()
     SetModelDeviceCount(value *int64)()
     SetStartupPerformanceScore(value *float64)()

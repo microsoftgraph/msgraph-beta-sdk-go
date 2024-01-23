@@ -31,7 +31,7 @@ func NewPrinterSharesItemJobsItemCancelRequestBuilder(rawUrl string, requestAdap
     return NewPrinterSharesItemJobsItemCancelRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions.
-// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
+// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/printjob-cancel?view=graph-rest-1.0
@@ -51,7 +51,7 @@ func (m *PrinterSharesItemJobsItemCancelRequestBuilder) Post(ctx context.Context
     return nil
 }
 // ToPostRequestInformation cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions.
-// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
+// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
 func (m *PrinterSharesItemJobsItemCancelRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *PrinterSharesItemJobsItemCancelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -62,7 +62,7 @@ func (m *PrinterSharesItemJobsItemCancelRequestBuilder) ToPostRequestInformation
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
+// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
 func (m *PrinterSharesItemJobsItemCancelRequestBuilder) WithUrl(rawUrl string)(*PrinterSharesItemJobsItemCancelRequestBuilder) {
     return NewPrinterSharesItemJobsItemCancelRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

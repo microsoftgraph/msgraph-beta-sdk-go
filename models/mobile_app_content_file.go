@@ -20,7 +20,7 @@ func NewMobileAppContentFile()(*MobileAppContentFile) {
 func CreateMobileAppContentFileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobileAppContentFile(), nil
 }
-// GetAzureStorageUri gets the azureStorageUri property value. The Azure Storage URI.
+// GetAzureStorageUri gets the azureStorageUri property value. Indicates the Azure Storage URI that the file is uploaded to. Created by the service upon receiving a valid mobileAppContentFile. Read-only.
 func (m *MobileAppContentFile) GetAzureStorageUri()(*string) {
     val, err := m.GetBackingStore().Get("azureStorageUri")
     if err != nil {
@@ -31,7 +31,7 @@ func (m *MobileAppContentFile) GetAzureStorageUri()(*string) {
     }
     return nil
 }
-// GetAzureStorageUriExpirationDateTime gets the azureStorageUriExpirationDateTime property value. The time the Azure storage Uri expires.
+// GetAzureStorageUriExpirationDateTime gets the azureStorageUriExpirationDateTime property value. Indicates the date and time when the Azure storage URI expires, in ISO 8601 format. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
 func (m *MobileAppContentFile) GetAzureStorageUriExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("azureStorageUriExpirationDateTime")
     if err != nil {
@@ -42,7 +42,7 @@ func (m *MobileAppContentFile) GetAzureStorageUriExpirationDateTime()(*i33607480
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The time the file was created.
+// GetCreatedDateTime gets the createdDateTime property value. Indicates created date and time associated with app content file, in ISO 8601 format. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
 func (m *MobileAppContentFile) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -188,7 +188,7 @@ func (m *MobileAppContentFile) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetIsCommitted gets the isCommitted property value. A value indicating whether the file is committed.
+// GetIsCommitted gets the isCommitted property value. A value indicating whether the file is committed. A committed app content file has been fully uploaded and validated by the Intune service. TRUE means that app content file is committed, FALSE means that app content file is not committed. Defaults to FALSE. Read-only.
 func (m *MobileAppContentFile) GetIsCommitted()(*bool) {
     val, err := m.GetBackingStore().Get("isCommitted")
     if err != nil {
@@ -199,7 +199,7 @@ func (m *MobileAppContentFile) GetIsCommitted()(*bool) {
     }
     return nil
 }
-// GetIsDependency gets the isDependency property value. Whether the content file is a dependency for the main content file.
+// GetIsDependency gets the isDependency property value. Indicates whether this content file is a dependency for the main content file. TRUE means that the content file is a dependency, FALSE means that the content file is not a dependency and is the main content file. Defaults to FALSE.
 func (m *MobileAppContentFile) GetIsDependency()(*bool) {
     val, err := m.GetBackingStore().Get("isDependency")
     if err != nil {
@@ -210,7 +210,7 @@ func (m *MobileAppContentFile) GetIsDependency()(*bool) {
     }
     return nil
 }
-// GetIsFrameworkFile gets the isFrameworkFile property value. A value indicating whether the file is a framework file.
+// GetIsFrameworkFile gets the isFrameworkFile property value. A value indicating whether the file is a framework file. To be deprecated.
 func (m *MobileAppContentFile) GetIsFrameworkFile()(*bool) {
     val, err := m.GetBackingStore().Get("isFrameworkFile")
     if err != nil {
@@ -221,7 +221,7 @@ func (m *MobileAppContentFile) GetIsFrameworkFile()(*bool) {
     }
     return nil
 }
-// GetManifest gets the manifest property value. The manifest information.
+// GetManifest gets the manifest property value. Indicates the manifest information, containing file metadata.
 func (m *MobileAppContentFile) GetManifest()([]byte) {
     val, err := m.GetBackingStore().Get("manifest")
     if err != nil {
@@ -232,7 +232,7 @@ func (m *MobileAppContentFile) GetManifest()([]byte) {
     }
     return nil
 }
-// GetName gets the name property value. the file name.
+// GetName gets the name property value. Indicates the name of the file.
 func (m *MobileAppContentFile) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -243,7 +243,7 @@ func (m *MobileAppContentFile) GetName()(*string) {
     }
     return nil
 }
-// GetSize gets the size property value. The size of the file prior to encryption.
+// GetSize gets the size property value. The size of the file prior to encryption. To be deprecated, please use sizeInBytes property instead.
 func (m *MobileAppContentFile) GetSize()(*int64) {
     val, err := m.GetBackingStore().Get("size")
     if err != nil {
@@ -254,7 +254,7 @@ func (m *MobileAppContentFile) GetSize()(*int64) {
     }
     return nil
 }
-// GetSizeEncrypted gets the sizeEncrypted property value. The size of the file after encryption.
+// GetSizeEncrypted gets the sizeEncrypted property value. The size of the file after encryption. To be deprecated, please use sizeEncryptedInBytes property instead.
 func (m *MobileAppContentFile) GetSizeEncrypted()(*int64) {
     val, err := m.GetBackingStore().Get("sizeEncrypted")
     if err != nil {
@@ -385,70 +385,70 @@ func (m *MobileAppContentFile) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetAzureStorageUri sets the azureStorageUri property value. The Azure Storage URI.
+// SetAzureStorageUri sets the azureStorageUri property value. Indicates the Azure Storage URI that the file is uploaded to. Created by the service upon receiving a valid mobileAppContentFile. Read-only.
 func (m *MobileAppContentFile) SetAzureStorageUri(value *string)() {
     err := m.GetBackingStore().Set("azureStorageUri", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAzureStorageUriExpirationDateTime sets the azureStorageUriExpirationDateTime property value. The time the Azure storage Uri expires.
+// SetAzureStorageUriExpirationDateTime sets the azureStorageUriExpirationDateTime property value. Indicates the date and time when the Azure storage URI expires, in ISO 8601 format. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
 func (m *MobileAppContentFile) SetAzureStorageUriExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("azureStorageUriExpirationDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The time the file was created.
+// SetCreatedDateTime sets the createdDateTime property value. Indicates created date and time associated with app content file, in ISO 8601 format. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
 func (m *MobileAppContentFile) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsCommitted sets the isCommitted property value. A value indicating whether the file is committed.
+// SetIsCommitted sets the isCommitted property value. A value indicating whether the file is committed. A committed app content file has been fully uploaded and validated by the Intune service. TRUE means that app content file is committed, FALSE means that app content file is not committed. Defaults to FALSE. Read-only.
 func (m *MobileAppContentFile) SetIsCommitted(value *bool)() {
     err := m.GetBackingStore().Set("isCommitted", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsDependency sets the isDependency property value. Whether the content file is a dependency for the main content file.
+// SetIsDependency sets the isDependency property value. Indicates whether this content file is a dependency for the main content file. TRUE means that the content file is a dependency, FALSE means that the content file is not a dependency and is the main content file. Defaults to FALSE.
 func (m *MobileAppContentFile) SetIsDependency(value *bool)() {
     err := m.GetBackingStore().Set("isDependency", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsFrameworkFile sets the isFrameworkFile property value. A value indicating whether the file is a framework file.
+// SetIsFrameworkFile sets the isFrameworkFile property value. A value indicating whether the file is a framework file. To be deprecated.
 func (m *MobileAppContentFile) SetIsFrameworkFile(value *bool)() {
     err := m.GetBackingStore().Set("isFrameworkFile", value)
     if err != nil {
         panic(err)
     }
 }
-// SetManifest sets the manifest property value. The manifest information.
+// SetManifest sets the manifest property value. Indicates the manifest information, containing file metadata.
 func (m *MobileAppContentFile) SetManifest(value []byte)() {
     err := m.GetBackingStore().Set("manifest", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. the file name.
+// SetName sets the name property value. Indicates the name of the file.
 func (m *MobileAppContentFile) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSize sets the size property value. The size of the file prior to encryption.
+// SetSize sets the size property value. The size of the file prior to encryption. To be deprecated, please use sizeInBytes property instead.
 func (m *MobileAppContentFile) SetSize(value *int64)() {
     err := m.GetBackingStore().Set("size", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSizeEncrypted sets the sizeEncrypted property value. The size of the file after encryption.
+// SetSizeEncrypted sets the sizeEncrypted property value. The size of the file after encryption. To be deprecated, please use sizeEncryptedInBytes property instead.
 func (m *MobileAppContentFile) SetSizeEncrypted(value *int64)() {
     err := m.GetBackingStore().Set("sizeEncrypted", value)
     if err != nil {

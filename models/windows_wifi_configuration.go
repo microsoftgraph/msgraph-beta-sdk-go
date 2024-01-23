@@ -284,7 +284,7 @@ func (m *WindowsWifiConfiguration) GetProxyManualPort()(*int32) {
     }
     return nil
 }
-// GetProxySetting gets the proxySetting property value. Specify the proxy setting for Wi-Fi configuration. Possible values are: none, manual, automatic.
+// GetProxySetting gets the proxySetting property value. Specify the proxy setting for Wi-Fi configuration. Possible values are: none, manual, automatic, unknownFutureValue.
 func (m *WindowsWifiConfiguration) GetProxySetting()(*WiFiProxySetting) {
     val, err := m.GetBackingStore().Get("proxySetting")
     if err != nil {
@@ -476,7 +476,7 @@ func (m *WindowsWifiConfiguration) SetProxyManualPort(value *int32)() {
         panic(err)
     }
 }
-// SetProxySetting sets the proxySetting property value. Specify the proxy setting for Wi-Fi configuration. Possible values are: none, manual, automatic.
+// SetProxySetting sets the proxySetting property value. Specify the proxy setting for Wi-Fi configuration. Possible values are: none, manual, automatic, unknownFutureValue.
 func (m *WindowsWifiConfiguration) SetProxySetting(value *WiFiProxySetting)() {
     err := m.GetBackingStore().Set("proxySetting", value)
     if err != nil {

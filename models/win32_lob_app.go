@@ -19,6 +19,24 @@ func NewWin32LobApp()(*Win32LobApp) {
 }
 // CreateWin32LobAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWin32LobAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                switch *mappingValue {
+                    case "#microsoft.graph.win32CatalogApp":
+                        return NewWin32CatalogApp(), nil
+                }
+            }
+        }
+    }
     return NewWin32LobApp(), nil
 }
 // GetAllowAvailableUninstall gets the allowAvailableUninstall property value. When TRUE, indicates that uninstall is supported from the company portal for the Windows app (Win32) with an Available assignment. When FALSE, indicates that uninstall is not supported for the Windows app (Win32) with an Available assignment. Default value is FALSE.

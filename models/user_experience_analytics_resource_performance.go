@@ -30,6 +30,28 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetAverageSpikeTimeScore()(
     }
     return nil
 }
+// GetCpuClockSpeedInMHz gets the cpuClockSpeedInMHz property value. The clock speed of the processor, in MHz. Valid values 0 to 1000000
+func (m *UserExperienceAnalyticsResourcePerformance) GetCpuClockSpeedInMHz()(*float64) {
+    val, err := m.GetBackingStore().Get("cpuClockSpeedInMHz")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetCpuDisplayName gets the cpuDisplayName property value. The name of the processor on the device, For example, 11th Gen Intel(R) Core(TM) i7.
+func (m *UserExperienceAnalyticsResourcePerformance) GetCpuDisplayName()(*string) {
+    val, err := m.GetBackingStore().Get("cpuDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetCpuSpikeTimePercentage gets the cpuSpikeTimePercentage property value. CPU spike time in percentage. Valid values 0 to 100
 func (m *UserExperienceAnalyticsResourcePerformance) GetCpuSpikeTimePercentage()(*float64) {
     val, err := m.GetBackingStore().Get("cpuSpikeTimePercentage")
@@ -107,6 +129,17 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetDeviceResourcePerformanc
     }
     return nil
 }
+// GetDiskType gets the diskType property value. The diskType property
+func (m *UserExperienceAnalyticsResourcePerformance) GetDiskType()(*DiskType) {
+    val, err := m.GetBackingStore().Get("diskType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DiskType)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
@@ -117,6 +150,26 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         }
         if val != nil {
             m.SetAverageSpikeTimeScore(val)
+        }
+        return nil
+    }
+    res["cpuClockSpeedInMHz"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetFloat64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCpuClockSpeedInMHz(val)
+        }
+        return nil
+    }
+    res["cpuDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCpuDisplayName(val)
         }
         return nil
     }
@@ -190,6 +243,36 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         }
         return nil
     }
+    res["diskType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseDiskType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDiskType(val.(*DiskType))
+        }
+        return nil
+    }
+    res["healthStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseUserExperienceAnalyticsHealthState)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHealthStatus(val.(*UserExperienceAnalyticsHealthState))
+        }
+        return nil
+    }
+    res["machineType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseUserExperienceAnalyticsMachineType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMachineType(val.(*UserExperienceAnalyticsMachineType))
+        }
+        return nil
+    }
     res["manufacturer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -240,7 +323,49 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         }
         return nil
     }
+    res["totalProcessorCoreCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTotalProcessorCoreCount(val)
+        }
+        return nil
+    }
+    res["totalRamInMB"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetFloat64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTotalRamInMB(val)
+        }
+        return nil
+    }
     return res
+}
+// GetHealthStatus gets the healthStatus property value. The healthStatus property
+func (m *UserExperienceAnalyticsResourcePerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
+    val, err := m.GetBackingStore().Get("healthStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*UserExperienceAnalyticsHealthState)
+    }
+    return nil
+}
+// GetMachineType gets the machineType property value. Indicates if machine is physical or virtual. Possible values are: physical or virtual
+func (m *UserExperienceAnalyticsResourcePerformance) GetMachineType()(*UserExperienceAnalyticsMachineType) {
+    val, err := m.GetBackingStore().Get("machineType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*UserExperienceAnalyticsMachineType)
+    }
+    return nil
 }
 // GetManufacturer gets the manufacturer property value. The user experience analytics device manufacturer.
 func (m *UserExperienceAnalyticsResourcePerformance) GetManufacturer()(*string) {
@@ -297,6 +422,28 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetRamSpikeTimeScore()(*int
     }
     return nil
 }
+// GetTotalProcessorCoreCount gets the totalProcessorCoreCount property value. The count of cores of the processor of device. Valid values 0 to 512
+func (m *UserExperienceAnalyticsResourcePerformance) GetTotalProcessorCoreCount()(*int32) {
+    val, err := m.GetBackingStore().Get("totalProcessorCoreCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetTotalRamInMB gets the totalRamInMB property value. The total RAM of the device, in MB. Valid values 0 to 1000000
+func (m *UserExperienceAnalyticsResourcePerformance) GetTotalRamInMB()(*float64) {
+    val, err := m.GetBackingStore().Get("totalRamInMB")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsResourcePerformance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -305,6 +452,18 @@ func (m *UserExperienceAnalyticsResourcePerformance) Serialize(writer i878a80d23
     }
     {
         err = writer.WriteInt32Value("averageSpikeTimeScore", m.GetAverageSpikeTimeScore())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteFloat64Value("cpuClockSpeedInMHz", m.GetCpuClockSpeedInMHz())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("cpuDisplayName", m.GetCpuDisplayName())
         if err != nil {
             return err
         }
@@ -351,6 +510,27 @@ func (m *UserExperienceAnalyticsResourcePerformance) Serialize(writer i878a80d23
             return err
         }
     }
+    if m.GetDiskType() != nil {
+        cast := (*m.GetDiskType()).String()
+        err = writer.WriteStringValue("diskType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetHealthStatus() != nil {
+        cast := (*m.GetHealthStatus()).String()
+        err = writer.WriteStringValue("healthStatus", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetMachineType() != nil {
+        cast := (*m.GetMachineType()).String()
+        err = writer.WriteStringValue("machineType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("manufacturer", m.GetManufacturer())
         if err != nil {
@@ -381,11 +561,37 @@ func (m *UserExperienceAnalyticsResourcePerformance) Serialize(writer i878a80d23
             return err
         }
     }
+    {
+        err = writer.WriteInt32Value("totalProcessorCoreCount", m.GetTotalProcessorCoreCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteFloat64Value("totalRamInMB", m.GetTotalRamInMB())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAverageSpikeTimeScore sets the averageSpikeTimeScore property value. AverageSpikeTimeScore of a device or a model type. Valid values 0 to 100
 func (m *UserExperienceAnalyticsResourcePerformance) SetAverageSpikeTimeScore(value *int32)() {
     err := m.GetBackingStore().Set("averageSpikeTimeScore", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCpuClockSpeedInMHz sets the cpuClockSpeedInMHz property value. The clock speed of the processor, in MHz. Valid values 0 to 1000000
+func (m *UserExperienceAnalyticsResourcePerformance) SetCpuClockSpeedInMHz(value *float64)() {
+    err := m.GetBackingStore().Set("cpuClockSpeedInMHz", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCpuDisplayName sets the cpuDisplayName property value. The name of the processor on the device, For example, 11th Gen Intel(R) Core(TM) i7.
+func (m *UserExperienceAnalyticsResourcePerformance) SetCpuDisplayName(value *string)() {
+    err := m.GetBackingStore().Set("cpuDisplayName", value)
     if err != nil {
         panic(err)
     }
@@ -439,6 +645,27 @@ func (m *UserExperienceAnalyticsResourcePerformance) SetDeviceResourcePerformanc
         panic(err)
     }
 }
+// SetDiskType sets the diskType property value. The diskType property
+func (m *UserExperienceAnalyticsResourcePerformance) SetDiskType(value *DiskType)() {
+    err := m.GetBackingStore().Set("diskType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetHealthStatus sets the healthStatus property value. The healthStatus property
+func (m *UserExperienceAnalyticsResourcePerformance) SetHealthStatus(value *UserExperienceAnalyticsHealthState)() {
+    err := m.GetBackingStore().Set("healthStatus", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMachineType sets the machineType property value. Indicates if machine is physical or virtual. Possible values are: physical or virtual
+func (m *UserExperienceAnalyticsResourcePerformance) SetMachineType(value *UserExperienceAnalyticsMachineType)() {
+    err := m.GetBackingStore().Set("machineType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetManufacturer sets the manufacturer property value. The user experience analytics device manufacturer.
 func (m *UserExperienceAnalyticsResourcePerformance) SetManufacturer(value *string)() {
     err := m.GetBackingStore().Set("manufacturer", value)
@@ -474,11 +701,27 @@ func (m *UserExperienceAnalyticsResourcePerformance) SetRamSpikeTimeScore(value 
         panic(err)
     }
 }
+// SetTotalProcessorCoreCount sets the totalProcessorCoreCount property value. The count of cores of the processor of device. Valid values 0 to 512
+func (m *UserExperienceAnalyticsResourcePerformance) SetTotalProcessorCoreCount(value *int32)() {
+    err := m.GetBackingStore().Set("totalProcessorCoreCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetTotalRamInMB sets the totalRamInMB property value. The total RAM of the device, in MB. Valid values 0 to 1000000
+func (m *UserExperienceAnalyticsResourcePerformance) SetTotalRamInMB(value *float64)() {
+    err := m.GetBackingStore().Set("totalRamInMB", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // UserExperienceAnalyticsResourcePerformanceable 
 type UserExperienceAnalyticsResourcePerformanceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAverageSpikeTimeScore()(*int32)
+    GetCpuClockSpeedInMHz()(*float64)
+    GetCpuDisplayName()(*string)
     GetCpuSpikeTimePercentage()(*float64)
     GetCpuSpikeTimePercentageThreshold()(*float64)
     GetCpuSpikeTimeScore()(*int32)
@@ -486,12 +729,19 @@ type UserExperienceAnalyticsResourcePerformanceable interface {
     GetDeviceId()(*string)
     GetDeviceName()(*string)
     GetDeviceResourcePerformanceScore()(*int32)
+    GetDiskType()(*DiskType)
+    GetHealthStatus()(*UserExperienceAnalyticsHealthState)
+    GetMachineType()(*UserExperienceAnalyticsMachineType)
     GetManufacturer()(*string)
     GetModel()(*string)
     GetRamSpikeTimePercentage()(*float64)
     GetRamSpikeTimePercentageThreshold()(*float64)
     GetRamSpikeTimeScore()(*int32)
+    GetTotalProcessorCoreCount()(*int32)
+    GetTotalRamInMB()(*float64)
     SetAverageSpikeTimeScore(value *int32)()
+    SetCpuClockSpeedInMHz(value *float64)()
+    SetCpuDisplayName(value *string)()
     SetCpuSpikeTimePercentage(value *float64)()
     SetCpuSpikeTimePercentageThreshold(value *float64)()
     SetCpuSpikeTimeScore(value *int32)()
@@ -499,9 +749,14 @@ type UserExperienceAnalyticsResourcePerformanceable interface {
     SetDeviceId(value *string)()
     SetDeviceName(value *string)()
     SetDeviceResourcePerformanceScore(value *int32)()
+    SetDiskType(value *DiskType)()
+    SetHealthStatus(value *UserExperienceAnalyticsHealthState)()
+    SetMachineType(value *UserExperienceAnalyticsMachineType)()
     SetManufacturer(value *string)()
     SetModel(value *string)()
     SetRamSpikeTimePercentage(value *float64)()
     SetRamSpikeTimePercentageThreshold(value *float64)()
     SetRamSpikeTimeScore(value *int32)()
+    SetTotalProcessorCoreCount(value *int32)()
+    SetTotalRamInMB(value *float64)()
 }

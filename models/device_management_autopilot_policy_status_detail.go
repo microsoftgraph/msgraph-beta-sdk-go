@@ -140,7 +140,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetPolicyType()(*DeviceMan
     }
     return nil
 }
-// GetTrackedOnEnrollmentStatus gets the trackedOnEnrollmentStatus property value. Indicates if this prolicy was tracked as part of the autopilot bootstrap enrollment sync session
+// GetTrackedOnEnrollmentStatus gets the trackedOnEnrollmentStatus property value. Indicates if this policy was tracked as part of the autopilot bootstrap enrollment sync session
 func (m *DeviceManagementAutopilotPolicyStatusDetail) GetTrackedOnEnrollmentStatus()(*bool) {
     val, err := m.GetBackingStore().Get("trackedOnEnrollmentStatus")
     if err != nil {
@@ -232,7 +232,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) SetPolicyType(value *Devic
         panic(err)
     }
 }
-// SetTrackedOnEnrollmentStatus sets the trackedOnEnrollmentStatus property value. Indicates if this prolicy was tracked as part of the autopilot bootstrap enrollment sync session
+// SetTrackedOnEnrollmentStatus sets the trackedOnEnrollmentStatus property value. Indicates if this policy was tracked as part of the autopilot bootstrap enrollment sync session
 func (m *DeviceManagementAutopilotPolicyStatusDetail) SetTrackedOnEnrollmentStatus(value *bool)() {
     err := m.GetBackingStore().Set("trackedOnEnrollmentStatus", value)
     if err != nil {

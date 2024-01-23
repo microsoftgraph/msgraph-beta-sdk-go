@@ -169,6 +169,10 @@ func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) GetFileVaultKey()(*I
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) GetNonCompliantSettings()(*ItemManagedDevicesItemGetNonCompliantSettingsRequestBuilder) {
     return NewItemManagedDevicesItemGetNonCompliantSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// InitiateDeviceAttestation provides operations to call the initiateDeviceAttestation method.
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) InitiateDeviceAttestation()(*ItemManagedDevicesItemInitiateDeviceAttestationRequestBuilder) {
+    return NewItemManagedDevicesItemInitiateDeviceAttestationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // InitiateMobileDeviceManagementKeyRecovery provides operations to call the initiateMobileDeviceManagementKeyRecovery method.
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) InitiateMobileDeviceManagementKeyRecovery()(*ItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestBuilder) {
     return NewItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

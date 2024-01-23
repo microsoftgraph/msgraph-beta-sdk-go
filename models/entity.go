@@ -1954,6 +1954,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOpenTypeExtension(), nil
                     case "#microsoft.graph.operation":
                         return NewOperation(), nil
+                    case "#microsoft.graph.operationApprovalPolicy":
+                        return NewOperationApprovalPolicy(), nil
+                    case "#microsoft.graph.operationApprovalRequest":
+                        return NewOperationApprovalRequest(), nil
                     case "#microsoft.graph.organization":
                         return NewOrganization(), nil
                     case "#microsoft.graph.organizationalBranding":
@@ -1996,6 +2000,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewParticipantJoiningNotification(), nil
                     case "#microsoft.graph.participantLeftNotification":
                         return NewParticipantLeftNotification(), nil
+                    case "#microsoft.graph.partners":
+                        return NewPartners(), nil
                     case "#microsoft.graph.passwordAuthenticationMethod":
                         return NewPasswordAuthenticationMethod(), nil
                     case "#microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod":
@@ -2896,6 +2902,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewWebApplicationSegment(), nil
                     case "#microsoft.graph.webPart":
                         return NewWebPart(), nil
+                    case "#microsoft.graph.win32CatalogApp":
+                        return NewWin32CatalogApp(), nil
                     case "#microsoft.graph.win32LobApp":
                         return NewWin32LobApp(), nil
                     case "#microsoft.graph.windows10CertificateProfileBase":

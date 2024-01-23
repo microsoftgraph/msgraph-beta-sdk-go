@@ -72,6 +72,16 @@ func (m *UserExperienceSettings) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["offerAsOptional"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOfferAsOptional(val)
+        }
+        return nil
+    }
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -85,6 +95,17 @@ func (m *UserExperienceSettings) GetOdataType()(*string) {
     }
     return nil
 }
+// GetOfferAsOptional gets the offerAsOptional property value. The offerAsOptional property
+func (m *UserExperienceSettings) GetOfferAsOptional()(*bool) {
+    val, err := m.GetBackingStore().Get("offerAsOptional")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *UserExperienceSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -95,6 +116,12 @@ func (m *UserExperienceSettings) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("offerAsOptional", m.GetOfferAsOptional())
         if err != nil {
             return err
         }
@@ -132,6 +159,13 @@ func (m *UserExperienceSettings) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetOfferAsOptional sets the offerAsOptional property value. The offerAsOptional property
+func (m *UserExperienceSettings) SetOfferAsOptional(value *bool)() {
+    err := m.GetBackingStore().Set("offerAsOptional", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // UserExperienceSettingsable 
 type UserExperienceSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
@@ -140,7 +174,9 @@ type UserExperienceSettingsable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDaysUntilForcedReboot()(*int32)
     GetOdataType()(*string)
+    GetOfferAsOptional()(*bool)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDaysUntilForcedReboot(value *int32)()
     SetOdataType(value *string)()
+    SetOfferAsOptional(value *bool)()
 }

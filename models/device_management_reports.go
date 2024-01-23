@@ -19,7 +19,7 @@ func NewDeviceManagementReports()(*DeviceManagementReports) {
 func CreateDeviceManagementReportsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementReports(), nil
 }
-// GetCachedReportConfigurations gets the cachedReportConfigurations property value. Entity representing the configuration of a cached report
+// GetCachedReportConfigurations gets the cachedReportConfigurations property value. Entity representing the configuration of a cached report.
 func (m *DeviceManagementReports) GetCachedReportConfigurations()([]DeviceManagementCachedReportConfigurationable) {
     val, err := m.GetBackingStore().Get("cachedReportConfigurations")
     if err != nil {
@@ -30,7 +30,7 @@ func (m *DeviceManagementReports) GetCachedReportConfigurations()([]DeviceManage
     }
     return nil
 }
-// GetExportJobs gets the exportJobs property value. Entity representing a job to export a report
+// GetExportJobs gets the exportJobs property value. Entity representing a job to export a report.
 func (m *DeviceManagementReports) GetExportJobs()([]DeviceManagementExportJobable) {
     val, err := m.GetBackingStore().Get("exportJobs")
     if err != nil {
@@ -110,14 +110,14 @@ func (m *DeviceManagementReports) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetCachedReportConfigurations sets the cachedReportConfigurations property value. Entity representing the configuration of a cached report
+// SetCachedReportConfigurations sets the cachedReportConfigurations property value. Entity representing the configuration of a cached report.
 func (m *DeviceManagementReports) SetCachedReportConfigurations(value []DeviceManagementCachedReportConfigurationable)() {
     err := m.GetBackingStore().Set("cachedReportConfigurations", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExportJobs sets the exportJobs property value. Entity representing a job to export a report
+// SetExportJobs sets the exportJobs property value. Entity representing a job to export a report.
 func (m *DeviceManagementReports) SetExportJobs(value []DeviceManagementExportJobable)() {
     err := m.GetBackingStore().Set("exportJobs", value)
     if err != nil {
