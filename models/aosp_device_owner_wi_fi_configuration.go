@@ -236,7 +236,7 @@ func (m *AospDeviceOwnerWiFiConfiguration) GetProxyAutomaticConfigurationUrl()(*
     }
     return nil
 }
-// GetProxyExclusionList gets the proxyExclusionList property value. List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as *.example.com.
+// GetProxyExclusionList gets the proxyExclusionList property value. List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as .example.com.
 func (m *AospDeviceOwnerWiFiConfiguration) GetProxyExclusionList()([]string) {
     val, err := m.GetBackingStore().Get("proxyExclusionList")
     if err != nil {
@@ -426,7 +426,7 @@ func (m *AospDeviceOwnerWiFiConfiguration) SetProxyAutomaticConfigurationUrl(val
         panic(err)
     }
 }
-// SetProxyExclusionList sets the proxyExclusionList property value. List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as *.example.com.
+// SetProxyExclusionList sets the proxyExclusionList property value. List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as .example.com.
 func (m *AospDeviceOwnerWiFiConfiguration) SetProxyExclusionList(value []string)() {
     err := m.GetBackingStore().Set("proxyExclusionList", value)
     if err != nil {

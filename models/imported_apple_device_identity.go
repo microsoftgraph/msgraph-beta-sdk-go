@@ -208,7 +208,7 @@ func (m *ImportedAppleDeviceIdentity) GetIsDeleted()(*bool) {
     }
     return nil
 }
-// GetIsSupervised gets the isSupervised property value. Indicates if the Apple device is supervised. More information is at: https://support.apple.com/en-us/HT202837
+// GetIsSupervised gets the isSupervised property value. Indicates if the Apple device is supervised.
 func (m *ImportedAppleDeviceIdentity) GetIsSupervised()(*bool) {
     val, err := m.GetBackingStore().Get("isSupervised")
     if err != nil {
@@ -386,7 +386,7 @@ func (m *ImportedAppleDeviceIdentity) SetIsDeleted(value *bool)() {
         panic(err)
     }
 }
-// SetIsSupervised sets the isSupervised property value. Indicates if the Apple device is supervised. More information is at: https://support.apple.com/en-us/HT202837
+// SetIsSupervised sets the isSupervised property value. Indicates if the Apple device is supervised.
 func (m *ImportedAppleDeviceIdentity) SetIsSupervised(value *bool)() {
     err := m.GetBackingStore().Set("isSupervised", value)
     if err != nil {

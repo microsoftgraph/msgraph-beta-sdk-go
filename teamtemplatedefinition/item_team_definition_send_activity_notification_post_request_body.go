@@ -104,6 +104,16 @@ func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) GetFieldDese
         }
         return nil
     }
+    res["teamsAppId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTeamsAppId(val)
+        }
+        return nil
+    }
     res["templateParameters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
@@ -154,6 +164,17 @@ func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) GetRecipient
     }
     return nil
 }
+// GetTeamsAppId gets the teamsAppId property value. The teamsAppId property
+func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) GetTeamsAppId()(*string) {
+    val, err := m.GetBackingStore().Get("teamsAppId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetTemplateParameters gets the templateParameters property value. The templateParameters property
 func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) GetTemplateParameters()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyValuePairable) {
     val, err := m.GetBackingStore().Get("templateParameters")
@@ -198,6 +219,12 @@ func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) Serialize(wr
     }
     {
         err := writer.WriteObjectValue("recipient", m.GetRecipient())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("teamsAppId", m.GetTeamsAppId())
         if err != nil {
             return err
         }
@@ -267,6 +294,13 @@ func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) SetRecipient
         panic(err)
     }
 }
+// SetTeamsAppId sets the teamsAppId property value. The teamsAppId property
+func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) SetTeamsAppId(value *string)() {
+    err := m.GetBackingStore().Set("teamsAppId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTemplateParameters sets the templateParameters property value. The templateParameters property
 func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) SetTemplateParameters(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyValuePairable)() {
     err := m.GetBackingStore().Set("templateParameters", value)
@@ -291,6 +325,7 @@ type ItemTeamDefinitionSendActivityNotificationPostRequestBodyable interface {
     GetChainId()(*int64)
     GetPreviewText()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemBodyable)
     GetRecipient()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkNotificationRecipientable)
+    GetTeamsAppId()(*string)
     GetTemplateParameters()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyValuePairable)
     GetTopic()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkActivityTopicable)
     SetActivityType(value *string)()
@@ -298,6 +333,7 @@ type ItemTeamDefinitionSendActivityNotificationPostRequestBodyable interface {
     SetChainId(value *int64)()
     SetPreviewText(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemBodyable)()
     SetRecipient(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkNotificationRecipientable)()
+    SetTeamsAppId(value *string)()
     SetTemplateParameters(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyValuePairable)()
     SetTopic(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkActivityTopicable)()
 }

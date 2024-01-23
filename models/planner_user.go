@@ -97,6 +97,22 @@ func (m *PlannerUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["myDayTasks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePlannerTaskFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PlannerTaskable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(PlannerTaskable)
+                }
+            }
+            m.SetMyDayTasks(res)
+        }
+        return nil
+    }
     res["plans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePlannerPlanFromDiscriminatorValue)
         if err != nil {
@@ -172,6 +188,17 @@ func (m *PlannerUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     return res
+}
+// GetMyDayTasks gets the myDayTasks property value. The myDayTasks property
+func (m *PlannerUser) GetMyDayTasks()([]PlannerTaskable) {
+    val, err := m.GetBackingStore().Get("myDayTasks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerTaskable)
+    }
+    return nil
 }
 // GetPlans gets the plans property value. The plans property
 func (m *PlannerUser) GetPlans()([]PlannerPlanable) {
@@ -264,6 +291,18 @@ func (m *PlannerUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    if m.GetMyDayTasks() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMyDayTasks()))
+        for i, v := range m.GetMyDayTasks() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("myDayTasks", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPlans() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPlans()))
         for i, v := range m.GetPlans() {
@@ -341,6 +380,13 @@ func (m *PlannerUser) SetFavoritePlans(value []PlannerPlanable)() {
         panic(err)
     }
 }
+// SetMyDayTasks sets the myDayTasks property value. The myDayTasks property
+func (m *PlannerUser) SetMyDayTasks(value []PlannerTaskable)() {
+    err := m.GetBackingStore().Set("myDayTasks", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPlans sets the plans property value. The plans property
 func (m *PlannerUser) SetPlans(value []PlannerPlanable)() {
     err := m.GetBackingStore().Set("plans", value)
@@ -383,6 +429,7 @@ type PlannerUserable interface {
     GetAll()([]PlannerDeltaable)
     GetFavoritePlanReferences()(PlannerFavoritePlanReferenceCollectionable)
     GetFavoritePlans()([]PlannerPlanable)
+    GetMyDayTasks()([]PlannerTaskable)
     GetPlans()([]PlannerPlanable)
     GetRecentPlanReferences()(PlannerRecentPlanReferenceCollectionable)
     GetRecentPlans()([]PlannerPlanable)
@@ -391,6 +438,7 @@ type PlannerUserable interface {
     SetAll(value []PlannerDeltaable)()
     SetFavoritePlanReferences(value PlannerFavoritePlanReferenceCollectionable)()
     SetFavoritePlans(value []PlannerPlanable)()
+    SetMyDayTasks(value []PlannerTaskable)()
     SetPlans(value []PlannerPlanable)()
     SetRecentPlanReferences(value PlannerRecentPlanReferenceCollectionable)()
     SetRecentPlans(value []PlannerPlanable)()

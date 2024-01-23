@@ -2,26 +2,30 @@ package models
 import (
     "errors"
 )
-// Contains all supported registry data detection type.
+// A list of possible operations for rules used to make determinations about an application based on registry keys or values. Unless noted, the values can be used with either detection or requirement rules.
 type Win32LobAppRegistryRuleOperationType int
 
 const (
-    // Not configured.
+    // Default. Indicates that the rule does not have the operation type configured.
     NOTCONFIGURED_WIN32LOBAPPREGISTRYRULEOPERATIONTYPE Win32LobAppRegistryRuleOperationType = iota
-    // The specified registry key or value exists.
+    // Indicates that the rule evaluates whether the specified registry key or value exists.
     EXISTS_WIN32LOBAPPREGISTRYRULEOPERATIONTYPE
-    // The specified registry key or value does not exist.
+    // Indicates that the rule evaluates whether the specified registry key or value does not exist. It is the functional inverse of an equivalent rule that uses operation type `exists`.
     DOESNOTEXIST_WIN32LOBAPPREGISTRYRULEOPERATIONTYPE
-    // String value type.
+    // Indicates that the rule compares the value read at the given registry value against a provided comparison value by string comparison.
     STRING_WIN32LOBAPPREGISTRYRULEOPERATIONTYPE
-    // Integer value type.
+    // Indicates that the rule compares the value read at the given registry value against a provided comparison value by integer comparison.
     INTEGER_WIN32LOBAPPREGISTRYRULEOPERATIONTYPE
-    // Version value type.
+    // Indicates that the rule compares the value read at the given registry value against a provided comparison value via version semantics (both operand values will be parsed as versions and directly compared). If the value read at the given registry value is not discovered to be in version-compatible format, a string comparison will be used instead.
     VERSION_WIN32LOBAPPREGISTRYRULEOPERATIONTYPE
+    // Indicates that the rule compares the data read at the given registry value against a provided comparison value via version semantics (both operand values will be parsed as versions and directly compared). If the data read at the given registry value is not discovered to be in a version-compatible format, a string comparison will be used instead. The rule will be resolved as not detected if the given registry value does not exist. This is similar to a rule with operation type `version`, but it also collects and reports the detected version value to report as the discovered version of the app installed on the device when the rule evaluates to `true`. Only one rule with this type may be specified.
+    APPVERSION_WIN32LOBAPPREGISTRYRULEOPERATIONTYPE
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_WIN32LOBAPPREGISTRYRULEOPERATIONTYPE
 )
 
 func (i Win32LobAppRegistryRuleOperationType) String() string {
-    return []string{"notConfigured", "exists", "doesNotExist", "string", "integer", "version"}[i]
+    return []string{"notConfigured", "exists", "doesNotExist", "string", "integer", "version", "appVersion", "unknownFutureValue"}[i]
 }
 func ParseWin32LobAppRegistryRuleOperationType(v string) (any, error) {
     result := NOTCONFIGURED_WIN32LOBAPPREGISTRYRULEOPERATIONTYPE
@@ -38,6 +42,10 @@ func ParseWin32LobAppRegistryRuleOperationType(v string) (any, error) {
             result = INTEGER_WIN32LOBAPPREGISTRYRULEOPERATIONTYPE
         case "version":
             result = VERSION_WIN32LOBAPPREGISTRYRULEOPERATIONTYPE
+        case "appVersion":
+            result = APPVERSION_WIN32LOBAPPREGISTRYRULEOPERATIONTYPE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_WIN32LOBAPPREGISTRYRULEOPERATIONTYPE
         default:
             return 0, errors.New("Unknown Win32LobAppRegistryRuleOperationType value: " + v)
     }

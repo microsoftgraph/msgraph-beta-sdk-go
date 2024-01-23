@@ -24,26 +24,6 @@ func CreateManagedAndroidLobAppFromDiscriminatorValue(parseNode i878a80d2330e89d
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedAndroidLobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedMobileLobApp.GetFieldDeserializers()
-    res["identityName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIdentityName(val)
-        }
-        return nil
-    }
-    res["identityVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIdentityVersion(val)
-        }
-        return nil
-    }
     res["minimumSupportedOperatingSystem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAndroidMinimumOperatingSystemFromDiscriminatorValue)
         if err != nil {
@@ -95,28 +75,6 @@ func (m *ManagedAndroidLobApp) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     return res
-}
-// GetIdentityName gets the identityName property value. The Identity Name. This property is being deprecated in 2302(February 2023).
-func (m *ManagedAndroidLobApp) GetIdentityName()(*string) {
-    val, err := m.GetBackingStore().Get("identityName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetIdentityVersion gets the identityVersion property value. The identity version. This property is being deprecated in 2302(February 2023).
-func (m *ManagedAndroidLobApp) GetIdentityVersion()(*string) {
-    val, err := m.GetBackingStore().Get("identityVersion")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *ManagedAndroidLobApp) GetMinimumSupportedOperatingSystem()(AndroidMinimumOperatingSystemable) {
@@ -180,18 +138,6 @@ func (m *ManagedAndroidLobApp) Serialize(writer i878a80d2330e89d26896388a3f487ee
         return err
     }
     {
-        err = writer.WriteStringValue("identityName", m.GetIdentityName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("identityVersion", m.GetIdentityVersion())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("minimumSupportedOperatingSystem", m.GetMinimumSupportedOperatingSystem())
         if err != nil {
             return err
@@ -223,20 +169,6 @@ func (m *ManagedAndroidLobApp) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     return nil
-}
-// SetIdentityName sets the identityName property value. The Identity Name. This property is being deprecated in 2302(February 2023).
-func (m *ManagedAndroidLobApp) SetIdentityName(value *string)() {
-    err := m.GetBackingStore().Set("identityName", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetIdentityVersion sets the identityVersion property value. The identity version. This property is being deprecated in 2302(February 2023).
-func (m *ManagedAndroidLobApp) SetIdentityVersion(value *string)() {
-    err := m.GetBackingStore().Set("identityVersion", value)
-    if err != nil {
-        panic(err)
-    }
 }
 // SetMinimumSupportedOperatingSystem sets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *ManagedAndroidLobApp) SetMinimumSupportedOperatingSystem(value AndroidMinimumOperatingSystemable)() {
@@ -277,15 +209,11 @@ func (m *ManagedAndroidLobApp) SetVersionName(value *string)() {
 type ManagedAndroidLobAppable interface {
     ManagedMobileLobAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetIdentityName()(*string)
-    GetIdentityVersion()(*string)
     GetMinimumSupportedOperatingSystem()(AndroidMinimumOperatingSystemable)
     GetPackageId()(*string)
     GetTargetedPlatforms()(*AndroidTargetedPlatforms)
     GetVersionCode()(*string)
     GetVersionName()(*string)
-    SetIdentityName(value *string)()
-    SetIdentityVersion(value *string)()
     SetMinimumSupportedOperatingSystem(value AndroidMinimumOperatingSystemable)()
     SetPackageId(value *string)()
     SetTargetedPlatforms(value *AndroidTargetedPlatforms)()

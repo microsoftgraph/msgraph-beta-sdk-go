@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementCachedReportConfiguration entity representing the configuration of a cached report
+// DeviceManagementCachedReportConfiguration entity representing the configuration of a cached report.
 type DeviceManagementCachedReportConfiguration struct {
     Entity
 }
@@ -20,7 +20,7 @@ func NewDeviceManagementCachedReportConfiguration()(*DeviceManagementCachedRepor
 func CreateDeviceManagementCachedReportConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementCachedReportConfiguration(), nil
 }
-// GetExpirationDateTime gets the expirationDateTime property value. Time that the cached report expires. This property is read-only.
+// GetExpirationDateTime gets the expirationDateTime property value. Time that the cached report expires.
 func (m *DeviceManagementCachedReportConfiguration) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -139,7 +139,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetFilter()(*string) {
     }
     return nil
 }
-// GetLastRefreshDateTime gets the lastRefreshDateTime property value. Time that the cached report was last refreshed. This property is read-only.
+// GetLastRefreshDateTime gets the lastRefreshDateTime property value. Time that the cached report was last refreshed.
 func (m *DeviceManagementCachedReportConfiguration) GetLastRefreshDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastRefreshDateTime")
     if err != nil {
@@ -150,7 +150,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetLastRefreshDateTime()(*i3
     }
     return nil
 }
-// GetMetadata gets the metadata property value. Caller-managed metadata associated with the report
+// GetMetadata gets the metadata property value. Caller-managed metadata associated with the report.
 func (m *DeviceManagementCachedReportConfiguration) GetMetadata()(*string) {
     val, err := m.GetBackingStore().Get("metadata")
     if err != nil {
@@ -161,7 +161,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetMetadata()(*string) {
     }
     return nil
 }
-// GetOrderBy gets the orderBy property value. Ordering of columns in the report
+// GetOrderBy gets the orderBy property value. Ordering of columns in the report.
 func (m *DeviceManagementCachedReportConfiguration) GetOrderBy()([]string) {
     val, err := m.GetBackingStore().Get("orderBy")
     if err != nil {
@@ -172,7 +172,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetOrderBy()([]string) {
     }
     return nil
 }
-// GetReportName gets the reportName property value. Name of the report. This property is read-only.
+// GetReportName gets the reportName property value. Name of the report.
 func (m *DeviceManagementCachedReportConfiguration) GetReportName()(*string) {
     val, err := m.GetBackingStore().Get("reportName")
     if err != nil {
@@ -183,7 +183,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetReportName()(*string) {
     }
     return nil
 }
-// GetSelectEscaped gets the select property value. Columns selected from the report
+// GetSelectEscaped gets the select property value. Columns selected from the report.
 func (m *DeviceManagementCachedReportConfiguration) GetSelectEscaped()([]string) {
     val, err := m.GetBackingStore().Get("selectEscaped")
     if err != nil {
@@ -194,7 +194,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetSelectEscaped()([]string)
     }
     return nil
 }
-// GetStatus gets the status property value. Possible statuses associated with a generated report
+// GetStatus gets the status property value. Possible statuses associated with a generated report.
 func (m *DeviceManagementCachedReportConfiguration) GetStatus()(*DeviceManagementReportStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -262,7 +262,7 @@ func (m *DeviceManagementCachedReportConfiguration) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetExpirationDateTime sets the expirationDateTime property value. Time that the cached report expires. This property is read-only.
+// SetExpirationDateTime sets the expirationDateTime property value. Time that the cached report expires.
 func (m *DeviceManagementCachedReportConfiguration) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expirationDateTime", value)
     if err != nil {
@@ -276,42 +276,42 @@ func (m *DeviceManagementCachedReportConfiguration) SetFilter(value *string)() {
         panic(err)
     }
 }
-// SetLastRefreshDateTime sets the lastRefreshDateTime property value. Time that the cached report was last refreshed. This property is read-only.
+// SetLastRefreshDateTime sets the lastRefreshDateTime property value. Time that the cached report was last refreshed.
 func (m *DeviceManagementCachedReportConfiguration) SetLastRefreshDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastRefreshDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMetadata sets the metadata property value. Caller-managed metadata associated with the report
+// SetMetadata sets the metadata property value. Caller-managed metadata associated with the report.
 func (m *DeviceManagementCachedReportConfiguration) SetMetadata(value *string)() {
     err := m.GetBackingStore().Set("metadata", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOrderBy sets the orderBy property value. Ordering of columns in the report
+// SetOrderBy sets the orderBy property value. Ordering of columns in the report.
 func (m *DeviceManagementCachedReportConfiguration) SetOrderBy(value []string)() {
     err := m.GetBackingStore().Set("orderBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReportName sets the reportName property value. Name of the report. This property is read-only.
+// SetReportName sets the reportName property value. Name of the report.
 func (m *DeviceManagementCachedReportConfiguration) SetReportName(value *string)() {
     err := m.GetBackingStore().Set("reportName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSelectEscaped sets the select property value. Columns selected from the report
+// SetSelectEscaped sets the select property value. Columns selected from the report.
 func (m *DeviceManagementCachedReportConfiguration) SetSelectEscaped(value []string)() {
     err := m.GetBackingStore().Set("selectEscaped", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Possible statuses associated with a generated report
+// SetStatus sets the status property value. Possible statuses associated with a generated report.
 func (m *DeviceManagementCachedReportConfiguration) SetStatus(value *DeviceManagementReportStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

@@ -40,10 +40,14 @@ const (
     ANDROIDENTERPRISEFULLYMANAGED_DEVICEENROLLMENTTYPE
     // Android Enterprise Corporate Work Profile
     ANDROIDENTERPRISECORPORATEWORKPROFILE_DEVICEENROLLMENTTYPE
+    // Indicates the device enrollment is for android device owned by/associated with user using Android Open Source Project (AOSP) on a non-Google mobile services.
+    ANDROIDAOSPUSEROWNEDDEVICEENROLLMENT_DEVICEENROLLMENTTYPE
+    // Indicates the device enrollment is for user less android device using Android Open Source Project (AOSP) on a non-Google mobile services.
+    ANDROIDAOSPUSERLESSDEVICEENROLLMENT_DEVICEENROLLMENTTYPE
 )
 
 func (i DeviceEnrollmentType) String() string {
-    return []string{"unknown", "userEnrollment", "deviceEnrollmentManager", "appleBulkWithUser", "appleBulkWithoutUser", "windowsAzureADJoin", "windowsBulkUserless", "windowsAutoEnrollment", "windowsBulkAzureDomainJoin", "windowsCoManagement", "windowsAzureADJoinUsingDeviceAuth", "appleUserEnrollment", "appleUserEnrollmentWithServiceAccount", "azureAdJoinUsingAzureVmExtension", "androidEnterpriseDedicatedDevice", "androidEnterpriseFullyManaged", "androidEnterpriseCorporateWorkProfile"}[i]
+    return []string{"unknown", "userEnrollment", "deviceEnrollmentManager", "appleBulkWithUser", "appleBulkWithoutUser", "windowsAzureADJoin", "windowsBulkUserless", "windowsAutoEnrollment", "windowsBulkAzureDomainJoin", "windowsCoManagement", "windowsAzureADJoinUsingDeviceAuth", "appleUserEnrollment", "appleUserEnrollmentWithServiceAccount", "azureAdJoinUsingAzureVmExtension", "androidEnterpriseDedicatedDevice", "androidEnterpriseFullyManaged", "androidEnterpriseCorporateWorkProfile", "androidAOSPUserOwnedDeviceEnrollment", "androidAOSPUserlessDeviceEnrollment"}[i]
 }
 func ParseDeviceEnrollmentType(v string) (any, error) {
     result := UNKNOWN_DEVICEENROLLMENTTYPE
@@ -82,6 +86,10 @@ func ParseDeviceEnrollmentType(v string) (any, error) {
             result = ANDROIDENTERPRISEFULLYMANAGED_DEVICEENROLLMENTTYPE
         case "androidEnterpriseCorporateWorkProfile":
             result = ANDROIDENTERPRISECORPORATEWORKPROFILE_DEVICEENROLLMENTTYPE
+        case "androidAOSPUserOwnedDeviceEnrollment":
+            result = ANDROIDAOSPUSEROWNEDDEVICEENROLLMENT_DEVICEENROLLMENTTYPE
+        case "androidAOSPUserlessDeviceEnrollment":
+            result = ANDROIDAOSPUSERLESSDEVICEENROLLMENT_DEVICEENROLLMENTTYPE
         default:
             return 0, errors.New("Unknown DeviceEnrollmentType value: " + v)
     }

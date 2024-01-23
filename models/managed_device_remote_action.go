@@ -44,10 +44,12 @@ const (
     INITIATEONDEMANDPROACTIVEREMEDIATION_MANAGEDDEVICEREMOTEACTION
     // Evolvable enum member
     UNKNOWNFUTUREVALUE_MANAGEDDEVICEREMOTEACTION
+    // Indicates remote device action to intiate Mobile Device Management (MDM) attestation if device is capable for it
+    INITIATEDEVICEATTESTATION_MANAGEDDEVICEREMOTEACTION
 )
 
 func (i ManagedDeviceRemoteAction) String() string {
-    return []string{"retire", "delete", "fullScan", "quickScan", "signatureUpdate", "wipe", "customTextNotification", "rebootNow", "setDeviceName", "syncDevice", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "activateDeviceEsim", "collectDiagnostics", "initiateMobileDeviceManagementKeyRecovery", "initiateOnDemandProactiveRemediation", "unknownFutureValue"}[i]
+    return []string{"retire", "delete", "fullScan", "quickScan", "signatureUpdate", "wipe", "customTextNotification", "rebootNow", "setDeviceName", "syncDevice", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "activateDeviceEsim", "collectDiagnostics", "initiateMobileDeviceManagementKeyRecovery", "initiateOnDemandProactiveRemediation", "unknownFutureValue", "initiateDeviceAttestation"}[i]
 }
 func ParseManagedDeviceRemoteAction(v string) (any, error) {
     result := RETIRE_MANAGEDDEVICEREMOTEACTION
@@ -90,6 +92,8 @@ func ParseManagedDeviceRemoteAction(v string) (any, error) {
             result = INITIATEONDEMANDPROACTIVEREMEDIATION_MANAGEDDEVICEREMOTEACTION
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MANAGEDDEVICEREMOTEACTION
+        case "initiateDeviceAttestation":
+            result = INITIATEDEVICEATTESTATION_MANAGEDDEVICEREMOTEACTION
         default:
             return 0, errors.New("Unknown ManagedDeviceRemoteAction value: " + v)
     }

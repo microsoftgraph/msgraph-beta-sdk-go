@@ -93,6 +93,10 @@ func (m *ItemEmployeeExperienceRequestBuilder) Get(ctx context.Context, requestC
 func (m *ItemEmployeeExperienceRequestBuilder) LearningCourseActivities()(*ItemEmployeeExperienceLearningCourseActivitiesRequestBuilder) {
     return NewItemEmployeeExperienceLearningCourseActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// LearningCourseActivitiesWithExternalcourseActivityId provides operations to manage the learningCourseActivities property of the microsoft.graph.employeeExperienceUser entity.
+func (m *ItemEmployeeExperienceRequestBuilder) LearningCourseActivitiesWithExternalcourseActivityId(externalcourseActivityId *string)(*ItemEmployeeExperienceLearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder) {
+    return NewItemEmployeeExperienceLearningCourseActivitiesWithExternalcourseActivityIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, externalcourseActivityId)
+}
 // Patch update the navigation property employeeExperience in users
 func (m *ItemEmployeeExperienceRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmployeeExperienceUserable, requestConfiguration *ItemEmployeeExperienceRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmployeeExperienceUserable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

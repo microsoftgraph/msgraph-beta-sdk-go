@@ -20,7 +20,7 @@ func NewCloudPcDeviceImage()(*CloudPcDeviceImage) {
 func CreateCloudPcDeviceImageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcDeviceImage(), nil
 }
-// GetDisplayName gets the displayName property value. The display name of the image.
+// GetDisplayName gets the displayName property value. The display name of the associated device image. The device image display name and the version are used to uniquely identify the Cloud PC device image. Read-only.
 func (m *CloudPcDeviceImage) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -31,7 +31,7 @@ func (m *CloudPcDeviceImage) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetErrorCode gets the errorCode property value. The errorCode property
+// GetErrorCode gets the errorCode property value. The error code of the status of the image that indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, sourceImageNotGeneralized, unknownFutureValue, vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Read-only.
 func (m *CloudPcDeviceImage) GetErrorCode()(*CloudPcDeviceImageErrorCode) {
     val, err := m.GetBackingStore().Get("errorCode")
     if err != nil {
@@ -42,7 +42,7 @@ func (m *CloudPcDeviceImage) GetErrorCode()(*CloudPcDeviceImageErrorCode) {
     }
     return nil
 }
-// GetExpirationDate gets the expirationDate property value. The date the image became unavailable.
+// GetExpirationDate gets the expirationDate property value. The date when the image became unavailable. Read-only.
 func (m *CloudPcDeviceImage) GetExpirationDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("expirationDate")
     if err != nil {
@@ -184,7 +184,7 @@ func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The data and time that the image was last modified. The time is shown in ISO 8601 format and  Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The data and time when the image was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *CloudPcDeviceImage) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -195,7 +195,7 @@ func (m *CloudPcDeviceImage) GetLastModifiedDateTime()(*i336074805fc853987abe6f7
     }
     return nil
 }
-// GetOperatingSystem gets the operatingSystem property value. The operating system of the image. For example, Windows 10 Enterprise.
+// GetOperatingSystem gets the operatingSystem property value. The operating system of the image. For example, Windows 10 Enterprise. Read-only.
 func (m *CloudPcDeviceImage) GetOperatingSystem()(*string) {
     val, err := m.GetBackingStore().Get("operatingSystem")
     if err != nil {
@@ -206,7 +206,7 @@ func (m *CloudPcDeviceImage) GetOperatingSystem()(*string) {
     }
     return nil
 }
-// GetOsBuildNumber gets the osBuildNumber property value. The OS build version of the image. For example, 1909.
+// GetOsBuildNumber gets the osBuildNumber property value. The OS build version of the image. For example, 1909. Read-only.
 func (m *CloudPcDeviceImage) GetOsBuildNumber()(*string) {
     val, err := m.GetBackingStore().Get("osBuildNumber")
     if err != nil {
@@ -217,7 +217,7 @@ func (m *CloudPcDeviceImage) GetOsBuildNumber()(*string) {
     }
     return nil
 }
-// GetOsStatus gets the osStatus property value. The OS status of this image. Possible values are: supported, supportedWithWarning, unknownFutureValue.
+// GetOsStatus gets the osStatus property value. The OS status of this image. Possible values are: supported, supportedWithWarning, unknown, unknownFutureValue. The default value is unknown. Read-only.
 func (m *CloudPcDeviceImage) GetOsStatus()(*CloudPcDeviceImageOsStatus) {
     val, err := m.GetBackingStore().Get("osStatus")
     if err != nil {
@@ -239,7 +239,7 @@ func (m *CloudPcDeviceImage) GetScopeIds()([]string) {
     }
     return nil
 }
-// GetSourceImageResourceId gets the sourceImageResourceId property value. The ID of the source image resource on Azure. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}.
+// GetSourceImageResourceId gets the sourceImageResourceId property value. The unique identifier (ID) of the source image resource on Azure. The required ID format is: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}'. Read-only.
 func (m *CloudPcDeviceImage) GetSourceImageResourceId()(*string) {
     val, err := m.GetBackingStore().Get("sourceImageResourceId")
     if err != nil {
@@ -250,7 +250,7 @@ func (m *CloudPcDeviceImage) GetSourceImageResourceId()(*string) {
     }
     return nil
 }
-// GetStatus gets the status property value. The status of the image on Cloud PC. Possible values are: pending, ready, failed.
+// GetStatus gets the status property value. The status of the image on the Cloud PC. Possible values are: pending, ready, failed, unknownFutureValue. Read-only.
 func (m *CloudPcDeviceImage) GetStatus()(*CloudPcDeviceImageStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -261,7 +261,7 @@ func (m *CloudPcDeviceImage) GetStatus()(*CloudPcDeviceImageStatus) {
     }
     return nil
 }
-// GetStatusDetails gets the statusDetails property value. The details of the status of the image that indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, and sourceImageNotGeneralized.
+// GetStatusDetails gets the statusDetails property value. The statusDetails property
 func (m *CloudPcDeviceImage) GetStatusDetails()(*CloudPcDeviceImageStatusDetails) {
     val, err := m.GetBackingStore().Get("statusDetails")
     if err != nil {
@@ -272,7 +272,7 @@ func (m *CloudPcDeviceImage) GetStatusDetails()(*CloudPcDeviceImageStatusDetails
     }
     return nil
 }
-// GetVersion gets the version property value. The image version. For example, 0.0.1 and 1.5.13.
+// GetVersion gets the version property value. The image version. For example, 0.0.1 and 1.5.13. Read-only.
 func (m *CloudPcDeviceImage) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -367,49 +367,49 @@ func (m *CloudPcDeviceImage) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetDisplayName sets the displayName property value. The display name of the image.
+// SetDisplayName sets the displayName property value. The display name of the associated device image. The device image display name and the version are used to uniquely identify the Cloud PC device image. Read-only.
 func (m *CloudPcDeviceImage) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetErrorCode sets the errorCode property value. The errorCode property
+// SetErrorCode sets the errorCode property value. The error code of the status of the image that indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, sourceImageNotGeneralized, unknownFutureValue, vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Read-only.
 func (m *CloudPcDeviceImage) SetErrorCode(value *CloudPcDeviceImageErrorCode)() {
     err := m.GetBackingStore().Set("errorCode", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExpirationDate sets the expirationDate property value. The date the image became unavailable.
+// SetExpirationDate sets the expirationDate property value. The date when the image became unavailable. Read-only.
 func (m *CloudPcDeviceImage) SetExpirationDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     err := m.GetBackingStore().Set("expirationDate", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The data and time that the image was last modified. The time is shown in ISO 8601 format and  Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The data and time when the image was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *CloudPcDeviceImage) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOperatingSystem sets the operatingSystem property value. The operating system of the image. For example, Windows 10 Enterprise.
+// SetOperatingSystem sets the operatingSystem property value. The operating system of the image. For example, Windows 10 Enterprise. Read-only.
 func (m *CloudPcDeviceImage) SetOperatingSystem(value *string)() {
     err := m.GetBackingStore().Set("operatingSystem", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOsBuildNumber sets the osBuildNumber property value. The OS build version of the image. For example, 1909.
+// SetOsBuildNumber sets the osBuildNumber property value. The OS build version of the image. For example, 1909. Read-only.
 func (m *CloudPcDeviceImage) SetOsBuildNumber(value *string)() {
     err := m.GetBackingStore().Set("osBuildNumber", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOsStatus sets the osStatus property value. The OS status of this image. Possible values are: supported, supportedWithWarning, unknownFutureValue.
+// SetOsStatus sets the osStatus property value. The OS status of this image. Possible values are: supported, supportedWithWarning, unknown, unknownFutureValue. The default value is unknown. Read-only.
 func (m *CloudPcDeviceImage) SetOsStatus(value *CloudPcDeviceImageOsStatus)() {
     err := m.GetBackingStore().Set("osStatus", value)
     if err != nil {
@@ -423,28 +423,28 @@ func (m *CloudPcDeviceImage) SetScopeIds(value []string)() {
         panic(err)
     }
 }
-// SetSourceImageResourceId sets the sourceImageResourceId property value. The ID of the source image resource on Azure. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}.
+// SetSourceImageResourceId sets the sourceImageResourceId property value. The unique identifier (ID) of the source image resource on Azure. The required ID format is: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}'. Read-only.
 func (m *CloudPcDeviceImage) SetSourceImageResourceId(value *string)() {
     err := m.GetBackingStore().Set("sourceImageResourceId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status of the image on Cloud PC. Possible values are: pending, ready, failed.
+// SetStatus sets the status property value. The status of the image on the Cloud PC. Possible values are: pending, ready, failed, unknownFutureValue. Read-only.
 func (m *CloudPcDeviceImage) SetStatus(value *CloudPcDeviceImageStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatusDetails sets the statusDetails property value. The details of the status of the image that indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, and sourceImageNotGeneralized.
+// SetStatusDetails sets the statusDetails property value. The statusDetails property
 func (m *CloudPcDeviceImage) SetStatusDetails(value *CloudPcDeviceImageStatusDetails)() {
     err := m.GetBackingStore().Set("statusDetails", value)
     if err != nil {
         panic(err)
     }
 }
-// SetVersion sets the version property value. The image version. For example, 0.0.1 and 1.5.13.
+// SetVersion sets the version property value. The image version. For example, 0.0.1 and 1.5.13. Read-only.
 func (m *CloudPcDeviceImage) SetVersion(value *string)() {
     err := m.GetBackingStore().Set("version", value)
     if err != nil {

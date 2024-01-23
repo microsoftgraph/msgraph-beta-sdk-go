@@ -55,6 +55,7 @@ func NewConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBu
     return NewConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property forwardingProfiles for networkAccess
+// Deprecated: The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 func (m *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -71,6 +72,7 @@ func (m *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestB
     return nil
 }
 // Get each forwarding profile associated with a branch site is specified. Supports $expand.
+// Deprecated: The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 func (m *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingProfileable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,6 +92,7 @@ func (m *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestB
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingProfileable), nil
 }
 // Patch update the navigation property forwardingProfiles in networkAccess
+// Deprecated: The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 func (m *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilder) Patch(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingProfileable, requestConfiguration *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilderPatchRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingProfileable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -113,6 +116,7 @@ func (m *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestB
     return NewConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property forwardingProfiles for networkAccess
+// Deprecated: The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 func (m *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -123,6 +127,7 @@ func (m *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestB
     return requestInfo, nil
 }
 // ToGetRequestInformation each forwarding profile associated with a branch site is specified. Supports $expand.
+// Deprecated: The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 func (m *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -136,6 +141,7 @@ func (m *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestB
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property forwardingProfiles in networkAccess
+// Deprecated: The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 func (m *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingProfileable, requestConfiguration *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -150,6 +156,7 @@ func (m *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestB
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 func (m *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilder) WithUrl(rawUrl string)(*ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilder) {
     return NewConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

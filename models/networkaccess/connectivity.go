@@ -50,6 +50,22 @@ func (m *Connectivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["remoteNetworks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateRemoteNetworkFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]RemoteNetworkable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(RemoteNetworkable)
+                }
+            }
+            m.SetRemoteNetworks(res)
+        }
+        return nil
+    }
     res["webCategories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWebCategoryFromDiscriminatorValue)
         if err != nil {
@@ -67,6 +83,17 @@ func (m *Connectivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     return res
+}
+// GetRemoteNetworks gets the remoteNetworks property value. The remoteNetworks property
+func (m *Connectivity) GetRemoteNetworks()([]RemoteNetworkable) {
+    val, err := m.GetBackingStore().Get("remoteNetworks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RemoteNetworkable)
+    }
+    return nil
 }
 // GetWebCategories gets the webCategories property value. The webCategories property
 func (m *Connectivity) GetWebCategories()([]WebCategoryable) {
@@ -97,6 +124,18 @@ func (m *Connectivity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    if m.GetRemoteNetworks() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRemoteNetworks()))
+        for i, v := range m.GetRemoteNetworks() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("remoteNetworks", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetWebCategories() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWebCategories()))
         for i, v := range m.GetWebCategories() {
@@ -118,6 +157,13 @@ func (m *Connectivity) SetBranches(value []BranchSiteable)() {
         panic(err)
     }
 }
+// SetRemoteNetworks sets the remoteNetworks property value. The remoteNetworks property
+func (m *Connectivity) SetRemoteNetworks(value []RemoteNetworkable)() {
+    err := m.GetBackingStore().Set("remoteNetworks", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetWebCategories sets the webCategories property value. The webCategories property
 func (m *Connectivity) SetWebCategories(value []WebCategoryable)() {
     err := m.GetBackingStore().Set("webCategories", value)
@@ -130,7 +176,9 @@ type Connectivityable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBranches()([]BranchSiteable)
+    GetRemoteNetworks()([]RemoteNetworkable)
     GetWebCategories()([]WebCategoryable)
     SetBranches(value []BranchSiteable)()
+    SetRemoteNetworks(value []RemoteNetworkable)()
     SetWebCategories(value []WebCategoryable)()
 }

@@ -476,7 +476,7 @@ func (m *AndroidDeviceOwnerCompliancePolicy) GetSecurityRequireIntuneAppIntegrit
     }
     return nil
 }
-// GetSecurityRequireSafetyNetAttestationBasicIntegrity gets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the SafetyNet basic integrity check.
+// GetSecurityRequireSafetyNetAttestationBasicIntegrity gets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the Play Integrity basic integrity check.
 func (m *AndroidDeviceOwnerCompliancePolicy) GetSecurityRequireSafetyNetAttestationBasicIntegrity()(*bool) {
     val, err := m.GetBackingStore().Get("securityRequireSafetyNetAttestationBasicIntegrity")
     if err != nil {
@@ -487,7 +487,7 @@ func (m *AndroidDeviceOwnerCompliancePolicy) GetSecurityRequireSafetyNetAttestat
     }
     return nil
 }
-// GetSecurityRequireSafetyNetAttestationCertifiedDevice gets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the SafetyNet certified device check.
+// GetSecurityRequireSafetyNetAttestationCertifiedDevice gets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the Play Integrity device integrity check.
 func (m *AndroidDeviceOwnerCompliancePolicy) GetSecurityRequireSafetyNetAttestationCertifiedDevice()(*bool) {
     val, err := m.GetBackingStore().Get("securityRequireSafetyNetAttestationCertifiedDevice")
     if err != nil {
@@ -798,14 +798,14 @@ func (m *AndroidDeviceOwnerCompliancePolicy) SetSecurityRequireIntuneAppIntegrit
         panic(err)
     }
 }
-// SetSecurityRequireSafetyNetAttestationBasicIntegrity sets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the SafetyNet basic integrity check.
+// SetSecurityRequireSafetyNetAttestationBasicIntegrity sets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the Play Integrity basic integrity check.
 func (m *AndroidDeviceOwnerCompliancePolicy) SetSecurityRequireSafetyNetAttestationBasicIntegrity(value *bool)() {
     err := m.GetBackingStore().Set("securityRequireSafetyNetAttestationBasicIntegrity", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSecurityRequireSafetyNetAttestationCertifiedDevice sets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the SafetyNet certified device check.
+// SetSecurityRequireSafetyNetAttestationCertifiedDevice sets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the Play Integrity device integrity check.
 func (m *AndroidDeviceOwnerCompliancePolicy) SetSecurityRequireSafetyNetAttestationCertifiedDevice(value *bool)() {
     err := m.GetBackingStore().Set("securityRequireSafetyNetAttestationCertifiedDevice", value)
     if err != nil {

@@ -96,7 +96,7 @@ func (m *Identity) GetAdditionalData()(map[string]any) {
 func (m *Identity) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDisplayName gets the displayName property value. The display name of the identity. This property is read-only.
+// GetDisplayName gets the displayName property value. The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
 func (m *Identity) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -142,7 +142,7 @@ func (m *Identity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetId gets the id property value. The identifier of the identity. This property is read-only.
+// GetId gets the id property value. Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
 func (m *Identity) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -203,14 +203,14 @@ func (m *Identity) SetAdditionalData(value map[string]any)() {
 func (m *Identity) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDisplayName sets the displayName property value. The display name of the identity. This property is read-only.
+// SetDisplayName sets the displayName property value. The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
 func (m *Identity) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetId sets the id property value. The identifier of the identity. This property is read-only.
+// SetId sets the id property value. Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
 func (m *Identity) SetId(value *string)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {

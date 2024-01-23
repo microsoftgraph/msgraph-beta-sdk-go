@@ -164,6 +164,10 @@ func (m *EntitlementManagementRequestBuilder) Settings()(*EntitlementManagementS
 func (m *EntitlementManagementRequestBuilder) Subjects()(*EntitlementManagementSubjectsRequestBuilder) {
     return NewEntitlementManagementSubjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// SubjectsWithObjectId provides operations to manage the subjects property of the microsoft.graph.entitlementManagement entity.
+func (m *EntitlementManagementRequestBuilder) SubjectsWithObjectId(objectId *string)(*EntitlementManagementSubjectsWithObjectIdRequestBuilder) {
+    return NewEntitlementManagementSubjectsWithObjectIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, objectId)
+}
 // ToDeleteRequestInformation delete navigation property entitlementManagement for identityGovernance
 func (m *EntitlementManagementRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

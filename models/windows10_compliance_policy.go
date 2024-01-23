@@ -109,7 +109,7 @@ func (m *Windows10CompliancePolicy) GetDefenderVersion()(*string) {
     }
     return nil
 }
-// GetDeviceCompliancePolicyScript gets the deviceCompliancePolicyScript property value. Not yet documented
+// GetDeviceCompliancePolicyScript gets the deviceCompliancePolicyScript property value. The deviceCompliancePolicyScript property
 func (m *Windows10CompliancePolicy) GetDeviceCompliancePolicyScript()(DeviceCompliancePolicyScriptable) {
     val, err := m.GetBackingStore().Get("deviceCompliancePolicyScript")
     if err != nil {
@@ -1076,7 +1076,7 @@ func (m *Windows10CompliancePolicy) SetDefenderVersion(value *string)() {
         panic(err)
     }
 }
-// SetDeviceCompliancePolicyScript sets the deviceCompliancePolicyScript property value. Not yet documented
+// SetDeviceCompliancePolicyScript sets the deviceCompliancePolicyScript property value. The deviceCompliancePolicyScript property
 func (m *Windows10CompliancePolicy) SetDeviceCompliancePolicyScript(value DeviceCompliancePolicyScriptable)() {
     err := m.GetBackingStore().Set("deviceCompliancePolicyScript", value)
     if err != nil {

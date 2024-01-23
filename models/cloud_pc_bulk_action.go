@@ -149,7 +149,28 @@ func (m *CloudPcBulkAction) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["scheduledDuringMaintenanceWindow"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetScheduledDuringMaintenanceWindow(val)
+        }
+        return nil
+    }
     return res
+}
+// GetScheduledDuringMaintenanceWindow gets the scheduledDuringMaintenanceWindow property value. The scheduledDuringMaintenanceWindow property
+func (m *CloudPcBulkAction) GetScheduledDuringMaintenanceWindow()(*bool) {
+    val, err := m.GetBackingStore().Get("scheduledDuringMaintenanceWindow")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcBulkAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,6 +198,12 @@ func (m *CloudPcBulkAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("scheduledDuringMaintenanceWindow", m.GetScheduledDuringMaintenanceWindow())
         if err != nil {
             return err
         }
@@ -211,6 +238,13 @@ func (m *CloudPcBulkAction) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetScheduledDuringMaintenanceWindow sets the scheduledDuringMaintenanceWindow property value. The scheduledDuringMaintenanceWindow property
+func (m *CloudPcBulkAction) SetScheduledDuringMaintenanceWindow(value *bool)() {
+    err := m.GetBackingStore().Set("scheduledDuringMaintenanceWindow", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // CloudPcBulkActionable 
 type CloudPcBulkActionable interface {
     Entityable
@@ -219,8 +253,10 @@ type CloudPcBulkActionable interface {
     GetCloudPcIds()([]string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDisplayName()(*string)
+    GetScheduledDuringMaintenanceWindow()(*bool)
     SetActionSummary(value CloudPcBulkActionSummaryable)()
     SetCloudPcIds(value []string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDisplayName(value *string)()
+    SetScheduledDuringMaintenanceWindow(value *bool)()
 }

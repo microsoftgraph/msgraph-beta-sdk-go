@@ -32,6 +32,17 @@ func (m *DetectionRule) GetDetectionAction()(DetectionActionable) {
     }
     return nil
 }
+// GetDetectorId gets the detectorId property value. The detectorId property
+func (m *DetectionRule) GetDetectorId()(*string) {
+    val, err := m.GetBackingStore().Get("detectorId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DetectionRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ProtectionRule.GetFieldDeserializers()
@@ -42,6 +53,16 @@ func (m *DetectionRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetDetectionAction(val.(DetectionActionable))
+        }
+        return nil
+    }
+    res["detectorId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDetectorId(val)
         }
         return nil
     }
@@ -123,6 +144,12 @@ func (m *DetectionRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err = writer.WriteStringValue("detectorId", m.GetDetectorId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("lastRunDetails", m.GetLastRunDetails())
         if err != nil {
             return err
@@ -145,6 +172,13 @@ func (m *DetectionRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 // SetDetectionAction sets the detectionAction property value. The detectionAction property
 func (m *DetectionRule) SetDetectionAction(value DetectionActionable)() {
     err := m.GetBackingStore().Set("detectionAction", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDetectorId sets the detectorId property value. The detectorId property
+func (m *DetectionRule) SetDetectorId(value *string)() {
+    err := m.GetBackingStore().Set("detectorId", value)
     if err != nil {
         panic(err)
     }
@@ -175,10 +209,12 @@ type DetectionRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ProtectionRuleable
     GetDetectionAction()(DetectionActionable)
+    GetDetectorId()(*string)
     GetLastRunDetails()(RunDetailsable)
     GetQueryCondition()(QueryConditionable)
     GetSchedule()(RuleScheduleable)
     SetDetectionAction(value DetectionActionable)()
+    SetDetectorId(value *string)()
     SetLastRunDetails(value RunDetailsable)()
     SetQueryCondition(value QueryConditionable)()
     SetSchedule(value RuleScheduleable)()

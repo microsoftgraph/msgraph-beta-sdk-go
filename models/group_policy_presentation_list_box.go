@@ -57,7 +57,7 @@ func (m *GroupPolicyPresentationListBox) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetValuePrefix gets the valuePrefix property value. Not yet documented
+// GetValuePrefix gets the valuePrefix property value. The valuePrefix property
 func (m *GroupPolicyPresentationListBox) GetValuePrefix()(*string) {
     val, err := m.GetBackingStore().Get("valuePrefix")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *GroupPolicyPresentationListBox) SetExplicitValue(value *bool)() {
         panic(err)
     }
 }
-// SetValuePrefix sets the valuePrefix property value. Not yet documented
+// SetValuePrefix sets the valuePrefix property value. The valuePrefix property
 func (m *GroupPolicyPresentationListBox) SetValuePrefix(value *string)() {
     err := m.GetBackingStore().Set("valuePrefix", value)
     if err != nil {

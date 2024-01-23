@@ -38,7 +38,7 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetAdditionalData()(map[st
 func (m *DeviceManagementTroubleshootingErrorDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetContext gets the context property value. Not yet documented
+// GetContext gets the context property value. The context property
 func (m *DeviceManagementTroubleshootingErrorDetails) GetContext()(*string) {
     val, err := m.GetBackingStore().Get("context")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetContext()(*string) {
     }
     return nil
 }
-// GetFailure gets the failure property value. Not yet documented
+// GetFailure gets the failure property value. The failure property
 func (m *DeviceManagementTroubleshootingErrorDetails) GetFailure()(*string) {
     val, err := m.GetBackingStore().Get("failure")
     if err != nil {
@@ -238,14 +238,14 @@ func (m *DeviceManagementTroubleshootingErrorDetails) SetAdditionalData(value ma
 func (m *DeviceManagementTroubleshootingErrorDetails) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetContext sets the context property value. Not yet documented
+// SetContext sets the context property value. The context property
 func (m *DeviceManagementTroubleshootingErrorDetails) SetContext(value *string)() {
     err := m.GetBackingStore().Set("context", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFailure sets the failure property value. Not yet documented
+// SetFailure sets the failure property value. The failure property
 func (m *DeviceManagementTroubleshootingErrorDetails) SetFailure(value *string)() {
     err := m.GetBackingStore().Set("failure", value)
     if err != nil {

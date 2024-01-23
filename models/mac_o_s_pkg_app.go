@@ -102,7 +102,7 @@ func (m *MacOSPkgApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetIgnoreVersionDetection gets the ignoreVersionDetection property value. A value indicating whether the app's version will be used to detect the app after it is installed on a device. Set this to true for apps that use a self-update feature. Set this to false to install the app when it is not already installed on the device, or if the deploying app's version number does not match the version that's already installed on the device. The default value is false.
+// GetIgnoreVersionDetection gets the ignoreVersionDetection property value. When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature. The default value is FALSE.
 func (m *MacOSPkgApp) GetIgnoreVersionDetection()(*bool) {
     val, err := m.GetBackingStore().Get("ignoreVersionDetection")
     if err != nil {
@@ -113,7 +113,7 @@ func (m *MacOSPkgApp) GetIgnoreVersionDetection()(*bool) {
     }
     return nil
 }
-// GetIncludedApps gets the includedApps property value. The list of apps expected to be installed by the .pkg.
+// GetIncludedApps gets the includedApps property value. The list of apps expected to be installed by the PKG.
 func (m *MacOSPkgApp) GetIncludedApps()([]MacOSIncludedAppable) {
     val, err := m.GetBackingStore().Get("includedApps")
     if err != nil {
@@ -124,7 +124,7 @@ func (m *MacOSPkgApp) GetIncludedApps()([]MacOSIncludedAppable) {
     }
     return nil
 }
-// GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
+// GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. ComplexType macOSMinimumOperatingSystem that indicates the minimum operating system applicable for the application.
 func (m *MacOSPkgApp) GetMinimumSupportedOperatingSystem()(MacOSMinimumOperatingSystemable) {
     val, err := m.GetBackingStore().Get("minimumSupportedOperatingSystem")
     if err != nil {
@@ -157,7 +157,7 @@ func (m *MacOSPkgApp) GetPreInstallScript()(MacOSAppScriptable) {
     }
     return nil
 }
-// GetPrimaryBundleId gets the primaryBundleId property value. The primary CFBundleIdentifier of the .pkg.
+// GetPrimaryBundleId gets the primaryBundleId property value. The bundleId of the primary app in the PKG. This maps to the CFBundleIdentifier in the app's bundle configuration.
 func (m *MacOSPkgApp) GetPrimaryBundleId()(*string) {
     val, err := m.GetBackingStore().Get("primaryBundleId")
     if err != nil {
@@ -168,7 +168,7 @@ func (m *MacOSPkgApp) GetPrimaryBundleId()(*string) {
     }
     return nil
 }
-// GetPrimaryBundleVersion gets the primaryBundleVersion property value. The primary CFBundleVersion of the .pkg.
+// GetPrimaryBundleVersion gets the primaryBundleVersion property value. The version of the primary app in the PKG. This maps to the CFBundleShortVersion in the app's bundle configuration.
 func (m *MacOSPkgApp) GetPrimaryBundleVersion()(*string) {
     val, err := m.GetBackingStore().Get("primaryBundleVersion")
     if err != nil {
@@ -235,21 +235,21 @@ func (m *MacOSPkgApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetIgnoreVersionDetection sets the ignoreVersionDetection property value. A value indicating whether the app's version will be used to detect the app after it is installed on a device. Set this to true for apps that use a self-update feature. Set this to false to install the app when it is not already installed on the device, or if the deploying app's version number does not match the version that's already installed on the device. The default value is false.
+// SetIgnoreVersionDetection sets the ignoreVersionDetection property value. When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature. The default value is FALSE.
 func (m *MacOSPkgApp) SetIgnoreVersionDetection(value *bool)() {
     err := m.GetBackingStore().Set("ignoreVersionDetection", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIncludedApps sets the includedApps property value. The list of apps expected to be installed by the .pkg.
+// SetIncludedApps sets the includedApps property value. The list of apps expected to be installed by the PKG.
 func (m *MacOSPkgApp) SetIncludedApps(value []MacOSIncludedAppable)() {
     err := m.GetBackingStore().Set("includedApps", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMinimumSupportedOperatingSystem sets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
+// SetMinimumSupportedOperatingSystem sets the minimumSupportedOperatingSystem property value. ComplexType macOSMinimumOperatingSystem that indicates the minimum operating system applicable for the application.
 func (m *MacOSPkgApp) SetMinimumSupportedOperatingSystem(value MacOSMinimumOperatingSystemable)() {
     err := m.GetBackingStore().Set("minimumSupportedOperatingSystem", value)
     if err != nil {
@@ -270,14 +270,14 @@ func (m *MacOSPkgApp) SetPreInstallScript(value MacOSAppScriptable)() {
         panic(err)
     }
 }
-// SetPrimaryBundleId sets the primaryBundleId property value. The primary CFBundleIdentifier of the .pkg.
+// SetPrimaryBundleId sets the primaryBundleId property value. The bundleId of the primary app in the PKG. This maps to the CFBundleIdentifier in the app's bundle configuration.
 func (m *MacOSPkgApp) SetPrimaryBundleId(value *string)() {
     err := m.GetBackingStore().Set("primaryBundleId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPrimaryBundleVersion sets the primaryBundleVersion property value. The primary CFBundleVersion of the .pkg.
+// SetPrimaryBundleVersion sets the primaryBundleVersion property value. The version of the primary app in the PKG. This maps to the CFBundleShortVersion in the app's bundle configuration.
 func (m *MacOSPkgApp) SetPrimaryBundleVersion(value *string)() {
     err := m.GetBackingStore().Set("primaryBundleVersion", value)
     if err != nil {

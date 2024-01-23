@@ -12,10 +12,12 @@ const (
     ANYMANAGEDAPP_MESSAGINGREDIRECTAPPTYPE
     // App protection policy will allow messaging redirection only to specified applications in related App protection policy settings. See related settings `messagingRedirectAppDisplayName`, `messagingRedirectAppPackageId` and `messagingRedirectAppUrlScheme`.
     SPECIFICAPPS_MESSAGINGREDIRECTAPPTYPE
+    // App protection policy will block messaging redirection to any app.
+    BLOCKED_MESSAGINGREDIRECTAPPTYPE
 )
 
 func (i MessagingRedirectAppType) String() string {
-    return []string{"anyApp", "anyManagedApp", "specificApps"}[i]
+    return []string{"anyApp", "anyManagedApp", "specificApps", "blocked"}[i]
 }
 func ParseMessagingRedirectAppType(v string) (any, error) {
     result := ANYAPP_MESSAGINGREDIRECTAPPTYPE
@@ -26,6 +28,8 @@ func ParseMessagingRedirectAppType(v string) (any, error) {
             result = ANYMANAGEDAPP_MESSAGINGREDIRECTAPPTYPE
         case "specificApps":
             result = SPECIFICAPPS_MESSAGINGREDIRECTAPPTYPE
+        case "blocked":
+            result = BLOCKED_MESSAGINGREDIRECTAPPTYPE
         default:
             return 0, errors.New("Unknown MessagingRedirectAppType value: " + v)
     }

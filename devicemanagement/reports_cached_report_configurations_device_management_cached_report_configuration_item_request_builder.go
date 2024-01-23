@@ -18,7 +18,7 @@ type ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationI
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilderGetQueryParameters entity representing the configuration of a cached report
+// ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilderGetQueryParameters entity representing the configuration of a cached report.
 type ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurat
     }
     return nil
 }
-// Get entity representing the configuration of a cached report
+// Get entity representing the configuration of a cached report.
 func (m *ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementCachedReportConfigurationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -118,7 +118,7 @@ func (m *ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurat
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation entity representing the configuration of a cached report
+// ToGetRequestInformation entity representing the configuration of a cached report.
 func (m *ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

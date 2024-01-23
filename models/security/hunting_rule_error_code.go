@@ -15,10 +15,11 @@ const (
     ALERTREPORTNOTFOUND_HUNTINGRULEERRORCODE
     PARTIALROWSFAILED_HUNTINGRULEERRORCODE
     UNKNOWNFUTUREVALUE_HUNTINGRULEERRORCODE
+    NOIMPACTEDENTITY_HUNTINGRULEERRORCODE
 )
 
 func (i HuntingRuleErrorCode) String() string {
-    return []string{"queryExecutionFailed", "queryExecutionThrottling", "queryExceededResultSize", "queryLimitsExceeded", "queryTimeout", "alertCreationFailed", "alertReportNotFound", "partialRowsFailed", "unknownFutureValue"}[i]
+    return []string{"queryExecutionFailed", "queryExecutionThrottling", "queryExceededResultSize", "queryLimitsExceeded", "queryTimeout", "alertCreationFailed", "alertReportNotFound", "partialRowsFailed", "unknownFutureValue", "noImpactedEntity"}[i]
 }
 func ParseHuntingRuleErrorCode(v string) (any, error) {
     result := QUERYEXECUTIONFAILED_HUNTINGRULEERRORCODE
@@ -41,6 +42,8 @@ func ParseHuntingRuleErrorCode(v string) (any, error) {
             result = PARTIALROWSFAILED_HUNTINGRULEERRORCODE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_HUNTINGRULEERRORCODE
+        case "noImpactedEntity":
+            result = NOIMPACTEDENTITY_HUNTINGRULEERRORCODE
         default:
             return 0, errors.New("Unknown HuntingRuleErrorCode value: " + v)
     }

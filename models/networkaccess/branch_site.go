@@ -54,7 +54,7 @@ func (m *BranchSite) GetConnectivityState()(*ConnectivityState) {
     }
     return nil
 }
-// GetCountry gets the country property value. The branch site is created in the specified country.
+// GetCountry gets the country property value. The country property
 func (m *BranchSite) GetCountry()(*string) {
     val, err := m.GetBackingStore().Get("country")
     if err != nil {
@@ -351,7 +351,7 @@ func (m *BranchSite) SetConnectivityState(value *ConnectivityState)() {
         panic(err)
     }
 }
-// SetCountry sets the country property value. The branch site is created in the specified country.
+// SetCountry sets the country property value. The country property
 func (m *BranchSite) SetCountry(value *string)() {
     err := m.GetBackingStore().Set("country", value)
     if err != nil {

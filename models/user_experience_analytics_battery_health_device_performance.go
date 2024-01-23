@@ -41,7 +41,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceBatteri
     }
     return nil
 }
-// GetDeviceBatteryCount gets the deviceBatteryCount property value. Number of batteries in a user device. Valid values 1 to 2147483647
+// GetDeviceBatteryCount gets the deviceBatteryCount property value. Number of batteries in a user device. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceBatteryCount()(*int32) {
     val, err := m.GetBackingStore().Get("deviceBatteryCount")
     if err != nil {
@@ -60,6 +60,17 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceBattery
     }
     if val != nil {
         return val.(*int32)
+    }
+    return nil
+}
+// GetDeviceBatteryTags gets the deviceBatteryTags property value. Tags for computed information on how battery on the device is behaving. E.g. newbattery, batterycapacityred, designcapacityzero, etc.
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceBatteryTags()([]string) {
+    val, err := m.GetBackingStore().Get("deviceBatteryTags")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
     }
     return nil
 }
@@ -142,6 +153,22 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
         }
         if val != nil {
             m.SetDeviceBatteryHealthScore(val)
+        }
+        return nil
+    }
+    res["deviceBatteryTags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetDeviceBatteryTags(res)
         }
         return nil
     }
@@ -318,6 +345,12 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) Serialize(writer
             return err
         }
     }
+    if m.GetDeviceBatteryTags() != nil {
+        err = writer.WriteCollectionOfStringValues("deviceBatteryTags", m.GetDeviceBatteryTags())
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("deviceId", m.GetDeviceId())
         if err != nil {
@@ -383,7 +416,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetDeviceBatteri
         panic(err)
     }
 }
-// SetDeviceBatteryCount sets the deviceBatteryCount property value. Number of batteries in a user device. Valid values 1 to 2147483647
+// SetDeviceBatteryCount sets the deviceBatteryCount property value. Number of batteries in a user device. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetDeviceBatteryCount(value *int32)() {
     err := m.GetBackingStore().Set("deviceBatteryCount", value)
     if err != nil {
@@ -393,6 +426,13 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetDeviceBattery
 // SetDeviceBatteryHealthScore sets the deviceBatteryHealthScore property value. A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetDeviceBatteryHealthScore(value *int32)() {
     err := m.GetBackingStore().Set("deviceBatteryHealthScore", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDeviceBatteryTags sets the deviceBatteryTags property value. Tags for computed information on how battery on the device is behaving. E.g. newbattery, batterycapacityred, designcapacityzero, etc.
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetDeviceBatteryTags(value []string)() {
+    err := m.GetBackingStore().Set("deviceBatteryTags", value)
     if err != nil {
         panic(err)
     }
@@ -461,6 +501,7 @@ type UserExperienceAnalyticsBatteryHealthDevicePerformanceable interface {
     GetDeviceBatteriesDetails()([]UserExperienceAnalyticsDeviceBatteryDetailable)
     GetDeviceBatteryCount()(*int32)
     GetDeviceBatteryHealthScore()(*int32)
+    GetDeviceBatteryTags()([]string)
     GetDeviceId()(*string)
     GetDeviceName()(*string)
     GetEstimatedRuntimeInMinutes()(*int32)
@@ -473,6 +514,7 @@ type UserExperienceAnalyticsBatteryHealthDevicePerformanceable interface {
     SetDeviceBatteriesDetails(value []UserExperienceAnalyticsDeviceBatteryDetailable)()
     SetDeviceBatteryCount(value *int32)()
     SetDeviceBatteryHealthScore(value *int32)()
+    SetDeviceBatteryTags(value []string)()
     SetDeviceId(value *string)()
     SetDeviceName(value *string)()
     SetEstimatedRuntimeInMinutes(value *int32)()

@@ -45,6 +45,14 @@ type ItemConnectorGroupsConnectorGroupItemRequestBuilderPatchRequestConfiguratio
 func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) Applications()(*ItemConnectorGroupsItemApplicationsRequestBuilder) {
     return NewItemConnectorGroupsItemApplicationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ApplicationsWithAppId provides operations to manage the applications property of the microsoft.graph.connectorGroup entity.
+func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) ApplicationsWithAppId(appId *string)(*ItemConnectorGroupsItemApplicationsWithAppIdRequestBuilder) {
+    return NewItemConnectorGroupsItemApplicationsWithAppIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, appId)
+}
+// ApplicationsWithUniqueName provides operations to manage the applications property of the microsoft.graph.connectorGroup entity.
+func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) ApplicationsWithUniqueName(uniqueName *string)(*ItemConnectorGroupsItemApplicationsWithUniqueNameRequestBuilder) {
+    return NewItemConnectorGroupsItemApplicationsWithUniqueNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, uniqueName)
+}
 // NewItemConnectorGroupsConnectorGroupItemRequestBuilderInternal instantiates a new ConnectorGroupItemRequestBuilder and sets the default values.
 func NewItemConnectorGroupsConnectorGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConnectorGroupsConnectorGroupItemRequestBuilder) {
     m := &ItemConnectorGroupsConnectorGroupItemRequestBuilder{

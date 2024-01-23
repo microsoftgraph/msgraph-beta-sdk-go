@@ -33,10 +33,14 @@ const (
     MSSENSE_MANAGEMENTAGENTTYPE
     // This device is managed by Intune's MDM for AOSP (Android Open Source Project) devices
     INTUNEAOSP_MANAGEMENTAGENTTYPE
+    // Indicates the management agent to manage the device is Google.
+    GOOGLE_MANAGEMENTAGENTTYPE
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_MANAGEMENTAGENTTYPE
 )
 
 func (i ManagementAgentType) String() string {
-    return []string{"eas", "mdm", "easMdm", "intuneClient", "easIntuneClient", "configurationManagerClient", "configurationManagerClientMdm", "configurationManagerClientMdmEas", "unknown", "jamf", "googleCloudDevicePolicyController", "microsoft365ManagedMdm", "msSense", "intuneAosp"}[i]
+    return []string{"eas", "mdm", "easMdm", "intuneClient", "easIntuneClient", "configurationManagerClient", "configurationManagerClientMdm", "configurationManagerClientMdmEas", "unknown", "jamf", "googleCloudDevicePolicyController", "microsoft365ManagedMdm", "msSense", "intuneAosp", "google", "unknownFutureValue"}[i]
 }
 func ParseManagementAgentType(v string) (any, error) {
     result := EAS_MANAGEMENTAGENTTYPE
@@ -69,6 +73,10 @@ func ParseManagementAgentType(v string) (any, error) {
             result = MSSENSE_MANAGEMENTAGENTTYPE
         case "intuneAosp":
             result = INTUNEAOSP_MANAGEMENTAGENTTYPE
+        case "google":
+            result = GOOGLE_MANAGEMENTAGENTTYPE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_MANAGEMENTAGENTTYPE
         default:
             return 0, errors.New("Unknown ManagementAgentType value: " + v)
     }

@@ -95,7 +95,7 @@ func (m *DeviceManagementTroubleshootingErrorResource) GetOdataType()(*string) {
     }
     return nil
 }
-// GetText gets the text property value. Not yet documented
+// GetText gets the text property value. The text property
 func (m *DeviceManagementTroubleshootingErrorResource) GetText()(*string) {
     val, err := m.GetBackingStore().Get("text")
     if err != nil {
@@ -159,7 +159,7 @@ func (m *DeviceManagementTroubleshootingErrorResource) SetOdataType(value *strin
         panic(err)
     }
 }
-// SetText sets the text property value. Not yet documented
+// SetText sets the text property value. The text property
 func (m *DeviceManagementTroubleshootingErrorResource) SetText(value *string)() {
     err := m.GetBackingStore().Set("text", value)
     if err != nil {

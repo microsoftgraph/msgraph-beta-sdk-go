@@ -32,7 +32,7 @@ func NewDecryptBufferRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     return NewDecryptBufferRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action decryptBuffer
-// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
 func (m *DecryptBufferRequestBuilder) Post(ctx context.Context, body DecryptBufferPostRequestBodyable, requestConfiguration *DecryptBufferRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BufferDecryptionResultable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -52,7 +52,7 @@ func (m *DecryptBufferRequestBuilder) Post(ctx context.Context, body DecryptBuff
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BufferDecryptionResultable), nil
 }
 // ToPostRequestInformation invoke action decryptBuffer
-// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
 func (m *DecryptBufferRequestBuilder) ToPostRequestInformation(ctx context.Context, body DecryptBufferPostRequestBodyable, requestConfiguration *DecryptBufferRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -67,7 +67,7 @@ func (m *DecryptBufferRequestBuilder) ToPostRequestInformation(ctx context.Conte
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
 func (m *DecryptBufferRequestBuilder) WithUrl(rawUrl string)(*DecryptBufferRequestBuilder) {
     return NewDecryptBufferRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

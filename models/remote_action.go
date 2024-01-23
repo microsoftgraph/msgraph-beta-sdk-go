@@ -78,10 +78,12 @@ const (
     REMOVEDEVICEFIRMWARECONFIGURATIONINTERFACEMANAGEMENT_REMOTEACTION
     // Indicates an action has been initiated to pause configuration refresh for the device.
     PAUSECONFIGURATIONREFRESH_REMOTEACTION
+    // Indicates remote device action to intiate Mobile Device Management (MDM) attestation if device is capable for it.
+    INITIATEDEVICEATTESTATION_REMOTEACTION
 )
 
 func (i RemoteAction) String() string {
-    return []string{"unknown", "factoryReset", "removeCompanyData", "resetPasscode", "remoteLock", "enableLostMode", "disableLostMode", "locateDevice", "rebootNow", "recoverPasscode", "cleanWindowsDevice", "logoutSharedAppleDeviceActiveUser", "quickScan", "fullScan", "windowsDefenderUpdateSignatures", "factoryResetKeepEnrollmentData", "updateDeviceAccount", "automaticRedeployment", "shutDown", "rotateBitLockerKeys", "rotateFileVaultKey", "getFileVaultKey", "setDeviceName", "activateDeviceEsim", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "initiateMobileDeviceManagementKeyRecovery", "initiateOnDemandProactiveRemediation", "rotateLocalAdminPassword", "unknownFutureValue", "launchRemoteHelp", "revokeAppleVppLicenses", "removeDeviceFirmwareConfigurationInterfaceManagement", "pauseConfigurationRefresh"}[i]
+    return []string{"unknown", "factoryReset", "removeCompanyData", "resetPasscode", "remoteLock", "enableLostMode", "disableLostMode", "locateDevice", "rebootNow", "recoverPasscode", "cleanWindowsDevice", "logoutSharedAppleDeviceActiveUser", "quickScan", "fullScan", "windowsDefenderUpdateSignatures", "factoryResetKeepEnrollmentData", "updateDeviceAccount", "automaticRedeployment", "shutDown", "rotateBitLockerKeys", "rotateFileVaultKey", "getFileVaultKey", "setDeviceName", "activateDeviceEsim", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "initiateMobileDeviceManagementKeyRecovery", "initiateOnDemandProactiveRemediation", "rotateLocalAdminPassword", "unknownFutureValue", "launchRemoteHelp", "revokeAppleVppLicenses", "removeDeviceFirmwareConfigurationInterfaceManagement", "pauseConfigurationRefresh", "initiateDeviceAttestation"}[i]
 }
 func ParseRemoteAction(v string) (any, error) {
     result := UNKNOWN_REMOTEACTION
@@ -158,6 +160,8 @@ func ParseRemoteAction(v string) (any, error) {
             result = REMOVEDEVICEFIRMWARECONFIGURATIONINTERFACEMANAGEMENT_REMOTEACTION
         case "pauseConfigurationRefresh":
             result = PAUSECONFIGURATIONREFRESH_REMOTEACTION
+        case "initiateDeviceAttestation":
+            result = INITIATEDEVICEATTESTATION_REMOTEACTION
         default:
             return 0, errors.New("Unknown RemoteAction value: " + v)
     }

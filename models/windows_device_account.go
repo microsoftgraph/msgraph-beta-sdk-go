@@ -94,7 +94,7 @@ func (m *WindowsDeviceAccount) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPassword gets the password property value. Not yet documented
+// GetPassword gets the password property value. The password property
 func (m *WindowsDeviceAccount) GetPassword()(*string) {
     val, err := m.GetBackingStore().Get("password")
     if err != nil {
@@ -145,7 +145,7 @@ func (m *WindowsDeviceAccount) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPassword sets the password property value. Not yet documented
+// SetPassword sets the password property value. The password property
 func (m *WindowsDeviceAccount) SetPassword(value *string)() {
     err := m.GetBackingStore().Set("password", value)
     if err != nil {

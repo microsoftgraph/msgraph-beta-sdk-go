@@ -841,7 +841,7 @@ func (m *DeviceHealthAttestationState) GetVirtualizationBasedSecurity()(*AzureAt
     }
     return nil
 }
-// GetVirtualSecureMode gets the virtualSecureMode property value. VSM is a container that protects high value assets from a compromised kernel
+// GetVirtualSecureMode gets the virtualSecureMode property value. Indicates whether the device has Virtual Secure Mode (VSM) enabled. Virtual Secure Mode (VSM) is a container that protects high value assets from a compromised kernel. This property will be deprecated in beta from August 2023. Support for this property will end in August 2025 for v1.0 API. A new property virtualizationBasedSecurity is added and used instead. The value used for virtualSecureMode will be passed by virtualizationBasedSecurity during the deprecation process. Possible values are 'enabled', 'disabled' and 'notApplicable'. 'enabled' indicates Virtual Secure Mode (VSM) is enabled. 'disabled' indicates Virtual Secure Mode (VSM) is disabled. 'notApplicable' indicates the device is not a Windows 11 device. Default value is 'notApplicable'.
 func (m *DeviceHealthAttestationState) GetVirtualSecureMode()(*string) {
     val, err := m.GetBackingStore().Get("virtualSecureMode")
     if err != nil {
@@ -1383,7 +1383,7 @@ func (m *DeviceHealthAttestationState) SetVirtualizationBasedSecurity(value *Azu
         panic(err)
     }
 }
-// SetVirtualSecureMode sets the virtualSecureMode property value. VSM is a container that protects high value assets from a compromised kernel
+// SetVirtualSecureMode sets the virtualSecureMode property value. Indicates whether the device has Virtual Secure Mode (VSM) enabled. Virtual Secure Mode (VSM) is a container that protects high value assets from a compromised kernel. This property will be deprecated in beta from August 2023. Support for this property will end in August 2025 for v1.0 API. A new property virtualizationBasedSecurity is added and used instead. The value used for virtualSecureMode will be passed by virtualizationBasedSecurity during the deprecation process. Possible values are 'enabled', 'disabled' and 'notApplicable'. 'enabled' indicates Virtual Secure Mode (VSM) is enabled. 'disabled' indicates Virtual Secure Mode (VSM) is disabled. 'notApplicable' indicates the device is not a Windows 11 device. Default value is 'notApplicable'.
 func (m *DeviceHealthAttestationState) SetVirtualSecureMode(value *string)() {
     err := m.GetBackingStore().Set("virtualSecureMode", value)
     if err != nil {
