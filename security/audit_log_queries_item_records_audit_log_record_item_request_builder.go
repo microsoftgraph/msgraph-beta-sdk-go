@@ -18,7 +18,7 @@ type AuditLogQueriesItemRecordsAuditLogRecordItemRequestBuilderDeleteRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AuditLogQueriesItemRecordsAuditLogRecordItemRequestBuilderGetQueryParameters get records from security
+// AuditLogQueriesItemRecordsAuditLogRecordItemRequestBuilderGetQueryParameters an individual audit log record.
 type AuditLogQueriesItemRecordsAuditLogRecordItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *AuditLogQueriesItemRecordsAuditLogRecordItemRequestBuilder) Delete(ctx 
     }
     return nil
 }
-// Get get records from security
+// Get an individual audit log record.
 func (m *AuditLogQueriesItemRecordsAuditLogRecordItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AuditLogQueriesItemRecordsAuditLogRecordItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AuditLogRecordable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -118,7 +118,7 @@ func (m *AuditLogQueriesItemRecordsAuditLogRecordItemRequestBuilder) ToDeleteReq
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get records from security
+// ToGetRequestInformation an individual audit log record.
 func (m *AuditLogQueriesItemRecordsAuditLogRecordItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuditLogQueriesItemRecordsAuditLogRecordItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

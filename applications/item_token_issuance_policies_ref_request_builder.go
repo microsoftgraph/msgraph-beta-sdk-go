@@ -11,6 +11,20 @@ import (
 type ItemTokenIssuancePoliciesRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// ItemTokenIssuancePoliciesRefRequestBuilderDeleteQueryParameters remove a tokenIssuancePolicy from an application.
+type ItemTokenIssuancePoliciesRefRequestBuilderDeleteQueryParameters struct {
+    // The delete Uri
+    Id *string `uriparametername:"%40id"`
+}
+// ItemTokenIssuancePoliciesRefRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ItemTokenIssuancePoliciesRefRequestBuilderDeleteRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *ItemTokenIssuancePoliciesRefRequestBuilderDeleteQueryParameters
+}
 // ItemTokenIssuancePoliciesRefRequestBuilderGetQueryParameters list the tokenIssuancePolicy objects that are assigned to an application.
 type ItemTokenIssuancePoliciesRefRequestBuilderGetQueryParameters struct {
     // Include count of items
@@ -45,7 +59,7 @@ type ItemTokenIssuancePoliciesRefRequestBuilderPostRequestConfiguration struct {
 // NewItemTokenIssuancePoliciesRefRequestBuilderInternal instantiates a new RefRequestBuilder and sets the default values.
 func NewItemTokenIssuancePoliciesRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTokenIssuancePoliciesRefRequestBuilder) {
     m := &ItemTokenIssuancePoliciesRefRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/applications/{application%2Did}/tokenIssuancePolicies/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/applications/{application%2Did}/tokenIssuancePolicies/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%40id*}", pathParameters),
     }
     return m
 }
@@ -54,6 +68,25 @@ func NewItemTokenIssuancePoliciesRefRequestBuilder(rawUrl string, requestAdapter
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemTokenIssuancePoliciesRefRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Delete remove a tokenIssuancePolicy from an application.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0
+func (m *ItemTokenIssuancePoliciesRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTokenIssuancePoliciesRefRequestBuilderDeleteRequestConfiguration)(error) {
+    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
 }
 // Get list the tokenIssuancePolicy objects that are assigned to an application.
 // [Find more info here]
@@ -95,6 +128,19 @@ func (m *ItemTokenIssuancePoliciesRefRequestBuilder) Post(ctx context.Context, b
         return err
     }
     return nil
+}
+// ToDeleteRequestInformation remove a tokenIssuancePolicy from an application.
+func (m *ItemTokenIssuancePoliciesRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTokenIssuancePoliciesRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
 }
 // ToGetRequestInformation list the tokenIssuancePolicy objects that are assigned to an application.
 func (m *ItemTokenIssuancePoliciesRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTokenIssuancePoliciesRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

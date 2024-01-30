@@ -11,6 +11,20 @@ import (
 type ItemRegisteredOwnersRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// ItemRegisteredOwnersRefRequestBuilderDeleteQueryParameters remove a user as a registered owner of the device.
+type ItemRegisteredOwnersRefRequestBuilderDeleteQueryParameters struct {
+    // The delete Uri
+    Id *string `uriparametername:"%40id"`
+}
+// ItemRegisteredOwnersRefRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ItemRegisteredOwnersRefRequestBuilderDeleteRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *ItemRegisteredOwnersRefRequestBuilderDeleteQueryParameters
+}
 // ItemRegisteredOwnersRefRequestBuilderGetQueryParameters the user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
 type ItemRegisteredOwnersRefRequestBuilderGetQueryParameters struct {
     // Include count of items
@@ -45,7 +59,7 @@ type ItemRegisteredOwnersRefRequestBuilderPostRequestConfiguration struct {
 // NewItemRegisteredOwnersRefRequestBuilderInternal instantiates a new RefRequestBuilder and sets the default values.
 func NewItemRegisteredOwnersRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRegisteredOwnersRefRequestBuilder) {
     m := &ItemRegisteredOwnersRefRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/devices/{device%2Did}/registeredOwners/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/devices/{device%2Did}/registeredOwners/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%40id*}", pathParameters),
     }
     return m
 }
@@ -54,6 +68,25 @@ func NewItemRegisteredOwnersRefRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemRegisteredOwnersRefRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Delete remove a user as a registered owner of the device.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/device-delete-registeredowners?view=graph-rest-1.0
+func (m *ItemRegisteredOwnersRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemRegisteredOwnersRefRequestBuilderDeleteRequestConfiguration)(error) {
+    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
 }
 // Get the user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
 // [Find more info here]
@@ -95,6 +128,19 @@ func (m *ItemRegisteredOwnersRefRequestBuilder) Post(ctx context.Context, body i
         return err
     }
     return nil
+}
+// ToDeleteRequestInformation remove a user as a registered owner of the device.
+func (m *ItemRegisteredOwnersRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemRegisteredOwnersRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
 }
 // ToGetRequestInformation the user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
 func (m *ItemRegisteredOwnersRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRegisteredOwnersRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

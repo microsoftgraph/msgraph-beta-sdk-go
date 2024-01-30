@@ -11,6 +11,20 @@ import (
 type ItemDevicesItemRegisteredUsersRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// ItemDevicesItemRegisteredUsersRefRequestBuilderDeleteQueryParameters remove a user as a registered user of the device.
+type ItemDevicesItemRegisteredUsersRefRequestBuilderDeleteQueryParameters struct {
+    // The delete Uri
+    Id *string `uriparametername:"%40id"`
+}
+// ItemDevicesItemRegisteredUsersRefRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ItemDevicesItemRegisteredUsersRefRequestBuilderDeleteRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *ItemDevicesItemRegisteredUsersRefRequestBuilderDeleteQueryParameters
+}
 // ItemDevicesItemRegisteredUsersRefRequestBuilderGetQueryParameters collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
 type ItemDevicesItemRegisteredUsersRefRequestBuilderGetQueryParameters struct {
     // Include count of items
@@ -45,7 +59,7 @@ type ItemDevicesItemRegisteredUsersRefRequestBuilderPostRequestConfiguration str
 // NewItemDevicesItemRegisteredUsersRefRequestBuilderInternal instantiates a new RefRequestBuilder and sets the default values.
 func NewItemDevicesItemRegisteredUsersRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDevicesItemRegisteredUsersRefRequestBuilder) {
     m := &ItemDevicesItemRegisteredUsersRefRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/registeredUsers/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/registeredUsers/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%40id*}", pathParameters),
     }
     return m
 }
@@ -54,6 +68,25 @@ func NewItemDevicesItemRegisteredUsersRefRequestBuilder(rawUrl string, requestAd
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemDevicesItemRegisteredUsersRefRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Delete remove a user as a registered user of the device.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/device-delete-registeredusers?view=graph-rest-1.0
+func (m *ItemDevicesItemRegisteredUsersRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemDevicesItemRegisteredUsersRefRequestBuilderDeleteRequestConfiguration)(error) {
+    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
 }
 // Get collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
 // [Find more info here]
@@ -95,6 +128,19 @@ func (m *ItemDevicesItemRegisteredUsersRefRequestBuilder) Post(ctx context.Conte
         return err
     }
     return nil
+}
+// ToDeleteRequestInformation remove a user as a registered user of the device.
+func (m *ItemDevicesItemRegisteredUsersRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemDevicesItemRegisteredUsersRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
 }
 // ToGetRequestInformation collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
 func (m *ItemDevicesItemRegisteredUsersRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDevicesItemRegisteredUsersRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -11,6 +11,20 @@ import (
 type B2cUserFlowsItemIdentityProvidersRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// B2cUserFlowsItemIdentityProvidersRefRequestBuilderDeleteQueryParameters delete an identity provider from a b2cIdentityUserFlow object. For more information about identity providers available for user flows, see the identityProviders API reference.
+type B2cUserFlowsItemIdentityProvidersRefRequestBuilderDeleteQueryParameters struct {
+    // The delete Uri
+    Id *string `uriparametername:"%40id"`
+}
+// B2cUserFlowsItemIdentityProvidersRefRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type B2cUserFlowsItemIdentityProvidersRefRequestBuilderDeleteRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *B2cUserFlowsItemIdentityProvidersRefRequestBuilderDeleteQueryParameters
+}
 // B2cUserFlowsItemIdentityProvidersRefRequestBuilderGetQueryParameters get the identity providers in a b2cIdentityUserFlow object.
 type B2cUserFlowsItemIdentityProvidersRefRequestBuilderGetQueryParameters struct {
     // Include count of items
@@ -45,7 +59,7 @@ type B2cUserFlowsItemIdentityProvidersRefRequestBuilderPostRequestConfiguration 
 // NewB2cUserFlowsItemIdentityProvidersRefRequestBuilderInternal instantiates a new RefRequestBuilder and sets the default values.
 func NewB2cUserFlowsItemIdentityProvidersRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2cUserFlowsItemIdentityProvidersRefRequestBuilder) {
     m := &B2cUserFlowsItemIdentityProvidersRefRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/identityProviders/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/identityProviders/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%40id*}", pathParameters),
     }
     return m
 }
@@ -54,6 +68,26 @@ func NewB2cUserFlowsItemIdentityProvidersRefRequestBuilder(rawUrl string, reques
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewB2cUserFlowsItemIdentityProvidersRefRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Delete delete an identity provider from a b2cIdentityUserFlow object. For more information about identity providers available for user flows, see the identityProviders API reference.
+// Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/b2cidentityuserflow-delete-identityproviders?view=graph-rest-1.0
+func (m *B2cUserFlowsItemIdentityProvidersRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *B2cUserFlowsItemIdentityProvidersRefRequestBuilderDeleteRequestConfiguration)(error) {
+    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
 }
 // Get get the identity providers in a b2cIdentityUserFlow object.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider
@@ -97,6 +131,20 @@ func (m *B2cUserFlowsItemIdentityProvidersRefRequestBuilder) Post(ctx context.Co
         return err
     }
     return nil
+}
+// ToDeleteRequestInformation delete an identity provider from a b2cIdentityUserFlow object. For more information about identity providers available for user flows, see the identityProviders API reference.
+// Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider
+func (m *B2cUserFlowsItemIdentityProvidersRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *B2cUserFlowsItemIdentityProvidersRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
 }
 // ToGetRequestInformation get the identity providers in a b2cIdentityUserFlow object.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider

@@ -11,7 +11,7 @@ import (
 type AuditLogQueriesItemRecordsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AuditLogQueriesItemRecordsRequestBuilderGetQueryParameters get records from security
+// AuditLogQueriesItemRecordsRequestBuilderGetQueryParameters an individual audit log record.
 type AuditLogQueriesItemRecordsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewAuditLogQueriesItemRecordsRequestBuilder(rawUrl string, requestAdapter i
 func (m *AuditLogQueriesItemRecordsRequestBuilder) Count()(*AuditLogQueriesItemRecordsCountRequestBuilder) {
     return NewAuditLogQueriesItemRecordsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get records from security
+// Get an individual audit log record.
 func (m *AuditLogQueriesItemRecordsRequestBuilder) Get(ctx context.Context, requestConfiguration *AuditLogQueriesItemRecordsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AuditLogRecordCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *AuditLogQueriesItemRecordsRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AuditLogRecordable), nil
 }
-// ToGetRequestInformation get records from security
+// ToGetRequestInformation an individual audit log record.
 func (m *AuditLogQueriesItemRecordsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuditLogQueriesItemRecordsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

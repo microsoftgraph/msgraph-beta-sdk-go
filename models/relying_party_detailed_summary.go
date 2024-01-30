@@ -179,7 +179,7 @@ func (m *RelyingPartyDetailedSummary) GetMigrationValidationDetails()([]KeyValue
     }
     return nil
 }
-// GetRelyingPartyId gets the relyingPartyId property value. This identifier is used to identify the relying party to this Federation Service. It is used when issuing claims to the relying party.
+// GetRelyingPartyId gets the relyingPartyId property value. This identifier is used to identify the relying party to this Federation Service. It's used when issuing claims to the relying party.
 func (m *RelyingPartyDetailedSummary) GetRelyingPartyId()(*string) {
     val, err := m.GetBackingStore().Get("relyingPartyId")
     if err != nil {
@@ -190,7 +190,7 @@ func (m *RelyingPartyDetailedSummary) GetRelyingPartyId()(*string) {
     }
     return nil
 }
-// GetRelyingPartyName gets the relyingPartyName property value. Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to log in.
+// GetRelyingPartyName gets the relyingPartyName property value. Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to sign in.
 func (m *RelyingPartyDetailedSummary) GetRelyingPartyName()(*string) {
     val, err := m.GetBackingStore().Get("relyingPartyName")
     if err != nil {
@@ -245,7 +245,7 @@ func (m *RelyingPartyDetailedSummary) GetSuccessfulSignInCount()(*int64) {
     }
     return nil
 }
-// GetTotalSignInCount gets the totalSignInCount property value. Number of successful + failed sign ins failed sign ins on Active Directory Federation Service in the period specified.
+// GetTotalSignInCount gets the totalSignInCount property value. Number of successful + failed sign ins on Active Directory Federation Service in the period specified.
 func (m *RelyingPartyDetailedSummary) GetTotalSignInCount()(*int64) {
     val, err := m.GetBackingStore().Get("totalSignInCount")
     if err != nil {
@@ -369,14 +369,14 @@ func (m *RelyingPartyDetailedSummary) SetMigrationValidationDetails(value []KeyV
         panic(err)
     }
 }
-// SetRelyingPartyId sets the relyingPartyId property value. This identifier is used to identify the relying party to this Federation Service. It is used when issuing claims to the relying party.
+// SetRelyingPartyId sets the relyingPartyId property value. This identifier is used to identify the relying party to this Federation Service. It's used when issuing claims to the relying party.
 func (m *RelyingPartyDetailedSummary) SetRelyingPartyId(value *string)() {
     err := m.GetBackingStore().Set("relyingPartyId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRelyingPartyName sets the relyingPartyName property value. Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to log in.
+// SetRelyingPartyName sets the relyingPartyName property value. Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to sign in.
 func (m *RelyingPartyDetailedSummary) SetRelyingPartyName(value *string)() {
     err := m.GetBackingStore().Set("relyingPartyName", value)
     if err != nil {
@@ -411,7 +411,7 @@ func (m *RelyingPartyDetailedSummary) SetSuccessfulSignInCount(value *int64)() {
         panic(err)
     }
 }
-// SetTotalSignInCount sets the totalSignInCount property value. Number of successful + failed sign ins failed sign ins on Active Directory Federation Service in the period specified.
+// SetTotalSignInCount sets the totalSignInCount property value. Number of successful + failed sign ins on Active Directory Federation Service in the period specified.
 func (m *RelyingPartyDetailedSummary) SetTotalSignInCount(value *int64)() {
     err := m.GetBackingStore().Set("totalSignInCount", value)
     if err != nil {

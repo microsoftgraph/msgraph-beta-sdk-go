@@ -41,7 +41,7 @@ func (m *EntitlementManagement) GetAccessPackageAssignmentPolicies()([]AccessPac
     }
     return nil
 }
-// GetAccessPackageAssignmentRequests gets the accessPackageAssignmentRequests property value. Represents access package assignment requests created by or on behalf of a user.
+// GetAccessPackageAssignmentRequests gets the accessPackageAssignmentRequests property value. Represents access package assignment requests created by or on behalf of a user. DO NOT USE. TO BE RETIRED SOON. Use the assignmentRequests relationship instead.
 func (m *EntitlementManagement) GetAccessPackageAssignmentRequests()([]AccessPackageAssignmentRequestable) {
     val, err := m.GetBackingStore().Get("accessPackageAssignmentRequests")
     if err != nil {
@@ -137,6 +137,17 @@ func (m *EntitlementManagement) GetAccessPackages()([]AccessPackageable) {
     }
     if val != nil {
         return val.([]AccessPackageable)
+    }
+    return nil
+}
+// GetAssignmentRequests gets the assignmentRequests property value. Represents access package assignment requests created by or on behalf of a user.
+func (m *EntitlementManagement) GetAssignmentRequests()([]AccessPackageAssignmentRequestable) {
+    val, err := m.GetBackingStore().Get("assignmentRequests")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessPackageAssignmentRequestable)
     }
     return nil
 }
@@ -327,6 +338,22 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d
                 }
             }
             m.SetAccessPackages(res)
+        }
+        return nil
+    }
+    res["assignmentRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAssignmentRequestFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AccessPackageAssignmentRequestable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AccessPackageAssignmentRequestable)
+                }
+            }
+            m.SetAssignmentRequests(res)
         }
         return nil
     }
@@ -534,6 +561,18 @@ func (m *EntitlementManagement) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    if m.GetAssignmentRequests() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignmentRequests()))
+        for i, v := range m.GetAssignmentRequests() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("assignmentRequests", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetConnectedOrganizations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConnectedOrganizations()))
         for i, v := range m.GetConnectedOrganizations() {
@@ -580,7 +619,7 @@ func (m *EntitlementManagement) SetAccessPackageAssignmentPolicies(value []Acces
         panic(err)
     }
 }
-// SetAccessPackageAssignmentRequests sets the accessPackageAssignmentRequests property value. Represents access package assignment requests created by or on behalf of a user.
+// SetAccessPackageAssignmentRequests sets the accessPackageAssignmentRequests property value. Represents access package assignment requests created by or on behalf of a user. DO NOT USE. TO BE RETIRED SOON. Use the assignmentRequests relationship instead.
 func (m *EntitlementManagement) SetAccessPackageAssignmentRequests(value []AccessPackageAssignmentRequestable)() {
     err := m.GetBackingStore().Set("accessPackageAssignmentRequests", value)
     if err != nil {
@@ -643,6 +682,13 @@ func (m *EntitlementManagement) SetAccessPackages(value []AccessPackageable)() {
         panic(err)
     }
 }
+// SetAssignmentRequests sets the assignmentRequests property value. Represents access package assignment requests created by or on behalf of a user.
+func (m *EntitlementManagement) SetAssignmentRequests(value []AccessPackageAssignmentRequestable)() {
+    err := m.GetBackingStore().Set("assignmentRequests", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetConnectedOrganizations sets the connectedOrganizations property value. Represents references to a directory or domain of another organization whose users can request access.
 func (m *EntitlementManagement) SetConnectedOrganizations(value []ConnectedOrganizationable)() {
     err := m.GetBackingStore().Set("connectedOrganizations", value)
@@ -679,6 +725,7 @@ type EntitlementManagementable interface {
     GetAccessPackageResourceRoleScopes()([]AccessPackageResourceRoleScopeable)
     GetAccessPackageResources()([]AccessPackageResourceable)
     GetAccessPackages()([]AccessPackageable)
+    GetAssignmentRequests()([]AccessPackageAssignmentRequestable)
     GetConnectedOrganizations()([]ConnectedOrganizationable)
     GetSettings()(EntitlementManagementSettingsable)
     GetSubjects()([]AccessPackageSubjectable)
@@ -693,6 +740,7 @@ type EntitlementManagementable interface {
     SetAccessPackageResourceRoleScopes(value []AccessPackageResourceRoleScopeable)()
     SetAccessPackageResources(value []AccessPackageResourceable)()
     SetAccessPackages(value []AccessPackageable)()
+    SetAssignmentRequests(value []AccessPackageAssignmentRequestable)()
     SetConnectedOrganizations(value []ConnectedOrganizationable)()
     SetSettings(value EntitlementManagementSettingsable)()
     SetSubjects(value []AccessPackageSubjectable)()

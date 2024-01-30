@@ -11,6 +11,20 @@ import (
 type SchoolsItemUsersRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// SchoolsItemUsersRefRequestBuilderDeleteQueryParameters delete a user from a school.
+type SchoolsItemUsersRefRequestBuilderDeleteQueryParameters struct {
+    // The delete Uri
+    Id *string `uriparametername:"%40id"`
+}
+// SchoolsItemUsersRefRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type SchoolsItemUsersRefRequestBuilderDeleteRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *SchoolsItemUsersRefRequestBuilderDeleteQueryParameters
+}
 // SchoolsItemUsersRefRequestBuilderGetQueryParameters retrieve a list of users at a school.
 type SchoolsItemUsersRefRequestBuilderGetQueryParameters struct {
     // Include count of items
@@ -45,7 +59,7 @@ type SchoolsItemUsersRefRequestBuilderPostRequestConfiguration struct {
 // NewSchoolsItemUsersRefRequestBuilderInternal instantiates a new RefRequestBuilder and sets the default values.
 func NewSchoolsItemUsersRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SchoolsItemUsersRefRequestBuilder) {
     m := &SchoolsItemUsersRefRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/schools/{educationSchool%2Did}/users/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/schools/{educationSchool%2Did}/users/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%40id*}", pathParameters),
     }
     return m
 }
@@ -54,6 +68,25 @@ func NewSchoolsItemUsersRefRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSchoolsItemUsersRefRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Delete delete a user from a school.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-delete-users?view=graph-rest-1.0
+func (m *SchoolsItemUsersRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *SchoolsItemUsersRefRequestBuilderDeleteRequestConfiguration)(error) {
+    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
 }
 // Get retrieve a list of users at a school.
 // [Find more info here]
@@ -95,6 +128,19 @@ func (m *SchoolsItemUsersRefRequestBuilder) Post(ctx context.Context, body ie233
         return err
     }
     return nil
+}
+// ToDeleteRequestInformation delete a user from a school.
+func (m *SchoolsItemUsersRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SchoolsItemUsersRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
 }
 // ToGetRequestInformation retrieve a list of users at a school.
 func (m *SchoolsItemUsersRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SchoolsItemUsersRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

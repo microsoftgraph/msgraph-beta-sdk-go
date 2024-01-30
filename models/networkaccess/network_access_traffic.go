@@ -57,6 +57,17 @@ func (m *NetworkAccessTraffic) GetAgentVersion()(*string) {
     }
     return nil
 }
+// GetApplicationSnapshot gets the applicationSnapshot property value. The applicationSnapshot property
+func (m *NetworkAccessTraffic) GetApplicationSnapshot()(ApplicationSnapshotable) {
+    val, err := m.GetBackingStore().Get("applicationSnapshot")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ApplicationSnapshotable)
+    }
+    return nil
+}
 // GetBackingStore gets the BackingStore property value. Stores model information.
 func (m *NetworkAccessTraffic) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
@@ -191,6 +202,16 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetAgentVersion(val)
+        }
+        return nil
+    }
+    res["applicationSnapshot"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateApplicationSnapshotFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetApplicationSnapshot(val.(ApplicationSnapshotable))
         }
         return nil
     }
@@ -391,6 +412,16 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetPolicyRuleName(val)
+        }
+        return nil
+    }
+    res["privateAccessDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePrivateAccessDetailsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPrivateAccessDetails(val.(PrivateAccessDetailsable))
         }
         return nil
     }
@@ -626,6 +657,17 @@ func (m *NetworkAccessTraffic) GetPolicyRuleName()(*string) {
     }
     return nil
 }
+// GetPrivateAccessDetails gets the privateAccessDetails property value. The privateAccessDetails property
+func (m *NetworkAccessTraffic) GetPrivateAccessDetails()(PrivateAccessDetailsable) {
+    val, err := m.GetBackingStore().Get("privateAccessDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PrivateAccessDetailsable)
+    }
+    return nil
+}
 // GetReceivedBytes gets the receivedBytes property value. Represents the total number of bytes received in a network communication or data transfer. Supports $filter (eq) and $orderby.
 func (m *NetworkAccessTraffic) GetReceivedBytes()(*int64) {
     val, err := m.GetBackingStore().Get("receivedBytes")
@@ -774,6 +816,12 @@ func (m *NetworkAccessTraffic) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err := writer.WriteObjectValue("applicationSnapshot", m.GetApplicationSnapshot())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("connectionId", m.GetConnectionId())
         if err != nil {
             return err
@@ -896,6 +944,12 @@ func (m *NetworkAccessTraffic) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err := writer.WriteObjectValue("privateAccessDetails", m.GetPrivateAccessDetails())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteInt64Value("receivedBytes", m.GetReceivedBytes())
         if err != nil {
             return err
@@ -994,6 +1048,13 @@ func (m *NetworkAccessTraffic) SetAdditionalData(value map[string]any)() {
 // SetAgentVersion sets the agentVersion property value. Represents the version of the Global Secure Access client agent software. Supports $filter (eq) and $orderby.
 func (m *NetworkAccessTraffic) SetAgentVersion(value *string)() {
     err := m.GetBackingStore().Set("agentVersion", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetApplicationSnapshot sets the applicationSnapshot property value. The applicationSnapshot property
+func (m *NetworkAccessTraffic) SetApplicationSnapshot(value ApplicationSnapshotable)() {
+    err := m.GetBackingStore().Set("applicationSnapshot", value)
     if err != nil {
         panic(err)
     }
@@ -1142,6 +1203,13 @@ func (m *NetworkAccessTraffic) SetPolicyRuleName(value *string)() {
         panic(err)
     }
 }
+// SetPrivateAccessDetails sets the privateAccessDetails property value. The privateAccessDetails property
+func (m *NetworkAccessTraffic) SetPrivateAccessDetails(value PrivateAccessDetailsable)() {
+    err := m.GetBackingStore().Set("privateAccessDetails", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetReceivedBytes sets the receivedBytes property value. Represents the total number of bytes received in a network communication or data transfer. Supports $filter (eq) and $orderby.
 func (m *NetworkAccessTraffic) SetReceivedBytes(value *int64)() {
     err := m.GetBackingStore().Set("receivedBytes", value)
@@ -1233,6 +1301,7 @@ type NetworkAccessTrafficable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAction()(*FilteringPolicyAction)
     GetAgentVersion()(*string)
+    GetApplicationSnapshot()(ApplicationSnapshotable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetConnectionId()(*string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -1254,6 +1323,7 @@ type NetworkAccessTrafficable interface {
     GetPolicyName()(*string)
     GetPolicyRuleId()(*string)
     GetPolicyRuleName()(*string)
+    GetPrivateAccessDetails()(PrivateAccessDetailsable)
     GetReceivedBytes()(*int64)
     GetResourceTenantId()(*string)
     GetSentBytes()(*int64)
@@ -1268,6 +1338,7 @@ type NetworkAccessTrafficable interface {
     GetUserPrincipalName()(*string)
     SetAction(value *FilteringPolicyAction)()
     SetAgentVersion(value *string)()
+    SetApplicationSnapshot(value ApplicationSnapshotable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetConnectionId(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -1289,6 +1360,7 @@ type NetworkAccessTrafficable interface {
     SetPolicyName(value *string)()
     SetPolicyRuleId(value *string)()
     SetPolicyRuleName(value *string)()
+    SetPrivateAccessDetails(value PrivateAccessDetailsable)()
     SetReceivedBytes(value *int64)()
     SetResourceTenantId(value *string)()
     SetSentBytes(value *int64)()

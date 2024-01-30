@@ -11,6 +11,20 @@ import (
 type SharesItemAllowedGroupsRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// SharesItemAllowedGroupsRefRequestBuilderDeleteQueryParameters revoke the specified group's access to submit print jobs to the associated printerShare.
+type SharesItemAllowedGroupsRefRequestBuilderDeleteQueryParameters struct {
+    // The delete Uri
+    Id *string `uriparametername:"%40id"`
+}
+// SharesItemAllowedGroupsRefRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type SharesItemAllowedGroupsRefRequestBuilderDeleteRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *SharesItemAllowedGroupsRefRequestBuilderDeleteQueryParameters
+}
 // SharesItemAllowedGroupsRefRequestBuilderGetQueryParameters retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
 type SharesItemAllowedGroupsRefRequestBuilderGetQueryParameters struct {
     // Include count of items
@@ -45,7 +59,7 @@ type SharesItemAllowedGroupsRefRequestBuilderPostRequestConfiguration struct {
 // NewSharesItemAllowedGroupsRefRequestBuilderInternal instantiates a new RefRequestBuilder and sets the default values.
 func NewSharesItemAllowedGroupsRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesItemAllowedGroupsRefRequestBuilder) {
     m := &SharesItemAllowedGroupsRefRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/allowedGroups/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/allowedGroups/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%40id*}", pathParameters),
     }
     return m
 }
@@ -54,6 +68,25 @@ func NewSharesItemAllowedGroupsRefRequestBuilder(rawUrl string, requestAdapter i
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSharesItemAllowedGroupsRefRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Delete revoke the specified group's access to submit print jobs to the associated printerShare.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/printershare-delete-allowedgroup?view=graph-rest-1.0
+func (m *SharesItemAllowedGroupsRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *SharesItemAllowedGroupsRefRequestBuilderDeleteRequestConfiguration)(error) {
+    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
 }
 // Get retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
 // [Find more info here]
@@ -95,6 +128,19 @@ func (m *SharesItemAllowedGroupsRefRequestBuilder) Post(ctx context.Context, bod
         return err
     }
     return nil
+}
+// ToDeleteRequestInformation revoke the specified group's access to submit print jobs to the associated printerShare.
+func (m *SharesItemAllowedGroupsRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SharesItemAllowedGroupsRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
 }
 // ToGetRequestInformation retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
 func (m *SharesItemAllowedGroupsRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SharesItemAllowedGroupsRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

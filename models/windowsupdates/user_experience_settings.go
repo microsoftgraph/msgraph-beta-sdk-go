@@ -95,7 +95,7 @@ func (m *UserExperienceSettings) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOfferAsOptional gets the offerAsOptional property value. The offerAsOptional property
+// GetOfferAsOptional gets the offerAsOptional property value. Specifies whether the update is offered as Optional rather than Required.
 func (m *UserExperienceSettings) GetOfferAsOptional()(*bool) {
     val, err := m.GetBackingStore().Get("offerAsOptional")
     if err != nil {
@@ -159,7 +159,7 @@ func (m *UserExperienceSettings) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOfferAsOptional sets the offerAsOptional property value. The offerAsOptional property
+// SetOfferAsOptional sets the offerAsOptional property value. Specifies whether the update is offered as Optional rather than Required.
 func (m *UserExperienceSettings) SetOfferAsOptional(value *bool)() {
     err := m.GetBackingStore().Set("offerAsOptional", value)
     if err != nil {
