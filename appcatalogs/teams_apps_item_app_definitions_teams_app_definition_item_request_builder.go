@@ -62,6 +62,10 @@ func NewTeamsAppsItemAppDefinitionsTeamsAppDefinitionItemRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewTeamsAppsItemAppDefinitionsTeamsAppDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// DashboardCards provides operations to manage the dashboardCards property of the microsoft.graph.teamsAppDefinition entity.
+func (m *TeamsAppsItemAppDefinitionsTeamsAppDefinitionItemRequestBuilder) DashboardCards()(*TeamsAppsItemAppDefinitionsItemDashboardCardsRequestBuilder) {
+    return NewTeamsAppsItemAppDefinitionsItemDashboardCardsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete navigation property appDefinitions for appCatalogs
 func (m *TeamsAppsItemAppDefinitionsTeamsAppDefinitionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TeamsAppsItemAppDefinitionsTeamsAppDefinitionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);

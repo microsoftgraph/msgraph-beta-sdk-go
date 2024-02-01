@@ -2536,6 +2536,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewTeamInfo(), nil
                     case "#microsoft.graph.teamsApp":
                         return NewTeamsApp(), nil
+                    case "#microsoft.graph.teamsAppDashboardCardDefinition":
+                        return NewTeamsAppDashboardCardDefinition(), nil
                     case "#microsoft.graph.teamsAppDefinition":
                         return NewTeamsAppDefinition(), nil
                     case "#microsoft.graph.teamsAppIcon":

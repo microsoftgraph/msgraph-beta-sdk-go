@@ -148,6 +148,7 @@ type M365AppsInstallationOptionsable interface {
     SetUpdateChannel(value *AppsUpdateChannelType)()
 }
 
+
 // AppsInstallationOptionsForWindows 
 type AppsInstallationOptionsForWindows struct {
     // Stores model information.

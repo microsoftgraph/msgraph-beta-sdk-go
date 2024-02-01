@@ -86,6 +86,17 @@ func (m *TeamsAppDefinition) GetCreatedBy()(IdentitySetable) {
     }
     return nil
 }
+// GetDashboardCards gets the dashboardCards property value. The dashboardCards property
+func (m *TeamsAppDefinition) GetDashboardCards()([]TeamsAppDashboardCardDefinitionable) {
+    val, err := m.GetBackingStore().Get("dashboardCards")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeamsAppDashboardCardDefinitionable)
+    }
+    return nil
+}
 // GetDescription gets the description property value. The description property
 func (m *TeamsAppDefinition) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -168,6 +179,22 @@ func (m *TeamsAppDefinition) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetCreatedBy(val.(IdentitySetable))
+        }
+        return nil
+    }
+    res["dashboardCards"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateTeamsAppDashboardCardDefinitionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]TeamsAppDashboardCardDefinitionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(TeamsAppDashboardCardDefinitionable)
+                }
+            }
+            m.SetDashboardCards(res)
         }
         return nil
     }
@@ -362,6 +389,18 @@ func (m *TeamsAppDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    if m.GetDashboardCards() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDashboardCards()))
+        for i, v := range m.GetDashboardCards() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("dashboardCards", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
@@ -455,6 +494,13 @@ func (m *TeamsAppDefinition) SetCreatedBy(value IdentitySetable)() {
         panic(err)
     }
 }
+// SetDashboardCards sets the dashboardCards property value. The dashboardCards property
+func (m *TeamsAppDefinition) SetDashboardCards(value []TeamsAppDashboardCardDefinitionable)() {
+    err := m.GetBackingStore().Set("dashboardCards", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDescription sets the description property value. The description property
 func (m *TeamsAppDefinition) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
@@ -521,6 +567,7 @@ type TeamsAppDefinitionable interface {
     GetBot()(TeamworkBotable)
     GetColorIcon()(TeamsAppIconable)
     GetCreatedBy()(IdentitySetable)
+    GetDashboardCards()([]TeamsAppDashboardCardDefinitionable)
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -535,6 +582,7 @@ type TeamsAppDefinitionable interface {
     SetBot(value TeamworkBotable)()
     SetColorIcon(value TeamsAppIconable)()
     SetCreatedBy(value IdentitySetable)()
+    SetDashboardCards(value []TeamsAppDashboardCardDefinitionable)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

@@ -84,7 +84,7 @@ func (m *ExpediteSettings) GetIsExpedited()(*bool) {
     }
     return nil
 }
-// GetIsReadinessTest gets the isReadinessTest property value. The isReadinessTest property
+// GetIsReadinessTest gets the isReadinessTest property value. True indicates that the deployment is an expedite readiness test.
 func (m *ExpediteSettings) GetIsReadinessTest()(*bool) {
     val, err := m.GetBackingStore().Get("isReadinessTest")
     if err != nil {
@@ -152,7 +152,7 @@ func (m *ExpediteSettings) SetIsExpedited(value *bool)() {
         panic(err)
     }
 }
-// SetIsReadinessTest sets the isReadinessTest property value. The isReadinessTest property
+// SetIsReadinessTest sets the isReadinessTest property value. True indicates that the deployment is an expedite readiness test.
 func (m *ExpediteSettings) SetIsReadinessTest(value *bool)() {
     err := m.GetBackingStore().Set("isReadinessTest", value)
     if err != nil {
