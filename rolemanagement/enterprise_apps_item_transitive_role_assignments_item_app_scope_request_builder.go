@@ -44,7 +44,7 @@ type EnterpriseAppsItemTransitiveRoleAssignmentsItemAppScopeRequestBuilderPatchR
 // NewEnterpriseAppsItemTransitiveRoleAssignmentsItemAppScopeRequestBuilderInternal instantiates a new AppScopeRequestBuilder and sets the default values.
 func NewEnterpriseAppsItemTransitiveRoleAssignmentsItemAppScopeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EnterpriseAppsItemTransitiveRoleAssignmentsItemAppScopeRequestBuilder) {
     m := &EnterpriseAppsItemTransitiveRoleAssignmentsItemAppScopeRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/enterpriseApps/{rbacApplication%2Did}/transitiveRoleAssignments/{unifiedRoleAssignment%2Did}/appScope{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/enterpriseApps/{rbacApplication%2Did}/transitiveRoleAssignments/{unifiedRoleAssignment%2Did}/appScope{?%24expand,%24select}", pathParameters),
     }
     return m
 }

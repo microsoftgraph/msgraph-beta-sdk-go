@@ -30,7 +30,7 @@ type EdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderGetRequest
 // NewEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderInternal instantiates a new LastIndexOperationRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder) {
     m := &EdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/custodians/{custodian%2Did}/lastIndexOperation{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/custodians/{custodian%2Did}/lastIndexOperation{?%24expand,%24select}", pathParameters),
     }
     return m
 }

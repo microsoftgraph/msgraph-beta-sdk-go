@@ -48,7 +48,7 @@ func (m *ConnectivityRequestBuilder) Branches()(*ConnectivityBranchesRequestBuil
 // NewConnectivityRequestBuilderInternal instantiates a new ConnectivityRequestBuilder and sets the default values.
 func NewConnectivityRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectivityRequestBuilder) {
     m := &ConnectivityRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/connectivity{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/connectivity{?%24expand,%24select}", pathParameters),
     }
     return m
 }

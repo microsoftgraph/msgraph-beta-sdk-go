@@ -44,7 +44,7 @@ type ManagedEBookCategoriesManagedEBookCategoryItemRequestBuilderPatchRequestCon
 // NewManagedEBookCategoriesManagedEBookCategoryItemRequestBuilderInternal instantiates a new ManagedEBookCategoryItemRequestBuilder and sets the default values.
 func NewManagedEBookCategoriesManagedEBookCategoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedEBookCategoriesManagedEBookCategoryItemRequestBuilder) {
     m := &ManagedEBookCategoriesManagedEBookCategoryItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/managedEBookCategories/{managedEBookCategory%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/managedEBookCategories/{managedEBookCategory%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

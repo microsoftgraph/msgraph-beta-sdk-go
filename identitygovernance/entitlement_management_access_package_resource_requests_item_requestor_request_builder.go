@@ -48,7 +48,7 @@ func (m *EntitlementManagementAccessPackageResourceRequestsItemRequestorRequestB
 // NewEntitlementManagementAccessPackageResourceRequestsItemRequestorRequestBuilderInternal instantiates a new RequestorRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageResourceRequestsItemRequestorRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageResourceRequestsItemRequestorRequestBuilder) {
     m := &EntitlementManagementAccessPackageResourceRequestsItemRequestorRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageResourceRequests/{accessPackageResourceRequest%2Did}/requestor{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageResourceRequests/{accessPackageResourceRequest%2Did}/requestor{?%24expand,%24select}", pathParameters),
     }
     return m
 }

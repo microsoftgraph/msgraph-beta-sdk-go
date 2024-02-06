@@ -39,7 +39,7 @@ func (m *RunDetails) GetAdditionalData()(map[string]any) {
 func (m *RunDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetErrorCode gets the errorCode property value. The errorCode property
+// GetErrorCode gets the errorCode property value. Error code of the most recent run that encountered an error. The possible values are: queryExecutionFailed, queryExecutionThrottling, queryExceededResultSize, queryLimitsExceeded, queryTimeout, alertCreationFailed, alertReportNotFound, partialRowsFailed, unknownFutureValue.
 func (m *RunDetails) GetErrorCode()(*HuntingRuleErrorCode) {
     val, err := m.GetBackingStore().Get("errorCode")
     if err != nil {
@@ -50,7 +50,7 @@ func (m *RunDetails) GetErrorCode()(*HuntingRuleErrorCode) {
     }
     return nil
 }
-// GetFailureReason gets the failureReason property value. The failureReason property
+// GetFailureReason gets the failureReason property value. Reason for failure when the custom detection last ran and failed. See the table below.
 func (m *RunDetails) GetFailureReason()(*string) {
     val, err := m.GetBackingStore().Get("failureReason")
     if err != nil {
@@ -116,7 +116,7 @@ func (m *RunDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetLastRunDateTime gets the lastRunDateTime property value. The lastRunDateTime property
+// GetLastRunDateTime gets the lastRunDateTime property value. Timestamp when the custom detection was last run.
 func (m *RunDetails) GetLastRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastRunDateTime")
     if err != nil {
@@ -138,7 +138,7 @@ func (m *RunDetails) GetOdataType()(*string) {
     }
     return nil
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. Status of custom detection when it was last run. The possible values are: running, completed, failed, partiallyFailed, unknownFutureValue.
 func (m *RunDetails) GetStatus()(*HuntingRuleRunStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -202,21 +202,21 @@ func (m *RunDetails) SetAdditionalData(value map[string]any)() {
 func (m *RunDetails) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetErrorCode sets the errorCode property value. The errorCode property
+// SetErrorCode sets the errorCode property value. Error code of the most recent run that encountered an error. The possible values are: queryExecutionFailed, queryExecutionThrottling, queryExceededResultSize, queryLimitsExceeded, queryTimeout, alertCreationFailed, alertReportNotFound, partialRowsFailed, unknownFutureValue.
 func (m *RunDetails) SetErrorCode(value *HuntingRuleErrorCode)() {
     err := m.GetBackingStore().Set("errorCode", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFailureReason sets the failureReason property value. The failureReason property
+// SetFailureReason sets the failureReason property value. Reason for failure when the custom detection last ran and failed. See the table below.
 func (m *RunDetails) SetFailureReason(value *string)() {
     err := m.GetBackingStore().Set("failureReason", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastRunDateTime sets the lastRunDateTime property value. The lastRunDateTime property
+// SetLastRunDateTime sets the lastRunDateTime property value. Timestamp when the custom detection was last run.
 func (m *RunDetails) SetLastRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastRunDateTime", value)
     if err != nil {
@@ -230,7 +230,7 @@ func (m *RunDetails) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. Status of custom detection when it was last run. The possible values are: running, completed, failed, partiallyFailed, unknownFutureValue.
 func (m *RunDetails) SetStatus(value *HuntingRuleRunStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

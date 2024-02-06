@@ -30,7 +30,10 @@ func NewVirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action getCloudPcRecommendationReports
+// Post get the device recommendation reports for Cloud PCs, such as the usage category report. The usage category report categorizes a Cloud PC as Undersized, Oversized, Rightsized, or Underutilized, and also provides the recommended SKU when the Cloud PC isn't Rightsized.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcreports-getcloudpcrecommendationreports?view=graph-rest-1.0
 func (m *VirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilder) Post(ctx context.Context, body VirtualEndpointReportsGetCloudPcRecommendationReportsPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *VirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilder) Po
     }
     return res.([]byte), nil
 }
-// ToPostRequestInformation invoke action getCloudPcRecommendationReports
+// ToPostRequestInformation get the device recommendation reports for Cloud PCs, such as the usage category report. The usage category report categorizes a Cloud PC as Undersized, Oversized, Rightsized, or Underutilized, and also provides the recommended SKU when the Cloud PC isn't Rightsized.
 func (m *VirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointReportsGetCloudPcRecommendationReportsPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

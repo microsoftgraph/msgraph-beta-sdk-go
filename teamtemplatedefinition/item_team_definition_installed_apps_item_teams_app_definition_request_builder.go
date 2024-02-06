@@ -30,7 +30,7 @@ type ItemTeamDefinitionInstalledAppsItemTeamsAppDefinitionRequestBuilderGetReque
 // NewItemTeamDefinitionInstalledAppsItemTeamsAppDefinitionRequestBuilderInternal instantiates a new TeamsAppDefinitionRequestBuilder and sets the default values.
 func NewItemTeamDefinitionInstalledAppsItemTeamsAppDefinitionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionInstalledAppsItemTeamsAppDefinitionRequestBuilder) {
     m := &ItemTeamDefinitionInstalledAppsItemTeamsAppDefinitionRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/installedApps/{teamsAppInstallation%2Did}/teamsAppDefinition{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/installedApps/{teamsAppInstallation%2Did}/teamsAppDefinition{?%24expand,%24select}", pathParameters),
     }
     return m
 }

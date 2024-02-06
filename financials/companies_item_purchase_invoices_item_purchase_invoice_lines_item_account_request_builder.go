@@ -30,7 +30,7 @@ type CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemAccountRequestBuil
 // NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemAccountRequestBuilderInternal instantiates a new AccountRequestBuilder and sets the default values.
 func NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemAccountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemAccountRequestBuilder) {
     m := &CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemAccountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/purchaseInvoices/{purchaseInvoice%2Did}/purchaseInvoiceLines/{purchaseInvoiceLine%2Did}/account{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/purchaseInvoices/{purchaseInvoice%2Did}/purchaseInvoiceLines/{purchaseInvoiceLine%2Did}/account{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -1,25 +1,28 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // 
 type IncomingTokenType int
 
 const (
-    NONE_INCOMINGTOKENTYPE IncomingTokenType = iota
-    PRIMARYREFRESHTOKEN_INCOMINGTOKENTYPE
-    SAML11_INCOMINGTOKENTYPE
-    SAML20_INCOMINGTOKENTYPE
-    UNKNOWNFUTUREVALUE_INCOMINGTOKENTYPE
-    REMOTEDESKTOPTOKEN_INCOMINGTOKENTYPE
+    NONE_INCOMINGTOKENTYPE = 1
+    PRIMARYREFRESHTOKEN_INCOMINGTOKENTYPE = 2
+    SAML11_INCOMINGTOKENTYPE = 4
+    SAML20_INCOMINGTOKENTYPE = 8
+    UNKNOWNFUTUREVALUE_INCOMINGTOKENTYPE = 16
+    REMOTEDESKTOPTOKEN_INCOMINGTOKENTYPE = 32
 )
 
 func (i IncomingTokenType) String() string {
     var values []string
-    for p := IncomingTokenType(1); p <= REMOTEDESKTOPTOKEN_INCOMINGTOKENTYPE; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "primaryRefreshToken", "saml11", "saml20", "unknownFutureValue", "remoteDesktopToken"}[p])
+    options := []string{"none", "primaryRefreshToken", "saml11", "saml20", "unknownFutureValue", "remoteDesktopToken"}
+    for p := 0; p < 6; p++ {
+        mantis := IncomingTokenType(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

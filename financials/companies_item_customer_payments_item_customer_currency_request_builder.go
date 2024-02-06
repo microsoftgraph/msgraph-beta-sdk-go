@@ -44,7 +44,7 @@ type CompaniesItemCustomerPaymentsItemCustomerCurrencyRequestBuilderPatchRequest
 // NewCompaniesItemCustomerPaymentsItemCustomerCurrencyRequestBuilderInternal instantiates a new CurrencyRequestBuilder and sets the default values.
 func NewCompaniesItemCustomerPaymentsItemCustomerCurrencyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemCustomerPaymentsItemCustomerCurrencyRequestBuilder) {
     m := &CompaniesItemCustomerPaymentsItemCustomerCurrencyRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/customerPayments/{customerPayment%2Did}/customer/currency{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/customerPayments/{customerPayment%2Did}/customer/currency{?%24expand,%24select}", pathParameters),
     }
     return m
 }

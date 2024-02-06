@@ -30,7 +30,7 @@ type ConnectivityBranchesItemForwardingProfilesItemPoliciesItemPolicyRequestBuil
 // NewConnectivityBranchesItemForwardingProfilesItemPoliciesItemPolicyRequestBuilderInternal instantiates a new PolicyRequestBuilder and sets the default values.
 func NewConnectivityBranchesItemForwardingProfilesItemPoliciesItemPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectivityBranchesItemForwardingProfilesItemPoliciesItemPolicyRequestBuilder) {
     m := &ConnectivityBranchesItemForwardingProfilesItemPoliciesItemPolicyRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}/forwardingProfiles/{forwardingProfile%2Did}/policies/{policyLink%2Did}/policy{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}/forwardingProfiles/{forwardingProfile%2Did}/policies/{policyLink%2Did}/policy{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -44,7 +44,7 @@ type IntentsItemUserStateSummaryRequestBuilderPatchRequestConfiguration struct {
 // NewIntentsItemUserStateSummaryRequestBuilderInternal instantiates a new UserStateSummaryRequestBuilder and sets the default values.
 func NewIntentsItemUserStateSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IntentsItemUserStateSummaryRequestBuilder) {
     m := &IntentsItemUserStateSummaryRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/userStateSummary{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/userStateSummary{?%24expand,%24select}", pathParameters),
     }
     return m
 }

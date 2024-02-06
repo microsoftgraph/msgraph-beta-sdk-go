@@ -30,7 +30,7 @@ type GroupsItemSetsItemChildrenItemChildrenItemRelationsItemSetRequestBuilderGet
 // NewGroupsItemSetsItemChildrenItemChildrenItemRelationsItemSetRequestBuilderInternal instantiates a new SetRequestBuilder and sets the default values.
 func NewGroupsItemSetsItemChildrenItemChildrenItemRelationsItemSetRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupsItemSetsItemChildrenItemChildrenItemRelationsItemSetRequestBuilder) {
     m := &GroupsItemSetsItemChildrenItemChildrenItemRelationsItemSetRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/termStore/groups/{group%2Did}/sets/{set%2Did}/children/{term%2Did}/children/{term%2Did1}/relations/{relation%2Did}/set{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/termStore/groups/{group%2Did}/sets/{set%2Did}/children/{term%2Did}/children/{term%2Did1}/relations/{relation%2Did}/set{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -1,27 +1,30 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // 
 type AwsSecurityToolWebServices int
 
 const (
-    MACIE_AWSSECURITYTOOLWEBSERVICES AwsSecurityToolWebServices = iota
-    WAFSHIELD_AWSSECURITYTOOLWEBSERVICES
-    CLOUDTRAIL_AWSSECURITYTOOLWEBSERVICES
-    INSPECTOR_AWSSECURITYTOOLWEBSERVICES
-    SECURITYHUB_AWSSECURITYTOOLWEBSERVICES
-    DETECTIVE_AWSSECURITYTOOLWEBSERVICES
-    GUARDDUTY_AWSSECURITYTOOLWEBSERVICES
-    UNKNOWNFUTUREVALUE_AWSSECURITYTOOLWEBSERVICES
+    MACIE_AWSSECURITYTOOLWEBSERVICES = 1
+    WAFSHIELD_AWSSECURITYTOOLWEBSERVICES = 2
+    CLOUDTRAIL_AWSSECURITYTOOLWEBSERVICES = 4
+    INSPECTOR_AWSSECURITYTOOLWEBSERVICES = 8
+    SECURITYHUB_AWSSECURITYTOOLWEBSERVICES = 16
+    DETECTIVE_AWSSECURITYTOOLWEBSERVICES = 32
+    GUARDDUTY_AWSSECURITYTOOLWEBSERVICES = 64
+    UNKNOWNFUTUREVALUE_AWSSECURITYTOOLWEBSERVICES = 128
 )
 
 func (i AwsSecurityToolWebServices) String() string {
     var values []string
-    for p := AwsSecurityToolWebServices(1); p <= UNKNOWNFUTUREVALUE_AWSSECURITYTOOLWEBSERVICES; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"macie", "wafShield", "cloudTrail", "inspector", "securityHub", "detective", "guardDuty", "unknownFutureValue"}[p])
+    options := []string{"macie", "wafShield", "cloudTrail", "inspector", "securityHub", "detective", "guardDuty", "unknownFutureValue"}
+    for p := 0; p < 8; p++ {
+        mantis := AwsSecurityToolWebServices(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

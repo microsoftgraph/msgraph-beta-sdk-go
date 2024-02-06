@@ -30,7 +30,7 @@ type VirtualEventsWebinarsItemSessionsItemRegistrationsVirtualEventRegistrationI
 // NewVirtualEventsWebinarsItemSessionsItemRegistrationsVirtualEventRegistrationItemRequestBuilderInternal instantiates a new VirtualEventRegistrationItemRequestBuilder and sets the default values.
 func NewVirtualEventsWebinarsItemSessionsItemRegistrationsVirtualEventRegistrationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsWebinarsItemSessionsItemRegistrationsVirtualEventRegistrationItemRequestBuilder) {
     m := &VirtualEventsWebinarsItemSessionsItemRegistrationsVirtualEventRegistrationItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/sessions/{virtualEventSession%2Did}/registrations/{virtualEventRegistration%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/sessions/{virtualEventSession%2Did}/registrations/{virtualEventRegistration%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

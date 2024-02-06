@@ -29,7 +29,7 @@ type EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleG
 // NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleGroupsItemServiceProvisioningErrorsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleGroupsItemServiceProvisioningErrorsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleGroupsItemServiceProvisioningErrorsCountRequestBuilder) {
     m := &EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleGroupsItemServiceProvisioningErrorsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment%2Did}/accessPackage/incompatibleGroups/{group%2Did}/serviceProvisioningErrors/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment%2Did}/accessPackage/incompatibleGroups/{group%2Did}/serviceProvisioningErrors/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

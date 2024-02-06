@@ -29,7 +29,7 @@ type ItemConnectorGroupsItemApplicationsCountRequestBuilderGetRequestConfigurati
 // NewItemConnectorGroupsItemApplicationsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemConnectorGroupsItemApplicationsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConnectorGroupsItemApplicationsCountRequestBuilder) {
     m := &ItemConnectorGroupsItemApplicationsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups/{connectorGroup%2Did}/applications/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups/{connectorGroup%2Did}/applications/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

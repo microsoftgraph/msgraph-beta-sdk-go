@@ -39,7 +39,7 @@ func CreateProtectionRuleFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     }
     return NewProtectionRule(), nil
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. Name of the user or application that created the rule.
 func (m *ProtectionRule) GetCreatedBy()(*string) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -50,7 +50,7 @@ func (m *ProtectionRule) GetCreatedBy()(*string) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Timestamp of rule creation.
 func (m *ProtectionRule) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *ProtectionRule) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Name of the rule.
 func (m *ProtectionRule) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -137,7 +137,7 @@ func (m *ProtectionRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetIsEnabled gets the isEnabled property value. The isEnabled property
+// GetIsEnabled gets the isEnabled property value. Whether rule is turned on for the tenant.
 func (m *ProtectionRule) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -148,7 +148,7 @@ func (m *ProtectionRule) GetIsEnabled()(*bool) {
     }
     return nil
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. Name of the user or application who last updated the rule.
 func (m *ProtectionRule) GetLastModifiedBy()(*string) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -159,7 +159,7 @@ func (m *ProtectionRule) GetLastModifiedBy()(*string) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Timestamp of when the rule was last updated.
 func (m *ProtectionRule) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -214,42 +214,42 @@ func (m *ProtectionRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. Name of the user or application that created the rule.
 func (m *ProtectionRule) SetCreatedBy(value *string)() {
     err := m.GetBackingStore().Set("createdBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Timestamp of rule creation.
 func (m *ProtectionRule) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Name of the rule.
 func (m *ProtectionRule) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsEnabled sets the isEnabled property value. The isEnabled property
+// SetIsEnabled sets the isEnabled property value. Whether rule is turned on for the tenant.
 func (m *ProtectionRule) SetIsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. Name of the user or application who last updated the rule.
 func (m *ProtectionRule) SetLastModifiedBy(value *string)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Timestamp of when the rule was last updated.
 func (m *ProtectionRule) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {

@@ -1,21 +1,24 @@
 package ediscovery
 import (
     "errors"
+    "math"
     "strings"
 )
 // 
 type SourceType int
 
 const (
-    MAILBOX_SOURCETYPE SourceType = iota
-    SITE_SOURCETYPE
+    MAILBOX_SOURCETYPE = 1
+    SITE_SOURCETYPE = 2
 )
 
 func (i SourceType) String() string {
     var values []string
-    for p := SourceType(1); p <= SITE_SOURCETYPE; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"mailbox", "site"}[p])
+    options := []string{"mailbox", "site"}
+    for p := 0; p < 2; p++ {
+        mantis := SourceType(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

@@ -29,7 +29,7 @@ type LabelsRetentionLabelsCountRequestBuilderGetRequestConfiguration struct {
 // NewLabelsRetentionLabelsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewLabelsRetentionLabelsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LabelsRetentionLabelsCountRequestBuilder) {
     m := &LabelsRetentionLabelsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/labels/retentionLabels/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/labels/retentionLabels/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

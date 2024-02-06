@@ -44,7 +44,7 @@ type IndustryDataInboundFlowsInboundFlowItemRequestBuilderPatchRequestConfigurat
 // NewIndustryDataInboundFlowsInboundFlowItemRequestBuilderInternal instantiates a new InboundFlowItemRequestBuilder and sets the default values.
 func NewIndustryDataInboundFlowsInboundFlowItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataInboundFlowsInboundFlowItemRequestBuilder) {
     m := &IndustryDataInboundFlowsInboundFlowItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/inboundFlows/{inboundFlow%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/inboundFlows/{inboundFlow%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
@@ -58,10 +58,10 @@ func NewIndustryDataInboundFlowsInboundFlowItemRequestBuilder(rawUrl string, req
 func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) DataConnector()(*IndustryDataInboundFlowsItemDataConnectorRequestBuilder) {
     return NewIndustryDataInboundFlowsItemDataConnectorRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete delete an inboundFileFlow object.
+// Delete delete an inboundFlow object.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundflow-delete?view=graph-rest-1.0
 func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IndustryDataInboundFlowsInboundFlowItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +121,7 @@ func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) Patch(ctx contex
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable), nil
 }
-// ToDeleteRequestInformation delete an inboundFileFlow object.
+// ToDeleteRequestInformation delete an inboundFlow object.
 func (m *IndustryDataInboundFlowsInboundFlowItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *IndustryDataInboundFlowsInboundFlowItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

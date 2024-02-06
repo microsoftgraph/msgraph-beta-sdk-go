@@ -30,7 +30,7 @@ type DeviceCustomAttributeShellScriptsItemRunSummaryRequestBuilderGetRequestConf
 // NewDeviceCustomAttributeShellScriptsItemRunSummaryRequestBuilderInternal instantiates a new RunSummaryRequestBuilder and sets the default values.
 func NewDeviceCustomAttributeShellScriptsItemRunSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceCustomAttributeShellScriptsItemRunSummaryRequestBuilder) {
     m := &DeviceCustomAttributeShellScriptsItemRunSummaryRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript%2Did}/runSummary{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript%2Did}/runSummary{?%24expand,%24select}", pathParameters),
     }
     return m
 }

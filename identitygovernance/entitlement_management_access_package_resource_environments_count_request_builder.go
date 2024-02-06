@@ -29,7 +29,7 @@ type EntitlementManagementAccessPackageResourceEnvironmentsCountRequestBuilderGe
 // NewEntitlementManagementAccessPackageResourceEnvironmentsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageResourceEnvironmentsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageResourceEnvironmentsCountRequestBuilder) {
     m := &EntitlementManagementAccessPackageResourceEnvironmentsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageResourceEnvironments/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageResourceEnvironments/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

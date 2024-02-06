@@ -44,7 +44,7 @@ type ItemCustomersBookingCustomerItemRequestBuilderPatchRequestConfiguration str
 // NewItemCustomersBookingCustomerItemRequestBuilderInternal instantiates a new BookingCustomerItemRequestBuilder and sets the default values.
 func NewItemCustomersBookingCustomerItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCustomersBookingCustomerItemRequestBuilder) {
     m := &ItemCustomersBookingCustomerItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/customers/{bookingCustomer%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/customers/{bookingCustomer%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

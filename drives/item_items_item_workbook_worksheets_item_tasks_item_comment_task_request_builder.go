@@ -48,7 +48,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskRequestBuilder) 
 // NewItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskRequestBuilderInternal instantiates a new TaskRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/tasks/{workbookDocumentTask%2Did}/comment/task{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/tasks/{workbookDocumentTask%2Did}/comment/task{?%24expand,%24select}", pathParameters),
     }
     return m
 }

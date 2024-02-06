@@ -29,7 +29,7 @@ type ItemInformationProtectionSensitivityLabelsItemSublabelsCountRequestBuilderG
 // NewItemInformationProtectionSensitivityLabelsItemSublabelsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemInformationProtectionSensitivityLabelsItemSublabelsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInformationProtectionSensitivityLabelsItemSublabelsCountRequestBuilder) {
     m := &ItemInformationProtectionSensitivityLabelsItemSublabelsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}/sublabels/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}/sublabels/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

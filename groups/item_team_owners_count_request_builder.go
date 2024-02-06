@@ -29,7 +29,7 @@ type ItemTeamOwnersCountRequestBuilderGetRequestConfiguration struct {
 // NewItemTeamOwnersCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemTeamOwnersCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamOwnersCountRequestBuilder) {
     m := &ItemTeamOwnersCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/owners/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/owners/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

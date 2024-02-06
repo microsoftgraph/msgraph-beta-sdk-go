@@ -29,7 +29,7 @@ type WindowsUpdatesUpdatePoliciesCountRequestBuilderGetRequestConfiguration stru
 // NewWindowsUpdatesUpdatePoliciesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewWindowsUpdatesUpdatePoliciesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesUpdatePoliciesCountRequestBuilder) {
     m := &WindowsUpdatesUpdatePoliciesCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/updatePolicies/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/updatePolicies/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

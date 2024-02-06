@@ -29,7 +29,7 @@ type CasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsCountRequestBuilderGetRe
 // NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsCountRequestBuilder) {
     m := &CasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/reviewSets/{ediscoveryReviewSet%2Did}/files/{ediscoveryFile%2Did}/tags/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/reviewSets/{ediscoveryReviewSet%2Did}/files/{ediscoveryFile%2Did}/tags/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

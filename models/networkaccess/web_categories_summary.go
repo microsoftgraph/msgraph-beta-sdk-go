@@ -22,6 +22,17 @@ func NewWebCategoriesSummary()(*WebCategoriesSummary) {
 func CreateWebCategoriesSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWebCategoriesSummary(), nil
 }
+// GetAction gets the action property value. The action property
+func (m *WebCategoriesSummary) GetAction()(*FilteringPolicyAction) {
+    val, err := m.GetBackingStore().Get("action")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*FilteringPolicyAction)
+    }
+    return nil
+}
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WebCategoriesSummary) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
@@ -52,6 +63,16 @@ func (m *WebCategoriesSummary) GetDeviceCount()(*int64) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WebCategoriesSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseFilteringPolicyAction)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAction(val.(*FilteringPolicyAction))
+        }
+        return nil
+    }
     res["deviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -150,6 +171,13 @@ func (m *WebCategoriesSummary) GetWebCategory()(WebCategoryable) {
 }
 // Serialize serializes information the current object
 func (m *WebCategoriesSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetAction() != nil {
+        cast := (*m.GetAction()).String()
+        err := writer.WriteStringValue("action", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteInt64Value("deviceCount", m.GetDeviceCount())
         if err != nil {
@@ -187,6 +215,13 @@ func (m *WebCategoriesSummary) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     return nil
+}
+// SetAction sets the action property value. The action property
+func (m *WebCategoriesSummary) SetAction(value *FilteringPolicyAction)() {
+    err := m.GetBackingStore().Set("action", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WebCategoriesSummary) SetAdditionalData(value map[string]any)() {
@@ -239,12 +274,14 @@ type WebCategoriesSummaryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAction()(*FilteringPolicyAction)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDeviceCount()(*int64)
     GetOdataType()(*string)
     GetTransactionCount()(*int64)
     GetUserCount()(*int64)
     GetWebCategory()(WebCategoryable)
+    SetAction(value *FilteringPolicyAction)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDeviceCount(value *int64)()
     SetOdataType(value *string)()

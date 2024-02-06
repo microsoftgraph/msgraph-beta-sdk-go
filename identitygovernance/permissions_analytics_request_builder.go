@@ -52,7 +52,7 @@ func (m *PermissionsAnalyticsRequestBuilder) Azure()(*PermissionsAnalyticsAzureR
 // NewPermissionsAnalyticsRequestBuilderInternal instantiates a new PermissionsAnalyticsRequestBuilder and sets the default values.
 func NewPermissionsAnalyticsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PermissionsAnalyticsRequestBuilder) {
     m := &PermissionsAnalyticsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/permissionsAnalytics{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/permissionsAnalytics{?%24expand,%24select}", pathParameters),
     }
     return m
 }

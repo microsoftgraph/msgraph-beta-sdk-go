@@ -37,7 +37,7 @@ type ItemOwnersItemMailboxSettingsRequestBuilderPatchRequestConfiguration struct
 // NewItemOwnersItemMailboxSettingsRequestBuilderInternal instantiates a new MailboxSettingsRequestBuilder and sets the default values.
 func NewItemOwnersItemMailboxSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOwnersItemMailboxSettingsRequestBuilder) {
     m := &ItemOwnersItemMailboxSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/owners/{user%2Did}/mailboxSettings{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/owners/{user%2Did}/mailboxSettings{?%24expand,%24select}", pathParameters),
     }
     return m
 }

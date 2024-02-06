@@ -44,7 +44,7 @@ type VirtualEndpointOrganizationSettingsRequestBuilderPatchRequestConfiguration 
 // NewVirtualEndpointOrganizationSettingsRequestBuilderInternal instantiates a new OrganizationSettingsRequestBuilder and sets the default values.
 func NewVirtualEndpointOrganizationSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointOrganizationSettingsRequestBuilder) {
     m := &VirtualEndpointOrganizationSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/organizationSettings{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/organizationSettings{?%24expand,%24select}", pathParameters),
     }
     return m
 }

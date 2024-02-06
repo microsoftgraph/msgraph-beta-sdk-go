@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Key Usage Options.
@@ -8,16 +9,18 @@ type KeyUsages int
 
 const (
     // Key Encipherment Usage.
-    KEYENCIPHERMENT_KEYUSAGES KeyUsages = iota
+    KEYENCIPHERMENT_KEYUSAGES = 1
     // Digital Signature Usage.
-    DIGITALSIGNATURE_KEYUSAGES
+    DIGITALSIGNATURE_KEYUSAGES = 2
 )
 
 func (i KeyUsages) String() string {
     var values []string
-    for p := KeyUsages(1); p <= DIGITALSIGNATURE_KEYUSAGES; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"keyEncipherment", "digitalSignature"}[p])
+    options := []string{"keyEncipherment", "digitalSignature"}
+    for p := 0; p < 2; p++ {
+        mantis := KeyUsages(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

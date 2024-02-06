@@ -29,7 +29,7 @@ type ManagedTenantsManagedTenantAlertsCountRequestBuilderGetRequestConfiguration
 // NewManagedTenantsManagedTenantAlertsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewManagedTenantsManagedTenantAlertsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagedTenantAlertsCountRequestBuilder) {
     m := &ManagedTenantsManagedTenantAlertsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/managedTenantAlerts/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/managedTenantAlerts/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

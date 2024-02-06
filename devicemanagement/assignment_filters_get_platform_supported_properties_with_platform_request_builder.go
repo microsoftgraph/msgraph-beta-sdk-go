@@ -35,7 +35,7 @@ type AssignmentFiltersGetPlatformSupportedPropertiesWithPlatformRequestBuilderGe
 // NewAssignmentFiltersGetPlatformSupportedPropertiesWithPlatformRequestBuilderInternal instantiates a new GetPlatformSupportedPropertiesWithPlatformRequestBuilder and sets the default values.
 func NewAssignmentFiltersGetPlatformSupportedPropertiesWithPlatformRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, platform *string)(*AssignmentFiltersGetPlatformSupportedPropertiesWithPlatformRequestBuilder) {
     m := &AssignmentFiltersGetPlatformSupportedPropertiesWithPlatformRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/assignmentFilters/getPlatformSupportedProperties(platform='{platform}'){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/assignmentFilters/getPlatformSupportedProperties(platform='{platform}'){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters),
     }
     if platform != nil {
         m.BaseRequestBuilder.PathParameters["platform"] = *platform

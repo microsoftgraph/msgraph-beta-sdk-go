@@ -30,7 +30,7 @@ type GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesItemPres
 // NewGroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesItemPresentationRequestBuilderInternal instantiates a new PresentationRequestBuilder and sets the default values.
 func NewGroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesItemPresentationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesItemPresentationRequestBuilder) {
     m := &GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesItemPresentationRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/groupPolicyConfigurations/{groupPolicyConfiguration%2Did}/definitionValues/{groupPolicyDefinitionValue%2Did}/presentationValues/{groupPolicyPresentationValue%2Did}/presentation{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/groupPolicyConfigurations/{groupPolicyConfiguration%2Did}/definitionValues/{groupPolicyDefinitionValue%2Did}/presentationValues/{groupPolicyPresentationValue%2Did}/presentation{?%24expand,%24select}", pathParameters),
     }
     return m
 }

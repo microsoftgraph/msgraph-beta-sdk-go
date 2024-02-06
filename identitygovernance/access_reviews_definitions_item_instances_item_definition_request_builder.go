@@ -30,7 +30,7 @@ type AccessReviewsDefinitionsItemInstancesItemDefinitionRequestBuilderGetRequest
 // NewAccessReviewsDefinitionsItemInstancesItemDefinitionRequestBuilderInternal instantiates a new DefinitionRequestBuilder and sets the default values.
 func NewAccessReviewsDefinitionsItemInstancesItemDefinitionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsDefinitionsItemInstancesItemDefinitionRequestBuilder) {
     m := &AccessReviewsDefinitionsItemInstancesItemDefinitionRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition%2Did}/instances/{accessReviewInstance%2Did}/definition{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition%2Did}/instances/{accessReviewInstance%2Did}/definition{?%24expand,%24select}", pathParameters),
     }
     return m
 }

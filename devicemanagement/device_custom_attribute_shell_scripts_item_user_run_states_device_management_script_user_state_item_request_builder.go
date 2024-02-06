@@ -44,7 +44,7 @@ type DeviceCustomAttributeShellScriptsItemUserRunStatesDeviceManagementScriptUse
 // NewDeviceCustomAttributeShellScriptsItemUserRunStatesDeviceManagementScriptUserStateItemRequestBuilderInternal instantiates a new DeviceManagementScriptUserStateItemRequestBuilder and sets the default values.
 func NewDeviceCustomAttributeShellScriptsItemUserRunStatesDeviceManagementScriptUserStateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceCustomAttributeShellScriptsItemUserRunStatesDeviceManagementScriptUserStateItemRequestBuilder) {
     m := &DeviceCustomAttributeShellScriptsItemUserRunStatesDeviceManagementScriptUserStateItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript%2Did}/userRunStates/{deviceManagementScriptUserState%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript%2Did}/userRunStates/{deviceManagementScriptUserState%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

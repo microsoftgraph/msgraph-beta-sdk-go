@@ -60,7 +60,7 @@ func (m *ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesRequestBuil
 // NewConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesRequestBuilderInternal instantiates a new PoliciesRequestBuilder and sets the default values.
 func NewConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesRequestBuilder) {
     m := &ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/connectivity/remoteNetworks/{remoteNetwork%2Did}/forwardingProfiles/{forwardingProfile%2Did}/policies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/connectivity/remoteNetworks/{remoteNetwork%2Did}/forwardingProfiles/{forwardingProfile%2Did}/policies{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }

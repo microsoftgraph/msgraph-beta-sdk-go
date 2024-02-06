@@ -57,7 +57,7 @@ func (m *ItemOutlookTaskFoldersRequestBuilder) ByOutlookTaskFolderId(outlookTask
 // NewItemOutlookTaskFoldersRequestBuilderInternal instantiates a new TaskFoldersRequestBuilder and sets the default values.
 func NewItemOutlookTaskFoldersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOutlookTaskFoldersRequestBuilder) {
     m := &ItemOutlookTaskFoldersRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/outlook/taskFolders{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/outlook/taskFolders{?%24count,%24filter,%24orderby,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }

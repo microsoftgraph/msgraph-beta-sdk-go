@@ -56,7 +56,7 @@ func (m *LabelsRetentionLabelsItemDescriptorsRequestBuilder) CitationTemplate()(
 // NewLabelsRetentionLabelsItemDescriptorsRequestBuilderInternal instantiates a new DescriptorsRequestBuilder and sets the default values.
 func NewLabelsRetentionLabelsItemDescriptorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LabelsRetentionLabelsItemDescriptorsRequestBuilder) {
     m := &LabelsRetentionLabelsItemDescriptorsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/descriptors{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/descriptors{?%24expand,%24select}", pathParameters),
     }
     return m
 }

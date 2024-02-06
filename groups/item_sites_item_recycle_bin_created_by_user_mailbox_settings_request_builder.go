@@ -37,7 +37,7 @@ type ItemSitesItemRecycleBinCreatedByUserMailboxSettingsRequestBuilderPatchReque
 // NewItemSitesItemRecycleBinCreatedByUserMailboxSettingsRequestBuilderInternal instantiates a new MailboxSettingsRequestBuilder and sets the default values.
 func NewItemSitesItemRecycleBinCreatedByUserMailboxSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemRecycleBinCreatedByUserMailboxSettingsRequestBuilder) {
     m := &ItemSitesItemRecycleBinCreatedByUserMailboxSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/recycleBin/createdByUser/mailboxSettings{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/recycleBin/createdByUser/mailboxSettings{?%24expand,%24select}", pathParameters),
     }
     return m
 }

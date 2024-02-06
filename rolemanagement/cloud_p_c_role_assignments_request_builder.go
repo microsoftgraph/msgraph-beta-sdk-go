@@ -60,7 +60,7 @@ func (m *CloudPCRoleAssignmentsRequestBuilder) ByUnifiedRoleAssignmentMultipleId
 // NewCloudPCRoleAssignmentsRequestBuilderInternal instantiates a new RoleAssignmentsRequestBuilder and sets the default values.
 func NewCloudPCRoleAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CloudPCRoleAssignmentsRequestBuilder) {
     m := &CloudPCRoleAssignmentsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/cloudPC/roleAssignments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/cloudPC/roleAssignments{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
@@ -77,7 +77,7 @@ func (m *CloudPCRoleAssignmentsRequestBuilder) Count()(*CloudPCRoleAssignmentsCo
 // Get get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
 func (m *CloudPCRoleAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *CloudPCRoleAssignmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentMultipleCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

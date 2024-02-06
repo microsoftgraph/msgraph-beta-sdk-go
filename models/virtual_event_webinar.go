@@ -13,6 +13,8 @@ func NewVirtualEventWebinar()(*VirtualEventWebinar) {
     m := &VirtualEventWebinar{
         VirtualEvent: *NewVirtualEvent(),
     }
+    odataTypeValue := "#microsoft.graph.virtualEventWebinar"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateVirtualEventWebinarFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

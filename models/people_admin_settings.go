@@ -22,6 +22,16 @@ func CreatePeopleAdminSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d2
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PeopleAdminSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["itemInsights"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateInsightsSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetItemInsights(val.(InsightsSettingsable))
+        }
+        return nil
+    }
     res["profileCardProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateProfileCardPropertyFromDiscriminatorValue)
         if err != nil {
@@ -49,6 +59,17 @@ func (m *PeopleAdminSettings) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     return res
+}
+// GetItemInsights gets the itemInsights property value. The itemInsights property
+func (m *PeopleAdminSettings) GetItemInsights()(InsightsSettingsable) {
+    val, err := m.GetBackingStore().Get("itemInsights")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(InsightsSettingsable)
+    }
+    return nil
 }
 // GetProfileCardProperties gets the profileCardProperties property value. Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
 func (m *PeopleAdminSettings) GetProfileCardProperties()([]ProfileCardPropertyable) {
@@ -78,6 +99,12 @@ func (m *PeopleAdminSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteObjectValue("itemInsights", m.GetItemInsights())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetProfileCardProperties() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProfileCardProperties()))
         for i, v := range m.GetProfileCardProperties() {
@@ -98,6 +125,13 @@ func (m *PeopleAdminSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
+// SetItemInsights sets the itemInsights property value. The itemInsights property
+func (m *PeopleAdminSettings) SetItemInsights(value InsightsSettingsable)() {
+    err := m.GetBackingStore().Set("itemInsights", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProfileCardProperties sets the profileCardProperties property value. Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
 func (m *PeopleAdminSettings) SetProfileCardProperties(value []ProfileCardPropertyable)() {
     err := m.GetBackingStore().Set("profileCardProperties", value)
@@ -116,8 +150,10 @@ func (m *PeopleAdminSettings) SetPronouns(value PronounsSettingsable)() {
 type PeopleAdminSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetItemInsights()(InsightsSettingsable)
     GetProfileCardProperties()([]ProfileCardPropertyable)
     GetPronouns()(PronounsSettingsable)
+    SetItemInsights(value InsightsSettingsable)()
     SetProfileCardProperties(value []ProfileCardPropertyable)()
     SetPronouns(value PronounsSettingsable)()
 }

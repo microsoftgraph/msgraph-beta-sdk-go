@@ -18,7 +18,7 @@ type WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderGetQueryParameters read the properties of an azureADDevice object.
+// WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderGetQueryParameters read the properties and relationships of an updatableAsset object.
 type WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -44,7 +44,7 @@ type WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderPatchRequestCo
 // NewWindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderInternal instantiates a new UpdatableAssetItemRequestBuilder and sets the default values.
 func NewWindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) {
     m := &WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/updatableAssets/{updatableAsset%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/updatableAssets/{updatableAsset%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
@@ -54,10 +54,10 @@ func NewWindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an updatableAsset object.
+// Delete delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-delete?view=graph-rest-1.0
 func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,10 +73,10 @@ func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get read the properties of an azureADDevice object.
+// Get read the properties and relationships of an updatableAsset object.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-azureaddevice-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-get?view=graph-rest-1.0
 func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -130,7 +130,7 @@ func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) Patch(ct
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable), nil
 }
-// ToDeleteRequestInformation delete an updatableAsset object.
+// ToDeleteRequestInformation delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted.
 func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -140,7 +140,7 @@ func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) ToDelete
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties of an azureADDevice object.
+// ToGetRequestInformation read the properties and relationships of an updatableAsset object.
 func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

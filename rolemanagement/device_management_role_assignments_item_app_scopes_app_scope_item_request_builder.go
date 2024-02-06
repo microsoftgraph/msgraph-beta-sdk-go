@@ -44,7 +44,7 @@ type DeviceManagementRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderPatch
 // NewDeviceManagementRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderInternal instantiates a new AppScopeItemRequestBuilder and sets the default values.
 func NewDeviceManagementRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) {
     m := &DeviceManagementRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple%2Did}/appScopes/{appScope%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple%2Did}/appScopes/{appScope%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

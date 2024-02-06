@@ -29,7 +29,7 @@ type ConfigurationPolicyTemplatesItemSettingTemplatesItemSettingDefinitionsCount
 // NewConfigurationPolicyTemplatesItemSettingTemplatesItemSettingDefinitionsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewConfigurationPolicyTemplatesItemSettingTemplatesItemSettingDefinitionsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConfigurationPolicyTemplatesItemSettingTemplatesItemSettingDefinitionsCountRequestBuilder) {
     m := &ConfigurationPolicyTemplatesItemSettingTemplatesItemSettingDefinitionsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/configurationPolicyTemplates/{deviceManagementConfigurationPolicyTemplate%2Did}/settingTemplates/{deviceManagementConfigurationSettingTemplate%2Did}/settingDefinitions/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/configurationPolicyTemplates/{deviceManagementConfigurationPolicyTemplate%2Did}/settingTemplates/{deviceManagementConfigurationSettingTemplate%2Did}/settingDefinitions/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

@@ -10,12 +10,19 @@ import (
 type ItemTeamDefinitionChannelsItemMessagesItemRepliesItemHostedContentsItemValueContentRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// ItemTeamDefinitionChannelsItemMessagesItemRepliesItemHostedContentsItemValueContentRequestBuilderGetQueryParameters get media content for the navigation property hostedContents from teamTemplateDefinition
+type ItemTeamDefinitionChannelsItemMessagesItemRepliesItemHostedContentsItemValueContentRequestBuilderGetQueryParameters struct {
+    // Format of the content
+    Format *string `uriparametername:"%24format"`
+}
 // ItemTeamDefinitionChannelsItemMessagesItemRepliesItemHostedContentsItemValueContentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTeamDefinitionChannelsItemMessagesItemRepliesItemHostedContentsItemValueContentRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *ItemTeamDefinitionChannelsItemMessagesItemRepliesItemHostedContentsItemValueContentRequestBuilderGetQueryParameters
 }
 // ItemTeamDefinitionChannelsItemMessagesItemRepliesItemHostedContentsItemValueContentRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTeamDefinitionChannelsItemMessagesItemRepliesItemHostedContentsItemValueContentRequestBuilderPutRequestConfiguration struct {
@@ -27,7 +34,7 @@ type ItemTeamDefinitionChannelsItemMessagesItemRepliesItemHostedContentsItemValu
 // NewItemTeamDefinitionChannelsItemMessagesItemRepliesItemHostedContentsItemValueContentRequestBuilderInternal instantiates a new ContentRequestBuilder and sets the default values.
 func NewItemTeamDefinitionChannelsItemMessagesItemRepliesItemHostedContentsItemValueContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionChannelsItemMessagesItemRepliesItemHostedContentsItemValueContentRequestBuilder) {
     m := &ItemTeamDefinitionChannelsItemMessagesItemRepliesItemHostedContentsItemValueContentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}/messages/{chatMessage%2Did}/replies/{chatMessage%2Did1}/hostedContents/{chatMessageHostedContent%2Did}/$value", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}/messages/{chatMessage%2Did}/replies/{chatMessage%2Did1}/hostedContents/{chatMessageHostedContent%2Did}/$value{?%24format*}", pathParameters),
     }
     return m
 }
@@ -82,6 +89,9 @@ func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesItemHostedContentsItem
 func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesItemHostedContentsItemValueContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsItemMessagesItemRepliesItemHostedContentsItemValueContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

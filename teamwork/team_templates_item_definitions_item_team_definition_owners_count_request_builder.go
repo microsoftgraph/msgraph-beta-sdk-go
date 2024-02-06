@@ -29,7 +29,7 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersCountRequestBuilderGetR
 // NewTeamTemplatesItemDefinitionsItemTeamDefinitionOwnersCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewTeamTemplatesItemDefinitionsItemTeamDefinitionOwnersCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersCountRequestBuilder) {
     m := &TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/owners/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/owners/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

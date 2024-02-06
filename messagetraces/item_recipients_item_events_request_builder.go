@@ -60,7 +60,7 @@ func (m *ItemRecipientsItemEventsRequestBuilder) ByMessageEventId(messageEventId
 // NewItemRecipientsItemEventsRequestBuilderInternal instantiates a new EventsRequestBuilder and sets the default values.
 func NewItemRecipientsItemEventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRecipientsItemEventsRequestBuilder) {
     m := &ItemRecipientsItemEventsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/messageTraces/{messageTrace%2Did}/recipients/{messageRecipient%2Did}/events{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/messageTraces/{messageTrace%2Did}/recipients/{messageRecipient%2Did}/events{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }

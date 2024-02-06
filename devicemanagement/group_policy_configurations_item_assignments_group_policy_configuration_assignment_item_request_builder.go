@@ -44,7 +44,7 @@ type GroupPolicyConfigurationsItemAssignmentsGroupPolicyConfigurationAssignmentI
 // NewGroupPolicyConfigurationsItemAssignmentsGroupPolicyConfigurationAssignmentItemRequestBuilderInternal instantiates a new GroupPolicyConfigurationAssignmentItemRequestBuilder and sets the default values.
 func NewGroupPolicyConfigurationsItemAssignmentsGroupPolicyConfigurationAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyConfigurationsItemAssignmentsGroupPolicyConfigurationAssignmentItemRequestBuilder) {
     m := &GroupPolicyConfigurationsItemAssignmentsGroupPolicyConfigurationAssignmentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/groupPolicyConfigurations/{groupPolicyConfiguration%2Did}/assignments/{groupPolicyConfigurationAssignment%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/groupPolicyConfigurations/{groupPolicyConfiguration%2Did}/assignments/{groupPolicyConfigurationAssignment%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

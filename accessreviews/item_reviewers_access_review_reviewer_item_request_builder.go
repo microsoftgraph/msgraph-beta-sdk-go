@@ -44,7 +44,7 @@ type ItemReviewersAccessReviewReviewerItemRequestBuilderPatchRequestConfiguratio
 // NewItemReviewersAccessReviewReviewerItemRequestBuilderInternal instantiates a new AccessReviewReviewerItemRequestBuilder and sets the default values.
 func NewItemReviewersAccessReviewReviewerItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemReviewersAccessReviewReviewerItemRequestBuilder) {
     m := &ItemReviewersAccessReviewReviewerItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/accessReviews/{accessReview%2Did}/reviewers/{accessReviewReviewer%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/accessReviews/{accessReview%2Did}/reviewers/{accessReviewReviewer%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

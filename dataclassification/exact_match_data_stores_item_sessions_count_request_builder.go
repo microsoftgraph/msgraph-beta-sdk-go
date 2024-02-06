@@ -29,7 +29,7 @@ type ExactMatchDataStoresItemSessionsCountRequestBuilderGetRequestConfiguration 
 // NewExactMatchDataStoresItemSessionsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewExactMatchDataStoresItemSessionsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExactMatchDataStoresItemSessionsCountRequestBuilder) {
     m := &ExactMatchDataStoresItemSessionsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/dataClassification/exactMatchDataStores/{exactMatchDataStore%2Did}/sessions/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/dataClassification/exactMatchDataStores/{exactMatchDataStore%2Did}/sessions/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
@@ -8,26 +9,28 @@ type EnrollmentNotificationBrandingOptions int
 
 const (
     // Indicates that the template has no branding.
-    NONE_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS EnrollmentNotificationBrandingOptions = iota
+    NONE_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS = 1
     // Indicates that the Company Logo is included in the notification.
-    INCLUDECOMPANYLOGO_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
+    INCLUDECOMPANYLOGO_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS = 2
     // Indicates that the Company Name is included in the notification.
-    INCLUDECOMPANYNAME_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
+    INCLUDECOMPANYNAME_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS = 4
     // Indicates that the Contact Information is included in the notification.
-    INCLUDECONTACTINFORMATION_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
+    INCLUDECONTACTINFORMATION_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS = 8
     // Indicates that the Company Portal Link is included in the notification.
-    INCLUDECOMPANYPORTALLINK_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
+    INCLUDECOMPANYPORTALLINK_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS = 16
     // Indicates that the DeviceDetails is included in the notification.
-    INCLUDEDEVICEDETAILS_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
+    INCLUDEDEVICEDETAILS_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS = 32
     // unknownFutureValue for evolvable enums pattern.
-    UNKNOWNFUTUREVALUE_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
+    UNKNOWNFUTUREVALUE_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS = 64
 )
 
 func (i EnrollmentNotificationBrandingOptions) String() string {
     var values []string
-    for p := EnrollmentNotificationBrandingOptions(1); p <= UNKNOWNFUTUREVALUE_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "includeCompanyLogo", "includeCompanyName", "includeContactInformation", "includeCompanyPortalLink", "includeDeviceDetails", "unknownFutureValue"}[p])
+    options := []string{"none", "includeCompanyLogo", "includeCompanyName", "includeContactInformation", "includeCompanyPortalLink", "includeDeviceDetails", "unknownFutureValue"}
+    for p := 0; p < 7; p++ {
+        mantis := EnrollmentNotificationBrandingOptions(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

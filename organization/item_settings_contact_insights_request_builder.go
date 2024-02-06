@@ -44,7 +44,7 @@ type ItemSettingsContactInsightsRequestBuilderPatchRequestConfiguration struct {
 // NewItemSettingsContactInsightsRequestBuilderInternal instantiates a new ContactInsightsRequestBuilder and sets the default values.
 func NewItemSettingsContactInsightsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSettingsContactInsightsRequestBuilder) {
     m := &ItemSettingsContactInsightsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/organization/{organization%2Did}/settings/contactInsights{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/organization/{organization%2Did}/settings/contactInsights{?%24expand,%24select}", pathParameters),
     }
     return m
 }

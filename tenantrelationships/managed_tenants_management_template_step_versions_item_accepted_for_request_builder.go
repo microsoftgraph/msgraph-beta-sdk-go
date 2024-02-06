@@ -30,7 +30,7 @@ type ManagedTenantsManagementTemplateStepVersionsItemAcceptedForRequestBuilderGe
 // NewManagedTenantsManagementTemplateStepVersionsItemAcceptedForRequestBuilderInternal instantiates a new AcceptedForRequestBuilder and sets the default values.
 func NewManagedTenantsManagementTemplateStepVersionsItemAcceptedForRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagementTemplateStepVersionsItemAcceptedForRequestBuilder) {
     m := &ManagedTenantsManagementTemplateStepVersionsItemAcceptedForRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/managementTemplateStepVersions/{managementTemplateStepVersion%2Did}/acceptedFor{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/managementTemplateStepVersions/{managementTemplateStepVersion%2Did}/acceptedFor{?%24expand,%24select}", pathParameters),
     }
     return m
 }

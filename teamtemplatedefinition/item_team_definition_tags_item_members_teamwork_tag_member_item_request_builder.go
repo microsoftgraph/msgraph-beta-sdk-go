@@ -44,7 +44,7 @@ type ItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderPatchRe
 // NewItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderInternal instantiates a new TeamworkTagMemberItemRequestBuilder and sets the default values.
 func NewItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilder) {
     m := &ItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/tags/{teamworkTag%2Did}/members/{teamworkTagMember%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/tags/{teamworkTag%2Did}/members/{teamworkTagMember%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

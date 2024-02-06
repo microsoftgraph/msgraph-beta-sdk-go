@@ -44,7 +44,7 @@ type AlertRecordsAlertRecordItemRequestBuilderPatchRequestConfiguration struct {
 // NewAlertRecordsAlertRecordItemRequestBuilderInternal instantiates a new AlertRecordItemRequestBuilder and sets the default values.
 func NewAlertRecordsAlertRecordItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AlertRecordsAlertRecordItemRequestBuilder) {
     m := &AlertRecordsAlertRecordItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/monitoring/alertRecords/{alertRecord%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/monitoring/alertRecords/{alertRecord%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

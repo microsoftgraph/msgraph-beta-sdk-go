@@ -111,7 +111,7 @@ func (m *DetectionAction) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOrganizationalScope gets the organizationalScope property value. The organizationalScope property
+// GetOrganizationalScope gets the organizationalScope property value. Groups to which the custom detection rule applies.
 func (m *DetectionAction) GetOrganizationalScope()(OrganizationalScopeable) {
     val, err := m.GetBackingStore().Get("organizationalScope")
     if err != nil {
@@ -122,7 +122,7 @@ func (m *DetectionAction) GetOrganizationalScope()(OrganizationalScopeable) {
     }
     return nil
 }
-// GetResponseActions gets the responseActions property value. The responseActions property
+// GetResponseActions gets the responseActions property value. Actions taken on impacted assets as set in the custom detection rule.
 func (m *DetectionAction) GetResponseActions()([]ResponseActionable) {
     val, err := m.GetBackingStore().Get("responseActions")
     if err != nil {
@@ -198,14 +198,14 @@ func (m *DetectionAction) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOrganizationalScope sets the organizationalScope property value. The organizationalScope property
+// SetOrganizationalScope sets the organizationalScope property value. Groups to which the custom detection rule applies.
 func (m *DetectionAction) SetOrganizationalScope(value OrganizationalScopeable)() {
     err := m.GetBackingStore().Set("organizationalScope", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResponseActions sets the responseActions property value. The responseActions property
+// SetResponseActions sets the responseActions property value. Actions taken on impacted assets as set in the custom detection rule.
 func (m *DetectionAction) SetResponseActions(value []ResponseActionable)() {
     err := m.GetBackingStore().Set("responseActions", value)
     if err != nil {

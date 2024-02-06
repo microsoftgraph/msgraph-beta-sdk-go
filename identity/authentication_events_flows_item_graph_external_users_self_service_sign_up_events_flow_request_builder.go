@@ -34,7 +34,7 @@ func (m *AuthenticationEventsFlowsItemGraphExternalUsersSelfServiceSignUpEventsF
 // NewAuthenticationEventsFlowsItemGraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilderInternal instantiates a new GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder and sets the default values.
 func NewAuthenticationEventsFlowsItemGraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationEventsFlowsItemGraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder) {
     m := &AuthenticationEventsFlowsItemGraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/authenticationEventsFlows/{authenticationEventsFlow%2Did}/graph.externalUsersSelfServiceSignUpEventsFlow{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/authenticationEventsFlows/{authenticationEventsFlow%2Did}/graph.externalUsersSelfServiceSignUpEventsFlow{?%24expand,%24select}", pathParameters),
     }
     return m
 }

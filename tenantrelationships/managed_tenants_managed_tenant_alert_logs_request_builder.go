@@ -60,7 +60,7 @@ func (m *ManagedTenantsManagedTenantAlertLogsRequestBuilder) ByManagedTenantAler
 // NewManagedTenantsManagedTenantAlertLogsRequestBuilderInternal instantiates a new ManagedTenantAlertLogsRequestBuilder and sets the default values.
 func NewManagedTenantsManagedTenantAlertLogsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagedTenantAlertLogsRequestBuilder) {
     m := &ManagedTenantsManagedTenantAlertLogsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/managedTenantAlertLogs{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/managedTenantAlertLogs{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }

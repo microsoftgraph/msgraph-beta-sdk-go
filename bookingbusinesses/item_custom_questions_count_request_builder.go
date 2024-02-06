@@ -29,7 +29,7 @@ type ItemCustomQuestionsCountRequestBuilderGetRequestConfiguration struct {
 // NewItemCustomQuestionsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemCustomQuestionsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCustomQuestionsCountRequestBuilder) {
     m := &ItemCustomQuestionsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/customQuestions/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/customQuestions/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

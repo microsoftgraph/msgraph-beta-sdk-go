@@ -57,14 +57,10 @@ func (m *VirtualEventsEventsRequestBuilder) ByVirtualEventId(virtualEventId stri
     }
     return NewVirtualEventsEventsVirtualEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// Cancel provides operations to call the cancel method.
-func (m *VirtualEventsEventsRequestBuilder) Cancel()(*VirtualEventsEventsCancelRequestBuilder) {
-    return NewVirtualEventsEventsCancelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewVirtualEventsEventsRequestBuilderInternal instantiates a new EventsRequestBuilder and sets the default values.
 func NewVirtualEventsEventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsEventsRequestBuilder) {
     m := &VirtualEventsEventsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/events{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/events{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
@@ -115,10 +111,6 @@ func (m *VirtualEventsEventsRequestBuilder) Post(ctx context.Context, body ie233
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventable), nil
-}
-// Publish provides operations to call the publish method.
-func (m *VirtualEventsEventsRequestBuilder) Publish()(*VirtualEventsEventsPublishRequestBuilder) {
-    return NewVirtualEventsEventsPublishRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get events from solutions
 func (m *VirtualEventsEventsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsEventsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

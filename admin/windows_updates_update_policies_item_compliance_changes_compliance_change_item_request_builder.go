@@ -44,7 +44,7 @@ type WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemReques
 // NewWindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilderInternal instantiates a new ComplianceChangeItemRequestBuilder and sets the default values.
 func NewWindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilder) {
     m := &WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/updatePolicies/{updatePolicy%2Did}/complianceChanges/{complianceChange%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/updatePolicies/{updatePolicy%2Did}/complianceChanges/{complianceChange%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
@@ -54,10 +54,10 @@ func NewWindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemReq
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a contentApproval object.
+// Delete delete a complianceChange object.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-delete?view=graph-rest-1.0
 func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,10 +95,10 @@ func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRe
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ComplianceChangeable), nil
 }
-// Patch update the properties of a contentApproval object.
+// Patch update the properties of a complianceChange object.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-update?view=graph-rest-1.0
 func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilder) Patch(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ComplianceChangeable, requestConfiguration *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilderPatchRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ComplianceChangeable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -117,7 +117,7 @@ func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRe
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ComplianceChangeable), nil
 }
-// ToDeleteRequestInformation delete a contentApproval object.
+// ToDeleteRequestInformation delete a complianceChange object.
 func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -140,7 +140,7 @@ func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a contentApproval object.
+// ToPatchRequestInformation update the properties of a complianceChange object.
 func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ComplianceChangeable, requestConfiguration *WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

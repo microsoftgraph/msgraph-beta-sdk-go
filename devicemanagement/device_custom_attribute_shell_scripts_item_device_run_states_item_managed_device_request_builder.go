@@ -30,7 +30,7 @@ type DeviceCustomAttributeShellScriptsItemDeviceRunStatesItemManagedDeviceReques
 // NewDeviceCustomAttributeShellScriptsItemDeviceRunStatesItemManagedDeviceRequestBuilderInternal instantiates a new ManagedDeviceRequestBuilder and sets the default values.
 func NewDeviceCustomAttributeShellScriptsItemDeviceRunStatesItemManagedDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceCustomAttributeShellScriptsItemDeviceRunStatesItemManagedDeviceRequestBuilder) {
     m := &DeviceCustomAttributeShellScriptsItemDeviceRunStatesItemManagedDeviceRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript%2Did}/deviceRunStates/{deviceManagementScriptDeviceState%2Did}/managedDevice{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript%2Did}/deviceRunStates/{deviceManagementScriptDeviceState%2Did}/managedDevice{?%24expand,%24select}", pathParameters),
     }
     return m
 }

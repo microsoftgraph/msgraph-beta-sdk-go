@@ -63,6 +63,16 @@ func (m *Destination) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["firstAccessDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFirstAccessDateTime(val)
+        }
+        return nil
+    }
     res["fqdn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -123,6 +133,36 @@ func (m *Destination) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["threatCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetThreatCount(val)
+        }
+        return nil
+    }
+    res["totalBytesReceived"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTotalBytesReceived(val)
+        }
+        return nil
+    }
+    res["totalBytesSent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTotalBytesSent(val)
+        }
+        return nil
+    }
     res["trafficType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTrafficType)
         if err != nil {
@@ -154,6 +194,17 @@ func (m *Destination) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     return res
+}
+// GetFirstAccessDateTime gets the firstAccessDateTime property value. The firstAccessDateTime property
+func (m *Destination) GetFirstAccessDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("firstAccessDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetFqdn gets the fqdn property value. The fully qualified domain name (FQDN) of the destination.
 func (m *Destination) GetFqdn()(*string) {
@@ -221,6 +272,39 @@ func (m *Destination) GetPort()(*int32) {
     }
     return nil
 }
+// GetThreatCount gets the threatCount property value. The threatCount property
+func (m *Destination) GetThreatCount()(*int32) {
+    val, err := m.GetBackingStore().Get("threatCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetTotalBytesReceived gets the totalBytesReceived property value. The totalBytesReceived property
+func (m *Destination) GetTotalBytesReceived()(*int64) {
+    val, err := m.GetBackingStore().Get("totalBytesReceived")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
+}
+// GetTotalBytesSent gets the totalBytesSent property value. The totalBytesSent property
+func (m *Destination) GetTotalBytesSent()(*int64) {
+    val, err := m.GetBackingStore().Get("totalBytesSent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
+}
 // GetTrafficType gets the trafficType property value. The trafficType property
 func (m *Destination) GetTrafficType()(*TrafficType) {
     val, err := m.GetBackingStore().Get("trafficType")
@@ -263,6 +347,12 @@ func (m *Destination) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err := writer.WriteTimeValue("firstAccessDateTime", m.GetFirstAccessDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("fqdn", m.GetFqdn())
         if err != nil {
             return err
@@ -295,6 +385,24 @@ func (m *Destination) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err := writer.WriteInt32Value("port", m.GetPort())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteInt32Value("threatCount", m.GetThreatCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteInt64Value("totalBytesReceived", m.GetTotalBytesReceived())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteInt64Value("totalBytesSent", m.GetTotalBytesSent())
         if err != nil {
             return err
         }
@@ -344,6 +452,13 @@ func (m *Destination) SetDeviceCount(value *int32)() {
         panic(err)
     }
 }
+// SetFirstAccessDateTime sets the firstAccessDateTime property value. The firstAccessDateTime property
+func (m *Destination) SetFirstAccessDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("firstAccessDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetFqdn sets the fqdn property value. The fully qualified domain name (FQDN) of the destination.
 func (m *Destination) SetFqdn(value *string)() {
     err := m.GetBackingStore().Set("fqdn", value)
@@ -386,6 +501,27 @@ func (m *Destination) SetPort(value *int32)() {
         panic(err)
     }
 }
+// SetThreatCount sets the threatCount property value. The threatCount property
+func (m *Destination) SetThreatCount(value *int32)() {
+    err := m.GetBackingStore().Set("threatCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetTotalBytesReceived sets the totalBytesReceived property value. The totalBytesReceived property
+func (m *Destination) SetTotalBytesReceived(value *int64)() {
+    err := m.GetBackingStore().Set("totalBytesReceived", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetTotalBytesSent sets the totalBytesSent property value. The totalBytesSent property
+func (m *Destination) SetTotalBytesSent(value *int64)() {
+    err := m.GetBackingStore().Set("totalBytesSent", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTrafficType sets the trafficType property value. The trafficType property
 func (m *Destination) SetTrafficType(value *TrafficType)() {
     err := m.GetBackingStore().Set("trafficType", value)
@@ -414,23 +550,31 @@ type Destinationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDeviceCount()(*int32)
+    GetFirstAccessDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetFqdn()(*string)
     GetIp()(*string)
     GetLastAccessDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetNetworkingProtocol()(*NetworkingProtocol)
     GetOdataType()(*string)
     GetPort()(*int32)
+    GetThreatCount()(*int32)
+    GetTotalBytesReceived()(*int64)
+    GetTotalBytesSent()(*int64)
     GetTrafficType()(*TrafficType)
     GetTransactionCount()(*int32)
     GetUserCount()(*int32)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDeviceCount(value *int32)()
+    SetFirstAccessDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetFqdn(value *string)()
     SetIp(value *string)()
     SetLastAccessDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetNetworkingProtocol(value *NetworkingProtocol)()
     SetOdataType(value *string)()
     SetPort(value *int32)()
+    SetThreatCount(value *int32)()
+    SetTotalBytesReceived(value *int64)()
+    SetTotalBytesSent(value *int64)()
     SetTrafficType(value *TrafficType)()
     SetTransactionCount(value *int32)()
     SetUserCount(value *int32)()

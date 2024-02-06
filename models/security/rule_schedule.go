@@ -74,7 +74,7 @@ func (m *RuleSchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetNextRunDateTime gets the nextRunDateTime property value. The nextRunDateTime property
+// GetNextRunDateTime gets the nextRunDateTime property value. Timestamp of the custom detection rule's next scheduled run.
 func (m *RuleSchedule) GetNextRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("nextRunDateTime")
     if err != nil {
@@ -96,7 +96,7 @@ func (m *RuleSchedule) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPeriod gets the period property value. The period property
+// GetPeriod gets the period property value. How often the detection rule is set to run. The allowed values are: 0, 1H, 3H, 12H, or 24H. '0' signifies the rule is run continuously.
 func (m *RuleSchedule) GetPeriod()(*string) {
     val, err := m.GetBackingStore().Get("period")
     if err != nil {
@@ -146,7 +146,7 @@ func (m *RuleSchedule) SetAdditionalData(value map[string]any)() {
 func (m *RuleSchedule) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetNextRunDateTime sets the nextRunDateTime property value. The nextRunDateTime property
+// SetNextRunDateTime sets the nextRunDateTime property value. Timestamp of the custom detection rule's next scheduled run.
 func (m *RuleSchedule) SetNextRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("nextRunDateTime", value)
     if err != nil {
@@ -160,7 +160,7 @@ func (m *RuleSchedule) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPeriod sets the period property value. The period property
+// SetPeriod sets the period property value. How often the detection rule is set to run. The allowed values are: 0, 1H, 3H, 12H, or 24H. '0' signifies the rule is run continuously.
 func (m *RuleSchedule) SetPeriod(value *string)() {
     err := m.GetBackingStore().Set("period", value)
     if err != nil {

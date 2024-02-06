@@ -30,7 +30,7 @@ type ItemConnectorGroupsItemApplicationsWithAppIdRequestBuilderGetRequestConfigu
 // NewItemConnectorGroupsItemApplicationsWithAppIdRequestBuilderInternal instantiates a new ApplicationsWithAppIdRequestBuilder and sets the default values.
 func NewItemConnectorGroupsItemApplicationsWithAppIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, appId *string)(*ItemConnectorGroupsItemApplicationsWithAppIdRequestBuilder) {
     m := &ItemConnectorGroupsItemApplicationsWithAppIdRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups/{connectorGroup%2Did}/applications(appId='{appId}'){?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups/{connectorGroup%2Did}/applications(appId='{appId}'){?%24expand,%24select}", pathParameters),
     }
     if appId != nil {
         m.BaseRequestBuilder.PathParameters["appId"] = *appId

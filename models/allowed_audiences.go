@@ -1,27 +1,30 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // 
 type AllowedAudiences int
 
 const (
-    ME_ALLOWEDAUDIENCES AllowedAudiences = iota
-    FAMILY_ALLOWEDAUDIENCES
-    CONTACTS_ALLOWEDAUDIENCES
-    GROUPMEMBERS_ALLOWEDAUDIENCES
-    ORGANIZATION_ALLOWEDAUDIENCES
-    FEDERATEDORGANIZATIONS_ALLOWEDAUDIENCES
-    EVERYONE_ALLOWEDAUDIENCES
-    UNKNOWNFUTUREVALUE_ALLOWEDAUDIENCES
+    ME_ALLOWEDAUDIENCES = 1
+    FAMILY_ALLOWEDAUDIENCES = 2
+    CONTACTS_ALLOWEDAUDIENCES = 4
+    GROUPMEMBERS_ALLOWEDAUDIENCES = 8
+    ORGANIZATION_ALLOWEDAUDIENCES = 16
+    FEDERATEDORGANIZATIONS_ALLOWEDAUDIENCES = 32
+    EVERYONE_ALLOWEDAUDIENCES = 64
+    UNKNOWNFUTUREVALUE_ALLOWEDAUDIENCES = 128
 )
 
 func (i AllowedAudiences) String() string {
     var values []string
-    for p := AllowedAudiences(1); p <= UNKNOWNFUTUREVALUE_ALLOWEDAUDIENCES; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"me", "family", "contacts", "groupMembers", "organization", "federatedOrganizations", "everyone", "unknownFutureValue"}[p])
+    options := []string{"me", "family", "contacts", "groupMembers", "organization", "federatedOrganizations", "everyone", "unknownFutureValue"}
+    for p := 0; p < 8; p++ {
+        mantis := AllowedAudiences(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

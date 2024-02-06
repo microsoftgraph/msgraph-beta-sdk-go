@@ -44,7 +44,7 @@ type ItemSettingsPeopleInsightsRequestBuilderPatchRequestConfiguration struct {
 // NewItemSettingsPeopleInsightsRequestBuilderInternal instantiates a new PeopleInsightsRequestBuilder and sets the default values.
 func NewItemSettingsPeopleInsightsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSettingsPeopleInsightsRequestBuilder) {
     m := &ItemSettingsPeopleInsightsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/organization/{organization%2Did}/settings/peopleInsights{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/organization/{organization%2Did}/settings/peopleInsights{?%24expand,%24select}", pathParameters),
     }
     return m
 }

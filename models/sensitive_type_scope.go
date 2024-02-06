@@ -1,21 +1,24 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // 
 type SensitiveTypeScope int
 
 const (
-    FULLDOCUMENT_SENSITIVETYPESCOPE SensitiveTypeScope = iota
-    PARTIALDOCUMENT_SENSITIVETYPESCOPE
+    FULLDOCUMENT_SENSITIVETYPESCOPE = 1
+    PARTIALDOCUMENT_SENSITIVETYPESCOPE = 2
 )
 
 func (i SensitiveTypeScope) String() string {
     var values []string
-    for p := SensitiveTypeScope(1); p <= PARTIALDOCUMENT_SENSITIVETYPESCOPE; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"fullDocument", "partialDocument"}[p])
+    options := []string{"fullDocument", "partialDocument"}
+    for p := 0; p < 2; p++ {
+        mantis := SensitiveTypeScope(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

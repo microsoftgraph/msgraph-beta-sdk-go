@@ -29,7 +29,7 @@ type ItemProfileWebsitesCountRequestBuilderGetRequestConfiguration struct {
 // NewItemProfileWebsitesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemProfileWebsitesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileWebsitesCountRequestBuilder) {
     m := &ItemProfileWebsitesCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/websites/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/websites/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

@@ -53,7 +53,7 @@ func (m *SolutionsRequestBuilder) BusinessScenariosWithUniqueName(uniqueName *st
 // NewSolutionsRequestBuilderInternal instantiates a new SolutionsRequestBuilder and sets the default values.
 func NewSolutionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SolutionsRequestBuilder) {
     m := &SolutionsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions{?%24expand,%24select}", pathParameters),
     }
     return m
 }

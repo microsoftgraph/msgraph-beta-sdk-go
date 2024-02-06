@@ -30,7 +30,7 @@ type EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesDataSourceItemReque
 // NewEdiscoveryCasesItemSourceCollectionsItemCustodianSourcesDataSourceItemRequestBuilderInternal instantiates a new DataSourceItemRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemSourceCollectionsItemCustodianSourcesDataSourceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesDataSourceItemRequestBuilder) {
     m := &EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesDataSourceItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/sourceCollections/{sourceCollection%2Did}/custodianSources/{dataSource%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/sourceCollections/{sourceCollection%2Did}/custodianSources/{dataSource%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

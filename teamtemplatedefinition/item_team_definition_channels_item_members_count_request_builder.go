@@ -29,7 +29,7 @@ type ItemTeamDefinitionChannelsItemMembersCountRequestBuilderGetRequestConfigura
 // NewItemTeamDefinitionChannelsItemMembersCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemTeamDefinitionChannelsItemMembersCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionChannelsItemMembersCountRequestBuilder) {
     m := &ItemTeamDefinitionChannelsItemMembersCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}/members/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}/members/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

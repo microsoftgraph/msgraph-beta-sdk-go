@@ -1,22 +1,25 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // 
 type PrivateNetworkProtocol int
 
 const (
-    TCP_PRIVATENETWORKPROTOCOL PrivateNetworkProtocol = iota
-    UDP_PRIVATENETWORKPROTOCOL
-    UNKNOWNFUTUREVALUE_PRIVATENETWORKPROTOCOL
+    TCP_PRIVATENETWORKPROTOCOL = 1
+    UDP_PRIVATENETWORKPROTOCOL = 2
+    UNKNOWNFUTUREVALUE_PRIVATENETWORKPROTOCOL = 4
 )
 
 func (i PrivateNetworkProtocol) String() string {
     var values []string
-    for p := PrivateNetworkProtocol(1); p <= UNKNOWNFUTUREVALUE_PRIVATENETWORKPROTOCOL; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"tcp", "udp", "unknownFutureValue"}[p])
+    options := []string{"tcp", "udp", "unknownFutureValue"}
+    for p := 0; p < 3; p++ {
+        mantis := PrivateNetworkProtocol(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

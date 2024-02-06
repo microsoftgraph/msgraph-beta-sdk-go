@@ -29,7 +29,7 @@ type ItemDevicesItemRegisteredUsersGraphServicePrincipalCountRequestBuilderGetRe
 // NewItemDevicesItemRegisteredUsersGraphServicePrincipalCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemDevicesItemRegisteredUsersGraphServicePrincipalCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDevicesItemRegisteredUsersGraphServicePrincipalCountRequestBuilder) {
     m := &ItemDevicesItemRegisteredUsersGraphServicePrincipalCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/registeredUsers/graph.servicePrincipal/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/registeredUsers/graph.servicePrincipal/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

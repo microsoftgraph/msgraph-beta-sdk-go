@@ -150,6 +150,22 @@ func (m *ManagementTemplateStep) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["informationLinks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateActionUrlFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActionUrlable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActionUrlable)
+                }
+            }
+            m.SetInformationLinks(res)
+        }
+        return nil
+    }
     res["lastActionByUserId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -200,6 +216,16 @@ func (m *ManagementTemplateStep) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["userImpact"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserImpact(val)
+        }
+        return nil
+    }
     res["versions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagementTemplateStepVersionFromDiscriminatorValue)
         if err != nil {
@@ -217,6 +243,17 @@ func (m *ManagementTemplateStep) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     return res
+}
+// GetInformationLinks gets the informationLinks property value. The informationLinks property
+func (m *ManagementTemplateStep) GetInformationLinks()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActionUrlable) {
+    val, err := m.GetBackingStore().Get("informationLinks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActionUrlable)
+    }
+    return nil
 }
 // GetLastActionByUserId gets the lastActionByUserId property value. The lastActionByUserId property
 func (m *ManagementTemplateStep) GetLastActionByUserId()(*string) {
@@ -270,6 +307,17 @@ func (m *ManagementTemplateStep) GetPriority()(*int32) {
     }
     if val != nil {
         return val.(*int32)
+    }
+    return nil
+}
+// GetUserImpact gets the userImpact property value. The userImpact property
+func (m *ManagementTemplateStep) GetUserImpact()(*string) {
+    val, err := m.GetBackingStore().Get("userImpact")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -327,6 +375,18 @@ func (m *ManagementTemplateStep) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    if m.GetInformationLinks() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInformationLinks()))
+        for i, v := range m.GetInformationLinks() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("informationLinks", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("lastActionByUserId", m.GetLastActionByUserId())
         if err != nil {
@@ -353,6 +413,12 @@ func (m *ManagementTemplateStep) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     {
         err = writer.WriteInt32Value("priority", m.GetPriority())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("userImpact", m.GetUserImpact())
         if err != nil {
             return err
         }
@@ -413,6 +479,13 @@ func (m *ManagementTemplateStep) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetInformationLinks sets the informationLinks property value. The informationLinks property
+func (m *ManagementTemplateStep) SetInformationLinks(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActionUrlable)() {
+    err := m.GetBackingStore().Set("informationLinks", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLastActionByUserId sets the lastActionByUserId property value. The lastActionByUserId property
 func (m *ManagementTemplateStep) SetLastActionByUserId(value *string)() {
     err := m.GetBackingStore().Set("lastActionByUserId", value)
@@ -448,6 +521,13 @@ func (m *ManagementTemplateStep) SetPriority(value *int32)() {
         panic(err)
     }
 }
+// SetUserImpact sets the userImpact property value. The userImpact property
+func (m *ManagementTemplateStep) SetUserImpact(value *string)() {
+    err := m.GetBackingStore().Set("userImpact", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetVersions sets the versions property value. The versions property
 func (m *ManagementTemplateStep) SetVersions(value []ManagementTemplateStepVersionable)() {
     err := m.GetBackingStore().Set("versions", value)
@@ -465,11 +545,13 @@ type ManagementTemplateStepable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDescription()(*string)
     GetDisplayName()(*string)
+    GetInformationLinks()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActionUrlable)
     GetLastActionByUserId()(*string)
     GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetManagementTemplate()(ManagementTemplateable)
     GetPortalLink()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActionUrlable)
     GetPriority()(*int32)
+    GetUserImpact()(*string)
     GetVersions()([]ManagementTemplateStepVersionable)
     SetAcceptedVersion(value ManagementTemplateStepVersionable)()
     SetCategory(value *ManagementCategory)()
@@ -477,10 +559,12 @@ type ManagementTemplateStepable interface {
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
+    SetInformationLinks(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActionUrlable)()
     SetLastActionByUserId(value *string)()
     SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetManagementTemplate(value ManagementTemplateable)()
     SetPortalLink(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActionUrlable)()
     SetPriority(value *int32)()
+    SetUserImpact(value *string)()
     SetVersions(value []ManagementTemplateStepVersionable)()
 }

@@ -48,7 +48,7 @@ func (m *RoleManagementAlertsAlertConfigurationsUnifiedRoleManagementAlertConfig
 // NewRoleManagementAlertsAlertConfigurationsUnifiedRoleManagementAlertConfigurationItemRequestBuilderInternal instantiates a new UnifiedRoleManagementAlertConfigurationItemRequestBuilder and sets the default values.
 func NewRoleManagementAlertsAlertConfigurationsUnifiedRoleManagementAlertConfigurationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleManagementAlertsAlertConfigurationsUnifiedRoleManagementAlertConfigurationItemRequestBuilder) {
     m := &RoleManagementAlertsAlertConfigurationsUnifiedRoleManagementAlertConfigurationItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/roleManagementAlerts/alertConfigurations/{unifiedRoleManagementAlertConfiguration%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/roleManagementAlerts/alertConfigurations/{unifiedRoleManagementAlertConfiguration%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

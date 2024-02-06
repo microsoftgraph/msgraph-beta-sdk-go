@@ -30,7 +30,7 @@ type IndustryDataRequestBuilderGetRequestConfiguration struct {
 // NewIndustryDataRequestBuilderInternal instantiates a new IndustryDataRequestBuilder and sets the default values.
 func NewIndustryDataRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataRequestBuilder) {
     m := &IndustryDataRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Hash Algorithm Options.
@@ -8,16 +9,18 @@ type HashAlgorithms int
 
 const (
     // SHA-1 Hash Algorithm.
-    SHA1_HASHALGORITHMS HashAlgorithms = iota
+    SHA1_HASHALGORITHMS = 1
     // SHA-2 Hash Algorithm.
-    SHA2_HASHALGORITHMS
+    SHA2_HASHALGORITHMS = 2
 )
 
 func (i HashAlgorithms) String() string {
     var values []string
-    for p := HashAlgorithms(1); p <= SHA2_HASHALGORITHMS; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"sha1", "sha2"}[p])
+    options := []string{"sha1", "sha2"}
+    for p := 0; p < 2; p++ {
+        mantis := HashAlgorithms(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

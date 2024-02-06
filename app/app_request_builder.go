@@ -41,7 +41,7 @@ func (m *AppRequestBuilder) Calls()(*CallsRequestBuilder) {
 // NewAppRequestBuilderInternal instantiates a new AppRequestBuilder and sets the default values.
 func NewAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppRequestBuilder) {
     m := &AppRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/app{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/app{?%24expand,%24select}", pathParameters),
     }
     return m
 }

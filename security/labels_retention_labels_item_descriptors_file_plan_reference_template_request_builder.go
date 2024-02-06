@@ -30,7 +30,7 @@ type LabelsRetentionLabelsItemDescriptorsFilePlanReferenceTemplateRequestBuilder
 // NewLabelsRetentionLabelsItemDescriptorsFilePlanReferenceTemplateRequestBuilderInternal instantiates a new FilePlanReferenceTemplateRequestBuilder and sets the default values.
 func NewLabelsRetentionLabelsItemDescriptorsFilePlanReferenceTemplateRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LabelsRetentionLabelsItemDescriptorsFilePlanReferenceTemplateRequestBuilder) {
     m := &LabelsRetentionLabelsItemDescriptorsFilePlanReferenceTemplateRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/descriptors/filePlanReferenceTemplate{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/descriptors/filePlanReferenceTemplate{?%24expand,%24select}", pathParameters),
     }
     return m
 }

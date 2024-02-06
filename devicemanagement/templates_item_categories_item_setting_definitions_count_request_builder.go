@@ -29,7 +29,7 @@ type TemplatesItemCategoriesItemSettingDefinitionsCountRequestBuilderGetRequestC
 // NewTemplatesItemCategoriesItemSettingDefinitionsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewTemplatesItemCategoriesItemSettingDefinitionsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TemplatesItemCategoriesItemSettingDefinitionsCountRequestBuilder) {
     m := &TemplatesItemCategoriesItemSettingDefinitionsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/categories/{deviceManagementTemplateSettingCategory%2Did}/settingDefinitions/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/categories/{deviceManagementTemplateSettingCategory%2Did}/settingDefinitions/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

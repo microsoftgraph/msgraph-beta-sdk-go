@@ -44,7 +44,7 @@ type DeviceComplianceScriptsItemRunSummaryRequestBuilderPatchRequestConfiguratio
 // NewDeviceComplianceScriptsItemRunSummaryRequestBuilderInternal instantiates a new RunSummaryRequestBuilder and sets the default values.
 func NewDeviceComplianceScriptsItemRunSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceComplianceScriptsItemRunSummaryRequestBuilder) {
     m := &DeviceComplianceScriptsItemRunSummaryRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceComplianceScripts/{deviceComplianceScript%2Did}/runSummary{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceComplianceScripts/{deviceComplianceScript%2Did}/runSummary{?%24expand,%24select}", pathParameters),
     }
     return m
 }

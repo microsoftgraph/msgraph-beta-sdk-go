@@ -30,7 +30,7 @@ type ItemPlannerMyDayTasksPlannerTaskItemRequestBuilderGetRequestConfiguration s
 // NewItemPlannerMyDayTasksPlannerTaskItemRequestBuilderInternal instantiates a new PlannerTaskItemRequestBuilder and sets the default values.
 func NewItemPlannerMyDayTasksPlannerTaskItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPlannerMyDayTasksPlannerTaskItemRequestBuilder) {
     m := &ItemPlannerMyDayTasksPlannerTaskItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/planner/myDayTasks/{plannerTask%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/planner/myDayTasks/{plannerTask%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

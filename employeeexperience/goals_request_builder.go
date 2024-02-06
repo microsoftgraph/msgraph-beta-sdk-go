@@ -44,7 +44,7 @@ type GoalsRequestBuilderPatchRequestConfiguration struct {
 // NewGoalsRequestBuilderInternal instantiates a new GoalsRequestBuilder and sets the default values.
 func NewGoalsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GoalsRequestBuilder) {
     m := &GoalsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/employeeExperience/goals{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/employeeExperience/goals{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -30,8 +30,11 @@ func NewItemGetPasswordSingleSignOnCredentialsRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewItemGetPasswordSingleSignOnCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action getPasswordSingleSignOnCredentials
+// Post get the list of password-based single sign-on credentials for a given user. This API returns the encrypted passwords as null or empty strings.
 // Deprecated: This method is obsolete. Use PostAsGetPasswordSingleSignOnCredentialsPostResponse instead.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-getpasswordsinglesignoncredentials?view=graph-rest-1.0
 func (m *ItemGetPasswordSingleSignOnCredentialsRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemGetPasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(ItemGetPasswordSingleSignOnCredentialsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -50,7 +53,10 @@ func (m *ItemGetPasswordSingleSignOnCredentialsRequestBuilder) Post(ctx context.
     }
     return res.(ItemGetPasswordSingleSignOnCredentialsResponseable), nil
 }
-// PostAsGetPasswordSingleSignOnCredentialsPostResponse invoke action getPasswordSingleSignOnCredentials
+// PostAsGetPasswordSingleSignOnCredentialsPostResponse get the list of password-based single sign-on credentials for a given user. This API returns the encrypted passwords as null or empty strings.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-getpasswordsinglesignoncredentials?view=graph-rest-1.0
 func (m *ItemGetPasswordSingleSignOnCredentialsRequestBuilder) PostAsGetPasswordSingleSignOnCredentialsPostResponse(ctx context.Context, requestConfiguration *ItemGetPasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(ItemGetPasswordSingleSignOnCredentialsPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -69,7 +75,7 @@ func (m *ItemGetPasswordSingleSignOnCredentialsRequestBuilder) PostAsGetPassword
     }
     return res.(ItemGetPasswordSingleSignOnCredentialsPostResponseable), nil
 }
-// ToPostRequestInformation invoke action getPasswordSingleSignOnCredentials
+// ToPostRequestInformation get the list of password-based single sign-on credentials for a given user. This API returns the encrypted passwords as null or empty strings.
 func (m *ItemGetPasswordSingleSignOnCredentialsRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemGetPasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

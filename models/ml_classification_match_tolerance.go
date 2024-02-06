@@ -1,21 +1,24 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // 
 type MlClassificationMatchTolerance int
 
 const (
-    EXACT_MLCLASSIFICATIONMATCHTOLERANCE MlClassificationMatchTolerance = iota
-    NEAR_MLCLASSIFICATIONMATCHTOLERANCE
+    EXACT_MLCLASSIFICATIONMATCHTOLERANCE = 1
+    NEAR_MLCLASSIFICATIONMATCHTOLERANCE = 2
 )
 
 func (i MlClassificationMatchTolerance) String() string {
     var values []string
-    for p := MlClassificationMatchTolerance(1); p <= NEAR_MLCLASSIFICATIONMATCHTOLERANCE; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"exact", "near"}[p])
+    options := []string{"exact", "near"}
+    for p := 0; p < 2; p++ {
+        mantis := MlClassificationMatchTolerance(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

@@ -30,7 +30,7 @@ type ItemListsItemItemsItemActivitiesItemListItemRequestBuilderGetRequestConfigu
 // NewItemListsItemItemsItemActivitiesItemListItemRequestBuilderInternal instantiates a new ListItemRequestBuilder and sets the default values.
 func NewItemListsItemItemsItemActivitiesItemListItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemItemsItemActivitiesItemListItemRequestBuilder) {
     m := &ItemListsItemItemsItemActivitiesItemListItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}/activities/{itemActivityOLD%2Did}/listItem{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}/activities/{itemActivityOLD%2Did}/listItem{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -30,7 +30,7 @@ type ManagedTenantsManagedTenantAlertRulesItemRuleDefinitionRequestBuilderGetReq
 // NewManagedTenantsManagedTenantAlertRulesItemRuleDefinitionRequestBuilderInternal instantiates a new RuleDefinitionRequestBuilder and sets the default values.
 func NewManagedTenantsManagedTenantAlertRulesItemRuleDefinitionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagedTenantAlertRulesItemRuleDefinitionRequestBuilder) {
     m := &ManagedTenantsManagedTenantAlertRulesItemRuleDefinitionRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/managedTenantAlertRules/{managedTenantAlertRule%2Did}/ruleDefinition{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/managedTenantAlertRules/{managedTenantAlertRule%2Did}/ruleDefinition{?%24expand,%24select}", pathParameters),
     }
     return m
 }

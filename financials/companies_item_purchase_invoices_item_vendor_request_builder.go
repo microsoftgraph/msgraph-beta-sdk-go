@@ -44,7 +44,7 @@ type CompaniesItemPurchaseInvoicesItemVendorRequestBuilderPatchRequestConfigurat
 // NewCompaniesItemPurchaseInvoicesItemVendorRequestBuilderInternal instantiates a new VendorRequestBuilder and sets the default values.
 func NewCompaniesItemPurchaseInvoicesItemVendorRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) {
     m := &CompaniesItemPurchaseInvoicesItemVendorRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/purchaseInvoices/{purchaseInvoice%2Did}/vendor{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/purchaseInvoices/{purchaseInvoice%2Did}/vendor{?%24expand,%24select}", pathParameters),
     }
     return m
 }

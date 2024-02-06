@@ -44,7 +44,7 @@ type SlaAzureADAuthenticationRequestBuilderPatchRequestConfiguration struct {
 // NewSlaAzureADAuthenticationRequestBuilderInternal instantiates a new AzureADAuthenticationRequestBuilder and sets the default values.
 func NewSlaAzureADAuthenticationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SlaAzureADAuthenticationRequestBuilder) {
     m := &SlaAzureADAuthenticationRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/sla/azureADAuthentication{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/sla/azureADAuthentication{?%24expand,%24select}", pathParameters),
     }
     return m
 }

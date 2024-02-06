@@ -44,7 +44,7 @@ type DailyPrintUsagePrintUsageItemRequestBuilderPatchRequestConfiguration struct
 // NewDailyPrintUsagePrintUsageItemRequestBuilderInternal instantiates a new PrintUsageItemRequestBuilder and sets the default values.
 func NewDailyPrintUsagePrintUsageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DailyPrintUsagePrintUsageItemRequestBuilder) {
     m := &DailyPrintUsagePrintUsageItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/dailyPrintUsage/{printUsage%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/dailyPrintUsage/{printUsage%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

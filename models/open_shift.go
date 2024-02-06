@@ -65,13 +65,13 @@ func (m *OpenShift) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
-    res["schedulingGroupName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+    res["schedulingGroupInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSchedulingGroupInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSchedulingGroupName(val)
+            m.SetSchedulingGroupInfo(val.(SchedulingGroupInfoable))
         }
         return nil
     }
@@ -85,23 +85,13 @@ func (m *OpenShift) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
-    res["teamId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+    res["teamInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateShiftsTeamInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTeamId(val)
-        }
-        return nil
-    }
-    res["teamName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTeamName(val)
+            m.SetTeamInfo(val.(ShiftsTeamInfoable))
         }
         return nil
     }
@@ -129,14 +119,14 @@ func (m *OpenShift) GetSchedulingGroupId()(*string) {
     }
     return nil
 }
-// GetSchedulingGroupName gets the schedulingGroupName property value. The name of the schedulingGroup that contains the openShift.
-func (m *OpenShift) GetSchedulingGroupName()(*string) {
-    val, err := m.GetBackingStore().Get("schedulingGroupName")
+// GetSchedulingGroupInfo gets the schedulingGroupInfo property value. The schedulingGroupInfo property
+func (m *OpenShift) GetSchedulingGroupInfo()(SchedulingGroupInfoable) {
+    val, err := m.GetBackingStore().Get("schedulingGroupInfo")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*string)
+        return val.(SchedulingGroupInfoable)
     }
     return nil
 }
@@ -151,25 +141,14 @@ func (m *OpenShift) GetSharedOpenShift()(OpenShiftItemable) {
     }
     return nil
 }
-// GetTeamId gets the teamId property value. The ID of the team in which the openShift is located.
-func (m *OpenShift) GetTeamId()(*string) {
-    val, err := m.GetBackingStore().Get("teamId")
+// GetTeamInfo gets the teamInfo property value. The teamInfo property
+func (m *OpenShift) GetTeamInfo()(ShiftsTeamInfoable) {
+    val, err := m.GetBackingStore().Get("teamInfo")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetTeamName gets the teamName property value. The name of the team in which the openShift is located.
-func (m *OpenShift) GetTeamName()(*string) {
-    val, err := m.GetBackingStore().Get("teamName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
+        return val.(ShiftsTeamInfoable)
     }
     return nil
 }
@@ -226,9 +205,9 @@ func (m *OpenShift) SetSchedulingGroupId(value *string)() {
         panic(err)
     }
 }
-// SetSchedulingGroupName sets the schedulingGroupName property value. The name of the schedulingGroup that contains the openShift.
-func (m *OpenShift) SetSchedulingGroupName(value *string)() {
-    err := m.GetBackingStore().Set("schedulingGroupName", value)
+// SetSchedulingGroupInfo sets the schedulingGroupInfo property value. The schedulingGroupInfo property
+func (m *OpenShift) SetSchedulingGroupInfo(value SchedulingGroupInfoable)() {
+    err := m.GetBackingStore().Set("schedulingGroupInfo", value)
     if err != nil {
         panic(err)
     }
@@ -240,16 +219,9 @@ func (m *OpenShift) SetSharedOpenShift(value OpenShiftItemable)() {
         panic(err)
     }
 }
-// SetTeamId sets the teamId property value. The ID of the team in which the openShift is located.
-func (m *OpenShift) SetTeamId(value *string)() {
-    err := m.GetBackingStore().Set("teamId", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetTeamName sets the teamName property value. The name of the team in which the openShift is located.
-func (m *OpenShift) SetTeamName(value *string)() {
-    err := m.GetBackingStore().Set("teamName", value)
+// SetTeamInfo sets the teamInfo property value. The teamInfo property
+func (m *OpenShift) SetTeamInfo(value ShiftsTeamInfoable)() {
+    err := m.GetBackingStore().Set("teamInfo", value)
     if err != nil {
         panic(err)
     }
@@ -261,15 +233,13 @@ type OpenShiftable interface {
     GetDraftOpenShift()(OpenShiftItemable)
     GetIsStagedForDeletion()(*bool)
     GetSchedulingGroupId()(*string)
-    GetSchedulingGroupName()(*string)
+    GetSchedulingGroupInfo()(SchedulingGroupInfoable)
     GetSharedOpenShift()(OpenShiftItemable)
-    GetTeamId()(*string)
-    GetTeamName()(*string)
+    GetTeamInfo()(ShiftsTeamInfoable)
     SetDraftOpenShift(value OpenShiftItemable)()
     SetIsStagedForDeletion(value *bool)()
     SetSchedulingGroupId(value *string)()
-    SetSchedulingGroupName(value *string)()
+    SetSchedulingGroupInfo(value SchedulingGroupInfoable)()
     SetSharedOpenShift(value OpenShiftItemable)()
-    SetTeamId(value *string)()
-    SetTeamName(value *string)()
+    SetTeamInfo(value ShiftsTeamInfoable)()
 }

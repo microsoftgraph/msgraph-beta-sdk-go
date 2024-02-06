@@ -44,7 +44,7 @@ type MonitoringAlertRulesAlertRuleItemRequestBuilderPatchRequestConfiguration st
 // NewMonitoringAlertRulesAlertRuleItemRequestBuilderInternal instantiates a new AlertRuleItemRequestBuilder and sets the default values.
 func NewMonitoringAlertRulesAlertRuleItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MonitoringAlertRulesAlertRuleItemRequestBuilder) {
     m := &MonitoringAlertRulesAlertRuleItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/monitoring/alertRules/{alertRule%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/monitoring/alertRules/{alertRule%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

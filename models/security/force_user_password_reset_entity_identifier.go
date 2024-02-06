@@ -1,24 +1,27 @@
 package security
 import (
     "errors"
+    "math"
     "strings"
 )
 // 
 type ForceUserPasswordResetEntityIdentifier int
 
 const (
-    ACCOUNTSID_FORCEUSERPASSWORDRESETENTITYIDENTIFIER ForceUserPasswordResetEntityIdentifier = iota
-    INITIATINGPROCESSACCOUNTSID_FORCEUSERPASSWORDRESETENTITYIDENTIFIER
-    REQUESTACCOUNTSID_FORCEUSERPASSWORDRESETENTITYIDENTIFIER
-    ONPREMSID_FORCEUSERPASSWORDRESETENTITYIDENTIFIER
-    UNKNOWNFUTUREVALUE_FORCEUSERPASSWORDRESETENTITYIDENTIFIER
+    ACCOUNTSID_FORCEUSERPASSWORDRESETENTITYIDENTIFIER = 1
+    INITIATINGPROCESSACCOUNTSID_FORCEUSERPASSWORDRESETENTITYIDENTIFIER = 2
+    REQUESTACCOUNTSID_FORCEUSERPASSWORDRESETENTITYIDENTIFIER = 4
+    ONPREMSID_FORCEUSERPASSWORDRESETENTITYIDENTIFIER = 8
+    UNKNOWNFUTUREVALUE_FORCEUSERPASSWORDRESETENTITYIDENTIFIER = 16
 )
 
 func (i ForceUserPasswordResetEntityIdentifier) String() string {
     var values []string
-    for p := ForceUserPasswordResetEntityIdentifier(1); p <= UNKNOWNFUTUREVALUE_FORCEUSERPASSWORDRESETENTITYIDENTIFIER; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"accountSid", "initiatingProcessAccountSid", "requestAccountSid", "onPremSid", "unknownFutureValue"}[p])
+    options := []string{"accountSid", "initiatingProcessAccountSid", "requestAccountSid", "onPremSid", "unknownFutureValue"}
+    for p := 0; p < 5; p++ {
+        mantis := ForceUserPasswordResetEntityIdentifier(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

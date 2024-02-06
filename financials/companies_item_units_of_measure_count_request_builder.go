@@ -29,7 +29,7 @@ type CompaniesItemUnitsOfMeasureCountRequestBuilderGetRequestConfiguration struc
 // NewCompaniesItemUnitsOfMeasureCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewCompaniesItemUnitsOfMeasureCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemUnitsOfMeasureCountRequestBuilder) {
     m := &CompaniesItemUnitsOfMeasureCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/unitsOfMeasure/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/unitsOfMeasure/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

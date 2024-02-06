@@ -44,7 +44,7 @@ type ItemDevicesItemUsageRightsUsageRightItemRequestBuilderPatchRequestConfigura
 // NewItemDevicesItemUsageRightsUsageRightItemRequestBuilderInternal instantiates a new UsageRightItemRequestBuilder and sets the default values.
 func NewItemDevicesItemUsageRightsUsageRightItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDevicesItemUsageRightsUsageRightItemRequestBuilder) {
     m := &ItemDevicesItemUsageRightsUsageRightItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/usageRights/{usageRight%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/usageRights/{usageRight%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

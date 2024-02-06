@@ -30,7 +30,7 @@ type EntitlementManagementAssignmentRequestsItemAccessPackageAssignmentRequestBu
 // NewEntitlementManagementAssignmentRequestsItemAccessPackageAssignmentRequestBuilderInternal instantiates a new AccessPackageAssignmentRequestBuilder and sets the default values.
 func NewEntitlementManagementAssignmentRequestsItemAccessPackageAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAssignmentRequestsItemAccessPackageAssignmentRequestBuilder) {
     m := &EntitlementManagementAssignmentRequestsItemAccessPackageAssignmentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest%2Did}/accessPackageAssignment{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest%2Did}/accessPackageAssignment{?%24expand,%24select}", pathParameters),
     }
     return m
 }

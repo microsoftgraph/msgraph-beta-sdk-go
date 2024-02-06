@@ -29,7 +29,7 @@ type ReusablePolicySettingsItemReferencingConfigurationPoliciesItemSettingsItemS
 // NewReusablePolicySettingsItemReferencingConfigurationPoliciesItemSettingsItemSettingDefinitionsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewReusablePolicySettingsItemReferencingConfigurationPoliciesItemSettingsItemSettingDefinitionsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReusablePolicySettingsItemReferencingConfigurationPoliciesItemSettingsItemSettingDefinitionsCountRequestBuilder) {
     m := &ReusablePolicySettingsItemReferencingConfigurationPoliciesItemSettingsItemSettingDefinitionsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting%2Did}/referencingConfigurationPolicies/{deviceManagementConfigurationPolicy%2Did}/settings/{deviceManagementConfigurationSetting%2Did}/settingDefinitions/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting%2Did}/referencingConfigurationPolicies/{deviceManagementConfigurationPolicy%2Did}/settings/{deviceManagementConfigurationSetting%2Did}/settingDefinitions/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

@@ -15,6 +15,8 @@ type GetOffice365GroupsActivityDetailWithDateRequestBuilder struct {
 type GetOffice365GroupsActivityDetailWithDateRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
@@ -40,7 +42,7 @@ type GetOffice365GroupsActivityDetailWithDateRequestBuilderGetRequestConfigurati
 // NewGetOffice365GroupsActivityDetailWithDateRequestBuilderInternal instantiates a new GetOffice365GroupsActivityDetailWithDateRequestBuilder and sets the default values.
 func NewGetOffice365GroupsActivityDetailWithDateRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*GetOffice365GroupsActivityDetailWithDateRequestBuilder) {
     m := &GetOffice365GroupsActivityDetailWithDateRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/getOffice365GroupsActivityDetail(date={date}){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/getOffice365GroupsActivityDetail(date={date}){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     if date != nil {
         m.BaseRequestBuilder.PathParameters["date"] = (*date).String()

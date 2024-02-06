@@ -30,7 +30,7 @@ type EdiscoveryCasesItemTagsItemParentRequestBuilderGetRequestConfiguration stru
 // NewEdiscoveryCasesItemTagsItemParentRequestBuilderInternal instantiates a new ParentRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemTagsItemParentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemTagsItemParentRequestBuilder) {
     m := &EdiscoveryCasesItemTagsItemParentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/tags/{tag%2Did}/parent{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/tags/{tag%2Did}/parent{?%24expand,%24select}", pathParameters),
     }
     return m
 }

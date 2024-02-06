@@ -30,7 +30,7 @@ type UserInsightsDailyActiveUsersBreakdownActiveUsersBreakdownMetricItemRequestB
 // NewUserInsightsDailyActiveUsersBreakdownActiveUsersBreakdownMetricItemRequestBuilderInternal instantiates a new ActiveUsersBreakdownMetricItemRequestBuilder and sets the default values.
 func NewUserInsightsDailyActiveUsersBreakdownActiveUsersBreakdownMetricItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserInsightsDailyActiveUsersBreakdownActiveUsersBreakdownMetricItemRequestBuilder) {
     m := &UserInsightsDailyActiveUsersBreakdownActiveUsersBreakdownMetricItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/userInsights/daily/activeUsersBreakdown/{activeUsersBreakdownMetric%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/userInsights/daily/activeUsersBreakdown/{activeUsersBreakdownMetric%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

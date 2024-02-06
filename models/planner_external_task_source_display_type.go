@@ -7,7 +7,7 @@ type PlannerExternalTaskSourceDisplayType int
 
 const (
     NONE_PLANNEREXTERNALTASKSOURCEDISPLAYTYPE PlannerExternalTaskSourceDisplayType = iota
-    DEFAULTESCAPED_PLANNEREXTERNALTASKSOURCEDISPLAYTYPE
+    DEFAULT_PLANNEREXTERNALTASKSOURCEDISPLAYTYPE
     UNKNOWNFUTUREVALUE_PLANNEREXTERNALTASKSOURCEDISPLAYTYPE
 )
 
@@ -20,7 +20,7 @@ func ParsePlannerExternalTaskSourceDisplayType(v string) (any, error) {
         case "none":
             result = NONE_PLANNEREXTERNALTASKSOURCEDISPLAYTYPE
         case "default":
-            result = DEFAULTESCAPED_PLANNEREXTERNALTASKSOURCEDISPLAYTYPE
+            result = DEFAULT_PLANNEREXTERNALTASKSOURCEDISPLAYTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PLANNEREXTERNALTASKSOURCEDISPLAYTYPE
         default:

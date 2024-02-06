@@ -44,7 +44,7 @@ type ItemGetByPathWithPathGetByPathWithPath1RecycleBinRequestBuilderPatchRequest
 // NewItemGetByPathWithPathGetByPathWithPath1RecycleBinRequestBuilderInternal instantiates a new RecycleBinRequestBuilder and sets the default values.
 func NewItemGetByPathWithPathGetByPathWithPath1RecycleBinRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGetByPathWithPathGetByPathWithPath1RecycleBinRequestBuilder) {
     m := &ItemGetByPathWithPathGetByPathWithPath1RecycleBinRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/getByPath(path='{path1}')/recycleBin{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/getByPath(path='{path1}')/recycleBin{?%24expand,%24select}", pathParameters),
     }
     return m
 }

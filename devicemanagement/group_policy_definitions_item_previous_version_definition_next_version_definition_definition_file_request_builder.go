@@ -30,7 +30,7 @@ type GroupPolicyDefinitionsItemPreviousVersionDefinitionNextVersionDefinitionDef
 // NewGroupPolicyDefinitionsItemPreviousVersionDefinitionNextVersionDefinitionDefinitionFileRequestBuilderInternal instantiates a new DefinitionFileRequestBuilder and sets the default values.
 func NewGroupPolicyDefinitionsItemPreviousVersionDefinitionNextVersionDefinitionDefinitionFileRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyDefinitionsItemPreviousVersionDefinitionNextVersionDefinitionDefinitionFileRequestBuilder) {
     m := &GroupPolicyDefinitionsItemPreviousVersionDefinitionNextVersionDefinitionDefinitionFileRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition%2Did}/previousVersionDefinition/nextVersionDefinition/definitionFile{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition%2Did}/previousVersionDefinition/nextVersionDefinition/definitionFile{?%24expand,%24select}", pathParameters),
     }
     return m
 }

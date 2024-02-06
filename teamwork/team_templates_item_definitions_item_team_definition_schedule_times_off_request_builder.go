@@ -58,7 +58,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimesOffRequestBu
 // NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimesOffRequestBuilderInternal instantiates a new TimesOffRequestBuilder and sets the default values.
 func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimesOffRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimesOffRequestBuilder) {
     m := &TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimesOffRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/schedule/timesOff{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/schedule/timesOff{?%24count,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }

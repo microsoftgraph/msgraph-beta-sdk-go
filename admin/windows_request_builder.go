@@ -44,7 +44,7 @@ type WindowsRequestBuilderPatchRequestConfiguration struct {
 // NewWindowsRequestBuilderInternal instantiates a new WindowsRequestBuilder and sets the default values.
 func NewWindowsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsRequestBuilder) {
     m := &WindowsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows{?%24expand,%24select}", pathParameters),
     }
     return m
 }

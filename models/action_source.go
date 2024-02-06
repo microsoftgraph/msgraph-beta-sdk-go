@@ -9,7 +9,7 @@ const (
     MANUAL_ACTIONSOURCE ActionSource = iota
     AUTOMATIC_ACTIONSOURCE
     RECOMMENDED_ACTIONSOURCE
-    DEFAULTESCAPED_ACTIONSOURCE
+    DEFAULT_ACTIONSOURCE
 )
 
 func (i ActionSource) String() string {
@@ -25,7 +25,7 @@ func ParseActionSource(v string) (any, error) {
         case "recommended":
             result = RECOMMENDED_ACTIONSOURCE
         case "default":
-            result = DEFAULTESCAPED_ACTIONSOURCE
+            result = DEFAULT_ACTIONSOURCE
         default:
             return 0, errors.New("Unknown ActionSource value: " + v)
     }

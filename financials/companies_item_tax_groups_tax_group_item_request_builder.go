@@ -44,7 +44,7 @@ type CompaniesItemTaxGroupsTaxGroupItemRequestBuilderPatchRequestConfiguration s
 // NewCompaniesItemTaxGroupsTaxGroupItemRequestBuilderInternal instantiates a new TaxGroupItemRequestBuilder and sets the default values.
 func NewCompaniesItemTaxGroupsTaxGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemTaxGroupsTaxGroupItemRequestBuilder) {
     m := &CompaniesItemTaxGroupsTaxGroupItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/taxGroups/{taxGroup%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/taxGroups/{taxGroup%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

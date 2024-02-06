@@ -30,7 +30,7 @@ type EntitlementManagementAccessPackageAssignmentRequestsItemRequestorConnectedO
 // NewEntitlementManagementAccessPackageAssignmentRequestsItemRequestorConnectedOrganizationRequestBuilderInternal instantiates a new ConnectedOrganizationRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageAssignmentRequestsItemRequestorConnectedOrganizationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageAssignmentRequestsItemRequestorConnectedOrganizationRequestBuilder) {
     m := &EntitlementManagementAccessPackageAssignmentRequestsItemRequestorConnectedOrganizationRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest%2Did}/requestor/connectedOrganization{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest%2Did}/requestor/connectedOrganization{?%24expand,%24select}", pathParameters),
     }
     return m
 }

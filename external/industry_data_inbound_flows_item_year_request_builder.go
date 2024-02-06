@@ -30,7 +30,7 @@ type IndustryDataInboundFlowsItemYearRequestBuilderGetRequestConfiguration struc
 // NewIndustryDataInboundFlowsItemYearRequestBuilderInternal instantiates a new YearRequestBuilder and sets the default values.
 func NewIndustryDataInboundFlowsItemYearRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataInboundFlowsItemYearRequestBuilder) {
     m := &IndustryDataInboundFlowsItemYearRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/inboundFlows/{inboundFlow%2Did}/year{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/inboundFlows/{inboundFlow%2Did}/year{?%24expand,%24select}", pathParameters),
     }
     return m
 }

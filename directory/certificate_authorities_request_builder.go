@@ -48,7 +48,7 @@ func (m *CertificateAuthoritiesRequestBuilder) CertificateBasedApplicationConfig
 // NewCertificateAuthoritiesRequestBuilderInternal instantiates a new CertificateAuthoritiesRequestBuilder and sets the default values.
 func NewCertificateAuthoritiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CertificateAuthoritiesRequestBuilder) {
     m := &CertificateAuthoritiesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/certificateAuthorities{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/certificateAuthorities{?%24expand,%24select}", pathParameters),
     }
     return m
 }

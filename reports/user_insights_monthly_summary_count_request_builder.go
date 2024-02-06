@@ -29,7 +29,7 @@ type UserInsightsMonthlySummaryCountRequestBuilderGetRequestConfiguration struct
 // NewUserInsightsMonthlySummaryCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewUserInsightsMonthlySummaryCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserInsightsMonthlySummaryCountRequestBuilder) {
     m := &UserInsightsMonthlySummaryCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/userInsights/monthly/summary/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/userInsights/monthly/summary/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

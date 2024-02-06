@@ -44,7 +44,7 @@ type TenantStatusRequestBuilderPatchRequestConfiguration struct {
 // NewTenantStatusRequestBuilderInternal instantiates a new TenantStatusRequestBuilder and sets the default values.
 func NewTenantStatusRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TenantStatusRequestBuilder) {
     m := &TenantStatusRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/tenantStatus{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/tenantStatus{?%24expand,%24select}", pathParameters),
     }
     return m
 }

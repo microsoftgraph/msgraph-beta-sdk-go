@@ -44,7 +44,7 @@ type CompaniesItemCustomersItemShipmentMethodRequestBuilderPatchRequestConfigura
 // NewCompaniesItemCustomersItemShipmentMethodRequestBuilderInternal instantiates a new ShipmentMethodRequestBuilder and sets the default values.
 func NewCompaniesItemCustomersItemShipmentMethodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemCustomersItemShipmentMethodRequestBuilder) {
     m := &CompaniesItemCustomersItemShipmentMethodRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/customers/{customer%2Did}/shipmentMethod{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/customers/{customer%2Did}/shipmentMethod{?%24expand,%24select}", pathParameters),
     }
     return m
 }

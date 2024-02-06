@@ -11,13 +11,6 @@ import (
 type TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsChannelItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsChannelItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsChannelItemRequestBuilderDeleteRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsChannelItemRequestBuilderGetQueryParameters list of channels shared with the team.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsChannelItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
@@ -37,7 +30,7 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsChannelItemRe
 // NewTeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsChannelItemRequestBuilderInternal instantiates a new ChannelItemRequestBuilder and sets the default values.
 func NewTeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsChannelItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsChannelItemRequestBuilder) {
     m := &TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsChannelItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/incomingChannels/{channel%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/incomingChannels/{channel%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
@@ -46,25 +39,6 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsChannelIte
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsChannelItemRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Delete remove an incoming channel (a channel shared with a team) from a team.
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/team-delete-incomingchannels?view=graph-rest-1.0
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsChannelItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsChannelItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
 }
 // Get list of channels shared with the team.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsChannelItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsChannelItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, error) {
@@ -84,16 +58,6 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsChannelIt
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable), nil
-}
-// ToDeleteRequestInformation remove an incoming channel (a channel shared with a team) from a team.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsChannelItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsChannelItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    requestInfo.Headers.TryAdd("Accept", "application/json")
-    return requestInfo, nil
 }
 // ToGetRequestInformation list of channels shared with the team.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsChannelItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsChannelItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

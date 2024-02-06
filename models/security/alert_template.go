@@ -38,7 +38,7 @@ func (m *AlertTemplate) GetAdditionalData()(map[string]any) {
 func (m *AlertTemplate) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCategory gets the category property value. The category property
+// GetCategory gets the category property value. Category assigned to the alert triggered by the custom detection rule.
 func (m *AlertTemplate) GetCategory()(*string) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *AlertTemplate) GetCategory()(*string) {
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. Description of the alert triggered by the custom detection rule.
 func (m *AlertTemplate) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -157,7 +157,7 @@ func (m *AlertTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetImpactedAssets gets the impactedAssets property value. The impactedAssets property
+// GetImpactedAssets gets the impactedAssets property value. Which asset or assets were impacted based on the alert triggered by the custom detection rule.
 func (m *AlertTemplate) GetImpactedAssets()([]ImpactedAssetable) {
     val, err := m.GetBackingStore().Get("impactedAssets")
     if err != nil {
@@ -168,7 +168,7 @@ func (m *AlertTemplate) GetImpactedAssets()([]ImpactedAssetable) {
     }
     return nil
 }
-// GetMitreTechniques gets the mitreTechniques property value. The mitreTechniques property
+// GetMitreTechniques gets the mitreTechniques property value. MITRE technique assigned to the alert triggered by the custom detection rule.
 func (m *AlertTemplate) GetMitreTechniques()([]string) {
     val, err := m.GetBackingStore().Get("mitreTechniques")
     if err != nil {
@@ -190,7 +190,7 @@ func (m *AlertTemplate) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRecommendedActions gets the recommendedActions property value. The recommendedActions property
+// GetRecommendedActions gets the recommendedActions property value. Recommended actions to mitigate the threat related to the alert triggered by the custom detection rule.
 func (m *AlertTemplate) GetRecommendedActions()(*string) {
     val, err := m.GetBackingStore().Get("recommendedActions")
     if err != nil {
@@ -212,7 +212,7 @@ func (m *AlertTemplate) GetSeverity()(*AlertSeverity) {
     }
     return nil
 }
-// GetTitle gets the title property value. The title property
+// GetTitle gets the title property value. Name of the alert triggered by the custom detection rule.
 func (m *AlertTemplate) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
     if err != nil {
@@ -299,28 +299,28 @@ func (m *AlertTemplate) SetAdditionalData(value map[string]any)() {
 func (m *AlertTemplate) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCategory sets the category property value. The category property
+// SetCategory sets the category property value. Category assigned to the alert triggered by the custom detection rule.
 func (m *AlertTemplate) SetCategory(value *string)() {
     err := m.GetBackingStore().Set("category", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. Description of the alert triggered by the custom detection rule.
 func (m *AlertTemplate) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetImpactedAssets sets the impactedAssets property value. The impactedAssets property
+// SetImpactedAssets sets the impactedAssets property value. Which asset or assets were impacted based on the alert triggered by the custom detection rule.
 func (m *AlertTemplate) SetImpactedAssets(value []ImpactedAssetable)() {
     err := m.GetBackingStore().Set("impactedAssets", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMitreTechniques sets the mitreTechniques property value. The mitreTechniques property
+// SetMitreTechniques sets the mitreTechniques property value. MITRE technique assigned to the alert triggered by the custom detection rule.
 func (m *AlertTemplate) SetMitreTechniques(value []string)() {
     err := m.GetBackingStore().Set("mitreTechniques", value)
     if err != nil {
@@ -334,7 +334,7 @@ func (m *AlertTemplate) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRecommendedActions sets the recommendedActions property value. The recommendedActions property
+// SetRecommendedActions sets the recommendedActions property value. Recommended actions to mitigate the threat related to the alert triggered by the custom detection rule.
 func (m *AlertTemplate) SetRecommendedActions(value *string)() {
     err := m.GetBackingStore().Set("recommendedActions", value)
     if err != nil {
@@ -348,7 +348,7 @@ func (m *AlertTemplate) SetSeverity(value *AlertSeverity)() {
         panic(err)
     }
 }
-// SetTitle sets the title property value. The title property
+// SetTitle sets the title property value. Name of the alert triggered by the custom detection rule.
 func (m *AlertTemplate) SetTitle(value *string)() {
     err := m.GetBackingStore().Set("title", value)
     if err != nil {

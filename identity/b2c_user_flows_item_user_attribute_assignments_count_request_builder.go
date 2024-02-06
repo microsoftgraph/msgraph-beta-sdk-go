@@ -29,7 +29,7 @@ type B2cUserFlowsItemUserAttributeAssignmentsCountRequestBuilderGetRequestConfig
 // NewB2cUserFlowsItemUserAttributeAssignmentsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewB2cUserFlowsItemUserAttributeAssignmentsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2cUserFlowsItemUserAttributeAssignmentsCountRequestBuilder) {
     m := &B2cUserFlowsItemUserAttributeAssignmentsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/userAttributeAssignments/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/userAttributeAssignments/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

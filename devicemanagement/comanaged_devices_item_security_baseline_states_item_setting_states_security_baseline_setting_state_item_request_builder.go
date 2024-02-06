@@ -44,7 +44,7 @@ type ComanagedDevicesItemSecurityBaselineStatesItemSettingStatesSecurityBaseline
 // NewComanagedDevicesItemSecurityBaselineStatesItemSettingStatesSecurityBaselineSettingStateItemRequestBuilderInternal instantiates a new SecurityBaselineSettingStateItemRequestBuilder and sets the default values.
 func NewComanagedDevicesItemSecurityBaselineStatesItemSettingStatesSecurityBaselineSettingStateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ComanagedDevicesItemSecurityBaselineStatesItemSettingStatesSecurityBaselineSettingStateItemRequestBuilder) {
     m := &ComanagedDevicesItemSecurityBaselineStatesItemSettingStatesSecurityBaselineSettingStateItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/securityBaselineStates/{securityBaselineState%2Did}/settingStates/{securityBaselineSettingState%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/securityBaselineStates/{securityBaselineState%2Did}/settingStates/{securityBaselineSettingState%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

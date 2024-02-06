@@ -44,7 +44,7 @@ type SettingsConditionalAccessRequestBuilderPatchRequestConfiguration struct {
 // NewSettingsConditionalAccessRequestBuilderInternal instantiates a new ConditionalAccessRequestBuilder and sets the default values.
 func NewSettingsConditionalAccessRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SettingsConditionalAccessRequestBuilder) {
     m := &SettingsConditionalAccessRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/settings/conditionalAccess{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/settings/conditionalAccess{?%24expand,%24select}", pathParameters),
     }
     return m
 }

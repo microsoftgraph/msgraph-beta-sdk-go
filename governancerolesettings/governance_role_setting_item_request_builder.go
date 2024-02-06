@@ -44,7 +44,7 @@ type GovernanceRoleSettingItemRequestBuilderPatchRequestConfiguration struct {
 // NewGovernanceRoleSettingItemRequestBuilderInternal instantiates a new GovernanceRoleSettingItemRequestBuilder and sets the default values.
 func NewGovernanceRoleSettingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GovernanceRoleSettingItemRequestBuilder) {
     m := &GovernanceRoleSettingItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/governanceRoleSettings/{governanceRoleSetting%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/governanceRoleSettings/{governanceRoleSetting%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

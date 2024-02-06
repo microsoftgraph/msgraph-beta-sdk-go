@@ -44,7 +44,7 @@ type WindowsAutopilotSettingsRequestBuilderPatchRequestConfiguration struct {
 // NewWindowsAutopilotSettingsRequestBuilderInternal instantiates a new WindowsAutopilotSettingsRequestBuilder and sets the default values.
 func NewWindowsAutopilotSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsAutopilotSettingsRequestBuilder) {
     m := &WindowsAutopilotSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/windowsAutopilotSettings{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/windowsAutopilotSettings{?%24expand,%24select}", pathParameters),
     }
     return m
 }

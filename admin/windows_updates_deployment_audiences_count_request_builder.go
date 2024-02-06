@@ -29,7 +29,7 @@ type WindowsUpdatesDeploymentAudiencesCountRequestBuilderGetRequestConfiguration
 // NewWindowsUpdatesDeploymentAudiencesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewWindowsUpdatesDeploymentAudiencesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesDeploymentAudiencesCountRequestBuilder) {
     m := &WindowsUpdatesDeploymentAudiencesCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/deploymentAudiences/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/deploymentAudiences/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

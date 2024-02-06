@@ -44,7 +44,7 @@ type SettingsEnrichedAuditLogsRequestBuilderPatchRequestConfiguration struct {
 // NewSettingsEnrichedAuditLogsRequestBuilderInternal instantiates a new EnrichedAuditLogsRequestBuilder and sets the default values.
 func NewSettingsEnrichedAuditLogsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SettingsEnrichedAuditLogsRequestBuilder) {
     m := &SettingsEnrichedAuditLogsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/settings/enrichedAuditLogs{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/settings/enrichedAuditLogs{?%24expand,%24select}", pathParameters),
     }
     return m
 }

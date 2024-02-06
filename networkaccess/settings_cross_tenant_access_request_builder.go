@@ -44,7 +44,7 @@ type SettingsCrossTenantAccessRequestBuilderPatchRequestConfiguration struct {
 // NewSettingsCrossTenantAccessRequestBuilderInternal instantiates a new CrossTenantAccessRequestBuilder and sets the default values.
 func NewSettingsCrossTenantAccessRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SettingsCrossTenantAccessRequestBuilder) {
     m := &SettingsCrossTenantAccessRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/settings/crossTenantAccess{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/settings/crossTenantAccess{?%24expand,%24select}", pathParameters),
     }
     return m
 }

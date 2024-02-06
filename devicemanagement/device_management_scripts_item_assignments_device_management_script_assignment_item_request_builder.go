@@ -44,7 +44,7 @@ type DeviceManagementScriptsItemAssignmentsDeviceManagementScriptAssignmentItemR
 // NewDeviceManagementScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilderInternal instantiates a new DeviceManagementScriptAssignmentItemRequestBuilder and sets the default values.
 func NewDeviceManagementScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilder) {
     m := &DeviceManagementScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceManagementScripts/{deviceManagementScript%2Did}/assignments/{deviceManagementScriptAssignment%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceManagementScripts/{deviceManagementScript%2Did}/assignments/{deviceManagementScriptAssignment%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

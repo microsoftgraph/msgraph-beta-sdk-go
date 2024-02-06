@@ -44,7 +44,7 @@ type LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemR
 // NewLabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderInternal instantiates a new DispositionReviewStageItemRequestBuilder and sets the default values.
 func NewLabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder) {
     m := &LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/dispositionReviewStages/{dispositionReviewStage%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/dispositionReviewStages/{dispositionReviewStage%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -44,7 +44,7 @@ type ManagedTenantsCloudPcConnectionsCloudPcConnectionItemRequestBuilderPatchReq
 // NewManagedTenantsCloudPcConnectionsCloudPcConnectionItemRequestBuilderInternal instantiates a new CloudPcConnectionItemRequestBuilder and sets the default values.
 func NewManagedTenantsCloudPcConnectionsCloudPcConnectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsCloudPcConnectionsCloudPcConnectionItemRequestBuilder) {
     m := &ManagedTenantsCloudPcConnectionsCloudPcConnectionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/cloudPcConnections/{cloudPcConnection%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/cloudPcConnections/{cloudPcConnection%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

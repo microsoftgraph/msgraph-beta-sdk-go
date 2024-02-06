@@ -48,7 +48,7 @@ func (m *DataSharingConsentsDataSharingConsentItemRequestBuilder) ConsentToDataS
 // NewDataSharingConsentsDataSharingConsentItemRequestBuilderInternal instantiates a new DataSharingConsentItemRequestBuilder and sets the default values.
 func NewDataSharingConsentsDataSharingConsentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DataSharingConsentsDataSharingConsentItemRequestBuilder) {
     m := &DataSharingConsentsDataSharingConsentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/dataSharingConsents/{dataSharingConsent%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/dataSharingConsents/{dataSharingConsent%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

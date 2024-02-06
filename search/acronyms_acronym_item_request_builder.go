@@ -44,7 +44,7 @@ type AcronymsAcronymItemRequestBuilderPatchRequestConfiguration struct {
 // NewAcronymsAcronymItemRequestBuilderInternal instantiates a new AcronymItemRequestBuilder and sets the default values.
 func NewAcronymsAcronymItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AcronymsAcronymItemRequestBuilder) {
     m := &AcronymsAcronymItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/search/acronyms/{acronym%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/search/acronyms/{acronym%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

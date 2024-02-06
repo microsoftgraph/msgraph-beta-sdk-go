@@ -29,7 +29,7 @@ type IosLobAppProvisioningConfigurationsItemGroupAssignmentsCountRequestBuilderG
 // NewIosLobAppProvisioningConfigurationsItemGroupAssignmentsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewIosLobAppProvisioningConfigurationsItemGroupAssignmentsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IosLobAppProvisioningConfigurationsItemGroupAssignmentsCountRequestBuilder) {
     m := &IosLobAppProvisioningConfigurationsItemGroupAssignmentsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/iosLobAppProvisioningConfigurations/{iosLobAppProvisioningConfiguration%2Did}/groupAssignments/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/iosLobAppProvisioningConfigurations/{iosLobAppProvisioningConfiguration%2Did}/groupAssignments/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

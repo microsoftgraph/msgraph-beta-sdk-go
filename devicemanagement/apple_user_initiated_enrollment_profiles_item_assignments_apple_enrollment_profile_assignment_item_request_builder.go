@@ -44,7 +44,7 @@ type AppleUserInitiatedEnrollmentProfilesItemAssignmentsAppleEnrollmentProfileAs
 // NewAppleUserInitiatedEnrollmentProfilesItemAssignmentsAppleEnrollmentProfileAssignmentItemRequestBuilderInternal instantiates a new AppleEnrollmentProfileAssignmentItemRequestBuilder and sets the default values.
 func NewAppleUserInitiatedEnrollmentProfilesItemAssignmentsAppleEnrollmentProfileAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppleUserInitiatedEnrollmentProfilesItemAssignmentsAppleEnrollmentProfileAssignmentItemRequestBuilder) {
     m := &AppleUserInitiatedEnrollmentProfilesItemAssignmentsAppleEnrollmentProfileAssignmentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/appleUserInitiatedEnrollmentProfiles/{appleUserInitiatedEnrollmentProfile%2Did}/assignments/{appleEnrollmentProfileAssignment%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/appleUserInitiatedEnrollmentProfiles/{appleUserInitiatedEnrollmentProfile%2Did}/assignments/{appleEnrollmentProfileAssignment%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

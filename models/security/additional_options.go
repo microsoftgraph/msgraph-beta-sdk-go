@@ -1,26 +1,29 @@
 package security
 import (
     "errors"
+    "math"
     "strings"
 )
 // 
 type AdditionalOptions int
 
 const (
-    NONE_ADDITIONALOPTIONS AdditionalOptions = iota
-    TEAMSANDYAMMERCONVERSATIONS_ADDITIONALOPTIONS
-    CLOUDATTACHMENTS_ADDITIONALOPTIONS
-    ALLDOCUMENTVERSIONS_ADDITIONALOPTIONS
-    SUBFOLDERCONTENTS_ADDITIONALOPTIONS
-    LISTATTACHMENTS_ADDITIONALOPTIONS
-    UNKNOWNFUTUREVALUE_ADDITIONALOPTIONS
+    NONE_ADDITIONALOPTIONS = 1
+    TEAMSANDYAMMERCONVERSATIONS_ADDITIONALOPTIONS = 2
+    CLOUDATTACHMENTS_ADDITIONALOPTIONS = 4
+    ALLDOCUMENTVERSIONS_ADDITIONALOPTIONS = 8
+    SUBFOLDERCONTENTS_ADDITIONALOPTIONS = 16
+    LISTATTACHMENTS_ADDITIONALOPTIONS = 32
+    UNKNOWNFUTUREVALUE_ADDITIONALOPTIONS = 64
 )
 
 func (i AdditionalOptions) String() string {
     var values []string
-    for p := AdditionalOptions(1); p <= UNKNOWNFUTUREVALUE_ADDITIONALOPTIONS; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "teamsAndYammerConversations", "cloudAttachments", "allDocumentVersions", "subfolderContents", "listAttachments", "unknownFutureValue"}[p])
+    options := []string{"none", "teamsAndYammerConversations", "cloudAttachments", "allDocumentVersions", "subfolderContents", "listAttachments", "unknownFutureValue"}
+    for p := 0; p < 7; p++ {
+        mantis := AdditionalOptions(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

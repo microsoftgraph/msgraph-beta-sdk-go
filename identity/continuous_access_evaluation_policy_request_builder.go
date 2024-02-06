@@ -44,7 +44,7 @@ type ContinuousAccessEvaluationPolicyRequestBuilderPatchRequestConfiguration str
 // NewContinuousAccessEvaluationPolicyRequestBuilderInternal instantiates a new ContinuousAccessEvaluationPolicyRequestBuilder and sets the default values.
 func NewContinuousAccessEvaluationPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ContinuousAccessEvaluationPolicyRequestBuilder) {
     m := &ContinuousAccessEvaluationPolicyRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/continuousAccessEvaluationPolicy{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/continuousAccessEvaluationPolicy{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -44,7 +44,7 @@ type PeopleRequestBuilderPatchRequestConfiguration struct {
 // NewPeopleRequestBuilderInternal instantiates a new PeopleRequestBuilder and sets the default values.
 func NewPeopleRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PeopleRequestBuilder) {
     m := &PeopleRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/people{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/people{?%24expand,%24select}", pathParameters),
     }
     return m
 }
@@ -91,6 +91,10 @@ func (m *PeopleRequestBuilder) Get(ctx context.Context, requestConfiguration *Pe
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PeopleAdminSettingsable), nil
+}
+// ItemInsights provides operations to manage the itemInsights property of the microsoft.graph.peopleAdminSettings entity.
+func (m *PeopleRequestBuilder) ItemInsights()(*PeopleItemInsightsRequestBuilder) {
+    return NewPeopleItemInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property people in admin
 func (m *PeopleRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PeopleAdminSettingsable, requestConfiguration *PeopleRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PeopleAdminSettingsable, error) {

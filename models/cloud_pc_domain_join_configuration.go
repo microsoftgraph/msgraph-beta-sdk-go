@@ -38,7 +38,7 @@ func (m *CloudPcDomainJoinConfiguration) GetAdditionalData()(map[string]any) {
 func (m *CloudPcDomainJoinConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDomainJoinType gets the domainJoinType property value. The domainJoinType property
+// GetDomainJoinType gets the domainJoinType property value. Specifies the method by which the provisioned Cloud PC joins Microsoft Entra ID. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave the regionName property empty. If you choose the azureADJoin type, provide a value for either the onPremisesConnectionId or the regionName property. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
 func (m *CloudPcDomainJoinConfiguration) GetDomainJoinType()(*CloudPcDomainJoinType) {
     val, err := m.GetBackingStore().Get("domainJoinType")
     if err != nil {
@@ -158,7 +158,7 @@ func (m *CloudPcDomainJoinConfiguration) GetRegionName()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. Specifies how the provisioned Cloud PC will be joined to Microsoft Entra ID. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave regionName as empty. If you choose the azureADJoin type, provide a value for either onPremisesConnectionId or regionName. The possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
+// GetTypeEscaped gets the type property value. The type property
 func (m *CloudPcDomainJoinConfiguration) GetTypeEscaped()(*CloudPcDomainJoinType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -229,7 +229,7 @@ func (m *CloudPcDomainJoinConfiguration) SetAdditionalData(value map[string]any)
 func (m *CloudPcDomainJoinConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDomainJoinType sets the domainJoinType property value. The domainJoinType property
+// SetDomainJoinType sets the domainJoinType property value. Specifies the method by which the provisioned Cloud PC joins Microsoft Entra ID. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave the regionName property empty. If you choose the azureADJoin type, provide a value for either the onPremisesConnectionId or the regionName property. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
 func (m *CloudPcDomainJoinConfiguration) SetDomainJoinType(value *CloudPcDomainJoinType)() {
     err := m.GetBackingStore().Set("domainJoinType", value)
     if err != nil {
@@ -264,7 +264,7 @@ func (m *CloudPcDomainJoinConfiguration) SetRegionName(value *string)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. Specifies how the provisioned Cloud PC will be joined to Microsoft Entra ID. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave regionName as empty. If you choose the azureADJoin type, provide a value for either onPremisesConnectionId or regionName. The possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
+// SetTypeEscaped sets the type property value. The type property
 func (m *CloudPcDomainJoinConfiguration) SetTypeEscaped(value *CloudPcDomainJoinType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

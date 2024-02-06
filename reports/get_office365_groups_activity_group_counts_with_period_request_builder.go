@@ -14,6 +14,8 @@ type GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilder struct {
 type GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
@@ -39,7 +41,7 @@ type GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilderGetRequestConf
 // NewGetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilderInternal instantiates a new GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilder) {
     m := &GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/getOffice365GroupsActivityGroupCounts(period='{period}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/getOffice365GroupsActivityGroupCounts(period='{period}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     if period != nil {
         m.BaseRequestBuilder.PathParameters["period"] = *period

@@ -44,7 +44,7 @@ type OnlineMeetingsWithJoinWebUrlRequestBuilderPatchRequestConfiguration struct 
 // NewOnlineMeetingsWithJoinWebUrlRequestBuilderInternal instantiates a new OnlineMeetingsWithJoinWebUrlRequestBuilder and sets the default values.
 func NewOnlineMeetingsWithJoinWebUrlRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, joinWebUrl *string)(*OnlineMeetingsWithJoinWebUrlRequestBuilder) {
     m := &OnlineMeetingsWithJoinWebUrlRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/app/onlineMeetings(joinWebUrl='{joinWebUrl}'){?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/app/onlineMeetings(joinWebUrl='{joinWebUrl}'){?%24expand,%24select}", pathParameters),
     }
     if joinWebUrl != nil {
         m.BaseRequestBuilder.PathParameters["joinWebUrl"] = *joinWebUrl

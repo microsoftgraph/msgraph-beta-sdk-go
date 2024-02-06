@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Flags representing firewall rule interface types.
@@ -8,20 +9,22 @@ type WindowsFirewallRuleInterfaceTypes int
 
 const (
     // No flags set.
-    NOTCONFIGURED_WINDOWSFIREWALLRULEINTERFACETYPES WindowsFirewallRuleInterfaceTypes = iota
+    NOTCONFIGURED_WINDOWSFIREWALLRULEINTERFACETYPES = 1
     // The Remote Access interface type.
-    REMOTEACCESS_WINDOWSFIREWALLRULEINTERFACETYPES
+    REMOTEACCESS_WINDOWSFIREWALLRULEINTERFACETYPES = 2
     // The Wireless interface type.
-    WIRELESS_WINDOWSFIREWALLRULEINTERFACETYPES
+    WIRELESS_WINDOWSFIREWALLRULEINTERFACETYPES = 4
     // The LAN interface type.
-    LAN_WINDOWSFIREWALLRULEINTERFACETYPES
+    LAN_WINDOWSFIREWALLRULEINTERFACETYPES = 8
 )
 
 func (i WindowsFirewallRuleInterfaceTypes) String() string {
     var values []string
-    for p := WindowsFirewallRuleInterfaceTypes(1); p <= LAN_WINDOWSFIREWALLRULEINTERFACETYPES; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"notConfigured", "remoteAccess", "wireless", "lan"}[p])
+    options := []string{"notConfigured", "remoteAccess", "wireless", "lan"}
+    for p := 0; p < 4; p++ {
+        mantis := WindowsFirewallRuleInterfaceTypes(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

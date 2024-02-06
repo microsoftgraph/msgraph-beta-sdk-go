@@ -30,7 +30,7 @@ type ItemResourcesItemRoleAssignmentRequestsItemRoleDefinitionRoleSettingRequest
 // NewItemResourcesItemRoleAssignmentRequestsItemRoleDefinitionRoleSettingRequestBuilderInternal instantiates a new RoleSettingRequestBuilder and sets the default values.
 func NewItemResourcesItemRoleAssignmentRequestsItemRoleDefinitionRoleSettingRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemResourcesItemRoleAssignmentRequestsItemRoleDefinitionRoleSettingRequestBuilder) {
     m := &ItemResourcesItemRoleAssignmentRequestsItemRoleDefinitionRoleSettingRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/resources/{governanceResource%2Did}/roleAssignmentRequests/{governanceRoleAssignmentRequest%2Did}/roleDefinition/roleSetting{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/resources/{governanceResource%2Did}/roleAssignmentRequests/{governanceRoleAssignmentRequest%2Did}/roleDefinition/roleSetting{?%24expand,%24select}", pathParameters),
     }
     return m
 }

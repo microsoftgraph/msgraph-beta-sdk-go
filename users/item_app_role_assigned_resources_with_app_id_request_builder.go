@@ -30,7 +30,7 @@ type ItemAppRoleAssignedResourcesWithAppIdRequestBuilderGetRequestConfiguration 
 // NewItemAppRoleAssignedResourcesWithAppIdRequestBuilderInternal instantiates a new AppRoleAssignedResourcesWithAppIdRequestBuilder and sets the default values.
 func NewItemAppRoleAssignedResourcesWithAppIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, appId *string)(*ItemAppRoleAssignedResourcesWithAppIdRequestBuilder) {
     m := &ItemAppRoleAssignedResourcesWithAppIdRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/appRoleAssignedResources(appId='{appId}'){?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/appRoleAssignedResources(appId='{appId}'){?%24expand,%24select}", pathParameters),
     }
     if appId != nil {
         m.BaseRequestBuilder.PathParameters["appId"] = *appId

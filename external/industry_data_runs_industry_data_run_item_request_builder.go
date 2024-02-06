@@ -34,7 +34,7 @@ func (m *IndustryDataRunsIndustryDataRunItemRequestBuilder) Activities()(*Indust
 // NewIndustryDataRunsIndustryDataRunItemRequestBuilderInternal instantiates a new IndustryDataRunItemRequestBuilder and sets the default values.
 func NewIndustryDataRunsIndustryDataRunItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataRunsIndustryDataRunItemRequestBuilder) {
     m := &IndustryDataRunsIndustryDataRunItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/runs/{industryDataRun%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/runs/{industryDataRun%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

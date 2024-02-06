@@ -44,7 +44,7 @@ type NdesConnectorsNdesConnectorItemRequestBuilderPatchRequestConfiguration stru
 // NewNdesConnectorsNdesConnectorItemRequestBuilderInternal instantiates a new NdesConnectorItemRequestBuilder and sets the default values.
 func NewNdesConnectorsNdesConnectorItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*NdesConnectorsNdesConnectorItemRequestBuilder) {
     m := &NdesConnectorsNdesConnectorItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/ndesConnectors/{ndesConnector%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/ndesConnectors/{ndesConnector%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

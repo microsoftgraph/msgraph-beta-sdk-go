@@ -1,26 +1,29 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // 
 type SignInAccessType int
 
 const (
-    NONE_SIGNINACCESSTYPE SignInAccessType = iota
-    B2BCOLLABORATION_SIGNINACCESSTYPE
-    B2BDIRECTCONNECT_SIGNINACCESSTYPE
-    MICROSOFTSUPPORT_SIGNINACCESSTYPE
-    SERVICEPROVIDER_SIGNINACCESSTYPE
-    UNKNOWNFUTUREVALUE_SIGNINACCESSTYPE
-    PASSTHROUGH_SIGNINACCESSTYPE
+    NONE_SIGNINACCESSTYPE = 1
+    B2BCOLLABORATION_SIGNINACCESSTYPE = 2
+    B2BDIRECTCONNECT_SIGNINACCESSTYPE = 4
+    MICROSOFTSUPPORT_SIGNINACCESSTYPE = 8
+    SERVICEPROVIDER_SIGNINACCESSTYPE = 16
+    UNKNOWNFUTUREVALUE_SIGNINACCESSTYPE = 32
+    PASSTHROUGH_SIGNINACCESSTYPE = 64
 )
 
 func (i SignInAccessType) String() string {
     var values []string
-    for p := SignInAccessType(1); p <= PASSTHROUGH_SIGNINACCESSTYPE; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "b2bCollaboration", "b2bDirectConnect", "microsoftSupport", "serviceProvider", "unknownFutureValue", "passthrough"}[p])
+    options := []string{"none", "b2bCollaboration", "b2bDirectConnect", "microsoftSupport", "serviceProvider", "unknownFutureValue", "passthrough"}
+    for p := 0; p < 7; p++ {
+        mantis := SignInAccessType(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

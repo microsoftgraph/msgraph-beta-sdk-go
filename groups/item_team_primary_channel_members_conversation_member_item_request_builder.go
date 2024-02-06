@@ -44,7 +44,7 @@ type ItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilderPatchReque
 // NewItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilderInternal instantiates a new ConversationMemberItemRequestBuilder and sets the default values.
 func NewItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilder) {
     m := &ItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/primaryChannel/members/{conversationMember%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/primaryChannel/members/{conversationMember%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
@@ -95,10 +95,10 @@ func (m *ItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilder) Get(
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable), nil
 }
-// Patch update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+// Patch update the role of a conversationMember in a team.or channel.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
 func (m *ItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable, requestConfiguration *ItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -140,7 +140,7 @@ func (m *ItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilder) ToGe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+// ToPatchRequestInformation update the role of a conversationMember in a team.or channel.
 func (m *ItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable, requestConfiguration *ItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

@@ -29,7 +29,7 @@ type GroupsItemSetsItemChildrenItemChildrenCountRequestBuilderGetRequestConfigur
 // NewGroupsItemSetsItemChildrenItemChildrenCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewGroupsItemSetsItemChildrenItemChildrenCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupsItemSetsItemChildrenItemChildrenCountRequestBuilder) {
     m := &GroupsItemSetsItemChildrenItemChildrenCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/termStore/groups/{group%2Did}/sets/{set%2Did}/children/{term%2Did}/children/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/termStore/groups/{group%2Did}/sets/{set%2Did}/children/{term%2Did}/children/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

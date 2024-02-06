@@ -44,7 +44,7 @@ type TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilderPatchReq
 // NewTeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilderInternal instantiates a new HostedContentRequestBuilder and sets the default values.
 func NewTeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilder) {
     m := &TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/appCatalogs/teamsApps/{teamsApp%2Did}/appDefinitions/{teamsAppDefinition%2Did}/colorIcon/hostedContent{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/appCatalogs/teamsApps/{teamsApp%2Did}/appDefinitions/{teamsAppDefinition%2Did}/colorIcon/hostedContent{?%24expand,%24select}", pathParameters),
     }
     return m
 }

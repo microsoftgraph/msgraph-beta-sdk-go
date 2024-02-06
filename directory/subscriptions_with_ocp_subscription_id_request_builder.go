@@ -44,7 +44,7 @@ type SubscriptionsWithOcpSubscriptionIdRequestBuilderPatchRequestConfiguration s
 // NewSubscriptionsWithOcpSubscriptionIdRequestBuilderInternal instantiates a new SubscriptionsWithOcpSubscriptionIdRequestBuilder and sets the default values.
 func NewSubscriptionsWithOcpSubscriptionIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, ocpSubscriptionId *string)(*SubscriptionsWithOcpSubscriptionIdRequestBuilder) {
     m := &SubscriptionsWithOcpSubscriptionIdRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/subscriptions(ocpSubscriptionId='{ocpSubscriptionId}'){?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/subscriptions(ocpSubscriptionId='{ocpSubscriptionId}'){?%24expand,%24select}", pathParameters),
     }
     if ocpSubscriptionId != nil {
         m.BaseRequestBuilder.PathParameters["ocpSubscriptionId"] = *ocpSubscriptionId

@@ -29,7 +29,7 @@ type CallRecordsItemParticipants_v2CountRequestBuilderGetRequestConfiguration st
 // NewCallRecordsItemParticipants_v2CountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewCallRecordsItemParticipants_v2CountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallRecordsItemParticipants_v2CountRequestBuilder) {
     m := &CallRecordsItemParticipants_v2CountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/callRecords/{callRecord%2Did}/participants_v2/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/callRecords/{callRecord%2Did}/participants_v2/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

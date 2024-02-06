@@ -30,7 +30,7 @@ type ItemRequestRequestBuilderGetRequestConfiguration struct {
 // NewItemRequestRequestBuilderInternal instantiates a new RequestRequestBuilder and sets the default values.
 func NewItemRequestRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRequestRequestBuilder) {
     m := &ItemRequestRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}/request{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}/request{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -56,7 +56,7 @@ func (m *UserInsightsMonthlyRequestBuilder) Authentications()(*UserInsightsMonth
 // NewUserInsightsMonthlyRequestBuilderInternal instantiates a new MonthlyRequestBuilder and sets the default values.
 func NewUserInsightsMonthlyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserInsightsMonthlyRequestBuilder) {
     m := &UserInsightsMonthlyRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/userInsights/monthly{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/userInsights/monthly{?%24expand,%24select}", pathParameters),
     }
     return m
 }

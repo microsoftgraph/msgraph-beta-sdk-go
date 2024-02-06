@@ -44,7 +44,7 @@ type IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderPatchReque
 // NewIndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderInternal instantiates a new SourceSystemDefinitionItemRequestBuilder and sets the default values.
 func NewIndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) {
     m := &IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/sourceSystems/{sourceSystemDefinition%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/sourceSystems/{sourceSystemDefinition%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

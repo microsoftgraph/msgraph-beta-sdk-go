@@ -48,7 +48,7 @@ func (m *CompaniesItemJournalLinesJournalLineItemRequestBuilder) Account()(*Comp
 // NewCompaniesItemJournalLinesJournalLineItemRequestBuilderInternal instantiates a new JournalLineItemRequestBuilder and sets the default values.
 func NewCompaniesItemJournalLinesJournalLineItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemJournalLinesJournalLineItemRequestBuilder) {
     m := &CompaniesItemJournalLinesJournalLineItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/journalLines/{journalLine%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/journalLines/{journalLine%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

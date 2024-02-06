@@ -44,7 +44,7 @@ type CompaniesItemVendorsItemPaymentTermRequestBuilderPatchRequestConfiguration 
 // NewCompaniesItemVendorsItemPaymentTermRequestBuilderInternal instantiates a new PaymentTermRequestBuilder and sets the default values.
 func NewCompaniesItemVendorsItemPaymentTermRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemVendorsItemPaymentTermRequestBuilder) {
     m := &CompaniesItemVendorsItemPaymentTermRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/vendors/{vendor%2Did}/paymentTerm{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/vendors/{vendor%2Did}/paymentTerm{?%24expand,%24select}", pathParameters),
     }
     return m
 }

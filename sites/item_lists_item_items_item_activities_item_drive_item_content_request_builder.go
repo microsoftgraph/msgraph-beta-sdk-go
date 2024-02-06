@@ -11,12 +11,19 @@ import (
 type ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderGetQueryParameters the content stream, if the item represents a file.
+type ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderGetQueryParameters struct {
+    // Format of the content
+    Format *string `uriparametername:"%24format"`
+}
 // ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderGetQueryParameters
 }
 // ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderPutRequestConfiguration struct {
@@ -28,7 +35,7 @@ type ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderPutReques
 // NewItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderInternal instantiates a new ContentRequestBuilder and sets the default values.
 func NewItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilder) {
     m := &ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}/activities/{itemActivityOLD%2Did}/driveItem/content", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}/activities/{itemActivityOLD%2Did}/driveItem/content{?%24format*}", pathParameters),
     }
     return m
 }
@@ -80,6 +87,9 @@ func (m *ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilder) Put
 func (m *ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

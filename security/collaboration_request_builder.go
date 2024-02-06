@@ -48,7 +48,7 @@ func (m *CollaborationRequestBuilder) AnalyzedEmails()(*CollaborationAnalyzedEma
 // NewCollaborationRequestBuilderInternal instantiates a new CollaborationRequestBuilder and sets the default values.
 func NewCollaborationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CollaborationRequestBuilder) {
     m := &CollaborationRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/collaboration{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/collaboration{?%24expand,%24select}", pathParameters),
     }
     return m
 }

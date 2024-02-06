@@ -48,7 +48,7 @@ func (m *EdiscoveryRequestBuilder) Cases()(*EdiscoveryCasesRequestBuilder) {
 // NewEdiscoveryRequestBuilderInternal instantiates a new EdiscoveryRequestBuilder and sets the default values.
 func NewEdiscoveryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryRequestBuilder) {
     m := &EdiscoveryRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -44,7 +44,7 @@ type B2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilderPatc
 // NewB2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilderInternal instantiates a new PreTokenIssuanceRequestBuilder and sets the default values.
 func NewB2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilder) {
     m := &B2xUserFlowsItemApiConnectorConfigurationPreTokenIssuanceRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/apiConnectorConfiguration/preTokenIssuance{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/apiConnectorConfiguration/preTokenIssuance{?%24expand,%24select}", pathParameters),
     }
     return m
 }

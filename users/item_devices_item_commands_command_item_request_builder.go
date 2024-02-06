@@ -44,7 +44,7 @@ type ItemDevicesItemCommandsCommandItemRequestBuilderPatchRequestConfiguration s
 // NewItemDevicesItemCommandsCommandItemRequestBuilderInternal instantiates a new CommandItemRequestBuilder and sets the default values.
 func NewItemDevicesItemCommandsCommandItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDevicesItemCommandsCommandItemRequestBuilder) {
     m := &ItemDevicesItemCommandsCommandItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/commands/{command%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/commands/{command%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

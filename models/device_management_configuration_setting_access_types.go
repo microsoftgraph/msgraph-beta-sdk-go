@@ -1,26 +1,29 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // 
 type DeviceManagementConfigurationSettingAccessTypes int
 
 const (
-    NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES DeviceManagementConfigurationSettingAccessTypes = iota
-    ADD_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES
-    COPY_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES
-    DELETE_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES
-    GET_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES
-    REPLACE_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES
-    EXECUTE_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES
+    NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES = 1
+    ADD_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES = 2
+    COPY_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES = 4
+    DELETE_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES = 8
+    GET_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES = 16
+    REPLACE_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES = 32
+    EXECUTE_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES = 64
 )
 
 func (i DeviceManagementConfigurationSettingAccessTypes) String() string {
     var values []string
-    for p := DeviceManagementConfigurationSettingAccessTypes(1); p <= EXECUTE_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "add", "copy", "delete", "get", "replace", "execute"}[p])
+    options := []string{"none", "add", "copy", "delete", "get", "replace", "execute"}
+    for p := 0; p < 7; p++ {
+        mantis := DeviceManagementConfigurationSettingAccessTypes(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

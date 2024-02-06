@@ -44,7 +44,7 @@ type SensitivityPolicySettingsRequestBuilderPatchRequestConfiguration struct {
 // NewSensitivityPolicySettingsRequestBuilderInternal instantiates a new SensitivityPolicySettingsRequestBuilder and sets the default values.
 func NewSensitivityPolicySettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SensitivityPolicySettingsRequestBuilder) {
     m := &SensitivityPolicySettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/informationProtection/sensitivityPolicySettings{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/informationProtection/sensitivityPolicySettings{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -44,7 +44,7 @@ type GovernanceSubjectItemRequestBuilderPatchRequestConfiguration struct {
 // NewGovernanceSubjectItemRequestBuilderInternal instantiates a new GovernanceSubjectItemRequestBuilder and sets the default values.
 func NewGovernanceSubjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GovernanceSubjectItemRequestBuilder) {
     m := &GovernanceSubjectItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/governanceSubjects/{governanceSubject%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/governanceSubjects/{governanceSubject%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

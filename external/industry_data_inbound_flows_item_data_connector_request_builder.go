@@ -30,7 +30,7 @@ type IndustryDataInboundFlowsItemDataConnectorRequestBuilderGetRequestConfigurat
 // NewIndustryDataInboundFlowsItemDataConnectorRequestBuilderInternal instantiates a new DataConnectorRequestBuilder and sets the default values.
 func NewIndustryDataInboundFlowsItemDataConnectorRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataInboundFlowsItemDataConnectorRequestBuilder) {
     m := &IndustryDataInboundFlowsItemDataConnectorRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/inboundFlows/{inboundFlow%2Did}/dataConnector{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/inboundFlows/{inboundFlow%2Did}/dataConnector{?%24expand,%24select}", pathParameters),
     }
     return m
 }

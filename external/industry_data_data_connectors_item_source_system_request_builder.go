@@ -30,7 +30,7 @@ type IndustryDataDataConnectorsItemSourceSystemRequestBuilderGetRequestConfigura
 // NewIndustryDataDataConnectorsItemSourceSystemRequestBuilderInternal instantiates a new SourceSystemRequestBuilder and sets the default values.
 func NewIndustryDataDataConnectorsItemSourceSystemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataDataConnectorsItemSourceSystemRequestBuilder) {
     m := &IndustryDataDataConnectorsItemSourceSystemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}/sourceSystem{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}/sourceSystem{?%24expand,%24select}", pathParameters),
     }
     return m
 }

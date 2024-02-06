@@ -11,7 +11,7 @@ import (
 type IndustryDataInboundFlowsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IndustryDataInboundFlowsRequestBuilderGetQueryParameters get a list of the inboundFlow objects and their properties.
+// IndustryDataInboundFlowsRequestBuilderGetQueryParameters get a list of the inboundFileFlow objects and their properties.
 type IndustryDataInboundFlowsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -60,7 +60,7 @@ func (m *IndustryDataInboundFlowsRequestBuilder) ByInboundFlowId(inboundFlowId s
 // NewIndustryDataInboundFlowsRequestBuilderInternal instantiates a new InboundFlowsRequestBuilder and sets the default values.
 func NewIndustryDataInboundFlowsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataInboundFlowsRequestBuilder) {
     m := &IndustryDataInboundFlowsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/inboundFlows{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/inboundFlows{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
@@ -74,10 +74,10 @@ func NewIndustryDataInboundFlowsRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *IndustryDataInboundFlowsRequestBuilder) Count()(*IndustryDataInboundFlowsCountRequestBuilder) {
     return NewIndustryDataInboundFlowsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the inboundFlow objects and their properties.
+// Get get a list of the inboundFileFlow objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundflow-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-list?view=graph-rest-1.0
 func (m *IndustryDataInboundFlowsRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataInboundFlowsRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +96,10 @@ func (m *IndustryDataInboundFlowsRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowCollectionResponseable), nil
 }
-// Post create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow:
+// Post create a new inboundFileFlow object. The following prerequisite resources are required when you create an inboundFileFlow:
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundflow-post?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-post?view=graph-rest-1.0
 func (m *IndustryDataInboundFlowsRequestBuilder) Post(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable, requestConfiguration *IndustryDataInboundFlowsRequestBuilderPostRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +118,7 @@ func (m *IndustryDataInboundFlowsRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable), nil
 }
-// ToGetRequestInformation get a list of the inboundFlow objects and their properties.
+// ToGetRequestInformation get a list of the inboundFileFlow objects and their properties.
 func (m *IndustryDataInboundFlowsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataInboundFlowsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -131,7 +131,7 @@ func (m *IndustryDataInboundFlowsRequestBuilder) ToGetRequestInformation(ctx con
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow:
+// ToPostRequestInformation create a new inboundFileFlow object. The following prerequisite resources are required when you create an inboundFileFlow:
 func (m *IndustryDataInboundFlowsRequestBuilder) ToPostRequestInformation(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable, requestConfiguration *IndustryDataInboundFlowsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

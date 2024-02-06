@@ -44,7 +44,7 @@ type AuthorizationSystemsAuthorizationSystemItemRequestBuilderPatchRequestConfig
 // NewAuthorizationSystemsAuthorizationSystemItemRequestBuilderInternal instantiates a new AuthorizationSystemItemRequestBuilder and sets the default values.
 func NewAuthorizationSystemsAuthorizationSystemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthorizationSystemsAuthorizationSystemItemRequestBuilder) {
     m := &AuthorizationSystemsAuthorizationSystemItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/authorizationSystems/{authorizationSystem%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/authorizationSystems/{authorizationSystem%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -29,7 +29,7 @@ type MeAssignmentsItemResourcesItemDependentResourcesCountRequestBuilderGetReque
 // NewMeAssignmentsItemResourcesItemDependentResourcesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewMeAssignmentsItemResourcesItemDependentResourcesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MeAssignmentsItemResourcesItemDependentResourcesCountRequestBuilder) {
     m := &MeAssignmentsItemResourcesItemDependentResourcesCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/resources/{educationAssignmentResource%2Did}/dependentResources/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/resources/{educationAssignmentResource%2Did}/dependentResources/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

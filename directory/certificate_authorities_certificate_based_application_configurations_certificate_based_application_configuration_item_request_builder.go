@@ -44,7 +44,7 @@ type CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateB
 // NewCertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilderInternal instantiates a new CertificateBasedApplicationConfigurationItemRequestBuilder and sets the default values.
 func NewCertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilder) {
     m := &CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/certificateAuthorities/certificateBasedApplicationConfigurations/{certificateBasedApplicationConfiguration%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/certificateAuthorities/certificateBasedApplicationConfigurations/{certificateBasedApplicationConfiguration%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -44,7 +44,7 @@ type CompliancePoliciesItemAssignmentsDeviceManagementConfigurationPolicyAssignm
 // NewCompliancePoliciesItemAssignmentsDeviceManagementConfigurationPolicyAssignmentItemRequestBuilderInternal instantiates a new DeviceManagementConfigurationPolicyAssignmentItemRequestBuilder and sets the default values.
 func NewCompliancePoliciesItemAssignmentsDeviceManagementConfigurationPolicyAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompliancePoliciesItemAssignmentsDeviceManagementConfigurationPolicyAssignmentItemRequestBuilder) {
     m := &CompliancePoliciesItemAssignmentsDeviceManagementConfigurationPolicyAssignmentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/compliancePolicies/{deviceManagementCompliancePolicy%2Did}/assignments/{deviceManagementConfigurationPolicyAssignment%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/compliancePolicies/{deviceManagementCompliancePolicy%2Did}/assignments/{deviceManagementConfigurationPolicyAssignment%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

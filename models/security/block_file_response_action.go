@@ -21,7 +21,7 @@ func NewBlockFileResponseAction()(*BlockFileResponseAction) {
 func CreateBlockFileResponseActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBlockFileResponseAction(), nil
 }
-// GetDeviceGroupNames gets the deviceGroupNames property value. The deviceGroupNames property
+// GetDeviceGroupNames gets the deviceGroupNames property value. Device groups to which the actions set in the custom detection rule are applied. More information
 func (m *BlockFileResponseAction) GetDeviceGroupNames()([]string) {
     val, err := m.GetBackingStore().Get("deviceGroupNames")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *BlockFileResponseAction) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetDeviceGroupNames sets the deviceGroupNames property value. The deviceGroupNames property
+// SetDeviceGroupNames sets the deviceGroupNames property value. Device groups to which the actions set in the custom detection rule are applied. More information
 func (m *BlockFileResponseAction) SetDeviceGroupNames(value []string)() {
     err := m.GetBackingStore().Set("deviceGroupNames", value)
     if err != nil {

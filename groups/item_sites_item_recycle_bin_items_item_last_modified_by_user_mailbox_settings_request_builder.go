@@ -37,7 +37,7 @@ type ItemSitesItemRecycleBinItemsItemLastModifiedByUserMailboxSettingsRequestBui
 // NewItemSitesItemRecycleBinItemsItemLastModifiedByUserMailboxSettingsRequestBuilderInternal instantiates a new MailboxSettingsRequestBuilder and sets the default values.
 func NewItemSitesItemRecycleBinItemsItemLastModifiedByUserMailboxSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemRecycleBinItemsItemLastModifiedByUserMailboxSettingsRequestBuilder) {
     m := &ItemSitesItemRecycleBinItemsItemLastModifiedByUserMailboxSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/recycleBin/items/{recycleBinItem%2Did}/lastModifiedByUser/mailboxSettings{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/recycleBin/items/{recycleBinItem%2Did}/lastModifiedByUser/mailboxSettings{?%24expand,%24select}", pathParameters),
     }
     return m
 }

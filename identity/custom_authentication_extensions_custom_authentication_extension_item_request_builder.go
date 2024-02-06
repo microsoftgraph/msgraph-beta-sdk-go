@@ -18,7 +18,7 @@ type CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderGetQueryParameters read the properties and relationships of a customAuthenticationExtension object.
+// CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderGetQueryParameters read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
 type CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -44,7 +44,7 @@ type CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuild
 // NewCustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderInternal instantiates a new CustomAuthenticationExtensionItemRequestBuilder and sets the default values.
 func NewCustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) {
     m := &CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/customAuthenticationExtensions/{customAuthenticationExtension%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/customAuthenticationExtensions/{customAuthenticationExtension%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
@@ -73,10 +73,10 @@ func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestB
     }
     return nil
 }
-// Get read the properties and relationships of a customAuthenticationExtension object.
+// Get read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/customauthenticationextension-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationeventlistener-get?view=graph-rest-1.0
 func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAuthenticationExtensionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +124,7 @@ func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestB
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a customAuthenticationExtension object.
+// ToGetRequestInformation read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
 func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

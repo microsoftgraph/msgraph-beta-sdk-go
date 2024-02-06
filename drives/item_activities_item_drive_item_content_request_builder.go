@@ -11,12 +11,19 @@ import (
 type ItemActivitiesItemDriveItemContentRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// ItemActivitiesItemDriveItemContentRequestBuilderGetQueryParameters the content stream, if the item represents a file.
+type ItemActivitiesItemDriveItemContentRequestBuilderGetQueryParameters struct {
+    // Format of the content
+    Format *string `uriparametername:"%24format"`
+}
 // ItemActivitiesItemDriveItemContentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemActivitiesItemDriveItemContentRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *ItemActivitiesItemDriveItemContentRequestBuilderGetQueryParameters
 }
 // ItemActivitiesItemDriveItemContentRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemActivitiesItemDriveItemContentRequestBuilderPutRequestConfiguration struct {
@@ -28,7 +35,7 @@ type ItemActivitiesItemDriveItemContentRequestBuilderPutRequestConfiguration str
 // NewItemActivitiesItemDriveItemContentRequestBuilderInternal instantiates a new ContentRequestBuilder and sets the default values.
 func NewItemActivitiesItemDriveItemContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemActivitiesItemDriveItemContentRequestBuilder) {
     m := &ItemActivitiesItemDriveItemContentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/activities/{itemActivityOLD%2Did}/driveItem/content", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/activities/{itemActivityOLD%2Did}/driveItem/content{?%24format*}", pathParameters),
     }
     return m
 }
@@ -80,6 +87,9 @@ func (m *ItemActivitiesItemDriveItemContentRequestBuilder) Put(ctx context.Conte
 func (m *ItemActivitiesItemDriveItemContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemActivitiesItemDriveItemContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

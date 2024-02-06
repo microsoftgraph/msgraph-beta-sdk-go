@@ -1,23 +1,26 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // 
 type TemplateApplicationLevel int
 
 const (
-    NONE_TEMPLATEAPPLICATIONLEVEL TemplateApplicationLevel = iota
-    NEWPARTNERS_TEMPLATEAPPLICATIONLEVEL
-    EXISTINGPARTNERS_TEMPLATEAPPLICATIONLEVEL
-    UNKNOWNFUTUREVALUE_TEMPLATEAPPLICATIONLEVEL
+    NONE_TEMPLATEAPPLICATIONLEVEL = 1
+    NEWPARTNERS_TEMPLATEAPPLICATIONLEVEL = 2
+    EXISTINGPARTNERS_TEMPLATEAPPLICATIONLEVEL = 4
+    UNKNOWNFUTUREVALUE_TEMPLATEAPPLICATIONLEVEL = 8
 )
 
 func (i TemplateApplicationLevel) String() string {
     var values []string
-    for p := TemplateApplicationLevel(1); p <= UNKNOWNFUTUREVALUE_TEMPLATEAPPLICATIONLEVEL; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "newPartners", "existingPartners", "unknownFutureValue"}[p])
+    options := []string{"none", "newPartners", "existingPartners", "unknownFutureValue"}
+    for p := 0; p < 4; p++ {
+        mantis := TemplateApplicationLevel(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

@@ -48,7 +48,7 @@ func (m *AndroidForWorkSettingsRequestBuilder) CompleteSignup()(*AndroidForWorkS
 // NewAndroidForWorkSettingsRequestBuilderInternal instantiates a new AndroidForWorkSettingsRequestBuilder and sets the default values.
 func NewAndroidForWorkSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AndroidForWorkSettingsRequestBuilder) {
     m := &AndroidForWorkSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/androidForWorkSettings{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/androidForWorkSettings{?%24expand,%24select}", pathParameters),
     }
     return m
 }

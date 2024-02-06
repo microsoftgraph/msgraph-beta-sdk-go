@@ -44,7 +44,7 @@ type WindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderPatch
 // NewWindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderInternal instantiates a new ManagedMobileAppItemRequestBuilder and sets the default values.
 func NewWindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) {
     m := &WindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/windowsManagedAppProtections/{windowsManagedAppProtection%2Did}/apps/{managedMobileApp%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/windowsManagedAppProtections/{windowsManagedAppProtection%2Did}/apps/{managedMobileApp%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

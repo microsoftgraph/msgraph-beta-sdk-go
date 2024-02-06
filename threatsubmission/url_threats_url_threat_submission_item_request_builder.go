@@ -44,7 +44,7 @@ type UrlThreatsUrlThreatSubmissionItemRequestBuilderPatchRequestConfiguration st
 // NewUrlThreatsUrlThreatSubmissionItemRequestBuilderInternal instantiates a new UrlThreatSubmissionItemRequestBuilder and sets the default values.
 func NewUrlThreatsUrlThreatSubmissionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UrlThreatsUrlThreatSubmissionItemRequestBuilder) {
     m := &UrlThreatsUrlThreatSubmissionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/threatSubmission/urlThreats/{urlThreatSubmission%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/threatSubmission/urlThreats/{urlThreatSubmission%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

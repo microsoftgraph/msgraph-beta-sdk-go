@@ -30,7 +30,7 @@ type DeviceConfigurationsItemGroupAssignmentsItemDeviceConfigurationRequestBuild
 // NewDeviceConfigurationsItemGroupAssignmentsItemDeviceConfigurationRequestBuilderInternal instantiates a new DeviceConfigurationRequestBuilder and sets the default values.
 func NewDeviceConfigurationsItemGroupAssignmentsItemDeviceConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceConfigurationsItemGroupAssignmentsItemDeviceConfigurationRequestBuilder) {
     m := &DeviceConfigurationsItemGroupAssignmentsItemDeviceConfigurationRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceConfigurations/{deviceConfiguration%2Did}/groupAssignments/{deviceConfigurationGroupAssignment%2Did}/deviceConfiguration{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceConfigurations/{deviceConfiguration%2Did}/groupAssignments/{deviceConfigurationGroupAssignment%2Did}/deviceConfiguration{?%24expand,%24select}", pathParameters),
     }
     return m
 }

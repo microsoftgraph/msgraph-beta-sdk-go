@@ -44,7 +44,7 @@ type InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilderPatc
 // NewInboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilderInternal instantiates a new InboundSharedUserProfileUserItemRequestBuilder and sets the default values.
 func NewInboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilder) {
     m := &InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/inboundSharedUserProfiles/{inboundSharedUserProfile%2DuserId}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/inboundSharedUserProfiles/{inboundSharedUserProfile%2DuserId}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

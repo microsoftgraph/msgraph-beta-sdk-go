@@ -44,7 +44,7 @@ type BusinessScenariosWithUniqueNameRequestBuilderPatchRequestConfiguration stru
 // NewBusinessScenariosWithUniqueNameRequestBuilderInternal instantiates a new BusinessScenariosWithUniqueNameRequestBuilder and sets the default values.
 func NewBusinessScenariosWithUniqueNameRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, uniqueName *string)(*BusinessScenariosWithUniqueNameRequestBuilder) {
     m := &BusinessScenariosWithUniqueNameRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/businessScenarios(uniqueName='{uniqueName}'){?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/businessScenarios(uniqueName='{uniqueName}'){?%24expand,%24select}", pathParameters),
     }
     if uniqueName != nil {
         m.BaseRequestBuilder.PathParameters["uniqueName"] = *uniqueName

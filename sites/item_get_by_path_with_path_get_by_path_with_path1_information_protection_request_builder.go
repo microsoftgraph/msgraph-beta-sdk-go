@@ -44,7 +44,7 @@ type ItemGetByPathWithPathGetByPathWithPath1InformationProtectionRequestBuilderP
 // NewItemGetByPathWithPathGetByPathWithPath1InformationProtectionRequestBuilderInternal instantiates a new InformationProtectionRequestBuilder and sets the default values.
 func NewItemGetByPathWithPathGetByPathWithPath1InformationProtectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGetByPathWithPathGetByPathWithPath1InformationProtectionRequestBuilder) {
     m := &ItemGetByPathWithPathGetByPathWithPath1InformationProtectionRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/getByPath(path='{path1}')/informationProtection{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/getByPath(path='{path1}')/informationProtection{?%24expand,%24select}", pathParameters),
     }
     return m
 }

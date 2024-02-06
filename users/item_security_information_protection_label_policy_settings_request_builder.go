@@ -44,7 +44,7 @@ type ItemSecurityInformationProtectionLabelPolicySettingsRequestBuilderPatchRequ
 // NewItemSecurityInformationProtectionLabelPolicySettingsRequestBuilderInternal instantiates a new LabelPolicySettingsRequestBuilder and sets the default values.
 func NewItemSecurityInformationProtectionLabelPolicySettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSecurityInformationProtectionLabelPolicySettingsRequestBuilder) {
     m := &ItemSecurityInformationProtectionLabelPolicySettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/security/informationProtection/labelPolicySettings{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/security/informationProtection/labelPolicySettings{?%24expand,%24select}", pathParameters),
     }
     return m
 }

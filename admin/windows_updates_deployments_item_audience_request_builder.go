@@ -44,7 +44,7 @@ type WindowsUpdatesDeploymentsItemAudienceRequestBuilderPatchRequestConfiguratio
 // NewWindowsUpdatesDeploymentsItemAudienceRequestBuilderInternal instantiates a new AudienceRequestBuilder and sets the default values.
 func NewWindowsUpdatesDeploymentsItemAudienceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesDeploymentsItemAudienceRequestBuilder) {
     m := &WindowsUpdatesDeploymentsItemAudienceRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/deployments/{deployment%2Did}/audience{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/deployments/{deployment%2Did}/audience{?%24expand,%24select}", pathParameters),
     }
     return m
 }

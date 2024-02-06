@@ -1,24 +1,27 @@
 package security
 import (
     "errors"
+    "math"
     "strings"
 )
 // 
 type MarkUserAsCompromisedEntityIdentifier int
 
 const (
-    ACCOUNTOBJECTID_MARKUSERASCOMPROMISEDENTITYIDENTIFIER MarkUserAsCompromisedEntityIdentifier = iota
-    INITIATINGPROCESSACCOUNTOBJECTID_MARKUSERASCOMPROMISEDENTITYIDENTIFIER
-    SERVICEPRINCIPALID_MARKUSERASCOMPROMISEDENTITYIDENTIFIER
-    RECIPIENTOBJECTID_MARKUSERASCOMPROMISEDENTITYIDENTIFIER
-    UNKNOWNFUTUREVALUE_MARKUSERASCOMPROMISEDENTITYIDENTIFIER
+    ACCOUNTOBJECTID_MARKUSERASCOMPROMISEDENTITYIDENTIFIER = 1
+    INITIATINGPROCESSACCOUNTOBJECTID_MARKUSERASCOMPROMISEDENTITYIDENTIFIER = 2
+    SERVICEPRINCIPALID_MARKUSERASCOMPROMISEDENTITYIDENTIFIER = 4
+    RECIPIENTOBJECTID_MARKUSERASCOMPROMISEDENTITYIDENTIFIER = 8
+    UNKNOWNFUTUREVALUE_MARKUSERASCOMPROMISEDENTITYIDENTIFIER = 16
 )
 
 func (i MarkUserAsCompromisedEntityIdentifier) String() string {
     var values []string
-    for p := MarkUserAsCompromisedEntityIdentifier(1); p <= UNKNOWNFUTUREVALUE_MARKUSERASCOMPROMISEDENTITYIDENTIFIER; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"accountObjectId", "initiatingProcessAccountObjectId", "servicePrincipalId", "recipientObjectId", "unknownFutureValue"}[p])
+    options := []string{"accountObjectId", "initiatingProcessAccountObjectId", "servicePrincipalId", "recipientObjectId", "unknownFutureValue"}
+    for p := 0; p < 5; p++ {
+        mantis := MarkUserAsCompromisedEntityIdentifier(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

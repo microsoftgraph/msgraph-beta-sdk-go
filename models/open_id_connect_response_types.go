@@ -1,22 +1,25 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // 
 type OpenIdConnectResponseTypes int
 
 const (
-    CODE_OPENIDCONNECTRESPONSETYPES OpenIdConnectResponseTypes = iota
-    ID_TOKEN_OPENIDCONNECTRESPONSETYPES
-    TOKEN_OPENIDCONNECTRESPONSETYPES
+    CODE_OPENIDCONNECTRESPONSETYPES = 1
+    ID_TOKEN_OPENIDCONNECTRESPONSETYPES = 2
+    TOKEN_OPENIDCONNECTRESPONSETYPES = 4
 )
 
 func (i OpenIdConnectResponseTypes) String() string {
     var values []string
-    for p := OpenIdConnectResponseTypes(1); p <= TOKEN_OPENIDCONNECTRESPONSETYPES; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"code", "id_token", "token"}[p])
+    options := []string{"code", "id_token", "token"}
+    for p := 0; p < 3; p++ {
+        mantis := OpenIdConnectResponseTypes(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

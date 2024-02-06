@@ -29,7 +29,7 @@ type ExchangeRoleDefinitionsItemInheritsPermissionsFromCountRequestBuilderGetReq
 // NewExchangeRoleDefinitionsItemInheritsPermissionsFromCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewExchangeRoleDefinitionsItemInheritsPermissionsFromCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExchangeRoleDefinitionsItemInheritsPermissionsFromCountRequestBuilder) {
     m := &ExchangeRoleDefinitionsItemInheritsPermissionsFromCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition%2Did}/inheritsPermissionsFrom/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition%2Did}/inheritsPermissionsFrom/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

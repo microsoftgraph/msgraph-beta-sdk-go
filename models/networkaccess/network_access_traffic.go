@@ -127,6 +127,17 @@ func (m *NetworkAccessTraffic) GetDestinationPort()(*int32) {
     }
     return nil
 }
+// GetDestinationUrl gets the destinationUrl property value. The destinationUrl property
+func (m *NetworkAccessTraffic) GetDestinationUrl()(*string) {
+    val, err := m.GetBackingStore().Get("destinationUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetDestinationWebCategory gets the destinationWebCategory property value. The destinationWebCategory property
 func (m *NetworkAccessTraffic) GetDestinationWebCategory()(WebCategoryable) {
     val, err := m.GetBackingStore().Get("destinationWebCategory")
@@ -262,6 +273,16 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetDestinationPort(val)
+        }
+        return nil
+    }
+    res["destinationUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDestinationUrl(val)
         }
         return nil
     }
@@ -492,6 +513,16 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetTenantId(val)
+        }
+        return nil
+    }
+    res["threatType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetThreatType(val)
         }
         return nil
     }
@@ -745,6 +776,17 @@ func (m *NetworkAccessTraffic) GetTenantId()(*string) {
     }
     return nil
 }
+// GetThreatType gets the threatType property value. The threatType property
+func (m *NetworkAccessTraffic) GetThreatType()(*string) {
+    val, err := m.GetBackingStore().Get("threatType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetTrafficType gets the trafficType property value. The trafficType property
 func (m *NetworkAccessTraffic) GetTrafficType()(*TrafficType) {
     val, err := m.GetBackingStore().Get("trafficType")
@@ -847,6 +889,12 @@ func (m *NetworkAccessTraffic) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err := writer.WriteInt32Value("destinationPort", m.GetDestinationPort())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("destinationUrl", m.GetDestinationUrl())
         if err != nil {
             return err
         }
@@ -991,6 +1039,12 @@ func (m *NetworkAccessTraffic) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err := writer.WriteStringValue("threatType", m.GetThreatType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTrafficType() != nil {
         cast := (*m.GetTrafficType()).String()
         err := writer.WriteStringValue("trafficType", &cast)
@@ -1094,6 +1148,13 @@ func (m *NetworkAccessTraffic) SetDestinationIp(value *string)() {
 // SetDestinationPort sets the destinationPort property value. Represents the network port number on the destination host or server in a network communication. Supports $filter (eq) and $orderby.
 func (m *NetworkAccessTraffic) SetDestinationPort(value *int32)() {
     err := m.GetBackingStore().Set("destinationPort", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDestinationUrl sets the destinationUrl property value. The destinationUrl property
+func (m *NetworkAccessTraffic) SetDestinationUrl(value *string)() {
+    err := m.GetBackingStore().Set("destinationUrl", value)
     if err != nil {
         panic(err)
     }
@@ -1259,6 +1320,13 @@ func (m *NetworkAccessTraffic) SetTenantId(value *string)() {
         panic(err)
     }
 }
+// SetThreatType sets the threatType property value. The threatType property
+func (m *NetworkAccessTraffic) SetThreatType(value *string)() {
+    err := m.GetBackingStore().Set("threatType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTrafficType sets the trafficType property value. The trafficType property
 func (m *NetworkAccessTraffic) SetTrafficType(value *TrafficType)() {
     err := m.GetBackingStore().Set("trafficType", value)
@@ -1308,6 +1376,7 @@ type NetworkAccessTrafficable interface {
     GetDestinationFQDN()(*string)
     GetDestinationIp()(*string)
     GetDestinationPort()(*int32)
+    GetDestinationUrl()(*string)
     GetDestinationWebCategory()(WebCategoryable)
     GetDeviceCategory()(*DeviceCategory)
     GetDeviceId()(*string)
@@ -1331,6 +1400,7 @@ type NetworkAccessTrafficable interface {
     GetSourceIp()(*string)
     GetSourcePort()(*int32)
     GetTenantId()(*string)
+    GetThreatType()(*string)
     GetTrafficType()(*TrafficType)
     GetTransactionId()(*string)
     GetTransportProtocol()(*NetworkingProtocol)
@@ -1345,6 +1415,7 @@ type NetworkAccessTrafficable interface {
     SetDestinationFQDN(value *string)()
     SetDestinationIp(value *string)()
     SetDestinationPort(value *int32)()
+    SetDestinationUrl(value *string)()
     SetDestinationWebCategory(value WebCategoryable)()
     SetDeviceCategory(value *DeviceCategory)()
     SetDeviceId(value *string)()
@@ -1368,6 +1439,7 @@ type NetworkAccessTrafficable interface {
     SetSourceIp(value *string)()
     SetSourcePort(value *int32)()
     SetTenantId(value *string)()
+    SetThreatType(value *string)()
     SetTrafficType(value *TrafficType)()
     SetTransactionId(value *string)()
     SetTransportProtocol(value *NetworkingProtocol)()

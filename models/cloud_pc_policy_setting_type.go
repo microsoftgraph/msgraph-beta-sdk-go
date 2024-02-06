@@ -1,22 +1,25 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // 
 type CloudPcPolicySettingType int
 
 const (
-    REGION_CLOUDPCPOLICYSETTINGTYPE CloudPcPolicySettingType = iota
-    SINGLESIGNON_CLOUDPCPOLICYSETTINGTYPE
-    UNKNOWNFUTUREVALUE_CLOUDPCPOLICYSETTINGTYPE
+    REGION_CLOUDPCPOLICYSETTINGTYPE = 1
+    SINGLESIGNON_CLOUDPCPOLICYSETTINGTYPE = 2
+    UNKNOWNFUTUREVALUE_CLOUDPCPOLICYSETTINGTYPE = 4
 )
 
 func (i CloudPcPolicySettingType) String() string {
     var values []string
-    for p := CloudPcPolicySettingType(1); p <= UNKNOWNFUTUREVALUE_CLOUDPCPOLICYSETTINGTYPE; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"region", "singleSignOn", "unknownFutureValue"}[p])
+    options := []string{"region", "singleSignOn", "unknownFutureValue"}
+    for p := 0; p < 3; p++ {
+        mantis := CloudPcPolicySettingType(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

@@ -1,25 +1,28 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // 
 type AwsRoleTrustEntityType int
 
 const (
-    NONE_AWSROLETRUSTENTITYTYPE AwsRoleTrustEntityType = iota
-    SERVICE_AWSROLETRUSTENTITYTYPE
-    SSO_AWSROLETRUSTENTITYTYPE
-    CROSSACCOUNT_AWSROLETRUSTENTITYTYPE
-    WEBIDENTITY_AWSROLETRUSTENTITYTYPE
-    UNKNOWNFUTUREVALUE_AWSROLETRUSTENTITYTYPE
+    NONE_AWSROLETRUSTENTITYTYPE = 1
+    SERVICE_AWSROLETRUSTENTITYTYPE = 2
+    SSO_AWSROLETRUSTENTITYTYPE = 4
+    CROSSACCOUNT_AWSROLETRUSTENTITYTYPE = 8
+    WEBIDENTITY_AWSROLETRUSTENTITYTYPE = 16
+    UNKNOWNFUTUREVALUE_AWSROLETRUSTENTITYTYPE = 32
 )
 
 func (i AwsRoleTrustEntityType) String() string {
     var values []string
-    for p := AwsRoleTrustEntityType(1); p <= UNKNOWNFUTUREVALUE_AWSROLETRUSTENTITYTYPE; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "service", "sso", "crossAccount", "webIdentity", "unknownFutureValue"}[p])
+    options := []string{"none", "service", "sso", "crossAccount", "webIdentity", "unknownFutureValue"}
+    for p := 0; p < 6; p++ {
+        mantis := AwsRoleTrustEntityType(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

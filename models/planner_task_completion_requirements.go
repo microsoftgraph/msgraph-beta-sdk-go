@@ -1,24 +1,27 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // 
 type PlannerTaskCompletionRequirements int
 
 const (
-    NONE_PLANNERTASKCOMPLETIONREQUIREMENTS PlannerTaskCompletionRequirements = iota
-    CHECKLISTCOMPLETION_PLANNERTASKCOMPLETIONREQUIREMENTS
-    UNKNOWNFUTUREVALUE_PLANNERTASKCOMPLETIONREQUIREMENTS
-    FORMCOMPLETION_PLANNERTASKCOMPLETIONREQUIREMENTS
-    APPROVALCOMPLETION_PLANNERTASKCOMPLETIONREQUIREMENTS
+    NONE_PLANNERTASKCOMPLETIONREQUIREMENTS = 1
+    CHECKLISTCOMPLETION_PLANNERTASKCOMPLETIONREQUIREMENTS = 2
+    UNKNOWNFUTUREVALUE_PLANNERTASKCOMPLETIONREQUIREMENTS = 4
+    FORMCOMPLETION_PLANNERTASKCOMPLETIONREQUIREMENTS = 8
+    APPROVALCOMPLETION_PLANNERTASKCOMPLETIONREQUIREMENTS = 16
 )
 
 func (i PlannerTaskCompletionRequirements) String() string {
     var values []string
-    for p := PlannerTaskCompletionRequirements(1); p <= APPROVALCOMPLETION_PLANNERTASKCOMPLETIONREQUIREMENTS; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "checklistCompletion", "unknownFutureValue", "formCompletion", "approvalCompletion"}[p])
+    options := []string{"none", "checklistCompletion", "unknownFutureValue", "formCompletion", "approvalCompletion"}
+    for p := 0; p < 5; p++ {
+        mantis := PlannerTaskCompletionRequirements(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

@@ -29,7 +29,7 @@ type CompliancePoliciesItemScheduledActionsForRuleCountRequestBuilderGetRequestC
 // NewCompliancePoliciesItemScheduledActionsForRuleCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewCompliancePoliciesItemScheduledActionsForRuleCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompliancePoliciesItemScheduledActionsForRuleCountRequestBuilder) {
     m := &CompliancePoliciesItemScheduledActionsForRuleCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/compliancePolicies/{deviceManagementCompliancePolicy%2Did}/scheduledActionsForRule/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/compliancePolicies/{deviceManagementCompliancePolicy%2Did}/scheduledActionsForRule/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

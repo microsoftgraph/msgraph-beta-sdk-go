@@ -35,7 +35,7 @@ type TemplatesItemCompareWithTemplateIdRequestBuilderGetRequestConfiguration str
 // NewTemplatesItemCompareWithTemplateIdRequestBuilderInternal instantiates a new CompareWithTemplateIdRequestBuilder and sets the default values.
 func NewTemplatesItemCompareWithTemplateIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, templateId *string)(*TemplatesItemCompareWithTemplateIdRequestBuilder) {
     m := &TemplatesItemCompareWithTemplateIdRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/compare(templateId='{templateId}'){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/compare(templateId='{templateId}'){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters),
     }
     if templateId != nil {
         m.BaseRequestBuilder.PathParameters["templateId"] = *templateId

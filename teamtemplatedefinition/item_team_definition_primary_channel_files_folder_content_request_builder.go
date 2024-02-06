@@ -11,12 +11,19 @@ import (
 type ItemTeamDefinitionPrimaryChannelFilesFolderContentRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// ItemTeamDefinitionPrimaryChannelFilesFolderContentRequestBuilderGetQueryParameters the content stream, if the item represents a file.
+type ItemTeamDefinitionPrimaryChannelFilesFolderContentRequestBuilderGetQueryParameters struct {
+    // Format of the content
+    Format *string `uriparametername:"%24format"`
+}
 // ItemTeamDefinitionPrimaryChannelFilesFolderContentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTeamDefinitionPrimaryChannelFilesFolderContentRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *ItemTeamDefinitionPrimaryChannelFilesFolderContentRequestBuilderGetQueryParameters
 }
 // ItemTeamDefinitionPrimaryChannelFilesFolderContentRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTeamDefinitionPrimaryChannelFilesFolderContentRequestBuilderPutRequestConfiguration struct {
@@ -28,7 +35,7 @@ type ItemTeamDefinitionPrimaryChannelFilesFolderContentRequestBuilderPutRequestC
 // NewItemTeamDefinitionPrimaryChannelFilesFolderContentRequestBuilderInternal instantiates a new ContentRequestBuilder and sets the default values.
 func NewItemTeamDefinitionPrimaryChannelFilesFolderContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionPrimaryChannelFilesFolderContentRequestBuilder) {
     m := &ItemTeamDefinitionPrimaryChannelFilesFolderContentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/primaryChannel/filesFolder/content", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/primaryChannel/filesFolder/content{?%24format*}", pathParameters),
     }
     return m
 }
@@ -83,6 +90,9 @@ func (m *ItemTeamDefinitionPrimaryChannelFilesFolderContentRequestBuilder) Put(c
 func (m *ItemTeamDefinitionPrimaryChannelFilesFolderContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionPrimaryChannelFilesFolderContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

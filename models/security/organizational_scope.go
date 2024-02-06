@@ -90,7 +90,7 @@ func (m *OrganizationalScope) GetOdataType()(*string) {
     }
     return nil
 }
-// GetScopeNames gets the scopeNames property value. The scopeNames property
+// GetScopeNames gets the scopeNames property value. List of groups to which the custom detection rule applies.
 func (m *OrganizationalScope) GetScopeNames()([]string) {
     val, err := m.GetBackingStore().Get("scopeNames")
     if err != nil {
@@ -159,7 +159,7 @@ func (m *OrganizationalScope) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetScopeNames sets the scopeNames property value. The scopeNames property
+// SetScopeNames sets the scopeNames property value. List of groups to which the custom detection rule applies.
 func (m *OrganizationalScope) SetScopeNames(value []string)() {
     err := m.GetBackingStore().Set("scopeNames", value)
     if err != nil {

@@ -41,7 +41,7 @@ func (m *FinancialsRequestBuilder) Companies()(*CompaniesRequestBuilder) {
 // NewFinancialsRequestBuilderInternal instantiates a new FinancialsRequestBuilder and sets the default values.
 func NewFinancialsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FinancialsRequestBuilder) {
     m := &FinancialsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials{?%24expand,%24select}", pathParameters),
     }
     return m
 }
